@@ -49,6 +49,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
               inputType: TextInputType.number,
               hintText: 'Enter Your Mobile No',
               label: 'Mobile No.',
+              maxLength: 10,
             ),
             SizedBox(height: 14.h),
             CustomButton(

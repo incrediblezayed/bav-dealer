@@ -51,8 +51,7 @@ class _SignUpFlowState extends ConsumerState<SignUpFlow> {
                 },
               ),
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.6,
+            Expanded(
               child: PageView(
                 controller: authPro.pageController,
                 children: authPro.pages,
@@ -61,8 +60,8 @@ class _SignUpFlowState extends ConsumerState<SignUpFlow> {
                 },
               ),
             ),
-            SizedBox(height: 16.h),
-            const Spacer(),
+            //SizedBox(height: 16.h),
+            //const Spacer(),
             Align(
               alignment: Alignment.bottomCenter,
               child: GestureDetector(

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget {
   ///Custom Textfield
   CustomTextField({
+    this.maxLength,
     super.key,
     this.hintText,
     this.label,
@@ -19,6 +20,7 @@ class CustomTextField extends StatelessWidget {
   bool obsecureText;
   TextEditingController? controller;
   TextInputType? inputType;
+  final int? maxLength;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,9 @@ class CustomTextField extends StatelessWidget {
       keyboardType: inputType,
       controller: controller,
       obscureText: obsecureText,
+      maxLength: maxLength,
       decoration: InputDecoration(
+        counterText: '',
         fillColor: AppTheme.white,
         suffixIcon: suffixIcon,
         suffixIconColor: Colors.black.withOpacity(.2),
