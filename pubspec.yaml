@@ -40,12 +40,14 @@ dependencies:
   flutter_svg: ^2.0.5
   intl: ^0.18.1
   ferry: ^0.14.2+1
+  flutter_screenutil: ^5.6.0
   ferry_hive_store: ^0.5.1
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   cached_network_image: ^3.2.3
   flutter_riverpod: ^2.3.6
   gql_dio_link: ^1.0.1
+  flutter_spinkit: ^5.2.0
 
 dev_dependencies:
   flutter_test:
@@ -71,8 +73,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/Images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
