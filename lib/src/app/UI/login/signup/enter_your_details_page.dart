@@ -20,6 +20,7 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
     final authPro = ref.watch(authProvider);
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Padding(
         padding:
             EdgeInsets.only(left: 20.w, right: 20.w, top: 30.h, bottom: 30.h),

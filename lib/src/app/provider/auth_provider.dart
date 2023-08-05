@@ -12,8 +12,6 @@ final authProvider = ChangeNotifierProvider((ref) => AuthProvider());
 
 ///Auth Class
 class AuthProvider extends ChangeNotifier {
-  
-
   ///Page controller
   PageController pageController = PageController();
 

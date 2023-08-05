@@ -34,6 +34,7 @@ class AddEmailPage extends ConsumerWidget {
             CustomTextField(
               hintText: 'Enter Your Email',
               label: 'Email ID',
+              inputType: TextInputType.emailAddress,
             ),
             SizedBox(
               height: 4.h,

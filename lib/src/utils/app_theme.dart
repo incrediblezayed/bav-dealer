@@ -119,8 +119,13 @@ class AppTheme {
   static ThemeData get theme => ThemeData(
         textTheme: TextTheme(
           headlineLarge: TextStyle(
-            fontSize: 24.sp,
-            fontWeight: FontWeight.w600,
+            fontSize: 20.sp,
+            fontWeight: FontWeight.w700,
+            color: AppTheme.textColor,
+          ),
+          labelLarge: TextStyle(
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w400,
             color: AppTheme.textColor,
           ),
           headlineSmall: TextStyle(
@@ -129,8 +134,8 @@ class AppTheme {
             color: AppTheme.textColor,
           ),
           labelMedium: TextStyle(
-            fontSize: 12.sp,
-            fontWeight: FontWeight.w300,
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w400,
             color: Colors.grey,
           ),
         ),

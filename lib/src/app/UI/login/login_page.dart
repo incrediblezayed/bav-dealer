@@ -1,6 +1,6 @@
 import 'package:dealerapp/src/app/UI/login/forgot_password.dart';
 import 'package:dealerapp/src/app/UI/login/signup/signup_flow.dart';
-import 'package:dealerapp/src/app/UI/login/wallet/my_wallet.dart';
+import 'package:dealerapp/src/app/UI/withdrawal/withdrawal_page.dart';
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
@@ -102,7 +102,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
             ),
             TextButton(
               onPressed: () {
-                AppRoutes.push(page: const MyWalletPage());
+                AppRoutes.push(page: const WithdrawalPage());
               },
               child: const Text('Wallet'),
             ),

@@ -12,11 +12,15 @@ class CustomTextField extends StatelessWidget {
     this.controller,
     this.inputType,
     this.suffixIcon,
+    this.prefixIcon,
     this.obsecureText = false,
   });
+
   String? hintText;
   String? label;
   Widget? suffixIcon;
+  Widget? prefixIcon;
+
   bool obsecureText;
   TextEditingController? controller;
   TextInputType? inputType;
@@ -30,6 +34,7 @@ class CustomTextField extends StatelessWidget {
       obscureText: obsecureText,
       maxLength: maxLength,
       decoration: InputDecoration(
+        prefixIcon: prefixIcon,
         counterText: '',
         fillColor: AppTheme.white,
         suffixIcon: suffixIcon,
