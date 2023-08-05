@@ -1,4 +1,4 @@
-import 'package:dealerapp/src/app/UI/forgot_password/forgot_password.dart';
+import 'package:dealerapp/src/app/UI/forgot_password/login/forgot_password.dart';
 import 'package:dealerapp/src/app/UI/signup/signup_flow.dart';
 import 'package:dealerapp/src/app/UI/wallet/withdrawal/withdrawal_page.dart';
 import 'package:dealerapp/src/app/provider/auth_provider.dart';

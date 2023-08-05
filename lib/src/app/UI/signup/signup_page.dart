@@ -1,7 +1,7 @@
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
-import 'package:dealerapp/src/utils/custom_button.dart';
-import 'package:dealerapp/src/utils/custom_textfield.dart';
+import 'package:dealerapp/src/widgets/custom_button.dart';
+import 'package:dealerapp/src/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -44,7 +44,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
               style: textTheme.headlineLarge,
             ),
             SizedBox(height: 14.h),
-            CustomTextField(
+            KTextField(
               controller: mobileController,
               inputType: TextInputType.number,
               hintText: 'Enter Your Mobile No',
@@ -52,12 +52,14 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
               maxLength: 10,
             ),
             SizedBox(height: 14.h),
-            CustomButton(
+            KButton(
               onPressed: () {
                 if (mobileController.text.isEmpty) {
-                  AppRoutes.showErrorSnackbar('Please Enter Mobile No.');
+                  AppRoutes.showErrorSnackbar(
+                    message: 'Please Enter Mobile No.',
+                  );
                 } else if (mobileController.text.length != 10) {
-                  AppRoutes.showErrorSnackbar('Minimum 10 Numbers');
+                  AppRoutes.showErrorSnackbar(message: 'Minimum 10 Numbers');
                 } else if (authPro.currentPageIndex <
                     authPro.pages.length - 1) {
                   print(authPro.currentPageIndex + 1);

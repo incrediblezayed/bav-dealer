@@ -1,9 +1,11 @@
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
-import 'package:dealerapp/src/utils/custom_button.dart';
-import 'package:dealerapp/src/utils/custom_textfield.dart';
+import 'package:dealerapp/src/utils/app_theme.dart';
+import 'package:dealerapp/src/widgets/custom_button.dart';
+import 'package:dealerapp/src/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iconsax/iconsax.dart';
 
 class EnterYourDetailsPage extends ConsumerStatefulWidget {
   const EnterYourDetailsPage({super.key});
@@ -18,7 +20,7 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
     // final passPro = ref.watch(pwdProvider);
 
     final authPro = ref.watch(authProvider);
-    final textTheme = Theme.of(context).textTheme;
+    final theme = Theme.of(context).textTheme;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Padding(
@@ -27,14 +29,34 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Enter Your Details',
-              style: textTheme.headlineLarge,
+            Row(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    if (authPro.currentPageIndex < authPro.pages.length - 1) {
+                      authPro.pageController.animateToPage(
+                        authPro.currentPageIndex - 1,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      );
+                    }
+                  },
+                  child: const Icon(
+                    Iconsax.arrow_left,
+                    color: AppTheme.textColor,
+                  ),
+                ),
+                SizedBox(width: 10.w),
+                Text(
+                  'Enter Your Details',
+                  style: theme.headlineLarge,
+                ),
+              ],
             ),
             SizedBox(
               height: 16.h,
             ),
-            CustomTextField(
+            KTextField(
               controller: authPro.firstNameController,
               hintText: 'Enter Your First Name',
               label: 'First Name',
@@ -42,7 +64,7 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
             SizedBox(
               height: 16.h,
             ),
-            CustomTextField(
+            KTextField(
               controller: authPro.lastNameController,
               hintText: 'Enter Your Last Name',
               label: 'Last Name',
@@ -50,7 +72,7 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
             SizedBox(
               height: 16.h,
             ),
-            CustomTextField(
+            KTextField(
               controller: authPro.phoneNumberController,
               hintText: 'Enter Your Phone Number',
               label: 'Phone Number',
@@ -58,7 +80,7 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
             SizedBox(
               height: 16.h,
             ),
-            CustomTextField(
+            KTextField(
               controller: authPro.emailIdController,
               hintText: 'Enter Your Email ID',
               label: 'Email ID',
@@ -66,7 +88,7 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
             SizedBox(
               height: 14.h,
             ),
-            CustomTextField(
+            KTextField(
               controller: authPro.newPasswordController,
               hintText: 'Enter Your Password',
               label: 'New Password',
@@ -74,7 +96,7 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
             SizedBox(
               height: 16.h,
             ),
-            CustomButton(
+            KButton(
               onPressed: () {
                 if (authPro.currentPageIndex < authPro.pages.length - 1) {
                   authPro.pageController.animateToPage(

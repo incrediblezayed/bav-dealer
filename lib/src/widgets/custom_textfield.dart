@@ -2,9 +2,9 @@ import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 
 ///Custom Textfield
-class CustomTextField extends StatelessWidget {
+class KTextField extends StatelessWidget {
   ///Custom Textfield
-  CustomTextField({
+  KTextField({
     this.maxLength,
     super.key,
     this.hintText,

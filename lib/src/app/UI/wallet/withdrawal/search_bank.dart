@@ -1,13 +1,12 @@
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
-import 'package:dealerapp/src/utils/custom_button.dart';
-import 'package:dealerapp/src/utils/custom_textfield.dart';
+import 'package:dealerapp/src/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class AddCardPage extends StatelessWidget {
-  const AddCardPage({super.key});
+class SearchBankPage extends StatelessWidget {
+  const SearchBankPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,7 @@ class AddCardPage extends StatelessWidget {
         ),
         // leading: const Icon(Icons.arrow_back, color: AppTheme.black),
         title: Text(
-          'Add Card',
+          'Add Bank Account',
           style: theme.headlineLarge,
         ),
         elevation: 0,
@@ -34,23 +33,34 @@ class AddCardPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomTextField(
-              hintText: 'Enter Your Name On Card',
-              label: 'Name On Card',
+            /* TextField(
+              decoration: InputDecoration(
+                prefixIcon: SvgPicture.asset(
+                  AppImages.search,
+                  fit: BoxFit.scaleDown,
+                ),
+                fillColor: Colors.white,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(6.r),
+                ),
+              ),
+            ) */
+            KTextField(
+              hintText: 'Search for bank',
+              prefixIcon: SvgPicture.asset(
+                AppImages.search,
+                fit: BoxFit.scaleDown,
+              ),
             ),
-            SizedBox(height: 10.h),
-            CustomTextField(
-              hintText: 'Enter Your Card Number',
-              label: 'Card Number',
+            SizedBox(
+              height: 20.h,
             ),
-            SizedBox(height: 10.h),
-            CustomTextField(
-              hintText: 'Expiry Date',
-              label: 'Expiry',
-            ),
-            SizedBox(height: 10.h),
-            CustomButton(onPressed: () {}, text: 'Submit')
+            Text(
+              'Add Your Bank',
+              style: theme.labelLarge,
+            )
           ],
         ),
       ),

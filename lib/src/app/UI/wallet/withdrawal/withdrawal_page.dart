@@ -1,8 +1,8 @@
-import 'package:dealerapp/src/app/UI/withdrawal/add_bank.dart';
-import 'package:dealerapp/src/app/UI/withdrawal/add_card.dart';
+import 'package:dealerapp/src/app/UI/wallet/withdrawal/add_bank.dart';
+import 'package:dealerapp/src/app/UI/wallet/withdrawal/add_card.dart';
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
-import 'package:dealerapp/src/utils/bank_cards.dart';
+import 'package:dealerapp/src/widgets/bank_cards.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';

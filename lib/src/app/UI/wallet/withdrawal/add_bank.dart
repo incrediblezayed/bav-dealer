@@ -1,12 +1,13 @@
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
-import 'package:dealerapp/src/utils/custom_textfield.dart';
+import 'package:dealerapp/src/widgets/custom_button.dart';
+import 'package:dealerapp/src/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class SearchBankPage extends StatelessWidget {
-  const SearchBankPage({super.key});
+class AddBankPage extends StatelessWidget {
+  const AddBankPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,34 +34,28 @@ class SearchBankPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /* TextField(
-              decoration: InputDecoration(
-                prefixIcon: SvgPicture.asset(
-                  AppImages.search,
-                  fit: BoxFit.scaleDown,
-                ),
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(6.r),
-                ),
-              ),
-            ) */
-            CustomTextField(
-              hintText: 'Search for bank',
-              prefixIcon: SvgPicture.asset(
-                AppImages.search,
-                fit: BoxFit.scaleDown,
-              ),
+            KTextField(
+              hintText: 'Enter Your Account Number',
+              label: 'Account Number',
             ),
-            SizedBox(
-              height: 20.h,
+            SizedBox(height: 10.h),
+            KTextField(
+              hintText: 'Enter Your IFSC Code',
+              label: 'IFSC Code',
             ),
-            Text(
-              'Add Your Bank',
-              style: theme.labelLarge,
-            )
+            SizedBox(height: 10.h),
+            KTextField(
+              hintText: 'Enter Your Branch Code',
+              label: 'Branch Code',
+            ),
+            SizedBox(height: 10.h),
+            KTextField(
+              hintText: 'Enter Your Registered Mobile Number',
+              label: 'Mobile Number',
+            ),
+            SizedBox(height: 10.h),
+            KButton(onPressed: () {}, text: 'Submit')
           ],
         ),
       ),

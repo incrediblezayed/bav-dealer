@@ -43,9 +43,9 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 ///
 /// AppRoutes.showLoadingDialog();
 ///
-/// AppRoutes.showErrorSnackbar();
+/// AppRoutes.showErrorSnackbar(message:);
 ///
-/// AppRoutes.showSuccessSnackbar();
+/// AppRoutes.showSuccessSnackbar(message:);
 class AppRoutes {
   ///Navigator key to navigate between pages
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -124,58 +124,41 @@ class AppRoutes {
 
   ///Shows a snackbar with a default title as 'Error'
   static ScaffoldFeatureController<SnackBar, SnackBarClosedReason>?
-      showErrorSnackbar([String message = '']) {
+      showErrorSnackbar({
+    String message = 'Error..',
+    Alignment alignment = Alignment.topCenter,
+  }) {
+    // message.log();
     return scaffoldMessengerKey.currentState?.showSnackBar(
       SnackBar(
         behavior: SnackBarBehavior.floating,
         duration: const Duration(seconds: 1),
         elevation: 1,
-        padding: EdgeInsets.zero,
+        //padding: EdgeInsets.zero,
         content: Row(
           children: [
-            Container(
-              height: 35.h,
-              width: 5.w,
-              decoration: BoxDecoration(
-                color: AppTheme.redColor,
-                borderRadius:
-                    BorderRadius.horizontal(left: Radius.circular(6.r)),
-              ),
-            ),
-            SizedBox(
-              width: 24.w,
-            ),
-            Icon(
-              Icons.cancel,
-              size: 24.sp,
-              color: AppTheme.redColor,
-            ),
-            SizedBox(
-              width: 10.w,
-            ),
             Text(
               message,
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
-                color: AppTheme.defaultBlack,
+                color: AppTheme.white,
                 fontWeight: FontWeight.w600,
                 fontSize: 14.sp,
               ),
             ),
-            const Spacer(),
             IconButton(
               onPressed: () {
                 scaffoldMessengerKey.currentState?.hideCurrentSnackBar();
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.close,
-                color: AppTheme.defaultBlack.withOpacity(.6),
+                color: AppTheme.white,
               ),
             )
           ],
         ),
-        backgroundColor: AppTheme.white,
+        backgroundColor: AppTheme.red,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(6.r),
           side: BorderSide(
@@ -188,54 +171,60 @@ class AppRoutes {
 
   ///Shows a snackbar with a default title as 'Success'
   static ScaffoldFeatureController<SnackBar, SnackBarClosedReason>?
-      showSuccessSnackbar([String message = 'Success']) {
+      showSuccessSnackbar({
+    String message = 'Success',
+    Alignment alignment = Alignment.bottomCenter,
+  }) {
     return scaffoldMessengerKey.currentState?.showSnackBar(
       SnackBar(
         behavior: SnackBarBehavior.floating,
         duration: const Duration(seconds: 1),
         elevation: 1,
         padding: EdgeInsets.zero,
-        content: Row(
-          children: [
-            Container(
-              height: 35.h,
-              width: 6.w,
-              decoration: BoxDecoration(
+        content: Align(
+          alignment: alignment,
+          child: Row(
+            children: [
+              Container(
+                height: 56.h,
+                width: 6.w,
+                decoration: BoxDecoration(
+                  color: AppTheme.primaryColor,
+                  borderRadius:
+                      BorderRadius.horizontal(left: Radius.circular(6.r)),
+                ),
+              ),
+              SizedBox(
+                width: 24.w,
+              ),
+              Icon(
+                Icons.check_circle,
+                size: 24.sp,
                 color: AppTheme.primaryColor,
-                borderRadius:
-                    BorderRadius.horizontal(left: Radius.circular(6.r)),
               ),
-            ),
-            SizedBox(
-              width: 24.w,
-            ),
-            Icon(
-              Icons.check_circle,
-              size: 24.sp,
-              color: AppTheme.primaryColor,
-            ),
-            SizedBox(
-              width: 10.w,
-            ),
-            Text(
-              message,
-              style: TextStyle(
-                color: AppTheme.defaultBlack,
-                fontWeight: FontWeight.w600,
-                fontSize: 14.sp,
+              SizedBox(
+                width: 10.w,
               ),
-            ),
-            const Spacer(),
-            IconButton(
-              onPressed: () {
-                scaffoldMessengerKey.currentState?.hideCurrentSnackBar();
-              },
-              icon: Icon(
-                Icons.close,
-                color: AppTheme.defaultBlack.withOpacity(0.6),
+              Text(
+                message,
+                style: TextStyle(
+                  color: AppTheme.defaultBlack,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 14.sp,
+                ),
               ),
-            )
-          ],
+              const Spacer(),
+              IconButton(
+                onPressed: () {
+                  scaffoldMessengerKey.currentState?.hideCurrentSnackBar();
+                },
+                icon: Icon(
+                  Icons.close,
+                  color: AppTheme.defaultBlack.withOpacity(0.6),
+                ),
+              )
+            ],
+          ),
         ),
         backgroundColor: AppTheme.white,
         shape: RoundedRectangleBorder(

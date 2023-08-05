@@ -1,18 +1,20 @@
-import 'package:dealerapp/src/app/UI/login/change_password.dart';
+import 'package:dealerapp/src/app/UI/forgot_password/change_password.dart';
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
-import 'package:dealerapp/src/utils/custom_button.dart';
-import 'package:dealerapp/src/utils/custom_textfield.dart';
+import 'package:dealerapp/src/widgets/custom_button.dart';
+import 'package:dealerapp/src/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iconsax/iconsax.dart';
 
 class ForgotPasswordPage extends ConsumerWidget {
   const ForgotPasswordPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context).textTheme;
     final authPro = ref.watch(authProvider);
     return Scaffold(
       body: Padding(
@@ -21,13 +23,23 @@ class ForgotPasswordPage extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Forgot Password',
-              style: TextStyle(
-                fontSize: 24.sp,
-                fontWeight: FontWeight.w600,
-                color: AppTheme.textColor,
-              ),
+            Row(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    AppRoutes.pop();
+                  },
+                  child: const Icon(
+                    Iconsax.arrow_left,
+                    color: AppTheme.textColor,
+                  ),
+                ),
+                SizedBox(width: 10.w),
+                Text(
+                  'Forgot Password',
+                  style: theme.headlineLarge,
+                ),
+              ],
             ),
             SizedBox(
               height: 16.h,
@@ -41,7 +53,7 @@ class ForgotPasswordPage extends ConsumerWidget {
             SizedBox(
               height: 26.h,
             ),
-            CustomTextField(
+            KTextField(
               hintText: 'Enter Your Username Or Mobile Number',
               label: 'Dealer Id',
               suffixIcon: IconButton(
@@ -60,7 +72,7 @@ class ForgotPasswordPage extends ConsumerWidget {
             SizedBox(
               height: 26.h,
             ),
-            CustomButton(
+            KButton(
               onPressed: () {
                 AppRoutes.push(page: const ChangePasswordPage());
               },

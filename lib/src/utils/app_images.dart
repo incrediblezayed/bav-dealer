@@ -10,4 +10,6 @@ class AppImages {
   static const sbi = 'assets/Images/sbi.png';
   static const sbisvg = 'assets/Images/sbisvg.svg';
   static const search = 'assets/Images/search.svg';
+  static const walletHistoryEmpty = 'assets/Images/empty_wallet.png';
+
 }

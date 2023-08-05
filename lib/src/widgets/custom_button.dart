@@ -2,8 +2,9 @@ import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomButton extends StatelessWidget {
-  CustomButton({super.key, required this.onPressed, required this.text});
+class KButton extends StatelessWidget {
+  /// Constructor
+  KButton({required this.onPressed, required this.text, super.key});
   Function()? onPressed;
   String text;
 

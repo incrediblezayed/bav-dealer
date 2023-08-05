@@ -1,9 +1,9 @@
-import 'package:dealerapp/src/app/UI/login/signup/add_email_page.dart';
-import 'package:dealerapp/src/app/UI/login/signup/address_page.dart';
-import 'package:dealerapp/src/app/UI/login/signup/create_your_password.dart';
-import 'package:dealerapp/src/app/UI/login/signup/enter_your_details_page.dart';
-import 'package:dealerapp/src/app/UI/login/signup/otp_verification_page.dart';
-import 'package:dealerapp/src/app/UI/login/signup/signup_page.dart';
+import 'package:dealerapp/src/app/UI/signup/add_email_page.dart';
+import 'package:dealerapp/src/app/UI/signup/address_page.dart';
+import 'package:dealerapp/src/app/UI/signup/create_your_password.dart';
+import 'package:dealerapp/src/app/UI/signup/enter_your_details_page.dart';
+import 'package:dealerapp/src/app/UI/signup/otp_verification_page.dart';
+import 'package:dealerapp/src/app/UI/signup/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

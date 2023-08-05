@@ -1,16 +1,18 @@
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
-import 'package:dealerapp/src/utils/custom_button.dart';
-import 'package:dealerapp/src/utils/custom_textfield.dart';
+import 'package:dealerapp/src/widgets/custom_button.dart';
+import 'package:dealerapp/src/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iconsax/iconsax.dart';
 
-class AddressPage extends ConsumerWidget {
-  const AddressPage({super.key});
+class AddEmailPage extends ConsumerWidget {
+  const AddEmailPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context).textTheme;
     final authPro = ref.watch(authProvider);
     final pageViewPro = ref.watch(authProvider);
     return Scaffold(
@@ -20,21 +22,37 @@ class AddressPage extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Address',
-              style: TextStyle(
-                fontSize: 24.sp,
-                fontWeight: FontWeight.w600,
-                color: AppTheme.textColor,
-              ),
+            Row(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    if (authPro.currentPageIndex < authPro.pages.length - 1) {
+                      authPro.pageController.animateToPage(
+                        authPro.currentPageIndex - 1,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      );
+                    }
+                  },
+                  child: const Icon(
+                    Iconsax.arrow_left,
+                    color: AppTheme.textColor,
+                  ),
+                ),
+                SizedBox(width: 10.w),
+                Text(
+                  'Add Your Email',
+                  style: theme.headlineLarge,
+                ),
+              ],
             ),
             SizedBox(
               height: 26.h,
             ),
-            CustomTextField(
-              controller: authPro.shopAddressController,
-              hintText: 'Enter Your Address',
-              label: 'Shop Address',
+            KTextField(
+              hintText: 'Enter Your Email',
+              label: 'Email ID',
+              inputType: TextInputType.emailAddress,
             ),
             SizedBox(
               height: 4.h,
@@ -42,7 +60,7 @@ class AddressPage extends ConsumerWidget {
             SizedBox(
               height: 26.h,
             ),
-            CustomButton(
+            KButton(
               onPressed: () {
                 if (pageViewPro.currentPageIndex <
                     pageViewPro.pages.length - 1) {
@@ -54,7 +72,7 @@ class AddressPage extends ConsumerWidget {
                 }
               },
               text: 'Next',
-            ),
+            )
           ],
         ),
       ),

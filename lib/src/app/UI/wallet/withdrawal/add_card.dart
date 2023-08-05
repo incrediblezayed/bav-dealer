@@ -1,13 +1,13 @@
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
-import 'package:dealerapp/src/utils/custom_button.dart';
-import 'package:dealerapp/src/utils/custom_textfield.dart';
+import 'package:dealerapp/src/widgets/custom_button.dart';
+import 'package:dealerapp/src/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class AddBankPage extends StatelessWidget {
-  const AddBankPage({super.key});
+class AddCardPage extends StatelessWidget {
+  const AddCardPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class AddBankPage extends StatelessWidget {
         ),
         // leading: const Icon(Icons.arrow_back, color: AppTheme.black),
         title: Text(
-          'Add Bank Account',
+          'Add Card',
           style: theme.headlineLarge,
         ),
         elevation: 0,
@@ -35,27 +35,22 @@ class AddBankPage extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            CustomTextField(
-              hintText: 'Enter Your Account Number',
-              label: 'Account Number',
+            KTextField(
+              hintText: 'Enter Your Name On Card',
+              label: 'Name On Card',
             ),
             SizedBox(height: 10.h),
-            CustomTextField(
-              hintText: 'Enter Your IFSC Code',
-              label: 'IFSC Code',
+            KTextField(
+              hintText: 'Enter Your Card Number',
+              label: 'Card Number',
             ),
             SizedBox(height: 10.h),
-            CustomTextField(
-              hintText: 'Enter Your Branch Code',
-              label: 'Branch Code',
+            KTextField(
+              hintText: 'Expiry Date',
+              label: 'Expiry',
             ),
             SizedBox(height: 10.h),
-            CustomTextField(
-              hintText: 'Enter Your Registered Mobile Number',
-              label: 'Mobile Number',
-            ),
-            SizedBox(height: 10.h),
-            CustomButton(onPressed: () {}, text: 'Submit')
+            KButton(onPressed: () {}, text: 'Submit')
           ],
         ),
       ),

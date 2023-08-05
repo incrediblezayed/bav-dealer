@@ -1,18 +1,20 @@
-import 'package:dealerapp/src/app/UI/login/password_change_success_page.dart';
+import 'package:dealerapp/src/app/UI/forgot_password/password_change_success_page.dart';
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
-import 'package:dealerapp/src/utils/custom_button.dart';
-import 'package:dealerapp/src/utils/custom_textfield.dart';
+import 'package:dealerapp/src/widgets/custom_button.dart';
+import 'package:dealerapp/src/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iconsax/iconsax.dart';
 
 class ChangePasswordPage extends ConsumerWidget {
   const ChangePasswordPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context).textTheme;
     final authPro = ref.watch(authProvider);
     return Scaffold(
       body: Padding(
@@ -21,13 +23,29 @@ class ChangePasswordPage extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Change Password',
-              style: TextStyle(
-                fontSize: 24.sp,
-                fontWeight: FontWeight.w600,
-                color: AppTheme.textColor,
-              ),
+            Row(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    if (authPro.currentPageIndex < authPro.pages.length - 1) {
+                      authPro.pageController.animateToPage(
+                        authPro.currentPageIndex - 1,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      );
+                    }
+                  },
+                  child: const Icon(
+                    Iconsax.arrow_left,
+                    color: AppTheme.textColor,
+                  ),
+                ),
+                SizedBox(width: 10.w),
+                Text(
+                  'Change Password',
+                  style: theme.headlineLarge,
+                ),
+              ],
             ),
             SizedBox(
               height: 16.h,
@@ -41,7 +59,7 @@ class ChangePasswordPage extends ConsumerWidget {
             SizedBox(
               height: 26.h,
             ),
-            CustomTextField(
+            KTextField(
               hintText: 'Enter Your New Password',
               label: 'New Password',
               suffixIcon: IconButton(
@@ -57,7 +75,7 @@ class ChangePasswordPage extends ConsumerWidget {
             SizedBox(
               height: 14.h,
             ),
-            CustomTextField(
+            KTextField(
               hintText: 'Enter Your Password',
               label: 'Re-Type New Password',
               suffixIcon: IconButton(
@@ -73,7 +91,7 @@ class ChangePasswordPage extends ConsumerWidget {
             SizedBox(
               height: 26.h,
             ),
-            CustomButton(
+            KButton(
               onPressed: () {
                 AppRoutes.push(page: const PasswordChangeSuccessPage());
               },

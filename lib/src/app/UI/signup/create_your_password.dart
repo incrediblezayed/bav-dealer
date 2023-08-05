@@ -1,20 +1,21 @@
-import 'package:dealerapp/src/app/UI/login/password_change_success_page.dart';
+import 'package:dealerapp/src/app/UI/login/login_page.dart';
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
-import 'package:dealerapp/src/utils/custom_button.dart';
-import 'package:dealerapp/src/utils/custom_textfield.dart';
+import 'package:dealerapp/src/widgets/custom_button.dart';
+import 'package:dealerapp/src/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iconsax/iconsax.dart';
 
 class CreateYourPasswordPage extends ConsumerWidget {
   const CreateYourPasswordPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context).textTheme;
     final authPro = ref.watch(authProvider);
-    final pageViewPro = ref.watch(authProvider);
     return Scaffold(
       body: Padding(
         padding:
@@ -22,30 +23,37 @@ class CreateYourPasswordPage extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Create Your Password',
-              style: TextStyle(
-                fontSize: 24.sp,
-                fontWeight: FontWeight.w600,
-                color: AppTheme.textColor,
-              ),
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            const Text(
-              'Enter Your New Password',
-              style: TextStyle(
-                color: Colors.grey,
-              ),
+            Row(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    if (authPro.currentPageIndex < authPro.pages.length) {
+                      authPro.pageController.animateToPage(
+                        authPro.currentPageIndex - 1,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      );
+                    }
+                  },
+                  child: const Icon(
+                    Iconsax.arrow_left,
+                    color: AppTheme.textColor,
+                  ),
+                ),
+                SizedBox(width: 10.w),
+                Text(
+                  'Create Your Password',
+                  style: theme.headlineLarge,
+                ),
+              ],
             ),
             SizedBox(
               height: 26.h,
             ),
-            CustomTextField(
+            KTextField(
               controller: authPro.newPasswordController,
-              hintText: 'Enter Your New Password',
-              label: 'New Password',
+              hintText: 'Enter Your Password',
+              label: 'Password',
               suffixIcon: IconButton(
                 onPressed: () {
                   authPro.isObsecure();
@@ -59,10 +67,10 @@ class CreateYourPasswordPage extends ConsumerWidget {
             SizedBox(
               height: 14.h,
             ),
-            CustomTextField(
+            KTextField(
               controller: authPro.reTypeNewPasswordController,
-              hintText: 'Enter Your Password',
-              label: 'Re-Type New Password',
+              hintText: 'Re-Enter Password',
+              label: 'Re-Enter Password',
               suffixIcon: IconButton(
                 onPressed: () {
                   authPro.isObsecure();
@@ -76,16 +84,25 @@ class CreateYourPasswordPage extends ConsumerWidget {
             SizedBox(
               height: 26.h,
             ),
-            CustomButton(
+            KButton(
               onPressed: () {
                 authPro.currentPageIndex = 0;
                 authPro.pageController = PageController();
-                AppRoutes.push(page: const PasswordChangeSuccessPage());
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    backgroundColor: AppTheme.primaryColor,
+                    content: Text(
+                      'Your Account Has Been Create Successfully',
+                    ),
+                  ),
+                );
+
+                AppRoutes.push(page: const LoginPage());
                 // );
                 // authPro.currentPageIndex = 0;
                 // authPro.pageController = PageController();
               },
-              text: 'Update',
+              text: 'Next',
             )
           ],
         ),
