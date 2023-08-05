@@ -1,4 +1,4 @@
-import 'package:dealerapp/src/app/graphql_client.dart';
+import 'package:dealerapp/src/app/repository/graphql_client.dart';
 import 'package:dealerapp/src/app/provider/cache_provider.dart';
 import 'package:get_it/get_it.dart';
 

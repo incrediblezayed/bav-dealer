@@ -106,6 +106,12 @@ class _LoginPageState extends ConsumerState<LoginPage> {
               },
               child: const Text('Wallet'),
             ),
+            TextButton(
+              onPressed: () {
+                // AppRoutes.push(page: const HomePage());
+              },
+              child: const Text('Wallet'),
+            ),
             const Spacer(),
             Align(
               alignment: Alignment.bottomCenter,
