@@ -53,6 +53,8 @@ class AppRoutes {
   ///Scaffold messenger key to show snackbars
   static GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey =
       GlobalKey<ScaffoldMessengerState>();
+///Scaffold state key
+  static GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   ///Shows a info dialog for handling permission
   static Future<T?> showInfoDialog<T>({

@@ -1,3 +1,4 @@
+import 'package:dealerapp/src/app/UI/Homepage/homepage.dart';
 import 'package:dealerapp/src/app/UI/forgot_password/forgot_password.dart';
 import 'package:dealerapp/src/app/UI/signup/signup_flow.dart';
 import 'package:dealerapp/src/app/UI/wallet/withdrawal/withdrawal_page.dart';
@@ -108,9 +109,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
             ),
             TextButton(
               onPressed: () {
-                // AppRoutes.push(page: const HomePage());
+                AppRoutes.push(page: const HomePage());
               },
-              child: const Text('Wallet'),
+              child: const Text('Homepage'),
             ),
             const Spacer(),
             Align(

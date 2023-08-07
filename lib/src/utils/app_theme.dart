@@ -139,6 +139,8 @@ class AppTheme {
             color: Colors.grey,
           ),
         ),
+
+        dividerColor: Colors.transparent,
         scaffoldBackgroundColor: scaffoldBgColor,
         primaryColor: primaryColor,
         inputDecorationTheme: inputDecorationTheme,
