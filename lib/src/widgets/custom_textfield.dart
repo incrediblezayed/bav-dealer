@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -16,14 +18,28 @@ class KTextField extends StatelessWidget {
     this.obsecureText = false,
   });
 
-  String? hintText;
-  String? label;
-  Widget? suffixIcon;
-  Widget? prefixIcon;
+  ///hintText
+  final String? hintText;
 
-  bool obsecureText;
+  ///label
+  final String? label;
+
+  ///suffixIcon
+  final Widget? suffixIcon;
+
+  ///prefixIcon
+  final Widget? prefixIcon;
+
+  /// obsecureText
+  final bool obsecureText;
+
+  /// controller
   TextEditingController? controller;
+
+  ///inputType
   TextInputType? inputType;
+
+  ///text length
   final int? maxLength;
 
   @override

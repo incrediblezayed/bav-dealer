@@ -2,19 +2,17 @@ import 'package:dealerapp/src/app/UI/Purchase_Orders/purchase_orders.dart';
 import 'package:dealerapp/src/app/UI/Test_Orders/test_orders.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/drawer.dart';
-import 'package:dealerapp/src/widgets/staggered_s1.dart';
-import 'package:dealerapp/src/widgets/staggered_s2.dart';
-import 'package:dealerapp/src/widgets/staggered_s3.dart';
-import 'package:dealerapp/src/widgets/staggered_s4.dart';
+import 'package:dealerapp/src/widgets/staggered_container.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+///HomePage
 class HomePage extends StatelessWidget {
+  ///Constructor
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
-    final key = GlobalKey<ScaffoldState>();
 
     return Scaffold(
       key: AppRoutes.scaffoldKey,
@@ -120,40 +118,72 @@ class HomePage extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    StagerredS1(
+                    StagerredContainer(
                       height: 145.h,
                       width: 150.w,
                       count: '90',
+                      countColor: AppTheme.primaryColor,
+                      arrowColor: AppTheme.primaryColor,
+                      containerBgColor: const Color(0xffc8eccb),
+                      iconBgColor: AppTheme.primaryColor,
+                      image: AppImages.cart,
+                      title: 'Purchase orders',
+                      titleColor: AppTheme.primaryColor,
                       onTap: () {
                         AppRoutes.push(page: const PurchaseOrders());
                       },
                     ),
                     SizedBox(height: 10.h),
-                    StaggeredS2(
+                    StagerredContainer(
                       height: 212.h,
                       width: 150.w,
                       count: '12',
-                      onTap: () {},
+                      countColor: const Color(0xff358fe1),
+                      arrowColor: const Color(0xff358fe1),
+                      containerBgColor: const Color(0xffbee0ff),
+                      iconBgColor: const Color(0xffa0d2ff),
+                      image: AppImages.s3,
+                      title: 'My Inventory',
+                      titleColor: const Color(0xff358fe1),
+                      onTap: () {
+                        AppRoutes.push(page: const PurchaseOrders());
+                      },
                     )
                   ],
                 ),
                 SizedBox(width: 10.w),
                 Column(
                   children: [
-                    StaggeredS3(
+                    StagerredContainer(
                       height: 215.h,
                       width: 180.w,
                       count: '976',
+                      countColor: const Color(0xff6a29a8),
+                      arrowColor: const Color(0xff6a29a8),
+                      containerBgColor: const Color(0xffb883ec),
+                      iconBgColor: const Color(0xffa95cf3),
+                      image: AppImages.s3,
+                      title: 'Test Orders',
+                      titleColor: const Color(0xff6a29a8),
                       onTap: () {
                         AppRoutes.push(page: const TestOrders());
                       },
                     ),
                     SizedBox(height: 10.h),
-                    StaggeredS4(
+                    StagerredContainer(
                       height: 138.h,
                       width: 180.w,
                       count: '5',
-                      onTap: () {},
+                      countColor: const Color(0xfffdb35f),
+                      arrowColor: const Color(0xfffdb35f),
+                      containerBgColor: const Color(0xffffec8a),
+                      iconBgColor: const Color(0xffffdc53),
+                      image: AppImages.s3,
+                      title: 'Your Rank',
+                      titleColor: const Color(0xfffdb35f),
+                      onTap: () {
+                        AppRoutes.push(page: const PurchaseOrders());
+                      },
                     )
                   ],
                 )

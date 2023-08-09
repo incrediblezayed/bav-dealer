@@ -2,8 +2,8 @@ import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
 
-class AboutUsPage extends StatelessWidget {
-  const AboutUsPage({super.key});
+class TermsConditionsPage extends StatelessWidget {
+  const TermsConditionsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

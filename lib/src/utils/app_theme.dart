@@ -115,6 +115,11 @@ class AppTheme {
     // focusedBorder: focusedTextfieldBorder,
   );
 
+  static const String _fontFamily = 'Outfit';
+
+  static TextTheme get defaultTextTheme =>
+      ThemeData(fontFamily: _fontFamily).textTheme;
+
   ///Default Theme Data
   static ThemeData get theme => ThemeData(
         textTheme: TextTheme(

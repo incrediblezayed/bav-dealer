@@ -2,6 +2,7 @@ import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
 import 'package:dealerapp/src/app/UI/Profile/personal_information_page.dart';
 import 'package:dealerapp/src/app/UI/drawer/about_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/contact_us.dart';
+import 'package:dealerapp/src/app/UI/drawer/terms_conditions.dart';
 import 'package:dealerapp/src/app/UI/login/login_page.dart';
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
@@ -67,10 +68,6 @@ class AppDrawer extends ConsumerWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: AppTheme.scaffoldBgColor,
-        // onTapLeading: () {
-        //   // dashboardPro.changePage(0);
-        // },
-
         leading: GestureDetector(
           onTap: () {
             AppRoutes.pop();
@@ -160,7 +157,7 @@ class AppDrawer extends ConsumerWidget {
                     ),
                     _drawerTile(
                       title: 'Make new purchase order',
-                      icon: AppImages.addorder,
+                      icon: AppImages.purchaseOrder,
                       height: 30,
                       width: 30,
                       onTap: () {},
@@ -184,19 +181,19 @@ class AppDrawer extends ConsumerWidget {
                       title: 'Terms & Conditions',
                       icon: AppImages.terms,
                       onTap: () {
-                        // AppRoutes.push(page: const MyWallet());
+                        AppRoutes.push(page: const TermsConditionsPage());
                       },
                     ),
                     _drawerTile(
                       title: 'About Us',
                       icon: AppImages.aboutus,
                       onTap: () {
-                        AppRoutes.push(page: const AboutUs());
+                        AppRoutes.push(page: const AboutUsPage());
                       },
                     ),
                     _drawerTile(
                       title: 'Contact Us',
-                      icon: AppImages.contactus,
+                      icon: AppImages.contact,
                       onTap: () {
                         AppRoutes.push(page: const ContactUs());
                       },

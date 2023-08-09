@@ -1,12 +1,17 @@
+// ignore_for_file: inference_failure_on_function_return_type
+
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+///Custom bottom class
 class KButton extends StatelessWidget {
   /// Constructor
-  KButton({required this.onPressed, required this.text, super.key});
-  Function()? onPressed;
-  String text;
+  const KButton({required this.onPressed, required this.text, super.key});
+  ///onpressed
+  final Function()? onPressed;
+  ///text
+  final String text;
 
   @override
   Widget build(BuildContext context) {

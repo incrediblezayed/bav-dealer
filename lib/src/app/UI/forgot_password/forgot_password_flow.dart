@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+///Forgot Password Class
 class ForgorPasswordFlow extends ConsumerStatefulWidget {
+  ///constructor
   const ForgorPasswordFlow({super.key});
 
   @override
@@ -18,7 +20,7 @@ class _SignUpFlowState extends ConsumerState<ForgorPasswordFlow> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final authPro = ref.watch(authProvider);
-    final textTheme = Theme.of(context).textTheme;
+    // final theme = Theme.of(context).textTheme;
     return Scaffold(
       backgroundColor: AppTheme.scaffoldBgColor,
       resizeToAvoidBottomInset: false,

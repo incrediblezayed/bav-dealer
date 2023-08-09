@@ -40,7 +40,7 @@ class CacheProvider {
   final String _graphqlBoxName = 'graphql';
 
   ///User Key for [UserModel] data
-  final String _userKey = 'user';
+  // final String _userKey = 'user';
 
   ///Session Token Key for [String] data
   final String _sessionToken = 'sessionToken';

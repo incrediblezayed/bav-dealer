@@ -6,7 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+///Sign Up flow class
 class SignUpFlow extends ConsumerStatefulWidget {
+
+  ///constructor
   const SignUpFlow({super.key});
 
   @override
@@ -18,7 +21,6 @@ class _SignUpFlowState extends ConsumerState<SignUpFlow> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final authPro = ref.watch(authProvider);
-    final textTheme = Theme.of(context).textTheme;
     return Scaffold(
       backgroundColor: AppTheme.scaffoldBgColor,
       resizeToAvoidBottomInset: false,

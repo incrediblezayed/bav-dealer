@@ -65,28 +65,5 @@ class AuthProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  voidPageViewZero() {
-    // if (mobileController.text.isEmpty) {
-    //             ScaffoldMessenger.of(context).showSnackBar(
-    //               const SnackBar(
-    //                 backgroundColor: AppTheme.primaryColor,
-    //                 content: Text('Please Enter Mobile No.'),
-    //               ),
-    //             );
-    //           } else if (mobileController.text.length != 10) {
-    //             ScaffoldMessenger.of(context).showSnackBar(
-    //               const SnackBar(
-    //                 backgroundColor: AppTheme.primaryColor,
-    //                 content: Text('Minimum 10 Characters'),
-    //               ),
-    //             );
-    //           } else if (currentPageIndex <
-    //             pages.length - 1) {
-    //             pageController.animateToPage(
-    //               currentPageIndex + 1,
-    //               duration: const Duration(milliseconds: 300),
-    //               curve: Curves.easeInOut,
-    //             );
-    //           } else {}
-  }
+ 
 }

@@ -1,35 +1,38 @@
 // ignore_for_file: public_member_api_docs
 
 class AppImages {
-  static const logo = 'assets/Images/bavlogo.svg';
-  static const edit = 'assets/Images/edit.svg';
-  static const arrow = 'assets/Images/arrow.png';
-  static const splashLogo = 'assets/Images/splashlogo.svg';
-  static const success = 'assets/Images/success.svg';
-  static const arrowBack = 'assets/Images/arrow-back.svg';
-  static const back = 'assets/Images/back.svg';
-  static const bank = 'assets/Images/bank.png';
-  static const card = 'assets/Images/card.png';
-  static const sbi = 'assets/Images/sbi.png';
-  static const sbisvg = 'assets/Images/sbisvg.svg';
-  static const search = 'assets/Images/search.svg';
-  static const menu = 'assets/Images/menu.svg';
-  static const notification = 'assets/Images/bell.svg';
-  static const mywallet = 'assets/Images/mywallet.svg';
-  static const aboutus = 'assets/Images/aboutus.svg';
-  static const contactus = 'assets/Images/contactus.svg';
-  static const logout = 'assets/Images/logout.svg';
-  static const logoutred = 'assets/Images/logoutred.svg';
-  static const history = 'assets/Images/history.svg';
-  static const change = 'assets/Images/change.svg';
-  static const cart = 'assets/Images/cart.png';
-  static const terms = 'assets/Images/terms.png';
-  static const addorder = 'assets/Images/addorder.png';
-  static const profile = 'assets/Images/profile.png';
-  static const person = 'assets/Images/person.png';
-  static const s2 = 'assets/Images/s2.png';
-  static const s3 = 'assets/Images/s3.png';
-  static const s4 = 'assets/Images/s4.png';
+  static const String _imagesPath = 'assets/images';
 
-  static const walletHistoryEmpty = 'assets/Images/empty_wallet.png';
+  static const String logo = '$_imagesPath/bavlogo.svg';
+  static const String edit = '$_imagesPath/edit.svg';
+  static const String splashLogo = '$_imagesPath/splashlogo.svg';
+  static const String arrowBack = '$_imagesPath/arrow-back.svg';
+  static const String back = '$_imagesPath/back.svg';
+  static const String sbisvg = '$_imagesPath/sbisvg.svg';
+  static const String search = '$_imagesPath/search.svg';
+  static const String menu = '$_imagesPath/menu.svg';
+  static const String notification = '$_imagesPath/bell.svg';
+  static const String mywallet = '$_imagesPath/mywallet.svg';
+  static const String aboutus = '$_imagesPath/aboutus.svg';
+  static const String contact = '$_imagesPath/contactus.svg';
+  static const String contactus = '$_imagesPath/contactus1.svg';
+
+  static const String logout = '$_imagesPath/logout.svg';
+  static const String logoutred = '$_imagesPath/logoutred.svg';
+  static const String history = '$_imagesPath/history.svg';
+  static const String change = '$_imagesPath/change.svg';
+  static const String cart = '$_imagesPath/cart.png';
+  static const String arrow = '$_imagesPath/arrow.png';
+  static const String terms = '$_imagesPath/terms.png';
+  static const String purchaseOrder = '$_imagesPath/new.png';
+  static const String profile = '$_imagesPath/profile.png';
+  static const String person = '$_imagesPath/person.png';
+  static const String bank = '$_imagesPath/bank.png';
+  static const String s2 = '$_imagesPath/s2.png';
+  static const String s3 = '$_imagesPath/s3.png';
+  static const String s4 = '$_imagesPath/s4.png';
+  static const String success = '$_imagesPath/success.png';
+  static const String sbi = '$_imagesPath/sbi.png';
+  static const String card = '$_imagesPath/card.png';
+  static const String walletHistoryEmpty = '$_imagesPath/empty_wallet.png';
 }

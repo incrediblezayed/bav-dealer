@@ -5,15 +5,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 ///Custom Bank Card
 class BankCard extends StatelessWidget {
   /// Constructor of bank card
-  BankCard({
-    super.key,
+  const BankCard({
     required this.image,
     required this.title,
     required this.onTap,
+    super.key,
   });
+
+  ///image 
   final String image;
+  ///title
   final String title;
-  Function()? onTap;
+  ///ontap
+  // ignore: inference_failure_on_function_return_type
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
