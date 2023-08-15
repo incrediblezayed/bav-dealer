@@ -1,8 +1,8 @@
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
-import 'package:dealerapp/src/widgets/custom_button.dart';
-import 'package:dealerapp/src/widgets/custom_textfield.dart';
+import 'package:dealerapp/src/widgets/k_button.dart';
+import 'package:dealerapp/src/widgets/k_textfiled.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -79,7 +79,8 @@ class OTPVerificationPage extends ConsumerWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    if (authPro.currentPageIndex < authPro.pages.length - 1) {
+                    if (authPro.currentPageIndex <
+                        authPro.signUpPages.length - 1) {
                       authPro.pageController.animateToPage(
                         authPro.currentPageIndex - 1,
                         duration: const Duration(milliseconds: 300),
@@ -156,7 +157,7 @@ class OTPVerificationPage extends ConsumerWidget {
                     ),
                   );
                 } else if (authPro.currentPageIndex <
-                    authPro.pages.length - 1) {
+                    authPro.signUpPages.length - 1) {
                   authPro.pageController.animateToPage(
                     authPro.currentPageIndex + 1,
                     duration: const Duration(milliseconds: 300),
@@ -167,7 +168,6 @@ class OTPVerificationPage extends ConsumerWidget {
               text: 'Confirm',
             ),
             SizedBox(height: 10.h),
-
             Align(
               child: RichText(
                 text: TextSpan(
@@ -182,35 +182,6 @@ class OTPVerificationPage extends ConsumerWidget {
                 ),
               ),
             )
-            // SizedBox(
-            //   height: 10.h,
-            // ),
-            /* Align(
-              alignment: Alignment.bottomCenter,
-              child: GestureDetector(
-                onTap: () {},
-                child: RichText(
-                  text: TextSpan(
-                    text: "Didn't get and OTP ",
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w300,
-                    ),
-                    children: [
-                      TextSpan(
-                        text: ' Resend SMS',
-                        style: TextStyle(
-                          color: AppTheme.textColor,
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ) */
           ],
         ),
       ),

@@ -1,9 +1,8 @@
-import 'package:dealerapp/src/app/UI/forgot_password/change_password.dart';
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
-import 'package:dealerapp/src/widgets/custom_button.dart';
-import 'package:dealerapp/src/widgets/custom_textfield.dart';
+import 'package:dealerapp/src/widgets/k_button.dart';
+import 'package:dealerapp/src/widgets/k_textfiled.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,8 +17,7 @@ class ForgotPasswordPage extends ConsumerWidget {
     final authPro = ref.watch(authProvider);
     return Scaffold(
       body: Padding(
-        padding:
-            EdgeInsets.only(left: 20.w, right: 20.w, top: 60.h, bottom: 30.h),
+        padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 30.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -74,34 +72,14 @@ class ForgotPasswordPage extends ConsumerWidget {
             ),
             KButton(
               onPressed: () {
-                AppRoutes.push(page: const ChangePasswordPage());
+                authPro.pageController.animateToPage(
+                  authPro.currentPageIndex + 1,
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
               },
               text: 'Submit',
             ),
-            const Spacer(),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: RichText(
-                text: TextSpan(
-                  text: "Don't have an account? ",
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w300,
-                  ),
-                  children: [
-                    TextSpan(
-                      text: ' Sign Up',
-                      style: TextStyle(
-                        color: AppTheme.textColor,
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            )
           ],
         ),
       ),

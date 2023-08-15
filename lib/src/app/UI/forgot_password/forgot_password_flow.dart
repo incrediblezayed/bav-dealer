@@ -38,8 +38,9 @@ class _SignUpFlowState extends ConsumerState<ForgorPasswordFlow> {
               child: AnimatedBuilder(
                 animation: authPro.pageController,
                 builder: (context, child) {
-                  final width = (size.width / authPro.pages.length) *
-                      (authPro.currentPageIndex + 1);
+                  final width =
+                      (size.width / authPro.forgotPasswordPages.length) *
+                          (authPro.currentPageIndex + 1);
                   return AnimatedContainer(
                     duration: const Duration(milliseconds: 300),
                     width: width,
@@ -56,14 +57,14 @@ class _SignUpFlowState extends ConsumerState<ForgorPasswordFlow> {
             Expanded(
               child: PageView(
                 controller: authPro.pageController,
-                children: authPro.pages,
+                children: authPro.forgotPasswordPages,
                 onPageChanged: (index) {
                   authPro.currentPageIndex = index;
                 },
               ),
             ),
             //SizedBox(height: 16.h),
-            //const Spacer(),
+            const Spacer(),
             Align(
               alignment: Alignment.bottomCenter,
               child: GestureDetector(
@@ -72,7 +73,7 @@ class _SignUpFlowState extends ConsumerState<ForgorPasswordFlow> {
                 },
                 child: RichText(
                   text: TextSpan(
-                    text: 'Already have an account? ',
+                    text: "Don't have an account? ",
                     style: TextStyle(
                       color: Colors.grey,
                       fontSize: 16.sp,
@@ -80,7 +81,7 @@ class _SignUpFlowState extends ConsumerState<ForgorPasswordFlow> {
                     ),
                     children: [
                       TextSpan(
-                        text: ' Log In',
+                        text: ' Sign Up',
                         style: TextStyle(
                           color: AppTheme.textColor,
                           fontSize: 20.sp,

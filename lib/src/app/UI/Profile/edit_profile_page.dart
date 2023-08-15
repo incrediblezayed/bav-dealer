@@ -1,6 +1,6 @@
 import 'package:dealerapp/src/utils/global_exports.dart';
-import 'package:dealerapp/src/widgets/custom_button.dart';
-import 'package:dealerapp/src/widgets/custom_textfield.dart';
+import 'package:dealerapp/src/widgets/k_button.dart';
+import 'package:dealerapp/src/widgets/k_textfiled.dart';
 import 'package:iconsax/iconsax.dart';
 
 class EditProfilePage extends StatelessWidget {

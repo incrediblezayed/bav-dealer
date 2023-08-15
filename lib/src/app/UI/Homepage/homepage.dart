@@ -1,5 +1,7 @@
-import 'package:dealerapp/src/app/UI/Purchase_Orders/purchase_orders.dart';
-import 'package:dealerapp/src/app/UI/Test_Orders/test_orders.dart';
+import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/my_inventory.dart';
+import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/purchase_orders.dart';
+import 'package:dealerapp/src/app/UI/Homepage/Rank_Page/rank_page.dart';
+import 'package:dealerapp/src/app/UI/Homepage/Test_Orders/test_orders.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/drawer.dart';
 import 'package:dealerapp/src/widgets/staggered_container.dart';
@@ -146,7 +148,7 @@ class HomePage extends StatelessWidget {
                       title: 'My Inventory',
                       titleColor: const Color(0xff358fe1),
                       onTap: () {
-                        AppRoutes.push(page: const PurchaseOrders());
+                        AppRoutes.push(page: const MyInventory());
                       },
                     )
                   ],
@@ -182,13 +184,13 @@ class HomePage extends StatelessWidget {
                       title: 'Your Rank',
                       titleColor: const Color(0xfffdb35f),
                       onTap: () {
-                        AppRoutes.push(page: const PurchaseOrders());
+                        AppRoutes.push(page: const RankPage());
                       },
-                    )
+                    ),
                   ],
                 )
               ],
-            )
+            ),
           ],
         ),
       ),

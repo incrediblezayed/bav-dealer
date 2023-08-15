@@ -2,8 +2,8 @@ import 'package:dealerapp/src/app/UI/forgot_password/password_change_success_pag
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
-import 'package:dealerapp/src/widgets/custom_button.dart';
-import 'package:dealerapp/src/widgets/custom_textfield.dart';
+import 'package:dealerapp/src/widgets/k_button.dart';
+import 'package:dealerapp/src/widgets/k_textfiled.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,9 +17,9 @@ class ChangePasswordPage extends ConsumerWidget {
     final theme = Theme.of(context).textTheme;
     final authPro = ref.watch(authProvider);
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Padding(
-        padding:
-            EdgeInsets.only(left: 20.w, right: 20.w, top: 60.h, bottom: 30.h),
+        padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 30.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -27,7 +27,8 @@ class ChangePasswordPage extends ConsumerWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    if (authPro.currentPageIndex < authPro.pages.length - 1) {
+                    if (authPro.currentPageIndex <
+                        authPro.forgotPasswordPages.length - 1) {
                       authPro.pageController.animateToPage(
                         authPro.currentPageIndex - 1,
                         duration: const Duration(milliseconds: 300),
@@ -93,34 +94,11 @@ class ChangePasswordPage extends ConsumerWidget {
             ),
             KButton(
               onPressed: () {
+                authPro.currentPageIndex = 0;
                 AppRoutes.push(page: const PasswordChangeSuccessPage());
               },
               text: 'Update',
             ),
-            const Spacer(),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: RichText(
-                text: TextSpan(
-                  text: "Don't have an account? ",
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w300,
-                  ),
-                  children: [
-                    TextSpan(
-                      text: ' Sign Up',
-                      style: TextStyle(
-                        color: AppTheme.textColor,
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            )
           ],
         ),
       ),

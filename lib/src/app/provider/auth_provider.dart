@@ -1,3 +1,5 @@
+import 'package:dealerapp/src/app/UI/forgot_password/change_password.dart';
+import 'package:dealerapp/src/app/UI/forgot_password/forgot_password.dart';
 import 'package:dealerapp/src/app/UI/signup/add_email_page.dart';
 import 'package:dealerapp/src/app/UI/signup/address_page.dart';
 import 'package:dealerapp/src/app/UI/signup/create_your_password.dart';
@@ -46,8 +48,16 @@ class AuthProvider extends ChangeNotifier {
   ///index
   int currentPageIndex = 0;
 
-  ///List of pages
-  final List<Widget> pages = [
+  ///List of forgot passwaord pages
+  ///
+  final List<Widget> forgotPasswordPages = [
+    const ForgotPasswordPage(),
+    const ChangePasswordPage(),
+    // const PasswordChangeSuccessPage(),
+  ];
+
+  ///List of sign up pages
+  final List<Widget> signUpPages = [
     const SignUpPage(),
     const OTPVerificationPage(),
     const EnterYourDetailsPage(),
@@ -64,6 +74,4 @@ class AuthProvider extends ChangeNotifier {
     isPassword = !isPassword;
     notifyListeners();
   }
-
- 
 }

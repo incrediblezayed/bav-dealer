@@ -8,7 +8,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ///Sign Up flow class
 class SignUpFlow extends ConsumerStatefulWidget {
-
   ///constructor
   const SignUpFlow({super.key});
 
@@ -38,7 +37,7 @@ class _SignUpFlowState extends ConsumerState<SignUpFlow> {
               child: AnimatedBuilder(
                 animation: authPro.pageController,
                 builder: (context, child) {
-                  final width = (size.width / authPro.pages.length) *
+                  final width = (size.width / authPro.signUpPages.length) *
                       (authPro.currentPageIndex + 1);
                   return AnimatedContainer(
                     duration: const Duration(milliseconds: 300),
@@ -56,7 +55,7 @@ class _SignUpFlowState extends ConsumerState<SignUpFlow> {
             Expanded(
               child: PageView(
                 controller: authPro.pageController,
-                children: authPro.pages,
+                children: authPro.signUpPages,
                 onPageChanged: (index) {
                   authPro.currentPageIndex = index;
                 },

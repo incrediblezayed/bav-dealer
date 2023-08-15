@@ -1,21 +1,18 @@
-import 'package:dealerapp/src/utils/app_routes.dart';
-import 'package:dealerapp/src/utils/app_theme.dart';
+import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/empty_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:dealerapp/src/widgets/k_inventory_bike_card.dart';
 import 'package:iconsax/iconsax.dart';
 
-class PurchaseOrders extends ConsumerStatefulWidget {
-  const PurchaseOrders({super.key});
+class MyInventory extends StatefulWidget {
+  const MyInventory({super.key});
 
   @override
-  ConsumerState<PurchaseOrders> createState() => _PurchaseOrdersState();
+  State<MyInventory> createState() => _MyInventoryState();
 }
 
-class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
+class _MyInventoryState extends State<MyInventory>
     with TickerProviderStateMixin {
-  late final TabController _tabController =
-      TabController(length: 4, vsync: this);
+  late final _tabController = TabController(length: 3, vsync: this);
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
@@ -23,10 +20,6 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
       appBar: AppBar(
         elevation: 0,
         backgroundColor: AppTheme.scaffoldBgColor,
-        // onTapLeading: () {
-        //   // dashboardPro.changePage(0);
-        // },
-
         leading: GestureDetector(
           onTap: () {
             AppRoutes.pop();
@@ -37,7 +30,7 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
           ),
         ),
         title: Text(
-          'Purchase Orders',
+          'Inventory',
           style: theme.headlineLarge,
         ),
         bottom: TabBar(
@@ -47,16 +40,13 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
           controller: _tabController,
           tabs: const [
             Tab(
-              text: 'Pending',
+              text: 'List Of Vehicle',
             ),
             Tab(
-              text: 'Accepted',
+              text: 'My Stock',
             ),
             Tab(
-              text: 'Rejected',
-            ),
-            Tab(
-              text: 'Delivered',
+              text: 'Products',
             ),
           ],
         ),
@@ -64,8 +54,7 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
       body: TabBarView(
         controller: _tabController,
         children: const [
-          EmptyWidgt(title: 'Uh oh! You have no orders.'),
-          EmptyWidgt(title: 'Uh oh! You have no orders.'),
+          KInventoryBikeCard(),
           EmptyWidgt(title: 'Uh oh! You have no orders.'),
           EmptyWidgt(title: 'Uh oh! You have no orders.'),
         ],

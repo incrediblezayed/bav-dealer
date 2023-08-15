@@ -1,7 +1,7 @@
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
-import 'package:dealerapp/src/widgets/custom_button.dart';
-import 'package:dealerapp/src/widgets/custom_textfield.dart';
+import 'package:dealerapp/src/widgets/k_button.dart';
+import 'package:dealerapp/src/widgets/k_textfiled.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -61,9 +61,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                 } else if (mobileController.text.length != 10) {
                   AppRoutes.showErrorSnackbar(message: 'Minimum 10 Numbers');
                 } else if (authPro.currentPageIndex <
-                    authPro.pages.length - 1) {
-                  print(authPro.currentPageIndex + 1);
-                  print(authPro.pageController);
+                    authPro.signUpPages.length - 1) {
                   authPro.pageController.animateToPage(
                     authPro.currentPageIndex + 1,
                     duration: const Duration(milliseconds: 300),

@@ -128,6 +128,11 @@ class AppTheme {
             fontWeight: FontWeight.w700,
             color: AppTheme.textColor,
           ),
+          headlineMedium: TextStyle(
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w600,
+            color: AppTheme.textColor,
+          ),
           labelLarge: TextStyle(
             fontSize: 16.sp,
             fontWeight: FontWeight.w400,
@@ -144,7 +149,6 @@ class AppTheme {
             color: Colors.grey,
           ),
         ),
-
         dividerColor: Colors.transparent,
         scaffoldBackgroundColor: scaffoldBgColor,
         primaryColor: primaryColor,
@@ -153,26 +157,5 @@ class AppTheme {
         radioTheme: RadioThemeData(
           fillColor: MaterialStateProperty.all(primaryColor),
         ),
-        // appBarTheme: const AppBarTheme(
-        //   toolbarHeight: kToolbarHeight + 10,
-        //   centerTitle: true,
-        //   titleTextStyle: TextStyle(
-        //       fontWeight: FontWeight.bold, letterSpacing: 2, color: Colors.white),
-        // ),
-        // colorScheme: ColorScheme(
-        //   brightness: Brightness.light,
-        //   primary: defaultBlack,
-        //   onPrimary: white,
-        //   secondary: primaryColor,
-        //   onSecondary: white,
-        //   error: Colors.red,
-        //   onError: white,
-        //   background: white,
-        //   onBackground: defaultBlack,
-        //   surface: white,
-        //   onSurface: defaultBlack,
-        // ),
       );
-
-  /// headline small
 }

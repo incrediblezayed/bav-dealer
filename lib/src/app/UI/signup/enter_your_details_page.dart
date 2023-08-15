@@ -1,7 +1,7 @@
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
-import 'package:dealerapp/src/widgets/custom_button.dart';
-import 'package:dealerapp/src/widgets/custom_textfield.dart';
+import 'package:dealerapp/src/widgets/k_button.dart';
+import 'package:dealerapp/src/widgets/k_textfiled.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,7 +33,8 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    if (authPro.currentPageIndex < authPro.pages.length - 1) {
+                    if (authPro.currentPageIndex <
+                        authPro.signUpPages.length - 1) {
                       authPro.pageController.animateToPage(
                         authPro.currentPageIndex - 1,
                         duration: const Duration(milliseconds: 300),
@@ -98,7 +99,7 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
             ),
             KButton(
               onPressed: () {
-                if (authPro.currentPageIndex < authPro.pages.length - 1) {
+                if (authPro.currentPageIndex < authPro.signUpPages.length - 1) {
                   authPro.pageController.animateToPage(
                     authPro.currentPageIndex + 1,
                     duration: const Duration(milliseconds: 300),
