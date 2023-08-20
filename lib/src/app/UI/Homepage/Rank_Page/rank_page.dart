@@ -1,4 +1,5 @@
 import 'package:dealerapp/src/utils/global_exports.dart';
+import 'package:iconsax/iconsax.dart';
 
 class RankPage extends StatelessWidget {
   const RankPage({super.key});
@@ -7,7 +8,8 @@ class RankPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
     return Scaffold(
-      /*appBar:  AppBar(
+      backgroundColor: AppTheme.primaryColor,
+      appBar: AppBar(
         elevation: 0,
         backgroundColor: AppTheme.primaryColor,
         leading: GestureDetector(
@@ -23,12 +25,26 @@ class RankPage extends StatelessWidget {
           'Notification',
           style: theme.headlineLarge!.copyWith(color: Colors.white),
         ),
-      ) */
+      ),
       body: Column(
         children: [
           Container(
             height: 200,
             color: AppTheme.primaryColor,
+          ),
+          Expanded(
+            child: ColoredBox(
+              color: Colors.white,
+              child: ListView(
+                shrinkWrap: true,
+                children: List.generate(
+                  50,
+                  (index) => ListTile(
+                    title: Text(index.toString()),
+                  ),
+                ),
+              ),
+            ),
           ),
         ],
       ) /* CustomScrollView(
