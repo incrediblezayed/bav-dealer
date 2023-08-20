@@ -2,6 +2,7 @@ import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/my_inventory.dart';
 import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/purchase_orders.dart';
 import 'package:dealerapp/src/app/UI/Homepage/Rank_Page/rank_page.dart';
 import 'package:dealerapp/src/app/UI/Homepage/Test_Orders/test_orders.dart';
+import 'package:dealerapp/src/app/UI/notification_page.dart/notification_page.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/drawer.dart';
 import 'package:dealerapp/src/widgets/staggered_container.dart';
@@ -34,7 +35,12 @@ class HomePage extends StatelessWidget {
         actions: [
           Row(
             children: [
-              SvgPicture.asset(AppImages.notification),
+              GestureDetector(
+                onTap: () {
+                  AppRoutes.push(page: const NotificationPage());
+                },
+                child: SvgPicture.asset(AppImages.notification),
+              ),
               SizedBox(width: 12.w),
               Padding(
                 padding: EdgeInsets.only(right: 20.w),

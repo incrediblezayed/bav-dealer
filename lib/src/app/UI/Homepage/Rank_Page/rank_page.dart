@@ -1,6 +1,4 @@
 import 'package:dealerapp/src/utils/global_exports.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:iconsax/iconsax.dart';
 
 class RankPage extends StatelessWidget {
   const RankPage({super.key});
@@ -9,7 +7,31 @@ class RankPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
     return Scaffold(
-      body: CustomScrollView(
+      /*appBar:  AppBar(
+        elevation: 0,
+        backgroundColor: AppTheme.primaryColor,
+        leading: GestureDetector(
+          onTap: () {
+            AppRoutes.pop();
+          },
+          child: const Icon(
+            Iconsax.arrow_left,
+            color: AppTheme.white,
+          ),
+        ),
+        title: Text(
+          'Notification',
+          style: theme.headlineLarge!.copyWith(color: Colors.white),
+        ),
+      ) */
+      body: Column(
+        children: [
+          Container(
+            height: 200,
+            color: AppTheme.primaryColor,
+          ),
+        ],
+      ) /* CustomScrollView(
         slivers: [
           SliverAppBar(
             pinned: true,
@@ -112,7 +134,8 @@ class RankPage extends StatelessWidget {
             ),
           ),
         ],
-      ),
+      ) */
+      ,
     );
 
     /* Scaffold(

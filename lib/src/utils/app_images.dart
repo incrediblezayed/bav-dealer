@@ -39,4 +39,12 @@ class AppImages {
   static const String sbi = '$_imagesPath/sbi.png';
   static const String card = '$_imagesPath/card.png';
   static const String walletHistoryEmpty = '$_imagesPath/empty_wallet.png';
+
+  static const String notificationOrder = '$_imagesPath/notificationOrder.png';
+  static const String notificationPassword =
+      '$_imagesPath/notificationPassword.png';
+  static const String notificationProfile =
+      '$_imagesPath/notificationProfile.png';
+  static const String notificationSecurity =
+      '$_imagesPath/notificationSecurity.png';
 }
