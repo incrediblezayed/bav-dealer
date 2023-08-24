@@ -46,11 +46,11 @@ class BankCard extends StatelessWidget {
           const Spacer(),
           IconButton(
             onPressed: () {},
-            icon: const Icon(
+            icon:  const Icon(
               Icons.arrow_forward_ios_sharp,
               color: Colors.grey,
             ),
-          )
+          ),
         ],
       ),
     );

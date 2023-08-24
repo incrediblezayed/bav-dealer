@@ -1,5 +1,5 @@
 import 'package:dealerapp/src/app/provider/app_provider.dart';
-import 'package:dealerapp/src/utils/extenstions.dart';
+import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dio/dio.dart';
 import 'package:ferry/ferry.dart';
 import 'package:ferry_hive_store/ferry_hive_store.dart';
