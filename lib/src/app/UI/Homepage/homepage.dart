@@ -127,8 +127,8 @@ class HomePage extends StatelessWidget {
                 Column(
                   children: [
                     StagerredContainer(
-                      height: 145.h,
-                      width: 150.w,
+                      height: MediaQuery.of(context).size.height * .19,
+                      width: MediaQuery.of(context).size.width * 0.4,
                       count: '90',
                       countColor: AppTheme.primaryColor,
                       arrowColor: AppTheme.primaryColor,
@@ -143,8 +143,8 @@ class HomePage extends StatelessWidget {
                     ),
                     SizedBox(height: 10.h),
                     StagerredContainer(
-                      height: 212.h,
-                      width: 150.w,
+                      height: MediaQuery.of(context).size.height * .25,
+                      width: MediaQuery.of(context).size.width * 0.4,
                       count: '12',
                       countColor: const Color(0xff358fe1),
                       arrowColor: const Color(0xff358fe1),

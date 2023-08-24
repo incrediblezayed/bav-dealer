@@ -18,6 +18,9 @@ class AppImages {
   static const String aboutus = '$_imagesPath/aboutus.svg';
   static const String contact = '$_imagesPath/contactus.svg';
   static const String contactus = '$_imagesPath/contactus1.svg';
+  static const String rank1 = '$_imagesPath/rank1.svg';
+  static const String rank2 = '$_imagesPath/rank2.svg';
+  static const String rank3 = '$_imagesPath/rank3.svg';
 
   static const String logout = '$_imagesPath/logout.svg';
   static const String logoutred = '$_imagesPath/logoutred.svg';

@@ -1,19 +1,12 @@
-/* import 'package:dio/dio.dart';
+import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:dealerapp/src/utils/extenstions.dart';
+import 'package:dio/dio.dart';
 import 'package:ferry/ferry.dart';
 import 'package:ferry_hive_store/ferry_hive_store.dart';
 import 'package:gql_dio_link/gql_dio_link.dart';
 
 ///GraphQL Client
 class GraphqlClient {
-  final _logger = Logger(
-    level: Level.info,
-    printer: PrettyPrinter(
-      errorMethodCount: 10,
-      methodCount: 0,
-      lineLength: 40,
-    ),
-  );
-
   final Map<String, String> _headers = {
     'Authorization': 'Bearer ${cacheProvider.getSessionToken()}'
   };
@@ -30,12 +23,12 @@ class GraphqlClient {
   final String _railwayUrl =
       'https://bav-backend-host-production.up.railway.app';
 
-  ///Dio Client
-  ///
-  ///It's a Dio Client Object which is late
-  ///r
-  ///
-  ///injected while initializing the [client] object
+  // /Dio Client
+  // /
+  // /It's a Dio Client Object which is late
+  // /r
+  // /
+  // /injected while initializing the [client] object
   late final Dio _dio = Dio(
     BaseOptions(
       baseUrl: _liveUrl,
@@ -124,10 +117,7 @@ class GraphqlClient {
               for (final element in options.headers.entries) {
                 headers.write('${element.key}: ${element.value}\n');
               }
-              _logger.i(
-                'Request: ${options.method} ${options.path}\n\nHeaders: $headers'
-                '\n\n\nBody: ${(options.data['query'] as String).split(' ').take(40)}',
-              );
+            
 
               handler.next(options);
             },
@@ -136,16 +126,12 @@ class GraphqlClient {
               for (final element in e.headers.map.entries) {
                 headers.write('${element.key}: ${element.value}\n');
               }
-              _logger.i(
-                'Response: ${e.statusCode} ${e.statusMessage}\n\nHeaders: $headers\n\nBody: ${e.data}',
-              );
+            
               handler.next(e);
             },
             onError: (e, handler) {
               e.log();
-              _logger.i(
-                '${e.message}\n\nBody: ${e.response?.data}',
-              );
+           
               handler.next(e);
             },
           )
@@ -156,4 +142,3 @@ class GraphqlClient {
     }
   }
 }
- */

@@ -1,0 +1,3378 @@
+type User {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  phoneNumber: String
+  email: String
+  address: String
+  password: PasswordState
+  emailVerified: Boolean
+  phoneNumberVerified: Boolean
+  isAdmin: Boolean
+  profile_image: ImageFieldOutput
+  aadhaar: FileFieldOutput
+  driving_license: FileFieldOutput
+  addresses(where: AddressWhereInput! = {}, orderBy: [AddressOrderByInput!]! = [], take: Int, skip: Int! = 0): [Address!]
+  addressesCount(where: AddressWhereInput! = {}): Int
+  favorites(where: FavoriteWhereInput! = {}, orderBy: [FavoriteOrderByInput!]! = [], take: Int, skip: Int! = 0): [Favorite!]
+  favoritesCount(where: FavoriteWhereInput! = {}): Int
+  cartItems(where: CartItemWhereInput! = {}, orderBy: [CartItemOrderByInput!]! = [], take: Int, skip: Int! = 0): [CartItem!]
+  cartItemsCount(where: CartItemWhereInput! = {}): Int
+  wallet: Wallet
+  referralCode: ReferralCode
+  passwordResetToken: PasswordState
+  passwordResetIssuedAt: DateTime
+  passwordResetRedeemedAt: DateTime
+}
+
+scalar DateTime
+
+type PasswordState {
+  isSet: Boolean!
+}
+
+type ImageFieldOutput {
+  id: ID!
+  filesize: Int!
+  width: Int!
+  height: Int!
+  extension: ImageExtension!
+  url: String!
+}
+
+enum ImageExtension {
+  jpg
+  png
+  webp
+  gif
+}
+
+type FileFieldOutput {
+  filename: String!
+  filesize: Int!
+  url: String!
+}
+
+input UserWhereUniqueInput {
+  id: ID
+  phoneNumber: String
+  email: String
+}
+
+input UserWhereInput {
+  AND: [UserWhereInput!]
+  OR: [UserWhereInput!]
+  NOT: [UserWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  name: StringFilter
+  phoneNumber: StringFilter
+  email: StringFilter
+  address: StringFilter
+  emailVerified: BooleanFilter
+  phoneNumberVerified: BooleanFilter
+  isAdmin: BooleanFilter
+  addresses: AddressManyRelationFilter
+  favorites: FavoriteManyRelationFilter
+  cartItems: CartItemManyRelationFilter
+  wallet: WalletWhereInput
+  referralCode: ReferralCodeWhereInput
+  passwordResetToken: PasswordFilter
+  passwordResetIssuedAt: DateTimeNullableFilter
+  passwordResetRedeemedAt: DateTimeNullableFilter
+}
+
+input IDFilter {
+  equals: ID
+  in: [ID!]
+  notIn: [ID!]
+  lt: ID
+  lte: ID
+  gt: ID
+  gte: ID
+  not: IDFilter
+}
+
+input DateTimeNullableFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: DateTimeNullableFilter
+}
+
+input StringFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringFilter
+}
+
+input NestedStringFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringFilter
+}
+
+input BooleanFilter {
+  equals: Boolean
+  not: BooleanFilter
+}
+
+input AddressManyRelationFilter {
+  every: AddressWhereInput
+  some: AddressWhereInput
+  none: AddressWhereInput
+}
+
+input FavoriteManyRelationFilter {
+  every: FavoriteWhereInput
+  some: FavoriteWhereInput
+  none: FavoriteWhereInput
+}
+
+input CartItemManyRelationFilter {
+  every: CartItemWhereInput
+  some: CartItemWhereInput
+  none: CartItemWhereInput
+}
+
+input PasswordFilter {
+  isSet: Boolean!
+}
+
+input UserOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  name: OrderDirection
+  phoneNumber: OrderDirection
+  email: OrderDirection
+  address: OrderDirection
+  emailVerified: OrderDirection
+  phoneNumberVerified: OrderDirection
+  isAdmin: OrderDirection
+  passwordResetIssuedAt: OrderDirection
+  passwordResetRedeemedAt: OrderDirection
+}
+
+enum OrderDirection {
+  asc
+  desc
+}
+
+input UserUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  phoneNumber: String
+  email: String
+  address: String
+  password: String
+  emailVerified: Boolean
+  phoneNumberVerified: Boolean
+  isAdmin: Boolean
+  profile_image: ImageFieldInput
+  aadhaar: FileFieldInput
+  driving_license: FileFieldInput
+  addresses: AddressRelateToManyForUpdateInput
+  favorites: FavoriteRelateToManyForUpdateInput
+  cartItems: CartItemRelateToManyForUpdateInput
+  wallet: WalletRelateToOneForUpdateInput
+  referralCode: ReferralCodeRelateToOneForUpdateInput
+  passwordResetToken: String
+  passwordResetIssuedAt: DateTime
+  passwordResetRedeemedAt: DateTime
+}
+
+input ImageFieldInput {
+  upload: Upload!
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+input FileFieldInput {
+  upload: Upload!
+}
+
+input AddressRelateToManyForUpdateInput {
+  disconnect: [AddressWhereUniqueInput!]
+  set: [AddressWhereUniqueInput!]
+  create: [AddressCreateInput!]
+  connect: [AddressWhereUniqueInput!]
+}
+
+input FavoriteRelateToManyForUpdateInput {
+  disconnect: [FavoriteWhereUniqueInput!]
+  set: [FavoriteWhereUniqueInput!]
+  create: [FavoriteCreateInput!]
+  connect: [FavoriteWhereUniqueInput!]
+}
+
+input CartItemRelateToManyForUpdateInput {
+  disconnect: [CartItemWhereUniqueInput!]
+  set: [CartItemWhereUniqueInput!]
+  create: [CartItemCreateInput!]
+  connect: [CartItemWhereUniqueInput!]
+}
+
+input WalletRelateToOneForUpdateInput {
+  create: WalletCreateInput
+  connect: WalletWhereUniqueInput
+  disconnect: Boolean
+}
+
+input ReferralCodeRelateToOneForUpdateInput {
+  create: ReferralCodeCreateInput
+  connect: ReferralCodeWhereUniqueInput
+  disconnect: Boolean
+}
+
+input UserUpdateArgs {
+  where: UserWhereUniqueInput!
+  data: UserUpdateInput!
+}
+
+input UserCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  phoneNumber: String
+  email: String
+  address: String
+  password: String
+  emailVerified: Boolean
+  phoneNumberVerified: Boolean
+  isAdmin: Boolean
+  profile_image: ImageFieldInput
+  aadhaar: FileFieldInput
+  driving_license: FileFieldInput
+  addresses: AddressRelateToManyForCreateInput
+  favorites: FavoriteRelateToManyForCreateInput
+  cartItems: CartItemRelateToManyForCreateInput
+  wallet: WalletRelateToOneForCreateInput
+  referralCode: ReferralCodeRelateToOneForCreateInput
+  passwordResetToken: String
+  passwordResetIssuedAt: DateTime
+  passwordResetRedeemedAt: DateTime
+}
+
+input AddressRelateToManyForCreateInput {
+  create: [AddressCreateInput!]
+  connect: [AddressWhereUniqueInput!]
+}
+
+input FavoriteRelateToManyForCreateInput {
+  create: [FavoriteCreateInput!]
+  connect: [FavoriteWhereUniqueInput!]
+}
+
+input CartItemRelateToManyForCreateInput {
+  create: [CartItemCreateInput!]
+  connect: [CartItemWhereUniqueInput!]
+}
+
+input WalletRelateToOneForCreateInput {
+  create: WalletCreateInput
+  connect: WalletWhereUniqueInput
+}
+
+input ReferralCodeRelateToOneForCreateInput {
+  create: ReferralCodeCreateInput
+  connect: ReferralCodeWhereUniqueInput
+}
+
+type ReferralCode {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: User
+  code: String
+}
+
+input ReferralCodeWhereUniqueInput {
+  id: ID
+  code: String
+}
+
+input ReferralCodeWhereInput {
+  AND: [ReferralCodeWhereInput!]
+  OR: [ReferralCodeWhereInput!]
+  NOT: [ReferralCodeWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  user: UserWhereInput
+  code: StringFilter
+}
+
+input ReferralCodeOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  code: OrderDirection
+}
+
+input ReferralCodeUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForUpdateInput
+  code: String
+}
+
+input UserRelateToOneForUpdateInput {
+  create: UserCreateInput
+  connect: UserWhereUniqueInput
+  disconnect: Boolean
+}
+
+input ReferralCodeUpdateArgs {
+  where: ReferralCodeWhereUniqueInput!
+  data: ReferralCodeUpdateInput!
+}
+
+input ReferralCodeCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForCreateInput
+  code: String
+}
+
+input UserRelateToOneForCreateInput {
+  create: UserCreateInput
+  connect: UserWhereUniqueInput
+}
+
+type ReferralUser {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  referrer: User
+  referee: User
+}
+
+input ReferralUserWhereUniqueInput {
+  id: ID
+}
+
+input ReferralUserWhereInput {
+  AND: [ReferralUserWhereInput!]
+  OR: [ReferralUserWhereInput!]
+  NOT: [ReferralUserWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  referrer: UserWhereInput
+  referee: UserWhereInput
+}
+
+input ReferralUserOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+}
+
+input ReferralUserUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  referrer: UserRelateToOneForUpdateInput
+  referee: UserRelateToOneForUpdateInput
+}
+
+input ReferralUserUpdateArgs {
+  where: ReferralUserWhereUniqueInput!
+  data: ReferralUserUpdateInput!
+}
+
+input ReferralUserCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  referrer: UserRelateToOneForCreateInput
+  referee: UserRelateToOneForCreateInput
+}
+
+type Address {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  phoneNumber: String
+  pinCode: String
+  address: String
+  town: String
+  district: String
+  state: String
+  default: Boolean
+  user: User
+}
+
+input AddressWhereUniqueInput {
+  id: ID
+}
+
+input AddressWhereInput {
+  AND: [AddressWhereInput!]
+  OR: [AddressWhereInput!]
+  NOT: [AddressWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  name: StringFilter
+  phoneNumber: StringFilter
+  pinCode: StringFilter
+  address: StringFilter
+  town: StringFilter
+  district: StringFilter
+  state: StringFilter
+  default: BooleanFilter
+  user: UserWhereInput
+}
+
+input AddressOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  name: OrderDirection
+  phoneNumber: OrderDirection
+  pinCode: OrderDirection
+  address: OrderDirection
+  town: OrderDirection
+  district: OrderDirection
+  state: OrderDirection
+  default: OrderDirection
+}
+
+input AddressUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  phoneNumber: String
+  pinCode: String
+  address: String
+  town: String
+  district: String
+  state: String
+  default: Boolean
+  user: UserRelateToOneForUpdateInput
+}
+
+input AddressUpdateArgs {
+  where: AddressWhereUniqueInput!
+  data: AddressUpdateInput!
+}
+
+input AddressCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  phoneNumber: String
+  pinCode: String
+  address: String
+  town: String
+  district: String
+  state: String
+  default: Boolean
+  user: UserRelateToOneForCreateInput
+}
+
+type Favorite {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  vehicleVariant: VehicleVariant
+  user: User
+}
+
+input FavoriteWhereUniqueInput {
+  id: ID
+}
+
+input FavoriteWhereInput {
+  AND: [FavoriteWhereInput!]
+  OR: [FavoriteWhereInput!]
+  NOT: [FavoriteWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  vehicleVariant: VehicleVariantWhereInput
+  user: UserWhereInput
+}
+
+input FavoriteOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+}
+
+input FavoriteUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  vehicleVariant: VehicleVariantRelateToOneForUpdateInput
+  user: UserRelateToOneForUpdateInput
+}
+
+input VehicleVariantRelateToOneForUpdateInput {
+  create: VehicleVariantCreateInput
+  connect: VehicleVariantWhereUniqueInput
+  disconnect: Boolean
+}
+
+input FavoriteUpdateArgs {
+  where: FavoriteWhereUniqueInput!
+  data: FavoriteUpdateInput!
+}
+
+input FavoriteCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  vehicleVariant: VehicleVariantRelateToOneForCreateInput
+  user: UserRelateToOneForCreateInput
+}
+
+input VehicleVariantRelateToOneForCreateInput {
+  create: VehicleVariantCreateInput
+  connect: VehicleVariantWhereUniqueInput
+}
+
+type CartItem {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: VehicleDealer
+  user: User
+}
+
+input CartItemWhereUniqueInput {
+  id: ID
+}
+
+input CartItemWhereInput {
+  AND: [CartItemWhereInput!]
+  OR: [CartItemWhereInput!]
+  NOT: [CartItemWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  dealer: VehicleDealerWhereInput
+  user: UserWhereInput
+}
+
+input CartItemOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+}
+
+input CartItemUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: VehicleDealerRelateToOneForUpdateInput
+  user: UserRelateToOneForUpdateInput
+}
+
+input VehicleDealerRelateToOneForUpdateInput {
+  create: VehicleDealerCreateInput
+  connect: VehicleDealerWhereUniqueInput
+  disconnect: Boolean
+}
+
+input CartItemUpdateArgs {
+  where: CartItemWhereUniqueInput!
+  data: CartItemUpdateInput!
+}
+
+input CartItemCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: VehicleDealerRelateToOneForCreateInput
+  user: UserRelateToOneForCreateInput
+}
+
+input VehicleDealerRelateToOneForCreateInput {
+  create: VehicleDealerCreateInput
+  connect: VehicleDealerWhereUniqueInput
+}
+
+type VehicleType {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+}
+
+input VehicleTypeWhereUniqueInput {
+  id: ID
+}
+
+input VehicleTypeWhereInput {
+  AND: [VehicleTypeWhereInput!]
+  OR: [VehicleTypeWhereInput!]
+  NOT: [VehicleTypeWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  name: StringFilter
+  description: StringFilter
+}
+
+input VehicleTypeOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  name: OrderDirection
+  description: OrderDirection
+}
+
+input VehicleTypeUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+}
+
+input VehicleTypeUpdateArgs {
+  where: VehicleTypeWhereUniqueInput!
+  data: VehicleTypeUpdateInput!
+}
+
+input VehicleTypeCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+}
+
+type Brand {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+}
+
+input BrandWhereUniqueInput {
+  id: ID
+}
+
+input BrandWhereInput {
+  AND: [BrandWhereInput!]
+  OR: [BrandWhereInput!]
+  NOT: [BrandWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  name: StringFilter
+}
+
+input BrandOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  name: OrderDirection
+}
+
+input BrandUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+}
+
+input BrandUpdateArgs {
+  where: BrandWhereUniqueInput!
+  data: BrandUpdateInput!
+}
+
+input BrandCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+}
+
+type Specification {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+  unit: String
+}
+
+input SpecificationWhereUniqueInput {
+  id: ID
+  name: String
+}
+
+input SpecificationWhereInput {
+  AND: [SpecificationWhereInput!]
+  OR: [SpecificationWhereInput!]
+  NOT: [SpecificationWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  name: StringFilter
+  description: StringFilter
+  unit: StringFilter
+}
+
+input SpecificationOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  name: OrderDirection
+  description: OrderDirection
+  unit: OrderDirection
+}
+
+input SpecificationUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+  unit: String
+}
+
+input SpecificationUpdateArgs {
+  where: SpecificationWhereUniqueInput!
+  data: SpecificationUpdateInput!
+}
+
+input SpecificationCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+  unit: String
+}
+
+type SpecificationCategory {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+}
+
+input SpecificationCategoryWhereUniqueInput {
+  id: ID
+  name: String
+}
+
+input SpecificationCategoryWhereInput {
+  AND: [SpecificationCategoryWhereInput!]
+  OR: [SpecificationCategoryWhereInput!]
+  NOT: [SpecificationCategoryWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  name: StringFilter
+  description: StringFilter
+}
+
+input SpecificationCategoryOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  name: OrderDirection
+  description: OrderDirection
+}
+
+input SpecificationCategoryUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+}
+
+input SpecificationCategoryUpdateArgs {
+  where: SpecificationCategoryWhereUniqueInput!
+  data: SpecificationCategoryUpdateInput!
+}
+
+input SpecificationCategoryCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+}
+
+type TestDriveDealer {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: Dealer
+  vehicleVariant: VehicleVariant
+  vehicleColor: VehicleColor
+  price: Int
+  available: Boolean
+}
+
+input TestDriveDealerWhereUniqueInput {
+  id: ID
+}
+
+input TestDriveDealerWhereInput {
+  AND: [TestDriveDealerWhereInput!]
+  OR: [TestDriveDealerWhereInput!]
+  NOT: [TestDriveDealerWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  dealer: DealerWhereInput
+  vehicleVariant: VehicleVariantWhereInput
+  vehicleColor: VehicleColorWhereInput
+  price: IntFilter
+  available: BooleanFilter
+}
+
+input IntFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: IntFilter
+}
+
+input TestDriveDealerOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  price: OrderDirection
+  available: OrderDirection
+}
+
+input TestDriveDealerUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: DealerRelateToOneForUpdateInput
+  vehicleVariant: VehicleVariantRelateToOneForUpdateInput
+  vehicleColor: VehicleColorRelateToOneForUpdateInput
+  price: Int
+  available: Boolean
+}
+
+input DealerRelateToOneForUpdateInput {
+  create: DealerCreateInput
+  connect: DealerWhereUniqueInput
+  disconnect: Boolean
+}
+
+input VehicleColorRelateToOneForUpdateInput {
+  create: VehicleColorCreateInput
+  connect: VehicleColorWhereUniqueInput
+  disconnect: Boolean
+}
+
+input TestDriveDealerUpdateArgs {
+  where: TestDriveDealerWhereUniqueInput!
+  data: TestDriveDealerUpdateInput!
+}
+
+input TestDriveDealerCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: DealerRelateToOneForCreateInput
+  vehicleVariant: VehicleVariantRelateToOneForCreateInput
+  vehicleColor: VehicleColorRelateToOneForCreateInput
+  price: Int
+  available: Boolean
+}
+
+input DealerRelateToOneForCreateInput {
+  create: DealerCreateInput
+  connect: DealerWhereUniqueInput
+}
+
+input VehicleColorRelateToOneForCreateInput {
+  create: VehicleColorCreateInput
+  connect: VehicleColorWhereUniqueInput
+}
+
+type Vehicle {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+  type: VehicleType
+  brand: Brand
+  variants(where: VehicleVariantWhereInput! = {}, orderBy: [VehicleVariantOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleVariant!]
+  variantsCount(where: VehicleVariantWhereInput! = {}): Int
+  specifications(where: VehicleSpecificationWhereInput! = {}, orderBy: [VehicleSpecificationOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleSpecification!]
+  specificationsCount(where: VehicleSpecificationWhereInput! = {}): Int
+  colors(where: VehicleColorWhereInput! = {}, orderBy: [VehicleColorOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleColor!]
+  colorsCount(where: VehicleColorWhereInput! = {}): Int
+}
+
+input VehicleWhereUniqueInput {
+  id: ID
+}
+
+input VehicleWhereInput {
+  AND: [VehicleWhereInput!]
+  OR: [VehicleWhereInput!]
+  NOT: [VehicleWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  name: StringFilter
+  description: StringFilter
+  type: VehicleTypeWhereInput
+  brand: BrandWhereInput
+  variants: VehicleVariantManyRelationFilter
+  specifications: VehicleSpecificationManyRelationFilter
+  colors: VehicleColorManyRelationFilter
+}
+
+input VehicleVariantManyRelationFilter {
+  every: VehicleVariantWhereInput
+  some: VehicleVariantWhereInput
+  none: VehicleVariantWhereInput
+}
+
+input VehicleSpecificationManyRelationFilter {
+  every: VehicleSpecificationWhereInput
+  some: VehicleSpecificationWhereInput
+  none: VehicleSpecificationWhereInput
+}
+
+input VehicleColorManyRelationFilter {
+  every: VehicleColorWhereInput
+  some: VehicleColorWhereInput
+  none: VehicleColorWhereInput
+}
+
+input VehicleOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  name: OrderDirection
+  description: OrderDirection
+}
+
+input VehicleUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+  type: VehicleTypeRelateToOneForUpdateInput
+  brand: BrandRelateToOneForUpdateInput
+  variants: VehicleVariantRelateToManyForUpdateInput
+  specifications: VehicleSpecificationRelateToManyForUpdateInput
+  colors: VehicleColorRelateToManyForUpdateInput
+}
+
+input VehicleTypeRelateToOneForUpdateInput {
+  create: VehicleTypeCreateInput
+  connect: VehicleTypeWhereUniqueInput
+  disconnect: Boolean
+}
+
+input BrandRelateToOneForUpdateInput {
+  create: BrandCreateInput
+  connect: BrandWhereUniqueInput
+  disconnect: Boolean
+}
+
+input VehicleVariantRelateToManyForUpdateInput {
+  disconnect: [VehicleVariantWhereUniqueInput!]
+  set: [VehicleVariantWhereUniqueInput!]
+  create: [VehicleVariantCreateInput!]
+  connect: [VehicleVariantWhereUniqueInput!]
+}
+
+input VehicleSpecificationRelateToManyForUpdateInput {
+  disconnect: [VehicleSpecificationWhereUniqueInput!]
+  set: [VehicleSpecificationWhereUniqueInput!]
+  create: [VehicleSpecificationCreateInput!]
+  connect: [VehicleSpecificationWhereUniqueInput!]
+}
+
+input VehicleColorRelateToManyForUpdateInput {
+  disconnect: [VehicleColorWhereUniqueInput!]
+  set: [VehicleColorWhereUniqueInput!]
+  create: [VehicleColorCreateInput!]
+  connect: [VehicleColorWhereUniqueInput!]
+}
+
+input VehicleUpdateArgs {
+  where: VehicleWhereUniqueInput!
+  data: VehicleUpdateInput!
+}
+
+input VehicleCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+  type: VehicleTypeRelateToOneForCreateInput
+  brand: BrandRelateToOneForCreateInput
+  variants: VehicleVariantRelateToManyForCreateInput
+  specifications: VehicleSpecificationRelateToManyForCreateInput
+  colors: VehicleColorRelateToManyForCreateInput
+}
+
+input VehicleTypeRelateToOneForCreateInput {
+  create: VehicleTypeCreateInput
+  connect: VehicleTypeWhereUniqueInput
+}
+
+input BrandRelateToOneForCreateInput {
+  create: BrandCreateInput
+  connect: BrandWhereUniqueInput
+}
+
+input VehicleVariantRelateToManyForCreateInput {
+  create: [VehicleVariantCreateInput!]
+  connect: [VehicleVariantWhereUniqueInput!]
+}
+
+input VehicleSpecificationRelateToManyForCreateInput {
+  create: [VehicleSpecificationCreateInput!]
+  connect: [VehicleSpecificationWhereUniqueInput!]
+}
+
+input VehicleColorRelateToManyForCreateInput {
+  create: [VehicleColorCreateInput!]
+  connect: [VehicleColorWhereUniqueInput!]
+}
+
+type VehicleColor {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  code: String
+  vehicle: Vehicle
+  vehicleVariant(where: VehicleVariantWhereInput! = {}, orderBy: [VehicleVariantOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleVariant!]
+  vehicleVariantCount(where: VehicleVariantWhereInput! = {}): Int
+  images(where: VehicleImageWhereInput! = {}, orderBy: [VehicleImageOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleImage!]
+  imagesCount(where: VehicleImageWhereInput! = {}): Int
+}
+
+input VehicleColorWhereUniqueInput {
+  id: ID
+}
+
+input VehicleColorWhereInput {
+  AND: [VehicleColorWhereInput!]
+  OR: [VehicleColorWhereInput!]
+  NOT: [VehicleColorWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  name: StringFilter
+  code: StringFilter
+  vehicle: VehicleWhereInput
+  vehicleVariant: VehicleVariantManyRelationFilter
+  images: VehicleImageManyRelationFilter
+}
+
+input VehicleImageManyRelationFilter {
+  every: VehicleImageWhereInput
+  some: VehicleImageWhereInput
+  none: VehicleImageWhereInput
+}
+
+input VehicleColorOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  name: OrderDirection
+  code: OrderDirection
+}
+
+input VehicleColorUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  code: String
+  vehicle: VehicleRelateToOneForUpdateInput
+  vehicleVariant: VehicleVariantRelateToManyForUpdateInput
+  images: VehicleImageRelateToManyForUpdateInput
+}
+
+input VehicleRelateToOneForUpdateInput {
+  create: VehicleCreateInput
+  connect: VehicleWhereUniqueInput
+  disconnect: Boolean
+}
+
+input VehicleImageRelateToManyForUpdateInput {
+  disconnect: [VehicleImageWhereUniqueInput!]
+  set: [VehicleImageWhereUniqueInput!]
+  create: [VehicleImageCreateInput!]
+  connect: [VehicleImageWhereUniqueInput!]
+}
+
+input VehicleColorUpdateArgs {
+  where: VehicleColorWhereUniqueInput!
+  data: VehicleColorUpdateInput!
+}
+
+input VehicleColorCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  code: String
+  vehicle: VehicleRelateToOneForCreateInput
+  vehicleVariant: VehicleVariantRelateToManyForCreateInput
+  images: VehicleImageRelateToManyForCreateInput
+}
+
+input VehicleRelateToOneForCreateInput {
+  create: VehicleCreateInput
+  connect: VehicleWhereUniqueInput
+}
+
+input VehicleImageRelateToManyForCreateInput {
+  create: [VehicleImageCreateInput!]
+  connect: [VehicleImageWhereUniqueInput!]
+}
+
+type VehicleDealer {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: Dealer
+  vehicleVariant: VehicleVariant
+  vehicleColor: VehicleColor
+  dealer_prices: Int
+  stock: Int
+}
+
+input VehicleDealerWhereUniqueInput {
+  id: ID
+}
+
+input VehicleDealerWhereInput {
+  AND: [VehicleDealerWhereInput!]
+  OR: [VehicleDealerWhereInput!]
+  NOT: [VehicleDealerWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  dealer: DealerWhereInput
+  vehicleVariant: VehicleVariantWhereInput
+  vehicleColor: VehicleColorWhereInput
+  dealer_prices: IntFilter
+  stock: IntNullableFilter
+}
+
+input IntNullableFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: IntNullableFilter
+}
+
+input VehicleDealerOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  dealer_prices: OrderDirection
+  stock: OrderDirection
+}
+
+input VehicleDealerUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: DealerRelateToOneForUpdateInput
+  vehicleVariant: VehicleVariantRelateToOneForUpdateInput
+  vehicleColor: VehicleColorRelateToOneForUpdateInput
+  dealer_prices: Int
+  stock: Int
+}
+
+input VehicleDealerUpdateArgs {
+  where: VehicleDealerWhereUniqueInput!
+  data: VehicleDealerUpdateInput!
+}
+
+input VehicleDealerCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: DealerRelateToOneForCreateInput
+  vehicleVariant: VehicleVariantRelateToOneForCreateInput
+  vehicleColor: VehicleColorRelateToOneForCreateInput
+  dealer_prices: Int
+  stock: Int
+}
+
+type VehicleImage {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  image: ImageFieldOutput
+  color: VehicleColor
+}
+
+input VehicleImageWhereUniqueInput {
+  id: ID
+}
+
+input VehicleImageWhereInput {
+  AND: [VehicleImageWhereInput!]
+  OR: [VehicleImageWhereInput!]
+  NOT: [VehicleImageWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  color: VehicleColorWhereInput
+}
+
+input VehicleImageOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+}
+
+input VehicleImageUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  image: ImageFieldInput
+  color: VehicleColorRelateToOneForUpdateInput
+}
+
+input VehicleImageUpdateArgs {
+  where: VehicleImageWhereUniqueInput!
+  data: VehicleImageUpdateInput!
+}
+
+input VehicleImageCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  image: ImageFieldInput
+  color: VehicleColorRelateToOneForCreateInput
+}
+
+type VehicleSpecification {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  specification: Specification
+  type: String
+  intValue: Int
+  stringValue: String
+  category: SpecificationCategory
+  vehicle: Vehicle
+}
+
+input VehicleSpecificationWhereUniqueInput {
+  id: ID
+}
+
+input VehicleSpecificationWhereInput {
+  AND: [VehicleSpecificationWhereInput!]
+  OR: [VehicleSpecificationWhereInput!]
+  NOT: [VehicleSpecificationWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  specification: SpecificationWhereInput
+  type: StringFilter
+  intValue: IntNullableFilter
+  stringValue: StringFilter
+  category: SpecificationCategoryWhereInput
+  vehicle: VehicleWhereInput
+}
+
+input VehicleSpecificationOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  type: OrderDirection
+  intValue: OrderDirection
+  stringValue: OrderDirection
+}
+
+input VehicleSpecificationUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  specification: SpecificationRelateToOneForUpdateInput
+  type: String
+  intValue: Int
+  stringValue: String
+  category: SpecificationCategoryRelateToOneForUpdateInput
+  vehicle: VehicleRelateToOneForUpdateInput
+}
+
+input SpecificationRelateToOneForUpdateInput {
+  create: SpecificationCreateInput
+  connect: SpecificationWhereUniqueInput
+  disconnect: Boolean
+}
+
+input SpecificationCategoryRelateToOneForUpdateInput {
+  create: SpecificationCategoryCreateInput
+  connect: SpecificationCategoryWhereUniqueInput
+  disconnect: Boolean
+}
+
+input VehicleSpecificationUpdateArgs {
+  where: VehicleSpecificationWhereUniqueInput!
+  data: VehicleSpecificationUpdateInput!
+}
+
+input VehicleSpecificationCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  specification: SpecificationRelateToOneForCreateInput
+  type: String
+  intValue: Int
+  stringValue: String
+  category: SpecificationCategoryRelateToOneForCreateInput
+  vehicle: VehicleRelateToOneForCreateInput
+}
+
+input SpecificationRelateToOneForCreateInput {
+  create: SpecificationCreateInput
+  connect: SpecificationWhereUniqueInput
+}
+
+input SpecificationCategoryRelateToOneForCreateInput {
+  create: SpecificationCategoryCreateInput
+  connect: SpecificationCategoryWhereUniqueInput
+}
+
+type VehicleVariant {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  vehicle: Vehicle
+  default: Boolean
+  specifications(where: VehicleSpecificationWhereInput! = {}, orderBy: [VehicleSpecificationOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleSpecification!]
+  specificationsCount(where: VehicleSpecificationWhereInput! = {}): Int
+  colors(where: VehicleColorWhereInput! = {}, orderBy: [VehicleColorOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleColor!]
+  colorsCount(where: VehicleColorWhereInput! = {}): Int
+  price: Int
+}
+
+input VehicleVariantWhereUniqueInput {
+  id: ID
+}
+
+input VehicleVariantWhereInput {
+  AND: [VehicleVariantWhereInput!]
+  OR: [VehicleVariantWhereInput!]
+  NOT: [VehicleVariantWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  name: StringFilter
+  vehicle: VehicleWhereInput
+  default: BooleanFilter
+  specifications: VehicleSpecificationManyRelationFilter
+  colors: VehicleColorManyRelationFilter
+  price: IntNullableFilter
+}
+
+input VehicleVariantOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  name: OrderDirection
+  default: OrderDirection
+  price: OrderDirection
+}
+
+input VehicleVariantUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  vehicle: VehicleRelateToOneForUpdateInput
+  default: Boolean
+  specifications: VehicleSpecificationRelateToManyForUpdateInput
+  colors: VehicleColorRelateToManyForUpdateInput
+  price: Int
+}
+
+input VehicleVariantUpdateArgs {
+  where: VehicleVariantWhereUniqueInput!
+  data: VehicleVariantUpdateInput!
+}
+
+input VehicleVariantCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  vehicle: VehicleRelateToOneForCreateInput
+  default: Boolean
+  specifications: VehicleSpecificationRelateToManyForCreateInput
+  colors: VehicleColorRelateToManyForCreateInput
+  price: Int
+}
+
+type Wallet {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: User
+  amount: Float
+}
+
+input WalletWhereUniqueInput {
+  id: ID
+}
+
+input WalletWhereInput {
+  AND: [WalletWhereInput!]
+  OR: [WalletWhereInput!]
+  NOT: [WalletWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  user: UserWhereInput
+  amount: FloatNullableFilter
+}
+
+input FloatNullableFilter {
+  equals: Float
+  in: [Float!]
+  notIn: [Float!]
+  lt: Float
+  lte: Float
+  gt: Float
+  gte: Float
+  not: FloatNullableFilter
+}
+
+input WalletOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  amount: OrderDirection
+}
+
+input WalletUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForUpdateInput
+  amount: Float
+}
+
+input WalletUpdateArgs {
+  where: WalletWhereUniqueInput!
+  data: WalletUpdateInput!
+}
+
+input WalletCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForCreateInput
+  amount: Float
+}
+
+type WalletTransaction {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  wallet: Wallet
+  externalTransactionName: String
+  externalTransactionId: String
+  from: String
+  to: String
+  mode: String
+  type: String
+  status: String
+  amount: Float
+  message: String
+}
+
+input WalletTransactionWhereUniqueInput {
+  id: ID
+}
+
+input WalletTransactionWhereInput {
+  AND: [WalletTransactionWhereInput!]
+  OR: [WalletTransactionWhereInput!]
+  NOT: [WalletTransactionWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  wallet: WalletWhereInput
+  externalTransactionName: StringFilter
+  externalTransactionId: StringFilter
+  from: StringFilter
+  to: StringFilter
+  mode: StringFilter
+  type: StringNullableFilter
+  status: StringNullableFilter
+  amount: FloatNullableFilter
+  message: StringFilter
+}
+
+input StringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableFilter
+}
+
+input NestedStringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableFilter
+}
+
+input WalletTransactionOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  externalTransactionName: OrderDirection
+  externalTransactionId: OrderDirection
+  from: OrderDirection
+  to: OrderDirection
+  mode: OrderDirection
+  type: OrderDirection
+  status: OrderDirection
+  amount: OrderDirection
+  message: OrderDirection
+}
+
+input WalletTransactionUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  wallet: WalletRelateToOneForUpdateInput
+  externalTransactionName: String
+  externalTransactionId: String
+  from: String
+  to: String
+  mode: String
+  type: String
+  status: String
+  amount: Float
+  message: String
+}
+
+input WalletTransactionUpdateArgs {
+  where: WalletTransactionWhereUniqueInput!
+  data: WalletTransactionUpdateInput!
+}
+
+input WalletTransactionCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  wallet: WalletRelateToOneForCreateInput
+  externalTransactionName: String
+  externalTransactionId: String
+  from: String
+  to: String
+  mode: String
+  type: String
+  status: String
+  amount: Float
+  message: String
+}
+
+type Order {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: User
+  status: String
+  vehicleOrders(where: VehicleOrderWhereInput! = {}, orderBy: [VehicleOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleOrder!]
+  vehicleOrdersCount(where: VehicleOrderWhereInput! = {}): Int
+  testDriveOrders(where: TestDriveOrderWhereInput! = {}, orderBy: [TestDriveOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [TestDriveOrder!]
+  testDriveOrdersCount(where: TestDriveOrderWhereInput! = {}): Int
+  payments(where: PaymentWhereInput! = {}, orderBy: [PaymentOrderByInput!]! = [], take: Int, skip: Int! = 0): [Payment!]
+  paymentsCount(where: PaymentWhereInput! = {}): Int
+}
+
+input OrderWhereUniqueInput {
+  id: ID
+}
+
+input OrderWhereInput {
+  AND: [OrderWhereInput!]
+  OR: [OrderWhereInput!]
+  NOT: [OrderWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  user: UserWhereInput
+  status: StringNullableFilter
+  vehicleOrders: VehicleOrderManyRelationFilter
+  testDriveOrders: TestDriveOrderManyRelationFilter
+  payments: PaymentManyRelationFilter
+}
+
+input VehicleOrderManyRelationFilter {
+  every: VehicleOrderWhereInput
+  some: VehicleOrderWhereInput
+  none: VehicleOrderWhereInput
+}
+
+input TestDriveOrderManyRelationFilter {
+  every: TestDriveOrderWhereInput
+  some: TestDriveOrderWhereInput
+  none: TestDriveOrderWhereInput
+}
+
+input PaymentManyRelationFilter {
+  every: PaymentWhereInput
+  some: PaymentWhereInput
+  none: PaymentWhereInput
+}
+
+input OrderOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  status: OrderDirection
+}
+
+input OrderUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForUpdateInput
+  status: String
+  vehicleOrders: VehicleOrderRelateToManyForUpdateInput
+  testDriveOrders: TestDriveOrderRelateToManyForUpdateInput
+  payments: PaymentRelateToManyForUpdateInput
+}
+
+input VehicleOrderRelateToManyForUpdateInput {
+  disconnect: [VehicleOrderWhereUniqueInput!]
+  set: [VehicleOrderWhereUniqueInput!]
+  create: [VehicleOrderCreateInput!]
+  connect: [VehicleOrderWhereUniqueInput!]
+}
+
+input TestDriveOrderRelateToManyForUpdateInput {
+  disconnect: [TestDriveOrderWhereUniqueInput!]
+  set: [TestDriveOrderWhereUniqueInput!]
+  create: [TestDriveOrderCreateInput!]
+  connect: [TestDriveOrderWhereUniqueInput!]
+}
+
+input PaymentRelateToManyForUpdateInput {
+  disconnect: [PaymentWhereUniqueInput!]
+  set: [PaymentWhereUniqueInput!]
+  create: [PaymentCreateInput!]
+  connect: [PaymentWhereUniqueInput!]
+}
+
+input OrderUpdateArgs {
+  where: OrderWhereUniqueInput!
+  data: OrderUpdateInput!
+}
+
+input OrderCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForCreateInput
+  status: String
+  vehicleOrders: VehicleOrderRelateToManyForCreateInput
+  testDriveOrders: TestDriveOrderRelateToManyForCreateInput
+  payments: PaymentRelateToManyForCreateInput
+}
+
+input VehicleOrderRelateToManyForCreateInput {
+  create: [VehicleOrderCreateInput!]
+  connect: [VehicleOrderWhereUniqueInput!]
+}
+
+input TestDriveOrderRelateToManyForCreateInput {
+  create: [TestDriveOrderCreateInput!]
+  connect: [TestDriveOrderWhereUniqueInput!]
+}
+
+input PaymentRelateToManyForCreateInput {
+  create: [PaymentCreateInput!]
+  connect: [PaymentWhereUniqueInput!]
+}
+
+type Payment {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  order: Order
+  transactionId: String
+  name: String
+  type: String
+  status: String
+  amount: Float
+  comment: String
+  mode: String
+}
+
+input PaymentWhereUniqueInput {
+  id: ID
+}
+
+input PaymentWhereInput {
+  AND: [PaymentWhereInput!]
+  OR: [PaymentWhereInput!]
+  NOT: [PaymentWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  order: OrderWhereInput
+  transactionId: StringFilter
+  name: StringFilter
+  type: StringNullableFilter
+  status: StringNullableFilter
+  amount: FloatFilter
+  comment: StringFilter
+  mode: StringFilter
+}
+
+input FloatFilter {
+  equals: Float
+  in: [Float!]
+  notIn: [Float!]
+  lt: Float
+  lte: Float
+  gt: Float
+  gte: Float
+  not: FloatFilter
+}
+
+input PaymentOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  transactionId: OrderDirection
+  name: OrderDirection
+  type: OrderDirection
+  status: OrderDirection
+  amount: OrderDirection
+  comment: OrderDirection
+  mode: OrderDirection
+}
+
+input PaymentUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  order: OrderRelateToOneForUpdateInput
+  transactionId: String
+  name: String
+  type: String
+  status: String
+  amount: Float
+  comment: String
+  mode: String
+}
+
+input OrderRelateToOneForUpdateInput {
+  create: OrderCreateInput
+  connect: OrderWhereUniqueInput
+  disconnect: Boolean
+}
+
+input PaymentUpdateArgs {
+  where: PaymentWhereUniqueInput!
+  data: PaymentUpdateInput!
+}
+
+input PaymentCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  order: OrderRelateToOneForCreateInput
+  transactionId: String
+  name: String
+  type: String
+  status: String
+  amount: Float
+  comment: String
+  mode: String
+}
+
+input OrderRelateToOneForCreateInput {
+  create: OrderCreateInput
+  connect: OrderWhereUniqueInput
+}
+
+type VehicleOrder {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: VehicleDealer
+  order: Order
+  price: Int
+}
+
+input VehicleOrderWhereUniqueInput {
+  id: ID
+}
+
+input VehicleOrderWhereInput {
+  AND: [VehicleOrderWhereInput!]
+  OR: [VehicleOrderWhereInput!]
+  NOT: [VehicleOrderWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  dealer: VehicleDealerWhereInput
+  order: OrderWhereInput
+  price: IntNullableFilter
+}
+
+input VehicleOrderOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  price: OrderDirection
+}
+
+input VehicleOrderUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: VehicleDealerRelateToOneForUpdateInput
+  order: OrderRelateToOneForUpdateInput
+  price: Int
+}
+
+input VehicleOrderUpdateArgs {
+  where: VehicleOrderWhereUniqueInput!
+  data: VehicleOrderUpdateInput!
+}
+
+input VehicleOrderCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: VehicleDealerRelateToOneForCreateInput
+  order: OrderRelateToOneForCreateInput
+  price: Int
+}
+
+type TestDriveOrder {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: TestDriveDealer
+  order: Order
+  price: Int
+}
+
+input TestDriveOrderWhereUniqueInput {
+  id: ID
+}
+
+input TestDriveOrderWhereInput {
+  AND: [TestDriveOrderWhereInput!]
+  OR: [TestDriveOrderWhereInput!]
+  NOT: [TestDriveOrderWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  dealer: TestDriveDealerWhereInput
+  order: OrderWhereInput
+  price: IntNullableFilter
+}
+
+input TestDriveOrderOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  price: OrderDirection
+}
+
+input TestDriveOrderUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: TestDriveDealerRelateToOneForUpdateInput
+  order: OrderRelateToOneForUpdateInput
+  price: Int
+}
+
+input TestDriveDealerRelateToOneForUpdateInput {
+  create: TestDriveDealerCreateInput
+  connect: TestDriveDealerWhereUniqueInput
+  disconnect: Boolean
+}
+
+input TestDriveOrderUpdateArgs {
+  where: TestDriveOrderWhereUniqueInput!
+  data: TestDriveOrderUpdateInput!
+}
+
+input TestDriveOrderCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: TestDriveDealerRelateToOneForCreateInput
+  order: OrderRelateToOneForCreateInput
+  price: Int
+}
+
+input TestDriveDealerRelateToOneForCreateInput {
+  create: TestDriveDealerCreateInput
+  connect: TestDriveDealerWhereUniqueInput
+}
+
+type UserVehicleReview {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: User
+  vehicle: Vehicle
+  review: String
+  rating: Int
+}
+
+input UserVehicleReviewWhereUniqueInput {
+  id: ID
+}
+
+input UserVehicleReviewWhereInput {
+  AND: [UserVehicleReviewWhereInput!]
+  OR: [UserVehicleReviewWhereInput!]
+  NOT: [UserVehicleReviewWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  user: UserWhereInput
+  vehicle: VehicleWhereInput
+  review: StringFilter
+  rating: IntFilter
+}
+
+input UserVehicleReviewOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  review: OrderDirection
+  rating: OrderDirection
+}
+
+input UserVehicleReviewUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForUpdateInput
+  vehicle: VehicleRelateToOneForUpdateInput
+  review: String
+  rating: Int
+}
+
+input UserVehicleReviewUpdateArgs {
+  where: UserVehicleReviewWhereUniqueInput!
+  data: UserVehicleReviewUpdateInput!
+}
+
+input UserVehicleReviewCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForCreateInput
+  vehicle: VehicleRelateToOneForCreateInput
+  review: String
+  rating: Int
+}
+
+type ExpertReview {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  title: String
+  description: String
+  user: User
+  likes: Int
+}
+
+input ExpertReviewWhereUniqueInput {
+  id: ID
+}
+
+input ExpertReviewWhereInput {
+  AND: [ExpertReviewWhereInput!]
+  OR: [ExpertReviewWhereInput!]
+  NOT: [ExpertReviewWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  title: StringFilter
+  description: StringFilter
+  user: UserWhereInput
+  likes: IntNullableFilter
+}
+
+input ExpertReviewOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  title: OrderDirection
+  description: OrderDirection
+  likes: OrderDirection
+}
+
+input ExpertReviewUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  title: String
+  description: String
+  user: UserRelateToOneForUpdateInput
+  likes: Int
+}
+
+input ExpertReviewUpdateArgs {
+  where: ExpertReviewWhereUniqueInput!
+  data: ExpertReviewUpdateInput!
+}
+
+input ExpertReviewCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  title: String
+  description: String
+  user: UserRelateToOneForCreateInput
+  likes: Int
+}
+
+type Dealer {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: User
+}
+
+input DealerWhereUniqueInput {
+  id: ID
+}
+
+input DealerWhereInput {
+  AND: [DealerWhereInput!]
+  OR: [DealerWhereInput!]
+  NOT: [DealerWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  user: UserWhereInput
+}
+
+input DealerOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+}
+
+input DealerUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForUpdateInput
+}
+
+input DealerUpdateArgs {
+  where: DealerWhereUniqueInput!
+  data: DealerUpdateInput!
+}
+
+input DealerCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForCreateInput
+}
+
+type NotificationType {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+}
+
+input NotificationTypeWhereUniqueInput {
+  id: ID
+  name: String
+}
+
+input NotificationTypeWhereInput {
+  AND: [NotificationTypeWhereInput!]
+  OR: [NotificationTypeWhereInput!]
+  NOT: [NotificationTypeWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  name: StringFilter
+}
+
+input NotificationTypeOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  name: OrderDirection
+}
+
+input NotificationTypeUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+}
+
+input NotificationTypeUpdateArgs {
+  where: NotificationTypeWhereUniqueInput!
+  data: NotificationTypeUpdateInput!
+}
+
+input NotificationTypeCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+}
+
+type EmailNotificationTemplate {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationType
+  subject: String
+  body: String
+}
+
+input EmailNotificationTemplateWhereUniqueInput {
+  id: ID
+}
+
+input EmailNotificationTemplateWhereInput {
+  AND: [EmailNotificationTemplateWhereInput!]
+  OR: [EmailNotificationTemplateWhereInput!]
+  NOT: [EmailNotificationTemplateWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  notificationType: NotificationTypeWhereInput
+  subject: StringFilter
+  body: StringFilter
+}
+
+input EmailNotificationTemplateOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  subject: OrderDirection
+  body: OrderDirection
+}
+
+input EmailNotificationTemplateUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationTypeRelateToOneForUpdateInput
+  subject: String
+  body: String
+}
+
+input NotificationTypeRelateToOneForUpdateInput {
+  create: NotificationTypeCreateInput
+  connect: NotificationTypeWhereUniqueInput
+  disconnect: Boolean
+}
+
+input EmailNotificationTemplateUpdateArgs {
+  where: EmailNotificationTemplateWhereUniqueInput!
+  data: EmailNotificationTemplateUpdateInput!
+}
+
+input EmailNotificationTemplateCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationTypeRelateToOneForCreateInput
+  subject: String
+  body: String
+}
+
+input NotificationTypeRelateToOneForCreateInput {
+  create: NotificationTypeCreateInput
+  connect: NotificationTypeWhereUniqueInput
+}
+
+type SMSNotificationTemplate {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationType
+  flowId: String
+  sender: String
+  variables: JSON
+  shortURL: Boolean
+}
+
+input SMSNotificationTemplateWhereUniqueInput {
+  id: ID
+}
+
+input SMSNotificationTemplateWhereInput {
+  AND: [SMSNotificationTemplateWhereInput!]
+  OR: [SMSNotificationTemplateWhereInput!]
+  NOT: [SMSNotificationTemplateWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  notificationType: NotificationTypeWhereInput
+  flowId: StringFilter
+  sender: StringFilter
+  shortURL: BooleanFilter
+}
+
+input SMSNotificationTemplateOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  flowId: OrderDirection
+  sender: OrderDirection
+  shortURL: OrderDirection
+}
+
+input SMSNotificationTemplateUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationTypeRelateToOneForUpdateInput
+  flowId: String
+  sender: String
+  variables: JSON
+  shortURL: Boolean
+}
+
+input SMSNotificationTemplateUpdateArgs {
+  where: SMSNotificationTemplateWhereUniqueInput!
+  data: SMSNotificationTemplateUpdateInput!
+}
+
+input SMSNotificationTemplateCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationTypeRelateToOneForCreateInput
+  flowId: String
+  sender: String
+  variables: JSON
+  shortURL: Boolean
+}
+
+type FAQ {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  question: String
+  answer: String
+  category: Category
+}
+
+input FAQWhereUniqueInput {
+  id: ID
+}
+
+input FAQWhereInput {
+  AND: [FAQWhereInput!]
+  OR: [FAQWhereInput!]
+  NOT: [FAQWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  question: StringFilter
+  answer: StringFilter
+  category: CategoryWhereInput
+}
+
+input FAQOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  question: OrderDirection
+  answer: OrderDirection
+}
+
+input FAQUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  question: String
+  answer: String
+  category: CategoryRelateToOneForUpdateInput
+}
+
+input CategoryRelateToOneForUpdateInput {
+  create: CategoryCreateInput
+  connect: CategoryWhereUniqueInput
+  disconnect: Boolean
+}
+
+input FAQUpdateArgs {
+  where: FAQWhereUniqueInput!
+  data: FAQUpdateInput!
+}
+
+input FAQCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  question: String
+  answer: String
+  category: CategoryRelateToOneForCreateInput
+}
+
+input CategoryRelateToOneForCreateInput {
+  create: CategoryCreateInput
+  connect: CategoryWhereUniqueInput
+}
+
+type HelpSupport {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  title: String
+  description: String
+  category: Category
+  solved: Boolean
+  user: User
+}
+
+input HelpSupportWhereUniqueInput {
+  id: ID
+}
+
+input HelpSupportWhereInput {
+  AND: [HelpSupportWhereInput!]
+  OR: [HelpSupportWhereInput!]
+  NOT: [HelpSupportWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  title: StringFilter
+  description: StringFilter
+  category: CategoryWhereInput
+  solved: BooleanFilter
+  user: UserWhereInput
+}
+
+input HelpSupportOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  title: OrderDirection
+  description: OrderDirection
+  solved: OrderDirection
+}
+
+input HelpSupportUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  title: String
+  description: String
+  category: CategoryRelateToOneForUpdateInput
+  solved: Boolean
+  user: UserRelateToOneForUpdateInput
+}
+
+input HelpSupportUpdateArgs {
+  where: HelpSupportWhereUniqueInput!
+  data: HelpSupportUpdateInput!
+}
+
+input HelpSupportCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  title: String
+  description: String
+  category: CategoryRelateToOneForCreateInput
+  solved: Boolean
+  user: UserRelateToOneForCreateInput
+}
+
+type Tag {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  title: String
+  description: String
+}
+
+input TagWhereUniqueInput {
+  id: ID
+}
+
+input TagWhereInput {
+  AND: [TagWhereInput!]
+  OR: [TagWhereInput!]
+  NOT: [TagWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  title: StringFilter
+  description: StringFilter
+}
+
+input TagOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  title: OrderDirection
+  description: OrderDirection
+}
+
+input TagUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  title: String
+  description: String
+}
+
+input TagUpdateArgs {
+  where: TagWhereUniqueInput!
+  data: TagUpdateInput!
+}
+
+input TagCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  title: String
+  description: String
+}
+
+type Coupon {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  code: String
+  logic: JSON
+  expireBy: DateTime
+}
+
+input CouponWhereUniqueInput {
+  id: ID
+  code: String
+}
+
+input CouponWhereInput {
+  AND: [CouponWhereInput!]
+  OR: [CouponWhereInput!]
+  NOT: [CouponWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  code: StringFilter
+  expireBy: DateTimeNullableFilter
+}
+
+input CouponOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  code: OrderDirection
+  expireBy: OrderDirection
+}
+
+input CouponUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  code: String
+  logic: JSON
+  expireBy: DateTime
+}
+
+input CouponUpdateArgs {
+  where: CouponWhereUniqueInput!
+  data: CouponUpdateInput!
+}
+
+input CouponCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  code: String
+  logic: JSON
+  expireBy: DateTime
+}
+
+type Feedback {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: User
+  category: Category
+  title: String
+  description: String
+  attachments(where: FeedbackAttachmentWhereInput! = {}, orderBy: [FeedbackAttachmentOrderByInput!]! = [], take: Int, skip: Int! = 0): [FeedbackAttachment!]
+  attachmentsCount(where: FeedbackAttachmentWhereInput! = {}): Int
+}
+
+input FeedbackWhereUniqueInput {
+  id: ID
+}
+
+input FeedbackWhereInput {
+  AND: [FeedbackWhereInput!]
+  OR: [FeedbackWhereInput!]
+  NOT: [FeedbackWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  user: UserWhereInput
+  category: CategoryWhereInput
+  title: StringFilter
+  description: StringFilter
+  attachments: FeedbackAttachmentManyRelationFilter
+}
+
+input FeedbackAttachmentManyRelationFilter {
+  every: FeedbackAttachmentWhereInput
+  some: FeedbackAttachmentWhereInput
+  none: FeedbackAttachmentWhereInput
+}
+
+input FeedbackOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  title: OrderDirection
+  description: OrderDirection
+}
+
+input FeedbackUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForUpdateInput
+  category: CategoryRelateToOneForUpdateInput
+  title: String
+  description: String
+  attachments: FeedbackAttachmentRelateToManyForUpdateInput
+}
+
+input FeedbackAttachmentRelateToManyForUpdateInput {
+  disconnect: [FeedbackAttachmentWhereUniqueInput!]
+  set: [FeedbackAttachmentWhereUniqueInput!]
+  create: [FeedbackAttachmentCreateInput!]
+  connect: [FeedbackAttachmentWhereUniqueInput!]
+}
+
+input FeedbackUpdateArgs {
+  where: FeedbackWhereUniqueInput!
+  data: FeedbackUpdateInput!
+}
+
+input FeedbackCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForCreateInput
+  category: CategoryRelateToOneForCreateInput
+  title: String
+  description: String
+  attachments: FeedbackAttachmentRelateToManyForCreateInput
+}
+
+input FeedbackAttachmentRelateToManyForCreateInput {
+  create: [FeedbackAttachmentCreateInput!]
+  connect: [FeedbackAttachmentWhereUniqueInput!]
+}
+
+type FeedbackAttachment {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  feedback: Feedback
+  image: ImageFieldOutput
+}
+
+input FeedbackAttachmentWhereUniqueInput {
+  id: ID
+}
+
+input FeedbackAttachmentWhereInput {
+  AND: [FeedbackAttachmentWhereInput!]
+  OR: [FeedbackAttachmentWhereInput!]
+  NOT: [FeedbackAttachmentWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  feedback: FeedbackWhereInput
+}
+
+input FeedbackAttachmentOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+}
+
+input FeedbackAttachmentUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  feedback: FeedbackRelateToOneForUpdateInput
+  image: ImageFieldInput
+}
+
+input FeedbackRelateToOneForUpdateInput {
+  create: FeedbackCreateInput
+  connect: FeedbackWhereUniqueInput
+  disconnect: Boolean
+}
+
+input FeedbackAttachmentUpdateArgs {
+  where: FeedbackAttachmentWhereUniqueInput!
+  data: FeedbackAttachmentUpdateInput!
+}
+
+input FeedbackAttachmentCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  feedback: FeedbackRelateToOneForCreateInput
+  image: ImageFieldInput
+}
+
+input FeedbackRelateToOneForCreateInput {
+  create: FeedbackCreateInput
+  connect: FeedbackWhereUniqueInput
+}
+
+type Report {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: User
+  status: String
+  category: Category
+  title: String
+  description: String
+  attachments(where: ReportAttachmentWhereInput! = {}, orderBy: [ReportAttachmentOrderByInput!]! = [], take: Int, skip: Int! = 0): [ReportAttachment!]
+  attachmentsCount(where: ReportAttachmentWhereInput! = {}): Int
+}
+
+input ReportWhereUniqueInput {
+  id: ID
+}
+
+input ReportWhereInput {
+  AND: [ReportWhereInput!]
+  OR: [ReportWhereInput!]
+  NOT: [ReportWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  user: UserWhereInput
+  status: StringNullableFilter
+  category: CategoryWhereInput
+  title: StringFilter
+  description: StringFilter
+  attachments: ReportAttachmentManyRelationFilter
+}
+
+input ReportAttachmentManyRelationFilter {
+  every: ReportAttachmentWhereInput
+  some: ReportAttachmentWhereInput
+  none: ReportAttachmentWhereInput
+}
+
+input ReportOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  status: OrderDirection
+  title: OrderDirection
+  description: OrderDirection
+}
+
+input ReportUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForUpdateInput
+  status: String
+  category: CategoryRelateToOneForUpdateInput
+  title: String
+  description: String
+  attachments: ReportAttachmentRelateToManyForUpdateInput
+}
+
+input ReportAttachmentRelateToManyForUpdateInput {
+  disconnect: [ReportAttachmentWhereUniqueInput!]
+  set: [ReportAttachmentWhereUniqueInput!]
+  create: [ReportAttachmentCreateInput!]
+  connect: [ReportAttachmentWhereUniqueInput!]
+}
+
+input ReportUpdateArgs {
+  where: ReportWhereUniqueInput!
+  data: ReportUpdateInput!
+}
+
+input ReportCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForCreateInput
+  status: String
+  category: CategoryRelateToOneForCreateInput
+  title: String
+  description: String
+  attachments: ReportAttachmentRelateToManyForCreateInput
+}
+
+input ReportAttachmentRelateToManyForCreateInput {
+  create: [ReportAttachmentCreateInput!]
+  connect: [ReportAttachmentWhereUniqueInput!]
+}
+
+type ReportAttachment {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  report: Report
+  image: ImageFieldOutput
+}
+
+input ReportAttachmentWhereUniqueInput {
+  id: ID
+}
+
+input ReportAttachmentWhereInput {
+  AND: [ReportAttachmentWhereInput!]
+  OR: [ReportAttachmentWhereInput!]
+  NOT: [ReportAttachmentWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  report: ReportWhereInput
+}
+
+input ReportAttachmentOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+}
+
+input ReportAttachmentUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  report: ReportRelateToOneForUpdateInput
+  image: ImageFieldInput
+}
+
+input ReportRelateToOneForUpdateInput {
+  create: ReportCreateInput
+  connect: ReportWhereUniqueInput
+  disconnect: Boolean
+}
+
+input ReportAttachmentUpdateArgs {
+  where: ReportAttachmentWhereUniqueInput!
+  data: ReportAttachmentUpdateInput!
+}
+
+input ReportAttachmentCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  report: ReportRelateToOneForCreateInput
+  image: ImageFieldInput
+}
+
+input ReportRelateToOneForCreateInput {
+  create: ReportCreateInput
+  connect: ReportWhereUniqueInput
+}
+
+type Category {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+}
+
+input CategoryWhereUniqueInput {
+  id: ID
+}
+
+input CategoryWhereInput {
+  AND: [CategoryWhereInput!]
+  OR: [CategoryWhereInput!]
+  NOT: [CategoryWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  name: StringFilter
+  description: StringFilter
+}
+
+input CategoryOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  name: OrderDirection
+  description: OrderDirection
+}
+
+input CategoryUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+}
+
+input CategoryUpdateArgs {
+  where: CategoryWhereUniqueInput!
+  data: CategoryUpdateInput!
+}
+
+input CategoryCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+type Mutation {
+  createUser(data: UserCreateInput!): User
+  createUsers(data: [UserCreateInput!]!): [User]
+  updateUser(where: UserWhereUniqueInput!, data: UserUpdateInput!): User
+  updateUsers(data: [UserUpdateArgs!]!): [User]
+  deleteUser(where: UserWhereUniqueInput!): User
+  deleteUsers(where: [UserWhereUniqueInput!]!): [User]
+  createReferralCode(data: ReferralCodeCreateInput!): ReferralCode
+  createReferralCodes(data: [ReferralCodeCreateInput!]!): [ReferralCode]
+  updateReferralCode(where: ReferralCodeWhereUniqueInput!, data: ReferralCodeUpdateInput!): ReferralCode
+  updateReferralCodes(data: [ReferralCodeUpdateArgs!]!): [ReferralCode]
+  deleteReferralCode(where: ReferralCodeWhereUniqueInput!): ReferralCode
+  deleteReferralCodes(where: [ReferralCodeWhereUniqueInput!]!): [ReferralCode]
+  createReferralUser(data: ReferralUserCreateInput!): ReferralUser
+  createReferralUsers(data: [ReferralUserCreateInput!]!): [ReferralUser]
+  updateReferralUser(where: ReferralUserWhereUniqueInput!, data: ReferralUserUpdateInput!): ReferralUser
+  updateReferralUsers(data: [ReferralUserUpdateArgs!]!): [ReferralUser]
+  deleteReferralUser(where: ReferralUserWhereUniqueInput!): ReferralUser
+  deleteReferralUsers(where: [ReferralUserWhereUniqueInput!]!): [ReferralUser]
+  createAddress(data: AddressCreateInput!): Address
+  createAddresses(data: [AddressCreateInput!]!): [Address]
+  updateAddress(where: AddressWhereUniqueInput!, data: AddressUpdateInput!): Address
+  updateAddresses(data: [AddressUpdateArgs!]!): [Address]
+  deleteAddress(where: AddressWhereUniqueInput!): Address
+  deleteAddresses(where: [AddressWhereUniqueInput!]!): [Address]
+  createFavorite(data: FavoriteCreateInput!): Favorite
+  createFavorites(data: [FavoriteCreateInput!]!): [Favorite]
+  updateFavorite(where: FavoriteWhereUniqueInput!, data: FavoriteUpdateInput!): Favorite
+  updateFavorites(data: [FavoriteUpdateArgs!]!): [Favorite]
+  deleteFavorite(where: FavoriteWhereUniqueInput!): Favorite
+  deleteFavorites(where: [FavoriteWhereUniqueInput!]!): [Favorite]
+  createCartItem(data: CartItemCreateInput!): CartItem
+  createCartItems(data: [CartItemCreateInput!]!): [CartItem]
+  updateCartItem(where: CartItemWhereUniqueInput!, data: CartItemUpdateInput!): CartItem
+  updateCartItems(data: [CartItemUpdateArgs!]!): [CartItem]
+  deleteCartItem(where: CartItemWhereUniqueInput!): CartItem
+  deleteCartItems(where: [CartItemWhereUniqueInput!]!): [CartItem]
+  createVehicleType(data: VehicleTypeCreateInput!): VehicleType
+  createVehicleTypes(data: [VehicleTypeCreateInput!]!): [VehicleType]
+  updateVehicleType(where: VehicleTypeWhereUniqueInput!, data: VehicleTypeUpdateInput!): VehicleType
+  updateVehicleTypes(data: [VehicleTypeUpdateArgs!]!): [VehicleType]
+  deleteVehicleType(where: VehicleTypeWhereUniqueInput!): VehicleType
+  deleteVehicleTypes(where: [VehicleTypeWhereUniqueInput!]!): [VehicleType]
+  createBrand(data: BrandCreateInput!): Brand
+  createBrands(data: [BrandCreateInput!]!): [Brand]
+  updateBrand(where: BrandWhereUniqueInput!, data: BrandUpdateInput!): Brand
+  updateBrands(data: [BrandUpdateArgs!]!): [Brand]
+  deleteBrand(where: BrandWhereUniqueInput!): Brand
+  deleteBrands(where: [BrandWhereUniqueInput!]!): [Brand]
+  createSpecification(data: SpecificationCreateInput!): Specification
+  createSpecifications(data: [SpecificationCreateInput!]!): [Specification]
+  updateSpecification(where: SpecificationWhereUniqueInput!, data: SpecificationUpdateInput!): Specification
+  updateSpecifications(data: [SpecificationUpdateArgs!]!): [Specification]
+  deleteSpecification(where: SpecificationWhereUniqueInput!): Specification
+  deleteSpecifications(where: [SpecificationWhereUniqueInput!]!): [Specification]
+  createSpecificationCategory(data: SpecificationCategoryCreateInput!): SpecificationCategory
+  createSpecificationCategories(data: [SpecificationCategoryCreateInput!]!): [SpecificationCategory]
+  updateSpecificationCategory(where: SpecificationCategoryWhereUniqueInput!, data: SpecificationCategoryUpdateInput!): SpecificationCategory
+  updateSpecificationCategories(data: [SpecificationCategoryUpdateArgs!]!): [SpecificationCategory]
+  deleteSpecificationCategory(where: SpecificationCategoryWhereUniqueInput!): SpecificationCategory
+  deleteSpecificationCategories(where: [SpecificationCategoryWhereUniqueInput!]!): [SpecificationCategory]
+  createTestDriveDealer(data: TestDriveDealerCreateInput!): TestDriveDealer
+  createTestDriveDealers(data: [TestDriveDealerCreateInput!]!): [TestDriveDealer]
+  updateTestDriveDealer(where: TestDriveDealerWhereUniqueInput!, data: TestDriveDealerUpdateInput!): TestDriveDealer
+  updateTestDriveDealers(data: [TestDriveDealerUpdateArgs!]!): [TestDriveDealer]
+  deleteTestDriveDealer(where: TestDriveDealerWhereUniqueInput!): TestDriveDealer
+  deleteTestDriveDealers(where: [TestDriveDealerWhereUniqueInput!]!): [TestDriveDealer]
+  createVehicle(data: VehicleCreateInput!): Vehicle
+  createVehicles(data: [VehicleCreateInput!]!): [Vehicle]
+  updateVehicle(where: VehicleWhereUniqueInput!, data: VehicleUpdateInput!): Vehicle
+  updateVehicles(data: [VehicleUpdateArgs!]!): [Vehicle]
+  deleteVehicle(where: VehicleWhereUniqueInput!): Vehicle
+  deleteVehicles(where: [VehicleWhereUniqueInput!]!): [Vehicle]
+  createVehicleColor(data: VehicleColorCreateInput!): VehicleColor
+  createVehicleColors(data: [VehicleColorCreateInput!]!): [VehicleColor]
+  updateVehicleColor(where: VehicleColorWhereUniqueInput!, data: VehicleColorUpdateInput!): VehicleColor
+  updateVehicleColors(data: [VehicleColorUpdateArgs!]!): [VehicleColor]
+  deleteVehicleColor(where: VehicleColorWhereUniqueInput!): VehicleColor
+  deleteVehicleColors(where: [VehicleColorWhereUniqueInput!]!): [VehicleColor]
+  createVehicleDealer(data: VehicleDealerCreateInput!): VehicleDealer
+  createVehicleDealers(data: [VehicleDealerCreateInput!]!): [VehicleDealer]
+  updateVehicleDealer(where: VehicleDealerWhereUniqueInput!, data: VehicleDealerUpdateInput!): VehicleDealer
+  updateVehicleDealers(data: [VehicleDealerUpdateArgs!]!): [VehicleDealer]
+  deleteVehicleDealer(where: VehicleDealerWhereUniqueInput!): VehicleDealer
+  deleteVehicleDealers(where: [VehicleDealerWhereUniqueInput!]!): [VehicleDealer]
+  createVehicleImage(data: VehicleImageCreateInput!): VehicleImage
+  createVehicleImages(data: [VehicleImageCreateInput!]!): [VehicleImage]
+  updateVehicleImage(where: VehicleImageWhereUniqueInput!, data: VehicleImageUpdateInput!): VehicleImage
+  updateVehicleImages(data: [VehicleImageUpdateArgs!]!): [VehicleImage]
+  deleteVehicleImage(where: VehicleImageWhereUniqueInput!): VehicleImage
+  deleteVehicleImages(where: [VehicleImageWhereUniqueInput!]!): [VehicleImage]
+  createVehicleSpecification(data: VehicleSpecificationCreateInput!): VehicleSpecification
+  createVehicleSpecifications(data: [VehicleSpecificationCreateInput!]!): [VehicleSpecification]
+  updateVehicleSpecification(where: VehicleSpecificationWhereUniqueInput!, data: VehicleSpecificationUpdateInput!): VehicleSpecification
+  updateVehicleSpecifications(data: [VehicleSpecificationUpdateArgs!]!): [VehicleSpecification]
+  deleteVehicleSpecification(where: VehicleSpecificationWhereUniqueInput!): VehicleSpecification
+  deleteVehicleSpecifications(where: [VehicleSpecificationWhereUniqueInput!]!): [VehicleSpecification]
+  createVehicleVariant(data: VehicleVariantCreateInput!): VehicleVariant
+  createVehicleVariants(data: [VehicleVariantCreateInput!]!): [VehicleVariant]
+  updateVehicleVariant(where: VehicleVariantWhereUniqueInput!, data: VehicleVariantUpdateInput!): VehicleVariant
+  updateVehicleVariants(data: [VehicleVariantUpdateArgs!]!): [VehicleVariant]
+  deleteVehicleVariant(where: VehicleVariantWhereUniqueInput!): VehicleVariant
+  deleteVehicleVariants(where: [VehicleVariantWhereUniqueInput!]!): [VehicleVariant]
+  createWallet(data: WalletCreateInput!): Wallet
+  createWallets(data: [WalletCreateInput!]!): [Wallet]
+  updateWallet(where: WalletWhereUniqueInput!, data: WalletUpdateInput!): Wallet
+  updateWallets(data: [WalletUpdateArgs!]!): [Wallet]
+  deleteWallet(where: WalletWhereUniqueInput!): Wallet
+  deleteWallets(where: [WalletWhereUniqueInput!]!): [Wallet]
+  createWalletTransaction(data: WalletTransactionCreateInput!): WalletTransaction
+  createWalletTransactions(data: [WalletTransactionCreateInput!]!): [WalletTransaction]
+  updateWalletTransaction(where: WalletTransactionWhereUniqueInput!, data: WalletTransactionUpdateInput!): WalletTransaction
+  updateWalletTransactions(data: [WalletTransactionUpdateArgs!]!): [WalletTransaction]
+  deleteWalletTransaction(where: WalletTransactionWhereUniqueInput!): WalletTransaction
+  deleteWalletTransactions(where: [WalletTransactionWhereUniqueInput!]!): [WalletTransaction]
+  createOrder(data: OrderCreateInput!): Order
+  createOrders(data: [OrderCreateInput!]!): [Order]
+  updateOrder(where: OrderWhereUniqueInput!, data: OrderUpdateInput!): Order
+  updateOrders(data: [OrderUpdateArgs!]!): [Order]
+  deleteOrder(where: OrderWhereUniqueInput!): Order
+  deleteOrders(where: [OrderWhereUniqueInput!]!): [Order]
+  createPayment(data: PaymentCreateInput!): Payment
+  createPayments(data: [PaymentCreateInput!]!): [Payment]
+  updatePayment(where: PaymentWhereUniqueInput!, data: PaymentUpdateInput!): Payment
+  updatePayments(data: [PaymentUpdateArgs!]!): [Payment]
+  deletePayment(where: PaymentWhereUniqueInput!): Payment
+  deletePayments(where: [PaymentWhereUniqueInput!]!): [Payment]
+  createVehicleOrder(data: VehicleOrderCreateInput!): VehicleOrder
+  createVehicleOrders(data: [VehicleOrderCreateInput!]!): [VehicleOrder]
+  updateVehicleOrder(where: VehicleOrderWhereUniqueInput!, data: VehicleOrderUpdateInput!): VehicleOrder
+  updateVehicleOrders(data: [VehicleOrderUpdateArgs!]!): [VehicleOrder]
+  deleteVehicleOrder(where: VehicleOrderWhereUniqueInput!): VehicleOrder
+  deleteVehicleOrders(where: [VehicleOrderWhereUniqueInput!]!): [VehicleOrder]
+  createTestDriveOrder(data: TestDriveOrderCreateInput!): TestDriveOrder
+  createTestDriveOrders(data: [TestDriveOrderCreateInput!]!): [TestDriveOrder]
+  updateTestDriveOrder(where: TestDriveOrderWhereUniqueInput!, data: TestDriveOrderUpdateInput!): TestDriveOrder
+  updateTestDriveOrders(data: [TestDriveOrderUpdateArgs!]!): [TestDriveOrder]
+  deleteTestDriveOrder(where: TestDriveOrderWhereUniqueInput!): TestDriveOrder
+  deleteTestDriveOrders(where: [TestDriveOrderWhereUniqueInput!]!): [TestDriveOrder]
+  createUserVehicleReview(data: UserVehicleReviewCreateInput!): UserVehicleReview
+  createUserVehicleReviews(data: [UserVehicleReviewCreateInput!]!): [UserVehicleReview]
+  updateUserVehicleReview(where: UserVehicleReviewWhereUniqueInput!, data: UserVehicleReviewUpdateInput!): UserVehicleReview
+  updateUserVehicleReviews(data: [UserVehicleReviewUpdateArgs!]!): [UserVehicleReview]
+  deleteUserVehicleReview(where: UserVehicleReviewWhereUniqueInput!): UserVehicleReview
+  deleteUserVehicleReviews(where: [UserVehicleReviewWhereUniqueInput!]!): [UserVehicleReview]
+  createExpertReview(data: ExpertReviewCreateInput!): ExpertReview
+  createExpertReviews(data: [ExpertReviewCreateInput!]!): [ExpertReview]
+  updateExpertReview(where: ExpertReviewWhereUniqueInput!, data: ExpertReviewUpdateInput!): ExpertReview
+  updateExpertReviews(data: [ExpertReviewUpdateArgs!]!): [ExpertReview]
+  deleteExpertReview(where: ExpertReviewWhereUniqueInput!): ExpertReview
+  deleteExpertReviews(where: [ExpertReviewWhereUniqueInput!]!): [ExpertReview]
+  createDealer(data: DealerCreateInput!): Dealer
+  createDealers(data: [DealerCreateInput!]!): [Dealer]
+  updateDealer(where: DealerWhereUniqueInput!, data: DealerUpdateInput!): Dealer
+  updateDealers(data: [DealerUpdateArgs!]!): [Dealer]
+  deleteDealer(where: DealerWhereUniqueInput!): Dealer
+  deleteDealers(where: [DealerWhereUniqueInput!]!): [Dealer]
+  createNotificationType(data: NotificationTypeCreateInput!): NotificationType
+  createNotificationTypes(data: [NotificationTypeCreateInput!]!): [NotificationType]
+  updateNotificationType(where: NotificationTypeWhereUniqueInput!, data: NotificationTypeUpdateInput!): NotificationType
+  updateNotificationTypes(data: [NotificationTypeUpdateArgs!]!): [NotificationType]
+  deleteNotificationType(where: NotificationTypeWhereUniqueInput!): NotificationType
+  deleteNotificationTypes(where: [NotificationTypeWhereUniqueInput!]!): [NotificationType]
+  createEmailNotificationTemplate(data: EmailNotificationTemplateCreateInput!): EmailNotificationTemplate
+  createEmailNotificationTemplates(data: [EmailNotificationTemplateCreateInput!]!): [EmailNotificationTemplate]
+  updateEmailNotificationTemplate(where: EmailNotificationTemplateWhereUniqueInput!, data: EmailNotificationTemplateUpdateInput!): EmailNotificationTemplate
+  updateEmailNotificationTemplates(data: [EmailNotificationTemplateUpdateArgs!]!): [EmailNotificationTemplate]
+  deleteEmailNotificationTemplate(where: EmailNotificationTemplateWhereUniqueInput!): EmailNotificationTemplate
+  deleteEmailNotificationTemplates(where: [EmailNotificationTemplateWhereUniqueInput!]!): [EmailNotificationTemplate]
+  createSMSNotificationTemplate(data: SMSNotificationTemplateCreateInput!): SMSNotificationTemplate
+  createSMSNotificationTemplates(data: [SMSNotificationTemplateCreateInput!]!): [SMSNotificationTemplate]
+  updateSMSNotificationTemplate(where: SMSNotificationTemplateWhereUniqueInput!, data: SMSNotificationTemplateUpdateInput!): SMSNotificationTemplate
+  updateSMSNotificationTemplates(data: [SMSNotificationTemplateUpdateArgs!]!): [SMSNotificationTemplate]
+  deleteSMSNotificationTemplate(where: SMSNotificationTemplateWhereUniqueInput!): SMSNotificationTemplate
+  deleteSMSNotificationTemplates(where: [SMSNotificationTemplateWhereUniqueInput!]!): [SMSNotificationTemplate]
+  createFAQ(data: FAQCreateInput!): FAQ
+  createFAQS(data: [FAQCreateInput!]!): [FAQ]
+  updateFAQ(where: FAQWhereUniqueInput!, data: FAQUpdateInput!): FAQ
+  updateFAQS(data: [FAQUpdateArgs!]!): [FAQ]
+  deleteFAQ(where: FAQWhereUniqueInput!): FAQ
+  deleteFAQS(where: [FAQWhereUniqueInput!]!): [FAQ]
+  createHelpSupport(data: HelpSupportCreateInput!): HelpSupport
+  createHelpSupports(data: [HelpSupportCreateInput!]!): [HelpSupport]
+  updateHelpSupport(where: HelpSupportWhereUniqueInput!, data: HelpSupportUpdateInput!): HelpSupport
+  updateHelpSupports(data: [HelpSupportUpdateArgs!]!): [HelpSupport]
+  deleteHelpSupport(where: HelpSupportWhereUniqueInput!): HelpSupport
+  deleteHelpSupports(where: [HelpSupportWhereUniqueInput!]!): [HelpSupport]
+  createTag(data: TagCreateInput!): Tag
+  createTags(data: [TagCreateInput!]!): [Tag]
+  updateTag(where: TagWhereUniqueInput!, data: TagUpdateInput!): Tag
+  updateTags(data: [TagUpdateArgs!]!): [Tag]
+  deleteTag(where: TagWhereUniqueInput!): Tag
+  deleteTags(where: [TagWhereUniqueInput!]!): [Tag]
+  createCoupon(data: CouponCreateInput!): Coupon
+  createCoupons(data: [CouponCreateInput!]!): [Coupon]
+  updateCoupon(where: CouponWhereUniqueInput!, data: CouponUpdateInput!): Coupon
+  updateCoupons(data: [CouponUpdateArgs!]!): [Coupon]
+  deleteCoupon(where: CouponWhereUniqueInput!): Coupon
+  deleteCoupons(where: [CouponWhereUniqueInput!]!): [Coupon]
+  createFeedback(data: FeedbackCreateInput!): Feedback
+  createFeedbacks(data: [FeedbackCreateInput!]!): [Feedback]
+  updateFeedback(where: FeedbackWhereUniqueInput!, data: FeedbackUpdateInput!): Feedback
+  updateFeedbacks(data: [FeedbackUpdateArgs!]!): [Feedback]
+  deleteFeedback(where: FeedbackWhereUniqueInput!): Feedback
+  deleteFeedbacks(where: [FeedbackWhereUniqueInput!]!): [Feedback]
+  createFeedbackAttachment(data: FeedbackAttachmentCreateInput!): FeedbackAttachment
+  createFeedbackAttachments(data: [FeedbackAttachmentCreateInput!]!): [FeedbackAttachment]
+  updateFeedbackAttachment(where: FeedbackAttachmentWhereUniqueInput!, data: FeedbackAttachmentUpdateInput!): FeedbackAttachment
+  updateFeedbackAttachments(data: [FeedbackAttachmentUpdateArgs!]!): [FeedbackAttachment]
+  deleteFeedbackAttachment(where: FeedbackAttachmentWhereUniqueInput!): FeedbackAttachment
+  deleteFeedbackAttachments(where: [FeedbackAttachmentWhereUniqueInput!]!): [FeedbackAttachment]
+  createReport(data: ReportCreateInput!): Report
+  createReports(data: [ReportCreateInput!]!): [Report]
+  updateReport(where: ReportWhereUniqueInput!, data: ReportUpdateInput!): Report
+  updateReports(data: [ReportUpdateArgs!]!): [Report]
+  deleteReport(where: ReportWhereUniqueInput!): Report
+  deleteReports(where: [ReportWhereUniqueInput!]!): [Report]
+  createReportAttachment(data: ReportAttachmentCreateInput!): ReportAttachment
+  createReportAttachments(data: [ReportAttachmentCreateInput!]!): [ReportAttachment]
+  updateReportAttachment(where: ReportAttachmentWhereUniqueInput!, data: ReportAttachmentUpdateInput!): ReportAttachment
+  updateReportAttachments(data: [ReportAttachmentUpdateArgs!]!): [ReportAttachment]
+  deleteReportAttachment(where: ReportAttachmentWhereUniqueInput!): ReportAttachment
+  deleteReportAttachments(where: [ReportAttachmentWhereUniqueInput!]!): [ReportAttachment]
+  createCategory(data: CategoryCreateInput!): Category
+  createCategories(data: [CategoryCreateInput!]!): [Category]
+  updateCategory(where: CategoryWhereUniqueInput!, data: CategoryUpdateInput!): Category
+  updateCategories(data: [CategoryUpdateArgs!]!): [Category]
+  deleteCategory(where: CategoryWhereUniqueInput!): Category
+  deleteCategories(where: [CategoryWhereUniqueInput!]!): [Category]
+  endSession: Boolean!
+  startTransaction(deviceId: String!, connectorId: Int, duration: Int, walletUsageLimit: Int): JSON
+  stopTransaction(deviceId: String!, connectorId: Int): JSON
+  enableDevice(deviceId: String!): JSON
+  disableDevice(deviceId: String!): JSON
+  validateUserOTP(key: String!, otp: String!, value: JSON): String
+  authenticateUserWithPassword(phoneNumber: String!, password: String!): UserAuthenticationWithPasswordResult
+  createInitialUser(data: CreateInitialUserInput!): UserAuthenticationWithPasswordSuccess!
+  sendUserPasswordResetLink(phoneNumber: String!): String!
+  redeemUserPasswordResetToken(phoneNumber: String!, token: String!, password: String!): RedeemUserPasswordResetTokenResult
+  startOrder(items: [OrderItem!]!, payments: [PaymentItem!]!, couponCode: String): JSON
+  verifyOrderPayment(razorpayPaymentId: String!, razorpayOrderId: String!, razorpaySignature: String): JSON
+  addAmountToWallet(amount: Int!): JSON
+  verifyWalletPayment(razorpayPaymentId: String!, razorpayOrderId: String!, razorpaySignature: String): JSON
+  submitReferralCode(code: String!, userId: ID!): Boolean
+}
+
+input OrderItem {
+  type: OrderItemType!
+  ids: [ID!]!
+}
+
+enum OrderItemType {
+  vehicleDealer
+  testDriveDealer
+}
+
+input PaymentItem {
+  type: PaymentItemType!
+  amount: Int!
+}
+
+enum PaymentItemType {
+  razorpay
+  wallet
+  cash
+}
+
+union UserAuthenticationWithPasswordResult = UserAuthenticationWithPasswordSuccess | UserAuthenticationWithPasswordFailure
+
+type UserAuthenticationWithPasswordSuccess {
+  sessionToken: String!
+  item: User!
+}
+
+type UserAuthenticationWithPasswordFailure {
+  message: String!
+}
+
+input CreateInitialUserInput {
+  name: String
+  phoneNumber: String
+  email: String
+  password: String
+}
+
+type RedeemUserPasswordResetTokenResult {
+  code: PasswordResetRedemptionErrorCode!
+  message: String!
+}
+
+enum PasswordResetRedemptionErrorCode {
+  FAILURE
+  TOKEN_EXPIRED
+  TOKEN_REDEEMED
+}
+
+type Query {
+  users(where: UserWhereInput! = {}, orderBy: [UserOrderByInput!]! = [], take: Int, skip: Int! = 0): [User!]
+  user(where: UserWhereUniqueInput!): User
+  usersCount(where: UserWhereInput! = {}): Int
+  referralCodes(where: ReferralCodeWhereInput! = {}, orderBy: [ReferralCodeOrderByInput!]! = [], take: Int, skip: Int! = 0): [ReferralCode!]
+  referralCode(where: ReferralCodeWhereUniqueInput!): ReferralCode
+  referralCodesCount(where: ReferralCodeWhereInput! = {}): Int
+  referralUsers(where: ReferralUserWhereInput! = {}, orderBy: [ReferralUserOrderByInput!]! = [], take: Int, skip: Int! = 0): [ReferralUser!]
+  referralUser(where: ReferralUserWhereUniqueInput!): ReferralUser
+  referralUsersCount(where: ReferralUserWhereInput! = {}): Int
+  addresses(where: AddressWhereInput! = {}, orderBy: [AddressOrderByInput!]! = [], take: Int, skip: Int! = 0): [Address!]
+  address(where: AddressWhereUniqueInput!): Address
+  addressesCount(where: AddressWhereInput! = {}): Int
+  favorites(where: FavoriteWhereInput! = {}, orderBy: [FavoriteOrderByInput!]! = [], take: Int, skip: Int! = 0): [Favorite!]
+  favorite(where: FavoriteWhereUniqueInput!): Favorite
+  favoritesCount(where: FavoriteWhereInput! = {}): Int
+  cartItems(where: CartItemWhereInput! = {}, orderBy: [CartItemOrderByInput!]! = [], take: Int, skip: Int! = 0): [CartItem!]
+  cartItem(where: CartItemWhereUniqueInput!): CartItem
+  cartItemsCount(where: CartItemWhereInput! = {}): Int
+  vehicleTypes(where: VehicleTypeWhereInput! = {}, orderBy: [VehicleTypeOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleType!]
+  vehicleType(where: VehicleTypeWhereUniqueInput!): VehicleType
+  vehicleTypesCount(where: VehicleTypeWhereInput! = {}): Int
+  brands(where: BrandWhereInput! = {}, orderBy: [BrandOrderByInput!]! = [], take: Int, skip: Int! = 0): [Brand!]
+  brand(where: BrandWhereUniqueInput!): Brand
+  brandsCount(where: BrandWhereInput! = {}): Int
+  specifications(where: SpecificationWhereInput! = {}, orderBy: [SpecificationOrderByInput!]! = [], take: Int, skip: Int! = 0): [Specification!]
+  specification(where: SpecificationWhereUniqueInput!): Specification
+  specificationsCount(where: SpecificationWhereInput! = {}): Int
+  specificationCategories(where: SpecificationCategoryWhereInput! = {}, orderBy: [SpecificationCategoryOrderByInput!]! = [], take: Int, skip: Int! = 0): [SpecificationCategory!]
+  specificationCategory(where: SpecificationCategoryWhereUniqueInput!): SpecificationCategory
+  specificationCategoriesCount(where: SpecificationCategoryWhereInput! = {}): Int
+  testDriveDealers(where: TestDriveDealerWhereInput! = {}, orderBy: [TestDriveDealerOrderByInput!]! = [], take: Int, skip: Int! = 0): [TestDriveDealer!]
+  testDriveDealer(where: TestDriveDealerWhereUniqueInput!): TestDriveDealer
+  testDriveDealersCount(where: TestDriveDealerWhereInput! = {}): Int
+  vehicles(where: VehicleWhereInput! = {}, orderBy: [VehicleOrderByInput!]! = [], take: Int, skip: Int! = 0): [Vehicle!]
+  vehicle(where: VehicleWhereUniqueInput!): Vehicle
+  vehiclesCount(where: VehicleWhereInput! = {}): Int
+  vehicleColors(where: VehicleColorWhereInput! = {}, orderBy: [VehicleColorOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleColor!]
+  vehicleColor(where: VehicleColorWhereUniqueInput!): VehicleColor
+  vehicleColorsCount(where: VehicleColorWhereInput! = {}): Int
+  vehicleDealers(where: VehicleDealerWhereInput! = {}, orderBy: [VehicleDealerOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleDealer!]
+  vehicleDealer(where: VehicleDealerWhereUniqueInput!): VehicleDealer
+  vehicleDealersCount(where: VehicleDealerWhereInput! = {}): Int
+  vehicleImages(where: VehicleImageWhereInput! = {}, orderBy: [VehicleImageOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleImage!]
+  vehicleImage(where: VehicleImageWhereUniqueInput!): VehicleImage
+  vehicleImagesCount(where: VehicleImageWhereInput! = {}): Int
+  vehicleSpecifications(where: VehicleSpecificationWhereInput! = {}, orderBy: [VehicleSpecificationOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleSpecification!]
+  vehicleSpecification(where: VehicleSpecificationWhereUniqueInput!): VehicleSpecification
+  vehicleSpecificationsCount(where: VehicleSpecificationWhereInput! = {}): Int
+  vehicleVariants(where: VehicleVariantWhereInput! = {}, orderBy: [VehicleVariantOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleVariant!]
+  vehicleVariant(where: VehicleVariantWhereUniqueInput!): VehicleVariant
+  vehicleVariantsCount(where: VehicleVariantWhereInput! = {}): Int
+  wallets(where: WalletWhereInput! = {}, orderBy: [WalletOrderByInput!]! = [], take: Int, skip: Int! = 0): [Wallet!]
+  wallet(where: WalletWhereUniqueInput!): Wallet
+  walletsCount(where: WalletWhereInput! = {}): Int
+  walletTransactions(where: WalletTransactionWhereInput! = {}, orderBy: [WalletTransactionOrderByInput!]! = [], take: Int, skip: Int! = 0): [WalletTransaction!]
+  walletTransaction(where: WalletTransactionWhereUniqueInput!): WalletTransaction
+  walletTransactionsCount(where: WalletTransactionWhereInput! = {}): Int
+  orders(where: OrderWhereInput! = {}, orderBy: [OrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [Order!]
+  order(where: OrderWhereUniqueInput!): Order
+  ordersCount(where: OrderWhereInput! = {}): Int
+  payments(where: PaymentWhereInput! = {}, orderBy: [PaymentOrderByInput!]! = [], take: Int, skip: Int! = 0): [Payment!]
+  payment(where: PaymentWhereUniqueInput!): Payment
+  paymentsCount(where: PaymentWhereInput! = {}): Int
+  vehicleOrders(where: VehicleOrderWhereInput! = {}, orderBy: [VehicleOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleOrder!]
+  vehicleOrder(where: VehicleOrderWhereUniqueInput!): VehicleOrder
+  vehicleOrdersCount(where: VehicleOrderWhereInput! = {}): Int
+  testDriveOrders(where: TestDriveOrderWhereInput! = {}, orderBy: [TestDriveOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [TestDriveOrder!]
+  testDriveOrder(where: TestDriveOrderWhereUniqueInput!): TestDriveOrder
+  testDriveOrdersCount(where: TestDriveOrderWhereInput! = {}): Int
+  userVehicleReviews(where: UserVehicleReviewWhereInput! = {}, orderBy: [UserVehicleReviewOrderByInput!]! = [], take: Int, skip: Int! = 0): [UserVehicleReview!]
+  userVehicleReview(where: UserVehicleReviewWhereUniqueInput!): UserVehicleReview
+  userVehicleReviewsCount(where: UserVehicleReviewWhereInput! = {}): Int
+  expertReviews(where: ExpertReviewWhereInput! = {}, orderBy: [ExpertReviewOrderByInput!]! = [], take: Int, skip: Int! = 0): [ExpertReview!]
+  expertReview(where: ExpertReviewWhereUniqueInput!): ExpertReview
+  expertReviewsCount(where: ExpertReviewWhereInput! = {}): Int
+  dealers(where: DealerWhereInput! = {}, orderBy: [DealerOrderByInput!]! = [], take: Int, skip: Int! = 0): [Dealer!]
+  dealer(where: DealerWhereUniqueInput!): Dealer
+  dealersCount(where: DealerWhereInput! = {}): Int
+  notificationTypes(where: NotificationTypeWhereInput! = {}, orderBy: [NotificationTypeOrderByInput!]! = [], take: Int, skip: Int! = 0): [NotificationType!]
+  notificationType(where: NotificationTypeWhereUniqueInput!): NotificationType
+  notificationTypesCount(where: NotificationTypeWhereInput! = {}): Int
+  emailNotificationTemplates(where: EmailNotificationTemplateWhereInput! = {}, orderBy: [EmailNotificationTemplateOrderByInput!]! = [], take: Int, skip: Int! = 0): [EmailNotificationTemplate!]
+  emailNotificationTemplate(where: EmailNotificationTemplateWhereUniqueInput!): EmailNotificationTemplate
+  emailNotificationTemplatesCount(where: EmailNotificationTemplateWhereInput! = {}): Int
+  sMSNotificationTemplates(where: SMSNotificationTemplateWhereInput! = {}, orderBy: [SMSNotificationTemplateOrderByInput!]! = [], take: Int, skip: Int! = 0): [SMSNotificationTemplate!]
+  sMSNotificationTemplate(where: SMSNotificationTemplateWhereUniqueInput!): SMSNotificationTemplate
+  sMSNotificationTemplatesCount(where: SMSNotificationTemplateWhereInput! = {}): Int
+  fAQS(where: FAQWhereInput! = {}, orderBy: [FAQOrderByInput!]! = [], take: Int, skip: Int! = 0): [FAQ!]
+  fAQ(where: FAQWhereUniqueInput!): FAQ
+  fAQSCount(where: FAQWhereInput! = {}): Int
+  helpSupports(where: HelpSupportWhereInput! = {}, orderBy: [HelpSupportOrderByInput!]! = [], take: Int, skip: Int! = 0): [HelpSupport!]
+  helpSupport(where: HelpSupportWhereUniqueInput!): HelpSupport
+  helpSupportsCount(where: HelpSupportWhereInput! = {}): Int
+  tags(where: TagWhereInput! = {}, orderBy: [TagOrderByInput!]! = [], take: Int, skip: Int! = 0): [Tag!]
+  tag(where: TagWhereUniqueInput!): Tag
+  tagsCount(where: TagWhereInput! = {}): Int
+  coupons(where: CouponWhereInput! = {}, orderBy: [CouponOrderByInput!]! = [], take: Int, skip: Int! = 0): [Coupon!]
+  coupon(where: CouponWhereUniqueInput!): Coupon
+  couponsCount(where: CouponWhereInput! = {}): Int
+  feedbacks(where: FeedbackWhereInput! = {}, orderBy: [FeedbackOrderByInput!]! = [], take: Int, skip: Int! = 0): [Feedback!]
+  feedback(where: FeedbackWhereUniqueInput!): Feedback
+  feedbacksCount(where: FeedbackWhereInput! = {}): Int
+  feedbackAttachments(where: FeedbackAttachmentWhereInput! = {}, orderBy: [FeedbackAttachmentOrderByInput!]! = [], take: Int, skip: Int! = 0): [FeedbackAttachment!]
+  feedbackAttachment(where: FeedbackAttachmentWhereUniqueInput!): FeedbackAttachment
+  feedbackAttachmentsCount(where: FeedbackAttachmentWhereInput! = {}): Int
+  reports(where: ReportWhereInput! = {}, orderBy: [ReportOrderByInput!]! = [], take: Int, skip: Int! = 0): [Report!]
+  report(where: ReportWhereUniqueInput!): Report
+  reportsCount(where: ReportWhereInput! = {}): Int
+  reportAttachments(where: ReportAttachmentWhereInput! = {}, orderBy: [ReportAttachmentOrderByInput!]! = [], take: Int, skip: Int! = 0): [ReportAttachment!]
+  reportAttachment(where: ReportAttachmentWhereUniqueInput!): ReportAttachment
+  reportAttachmentsCount(where: ReportAttachmentWhereInput! = {}): Int
+  categories(where: CategoryWhereInput! = {}, orderBy: [CategoryOrderByInput!]! = [], take: Int, skip: Int! = 0): [Category!]
+  category(where: CategoryWhereUniqueInput!): Category
+  categoriesCount(where: CategoryWhereInput! = {}): Int
+  keystone: KeystoneMeta!
+  getDeviceState(deviceId: String!): JSON
+  getDeviceDetails(deviceId: String, location: [Float!], distance: Int, fullAddress: Boolean = false): JSON
+  getUserTransactions(startTime: DateTime, endTime: DateTime): JSON
+  getTransactionDetails(txnId: String!): JSON
+  currentUserOTP(key: String!): String
+  getPincode(pincode: String!): JSON
+  authenticatedItem: AuthenticatedItem
+  validateUserPasswordResetToken(phoneNumber: String!, token: String!): ValidateUserPasswordResetTokenResult
+}
+
+union AuthenticatedItem = User
+
+type ValidateUserPasswordResetTokenResult {
+  code: PasswordResetRedemptionErrorCode!
+  message: String!
+}
+
+type KeystoneMeta {
+  adminMeta: KeystoneAdminMeta!
+}
+
+type KeystoneAdminMeta {
+  lists: [KeystoneAdminUIListMeta!]!
+  list(key: String!): KeystoneAdminUIListMeta
+}
+
+type KeystoneAdminUIListMeta {
+  key: String!
+  itemQueryName: String!
+  listQueryName: String!
+  hideCreate: Boolean!
+  hideDelete: Boolean!
+  path: String!
+  label: String!
+  singular: String!
+  plural: String!
+  description: String
+  initialColumns: [String!]!
+  pageSize: Int!
+  labelField: String!
+  fields: [KeystoneAdminUIFieldMeta!]!
+  groups: [KeystoneAdminUIFieldGroupMeta!]!
+  initialSort: KeystoneAdminUISort
+  isHidden: Boolean!
+  isSingleton: Boolean!
+}
+
+type KeystoneAdminUIFieldMeta {
+  path: String!
+  label: String!
+  description: String
+  isOrderable: Boolean!
+  isFilterable: Boolean!
+  fieldMeta: JSON
+  viewsIndex: Int!
+  customViewsIndex: Int
+  createView: KeystoneAdminUIFieldMetaCreateView!
+  listView: KeystoneAdminUIFieldMetaListView!
+  itemView(id: ID): KeystoneAdminUIFieldMetaItemView
+  search: QueryMode
+}
+
+type KeystoneAdminUIFieldMetaCreateView {
+  fieldMode: KeystoneAdminUIFieldMetaCreateViewFieldMode!
+}
+
+enum KeystoneAdminUIFieldMetaCreateViewFieldMode {
+  edit
+  hidden
+}
+
+type KeystoneAdminUIFieldMetaListView {
+  fieldMode: KeystoneAdminUIFieldMetaListViewFieldMode!
+}
+
+enum KeystoneAdminUIFieldMetaListViewFieldMode {
+  read
+  hidden
+}
+
+type KeystoneAdminUIFieldMetaItemView {
+  fieldMode: KeystoneAdminUIFieldMetaItemViewFieldMode
+  fieldPosition: KeystoneAdminUIFieldMetaItemViewFieldPosition
+}
+
+enum KeystoneAdminUIFieldMetaItemViewFieldMode {
+  edit
+  read
+  hidden
+}
+
+enum KeystoneAdminUIFieldMetaItemViewFieldPosition {
+  form
+  sidebar
+}
+
+enum QueryMode {
+  default
+  insensitive
+}
+
+type KeystoneAdminUIFieldGroupMeta {
+  label: String!
+  description: String
+  fields: [KeystoneAdminUIFieldMeta!]!
+}
+
+type KeystoneAdminUISort {
+  field: String!
+  direction: KeystoneAdminUISortDirection!
+}
+
+enum KeystoneAdminUISortDirection {
+  ASC
+  DESC
+}
