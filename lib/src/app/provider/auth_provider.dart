@@ -61,7 +61,7 @@ class AuthProvider extends ChangeNotifier {
       );
 
       if (response) {
-        final loggedIn = await loginApi(fromSignUp: true);
+        final loggedIn = await loginApi(fromSignUp: true);  
         if (!loggedIn) {
           AppRoutes.showErrorSnackbar(message: 'Failed to create User');
           return;
