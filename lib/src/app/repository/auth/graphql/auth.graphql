@@ -1,0 +1,123 @@
+mutation CreateUser($data: UserCreateInput!) {
+  createUser(data: $data) {
+    id
+  }
+}
+
+query CurrentUserOTP($key: String!) {
+  currentUserOTP(key: $key)
+}
+mutation ValidateUserOTP($key: String!, $otp: String!) {
+  validateUserOTP(key: $key, otp: $otp)
+}
+
+
+mutation CreateDealer($data: DealerCreateInput!) {
+  createDealer(data: $data) {
+    id
+  }
+}
+mutation AuthenticateUserWithPassword(
+  $phoneNumber: String!
+  $password: String!
+) {
+  authenticateUserWithPassword(phoneNumber: $phoneNumber, password: $password) {
+    ... on UserAuthenticationWithPasswordSuccess {
+      item {
+        id
+        name
+        phoneNumber
+        email
+        address
+        phoneNumberVerified
+        isAdmin
+        profile_image {
+          id
+          filesize
+          width
+          height
+          extension
+          url
+        }
+        addresses {
+          id
+          createdAt
+          modifiedAt
+          name
+          phoneNumber
+          pinCode
+          address
+          town
+          district
+          state
+          default
+        }
+        emailVerified
+        referralCode {
+          id
+          code
+          modifiedAt
+          createdAt
+        }
+      }
+      sessionToken
+    }
+    ... on UserAuthenticationWithPasswordFailure {
+      message
+    }
+  }
+}
+
+query User($where: UserWhereUniqueInput!) {
+  user(where: $where) {
+    id
+    name
+    phoneNumber
+    email
+    address
+    phoneNumberVerified
+    isAdmin
+    profile_image {
+      id
+      filesize
+      width
+      height
+      extension
+      url
+    }
+    addresses {
+      id
+      createdAt
+      modifiedAt
+      name
+      phoneNumber
+      pinCode
+      address
+      town
+      district
+      state
+      default
+    }
+    emailVerified
+    favorites {
+      vehicleVariant {
+        id
+      }
+      id
+    }
+    aadhaar {
+      url
+      filename
+    }
+    driving_license {
+      url
+      filename
+    }
+  }
+}
+
+mutation UpdateUser($data: UserUpdateInput!, $where: UserWhereUniqueInput!) {
+  updateUser(data: $data, where: $where) {
+    id
+  }
+}

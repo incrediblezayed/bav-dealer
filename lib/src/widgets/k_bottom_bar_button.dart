@@ -1,8 +1,8 @@
+import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../utils/app_theme.dart';
 
 ///Bottom bar button
 class KBottomBarButton extends StatelessWidget {

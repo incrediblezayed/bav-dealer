@@ -1,12 +1,13 @@
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
-import 'package:dealerapp/src/utils/app_routes.dart';
-import 'package:dealerapp/src/widgets/k_button.dart';
+import 'package:dealerapp/src/utils/global_exports.dart';
+import 'package:dealerapp/src/widgets/k_bottom_bar_button.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// Sign up page
 class SignUpPage extends ConsumerStatefulWidget {
+  /// This page is used for sign up
   const SignUpPage({super.key});
 
   @override
@@ -16,8 +17,8 @@ class SignUpPage extends ConsumerStatefulWidget {
 class _SignUpPageState extends ConsumerState<SignUpPage> {
   @override
   Widget build(BuildContext context) {
-    final mobileController = TextEditingController();
-    final textTheme = Theme.of(context).textTheme;
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
 
     final authPro = ref.watch(authProvider);
 
@@ -31,45 +32,53 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
           children: [
             Text(
               'Create Your Account',
-              style: textTheme.headlineSmall,
+              style: textTheme.bodyLarge,
             ),
             SizedBox(height: 6.h),
-            Text(
+/*             Text(
               'Enter Your Mobile No.',
-              style: textTheme.labelMedium,
+              style: textTheme.labelMedium?.copyWith(
+                color: AppTheme.defaultCaptionColor,
+              ),
             ),
-            SizedBox(height: 24.h),
+            SizedBox(height: 24.h), */
             Text(
-              'Enter Your Mobile Number',
+              'Enter Your Mobile\nNumber',
               style: textTheme.headlineLarge,
             ),
             SizedBox(height: 14.h),
             KTextField(
-              controller: mobileController,
+              controller: authPro.phoneNumberController,
               inputType: TextInputType.number,
               hintText: 'Enter Your Mobile No',
-              label: 'Mobile No.',
               maxLength: 10,
+              label: 'Mobile No.',
+              inputFormatters: [
+                FilteringTextInputFormatter.digitsOnly,
+              ],
             ),
             SizedBox(height: 14.h),
-            KButton(
-              onPressed: () {
-                if (mobileController.text.isEmpty) {
+            KBottomBarButton(
+              onTap: () {
+                if (authPro.phoneNumberController.text.isEmpty) {
                   AppRoutes.showErrorSnackbar(
                     message: 'Please Enter Mobile No.',
                   );
-                } else if (mobileController.text.length != 10) {
+                } else if (authPro.phoneNumberController.text.length != 10) {
                   AppRoutes.showErrorSnackbar(message: 'Minimum 10 Numbers');
-                } else if (authPro.currentPageIndex <
-                    authPro.signUpPages.length - 1) {
-                  authPro.pageController.animateToPage(
+                } else if (!authPro.agree) {
+                  AppRoutes.showErrorSnackbar(
+                    message: 'You must agree to our terms and conditions',
+                  );
+                } else {
+                  authPro.signUpPageController.animateToPage(
                     authPro.currentPageIndex + 1,
                     duration: const Duration(milliseconds: 300),
                     curve: Curves.easeInOut,
                   );
-                } else {}
+                }
               },
-              text: 'Get OTP',
+              text: 'Next',
             ),
             SizedBox(
               height: 10.h,
@@ -80,16 +89,34 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
             ),
             SizedBox(height: 14.h),
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Checkbox(
-                  value: false,
-                  onChanged: (value) {
-                    setState(() {});
-                  },
+                Theme(
+                  data: ThemeData(
+                    unselectedWidgetColor: AppTheme.primaryColor,
+                    checkboxTheme: theme.checkboxTheme.copyWith(
+                      side: const BorderSide(
+                        color: AppTheme.primaryColor,
+                        width: .5,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4.r),
+                      ),
+                    ),
+                  ),
+                  child: Checkbox(
+                    activeColor: AppTheme.primaryColor,
+                    value: authPro.agree,
+                    onChanged: (value) {
+                      authPro.agree = value!;
+                    },
+                  ),
                 ),
-                Text(
-                  'I Agree With Terms & Conditions',
-                  style: textTheme.labelMedium,
+                Flexible(
+                  child: Text(
+                    'I Agree With Terms & Conditions',
+                    style: textTheme.labelMedium,
+                  ),
                 ),
               ],
             ),

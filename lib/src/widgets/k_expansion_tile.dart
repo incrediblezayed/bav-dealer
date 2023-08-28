@@ -60,7 +60,7 @@ class KExpansionTile extends StatelessWidget {
             ),
             SizedBox(height: 6.h),
           ],
-        )
+        ),
       ],
     );
   }

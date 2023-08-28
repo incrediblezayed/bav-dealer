@@ -1,25 +1,36 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 // ignore_for_file: must_be_immutable
 
-import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import 'package:dealerapp/src/utils/app_theme.dart';
 
 ///Custom Textfield
 class KTextField extends StatelessWidget {
   ///Custom Textfield
-  KTextField({
-    this.maxLength,
+  const KTextField({
     super.key,
     this.hintText,
-    this.label,
-    this.controller,
     this.inputType,
+    this.controller,
+    this.inputFormatters,
+    this.label,
     this.suffixIcon,
     this.prefixIcon,
     this.obsecureText = false,
+    this.maxLength, 
+    
   });
 
   ///hintText
   final String? hintText;
+
+  final TextInputType? inputType;
+
+  final TextEditingController? controller;
+  
+  final List<TextInputFormatter>? inputFormatters;
 
   ///label
   final String? label;
@@ -34,10 +45,8 @@ class KTextField extends StatelessWidget {
   final bool obsecureText;
 
   /// controller
-  TextEditingController? controller;
 
   ///inputType
-  TextInputType? inputType;
 
   ///text length
   final int? maxLength;

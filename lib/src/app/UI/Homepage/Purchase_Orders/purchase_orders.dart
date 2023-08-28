@@ -143,7 +143,7 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
 
           const EmptyWidgt(
             title: 'Uh oh! You have no orders.',
-          ) // EmptyWidgt(title: 'Uh oh! You have no orders.'),
+          ), // EmptyWidgt(title: 'Uh oh! You have no orders.'),
         ],
       ),
     );

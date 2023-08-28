@@ -4,12 +4,15 @@ import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
+import 'package:dealerapp/src/widgets/my_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
 
+///Change Password Page
 class ChangePasswordPage extends ConsumerWidget {
+  ///Constructor
   const ChangePasswordPage({super.key});
 
   @override
@@ -17,37 +20,14 @@ class ChangePasswordPage extends ConsumerWidget {
     final theme = Theme.of(context).textTheme;
     final authPro = ref.watch(authProvider);
     return Scaffold(
+      appBar: MyAppBar(title: 'Change Password', titleTextStyle: theme.headlineLarge),
       resizeToAvoidBottomInset: false,
       body: Padding(
-        padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 30.h),
+        padding: EdgeInsets.only(left: 20.w, right: 20.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    if (authPro.currentPageIndex <
-                        authPro.forgotPasswordPages.length - 1) {
-                      authPro.pageController.animateToPage(
-                        authPro.currentPageIndex - 1,
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut,
-                      );
-                    }
-                  },
-                  child: const Icon(
-                    Iconsax.arrow_left,
-                    color: AppTheme.textColor,
-                  ),
-                ),
-                SizedBox(width: 10.w),
-                Text(
-                  'Change Password',
-                  style: theme.headlineLarge,
-                ),
-              ],
-            ),
+            
             SizedBox(
               height: 16.h,
             ),

@@ -1,3 +1,4 @@
+import 'package:dealerapp/src/utils/app_texts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -78,6 +79,16 @@ class AppTheme {
   ///Pickup location Color
   static const pickupLocation = Color(0xff4285F4);
 
+  ///Default Title Text Color
+  static const Color defaultTitleColor = Color.fromRGBO(25, 75, 63, 1);
+
+  ///Label text Color
+  static const labelTextColor = Color(0xff194B3F);
+
+   ///Default Caption Text Color
+  static Color defaultCaptionColor = const Color.fromRGBO(25, 75, 63, 0.46);
+
+
   ///Drop location Color
   static const dropLocation = Color(0xff12A89D);
 
@@ -122,6 +133,14 @@ class AppTheme {
 
   ///Default Theme Data
   static ThemeData get theme => ThemeData(
+     appBarTheme: AppBarTheme(
+          titleTextStyle:
+              AppTexts.labelMedium?.copyWith(fontWeight: FontWeight.w700),
+          backgroundColor: scaffoldBgColor,
+          elevation: 0,
+          iconTheme: const IconThemeData(color: textColor),
+          titleSpacing: 0,
+        ),
         textTheme: TextTheme(
           headlineLarge: TextStyle(
             fontSize: 20.sp,

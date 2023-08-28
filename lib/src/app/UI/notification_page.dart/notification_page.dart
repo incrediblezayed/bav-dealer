@@ -39,7 +39,7 @@ class _NotificationPageState extends State<NotificationPage> {
       subtitle:
           'orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,',
       notificationType: NotificationType.securityNotification,
-    )
+    ),
   ];
   @override
   Widget build(BuildContext context) {

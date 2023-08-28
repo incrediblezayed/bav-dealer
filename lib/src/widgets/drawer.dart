@@ -132,9 +132,9 @@ class AppDrawer extends ConsumerWidget {
                             onTap: () {
                               AppRoutes.push(page: const EditProfilePage());
                             },
-                          )
+                          ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),

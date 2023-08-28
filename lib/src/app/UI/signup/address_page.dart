@@ -28,7 +28,7 @@ class AddressPage extends ConsumerWidget {
                   onTap: () {
                     if (authPro.currentPageIndex <
                         authPro.signUpPages.length - 1) {
-                      authPro.pageController.animateToPage(
+                      authPro.signUpPageController.animateToPage(
                         authPro.currentPageIndex - 1,
                         duration: const Duration(milliseconds: 300),
                         curve: Curves.easeInOut,
@@ -62,15 +62,14 @@ class AddressPage extends ConsumerWidget {
               height: 26.h,
             ),
             KButton(
-              onPressed: () {
-                if (pageViewPro.currentPageIndex <
-                    pageViewPro.signUpPages.length - 1) {
-                  pageViewPro.pageController.animateToPage(
-                    pageViewPro.currentPageIndex + 1,
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
-                }
+              onPressed: () async {
+                await authPro.regsiter();
+
+                await pageViewPro.signUpPageController.animateToPage(
+                  pageViewPro.currentPageIndex + 1,
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
               },
               text: 'Next',
             ),

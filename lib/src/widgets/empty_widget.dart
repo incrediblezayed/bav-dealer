@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../utils/app_images.dart';
+import 'package:dealerapp/src/utils/app_images.dart';
 
 class EmptyWidgt extends StatelessWidget {
   const EmptyWidgt({required this.title, super.key, this.subTitle});
@@ -39,7 +39,7 @@ class EmptyWidgt extends StatelessWidget {
               subTitle!,
               style: textTheme.bodyMedium
                   ?.copyWith(color: const Color(0xff828282)),
-            )
+            ),
         ],
       ),
     );

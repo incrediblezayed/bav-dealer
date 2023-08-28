@@ -4,7 +4,9 @@ import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
 import 'package:iconsax/iconsax.dart';
 
+///Personal Imformation Page
 class PersonalInformationPage extends StatelessWidget {
+  ///This page is used to take inout from the users on sign up flow
   const PersonalInformationPage({super.key});
 
   @override
@@ -42,7 +44,7 @@ class PersonalInformationPage extends StatelessWidget {
                   color: AppTheme.primaryColor,
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -50,37 +52,43 @@ class PersonalInformationPage extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         child: Column(
           children: [
-            KTextField(
+            const CircleAvatar(
+              radius: 35,
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            const KTextField(
               hintText: 'Name',
               label: 'Name',
             ),
             SizedBox(height: 12.h),
-            KTextField(
+            const KTextField(
               hintText: 'Username',
               label: 'Username',
             ),
             SizedBox(height: 12.h),
-            KTextField(
+            const KTextField(
               hintText: 'Email',
               label: 'Email',
             ),
             SizedBox(height: 12.h),
-            KTextField(
+            const KTextField(
               hintText: 'Contact Number',
               label: 'Contact Number',
             ),
             SizedBox(height: 12.h),
-            KTextField(
+            const KTextField(
               hintText: 'Alternative Contact Number',
               label: 'Alternative Contact Number',
             ),
             SizedBox(height: 12.h),
-            KTextField(
+            const KTextField(
               hintText: 'Showroom Address',
               label: 'Showroom Address',
             ),
             SizedBox(height: 20.h),
-            KButton(onPressed: () {}, text: 'Update')
+            KButton(onPressed: () {}, text: 'Update'),
           ],
         ),
       ),

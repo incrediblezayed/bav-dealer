@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.data.gql.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 ///Cache Provider
@@ -40,7 +43,7 @@ class CacheProvider {
   final String _graphqlBoxName = 'graphql';
 
   ///User Key for [UserModel] data
-  // final String _userKey = 'user';
+  final String _userKey = 'user';
 
   ///Session Token Key for [String] data
   final String _sessionToken = 'sessionToken';
@@ -118,13 +121,19 @@ class CacheProvider {
     }
   }
 
+  String jsonEncode(
+    Object? object, {
+    Object? Function(Object? nonEncodable)? toEncodable,
+  }) =>
+      json.encode(object, toEncodable: toEncodable);
+
   ///Set User Method
   ///
   ///For storing the user data with the key [_userKey]
   ///the data is stored as string by converting it to json
-  /*  Future<void> setUser(GUserData_user user) async {
+  Future<void> setUser(GUserData_user user) async {
     await _stringBox.put(_userKey, jsonEncode(user.toJson()));
-  } */
+  }
 
   ///Get User Method
   ///

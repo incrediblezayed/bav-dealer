@@ -1,11 +1,17 @@
+import 'dart:async';
+
 import 'package:dealerapp/src/app/UI/forgot_password/change_password.dart';
 import 'package:dealerapp/src/app/UI/forgot_password/forgot_password.dart';
-import 'package:dealerapp/src/app/UI/signup/add_email_page.dart';
+import 'package:dealerapp/src/app/UI/login/login_page.dart';
 import 'package:dealerapp/src/app/UI/signup/address_page.dart';
-import 'package:dealerapp/src/app/UI/signup/create_your_password.dart';
 import 'package:dealerapp/src/app/UI/signup/enter_your_details_page.dart';
 import 'package:dealerapp/src/app/UI/signup/otp_verification_page.dart';
 import 'package:dealerapp/src/app/UI/signup/signup_page.dart';
+import 'package:dealerapp/src/app/model/user.model.dart';
+import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:dealerapp/src/app/repository/auth/auth_repository.dart';
+import 'package:dealerapp/src/utils/app_routes.dart';
+import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -15,6 +21,156 @@ final authProvider = ChangeNotifierProvider((ref) => AuthProvider());
 ///Auth Class
 class AuthProvider extends ChangeNotifier {
   ///Page controller
+  PageController signUpPageController = PageController();
+
+  ///Mobile Controller
+  ///
+  ///
+  bool _agree = false;
+  bool get agree => _agree;
+
+  set agree(bool value) {
+    _agree = value;
+    notifyListeners();
+  }
+
+  final AuthRepository _authRepository = AuthRepository();
+  Future<void> regsiter() async {
+    try {
+      if (firstNameController.text.isEmpty ||
+          lastNameController.text.isEmpty ||
+          phoneNumberController.text.isEmpty ||
+          emailIdController.text.isEmpty ||
+          passwordController.text.isEmpty) {
+        AppRoutes.showErrorSnackbar(message: 'Please enter all fields');
+        return;
+      }
+
+      if (_agree == false) {
+        AppRoutes.showErrorSnackbar(
+          message: 'Please agree to terms and conditions',
+        );
+        return;
+      }
+
+      final response = await _authRepository.register(
+        name: '${firstNameController.text} ${lastNameController.text}',
+        phoneNumber: phoneNumberController.text,
+        email: emailIdController.text,
+        password: passwordController.text,
+      );
+
+      if (response) {
+        final loggedIn = await loginApi(fromSignUp: true);
+        if (!loggedIn) {
+          AppRoutes.showErrorSnackbar(message: 'Failed to create User');
+          return;
+        } else {
+          await signUpPageController.nextPage(
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.ease,
+          );
+        }
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  /// This Method hits the login api and gets the relevant data back
+  /// [fromSignUp] is used to check if the user is logging in
+  Future<bool> loginApi({required bool fromSignUp}) async {
+    final data = await _authRepository.login(
+      phoneNumberController.text,
+      passwordController.text,
+    );
+    if (data.containsKey('message')) {
+      AppRoutes.showErrorSnackbar(message: data['message'] as String);
+      return false;
+    } else {
+      final user = UserModel.fromJson(data['item'] as Map<String, dynamic>);
+      if (!fromSignUp) {
+        if (!(user.phoneNumberVerified ?? true)) {
+          AppRoutes.showErrorSnackbar(message: 'User not verified');
+          return false;
+        }
+      }
+      final sessionToken = data['sessionToken'] as String;
+      await cacheProvider.setSessionToken(sessionToken);
+      final newUser = await _authRepository.getUser(userId: user.id!);
+      if (!fromSignUp) {
+        await cacheProvider.setUserId(user.id!);
+        await cacheProvider.setUser(newUser!);
+      } else {
+        await _authRepository.updateUser(
+          id: user.id!,
+          name: newUser!.name!,
+          email: newUser.email!,
+          phoneNumber: newUser.phoneNumber!,
+        );
+        await getCurrentUserOtp(isEmail: false);
+      }
+      return true;
+    }
+  }
+
+  /// Get CurrentUserOtp for loggedIn user
+  Future<void> getCurrentUserOtp({required bool isEmail}) async {
+    try {
+      String? otp;
+      if (isEmail) {
+        otp = await _authRepository.getCurrentOtp('emailVerification');
+      } else {
+        otp = await _authRepository.getCurrentOtp('phoneNumberVerification');
+      }
+      if (otp != null) {
+        AppRoutes.showSuccessSnackbar(message: otp);
+      }
+    } catch (e) {
+      e.log();
+    }
+  }
+
+  ///Login Method
+  ///
+  ///It is used to login the user
+  ///from the sign up page, this is mainly for the loading dialog
+  Future<void> login() async {
+    if (phoneNumberController.text.isEmpty || passwordController.text.isEmpty) {
+      AppRoutes.showErrorSnackbar(message: 'Please enter phone and password');
+      return;
+    }
+
+    unawaited(AppRoutes.showLoadingDialog());
+    final response = await loginApi(fromSignUp: false);
+    AppRoutes.pop();
+    if (response) {
+      await AppRoutes.pushAndRemoveUntil(page: const LoginPage());
+    }
+  }
+
+  ///Validate OTP Method
+  ///
+  ///It is used to Validate the user
+  Future<void> validateOTP({required bool isEmail}) async {
+    try {
+      final key = isEmail ? 'emailVerification' : 'phoneNumberVerification';
+
+      final response = await _authRepository.validateOTP(
+        key,
+        otpController.map((e) => e.text).join(),
+      );
+      if (response) {
+        await login();
+      } else {
+        throw Exception('Something went wrong');
+      }
+    } catch (e) {
+      e.log();
+      AppRoutes.showErrorSnackbar(message: e.toString());
+    }
+  }
+
   PageController pageController = PageController();
 
   ///
@@ -22,7 +178,7 @@ class AuthProvider extends ChangeNotifier {
 
   ///OTP Controller
   List<TextEditingController> otpController =
-      List.generate(4, (index) => TextEditingController());
+      List.generate(6, (index) => TextEditingController());
 
   ///Name Controller
   TextEditingController firstNameController = TextEditingController();
@@ -37,7 +193,10 @@ class AuthProvider extends ChangeNotifier {
   TextEditingController emailIdController = TextEditingController();
 
   ///
-  TextEditingController newPasswordController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  ///
+  TextEditingController confirmPasswordController = TextEditingController();
 
   ///
   TextEditingController reTypeNewPasswordController = TextEditingController();
@@ -46,7 +205,12 @@ class AuthProvider extends ChangeNotifier {
   TextEditingController shopAddressController = TextEditingController();
 
   ///index
-  int currentPageIndex = 0;
+  int _currentPageIndex = 0;
+  int get currentPageIndex => _currentPageIndex;
+  set currentPageIndex(int i) {
+    _currentPageIndex = i;
+    notifyListeners();
+  }
 
   ///List of forgot passwaord pages
   ///
@@ -59,11 +223,13 @@ class AuthProvider extends ChangeNotifier {
   ///List of sign up pages
   final List<Widget> signUpPages = [
     const SignUpPage(),
-    const OTPVerificationPage(),
     const EnterYourDetailsPage(),
     const AddressPage(),
-    const AddEmailPage(),
-    const CreateYourPasswordPage(),
+    const OTPVerificationPage(),
+
+    // const AddEmailPage(),
+
+    // const CreateYourPasswordPage(),
   ];
 
   ///password

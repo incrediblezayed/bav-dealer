@@ -58,7 +58,7 @@ class _RankPageState extends State<RankPage> {
                 padding: EdgeInsets.only(right: 15.w),
                 child: SvgPicture.asset(AppImages.search1),
               ),
-            )
+            ),
         ],
       ),
       body: Column(
@@ -125,7 +125,7 @@ class _RankPageState extends State<RankPage> {
                         ],
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
@@ -195,14 +195,14 @@ class _RankPageState extends State<RankPage> {
                               ],
                             ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );

@@ -35,27 +35,27 @@ class AddBankPage extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            KTextField(
+            const KTextField(
               hintText: 'Enter Your Account Number',
               label: 'Account Number',
             ),
             SizedBox(height: 10.h),
-            KTextField(
+            const KTextField(
               hintText: 'Enter Your IFSC Code',
               label: 'IFSC Code',
             ),
             SizedBox(height: 10.h),
-            KTextField(
+            const KTextField(
               hintText: 'Enter Your Branch Code',
               label: 'Branch Code',
             ),
             SizedBox(height: 10.h),
-            KTextField(
+            const KTextField(
               hintText: 'Enter Your Registered Mobile Number',
               label: 'Mobile Number',
             ),
             SizedBox(height: 10.h),
-            KButton(onPressed: () {}, text: 'Submit')
+            KButton(onPressed: () {}, text: 'Submit'),
           ],
         ),
       ),

@@ -1,4 +1,4 @@
-import 'package:dealerapp/src/app/provider/auth_provider.dart';
+/* import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
@@ -7,6 +7,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
 
+
+///Add Email Page
 class AddEmailPage extends ConsumerWidget {
   const AddEmailPage({super.key});
 
@@ -73,10 +75,11 @@ class AddEmailPage extends ConsumerWidget {
                 }
               },
               text: 'Next',
-            )
+            ),
           ],
         ),
       ),
     );
   }
 }
+ */

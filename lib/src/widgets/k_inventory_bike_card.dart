@@ -187,10 +187,10 @@ class _KInventoryBikeCardState extends State<KInventoryBikeCard> {
                                 ),
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
                 SizedBox(height: 24.h),
@@ -230,7 +230,7 @@ class _KInventoryBikeCardState extends State<KInventoryBikeCard> {
                 KButton(
                   onPressed: () {},
                   text: 'Add',
-                )
+                ),
               ],
             ),
           ),

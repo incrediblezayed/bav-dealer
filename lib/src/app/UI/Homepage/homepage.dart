@@ -49,9 +49,9 @@ class HomePage extends StatelessWidget {
                   radius: 20,
                   child: Image.asset(AppImages.profile),
                 ),
-              )
+              ),
             ],
-          )
+          ),
         ],
       ),
       body: Padding(
@@ -118,7 +118,7 @@ class HomePage extends StatelessWidget {
                     ),
                     SizedBox(height: 6.h),
                   ],
-                )
+                ),
               ],
             ),
             SizedBox(height: 20.h),
@@ -156,7 +156,7 @@ class HomePage extends StatelessWidget {
                       onTap: () {
                         AppRoutes.push(page: const MyInventory());
                       },
-                    )
+                    ),
                   ],
                 ),
                 SizedBox(width: 10.w),
@@ -194,7 +194,7 @@ class HomePage extends StatelessWidget {
                       },
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ],

@@ -46,10 +46,10 @@ class NotificationCard extends StatelessWidget {
                     Text(
                       notificationModel.dateTime.toString(),
                       style: theme.labelMedium,
-                    )
+                    ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
           SizedBox(height: 10.h),
@@ -57,7 +57,7 @@ class NotificationCard extends StatelessWidget {
             notificationModel.subtitle,
             style: theme.headlineSmall!
                 .copyWith(fontSize: 14.sp, fontWeight: FontWeight.w300),
-          )
+          ),
         ],
       ),
     );

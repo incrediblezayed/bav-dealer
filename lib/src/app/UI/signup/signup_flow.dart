@@ -35,7 +35,7 @@ class _SignUpFlowState extends ConsumerState<SignUpFlow> {
               color: AppTheme.primaryColor.withOpacity(.3),
               alignment: Alignment.centerLeft,
               child: AnimatedBuilder(
-                animation: authPro.pageController,
+                animation: authPro.signUpPageController,
                 builder: (context, child) {
                   final width = (size.width / authPro.signUpPages.length) *
                       (authPro.currentPageIndex + 1);
@@ -54,7 +54,7 @@ class _SignUpFlowState extends ConsumerState<SignUpFlow> {
             ),
             Expanded(
               child: PageView(
-                controller: authPro.pageController,
+                controller: authPro.signUpPageController,
                 children: authPro.signUpPages,
                 onPageChanged: (index) {
                   authPro.currentPageIndex = index;
@@ -63,6 +63,7 @@ class _SignUpFlowState extends ConsumerState<SignUpFlow> {
             ),
             //SizedBox(height: 16.h),
             //const Spacer(),
+            
             Align(
               alignment: Alignment.bottomCenter,
               child: GestureDetector(
@@ -85,12 +86,12 @@ class _SignUpFlowState extends ConsumerState<SignUpFlow> {
                           fontSize: 20.sp,
                           fontWeight: FontWeight.w600,
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

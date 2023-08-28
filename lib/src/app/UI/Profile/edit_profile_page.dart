@@ -31,37 +31,37 @@ class EditProfilePage extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         child: Column(
           children: [
-            KTextField(
+            const KTextField(
               hintText: 'Name',
               label: 'Name',
             ),
             SizedBox(height: 12.h),
-            KTextField(
+            const KTextField(
               hintText: 'Username',
               label: 'Username',
             ),
             SizedBox(height: 12.h),
-            KTextField(
+            const KTextField(
               hintText: 'Email',
               label: 'Email',
             ),
             SizedBox(height: 12.h),
-            KTextField(
+            const KTextField(
               hintText: 'Contact Number',
               label: 'Contact Number',
             ),
             SizedBox(height: 12.h),
-            KTextField(
+            const KTextField(
               hintText: 'Alternative Contact Number',
               label: 'Alternative Contact Number',
             ),
             SizedBox(height: 12.h),
-            KTextField(
+            const KTextField(
               hintText: 'Showroom Address',
               label: 'Showroom Address',
             ),
             SizedBox(height: 20.h),
-            KButton(onPressed: () {}, text: 'Update')
+            KButton(onPressed: () {}, text: 'Update'),
           ],
         ),
       ),

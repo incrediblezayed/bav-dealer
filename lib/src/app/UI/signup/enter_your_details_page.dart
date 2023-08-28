@@ -7,7 +7,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
 
+///Enter Details Page in Sign Up Flow
 class EnterYourDetailsPage extends ConsumerStatefulWidget {
+  ///Constructor
   const EnterYourDetailsPage({super.key});
 
   @override
@@ -35,7 +37,7 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
                   onTap: () {
                     if (authPro.currentPageIndex <
                         authPro.signUpPages.length - 1) {
-                      authPro.pageController.animateToPage(
+                      authPro.signUpPageController.animateToPage(
                         authPro.currentPageIndex - 1,
                         duration: const Duration(milliseconds: 300),
                         curve: Curves.easeInOut,
@@ -74,14 +76,6 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
               height: 16.h,
             ),
             KTextField(
-              controller: authPro.phoneNumberController,
-              hintText: 'Enter Your Phone Number',
-              label: 'Phone Number',
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            KTextField(
               controller: authPro.emailIdController,
               hintText: 'Enter Your Email ID',
               label: 'Email ID',
@@ -90,9 +84,17 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
               height: 14.h,
             ),
             KTextField(
-              controller: authPro.newPasswordController,
+              controller: authPro.passwordController,
               hintText: 'Enter Your Password',
               label: 'New Password',
+            ),
+            SizedBox(
+              height: 16.h,
+            ),
+            KTextField(
+              controller: authPro.confirmPasswordController,
+              hintText: 'Enter Confirm Password',
+              label: 'Confirm Password',
             ),
             SizedBox(
               height: 16.h,
@@ -100,7 +102,7 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
             KButton(
               onPressed: () {
                 if (authPro.currentPageIndex < authPro.signUpPages.length - 1) {
-                  authPro.pageController.animateToPage(
+                  authPro.signUpPageController.animateToPage(
                     authPro.currentPageIndex + 1,
                     duration: const Duration(milliseconds: 300),
                     curve: Curves.easeInOut,

@@ -76,7 +76,7 @@ class _KPurchaseOrderBikeCardState extends State<KPurchaseOrderBikeCard> {
                           ),
                         ),
                         SizedBox(height: 6.h),
-                        const Text('08:56 PM   01/02/23')
+                        const Text('08:56 PM   01/02/23'),
                       ],
                     ),
                   ),
@@ -183,9 +183,9 @@ class _KPurchaseOrderBikeCardState extends State<KPurchaseOrderBikeCard> {
                                     ),
                                   ),
                                 ],
-                              )
+                              ),
                             ],
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -294,7 +294,7 @@ class _KPurchaseOrderBikeCardState extends State<KPurchaseOrderBikeCard> {
                           ),
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -350,7 +350,7 @@ class _KPurchaseOrderBikeCardState extends State<KPurchaseOrderBikeCard> {
                                   ),
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -373,7 +373,7 @@ class _KPurchaseOrderBikeCardState extends State<KPurchaseOrderBikeCard> {
                                 color: AppTheme.primaryColor,
                                 fontWeight: FontWeight.w700,
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -398,7 +398,7 @@ class _KPurchaseOrderBikeCardState extends State<KPurchaseOrderBikeCard> {
                                     color: AppTheme.red,
                                     fontWeight: FontWeight.w700,
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),
@@ -421,7 +421,7 @@ class _KPurchaseOrderBikeCardState extends State<KPurchaseOrderBikeCard> {
                                     color: Colors.black.withOpacity(.5),
                                     fontWeight: FontWeight.w500,
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),

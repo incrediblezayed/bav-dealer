@@ -1,6 +1,7 @@
 import 'package:dealerapp/src/utils/global_exports.dart';
-
+///
 class StagerredContainer extends StatelessWidget {
+  ///
   StagerredContainer({
     required this.height,
     required this.width,
@@ -17,8 +18,11 @@ class StagerredContainer extends StatelessWidget {
   });
 
   double height;
+  ////width
   double width;
+  ///
   String count;
+  ///
   String title;
 
   String image;

@@ -88,6 +88,7 @@ class NotificationModel {
 
   @override
   String toString() {
+    // ignore: lines_longer_than_80_chars
     return 'NotificationModel(title: $title, subtitle: $subtitle, notificationType: $notificationType, dateTime: $dateTime)';
   }
 

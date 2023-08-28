@@ -1,4 +1,4 @@
-import 'package:dealerapp/src/app/UI/login/login_page.dart';
+/* import 'package:dealerapp/src/app/UI/login/login_page.dart';
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
@@ -28,7 +28,7 @@ class CreateYourPasswordPage extends ConsumerWidget {
                 GestureDetector(
                   onTap: () {
                     if (authPro.currentPageIndex < authPro.signUpPages.length) {
-                      authPro.pageController.animateToPage(
+                      authPro.signUpPageController.animateToPage(
                         authPro.currentPageIndex - 1,
                         duration: const Duration(milliseconds: 300),
                         curve: Curves.easeInOut,
@@ -87,7 +87,7 @@ class CreateYourPasswordPage extends ConsumerWidget {
             KButton(
               onPressed: () {
                 authPro.currentPageIndex = 0;
-                authPro.pageController = PageController();
+                authPro.signUpPageController = PageController();
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
                     backgroundColor: AppTheme.primaryColor,
@@ -103,10 +103,11 @@ class CreateYourPasswordPage extends ConsumerWidget {
                 // authPro.pageController = PageController();
               },
               text: 'Next',
-            )
+            ),
           ],
         ),
       ),
     );
   }
 }
+ */

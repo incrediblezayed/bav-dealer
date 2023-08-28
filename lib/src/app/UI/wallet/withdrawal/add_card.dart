@@ -35,22 +35,22 @@ class AddCardPage extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            KTextField(
+            const KTextField(
               hintText: 'Enter Your Name On Card',
               label: 'Name On Card',
             ),
             SizedBox(height: 10.h),
-            KTextField(
+            const KTextField(
               hintText: 'Enter Your Card Number',
               label: 'Card Number',
             ),
             SizedBox(height: 10.h),
-            KTextField(
+            const KTextField(
               hintText: 'Expiry Date',
               label: 'Expiry',
             ),
             SizedBox(height: 10.h),
-            KButton(onPressed: () {}, text: 'Submit')
+            KButton(onPressed: () {}, text: 'Submit'),
           ],
         ),
       ),

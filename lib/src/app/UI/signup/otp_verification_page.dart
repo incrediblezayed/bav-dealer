@@ -4,70 +4,35 @@ import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:collection/collection.dart';
 
-class OTPVerificationPage extends ConsumerWidget {
+///OTP Verfication Page
+class OTPVerificationPage extends ConsumerStatefulWidget {
+  ///Constructor
   const OTPVerificationPage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    // final otpController = List<TextEditingController>.generate(
-    //   4,
-    //   (index) => TextEditingController(),
-    // );
+  ConsumerState<OTPVerificationPage> createState() =>
+      _OTPVerificationPageState();
+}
+
+class _OTPVerificationPageState extends ConsumerState<OTPVerificationPage> {
+  @override
+  Widget build(
+    BuildContext context,
+  ) {
+    final focusNodes = List<FocusNode>.generate(6, (index) => FocusNode());
 
     final authPro = ref.watch(authProvider);
 
+    final size = MediaQuery.sizeOf(context);
     final theme = Theme.of(context).textTheme;
     return Scaffold(
-      /* appBar: AppBar(
-        backgroundColor: AppTheme.scaffoldBgColor,
-        elevation: 0,
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Text(
-                  'OTP Verification',
-                  style: theme.headlineLarge,
-                ),
-              ],
-            ),
-            SizedBox(height: 6.h),
-            Row(
-              children: [
-                RichText(
-                  text: TextSpan(
-                    text: 'Enter The OTP Shared On ',
-                    style: theme.labelMedium,
-                    children: [
-                      TextSpan(
-                        text: ' 7878451245',
-                        style: theme.labelMedium,
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 6.w,
-                ),
-                SvgPicture.asset(AppImages.edit)
-              ],
-            )
-          ],
-        ),
-        leading: GestureDetector(
-          onTap: () {},
-          child: const Icon(
-            Iconsax.arrow_left,
-            color: AppTheme.textColor,
-          ),
-        ),
-      ) */
       backgroundColor: AppTheme.scaffoldBgColor,
       body: Padding(
         padding:
@@ -81,7 +46,7 @@ class OTPVerificationPage extends ConsumerWidget {
                   onTap: () {
                     if (authPro.currentPageIndex <
                         authPro.signUpPages.length - 1) {
-                      authPro.pageController.animateToPage(
+                      authPro.signUpPageController.animateToPage(
                         authPro.currentPageIndex - 1,
                         duration: const Duration(milliseconds: 300),
                         curve: Curves.easeInOut,
@@ -115,7 +80,7 @@ class OTPVerificationPage extends ConsumerWidget {
                         TextSpan(
                           text: ' 7878451245',
                           style: theme.labelMedium,
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -123,33 +88,70 @@ class OTPVerificationPage extends ConsumerWidget {
                 SizedBox(
                   width: 6.w,
                 ),
-                SvgPicture.asset(AppImages.edit)
+                SvgPicture.asset(AppImages.edit),
               ],
             ),
             SizedBox(
-              height: 6.h,
+              height: 20.h,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: authPro.otpController
-                  .map(
-                    (e) => Padding(
-                      padding: const EdgeInsets.all(16),
-                      child: SizedBox(
-                        height: 80.h,
-                        width: 50.w,
-                        child: KTextField(),
+                  .mapIndexed(
+                    (i, e) => SizedBox(
+                      width: size.width * 0.12,
+                      child: Center(
+                        child: TextField(
+                          textAlignVertical: TextAlignVertical.top,
+                          maxLength: 1,
+                          inputFormatters: [
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
+                          keyboardType: TextInputType.number,
+                          decoration: const InputDecoration(
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: AppTheme.primaryColor),
+                            ),
+                            counterText: '',
+                            fillColor: Colors.white,
+                            filled: true,
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: AppTheme.cardBorders,
+                              ),
+                            ),
+                          ),
+                          controller: e,
+                          onChanged: (value) {
+                            if (value.isEmpty) {
+                              if (i != 0) {
+                                focusNodes[i - 1].requestFocus();
+                              }
+                            } else {
+                              if (i != 5) {
+                                focusNodes[i + 1].requestFocus();
+                              }
+                            }
+                          },
+                          focusNode: focusNodes[i],
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ),
                   )
                   .toList(),
             ),
             SizedBox(
+              height: 20.h,
+            ),
+            SizedBox(
               height: 6.h,
             ),
             KButton(
               onPressed: () {
-                if (authPro.otpController.isEmpty) {
+                authPro.validateOTP(isEmail: true);
+                /*  if (authPro.otpController.isEmpty) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       backgroundColor: AppTheme.primaryColor,
@@ -158,12 +160,12 @@ class OTPVerificationPage extends ConsumerWidget {
                   );
                 } else if (authPro.currentPageIndex <
                     authPro.signUpPages.length - 1) {
-                  authPro.pageController.animateToPage(
+                  authPro.signUpPageController.animateToPage(
                     authPro.currentPageIndex + 1,
                     duration: const Duration(milliseconds: 300),
                     curve: Curves.easeInOut,
                   );
-                }
+                } */
               },
               text: 'Confirm',
             ),
@@ -177,11 +179,11 @@ class OTPVerificationPage extends ConsumerWidget {
                     TextSpan(
                       text: ' Resend SMS',
                       style: theme.headlineSmall,
-                    )
+                    ),
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

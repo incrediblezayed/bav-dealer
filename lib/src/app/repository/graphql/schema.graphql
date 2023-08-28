@@ -1431,6 +1431,173 @@ input VehicleVariantCreateInput {
   price: Int
 }
 
+type VehicleDealerStockRequest {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: Dealer
+  vehicleVariant: VehicleVariant
+  vehicleColor: VehicleColor
+  dealer_prices: Int
+  stock: Int
+  accepted: Boolean
+  type: String
+}
+
+input VehicleDealerStockRequestWhereUniqueInput {
+  id: ID
+}
+
+input VehicleDealerStockRequestWhereInput {
+  AND: [VehicleDealerStockRequestWhereInput!]
+  OR: [VehicleDealerStockRequestWhereInput!]
+  NOT: [VehicleDealerStockRequestWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  dealer: DealerWhereInput
+  vehicleVariant: VehicleVariantWhereInput
+  vehicleColor: VehicleColorWhereInput
+  dealer_prices: IntFilter
+  stock: IntNullableFilter
+  accepted: BooleanFilter
+  type: StringNullableFilter
+}
+
+input StringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableFilter
+}
+
+input NestedStringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableFilter
+}
+
+input VehicleDealerStockRequestOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  dealer_prices: OrderDirection
+  stock: OrderDirection
+  accepted: OrderDirection
+  type: OrderDirection
+}
+
+input VehicleDealerStockRequestUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: DealerRelateToOneForUpdateInput
+  vehicleVariant: VehicleVariantRelateToOneForUpdateInput
+  vehicleColor: VehicleColorRelateToOneForUpdateInput
+  dealer_prices: Int
+  stock: Int
+  accepted: Boolean
+  type: String
+}
+
+input VehicleDealerStockRequestUpdateArgs {
+  where: VehicleDealerStockRequestWhereUniqueInput!
+  data: VehicleDealerStockRequestUpdateInput!
+}
+
+input VehicleDealerStockRequestCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: DealerRelateToOneForCreateInput
+  vehicleVariant: VehicleVariantRelateToOneForCreateInput
+  vehicleColor: VehicleColorRelateToOneForCreateInput
+  dealer_prices: Int
+  stock: Int
+  accepted: Boolean
+  type: String
+}
+
+type TestDriveDealerStockRequest {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: Dealer
+  vehicleVariant: VehicleVariant
+  vehicleColor: VehicleColor
+  price: Int
+  available: Boolean
+  accepted: Boolean
+}
+
+input TestDriveDealerStockRequestWhereUniqueInput {
+  id: ID
+}
+
+input TestDriveDealerStockRequestWhereInput {
+  AND: [TestDriveDealerStockRequestWhereInput!]
+  OR: [TestDriveDealerStockRequestWhereInput!]
+  NOT: [TestDriveDealerStockRequestWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  dealer: DealerWhereInput
+  vehicleVariant: VehicleVariantWhereInput
+  vehicleColor: VehicleColorWhereInput
+  price: IntFilter
+  available: BooleanFilter
+  accepted: BooleanFilter
+}
+
+input TestDriveDealerStockRequestOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  price: OrderDirection
+  available: OrderDirection
+  accepted: OrderDirection
+}
+
+input TestDriveDealerStockRequestUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: DealerRelateToOneForUpdateInput
+  vehicleVariant: VehicleVariantRelateToOneForUpdateInput
+  vehicleColor: VehicleColorRelateToOneForUpdateInput
+  price: Int
+  available: Boolean
+  accepted: Boolean
+}
+
+input TestDriveDealerStockRequestUpdateArgs {
+  where: TestDriveDealerStockRequestWhereUniqueInput!
+  data: TestDriveDealerStockRequestUpdateInput!
+}
+
+input TestDriveDealerStockRequestCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  dealer: DealerRelateToOneForCreateInput
+  vehicleVariant: VehicleVariantRelateToOneForCreateInput
+  vehicleColor: VehicleColorRelateToOneForCreateInput
+  price: Int
+  available: Boolean
+  accepted: Boolean
+}
+
 type Wallet {
   id: ID!
   createdAt: DateTime
@@ -1528,34 +1695,6 @@ input WalletTransactionWhereInput {
   status: StringNullableFilter
   amount: FloatNullableFilter
   message: StringFilter
-}
-
-input StringNullableFilter {
-  equals: String
-  in: [String!]
-  notIn: [String!]
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  contains: String
-  startsWith: String
-  endsWith: String
-  not: NestedStringNullableFilter
-}
-
-input NestedStringNullableFilter {
-  equals: String
-  in: [String!]
-  notIn: [String!]
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  contains: String
-  startsWith: String
-  endsWith: String
-  not: NestedStringNullableFilter
 }
 
 input WalletTransactionOrderByInput {
@@ -2066,6 +2205,7 @@ type Dealer {
   createdAt: DateTime
   modifiedAt: DateTime
   user: User
+  approved: Boolean
 }
 
 input DealerWhereUniqueInput {
@@ -2080,18 +2220,21 @@ input DealerWhereInput {
   createdAt: DateTimeNullableFilter
   modifiedAt: DateTimeNullableFilter
   user: UserWhereInput
+  approved: BooleanFilter
 }
 
 input DealerOrderByInput {
   id: OrderDirection
   createdAt: OrderDirection
   modifiedAt: OrderDirection
+  approved: OrderDirection
 }
 
 input DealerUpdateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   user: UserRelateToOneForUpdateInput
+  approved: Boolean
 }
 
 input DealerUpdateArgs {
@@ -2103,6 +2246,7 @@ input DealerCreateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   user: UserRelateToOneForCreateInput
+  approved: Boolean
 }
 
 type NotificationType {
@@ -2951,6 +3095,18 @@ type Mutation {
   updateVehicleVariants(data: [VehicleVariantUpdateArgs!]!): [VehicleVariant]
   deleteVehicleVariant(where: VehicleVariantWhereUniqueInput!): VehicleVariant
   deleteVehicleVariants(where: [VehicleVariantWhereUniqueInput!]!): [VehicleVariant]
+  createVehicleDealerStockRequest(data: VehicleDealerStockRequestCreateInput!): VehicleDealerStockRequest
+  createVehicleDealerStockRequests(data: [VehicleDealerStockRequestCreateInput!]!): [VehicleDealerStockRequest]
+  updateVehicleDealerStockRequest(where: VehicleDealerStockRequestWhereUniqueInput!, data: VehicleDealerStockRequestUpdateInput!): VehicleDealerStockRequest
+  updateVehicleDealerStockRequests(data: [VehicleDealerStockRequestUpdateArgs!]!): [VehicleDealerStockRequest]
+  deleteVehicleDealerStockRequest(where: VehicleDealerStockRequestWhereUniqueInput!): VehicleDealerStockRequest
+  deleteVehicleDealerStockRequests(where: [VehicleDealerStockRequestWhereUniqueInput!]!): [VehicleDealerStockRequest]
+  createTestDriveDealerStockRequest(data: TestDriveDealerStockRequestCreateInput!): TestDriveDealerStockRequest
+  createTestDriveDealerStockRequests(data: [TestDriveDealerStockRequestCreateInput!]!): [TestDriveDealerStockRequest]
+  updateTestDriveDealerStockRequest(where: TestDriveDealerStockRequestWhereUniqueInput!, data: TestDriveDealerStockRequestUpdateInput!): TestDriveDealerStockRequest
+  updateTestDriveDealerStockRequests(data: [TestDriveDealerStockRequestUpdateArgs!]!): [TestDriveDealerStockRequest]
+  deleteTestDriveDealerStockRequest(where: TestDriveDealerStockRequestWhereUniqueInput!): TestDriveDealerStockRequest
+  deleteTestDriveDealerStockRequests(where: [TestDriveDealerStockRequestWhereUniqueInput!]!): [TestDriveDealerStockRequest]
   createWallet(data: WalletCreateInput!): Wallet
   createWallets(data: [WalletCreateInput!]!): [Wallet]
   updateWallet(where: WalletWhereUniqueInput!, data: WalletUpdateInput!): Wallet
@@ -3196,6 +3352,12 @@ type Query {
   vehicleVariants(where: VehicleVariantWhereInput! = {}, orderBy: [VehicleVariantOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleVariant!]
   vehicleVariant(where: VehicleVariantWhereUniqueInput!): VehicleVariant
   vehicleVariantsCount(where: VehicleVariantWhereInput! = {}): Int
+  vehicleDealerStockRequests(where: VehicleDealerStockRequestWhereInput! = {}, orderBy: [VehicleDealerStockRequestOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleDealerStockRequest!]
+  vehicleDealerStockRequest(where: VehicleDealerStockRequestWhereUniqueInput!): VehicleDealerStockRequest
+  vehicleDealerStockRequestsCount(where: VehicleDealerStockRequestWhereInput! = {}): Int
+  testDriveDealerStockRequests(where: TestDriveDealerStockRequestWhereInput! = {}, orderBy: [TestDriveDealerStockRequestOrderByInput!]! = [], take: Int, skip: Int! = 0): [TestDriveDealerStockRequest!]
+  testDriveDealerStockRequest(where: TestDriveDealerStockRequestWhereUniqueInput!): TestDriveDealerStockRequest
+  testDriveDealerStockRequestsCount(where: TestDriveDealerStockRequestWhereInput! = {}): Int
   wallets(where: WalletWhereInput! = {}, orderBy: [WalletOrderByInput!]! = [], take: Int, skip: Int! = 0): [Wallet!]
   wallet(where: WalletWhereUniqueInput!): Wallet
   walletsCount(where: WalletWhereInput! = {}): Int
