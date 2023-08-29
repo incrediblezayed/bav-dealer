@@ -139,7 +139,7 @@ class CacheProvider {
   ///
   ///For getting the user data with the key [_userKey]
   ///the data is stored as string so it is converted to [UserModel] from Json
-  /*  GUserData_user? getUser() {
+   GUserData_user? getUser() {
     final userJson = _stringBox.get(_userKey);
     if (userJson != null) {
       return GUserData_user.fromJson(
@@ -147,7 +147,7 @@ class CacheProvider {
       );
     }
     return null;
-  } */
+  }
 
   ///Set Session Token Method
   ///

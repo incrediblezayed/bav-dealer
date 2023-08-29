@@ -9,6 +9,27 @@ class AuthRepository {
   final GraphqlClient _graphqlClient = getIt<GraphqlClient>();
   Client get _client => _graphqlClient.client;
 
+  Future<bool> createDealer(String id) async {
+    try {
+      final response = await _client
+          .request(
+            GCreateDealerReq(
+              (b) => b.vars.data.user.connect.id = id,
+            ),
+          )
+          .first;
+
+      if (response.linkException != null ||
+          (response.graphqlErrors?.isNotEmpty ?? false)) {
+        throw Exception('Something went wrong');
+      }
+      return response.data?.createDealer?.id != null;
+    } catch (e) {
+      e.log();
+    }
+    return false;
+  }
+
   Future<bool> register({
     required String name,
     required String phoneNumber,

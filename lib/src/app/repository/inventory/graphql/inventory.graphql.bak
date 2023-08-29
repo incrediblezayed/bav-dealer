@@ -1,0 +1,34 @@
+query Vehicles {
+  vehicles {
+    brand {
+      name
+    }
+    colors {
+      name
+      code
+    }
+    description
+    id
+    name
+    type {
+      id
+      name
+      description
+    }
+  }
+}
+
+mutation CreateVehicleDealerStockRequest($data: VehicleDealerStockRequestCreateInput!) {
+  createVehicleDealerStockRequest(data: $data) {
+    type
+    stock
+    dealer_prices
+  }
+}
+
+mutation CreateVehicleDealerStockRequest($data: TestDriveDealerStockRequestCreateInput!) {
+  createTestDriveDealerStockRequest(data: $data) {
+    available
+    price
+  }
+}

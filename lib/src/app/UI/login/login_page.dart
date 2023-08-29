@@ -55,13 +55,15 @@ class _LoginPageState extends ConsumerState<LoginPage> {
               height: 26.h,
             ),
             KTextField(
-              hintText: 'Enter Your Username Or Mobile Number',
-              label: 'Dealer Id',
+              controller: authPro.phoneNumberController,
+              hintText: 'Phone Number',
+              label: 'Phone Number',
             ),
             SizedBox(
               height: 16.h,
             ),
             KTextField(
+              controller: authPro.passwordController,
               hintText: 'Enter Your Password',
               label: 'Password',
               suffixIcon: IconButton(
@@ -98,7 +100,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
               height: 16.h,
             ),
             KButton(
-              onPressed: () {},
+              onPressed: () {
+                authPro.login();
+              },
               text: 'Log In',
             ),
             TextButton(
@@ -136,12 +140,12 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                           fontSize: 20.sp,
                           fontWeight: FontWeight.w600,
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
