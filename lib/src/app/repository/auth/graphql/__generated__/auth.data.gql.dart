@@ -832,3 +832,50 @@ abstract class GUpdateUserData_updateUser
         json,
       );
 }
+
+abstract class GDealerData implements Built<GDealerData, GDealerDataBuilder> {
+  GDealerData._();
+
+  factory GDealerData([Function(GDealerDataBuilder b) updates]) = _$GDealerData;
+
+  static void _initializeBuilder(GDealerDataBuilder b) =>
+      b..G__typename = 'Query';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  BuiltList<GDealerData_dealers>? get dealers;
+  static Serializer<GDealerData> get serializer => _$gDealerDataSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GDealerData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GDealerData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GDealerData.serializer,
+        json,
+      );
+}
+
+abstract class GDealerData_dealers
+    implements Built<GDealerData_dealers, GDealerData_dealersBuilder> {
+  GDealerData_dealers._();
+
+  factory GDealerData_dealers(
+      [Function(GDealerData_dealersBuilder b) updates]) = _$GDealerData_dealers;
+
+  static void _initializeBuilder(GDealerData_dealersBuilder b) =>
+      b..G__typename = 'Dealer';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  static Serializer<GDealerData_dealers> get serializer =>
+      _$gDealerDataDealersSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GDealerData_dealers.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GDealerData_dealers? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GDealerData_dealers.serializer,
+        json,
+      );
+}

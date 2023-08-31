@@ -1,3 +1,4 @@
+import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
@@ -14,7 +15,6 @@ class AddressPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context).textTheme;
     final authPro = ref.watch(authProvider);
-    final pageViewPro = ref.watch(authProvider);
     return Scaffold(
       body: Padding(
         padding:
@@ -65,8 +65,8 @@ class AddressPage extends ConsumerWidget {
               onPressed: () async {
                 await authPro.regsiter();
 
-                await pageViewPro.signUpPageController.animateToPage(
-                  pageViewPro.currentPageIndex + 1,
+                await authPro.signUpPageController.animateToPage(
+                  authPro.currentPageIndex + 1,
                   duration: const Duration(milliseconds: 300),
                   curve: Curves.easeInOut,
                 );

@@ -1,3 +1,4 @@
+import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';

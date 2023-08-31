@@ -162,3 +162,21 @@ abstract class GUpdateUserVars
         json,
       );
 }
+
+abstract class GDealerVars implements Built<GDealerVars, GDealerVarsBuilder> {
+  GDealerVars._();
+
+  factory GDealerVars([Function(GDealerVarsBuilder b) updates]) = _$GDealerVars;
+
+  _i1.GDealerWhereInput get where;
+  static Serializer<GDealerVars> get serializer => _$gDealerVarsSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GDealerVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GDealerVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GDealerVars.serializer,
+        json,
+      );
+}

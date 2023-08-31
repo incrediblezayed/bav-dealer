@@ -22,6 +22,8 @@ import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.dat
         GCreateUserData,
         GCreateUserData_createUser,
         GCurrentUserOTPData,
+        GDealerData,
+        GDealerData_dealers,
         GUpdateUserData,
         GUpdateUserData_updateUser,
         GUserData,
@@ -39,6 +41,7 @@ import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.req
         GCreateDealerReq,
         GCreateUserReq,
         GCurrentUserOTPReq,
+        GDealerReq,
         GUpdateUserReq,
         GUserReq,
         GValidateUserOTPReq;
@@ -48,6 +51,7 @@ import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.var
         GCreateDealerVars,
         GCreateUserVars,
         GCurrentUserOTPVars,
+        GDealerVars,
         GUpdateUserVars,
         GUserVars,
         GValidateUserOTPVars;
@@ -394,6 +398,31 @@ import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema
         GWalletUpdateInput,
         GWalletWhereInput,
         GWalletWhereUniqueInput;
+import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart'
+    show
+        GCreateVehicleDealerStockRequestData,
+        GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest,
+        GCreateVehicleTestDriveDealerStockRequestData,
+        GCreateVehicleTestDriveDealerStockRequestData_createTestDriveDealerStockRequest,
+        GVehiclesData,
+        GVehiclesData_vehicles,
+        GVehiclesData_vehicles_variants,
+        GVehiclesData_vehicles_variants_colors,
+        GVehiclesData_vehicles_variants_colors_images,
+        GVehiclesData_vehicles_variants_colors_images_image,
+        GVehiclesData_vehicles_variants_vehicle,
+        GVehiclesData_vehicles_variants_vehicle_brand,
+        GVehiclesData_vehicles_variants_vehicle_type;
+import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.req.gql.dart'
+    show
+        GCreateVehicleDealerStockRequestReq,
+        GCreateVehicleTestDriveDealerStockRequestReq,
+        GVehiclesReq;
+import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.var.gql.dart'
+    show
+        GCreateVehicleDealerStockRequestVars,
+        GCreateVehicleTestDriveDealerStockRequestVars,
+        GVehiclesVars;
 import 'package:dealerapp/src/custom_serializers/upload_serializer.dart'
     show UploadSerializer;
 import 'package:ferry_exec/ferry_exec.dart';
@@ -470,17 +499,29 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GCreateUserData_createUser,
   GCreateUserReq,
   GCreateUserVars,
+  GCreateVehicleDealerStockRequestData,
+  GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest,
+  GCreateVehicleDealerStockRequestReq,
+  GCreateVehicleDealerStockRequestVars,
+  GCreateVehicleTestDriveDealerStockRequestData,
+  GCreateVehicleTestDriveDealerStockRequestData_createTestDriveDealerStockRequest,
+  GCreateVehicleTestDriveDealerStockRequestReq,
+  GCreateVehicleTestDriveDealerStockRequestVars,
   GCurrentUserOTPData,
   GCurrentUserOTPReq,
   GCurrentUserOTPVars,
   GDateTime,
   GDateTimeNullableFilter,
   GDealerCreateInput,
+  GDealerData,
+  GDealerData_dealers,
   GDealerOrderByInput,
   GDealerRelateToOneForCreateInput,
   GDealerRelateToOneForUpdateInput,
+  GDealerReq,
   GDealerUpdateArgs,
   GDealerUpdateInput,
+  GDealerVars,
   GDealerWhereInput,
   GDealerWhereUniqueInput,
   GEmailNotificationTemplateCreateInput,
@@ -775,6 +816,17 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GVehicleVariantWhereUniqueInput,
   GVehicleWhereInput,
   GVehicleWhereUniqueInput,
+  GVehiclesData,
+  GVehiclesData_vehicles,
+  GVehiclesData_vehicles_variants,
+  GVehiclesData_vehicles_variants_colors,
+  GVehiclesData_vehicles_variants_colors_images,
+  GVehiclesData_vehicles_variants_colors_images_image,
+  GVehiclesData_vehicles_variants_vehicle,
+  GVehiclesData_vehicles_variants_vehicle_brand,
+  GVehiclesData_vehicles_variants_vehicle_type,
+  GVehiclesReq,
+  GVehiclesVars,
   GWalletCreateInput,
   GWalletOrderByInput,
   GWalletRelateToOneForCreateInput,

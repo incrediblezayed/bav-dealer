@@ -18,7 +18,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 ///Auth Provider Instance
-final authProvider = ChangeNotifierProvider((ref) => AuthProvider());
 
 ///Auth Class
 class AuthProvider extends ChangeNotifier {
@@ -41,11 +40,16 @@ class AuthProvider extends ChangeNotifier {
   Future<void> createDealer() async {
     final user = cacheProvider.getUserId();
     final check = await _authRepository.createDealer(user!);
-    if (check) {
+    if (check != null) {
+      await cacheProvider.setDealerId(check);
       await AppRoutes.push(page: const HomePage());
     } else {
       AppRoutes.showErrorSnackbar(message: 'Something Went Wrong');
     }
+  }
+
+  Future<String> getDealerId() async {
+    return (await _authRepository.getDealerByUser()) ?? '';
   }
 
   Future<void> regsiter() async {
@@ -159,6 +163,7 @@ class AuthProvider extends ChangeNotifier {
     final response = await loginApi(fromSignUp: false);
     AppRoutes.pop();
     if (response) {
+      await cacheProvider.setDealerId(await getDealerId());
       await AppRoutes.pushAndRemoveUntil(page: const HomePage());
     }
   }
