@@ -51,6 +51,10 @@ class CacheProvider {
   ///User Id Key for user id
   final String _userId = 'userId';
 
+  ///User Id Key for dealer id
+
+  final String _dealerId = 'dealerId';
+
   ///Initialize the Hive
   ///
   ///This method initializes the Hive
@@ -139,7 +143,7 @@ class CacheProvider {
   ///
   ///For getting the user data with the key [_userKey]
   ///the data is stored as string so it is converted to [UserModel] from Json
-  /*  GUserData_user? getUser() {
+  GUserData_user? getUser() {
     final userJson = _stringBox.get(_userKey);
     if (userJson != null) {
       return GUserData_user.fromJson(
@@ -147,7 +151,7 @@ class CacheProvider {
       );
     }
     return null;
-  } */
+  }
 
   ///Set Session Token Method
   ///
@@ -175,6 +179,20 @@ class CacheProvider {
   ///For getting the user id with the key [_userId]
   String? getUserId() {
     return _stringBox.get(_userId);
+  }
+
+  ///Set dealer Id Method
+  ///
+  ///For storing the user id with the key [_userId]
+  Future<void> setDealerId(String dealerId) async {
+    await _stringBox.put(_dealerId, dealerId);
+  }
+
+  ///Get dealer Id Method
+  ///
+  ///For getting the user id with the key [_userId]
+  String? getDealerId() {
+    return _stringBox.get(_dealerId);
   }
 
   ///Clear Method

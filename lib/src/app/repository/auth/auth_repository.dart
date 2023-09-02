@@ -1,3 +1,4 @@
+import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.data.gql.dart';
 import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.req.gql.dart';
 import 'package:dealerapp/src/app/repository/graphql_client.dart';
@@ -8,6 +9,27 @@ import 'package:ferry/ferry.dart';
 class AuthRepository {
   final GraphqlClient _graphqlClient = getIt<GraphqlClient>();
   Client get _client => _graphqlClient.client;
+
+  Future<String?> createDealer(String id) async {
+    try {
+      final response = await _client
+          .request(
+            GCreateDealerReq(
+              (b) => b.vars.data.user.connect.id = id,
+            ),
+          )
+          .first;
+
+      if (response.linkException != null ||
+          (response.graphqlErrors?.isNotEmpty ?? false)) {
+        throw Exception('Something went wrong');
+      }
+      return response.data?.createDealer?.id;
+    } catch (e) {
+      e.log();
+    }
+    return null;
+  }
 
   Future<bool> register({
     required String name,
@@ -182,6 +204,27 @@ class AuthRepository {
       if (response.data?.currentUserOTP != null) {
         response.data?.currentUserOTP.log();
         return response.data?.currentUserOTP;
+      }
+    } catch (e) {
+      e.log();
+    }
+    return null;
+  }
+
+  Future<String?> getDealerByUser() async {
+    try {
+      final response = await _client
+          .request(
+            GDealerReq(
+              (b) => b.vars.where.user.id.equals = cacheProvider.getUserId(),
+            ),
+          )
+          .first;
+      if (response.linkException != null ||
+          (response.graphqlErrors?.isNotEmpty ?? false)) {
+        throw Exception('Something w w');
+      } else {
+        return response.data?.dealers?.firstOrNull?.id;
       }
     } catch (e) {
       e.log();

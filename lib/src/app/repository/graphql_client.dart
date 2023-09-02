@@ -8,7 +8,7 @@ import 'package:gql_dio_link/gql_dio_link.dart';
 ///GraphQL Client
 class GraphqlClient {
   final Map<String, String> _headers = {
-    'Authorization': 'Bearer ${cacheProvider.getSessionToken()}'
+    'Authorization': 'Bearer ${cacheProvider.getSessionToken()}',
   };
 
   ///Local URL
@@ -117,7 +117,6 @@ class GraphqlClient {
               for (final element in options.headers.entries) {
                 headers.write('${element.key}: ${element.value}\n');
               }
-            
 
               handler.next(options);
             },
@@ -126,15 +125,15 @@ class GraphqlClient {
               for (final element in e.headers.map.entries) {
                 headers.write('${element.key}: ${element.value}\n');
               }
-            
+
               handler.next(e);
             },
             onError: (e, handler) {
               e.log();
-           
+
               handler.next(e);
             },
-          )
+          ),
         ],
       );
     } catch (e) {

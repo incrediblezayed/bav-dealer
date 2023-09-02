@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:dealerapp/src/app/UI/Homepage/homepage.dart';
 import 'package:dealerapp/src/app/UI/forgot_password/change_password.dart';
 import 'package:dealerapp/src/app/UI/forgot_password/forgot_password.dart';
 import 'package:dealerapp/src/app/UI/login/login_page.dart';
@@ -9,6 +10,7 @@ import 'package:dealerapp/src/app/UI/signup/otp_verification_page.dart';
 import 'package:dealerapp/src/app/UI/signup/signup_page.dart';
 import 'package:dealerapp/src/app/model/user.model.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:dealerapp/src/app/provider/cache_provider.dart';
 import 'package:dealerapp/src/app/repository/auth/auth_repository.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
@@ -16,7 +18,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 ///Auth Provider Instance
-final authProvider = ChangeNotifierProvider((ref) => AuthProvider());
 
 ///Auth Class
 class AuthProvider extends ChangeNotifier {
@@ -35,6 +36,22 @@ class AuthProvider extends ChangeNotifier {
   }
 
   final AuthRepository _authRepository = AuthRepository();
+
+  Future<void> createDealer() async {
+    final user = cacheProvider.getUserId();
+    final check = await _authRepository.createDealer(user!);
+    if (check != null) {
+      await cacheProvider.setDealerId(check);
+      await AppRoutes.push(page: const HomePage());
+    } else {
+      AppRoutes.showErrorSnackbar(message: 'Something Went Wrong');
+    }
+  }
+
+  Future<String> getDealerId() async {
+    return (await _authRepository.getDealerByUser()) ?? '';
+  }
+
   Future<void> regsiter() async {
     try {
       if (firstNameController.text.isEmpty ||
@@ -98,8 +115,9 @@ class AuthProvider extends ChangeNotifier {
       final sessionToken = data['sessionToken'] as String;
       await cacheProvider.setSessionToken(sessionToken);
       final newUser = await _authRepository.getUser(userId: user.id!);
+      await cacheProvider.setUserId(user.id!);
+
       if (!fromSignUp) {
-        await cacheProvider.setUserId(user.id!);
         await cacheProvider.setUser(newUser!);
       } else {
         await _authRepository.updateUser(
@@ -145,7 +163,8 @@ class AuthProvider extends ChangeNotifier {
     final response = await loginApi(fromSignUp: false);
     AppRoutes.pop();
     if (response) {
-      await AppRoutes.pushAndRemoveUntil(page: const LoginPage());
+      await cacheProvider.setDealerId(await getDealerId());
+      await AppRoutes.pushAndRemoveUntil(page: const HomePage());
     }
   }
 
@@ -161,7 +180,7 @@ class AuthProvider extends ChangeNotifier {
         otpController.map((e) => e.text).join(),
       );
       if (response) {
-        await login();
+        await createDealer();
       } else {
         throw Exception('Something went wrong');
       }

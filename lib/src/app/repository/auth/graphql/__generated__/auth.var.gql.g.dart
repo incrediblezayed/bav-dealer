@@ -20,6 +20,7 @@ Serializer<GAuthenticateUserWithPasswordVars>
 Serializer<GUserVars> _$gUserVarsSerializer = new _$GUserVarsSerializer();
 Serializer<GUpdateUserVars> _$gUpdateUserVarsSerializer =
     new _$GUpdateUserVarsSerializer();
+Serializer<GDealerVars> _$gDealerVarsSerializer = new _$GDealerVarsSerializer();
 
 class _$GCreateUserVarsSerializer
     implements StructuredSerializer<GCreateUserVars> {
@@ -340,6 +341,47 @@ class _$GUpdateUserVarsSerializer
           result.where.replace(serializers.deserialize(value,
                   specifiedType: const FullType(_i1.GUserWhereUniqueInput))!
               as _i1.GUserWhereUniqueInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GDealerVarsSerializer implements StructuredSerializer<GDealerVars> {
+  @override
+  final Iterable<Type> types = const [GDealerVars, _$GDealerVars];
+  @override
+  final String wireName = 'GDealerVars';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, GDealerVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(_i1.GDealerWhereInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GDealerVars deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GDealerVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i1.GDealerWhereInput))!
+              as _i1.GDealerWhereInput);
           break;
       }
     }
@@ -1028,6 +1070,98 @@ class GUpdateUserVarsBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GUpdateUserVars', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GDealerVars extends GDealerVars {
+  @override
+  final _i1.GDealerWhereInput where;
+
+  factory _$GDealerVars([void Function(GDealerVarsBuilder)? updates]) =>
+      (new GDealerVarsBuilder()..update(updates))._build();
+
+  _$GDealerVars._({required this.where}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(where, r'GDealerVars', 'where');
+  }
+
+  @override
+  GDealerVars rebuild(void Function(GDealerVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GDealerVarsBuilder toBuilder() => new GDealerVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GDealerVars && where == other.where;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GDealerVars')..add('where', where))
+        .toString();
+  }
+}
+
+class GDealerVarsBuilder implements Builder<GDealerVars, GDealerVarsBuilder> {
+  _$GDealerVars? _$v;
+
+  _i1.GDealerWhereInputBuilder? _where;
+  _i1.GDealerWhereInputBuilder get where =>
+      _$this._where ??= new _i1.GDealerWhereInputBuilder();
+  set where(_i1.GDealerWhereInputBuilder? where) => _$this._where = where;
+
+  GDealerVarsBuilder();
+
+  GDealerVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GDealerVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GDealerVars;
+  }
+
+  @override
+  void update(void Function(GDealerVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GDealerVars build() => _build();
+
+  _$GDealerVars _build() {
+    _$GDealerVars _$result;
+    try {
+      _$result = _$v ?? new _$GDealerVars._(where: where.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GDealerVars', _$failedField, e.toString());
       }
       rethrow;
     }

@@ -425,3 +425,59 @@ abstract class GUpdateUserReq
         json,
       );
 }
+
+abstract class GDealerReq
+    implements
+        Built<GDealerReq, GDealerReqBuilder>,
+        _i1.OperationRequest<_i2.GDealerData, _i3.GDealerVars> {
+  GDealerReq._();
+
+  factory GDealerReq([Function(GDealerReqBuilder b) updates]) = _$GDealerReq;
+
+  static void _initializeBuilder(GDealerReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'Dealer',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GDealerVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GDealerData? Function(
+    _i2.GDealerData?,
+    _i2.GDealerData?,
+  )? get updateResult;
+  @override
+  _i2.GDealerData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GDealerData? parseData(Map<String, dynamic> json) =>
+      _i2.GDealerData.fromJson(json);
+  static Serializer<GDealerReq> get serializer => _$gDealerReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GDealerReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GDealerReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GDealerReq.serializer,
+        json,
+      );
+}

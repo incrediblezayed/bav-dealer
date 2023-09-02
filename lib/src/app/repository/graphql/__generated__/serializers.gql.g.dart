@@ -81,17 +81,32 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GCreateUserData_createUser.serializer)
       ..add(GCreateUserReq.serializer)
       ..add(GCreateUserVars.serializer)
+      ..add(GCreateVehicleDealerStockRequestData.serializer)
+      ..add(GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest
+          .serializer)
+      ..add(GCreateVehicleDealerStockRequestReq.serializer)
+      ..add(GCreateVehicleDealerStockRequestVars.serializer)
+      ..add(GCreateVehicleTestDriveDealerStockRequestData.serializer)
+      ..add(
+          GCreateVehicleTestDriveDealerStockRequestData_createTestDriveDealerStockRequest
+              .serializer)
+      ..add(GCreateVehicleTestDriveDealerStockRequestReq.serializer)
+      ..add(GCreateVehicleTestDriveDealerStockRequestVars.serializer)
       ..add(GCurrentUserOTPData.serializer)
       ..add(GCurrentUserOTPReq.serializer)
       ..add(GCurrentUserOTPVars.serializer)
       ..add(GDateTime.serializer)
       ..add(GDateTimeNullableFilter.serializer)
       ..add(GDealerCreateInput.serializer)
+      ..add(GDealerData.serializer)
+      ..add(GDealerData_dealers.serializer)
       ..add(GDealerOrderByInput.serializer)
       ..add(GDealerRelateToOneForCreateInput.serializer)
       ..add(GDealerRelateToOneForUpdateInput.serializer)
+      ..add(GDealerReq.serializer)
       ..add(GDealerUpdateArgs.serializer)
       ..add(GDealerUpdateInput.serializer)
+      ..add(GDealerVars.serializer)
       ..add(GDealerWhereInput.serializer)
       ..add(GDealerWhereUniqueInput.serializer)
       ..add(GEmailNotificationTemplateCreateInput.serializer)
@@ -386,6 +401,17 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleVariantWhereUniqueInput.serializer)
       ..add(GVehicleWhereInput.serializer)
       ..add(GVehicleWhereUniqueInput.serializer)
+      ..add(GVehiclesData.serializer)
+      ..add(GVehiclesData_vehicles.serializer)
+      ..add(GVehiclesData_vehicles_variants.serializer)
+      ..add(GVehiclesData_vehicles_variants_colors.serializer)
+      ..add(GVehiclesData_vehicles_variants_colors_images.serializer)
+      ..add(GVehiclesData_vehicles_variants_colors_images_image.serializer)
+      ..add(GVehiclesData_vehicles_variants_vehicle.serializer)
+      ..add(GVehiclesData_vehicles_variants_vehicle_brand.serializer)
+      ..add(GVehiclesData_vehicles_variants_vehicle_type.serializer)
+      ..add(GVehiclesReq.serializer)
+      ..add(GVehiclesVars.serializer)
       ..add(GWalletCreateInput.serializer)
       ..add(GWalletOrderByInput.serializer)
       ..add(GWalletRelateToOneForCreateInput.serializer)
@@ -512,6 +538,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GDateTime)]),
           () => new ListBuilder<GDateTime>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GDealerData_dealers)]),
+          () => new ListBuilder<GDealerData_dealers>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GDealerWhereInput)]),
           () => new ListBuilder<GDealerWhereInput>())
@@ -1132,6 +1162,24 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GVehicleWhereInput)]),
           () => new ListBuilder<GVehicleWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehiclesData_vehicles)]),
+          () => new ListBuilder<GVehiclesData_vehicles>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehiclesData_vehicles_variants)]),
+          () => new ListBuilder<GVehiclesData_vehicles_variants>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehiclesData_vehicles_variants_colors)]),
+          () => new ListBuilder<GVehiclesData_vehicles_variants_colors>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GVehiclesData_vehicles_variants_colors_images)
+          ]),
+          () =>
+              new ListBuilder<GVehiclesData_vehicles_variants_colors_images>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GWalletTransactionWhereInput)]),

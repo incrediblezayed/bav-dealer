@@ -2,6 +2,7 @@ import 'package:dealerapp/src/app/UI/Homepage/homepage.dart';
 import 'package:dealerapp/src/app/UI/forgot_password/forgot_password_flow.dart';
 import 'package:dealerapp/src/app/UI/signup/signup_flow.dart';
 import 'package:dealerapp/src/app/UI/wallet/withdrawal/withdrawal_page.dart';
+import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
@@ -55,13 +56,15 @@ class _LoginPageState extends ConsumerState<LoginPage> {
               height: 26.h,
             ),
             KTextField(
-              hintText: 'Enter Your Username Or Mobile Number',
-              label: 'Dealer Id',
+              controller: authPro.phoneNumberController,
+              hintText: 'Phone Number',
+              label: 'Phone Number',
             ),
             SizedBox(
               height: 16.h,
             ),
             KTextField(
+              controller: authPro.passwordController,
               hintText: 'Enter Your Password',
               label: 'Password',
               suffixIcon: IconButton(
@@ -98,7 +101,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
               height: 16.h,
             ),
             KButton(
-              onPressed: () {},
+              onPressed: () {
+                authPro.login();
+              },
               text: 'Log In',
             ),
             TextButton(
@@ -136,12 +141,12 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                           fontSize: 20.sp,
                           fontWeight: FontWeight.w600,
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

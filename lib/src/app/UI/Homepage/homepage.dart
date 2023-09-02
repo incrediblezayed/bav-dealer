@@ -18,6 +18,7 @@ class HomePage extends StatelessWidget {
     final theme = Theme.of(context).textTheme;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       key: AppRoutes.scaffoldKey,
       drawer: const AppDrawer(),
       appBar: AppBar(

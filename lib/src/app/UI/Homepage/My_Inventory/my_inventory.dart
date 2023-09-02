@@ -1,16 +1,18 @@
+import 'package:dealerapp/src/app/UI/ListOfVehicle/list_of_vehicles.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/empty_widget.dart';
 import 'package:dealerapp/src/widgets/k_inventory_bike_card.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:iconsax/iconsax.dart';
 
-class MyInventory extends StatefulWidget {
+class MyInventory extends ConsumerStatefulWidget {
   const MyInventory({super.key});
 
   @override
-  State<MyInventory> createState() => _MyInventoryState();
+  ConsumerState<MyInventory> createState() => _MyInventoryState();
 }
 
-class _MyInventoryState extends State<MyInventory>
+class _MyInventoryState extends ConsumerState<MyInventory>
     with TickerProviderStateMixin {
   late final _tabController = TabController(length: 3, vsync: this);
   @override
@@ -54,7 +56,8 @@ class _MyInventoryState extends State<MyInventory>
       body: TabBarView(
         controller: _tabController,
         children: const [
-          KInventoryBikeCard(),
+          // KInventoryBikeCard(),
+          ListOfVehicles(),
           EmptyWidgt(title: 'Uh oh! You have no orders.'),
           EmptyWidgt(title: 'Uh oh! You have no orders.'),
         ],
