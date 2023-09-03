@@ -1,16 +1,19 @@
 import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
+import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:iconsax/iconsax.dart';
 
 ///Personal Imformation Page
-class PersonalInformationPage extends StatelessWidget {
+class PersonalInformationPage extends ConsumerWidget {
   ///This page is used to take inout from the users on sign up flow
   const PersonalInformationPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final authPro = ref.watch(authProvider);
     final theme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
@@ -52,11 +55,24 @@ class PersonalInformationPage extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         child: Column(
           children: [
-            const CircleAvatar(
-              radius: 35,
+            GestureDetector(
+              onTap: () => authPro.pickImage(),
+              child: CircleAvatar(
+                radius: 40.h,
+                backgroundImage: authPro.file != null
+                    ? MemoryImage(authPro.file!.readAsBytesSync())
+                    : null,
+                backgroundColor: AppTheme.textFieldFill,
+                child: authPro.file == null
+                    ? const Icon(
+                        Icons.add_a_photo,
+                        color: AppTheme.primaryColor,
+                      )
+                    : null,
+              ),
             ),
             SizedBox(
-              height: 10.h,
+              height: 20.h,
             ),
             const KTextField(
               hintText: 'Name',

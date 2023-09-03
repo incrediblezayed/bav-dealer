@@ -1,5 +1,6 @@
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
+import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
@@ -64,6 +65,7 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
               controller: authPro.firstNameController,
               hintText: 'Enter Your First Name',
               label: 'First Name',
+              inputType: TextInputType.name,
             ),
             SizedBox(
               height: 16.h,
@@ -72,6 +74,7 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
               controller: authPro.lastNameController,
               hintText: 'Enter Your Last Name',
               label: 'Last Name',
+              inputType: TextInputType.name,
             ),
             SizedBox(
               height: 16.h,
@@ -80,6 +83,7 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
               controller: authPro.emailIdController,
               hintText: 'Enter Your Email ID',
               label: 'Email ID',
+              inputType: TextInputType.emailAddress,
             ),
             SizedBox(
               height: 14.h,
@@ -102,7 +106,15 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
             ),
             KButton(
               onPressed: () {
-                if (authPro.currentPageIndex < authPro.signUpPages.length - 1) {
+                if (authPro.firstNameController.text.isEmpty ||
+                    authPro.lastNameController.text.isEmpty ||
+                    authPro.emailIdController.text.isEmpty ||
+                    authPro.passwordController.text.isEmpty) {
+                  AppRoutes.showErrorSnackbar(
+                    message: 'Please fill all the details',
+                  );
+                } else if (authPro.currentPageIndex <
+                    authPro.signUpPages.length - 1) {
                   authPro.signUpPageController.animateToPage(
                     authPro.currentPageIndex + 1,
                     duration: const Duration(milliseconds: 300),

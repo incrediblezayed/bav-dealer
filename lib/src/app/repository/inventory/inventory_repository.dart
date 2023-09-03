@@ -1,5 +1,4 @@
 import 'package:dealerapp/src/app/provider/app_provider.dart';
-import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema.gql.dart';
 import 'package:dealerapp/src/app/repository/graphql_client.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.req.gql.dart';
@@ -7,6 +6,7 @@ import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/get_it.dart';
 import 'package:ferry/ferry.dart';
 
+///Inventory Repository Class
 class InventoryRepository {
   final GraphqlClient _graphqlClient = getIt<GraphqlClient>();
   Client get _client => _graphqlClient.client;
@@ -31,6 +31,7 @@ class InventoryRepository {
     return null;
   }
 
+  ///Creating Stock Request Function
   Future<bool> createStockRequest(
     String colorId,
     String variantId,

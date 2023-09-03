@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:dealerapp/src/app/UI/Homepage/homepage.dart';
 import 'package:dealerapp/src/app/UI/forgot_password/change_password.dart';
@@ -16,6 +17,7 @@ import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:image_picker/image_picker.dart';
 
 ///Auth Provider Instance
 
@@ -29,10 +31,24 @@ class AuthProvider extends ChangeNotifier {
   ///
   bool _agree = false;
   bool get agree => _agree;
+  File? file;
 
   set agree(bool value) {
     _agree = value;
     notifyListeners();
+  }
+
+  ///Pick Image Function
+  Future<void> pickImage() async {
+    try {
+      final xFile = await ImagePicker().pickImage(source: ImageSource.gallery);
+      if (xFile != null) {
+        file = File(xFile.path);
+        notifyListeners();
+      }
+    } catch (e) {
+      e.log();
+    }
   }
 
   final AuthRepository _authRepository = AuthRepository();
@@ -156,6 +172,11 @@ class AuthProvider extends ChangeNotifier {
   Future<void> login() async {
     if (phoneNumberController.text.isEmpty || passwordController.text.isEmpty) {
       AppRoutes.showErrorSnackbar(message: 'Please enter phone and password');
+      return;
+    }
+
+    if (phoneNumberController.text.length < 10) {
+      AppRoutes.showErrorSnackbar(message: 'Phone number must be 10 numbers');
       return;
     }
 

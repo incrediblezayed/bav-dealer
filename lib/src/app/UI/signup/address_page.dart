@@ -1,5 +1,6 @@
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
+import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
@@ -63,6 +64,10 @@ class AddressPage extends ConsumerWidget {
             ),
             KButton(
               onPressed: () async {
+             /*    if (authPro.shopAddressController.text.isEmpty) {
+                  AppRoutes.showErrorSnackbar(
+                      message: 'Please fill the shop address');
+                } */
                 await authPro.regsiter();
 
                 await authPro.signUpPageController.animateToPage(

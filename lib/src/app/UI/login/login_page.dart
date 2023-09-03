@@ -57,6 +57,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
             ),
             KTextField(
               controller: authPro.phoneNumberController,
+              inputType: TextInputType.number,
               hintText: 'Phone Number',
               label: 'Phone Number',
             ),
@@ -136,11 +137,8 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     children: [
                       TextSpan(
                         text: ' Sign Up',
-                        style: TextStyle(
-                          color: AppTheme.textColor,
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style:
+                            textTheme.headlineLarge?.copyWith(fontSize: 18.sp),
                       ),
                     ],
                   ),
