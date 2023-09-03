@@ -4,19 +4,17 @@ import 'dart:io';
 import 'package:dealerapp/src/app/UI/Homepage/homepage.dart';
 import 'package:dealerapp/src/app/UI/forgot_password/change_password.dart';
 import 'package:dealerapp/src/app/UI/forgot_password/forgot_password.dart';
-import 'package:dealerapp/src/app/UI/login/login_page.dart';
 import 'package:dealerapp/src/app/UI/signup/address_page.dart';
 import 'package:dealerapp/src/app/UI/signup/enter_your_details_page.dart';
 import 'package:dealerapp/src/app/UI/signup/otp_verification_page.dart';
 import 'package:dealerapp/src/app/UI/signup/signup_page.dart';
 import 'package:dealerapp/src/app/model/user.model.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
-import 'package:dealerapp/src/app/provider/cache_provider.dart';
 import 'package:dealerapp/src/app/repository/auth/auth_repository.dart';
+import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.data.gql.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 
 ///Auth Provider Instance
@@ -48,6 +46,17 @@ class AuthProvider extends ChangeNotifier {
       }
     } catch (e) {
       e.log();
+    }
+  }
+
+  ///Method to get the user from the database
+  Future<GUserData_user?> getUser(String id) async {
+    final data = await _authRepository.getUser(userId: id);
+    if (data == null) {
+      AppRoutes.showErrorSnackbar(message: 'Something went wrong');
+      return null;
+    } else {
+      return data;
     }
   }
 
@@ -94,7 +103,7 @@ class AuthProvider extends ChangeNotifier {
       );
 
       if (response) {
-        final loggedIn = await loginApi(fromSignUp: true);  
+        final loggedIn = await loginApi(fromSignUp: true);
         if (!loggedIn) {
           AppRoutes.showErrorSnackbar(message: 'Failed to create User');
           return;

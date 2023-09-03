@@ -4,6 +4,7 @@ import 'package:dealerapp/src/app/UI/drawer/about_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/contact_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/terms_conditions.dart';
 import 'package:dealerapp/src/app/UI/login/login_page.dart';
+import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
@@ -202,7 +203,7 @@ class AppDrawer extends ConsumerWidget {
                       title: 'Logout',
                       icon: AppImages.logoutred,
                       onTap: () {
-                        // cacheProvider.clear();
+                        cacheProvider.clear();
                         AppRoutes.pushAndRemoveUntil(page: const LoginPage());
                       },
                     ),

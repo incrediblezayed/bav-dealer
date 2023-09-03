@@ -1,3 +1,5 @@
+// ignore_for_file: sdk_version_since
+
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.data.gql.dart';
 import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.req.gql.dart';
