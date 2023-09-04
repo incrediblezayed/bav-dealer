@@ -98,6 +98,15 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 16.h,
+            ),
+            KButton(
+              onPressed: () {
+                authPro.login();
+              },
+              text: 'Log In',
+            ),
             const Spacer(),
             Align(
               alignment: Alignment.bottomCenter,
