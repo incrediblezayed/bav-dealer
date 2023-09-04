@@ -98,27 +98,6 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 16.h,
-            ),
-            KButton(
-              onPressed: () {
-                authPro.login();
-              },
-              text: 'Log In',
-            ),
-            TextButton(
-              onPressed: () {
-                AppRoutes.push(page: const WithdrawalPage());
-              },
-              child: const Text('Wallet'),
-            ),
-            TextButton(
-              onPressed: () {
-                AppRoutes.push(page: const HomePage());
-              },
-              child: const Text('Homepage'),
-            ),
             const Spacer(),
             Align(
               alignment: Alignment.bottomCenter,
