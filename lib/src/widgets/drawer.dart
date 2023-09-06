@@ -4,6 +4,7 @@ import 'package:dealerapp/src/app/UI/drawer/about_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/contact_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/terms_conditions.dart';
 import 'package:dealerapp/src/app/UI/login/login_page.dart';
+import 'package:dealerapp/src/app/UI/make_new_purchase/make_new_purchase.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
@@ -161,7 +162,9 @@ class AppDrawer extends ConsumerWidget {
                       icon: AppImages.purchaseOrder,
                       height: 30,
                       width: 30,
-                      onTap: () {},
+                      onTap: () {
+                        AppRoutes.push(page: MakeNewPurchase());
+                      },
                     ),
 
                     ///Order History Expansion Tile

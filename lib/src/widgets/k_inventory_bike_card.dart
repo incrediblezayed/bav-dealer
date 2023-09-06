@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
@@ -41,8 +43,6 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
       child: DecoratedBox(
-        // height: MediaQuery.of(context).size.height / 1.6.h,
-        // width: double.maxFinite,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(6.r),
@@ -87,10 +87,9 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                       ),
                       SizedBox(width: 20.w),
                       Expanded(
-                        child: Row(
+                        child: Column(
                           children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                            Row(
                               children: [
                                 Text(
                                   'Model',
@@ -99,7 +98,21 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                                SizedBox(height: 6.h),
+                                SizedBox(width: 10.w),
+                                Flexible(
+                                  child: Text(
+                                    variants.name!,
+                                    style: theme.labelMedium!.copyWith(
+                                      color: Colors.black.withOpacity(.5),
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 6.h),
+                            Row(
+                              children: [
                                 Text(
                                   'Color',
                                   style: theme.labelMedium!.copyWith(
@@ -107,7 +120,21 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                                SizedBox(height: 6.h),
+                                SizedBox(width: 10.w),
+                                Flexible(
+                                  child: Text(
+                                    selectedColor?.name ?? '',
+                                    style: theme.labelMedium!.copyWith(
+                                      color: Colors.black.withOpacity(.5),
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 6.h),
+                            Row(
+                              children: [
                                 Text(
                                   'Price',
                                   style: theme.labelMedium!.copyWith(
@@ -115,38 +142,15 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
+                                SizedBox(width: 10.w),
+                                Text(
+                                  variants.price!.toString(),
+                                  style: theme.labelLarge!.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                    color: AppTheme.primaryColor,
+                                  ),
+                                ),
                               ],
-                            ),
-                            SizedBox(width: 20.w),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    variants.name!,
-                                    style: theme.labelMedium!.copyWith(
-                                      color: Colors.black.withOpacity(.5),
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  SizedBox(height: 6.h),
-                                  Text(
-                                    selectedColor?.name ?? '',
-                                    style: theme.labelMedium!.copyWith(
-                                      color: Colors.black.withOpacity(.5),
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  SizedBox(height: 6.h),
-                                  Text(
-                                    variants.price!.toString(),
-                                    style: theme.labelLarge!.copyWith(
-                                      fontWeight: FontWeight.w600,
-                                      color: AppTheme.primaryColor,
-                                    ),
-                                  ),
-                                ],
-                              ),
                             ),
                           ],
                         ),
@@ -165,7 +169,7 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                               padding: EdgeInsets.only(left: 10.w),
                               child: CircleAvatar(
                                 backgroundColor: Colors.grey,
-                                radius: 13.h,
+                                radius: 12.5.h,
                                 child: CircleAvatar(
                                   radius: 10.h,
                                   backgroundColor: HexColor.fromHex(

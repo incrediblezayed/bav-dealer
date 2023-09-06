@@ -1,14 +1,14 @@
-include: package:very_good_analysis/analysis_options.yaml
-analyzer:
-  plugins:
-    - custom_lint
-  exclude:
-    - "**.gql.g.dart"
-    - "**.gql.dart"
+# include: package:very_good_analysis/analysis_options.yaml
+# analyzer:
+#   plugins:
+#     - custom_lint
+#   exclude:
+#     - "**.gql.g.dart"
+#     - "**.gql.dart"
 
-linter:
-  rules:
-    prefer_single_quotes: true
-    unnecessary_lambdas: false
-    avoid_dynamic_calls: false
-    # lines_longer_than_80_chars: false
+# linter:
+#   rules:
+#     prefer_single_quotes: true
+#     unnecessary_lambdas: false
+#     avoid_dynamic_calls: false
+#     # lines_longer_than_80_chars: false

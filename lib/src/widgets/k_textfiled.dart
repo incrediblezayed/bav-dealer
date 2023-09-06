@@ -10,8 +10,9 @@ import 'package:dealerapp/src/utils/app_theme.dart';
 class KTextField extends StatelessWidget {
   ///Custom Textfield
   const KTextField({
-    super.key,
+    Key? key,
     this.hintText,
+    this.readOnly,
     this.inputType,
     this.controller,
     this.inputFormatters,
@@ -19,12 +20,13 @@ class KTextField extends StatelessWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.obsecureText = false,
-    this.maxLength, 
-    
-  });
+    this.maxLength,
+  }) : super(key: key);
 
   ///hintText
   final String? hintText;
+
+  final bool? readOnly;
 
   final TextInputType? inputType;
 
