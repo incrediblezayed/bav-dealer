@@ -167,7 +167,10 @@ class AuthProvider extends ChangeNotifier {
         otp = await _authRepository.getCurrentOtp('phoneNumberVerification');
       }
       if (otp != null) {
-        AppRoutes.showSuccessSnackbar(message: otp);
+        AppRoutes.showSuccessSnackbar(
+          message: otp,
+          duration: Duration(minutes: 1),
+        );
       }
     } catch (e) {
       e.log();

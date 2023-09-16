@@ -2,7 +2,6 @@ import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/graphql_client.dart';
 import 'package:dealerapp/src/dealer_app.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:stack_trace/stack_trace.dart' as stack_trace;
 

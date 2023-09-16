@@ -53,7 +53,8 @@ class AppRoutes {
   ///Scaffold messenger key to show snackbars
   static GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey =
       GlobalKey<ScaffoldMessengerState>();
-///Scaffold state key
+
+  ///Scaffold state key
   static GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   ///Shows a info dialog for handling permission
@@ -173,14 +174,14 @@ class AppRoutes {
 
   ///Shows a snackbar with a default title as 'Success'
   static ScaffoldFeatureController<SnackBar, SnackBarClosedReason>?
-      showSuccessSnackbar({
-    String message = 'Success',
-    Alignment alignment = Alignment.bottomCenter,
-  }) {
+      showSuccessSnackbar(
+          {String message = 'Success',
+          Alignment alignment = Alignment.bottomCenter,
+          Duration duration = const Duration(seconds: 1)}) {
     return scaffoldMessengerKey.currentState?.showSnackBar(
       SnackBar(
         behavior: SnackBarBehavior.floating,
-        duration: const Duration(seconds: 1),
+        duration: duration,
         elevation: 1,
         padding: EdgeInsets.zero,
         content: Align(
