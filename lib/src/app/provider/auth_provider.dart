@@ -78,23 +78,23 @@ class AuthProvider extends ChangeNotifier {
   }
 
   Future<void> regsiter() async {
+    if (firstNameController.text.isEmpty ||
+        lastNameController.text.isEmpty ||
+        phoneNumberController.text.isEmpty ||
+        emailIdController.text.isEmpty ||
+        passwordController.text.isEmpty) {
+      AppRoutes.showErrorSnackbar(message: 'Please enter all fields');
+      return;
+    }
+
+    if (_agree == false) {
+      AppRoutes.showErrorSnackbar(
+        message: 'Please agree to terms and conditions',
+      );
+      return;
+    }
+    unawaited(AppRoutes.showLoadingDialog());
     try {
-      if (firstNameController.text.isEmpty ||
-          lastNameController.text.isEmpty ||
-          phoneNumberController.text.isEmpty ||
-          emailIdController.text.isEmpty ||
-          passwordController.text.isEmpty) {
-        AppRoutes.showErrorSnackbar(message: 'Please enter all fields');
-        return;
-      }
-
-      if (_agree == false) {
-        AppRoutes.showErrorSnackbar(
-          message: 'Please agree to terms and conditions',
-        );
-        return;
-      }
-
       final response = await _authRepository.register(
         name: '${firstNameController.text} ${lastNameController.text}',
         phoneNumber: phoneNumberController.text,
@@ -116,6 +116,8 @@ class AuthProvider extends ChangeNotifier {
       }
     } catch (e) {
       print(e);
+    } finally {
+      AppRoutes.pop();
     }
   }
 
