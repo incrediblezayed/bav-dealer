@@ -23,7 +23,11 @@ jobs:
           sdk: "3.1.0"
       - run: flutter update-packages --force-upgrade
       - run: flutter pub get
-      - run: flutter build apk
+      - run: flutter build apk --release
+      - run: flutter build apk --debug
+      - run: mkdir builds
+      - run: mv build/app/outputs/apk/release/app-release.apk builds/app-release.apk
+      - run: mv build/app/outputs/apk/debug/app-debug.apk builds/app-debug.apk
       - name: Push Test Build
         uses: ncipollo/release-action@v1
         with:
