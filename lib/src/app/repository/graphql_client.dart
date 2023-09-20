@@ -20,9 +20,6 @@ class GraphqlClient {
   ///Base URL
   static String baseUrl = 'http://bavelectric.com:3000';
 
-  final String _railwayUrl =
-      'https://bav-backend-host-production.up.railway.app';
-
   // /Dio Client
   // /
   // /It's a Dio Client Object which is late
