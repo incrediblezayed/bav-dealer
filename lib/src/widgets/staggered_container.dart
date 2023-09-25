@@ -1,10 +1,10 @@
 import 'package:dealerapp/src/utils/global_exports.dart';
+
 ///
 class StagerredContainer extends StatelessWidget {
   ///
   StagerredContainer({
     required this.height,
-    required this.width,
     required this.count,
     required this.onTap,
     required this.arrowColor,
@@ -18,10 +18,10 @@ class StagerredContainer extends StatelessWidget {
   });
 
   double height;
-  ////width
-  double width;
+
   ///
   String count;
+
   ///
   String title;
 
@@ -41,9 +41,6 @@ class StagerredContainer extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: height,
-        width: width,
-        // height: 145.h,
-        // width: 150.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.r),
           // color: const Color(0xffc8eccb),

@@ -11,7 +11,7 @@ targets:
               import: "package:built_value/json_object.dart"
             Upload:
               name: MultipartFile
-              import: "package:dio/dio.dart"
+              import: "package:http/http.dart"
       ferry_generator|serializer_builder:
         enabled: true
         options:

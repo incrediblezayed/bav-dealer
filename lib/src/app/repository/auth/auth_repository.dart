@@ -7,6 +7,7 @@ import 'package:dealerapp/src/app/repository/graphql_client.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/get_it.dart';
 import 'package:ferry/ferry.dart';
+import 'package:http/http.dart' as http;
 
 class AuthRepository {
   final GraphqlClient _graphqlClient = getIt<GraphqlClient>();
@@ -156,32 +157,46 @@ class AuthRepository {
 
   ///Update user
   /// Files will not be uploaded if [useFerry] is true
-
   Future<String?> updateUser({
     required String id,
     required String name,
     required String email,
     required String phoneNumber,
+    required String? image,
+    String? address,
   }) async {
     try {
-      final response = await _client
-          .request(
-            GUpdateUserReq(
-              (b) => b.vars
-                ..where.id = id
-                ..data.name = name
-                ..data.phoneNumber = phoneNumber
-                ..data.email = email,
-            ),
-          )
-          .first;
-      if (response.linkException != null) {
-        throw response.linkException!;
-      }
-      if (response.data?.updateUser != null) {
-        return response.data!.updateUser!.id;
-      } else {
-        return null;
+      {
+        http.MultipartFile? imageFile;
+        if (image != null) {
+          imageFile = await http.MultipartFile.fromPath(
+            '',
+            image,
+          );
+        }
+
+        final response =
+            await _graphqlClient.httpClient(imageFile != null).request(
+          GUpdateUserReq((b) {
+            b.vars.where.id = id;
+            b.vars.data.name = name;
+            b.vars.data.phoneNumber = phoneNumber;
+            b.vars.data.email = email;
+            if (address != null) b.vars.data.address = address;
+            if (imageFile != null) b.vars.data.profile_image.upload = imageFile;
+            b.fetchPolicy = FetchPolicy.NoCache;
+
+            return b;
+          }),
+        ).first;
+        if (response.linkException != null) {
+          throw response.linkException!;
+        }
+        if (response.data?.updateUser != null) {
+          return response.data!.updateUser!.id;
+        } else {
+          return null;
+        }
       }
     } catch (e) {
       e.log();

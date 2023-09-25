@@ -1752,7 +1752,6 @@ type Order {
   createdAt: DateTime
   modifiedAt: DateTime
   user: User
-  status: String
   vehicleOrders(where: VehicleOrderWhereInput! = {}, orderBy: [VehicleOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleOrder!]
   vehicleOrdersCount(where: VehicleOrderWhereInput! = {}): Int
   testDriveOrders(where: TestDriveOrderWhereInput! = {}, orderBy: [TestDriveOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [TestDriveOrder!]
@@ -1773,7 +1772,6 @@ input OrderWhereInput {
   createdAt: DateTimeNullableFilter
   modifiedAt: DateTimeNullableFilter
   user: UserWhereInput
-  status: StringNullableFilter
   vehicleOrders: VehicleOrderManyRelationFilter
   testDriveOrders: TestDriveOrderManyRelationFilter
   payments: PaymentManyRelationFilter
@@ -1801,14 +1799,12 @@ input OrderOrderByInput {
   id: OrderDirection
   createdAt: OrderDirection
   modifiedAt: OrderDirection
-  status: OrderDirection
 }
 
 input OrderUpdateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   user: UserRelateToOneForUpdateInput
-  status: String
   vehicleOrders: VehicleOrderRelateToManyForUpdateInput
   testDriveOrders: TestDriveOrderRelateToManyForUpdateInput
   payments: PaymentRelateToManyForUpdateInput
@@ -1844,7 +1840,6 @@ input OrderCreateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   user: UserRelateToOneForCreateInput
-  status: String
   vehicleOrders: VehicleOrderRelateToManyForCreateInput
   testDriveOrders: TestDriveOrderRelateToManyForCreateInput
   payments: PaymentRelateToManyForCreateInput
@@ -1973,6 +1968,7 @@ type VehicleOrder {
   dealer: VehicleDealer
   order: Order
   price: Int
+  status: String
 }
 
 input VehicleOrderWhereUniqueInput {
@@ -1989,6 +1985,7 @@ input VehicleOrderWhereInput {
   dealer: VehicleDealerWhereInput
   order: OrderWhereInput
   price: IntNullableFilter
+  status: StringNullableFilter
 }
 
 input VehicleOrderOrderByInput {
@@ -1996,6 +1993,7 @@ input VehicleOrderOrderByInput {
   createdAt: OrderDirection
   modifiedAt: OrderDirection
   price: OrderDirection
+  status: OrderDirection
 }
 
 input VehicleOrderUpdateInput {
@@ -2004,6 +2002,7 @@ input VehicleOrderUpdateInput {
   dealer: VehicleDealerRelateToOneForUpdateInput
   order: OrderRelateToOneForUpdateInput
   price: Int
+  status: String
 }
 
 input VehicleOrderUpdateArgs {
@@ -2017,6 +2016,7 @@ input VehicleOrderCreateInput {
   dealer: VehicleDealerRelateToOneForCreateInput
   order: OrderRelateToOneForCreateInput
   price: Int
+  status: String
 }
 
 type TestDriveOrder {
@@ -2026,6 +2026,7 @@ type TestDriveOrder {
   dealer: TestDriveDealer
   order: Order
   price: Int
+  status: String
 }
 
 input TestDriveOrderWhereUniqueInput {
@@ -2042,6 +2043,7 @@ input TestDriveOrderWhereInput {
   dealer: TestDriveDealerWhereInput
   order: OrderWhereInput
   price: IntNullableFilter
+  status: StringNullableFilter
 }
 
 input TestDriveOrderOrderByInput {
@@ -2049,6 +2051,7 @@ input TestDriveOrderOrderByInput {
   createdAt: OrderDirection
   modifiedAt: OrderDirection
   price: OrderDirection
+  status: OrderDirection
 }
 
 input TestDriveOrderUpdateInput {
@@ -2057,6 +2060,7 @@ input TestDriveOrderUpdateInput {
   dealer: TestDriveDealerRelateToOneForUpdateInput
   order: OrderRelateToOneForUpdateInput
   price: Int
+  status: String
 }
 
 input TestDriveDealerRelateToOneForUpdateInput {
@@ -2076,11 +2080,122 @@ input TestDriveOrderCreateInput {
   dealer: TestDriveDealerRelateToOneForCreateInput
   order: OrderRelateToOneForCreateInput
   price: Int
+  status: String
 }
 
 input TestDriveDealerRelateToOneForCreateInput {
   create: TestDriveDealerCreateInput
   connect: TestDriveDealerWhereUniqueInput
+}
+
+type OrderCancellationRequest {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  vehicleOrders(where: VehicleOrderWhereInput! = {}, orderBy: [VehicleOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleOrder!]
+  vehicleOrdersCount(where: VehicleOrderWhereInput! = {}): Int
+  testDriveOrders(where: TestDriveOrderWhereInput! = {}, orderBy: [TestDriveOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [TestDriveOrder!]
+  testDriveOrdersCount(where: TestDriveOrderWhereInput! = {}): Int
+  reason: String
+}
+
+input OrderCancellationRequestWhereUniqueInput {
+  id: ID
+}
+
+input OrderCancellationRequestWhereInput {
+  AND: [OrderCancellationRequestWhereInput!]
+  OR: [OrderCancellationRequestWhereInput!]
+  NOT: [OrderCancellationRequestWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  vehicleOrders: VehicleOrderManyRelationFilter
+  testDriveOrders: TestDriveOrderManyRelationFilter
+  reason: StringFilter
+}
+
+input OrderCancellationRequestOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  reason: OrderDirection
+}
+
+input OrderCancellationRequestUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  vehicleOrders: VehicleOrderRelateToManyForUpdateInput
+  testDriveOrders: TestDriveOrderRelateToManyForUpdateInput
+  reason: String
+}
+
+input OrderCancellationRequestUpdateArgs {
+  where: OrderCancellationRequestWhereUniqueInput!
+  data: OrderCancellationRequestUpdateInput!
+}
+
+input OrderCancellationRequestCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  vehicleOrders: VehicleOrderRelateToManyForCreateInput
+  testDriveOrders: TestDriveOrderRelateToManyForCreateInput
+  reason: String
+}
+
+type OrderRejectionByDealer {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  vehicleOrders(where: VehicleOrderWhereInput! = {}, orderBy: [VehicleOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleOrder!]
+  vehicleOrdersCount(where: VehicleOrderWhereInput! = {}): Int
+  testDriveOrders(where: TestDriveOrderWhereInput! = {}, orderBy: [TestDriveOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [TestDriveOrder!]
+  testDriveOrdersCount(where: TestDriveOrderWhereInput! = {}): Int
+  reason: String
+}
+
+input OrderRejectionByDealerWhereUniqueInput {
+  id: ID
+}
+
+input OrderRejectionByDealerWhereInput {
+  AND: [OrderRejectionByDealerWhereInput!]
+  OR: [OrderRejectionByDealerWhereInput!]
+  NOT: [OrderRejectionByDealerWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  vehicleOrders: VehicleOrderManyRelationFilter
+  testDriveOrders: TestDriveOrderManyRelationFilter
+  reason: StringFilter
+}
+
+input OrderRejectionByDealerOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  reason: OrderDirection
+}
+
+input OrderRejectionByDealerUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  vehicleOrders: VehicleOrderRelateToManyForUpdateInput
+  testDriveOrders: TestDriveOrderRelateToManyForUpdateInput
+  reason: String
+}
+
+input OrderRejectionByDealerUpdateArgs {
+  where: OrderRejectionByDealerWhereUniqueInput!
+  data: OrderRejectionByDealerUpdateInput!
+}
+
+input OrderRejectionByDealerCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  vehicleOrders: VehicleOrderRelateToManyForCreateInput
+  testDriveOrders: TestDriveOrderRelateToManyForCreateInput
+  reason: String
 }
 
 type UserVehicleReview {
@@ -3143,6 +3258,18 @@ type Mutation {
   updateTestDriveOrders(data: [TestDriveOrderUpdateArgs!]!): [TestDriveOrder]
   deleteTestDriveOrder(where: TestDriveOrderWhereUniqueInput!): TestDriveOrder
   deleteTestDriveOrders(where: [TestDriveOrderWhereUniqueInput!]!): [TestDriveOrder]
+  createOrderCancellationRequest(data: OrderCancellationRequestCreateInput!): OrderCancellationRequest
+  createOrderCancellationRequests(data: [OrderCancellationRequestCreateInput!]!): [OrderCancellationRequest]
+  updateOrderCancellationRequest(where: OrderCancellationRequestWhereUniqueInput!, data: OrderCancellationRequestUpdateInput!): OrderCancellationRequest
+  updateOrderCancellationRequests(data: [OrderCancellationRequestUpdateArgs!]!): [OrderCancellationRequest]
+  deleteOrderCancellationRequest(where: OrderCancellationRequestWhereUniqueInput!): OrderCancellationRequest
+  deleteOrderCancellationRequests(where: [OrderCancellationRequestWhereUniqueInput!]!): [OrderCancellationRequest]
+  createOrderRejectionByDealer(data: OrderRejectionByDealerCreateInput!): OrderRejectionByDealer
+  createOrderRejectionByDealers(data: [OrderRejectionByDealerCreateInput!]!): [OrderRejectionByDealer]
+  updateOrderRejectionByDealer(where: OrderRejectionByDealerWhereUniqueInput!, data: OrderRejectionByDealerUpdateInput!): OrderRejectionByDealer
+  updateOrderRejectionByDealers(data: [OrderRejectionByDealerUpdateArgs!]!): [OrderRejectionByDealer]
+  deleteOrderRejectionByDealer(where: OrderRejectionByDealerWhereUniqueInput!): OrderRejectionByDealer
+  deleteOrderRejectionByDealers(where: [OrderRejectionByDealerWhereUniqueInput!]!): [OrderRejectionByDealer]
   createUserVehicleReview(data: UserVehicleReviewCreateInput!): UserVehicleReview
   createUserVehicleReviews(data: [UserVehicleReviewCreateInput!]!): [UserVehicleReview]
   updateUserVehicleReview(where: UserVehicleReviewWhereUniqueInput!, data: UserVehicleReviewUpdateInput!): UserVehicleReview
@@ -3376,6 +3503,12 @@ type Query {
   testDriveOrders(where: TestDriveOrderWhereInput! = {}, orderBy: [TestDriveOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [TestDriveOrder!]
   testDriveOrder(where: TestDriveOrderWhereUniqueInput!): TestDriveOrder
   testDriveOrdersCount(where: TestDriveOrderWhereInput! = {}): Int
+  orderCancellationRequests(where: OrderCancellationRequestWhereInput! = {}, orderBy: [OrderCancellationRequestOrderByInput!]! = [], take: Int, skip: Int! = 0): [OrderCancellationRequest!]
+  orderCancellationRequest(where: OrderCancellationRequestWhereUniqueInput!): OrderCancellationRequest
+  orderCancellationRequestsCount(where: OrderCancellationRequestWhereInput! = {}): Int
+  orderRejectionByDealers(where: OrderRejectionByDealerWhereInput! = {}, orderBy: [OrderRejectionByDealerOrderByInput!]! = [], take: Int, skip: Int! = 0): [OrderRejectionByDealer!]
+  orderRejectionByDealer(where: OrderRejectionByDealerWhereUniqueInput!): OrderRejectionByDealer
+  orderRejectionByDealersCount(where: OrderRejectionByDealerWhereInput! = {}): Int
   userVehicleReviews(where: UserVehicleReviewWhereInput! = {}, orderBy: [UserVehicleReviewOrderByInput!]! = [], take: Int, skip: Int! = 0): [UserVehicleReview!]
   userVehicleReview(where: UserVehicleReviewWhereUniqueInput!): UserVehicleReview
   userVehicleReviewsCount(where: UserVehicleReviewWhereInput! = {}): Int

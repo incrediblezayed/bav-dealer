@@ -2,22 +2,24 @@ import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/my_inventory.dart';
 import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/purchase_orders.dart';
 import 'package:dealerapp/src/app/UI/Homepage/Rank_Page/rank_page.dart';
 import 'package:dealerapp/src/app/UI/Homepage/Test_Orders/test_orders.dart';
-import 'package:dealerapp/src/app/UI/make_new_purchase/make_new_purchase.dart';
 import 'package:dealerapp/src/app/UI/notification_page.dart/notification_page.dart';
+import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/drawer.dart';
 import 'package:dealerapp/src/widgets/staggered_container.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 ///HomePage
-class HomePage extends StatelessWidget {
+class HomePage extends ConsumerWidget {
   ///Constructor
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context).textTheme;
-
+    final user = cacheProvider.getUser()!;
+    final controller = ref.watch(homePageProvider);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       key: AppRoutes.scaffoldKey,
@@ -69,7 +71,7 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 10.h),
             Text(
-              'Tanmay UI UX',
+              user.name!,
               style: theme.headlineLarge,
             ),
             SizedBox(height: 20.h),
@@ -124,81 +126,85 @@ class HomePage extends StatelessWidget {
               ],
             ),
             SizedBox(height: 20.h),
-            Row(
-              children: [
-                Column(
-                  children: [
-                    StagerredContainer(
-                      height: MediaQuery.of(context).size.height * .19,
-                      width: MediaQuery.of(context).size.width * 0.4,
-                      count: '90',
-                      countColor: AppTheme.primaryColor,
-                      arrowColor: AppTheme.primaryColor,
-                      containerBgColor: const Color(0xffc8eccb),
-                      iconBgColor: AppTheme.primaryColor,
-                      image: AppImages.cart,
-                      title: 'Purchase orders',
-                      titleColor: AppTheme.primaryColor,
-                      onTap: () {
-                        AppRoutes.push(page: const PurchaseOrders());
-                      },
+            LayoutBuilder(builder: (context, constraints) {
+              return Row(
+                children: [
+                  Expanded(
+                    flex: 13,
+                    child: Column(
+                      children: [
+                        StagerredContainer(
+                          height: MediaQuery.of(context).size.height * .19,
+                          count: controller.purchaseCount.toString(),
+                          countColor: AppTheme.primaryColor,
+                          arrowColor: AppTheme.primaryColor,
+                          containerBgColor: const Color(0xffc8eccb),
+                          iconBgColor: AppTheme.primaryColor,
+                          image: AppImages.cart,
+                          title: 'Purchase orders',
+                          titleColor: AppTheme.primaryColor,
+                          onTap: () {
+                            AppRoutes.push(page: const PurchaseOrders());
+                          },
+                        ),
+                        SizedBox(height: 10.h),
+                        StagerredContainer(
+                          height: MediaQuery.of(context).size.height * .25,
+                          count: controller.inventoryCount.toString(),
+                          countColor: const Color(0xff358fe1),
+                          arrowColor: const Color(0xff358fe1),
+                          containerBgColor: const Color(0xffbee0ff),
+                          iconBgColor: const Color(0xffa0d2ff),
+                          image: AppImages.s3,
+                          title: 'My Inventory',
+                          titleColor: const Color(0xff358fe1),
+                          onTap: () {
+                            AppRoutes.push(page: const MyInventory());
+                          },
+                        ),
+                      ],
                     ),
-                    SizedBox(height: 10.h),
-                    StagerredContainer(
-                      height: MediaQuery.of(context).size.height * .25,
-                      width: MediaQuery.of(context).size.width * 0.4,
-                      count: '12',
-                      countColor: const Color(0xff358fe1),
-                      arrowColor: const Color(0xff358fe1),
-                      containerBgColor: const Color(0xffbee0ff),
-                      iconBgColor: const Color(0xffa0d2ff),
-                      image: AppImages.s3,
-                      title: 'My Inventory',
-                      titleColor: const Color(0xff358fe1),
-                      onTap: () {
-                        AppRoutes.push(page: const MyInventory());
-                      },
+                  ),
+                  SizedBox(width: 10.w),
+                  Expanded(
+                    flex: 15,
+                    child: Column(
+                      children: [
+                        StagerredContainer(
+                          height: 215.h,
+                          count: controller.testOrderCount.toString(),
+                          countColor: const Color(0xff6a29a8),
+                          arrowColor: const Color(0xff6a29a8),
+                          containerBgColor: const Color(0xffb883ec),
+                          iconBgColor: const Color(0xffa95cf3),
+                          image: AppImages.s3,
+                          title: 'Test Orders',
+                          titleColor: const Color(0xff6a29a8),
+                          onTap: () {
+                            AppRoutes.push(page: const TestOrders());
+                          },
+                        ),
+                        SizedBox(height: 10.h),
+                        StagerredContainer(
+                          height: 138.h,
+                          count: controller.rankCount.toString(),
+                          countColor: const Color(0xfffdb35f),
+                          arrowColor: const Color(0xfffdb35f),
+                          containerBgColor: const Color(0xffffec8a),
+                          iconBgColor: const Color(0xffffdc53),
+                          image: AppImages.s3,
+                          title: 'Your Rank',
+                          titleColor: const Color(0xfffdb35f),
+                          onTap: () {
+                            AppRoutes.push(page: const RankPage());
+                          },
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                SizedBox(width: 10.w),
-                Column(
-                  children: [
-                    StagerredContainer(
-                      height: 215.h,
-                      width: 180.w,
-                      count: '976',
-                      countColor: const Color(0xff6a29a8),
-                      arrowColor: const Color(0xff6a29a8),
-                      containerBgColor: const Color(0xffb883ec),
-                      iconBgColor: const Color(0xffa95cf3),
-                      image: AppImages.s3,
-                      title: 'Test Orders',
-                      titleColor: const Color(0xff6a29a8),
-                      onTap: () {
-                        AppRoutes.push(page: const TestOrders());
-                      },
-                    ),
-                    SizedBox(height: 10.h),
-                    StagerredContainer(
-                      height: 138.h,
-                      width: 180.w,
-                      count: '5',
-                      countColor: const Color(0xfffdb35f),
-                      arrowColor: const Color(0xfffdb35f),
-                      containerBgColor: const Color(0xffffec8a),
-                      iconBgColor: const Color(0xffffdc53),
-                      image: AppImages.s3,
-                      title: 'Your Rank',
-                      titleColor: const Color(0xfffdb35f),
-                      onTap: () {
-                        AppRoutes.push(page: const RankPage());
-                      },
-                    ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ],
+              );
+            }),
           ],
         ),
       ),

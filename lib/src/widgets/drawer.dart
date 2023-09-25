@@ -1,5 +1,4 @@
 import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
-import 'package:dealerapp/src/app/UI/Profile/personal_information_page.dart';
 import 'package:dealerapp/src/app/UI/drawer/about_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/contact_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/terms_conditions.dart';
@@ -9,8 +8,9 @@ import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
-import 'package:dealerapp/src/widgets/k_expansion_tile.dart';
 import 'package:dealerapp/src/widgets/k_bottom_bar_button.dart';
+import 'package:dealerapp/src/widgets/k_expansion_tile.dart';
+import 'package:dealerapp/src/widgets/user_profile_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -63,9 +63,8 @@ class AppDrawer extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // final homePageProv = ref.read(homePageProvider);
-    // final dashboardPro = ref.watch(dashboardProvider);
     final theme = Theme.of(context).textTheme;
+    final user = cacheProvider.getUser()!;
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -103,10 +102,9 @@ class AppDrawer extends ConsumerWidget {
                         ),
                       ) */
 
-                      CircleAvatar(
-                        radius: 50,
-                        backgroundColor: Colors.grey,
-                        child: Image.asset(AppImages.profile),
+                      UserProfileImage(
+                        url: user.profile_image?.url,
+                        size: 80.sp,
                       ),
                       SizedBox(
                         width: 16.w,
@@ -115,11 +113,11 @@ class AppDrawer extends ConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Tanmay UI/UX',
+                            user.name!,
                             style: theme.headlineLarge,
                           ),
                           SizedBox(height: 6.h),
-                          const Text('@Tanmay'),
+                          //const Text('@Tanmay'),
                           SizedBox(height: 6.h),
 
                           /* Text(
@@ -132,7 +130,10 @@ class AppDrawer extends ConsumerWidget {
                             radius: 100,
                             text: 'Edit Profile',
                             onTap: () {
-                              AppRoutes.push(page: const EditProfilePage());
+                              AppRoutes.push(
+                                  page: const EditProfile(
+                                isPersonalInfo: false,
+                              ));
                             },
                           ),
                         ],
@@ -154,7 +155,10 @@ class AppDrawer extends ConsumerWidget {
                       width: 25,
                       isSvg: false,
                       onTap: () {
-                        AppRoutes.push(page: const PersonalInformationPage());
+                        AppRoutes.push(
+                            page: const EditProfile(
+                          isPersonalInfo: true,
+                        ));
                       },
                     ),
                     _drawerTile(

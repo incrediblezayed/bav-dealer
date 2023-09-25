@@ -1,27 +1,27 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 // ignore_for_file: must_be_immutable
 
+import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'package:dealerapp/src/utils/app_theme.dart';
 
 ///Custom Textfield
 class KTextField extends StatelessWidget {
   ///Custom Textfield
-  const KTextField({
-    Key? key,
-    this.hintText,
-    this.readOnly,
-    this.inputType,
-    this.controller,
-    this.inputFormatters,
-    this.label,
-    this.suffixIcon,
-    this.prefixIcon,
-    this.obsecureText = false,
-    this.maxLength,
-  }) : super(key: key);
+  const KTextField(
+      {Key? key,
+      this.hintText,
+      this.readOnly,
+      this.inputType,
+      this.controller,
+      this.inputFormatters,
+      this.label,
+      this.suffixIcon,
+      this.prefixIcon,
+      this.obsecureText = false,
+      this.maxLength,
+      this.suffixIconConstraints})
+      : super(key: key);
 
   ///hintText
   final String? hintText;
@@ -31,7 +31,7 @@ class KTextField extends StatelessWidget {
   final TextInputType? inputType;
 
   final TextEditingController? controller;
-  
+
   final List<TextInputFormatter>? inputFormatters;
 
   ///label
@@ -53,6 +53,8 @@ class KTextField extends StatelessWidget {
   ///text length
   final int? maxLength;
 
+  final BoxConstraints? suffixIconConstraints;
+
   @override
   Widget build(BuildContext context) {
     return TextField(
@@ -67,6 +69,7 @@ class KTextField extends StatelessWidget {
         suffixIcon: suffixIcon,
         suffixIconColor: Colors.black.withOpacity(.2),
         label: Text(label ?? ''),
+        suffixIconConstraints: suffixIconConstraints,
         labelStyle: const TextStyle(
           color: AppTheme.textColor,
           fontWeight: FontWeight.w500,

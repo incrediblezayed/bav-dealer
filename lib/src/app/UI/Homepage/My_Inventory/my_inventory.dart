@@ -1,7 +1,7 @@
 import 'package:dealerapp/src/app/UI/ListOfVehicle/list_of_vehicles.dart';
+import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/empty_widget.dart';
-import 'package:dealerapp/src/widgets/k_inventory_bike_card.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -17,6 +17,7 @@ class _MyInventoryState extends ConsumerState<MyInventory>
   late final _tabController = TabController(length: 3, vsync: this);
   @override
   Widget build(BuildContext context) {
+    print(cacheProvider.getDealerId());
     final theme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(

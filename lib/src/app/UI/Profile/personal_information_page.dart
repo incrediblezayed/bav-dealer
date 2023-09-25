@@ -1,4 +1,4 @@
-import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
+/* import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
@@ -37,7 +37,7 @@ class PersonalInformationPage extends ConsumerWidget {
             ),
             TextButton(
               onPressed: () {
-                AppRoutes.push(page: const EditProfilePage());
+                AppRoutes.push(page: const EditProfile());
               },
               child: Text(
                 'Edit Profile',
@@ -111,3 +111,4 @@ class PersonalInformationPage extends ConsumerWidget {
     );
   }
 }
+ */

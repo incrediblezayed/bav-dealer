@@ -4,11 +4,12 @@ import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
-class PurchaseOrderProvider extends ChangeNotifier {
+class OrdersProvider extends ChangeNotifier {
   final InventoryRepository _inventoryRepository = InventoryRepository();
 
   bool _loading = true;
   bool get loading => _loading;
+
   ///
   set loading(bool data) {
     _loading = data;
@@ -16,8 +17,10 @@ class PurchaseOrderProvider extends ChangeNotifier {
   }
 
   GVehiclesData_vehicles? _selectedVehicle;
+
   ///
   GVehiclesData_vehicles? get selectedVehicle => _selectedVehicle;
+
   ///
   set selectedVehicle(GVehiclesData_vehicles? data) {
     _selectedVehicle = data;
@@ -25,6 +28,7 @@ class PurchaseOrderProvider extends ChangeNotifier {
   }
 
   GVehiclesData_vehicles_variants? _selectedVariants;
+
   ///
   GVehiclesData_vehicles_variants? get selectedVariants => _selectedVariants;
   set selectedVariants(GVehiclesData_vehicles_variants? data) {

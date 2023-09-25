@@ -1,9 +1,11 @@
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
+import 'package:dealerapp/src/utils/log_colors.dart';
 import 'package:dio/dio.dart';
 import 'package:ferry/ferry.dart';
 import 'package:ferry_hive_store/ferry_hive_store.dart';
 import 'package:gql_dio_link/gql_dio_link.dart';
+import 'package:gql_http_link/gql_http_link.dart';
 
 ///GraphQL Client
 class GraphqlClient {
@@ -48,6 +50,9 @@ class GraphqlClient {
   ///GraphQL Client for Multipart Requests
   late Client multipartClient;
 
+  /// HTTP Ferry client for temporary fix for file upload
+  late Client Function(bool isMultipart) httpClient;
+
   ///Initialize the GraphQL Client
   ///This method initializes the GraphQL Client
   ///and sets the [client] variable
@@ -80,6 +85,15 @@ class GraphqlClient {
       client: _dio,
       defaultHeaders: {..._headers, 'Content-Type': 'multipart/form-data'},
     );
+
+    HttpLink httpLink(bool isMultipart) => HttpLink(
+          baseUrl + _path,
+          defaultHeaders: {
+            ..._headers,
+            if (isMultipart)
+              Headers.contentTypeHeader: Headers.multipartFormDataContentType,
+          },
+        );
     multipartClient = Client(
       link: multiPartLink,
       cache: cache,
@@ -87,6 +101,12 @@ class GraphqlClient {
         OperationType.mutation: FetchPolicy.NetworkOnly,
       },
     );
+    'Initiating http ferry cliient for file upload'
+        .log(color: LogColors.blueBg);
+    httpClient = (multipart) => Client(
+          link: httpLink(multipart),
+          cache: cache,
+        );
   }
 
   ///Initialize Dio Interceptors

@@ -8,9 +8,9 @@ import 'package:built_value/json_object.dart' as _i4;
 import 'package:built_value/serializer.dart';
 import 'package:dealerapp/src/app/repository/graphql/__generated__/serializers.gql.dart'
     as _i2;
-import 'package:dio/dio.dart' as _i3;
 import 'package:gql_code_builder/src/serializers/default_scalar_serializer.dart'
     as _i1;
+import 'package:http/http.dart' as _i3;
 
 part 'schema.schema.gql.g.dart';
 
@@ -5120,7 +5120,6 @@ abstract class GOrderWhereInput
   GDateTimeNullableFilter? get createdAt;
   GDateTimeNullableFilter? get modifiedAt;
   GUserWhereInput? get user;
-  GStringNullableFilter? get status;
   GVehicleOrderManyRelationFilter? get vehicleOrders;
   GTestDriveOrderManyRelationFilter? get testDriveOrders;
   GPaymentManyRelationFilter? get payments;
@@ -5225,7 +5224,6 @@ abstract class GOrderOrderByInput
   GOrderDirection? get id;
   GOrderDirection? get createdAt;
   GOrderDirection? get modifiedAt;
-  GOrderDirection? get status;
   static Serializer<GOrderOrderByInput> get serializer =>
       _$gOrderOrderByInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -5249,7 +5247,6 @@ abstract class GOrderUpdateInput
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
   GUserRelateToOneForUpdateInput? get user;
-  String? get status;
   GVehicleOrderRelateToManyForUpdateInput? get vehicleOrders;
   GTestDriveOrderRelateToManyForUpdateInput? get testDriveOrders;
   GPaymentRelateToManyForUpdateInput? get payments;
@@ -5382,7 +5379,6 @@ abstract class GOrderCreateInput
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
   GUserRelateToOneForCreateInput? get user;
-  String? get status;
   GVehicleOrderRelateToManyForCreateInput? get vehicleOrders;
   GTestDriveOrderRelateToManyForCreateInput? get testDriveOrders;
   GPaymentRelateToManyForCreateInput? get payments;
@@ -5767,6 +5763,7 @@ abstract class GVehicleOrderWhereInput
   GVehicleDealerWhereInput? get dealer;
   GOrderWhereInput? get order;
   GIntNullableFilter? get price;
+  GStringNullableFilter? get status;
   static Serializer<GVehicleOrderWhereInput> get serializer =>
       _$gVehicleOrderWhereInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -5793,6 +5790,7 @@ abstract class GVehicleOrderOrderByInput
   GOrderDirection? get createdAt;
   GOrderDirection? get modifiedAt;
   GOrderDirection? get price;
+  GOrderDirection? get status;
   static Serializer<GVehicleOrderOrderByInput> get serializer =>
       _$gVehicleOrderOrderByInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -5820,6 +5818,7 @@ abstract class GVehicleOrderUpdateInput
   GVehicleDealerRelateToOneForUpdateInput? get dealer;
   GOrderRelateToOneForUpdateInput? get order;
   int? get price;
+  String? get status;
   static Serializer<GVehicleOrderUpdateInput> get serializer =>
       _$gVehicleOrderUpdateInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -5870,6 +5869,7 @@ abstract class GVehicleOrderCreateInput
   GVehicleDealerRelateToOneForCreateInput? get dealer;
   GOrderRelateToOneForCreateInput? get order;
   int? get price;
+  String? get status;
   static Serializer<GVehicleOrderCreateInput> get serializer =>
       _$gVehicleOrderCreateInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -5925,6 +5925,7 @@ abstract class GTestDriveOrderWhereInput
   GTestDriveDealerWhereInput? get dealer;
   GOrderWhereInput? get order;
   GIntNullableFilter? get price;
+  GStringNullableFilter? get status;
   static Serializer<GTestDriveOrderWhereInput> get serializer =>
       _$gTestDriveOrderWhereInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -5951,6 +5952,7 @@ abstract class GTestDriveOrderOrderByInput
   GOrderDirection? get createdAt;
   GOrderDirection? get modifiedAt;
   GOrderDirection? get price;
+  GOrderDirection? get status;
   static Serializer<GTestDriveOrderOrderByInput> get serializer =>
       _$gTestDriveOrderOrderByInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -5978,6 +5980,7 @@ abstract class GTestDriveOrderUpdateInput
   GTestDriveDealerRelateToOneForUpdateInput? get dealer;
   GOrderRelateToOneForUpdateInput? get order;
   int? get price;
+  String? get status;
   static Serializer<GTestDriveOrderUpdateInput> get serializer =>
       _$gTestDriveOrderUpdateInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -6056,6 +6059,7 @@ abstract class GTestDriveOrderCreateInput
   GTestDriveDealerRelateToOneForCreateInput? get dealer;
   GOrderRelateToOneForCreateInput? get order;
   int? get price;
+  String? get status;
   static Serializer<GTestDriveOrderCreateInput> get serializer =>
       _$gTestDriveOrderCreateInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -6091,6 +6095,346 @@ abstract class GTestDriveDealerRelateToOneForCreateInput
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveDealerRelateToOneForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GOrderCancellationRequestWhereUniqueInput
+    implements
+        Built<GOrderCancellationRequestWhereUniqueInput,
+            GOrderCancellationRequestWhereUniqueInputBuilder> {
+  GOrderCancellationRequestWhereUniqueInput._();
+
+  factory GOrderCancellationRequestWhereUniqueInput(
+      [Function(GOrderCancellationRequestWhereUniqueInputBuilder b)
+          updates]) = _$GOrderCancellationRequestWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GOrderCancellationRequestWhereUniqueInput> get serializer =>
+      _$gOrderCancellationRequestWhereUniqueInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GOrderCancellationRequestWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GOrderCancellationRequestWhereUniqueInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GOrderCancellationRequestWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GOrderCancellationRequestWhereInput
+    implements
+        Built<GOrderCancellationRequestWhereInput,
+            GOrderCancellationRequestWhereInputBuilder> {
+  GOrderCancellationRequestWhereInput._();
+
+  factory GOrderCancellationRequestWhereInput(
+          [Function(GOrderCancellationRequestWhereInputBuilder b) updates]) =
+      _$GOrderCancellationRequestWhereInput;
+
+  BuiltList<GOrderCancellationRequestWhereInput>? get AND;
+  BuiltList<GOrderCancellationRequestWhereInput>? get OR;
+  BuiltList<GOrderCancellationRequestWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GVehicleOrderManyRelationFilter? get vehicleOrders;
+  GTestDriveOrderManyRelationFilter? get testDriveOrders;
+  GStringFilter? get reason;
+  static Serializer<GOrderCancellationRequestWhereInput> get serializer =>
+      _$gOrderCancellationRequestWhereInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GOrderCancellationRequestWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GOrderCancellationRequestWhereInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GOrderCancellationRequestWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GOrderCancellationRequestOrderByInput
+    implements
+        Built<GOrderCancellationRequestOrderByInput,
+            GOrderCancellationRequestOrderByInputBuilder> {
+  GOrderCancellationRequestOrderByInput._();
+
+  factory GOrderCancellationRequestOrderByInput(
+          [Function(GOrderCancellationRequestOrderByInputBuilder b) updates]) =
+      _$GOrderCancellationRequestOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get reason;
+  static Serializer<GOrderCancellationRequestOrderByInput> get serializer =>
+      _$gOrderCancellationRequestOrderByInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GOrderCancellationRequestOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GOrderCancellationRequestOrderByInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GOrderCancellationRequestOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GOrderCancellationRequestUpdateInput
+    implements
+        Built<GOrderCancellationRequestUpdateInput,
+            GOrderCancellationRequestUpdateInputBuilder> {
+  GOrderCancellationRequestUpdateInput._();
+
+  factory GOrderCancellationRequestUpdateInput(
+          [Function(GOrderCancellationRequestUpdateInputBuilder b) updates]) =
+      _$GOrderCancellationRequestUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GVehicleOrderRelateToManyForUpdateInput? get vehicleOrders;
+  GTestDriveOrderRelateToManyForUpdateInput? get testDriveOrders;
+  String? get reason;
+  static Serializer<GOrderCancellationRequestUpdateInput> get serializer =>
+      _$gOrderCancellationRequestUpdateInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GOrderCancellationRequestUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GOrderCancellationRequestUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GOrderCancellationRequestUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GOrderCancellationRequestUpdateArgs
+    implements
+        Built<GOrderCancellationRequestUpdateArgs,
+            GOrderCancellationRequestUpdateArgsBuilder> {
+  GOrderCancellationRequestUpdateArgs._();
+
+  factory GOrderCancellationRequestUpdateArgs(
+          [Function(GOrderCancellationRequestUpdateArgsBuilder b) updates]) =
+      _$GOrderCancellationRequestUpdateArgs;
+
+  GOrderCancellationRequestWhereUniqueInput get where;
+  GOrderCancellationRequestUpdateInput get data;
+  static Serializer<GOrderCancellationRequestUpdateArgs> get serializer =>
+      _$gOrderCancellationRequestUpdateArgsSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GOrderCancellationRequestUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GOrderCancellationRequestUpdateArgs? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GOrderCancellationRequestUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GOrderCancellationRequestCreateInput
+    implements
+        Built<GOrderCancellationRequestCreateInput,
+            GOrderCancellationRequestCreateInputBuilder> {
+  GOrderCancellationRequestCreateInput._();
+
+  factory GOrderCancellationRequestCreateInput(
+          [Function(GOrderCancellationRequestCreateInputBuilder b) updates]) =
+      _$GOrderCancellationRequestCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GVehicleOrderRelateToManyForCreateInput? get vehicleOrders;
+  GTestDriveOrderRelateToManyForCreateInput? get testDriveOrders;
+  String? get reason;
+  static Serializer<GOrderCancellationRequestCreateInput> get serializer =>
+      _$gOrderCancellationRequestCreateInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GOrderCancellationRequestCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GOrderCancellationRequestCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GOrderCancellationRequestCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GOrderRejectionByDealerWhereUniqueInput
+    implements
+        Built<GOrderRejectionByDealerWhereUniqueInput,
+            GOrderRejectionByDealerWhereUniqueInputBuilder> {
+  GOrderRejectionByDealerWhereUniqueInput._();
+
+  factory GOrderRejectionByDealerWhereUniqueInput(
+      [Function(GOrderRejectionByDealerWhereUniqueInputBuilder b)
+          updates]) = _$GOrderRejectionByDealerWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GOrderRejectionByDealerWhereUniqueInput> get serializer =>
+      _$gOrderRejectionByDealerWhereUniqueInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GOrderRejectionByDealerWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GOrderRejectionByDealerWhereUniqueInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GOrderRejectionByDealerWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GOrderRejectionByDealerWhereInput
+    implements
+        Built<GOrderRejectionByDealerWhereInput,
+            GOrderRejectionByDealerWhereInputBuilder> {
+  GOrderRejectionByDealerWhereInput._();
+
+  factory GOrderRejectionByDealerWhereInput(
+          [Function(GOrderRejectionByDealerWhereInputBuilder b) updates]) =
+      _$GOrderRejectionByDealerWhereInput;
+
+  BuiltList<GOrderRejectionByDealerWhereInput>? get AND;
+  BuiltList<GOrderRejectionByDealerWhereInput>? get OR;
+  BuiltList<GOrderRejectionByDealerWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GVehicleOrderManyRelationFilter? get vehicleOrders;
+  GTestDriveOrderManyRelationFilter? get testDriveOrders;
+  GStringFilter? get reason;
+  static Serializer<GOrderRejectionByDealerWhereInput> get serializer =>
+      _$gOrderRejectionByDealerWhereInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GOrderRejectionByDealerWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GOrderRejectionByDealerWhereInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GOrderRejectionByDealerWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GOrderRejectionByDealerOrderByInput
+    implements
+        Built<GOrderRejectionByDealerOrderByInput,
+            GOrderRejectionByDealerOrderByInputBuilder> {
+  GOrderRejectionByDealerOrderByInput._();
+
+  factory GOrderRejectionByDealerOrderByInput(
+          [Function(GOrderRejectionByDealerOrderByInputBuilder b) updates]) =
+      _$GOrderRejectionByDealerOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get reason;
+  static Serializer<GOrderRejectionByDealerOrderByInput> get serializer =>
+      _$gOrderRejectionByDealerOrderByInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GOrderRejectionByDealerOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GOrderRejectionByDealerOrderByInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GOrderRejectionByDealerOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GOrderRejectionByDealerUpdateInput
+    implements
+        Built<GOrderRejectionByDealerUpdateInput,
+            GOrderRejectionByDealerUpdateInputBuilder> {
+  GOrderRejectionByDealerUpdateInput._();
+
+  factory GOrderRejectionByDealerUpdateInput(
+          [Function(GOrderRejectionByDealerUpdateInputBuilder b) updates]) =
+      _$GOrderRejectionByDealerUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GVehicleOrderRelateToManyForUpdateInput? get vehicleOrders;
+  GTestDriveOrderRelateToManyForUpdateInput? get testDriveOrders;
+  String? get reason;
+  static Serializer<GOrderRejectionByDealerUpdateInput> get serializer =>
+      _$gOrderRejectionByDealerUpdateInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GOrderRejectionByDealerUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GOrderRejectionByDealerUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GOrderRejectionByDealerUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GOrderRejectionByDealerUpdateArgs
+    implements
+        Built<GOrderRejectionByDealerUpdateArgs,
+            GOrderRejectionByDealerUpdateArgsBuilder> {
+  GOrderRejectionByDealerUpdateArgs._();
+
+  factory GOrderRejectionByDealerUpdateArgs(
+          [Function(GOrderRejectionByDealerUpdateArgsBuilder b) updates]) =
+      _$GOrderRejectionByDealerUpdateArgs;
+
+  GOrderRejectionByDealerWhereUniqueInput get where;
+  GOrderRejectionByDealerUpdateInput get data;
+  static Serializer<GOrderRejectionByDealerUpdateArgs> get serializer =>
+      _$gOrderRejectionByDealerUpdateArgsSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GOrderRejectionByDealerUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GOrderRejectionByDealerUpdateArgs? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GOrderRejectionByDealerUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GOrderRejectionByDealerCreateInput
+    implements
+        Built<GOrderRejectionByDealerCreateInput,
+            GOrderRejectionByDealerCreateInputBuilder> {
+  GOrderRejectionByDealerCreateInput._();
+
+  factory GOrderRejectionByDealerCreateInput(
+          [Function(GOrderRejectionByDealerCreateInputBuilder b) updates]) =
+      _$GOrderRejectionByDealerCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GVehicleOrderRelateToManyForCreateInput? get vehicleOrders;
+  GTestDriveOrderRelateToManyForCreateInput? get testDriveOrders;
+  String? get reason;
+  static Serializer<GOrderRejectionByDealerCreateInput> get serializer =>
+      _$gOrderRejectionByDealerCreateInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GOrderRejectionByDealerCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GOrderRejectionByDealerCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GOrderRejectionByDealerCreateInput.serializer,
         json,
       );
 }

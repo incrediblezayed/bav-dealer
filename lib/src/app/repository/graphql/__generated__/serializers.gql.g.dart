@@ -182,11 +182,23 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GNotificationTypeUpdateInput.serializer)
       ..add(GNotificationTypeWhereInput.serializer)
       ..add(GNotificationTypeWhereUniqueInput.serializer)
+      ..add(GOrderCancellationRequestCreateInput.serializer)
+      ..add(GOrderCancellationRequestOrderByInput.serializer)
+      ..add(GOrderCancellationRequestUpdateArgs.serializer)
+      ..add(GOrderCancellationRequestUpdateInput.serializer)
+      ..add(GOrderCancellationRequestWhereInput.serializer)
+      ..add(GOrderCancellationRequestWhereUniqueInput.serializer)
       ..add(GOrderCreateInput.serializer)
       ..add(GOrderDirection.serializer)
       ..add(GOrderItem.serializer)
       ..add(GOrderItemType.serializer)
       ..add(GOrderOrderByInput.serializer)
+      ..add(GOrderRejectionByDealerCreateInput.serializer)
+      ..add(GOrderRejectionByDealerOrderByInput.serializer)
+      ..add(GOrderRejectionByDealerUpdateArgs.serializer)
+      ..add(GOrderRejectionByDealerUpdateInput.serializer)
+      ..add(GOrderRejectionByDealerWhereInput.serializer)
+      ..add(GOrderRejectionByDealerWhereUniqueInput.serializer)
       ..add(GOrderRelateToOneForCreateInput.serializer)
       ..add(GOrderRelateToOneForUpdateInput.serializer)
       ..add(GOrderUpdateArgs.serializer)
@@ -367,6 +379,22 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleOrderUpdateInput.serializer)
       ..add(GVehicleOrderWhereInput.serializer)
       ..add(GVehicleOrderWhereUniqueInput.serializer)
+      ..add(GVehicleOrdersData.serializer)
+      ..add(GVehicleOrdersData_vehicleOrders.serializer)
+      ..add(GVehicleOrdersData_vehicleOrders_dealer.serializer)
+      ..add(GVehicleOrdersData_vehicleOrders_dealer_vehicleColor.serializer)
+      ..add(GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images
+          .serializer)
+      ..add(GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image
+          .serializer)
+      ..add(GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant.serializer)
+      ..add(GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle
+          .serializer)
+      ..add(GVehicleOrdersData_vehicleOrders_order.serializer)
+      ..add(GVehicleOrdersData_vehicleOrders_order_user.serializer)
+      ..add(GVehicleOrdersData_vehicleOrders_order_user_addresses.serializer)
+      ..add(GVehicleOrdersReq.serializer)
+      ..add(GVehicleOrdersVars.serializer)
       ..add(GVehicleRelateToOneForCreateInput.serializer)
       ..add(GVehicleRelateToOneForUpdateInput.serializer)
       ..add(GVehicleSpecificationCreateInput.serializer)
@@ -692,6 +720,30 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GNotificationTypeWhereInput)]),
           () => new ListBuilder<GNotificationTypeWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GOrderCancellationRequestWhereInput)]),
+          () => new ListBuilder<GOrderCancellationRequestWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GOrderCancellationRequestWhereInput)]),
+          () => new ListBuilder<GOrderCancellationRequestWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GOrderCancellationRequestWhereInput)]),
+          () => new ListBuilder<GOrderCancellationRequestWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GOrderRejectionByDealerWhereInput)]),
+          () => new ListBuilder<GOrderRejectionByDealerWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GOrderRejectionByDealerWhereInput)]),
+          () => new ListBuilder<GOrderRejectionByDealerWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GOrderRejectionByDealerWhereInput)]),
+          () => new ListBuilder<GOrderRejectionByDealerWhereInput>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GOrderWhereInput)]),
           () => new ListBuilder<GOrderWhereInput>())
@@ -1069,6 +1121,24 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GVehicleOrderWhereUniqueInput)]),
           () => new ListBuilder<GVehicleOrderWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehicleOrdersData_vehicleOrders)]),
+          () => new ListBuilder<GVehicleOrdersData_vehicleOrders>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images)
+          ]),
+          () => new ListBuilder<
+              GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GVehicleOrdersData_vehicleOrders_order_user_addresses)
+          ]),
+          () => new ListBuilder<
+              GVehicleOrdersData_vehicleOrders_order_user_addresses>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(GVehicleSpecificationCreateInput)]),

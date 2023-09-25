@@ -63,4 +63,22 @@ class InventoryProvider extends ChangeNotifier {
       e.log();
     }
   }
+
+/*   Future<int> getInventoryCount() async {
+    try {
+      final result = await _inventoryRepository.getInventoryCount();
+
+      if (result != null) {
+        return result;
+      } else {
+        AppRoutes.showErrorSnackbar(
+          message: 'Errow while fetching Inventory Count',
+        );
+        return 0;
+      }
+    } catch (e) {
+      e.log();
+      return 0;
+    }
+  } */
 }

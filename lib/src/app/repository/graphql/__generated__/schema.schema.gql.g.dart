@@ -838,6 +838,42 @@ Serializer<GTestDriveOrderCreateInput> _$gTestDriveOrderCreateInputSerializer =
 Serializer<GTestDriveDealerRelateToOneForCreateInput>
     _$gTestDriveDealerRelateToOneForCreateInputSerializer =
     new _$GTestDriveDealerRelateToOneForCreateInputSerializer();
+Serializer<GOrderCancellationRequestWhereUniqueInput>
+    _$gOrderCancellationRequestWhereUniqueInputSerializer =
+    new _$GOrderCancellationRequestWhereUniqueInputSerializer();
+Serializer<GOrderCancellationRequestWhereInput>
+    _$gOrderCancellationRequestWhereInputSerializer =
+    new _$GOrderCancellationRequestWhereInputSerializer();
+Serializer<GOrderCancellationRequestOrderByInput>
+    _$gOrderCancellationRequestOrderByInputSerializer =
+    new _$GOrderCancellationRequestOrderByInputSerializer();
+Serializer<GOrderCancellationRequestUpdateInput>
+    _$gOrderCancellationRequestUpdateInputSerializer =
+    new _$GOrderCancellationRequestUpdateInputSerializer();
+Serializer<GOrderCancellationRequestUpdateArgs>
+    _$gOrderCancellationRequestUpdateArgsSerializer =
+    new _$GOrderCancellationRequestUpdateArgsSerializer();
+Serializer<GOrderCancellationRequestCreateInput>
+    _$gOrderCancellationRequestCreateInputSerializer =
+    new _$GOrderCancellationRequestCreateInputSerializer();
+Serializer<GOrderRejectionByDealerWhereUniqueInput>
+    _$gOrderRejectionByDealerWhereUniqueInputSerializer =
+    new _$GOrderRejectionByDealerWhereUniqueInputSerializer();
+Serializer<GOrderRejectionByDealerWhereInput>
+    _$gOrderRejectionByDealerWhereInputSerializer =
+    new _$GOrderRejectionByDealerWhereInputSerializer();
+Serializer<GOrderRejectionByDealerOrderByInput>
+    _$gOrderRejectionByDealerOrderByInputSerializer =
+    new _$GOrderRejectionByDealerOrderByInputSerializer();
+Serializer<GOrderRejectionByDealerUpdateInput>
+    _$gOrderRejectionByDealerUpdateInputSerializer =
+    new _$GOrderRejectionByDealerUpdateInputSerializer();
+Serializer<GOrderRejectionByDealerUpdateArgs>
+    _$gOrderRejectionByDealerUpdateArgsSerializer =
+    new _$GOrderRejectionByDealerUpdateArgsSerializer();
+Serializer<GOrderRejectionByDealerCreateInput>
+    _$gOrderRejectionByDealerCreateInputSerializer =
+    new _$GOrderRejectionByDealerCreateInputSerializer();
 Serializer<GUserVehicleReviewWhereUniqueInput>
     _$gUserVehicleReviewWhereUniqueInputSerializer =
     new _$GUserVehicleReviewWhereUniqueInputSerializer();
@@ -19098,13 +19134,6 @@ class _$GOrderWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GUserWhereInput)));
     }
-    value = object.status;
-    if (value != null) {
-      result
-        ..add('status')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GStringNullableFilter)));
-    }
     value = object.vehicleOrders;
     if (value != null) {
       result
@@ -19177,11 +19206,6 @@ class _$GOrderWhereInputSerializer
           result.user.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GUserWhereInput))!
               as GUserWhereInput);
-          break;
-        case 'status':
-          result.status.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GStringNullableFilter))!
-              as GStringNullableFilter);
           break;
         case 'vehicleOrders':
           result.vehicleOrders.replace(serializers.deserialize(value,
@@ -19463,13 +19487,6 @@ class _$GOrderOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
-    value = object.status;
-    if (value != null) {
-      result
-        ..add('status')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GOrderDirection)));
-    }
     return result;
   }
 
@@ -19497,11 +19514,6 @@ class _$GOrderOrderByInputSerializer
           break;
         case 'modifiedAt':
           result.modifiedAt = serializers.deserialize(value,
-                  specifiedType: const FullType(GOrderDirection))
-              as GOrderDirection?;
-          break;
-        case 'status':
-          result.status = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -19544,13 +19556,6 @@ class _$GOrderUpdateInputSerializer
         ..add('user')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GUserRelateToOneForUpdateInput)));
-    }
-    value = object.status;
-    if (value != null) {
-      result
-        ..add('status')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
     }
     value = object.vehicleOrders;
     if (value != null) {
@@ -19603,10 +19608,6 @@ class _$GOrderUpdateInputSerializer
                   specifiedType:
                       const FullType(GUserRelateToOneForUpdateInput))!
               as GUserRelateToOneForUpdateInput);
-          break;
-        case 'status':
-          result.status = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
           break;
         case 'vehicleOrders':
           result.vehicleOrders.replace(serializers.deserialize(value,
@@ -19999,13 +20000,6 @@ class _$GOrderCreateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GUserRelateToOneForCreateInput)));
     }
-    value = object.status;
-    if (value != null) {
-      result
-        ..add('status')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.vehicleOrders;
     if (value != null) {
       result
@@ -20057,10 +20051,6 @@ class _$GOrderCreateInputSerializer
                   specifiedType:
                       const FullType(GUserRelateToOneForCreateInput))!
               as GUserRelateToOneForCreateInput);
-          break;
-        case 'status':
-          result.status = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
           break;
         case 'vehicleOrders':
           result.vehicleOrders.replace(serializers.deserialize(value,
@@ -21440,6 +21430,13 @@ class _$GVehicleOrderWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GIntNullableFilter)));
     }
+    value = object.status;
+    if (value != null) {
+      result
+        ..add('status')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringNullableFilter)));
+    }
     return result;
   }
 
@@ -21502,6 +21499,11 @@ class _$GVehicleOrderWhereInputSerializer
                   specifiedType: const FullType(GIntNullableFilter))!
               as GIntNullableFilter);
           break;
+        case 'status':
+          result.status.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GStringNullableFilter))!
+              as GStringNullableFilter);
+          break;
       }
     }
 
@@ -21553,6 +21555,13 @@ class _$GVehicleOrderOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.status;
+    if (value != null) {
+      result
+        ..add('status')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     return result;
   }
 
@@ -21585,6 +21594,11 @@ class _$GVehicleOrderOrderByInputSerializer
           break;
         case 'price':
           result.price = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'status':
+          result.status = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -21646,6 +21660,13 @@ class _$GVehicleOrderUpdateInputSerializer
         ..add('price')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.status;
+    if (value != null) {
+      result
+        ..add('status')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -21684,6 +21705,10 @@ class _$GVehicleOrderUpdateInputSerializer
         case 'price':
           result.price = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+        case 'status':
+          result.status = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -21798,6 +21823,13 @@ class _$GVehicleOrderCreateInputSerializer
         ..add('price')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.status;
+    if (value != null) {
+      result
+        ..add('status')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -21836,6 +21868,10 @@ class _$GVehicleOrderCreateInputSerializer
         case 'price':
           result.price = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+        case 'status':
+          result.status = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -21975,6 +22011,13 @@ class _$GTestDriveOrderWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GIntNullableFilter)));
     }
+    value = object.status;
+    if (value != null) {
+      result
+        ..add('status')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringNullableFilter)));
+    }
     return result;
   }
 
@@ -22037,6 +22080,11 @@ class _$GTestDriveOrderWhereInputSerializer
                   specifiedType: const FullType(GIntNullableFilter))!
               as GIntNullableFilter);
           break;
+        case 'status':
+          result.status.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GStringNullableFilter))!
+              as GStringNullableFilter);
+          break;
       }
     }
 
@@ -22088,6 +22136,13 @@ class _$GTestDriveOrderOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.status;
+    if (value != null) {
+      result
+        ..add('status')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     return result;
   }
 
@@ -22120,6 +22175,11 @@ class _$GTestDriveOrderOrderByInputSerializer
           break;
         case 'price':
           result.price = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'status':
+          result.status = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -22181,6 +22241,13 @@ class _$GTestDriveOrderUpdateInputSerializer
         ..add('price')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.status;
+    if (value != null) {
+      result
+        ..add('status')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -22219,6 +22286,10 @@ class _$GTestDriveOrderUpdateInputSerializer
         case 'price':
           result.price = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+        case 'status':
+          result.status = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -22408,6 +22479,13 @@ class _$GTestDriveOrderCreateInputSerializer
         ..add('price')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.status;
+    if (value != null) {
+      result
+        ..add('status')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -22446,6 +22524,10 @@ class _$GTestDriveOrderCreateInputSerializer
         case 'price':
           result.price = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+        case 'status':
+          result.status = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -22509,6 +22591,1092 @@ class _$GTestDriveDealerRelateToOneForCreateInputSerializer
                   specifiedType:
                       const FullType(GTestDriveDealerWhereUniqueInput))!
               as GTestDriveDealerWhereUniqueInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GOrderCancellationRequestWhereUniqueInputSerializer
+    implements StructuredSerializer<GOrderCancellationRequestWhereUniqueInput> {
+  @override
+  final Iterable<Type> types = const [
+    GOrderCancellationRequestWhereUniqueInput,
+    _$GOrderCancellationRequestWhereUniqueInput
+  ];
+  @override
+  final String wireName = 'GOrderCancellationRequestWhereUniqueInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GOrderCancellationRequestWhereUniqueInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GOrderCancellationRequestWhereUniqueInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GOrderCancellationRequestWhereUniqueInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GOrderCancellationRequestWhereInputSerializer
+    implements StructuredSerializer<GOrderCancellationRequestWhereInput> {
+  @override
+  final Iterable<Type> types = const [
+    GOrderCancellationRequestWhereInput,
+    _$GOrderCancellationRequestWhereInput
+  ];
+  @override
+  final String wireName = 'GOrderCancellationRequestWhereInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GOrderCancellationRequestWhereInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.AND;
+    if (value != null) {
+      result
+        ..add('AND')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GOrderCancellationRequestWhereInput)])));
+    }
+    value = object.OR;
+    if (value != null) {
+      result
+        ..add('OR')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GOrderCancellationRequestWhereInput)])));
+    }
+    value = object.NOT;
+    if (value != null) {
+      result
+        ..add('NOT')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GOrderCancellationRequestWhereInput)])));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GIDFilter)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.vehicleOrders;
+    if (value != null) {
+      result
+        ..add('vehicleOrders')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GVehicleOrderManyRelationFilter)));
+    }
+    value = object.testDriveOrders;
+    if (value != null) {
+      result
+        ..add('testDriveOrders')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GTestDriveOrderManyRelationFilter)));
+    }
+    value = object.reason;
+    if (value != null) {
+      result
+        ..add('reason')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    return result;
+  }
+
+  @override
+  GOrderCancellationRequestWhereInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GOrderCancellationRequestWhereInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'AND':
+          result.AND.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GOrderCancellationRequestWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'OR':
+          result.OR.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GOrderCancellationRequestWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'NOT':
+          result.NOT.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GOrderCancellationRequestWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GIDFilter))! as GIDFilter);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'vehicleOrders':
+          result.vehicleOrders.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleOrderManyRelationFilter))!
+              as GVehicleOrderManyRelationFilter);
+          break;
+        case 'testDriveOrders':
+          result.testDriveOrders.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GTestDriveOrderManyRelationFilter))!
+              as GTestDriveOrderManyRelationFilter);
+          break;
+        case 'reason':
+          result.reason.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GOrderCancellationRequestOrderByInputSerializer
+    implements StructuredSerializer<GOrderCancellationRequestOrderByInput> {
+  @override
+  final Iterable<Type> types = const [
+    GOrderCancellationRequestOrderByInput,
+    _$GOrderCancellationRequestOrderByInput
+  ];
+  @override
+  final String wireName = 'GOrderCancellationRequestOrderByInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GOrderCancellationRequestOrderByInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.reason;
+    if (value != null) {
+      result
+        ..add('reason')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    return result;
+  }
+
+  @override
+  GOrderCancellationRequestOrderByInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GOrderCancellationRequestOrderByInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'createdAt':
+          result.createdAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'modifiedAt':
+          result.modifiedAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'reason':
+          result.reason = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GOrderCancellationRequestUpdateInputSerializer
+    implements StructuredSerializer<GOrderCancellationRequestUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GOrderCancellationRequestUpdateInput,
+    _$GOrderCancellationRequestUpdateInput
+  ];
+  @override
+  final String wireName = 'GOrderCancellationRequestUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GOrderCancellationRequestUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.vehicleOrders;
+    if (value != null) {
+      result
+        ..add('vehicleOrders')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GVehicleOrderRelateToManyForUpdateInput)));
+    }
+    value = object.testDriveOrders;
+    if (value != null) {
+      result
+        ..add('testDriveOrders')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GTestDriveOrderRelateToManyForUpdateInput)));
+    }
+    value = object.reason;
+    if (value != null) {
+      result
+        ..add('reason')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GOrderCancellationRequestUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GOrderCancellationRequestUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'vehicleOrders':
+          result.vehicleOrders.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleOrderRelateToManyForUpdateInput))!
+              as GVehicleOrderRelateToManyForUpdateInput);
+          break;
+        case 'testDriveOrders':
+          result.testDriveOrders.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GTestDriveOrderRelateToManyForUpdateInput))!
+              as GTestDriveOrderRelateToManyForUpdateInput);
+          break;
+        case 'reason':
+          result.reason = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GOrderCancellationRequestUpdateArgsSerializer
+    implements StructuredSerializer<GOrderCancellationRequestUpdateArgs> {
+  @override
+  final Iterable<Type> types = const [
+    GOrderCancellationRequestUpdateArgs,
+    _$GOrderCancellationRequestUpdateArgs
+  ];
+  @override
+  final String wireName = 'GOrderCancellationRequestUpdateArgs';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GOrderCancellationRequestUpdateArgs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType:
+              const FullType(GOrderCancellationRequestWhereUniqueInput)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(GOrderCancellationRequestUpdateInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GOrderCancellationRequestUpdateArgs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GOrderCancellationRequestUpdateArgsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GOrderCancellationRequestWhereUniqueInput))!
+              as GOrderCancellationRequestWhereUniqueInput);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GOrderCancellationRequestUpdateInput))!
+              as GOrderCancellationRequestUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GOrderCancellationRequestCreateInputSerializer
+    implements StructuredSerializer<GOrderCancellationRequestCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GOrderCancellationRequestCreateInput,
+    _$GOrderCancellationRequestCreateInput
+  ];
+  @override
+  final String wireName = 'GOrderCancellationRequestCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GOrderCancellationRequestCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.vehicleOrders;
+    if (value != null) {
+      result
+        ..add('vehicleOrders')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GVehicleOrderRelateToManyForCreateInput)));
+    }
+    value = object.testDriveOrders;
+    if (value != null) {
+      result
+        ..add('testDriveOrders')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GTestDriveOrderRelateToManyForCreateInput)));
+    }
+    value = object.reason;
+    if (value != null) {
+      result
+        ..add('reason')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GOrderCancellationRequestCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GOrderCancellationRequestCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'vehicleOrders':
+          result.vehicleOrders.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleOrderRelateToManyForCreateInput))!
+              as GVehicleOrderRelateToManyForCreateInput);
+          break;
+        case 'testDriveOrders':
+          result.testDriveOrders.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GTestDriveOrderRelateToManyForCreateInput))!
+              as GTestDriveOrderRelateToManyForCreateInput);
+          break;
+        case 'reason':
+          result.reason = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GOrderRejectionByDealerWhereUniqueInputSerializer
+    implements StructuredSerializer<GOrderRejectionByDealerWhereUniqueInput> {
+  @override
+  final Iterable<Type> types = const [
+    GOrderRejectionByDealerWhereUniqueInput,
+    _$GOrderRejectionByDealerWhereUniqueInput
+  ];
+  @override
+  final String wireName = 'GOrderRejectionByDealerWhereUniqueInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GOrderRejectionByDealerWhereUniqueInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GOrderRejectionByDealerWhereUniqueInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GOrderRejectionByDealerWhereUniqueInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GOrderRejectionByDealerWhereInputSerializer
+    implements StructuredSerializer<GOrderRejectionByDealerWhereInput> {
+  @override
+  final Iterable<Type> types = const [
+    GOrderRejectionByDealerWhereInput,
+    _$GOrderRejectionByDealerWhereInput
+  ];
+  @override
+  final String wireName = 'GOrderRejectionByDealerWhereInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GOrderRejectionByDealerWhereInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.AND;
+    if (value != null) {
+      result
+        ..add('AND')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GOrderRejectionByDealerWhereInput)])));
+    }
+    value = object.OR;
+    if (value != null) {
+      result
+        ..add('OR')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GOrderRejectionByDealerWhereInput)])));
+    }
+    value = object.NOT;
+    if (value != null) {
+      result
+        ..add('NOT')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GOrderRejectionByDealerWhereInput)])));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GIDFilter)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.vehicleOrders;
+    if (value != null) {
+      result
+        ..add('vehicleOrders')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GVehicleOrderManyRelationFilter)));
+    }
+    value = object.testDriveOrders;
+    if (value != null) {
+      result
+        ..add('testDriveOrders')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GTestDriveOrderManyRelationFilter)));
+    }
+    value = object.reason;
+    if (value != null) {
+      result
+        ..add('reason')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    return result;
+  }
+
+  @override
+  GOrderRejectionByDealerWhereInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GOrderRejectionByDealerWhereInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'AND':
+          result.AND.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GOrderRejectionByDealerWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'OR':
+          result.OR.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GOrderRejectionByDealerWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'NOT':
+          result.NOT.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GOrderRejectionByDealerWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GIDFilter))! as GIDFilter);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'vehicleOrders':
+          result.vehicleOrders.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleOrderManyRelationFilter))!
+              as GVehicleOrderManyRelationFilter);
+          break;
+        case 'testDriveOrders':
+          result.testDriveOrders.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GTestDriveOrderManyRelationFilter))!
+              as GTestDriveOrderManyRelationFilter);
+          break;
+        case 'reason':
+          result.reason.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GOrderRejectionByDealerOrderByInputSerializer
+    implements StructuredSerializer<GOrderRejectionByDealerOrderByInput> {
+  @override
+  final Iterable<Type> types = const [
+    GOrderRejectionByDealerOrderByInput,
+    _$GOrderRejectionByDealerOrderByInput
+  ];
+  @override
+  final String wireName = 'GOrderRejectionByDealerOrderByInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GOrderRejectionByDealerOrderByInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.reason;
+    if (value != null) {
+      result
+        ..add('reason')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    return result;
+  }
+
+  @override
+  GOrderRejectionByDealerOrderByInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GOrderRejectionByDealerOrderByInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'createdAt':
+          result.createdAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'modifiedAt':
+          result.modifiedAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'reason':
+          result.reason = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GOrderRejectionByDealerUpdateInputSerializer
+    implements StructuredSerializer<GOrderRejectionByDealerUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GOrderRejectionByDealerUpdateInput,
+    _$GOrderRejectionByDealerUpdateInput
+  ];
+  @override
+  final String wireName = 'GOrderRejectionByDealerUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GOrderRejectionByDealerUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.vehicleOrders;
+    if (value != null) {
+      result
+        ..add('vehicleOrders')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GVehicleOrderRelateToManyForUpdateInput)));
+    }
+    value = object.testDriveOrders;
+    if (value != null) {
+      result
+        ..add('testDriveOrders')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GTestDriveOrderRelateToManyForUpdateInput)));
+    }
+    value = object.reason;
+    if (value != null) {
+      result
+        ..add('reason')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GOrderRejectionByDealerUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GOrderRejectionByDealerUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'vehicleOrders':
+          result.vehicleOrders.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleOrderRelateToManyForUpdateInput))!
+              as GVehicleOrderRelateToManyForUpdateInput);
+          break;
+        case 'testDriveOrders':
+          result.testDriveOrders.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GTestDriveOrderRelateToManyForUpdateInput))!
+              as GTestDriveOrderRelateToManyForUpdateInput);
+          break;
+        case 'reason':
+          result.reason = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GOrderRejectionByDealerUpdateArgsSerializer
+    implements StructuredSerializer<GOrderRejectionByDealerUpdateArgs> {
+  @override
+  final Iterable<Type> types = const [
+    GOrderRejectionByDealerUpdateArgs,
+    _$GOrderRejectionByDealerUpdateArgs
+  ];
+  @override
+  final String wireName = 'GOrderRejectionByDealerUpdateArgs';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GOrderRejectionByDealerUpdateArgs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType:
+              const FullType(GOrderRejectionByDealerWhereUniqueInput)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(GOrderRejectionByDealerUpdateInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GOrderRejectionByDealerUpdateArgs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GOrderRejectionByDealerUpdateArgsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GOrderRejectionByDealerWhereUniqueInput))!
+              as GOrderRejectionByDealerWhereUniqueInput);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GOrderRejectionByDealerUpdateInput))!
+              as GOrderRejectionByDealerUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GOrderRejectionByDealerCreateInputSerializer
+    implements StructuredSerializer<GOrderRejectionByDealerCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GOrderRejectionByDealerCreateInput,
+    _$GOrderRejectionByDealerCreateInput
+  ];
+  @override
+  final String wireName = 'GOrderRejectionByDealerCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GOrderRejectionByDealerCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.vehicleOrders;
+    if (value != null) {
+      result
+        ..add('vehicleOrders')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GVehicleOrderRelateToManyForCreateInput)));
+    }
+    value = object.testDriveOrders;
+    if (value != null) {
+      result
+        ..add('testDriveOrders')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GTestDriveOrderRelateToManyForCreateInput)));
+    }
+    value = object.reason;
+    if (value != null) {
+      result
+        ..add('reason')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GOrderRejectionByDealerCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GOrderRejectionByDealerCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'vehicleOrders':
+          result.vehicleOrders.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleOrderRelateToManyForCreateInput))!
+              as GVehicleOrderRelateToManyForCreateInput);
+          break;
+        case 'testDriveOrders':
+          result.testDriveOrders.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GTestDriveOrderRelateToManyForCreateInput))!
+              as GTestDriveOrderRelateToManyForCreateInput);
+          break;
+        case 'reason':
+          result.reason = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -60849,8 +62017,6 @@ class _$GOrderWhereInput extends GOrderWhereInput {
   @override
   final GUserWhereInput? user;
   @override
-  final GStringNullableFilter? status;
-  @override
   final GVehicleOrderManyRelationFilter? vehicleOrders;
   @override
   final GTestDriveOrderManyRelationFilter? testDriveOrders;
@@ -60869,7 +62035,6 @@ class _$GOrderWhereInput extends GOrderWhereInput {
       this.createdAt,
       this.modifiedAt,
       this.user,
-      this.status,
       this.vehicleOrders,
       this.testDriveOrders,
       this.payments})
@@ -60894,7 +62059,6 @@ class _$GOrderWhereInput extends GOrderWhereInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         user == other.user &&
-        status == other.status &&
         vehicleOrders == other.vehicleOrders &&
         testDriveOrders == other.testDriveOrders &&
         payments == other.payments;
@@ -60910,7 +62074,6 @@ class _$GOrderWhereInput extends GOrderWhereInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, user.hashCode);
-    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, vehicleOrders.hashCode);
     _$hash = $jc(_$hash, testDriveOrders.hashCode);
     _$hash = $jc(_$hash, payments.hashCode);
@@ -60928,7 +62091,6 @@ class _$GOrderWhereInput extends GOrderWhereInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('user', user)
-          ..add('status', status)
           ..add('vehicleOrders', vehicleOrders)
           ..add('testDriveOrders', testDriveOrders)
           ..add('payments', payments))
@@ -60976,11 +62138,6 @@ class GOrderWhereInputBuilder
       _$this._user ??= new GUserWhereInputBuilder();
   set user(GUserWhereInputBuilder? user) => _$this._user = user;
 
-  GStringNullableFilterBuilder? _status;
-  GStringNullableFilterBuilder get status =>
-      _$this._status ??= new GStringNullableFilterBuilder();
-  set status(GStringNullableFilterBuilder? status) => _$this._status = status;
-
   GVehicleOrderManyRelationFilterBuilder? _vehicleOrders;
   GVehicleOrderManyRelationFilterBuilder get vehicleOrders =>
       _$this._vehicleOrders ??= new GVehicleOrderManyRelationFilterBuilder();
@@ -61013,7 +62170,6 @@ class GOrderWhereInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _user = $v.user?.toBuilder();
-      _status = $v.status?.toBuilder();
       _vehicleOrders = $v.vehicleOrders?.toBuilder();
       _testDriveOrders = $v.testDriveOrders?.toBuilder();
       _payments = $v.payments?.toBuilder();
@@ -61048,7 +62204,6 @@ class GOrderWhereInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               user: _user?.build(),
-              status: _status?.build(),
               vehicleOrders: _vehicleOrders?.build(),
               testDriveOrders: _testDriveOrders?.build(),
               payments: _payments?.build());
@@ -61069,8 +62224,6 @@ class GOrderWhereInputBuilder
         _modifiedAt?.build();
         _$failedField = 'user';
         _user?.build();
-        _$failedField = 'status';
-        _status?.build();
         _$failedField = 'vehicleOrders';
         _vehicleOrders?.build();
         _$failedField = 'testDriveOrders';
@@ -61485,15 +62638,12 @@ class _$GOrderOrderByInput extends GOrderOrderByInput {
   final GOrderDirection? createdAt;
   @override
   final GOrderDirection? modifiedAt;
-  @override
-  final GOrderDirection? status;
 
   factory _$GOrderOrderByInput(
           [void Function(GOrderOrderByInputBuilder)? updates]) =>
       (new GOrderOrderByInputBuilder()..update(updates))._build();
 
-  _$GOrderOrderByInput._(
-      {this.id, this.createdAt, this.modifiedAt, this.status})
+  _$GOrderOrderByInput._({this.id, this.createdAt, this.modifiedAt})
       : super._();
 
   @override
@@ -61511,8 +62661,7 @@ class _$GOrderOrderByInput extends GOrderOrderByInput {
     return other is GOrderOrderByInput &&
         id == other.id &&
         createdAt == other.createdAt &&
-        modifiedAt == other.modifiedAt &&
-        status == other.status;
+        modifiedAt == other.modifiedAt;
   }
 
   @override
@@ -61521,7 +62670,6 @@ class _$GOrderOrderByInput extends GOrderOrderByInput {
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
-    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61531,8 +62679,7 @@ class _$GOrderOrderByInput extends GOrderOrderByInput {
     return (newBuiltValueToStringHelper(r'GOrderOrderByInput')
           ..add('id', id)
           ..add('createdAt', createdAt)
-          ..add('modifiedAt', modifiedAt)
-          ..add('status', status))
+          ..add('modifiedAt', modifiedAt))
         .toString();
   }
 }
@@ -61554,10 +62701,6 @@ class GOrderOrderByInputBuilder
   set modifiedAt(GOrderDirection? modifiedAt) =>
       _$this._modifiedAt = modifiedAt;
 
-  GOrderDirection? _status;
-  GOrderDirection? get status => _$this._status;
-  set status(GOrderDirection? status) => _$this._status = status;
-
   GOrderOrderByInputBuilder();
 
   GOrderOrderByInputBuilder get _$this {
@@ -61566,7 +62709,6 @@ class GOrderOrderByInputBuilder
       _id = $v.id;
       _createdAt = $v.createdAt;
       _modifiedAt = $v.modifiedAt;
-      _status = $v.status;
       _$v = null;
     }
     return this;
@@ -61589,10 +62731,7 @@ class GOrderOrderByInputBuilder
   _$GOrderOrderByInput _build() {
     final _$result = _$v ??
         new _$GOrderOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            status: status);
+            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
     replace(_$result);
     return _$result;
   }
@@ -61605,8 +62744,6 @@ class _$GOrderUpdateInput extends GOrderUpdateInput {
   final GDateTime? modifiedAt;
   @override
   final GUserRelateToOneForUpdateInput? user;
-  @override
-  final String? status;
   @override
   final GVehicleOrderRelateToManyForUpdateInput? vehicleOrders;
   @override
@@ -61622,7 +62759,6 @@ class _$GOrderUpdateInput extends GOrderUpdateInput {
       {this.createdAt,
       this.modifiedAt,
       this.user,
-      this.status,
       this.vehicleOrders,
       this.testDriveOrders,
       this.payments})
@@ -61643,7 +62779,6 @@ class _$GOrderUpdateInput extends GOrderUpdateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         user == other.user &&
-        status == other.status &&
         vehicleOrders == other.vehicleOrders &&
         testDriveOrders == other.testDriveOrders &&
         payments == other.payments;
@@ -61655,7 +62790,6 @@ class _$GOrderUpdateInput extends GOrderUpdateInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, user.hashCode);
-    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, vehicleOrders.hashCode);
     _$hash = $jc(_$hash, testDriveOrders.hashCode);
     _$hash = $jc(_$hash, payments.hashCode);
@@ -61669,7 +62803,6 @@ class _$GOrderUpdateInput extends GOrderUpdateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('user', user)
-          ..add('status', status)
           ..add('vehicleOrders', vehicleOrders)
           ..add('testDriveOrders', testDriveOrders)
           ..add('payments', payments))
@@ -61696,10 +62829,6 @@ class GOrderUpdateInputBuilder
   GUserRelateToOneForUpdateInputBuilder get user =>
       _$this._user ??= new GUserRelateToOneForUpdateInputBuilder();
   set user(GUserRelateToOneForUpdateInputBuilder? user) => _$this._user = user;
-
-  String? _status;
-  String? get status => _$this._status;
-  set status(String? status) => _$this._status = status;
 
   GVehicleOrderRelateToManyForUpdateInputBuilder? _vehicleOrders;
   GVehicleOrderRelateToManyForUpdateInputBuilder get vehicleOrders =>
@@ -61731,7 +62860,6 @@ class GOrderUpdateInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _user = $v.user?.toBuilder();
-      _status = $v.status;
       _vehicleOrders = $v.vehicleOrders?.toBuilder();
       _testDriveOrders = $v.testDriveOrders?.toBuilder();
       _payments = $v.payments?.toBuilder();
@@ -61762,7 +62890,6 @@ class GOrderUpdateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               user: _user?.build(),
-              status: status,
               vehicleOrders: _vehicleOrders?.build(),
               testDriveOrders: _testDriveOrders?.build(),
               payments: _payments?.build());
@@ -61775,7 +62902,6 @@ class GOrderUpdateInputBuilder
         _modifiedAt?.build();
         _$failedField = 'user';
         _user?.build();
-
         _$failedField = 'vehicleOrders';
         _vehicleOrders?.build();
         _$failedField = 'testDriveOrders';
@@ -62376,8 +63502,6 @@ class _$GOrderCreateInput extends GOrderCreateInput {
   @override
   final GUserRelateToOneForCreateInput? user;
   @override
-  final String? status;
-  @override
   final GVehicleOrderRelateToManyForCreateInput? vehicleOrders;
   @override
   final GTestDriveOrderRelateToManyForCreateInput? testDriveOrders;
@@ -62392,7 +63516,6 @@ class _$GOrderCreateInput extends GOrderCreateInput {
       {this.createdAt,
       this.modifiedAt,
       this.user,
-      this.status,
       this.vehicleOrders,
       this.testDriveOrders,
       this.payments})
@@ -62413,7 +63536,6 @@ class _$GOrderCreateInput extends GOrderCreateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         user == other.user &&
-        status == other.status &&
         vehicleOrders == other.vehicleOrders &&
         testDriveOrders == other.testDriveOrders &&
         payments == other.payments;
@@ -62425,7 +63547,6 @@ class _$GOrderCreateInput extends GOrderCreateInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, user.hashCode);
-    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, vehicleOrders.hashCode);
     _$hash = $jc(_$hash, testDriveOrders.hashCode);
     _$hash = $jc(_$hash, payments.hashCode);
@@ -62439,7 +63560,6 @@ class _$GOrderCreateInput extends GOrderCreateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('user', user)
-          ..add('status', status)
           ..add('vehicleOrders', vehicleOrders)
           ..add('testDriveOrders', testDriveOrders)
           ..add('payments', payments))
@@ -62466,10 +63586,6 @@ class GOrderCreateInputBuilder
   GUserRelateToOneForCreateInputBuilder get user =>
       _$this._user ??= new GUserRelateToOneForCreateInputBuilder();
   set user(GUserRelateToOneForCreateInputBuilder? user) => _$this._user = user;
-
-  String? _status;
-  String? get status => _$this._status;
-  set status(String? status) => _$this._status = status;
 
   GVehicleOrderRelateToManyForCreateInputBuilder? _vehicleOrders;
   GVehicleOrderRelateToManyForCreateInputBuilder get vehicleOrders =>
@@ -62501,7 +63617,6 @@ class GOrderCreateInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _user = $v.user?.toBuilder();
-      _status = $v.status;
       _vehicleOrders = $v.vehicleOrders?.toBuilder();
       _testDriveOrders = $v.testDriveOrders?.toBuilder();
       _payments = $v.payments?.toBuilder();
@@ -62532,7 +63647,6 @@ class GOrderCreateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               user: _user?.build(),
-              status: status,
               vehicleOrders: _vehicleOrders?.build(),
               testDriveOrders: _testDriveOrders?.build(),
               payments: _payments?.build());
@@ -62545,7 +63659,6 @@ class GOrderCreateInputBuilder
         _modifiedAt?.build();
         _$failedField = 'user';
         _user?.build();
-
         _$failedField = 'vehicleOrders';
         _vehicleOrders?.build();
         _$failedField = 'testDriveOrders';
@@ -64585,6 +65698,8 @@ class _$GVehicleOrderWhereInput extends GVehicleOrderWhereInput {
   final GOrderWhereInput? order;
   @override
   final GIntNullableFilter? price;
+  @override
+  final GStringNullableFilter? status;
 
   factory _$GVehicleOrderWhereInput(
           [void Function(GVehicleOrderWhereInputBuilder)? updates]) =>
@@ -64599,7 +65714,8 @@ class _$GVehicleOrderWhereInput extends GVehicleOrderWhereInput {
       this.modifiedAt,
       this.dealer,
       this.order,
-      this.price})
+      this.price,
+      this.status})
       : super._();
 
   @override
@@ -64623,7 +65739,8 @@ class _$GVehicleOrderWhereInput extends GVehicleOrderWhereInput {
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         order == other.order &&
-        price == other.price;
+        price == other.price &&
+        status == other.status;
   }
 
   @override
@@ -64638,6 +65755,7 @@ class _$GVehicleOrderWhereInput extends GVehicleOrderWhereInput {
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, order.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -64653,7 +65771,8 @@ class _$GVehicleOrderWhereInput extends GVehicleOrderWhereInput {
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('order', order)
-          ..add('price', price))
+          ..add('price', price)
+          ..add('status', status))
         .toString();
   }
 }
@@ -64710,6 +65829,11 @@ class GVehicleOrderWhereInputBuilder
       _$this._price ??= new GIntNullableFilterBuilder();
   set price(GIntNullableFilterBuilder? price) => _$this._price = price;
 
+  GStringNullableFilterBuilder? _status;
+  GStringNullableFilterBuilder get status =>
+      _$this._status ??= new GStringNullableFilterBuilder();
+  set status(GStringNullableFilterBuilder? status) => _$this._status = status;
+
   GVehicleOrderWhereInputBuilder();
 
   GVehicleOrderWhereInputBuilder get _$this {
@@ -64724,6 +65848,7 @@ class GVehicleOrderWhereInputBuilder
       _dealer = $v.dealer?.toBuilder();
       _order = $v.order?.toBuilder();
       _price = $v.price?.toBuilder();
+      _status = $v.status?.toBuilder();
       _$v = null;
     }
     return this;
@@ -64756,7 +65881,8 @@ class GVehicleOrderWhereInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               order: _order?.build(),
-              price: _price?.build());
+              price: _price?.build(),
+              status: _status?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -64778,6 +65904,8 @@ class GVehicleOrderWhereInputBuilder
         _order?.build();
         _$failedField = 'price';
         _price?.build();
+        _$failedField = 'status';
+        _status?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleOrderWhereInput', _$failedField, e.toString());
@@ -64798,13 +65926,15 @@ class _$GVehicleOrderOrderByInput extends GVehicleOrderOrderByInput {
   final GOrderDirection? modifiedAt;
   @override
   final GOrderDirection? price;
+  @override
+  final GOrderDirection? status;
 
   factory _$GVehicleOrderOrderByInput(
           [void Function(GVehicleOrderOrderByInputBuilder)? updates]) =>
       (new GVehicleOrderOrderByInputBuilder()..update(updates))._build();
 
   _$GVehicleOrderOrderByInput._(
-      {this.id, this.createdAt, this.modifiedAt, this.price})
+      {this.id, this.createdAt, this.modifiedAt, this.price, this.status})
       : super._();
 
   @override
@@ -64823,7 +65953,8 @@ class _$GVehicleOrderOrderByInput extends GVehicleOrderOrderByInput {
         id == other.id &&
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
-        price == other.price;
+        price == other.price &&
+        status == other.status;
   }
 
   @override
@@ -64833,6 +65964,7 @@ class _$GVehicleOrderOrderByInput extends GVehicleOrderOrderByInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -64843,7 +65975,8 @@ class _$GVehicleOrderOrderByInput extends GVehicleOrderOrderByInput {
           ..add('id', id)
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
-          ..add('price', price))
+          ..add('price', price)
+          ..add('status', status))
         .toString();
   }
 }
@@ -64870,6 +66003,10 @@ class GVehicleOrderOrderByInputBuilder
   GOrderDirection? get price => _$this._price;
   set price(GOrderDirection? price) => _$this._price = price;
 
+  GOrderDirection? _status;
+  GOrderDirection? get status => _$this._status;
+  set status(GOrderDirection? status) => _$this._status = status;
+
   GVehicleOrderOrderByInputBuilder();
 
   GVehicleOrderOrderByInputBuilder get _$this {
@@ -64879,6 +66016,7 @@ class GVehicleOrderOrderByInputBuilder
       _createdAt = $v.createdAt;
       _modifiedAt = $v.modifiedAt;
       _price = $v.price;
+      _status = $v.status;
       _$v = null;
     }
     return this;
@@ -64901,7 +66039,11 @@ class GVehicleOrderOrderByInputBuilder
   _$GVehicleOrderOrderByInput _build() {
     final _$result = _$v ??
         new _$GVehicleOrderOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt, price: price);
+            id: id,
+            createdAt: createdAt,
+            modifiedAt: modifiedAt,
+            price: price,
+            status: status);
     replace(_$result);
     return _$result;
   }
@@ -64918,13 +66060,20 @@ class _$GVehicleOrderUpdateInput extends GVehicleOrderUpdateInput {
   final GOrderRelateToOneForUpdateInput? order;
   @override
   final int? price;
+  @override
+  final String? status;
 
   factory _$GVehicleOrderUpdateInput(
           [void Function(GVehicleOrderUpdateInputBuilder)? updates]) =>
       (new GVehicleOrderUpdateInputBuilder()..update(updates))._build();
 
   _$GVehicleOrderUpdateInput._(
-      {this.createdAt, this.modifiedAt, this.dealer, this.order, this.price})
+      {this.createdAt,
+      this.modifiedAt,
+      this.dealer,
+      this.order,
+      this.price,
+      this.status})
       : super._();
 
   @override
@@ -64944,7 +66093,8 @@ class _$GVehicleOrderUpdateInput extends GVehicleOrderUpdateInput {
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         order == other.order &&
-        price == other.price;
+        price == other.price &&
+        status == other.status;
   }
 
   @override
@@ -64955,6 +66105,7 @@ class _$GVehicleOrderUpdateInput extends GVehicleOrderUpdateInput {
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, order.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -64966,7 +66117,8 @@ class _$GVehicleOrderUpdateInput extends GVehicleOrderUpdateInput {
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('order', order)
-          ..add('price', price))
+          ..add('price', price)
+          ..add('status', status))
         .toString();
   }
 }
@@ -65003,6 +66155,10 @@ class GVehicleOrderUpdateInputBuilder
   int? get price => _$this._price;
   set price(int? price) => _$this._price = price;
 
+  String? _status;
+  String? get status => _$this._status;
+  set status(String? status) => _$this._status = status;
+
   GVehicleOrderUpdateInputBuilder();
 
   GVehicleOrderUpdateInputBuilder get _$this {
@@ -65013,6 +66169,7 @@ class GVehicleOrderUpdateInputBuilder
       _dealer = $v.dealer?.toBuilder();
       _order = $v.order?.toBuilder();
       _price = $v.price;
+      _status = $v.status;
       _$v = null;
     }
     return this;
@@ -65041,7 +66198,8 @@ class GVehicleOrderUpdateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               order: _order?.build(),
-              price: price);
+              price: price,
+              status: status);
     } catch (_) {
       late String _$failedField;
       try {
@@ -65194,13 +66352,20 @@ class _$GVehicleOrderCreateInput extends GVehicleOrderCreateInput {
   final GOrderRelateToOneForCreateInput? order;
   @override
   final int? price;
+  @override
+  final String? status;
 
   factory _$GVehicleOrderCreateInput(
           [void Function(GVehicleOrderCreateInputBuilder)? updates]) =>
       (new GVehicleOrderCreateInputBuilder()..update(updates))._build();
 
   _$GVehicleOrderCreateInput._(
-      {this.createdAt, this.modifiedAt, this.dealer, this.order, this.price})
+      {this.createdAt,
+      this.modifiedAt,
+      this.dealer,
+      this.order,
+      this.price,
+      this.status})
       : super._();
 
   @override
@@ -65220,7 +66385,8 @@ class _$GVehicleOrderCreateInput extends GVehicleOrderCreateInput {
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         order == other.order &&
-        price == other.price;
+        price == other.price &&
+        status == other.status;
   }
 
   @override
@@ -65231,6 +66397,7 @@ class _$GVehicleOrderCreateInput extends GVehicleOrderCreateInput {
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, order.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -65242,7 +66409,8 @@ class _$GVehicleOrderCreateInput extends GVehicleOrderCreateInput {
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('order', order)
-          ..add('price', price))
+          ..add('price', price)
+          ..add('status', status))
         .toString();
   }
 }
@@ -65279,6 +66447,10 @@ class GVehicleOrderCreateInputBuilder
   int? get price => _$this._price;
   set price(int? price) => _$this._price = price;
 
+  String? _status;
+  String? get status => _$this._status;
+  set status(String? status) => _$this._status = status;
+
   GVehicleOrderCreateInputBuilder();
 
   GVehicleOrderCreateInputBuilder get _$this {
@@ -65289,6 +66461,7 @@ class GVehicleOrderCreateInputBuilder
       _dealer = $v.dealer?.toBuilder();
       _order = $v.order?.toBuilder();
       _price = $v.price;
+      _status = $v.status;
       _$v = null;
     }
     return this;
@@ -65317,7 +66490,8 @@ class GVehicleOrderCreateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               order: _order?.build(),
-              price: price);
+              price: price,
+              status: status);
     } catch (_) {
       late String _$failedField;
       try {
@@ -65443,6 +66617,8 @@ class _$GTestDriveOrderWhereInput extends GTestDriveOrderWhereInput {
   final GOrderWhereInput? order;
   @override
   final GIntNullableFilter? price;
+  @override
+  final GStringNullableFilter? status;
 
   factory _$GTestDriveOrderWhereInput(
           [void Function(GTestDriveOrderWhereInputBuilder)? updates]) =>
@@ -65457,7 +66633,8 @@ class _$GTestDriveOrderWhereInput extends GTestDriveOrderWhereInput {
       this.modifiedAt,
       this.dealer,
       this.order,
-      this.price})
+      this.price,
+      this.status})
       : super._();
 
   @override
@@ -65481,7 +66658,8 @@ class _$GTestDriveOrderWhereInput extends GTestDriveOrderWhereInput {
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         order == other.order &&
-        price == other.price;
+        price == other.price &&
+        status == other.status;
   }
 
   @override
@@ -65496,6 +66674,7 @@ class _$GTestDriveOrderWhereInput extends GTestDriveOrderWhereInput {
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, order.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -65511,7 +66690,8 @@ class _$GTestDriveOrderWhereInput extends GTestDriveOrderWhereInput {
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('order', order)
-          ..add('price', price))
+          ..add('price', price)
+          ..add('status', status))
         .toString();
   }
 }
@@ -65568,6 +66748,11 @@ class GTestDriveOrderWhereInputBuilder
       _$this._price ??= new GIntNullableFilterBuilder();
   set price(GIntNullableFilterBuilder? price) => _$this._price = price;
 
+  GStringNullableFilterBuilder? _status;
+  GStringNullableFilterBuilder get status =>
+      _$this._status ??= new GStringNullableFilterBuilder();
+  set status(GStringNullableFilterBuilder? status) => _$this._status = status;
+
   GTestDriveOrderWhereInputBuilder();
 
   GTestDriveOrderWhereInputBuilder get _$this {
@@ -65582,6 +66767,7 @@ class GTestDriveOrderWhereInputBuilder
       _dealer = $v.dealer?.toBuilder();
       _order = $v.order?.toBuilder();
       _price = $v.price?.toBuilder();
+      _status = $v.status?.toBuilder();
       _$v = null;
     }
     return this;
@@ -65614,7 +66800,8 @@ class GTestDriveOrderWhereInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               order: _order?.build(),
-              price: _price?.build());
+              price: _price?.build(),
+              status: _status?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -65636,6 +66823,8 @@ class GTestDriveOrderWhereInputBuilder
         _order?.build();
         _$failedField = 'price';
         _price?.build();
+        _$failedField = 'status';
+        _status?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GTestDriveOrderWhereInput', _$failedField, e.toString());
@@ -65656,13 +66845,15 @@ class _$GTestDriveOrderOrderByInput extends GTestDriveOrderOrderByInput {
   final GOrderDirection? modifiedAt;
   @override
   final GOrderDirection? price;
+  @override
+  final GOrderDirection? status;
 
   factory _$GTestDriveOrderOrderByInput(
           [void Function(GTestDriveOrderOrderByInputBuilder)? updates]) =>
       (new GTestDriveOrderOrderByInputBuilder()..update(updates))._build();
 
   _$GTestDriveOrderOrderByInput._(
-      {this.id, this.createdAt, this.modifiedAt, this.price})
+      {this.id, this.createdAt, this.modifiedAt, this.price, this.status})
       : super._();
 
   @override
@@ -65681,7 +66872,8 @@ class _$GTestDriveOrderOrderByInput extends GTestDriveOrderOrderByInput {
         id == other.id &&
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
-        price == other.price;
+        price == other.price &&
+        status == other.status;
   }
 
   @override
@@ -65691,6 +66883,7 @@ class _$GTestDriveOrderOrderByInput extends GTestDriveOrderOrderByInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -65701,7 +66894,8 @@ class _$GTestDriveOrderOrderByInput extends GTestDriveOrderOrderByInput {
           ..add('id', id)
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
-          ..add('price', price))
+          ..add('price', price)
+          ..add('status', status))
         .toString();
   }
 }
@@ -65729,6 +66923,10 @@ class GTestDriveOrderOrderByInputBuilder
   GOrderDirection? get price => _$this._price;
   set price(GOrderDirection? price) => _$this._price = price;
 
+  GOrderDirection? _status;
+  GOrderDirection? get status => _$this._status;
+  set status(GOrderDirection? status) => _$this._status = status;
+
   GTestDriveOrderOrderByInputBuilder();
 
   GTestDriveOrderOrderByInputBuilder get _$this {
@@ -65738,6 +66936,7 @@ class GTestDriveOrderOrderByInputBuilder
       _createdAt = $v.createdAt;
       _modifiedAt = $v.modifiedAt;
       _price = $v.price;
+      _status = $v.status;
       _$v = null;
     }
     return this;
@@ -65760,7 +66959,11 @@ class GTestDriveOrderOrderByInputBuilder
   _$GTestDriveOrderOrderByInput _build() {
     final _$result = _$v ??
         new _$GTestDriveOrderOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt, price: price);
+            id: id,
+            createdAt: createdAt,
+            modifiedAt: modifiedAt,
+            price: price,
+            status: status);
     replace(_$result);
     return _$result;
   }
@@ -65777,13 +66980,20 @@ class _$GTestDriveOrderUpdateInput extends GTestDriveOrderUpdateInput {
   final GOrderRelateToOneForUpdateInput? order;
   @override
   final int? price;
+  @override
+  final String? status;
 
   factory _$GTestDriveOrderUpdateInput(
           [void Function(GTestDriveOrderUpdateInputBuilder)? updates]) =>
       (new GTestDriveOrderUpdateInputBuilder()..update(updates))._build();
 
   _$GTestDriveOrderUpdateInput._(
-      {this.createdAt, this.modifiedAt, this.dealer, this.order, this.price})
+      {this.createdAt,
+      this.modifiedAt,
+      this.dealer,
+      this.order,
+      this.price,
+      this.status})
       : super._();
 
   @override
@@ -65803,7 +67013,8 @@ class _$GTestDriveOrderUpdateInput extends GTestDriveOrderUpdateInput {
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         order == other.order &&
-        price == other.price;
+        price == other.price &&
+        status == other.status;
   }
 
   @override
@@ -65814,6 +67025,7 @@ class _$GTestDriveOrderUpdateInput extends GTestDriveOrderUpdateInput {
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, order.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -65825,7 +67037,8 @@ class _$GTestDriveOrderUpdateInput extends GTestDriveOrderUpdateInput {
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('order', order)
-          ..add('price', price))
+          ..add('price', price)
+          ..add('status', status))
         .toString();
   }
 }
@@ -65862,6 +67075,10 @@ class GTestDriveOrderUpdateInputBuilder
   int? get price => _$this._price;
   set price(int? price) => _$this._price = price;
 
+  String? _status;
+  String? get status => _$this._status;
+  set status(String? status) => _$this._status = status;
+
   GTestDriveOrderUpdateInputBuilder();
 
   GTestDriveOrderUpdateInputBuilder get _$this {
@@ -65872,6 +67089,7 @@ class GTestDriveOrderUpdateInputBuilder
       _dealer = $v.dealer?.toBuilder();
       _order = $v.order?.toBuilder();
       _price = $v.price;
+      _status = $v.status;
       _$v = null;
     }
     return this;
@@ -65900,7 +67118,8 @@ class GTestDriveOrderUpdateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               order: _order?.build(),
-              price: price);
+              price: price,
+              status: status);
     } catch (_) {
       late String _$failedField;
       try {
@@ -66191,13 +67410,20 @@ class _$GTestDriveOrderCreateInput extends GTestDriveOrderCreateInput {
   final GOrderRelateToOneForCreateInput? order;
   @override
   final int? price;
+  @override
+  final String? status;
 
   factory _$GTestDriveOrderCreateInput(
           [void Function(GTestDriveOrderCreateInputBuilder)? updates]) =>
       (new GTestDriveOrderCreateInputBuilder()..update(updates))._build();
 
   _$GTestDriveOrderCreateInput._(
-      {this.createdAt, this.modifiedAt, this.dealer, this.order, this.price})
+      {this.createdAt,
+      this.modifiedAt,
+      this.dealer,
+      this.order,
+      this.price,
+      this.status})
       : super._();
 
   @override
@@ -66217,7 +67443,8 @@ class _$GTestDriveOrderCreateInput extends GTestDriveOrderCreateInput {
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         order == other.order &&
-        price == other.price;
+        price == other.price &&
+        status == other.status;
   }
 
   @override
@@ -66228,6 +67455,7 @@ class _$GTestDriveOrderCreateInput extends GTestDriveOrderCreateInput {
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, order.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -66239,7 +67467,8 @@ class _$GTestDriveOrderCreateInput extends GTestDriveOrderCreateInput {
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('order', order)
-          ..add('price', price))
+          ..add('price', price)
+          ..add('status', status))
         .toString();
   }
 }
@@ -66276,6 +67505,10 @@ class GTestDriveOrderCreateInputBuilder
   int? get price => _$this._price;
   set price(int? price) => _$this._price = price;
 
+  String? _status;
+  String? get status => _$this._status;
+  set status(String? status) => _$this._status = status;
+
   GTestDriveOrderCreateInputBuilder();
 
   GTestDriveOrderCreateInputBuilder get _$this {
@@ -66286,6 +67519,7 @@ class GTestDriveOrderCreateInputBuilder
       _dealer = $v.dealer?.toBuilder();
       _order = $v.order?.toBuilder();
       _price = $v.price;
+      _status = $v.status;
       _$v = null;
     }
     return this;
@@ -66314,7 +67548,8 @@ class GTestDriveOrderCreateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               order: _order?.build(),
-              price: price);
+              price: price,
+              status: status);
     } catch (_) {
       late String _$failedField;
       try {
@@ -66454,6 +67689,1846 @@ class GTestDriveDealerRelateToOneForCreateInputBuilder
             r'GTestDriveDealerRelateToOneForCreateInput',
             _$failedField,
             e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GOrderCancellationRequestWhereUniqueInput
+    extends GOrderCancellationRequestWhereUniqueInput {
+  @override
+  final String? id;
+
+  factory _$GOrderCancellationRequestWhereUniqueInput(
+          [void Function(GOrderCancellationRequestWhereUniqueInputBuilder)?
+              updates]) =>
+      (new GOrderCancellationRequestWhereUniqueInputBuilder()..update(updates))
+          ._build();
+
+  _$GOrderCancellationRequestWhereUniqueInput._({this.id}) : super._();
+
+  @override
+  GOrderCancellationRequestWhereUniqueInput rebuild(
+          void Function(GOrderCancellationRequestWhereUniqueInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GOrderCancellationRequestWhereUniqueInputBuilder toBuilder() =>
+      new GOrderCancellationRequestWhereUniqueInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GOrderCancellationRequestWhereUniqueInput && id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GOrderCancellationRequestWhereUniqueInput')
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GOrderCancellationRequestWhereUniqueInputBuilder
+    implements
+        Builder<GOrderCancellationRequestWhereUniqueInput,
+            GOrderCancellationRequestWhereUniqueInputBuilder> {
+  _$GOrderCancellationRequestWhereUniqueInput? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GOrderCancellationRequestWhereUniqueInputBuilder();
+
+  GOrderCancellationRequestWhereUniqueInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GOrderCancellationRequestWhereUniqueInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GOrderCancellationRequestWhereUniqueInput;
+  }
+
+  @override
+  void update(
+      void Function(GOrderCancellationRequestWhereUniqueInputBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GOrderCancellationRequestWhereUniqueInput build() => _build();
+
+  _$GOrderCancellationRequestWhereUniqueInput _build() {
+    final _$result =
+        _$v ?? new _$GOrderCancellationRequestWhereUniqueInput._(id: id);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GOrderCancellationRequestWhereInput
+    extends GOrderCancellationRequestWhereInput {
+  @override
+  final BuiltList<GOrderCancellationRequestWhereInput>? AND;
+  @override
+  final BuiltList<GOrderCancellationRequestWhereInput>? OR;
+  @override
+  final BuiltList<GOrderCancellationRequestWhereInput>? NOT;
+  @override
+  final GIDFilter? id;
+  @override
+  final GDateTimeNullableFilter? createdAt;
+  @override
+  final GDateTimeNullableFilter? modifiedAt;
+  @override
+  final GVehicleOrderManyRelationFilter? vehicleOrders;
+  @override
+  final GTestDriveOrderManyRelationFilter? testDriveOrders;
+  @override
+  final GStringFilter? reason;
+
+  factory _$GOrderCancellationRequestWhereInput(
+          [void Function(GOrderCancellationRequestWhereInputBuilder)?
+              updates]) =>
+      (new GOrderCancellationRequestWhereInputBuilder()..update(updates))
+          ._build();
+
+  _$GOrderCancellationRequestWhereInput._(
+      {this.AND,
+      this.OR,
+      this.NOT,
+      this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.vehicleOrders,
+      this.testDriveOrders,
+      this.reason})
+      : super._();
+
+  @override
+  GOrderCancellationRequestWhereInput rebuild(
+          void Function(GOrderCancellationRequestWhereInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GOrderCancellationRequestWhereInputBuilder toBuilder() =>
+      new GOrderCancellationRequestWhereInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GOrderCancellationRequestWhereInput &&
+        AND == other.AND &&
+        OR == other.OR &&
+        NOT == other.NOT &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        vehicleOrders == other.vehicleOrders &&
+        testDriveOrders == other.testDriveOrders &&
+        reason == other.reason;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, AND.hashCode);
+    _$hash = $jc(_$hash, OR.hashCode);
+    _$hash = $jc(_$hash, NOT.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, vehicleOrders.hashCode);
+    _$hash = $jc(_$hash, testDriveOrders.hashCode);
+    _$hash = $jc(_$hash, reason.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GOrderCancellationRequestWhereInput')
+          ..add('AND', AND)
+          ..add('OR', OR)
+          ..add('NOT', NOT)
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('vehicleOrders', vehicleOrders)
+          ..add('testDriveOrders', testDriveOrders)
+          ..add('reason', reason))
+        .toString();
+  }
+}
+
+class GOrderCancellationRequestWhereInputBuilder
+    implements
+        Builder<GOrderCancellationRequestWhereInput,
+            GOrderCancellationRequestWhereInputBuilder> {
+  _$GOrderCancellationRequestWhereInput? _$v;
+
+  ListBuilder<GOrderCancellationRequestWhereInput>? _AND;
+  ListBuilder<GOrderCancellationRequestWhereInput> get AND =>
+      _$this._AND ??= new ListBuilder<GOrderCancellationRequestWhereInput>();
+  set AND(ListBuilder<GOrderCancellationRequestWhereInput>? AND) =>
+      _$this._AND = AND;
+
+  ListBuilder<GOrderCancellationRequestWhereInput>? _OR;
+  ListBuilder<GOrderCancellationRequestWhereInput> get OR =>
+      _$this._OR ??= new ListBuilder<GOrderCancellationRequestWhereInput>();
+  set OR(ListBuilder<GOrderCancellationRequestWhereInput>? OR) =>
+      _$this._OR = OR;
+
+  ListBuilder<GOrderCancellationRequestWhereInput>? _NOT;
+  ListBuilder<GOrderCancellationRequestWhereInput> get NOT =>
+      _$this._NOT ??= new ListBuilder<GOrderCancellationRequestWhereInput>();
+  set NOT(ListBuilder<GOrderCancellationRequestWhereInput>? NOT) =>
+      _$this._NOT = NOT;
+
+  GIDFilterBuilder? _id;
+  GIDFilterBuilder get id => _$this._id ??= new GIDFilterBuilder();
+  set id(GIDFilterBuilder? id) => _$this._id = id;
+
+  GDateTimeNullableFilterBuilder? _createdAt;
+  GDateTimeNullableFilterBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeNullableFilterBuilder();
+  set createdAt(GDateTimeNullableFilterBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GDateTimeNullableFilterBuilder? _modifiedAt;
+  GDateTimeNullableFilterBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeNullableFilterBuilder();
+  set modifiedAt(GDateTimeNullableFilterBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GVehicleOrderManyRelationFilterBuilder? _vehicleOrders;
+  GVehicleOrderManyRelationFilterBuilder get vehicleOrders =>
+      _$this._vehicleOrders ??= new GVehicleOrderManyRelationFilterBuilder();
+  set vehicleOrders(GVehicleOrderManyRelationFilterBuilder? vehicleOrders) =>
+      _$this._vehicleOrders = vehicleOrders;
+
+  GTestDriveOrderManyRelationFilterBuilder? _testDriveOrders;
+  GTestDriveOrderManyRelationFilterBuilder get testDriveOrders =>
+      _$this._testDriveOrders ??=
+          new GTestDriveOrderManyRelationFilterBuilder();
+  set testDriveOrders(
+          GTestDriveOrderManyRelationFilterBuilder? testDriveOrders) =>
+      _$this._testDriveOrders = testDriveOrders;
+
+  GStringFilterBuilder? _reason;
+  GStringFilterBuilder get reason =>
+      _$this._reason ??= new GStringFilterBuilder();
+  set reason(GStringFilterBuilder? reason) => _$this._reason = reason;
+
+  GOrderCancellationRequestWhereInputBuilder();
+
+  GOrderCancellationRequestWhereInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _AND = $v.AND?.toBuilder();
+      _OR = $v.OR?.toBuilder();
+      _NOT = $v.NOT?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _vehicleOrders = $v.vehicleOrders?.toBuilder();
+      _testDriveOrders = $v.testDriveOrders?.toBuilder();
+      _reason = $v.reason?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GOrderCancellationRequestWhereInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GOrderCancellationRequestWhereInput;
+  }
+
+  @override
+  void update(
+      void Function(GOrderCancellationRequestWhereInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GOrderCancellationRequestWhereInput build() => _build();
+
+  _$GOrderCancellationRequestWhereInput _build() {
+    _$GOrderCancellationRequestWhereInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GOrderCancellationRequestWhereInput._(
+              AND: _AND?.build(),
+              OR: _OR?.build(),
+              NOT: _NOT?.build(),
+              id: _id?.build(),
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              vehicleOrders: _vehicleOrders?.build(),
+              testDriveOrders: _testDriveOrders?.build(),
+              reason: _reason?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'AND';
+        _AND?.build();
+        _$failedField = 'OR';
+        _OR?.build();
+        _$failedField = 'NOT';
+        _NOT?.build();
+        _$failedField = 'id';
+        _id?.build();
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'vehicleOrders';
+        _vehicleOrders?.build();
+        _$failedField = 'testDriveOrders';
+        _testDriveOrders?.build();
+        _$failedField = 'reason';
+        _reason?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GOrderCancellationRequestWhereInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GOrderCancellationRequestOrderByInput
+    extends GOrderCancellationRequestOrderByInput {
+  @override
+  final GOrderDirection? id;
+  @override
+  final GOrderDirection? createdAt;
+  @override
+  final GOrderDirection? modifiedAt;
+  @override
+  final GOrderDirection? reason;
+
+  factory _$GOrderCancellationRequestOrderByInput(
+          [void Function(GOrderCancellationRequestOrderByInputBuilder)?
+              updates]) =>
+      (new GOrderCancellationRequestOrderByInputBuilder()..update(updates))
+          ._build();
+
+  _$GOrderCancellationRequestOrderByInput._(
+      {this.id, this.createdAt, this.modifiedAt, this.reason})
+      : super._();
+
+  @override
+  GOrderCancellationRequestOrderByInput rebuild(
+          void Function(GOrderCancellationRequestOrderByInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GOrderCancellationRequestOrderByInputBuilder toBuilder() =>
+      new GOrderCancellationRequestOrderByInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GOrderCancellationRequestOrderByInput &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        reason == other.reason;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, reason.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GOrderCancellationRequestOrderByInput')
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('reason', reason))
+        .toString();
+  }
+}
+
+class GOrderCancellationRequestOrderByInputBuilder
+    implements
+        Builder<GOrderCancellationRequestOrderByInput,
+            GOrderCancellationRequestOrderByInputBuilder> {
+  _$GOrderCancellationRequestOrderByInput? _$v;
+
+  GOrderDirection? _id;
+  GOrderDirection? get id => _$this._id;
+  set id(GOrderDirection? id) => _$this._id = id;
+
+  GOrderDirection? _createdAt;
+  GOrderDirection? get createdAt => _$this._createdAt;
+  set createdAt(GOrderDirection? createdAt) => _$this._createdAt = createdAt;
+
+  GOrderDirection? _modifiedAt;
+  GOrderDirection? get modifiedAt => _$this._modifiedAt;
+  set modifiedAt(GOrderDirection? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GOrderDirection? _reason;
+  GOrderDirection? get reason => _$this._reason;
+  set reason(GOrderDirection? reason) => _$this._reason = reason;
+
+  GOrderCancellationRequestOrderByInputBuilder();
+
+  GOrderCancellationRequestOrderByInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _createdAt = $v.createdAt;
+      _modifiedAt = $v.modifiedAt;
+      _reason = $v.reason;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GOrderCancellationRequestOrderByInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GOrderCancellationRequestOrderByInput;
+  }
+
+  @override
+  void update(
+      void Function(GOrderCancellationRequestOrderByInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GOrderCancellationRequestOrderByInput build() => _build();
+
+  _$GOrderCancellationRequestOrderByInput _build() {
+    final _$result = _$v ??
+        new _$GOrderCancellationRequestOrderByInput._(
+            id: id,
+            createdAt: createdAt,
+            modifiedAt: modifiedAt,
+            reason: reason);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GOrderCancellationRequestUpdateInput
+    extends GOrderCancellationRequestUpdateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final GVehicleOrderRelateToManyForUpdateInput? vehicleOrders;
+  @override
+  final GTestDriveOrderRelateToManyForUpdateInput? testDriveOrders;
+  @override
+  final String? reason;
+
+  factory _$GOrderCancellationRequestUpdateInput(
+          [void Function(GOrderCancellationRequestUpdateInputBuilder)?
+              updates]) =>
+      (new GOrderCancellationRequestUpdateInputBuilder()..update(updates))
+          ._build();
+
+  _$GOrderCancellationRequestUpdateInput._(
+      {this.createdAt,
+      this.modifiedAt,
+      this.vehicleOrders,
+      this.testDriveOrders,
+      this.reason})
+      : super._();
+
+  @override
+  GOrderCancellationRequestUpdateInput rebuild(
+          void Function(GOrderCancellationRequestUpdateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GOrderCancellationRequestUpdateInputBuilder toBuilder() =>
+      new GOrderCancellationRequestUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GOrderCancellationRequestUpdateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        vehicleOrders == other.vehicleOrders &&
+        testDriveOrders == other.testDriveOrders &&
+        reason == other.reason;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, vehicleOrders.hashCode);
+    _$hash = $jc(_$hash, testDriveOrders.hashCode);
+    _$hash = $jc(_$hash, reason.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GOrderCancellationRequestUpdateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('vehicleOrders', vehicleOrders)
+          ..add('testDriveOrders', testDriveOrders)
+          ..add('reason', reason))
+        .toString();
+  }
+}
+
+class GOrderCancellationRequestUpdateInputBuilder
+    implements
+        Builder<GOrderCancellationRequestUpdateInput,
+            GOrderCancellationRequestUpdateInputBuilder> {
+  _$GOrderCancellationRequestUpdateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GVehicleOrderRelateToManyForUpdateInputBuilder? _vehicleOrders;
+  GVehicleOrderRelateToManyForUpdateInputBuilder get vehicleOrders =>
+      _$this._vehicleOrders ??=
+          new GVehicleOrderRelateToManyForUpdateInputBuilder();
+  set vehicleOrders(
+          GVehicleOrderRelateToManyForUpdateInputBuilder? vehicleOrders) =>
+      _$this._vehicleOrders = vehicleOrders;
+
+  GTestDriveOrderRelateToManyForUpdateInputBuilder? _testDriveOrders;
+  GTestDriveOrderRelateToManyForUpdateInputBuilder get testDriveOrders =>
+      _$this._testDriveOrders ??=
+          new GTestDriveOrderRelateToManyForUpdateInputBuilder();
+  set testDriveOrders(
+          GTestDriveOrderRelateToManyForUpdateInputBuilder? testDriveOrders) =>
+      _$this._testDriveOrders = testDriveOrders;
+
+  String? _reason;
+  String? get reason => _$this._reason;
+  set reason(String? reason) => _$this._reason = reason;
+
+  GOrderCancellationRequestUpdateInputBuilder();
+
+  GOrderCancellationRequestUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _vehicleOrders = $v.vehicleOrders?.toBuilder();
+      _testDriveOrders = $v.testDriveOrders?.toBuilder();
+      _reason = $v.reason;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GOrderCancellationRequestUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GOrderCancellationRequestUpdateInput;
+  }
+
+  @override
+  void update(
+      void Function(GOrderCancellationRequestUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GOrderCancellationRequestUpdateInput build() => _build();
+
+  _$GOrderCancellationRequestUpdateInput _build() {
+    _$GOrderCancellationRequestUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GOrderCancellationRequestUpdateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              vehicleOrders: _vehicleOrders?.build(),
+              testDriveOrders: _testDriveOrders?.build(),
+              reason: reason);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'vehicleOrders';
+        _vehicleOrders?.build();
+        _$failedField = 'testDriveOrders';
+        _testDriveOrders?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GOrderCancellationRequestUpdateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GOrderCancellationRequestUpdateArgs
+    extends GOrderCancellationRequestUpdateArgs {
+  @override
+  final GOrderCancellationRequestWhereUniqueInput where;
+  @override
+  final GOrderCancellationRequestUpdateInput data;
+
+  factory _$GOrderCancellationRequestUpdateArgs(
+          [void Function(GOrderCancellationRequestUpdateArgsBuilder)?
+              updates]) =>
+      (new GOrderCancellationRequestUpdateArgsBuilder()..update(updates))
+          ._build();
+
+  _$GOrderCancellationRequestUpdateArgs._(
+      {required this.where, required this.data})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GOrderCancellationRequestUpdateArgs', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        data, r'GOrderCancellationRequestUpdateArgs', 'data');
+  }
+
+  @override
+  GOrderCancellationRequestUpdateArgs rebuild(
+          void Function(GOrderCancellationRequestUpdateArgsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GOrderCancellationRequestUpdateArgsBuilder toBuilder() =>
+      new GOrderCancellationRequestUpdateArgsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GOrderCancellationRequestUpdateArgs &&
+        where == other.where &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GOrderCancellationRequestUpdateArgs')
+          ..add('where', where)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GOrderCancellationRequestUpdateArgsBuilder
+    implements
+        Builder<GOrderCancellationRequestUpdateArgs,
+            GOrderCancellationRequestUpdateArgsBuilder> {
+  _$GOrderCancellationRequestUpdateArgs? _$v;
+
+  GOrderCancellationRequestWhereUniqueInputBuilder? _where;
+  GOrderCancellationRequestWhereUniqueInputBuilder get where =>
+      _$this._where ??= new GOrderCancellationRequestWhereUniqueInputBuilder();
+  set where(GOrderCancellationRequestWhereUniqueInputBuilder? where) =>
+      _$this._where = where;
+
+  GOrderCancellationRequestUpdateInputBuilder? _data;
+  GOrderCancellationRequestUpdateInputBuilder get data =>
+      _$this._data ??= new GOrderCancellationRequestUpdateInputBuilder();
+  set data(GOrderCancellationRequestUpdateInputBuilder? data) =>
+      _$this._data = data;
+
+  GOrderCancellationRequestUpdateArgsBuilder();
+
+  GOrderCancellationRequestUpdateArgsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GOrderCancellationRequestUpdateArgs other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GOrderCancellationRequestUpdateArgs;
+  }
+
+  @override
+  void update(
+      void Function(GOrderCancellationRequestUpdateArgsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GOrderCancellationRequestUpdateArgs build() => _build();
+
+  _$GOrderCancellationRequestUpdateArgs _build() {
+    _$GOrderCancellationRequestUpdateArgs _$result;
+    try {
+      _$result = _$v ??
+          new _$GOrderCancellationRequestUpdateArgs._(
+              where: where.build(), data: data.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GOrderCancellationRequestUpdateArgs',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GOrderCancellationRequestCreateInput
+    extends GOrderCancellationRequestCreateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final GVehicleOrderRelateToManyForCreateInput? vehicleOrders;
+  @override
+  final GTestDriveOrderRelateToManyForCreateInput? testDriveOrders;
+  @override
+  final String? reason;
+
+  factory _$GOrderCancellationRequestCreateInput(
+          [void Function(GOrderCancellationRequestCreateInputBuilder)?
+              updates]) =>
+      (new GOrderCancellationRequestCreateInputBuilder()..update(updates))
+          ._build();
+
+  _$GOrderCancellationRequestCreateInput._(
+      {this.createdAt,
+      this.modifiedAt,
+      this.vehicleOrders,
+      this.testDriveOrders,
+      this.reason})
+      : super._();
+
+  @override
+  GOrderCancellationRequestCreateInput rebuild(
+          void Function(GOrderCancellationRequestCreateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GOrderCancellationRequestCreateInputBuilder toBuilder() =>
+      new GOrderCancellationRequestCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GOrderCancellationRequestCreateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        vehicleOrders == other.vehicleOrders &&
+        testDriveOrders == other.testDriveOrders &&
+        reason == other.reason;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, vehicleOrders.hashCode);
+    _$hash = $jc(_$hash, testDriveOrders.hashCode);
+    _$hash = $jc(_$hash, reason.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GOrderCancellationRequestCreateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('vehicleOrders', vehicleOrders)
+          ..add('testDriveOrders', testDriveOrders)
+          ..add('reason', reason))
+        .toString();
+  }
+}
+
+class GOrderCancellationRequestCreateInputBuilder
+    implements
+        Builder<GOrderCancellationRequestCreateInput,
+            GOrderCancellationRequestCreateInputBuilder> {
+  _$GOrderCancellationRequestCreateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GVehicleOrderRelateToManyForCreateInputBuilder? _vehicleOrders;
+  GVehicleOrderRelateToManyForCreateInputBuilder get vehicleOrders =>
+      _$this._vehicleOrders ??=
+          new GVehicleOrderRelateToManyForCreateInputBuilder();
+  set vehicleOrders(
+          GVehicleOrderRelateToManyForCreateInputBuilder? vehicleOrders) =>
+      _$this._vehicleOrders = vehicleOrders;
+
+  GTestDriveOrderRelateToManyForCreateInputBuilder? _testDriveOrders;
+  GTestDriveOrderRelateToManyForCreateInputBuilder get testDriveOrders =>
+      _$this._testDriveOrders ??=
+          new GTestDriveOrderRelateToManyForCreateInputBuilder();
+  set testDriveOrders(
+          GTestDriveOrderRelateToManyForCreateInputBuilder? testDriveOrders) =>
+      _$this._testDriveOrders = testDriveOrders;
+
+  String? _reason;
+  String? get reason => _$this._reason;
+  set reason(String? reason) => _$this._reason = reason;
+
+  GOrderCancellationRequestCreateInputBuilder();
+
+  GOrderCancellationRequestCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _vehicleOrders = $v.vehicleOrders?.toBuilder();
+      _testDriveOrders = $v.testDriveOrders?.toBuilder();
+      _reason = $v.reason;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GOrderCancellationRequestCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GOrderCancellationRequestCreateInput;
+  }
+
+  @override
+  void update(
+      void Function(GOrderCancellationRequestCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GOrderCancellationRequestCreateInput build() => _build();
+
+  _$GOrderCancellationRequestCreateInput _build() {
+    _$GOrderCancellationRequestCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GOrderCancellationRequestCreateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              vehicleOrders: _vehicleOrders?.build(),
+              testDriveOrders: _testDriveOrders?.build(),
+              reason: reason);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'vehicleOrders';
+        _vehicleOrders?.build();
+        _$failedField = 'testDriveOrders';
+        _testDriveOrders?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GOrderCancellationRequestCreateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GOrderRejectionByDealerWhereUniqueInput
+    extends GOrderRejectionByDealerWhereUniqueInput {
+  @override
+  final String? id;
+
+  factory _$GOrderRejectionByDealerWhereUniqueInput(
+          [void Function(GOrderRejectionByDealerWhereUniqueInputBuilder)?
+              updates]) =>
+      (new GOrderRejectionByDealerWhereUniqueInputBuilder()..update(updates))
+          ._build();
+
+  _$GOrderRejectionByDealerWhereUniqueInput._({this.id}) : super._();
+
+  @override
+  GOrderRejectionByDealerWhereUniqueInput rebuild(
+          void Function(GOrderRejectionByDealerWhereUniqueInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GOrderRejectionByDealerWhereUniqueInputBuilder toBuilder() =>
+      new GOrderRejectionByDealerWhereUniqueInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GOrderRejectionByDealerWhereUniqueInput && id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GOrderRejectionByDealerWhereUniqueInput')
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GOrderRejectionByDealerWhereUniqueInputBuilder
+    implements
+        Builder<GOrderRejectionByDealerWhereUniqueInput,
+            GOrderRejectionByDealerWhereUniqueInputBuilder> {
+  _$GOrderRejectionByDealerWhereUniqueInput? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GOrderRejectionByDealerWhereUniqueInputBuilder();
+
+  GOrderRejectionByDealerWhereUniqueInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GOrderRejectionByDealerWhereUniqueInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GOrderRejectionByDealerWhereUniqueInput;
+  }
+
+  @override
+  void update(
+      void Function(GOrderRejectionByDealerWhereUniqueInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GOrderRejectionByDealerWhereUniqueInput build() => _build();
+
+  _$GOrderRejectionByDealerWhereUniqueInput _build() {
+    final _$result =
+        _$v ?? new _$GOrderRejectionByDealerWhereUniqueInput._(id: id);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GOrderRejectionByDealerWhereInput
+    extends GOrderRejectionByDealerWhereInput {
+  @override
+  final BuiltList<GOrderRejectionByDealerWhereInput>? AND;
+  @override
+  final BuiltList<GOrderRejectionByDealerWhereInput>? OR;
+  @override
+  final BuiltList<GOrderRejectionByDealerWhereInput>? NOT;
+  @override
+  final GIDFilter? id;
+  @override
+  final GDateTimeNullableFilter? createdAt;
+  @override
+  final GDateTimeNullableFilter? modifiedAt;
+  @override
+  final GVehicleOrderManyRelationFilter? vehicleOrders;
+  @override
+  final GTestDriveOrderManyRelationFilter? testDriveOrders;
+  @override
+  final GStringFilter? reason;
+
+  factory _$GOrderRejectionByDealerWhereInput(
+          [void Function(GOrderRejectionByDealerWhereInputBuilder)? updates]) =>
+      (new GOrderRejectionByDealerWhereInputBuilder()..update(updates))
+          ._build();
+
+  _$GOrderRejectionByDealerWhereInput._(
+      {this.AND,
+      this.OR,
+      this.NOT,
+      this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.vehicleOrders,
+      this.testDriveOrders,
+      this.reason})
+      : super._();
+
+  @override
+  GOrderRejectionByDealerWhereInput rebuild(
+          void Function(GOrderRejectionByDealerWhereInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GOrderRejectionByDealerWhereInputBuilder toBuilder() =>
+      new GOrderRejectionByDealerWhereInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GOrderRejectionByDealerWhereInput &&
+        AND == other.AND &&
+        OR == other.OR &&
+        NOT == other.NOT &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        vehicleOrders == other.vehicleOrders &&
+        testDriveOrders == other.testDriveOrders &&
+        reason == other.reason;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, AND.hashCode);
+    _$hash = $jc(_$hash, OR.hashCode);
+    _$hash = $jc(_$hash, NOT.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, vehicleOrders.hashCode);
+    _$hash = $jc(_$hash, testDriveOrders.hashCode);
+    _$hash = $jc(_$hash, reason.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GOrderRejectionByDealerWhereInput')
+          ..add('AND', AND)
+          ..add('OR', OR)
+          ..add('NOT', NOT)
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('vehicleOrders', vehicleOrders)
+          ..add('testDriveOrders', testDriveOrders)
+          ..add('reason', reason))
+        .toString();
+  }
+}
+
+class GOrderRejectionByDealerWhereInputBuilder
+    implements
+        Builder<GOrderRejectionByDealerWhereInput,
+            GOrderRejectionByDealerWhereInputBuilder> {
+  _$GOrderRejectionByDealerWhereInput? _$v;
+
+  ListBuilder<GOrderRejectionByDealerWhereInput>? _AND;
+  ListBuilder<GOrderRejectionByDealerWhereInput> get AND =>
+      _$this._AND ??= new ListBuilder<GOrderRejectionByDealerWhereInput>();
+  set AND(ListBuilder<GOrderRejectionByDealerWhereInput>? AND) =>
+      _$this._AND = AND;
+
+  ListBuilder<GOrderRejectionByDealerWhereInput>? _OR;
+  ListBuilder<GOrderRejectionByDealerWhereInput> get OR =>
+      _$this._OR ??= new ListBuilder<GOrderRejectionByDealerWhereInput>();
+  set OR(ListBuilder<GOrderRejectionByDealerWhereInput>? OR) => _$this._OR = OR;
+
+  ListBuilder<GOrderRejectionByDealerWhereInput>? _NOT;
+  ListBuilder<GOrderRejectionByDealerWhereInput> get NOT =>
+      _$this._NOT ??= new ListBuilder<GOrderRejectionByDealerWhereInput>();
+  set NOT(ListBuilder<GOrderRejectionByDealerWhereInput>? NOT) =>
+      _$this._NOT = NOT;
+
+  GIDFilterBuilder? _id;
+  GIDFilterBuilder get id => _$this._id ??= new GIDFilterBuilder();
+  set id(GIDFilterBuilder? id) => _$this._id = id;
+
+  GDateTimeNullableFilterBuilder? _createdAt;
+  GDateTimeNullableFilterBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeNullableFilterBuilder();
+  set createdAt(GDateTimeNullableFilterBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GDateTimeNullableFilterBuilder? _modifiedAt;
+  GDateTimeNullableFilterBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeNullableFilterBuilder();
+  set modifiedAt(GDateTimeNullableFilterBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GVehicleOrderManyRelationFilterBuilder? _vehicleOrders;
+  GVehicleOrderManyRelationFilterBuilder get vehicleOrders =>
+      _$this._vehicleOrders ??= new GVehicleOrderManyRelationFilterBuilder();
+  set vehicleOrders(GVehicleOrderManyRelationFilterBuilder? vehicleOrders) =>
+      _$this._vehicleOrders = vehicleOrders;
+
+  GTestDriveOrderManyRelationFilterBuilder? _testDriveOrders;
+  GTestDriveOrderManyRelationFilterBuilder get testDriveOrders =>
+      _$this._testDriveOrders ??=
+          new GTestDriveOrderManyRelationFilterBuilder();
+  set testDriveOrders(
+          GTestDriveOrderManyRelationFilterBuilder? testDriveOrders) =>
+      _$this._testDriveOrders = testDriveOrders;
+
+  GStringFilterBuilder? _reason;
+  GStringFilterBuilder get reason =>
+      _$this._reason ??= new GStringFilterBuilder();
+  set reason(GStringFilterBuilder? reason) => _$this._reason = reason;
+
+  GOrderRejectionByDealerWhereInputBuilder();
+
+  GOrderRejectionByDealerWhereInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _AND = $v.AND?.toBuilder();
+      _OR = $v.OR?.toBuilder();
+      _NOT = $v.NOT?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _vehicleOrders = $v.vehicleOrders?.toBuilder();
+      _testDriveOrders = $v.testDriveOrders?.toBuilder();
+      _reason = $v.reason?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GOrderRejectionByDealerWhereInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GOrderRejectionByDealerWhereInput;
+  }
+
+  @override
+  void update(
+      void Function(GOrderRejectionByDealerWhereInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GOrderRejectionByDealerWhereInput build() => _build();
+
+  _$GOrderRejectionByDealerWhereInput _build() {
+    _$GOrderRejectionByDealerWhereInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GOrderRejectionByDealerWhereInput._(
+              AND: _AND?.build(),
+              OR: _OR?.build(),
+              NOT: _NOT?.build(),
+              id: _id?.build(),
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              vehicleOrders: _vehicleOrders?.build(),
+              testDriveOrders: _testDriveOrders?.build(),
+              reason: _reason?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'AND';
+        _AND?.build();
+        _$failedField = 'OR';
+        _OR?.build();
+        _$failedField = 'NOT';
+        _NOT?.build();
+        _$failedField = 'id';
+        _id?.build();
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'vehicleOrders';
+        _vehicleOrders?.build();
+        _$failedField = 'testDriveOrders';
+        _testDriveOrders?.build();
+        _$failedField = 'reason';
+        _reason?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GOrderRejectionByDealerWhereInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GOrderRejectionByDealerOrderByInput
+    extends GOrderRejectionByDealerOrderByInput {
+  @override
+  final GOrderDirection? id;
+  @override
+  final GOrderDirection? createdAt;
+  @override
+  final GOrderDirection? modifiedAt;
+  @override
+  final GOrderDirection? reason;
+
+  factory _$GOrderRejectionByDealerOrderByInput(
+          [void Function(GOrderRejectionByDealerOrderByInputBuilder)?
+              updates]) =>
+      (new GOrderRejectionByDealerOrderByInputBuilder()..update(updates))
+          ._build();
+
+  _$GOrderRejectionByDealerOrderByInput._(
+      {this.id, this.createdAt, this.modifiedAt, this.reason})
+      : super._();
+
+  @override
+  GOrderRejectionByDealerOrderByInput rebuild(
+          void Function(GOrderRejectionByDealerOrderByInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GOrderRejectionByDealerOrderByInputBuilder toBuilder() =>
+      new GOrderRejectionByDealerOrderByInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GOrderRejectionByDealerOrderByInput &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        reason == other.reason;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, reason.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GOrderRejectionByDealerOrderByInput')
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('reason', reason))
+        .toString();
+  }
+}
+
+class GOrderRejectionByDealerOrderByInputBuilder
+    implements
+        Builder<GOrderRejectionByDealerOrderByInput,
+            GOrderRejectionByDealerOrderByInputBuilder> {
+  _$GOrderRejectionByDealerOrderByInput? _$v;
+
+  GOrderDirection? _id;
+  GOrderDirection? get id => _$this._id;
+  set id(GOrderDirection? id) => _$this._id = id;
+
+  GOrderDirection? _createdAt;
+  GOrderDirection? get createdAt => _$this._createdAt;
+  set createdAt(GOrderDirection? createdAt) => _$this._createdAt = createdAt;
+
+  GOrderDirection? _modifiedAt;
+  GOrderDirection? get modifiedAt => _$this._modifiedAt;
+  set modifiedAt(GOrderDirection? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GOrderDirection? _reason;
+  GOrderDirection? get reason => _$this._reason;
+  set reason(GOrderDirection? reason) => _$this._reason = reason;
+
+  GOrderRejectionByDealerOrderByInputBuilder();
+
+  GOrderRejectionByDealerOrderByInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _createdAt = $v.createdAt;
+      _modifiedAt = $v.modifiedAt;
+      _reason = $v.reason;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GOrderRejectionByDealerOrderByInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GOrderRejectionByDealerOrderByInput;
+  }
+
+  @override
+  void update(
+      void Function(GOrderRejectionByDealerOrderByInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GOrderRejectionByDealerOrderByInput build() => _build();
+
+  _$GOrderRejectionByDealerOrderByInput _build() {
+    final _$result = _$v ??
+        new _$GOrderRejectionByDealerOrderByInput._(
+            id: id,
+            createdAt: createdAt,
+            modifiedAt: modifiedAt,
+            reason: reason);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GOrderRejectionByDealerUpdateInput
+    extends GOrderRejectionByDealerUpdateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final GVehicleOrderRelateToManyForUpdateInput? vehicleOrders;
+  @override
+  final GTestDriveOrderRelateToManyForUpdateInput? testDriveOrders;
+  @override
+  final String? reason;
+
+  factory _$GOrderRejectionByDealerUpdateInput(
+          [void Function(GOrderRejectionByDealerUpdateInputBuilder)?
+              updates]) =>
+      (new GOrderRejectionByDealerUpdateInputBuilder()..update(updates))
+          ._build();
+
+  _$GOrderRejectionByDealerUpdateInput._(
+      {this.createdAt,
+      this.modifiedAt,
+      this.vehicleOrders,
+      this.testDriveOrders,
+      this.reason})
+      : super._();
+
+  @override
+  GOrderRejectionByDealerUpdateInput rebuild(
+          void Function(GOrderRejectionByDealerUpdateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GOrderRejectionByDealerUpdateInputBuilder toBuilder() =>
+      new GOrderRejectionByDealerUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GOrderRejectionByDealerUpdateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        vehicleOrders == other.vehicleOrders &&
+        testDriveOrders == other.testDriveOrders &&
+        reason == other.reason;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, vehicleOrders.hashCode);
+    _$hash = $jc(_$hash, testDriveOrders.hashCode);
+    _$hash = $jc(_$hash, reason.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GOrderRejectionByDealerUpdateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('vehicleOrders', vehicleOrders)
+          ..add('testDriveOrders', testDriveOrders)
+          ..add('reason', reason))
+        .toString();
+  }
+}
+
+class GOrderRejectionByDealerUpdateInputBuilder
+    implements
+        Builder<GOrderRejectionByDealerUpdateInput,
+            GOrderRejectionByDealerUpdateInputBuilder> {
+  _$GOrderRejectionByDealerUpdateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GVehicleOrderRelateToManyForUpdateInputBuilder? _vehicleOrders;
+  GVehicleOrderRelateToManyForUpdateInputBuilder get vehicleOrders =>
+      _$this._vehicleOrders ??=
+          new GVehicleOrderRelateToManyForUpdateInputBuilder();
+  set vehicleOrders(
+          GVehicleOrderRelateToManyForUpdateInputBuilder? vehicleOrders) =>
+      _$this._vehicleOrders = vehicleOrders;
+
+  GTestDriveOrderRelateToManyForUpdateInputBuilder? _testDriveOrders;
+  GTestDriveOrderRelateToManyForUpdateInputBuilder get testDriveOrders =>
+      _$this._testDriveOrders ??=
+          new GTestDriveOrderRelateToManyForUpdateInputBuilder();
+  set testDriveOrders(
+          GTestDriveOrderRelateToManyForUpdateInputBuilder? testDriveOrders) =>
+      _$this._testDriveOrders = testDriveOrders;
+
+  String? _reason;
+  String? get reason => _$this._reason;
+  set reason(String? reason) => _$this._reason = reason;
+
+  GOrderRejectionByDealerUpdateInputBuilder();
+
+  GOrderRejectionByDealerUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _vehicleOrders = $v.vehicleOrders?.toBuilder();
+      _testDriveOrders = $v.testDriveOrders?.toBuilder();
+      _reason = $v.reason;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GOrderRejectionByDealerUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GOrderRejectionByDealerUpdateInput;
+  }
+
+  @override
+  void update(
+      void Function(GOrderRejectionByDealerUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GOrderRejectionByDealerUpdateInput build() => _build();
+
+  _$GOrderRejectionByDealerUpdateInput _build() {
+    _$GOrderRejectionByDealerUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GOrderRejectionByDealerUpdateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              vehicleOrders: _vehicleOrders?.build(),
+              testDriveOrders: _testDriveOrders?.build(),
+              reason: reason);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'vehicleOrders';
+        _vehicleOrders?.build();
+        _$failedField = 'testDriveOrders';
+        _testDriveOrders?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GOrderRejectionByDealerUpdateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GOrderRejectionByDealerUpdateArgs
+    extends GOrderRejectionByDealerUpdateArgs {
+  @override
+  final GOrderRejectionByDealerWhereUniqueInput where;
+  @override
+  final GOrderRejectionByDealerUpdateInput data;
+
+  factory _$GOrderRejectionByDealerUpdateArgs(
+          [void Function(GOrderRejectionByDealerUpdateArgsBuilder)? updates]) =>
+      (new GOrderRejectionByDealerUpdateArgsBuilder()..update(updates))
+          ._build();
+
+  _$GOrderRejectionByDealerUpdateArgs._(
+      {required this.where, required this.data})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GOrderRejectionByDealerUpdateArgs', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        data, r'GOrderRejectionByDealerUpdateArgs', 'data');
+  }
+
+  @override
+  GOrderRejectionByDealerUpdateArgs rebuild(
+          void Function(GOrderRejectionByDealerUpdateArgsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GOrderRejectionByDealerUpdateArgsBuilder toBuilder() =>
+      new GOrderRejectionByDealerUpdateArgsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GOrderRejectionByDealerUpdateArgs &&
+        where == other.where &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GOrderRejectionByDealerUpdateArgs')
+          ..add('where', where)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GOrderRejectionByDealerUpdateArgsBuilder
+    implements
+        Builder<GOrderRejectionByDealerUpdateArgs,
+            GOrderRejectionByDealerUpdateArgsBuilder> {
+  _$GOrderRejectionByDealerUpdateArgs? _$v;
+
+  GOrderRejectionByDealerWhereUniqueInputBuilder? _where;
+  GOrderRejectionByDealerWhereUniqueInputBuilder get where =>
+      _$this._where ??= new GOrderRejectionByDealerWhereUniqueInputBuilder();
+  set where(GOrderRejectionByDealerWhereUniqueInputBuilder? where) =>
+      _$this._where = where;
+
+  GOrderRejectionByDealerUpdateInputBuilder? _data;
+  GOrderRejectionByDealerUpdateInputBuilder get data =>
+      _$this._data ??= new GOrderRejectionByDealerUpdateInputBuilder();
+  set data(GOrderRejectionByDealerUpdateInputBuilder? data) =>
+      _$this._data = data;
+
+  GOrderRejectionByDealerUpdateArgsBuilder();
+
+  GOrderRejectionByDealerUpdateArgsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GOrderRejectionByDealerUpdateArgs other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GOrderRejectionByDealerUpdateArgs;
+  }
+
+  @override
+  void update(
+      void Function(GOrderRejectionByDealerUpdateArgsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GOrderRejectionByDealerUpdateArgs build() => _build();
+
+  _$GOrderRejectionByDealerUpdateArgs _build() {
+    _$GOrderRejectionByDealerUpdateArgs _$result;
+    try {
+      _$result = _$v ??
+          new _$GOrderRejectionByDealerUpdateArgs._(
+              where: where.build(), data: data.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GOrderRejectionByDealerUpdateArgs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GOrderRejectionByDealerCreateInput
+    extends GOrderRejectionByDealerCreateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final GVehicleOrderRelateToManyForCreateInput? vehicleOrders;
+  @override
+  final GTestDriveOrderRelateToManyForCreateInput? testDriveOrders;
+  @override
+  final String? reason;
+
+  factory _$GOrderRejectionByDealerCreateInput(
+          [void Function(GOrderRejectionByDealerCreateInputBuilder)?
+              updates]) =>
+      (new GOrderRejectionByDealerCreateInputBuilder()..update(updates))
+          ._build();
+
+  _$GOrderRejectionByDealerCreateInput._(
+      {this.createdAt,
+      this.modifiedAt,
+      this.vehicleOrders,
+      this.testDriveOrders,
+      this.reason})
+      : super._();
+
+  @override
+  GOrderRejectionByDealerCreateInput rebuild(
+          void Function(GOrderRejectionByDealerCreateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GOrderRejectionByDealerCreateInputBuilder toBuilder() =>
+      new GOrderRejectionByDealerCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GOrderRejectionByDealerCreateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        vehicleOrders == other.vehicleOrders &&
+        testDriveOrders == other.testDriveOrders &&
+        reason == other.reason;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, vehicleOrders.hashCode);
+    _$hash = $jc(_$hash, testDriveOrders.hashCode);
+    _$hash = $jc(_$hash, reason.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GOrderRejectionByDealerCreateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('vehicleOrders', vehicleOrders)
+          ..add('testDriveOrders', testDriveOrders)
+          ..add('reason', reason))
+        .toString();
+  }
+}
+
+class GOrderRejectionByDealerCreateInputBuilder
+    implements
+        Builder<GOrderRejectionByDealerCreateInput,
+            GOrderRejectionByDealerCreateInputBuilder> {
+  _$GOrderRejectionByDealerCreateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GVehicleOrderRelateToManyForCreateInputBuilder? _vehicleOrders;
+  GVehicleOrderRelateToManyForCreateInputBuilder get vehicleOrders =>
+      _$this._vehicleOrders ??=
+          new GVehicleOrderRelateToManyForCreateInputBuilder();
+  set vehicleOrders(
+          GVehicleOrderRelateToManyForCreateInputBuilder? vehicleOrders) =>
+      _$this._vehicleOrders = vehicleOrders;
+
+  GTestDriveOrderRelateToManyForCreateInputBuilder? _testDriveOrders;
+  GTestDriveOrderRelateToManyForCreateInputBuilder get testDriveOrders =>
+      _$this._testDriveOrders ??=
+          new GTestDriveOrderRelateToManyForCreateInputBuilder();
+  set testDriveOrders(
+          GTestDriveOrderRelateToManyForCreateInputBuilder? testDriveOrders) =>
+      _$this._testDriveOrders = testDriveOrders;
+
+  String? _reason;
+  String? get reason => _$this._reason;
+  set reason(String? reason) => _$this._reason = reason;
+
+  GOrderRejectionByDealerCreateInputBuilder();
+
+  GOrderRejectionByDealerCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _vehicleOrders = $v.vehicleOrders?.toBuilder();
+      _testDriveOrders = $v.testDriveOrders?.toBuilder();
+      _reason = $v.reason;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GOrderRejectionByDealerCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GOrderRejectionByDealerCreateInput;
+  }
+
+  @override
+  void update(
+      void Function(GOrderRejectionByDealerCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GOrderRejectionByDealerCreateInput build() => _build();
+
+  _$GOrderRejectionByDealerCreateInput _build() {
+    _$GOrderRejectionByDealerCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GOrderRejectionByDealerCreateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              vehicleOrders: _vehicleOrders?.build(),
+              testDriveOrders: _testDriveOrders?.build(),
+              reason: reason);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'vehicleOrders';
+        _vehicleOrders?.build();
+        _$failedField = 'testDriveOrders';
+        _testDriveOrders?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GOrderRejectionByDealerCreateInput', _$failedField, e.toString());
       }
       rethrow;
     }

@@ -1,3 +1,4 @@
+import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -34,6 +35,7 @@ class _RankPageState extends State<RankPage> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
+    final user = cacheProvider.getUser()!;
 
     return Scaffold(
       backgroundColor: AppTheme.primaryColor,
@@ -83,7 +85,7 @@ class _RankPageState extends State<RankPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Tanmay UI/UX',
+                        user.name!,
                         style: theme.headlineLarge!.copyWith(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w600,

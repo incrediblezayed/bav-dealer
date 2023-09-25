@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:dealerapp/src/app/UI/Homepage/homepage.dart';
 import 'package:dealerapp/src/app/UI/forgot_password/change_password.dart';
@@ -29,7 +28,15 @@ class AuthProvider extends ChangeNotifier {
   ///
   bool _agree = false;
   bool get agree => _agree;
-  File? file;
+
+  XFile? _image;
+
+  ///Getter for image
+  XFile? get image => _image;
+  set image(XFile? value) {
+    _image = value;
+    notifyListeners();
+  }
 
   set agree(bool value) {
     _agree = value;
@@ -41,7 +48,7 @@ class AuthProvider extends ChangeNotifier {
     try {
       final xFile = await ImagePicker().pickImage(source: ImageSource.gallery);
       if (xFile != null) {
-        file = File(xFile.path);
+        image = xFile;
         notifyListeners();
       }
     } catch (e) {
@@ -52,10 +59,12 @@ class AuthProvider extends ChangeNotifier {
   ///Method to get the user from the database
   Future<GUserData_user?> getUser(String id) async {
     final data = await _authRepository.getUser(userId: id);
+
     if (data == null) {
       AppRoutes.showErrorSnackbar(message: 'Something went wrong');
       return null;
     } else {
+      cacheProvider.setUser(data);
       return data;
     }
   }
@@ -148,11 +157,11 @@ class AuthProvider extends ChangeNotifier {
         await cacheProvider.setUser(newUser!);
       } else {
         await _authRepository.updateUser(
-          id: user.id!,
-          name: newUser!.name!,
-          email: newUser.email!,
-          phoneNumber: newUser.phoneNumber!,
-        );
+            id: user.id!,
+            name: newUser!.name!,
+            email: newUser.email!,
+            phoneNumber: newUser.phoneNumber!,
+            image: _image?.path);
         await getCurrentUserOtp(isEmail: false);
       }
       return true;
@@ -293,5 +302,40 @@ class AuthProvider extends ChangeNotifier {
   void isObsecure() {
     isPassword = !isPassword;
     notifyListeners();
+  }
+
+  ///Method to update the user
+  Future<void> updateUser(
+      {required String id,
+      required String email,
+      required String phoneNumber,
+      required String name,
+      String? address}) async {
+    try {
+      final response = await _authRepository.updateUser(
+          id: id,
+          email: email,
+          phoneNumber: phoneNumber,
+          name: name,
+          image: _image?.path,
+          address: address);
+      if (response == null) {
+        AppRoutes.showErrorSnackbar(
+          message: response ?? 'Something went wrong',
+        );
+      } else {
+        final userResponse = await getUser(id);
+        await cacheProvider.setUser(userResponse!);
+        AppRoutes.showSuccessSnackbar(message: 'Profile updated successfully');
+      }
+    } catch (e) {
+      AppRoutes.showErrorSnackbar(
+        message: (e as dynamic)?.message != null
+            ? (e as dynamic).message.toString()
+            : 'Something went wrong',
+      );
+    } finally {
+      notifyListeners();
+    }
   }
 }

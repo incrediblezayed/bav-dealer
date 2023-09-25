@@ -1,5 +1,5 @@
 import 'package:built_value/serializer.dart';
-import 'package:dio/dio.dart' show MultipartFile;
+import 'package:http/http.dart' show MultipartFile;
 
 /// Serializer for [MultipartFile]
 class UploadSerializer extends PrimitiveSerializer<MultipartFile> {
@@ -13,7 +13,7 @@ class UploadSerializer extends PrimitiveSerializer<MultipartFile> {
       serialized is List<int>,
       "FileSerializer expected 'Uint8List' but got ${serialized.runtimeType}",
     );
-    return MultipartFile.fromBytes(serialized as List<int>);
+    return MultipartFile.fromBytes('field', serialized as List<int>);
   }
 
   @override

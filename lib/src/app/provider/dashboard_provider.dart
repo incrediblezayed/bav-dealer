@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// Dashboard Provider
 /// This provider is used manage the home page with bottom navigation bar
-class DashboardProvider extends ChangeNotifier {
+class HomePageProvider extends ChangeNotifier {
+  final Ref ref;
+  HomePageProvider(this.ref) {
+    onInit();
+  }
+
   ///Page index
   int _pageIndex = 0;
 
@@ -12,6 +18,36 @@ class DashboardProvider extends ChangeNotifier {
     _pageIndex = pageIndex;
     notifyListeners();
   }
+
+  int _inventoryCount = 0;
+  int get inventoryCount => _inventoryCount;
+  set inventoryCount(int inventoryCount) {
+    _inventoryCount = inventoryCount;
+    notifyListeners();
+  }
+
+  int _testOrderCount = 0;
+  int get testOrderCount => _testOrderCount;
+  set testOrderCount(int testOrderCount) {
+    _testOrderCount = testOrderCount;
+    notifyListeners();
+  }
+
+  int _rankCount = 0;
+  int get rankCount => _rankCount;
+  set rankCount(int rankCount) {
+    _rankCount = rankCount;
+    notifyListeners();
+  }
+
+  int _purchaseCount = 0;
+  int get purchaseCount => _purchaseCount;
+  set purchaseCount(int purchaseCount) {
+    _purchaseCount = purchaseCount;
+    notifyListeners();
+  }
+
+  void onInit() async {}
 
   ///Page controller
   PageController pageController = PageController();

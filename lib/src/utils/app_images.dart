@@ -54,4 +54,7 @@ class AppImages {
       '$_imagesPath/notificationProfile.png';
   static const String notificationSecurity =
       '$_imagesPath/notificationSecurity.png';
+
+  /// Camera Icon SVG
+  static const String camera = '$_imagesPath/camera.svg';
 }

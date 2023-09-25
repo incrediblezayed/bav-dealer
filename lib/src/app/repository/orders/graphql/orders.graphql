@@ -1,0 +1,89 @@
+query VehicleOrders($where: VehicleOrderWhereInput!) {
+  vehicleOrders(where: $where) {
+    id
+    price
+    dealer {
+      vehicleVariant {
+        vehicle {
+          name
+        }
+        name
+      }
+      vehicleColor {
+        name
+        code
+        images {
+          id
+          image {
+            id
+          }
+        }
+      }
+    }
+    status
+    order {
+      user {
+        id
+        email
+        name
+        phoneNumber
+        addresses {
+          id
+          phoneNumber
+          pinCode
+          state
+          town
+          address
+          district
+          name
+        }
+      }
+    }
+    createdAt
+  }
+}
+
+query TestDriveOrders($where: TestDriveOrderWhereInput!) {
+  testDriveOrders(where: $where) {
+    id
+    price
+    dealer {
+      vehicleVariant {
+        vehicle {
+          name
+        }
+        name
+      }
+      vehicleColor {
+        name
+        code
+        images {
+          id
+          image {
+            id
+          }
+        }
+      }
+    }
+    status
+    order {
+      user {
+        id
+        email
+        name
+        phoneNumber
+        addresses {
+          id
+          phoneNumber
+          pinCode
+          state
+          town
+          address
+          district
+          name
+        }
+      }
+    }
+    createdAt
+  }
+}
