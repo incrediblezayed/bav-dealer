@@ -303,6 +303,25 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GTestDriveOrderUpdateInput.serializer)
       ..add(GTestDriveOrderWhereInput.serializer)
       ..add(GTestDriveOrderWhereUniqueInput.serializer)
+      ..add(GTestDriveOrdersData.serializer)
+      ..add(GTestDriveOrdersData_testDriveOrders.serializer)
+      ..add(GTestDriveOrdersData_testDriveOrders_dealer.serializer)
+      ..add(GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor.serializer)
+      ..add(GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images
+          .serializer)
+      ..add(
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image
+              .serializer)
+      ..add(
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant.serializer)
+      ..add(GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle
+          .serializer)
+      ..add(GTestDriveOrdersData_testDriveOrders_order.serializer)
+      ..add(GTestDriveOrdersData_testDriveOrders_order_user.serializer)
+      ..add(
+          GTestDriveOrdersData_testDriveOrders_order_user_addresses.serializer)
+      ..add(GTestDriveOrdersReq.serializer)
+      ..add(GTestDriveOrdersVars.serializer)
       ..add(GUpdateUserData.serializer)
       ..add(GUpdateUserData_updateUser.serializer)
       ..add(GUpdateUserReq.serializer)
@@ -360,6 +379,19 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleDealerUpdateInput.serializer)
       ..add(GVehicleDealerWhereInput.serializer)
       ..add(GVehicleDealerWhereUniqueInput.serializer)
+      ..add(GVehicleDealersData.serializer)
+      ..add(GVehicleDealersData_vehicleDealers.serializer)
+      ..add(GVehicleDealersData_vehicleDealers_vehicleColor.serializer)
+      ..add(GVehicleDealersData_vehicleDealers_vehicleColor_images.serializer)
+      ..add(GVehicleDealersData_vehicleDealers_vehicleColor_images_image
+          .serializer)
+      ..add(GVehicleDealersData_vehicleDealers_vehicleVariant.serializer)
+      ..add(
+          GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle.serializer)
+      ..add(GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand
+          .serializer)
+      ..add(GVehicleDealersReq.serializer)
+      ..add(GVehicleDealersVars.serializer)
       ..add(GVehicleImageCreateInput.serializer)
       ..add(GVehicleImageManyRelationFilter.serializer)
       ..add(GVehicleImageOrderByInput.serializer)
@@ -961,6 +993,24 @@ Serializers _$serializers = (new Serializers().toBuilder()
               const [const FullType(GTestDriveOrderWhereUniqueInput)]),
           () => new ListBuilder<GTestDriveOrderWhereUniqueInput>())
       ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GTestDriveOrdersData_testDriveOrders)]),
+          () => new ListBuilder<GTestDriveOrdersData_testDriveOrders>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images)
+          ]),
+          () => new ListBuilder<
+              GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GTestDriveOrdersData_testDriveOrders_order_user_addresses)
+          ]),
+          () => new ListBuilder<
+              GTestDriveOrdersData_testDriveOrders_order_user_addresses>())
+      ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GUserData_user_addresses)]),
           () => new ListBuilder<GUserData_user_addresses>())
@@ -1049,6 +1099,17 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GVehicleDealerWhereInput)]),
           () => new ListBuilder<GVehicleDealerWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehicleDealersData_vehicleDealers)]),
+          () => new ListBuilder<GVehicleDealersData_vehicleDealers>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GVehicleDealersData_vehicleDealers_vehicleColor_images)
+          ]),
+          () => new ListBuilder<
+              GVehicleDealersData_vehicleDealers_vehicleColor_images>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GVehicleImageCreateInput)]),

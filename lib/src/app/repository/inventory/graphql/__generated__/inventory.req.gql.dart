@@ -204,3 +204,61 @@ abstract class GCreateVehicleTestDriveDealerStockRequestReq
         json,
       );
 }
+
+abstract class GVehicleDealersReq
+    implements
+        Built<GVehicleDealersReq, GVehicleDealersReqBuilder>,
+        _i1.OperationRequest<_i2.GVehicleDealersData, _i3.GVehicleDealersVars> {
+  GVehicleDealersReq._();
+
+  factory GVehicleDealersReq([Function(GVehicleDealersReqBuilder b) updates]) =
+      _$GVehicleDealersReq;
+
+  static void _initializeBuilder(GVehicleDealersReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'VehicleDealers',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GVehicleDealersVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GVehicleDealersData? Function(
+    _i2.GVehicleDealersData?,
+    _i2.GVehicleDealersData?,
+  )? get updateResult;
+  @override
+  _i2.GVehicleDealersData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GVehicleDealersData? parseData(Map<String, dynamic> json) =>
+      _i2.GVehicleDealersData.fromJson(json);
+  static Serializer<GVehicleDealersReq> get serializer =>
+      _$gVehicleDealersReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GVehicleDealersReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GVehicleDealersReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GVehicleDealersReq.serializer,
+        json,
+      );
+}

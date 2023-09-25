@@ -31,7 +31,9 @@ query Vehicles {
   }
 }
 
-mutation CreateVehicleDealerStockRequest($data: VehicleDealerStockRequestCreateInput!) {
+mutation CreateVehicleDealerStockRequest(
+  $data: VehicleDealerStockRequestCreateInput!
+) {
   createVehicleDealerStockRequest(data: $data) {
     type
     stock
@@ -39,9 +41,45 @@ mutation CreateVehicleDealerStockRequest($data: VehicleDealerStockRequestCreateI
   }
 }
 
-mutation CreateVehicleTestDriveDealerStockRequest($data: TestDriveDealerStockRequestCreateInput!) {
+mutation CreateVehicleTestDriveDealerStockRequest(
+  $data: TestDriveDealerStockRequestCreateInput!
+) {
   createTestDriveDealerStockRequest(data: $data) {
     available
     price
+  }
+}
+
+query VehicleDealers($where: VehicleDealerWhereInput!) {
+  vehicleDealers(where: $where) {
+    vehicleColor {
+      id
+      name
+      code
+      images {
+        id
+        image {
+          url
+        }
+      }
+    }
+    vehicleVariant {
+      id
+      name
+      modifiedAt
+      price
+      vehicle {
+        brand {
+          id
+          name
+        }
+        name
+        id
+        description
+      }
+    }
+    dealer_prices
+    id
+    stock
   }
 }

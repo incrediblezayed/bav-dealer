@@ -31,3 +31,25 @@ abstract class GVehicleOrdersVars
         json,
       );
 }
+
+abstract class GTestDriveOrdersVars
+    implements Built<GTestDriveOrdersVars, GTestDriveOrdersVarsBuilder> {
+  GTestDriveOrdersVars._();
+
+  factory GTestDriveOrdersVars(
+          [Function(GTestDriveOrdersVarsBuilder b) updates]) =
+      _$GTestDriveOrdersVars;
+
+  _i1.GTestDriveOrderWhereInput get where;
+  static Serializer<GTestDriveOrdersVars> get serializer =>
+      _$gTestDriveOrdersVarsSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GTestDriveOrdersVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GTestDriveOrdersVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GTestDriveOrdersVars.serializer,
+        json,
+      );
+}

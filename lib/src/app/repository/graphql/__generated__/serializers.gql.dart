@@ -416,6 +416,14 @@ import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inv
         GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest,
         GCreateVehicleTestDriveDealerStockRequestData,
         GCreateVehicleTestDriveDealerStockRequestData_createTestDriveDealerStockRequest,
+        GVehicleDealersData,
+        GVehicleDealersData_vehicleDealers,
+        GVehicleDealersData_vehicleDealers_vehicleColor,
+        GVehicleDealersData_vehicleDealers_vehicleColor_images,
+        GVehicleDealersData_vehicleDealers_vehicleColor_images_image,
+        GVehicleDealersData_vehicleDealers_vehicleVariant,
+        GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle,
+        GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand,
         GVehiclesData,
         GVehiclesData_vehicles,
         GVehiclesData_vehicles_variants,
@@ -429,14 +437,27 @@ import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inv
     show
         GCreateVehicleDealerStockRequestReq,
         GCreateVehicleTestDriveDealerStockRequestReq,
+        GVehicleDealersReq,
         GVehiclesReq;
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.var.gql.dart'
     show
         GCreateVehicleDealerStockRequestVars,
         GCreateVehicleTestDriveDealerStockRequestVars,
+        GVehicleDealersVars,
         GVehiclesVars;
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart'
     show
+        GTestDriveOrdersData,
+        GTestDriveOrdersData_testDriveOrders,
+        GTestDriveOrdersData_testDriveOrders_dealer,
+        GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor,
+        GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images,
+        GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image,
+        GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant,
+        GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle,
+        GTestDriveOrdersData_testDriveOrders_order,
+        GTestDriveOrdersData_testDriveOrders_order_user,
+        GTestDriveOrdersData_testDriveOrders_order_user_addresses,
         GVehicleOrdersData,
         GVehicleOrdersData_vehicleOrders,
         GVehicleOrdersData_vehicleOrders_dealer,
@@ -449,9 +470,9 @@ import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders
         GVehicleOrdersData_vehicleOrders_order_user,
         GVehicleOrdersData_vehicleOrders_order_user_addresses;
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.req.gql.dart'
-    show GVehicleOrdersReq;
+    show GTestDriveOrdersReq, GVehicleOrdersReq;
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.var.gql.dart'
-    show GVehicleOrdersVars;
+    show GTestDriveOrdersVars, GVehicleOrdersVars;
 import 'package:dealerapp/src/custom_serializers/upload_serializer.dart'
     show UploadSerializer;
 import 'package:ferry_exec/ferry_exec.dart';
@@ -747,6 +768,19 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GTestDriveOrderUpdateInput,
   GTestDriveOrderWhereInput,
   GTestDriveOrderWhereUniqueInput,
+  GTestDriveOrdersData,
+  GTestDriveOrdersData_testDriveOrders,
+  GTestDriveOrdersData_testDriveOrders_dealer,
+  GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor,
+  GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images,
+  GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image,
+  GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant,
+  GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle,
+  GTestDriveOrdersData_testDriveOrders_order,
+  GTestDriveOrdersData_testDriveOrders_order_user,
+  GTestDriveOrdersData_testDriveOrders_order_user_addresses,
+  GTestDriveOrdersReq,
+  GTestDriveOrdersVars,
   GUpdateUserData,
   GUpdateUserData_updateUser,
   GUpdateUserReq,
@@ -804,6 +838,16 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GVehicleDealerUpdateInput,
   GVehicleDealerWhereInput,
   GVehicleDealerWhereUniqueInput,
+  GVehicleDealersData,
+  GVehicleDealersData_vehicleDealers,
+  GVehicleDealersData_vehicleDealers_vehicleColor,
+  GVehicleDealersData_vehicleDealers_vehicleColor_images,
+  GVehicleDealersData_vehicleDealers_vehicleColor_images_image,
+  GVehicleDealersData_vehicleDealers_vehicleVariant,
+  GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle,
+  GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand,
+  GVehicleDealersReq,
+  GVehicleDealersVars,
   GVehicleImageCreateInput,
   GVehicleImageManyRelationFilter,
   GVehicleImageOrderByInput,

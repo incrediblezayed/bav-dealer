@@ -14,6 +14,8 @@ Serializer<GCreateVehicleDealerStockRequestVars>
 Serializer<GCreateVehicleTestDriveDealerStockRequestVars>
     _$gCreateVehicleTestDriveDealerStockRequestVarsSerializer =
     new _$GCreateVehicleTestDriveDealerStockRequestVarsSerializer();
+Serializer<GVehicleDealersVars> _$gVehicleDealersVarsSerializer =
+    new _$GVehicleDealersVarsSerializer();
 
 class _$GVehiclesVarsSerializer implements StructuredSerializer<GVehiclesVars> {
   @override
@@ -126,6 +128,53 @@ class _$GCreateVehicleTestDriveDealerStockRequestVarsSerializer
                   specifiedType: const FullType(
                       _i2.GTestDriveDealerStockRequestCreateInput))!
               as _i2.GTestDriveDealerStockRequestCreateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleDealersVarsSerializer
+    implements StructuredSerializer<GVehicleDealersVars> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleDealersVars,
+    _$GVehicleDealersVars
+  ];
+  @override
+  final String wireName = 'GVehicleDealersVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleDealersVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(_i2.GVehicleDealerWhereInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GVehicleDealersVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleDealersVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.GVehicleDealerWhereInput))!
+              as _i2.GVehicleDealerWhereInput);
           break;
       }
     }
@@ -406,6 +455,105 @@ class GCreateVehicleTestDriveDealerStockRequestVarsBuilder
             r'GCreateVehicleTestDriveDealerStockRequestVars',
             _$failedField,
             e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleDealersVars extends GVehicleDealersVars {
+  @override
+  final _i2.GVehicleDealerWhereInput where;
+
+  factory _$GVehicleDealersVars(
+          [void Function(GVehicleDealersVarsBuilder)? updates]) =>
+      (new GVehicleDealersVarsBuilder()..update(updates))._build();
+
+  _$GVehicleDealersVars._({required this.where}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GVehicleDealersVars', 'where');
+  }
+
+  @override
+  GVehicleDealersVars rebuild(
+          void Function(GVehicleDealersVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleDealersVarsBuilder toBuilder() =>
+      new GVehicleDealersVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleDealersVars && where == other.where;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GVehicleDealersVars')
+          ..add('where', where))
+        .toString();
+  }
+}
+
+class GVehicleDealersVarsBuilder
+    implements Builder<GVehicleDealersVars, GVehicleDealersVarsBuilder> {
+  _$GVehicleDealersVars? _$v;
+
+  _i2.GVehicleDealerWhereInputBuilder? _where;
+  _i2.GVehicleDealerWhereInputBuilder get where =>
+      _$this._where ??= new _i2.GVehicleDealerWhereInputBuilder();
+  set where(_i2.GVehicleDealerWhereInputBuilder? where) =>
+      _$this._where = where;
+
+  GVehicleDealersVarsBuilder();
+
+  GVehicleDealersVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleDealersVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleDealersVars;
+  }
+
+  @override
+  void update(void Function(GVehicleDealersVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleDealersVars build() => _build();
+
+  _$GVehicleDealersVars _build() {
+    _$GVehicleDealersVars _$result;
+    try {
+      _$result = _$v ?? new _$GVehicleDealersVars._(where: where.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleDealersVars', _$failedField, e.toString());
       }
       rethrow;
     }

@@ -74,3 +74,62 @@ abstract class GVehicleOrdersReq
         json,
       );
 }
+
+abstract class GTestDriveOrdersReq
+    implements
+        Built<GTestDriveOrdersReq, GTestDriveOrdersReqBuilder>,
+        _i1
+        .OperationRequest<_i2.GTestDriveOrdersData, _i3.GTestDriveOrdersVars> {
+  GTestDriveOrdersReq._();
+
+  factory GTestDriveOrdersReq(
+      [Function(GTestDriveOrdersReqBuilder b) updates]) = _$GTestDriveOrdersReq;
+
+  static void _initializeBuilder(GTestDriveOrdersReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'TestDriveOrders',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GTestDriveOrdersVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GTestDriveOrdersData? Function(
+    _i2.GTestDriveOrdersData?,
+    _i2.GTestDriveOrdersData?,
+  )? get updateResult;
+  @override
+  _i2.GTestDriveOrdersData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GTestDriveOrdersData? parseData(Map<String, dynamic> json) =>
+      _i2.GTestDriveOrdersData.fromJson(json);
+  static Serializer<GTestDriveOrdersReq> get serializer =>
+      _$gTestDriveOrdersReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GTestDriveOrdersReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GTestDriveOrdersReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GTestDriveOrdersReq.serializer,
+        json,
+      );
+}

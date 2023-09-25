@@ -65,4 +65,50 @@ class InventoryRepository {
 
     return false;
   }
+
+  Future<int> getStockCount() async {
+    try {
+      final result = await _client
+          .request(GVehicleDealersReq(
+            (b) => b..vars.where.dealer.id.equals = cacheProvider.getDealerId(),
+          ))
+          .first;
+      if (result.linkException != null) {
+        throw result.linkException!;
+      }
+      if ((result.graphqlErrors?.isNotEmpty ?? false)) {
+        throw result.graphqlErrors!.first;
+      }
+      if (result.data != null) {
+        return result.data!.vehicleDealers!
+            .map((p0) => p0.stock!)
+            .reduce((value, element) => value + element);
+      }
+    } catch (e) {
+      e.log();
+    }
+    return 0;
+  }
+
+  Future<List<GVehicleDealersData_vehicleDealers>> currentStock() async {
+    try {
+      final result = await _client
+          .request(GVehicleDealersReq(
+            (b) => b..vars.where.dealer.id.equals = cacheProvider.getDealerId(),
+          ))
+          .first;
+      if (result.linkException != null) {
+        throw result.linkException!;
+      }
+      if ((result.graphqlErrors?.isNotEmpty ?? false)) {
+        throw result.graphqlErrors!.first;
+      }
+      if (result.data != null) {
+        return result.data!.vehicleDealers!.toList();
+      }
+    } catch (e) {
+      e.log();
+    }
+    return [];
+  }
 }

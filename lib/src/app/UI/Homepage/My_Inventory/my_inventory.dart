@@ -1,4 +1,5 @@
-import 'package:dealerapp/src/app/UI/ListOfVehicle/list_of_vehicles.dart';
+import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/list_of_vehicles.dart';
+import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/my_stock.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/empty_widget.dart';
@@ -57,9 +58,8 @@ class _MyInventoryState extends ConsumerState<MyInventory>
       body: TabBarView(
         controller: _tabController,
         children: const [
-          // KInventoryBikeCard(),
           ListOfVehicles(),
-          EmptyWidgt(title: 'Uh oh! You have no orders.'),
+          MyStockPage(),
           EmptyWidgt(title: 'Uh oh! You have no orders.'),
         ],
       ),

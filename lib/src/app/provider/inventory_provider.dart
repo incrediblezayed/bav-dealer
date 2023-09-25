@@ -12,6 +12,20 @@ class InventoryProvider extends ChangeNotifier {
   }
 
   final InventoryRepository _inventoryRepository = InventoryRepository();
+
+  List<GVehicleDealersData_vehicleDealers> _vehicleDealers = [];
+  List<GVehicleDealersData_vehicleDealers> get vehicleDealers =>
+      _vehicleDealers;
+  set vehicleDealers(List<GVehicleDealersData_vehicleDealers> data) {
+    _vehicleDealers = data;
+    notifyListeners();
+  }
+
+  void init() async {
+    await getVehicles();
+    await getStocks();
+  }
+
   Future<void> getVehicles() async {
     try {
       final getVehicles = await _inventoryRepository.getVehicles();
@@ -64,21 +78,26 @@ class InventoryProvider extends ChangeNotifier {
     }
   }
 
-/*   Future<int> getInventoryCount() async {
+  Future<int> getInventoryCount() async {
     try {
-      final result = await _inventoryRepository.getInventoryCount();
-
-      if (result != null) {
-        return result;
-      } else {
-        AppRoutes.showErrorSnackbar(
-          message: 'Errow while fetching Inventory Count',
-        );
-        return 0;
-      }
+      final result = await _inventoryRepository.getStockCount();
+      return result;
     } catch (e) {
       e.log();
       return 0;
     }
-  } */
+  }
+
+  Future<void> getStocks() async {
+    try {
+      final result = await _inventoryRepository.currentStock();
+
+      vehicleDealers = result;
+    } catch (e) {
+      e.log();
+      AppRoutes.showErrorSnackbar(
+        message: 'Errow while fetching list of vehicles',
+      );
+    }
+  }
 }

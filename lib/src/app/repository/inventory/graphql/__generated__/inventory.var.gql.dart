@@ -80,3 +80,24 @@ abstract class GCreateVehicleTestDriveDealerStockRequestVars
         json,
       );
 }
+
+abstract class GVehicleDealersVars
+    implements Built<GVehicleDealersVars, GVehicleDealersVarsBuilder> {
+  GVehicleDealersVars._();
+
+  factory GVehicleDealersVars(
+      [Function(GVehicleDealersVarsBuilder b) updates]) = _$GVehicleDealersVars;
+
+  _i2.GVehicleDealerWhereInput get where;
+  static Serializer<GVehicleDealersVars> get serializer =>
+      _$gVehicleDealersVarsSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GVehicleDealersVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GVehicleDealersVars? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GVehicleDealersVars.serializer,
+        json,
+      );
+}

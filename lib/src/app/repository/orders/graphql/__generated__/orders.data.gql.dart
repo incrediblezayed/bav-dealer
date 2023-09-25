@@ -379,3 +379,388 @@ abstract class GVehicleOrdersData_vehicleOrders_order_user_addresses
         json,
       );
 }
+
+abstract class GTestDriveOrdersData
+    implements Built<GTestDriveOrdersData, GTestDriveOrdersDataBuilder> {
+  GTestDriveOrdersData._();
+
+  factory GTestDriveOrdersData(
+          [Function(GTestDriveOrdersDataBuilder b) updates]) =
+      _$GTestDriveOrdersData;
+
+  static void _initializeBuilder(GTestDriveOrdersDataBuilder b) =>
+      b..G__typename = 'Query';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  BuiltList<GTestDriveOrdersData_testDriveOrders>? get testDriveOrders;
+  static Serializer<GTestDriveOrdersData> get serializer =>
+      _$gTestDriveOrdersDataSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveOrdersData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GTestDriveOrdersData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GTestDriveOrdersData.serializer,
+        json,
+      );
+}
+
+abstract class GTestDriveOrdersData_testDriveOrders
+    implements
+        Built<GTestDriveOrdersData_testDriveOrders,
+            GTestDriveOrdersData_testDriveOrdersBuilder> {
+  GTestDriveOrdersData_testDriveOrders._();
+
+  factory GTestDriveOrdersData_testDriveOrders(
+          [Function(GTestDriveOrdersData_testDriveOrdersBuilder b) updates]) =
+      _$GTestDriveOrdersData_testDriveOrders;
+
+  static void _initializeBuilder(
+          GTestDriveOrdersData_testDriveOrdersBuilder b) =>
+      b..G__typename = 'TestDriveOrder';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  int? get price;
+  GTestDriveOrdersData_testDriveOrders_dealer? get dealer;
+  String? get status;
+  GTestDriveOrdersData_testDriveOrders_order? get order;
+  _i2.GDateTime? get createdAt;
+  static Serializer<GTestDriveOrdersData_testDriveOrders> get serializer =>
+      _$gTestDriveOrdersDataTestDriveOrdersSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveOrdersData_testDriveOrders.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GTestDriveOrdersData_testDriveOrders? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GTestDriveOrdersData_testDriveOrders.serializer,
+        json,
+      );
+}
+
+abstract class GTestDriveOrdersData_testDriveOrders_dealer
+    implements
+        Built<GTestDriveOrdersData_testDriveOrders_dealer,
+            GTestDriveOrdersData_testDriveOrders_dealerBuilder> {
+  GTestDriveOrdersData_testDriveOrders_dealer._();
+
+  factory GTestDriveOrdersData_testDriveOrders_dealer(
+      [Function(GTestDriveOrdersData_testDriveOrders_dealerBuilder b)
+          updates]) = _$GTestDriveOrdersData_testDriveOrders_dealer;
+
+  static void _initializeBuilder(
+          GTestDriveOrdersData_testDriveOrders_dealerBuilder b) =>
+      b..G__typename = 'TestDriveDealer';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant?
+      get vehicleVariant;
+  GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor? get vehicleColor;
+  static Serializer<GTestDriveOrdersData_testDriveOrders_dealer>
+      get serializer => _$gTestDriveOrdersDataTestDriveOrdersDealerSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveOrdersData_testDriveOrders_dealer.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GTestDriveOrdersData_testDriveOrders_dealer? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GTestDriveOrdersData_testDriveOrders_dealer.serializer,
+        json,
+      );
+}
+
+abstract class GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant
+    implements
+        Built<GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant,
+            GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder> {
+  GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant._();
+
+  factory GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant(
+      [Function(
+              GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder
+                  b)
+          updates]) = _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant;
+
+  static void _initializeBuilder(
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder
+              b) =>
+      b..G__typename = 'VehicleVariant';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle?
+      get vehicle;
+  String? get name;
+  static Serializer<GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant>
+      get serializer =>
+          _$gTestDriveOrdersDataTestDriveOrdersDealerVehicleVariantSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant.serializer,
+        json,
+      );
+}
+
+abstract class GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle
+    implements
+        Built<
+            GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle,
+            GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder> {
+  GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle._();
+
+  factory GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle(
+          [Function(
+                  GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder
+                      b)
+              updates]) =
+      _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle;
+
+  static void _initializeBuilder(
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder
+              b) =>
+      b..G__typename = 'Vehicle';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String? get name;
+  static Serializer<
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle>
+      get serializer =>
+          _$gTestDriveOrdersDataTestDriveOrdersDealerVehicleVariantVehicleSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle
+                .serializer,
+            json,
+          );
+}
+
+abstract class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor
+    implements
+        Built<GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor,
+            GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder> {
+  GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor._();
+
+  factory GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor(
+      [Function(
+              GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder b)
+          updates]) = _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor;
+
+  static void _initializeBuilder(
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder b) =>
+      b..G__typename = 'VehicleColor';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String? get name;
+  String? get code;
+  BuiltList<GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images>?
+      get images;
+  static Serializer<GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor>
+      get serializer =>
+          _$gTestDriveOrdersDataTestDriveOrdersDealerVehicleColorSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor.serializer,
+        json,
+      );
+}
+
+abstract class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images
+    implements
+        Built<GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images,
+            GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesBuilder> {
+  GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images._();
+
+  factory GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images(
+          [Function(
+                  GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesBuilder
+                      b)
+              updates]) =
+      _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images;
+
+  static void _initializeBuilder(
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesBuilder
+              b) =>
+      b..G__typename = 'VehicleImage';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image?
+      get image;
+  static Serializer<
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images>
+      get serializer =>
+          _$gTestDriveOrdersDataTestDriveOrdersDealerVehicleColorImagesSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images
+                .serializer,
+            json,
+          );
+}
+
+abstract class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image
+    implements
+        Built<
+            GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image,
+            GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuilder> {
+  GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image._();
+
+  factory GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image(
+          [Function(
+                  GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuilder
+                      b)
+              updates]) =
+      _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image;
+
+  static void _initializeBuilder(
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuilder
+              b) =>
+      b..G__typename = 'ImageFieldOutput';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  static Serializer<
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image>
+      get serializer =>
+          _$gTestDriveOrdersDataTestDriveOrdersDealerVehicleColorImagesImageSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image
+                .serializer,
+            json,
+          );
+}
+
+abstract class GTestDriveOrdersData_testDriveOrders_order
+    implements
+        Built<GTestDriveOrdersData_testDriveOrders_order,
+            GTestDriveOrdersData_testDriveOrders_orderBuilder> {
+  GTestDriveOrdersData_testDriveOrders_order._();
+
+  factory GTestDriveOrdersData_testDriveOrders_order(
+      [Function(GTestDriveOrdersData_testDriveOrders_orderBuilder b)
+          updates]) = _$GTestDriveOrdersData_testDriveOrders_order;
+
+  static void _initializeBuilder(
+          GTestDriveOrdersData_testDriveOrders_orderBuilder b) =>
+      b..G__typename = 'Order';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GTestDriveOrdersData_testDriveOrders_order_user? get user;
+  static Serializer<GTestDriveOrdersData_testDriveOrders_order>
+      get serializer => _$gTestDriveOrdersDataTestDriveOrdersOrderSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveOrdersData_testDriveOrders_order.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GTestDriveOrdersData_testDriveOrders_order? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GTestDriveOrdersData_testDriveOrders_order.serializer,
+        json,
+      );
+}
+
+abstract class GTestDriveOrdersData_testDriveOrders_order_user
+    implements
+        Built<GTestDriveOrdersData_testDriveOrders_order_user,
+            GTestDriveOrdersData_testDriveOrders_order_userBuilder> {
+  GTestDriveOrdersData_testDriveOrders_order_user._();
+
+  factory GTestDriveOrdersData_testDriveOrders_order_user(
+      [Function(GTestDriveOrdersData_testDriveOrders_order_userBuilder b)
+          updates]) = _$GTestDriveOrdersData_testDriveOrders_order_user;
+
+  static void _initializeBuilder(
+          GTestDriveOrdersData_testDriveOrders_order_userBuilder b) =>
+      b..G__typename = 'User';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get email;
+  String? get name;
+  String? get phoneNumber;
+  BuiltList<GTestDriveOrdersData_testDriveOrders_order_user_addresses>?
+      get addresses;
+  static Serializer<GTestDriveOrdersData_testDriveOrders_order_user>
+      get serializer =>
+          _$gTestDriveOrdersDataTestDriveOrdersOrderUserSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveOrdersData_testDriveOrders_order_user.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GTestDriveOrdersData_testDriveOrders_order_user? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GTestDriveOrdersData_testDriveOrders_order_user.serializer,
+        json,
+      );
+}
+
+abstract class GTestDriveOrdersData_testDriveOrders_order_user_addresses
+    implements
+        Built<GTestDriveOrdersData_testDriveOrders_order_user_addresses,
+            GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder> {
+  GTestDriveOrdersData_testDriveOrders_order_user_addresses._();
+
+  factory GTestDriveOrdersData_testDriveOrders_order_user_addresses(
+      [Function(
+              GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder
+                  b)
+          updates]) = _$GTestDriveOrdersData_testDriveOrders_order_user_addresses;
+
+  static void _initializeBuilder(
+          GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder b) =>
+      b..G__typename = 'Address';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get phoneNumber;
+  String? get pinCode;
+  String? get state;
+  String? get town;
+  String? get address;
+  String? get district;
+  String? get name;
+  static Serializer<GTestDriveOrdersData_testDriveOrders_order_user_addresses>
+      get serializer =>
+          _$gTestDriveOrdersDataTestDriveOrdersOrderUserAddressesSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveOrdersData_testDriveOrders_order_user_addresses.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GTestDriveOrdersData_testDriveOrders_order_user_addresses? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GTestDriveOrdersData_testDriveOrders_order_user_addresses.serializer,
+        json,
+      );
+}

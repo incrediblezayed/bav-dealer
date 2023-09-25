@@ -9,9 +9,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 final cacheProvider = getIt<CacheProvider>();
 final authProvider = ChangeNotifierProvider((ref) => AuthProvider());
 final inventoryProvider =
-    ChangeNotifierProvider((ref) => InventoryProvider()..getVehicles());
+    ChangeNotifierProvider((ref) => InventoryProvider()..init());
 
 final purchaseOrderProvider =
     ChangeNotifierProvider((ref) => OrdersProvider()..getVehicles());
-final homePageProvider =
-    ChangeNotifierProvider((ref) => HomePageProvider(ref));
+final homePageProvider = ChangeNotifierProvider((ref) => HomePageProvider(ref));

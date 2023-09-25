@@ -1,3 +1,4 @@
+import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -47,7 +48,9 @@ class HomePageProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void onInit() async {}
+  void onInit() async {
+    inventoryCount = await ref.read(inventoryProvider).getInventoryCount();
+  }
 
   ///Page controller
   PageController pageController = PageController();
