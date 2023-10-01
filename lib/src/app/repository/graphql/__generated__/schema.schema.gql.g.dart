@@ -22723,10 +22723,24 @@ class _$GOrderCancellationRequestWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GTestDriveOrderManyRelationFilter)));
     }
+    value = object.approved;
+    if (value != null) {
+      result
+        ..add('approved')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GBooleanFilter)));
+    }
     value = object.reason;
     if (value != null) {
       result
         ..add('reason')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GStringFilter)));
     }
@@ -22789,8 +22803,17 @@ class _$GOrderCancellationRequestWhereInputSerializer
                       const FullType(GTestDriveOrderManyRelationFilter))!
               as GTestDriveOrderManyRelationFilter);
           break;
+        case 'approved':
+          result.approved.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GBooleanFilter))!
+              as GBooleanFilter);
+          break;
         case 'reason':
           result.reason.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'description':
+          result.description.replace(serializers.deserialize(value,
               specifiedType: const FullType(GStringFilter))! as GStringFilter);
           break;
       }
@@ -22837,10 +22860,24 @@ class _$GOrderCancellationRequestOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.approved;
+    if (value != null) {
+      result
+        ..add('approved')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     value = object.reason;
     if (value != null) {
       result
         ..add('reason')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
@@ -22874,8 +22911,18 @@ class _$GOrderCancellationRequestOrderByInputSerializer
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
+        case 'approved':
+          result.approved = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
         case 'reason':
           result.reason = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -22932,10 +22979,24 @@ class _$GOrderCancellationRequestUpdateInputSerializer
             specifiedType:
                 const FullType(GTestDriveOrderRelateToManyForUpdateInput)));
     }
+    value = object.approved;
+    if (value != null) {
+      result
+        ..add('approved')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     value = object.reason;
     if (value != null) {
       result
         ..add('reason')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -22974,8 +23035,16 @@ class _$GOrderCancellationRequestUpdateInputSerializer
                       GTestDriveOrderRelateToManyForUpdateInput))!
               as GTestDriveOrderRelateToManyForUpdateInput);
           break;
+        case 'approved':
+          result.approved = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
         case 'reason':
           result.reason = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
       }
@@ -23089,10 +23158,24 @@ class _$GOrderCancellationRequestCreateInputSerializer
             specifiedType:
                 const FullType(GTestDriveOrderRelateToManyForCreateInput)));
     }
+    value = object.approved;
+    if (value != null) {
+      result
+        ..add('approved')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     value = object.reason;
     if (value != null) {
       result
         ..add('reason')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -23131,8 +23214,16 @@ class _$GOrderCancellationRequestCreateInputSerializer
                       GTestDriveOrderRelateToManyForCreateInput))!
               as GTestDriveOrderRelateToManyForCreateInput);
           break;
+        case 'approved':
+          result.approved = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
         case 'reason':
           result.reason = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
       }
@@ -23266,10 +23357,24 @@ class _$GOrderRejectionByDealerWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GTestDriveOrderManyRelationFilter)));
     }
+    value = object.approved;
+    if (value != null) {
+      result
+        ..add('approved')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GBooleanFilter)));
+    }
     value = object.reason;
     if (value != null) {
       result
         ..add('reason')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GStringFilter)));
     }
@@ -23332,8 +23437,17 @@ class _$GOrderRejectionByDealerWhereInputSerializer
                       const FullType(GTestDriveOrderManyRelationFilter))!
               as GTestDriveOrderManyRelationFilter);
           break;
+        case 'approved':
+          result.approved.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GBooleanFilter))!
+              as GBooleanFilter);
+          break;
         case 'reason':
           result.reason.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'description':
+          result.description.replace(serializers.deserialize(value,
               specifiedType: const FullType(GStringFilter))! as GStringFilter);
           break;
       }
@@ -23380,10 +23494,24 @@ class _$GOrderRejectionByDealerOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.approved;
+    if (value != null) {
+      result
+        ..add('approved')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     value = object.reason;
     if (value != null) {
       result
         ..add('reason')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
@@ -23417,8 +23545,18 @@ class _$GOrderRejectionByDealerOrderByInputSerializer
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
+        case 'approved':
+          result.approved = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
         case 'reason':
           result.reason = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -23475,10 +23613,24 @@ class _$GOrderRejectionByDealerUpdateInputSerializer
             specifiedType:
                 const FullType(GTestDriveOrderRelateToManyForUpdateInput)));
     }
+    value = object.approved;
+    if (value != null) {
+      result
+        ..add('approved')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     value = object.reason;
     if (value != null) {
       result
         ..add('reason')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -23517,8 +23669,16 @@ class _$GOrderRejectionByDealerUpdateInputSerializer
                       GTestDriveOrderRelateToManyForUpdateInput))!
               as GTestDriveOrderRelateToManyForUpdateInput);
           break;
+        case 'approved':
+          result.approved = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
         case 'reason':
           result.reason = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
       }
@@ -23632,10 +23792,24 @@ class _$GOrderRejectionByDealerCreateInputSerializer
             specifiedType:
                 const FullType(GTestDriveOrderRelateToManyForCreateInput)));
     }
+    value = object.approved;
+    if (value != null) {
+      result
+        ..add('approved')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     value = object.reason;
     if (value != null) {
       result
         ..add('reason')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -23674,8 +23848,16 @@ class _$GOrderRejectionByDealerCreateInputSerializer
                       GTestDriveOrderRelateToManyForCreateInput))!
               as GTestDriveOrderRelateToManyForCreateInput);
           break;
+        case 'approved':
+          result.approved = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
         case 'reason':
           result.reason = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
       }
@@ -67807,7 +67989,11 @@ class _$GOrderCancellationRequestWhereInput
   @override
   final GTestDriveOrderManyRelationFilter? testDriveOrders;
   @override
+  final GBooleanFilter? approved;
+  @override
   final GStringFilter? reason;
+  @override
+  final GStringFilter? description;
 
   factory _$GOrderCancellationRequestWhereInput(
           [void Function(GOrderCancellationRequestWhereInputBuilder)?
@@ -67824,7 +68010,9 @@ class _$GOrderCancellationRequestWhereInput
       this.modifiedAt,
       this.vehicleOrders,
       this.testDriveOrders,
-      this.reason})
+      this.approved,
+      this.reason,
+      this.description})
       : super._();
 
   @override
@@ -67848,7 +68036,9 @@ class _$GOrderCancellationRequestWhereInput
         modifiedAt == other.modifiedAt &&
         vehicleOrders == other.vehicleOrders &&
         testDriveOrders == other.testDriveOrders &&
-        reason == other.reason;
+        approved == other.approved &&
+        reason == other.reason &&
+        description == other.description;
   }
 
   @override
@@ -67862,7 +68052,9 @@ class _$GOrderCancellationRequestWhereInput
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, vehicleOrders.hashCode);
     _$hash = $jc(_$hash, testDriveOrders.hashCode);
+    _$hash = $jc(_$hash, approved.hashCode);
     _$hash = $jc(_$hash, reason.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -67878,7 +68070,9 @@ class _$GOrderCancellationRequestWhereInput
           ..add('modifiedAt', modifiedAt)
           ..add('vehicleOrders', vehicleOrders)
           ..add('testDriveOrders', testDriveOrders)
-          ..add('reason', reason))
+          ..add('approved', approved)
+          ..add('reason', reason)
+          ..add('description', description))
         .toString();
   }
 }
@@ -67937,10 +68131,21 @@ class GOrderCancellationRequestWhereInputBuilder
           GTestDriveOrderManyRelationFilterBuilder? testDriveOrders) =>
       _$this._testDriveOrders = testDriveOrders;
 
+  GBooleanFilterBuilder? _approved;
+  GBooleanFilterBuilder get approved =>
+      _$this._approved ??= new GBooleanFilterBuilder();
+  set approved(GBooleanFilterBuilder? approved) => _$this._approved = approved;
+
   GStringFilterBuilder? _reason;
   GStringFilterBuilder get reason =>
       _$this._reason ??= new GStringFilterBuilder();
   set reason(GStringFilterBuilder? reason) => _$this._reason = reason;
+
+  GStringFilterBuilder? _description;
+  GStringFilterBuilder get description =>
+      _$this._description ??= new GStringFilterBuilder();
+  set description(GStringFilterBuilder? description) =>
+      _$this._description = description;
 
   GOrderCancellationRequestWhereInputBuilder();
 
@@ -67955,7 +68160,9 @@ class GOrderCancellationRequestWhereInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _vehicleOrders = $v.vehicleOrders?.toBuilder();
       _testDriveOrders = $v.testDriveOrders?.toBuilder();
+      _approved = $v.approved?.toBuilder();
       _reason = $v.reason?.toBuilder();
+      _description = $v.description?.toBuilder();
       _$v = null;
     }
     return this;
@@ -67989,7 +68196,9 @@ class GOrderCancellationRequestWhereInputBuilder
               modifiedAt: _modifiedAt?.build(),
               vehicleOrders: _vehicleOrders?.build(),
               testDriveOrders: _testDriveOrders?.build(),
-              reason: _reason?.build());
+              approved: _approved?.build(),
+              reason: _reason?.build(),
+              description: _description?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -68009,8 +68218,12 @@ class GOrderCancellationRequestWhereInputBuilder
         _vehicleOrders?.build();
         _$failedField = 'testDriveOrders';
         _testDriveOrders?.build();
+        _$failedField = 'approved';
+        _approved?.build();
         _$failedField = 'reason';
         _reason?.build();
+        _$failedField = 'description';
+        _description?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GOrderCancellationRequestWhereInput',
@@ -68033,7 +68246,11 @@ class _$GOrderCancellationRequestOrderByInput
   @override
   final GOrderDirection? modifiedAt;
   @override
+  final GOrderDirection? approved;
+  @override
   final GOrderDirection? reason;
+  @override
+  final GOrderDirection? description;
 
   factory _$GOrderCancellationRequestOrderByInput(
           [void Function(GOrderCancellationRequestOrderByInputBuilder)?
@@ -68042,7 +68259,12 @@ class _$GOrderCancellationRequestOrderByInput
           ._build();
 
   _$GOrderCancellationRequestOrderByInput._(
-      {this.id, this.createdAt, this.modifiedAt, this.reason})
+      {this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.approved,
+      this.reason,
+      this.description})
       : super._();
 
   @override
@@ -68062,7 +68284,9 @@ class _$GOrderCancellationRequestOrderByInput
         id == other.id &&
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
-        reason == other.reason;
+        approved == other.approved &&
+        reason == other.reason &&
+        description == other.description;
   }
 
   @override
@@ -68071,7 +68295,9 @@ class _$GOrderCancellationRequestOrderByInput
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, approved.hashCode);
     _$hash = $jc(_$hash, reason.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -68083,7 +68309,9 @@ class _$GOrderCancellationRequestOrderByInput
           ..add('id', id)
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
-          ..add('reason', reason))
+          ..add('approved', approved)
+          ..add('reason', reason)
+          ..add('description', description))
         .toString();
   }
 }
@@ -68107,9 +68335,18 @@ class GOrderCancellationRequestOrderByInputBuilder
   set modifiedAt(GOrderDirection? modifiedAt) =>
       _$this._modifiedAt = modifiedAt;
 
+  GOrderDirection? _approved;
+  GOrderDirection? get approved => _$this._approved;
+  set approved(GOrderDirection? approved) => _$this._approved = approved;
+
   GOrderDirection? _reason;
   GOrderDirection? get reason => _$this._reason;
   set reason(GOrderDirection? reason) => _$this._reason = reason;
+
+  GOrderDirection? _description;
+  GOrderDirection? get description => _$this._description;
+  set description(GOrderDirection? description) =>
+      _$this._description = description;
 
   GOrderCancellationRequestOrderByInputBuilder();
 
@@ -68119,7 +68356,9 @@ class GOrderCancellationRequestOrderByInputBuilder
       _id = $v.id;
       _createdAt = $v.createdAt;
       _modifiedAt = $v.modifiedAt;
+      _approved = $v.approved;
       _reason = $v.reason;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -68146,7 +68385,9 @@ class GOrderCancellationRequestOrderByInputBuilder
             id: id,
             createdAt: createdAt,
             modifiedAt: modifiedAt,
-            reason: reason);
+            approved: approved,
+            reason: reason,
+            description: description);
     replace(_$result);
     return _$result;
   }
@@ -68163,7 +68404,11 @@ class _$GOrderCancellationRequestUpdateInput
   @override
   final GTestDriveOrderRelateToManyForUpdateInput? testDriveOrders;
   @override
+  final bool? approved;
+  @override
   final String? reason;
+  @override
+  final String? description;
 
   factory _$GOrderCancellationRequestUpdateInput(
           [void Function(GOrderCancellationRequestUpdateInputBuilder)?
@@ -68176,7 +68421,9 @@ class _$GOrderCancellationRequestUpdateInput
       this.modifiedAt,
       this.vehicleOrders,
       this.testDriveOrders,
-      this.reason})
+      this.approved,
+      this.reason,
+      this.description})
       : super._();
 
   @override
@@ -68196,7 +68443,9 @@ class _$GOrderCancellationRequestUpdateInput
         modifiedAt == other.modifiedAt &&
         vehicleOrders == other.vehicleOrders &&
         testDriveOrders == other.testDriveOrders &&
-        reason == other.reason;
+        approved == other.approved &&
+        reason == other.reason &&
+        description == other.description;
   }
 
   @override
@@ -68206,7 +68455,9 @@ class _$GOrderCancellationRequestUpdateInput
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, vehicleOrders.hashCode);
     _$hash = $jc(_$hash, testDriveOrders.hashCode);
+    _$hash = $jc(_$hash, approved.hashCode);
     _$hash = $jc(_$hash, reason.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -68218,7 +68469,9 @@ class _$GOrderCancellationRequestUpdateInput
           ..add('modifiedAt', modifiedAt)
           ..add('vehicleOrders', vehicleOrders)
           ..add('testDriveOrders', testDriveOrders)
-          ..add('reason', reason))
+          ..add('approved', approved)
+          ..add('reason', reason)
+          ..add('description', description))
         .toString();
   }
 }
@@ -68256,9 +68509,17 @@ class GOrderCancellationRequestUpdateInputBuilder
           GTestDriveOrderRelateToManyForUpdateInputBuilder? testDriveOrders) =>
       _$this._testDriveOrders = testDriveOrders;
 
+  bool? _approved;
+  bool? get approved => _$this._approved;
+  set approved(bool? approved) => _$this._approved = approved;
+
   String? _reason;
   String? get reason => _$this._reason;
   set reason(String? reason) => _$this._reason = reason;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   GOrderCancellationRequestUpdateInputBuilder();
 
@@ -68269,7 +68530,9 @@ class GOrderCancellationRequestUpdateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _vehicleOrders = $v.vehicleOrders?.toBuilder();
       _testDriveOrders = $v.testDriveOrders?.toBuilder();
+      _approved = $v.approved;
       _reason = $v.reason;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -68299,7 +68562,9 @@ class GOrderCancellationRequestUpdateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               vehicleOrders: _vehicleOrders?.build(),
               testDriveOrders: _testDriveOrders?.build(),
-              reason: reason);
+              approved: approved,
+              reason: reason,
+              description: description);
     } catch (_) {
       late String _$failedField;
       try {
@@ -68463,7 +68728,11 @@ class _$GOrderCancellationRequestCreateInput
   @override
   final GTestDriveOrderRelateToManyForCreateInput? testDriveOrders;
   @override
+  final bool? approved;
+  @override
   final String? reason;
+  @override
+  final String? description;
 
   factory _$GOrderCancellationRequestCreateInput(
           [void Function(GOrderCancellationRequestCreateInputBuilder)?
@@ -68476,7 +68745,9 @@ class _$GOrderCancellationRequestCreateInput
       this.modifiedAt,
       this.vehicleOrders,
       this.testDriveOrders,
-      this.reason})
+      this.approved,
+      this.reason,
+      this.description})
       : super._();
 
   @override
@@ -68496,7 +68767,9 @@ class _$GOrderCancellationRequestCreateInput
         modifiedAt == other.modifiedAt &&
         vehicleOrders == other.vehicleOrders &&
         testDriveOrders == other.testDriveOrders &&
-        reason == other.reason;
+        approved == other.approved &&
+        reason == other.reason &&
+        description == other.description;
   }
 
   @override
@@ -68506,7 +68779,9 @@ class _$GOrderCancellationRequestCreateInput
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, vehicleOrders.hashCode);
     _$hash = $jc(_$hash, testDriveOrders.hashCode);
+    _$hash = $jc(_$hash, approved.hashCode);
     _$hash = $jc(_$hash, reason.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -68518,7 +68793,9 @@ class _$GOrderCancellationRequestCreateInput
           ..add('modifiedAt', modifiedAt)
           ..add('vehicleOrders', vehicleOrders)
           ..add('testDriveOrders', testDriveOrders)
-          ..add('reason', reason))
+          ..add('approved', approved)
+          ..add('reason', reason)
+          ..add('description', description))
         .toString();
   }
 }
@@ -68556,9 +68833,17 @@ class GOrderCancellationRequestCreateInputBuilder
           GTestDriveOrderRelateToManyForCreateInputBuilder? testDriveOrders) =>
       _$this._testDriveOrders = testDriveOrders;
 
+  bool? _approved;
+  bool? get approved => _$this._approved;
+  set approved(bool? approved) => _$this._approved = approved;
+
   String? _reason;
   String? get reason => _$this._reason;
   set reason(String? reason) => _$this._reason = reason;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   GOrderCancellationRequestCreateInputBuilder();
 
@@ -68569,7 +68854,9 @@ class GOrderCancellationRequestCreateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _vehicleOrders = $v.vehicleOrders?.toBuilder();
       _testDriveOrders = $v.testDriveOrders?.toBuilder();
+      _approved = $v.approved;
       _reason = $v.reason;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -68599,7 +68886,9 @@ class GOrderCancellationRequestCreateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               vehicleOrders: _vehicleOrders?.build(),
               testDriveOrders: _testDriveOrders?.build(),
-              reason: reason);
+              approved: approved,
+              reason: reason,
+              description: description);
     } catch (_) {
       late String _$failedField;
       try {
@@ -68733,7 +69022,11 @@ class _$GOrderRejectionByDealerWhereInput
   @override
   final GTestDriveOrderManyRelationFilter? testDriveOrders;
   @override
+  final GBooleanFilter? approved;
+  @override
   final GStringFilter? reason;
+  @override
+  final GStringFilter? description;
 
   factory _$GOrderRejectionByDealerWhereInput(
           [void Function(GOrderRejectionByDealerWhereInputBuilder)? updates]) =>
@@ -68749,7 +69042,9 @@ class _$GOrderRejectionByDealerWhereInput
       this.modifiedAt,
       this.vehicleOrders,
       this.testDriveOrders,
-      this.reason})
+      this.approved,
+      this.reason,
+      this.description})
       : super._();
 
   @override
@@ -68773,7 +69068,9 @@ class _$GOrderRejectionByDealerWhereInput
         modifiedAt == other.modifiedAt &&
         vehicleOrders == other.vehicleOrders &&
         testDriveOrders == other.testDriveOrders &&
-        reason == other.reason;
+        approved == other.approved &&
+        reason == other.reason &&
+        description == other.description;
   }
 
   @override
@@ -68787,7 +69084,9 @@ class _$GOrderRejectionByDealerWhereInput
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, vehicleOrders.hashCode);
     _$hash = $jc(_$hash, testDriveOrders.hashCode);
+    _$hash = $jc(_$hash, approved.hashCode);
     _$hash = $jc(_$hash, reason.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -68803,7 +69102,9 @@ class _$GOrderRejectionByDealerWhereInput
           ..add('modifiedAt', modifiedAt)
           ..add('vehicleOrders', vehicleOrders)
           ..add('testDriveOrders', testDriveOrders)
-          ..add('reason', reason))
+          ..add('approved', approved)
+          ..add('reason', reason)
+          ..add('description', description))
         .toString();
   }
 }
@@ -68861,10 +69162,21 @@ class GOrderRejectionByDealerWhereInputBuilder
           GTestDriveOrderManyRelationFilterBuilder? testDriveOrders) =>
       _$this._testDriveOrders = testDriveOrders;
 
+  GBooleanFilterBuilder? _approved;
+  GBooleanFilterBuilder get approved =>
+      _$this._approved ??= new GBooleanFilterBuilder();
+  set approved(GBooleanFilterBuilder? approved) => _$this._approved = approved;
+
   GStringFilterBuilder? _reason;
   GStringFilterBuilder get reason =>
       _$this._reason ??= new GStringFilterBuilder();
   set reason(GStringFilterBuilder? reason) => _$this._reason = reason;
+
+  GStringFilterBuilder? _description;
+  GStringFilterBuilder get description =>
+      _$this._description ??= new GStringFilterBuilder();
+  set description(GStringFilterBuilder? description) =>
+      _$this._description = description;
 
   GOrderRejectionByDealerWhereInputBuilder();
 
@@ -68879,7 +69191,9 @@ class GOrderRejectionByDealerWhereInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _vehicleOrders = $v.vehicleOrders?.toBuilder();
       _testDriveOrders = $v.testDriveOrders?.toBuilder();
+      _approved = $v.approved?.toBuilder();
       _reason = $v.reason?.toBuilder();
+      _description = $v.description?.toBuilder();
       _$v = null;
     }
     return this;
@@ -68913,7 +69227,9 @@ class GOrderRejectionByDealerWhereInputBuilder
               modifiedAt: _modifiedAt?.build(),
               vehicleOrders: _vehicleOrders?.build(),
               testDriveOrders: _testDriveOrders?.build(),
-              reason: _reason?.build());
+              approved: _approved?.build(),
+              reason: _reason?.build(),
+              description: _description?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -68933,8 +69249,12 @@ class GOrderRejectionByDealerWhereInputBuilder
         _vehicleOrders?.build();
         _$failedField = 'testDriveOrders';
         _testDriveOrders?.build();
+        _$failedField = 'approved';
+        _approved?.build();
         _$failedField = 'reason';
         _reason?.build();
+        _$failedField = 'description';
+        _description?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GOrderRejectionByDealerWhereInput', _$failedField, e.toString());
@@ -68955,7 +69275,11 @@ class _$GOrderRejectionByDealerOrderByInput
   @override
   final GOrderDirection? modifiedAt;
   @override
+  final GOrderDirection? approved;
+  @override
   final GOrderDirection? reason;
+  @override
+  final GOrderDirection? description;
 
   factory _$GOrderRejectionByDealerOrderByInput(
           [void Function(GOrderRejectionByDealerOrderByInputBuilder)?
@@ -68964,7 +69288,12 @@ class _$GOrderRejectionByDealerOrderByInput
           ._build();
 
   _$GOrderRejectionByDealerOrderByInput._(
-      {this.id, this.createdAt, this.modifiedAt, this.reason})
+      {this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.approved,
+      this.reason,
+      this.description})
       : super._();
 
   @override
@@ -68983,7 +69312,9 @@ class _$GOrderRejectionByDealerOrderByInput
         id == other.id &&
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
-        reason == other.reason;
+        approved == other.approved &&
+        reason == other.reason &&
+        description == other.description;
   }
 
   @override
@@ -68992,7 +69323,9 @@ class _$GOrderRejectionByDealerOrderByInput
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, approved.hashCode);
     _$hash = $jc(_$hash, reason.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -69003,7 +69336,9 @@ class _$GOrderRejectionByDealerOrderByInput
           ..add('id', id)
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
-          ..add('reason', reason))
+          ..add('approved', approved)
+          ..add('reason', reason)
+          ..add('description', description))
         .toString();
   }
 }
@@ -69027,9 +69362,18 @@ class GOrderRejectionByDealerOrderByInputBuilder
   set modifiedAt(GOrderDirection? modifiedAt) =>
       _$this._modifiedAt = modifiedAt;
 
+  GOrderDirection? _approved;
+  GOrderDirection? get approved => _$this._approved;
+  set approved(GOrderDirection? approved) => _$this._approved = approved;
+
   GOrderDirection? _reason;
   GOrderDirection? get reason => _$this._reason;
   set reason(GOrderDirection? reason) => _$this._reason = reason;
+
+  GOrderDirection? _description;
+  GOrderDirection? get description => _$this._description;
+  set description(GOrderDirection? description) =>
+      _$this._description = description;
 
   GOrderRejectionByDealerOrderByInputBuilder();
 
@@ -69039,7 +69383,9 @@ class GOrderRejectionByDealerOrderByInputBuilder
       _id = $v.id;
       _createdAt = $v.createdAt;
       _modifiedAt = $v.modifiedAt;
+      _approved = $v.approved;
       _reason = $v.reason;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -69066,7 +69412,9 @@ class GOrderRejectionByDealerOrderByInputBuilder
             id: id,
             createdAt: createdAt,
             modifiedAt: modifiedAt,
-            reason: reason);
+            approved: approved,
+            reason: reason,
+            description: description);
     replace(_$result);
     return _$result;
   }
@@ -69083,7 +69431,11 @@ class _$GOrderRejectionByDealerUpdateInput
   @override
   final GTestDriveOrderRelateToManyForUpdateInput? testDriveOrders;
   @override
+  final bool? approved;
+  @override
   final String? reason;
+  @override
+  final String? description;
 
   factory _$GOrderRejectionByDealerUpdateInput(
           [void Function(GOrderRejectionByDealerUpdateInputBuilder)?
@@ -69096,7 +69448,9 @@ class _$GOrderRejectionByDealerUpdateInput
       this.modifiedAt,
       this.vehicleOrders,
       this.testDriveOrders,
-      this.reason})
+      this.approved,
+      this.reason,
+      this.description})
       : super._();
 
   @override
@@ -69116,7 +69470,9 @@ class _$GOrderRejectionByDealerUpdateInput
         modifiedAt == other.modifiedAt &&
         vehicleOrders == other.vehicleOrders &&
         testDriveOrders == other.testDriveOrders &&
-        reason == other.reason;
+        approved == other.approved &&
+        reason == other.reason &&
+        description == other.description;
   }
 
   @override
@@ -69126,7 +69482,9 @@ class _$GOrderRejectionByDealerUpdateInput
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, vehicleOrders.hashCode);
     _$hash = $jc(_$hash, testDriveOrders.hashCode);
+    _$hash = $jc(_$hash, approved.hashCode);
     _$hash = $jc(_$hash, reason.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -69138,7 +69496,9 @@ class _$GOrderRejectionByDealerUpdateInput
           ..add('modifiedAt', modifiedAt)
           ..add('vehicleOrders', vehicleOrders)
           ..add('testDriveOrders', testDriveOrders)
-          ..add('reason', reason))
+          ..add('approved', approved)
+          ..add('reason', reason)
+          ..add('description', description))
         .toString();
   }
 }
@@ -69176,9 +69536,17 @@ class GOrderRejectionByDealerUpdateInputBuilder
           GTestDriveOrderRelateToManyForUpdateInputBuilder? testDriveOrders) =>
       _$this._testDriveOrders = testDriveOrders;
 
+  bool? _approved;
+  bool? get approved => _$this._approved;
+  set approved(bool? approved) => _$this._approved = approved;
+
   String? _reason;
   String? get reason => _$this._reason;
   set reason(String? reason) => _$this._reason = reason;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   GOrderRejectionByDealerUpdateInputBuilder();
 
@@ -69189,7 +69557,9 @@ class GOrderRejectionByDealerUpdateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _vehicleOrders = $v.vehicleOrders?.toBuilder();
       _testDriveOrders = $v.testDriveOrders?.toBuilder();
+      _approved = $v.approved;
       _reason = $v.reason;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -69219,7 +69589,9 @@ class GOrderRejectionByDealerUpdateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               vehicleOrders: _vehicleOrders?.build(),
               testDriveOrders: _testDriveOrders?.build(),
-              reason: reason);
+              approved: approved,
+              reason: reason,
+              description: description);
     } catch (_) {
       late String _$failedField;
       try {
@@ -69378,7 +69750,11 @@ class _$GOrderRejectionByDealerCreateInput
   @override
   final GTestDriveOrderRelateToManyForCreateInput? testDriveOrders;
   @override
+  final bool? approved;
+  @override
   final String? reason;
+  @override
+  final String? description;
 
   factory _$GOrderRejectionByDealerCreateInput(
           [void Function(GOrderRejectionByDealerCreateInputBuilder)?
@@ -69391,7 +69767,9 @@ class _$GOrderRejectionByDealerCreateInput
       this.modifiedAt,
       this.vehicleOrders,
       this.testDriveOrders,
-      this.reason})
+      this.approved,
+      this.reason,
+      this.description})
       : super._();
 
   @override
@@ -69411,7 +69789,9 @@ class _$GOrderRejectionByDealerCreateInput
         modifiedAt == other.modifiedAt &&
         vehicleOrders == other.vehicleOrders &&
         testDriveOrders == other.testDriveOrders &&
-        reason == other.reason;
+        approved == other.approved &&
+        reason == other.reason &&
+        description == other.description;
   }
 
   @override
@@ -69421,7 +69801,9 @@ class _$GOrderRejectionByDealerCreateInput
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, vehicleOrders.hashCode);
     _$hash = $jc(_$hash, testDriveOrders.hashCode);
+    _$hash = $jc(_$hash, approved.hashCode);
     _$hash = $jc(_$hash, reason.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -69433,7 +69815,9 @@ class _$GOrderRejectionByDealerCreateInput
           ..add('modifiedAt', modifiedAt)
           ..add('vehicleOrders', vehicleOrders)
           ..add('testDriveOrders', testDriveOrders)
-          ..add('reason', reason))
+          ..add('approved', approved)
+          ..add('reason', reason)
+          ..add('description', description))
         .toString();
   }
 }
@@ -69471,9 +69855,17 @@ class GOrderRejectionByDealerCreateInputBuilder
           GTestDriveOrderRelateToManyForCreateInputBuilder? testDriveOrders) =>
       _$this._testDriveOrders = testDriveOrders;
 
+  bool? _approved;
+  bool? get approved => _$this._approved;
+  set approved(bool? approved) => _$this._approved = approved;
+
   String? _reason;
   String? get reason => _$this._reason;
   set reason(String? reason) => _$this._reason = reason;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   GOrderRejectionByDealerCreateInputBuilder();
 
@@ -69484,7 +69876,9 @@ class GOrderRejectionByDealerCreateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _vehicleOrders = $v.vehicleOrders?.toBuilder();
       _testDriveOrders = $v.testDriveOrders?.toBuilder();
+      _approved = $v.approved;
       _reason = $v.reason;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -69514,7 +69908,9 @@ class GOrderRejectionByDealerCreateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               vehicleOrders: _vehicleOrders?.build(),
               testDriveOrders: _testDriveOrders?.build(),
-              reason: reason);
+              approved: approved,
+              reason: reason,
+              description: description);
     } catch (_) {
       late String _$failedField;
       try {

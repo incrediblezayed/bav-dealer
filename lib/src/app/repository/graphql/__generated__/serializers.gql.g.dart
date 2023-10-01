@@ -414,6 +414,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleOrdersData.serializer)
       ..add(GVehicleOrdersData_vehicleOrders.serializer)
       ..add(GVehicleOrdersData_vehicleOrders_dealer.serializer)
+      ..add(GVehicleOrdersData_vehicleOrders_dealer_dealer.serializer)
       ..add(GVehicleOrdersData_vehicleOrders_dealer_vehicleColor.serializer)
       ..add(GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images
           .serializer)
@@ -1154,6 +1155,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GVehicleOrderWhereUniqueInput)]),
           () => new ListBuilder<GVehicleOrderWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleOrderOrderByInput)]),
+          () => new ListBuilder<GVehicleOrderOrderByInput>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GVehicleOrderWhereInput)]),

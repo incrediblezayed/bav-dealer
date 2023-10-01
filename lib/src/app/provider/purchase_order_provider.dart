@@ -1,11 +1,16 @@
+import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.ast.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
+import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart';
+import 'package:dealerapp/src/app/repository/orders/orders_repository.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 class OrdersProvider extends ChangeNotifier {
   final InventoryRepository _inventoryRepository = InventoryRepository();
+  final OrderRepository _orderRepository = OrderRepository();
 
   bool _loading = true;
   bool get loading => _loading;
@@ -48,6 +53,119 @@ class OrdersProvider extends ChangeNotifier {
   set vehicles(List<GVehiclesData_vehicles> data) {
     _vehicles = data;
     notifyListeners();
+  }
+
+  List<GVehicleOrdersData_vehicleOrders> _pendingOrders = [];
+  List<GVehicleOrdersData_vehicleOrders> get pendingOrders => _pendingOrders;
+  set pendingOrders(List<GVehicleOrdersData_vehicleOrders> data) {
+    _pendingOrders = data;
+    notifyListeners();
+  }
+
+  List<GVehicleOrdersData_vehicleOrders> _acceptedOrders = [];
+  List<GVehicleOrdersData_vehicleOrders> get acceptedOrders => _acceptedOrders;
+  set acceptedOrders(List<GVehicleOrdersData_vehicleOrders> data) {
+    _acceptedOrders = data;
+    notifyListeners();
+  }
+
+  List<GVehicleOrdersData_vehicleOrders> _rejectedOrders = [];
+  List<GVehicleOrdersData_vehicleOrders> get rejectedOrders => _rejectedOrders;
+  set rejectedOrders(List<GVehicleOrdersData_vehicleOrders> data) {
+    _rejectedOrders = data;
+    notifyListeners();
+  }
+
+  List<GVehicleOrdersData_vehicleOrders> _deliveredOrders = [];
+  List<GVehicleOrdersData_vehicleOrders> get deliveredOrders =>
+      _deliveredOrders;
+  set deliveredOrders(List<GVehicleOrdersData_vehicleOrders> data) {
+    _deliveredOrders = data;
+    notifyListeners();
+  }
+
+  void init() async {
+    await getVehicles();
+    await getPendingOrders();
+    await getAcceptedOrders();
+    await getRejectedOrders();
+    await getDeliveredOrders();
+  }
+
+  Future<void> getPendingOrders() async {
+    try {
+      final getVehicleOrders =
+          await _orderRepository.getVehicleOrders('created');
+
+      if (getVehicleOrders != null) {
+        pendingOrders = getVehicleOrders;
+      } else {
+        AppRoutes.showErrorSnackbar(
+          message: 'Errow while fetching list of vehicles',
+        );
+      }
+    } catch (e) {
+      e.log();
+    } finally {
+      loading = false;
+    }
+  }
+
+  Future<void> getAcceptedOrders() async {
+    try {
+      final getVehicleOrders =
+          await _orderRepository.getVehicleOrders('accepted');
+
+      if (getVehicleOrders != null) {
+        pendingOrders = getVehicleOrders;
+      } else {
+        AppRoutes.showErrorSnackbar(
+          message: 'Errow while fetching list of vehicles',
+        );
+      }
+    } catch (e) {
+      e.log();
+    } finally {
+      loading = false;
+    }
+  }
+
+  Future<void> getRejectedOrders() async {
+    try {
+      final getVehicleOrders =
+          await _orderRepository.getVehicleOrders('rejected');
+
+      if (getVehicleOrders != null) {
+        pendingOrders = getVehicleOrders;
+      } else {
+        AppRoutes.showErrorSnackbar(
+          message: 'Errow while fetching list of vehicles',
+        );
+      }
+    } catch (e) {
+      e.log();
+    } finally {
+      loading = false;
+    }
+  }
+
+  Future<void> getDeliveredOrders() async {
+    try {
+      final getVehicleOrders =
+          await _orderRepository.getVehicleOrders('delivered');
+
+      if (getVehicleOrders != null) {
+        pendingOrders = getVehicleOrders;
+      } else {
+        AppRoutes.showErrorSnackbar(
+          message: 'Errow while fetching list of vehicles',
+        );
+      }
+    } catch (e) {
+      e.log();
+    } finally {
+      loading = false;
+    }
   }
 
   Future<void> getVehicles() async {

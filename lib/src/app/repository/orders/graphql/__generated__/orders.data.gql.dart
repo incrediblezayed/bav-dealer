@@ -88,6 +88,9 @@ abstract class GVehicleOrdersData_vehicleOrders_dealer
   String get G__typename;
   GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant? get vehicleVariant;
   GVehicleOrdersData_vehicleOrders_dealer_vehicleColor? get vehicleColor;
+  GVehicleOrdersData_vehicleOrders_dealer_dealer? get dealer;
+  String get id;
+  int? get dealer_prices;
   static Serializer<GVehicleOrdersData_vehicleOrders_dealer> get serializer =>
       _$gVehicleOrdersDataVehicleOrdersDealerSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -119,6 +122,7 @@ abstract class GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant
   String get G__typename;
   GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle? get vehicle;
   String? get name;
+  int? get price;
   static Serializer<GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant>
       get serializer =>
           _$gVehicleOrdersDataVehicleOrdersDealerVehicleVariantSerializer;
@@ -277,6 +281,36 @@ abstract class GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image
           );
 }
 
+abstract class GVehicleOrdersData_vehicleOrders_dealer_dealer
+    implements
+        Built<GVehicleOrdersData_vehicleOrders_dealer_dealer,
+            GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder> {
+  GVehicleOrdersData_vehicleOrders_dealer_dealer._();
+
+  factory GVehicleOrdersData_vehicleOrders_dealer_dealer(
+      [Function(GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder b)
+          updates]) = _$GVehicleOrdersData_vehicleOrders_dealer_dealer;
+
+  static void _initializeBuilder(
+          GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder b) =>
+      b..G__typename = 'Dealer';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  static Serializer<GVehicleOrdersData_vehicleOrders_dealer_dealer>
+      get serializer => _$gVehicleOrdersDataVehicleOrdersDealerDealerSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GVehicleOrdersData_vehicleOrders_dealer_dealer.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GVehicleOrdersData_vehicleOrders_dealer_dealer? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GVehicleOrdersData_vehicleOrders_dealer_dealer.serializer,
+        json,
+      );
+}
+
 abstract class GVehicleOrdersData_vehicleOrders_order
     implements
         Built<GVehicleOrdersData_vehicleOrders_order,
@@ -293,6 +327,8 @@ abstract class GVehicleOrdersData_vehicleOrders_order
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   GVehicleOrdersData_vehicleOrders_order_user? get user;
+  String get id;
+  _i2.GDateTime? get createdAt;
   static Serializer<GVehicleOrdersData_vehicleOrders_order> get serializer =>
       _$gVehicleOrdersDataVehicleOrdersOrderSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(

@@ -66,10 +66,10 @@ class _PurchaseOrdersState extends ConsumerState<TestOrders>
       body: TabBarView(
         controller: _tabController,
         children: const [
-          EmptyWidgt(title: 'Uh oh! You have no orders.'),
-          EmptyWidgt(title: 'Uh oh! You have no orders.'),
-          EmptyWidgt(title: 'Uh oh! You have no orders.'),
-          EmptyWidgt(title: 'Uh oh! You have no orders.'),
+          EmptyWidget(title: 'Uh oh! You have no orders.'),
+          EmptyWidget(title: 'Uh oh! You have no orders.'),
+          EmptyWidget(title: 'Uh oh! You have no orders.'),
+          EmptyWidget(title: 'Uh oh! You have no orders.'),
         ],
       ),
     );

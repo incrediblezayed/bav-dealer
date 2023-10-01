@@ -1,5 +1,5 @@
-query VehicleOrders($where: VehicleOrderWhereInput!) {
-  vehicleOrders(where: $where) {
+query VehicleOrders($orderBy: [VehicleOrderOrderByInput!]!, $where: VehicleOrderWhereInput!) {
+  vehicleOrders(orderBy: $orderBy, where: $where) {
     id
     price
     dealer {
@@ -8,6 +8,7 @@ query VehicleOrders($where: VehicleOrderWhereInput!) {
           name
         }
         name
+        price
       }
       vehicleColor {
         name
@@ -19,6 +20,11 @@ query VehicleOrders($where: VehicleOrderWhereInput!) {
           }
         }
       }
+      dealer {
+        id
+      }
+      id
+      dealer_prices
     }
     status
     order {
@@ -38,6 +44,8 @@ query VehicleOrders($where: VehicleOrderWhereInput!) {
           name
         }
       }
+      id
+      createdAt
     }
     createdAt
   }
@@ -87,3 +95,4 @@ query TestDriveOrders($where: TestDriveOrderWhereInput!) {
     createdAt
   }
 }
+

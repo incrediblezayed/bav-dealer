@@ -11,7 +11,7 @@ class ListOfVehicles extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final inventoryPro = ref.watch(inventoryProvider);
     return Container(
-      padding: const EdgeInsets.all(6),
+      // padding: const EdgeInsets.all(1),
       color: AppTheme.textFieldFill,
       child: ListView(
         shrinkWrap: true,

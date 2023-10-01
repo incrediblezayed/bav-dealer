@@ -2096,7 +2096,9 @@ type OrderCancellationRequest {
   vehicleOrdersCount(where: VehicleOrderWhereInput! = {}): Int
   testDriveOrders(where: TestDriveOrderWhereInput! = {}, orderBy: [TestDriveOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [TestDriveOrder!]
   testDriveOrdersCount(where: TestDriveOrderWhereInput! = {}): Int
+  approved: Boolean
   reason: String
+  description: String
 }
 
 input OrderCancellationRequestWhereUniqueInput {
@@ -2112,14 +2114,18 @@ input OrderCancellationRequestWhereInput {
   modifiedAt: DateTimeNullableFilter
   vehicleOrders: VehicleOrderManyRelationFilter
   testDriveOrders: TestDriveOrderManyRelationFilter
+  approved: BooleanFilter
   reason: StringFilter
+  description: StringFilter
 }
 
 input OrderCancellationRequestOrderByInput {
   id: OrderDirection
   createdAt: OrderDirection
   modifiedAt: OrderDirection
+  approved: OrderDirection
   reason: OrderDirection
+  description: OrderDirection
 }
 
 input OrderCancellationRequestUpdateInput {
@@ -2127,7 +2133,9 @@ input OrderCancellationRequestUpdateInput {
   modifiedAt: DateTime
   vehicleOrders: VehicleOrderRelateToManyForUpdateInput
   testDriveOrders: TestDriveOrderRelateToManyForUpdateInput
+  approved: Boolean
   reason: String
+  description: String
 }
 
 input OrderCancellationRequestUpdateArgs {
@@ -2140,7 +2148,9 @@ input OrderCancellationRequestCreateInput {
   modifiedAt: DateTime
   vehicleOrders: VehicleOrderRelateToManyForCreateInput
   testDriveOrders: TestDriveOrderRelateToManyForCreateInput
+  approved: Boolean
   reason: String
+  description: String
 }
 
 type OrderRejectionByDealer {
@@ -2151,7 +2161,9 @@ type OrderRejectionByDealer {
   vehicleOrdersCount(where: VehicleOrderWhereInput! = {}): Int
   testDriveOrders(where: TestDriveOrderWhereInput! = {}, orderBy: [TestDriveOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [TestDriveOrder!]
   testDriveOrdersCount(where: TestDriveOrderWhereInput! = {}): Int
+  approved: Boolean
   reason: String
+  description: String
 }
 
 input OrderRejectionByDealerWhereUniqueInput {
@@ -2167,14 +2179,18 @@ input OrderRejectionByDealerWhereInput {
   modifiedAt: DateTimeNullableFilter
   vehicleOrders: VehicleOrderManyRelationFilter
   testDriveOrders: TestDriveOrderManyRelationFilter
+  approved: BooleanFilter
   reason: StringFilter
+  description: StringFilter
 }
 
 input OrderRejectionByDealerOrderByInput {
   id: OrderDirection
   createdAt: OrderDirection
   modifiedAt: OrderDirection
+  approved: OrderDirection
   reason: OrderDirection
+  description: OrderDirection
 }
 
 input OrderRejectionByDealerUpdateInput {
@@ -2182,7 +2198,9 @@ input OrderRejectionByDealerUpdateInput {
   modifiedAt: DateTime
   vehicleOrders: VehicleOrderRelateToManyForUpdateInput
   testDriveOrders: TestDriveOrderRelateToManyForUpdateInput
+  approved: Boolean
   reason: String
+  description: String
 }
 
 input OrderRejectionByDealerUpdateArgs {
@@ -2195,7 +2213,9 @@ input OrderRejectionByDealerCreateInput {
   modifiedAt: DateTime
   vehicleOrders: VehicleOrderRelateToManyForCreateInput
   testDriveOrders: TestDriveOrderRelateToManyForCreateInput
+  approved: Boolean
   reason: String
+  description: String
 }
 
 type UserVehicleReview {

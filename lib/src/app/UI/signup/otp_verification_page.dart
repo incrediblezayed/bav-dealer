@@ -75,11 +75,11 @@ class _OTPVerificationPageState extends ConsumerState<OTPVerificationPage> {
                   padding: EdgeInsets.only(left: 30.w),
                   child: RichText(
                     text: TextSpan(
-                      text: 'Enter The OTP Shared On? ',
+                      text: 'Enter The OTP Shared On ? ',
                       style: theme.labelMedium,
                       children: [
                         TextSpan(
-                          text: ' 7878451245',
+                          text: authPro.phoneNumberController.text,
                           style: theme.labelMedium,
                         ),
                       ],
@@ -89,7 +89,13 @@ class _OTPVerificationPageState extends ConsumerState<OTPVerificationPage> {
                 SizedBox(
                   width: 6.w,
                 ),
-                SvgPicture.asset(AppImages.edit),
+                InkWell(
+                    onTap: () {
+                      authPro.signUpPageController.animateToPage(0,
+                          duration: Duration(milliseconds: 300),
+                          curve: Curves.easeInOut);
+                    },
+                    child: SvgPicture.asset(AppImages.edit)),
               ],
             ),
             SizedBox(
@@ -170,11 +176,11 @@ class _OTPVerificationPageState extends ConsumerState<OTPVerificationPage> {
               },
               text: 'Confirm',
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 20.h),
             Align(
               child: RichText(
                 text: TextSpan(
-                  text: "Didn't Get An OTP",
+                  text: "Didn't Get An OTP ?",
                   style: theme.labelMedium,
                   children: [
                     TextSpan(

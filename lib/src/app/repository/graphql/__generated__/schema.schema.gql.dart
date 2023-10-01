@@ -6142,7 +6142,9 @@ abstract class GOrderCancellationRequestWhereInput
   GDateTimeNullableFilter? get modifiedAt;
   GVehicleOrderManyRelationFilter? get vehicleOrders;
   GTestDriveOrderManyRelationFilter? get testDriveOrders;
+  GBooleanFilter? get approved;
   GStringFilter? get reason;
+  GStringFilter? get description;
   static Serializer<GOrderCancellationRequestWhereInput> get serializer =>
       _$gOrderCancellationRequestWhereInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -6170,7 +6172,9 @@ abstract class GOrderCancellationRequestOrderByInput
   GOrderDirection? get id;
   GOrderDirection? get createdAt;
   GOrderDirection? get modifiedAt;
+  GOrderDirection? get approved;
   GOrderDirection? get reason;
+  GOrderDirection? get description;
   static Serializer<GOrderCancellationRequestOrderByInput> get serializer =>
       _$gOrderCancellationRequestOrderByInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -6199,7 +6203,9 @@ abstract class GOrderCancellationRequestUpdateInput
   GDateTime? get modifiedAt;
   GVehicleOrderRelateToManyForUpdateInput? get vehicleOrders;
   GTestDriveOrderRelateToManyForUpdateInput? get testDriveOrders;
+  bool? get approved;
   String? get reason;
+  String? get description;
   static Serializer<GOrderCancellationRequestUpdateInput> get serializer =>
       _$gOrderCancellationRequestUpdateInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -6254,7 +6260,9 @@ abstract class GOrderCancellationRequestCreateInput
   GDateTime? get modifiedAt;
   GVehicleOrderRelateToManyForCreateInput? get vehicleOrders;
   GTestDriveOrderRelateToManyForCreateInput? get testDriveOrders;
+  bool? get approved;
   String? get reason;
+  String? get description;
   static Serializer<GOrderCancellationRequestCreateInput> get serializer =>
       _$gOrderCancellationRequestCreateInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -6312,7 +6320,9 @@ abstract class GOrderRejectionByDealerWhereInput
   GDateTimeNullableFilter? get modifiedAt;
   GVehicleOrderManyRelationFilter? get vehicleOrders;
   GTestDriveOrderManyRelationFilter? get testDriveOrders;
+  GBooleanFilter? get approved;
   GStringFilter? get reason;
+  GStringFilter? get description;
   static Serializer<GOrderRejectionByDealerWhereInput> get serializer =>
       _$gOrderRejectionByDealerWhereInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -6340,7 +6350,9 @@ abstract class GOrderRejectionByDealerOrderByInput
   GOrderDirection? get id;
   GOrderDirection? get createdAt;
   GOrderDirection? get modifiedAt;
+  GOrderDirection? get approved;
   GOrderDirection? get reason;
+  GOrderDirection? get description;
   static Serializer<GOrderRejectionByDealerOrderByInput> get serializer =>
       _$gOrderRejectionByDealerOrderByInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -6369,7 +6381,9 @@ abstract class GOrderRejectionByDealerUpdateInput
   GDateTime? get modifiedAt;
   GVehicleOrderRelateToManyForUpdateInput? get vehicleOrders;
   GTestDriveOrderRelateToManyForUpdateInput? get testDriveOrders;
+  bool? get approved;
   String? get reason;
+  String? get description;
   static Serializer<GOrderRejectionByDealerUpdateInput> get serializer =>
       _$gOrderRejectionByDealerUpdateInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -6424,7 +6438,9 @@ abstract class GOrderRejectionByDealerCreateInput
   GDateTime? get modifiedAt;
   GVehicleOrderRelateToManyForCreateInput? get vehicleOrders;
   GTestDriveOrderRelateToManyForCreateInput? get testDriveOrders;
+  bool? get approved;
   String? get reason;
+  String? get description;
   static Serializer<GOrderRejectionByDealerCreateInput> get serializer =>
       _$gOrderRejectionByDealerCreateInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(

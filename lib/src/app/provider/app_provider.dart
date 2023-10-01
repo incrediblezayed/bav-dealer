@@ -12,5 +12,5 @@ final inventoryProvider =
     ChangeNotifierProvider((ref) => InventoryProvider()..init());
 
 final purchaseOrderProvider =
-    ChangeNotifierProvider((ref) => OrdersProvider()..getVehicles());
+    ChangeNotifierProvider((ref) => OrdersProvider()..init());
 final homePageProvider = ChangeNotifierProvider((ref) => HomePageProvider(ref));

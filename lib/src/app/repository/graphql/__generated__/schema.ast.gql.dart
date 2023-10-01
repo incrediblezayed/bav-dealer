@@ -14847,7 +14847,25 @@ const OrderCancellationRequest = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'approved'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'reason'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
       directives: [],
       args: [],
       type: _i1.NamedTypeNode(
@@ -14959,7 +14977,25 @@ const OrderCancellationRequestWhereInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'approved'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'BooleanFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'reason'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'StringFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'StringFilter'),
@@ -15001,7 +15037,25 @@ const OrderCancellationRequestOrderByInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'approved'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'reason'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'OrderDirection'),
@@ -15052,7 +15106,25 @@ const OrderCancellationRequestUpdateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'approved'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'reason'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
@@ -15127,7 +15199,25 @@ const OrderCancellationRequestCreateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'approved'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'reason'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
@@ -15312,7 +15402,25 @@ const OrderRejectionByDealer = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'approved'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'reason'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
       directives: [],
       args: [],
       type: _i1.NamedTypeNode(
@@ -15424,7 +15532,25 @@ const OrderRejectionByDealerWhereInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'approved'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'BooleanFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'reason'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'StringFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'StringFilter'),
@@ -15466,7 +15592,25 @@ const OrderRejectionByDealerOrderByInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'approved'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'reason'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'OrderDirection'),
@@ -15517,7 +15661,25 @@ const OrderRejectionByDealerUpdateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'approved'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'reason'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
@@ -15592,7 +15754,25 @@ const OrderRejectionByDealerCreateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'approved'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'reason'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),

@@ -2,6 +2,8 @@ import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/graphql_client.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.req.gql.dart';
+import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart';
+import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.req.gql.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/get_it.dart';
 import 'package:ferry/ferry.dart';
@@ -31,12 +33,15 @@ class InventoryRepository {
     return null;
   }
 
+ 
+
   ///Creating Stock Request Function
   Future<bool> createStockRequest(
     String colorId,
     String variantId,
     int stock,
     int price,
+    String type,
   ) async {
     try {
       final dealerId = cacheProvider.getDealerId();
@@ -48,7 +53,8 @@ class InventoryRepository {
                 ..data.vehicleVariant.connect.id = variantId
                 ..data.stock = stock
                 ..data.dealer.connect.id = dealerId
-                ..data.dealer_prices = price,
+                ..data.dealer_prices = price
+                ..data.type = type,
             ),
           )
           .first;

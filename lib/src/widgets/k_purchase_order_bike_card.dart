@@ -1,20 +1,27 @@
 import 'package:dealerapp/src/app/model/bike_order_model.dart';
+import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
+import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class KPurchaseOrderBikeCard extends StatefulWidget {
+class KPurchaseOrderBikeCard extends ConsumerStatefulWidget {
   ///
-  const KPurchaseOrderBikeCard({
-    required this.bikeOrderModel,
+  KPurchaseOrderBikeCard({
+    required this.vehiclePurchaseOrders,
     super.key,
   });
-
-  final BikeOrderModel bikeOrderModel;
+  final GVehicleOrdersData_vehicleOrders vehiclePurchaseOrders;
 
   @override
-  State<KPurchaseOrderBikeCard> createState() => _KPurchaseOrderBikeCardState();
+  ConsumerState<KPurchaseOrderBikeCard> createState() =>
+      _KPurchaseOrderBikeCardState();
 }
 
-class _KPurchaseOrderBikeCardState extends State<KPurchaseOrderBikeCard> {
+class _KPurchaseOrderBikeCardState
+    extends ConsumerState<KPurchaseOrderBikeCard> {
+  GVehicleOrdersData_vehicleOrders get vehiclePurchaseOrders =>
+      widget.vehiclePurchaseOrders;
+
   Status currentStatus = Status.pending;
   String rejectionReason = '';
 
@@ -30,431 +37,439 @@ class _KPurchaseOrderBikeCardState extends State<KPurchaseOrderBikeCard> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
-    return Scaffold(
-      backgroundColor: AppTheme.textFieldFill,
-      body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
-        child: Container(
-          height: (currentStatus == Status.pending)
-              ? MediaQuery.of(context).size.height / 1.2.h
-              : MediaQuery.of(context).size.height / 1.4.h,
-          width: double.maxFinite,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(6.r),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: 10.h,
-                  horizontal: 10.w,
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
+      child: Container(
+        height: (currentStatus == Status.pending)
+            ? MediaQuery.of(context).size.height / 1.45.h
+            : (currentStatus == Status.accepted)
+                ? MediaQuery.of(context).size.height / 1.75.h
+                : MediaQuery.of(context).size.height / 1.68.h,
+        width: double.maxFinite,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(6.r),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: 10.h,
+                horizontal: 10.w,
+              ),
+              child: Container(
+                decoration: BoxDecoration(
+                  // color: const Color(0xffe0f4f2),
+                  color: AppTheme.primaryColor.withOpacity(.1),
+                  borderRadius: BorderRadius.circular(10.r),
                 ),
-                child: Container(
-                  decoration: BoxDecoration(
-                    // color: const Color(0xffe0f4f2),
-                    color: AppTheme.primaryColor.withOpacity(.1),
-                    borderRadius: BorderRadius.circular(10.r),
+                height: 80.h,
+                width: double.maxFinite,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 16.h,
                   ),
-                  height: 80.h,
-                  width: double.maxFinite,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 16.w,
-                      vertical: 16.h,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.vehiclePurchaseOrders.id,
+
+                        // vehiclePurchaseOrders.dealer,
+                        style: theme.labelLarge!.copyWith(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w700,
+                          color: AppTheme.black,
+                        ),
+                      ),
+                      SizedBox(height: 6.h),
+                      Text(widget.vehiclePurchaseOrders.createdAt.toString()),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 6.h),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20.w,
+              ),
+              child: Text(
+                'EV Model Details',
+                style: theme.headlineMedium,
+              ),
+            ),
+            SizedBox(height: 6.h),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20.w,
+                vertical: 10.h,
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    height: 100.h,
+                    width: 100.w,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(6.r),
                     ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(6.r),
+                      child: KCachedNWImage(widget.vehiclePurchaseOrders.dealer!
+                              .vehicleColor!.images?.firstOrNull?.image?.id ??
+                          ''),
+                    ),
+                  ),
+                  SizedBox(width: 20.w),
+                  Expanded(
                     child: Column(
+                      mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          widget.bikeOrderModel.orderID,
-                          style: theme.labelLarge!.copyWith(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w700,
-                            color: AppTheme.black,
-                          ),
+                          widget.vehiclePurchaseOrders.dealer!.vehicleVariant!
+                              .name!,
+                          style: theme.headlineMedium,
                         ),
-                        SizedBox(height: 6.h),
-                        const Text('08:56 PM   01/02/23'),
+                        SizedBox(height: 10.h),
+                        Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Model',
+                                  style: theme.labelMedium!.copyWith(
+                                    color: Colors.black.withOpacity(.5),
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(height: 6.h),
+                                Text(
+                                  'Color',
+                                  style: theme.labelMedium!.copyWith(
+                                    color: Colors.black.withOpacity(.5),
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(height: 6.h),
+                                Text(
+                                  'Price',
+                                  style: theme.labelMedium!.copyWith(
+                                    color: Colors.black.withOpacity(.5),
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(width: 20.w),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  widget.vehiclePurchaseOrders.dealer!
+                                      .vehicleVariant!.name!,
+                                  style: theme.labelMedium!.copyWith(
+                                    color: Colors.black.withOpacity(.5),
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(height: 6.h),
+                                Text(
+                                  // widget.bikeOrderModel.color,
+                                  widget.vehiclePurchaseOrders.dealer
+                                          ?.vehicleColor?.name ??
+                                      "",
+                                  style: theme.labelMedium!.copyWith(
+                                    color: Colors.black.withOpacity(.5),
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(height: 6.h),
+                                Text(
+                                  widget.vehiclePurchaseOrders.dealer!
+                                      .vehicleVariant!.price
+                                      .toString(),
+                                  style: theme.labelLarge!.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                    color: AppTheme.primaryColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
-                ),
+                ],
               ),
-              SizedBox(height: 6.h),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20.w,
-                ),
-                child: Text(
-                  'EV Model Details',
-                  style: theme.headlineMedium,
-                ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20.w,
+                vertical: 10.h,
               ),
-              SizedBox(height: 6.h),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20.w,
-                  vertical: 10.h,
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 100.h,
-                      width: 100.w,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6.r),
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(6.r),
-                        child: Image.asset(
-                          widget.bikeOrderModel.image,
-                          fit: BoxFit.cover,
+              child: Text(
+                'Customer Info',
+                style: theme.headlineMedium,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Name',
+                        style: theme.labelMedium!.copyWith(
+                          color: Colors.black.withOpacity(.5),
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
+                      SizedBox(height: 6.h),
+                      Text(
+                        'Email Id',
+                        style: theme.labelMedium!.copyWith(
+                          color: Colors.black.withOpacity(.5),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(height: 6.h),
+                      Text(
+                        'Contact Number',
+                        style: theme.labelMedium!.copyWith(
+                          color: Colors.black.withOpacity(.5),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(height: 6.h),
+                      Text(
+                        'Alternative Number',
+                        style: theme.labelMedium!.copyWith(
+                          color: Colors.black.withOpacity(.5),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(height: 6.h),
+                      Text(
+                        'Address',
+                        style: theme.labelMedium!.copyWith(
+                          color: Colors.black.withOpacity(.5),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(width: 20.w),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.vehiclePurchaseOrders.order!.user!.name!,
+                        style: theme.labelMedium!.copyWith(
+                          color: Colors.black.withOpacity(.5),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(height: 6.h),
+                      Text(
+                        widget.vehiclePurchaseOrders.order!.user!.email!,
+                        style: theme.labelMedium!.copyWith(
+                          color: Colors.black.withOpacity(.5),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(height: 6.h),
+                      Text(
+                        widget.vehiclePurchaseOrders.order!.user!.phoneNumber!,
+                        style: theme.labelMedium!.copyWith(
+                          color: Colors.black.withOpacity(.5),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(height: 6.h),
+                      Text(
+                        widget.vehiclePurchaseOrders.order!.user!.phoneNumber!,
+                        style: theme.labelMedium!.copyWith(
+                          color: Colors.black.withOpacity(.5),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(height: 6.h),
+                      Text(
+                        widget.vehiclePurchaseOrders.order!.user!.addresses!
+                            .first.address!,
+                        style: theme.labelMedium!.copyWith(
+                          color: Colors.black.withOpacity(.5),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20.h,
+            ),
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  if (currentStatus == Status.pending)
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.w),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              showRejectionDialog();
+                            },
+                            child: Container(
+                              height: 50.h,
+                              width: 145.w,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.red),
+                                borderRadius: BorderRadius.circular(30.r),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Reject',
+                                  style: theme.headlineSmall!
+                                      .copyWith(color: Colors.red),
+                                ),
+                              ),
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              updateStatus(Status.accepted);
+                            },
+                            child: Container(
+                              height: 50.h,
+                              width: 145.w,
+                              decoration: BoxDecoration(
+                                color: AppTheme.primaryColor,
+                                borderRadius: BorderRadius.circular(30.r),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Accept',
+                                  style: theme.headlineSmall!
+                                      .copyWith(color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    SizedBox(width: 20.w),
-                    Expanded(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                  if (currentStatus == Status.accepted)
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.w),
+                      child: Row(
                         children: [
                           Text(
-                            widget.bikeOrderModel.vehicleName,
-                            style: theme.headlineMedium,
+                            'Status',
+                            style: theme.labelMedium!.copyWith(
+                              color: Colors.black.withOpacity(.5),
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
-                          SizedBox(height: 10.h),
-                          Row(
+                          SizedBox(width: 100.w),
+                          Text(
+                            'Accepted',
+                            style: theme.labelMedium!.copyWith(
+                              color: AppTheme.primaryColor,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  if (currentStatus == Status.rejected)
+                    Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 20.w),
+                          child: Row(
                             children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Model',
-                                    style: theme.labelMedium!.copyWith(
-                                      color: Colors.black.withOpacity(.5),
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  SizedBox(height: 6.h),
-                                  Text(
-                                    'Color',
-                                    style: theme.labelMedium!.copyWith(
-                                      color: Colors.black.withOpacity(.5),
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  SizedBox(height: 6.h),
-                                  Text(
-                                    'Price',
-                                    style: theme.labelMedium!.copyWith(
-                                      color: Colors.black.withOpacity(.5),
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ],
+                              Text(
+                                'Status',
+                                style: theme.labelMedium!.copyWith(
+                                  color: Colors.black.withOpacity(.5),
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
-                              SizedBox(width: 20.w),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    widget.bikeOrderModel.model,
-                                    style: theme.labelMedium!.copyWith(
-                                      color: Colors.black.withOpacity(.5),
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  SizedBox(height: 6.h),
-                                  Text(
-                                    widget.bikeOrderModel.color,
-                                    style: theme.labelMedium!.copyWith(
-                                      color: Colors.black.withOpacity(.5),
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  SizedBox(height: 6.h),
-                                  Text(
-                                    widget.bikeOrderModel.price,
-                                    style: theme.labelLarge!.copyWith(
-                                      fontWeight: FontWeight.w600,
-                                      color: AppTheme.primaryColor,
-                                    ),
-                                  ),
-                                ],
+                              SizedBox(width: 100.w),
+                              Text(
+                                'Rejected',
+                                style: theme.labelMedium!.copyWith(
+                                  color: AppTheme.red,
+                                  fontWeight: FontWeight.w700,
+                                ),
                               ),
                             ],
                           ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20.w,
-                  vertical: 10.h,
-                ),
-                child: Text(
-                  'Customer Info',
-                  style: theme.headlineMedium,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: Row(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Name',
-                          style: theme.labelMedium!.copyWith(
-                            color: Colors.black.withOpacity(.5),
-                            fontWeight: FontWeight.w500,
-                          ),
                         ),
-                        SizedBox(height: 6.h),
-                        Text(
-                          'Email Id',
-                          style: theme.labelMedium!.copyWith(
-                            color: Colors.black.withOpacity(.5),
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(height: 6.h),
-                        Text(
-                          'Contact Number',
-                          style: theme.labelMedium!.copyWith(
-                            color: Colors.black.withOpacity(.5),
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(height: 6.h),
-                        Text(
-                          'Alternative Number',
-                          style: theme.labelMedium!.copyWith(
-                            color: Colors.black.withOpacity(.5),
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(height: 6.h),
-                        Text(
-                          'Address',
-                          style: theme.labelMedium!.copyWith(
-                            color: Colors.black.withOpacity(.5),
-                            fontWeight: FontWeight.w500,
+                        const SizedBox(height: 10),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 20.w),
+                          child: Row(
+                            children: [
+                              Text(
+                                'Reason',
+                                style: theme.labelMedium!.copyWith(
+                                  color: Colors.black.withOpacity(.5),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SizedBox(width: 93.w),
+                              Text(
+                                rejectionReason,
+                                style: theme.labelMedium!.copyWith(
+                                  color: Colors.black.withOpacity(.5),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(width: 20.w),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.bikeOrderModel.customerName,
-                          style: theme.labelMedium!.copyWith(
-                            color: Colors.black.withOpacity(.5),
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(height: 6.h),
-                        Text(
-                          widget.bikeOrderModel.customerEmail,
-                          style: theme.labelMedium!.copyWith(
-                            color: Colors.black.withOpacity(.5),
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(height: 6.h),
-                        Text(
-                          widget.bikeOrderModel.customerContact,
-                          style: theme.labelMedium!.copyWith(
-                            color: Colors.black.withOpacity(.5),
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(height: 6.h),
-                        Text(
-                          widget.bikeOrderModel.customerAlternateContact,
-                          style: theme.labelMedium!.copyWith(
-                            color: Colors.black.withOpacity(.5),
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(height: 6.h),
-                        Text(
-                          widget.bikeOrderModel.customerAddress,
-                          style: theme.labelMedium!.copyWith(
-                            color: Colors.black.withOpacity(.5),
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                ],
               ),
-              SizedBox(
-                height: 20.h,
-              ),
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            if (currentStatus == Status.pending)
+              const Center(child: Text('OR')),
+            if (currentStatus == Status.accepted) const SizedBox.shrink(),
+            if (currentStatus == Status.rejected) const SizedBox.shrink(),
+            SizedBox(
+              height: 5.h,
+            ),
+            if (currentStatus == Status.pending)
               Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    if (currentStatus == Status.pending)
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20.w),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                showRejectionDialog();
-                              },
-                              child: Container(
-                                height: 50.h,
-                                width: 145.w,
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.red),
-                                  borderRadius: BorderRadius.circular(30.r),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'Reject',
-                                    style: theme.headlineSmall!
-                                        .copyWith(color: Colors.red),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                updateStatus(Status.accepted);
-                              },
-                              child: Container(
-                                height: 50.h,
-                                width: 145.w,
-                                decoration: BoxDecoration(
-                                  color: AppTheme.primaryColor,
-                                  borderRadius: BorderRadius.circular(30.r),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'Accept',
-                                    style: theme.headlineSmall!
-                                        .copyWith(color: Colors.white),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    if (currentStatus == Status.accepted)
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20.w),
-                        child: Row(
-                          children: [
-                            Text(
-                              'Status',
-                              style: theme.labelMedium!.copyWith(
-                                color: Colors.black.withOpacity(.5),
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            SizedBox(width: 100.w),
-                            Text(
-                              'Accepted',
-                              style: theme.labelMedium!.copyWith(
-                                color: AppTheme.primaryColor,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    if (currentStatus == Status.rejected)
-                      Column(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20.w),
-                            child: Row(
-                              children: [
-                                Text(
-                                  'Status',
-                                  style: theme.labelMedium!.copyWith(
-                                    color: Colors.black.withOpacity(.5),
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                SizedBox(width: 100.w),
-                                Text(
-                                  'Rejected',
-                                  style: theme.labelMedium!.copyWith(
-                                    color: AppTheme.red,
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20.w),
-                            child: Row(
-                              children: [
-                                Text(
-                                  'Reason',
-                                  style: theme.labelMedium!.copyWith(
-                                    color: Colors.black.withOpacity(.5),
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                SizedBox(width: 93.w),
-                                Text(
-                                  rejectionReason,
-                                  style: theme.labelMedium!.copyWith(
-                                    color: Colors.black.withOpacity(.5),
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 16.h,
-              ),
-              if (currentStatus == Status.pending)
-                const Center(child: Text('OR')),
-              if (currentStatus == Status.accepted) const SizedBox.shrink(),
-              if (currentStatus == Status.rejected) const SizedBox.shrink(),
-              SizedBox(
-                height: 16.h,
-              ),
-              if (currentStatus == Status.pending)
-                Center(
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Ready To Pick',
-                      style: theme.headlineSmall!
-                          .copyWith(color: AppTheme.primaryColor),
-                    ),
+                child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Ready To Pick',
+                    style: theme.headlineSmall!
+                        .copyWith(color: AppTheme.primaryColor),
                   ),
                 ),
-              if (currentStatus == Status.accepted) const SizedBox.shrink(),
-              if (currentStatus == Status.rejected) const SizedBox.shrink(),
-            ],
-          ),
+              ),
+            if (currentStatus == Status.accepted) const SizedBox.shrink(),
+            if (currentStatus == Status.rejected) const SizedBox.shrink(),
+          ],
         ),
       ),
     );
@@ -507,6 +522,7 @@ class _KPurchaseOrderBikeCardState extends State<KPurchaseOrderBikeCard> {
                   ),
                   const SizedBox(height: 20),
                   ListView.builder(
+                    
                     shrinkWrap: true,
                     physics: const BouncingScrollPhysics(),
                     itemCount: reasons.length,

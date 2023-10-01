@@ -41,7 +41,7 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
     final inventoryPro = ref.watch(inventoryProvider);
     final theme = Theme.of(context).textTheme;
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
+      padding: EdgeInsets.symmetric(vertical: 6.h, horizontal: 6.w),
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: Colors.white,
@@ -266,6 +266,7 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                     variants.id,
                     selectedQuantity,
                     1233,
+                    'add',
                   );
                 },
                 text: 'Add',

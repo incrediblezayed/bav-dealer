@@ -1,7 +1,9 @@
-import 'package:dealerapp/src/app/model/bike_order_model.dart';
+import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/accepted_orders_page.dart';
+import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/delivered_orders_page.dart';
+import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/pending_orders_page.dart';
+import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/rejected_orders_page.dart';
+import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
-import 'package:dealerapp/src/widgets/empty_widget.dart';
-import 'package:dealerapp/src/widgets/k_purchase_order_bike_card.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -33,6 +35,7 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
+    final purchaseOrderPro = ref.watch(purchaseOrderProvider);
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -78,72 +81,10 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
       body: TabBarView(
         controller: _tabController,
         children: [
-          KPurchaseOrderBikeCard(
-            bikeOrderModel: BikeOrderModel(
-              currentStatus: Status.accepted,
-              orderID: 'orderID',
-              dateTime: DateTime(2023, 08, 14),
-              vehicleName: 'vehicleName',
-              image: AppImages.bike,
-              model: 'model',
-              color: 'color',
-              price: 'price',
-              customerName: 'customerName',
-              customerEmail: 'customerEmail',
-              customerContact: 'customerContact',
-              customerAlternateContact: 'customerAlternateContact',
-              customerAddress: 'customerAddress',
-            ),
-          ),
-          // EmptyWidgt(title: 'Uh oh! You have no orders.'),
-
-          /* if (currentStatus == Status.accepted)
-            KOrderBikeCard(
-              bikeOrderModel: BikeOrderModel(
-                currentStatus: Status.accepted,
-                orderID: 'orderID',
-                dateTime: DateTime(2023, 08, 14),
-                vehicleName: 'vehicleName',
-                image: AppImages.bike,
-                model: 'model',
-                color: 'color',
-                price: 'price',
-                customerName: 'customerName',
-                customerEmail: 'customerEmail',
-                customerContact: 'customerContact',
-                customerAlternateContact: 'customerAlternateContact',
-                customerAddress: 'customerAddress',
-              ),
-            ), */
-
-          /* if (currentStatus == Status.rejected)
-            KOrderBikeCard(
-              bikeOrderModel: BikeOrderModel(
-                currentStatus: Status.accepted,
-                orderID: 'orderID',
-                dateTime: DateTime(2023, 08, 14),
-                vehicleName: 'vehicleName',
-                image: AppImages.bike,
-                model: 'model',
-                color: 'color',
-                price: 'price',
-                customerName: 'customerName',
-                customerEmail: 'customerEmail',
-                customerContact: 'customerContact',
-                customerAlternateContact: 'customerAlternateContact',
-                customerAddress: 'customerAddress',
-              ),
-            ), */
-          const EmptyWidgt(
-            title: 'Uh oh! You have no orders.',
-          ),
-          const EmptyWidgt(
-            title: 'Uh oh! You have no orders.',
-          ),
-
-          const EmptyWidgt(
-            title: 'Uh oh! You have no orders.',
-          ), // EmptyWidgt(title: 'Uh oh! You have no orders.'),
+          PendingOrdersPage(),
+          AcceptedOrdersPage(),
+          RejectedOrdersPage(),
+          DeliveredOrdersPage(),
         ],
       ),
     );

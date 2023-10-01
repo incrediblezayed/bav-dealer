@@ -23,6 +23,10 @@ class _$GVehicleOrdersVarsSerializer
       Serializers serializers, GVehicleOrdersVars object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
+      'orderBy',
+      serializers.serialize(object.orderBy,
+          specifiedType: const FullType(BuiltList,
+              const [const FullType(_i1.GVehicleOrderOrderByInput)])),
       'where',
       serializers.serialize(object.where,
           specifiedType: const FullType(_i1.GVehicleOrderWhereInput)),
@@ -43,6 +47,12 @@ class _$GVehicleOrdersVarsSerializer
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
+        case 'orderBy':
+          result.orderBy.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(_i1.GVehicleOrderOrderByInput)
+              ]))! as BuiltList<Object?>);
+          break;
         case 'where':
           result.where.replace(serializers.deserialize(value,
                   specifiedType: const FullType(_i1.GVehicleOrderWhereInput))!
@@ -104,13 +114,18 @@ class _$GTestDriveOrdersVarsSerializer
 
 class _$GVehicleOrdersVars extends GVehicleOrdersVars {
   @override
+  final BuiltList<_i1.GVehicleOrderOrderByInput> orderBy;
+  @override
   final _i1.GVehicleOrderWhereInput where;
 
   factory _$GVehicleOrdersVars(
           [void Function(GVehicleOrdersVarsBuilder)? updates]) =>
       (new GVehicleOrdersVarsBuilder()..update(updates))._build();
 
-  _$GVehicleOrdersVars._({required this.where}) : super._() {
+  _$GVehicleOrdersVars._({required this.orderBy, required this.where})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        orderBy, r'GVehicleOrdersVars', 'orderBy');
     BuiltValueNullFieldError.checkNotNull(
         where, r'GVehicleOrdersVars', 'where');
   }
@@ -127,12 +142,15 @@ class _$GVehicleOrdersVars extends GVehicleOrdersVars {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GVehicleOrdersVars && where == other.where;
+    return other is GVehicleOrdersVars &&
+        orderBy == other.orderBy &&
+        where == other.where;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, orderBy.hashCode);
     _$hash = $jc(_$hash, where.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -141,6 +159,7 @@ class _$GVehicleOrdersVars extends GVehicleOrdersVars {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GVehicleOrdersVars')
+          ..add('orderBy', orderBy)
           ..add('where', where))
         .toString();
   }
@@ -149,6 +168,14 @@ class _$GVehicleOrdersVars extends GVehicleOrdersVars {
 class GVehicleOrdersVarsBuilder
     implements Builder<GVehicleOrdersVars, GVehicleOrdersVarsBuilder> {
   _$GVehicleOrdersVars? _$v;
+
+  ListBuilder<_i1.GVehicleOrderOrderByInput>? _orderBy;
+  ListBuilder<_i1.GVehicleOrderOrderByInput> get orderBy =>
+      _$this._orderBy ??= new ListBuilder<_i1.GVehicleOrderOrderByInput>();
+
+  get data => null;
+  set orderBy(ListBuilder<_i1.GVehicleOrderOrderByInput>? orderBy) =>
+      _$this._orderBy = orderBy;
 
   _i1.GVehicleOrderWhereInputBuilder? _where;
   _i1.GVehicleOrderWhereInputBuilder get where =>
@@ -160,6 +187,7 @@ class GVehicleOrdersVarsBuilder
   GVehicleOrdersVarsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _orderBy = $v.orderBy.toBuilder();
       _where = $v.where.toBuilder();
       _$v = null;
     }
@@ -183,10 +211,14 @@ class GVehicleOrdersVarsBuilder
   _$GVehicleOrdersVars _build() {
     _$GVehicleOrdersVars _$result;
     try {
-      _$result = _$v ?? new _$GVehicleOrdersVars._(where: where.build());
+      _$result = _$v ??
+          new _$GVehicleOrdersVars._(
+              orderBy: orderBy.build(), where: where.build());
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'orderBy';
+        orderBy.build();
         _$failedField = 'where';
         where.build();
       } catch (e) {

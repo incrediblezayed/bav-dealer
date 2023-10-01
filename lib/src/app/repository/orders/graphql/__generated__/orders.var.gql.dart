@@ -2,6 +2,7 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema.gql.dart'
@@ -18,6 +19,7 @@ abstract class GVehicleOrdersVars
   factory GVehicleOrdersVars([Function(GVehicleOrdersVarsBuilder b) updates]) =
       _$GVehicleOrdersVars;
 
+  BuiltList<_i1.GVehicleOrderOrderByInput> get orderBy;
   _i1.GVehicleOrderWhereInput get where;
   static Serializer<GVehicleOrdersVars> get serializer =>
       _$gVehicleOrdersVarsSerializer;

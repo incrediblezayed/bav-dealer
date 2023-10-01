@@ -168,7 +168,7 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
-  /// Get CurrentUserOtp for loggedIn user
+  /// Get CurrentUserOtp for loggedIn user 
   Future<void> getCurrentUserOtp({required bool isEmail}) async {
     try {
       String? otp;

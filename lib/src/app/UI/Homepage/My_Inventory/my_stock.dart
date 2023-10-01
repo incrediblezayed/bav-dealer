@@ -12,7 +12,7 @@ class MyStockPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final inventoryPro = ref.watch(inventoryProvider);
     return inventoryPro.vehicleDealers.isEmpty
-        ? EmptyWidgt(title: 'Uh oh! You have no orders.')
+        ? EmptyWidget(title: 'Uh oh! You have no orders.')
         : Container(
             padding: const EdgeInsets.all(6),
             color: AppTheme.textFieldFill,

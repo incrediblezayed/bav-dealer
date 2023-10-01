@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:dealerapp/src/utils/app_images.dart';
 
-class EmptyWidgt extends StatelessWidget {
-  const EmptyWidgt({required this.title, super.key, this.subTitle});
+class EmptyWidget extends StatelessWidget {
+  const EmptyWidget({required this.title, super.key, this.subTitle});
   final String title;
   final String? subTitle;
   static const String routeName = 'EmptyWidgt';

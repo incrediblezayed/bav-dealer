@@ -60,7 +60,7 @@ class _MyInventoryState extends ConsumerState<MyInventory>
         children: const [
           ListOfVehicles(),
           MyStockPage(),
-          EmptyWidgt(title: 'Uh oh! You have no orders.'),
+          EmptyWidget(title: 'Uh oh! You have no orders.'),
         ],
       ),
     );

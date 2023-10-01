@@ -56,6 +56,7 @@ class InventoryProvider extends ChangeNotifier {
     String variantId,
     int stock,
     int price,
+    String type,
   ) async {
     try {
       final result = await _inventoryRepository.createStockRequest(
@@ -63,6 +64,7 @@ class InventoryProvider extends ChangeNotifier {
         variantId,
         stock,
         price,
+        type
       );
 
       if (result) {
