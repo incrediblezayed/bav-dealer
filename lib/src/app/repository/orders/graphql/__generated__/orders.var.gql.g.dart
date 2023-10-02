@@ -88,6 +88,10 @@ class _$GTestDriveOrdersVarsSerializer
       'where',
       serializers.serialize(object.where,
           specifiedType: const FullType(_i1.GTestDriveOrderWhereInput)),
+      'orderBy',
+      serializers.serialize(object.orderBy,
+          specifiedType: const FullType(BuiltList,
+              const [const FullType(_i1.GTestDriveOrderOrderByInput)])),
     ];
 
     return result;
@@ -109,6 +113,12 @@ class _$GTestDriveOrdersVarsSerializer
           result.where.replace(serializers.deserialize(value,
                   specifiedType: const FullType(_i1.GTestDriveOrderWhereInput))!
               as _i1.GTestDriveOrderWhereInput);
+          break;
+        case 'orderBy':
+          result.orderBy.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(_i1.GTestDriveOrderOrderByInput)
+              ]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -343,14 +353,19 @@ class GVehicleOrdersVarsBuilder
 class _$GTestDriveOrdersVars extends GTestDriveOrdersVars {
   @override
   final _i1.GTestDriveOrderWhereInput where;
+  @override
+  final BuiltList<_i1.GTestDriveOrderOrderByInput> orderBy;
 
   factory _$GTestDriveOrdersVars(
           [void Function(GTestDriveOrdersVarsBuilder)? updates]) =>
       (new GTestDriveOrdersVarsBuilder()..update(updates))._build();
 
-  _$GTestDriveOrdersVars._({required this.where}) : super._() {
+  _$GTestDriveOrdersVars._({required this.where, required this.orderBy})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(
         where, r'GTestDriveOrdersVars', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        orderBy, r'GTestDriveOrdersVars', 'orderBy');
   }
 
   @override
@@ -365,13 +380,16 @@ class _$GTestDriveOrdersVars extends GTestDriveOrdersVars {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GTestDriveOrdersVars && where == other.where;
+    return other is GTestDriveOrdersVars &&
+        where == other.where &&
+        orderBy == other.orderBy;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, orderBy.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -379,7 +397,8 @@ class _$GTestDriveOrdersVars extends GTestDriveOrdersVars {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GTestDriveOrdersVars')
-          ..add('where', where))
+          ..add('where', where)
+          ..add('orderBy', orderBy))
         .toString();
   }
 }
@@ -394,12 +413,19 @@ class GTestDriveOrdersVarsBuilder
   set where(_i1.GTestDriveOrderWhereInputBuilder? where) =>
       _$this._where = where;
 
+  ListBuilder<_i1.GTestDriveOrderOrderByInput>? _orderBy;
+  ListBuilder<_i1.GTestDriveOrderOrderByInput> get orderBy =>
+      _$this._orderBy ??= new ListBuilder<_i1.GTestDriveOrderOrderByInput>();
+  set orderBy(ListBuilder<_i1.GTestDriveOrderOrderByInput>? orderBy) =>
+      _$this._orderBy = orderBy;
+
   GTestDriveOrdersVarsBuilder();
 
   GTestDriveOrdersVarsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _where = $v.where.toBuilder();
+      _orderBy = $v.orderBy.toBuilder();
       _$v = null;
     }
     return this;
@@ -422,12 +448,16 @@ class GTestDriveOrdersVarsBuilder
   _$GTestDriveOrdersVars _build() {
     _$GTestDriveOrdersVars _$result;
     try {
-      _$result = _$v ?? new _$GTestDriveOrdersVars._(where: where.build());
+      _$result = _$v ??
+          new _$GTestDriveOrdersVars._(
+              where: where.build(), orderBy: orderBy.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'where';
         where.build();
+        _$failedField = 'orderBy';
+        orderBy.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GTestDriveOrdersVars', _$failedField, e.toString());

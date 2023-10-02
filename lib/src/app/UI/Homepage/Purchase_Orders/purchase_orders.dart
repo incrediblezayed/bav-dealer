@@ -1,5 +1,6 @@
-import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/accepted_orders_page.dart';
+import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/orders_list_page.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:dealerapp/src/app/provider/order_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:iconsax/iconsax.dart';
@@ -32,7 +33,7 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
-    final purchaseOrderPro = ref.watch(purchaseOrderProvider);
+    final orderPro = ref.watch(orderProvider(OrderFamily.purchaseOrders));
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -78,10 +79,10 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
       body: TabBarView(
         controller: _tabController,
         children: [
-          purchaseOrderPro.pendingOrders,
-          purchaseOrderPro.acceptedOrders,
-          purchaseOrderPro.rejectedOrders,
-          purchaseOrderPro.deliveredOrders
+          orderPro.pendingOrders,
+          orderPro.acceptedOrders,
+          orderPro.rejectedOrders,
+          orderPro.deliveredOrders
         ].map((e) => OrdersListPage(data: e)).toList(),
       ),
     );

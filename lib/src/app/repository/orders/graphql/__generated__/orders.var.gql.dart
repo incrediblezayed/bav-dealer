@@ -43,6 +43,7 @@ abstract class GTestDriveOrdersVars
       _$GTestDriveOrdersVars;
 
   _i1.GTestDriveOrderWhereInput get where;
+  BuiltList<_i1.GTestDriveOrderOrderByInput> get orderBy;
   static Serializer<GTestDriveOrdersVars> get serializer =>
       _$gTestDriveOrdersVarsSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(

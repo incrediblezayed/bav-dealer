@@ -6,6 +6,8 @@ import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
+enum OrderFamily { purchaseOrders, testDriveOrders }
+
 enum OrderStatus {
   pending("created"),
   accepted("accepted"),
@@ -72,6 +74,14 @@ class OrdersProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  List<GTestDriveOrdersData_testDriveOrders> _testDrivePendingOrders = [];
+  List<GTestDriveOrdersData_testDriveOrders> get testDrivePendingOrders =>
+      _testDrivePendingOrders;
+  set testDrivePendingOrders(List<GTestDriveOrdersData_testDriveOrders> data) {
+    _testDrivePendingOrders = data;
+    notifyListeners();
+  }
+
   List<GVehicleOrdersData_vehicleOrders> _acceptedOrders = [];
   List<GVehicleOrdersData_vehicleOrders> get acceptedOrders => _acceptedOrders;
   set acceptedOrders(List<GVehicleOrdersData_vehicleOrders> data) {
@@ -79,10 +89,26 @@ class OrdersProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  List<GTestDriveOrdersData_testDriveOrders> _testDriveAcceptedOrders = [];
+  List<GTestDriveOrdersData_testDriveOrders> get testDriveAcceptedOrders =>
+      _testDriveAcceptedOrders;
+  set testDriveAcceptedOrders(List<GTestDriveOrdersData_testDriveOrders> data) {
+    _testDriveAcceptedOrders = data;
+    notifyListeners();
+  }
+
   List<GVehicleOrdersData_vehicleOrders> _rejectedOrders = [];
   List<GVehicleOrdersData_vehicleOrders> get rejectedOrders => _rejectedOrders;
   set rejectedOrders(List<GVehicleOrdersData_vehicleOrders> data) {
     _rejectedOrders = data;
+    notifyListeners();
+  }
+
+  List<GTestDriveOrdersData_testDriveOrders> _testDriveRejectedOrders = [];
+  List<GTestDriveOrdersData_testDriveOrders> get testDriveRejectedOrders =>
+      _testDriveRejectedOrders;
+  set testDriveRejectedOrders(List<GTestDriveOrdersData_testDriveOrders> data) {
+    _testDriveRejectedOrders = data;
     notifyListeners();
   }
 
@@ -94,12 +120,29 @@ class OrdersProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void init() async {
+  List<GTestDriveOrdersData_testDriveOrders> _testDriveDeliveredOrders = [];
+  List<GTestDriveOrdersData_testDriveOrders> get testDriveDeliveredOrders =>
+      _testDriveDeliveredOrders;
+  set testDriveDeliveredOrders(
+      List<GTestDriveOrdersData_testDriveOrders> data) {
+    _testDriveDeliveredOrders = data;
+    notifyListeners();
+  }
+
+  void init(OrderFamily orderFamily) async {
     await getVehicles();
-    await getPendingOrders();
-    await getAcceptedOrders();
-    await getRejectedOrders();
-    await getDeliveredOrders();
+
+    if (orderFamily == OrderFamily.purchaseOrders) {
+      await getPendingOrders();
+      await getAcceptedOrders();
+      await getRejectedOrders();
+      await getDeliveredOrders();
+    } else {
+      await getTestDrivePendingOrders();
+      await getTestDriveAcceptedOrders();
+      await getTestDriveRejectedOrders();
+      await getTestDriveDeliveredOrders();
+    }
   }
 
   Future<void> getPendingOrders() async {
@@ -121,16 +164,53 @@ class OrdersProvider extends ChangeNotifier {
     }
   }
 
+  Future<void> getTestDrivePendingOrders() async {
+    try {
+      final getTestDriveOrders =
+          await _orderRepository.getTestDriveOrders('created');
+
+      if (getTestDriveOrders != null) {
+        testDrivePendingOrders = getTestDriveOrders;
+      } else {
+        AppRoutes.showErrorSnackbar(
+            message: "Error while fetching list of test order vehicles");
+      }
+    } catch (e) {
+      e.log();
+    } finally {
+      loading = false;
+    }
+  }
+
   Future<void> getAcceptedOrders() async {
     try {
       final getVehicleOrders =
           await _orderRepository.getVehicleOrders('accepted');
 
       if (getVehicleOrders != null) {
-        pendingOrders = getVehicleOrders;
+        acceptedOrders = getVehicleOrders;
       } else {
         AppRoutes.showErrorSnackbar(
           message: 'Errow while fetching list of vehicles',
+        );
+      }
+    } catch (e) {
+      e.log();
+    } finally {
+      loading = false;
+    }
+  }
+
+  Future<void> getTestDriveAcceptedOrders() async {
+    try {
+      final getTestDriveOrders =
+          await _orderRepository.getTestDriveOrders("accepted");
+
+      if (getTestDriveOrders != null) {
+        testDriveAcceptedOrders = getTestDriveOrders;
+      } else {
+        AppRoutes.showErrorSnackbar(
+          message: 'Errow while fetching list of accepted test orders vehicles',
         );
       }
     } catch (e) {
@@ -146,7 +226,7 @@ class OrdersProvider extends ChangeNotifier {
           await _orderRepository.getVehicleOrders('rejected');
 
       if (getVehicleOrders != null) {
-        pendingOrders = getVehicleOrders;
+        rejectedOrders = getVehicleOrders;
       } else {
         AppRoutes.showErrorSnackbar(
           message: 'Errow while fetching list of vehicles',
@@ -159,13 +239,30 @@ class OrdersProvider extends ChangeNotifier {
     }
   }
 
+  Future<void> getTestDriveRejectedOrders() async {
+    try {
+      final getTestDriveOrders =
+          await _orderRepository.getTestDriveOrders('rejected');
+
+      if (getTestDriveOrders != null) {
+        testDriveRejectedOrders = getTestDriveOrders;
+      } else {
+        AppRoutes.showErrorSnackbar(
+          message: 'Errow while fetching list of test drive rejected vehicles',
+        );
+      }
+    } catch (e) {
+      e.log();
+    }
+  }
+
   Future<void> getDeliveredOrders() async {
     try {
       final getVehicleOrders =
           await _orderRepository.getVehicleOrders('delivered');
 
       if (getVehicleOrders != null) {
-        pendingOrders = getVehicleOrders;
+        deliveredOrders = getVehicleOrders;
       } else {
         AppRoutes.showErrorSnackbar(
           message: 'Errow while fetching list of vehicles',
@@ -175,6 +272,23 @@ class OrdersProvider extends ChangeNotifier {
       e.log();
     } finally {
       loading = false;
+    }
+  }
+
+  Future<void> getTestDriveDeliveredOrders() async {
+    try {
+      final getTestDriveOrders =
+          await _orderRepository.getTestDriveOrders('delivered');
+
+      if (getTestDriveOrders != null) {
+        testDriveDeliveredOrders = getTestDriveOrders;
+      } else {
+        AppRoutes.showErrorSnackbar(
+          message: 'Errow while fetching list of delivered test drive orders',
+        );
+      }
+    } catch (e) {
+      e.log();
     }
   }
 
@@ -212,11 +326,14 @@ class OrdersProvider extends ChangeNotifier {
     }
   }
 
-  Future<void> rejectOrder(String id, String reason,
+  Future<void> rejectOrder(String id, String reason, bool isPurchaseOrder,
       [String? description]) async {
     try {
       final success = await _orderRepository.rejectOrder(
-          orderId: id, reason: reason, description: description);
+          isPurchaseOrder: isPurchaseOrder,
+          orderId: id,
+          reason: reason,
+          description: description);
       if (success) {
         await getPendingOrders();
         await getRejectedOrders();

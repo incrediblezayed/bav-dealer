@@ -311,6 +311,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GTestDriveOrdersData.serializer)
       ..add(GTestDriveOrdersData_testDriveOrders.serializer)
       ..add(GTestDriveOrdersData_testDriveOrders_dealer.serializer)
+      ..add(GTestDriveOrdersData_testDriveOrders_dealer_dealer.serializer)
       ..add(GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor.serializer)
       ..add(GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images
           .serializer)
@@ -974,6 +975,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(GTestDriveOrderWhereUniqueInput)]),
           () => new ListBuilder<GTestDriveOrderWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GTestDriveOrderOrderByInput)]),
+          () => new ListBuilder<GTestDriveOrderOrderByInput>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GTestDriveOrderWhereInput)]),

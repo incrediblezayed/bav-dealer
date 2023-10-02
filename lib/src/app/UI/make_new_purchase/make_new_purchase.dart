@@ -1,6 +1,7 @@
 import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
 import 'package:dealerapp/src/app/UI/make_new_purchase/make_new_purchase_details_page.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:dealerapp/src/app/provider/order_provider.dart';
 import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.ast.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
@@ -49,7 +50,7 @@ class _MakeNewPurchaseState extends ConsumerState<MakeNewPurchase> {
 
   @override
   Widget build(BuildContext context) {
-    final purchaseOrderPro = ref.watch(purchaseOrderProvider);
+    final purchaseOrderPro = ref.watch(orderProvider(OrderFamily.purchaseOrders));
     final theme = Theme.of(context).textTheme;
 
     return Scaffold(
