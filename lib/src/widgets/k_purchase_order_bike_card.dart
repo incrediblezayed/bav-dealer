@@ -34,12 +34,6 @@ class _KPurchaseOrderBikeCardState
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
       child: Container(
-        height: (currentStatus == Status.pending)
-            ? MediaQuery.of(context).size.height / 1.45.h
-            : (currentStatus == Status.accepted)
-                ? MediaQuery.of(context).size.height / 1.75.h
-                : MediaQuery.of(context).size.height / 1.68.h,
-        width: double.maxFinite,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(6.r),
@@ -69,9 +63,7 @@ class _KPurchaseOrderBikeCardState
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        widget.vehiclePurchaseOrders.id,
-
-                        // vehiclePurchaseOrders.dealer,
+                        "ORDER ID #${widget.vehiclePurchaseOrders.id}",
                         style: theme.labelLarge!.copyWith(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w700,
@@ -112,9 +104,12 @@ class _KPurchaseOrderBikeCardState
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(6.r),
-                      child: KCachedNWImage(widget.vehiclePurchaseOrders.dealer!
-                              .vehicleColor!.images?.firstOrNull?.image?.url ??
-                          ''),
+                      child: KCachedNWImage(
+                        widget.vehiclePurchaseOrders.dealer!.vehicleColor!
+                                .images?.firstOrNull?.image?.url ??
+                            '',
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   SizedBox(width: 20.w),
@@ -160,39 +155,41 @@ class _KPurchaseOrderBikeCardState
                               ],
                             ),
                             SizedBox(width: 20.w),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  widget.vehiclePurchaseOrders.dealer!
-                                      .vehicleVariant!.name!,
-                                  style: theme.labelMedium!.copyWith(
-                                    color: Colors.black.withOpacity(.5),
-                                    fontWeight: FontWeight.w500,
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    widget.vehiclePurchaseOrders.dealer!
+                                        .vehicleVariant!.name!,
+                                    style: theme.labelMedium!.copyWith(
+                                      color: Colors.black.withOpacity(.5),
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
-                                ),
-                                SizedBox(height: 6.h),
-                                Text(
-                                  // widget.bikeOrderModel.color,
-                                  widget.vehiclePurchaseOrders.dealer
-                                          ?.vehicleColor?.name ??
-                                      "",
-                                  style: theme.labelMedium!.copyWith(
-                                    color: Colors.black.withOpacity(.5),
-                                    fontWeight: FontWeight.w500,
+                                  SizedBox(height: 6.h),
+                                  Text(
+                                    // widget.bikeOrderModel.color,
+                                    widget.vehiclePurchaseOrders.dealer
+                                            ?.vehicleColor?.name ??
+                                        "",
+                                    style: theme.labelMedium!.copyWith(
+                                      color: Colors.black.withOpacity(.5),
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
-                                ),
-                                SizedBox(height: 6.h),
-                                Text(
-                                  widget.vehiclePurchaseOrders.dealer!
-                                      .vehicleVariant!.price
-                                      .toString(),
-                                  style: theme.labelLarge!.copyWith(
-                                    fontWeight: FontWeight.w600,
-                                    color: AppTheme.primaryColor,
+                                  SizedBox(height: 6.h),
+                                  Text(
+                                    widget.vehiclePurchaseOrders.dealer!
+                                        .vehicleVariant!.price
+                                        .toString(),
+                                    style: theme.labelLarge!.copyWith(
+                                      fontWeight: FontWeight.w600,
+                                      color: AppTheme.primaryColor,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ],
                         ),
@@ -298,7 +295,8 @@ class _KPurchaseOrderBikeCardState
                       SizedBox(height: 6.h),
                       Text(
                         widget.vehiclePurchaseOrders.order!.user!.addresses!
-                            .first.address!,
+                                .firstOrNull?.address ??
+                            "",
                         style: theme.labelMedium!.copyWith(
                           color: Colors.black.withOpacity(.5),
                           fontWeight: FontWeight.w500,
