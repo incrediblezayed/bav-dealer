@@ -1,7 +1,4 @@
 import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/accepted_orders_page.dart';
-import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/delivered_orders_page.dart';
-import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/pending_orders_page.dart';
-import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/rejected_orders_page.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -81,11 +78,11 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
       body: TabBarView(
         controller: _tabController,
         children: [
-          PendingOrdersPage(),
-          AcceptedOrdersPage(),
-          RejectedOrdersPage(),
-          DeliveredOrdersPage(),
-        ],
+          purchaseOrderPro.pendingOrders,
+          purchaseOrderPro.acceptedOrders,
+          purchaseOrderPro.rejectedOrders,
+          purchaseOrderPro.deliveredOrders
+        ].map((e) => OrdersListPage(data: e)).toList(),
       ),
     );
   }

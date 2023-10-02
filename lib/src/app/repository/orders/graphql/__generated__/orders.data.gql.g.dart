@@ -74,6 +74,17 @@ Serializer<GTestDriveOrdersData_testDriveOrders_order_user>
 Serializer<GTestDriveOrdersData_testDriveOrders_order_user_addresses>
     _$gTestDriveOrdersDataTestDriveOrdersOrderUserAddressesSerializer =
     new _$GTestDriveOrdersData_testDriveOrders_order_user_addressesSerializer();
+Serializer<GUpdateVehicleOrderData> _$gUpdateVehicleOrderDataSerializer =
+    new _$GUpdateVehicleOrderDataSerializer();
+Serializer<GUpdateVehicleOrderData_updateVehicleOrder>
+    _$gUpdateVehicleOrderDataUpdateVehicleOrderSerializer =
+    new _$GUpdateVehicleOrderData_updateVehicleOrderSerializer();
+Serializer<GCreateOrderRejectionByDealerData>
+    _$gCreateOrderRejectionByDealerDataSerializer =
+    new _$GCreateOrderRejectionByDealerDataSerializer();
+Serializer<GCreateOrderRejectionByDealerData_createOrderRejectionByDealer>
+    _$gCreateOrderRejectionByDealerDataCreateOrderRejectionByDealerSerializer =
+    new _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealerSerializer();
 
 class _$GVehicleOrdersDataSerializer
     implements StructuredSerializer<GVehicleOrdersData> {
@@ -676,6 +687,8 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageSeriali
           specifiedType: const FullType(String)),
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
+      'url',
+      serializers.serialize(object.url, specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -700,6 +713,10 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageSeriali
           break;
         case 'id':
           result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'url':
+          result.url = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
       }
@@ -1972,6 +1989,236 @@ class _$GTestDriveOrdersData_testDriveOrders_order_user_addressesSerializer
   }
 }
 
+class _$GUpdateVehicleOrderDataSerializer
+    implements StructuredSerializer<GUpdateVehicleOrderData> {
+  @override
+  final Iterable<Type> types = const [
+    GUpdateVehicleOrderData,
+    _$GUpdateVehicleOrderData
+  ];
+  @override
+  final String wireName = 'GUpdateVehicleOrderData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUpdateVehicleOrderData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.updateVehicleOrder;
+    if (value != null) {
+      result
+        ..add('updateVehicleOrder')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GUpdateVehicleOrderData_updateVehicleOrder)));
+    }
+    return result;
+  }
+
+  @override
+  GUpdateVehicleOrderData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUpdateVehicleOrderDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'updateVehicleOrder':
+          result.updateVehicleOrder.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GUpdateVehicleOrderData_updateVehicleOrder))!
+              as GUpdateVehicleOrderData_updateVehicleOrder);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUpdateVehicleOrderData_updateVehicleOrderSerializer
+    implements
+        StructuredSerializer<GUpdateVehicleOrderData_updateVehicleOrder> {
+  @override
+  final Iterable<Type> types = const [
+    GUpdateVehicleOrderData_updateVehicleOrder,
+    _$GUpdateVehicleOrderData_updateVehicleOrder
+  ];
+  @override
+  final String wireName = 'GUpdateVehicleOrderData_updateVehicleOrder';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GUpdateVehicleOrderData_updateVehicleOrder object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GUpdateVehicleOrderData_updateVehicleOrder deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUpdateVehicleOrderData_updateVehicleOrderBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GCreateOrderRejectionByDealerDataSerializer
+    implements StructuredSerializer<GCreateOrderRejectionByDealerData> {
+  @override
+  final Iterable<Type> types = const [
+    GCreateOrderRejectionByDealerData,
+    _$GCreateOrderRejectionByDealerData
+  ];
+  @override
+  final String wireName = 'GCreateOrderRejectionByDealerData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GCreateOrderRejectionByDealerData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.createOrderRejectionByDealer;
+    if (value != null) {
+      result
+        ..add('createOrderRejectionByDealer')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GCreateOrderRejectionByDealerData_createOrderRejectionByDealer)));
+    }
+    return result;
+  }
+
+  @override
+  GCreateOrderRejectionByDealerData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GCreateOrderRejectionByDealerDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'createOrderRejectionByDealer':
+          result.createOrderRejectionByDealer.replace(serializers.deserialize(
+                  value,
+                  specifiedType: const FullType(
+                      GCreateOrderRejectionByDealerData_createOrderRejectionByDealer))!
+              as GCreateOrderRejectionByDealerData_createOrderRejectionByDealer);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealerSerializer
+    implements
+        StructuredSerializer<
+            GCreateOrderRejectionByDealerData_createOrderRejectionByDealer> {
+  @override
+  final Iterable<Type> types = const [
+    GCreateOrderRejectionByDealerData_createOrderRejectionByDealer,
+    _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer
+  ];
+  @override
+  final String wireName =
+      'GCreateOrderRejectionByDealerData_createOrderRejectionByDealer';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GCreateOrderRejectionByDealerData_createOrderRejectionByDealer object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GCreateOrderRejectionByDealerData_createOrderRejectionByDealer deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$GVehicleOrdersData extends GVehicleOrdersData {
   @override
   final String G__typename;
@@ -3112,6 +3359,8 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image
   final String G__typename;
   @override
   final String id;
+  @override
+  final String url;
 
   factory _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image(
           [void Function(
@@ -3122,7 +3371,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image
           ._build();
 
   _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image._(
-      {required this.G__typename, required this.id})
+      {required this.G__typename, required this.id, required this.url})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
@@ -3132,6 +3381,10 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image
         id,
         r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image',
         'id');
+    BuiltValueNullFieldError.checkNotNull(
+        url,
+        r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image',
+        'url');
   }
 
   @override
@@ -3153,7 +3406,8 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image
     return other
             is GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image &&
         G__typename == other.G__typename &&
-        id == other.id;
+        id == other.id &&
+        url == other.url;
   }
 
   @override
@@ -3161,6 +3415,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, url.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -3170,7 +3425,8 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image
     return (newBuiltValueToStringHelper(
             r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image')
           ..add('G__typename', G__typename)
-          ..add('id', id))
+          ..add('id', id)
+          ..add('url', url))
         .toString();
   }
 }
@@ -3190,6 +3446,10 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
+
   GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder() {
     GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image
         ._initializeBuilder(this);
@@ -3201,6 +3461,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder
     if ($v != null) {
       _G__typename = $v.G__typename;
       _id = $v.id;
+      _url = $v.url;
       _$v = null;
     }
     return this;
@@ -3237,7 +3498,11 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder
             id: BuiltValueNullFieldError.checkNotNull(
                 id,
                 r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image',
-                'id'));
+                'id'),
+            url: BuiltValueNullFieldError.checkNotNull(
+                url,
+                r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image',
+                'url'));
     replace(_$result);
     return _$result;
   }
@@ -5691,6 +5956,509 @@ class GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder
             address: address,
             district: district,
             name: name);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUpdateVehicleOrderData extends GUpdateVehicleOrderData {
+  @override
+  final String G__typename;
+  @override
+  final GUpdateVehicleOrderData_updateVehicleOrder? updateVehicleOrder;
+
+  factory _$GUpdateVehicleOrderData(
+          [void Function(GUpdateVehicleOrderDataBuilder)? updates]) =>
+      (new GUpdateVehicleOrderDataBuilder()..update(updates))._build();
+
+  _$GUpdateVehicleOrderData._(
+      {required this.G__typename, this.updateVehicleOrder})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GUpdateVehicleOrderData', 'G__typename');
+  }
+
+  @override
+  GUpdateVehicleOrderData rebuild(
+          void Function(GUpdateVehicleOrderDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUpdateVehicleOrderDataBuilder toBuilder() =>
+      new GUpdateVehicleOrderDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUpdateVehicleOrderData &&
+        G__typename == other.G__typename &&
+        updateVehicleOrder == other.updateVehicleOrder;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, updateVehicleOrder.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GUpdateVehicleOrderData')
+          ..add('G__typename', G__typename)
+          ..add('updateVehicleOrder', updateVehicleOrder))
+        .toString();
+  }
+}
+
+class GUpdateVehicleOrderDataBuilder
+    implements
+        Builder<GUpdateVehicleOrderData, GUpdateVehicleOrderDataBuilder> {
+  _$GUpdateVehicleOrderData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GUpdateVehicleOrderData_updateVehicleOrderBuilder? _updateVehicleOrder;
+  GUpdateVehicleOrderData_updateVehicleOrderBuilder get updateVehicleOrder =>
+      _$this._updateVehicleOrder ??=
+          new GUpdateVehicleOrderData_updateVehicleOrderBuilder();
+  set updateVehicleOrder(
+          GUpdateVehicleOrderData_updateVehicleOrderBuilder?
+              updateVehicleOrder) =>
+      _$this._updateVehicleOrder = updateVehicleOrder;
+
+  GUpdateVehicleOrderDataBuilder() {
+    GUpdateVehicleOrderData._initializeBuilder(this);
+  }
+
+  GUpdateVehicleOrderDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _updateVehicleOrder = $v.updateVehicleOrder?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUpdateVehicleOrderData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUpdateVehicleOrderData;
+  }
+
+  @override
+  void update(void Function(GUpdateVehicleOrderDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUpdateVehicleOrderData build() => _build();
+
+  _$GUpdateVehicleOrderData _build() {
+    _$GUpdateVehicleOrderData _$result;
+    try {
+      _$result = _$v ??
+          new _$GUpdateVehicleOrderData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GUpdateVehicleOrderData', 'G__typename'),
+              updateVehicleOrder: _updateVehicleOrder?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'updateVehicleOrder';
+        _updateVehicleOrder?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUpdateVehicleOrderData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUpdateVehicleOrderData_updateVehicleOrder
+    extends GUpdateVehicleOrderData_updateVehicleOrder {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+
+  factory _$GUpdateVehicleOrderData_updateVehicleOrder(
+          [void Function(GUpdateVehicleOrderData_updateVehicleOrderBuilder)?
+              updates]) =>
+      (new GUpdateVehicleOrderData_updateVehicleOrderBuilder()..update(updates))
+          ._build();
+
+  _$GUpdateVehicleOrderData_updateVehicleOrder._(
+      {required this.G__typename, required this.id})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GUpdateVehicleOrderData_updateVehicleOrder', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GUpdateVehicleOrderData_updateVehicleOrder', 'id');
+  }
+
+  @override
+  GUpdateVehicleOrderData_updateVehicleOrder rebuild(
+          void Function(GUpdateVehicleOrderData_updateVehicleOrderBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUpdateVehicleOrderData_updateVehicleOrderBuilder toBuilder() =>
+      new GUpdateVehicleOrderData_updateVehicleOrderBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUpdateVehicleOrderData_updateVehicleOrder &&
+        G__typename == other.G__typename &&
+        id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUpdateVehicleOrderData_updateVehicleOrder')
+          ..add('G__typename', G__typename)
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GUpdateVehicleOrderData_updateVehicleOrderBuilder
+    implements
+        Builder<GUpdateVehicleOrderData_updateVehicleOrder,
+            GUpdateVehicleOrderData_updateVehicleOrderBuilder> {
+  _$GUpdateVehicleOrderData_updateVehicleOrder? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GUpdateVehicleOrderData_updateVehicleOrderBuilder() {
+    GUpdateVehicleOrderData_updateVehicleOrder._initializeBuilder(this);
+  }
+
+  GUpdateVehicleOrderData_updateVehicleOrderBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUpdateVehicleOrderData_updateVehicleOrder other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUpdateVehicleOrderData_updateVehicleOrder;
+  }
+
+  @override
+  void update(
+      void Function(GUpdateVehicleOrderData_updateVehicleOrderBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUpdateVehicleOrderData_updateVehicleOrder build() => _build();
+
+  _$GUpdateVehicleOrderData_updateVehicleOrder _build() {
+    final _$result = _$v ??
+        new _$GUpdateVehicleOrderData_updateVehicleOrder._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GUpdateVehicleOrderData_updateVehicleOrder', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GUpdateVehicleOrderData_updateVehicleOrder', 'id'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GCreateOrderRejectionByDealerData
+    extends GCreateOrderRejectionByDealerData {
+  @override
+  final String G__typename;
+  @override
+  final GCreateOrderRejectionByDealerData_createOrderRejectionByDealer?
+      createOrderRejectionByDealer;
+
+  factory _$GCreateOrderRejectionByDealerData(
+          [void Function(GCreateOrderRejectionByDealerDataBuilder)? updates]) =>
+      (new GCreateOrderRejectionByDealerDataBuilder()..update(updates))
+          ._build();
+
+  _$GCreateOrderRejectionByDealerData._(
+      {required this.G__typename, this.createOrderRejectionByDealer})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GCreateOrderRejectionByDealerData', 'G__typename');
+  }
+
+  @override
+  GCreateOrderRejectionByDealerData rebuild(
+          void Function(GCreateOrderRejectionByDealerDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GCreateOrderRejectionByDealerDataBuilder toBuilder() =>
+      new GCreateOrderRejectionByDealerDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GCreateOrderRejectionByDealerData &&
+        G__typename == other.G__typename &&
+        createOrderRejectionByDealer == other.createOrderRejectionByDealer;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, createOrderRejectionByDealer.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GCreateOrderRejectionByDealerData')
+          ..add('G__typename', G__typename)
+          ..add('createOrderRejectionByDealer', createOrderRejectionByDealer))
+        .toString();
+  }
+}
+
+class GCreateOrderRejectionByDealerDataBuilder
+    implements
+        Builder<GCreateOrderRejectionByDealerData,
+            GCreateOrderRejectionByDealerDataBuilder> {
+  _$GCreateOrderRejectionByDealerData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder?
+      _createOrderRejectionByDealer;
+  GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder
+      get createOrderRejectionByDealer => _$this
+              ._createOrderRejectionByDealer ??=
+          new GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder();
+  set createOrderRejectionByDealer(
+          GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder?
+              createOrderRejectionByDealer) =>
+      _$this._createOrderRejectionByDealer = createOrderRejectionByDealer;
+
+  GCreateOrderRejectionByDealerDataBuilder() {
+    GCreateOrderRejectionByDealerData._initializeBuilder(this);
+  }
+
+  GCreateOrderRejectionByDealerDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _createOrderRejectionByDealer =
+          $v.createOrderRejectionByDealer?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GCreateOrderRejectionByDealerData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GCreateOrderRejectionByDealerData;
+  }
+
+  @override
+  void update(
+      void Function(GCreateOrderRejectionByDealerDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GCreateOrderRejectionByDealerData build() => _build();
+
+  _$GCreateOrderRejectionByDealerData _build() {
+    _$GCreateOrderRejectionByDealerData _$result;
+    try {
+      _$result = _$v ??
+          new _$GCreateOrderRejectionByDealerData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                  r'GCreateOrderRejectionByDealerData', 'G__typename'),
+              createOrderRejectionByDealer:
+                  _createOrderRejectionByDealer?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createOrderRejectionByDealer';
+        _createOrderRejectionByDealer?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GCreateOrderRejectionByDealerData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer
+    extends GCreateOrderRejectionByDealerData_createOrderRejectionByDealer {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+
+  factory _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer(
+          [void Function(
+                  GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder)?
+              updates]) =>
+      (new GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer._(
+      {required this.G__typename, required this.id})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GCreateOrderRejectionByDealerData_createOrderRejectionByDealer',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id,
+        r'GCreateOrderRejectionByDealerData_createOrderRejectionByDealer',
+        'id');
+  }
+
+  @override
+  GCreateOrderRejectionByDealerData_createOrderRejectionByDealer rebuild(
+          void Function(
+                  GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder
+      toBuilder() =>
+          new GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GCreateOrderRejectionByDealerData_createOrderRejectionByDealer &&
+        G__typename == other.G__typename &&
+        id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GCreateOrderRejectionByDealerData_createOrderRejectionByDealer')
+          ..add('G__typename', G__typename)
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder
+    implements
+        Builder<GCreateOrderRejectionByDealerData_createOrderRejectionByDealer,
+            GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder> {
+  _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder() {
+    GCreateOrderRejectionByDealerData_createOrderRejectionByDealer
+        ._initializeBuilder(this);
+  }
+
+  GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GCreateOrderRejectionByDealerData_createOrderRejectionByDealer other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer;
+  }
+
+  @override
+  void update(
+      void Function(
+              GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GCreateOrderRejectionByDealerData_createOrderRejectionByDealer build() =>
+      _build();
+
+  _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer _build() {
+    final _$result = _$v ??
+        new _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GCreateOrderRejectionByDealerData_createOrderRejectionByDealer',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GCreateOrderRejectionByDealerData_createOrderRejectionByDealer',
+                'id'));
     replace(_$result);
     return _$result;
   }

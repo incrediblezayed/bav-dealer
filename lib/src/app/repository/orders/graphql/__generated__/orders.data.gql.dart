@@ -264,6 +264,7 @@ abstract class GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
+  String get url;
   static Serializer<
           GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image>
       get serializer =>
@@ -799,4 +800,127 @@ abstract class GTestDriveOrdersData_testDriveOrders_order_user_addresses
         GTestDriveOrdersData_testDriveOrders_order_user_addresses.serializer,
         json,
       );
+}
+
+abstract class GUpdateVehicleOrderData
+    implements Built<GUpdateVehicleOrderData, GUpdateVehicleOrderDataBuilder> {
+  GUpdateVehicleOrderData._();
+
+  factory GUpdateVehicleOrderData(
+          [Function(GUpdateVehicleOrderDataBuilder b) updates]) =
+      _$GUpdateVehicleOrderData;
+
+  static void _initializeBuilder(GUpdateVehicleOrderDataBuilder b) =>
+      b..G__typename = 'Mutation';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GUpdateVehicleOrderData_updateVehicleOrder? get updateVehicleOrder;
+  static Serializer<GUpdateVehicleOrderData> get serializer =>
+      _$gUpdateVehicleOrderDataSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateVehicleOrderData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GUpdateVehicleOrderData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateVehicleOrderData.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateVehicleOrderData_updateVehicleOrder
+    implements
+        Built<GUpdateVehicleOrderData_updateVehicleOrder,
+            GUpdateVehicleOrderData_updateVehicleOrderBuilder> {
+  GUpdateVehicleOrderData_updateVehicleOrder._();
+
+  factory GUpdateVehicleOrderData_updateVehicleOrder(
+      [Function(GUpdateVehicleOrderData_updateVehicleOrderBuilder b)
+          updates]) = _$GUpdateVehicleOrderData_updateVehicleOrder;
+
+  static void _initializeBuilder(
+          GUpdateVehicleOrderData_updateVehicleOrderBuilder b) =>
+      b..G__typename = 'VehicleOrder';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  static Serializer<GUpdateVehicleOrderData_updateVehicleOrder>
+      get serializer => _$gUpdateVehicleOrderDataUpdateVehicleOrderSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateVehicleOrderData_updateVehicleOrder.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GUpdateVehicleOrderData_updateVehicleOrder? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateVehicleOrderData_updateVehicleOrder.serializer,
+        json,
+      );
+}
+
+abstract class GCreateOrderRejectionByDealerData
+    implements
+        Built<GCreateOrderRejectionByDealerData,
+            GCreateOrderRejectionByDealerDataBuilder> {
+  GCreateOrderRejectionByDealerData._();
+
+  factory GCreateOrderRejectionByDealerData(
+          [Function(GCreateOrderRejectionByDealerDataBuilder b) updates]) =
+      _$GCreateOrderRejectionByDealerData;
+
+  static void _initializeBuilder(GCreateOrderRejectionByDealerDataBuilder b) =>
+      b..G__typename = 'Mutation';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GCreateOrderRejectionByDealerData_createOrderRejectionByDealer?
+      get createOrderRejectionByDealer;
+  static Serializer<GCreateOrderRejectionByDealerData> get serializer =>
+      _$gCreateOrderRejectionByDealerDataSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GCreateOrderRejectionByDealerData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GCreateOrderRejectionByDealerData? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GCreateOrderRejectionByDealerData.serializer,
+        json,
+      );
+}
+
+abstract class GCreateOrderRejectionByDealerData_createOrderRejectionByDealer
+    implements
+        Built<GCreateOrderRejectionByDealerData_createOrderRejectionByDealer,
+            GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder> {
+  GCreateOrderRejectionByDealerData_createOrderRejectionByDealer._();
+
+  factory GCreateOrderRejectionByDealerData_createOrderRejectionByDealer(
+          [Function(
+                  GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder
+                      b)
+              updates]) =
+      _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer;
+
+  static void _initializeBuilder(
+          GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder
+              b) =>
+      b..G__typename = 'OrderRejectionByDealer';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  static Serializer<
+          GCreateOrderRejectionByDealerData_createOrderRejectionByDealer>
+      get serializer =>
+          _$gCreateOrderRejectionByDealerDataCreateOrderRejectionByDealerSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GCreateOrderRejectionByDealerData_createOrderRejectionByDealer
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GCreateOrderRejectionByDealerData_createOrderRejectionByDealer?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GCreateOrderRejectionByDealerData_createOrderRejectionByDealer
+                .serializer,
+            json,
+          );
 }

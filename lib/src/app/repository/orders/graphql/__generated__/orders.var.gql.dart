@@ -55,3 +55,51 @@ abstract class GTestDriveOrdersVars
         json,
       );
 }
+
+abstract class GUpdateVehicleOrderVars
+    implements Built<GUpdateVehicleOrderVars, GUpdateVehicleOrderVarsBuilder> {
+  GUpdateVehicleOrderVars._();
+
+  factory GUpdateVehicleOrderVars(
+          [Function(GUpdateVehicleOrderVarsBuilder b) updates]) =
+      _$GUpdateVehicleOrderVars;
+
+  _i1.GVehicleOrderWhereUniqueInput get where;
+  _i1.GVehicleOrderUpdateInput get data;
+  static Serializer<GUpdateVehicleOrderVars> get serializer =>
+      _$gUpdateVehicleOrderVarsSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GUpdateVehicleOrderVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GUpdateVehicleOrderVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GUpdateVehicleOrderVars.serializer,
+        json,
+      );
+}
+
+abstract class GCreateOrderRejectionByDealerVars
+    implements
+        Built<GCreateOrderRejectionByDealerVars,
+            GCreateOrderRejectionByDealerVarsBuilder> {
+  GCreateOrderRejectionByDealerVars._();
+
+  factory GCreateOrderRejectionByDealerVars(
+          [Function(GCreateOrderRejectionByDealerVarsBuilder b) updates]) =
+      _$GCreateOrderRejectionByDealerVars;
+
+  _i1.GOrderRejectionByDealerCreateInput get data;
+  static Serializer<GCreateOrderRejectionByDealerVars> get serializer =>
+      _$gCreateOrderRejectionByDealerVarsSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GCreateOrderRejectionByDealerVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GCreateOrderRejectionByDealerVars? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GCreateOrderRejectionByDealerVars.serializer,
+        json,
+      );
+}

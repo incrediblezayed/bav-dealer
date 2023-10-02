@@ -447,6 +447,8 @@ import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inv
         GVehiclesVars;
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart'
     show
+        GCreateOrderRejectionByDealerData,
+        GCreateOrderRejectionByDealerData_createOrderRejectionByDealer,
         GTestDriveOrdersData,
         GTestDriveOrdersData_testDriveOrders,
         GTestDriveOrdersData_testDriveOrders_dealer,
@@ -458,6 +460,8 @@ import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders
         GTestDriveOrdersData_testDriveOrders_order,
         GTestDriveOrdersData_testDriveOrders_order_user,
         GTestDriveOrdersData_testDriveOrders_order_user_addresses,
+        GUpdateVehicleOrderData,
+        GUpdateVehicleOrderData_updateVehicleOrder,
         GVehicleOrdersData,
         GVehicleOrdersData_vehicleOrders,
         GVehicleOrdersData_vehicleOrders_dealer,
@@ -471,9 +475,17 @@ import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders
         GVehicleOrdersData_vehicleOrders_order_user,
         GVehicleOrdersData_vehicleOrders_order_user_addresses;
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.req.gql.dart'
-    show GTestDriveOrdersReq, GVehicleOrdersReq;
+    show
+        GCreateOrderRejectionByDealerReq,
+        GTestDriveOrdersReq,
+        GUpdateVehicleOrderReq,
+        GVehicleOrdersReq;
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.var.gql.dart'
-    show GTestDriveOrdersVars, GVehicleOrdersVars;
+    show
+        GCreateOrderRejectionByDealerVars,
+        GTestDriveOrdersVars,
+        GUpdateVehicleOrderVars,
+        GVehicleOrdersVars;
 import 'package:dealerapp/src/custom_serializers/upload_serializer.dart'
     show UploadSerializer;
 import 'package:ferry_exec/ferry_exec.dart';
@@ -546,6 +558,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GCreateDealerReq,
   GCreateDealerVars,
   GCreateInitialUserInput,
+  GCreateOrderRejectionByDealerData,
+  GCreateOrderRejectionByDealerData_createOrderRejectionByDealer,
+  GCreateOrderRejectionByDealerReq,
+  GCreateOrderRejectionByDealerVars,
   GCreateUserData,
   GCreateUserData_createUser,
   GCreateUserReq,
@@ -786,6 +802,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GUpdateUserData_updateUser,
   GUpdateUserReq,
   GUpdateUserVars,
+  GUpdateVehicleOrderData,
+  GUpdateVehicleOrderData_updateVehicleOrder,
+  GUpdateVehicleOrderReq,
+  GUpdateVehicleOrderVars,
   GUserCreateInput,
   GUserData,
   GUserData_user,

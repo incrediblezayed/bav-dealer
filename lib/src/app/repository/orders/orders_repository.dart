@@ -1,6 +1,6 @@
+import 'package:built_collection/built_collection.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema.gql.dart';
-import 'package:built_collection/built_collection.dart';
 import 'package:dealerapp/src/app/repository/graphql_client.dart';
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart';
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.req.gql.dart';
@@ -29,13 +29,56 @@ class OrderRepository {
         throw Exception(
             'Something went wrong while getting purchase order lists');
       } else {
-        print(response.data?.vehicleOrders?.toList());
-        print('*************************************************************************************** ${dealerId}');
         return response.data?.vehicleOrders?.toList();
       }
     } catch (e) {
       e.log();
     }
     return null;
+  }
+
+  Future<bool> updateOrderStatus(
+      {required String vehicleOrderId, required String status}) async {
+    try {
+      final response = await _client
+          .request(GUpdateVehicleOrderReq(
+            (b) => b.vars
+              ..data.status = status
+              ..where.id = vehicleOrderId,
+          ))
+          .first;
+      if (response.linkException != null ||
+          (response.graphqlErrors?.isNotEmpty ?? false)) {
+        throw Exception("Failed to update status");
+      }
+      return response.data?.updateVehicleOrder?.id != null;
+    } catch (e) {
+      e.log();
+    }
+    return false;
+  }
+
+  Future<bool> rejectOrder(
+      {required String orderId,
+      required String reason,
+      String? description}) async {
+    try {
+      final response = await _client
+          .request(GCreateOrderRejectionByDealerReq(
+            (b) => b.vars
+              //..data.order = orderId
+              ..data.reason = reason
+              ..data.description = description,
+          ))
+          .first;
+      if (response.linkException != null ||
+          (response.graphqlErrors?.isNotEmpty ?? false)) {
+        throw Exception("Failed to reject order");
+      }
+      return response.data?.createOrderRejectionByDealer?.id != null;
+    } catch (e) {
+      e.log();
+    }
+    return false;
   }
 }

@@ -1,5 +1,7 @@
 import 'package:dealerapp/src/app/model/bike_order_model.dart';
+import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart';
+import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -25,18 +27,10 @@ class _KPurchaseOrderBikeCardState
   Status currentStatus = Status.pending;
   String rejectionReason = '';
 
-  void updateStatus(Status status, {String reason = ''}) {
-    setState(() {
-      currentStatus = status;
-      if (status == Status.rejected) {
-        rejectionReason = reason;
-      }
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
+    final ordersPro = ref.read(purchaseOrderProvider);
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
       child: Container(
@@ -85,7 +79,8 @@ class _KPurchaseOrderBikeCardState
                         ),
                       ),
                       SizedBox(height: 6.h),
-                      Text(widget.vehiclePurchaseOrders.createdAt.toString()),
+                      Text(widget
+                          .vehiclePurchaseOrders.createdAt.formatTohhmmaddMMyy),
                     ],
                   ),
                 ),
@@ -118,7 +113,7 @@ class _KPurchaseOrderBikeCardState
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(6.r),
                       child: KCachedNWImage(widget.vehiclePurchaseOrders.dealer!
-                              .vehicleColor!.images?.firstOrNull?.image?.id ??
+                              .vehicleColor!.images?.firstOrNull?.image?.url ??
                           ''),
                     ),
                   ),
@@ -349,7 +344,7 @@ class _KPurchaseOrderBikeCardState
                           ),
                           GestureDetector(
                             onTap: () {
-                              updateStatus(Status.accepted);
+                              ordersPro.acceptOrder(vehiclePurchaseOrders.id);
                             },
                             child: Container(
                               height: 50.h,
@@ -522,7 +517,6 @@ class _KPurchaseOrderBikeCardState
                   ),
                   const SizedBox(height: 20),
                   ListView.builder(
-                    
                     shrinkWrap: true,
                     physics: const BouncingScrollPhysics(),
                     itemCount: reasons.length,
@@ -560,8 +554,11 @@ class _KPurchaseOrderBikeCardState
                       minWidth: 300.w,
                       color: const Color(0xffe36666),
                       onPressed: () {
-                        Navigator.pop(context); // Close the bottom sheet
-                        updateStatus(Status.rejected, reason: selectedReason);
+                        AppRoutes.pop();
+                        ref.read(purchaseOrderProvider).rejectOrder(
+                              vehiclePurchaseOrders.id,
+                              selectedReason,
+                            );
                       },
                       child: Text(
                         'Submit',

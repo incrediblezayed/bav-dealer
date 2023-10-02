@@ -1,5 +1,3 @@
-import 'package:dealerapp/src/app/provider/app_provider.dart';
-import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.ast.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart';
@@ -7,6 +5,18 @@ import 'package:dealerapp/src/app/repository/orders/orders_repository.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
+
+enum OrderStatus {
+  pending("created"),
+  accepted("accepted"),
+  rejected("rejected"),
+  inTransit("in-transit"),
+  delivered("delivered"),
+  cancelled("cancelled");
+
+  final String name;
+  const OrderStatus(this.name);
+}
 
 class OrdersProvider extends ChangeNotifier {
   final InventoryRepository _inventoryRepository = InventoryRepository();
@@ -183,6 +193,39 @@ class OrdersProvider extends ChangeNotifier {
       e.log();
     } finally {
       loading = false;
+    }
+  }
+
+  Future<void> acceptOrder(String id) async {
+    try {
+      final success = await _orderRepository.updateOrderStatus(
+          vehicleOrderId: id, status: OrderStatus.accepted.name);
+      if (success) {
+        await getPendingOrders();
+        await getAcceptedOrders();
+      } else {
+        throw Exception();
+      }
+    } catch (e) {
+      e.log();
+      AppRoutes.showErrorSnackbar(message: "Failed to accept order");
+    }
+  }
+
+  Future<void> rejectOrder(String id, String reason,
+      [String? description]) async {
+    try {
+      final success = await _orderRepository.rejectOrder(
+          orderId: id, reason: reason, description: description);
+      if (success) {
+        await getPendingOrders();
+        await getRejectedOrders();
+      } else {
+        throw Exception();
+      }
+    } catch (e) {
+      e.log();
+      AppRoutes.showErrorSnackbar(message: "Failed to reject order");
     }
   }
 }

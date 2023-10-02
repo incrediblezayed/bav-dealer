@@ -1,4 +1,7 @@
-query VehicleOrders($orderBy: [VehicleOrderOrderByInput!]!, $where: VehicleOrderWhereInput!) {
+query VehicleOrders(
+  $orderBy: [VehicleOrderOrderByInput!]!
+  $where: VehicleOrderWhereInput!
+) {
   vehicleOrders(orderBy: $orderBy, where: $where) {
     id
     price
@@ -17,6 +20,7 @@ query VehicleOrders($orderBy: [VehicleOrderOrderByInput!]!, $where: VehicleOrder
           id
           image {
             id
+            url
           }
         }
       }
@@ -96,3 +100,17 @@ query TestDriveOrders($where: TestDriveOrderWhereInput!) {
   }
 }
 
+mutation UpdateVehicleOrder(
+  $where: VehicleOrderWhereUniqueInput!
+  $data: VehicleOrderUpdateInput!
+) {
+  updateVehicleOrder(where: $where, data: $data) {
+    id
+  }
+}
+
+mutation CreateOrderRejectionByDealer($data: OrderRejectionByDealerCreateInput!) {
+  createOrderRejectionByDealer(data: $data) {
+    id
+  }
+}

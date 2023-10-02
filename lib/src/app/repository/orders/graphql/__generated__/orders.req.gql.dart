@@ -133,3 +133,125 @@ abstract class GTestDriveOrdersReq
         json,
       );
 }
+
+abstract class GUpdateVehicleOrderReq
+    implements
+        Built<GUpdateVehicleOrderReq, GUpdateVehicleOrderReqBuilder>,
+        _i1.OperationRequest<_i2.GUpdateVehicleOrderData,
+            _i3.GUpdateVehicleOrderVars> {
+  GUpdateVehicleOrderReq._();
+
+  factory GUpdateVehicleOrderReq(
+          [Function(GUpdateVehicleOrderReqBuilder b) updates]) =
+      _$GUpdateVehicleOrderReq;
+
+  static void _initializeBuilder(GUpdateVehicleOrderReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'UpdateVehicleOrder',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GUpdateVehicleOrderVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GUpdateVehicleOrderData? Function(
+    _i2.GUpdateVehicleOrderData?,
+    _i2.GUpdateVehicleOrderData?,
+  )? get updateResult;
+  @override
+  _i2.GUpdateVehicleOrderData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GUpdateVehicleOrderData? parseData(Map<String, dynamic> json) =>
+      _i2.GUpdateVehicleOrderData.fromJson(json);
+  static Serializer<GUpdateVehicleOrderReq> get serializer =>
+      _$gUpdateVehicleOrderReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GUpdateVehicleOrderReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GUpdateVehicleOrderReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GUpdateVehicleOrderReq.serializer,
+        json,
+      );
+}
+
+abstract class GCreateOrderRejectionByDealerReq
+    implements
+        Built<GCreateOrderRejectionByDealerReq,
+            GCreateOrderRejectionByDealerReqBuilder>,
+        _i1.OperationRequest<_i2.GCreateOrderRejectionByDealerData,
+            _i3.GCreateOrderRejectionByDealerVars> {
+  GCreateOrderRejectionByDealerReq._();
+
+  factory GCreateOrderRejectionByDealerReq(
+          [Function(GCreateOrderRejectionByDealerReqBuilder b) updates]) =
+      _$GCreateOrderRejectionByDealerReq;
+
+  static void _initializeBuilder(GCreateOrderRejectionByDealerReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'CreateOrderRejectionByDealer',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GCreateOrderRejectionByDealerVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GCreateOrderRejectionByDealerData? Function(
+    _i2.GCreateOrderRejectionByDealerData?,
+    _i2.GCreateOrderRejectionByDealerData?,
+  )? get updateResult;
+  @override
+  _i2.GCreateOrderRejectionByDealerData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GCreateOrderRejectionByDealerData? parseData(Map<String, dynamic> json) =>
+      _i2.GCreateOrderRejectionByDealerData.fromJson(json);
+  static Serializer<GCreateOrderRejectionByDealerReq> get serializer =>
+      _$gCreateOrderRejectionByDealerReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GCreateOrderRejectionByDealerReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GCreateOrderRejectionByDealerReq? fromJson(
+          Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GCreateOrderRejectionByDealerReq.serializer,
+        json,
+      );
+}
