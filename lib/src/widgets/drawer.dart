@@ -163,9 +163,10 @@ class AppDrawer extends ConsumerWidget {
                     ),
                     _drawerTile(
                       title: 'Make new purchase order',
-                      icon: AppImages.purchaseOrder,
+                      icon: AppImages.purchaseNew,
                       height: 30,
                       width: 30,
+                      isSvg: false,
                       onTap: () {
                         AppRoutes.push(page: MakeNewPurchase());
                       },

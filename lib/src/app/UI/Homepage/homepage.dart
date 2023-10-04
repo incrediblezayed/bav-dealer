@@ -4,9 +4,11 @@ import 'package:dealerapp/src/app/UI/Homepage/Rank_Page/rank_page.dart';
 import 'package:dealerapp/src/app/UI/Homepage/Test_Orders/test_orders.dart';
 import 'package:dealerapp/src/app/UI/notification_page.dart/notification_page.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:dealerapp/src/app/provider/order_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/drawer.dart';
 import 'package:dealerapp/src/widgets/staggered_container.dart';
+import 'package:dealerapp/src/widgets/user_profile_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -20,6 +22,7 @@ class HomePage extends ConsumerWidget {
     final theme = Theme.of(context).textTheme;
     final user = cacheProvider.getUser()!;
     final controller = ref.watch(homePageProvider);
+    final purchasePro = ref.watch(orderProvider(OrderFamily.testDriveOrders));
     return Scaffold(
       resizeToAvoidBottomInset: false,
       key: AppRoutes.scaffoldKey,
@@ -91,40 +94,74 @@ class HomePage extends ConsumerWidget {
             Text(
               'Recent Notification',
               style: theme.labelMedium!.copyWith(
-                color: AppTheme.textColor,
-              ),
+                  color: AppTheme.textColor,
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w600),
             ),
-            SizedBox(height: 20.h),
-            Row(
-              children: [
-                /* SizedBox.square(
+            SizedBox(height: 16.h),
+            if (purchasePro.testDrivePendingOrders.isNotEmpty) ...[
+              Row(
+                children: [
+                  /*  SizedBox.square(
                         dimension: 70.sp,
                         child: UserProfileImage(
                           url: homePageProv.user.profile_image?.url,
                           size: 70.sp,
                         ),
-                      ) */
+                      ) , */
 
-                Image.asset(AppImages.person),
-                SizedBox(
-                  width: 16.w,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Someone wants to book a ride',
-                      style: theme.headlineSmall,
+                  Image.asset(AppImages.person),
+                  SizedBox(
+                    width: 10.w,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      AppRoutes.push(page: TestOrders());
+                    },
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Someone wants to book a ride',
+                          style: theme.headlineSmall,
+                        ),
+                        SizedBox(height: 3.h),
+                        Text(
+                          'view details',
+                          style: theme.labelMedium,
+                        ),
+                      ],
                     ),
-                    Text(
-                      'view details',
+                  ),
+                ],
+              )
+            ],
+            if (purchasePro.testDrivePendingOrders.isEmpty)
+              Row(
+                children: [
+                  /*  SizedBox.square(
+                        dimension: 70.sp,
+                        child: UserProfileImage(
+                          url: homePageProv.user.profile_image?.url,
+                          size: 70.sp,
+                        ),
+                      ) , */
+
+                  Image.asset(AppImages.person),
+                  SizedBox(
+                    width: 10.w,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      AppRoutes.push(page: TestOrders());
+                    },
+                    child: Text(
+                      "No notifications",
                       style: theme.labelMedium,
                     ),
-                    SizedBox(height: 6.h),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
             SizedBox(height: 20.h),
             LayoutBuilder(builder: (context, constraints) {
               return Row(
