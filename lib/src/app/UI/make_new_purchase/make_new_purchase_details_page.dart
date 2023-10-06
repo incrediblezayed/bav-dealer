@@ -53,7 +53,8 @@ class _MakeNewPurchaseDetailsPageState
 
   @override
   Widget build(BuildContext context) {
-    final purchaseOrderPro = ref.watch(orderProvider(OrderFamily.purchaseOrders));
+    final purchaseOrderPro =
+        ref.watch(orderProvider(OrderFamily.purchaseOrders));
 
     final theme = Theme.of(context).textTheme;
     return Scaffold(
@@ -80,87 +81,89 @@ class _MakeNewPurchaseDetailsPageState
         ),
       ),
       resizeToAvoidBottomInset: false,
-      body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Add Buyer Information',
-              style: TextStyle(
-                color: Colors.grey,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Add Buyer Information',
+                style: TextStyle(
+                  color: Colors.grey,
+                ),
               ),
-            ),
-            SizedBox(height: 20.h),
-            KTextField(
-              controller: nameController,
-              hintText: 'Name',
-              label: 'Name',
-              inputType: TextInputType.name,
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            KTextField(
-              controller: emailIdController,
-              hintText: 'Enter Your Email ID',
-              label: 'Email ID',
-              inputType: TextInputType.emailAddress,
-            ),
-            SizedBox(
-              height: 14.h,
-            ),
-            KTextField(
-              controller: contactNumberController,
-              hintText: 'Contact Number',
-              label: 'Contact Number',
-              inputType: TextInputType.phone,
-              maxLength: 10,
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            KTextField(
-              controller: addressController,
-              hintText: 'Address',
-              label: 'UserAddress',
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            KTextField(
-              label: "Date Of Delivery",
-              controller: _dateController,
-              inputType: TextInputType.datetime,
-              readOnly: true,
-              suffixIcon: IconButton(
-                  onPressed: () {
-                    _selectDate(context);
-                  },
-                  icon: SvgPicture.asset(AppImages.calender)),
-            ),
-            SizedBox(height: 20.h),
-            Text("Billing Details", style: theme.headlineSmall),
-            SizedBox(height: 20.h),
-            TotalAmountWidget(
-                price: 2020200, shippingCharges: 500, serviceTax: 199),
-            Spacer(),
-            KButton(
-              onPressed: () {
-                if (nameController.text.isEmpty ||
-                    emailIdController.text.isEmpty ||
-                    contactNumberController.text.isEmpty ||
-                    addressController.text.isEmpty ||
-                    _dateController.text.isEmpty) {
-                  AppRoutes.showErrorSnackbar(
-                      message: "Please fill the details");
-                } else {
-                  AppRoutes.push(page: PurchaseSuccessPage());
-                }
-              },
-              text: 'Place Order',
-            ),
-          ],
+              SizedBox(height: 20.h),
+              KTextField(
+                controller: nameController,
+                hintText: 'Name',
+                label: 'Name',
+                inputType: TextInputType.name,
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              KTextField(
+                controller: emailIdController,
+                hintText: 'Enter Your Email ID',
+                label: 'Email ID',
+                inputType: TextInputType.emailAddress,
+              ),
+              SizedBox(
+                height: 14.h,
+              ),
+              KTextField(
+                controller: contactNumberController,
+                hintText: 'Contact Number',
+                label: 'Contact Number',
+                inputType: TextInputType.phone,
+                maxLength: 10,
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              KTextField(
+                controller: addressController,
+                hintText: 'Address',
+                label: 'UserAddress',
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              KTextField(
+                label: "Date Of Delivery",
+                controller: _dateController,
+                inputType: TextInputType.datetime,
+                readOnly: true,
+                suffixIcon: IconButton(
+                    onPressed: () {
+                      _selectDate(context);
+                    },
+                    icon: SvgPicture.asset(AppImages.calender)),
+              ),
+              SizedBox(height: 20.h),
+              Text("Billing Details", style: theme.headlineSmall),
+              SizedBox(height: 20.h),
+              TotalAmountWidget(
+                  price: 2020200, shippingCharges: 500, serviceTax: 199),
+              Spacer(),
+              KButton(
+                onPressed: () {
+                  if (nameController.text.isEmpty ||
+                      emailIdController.text.isEmpty ||
+                      contactNumberController.text.isEmpty ||
+                      addressController.text.isEmpty ||
+                      _dateController.text.isEmpty) {
+                    AppRoutes.showErrorSnackbar(
+                        message: "Please fill the details");
+                  } else {
+                    AppRoutes.push(page: PurchaseSuccessPage());
+                  }
+                },
+                text: 'Place Order',
+              ),
+            ],
+          ),
         ),
       ),
     );

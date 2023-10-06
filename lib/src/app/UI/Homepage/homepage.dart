@@ -2,6 +2,7 @@ import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/my_inventory.dart';
 import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/purchase_orders.dart';
 import 'package:dealerapp/src/app/UI/Homepage/Rank_Page/rank_page.dart';
 import 'package:dealerapp/src/app/UI/Homepage/Test_Orders/test_orders.dart';
+import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
 import 'package:dealerapp/src/app/UI/notification_page.dart/notification_page.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/provider/order_provider.dart';
@@ -49,14 +50,19 @@ class HomePage extends ConsumerWidget {
                 child: SvgPicture.asset(AppImages.notification),
               ),
               SizedBox(width: 12.w),
-              Padding(
-                padding: EdgeInsets.only(right: 20.w),
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey.withOpacity(.3),
-                  radius: 20,
-                  child: Image.asset(AppImages.profile),
+              GestureDetector(
+                onTap: () {
+                  AppRoutes.push(
+                      page: const EditProfile(
+                    isPersonalInfo: false,
+                  ));
+                },
+                child: UserProfileImage(
+                  url: user.profile_image?.url,
+                  size: 40.sp,
                 ),
               ),
+              SizedBox(width: 10.w),
             ],
           ),
         ],

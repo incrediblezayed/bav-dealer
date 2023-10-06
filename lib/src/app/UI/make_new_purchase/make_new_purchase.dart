@@ -50,7 +50,8 @@ class _MakeNewPurchaseState extends ConsumerState<MakeNewPurchase> {
 
   @override
   Widget build(BuildContext context) {
-    final purchaseOrderPro = ref.watch(orderProvider(OrderFamily.purchaseOrders));
+    final purchaseOrderPro =
+        ref.watch(orderProvider(OrderFamily.purchaseOrders));
     final theme = Theme.of(context).textTheme;
 
     return Scaffold(
