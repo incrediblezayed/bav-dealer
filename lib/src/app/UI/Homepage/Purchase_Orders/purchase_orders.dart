@@ -16,19 +16,6 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
     with TickerProviderStateMixin {
   late final TabController _tabController =
       TabController(length: 4, vsync: this);
-  /*  Status currentStatus = Status.pending;
-  String rejectionReason = '';
-
-  void updateStatus(Status status, {String reason = ''}) {
-    setState(() {
-      currentStatus = status;
-      if (status == Status.rejected) {
-        rejectionReason = reason;
-      }
-    });
-
-    _tabController.animateTo(status == Status.accepted ? 1 : 2);
-  } */
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +25,6 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
       appBar: AppBar(
         elevation: 0,
         backgroundColor: AppTheme.scaffoldBgColor,
-        // onTapLeading: () {
-        //   // dashboardPro.changePage(0);
-        // },
-
         leading: GestureDetector(
           onTap: () {
             AppRoutes.pop();
@@ -83,7 +66,12 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
           orderPro.acceptedOrders,
           orderPro.rejectedOrders,
           orderPro.deliveredOrders
-        ].map((e) => OrdersListPage(data: e)).toList(),
+        ]
+            .map((e) => OrdersListPage(
+                  data: e,
+                 orderPro: OrdersProvider()
+                ))
+            .toList(),
       ),
     );
   }

@@ -52,7 +52,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                   color: AppTheme.primaryColor.withOpacity(.1),
                   borderRadius: BorderRadius.circular(10.r),
                 ),
-                height: 80.h,
+                // height: 80.h,
                 width: double.maxFinite,
                 child: Padding(
                   padding: EdgeInsets.symmetric(
@@ -258,51 +258,55 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                     ],
                   ),
                   SizedBox(width: 20.w),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        widget.vehiclePurchaseOrders.order!.user!.name!,
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.vehiclePurchaseOrders.order!.user!.name!,
+                          style: theme.labelMedium!.copyWith(
+                            color: Colors.black.withOpacity(.5),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Text(
-                        widget.vehiclePurchaseOrders.order!.user!.email!,
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
+                        SizedBox(height: 6.h),
+                        Text(
+                          widget.vehiclePurchaseOrders.order!.user!.email!,
+                          style: theme.labelMedium!.copyWith(
+                            color: Colors.black.withOpacity(.5),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Text(
-                        widget.vehiclePurchaseOrders.order!.user!.phoneNumber!,
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
+                        SizedBox(height: 6.h),
+                        Text(
+                          widget
+                              .vehiclePurchaseOrders.order!.user!.phoneNumber!,
+                          style: theme.labelMedium!.copyWith(
+                            color: Colors.black.withOpacity(.5),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Text(
-                        widget.vehiclePurchaseOrders.order!.user!.phoneNumber!,
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
+                        SizedBox(height: 6.h),
+                        Text(
+                          widget
+                              .vehiclePurchaseOrders.order!.user!.phoneNumber!,
+                          style: theme.labelMedium!.copyWith(
+                            color: Colors.black.withOpacity(.5),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Text(
-                        widget.vehiclePurchaseOrders.order!.user!.addresses!
-                                .firstOrNull?.address ??
-                            "",
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
+                        SizedBox(height: 6.h),
+                        Text(
+                          widget.vehiclePurchaseOrders.order!.user!.addresses!
+                                  .firstOrNull?.address ??
+                              "",
+                          style: theme.labelMedium!.copyWith(
+                            color: Colors.black.withOpacity(.5),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ],
               ),
