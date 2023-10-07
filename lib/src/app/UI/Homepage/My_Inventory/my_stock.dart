@@ -16,11 +16,16 @@ class MyStockPage extends ConsumerWidget {
         : Container(
             padding: const EdgeInsets.all(6),
             color: AppTheme.textFieldFill,
-            child: ListView(
-              shrinkWrap: true,
-              children: inventoryPro.vehicleDealers
-                  .map((e) => MyStockCard(vehicleDealers: e))
-                  .toList(),
+            child: RefreshIndicator(
+              onRefresh: () async {
+                await inventoryPro.getStocks();
+              },
+              child: ListView(
+                shrinkWrap: true,
+                children: inventoryPro.vehicleDealers
+                    .map((e) => MyStockCard(vehicleDealers: e))
+                    .toList(),
+              ),
             ),
           );
   }

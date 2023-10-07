@@ -49,6 +49,7 @@ class _MyInventoryState extends ConsumerState<MyInventory>
             Tab(
               text: 'My Stock',
             ),
+            
             Tab(
               text: 'Products',
             ),

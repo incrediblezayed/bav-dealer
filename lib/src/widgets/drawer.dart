@@ -188,7 +188,8 @@ class AppDrawer extends ConsumerWidget {
                     ),
                     _drawerTile(
                       title: 'Terms & Conditions',
-                      icon: AppImages.terms,
+                      icon: AppImages.termsNew,
+                      isSvg: false,
                       onTap: () {
                         AppRoutes.push(page: const TermsConditionsPage());
                       },

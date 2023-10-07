@@ -74,7 +74,12 @@ class _PurchaseOrdersState extends ConsumerState<TestOrders>
             orderPro.testDriveDeliveredOrders,
             orderPro.testDriveRejectedOrders,
             orderPro.testDriveDeliveredOrders,
-          ].map((e) => TestOrdersListPage(data: e)).toList()),
+          ]
+              .map((e) => TestOrdersListPage(
+                    data: e,
+                    ordersPro: OrdersProvider(),
+                  ))
+              .toList()),
     );
   }
 }

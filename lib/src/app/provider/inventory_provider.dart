@@ -60,12 +60,7 @@ class InventoryProvider extends ChangeNotifier {
   ) async {
     try {
       final result = await _inventoryRepository.createStockRequest(
-        colorId,
-        variantId,
-        stock,
-        price,
-        type
-      );
+          colorId, variantId, stock, price, type);
 
       if (result) {
         await _inventoryRepository.getVehicles();

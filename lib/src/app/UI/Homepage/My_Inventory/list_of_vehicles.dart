@@ -13,15 +13,20 @@ class ListOfVehicles extends ConsumerWidget {
     return Container(
       // padding: const EdgeInsets.all(1),
       color: AppTheme.textFieldFill,
-      child: ListView(
-        shrinkWrap: true,
-        children: inventoryPro.vehicles
-            .map(
-              (e) => KInventoryBikeCard(
-                variants: e,
-              ),
-            )
-            .toList(),
+      child: RefreshIndicator(
+        onRefresh: ()async{
+          await inventoryPro.getVehicles();
+        },
+        child: ListView(
+          shrinkWrap: true,
+          children: inventoryPro.vehicles
+              .map(
+                (e) => KInventoryBikeCard(
+                  variants: e,
+                ),
+              )
+              .toList(),
+        ),
       ),
     );
   }
