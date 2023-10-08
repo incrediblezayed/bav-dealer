@@ -50,9 +50,19 @@ class MyStockCard extends ConsumerWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(6.r),
                   child: KCachedNWImage(
-                    vehicleDealers.vehicleColor!.images!.first.image!.url,
+                    vehicleDealers!
+                            .vehicleColor!.images?.firstOrNull?.image?.url ??
+                        '',
                     fit: BoxFit.cover,
-                  ),
+                  )
+
+                  /* KCachedNWImage(
+                    vehicleDealers
+                            .vehicleColor!.images!.firstOrNull!.image!.url ??
+                        "",
+                    fit: BoxFit.cover,
+                  ) */
+                  ,
                 ),
               ),
               SizedBox(width: 20.w),
@@ -141,8 +151,11 @@ class MyStockCard extends ConsumerWidget {
                 width: 20,
               ),
               Expanded(
-                  child: KBottomBarButton(
-                      text: 'Quantity: ${vehicleDealers.stock}', onTap: () {})),
+                child: KBottomBarButton(
+                  text: 'Quantity: ${vehicleDealers.stock}',
+                  onTap: () {},
+                ),
+              ),
             ],
           )
         ],
