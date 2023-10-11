@@ -31,8 +31,6 @@ class InventoryRepository {
     return null;
   }
 
- 
-
   ///Creating Stock Request Function
   Future<bool> createStockRequest(
     String colorId,
@@ -51,7 +49,7 @@ class InventoryRepository {
                 ..data.vehicleVariant.connect.id = variantId
                 ..data.stock = stock
                 ..data.dealer.connect.id = dealerId
-                ..data.dealer_prices = price
+                // ..data.stock = price
                 ..data.type = type,
             ),
           )

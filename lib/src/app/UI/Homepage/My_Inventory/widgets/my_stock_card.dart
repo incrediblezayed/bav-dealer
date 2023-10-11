@@ -123,7 +123,7 @@ class MyStockCard extends ConsumerWidget {
                         ),
                         SizedBox(width: 10.w),
                         Text(
-                          vehicleDealers.dealer_prices!.toPrice(),
+                          vehicleDealers.prices.toString(),
                           style: theme.labelLarge!.copyWith(
                             fontWeight: FontWeight.w600,
                             color: AppTheme.primaryColor,
