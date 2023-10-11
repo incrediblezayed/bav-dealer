@@ -2,8 +2,6 @@ import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/graphql_client.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.req.gql.dart';
-import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart';
-import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.req.gql.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/get_it.dart';
 import 'package:ferry/ferry.dart';

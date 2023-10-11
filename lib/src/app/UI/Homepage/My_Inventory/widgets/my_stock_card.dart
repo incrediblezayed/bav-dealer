@@ -1,4 +1,3 @@
-import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
@@ -14,7 +13,7 @@ class MyStockCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context).textTheme;
-    final inventoryPro = ref.watch(inventoryProvider);
+    // final inventoryPro = ref.watch(inventoryProvider);
     return Container(
       margin: EdgeInsets.only(bottom: 8),
       padding: EdgeInsets.all(20),
@@ -50,7 +49,7 @@ class MyStockCard extends ConsumerWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(6.r),
                   child: KCachedNWImage(
-                    vehicleDealers!
+                    vehicleDealers
                             .vehicleColor!.images?.firstOrNull?.image?.url ??
                         '',
                     fit: BoxFit.cover,

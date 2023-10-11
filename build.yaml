@@ -1,5 +1,8 @@
 targets:
   $default:
+    sources:
+      exclude:
+        - lib/**/**.dart
     builders:
       ferry_generator|graphql_builder:
         enabled: true

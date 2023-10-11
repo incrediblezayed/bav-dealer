@@ -78,8 +78,16 @@ query VehicleDealers($where: VehicleDealerWhereInput!) {
         description
       }
     }
-    dealer_prices
+    
     id
     stock
+    prices {
+      id
+      amount
+      category {
+        id
+        name
+      }
+    }
   }
 }
