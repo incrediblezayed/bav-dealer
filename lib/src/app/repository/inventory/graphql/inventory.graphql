@@ -37,16 +37,6 @@ mutation CreateVehicleDealerStockRequest(
   createVehicleDealerStockRequest(data: $data) {
     type
     stock
-    dealer_prices
-  }
-}
-
-mutation CreateVehicleTestDriveDealerStockRequest(
-  $data: TestDriveDealerStockRequestCreateInput!
-) {
-  createTestDriveDealerStockRequest(data: $data) {
-    available
-    price
   }
 }
 
@@ -78,7 +68,7 @@ query VehicleDealers($where: VehicleDealerWhereInput!) {
         description
       }
     }
-    
+
     id
     stock
     prices {

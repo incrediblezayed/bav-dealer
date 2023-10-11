@@ -28,7 +28,15 @@ query VehicleOrders(
         id
       }
       id
-      dealer_prices
+      prices {
+        amount
+        createdAt
+        id
+        category {
+          name
+          id
+        }
+      }
     }
     status
     order {
