@@ -966,6 +966,12 @@ class _$GVehicleDealersData_vehicleDealersSerializer
               const FullType(GVehicleDealersData_vehicleDealers_prices)
             ])));
     }
+    value = object.totalPrice;
+    if (value != null) {
+      result
+        ..add('totalPrice')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -1010,6 +1016,10 @@ class _$GVehicleDealersData_vehicleDealersSerializer
               specifiedType: const FullType(BuiltList, const [
                 const FullType(GVehicleDealersData_vehicleDealers_prices)
               ]))! as BuiltList<Object?>);
+          break;
+        case 'totalPrice':
+          result.totalPrice = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -3328,6 +3338,8 @@ class _$GVehicleDealersData_vehicleDealers
   final int? stock;
   @override
   final BuiltList<GVehicleDealersData_vehicleDealers_prices>? prices;
+  @override
+  final int? totalPrice;
 
   factory _$GVehicleDealersData_vehicleDealers(
           [void Function(GVehicleDealersData_vehicleDealersBuilder)?
@@ -3341,7 +3353,8 @@ class _$GVehicleDealersData_vehicleDealers
       this.vehicleVariant,
       required this.id,
       this.stock,
-      this.prices})
+      this.prices,
+      this.totalPrice})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GVehicleDealersData_vehicleDealers', 'G__typename');
@@ -3367,7 +3380,8 @@ class _$GVehicleDealersData_vehicleDealers
         vehicleVariant == other.vehicleVariant &&
         id == other.id &&
         stock == other.stock &&
-        prices == other.prices;
+        prices == other.prices &&
+        totalPrice == other.totalPrice;
   }
 
   @override
@@ -3379,6 +3393,7 @@ class _$GVehicleDealersData_vehicleDealers
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, stock.hashCode);
     _$hash = $jc(_$hash, prices.hashCode);
+    _$hash = $jc(_$hash, totalPrice.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -3391,7 +3406,8 @@ class _$GVehicleDealersData_vehicleDealers
           ..add('vehicleVariant', vehicleVariant)
           ..add('id', id)
           ..add('stock', stock)
-          ..add('prices', prices))
+          ..add('prices', prices)
+          ..add('totalPrice', totalPrice))
         .toString();
   }
 }
@@ -3439,6 +3455,10 @@ class GVehicleDealersData_vehicleDealersBuilder
   set prices(ListBuilder<GVehicleDealersData_vehicleDealers_prices>? prices) =>
       _$this._prices = prices;
 
+  int? _totalPrice;
+  int? get totalPrice => _$this._totalPrice;
+  set totalPrice(int? totalPrice) => _$this._totalPrice = totalPrice;
+
   GVehicleDealersData_vehicleDealersBuilder() {
     GVehicleDealersData_vehicleDealers._initializeBuilder(this);
   }
@@ -3452,6 +3472,7 @@ class GVehicleDealersData_vehicleDealersBuilder
       _id = $v.id;
       _stock = $v.stock;
       _prices = $v.prices?.toBuilder();
+      _totalPrice = $v.totalPrice;
       _$v = null;
     }
     return this;
@@ -3484,7 +3505,8 @@ class GVehicleDealersData_vehicleDealersBuilder
               id: BuiltValueNullFieldError.checkNotNull(
                   id, r'GVehicleDealersData_vehicleDealers', 'id'),
               stock: stock,
-              prices: _prices?.build());
+              prices: _prices?.build(),
+              totalPrice: totalPrice);
     } catch (_) {
       late String _$failedField;
       try {

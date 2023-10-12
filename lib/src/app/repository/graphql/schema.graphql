@@ -1163,6 +1163,7 @@ type VehicleDealer {
   prices(where: PriceWhereInput! = {}, orderBy: [PriceOrderByInput!]! = [], take: Int, skip: Int! = 0): [Price!]
   pricesCount(where: PriceWhereInput! = {}): Int
   stock: Int
+  totalPrice: Int
 }
 
 input VehicleDealerWhereUniqueInput {
@@ -1457,6 +1458,7 @@ type VehicleDealerStockRequest {
   vehicleVariant: VehicleVariant
   vehicleColor: VehicleColor
   stock: Int
+  totalPrice: Int
   accepted: Boolean
   type: String
 }

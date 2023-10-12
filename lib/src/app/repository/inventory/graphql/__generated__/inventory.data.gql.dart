@@ -398,6 +398,7 @@ abstract class GVehicleDealersData_vehicleDealers
   String get id;
   int? get stock;
   BuiltList<GVehicleDealersData_vehicleDealers_prices>? get prices;
+  int? get totalPrice;
   static Serializer<GVehicleDealersData_vehicleDealers> get serializer =>
       _$gVehicleDealersDataVehicleDealersSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(

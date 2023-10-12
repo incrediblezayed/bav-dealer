@@ -79,5 +79,6 @@ query VehicleDealers($where: VehicleDealerWhereInput!) {
         name
       }
     }
+    totalPrice
   }
 }

@@ -450,6 +450,13 @@ const VehicleDealers = _i1.OperationDefinitionNode(
             ),
           ]),
         ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'totalPrice'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
       ]),
     )
   ]),
