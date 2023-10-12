@@ -337,6 +337,7 @@ abstract class GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequ
   String get G__typename;
   String? get type;
   int? get stock;
+  int? get totalPrice;
   static Serializer<
           GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest>
       get serializer =>

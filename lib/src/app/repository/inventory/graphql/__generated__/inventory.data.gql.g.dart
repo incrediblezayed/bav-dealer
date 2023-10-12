@@ -818,6 +818,12 @@ class _$GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequestSeri
         ..add('stock')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.totalPrice;
+    if (value != null) {
+      result
+        ..add('totalPrice')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -844,6 +850,10 @@ class _$GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequestSeri
           break;
         case 'stock':
           result.stock = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'totalPrice':
+          result.totalPrice = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
           break;
       }
@@ -3070,6 +3080,8 @@ class _$GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest
   final String? type;
   @override
   final int? stock;
+  @override
+  final int? totalPrice;
 
   factory _$GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest(
           [void Function(
@@ -3080,7 +3092,7 @@ class _$GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest
           ._build();
 
   _$GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest._(
-      {required this.G__typename, this.type, this.stock})
+      {required this.G__typename, this.type, this.stock, this.totalPrice})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
@@ -3108,7 +3120,8 @@ class _$GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest
             is GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest &&
         G__typename == other.G__typename &&
         type == other.type &&
-        stock == other.stock;
+        stock == other.stock &&
+        totalPrice == other.totalPrice;
   }
 
   @override
@@ -3117,6 +3130,7 @@ class _$GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, stock.hashCode);
+    _$hash = $jc(_$hash, totalPrice.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -3127,7 +3141,8 @@ class _$GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest
             r'GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest')
           ..add('G__typename', G__typename)
           ..add('type', type)
-          ..add('stock', stock))
+          ..add('stock', stock)
+          ..add('totalPrice', totalPrice))
         .toString();
   }
 }
@@ -3151,6 +3166,10 @@ class GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequestBuilde
   int? get stock => _$this._stock;
   set stock(int? stock) => _$this._stock = stock;
 
+  int? _totalPrice;
+  int? get totalPrice => _$this._totalPrice;
+  set totalPrice(int? totalPrice) => _$this._totalPrice = totalPrice;
+
   GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequestBuilder() {
     GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest
         ._initializeBuilder(this);
@@ -3163,6 +3182,7 @@ class GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequestBuilde
       _G__typename = $v.G__typename;
       _type = $v.type;
       _stock = $v.stock;
+      _totalPrice = $v.totalPrice;
       _$v = null;
     }
     return this;
@@ -3199,7 +3219,8 @@ class GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequestBuilde
                 r'GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest',
                 'G__typename'),
             type: type,
-            stock: stock);
+            stock: stock,
+            totalPrice: totalPrice);
     replace(_$result);
     return _$result;
   }

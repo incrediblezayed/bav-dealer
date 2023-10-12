@@ -37,6 +37,7 @@ mutation CreateVehicleDealerStockRequest(
   createVehicleDealerStockRequest(data: $data) {
     type
     stock
+    totalPrice
   }
 }
 

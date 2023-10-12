@@ -49,7 +49,7 @@ class InventoryRepository {
                 ..data.vehicleVariant.connect.id = variantId
                 ..data.stock = stock
                 ..data.dealer.connect.id = dealerId
-                // ..data.vehicleVariant.price = price
+                // ..data.dealer_price = price
                 ..data.type = type,
                 
             ),
