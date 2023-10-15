@@ -36,6 +36,7 @@ class UserProfileImage extends StatelessWidget {
             ),
           )
         : CircleAvatar(
+            backgroundColor: AppTheme.white,
             radius: size / 2,
             backgroundImage: isFile ? FileImage(File(url!)) : null,
             child: isFile

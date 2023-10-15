@@ -42,6 +42,7 @@ class AppImages {
   static const String profile = '$_imagesPath/profile.png';
   static const String person = '$_imagesPath/person.png';
   static const String bike = '$_imagesPath/bike.png';
+  static const String newLogo = '$_imagesPath/newSplashLogo.png';
 
   static const String bank = '$_imagesPath/bank.png';
   static const String s2 = '$_imagesPath/s2.png';
