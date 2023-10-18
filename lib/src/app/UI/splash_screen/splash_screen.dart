@@ -7,6 +7,7 @@ import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
+import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -32,7 +33,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
     return Scaffold(
       backgroundColor: AppTheme.white,
       body: Center(
-        child: Image.asset(AppImages.newLogo),
+        child: Image.asset(AppImages.newLogo, height: 200.h),
       ),
     );
   }

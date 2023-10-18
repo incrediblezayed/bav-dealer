@@ -159,7 +159,8 @@ class HomePage extends ConsumerWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      AppRoutes.push(page: TestOrders());
+                      if (purchasePro.testDrivePendingOrders.isNotEmpty)
+                        AppRoutes.push(page: TestOrders());
                     },
                     child: Text(
                       "No notifications",
