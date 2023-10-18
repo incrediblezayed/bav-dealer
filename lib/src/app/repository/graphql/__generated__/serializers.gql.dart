@@ -66,6 +66,18 @@ import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema
         GAddressUpdateInput,
         GAddressWhereInput,
         GAddressWhereUniqueInput,
+        GAppNotificationCreateInput,
+        GAppNotificationOrderByInput,
+        GAppNotificationTemplateCreateInput,
+        GAppNotificationTemplateOrderByInput,
+        GAppNotificationTemplateUpdateArgs,
+        GAppNotificationTemplateUpdateInput,
+        GAppNotificationTemplateWhereInput,
+        GAppNotificationTemplateWhereUniqueInput,
+        GAppNotificationUpdateArgs,
+        GAppNotificationUpdateInput,
+        GAppNotificationWhereInput,
+        GAppNotificationWhereUniqueInput,
         GBooleanFilter,
         GBrandCreateInput,
         GBrandOrderByInput,
@@ -462,6 +474,15 @@ import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inv
         GCreateVehicleDealerStockRequestVars,
         GVehicleDealersVars,
         GVehiclesVars;
+import 'package:dealerapp/src/app/repository/notifications/graphql/__generated__/notifications.data.gql.dart'
+    show
+        GAppNotificationsData,
+        GAppNotificationsData_appNotifications,
+        GAppNotificationsData_appNotifications_notificationType;
+import 'package:dealerapp/src/app/repository/notifications/graphql/__generated__/notifications.req.gql.dart'
+    show GAppNotificationsReq;
+import 'package:dealerapp/src/app/repository/notifications/graphql/__generated__/notifications.var.gql.dart'
+    show GAppNotificationsVars;
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart'
     show
         GCreateOrderRejectionByDealerData,
@@ -531,6 +552,23 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GAddressUpdateInput,
   GAddressWhereInput,
   GAddressWhereUniqueInput,
+  GAppNotificationCreateInput,
+  GAppNotificationOrderByInput,
+  GAppNotificationTemplateCreateInput,
+  GAppNotificationTemplateOrderByInput,
+  GAppNotificationTemplateUpdateArgs,
+  GAppNotificationTemplateUpdateInput,
+  GAppNotificationTemplateWhereInput,
+  GAppNotificationTemplateWhereUniqueInput,
+  GAppNotificationUpdateArgs,
+  GAppNotificationUpdateInput,
+  GAppNotificationWhereInput,
+  GAppNotificationWhereUniqueInput,
+  GAppNotificationsData,
+  GAppNotificationsData_appNotifications,
+  GAppNotificationsData_appNotifications_notificationType,
+  GAppNotificationsReq,
+  GAppNotificationsVars,
   GAuthenticateUserWithPasswordData,
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure,
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess,

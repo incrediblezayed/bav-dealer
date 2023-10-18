@@ -2615,6 +2615,118 @@ input SMSNotificationTemplateCreateInput {
   shortURL: Boolean
 }
 
+type AppNotificationTemplate {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationType
+  title: String
+  body: String
+}
+
+input AppNotificationTemplateWhereUniqueInput {
+  id: ID
+}
+
+input AppNotificationTemplateWhereInput {
+  AND: [AppNotificationTemplateWhereInput!]
+  OR: [AppNotificationTemplateWhereInput!]
+  NOT: [AppNotificationTemplateWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  notificationType: NotificationTypeWhereInput
+  title: StringFilter
+  body: StringFilter
+}
+
+input AppNotificationTemplateOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  title: OrderDirection
+  body: OrderDirection
+}
+
+input AppNotificationTemplateUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationTypeRelateToOneForUpdateInput
+  title: String
+  body: String
+}
+
+input AppNotificationTemplateUpdateArgs {
+  where: AppNotificationTemplateWhereUniqueInput!
+  data: AppNotificationTemplateUpdateInput!
+}
+
+input AppNotificationTemplateCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationTypeRelateToOneForCreateInput
+  title: String
+  body: String
+}
+
+type AppNotification {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationType
+  title: String
+  body: String
+  user: User
+}
+
+input AppNotificationWhereUniqueInput {
+  id: ID
+}
+
+input AppNotificationWhereInput {
+  AND: [AppNotificationWhereInput!]
+  OR: [AppNotificationWhereInput!]
+  NOT: [AppNotificationWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  notificationType: NotificationTypeWhereInput
+  title: StringFilter
+  body: StringFilter
+  user: UserWhereInput
+}
+
+input AppNotificationOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  title: OrderDirection
+  body: OrderDirection
+}
+
+input AppNotificationUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationTypeRelateToOneForUpdateInput
+  title: String
+  body: String
+  user: UserRelateToOneForUpdateInput
+}
+
+input AppNotificationUpdateArgs {
+  where: AppNotificationWhereUniqueInput!
+  data: AppNotificationUpdateInput!
+}
+
+input AppNotificationCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationTypeRelateToOneForCreateInput
+  title: String
+  body: String
+  user: UserRelateToOneForCreateInput
+}
+
 type FAQ {
   id: ID!
   createdAt: DateTime
@@ -3502,6 +3614,18 @@ type Mutation {
   updateSMSNotificationTemplates(data: [SMSNotificationTemplateUpdateArgs!]!): [SMSNotificationTemplate]
   deleteSMSNotificationTemplate(where: SMSNotificationTemplateWhereUniqueInput!): SMSNotificationTemplate
   deleteSMSNotificationTemplates(where: [SMSNotificationTemplateWhereUniqueInput!]!): [SMSNotificationTemplate]
+  createAppNotificationTemplate(data: AppNotificationTemplateCreateInput!): AppNotificationTemplate
+  createAppNotificationTemplates(data: [AppNotificationTemplateCreateInput!]!): [AppNotificationTemplate]
+  updateAppNotificationTemplate(where: AppNotificationTemplateWhereUniqueInput!, data: AppNotificationTemplateUpdateInput!): AppNotificationTemplate
+  updateAppNotificationTemplates(data: [AppNotificationTemplateUpdateArgs!]!): [AppNotificationTemplate]
+  deleteAppNotificationTemplate(where: AppNotificationTemplateWhereUniqueInput!): AppNotificationTemplate
+  deleteAppNotificationTemplates(where: [AppNotificationTemplateWhereUniqueInput!]!): [AppNotificationTemplate]
+  createAppNotification(data: AppNotificationCreateInput!): AppNotification
+  createAppNotifications(data: [AppNotificationCreateInput!]!): [AppNotification]
+  updateAppNotification(where: AppNotificationWhereUniqueInput!, data: AppNotificationUpdateInput!): AppNotification
+  updateAppNotifications(data: [AppNotificationUpdateArgs!]!): [AppNotification]
+  deleteAppNotification(where: AppNotificationWhereUniqueInput!): AppNotification
+  deleteAppNotifications(where: [AppNotificationWhereUniqueInput!]!): [AppNotification]
   createFAQ(data: FAQCreateInput!): FAQ
   createFAQS(data: [FAQCreateInput!]!): [FAQ]
   updateFAQ(where: FAQWhereUniqueInput!, data: FAQUpdateInput!): FAQ
@@ -3732,6 +3856,12 @@ type Query {
   sMSNotificationTemplates(where: SMSNotificationTemplateWhereInput! = {}, orderBy: [SMSNotificationTemplateOrderByInput!]! = [], take: Int, skip: Int! = 0): [SMSNotificationTemplate!]
   sMSNotificationTemplate(where: SMSNotificationTemplateWhereUniqueInput!): SMSNotificationTemplate
   sMSNotificationTemplatesCount(where: SMSNotificationTemplateWhereInput! = {}): Int
+  appNotificationTemplates(where: AppNotificationTemplateWhereInput! = {}, orderBy: [AppNotificationTemplateOrderByInput!]! = [], take: Int, skip: Int! = 0): [AppNotificationTemplate!]
+  appNotificationTemplate(where: AppNotificationTemplateWhereUniqueInput!): AppNotificationTemplate
+  appNotificationTemplatesCount(where: AppNotificationTemplateWhereInput! = {}): Int
+  appNotifications(where: AppNotificationWhereInput! = {}, orderBy: [AppNotificationOrderByInput!]! = [], take: Int, skip: Int! = 0): [AppNotification!]
+  appNotification(where: AppNotificationWhereUniqueInput!): AppNotification
+  appNotificationsCount(where: AppNotificationWhereInput! = {}): Int
   fAQS(where: FAQWhereInput! = {}, orderBy: [FAQOrderByInput!]! = [], take: Int, skip: Int! = 0): [FAQ!]
   fAQ(where: FAQWhereUniqueInput!): FAQ
   fAQSCount(where: FAQWhereInput! = {}): Int

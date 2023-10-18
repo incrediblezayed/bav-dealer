@@ -17,6 +17,23 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GAddressUpdateInput.serializer)
       ..add(GAddressWhereInput.serializer)
       ..add(GAddressWhereUniqueInput.serializer)
+      ..add(GAppNotificationCreateInput.serializer)
+      ..add(GAppNotificationOrderByInput.serializer)
+      ..add(GAppNotificationTemplateCreateInput.serializer)
+      ..add(GAppNotificationTemplateOrderByInput.serializer)
+      ..add(GAppNotificationTemplateUpdateArgs.serializer)
+      ..add(GAppNotificationTemplateUpdateInput.serializer)
+      ..add(GAppNotificationTemplateWhereInput.serializer)
+      ..add(GAppNotificationTemplateWhereUniqueInput.serializer)
+      ..add(GAppNotificationUpdateArgs.serializer)
+      ..add(GAppNotificationUpdateInput.serializer)
+      ..add(GAppNotificationWhereInput.serializer)
+      ..add(GAppNotificationWhereUniqueInput.serializer)
+      ..add(GAppNotificationsData.serializer)
+      ..add(GAppNotificationsData_appNotifications.serializer)
+      ..add(GAppNotificationsData_appNotifications_notificationType.serializer)
+      ..add(GAppNotificationsReq.serializer)
+      ..add(GAppNotificationsVars.serializer)
       ..add(GAuthenticateUserWithPasswordData.serializer)
       ..add(
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure
@@ -550,6 +567,34 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GAddressWhereUniqueInput)]),
           () => new ListBuilder<GAddressWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GAppNotificationTemplateWhereInput)]),
+          () => new ListBuilder<GAppNotificationTemplateWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GAppNotificationTemplateWhereInput)]),
+          () => new ListBuilder<GAppNotificationTemplateWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GAppNotificationTemplateWhereInput)]),
+          () => new ListBuilder<GAppNotificationTemplateWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GAppNotificationWhereInput)]),
+          () => new ListBuilder<GAppNotificationWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GAppNotificationWhereInput)]),
+          () => new ListBuilder<GAppNotificationWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GAppNotificationWhereInput)]),
+          () => new ListBuilder<GAppNotificationWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GAppNotificationsData_appNotifications)]),
+          () => new ListBuilder<GAppNotificationsData_appNotifications>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(

@@ -7735,6 +7735,342 @@ abstract class GSMSNotificationTemplateCreateInput
       );
 }
 
+abstract class GAppNotificationTemplateWhereUniqueInput
+    implements
+        Built<GAppNotificationTemplateWhereUniqueInput,
+            GAppNotificationTemplateWhereUniqueInputBuilder> {
+  GAppNotificationTemplateWhereUniqueInput._();
+
+  factory GAppNotificationTemplateWhereUniqueInput(
+      [Function(GAppNotificationTemplateWhereUniqueInputBuilder b)
+          updates]) = _$GAppNotificationTemplateWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GAppNotificationTemplateWhereUniqueInput> get serializer =>
+      _$gAppNotificationTemplateWhereUniqueInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GAppNotificationTemplateWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GAppNotificationTemplateWhereUniqueInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GAppNotificationTemplateWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GAppNotificationTemplateWhereInput
+    implements
+        Built<GAppNotificationTemplateWhereInput,
+            GAppNotificationTemplateWhereInputBuilder> {
+  GAppNotificationTemplateWhereInput._();
+
+  factory GAppNotificationTemplateWhereInput(
+          [Function(GAppNotificationTemplateWhereInputBuilder b) updates]) =
+      _$GAppNotificationTemplateWhereInput;
+
+  BuiltList<GAppNotificationTemplateWhereInput>? get AND;
+  BuiltList<GAppNotificationTemplateWhereInput>? get OR;
+  BuiltList<GAppNotificationTemplateWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GNotificationTypeWhereInput? get notificationType;
+  GStringFilter? get title;
+  GStringFilter? get body;
+  static Serializer<GAppNotificationTemplateWhereInput> get serializer =>
+      _$gAppNotificationTemplateWhereInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GAppNotificationTemplateWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GAppNotificationTemplateWhereInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GAppNotificationTemplateWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GAppNotificationTemplateOrderByInput
+    implements
+        Built<GAppNotificationTemplateOrderByInput,
+            GAppNotificationTemplateOrderByInputBuilder> {
+  GAppNotificationTemplateOrderByInput._();
+
+  factory GAppNotificationTemplateOrderByInput(
+          [Function(GAppNotificationTemplateOrderByInputBuilder b) updates]) =
+      _$GAppNotificationTemplateOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get title;
+  GOrderDirection? get body;
+  static Serializer<GAppNotificationTemplateOrderByInput> get serializer =>
+      _$gAppNotificationTemplateOrderByInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GAppNotificationTemplateOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GAppNotificationTemplateOrderByInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GAppNotificationTemplateOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GAppNotificationTemplateUpdateInput
+    implements
+        Built<GAppNotificationTemplateUpdateInput,
+            GAppNotificationTemplateUpdateInputBuilder> {
+  GAppNotificationTemplateUpdateInput._();
+
+  factory GAppNotificationTemplateUpdateInput(
+          [Function(GAppNotificationTemplateUpdateInputBuilder b) updates]) =
+      _$GAppNotificationTemplateUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GNotificationTypeRelateToOneForUpdateInput? get notificationType;
+  String? get title;
+  String? get body;
+  static Serializer<GAppNotificationTemplateUpdateInput> get serializer =>
+      _$gAppNotificationTemplateUpdateInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GAppNotificationTemplateUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GAppNotificationTemplateUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GAppNotificationTemplateUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GAppNotificationTemplateUpdateArgs
+    implements
+        Built<GAppNotificationTemplateUpdateArgs,
+            GAppNotificationTemplateUpdateArgsBuilder> {
+  GAppNotificationTemplateUpdateArgs._();
+
+  factory GAppNotificationTemplateUpdateArgs(
+          [Function(GAppNotificationTemplateUpdateArgsBuilder b) updates]) =
+      _$GAppNotificationTemplateUpdateArgs;
+
+  GAppNotificationTemplateWhereUniqueInput get where;
+  GAppNotificationTemplateUpdateInput get data;
+  static Serializer<GAppNotificationTemplateUpdateArgs> get serializer =>
+      _$gAppNotificationTemplateUpdateArgsSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GAppNotificationTemplateUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GAppNotificationTemplateUpdateArgs? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GAppNotificationTemplateUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GAppNotificationTemplateCreateInput
+    implements
+        Built<GAppNotificationTemplateCreateInput,
+            GAppNotificationTemplateCreateInputBuilder> {
+  GAppNotificationTemplateCreateInput._();
+
+  factory GAppNotificationTemplateCreateInput(
+          [Function(GAppNotificationTemplateCreateInputBuilder b) updates]) =
+      _$GAppNotificationTemplateCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GNotificationTypeRelateToOneForCreateInput? get notificationType;
+  String? get title;
+  String? get body;
+  static Serializer<GAppNotificationTemplateCreateInput> get serializer =>
+      _$gAppNotificationTemplateCreateInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GAppNotificationTemplateCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GAppNotificationTemplateCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GAppNotificationTemplateCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GAppNotificationWhereUniqueInput
+    implements
+        Built<GAppNotificationWhereUniqueInput,
+            GAppNotificationWhereUniqueInputBuilder> {
+  GAppNotificationWhereUniqueInput._();
+
+  factory GAppNotificationWhereUniqueInput(
+          [Function(GAppNotificationWhereUniqueInputBuilder b) updates]) =
+      _$GAppNotificationWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GAppNotificationWhereUniqueInput> get serializer =>
+      _$gAppNotificationWhereUniqueInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GAppNotificationWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GAppNotificationWhereUniqueInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GAppNotificationWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GAppNotificationWhereInput
+    implements
+        Built<GAppNotificationWhereInput, GAppNotificationWhereInputBuilder> {
+  GAppNotificationWhereInput._();
+
+  factory GAppNotificationWhereInput(
+          [Function(GAppNotificationWhereInputBuilder b) updates]) =
+      _$GAppNotificationWhereInput;
+
+  BuiltList<GAppNotificationWhereInput>? get AND;
+  BuiltList<GAppNotificationWhereInput>? get OR;
+  BuiltList<GAppNotificationWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GNotificationTypeWhereInput? get notificationType;
+  GStringFilter? get title;
+  GStringFilter? get body;
+  GUserWhereInput? get user;
+  static Serializer<GAppNotificationWhereInput> get serializer =>
+      _$gAppNotificationWhereInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GAppNotificationWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GAppNotificationWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GAppNotificationWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GAppNotificationOrderByInput
+    implements
+        Built<GAppNotificationOrderByInput,
+            GAppNotificationOrderByInputBuilder> {
+  GAppNotificationOrderByInput._();
+
+  factory GAppNotificationOrderByInput(
+          [Function(GAppNotificationOrderByInputBuilder b) updates]) =
+      _$GAppNotificationOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get title;
+  GOrderDirection? get body;
+  static Serializer<GAppNotificationOrderByInput> get serializer =>
+      _$gAppNotificationOrderByInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GAppNotificationOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GAppNotificationOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GAppNotificationOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GAppNotificationUpdateInput
+    implements
+        Built<GAppNotificationUpdateInput, GAppNotificationUpdateInputBuilder> {
+  GAppNotificationUpdateInput._();
+
+  factory GAppNotificationUpdateInput(
+          [Function(GAppNotificationUpdateInputBuilder b) updates]) =
+      _$GAppNotificationUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GNotificationTypeRelateToOneForUpdateInput? get notificationType;
+  String? get title;
+  String? get body;
+  GUserRelateToOneForUpdateInput? get user;
+  static Serializer<GAppNotificationUpdateInput> get serializer =>
+      _$gAppNotificationUpdateInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GAppNotificationUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GAppNotificationUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GAppNotificationUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GAppNotificationUpdateArgs
+    implements
+        Built<GAppNotificationUpdateArgs, GAppNotificationUpdateArgsBuilder> {
+  GAppNotificationUpdateArgs._();
+
+  factory GAppNotificationUpdateArgs(
+          [Function(GAppNotificationUpdateArgsBuilder b) updates]) =
+      _$GAppNotificationUpdateArgs;
+
+  GAppNotificationWhereUniqueInput get where;
+  GAppNotificationUpdateInput get data;
+  static Serializer<GAppNotificationUpdateArgs> get serializer =>
+      _$gAppNotificationUpdateArgsSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GAppNotificationUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GAppNotificationUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GAppNotificationUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GAppNotificationCreateInput
+    implements
+        Built<GAppNotificationCreateInput, GAppNotificationCreateInputBuilder> {
+  GAppNotificationCreateInput._();
+
+  factory GAppNotificationCreateInput(
+          [Function(GAppNotificationCreateInputBuilder b) updates]) =
+      _$GAppNotificationCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GNotificationTypeRelateToOneForCreateInput? get notificationType;
+  String? get title;
+  String? get body;
+  GUserRelateToOneForCreateInput? get user;
+  static Serializer<GAppNotificationCreateInput> get serializer =>
+      _$gAppNotificationCreateInputSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GAppNotificationCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GAppNotificationCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GAppNotificationCreateInput.serializer,
+        json,
+      );
+}
+
 abstract class GFAQWhereUniqueInput
     implements Built<GFAQWhereUniqueInput, GFAQWhereUniqueInputBuilder> {
   GFAQWhereUniqueInput._();

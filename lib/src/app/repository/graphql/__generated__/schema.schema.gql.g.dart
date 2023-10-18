@@ -1015,6 +1015,40 @@ Serializer<GSMSNotificationTemplateUpdateArgs>
 Serializer<GSMSNotificationTemplateCreateInput>
     _$gSMSNotificationTemplateCreateInputSerializer =
     new _$GSMSNotificationTemplateCreateInputSerializer();
+Serializer<GAppNotificationTemplateWhereUniqueInput>
+    _$gAppNotificationTemplateWhereUniqueInputSerializer =
+    new _$GAppNotificationTemplateWhereUniqueInputSerializer();
+Serializer<GAppNotificationTemplateWhereInput>
+    _$gAppNotificationTemplateWhereInputSerializer =
+    new _$GAppNotificationTemplateWhereInputSerializer();
+Serializer<GAppNotificationTemplateOrderByInput>
+    _$gAppNotificationTemplateOrderByInputSerializer =
+    new _$GAppNotificationTemplateOrderByInputSerializer();
+Serializer<GAppNotificationTemplateUpdateInput>
+    _$gAppNotificationTemplateUpdateInputSerializer =
+    new _$GAppNotificationTemplateUpdateInputSerializer();
+Serializer<GAppNotificationTemplateUpdateArgs>
+    _$gAppNotificationTemplateUpdateArgsSerializer =
+    new _$GAppNotificationTemplateUpdateArgsSerializer();
+Serializer<GAppNotificationTemplateCreateInput>
+    _$gAppNotificationTemplateCreateInputSerializer =
+    new _$GAppNotificationTemplateCreateInputSerializer();
+Serializer<GAppNotificationWhereUniqueInput>
+    _$gAppNotificationWhereUniqueInputSerializer =
+    new _$GAppNotificationWhereUniqueInputSerializer();
+Serializer<GAppNotificationWhereInput> _$gAppNotificationWhereInputSerializer =
+    new _$GAppNotificationWhereInputSerializer();
+Serializer<GAppNotificationOrderByInput>
+    _$gAppNotificationOrderByInputSerializer =
+    new _$GAppNotificationOrderByInputSerializer();
+Serializer<GAppNotificationUpdateInput>
+    _$gAppNotificationUpdateInputSerializer =
+    new _$GAppNotificationUpdateInputSerializer();
+Serializer<GAppNotificationUpdateArgs> _$gAppNotificationUpdateArgsSerializer =
+    new _$GAppNotificationUpdateArgsSerializer();
+Serializer<GAppNotificationCreateInput>
+    _$gAppNotificationCreateInputSerializer =
+    new _$GAppNotificationCreateInputSerializer();
 Serializer<GFAQWhereUniqueInput> _$gFAQWhereUniqueInputSerializer =
     new _$GFAQWhereUniqueInputSerializer();
 Serializer<GFAQWhereInput> _$gFAQWhereInputSerializer =
@@ -27966,6 +28000,1134 @@ class _$GSMSNotificationTemplateCreateInputSerializer
         case 'shortURL':
           result.shortURL = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GAppNotificationTemplateWhereUniqueInputSerializer
+    implements StructuredSerializer<GAppNotificationTemplateWhereUniqueInput> {
+  @override
+  final Iterable<Type> types = const [
+    GAppNotificationTemplateWhereUniqueInput,
+    _$GAppNotificationTemplateWhereUniqueInput
+  ];
+  @override
+  final String wireName = 'GAppNotificationTemplateWhereUniqueInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GAppNotificationTemplateWhereUniqueInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GAppNotificationTemplateWhereUniqueInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GAppNotificationTemplateWhereUniqueInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GAppNotificationTemplateWhereInputSerializer
+    implements StructuredSerializer<GAppNotificationTemplateWhereInput> {
+  @override
+  final Iterable<Type> types = const [
+    GAppNotificationTemplateWhereInput,
+    _$GAppNotificationTemplateWhereInput
+  ];
+  @override
+  final String wireName = 'GAppNotificationTemplateWhereInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GAppNotificationTemplateWhereInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.AND;
+    if (value != null) {
+      result
+        ..add('AND')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GAppNotificationTemplateWhereInput)])));
+    }
+    value = object.OR;
+    if (value != null) {
+      result
+        ..add('OR')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GAppNotificationTemplateWhereInput)])));
+    }
+    value = object.NOT;
+    if (value != null) {
+      result
+        ..add('NOT')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GAppNotificationTemplateWhereInput)])));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GIDFilter)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.notificationType;
+    if (value != null) {
+      result
+        ..add('notificationType')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GNotificationTypeWhereInput)));
+    }
+    value = object.title;
+    if (value != null) {
+      result
+        ..add('title')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.body;
+    if (value != null) {
+      result
+        ..add('body')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    return result;
+  }
+
+  @override
+  GAppNotificationTemplateWhereInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GAppNotificationTemplateWhereInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'AND':
+          result.AND.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GAppNotificationTemplateWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'OR':
+          result.OR.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GAppNotificationTemplateWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'NOT':
+          result.NOT.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GAppNotificationTemplateWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GIDFilter))! as GIDFilter);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'notificationType':
+          result.notificationType.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GNotificationTypeWhereInput))!
+              as GNotificationTypeWhereInput);
+          break;
+        case 'title':
+          result.title.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'body':
+          result.body.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GAppNotificationTemplateOrderByInputSerializer
+    implements StructuredSerializer<GAppNotificationTemplateOrderByInput> {
+  @override
+  final Iterable<Type> types = const [
+    GAppNotificationTemplateOrderByInput,
+    _$GAppNotificationTemplateOrderByInput
+  ];
+  @override
+  final String wireName = 'GAppNotificationTemplateOrderByInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GAppNotificationTemplateOrderByInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.title;
+    if (value != null) {
+      result
+        ..add('title')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.body;
+    if (value != null) {
+      result
+        ..add('body')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    return result;
+  }
+
+  @override
+  GAppNotificationTemplateOrderByInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GAppNotificationTemplateOrderByInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'createdAt':
+          result.createdAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'modifiedAt':
+          result.modifiedAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'title':
+          result.title = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'body':
+          result.body = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GAppNotificationTemplateUpdateInputSerializer
+    implements StructuredSerializer<GAppNotificationTemplateUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GAppNotificationTemplateUpdateInput,
+    _$GAppNotificationTemplateUpdateInput
+  ];
+  @override
+  final String wireName = 'GAppNotificationTemplateUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GAppNotificationTemplateUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.notificationType;
+    if (value != null) {
+      result
+        ..add('notificationType')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GNotificationTypeRelateToOneForUpdateInput)));
+    }
+    value = object.title;
+    if (value != null) {
+      result
+        ..add('title')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.body;
+    if (value != null) {
+      result
+        ..add('body')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GAppNotificationTemplateUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GAppNotificationTemplateUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'notificationType':
+          result.notificationType.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GNotificationTypeRelateToOneForUpdateInput))!
+              as GNotificationTypeRelateToOneForUpdateInput);
+          break;
+        case 'title':
+          result.title = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'body':
+          result.body = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GAppNotificationTemplateUpdateArgsSerializer
+    implements StructuredSerializer<GAppNotificationTemplateUpdateArgs> {
+  @override
+  final Iterable<Type> types = const [
+    GAppNotificationTemplateUpdateArgs,
+    _$GAppNotificationTemplateUpdateArgs
+  ];
+  @override
+  final String wireName = 'GAppNotificationTemplateUpdateArgs';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GAppNotificationTemplateUpdateArgs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType:
+              const FullType(GAppNotificationTemplateWhereUniqueInput)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(GAppNotificationTemplateUpdateInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GAppNotificationTemplateUpdateArgs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GAppNotificationTemplateUpdateArgsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GAppNotificationTemplateWhereUniqueInput))!
+              as GAppNotificationTemplateWhereUniqueInput);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GAppNotificationTemplateUpdateInput))!
+              as GAppNotificationTemplateUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GAppNotificationTemplateCreateInputSerializer
+    implements StructuredSerializer<GAppNotificationTemplateCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GAppNotificationTemplateCreateInput,
+    _$GAppNotificationTemplateCreateInput
+  ];
+  @override
+  final String wireName = 'GAppNotificationTemplateCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GAppNotificationTemplateCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.notificationType;
+    if (value != null) {
+      result
+        ..add('notificationType')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GNotificationTypeRelateToOneForCreateInput)));
+    }
+    value = object.title;
+    if (value != null) {
+      result
+        ..add('title')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.body;
+    if (value != null) {
+      result
+        ..add('body')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GAppNotificationTemplateCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GAppNotificationTemplateCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'notificationType':
+          result.notificationType.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GNotificationTypeRelateToOneForCreateInput))!
+              as GNotificationTypeRelateToOneForCreateInput);
+          break;
+        case 'title':
+          result.title = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'body':
+          result.body = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GAppNotificationWhereUniqueInputSerializer
+    implements StructuredSerializer<GAppNotificationWhereUniqueInput> {
+  @override
+  final Iterable<Type> types = const [
+    GAppNotificationWhereUniqueInput,
+    _$GAppNotificationWhereUniqueInput
+  ];
+  @override
+  final String wireName = 'GAppNotificationWhereUniqueInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GAppNotificationWhereUniqueInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GAppNotificationWhereUniqueInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GAppNotificationWhereUniqueInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GAppNotificationWhereInputSerializer
+    implements StructuredSerializer<GAppNotificationWhereInput> {
+  @override
+  final Iterable<Type> types = const [
+    GAppNotificationWhereInput,
+    _$GAppNotificationWhereInput
+  ];
+  @override
+  final String wireName = 'GAppNotificationWhereInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GAppNotificationWhereInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.AND;
+    if (value != null) {
+      result
+        ..add('AND')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GAppNotificationWhereInput)])));
+    }
+    value = object.OR;
+    if (value != null) {
+      result
+        ..add('OR')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GAppNotificationWhereInput)])));
+    }
+    value = object.NOT;
+    if (value != null) {
+      result
+        ..add('NOT')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GAppNotificationWhereInput)])));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GIDFilter)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.notificationType;
+    if (value != null) {
+      result
+        ..add('notificationType')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GNotificationTypeWhereInput)));
+    }
+    value = object.title;
+    if (value != null) {
+      result
+        ..add('title')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.body;
+    if (value != null) {
+      result
+        ..add('body')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.user;
+    if (value != null) {
+      result
+        ..add('user')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserWhereInput)));
+    }
+    return result;
+  }
+
+  @override
+  GAppNotificationWhereInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GAppNotificationWhereInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'AND':
+          result.AND.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GAppNotificationWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'OR':
+          result.OR.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GAppNotificationWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'NOT':
+          result.NOT.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GAppNotificationWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GIDFilter))! as GIDFilter);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'notificationType':
+          result.notificationType.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GNotificationTypeWhereInput))!
+              as GNotificationTypeWhereInput);
+          break;
+        case 'title':
+          result.title.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'body':
+          result.body.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'user':
+          result.user.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GUserWhereInput))!
+              as GUserWhereInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GAppNotificationOrderByInputSerializer
+    implements StructuredSerializer<GAppNotificationOrderByInput> {
+  @override
+  final Iterable<Type> types = const [
+    GAppNotificationOrderByInput,
+    _$GAppNotificationOrderByInput
+  ];
+  @override
+  final String wireName = 'GAppNotificationOrderByInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GAppNotificationOrderByInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.title;
+    if (value != null) {
+      result
+        ..add('title')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.body;
+    if (value != null) {
+      result
+        ..add('body')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    return result;
+  }
+
+  @override
+  GAppNotificationOrderByInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GAppNotificationOrderByInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'createdAt':
+          result.createdAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'modifiedAt':
+          result.modifiedAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'title':
+          result.title = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'body':
+          result.body = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GAppNotificationUpdateInputSerializer
+    implements StructuredSerializer<GAppNotificationUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GAppNotificationUpdateInput,
+    _$GAppNotificationUpdateInput
+  ];
+  @override
+  final String wireName = 'GAppNotificationUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GAppNotificationUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.notificationType;
+    if (value != null) {
+      result
+        ..add('notificationType')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GNotificationTypeRelateToOneForUpdateInput)));
+    }
+    value = object.title;
+    if (value != null) {
+      result
+        ..add('title')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.body;
+    if (value != null) {
+      result
+        ..add('body')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.user;
+    if (value != null) {
+      result
+        ..add('user')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserRelateToOneForUpdateInput)));
+    }
+    return result;
+  }
+
+  @override
+  GAppNotificationUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GAppNotificationUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'notificationType':
+          result.notificationType.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GNotificationTypeRelateToOneForUpdateInput))!
+              as GNotificationTypeRelateToOneForUpdateInput);
+          break;
+        case 'title':
+          result.title = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'body':
+          result.body = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'user':
+          result.user.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserRelateToOneForUpdateInput))!
+              as GUserRelateToOneForUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GAppNotificationUpdateArgsSerializer
+    implements StructuredSerializer<GAppNotificationUpdateArgs> {
+  @override
+  final Iterable<Type> types = const [
+    GAppNotificationUpdateArgs,
+    _$GAppNotificationUpdateArgs
+  ];
+  @override
+  final String wireName = 'GAppNotificationUpdateArgs';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GAppNotificationUpdateArgs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(GAppNotificationWhereUniqueInput)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(GAppNotificationUpdateInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GAppNotificationUpdateArgs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GAppNotificationUpdateArgsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GAppNotificationWhereUniqueInput))!
+              as GAppNotificationWhereUniqueInput);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GAppNotificationUpdateInput))!
+              as GAppNotificationUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GAppNotificationCreateInputSerializer
+    implements StructuredSerializer<GAppNotificationCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GAppNotificationCreateInput,
+    _$GAppNotificationCreateInput
+  ];
+  @override
+  final String wireName = 'GAppNotificationCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GAppNotificationCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.notificationType;
+    if (value != null) {
+      result
+        ..add('notificationType')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GNotificationTypeRelateToOneForCreateInput)));
+    }
+    value = object.title;
+    if (value != null) {
+      result
+        ..add('title')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.body;
+    if (value != null) {
+      result
+        ..add('body')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.user;
+    if (value != null) {
+      result
+        ..add('user')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserRelateToOneForCreateInput)));
+    }
+    return result;
+  }
+
+  @override
+  GAppNotificationCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GAppNotificationCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'notificationType':
+          result.notificationType.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GNotificationTypeRelateToOneForCreateInput))!
+              as GNotificationTypeRelateToOneForCreateInput);
+          break;
+        case 'title':
+          result.title = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'body':
+          result.body = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'user':
+          result.user.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserRelateToOneForCreateInput))!
+              as GUserRelateToOneForCreateInput);
           break;
       }
     }
@@ -78518,6 +79680,1850 @@ class GSMSNotificationTemplateCreateInputBuilder
             r'GSMSNotificationTemplateCreateInput',
             _$failedField,
             e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GAppNotificationTemplateWhereUniqueInput
+    extends GAppNotificationTemplateWhereUniqueInput {
+  @override
+  final String? id;
+
+  factory _$GAppNotificationTemplateWhereUniqueInput(
+          [void Function(GAppNotificationTemplateWhereUniqueInputBuilder)?
+              updates]) =>
+      (new GAppNotificationTemplateWhereUniqueInputBuilder()..update(updates))
+          ._build();
+
+  _$GAppNotificationTemplateWhereUniqueInput._({this.id}) : super._();
+
+  @override
+  GAppNotificationTemplateWhereUniqueInput rebuild(
+          void Function(GAppNotificationTemplateWhereUniqueInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GAppNotificationTemplateWhereUniqueInputBuilder toBuilder() =>
+      new GAppNotificationTemplateWhereUniqueInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GAppNotificationTemplateWhereUniqueInput && id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GAppNotificationTemplateWhereUniqueInput')
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GAppNotificationTemplateWhereUniqueInputBuilder
+    implements
+        Builder<GAppNotificationTemplateWhereUniqueInput,
+            GAppNotificationTemplateWhereUniqueInputBuilder> {
+  _$GAppNotificationTemplateWhereUniqueInput? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GAppNotificationTemplateWhereUniqueInputBuilder();
+
+  GAppNotificationTemplateWhereUniqueInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GAppNotificationTemplateWhereUniqueInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GAppNotificationTemplateWhereUniqueInput;
+  }
+
+  @override
+  void update(
+      void Function(GAppNotificationTemplateWhereUniqueInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GAppNotificationTemplateWhereUniqueInput build() => _build();
+
+  _$GAppNotificationTemplateWhereUniqueInput _build() {
+    final _$result =
+        _$v ?? new _$GAppNotificationTemplateWhereUniqueInput._(id: id);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GAppNotificationTemplateWhereInput
+    extends GAppNotificationTemplateWhereInput {
+  @override
+  final BuiltList<GAppNotificationTemplateWhereInput>? AND;
+  @override
+  final BuiltList<GAppNotificationTemplateWhereInput>? OR;
+  @override
+  final BuiltList<GAppNotificationTemplateWhereInput>? NOT;
+  @override
+  final GIDFilter? id;
+  @override
+  final GDateTimeNullableFilter? createdAt;
+  @override
+  final GDateTimeNullableFilter? modifiedAt;
+  @override
+  final GNotificationTypeWhereInput? notificationType;
+  @override
+  final GStringFilter? title;
+  @override
+  final GStringFilter? body;
+
+  factory _$GAppNotificationTemplateWhereInput(
+          [void Function(GAppNotificationTemplateWhereInputBuilder)?
+              updates]) =>
+      (new GAppNotificationTemplateWhereInputBuilder()..update(updates))
+          ._build();
+
+  _$GAppNotificationTemplateWhereInput._(
+      {this.AND,
+      this.OR,
+      this.NOT,
+      this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.notificationType,
+      this.title,
+      this.body})
+      : super._();
+
+  @override
+  GAppNotificationTemplateWhereInput rebuild(
+          void Function(GAppNotificationTemplateWhereInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GAppNotificationTemplateWhereInputBuilder toBuilder() =>
+      new GAppNotificationTemplateWhereInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GAppNotificationTemplateWhereInput &&
+        AND == other.AND &&
+        OR == other.OR &&
+        NOT == other.NOT &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        notificationType == other.notificationType &&
+        title == other.title &&
+        body == other.body;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, AND.hashCode);
+    _$hash = $jc(_$hash, OR.hashCode);
+    _$hash = $jc(_$hash, NOT.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, notificationType.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, body.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GAppNotificationTemplateWhereInput')
+          ..add('AND', AND)
+          ..add('OR', OR)
+          ..add('NOT', NOT)
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('notificationType', notificationType)
+          ..add('title', title)
+          ..add('body', body))
+        .toString();
+  }
+}
+
+class GAppNotificationTemplateWhereInputBuilder
+    implements
+        Builder<GAppNotificationTemplateWhereInput,
+            GAppNotificationTemplateWhereInputBuilder> {
+  _$GAppNotificationTemplateWhereInput? _$v;
+
+  ListBuilder<GAppNotificationTemplateWhereInput>? _AND;
+  ListBuilder<GAppNotificationTemplateWhereInput> get AND =>
+      _$this._AND ??= new ListBuilder<GAppNotificationTemplateWhereInput>();
+  set AND(ListBuilder<GAppNotificationTemplateWhereInput>? AND) =>
+      _$this._AND = AND;
+
+  ListBuilder<GAppNotificationTemplateWhereInput>? _OR;
+  ListBuilder<GAppNotificationTemplateWhereInput> get OR =>
+      _$this._OR ??= new ListBuilder<GAppNotificationTemplateWhereInput>();
+  set OR(ListBuilder<GAppNotificationTemplateWhereInput>? OR) =>
+      _$this._OR = OR;
+
+  ListBuilder<GAppNotificationTemplateWhereInput>? _NOT;
+  ListBuilder<GAppNotificationTemplateWhereInput> get NOT =>
+      _$this._NOT ??= new ListBuilder<GAppNotificationTemplateWhereInput>();
+  set NOT(ListBuilder<GAppNotificationTemplateWhereInput>? NOT) =>
+      _$this._NOT = NOT;
+
+  GIDFilterBuilder? _id;
+  GIDFilterBuilder get id => _$this._id ??= new GIDFilterBuilder();
+  set id(GIDFilterBuilder? id) => _$this._id = id;
+
+  GDateTimeNullableFilterBuilder? _createdAt;
+  GDateTimeNullableFilterBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeNullableFilterBuilder();
+  set createdAt(GDateTimeNullableFilterBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GDateTimeNullableFilterBuilder? _modifiedAt;
+  GDateTimeNullableFilterBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeNullableFilterBuilder();
+  set modifiedAt(GDateTimeNullableFilterBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GNotificationTypeWhereInputBuilder? _notificationType;
+  GNotificationTypeWhereInputBuilder get notificationType =>
+      _$this._notificationType ??= new GNotificationTypeWhereInputBuilder();
+  set notificationType(GNotificationTypeWhereInputBuilder? notificationType) =>
+      _$this._notificationType = notificationType;
+
+  GStringFilterBuilder? _title;
+  GStringFilterBuilder get title =>
+      _$this._title ??= new GStringFilterBuilder();
+  set title(GStringFilterBuilder? title) => _$this._title = title;
+
+  GStringFilterBuilder? _body;
+  GStringFilterBuilder get body => _$this._body ??= new GStringFilterBuilder();
+  set body(GStringFilterBuilder? body) => _$this._body = body;
+
+  GAppNotificationTemplateWhereInputBuilder();
+
+  GAppNotificationTemplateWhereInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _AND = $v.AND?.toBuilder();
+      _OR = $v.OR?.toBuilder();
+      _NOT = $v.NOT?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _notificationType = $v.notificationType?.toBuilder();
+      _title = $v.title?.toBuilder();
+      _body = $v.body?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GAppNotificationTemplateWhereInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GAppNotificationTemplateWhereInput;
+  }
+
+  @override
+  void update(
+      void Function(GAppNotificationTemplateWhereInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GAppNotificationTemplateWhereInput build() => _build();
+
+  _$GAppNotificationTemplateWhereInput _build() {
+    _$GAppNotificationTemplateWhereInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GAppNotificationTemplateWhereInput._(
+              AND: _AND?.build(),
+              OR: _OR?.build(),
+              NOT: _NOT?.build(),
+              id: _id?.build(),
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              notificationType: _notificationType?.build(),
+              title: _title?.build(),
+              body: _body?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'AND';
+        _AND?.build();
+        _$failedField = 'OR';
+        _OR?.build();
+        _$failedField = 'NOT';
+        _NOT?.build();
+        _$failedField = 'id';
+        _id?.build();
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'notificationType';
+        _notificationType?.build();
+        _$failedField = 'title';
+        _title?.build();
+        _$failedField = 'body';
+        _body?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GAppNotificationTemplateWhereInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GAppNotificationTemplateOrderByInput
+    extends GAppNotificationTemplateOrderByInput {
+  @override
+  final GOrderDirection? id;
+  @override
+  final GOrderDirection? createdAt;
+  @override
+  final GOrderDirection? modifiedAt;
+  @override
+  final GOrderDirection? title;
+  @override
+  final GOrderDirection? body;
+
+  factory _$GAppNotificationTemplateOrderByInput(
+          [void Function(GAppNotificationTemplateOrderByInputBuilder)?
+              updates]) =>
+      (new GAppNotificationTemplateOrderByInputBuilder()..update(updates))
+          ._build();
+
+  _$GAppNotificationTemplateOrderByInput._(
+      {this.id, this.createdAt, this.modifiedAt, this.title, this.body})
+      : super._();
+
+  @override
+  GAppNotificationTemplateOrderByInput rebuild(
+          void Function(GAppNotificationTemplateOrderByInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GAppNotificationTemplateOrderByInputBuilder toBuilder() =>
+      new GAppNotificationTemplateOrderByInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GAppNotificationTemplateOrderByInput &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        title == other.title &&
+        body == other.body;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, body.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GAppNotificationTemplateOrderByInput')
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('title', title)
+          ..add('body', body))
+        .toString();
+  }
+}
+
+class GAppNotificationTemplateOrderByInputBuilder
+    implements
+        Builder<GAppNotificationTemplateOrderByInput,
+            GAppNotificationTemplateOrderByInputBuilder> {
+  _$GAppNotificationTemplateOrderByInput? _$v;
+
+  GOrderDirection? _id;
+  GOrderDirection? get id => _$this._id;
+  set id(GOrderDirection? id) => _$this._id = id;
+
+  GOrderDirection? _createdAt;
+  GOrderDirection? get createdAt => _$this._createdAt;
+  set createdAt(GOrderDirection? createdAt) => _$this._createdAt = createdAt;
+
+  GOrderDirection? _modifiedAt;
+  GOrderDirection? get modifiedAt => _$this._modifiedAt;
+  set modifiedAt(GOrderDirection? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GOrderDirection? _title;
+  GOrderDirection? get title => _$this._title;
+  set title(GOrderDirection? title) => _$this._title = title;
+
+  GOrderDirection? _body;
+  GOrderDirection? get body => _$this._body;
+  set body(GOrderDirection? body) => _$this._body = body;
+
+  GAppNotificationTemplateOrderByInputBuilder();
+
+  GAppNotificationTemplateOrderByInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _createdAt = $v.createdAt;
+      _modifiedAt = $v.modifiedAt;
+      _title = $v.title;
+      _body = $v.body;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GAppNotificationTemplateOrderByInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GAppNotificationTemplateOrderByInput;
+  }
+
+  @override
+  void update(
+      void Function(GAppNotificationTemplateOrderByInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GAppNotificationTemplateOrderByInput build() => _build();
+
+  _$GAppNotificationTemplateOrderByInput _build() {
+    final _$result = _$v ??
+        new _$GAppNotificationTemplateOrderByInput._(
+            id: id,
+            createdAt: createdAt,
+            modifiedAt: modifiedAt,
+            title: title,
+            body: body);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GAppNotificationTemplateUpdateInput
+    extends GAppNotificationTemplateUpdateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final GNotificationTypeRelateToOneForUpdateInput? notificationType;
+  @override
+  final String? title;
+  @override
+  final String? body;
+
+  factory _$GAppNotificationTemplateUpdateInput(
+          [void Function(GAppNotificationTemplateUpdateInputBuilder)?
+              updates]) =>
+      (new GAppNotificationTemplateUpdateInputBuilder()..update(updates))
+          ._build();
+
+  _$GAppNotificationTemplateUpdateInput._(
+      {this.createdAt,
+      this.modifiedAt,
+      this.notificationType,
+      this.title,
+      this.body})
+      : super._();
+
+  @override
+  GAppNotificationTemplateUpdateInput rebuild(
+          void Function(GAppNotificationTemplateUpdateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GAppNotificationTemplateUpdateInputBuilder toBuilder() =>
+      new GAppNotificationTemplateUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GAppNotificationTemplateUpdateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        notificationType == other.notificationType &&
+        title == other.title &&
+        body == other.body;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, notificationType.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, body.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GAppNotificationTemplateUpdateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('notificationType', notificationType)
+          ..add('title', title)
+          ..add('body', body))
+        .toString();
+  }
+}
+
+class GAppNotificationTemplateUpdateInputBuilder
+    implements
+        Builder<GAppNotificationTemplateUpdateInput,
+            GAppNotificationTemplateUpdateInputBuilder> {
+  _$GAppNotificationTemplateUpdateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GNotificationTypeRelateToOneForUpdateInputBuilder? _notificationType;
+  GNotificationTypeRelateToOneForUpdateInputBuilder get notificationType =>
+      _$this._notificationType ??=
+          new GNotificationTypeRelateToOneForUpdateInputBuilder();
+  set notificationType(
+          GNotificationTypeRelateToOneForUpdateInputBuilder?
+              notificationType) =>
+      _$this._notificationType = notificationType;
+
+  String? _title;
+  String? get title => _$this._title;
+  set title(String? title) => _$this._title = title;
+
+  String? _body;
+  String? get body => _$this._body;
+  set body(String? body) => _$this._body = body;
+
+  GAppNotificationTemplateUpdateInputBuilder();
+
+  GAppNotificationTemplateUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _notificationType = $v.notificationType?.toBuilder();
+      _title = $v.title;
+      _body = $v.body;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GAppNotificationTemplateUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GAppNotificationTemplateUpdateInput;
+  }
+
+  @override
+  void update(
+      void Function(GAppNotificationTemplateUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GAppNotificationTemplateUpdateInput build() => _build();
+
+  _$GAppNotificationTemplateUpdateInput _build() {
+    _$GAppNotificationTemplateUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GAppNotificationTemplateUpdateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              notificationType: _notificationType?.build(),
+              title: title,
+              body: body);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'notificationType';
+        _notificationType?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GAppNotificationTemplateUpdateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GAppNotificationTemplateUpdateArgs
+    extends GAppNotificationTemplateUpdateArgs {
+  @override
+  final GAppNotificationTemplateWhereUniqueInput where;
+  @override
+  final GAppNotificationTemplateUpdateInput data;
+
+  factory _$GAppNotificationTemplateUpdateArgs(
+          [void Function(GAppNotificationTemplateUpdateArgsBuilder)?
+              updates]) =>
+      (new GAppNotificationTemplateUpdateArgsBuilder()..update(updates))
+          ._build();
+
+  _$GAppNotificationTemplateUpdateArgs._(
+      {required this.where, required this.data})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GAppNotificationTemplateUpdateArgs', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        data, r'GAppNotificationTemplateUpdateArgs', 'data');
+  }
+
+  @override
+  GAppNotificationTemplateUpdateArgs rebuild(
+          void Function(GAppNotificationTemplateUpdateArgsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GAppNotificationTemplateUpdateArgsBuilder toBuilder() =>
+      new GAppNotificationTemplateUpdateArgsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GAppNotificationTemplateUpdateArgs &&
+        where == other.where &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GAppNotificationTemplateUpdateArgs')
+          ..add('where', where)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GAppNotificationTemplateUpdateArgsBuilder
+    implements
+        Builder<GAppNotificationTemplateUpdateArgs,
+            GAppNotificationTemplateUpdateArgsBuilder> {
+  _$GAppNotificationTemplateUpdateArgs? _$v;
+
+  GAppNotificationTemplateWhereUniqueInputBuilder? _where;
+  GAppNotificationTemplateWhereUniqueInputBuilder get where =>
+      _$this._where ??= new GAppNotificationTemplateWhereUniqueInputBuilder();
+  set where(GAppNotificationTemplateWhereUniqueInputBuilder? where) =>
+      _$this._where = where;
+
+  GAppNotificationTemplateUpdateInputBuilder? _data;
+  GAppNotificationTemplateUpdateInputBuilder get data =>
+      _$this._data ??= new GAppNotificationTemplateUpdateInputBuilder();
+  set data(GAppNotificationTemplateUpdateInputBuilder? data) =>
+      _$this._data = data;
+
+  GAppNotificationTemplateUpdateArgsBuilder();
+
+  GAppNotificationTemplateUpdateArgsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GAppNotificationTemplateUpdateArgs other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GAppNotificationTemplateUpdateArgs;
+  }
+
+  @override
+  void update(
+      void Function(GAppNotificationTemplateUpdateArgsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GAppNotificationTemplateUpdateArgs build() => _build();
+
+  _$GAppNotificationTemplateUpdateArgs _build() {
+    _$GAppNotificationTemplateUpdateArgs _$result;
+    try {
+      _$result = _$v ??
+          new _$GAppNotificationTemplateUpdateArgs._(
+              where: where.build(), data: data.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GAppNotificationTemplateUpdateArgs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GAppNotificationTemplateCreateInput
+    extends GAppNotificationTemplateCreateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final GNotificationTypeRelateToOneForCreateInput? notificationType;
+  @override
+  final String? title;
+  @override
+  final String? body;
+
+  factory _$GAppNotificationTemplateCreateInput(
+          [void Function(GAppNotificationTemplateCreateInputBuilder)?
+              updates]) =>
+      (new GAppNotificationTemplateCreateInputBuilder()..update(updates))
+          ._build();
+
+  _$GAppNotificationTemplateCreateInput._(
+      {this.createdAt,
+      this.modifiedAt,
+      this.notificationType,
+      this.title,
+      this.body})
+      : super._();
+
+  @override
+  GAppNotificationTemplateCreateInput rebuild(
+          void Function(GAppNotificationTemplateCreateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GAppNotificationTemplateCreateInputBuilder toBuilder() =>
+      new GAppNotificationTemplateCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GAppNotificationTemplateCreateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        notificationType == other.notificationType &&
+        title == other.title &&
+        body == other.body;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, notificationType.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, body.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GAppNotificationTemplateCreateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('notificationType', notificationType)
+          ..add('title', title)
+          ..add('body', body))
+        .toString();
+  }
+}
+
+class GAppNotificationTemplateCreateInputBuilder
+    implements
+        Builder<GAppNotificationTemplateCreateInput,
+            GAppNotificationTemplateCreateInputBuilder> {
+  _$GAppNotificationTemplateCreateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GNotificationTypeRelateToOneForCreateInputBuilder? _notificationType;
+  GNotificationTypeRelateToOneForCreateInputBuilder get notificationType =>
+      _$this._notificationType ??=
+          new GNotificationTypeRelateToOneForCreateInputBuilder();
+  set notificationType(
+          GNotificationTypeRelateToOneForCreateInputBuilder?
+              notificationType) =>
+      _$this._notificationType = notificationType;
+
+  String? _title;
+  String? get title => _$this._title;
+  set title(String? title) => _$this._title = title;
+
+  String? _body;
+  String? get body => _$this._body;
+  set body(String? body) => _$this._body = body;
+
+  GAppNotificationTemplateCreateInputBuilder();
+
+  GAppNotificationTemplateCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _notificationType = $v.notificationType?.toBuilder();
+      _title = $v.title;
+      _body = $v.body;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GAppNotificationTemplateCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GAppNotificationTemplateCreateInput;
+  }
+
+  @override
+  void update(
+      void Function(GAppNotificationTemplateCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GAppNotificationTemplateCreateInput build() => _build();
+
+  _$GAppNotificationTemplateCreateInput _build() {
+    _$GAppNotificationTemplateCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GAppNotificationTemplateCreateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              notificationType: _notificationType?.build(),
+              title: title,
+              body: body);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'notificationType';
+        _notificationType?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GAppNotificationTemplateCreateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GAppNotificationWhereUniqueInput
+    extends GAppNotificationWhereUniqueInput {
+  @override
+  final String? id;
+
+  factory _$GAppNotificationWhereUniqueInput(
+          [void Function(GAppNotificationWhereUniqueInputBuilder)? updates]) =>
+      (new GAppNotificationWhereUniqueInputBuilder()..update(updates))._build();
+
+  _$GAppNotificationWhereUniqueInput._({this.id}) : super._();
+
+  @override
+  GAppNotificationWhereUniqueInput rebuild(
+          void Function(GAppNotificationWhereUniqueInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GAppNotificationWhereUniqueInputBuilder toBuilder() =>
+      new GAppNotificationWhereUniqueInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GAppNotificationWhereUniqueInput && id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GAppNotificationWhereUniqueInput')
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GAppNotificationWhereUniqueInputBuilder
+    implements
+        Builder<GAppNotificationWhereUniqueInput,
+            GAppNotificationWhereUniqueInputBuilder> {
+  _$GAppNotificationWhereUniqueInput? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GAppNotificationWhereUniqueInputBuilder();
+
+  GAppNotificationWhereUniqueInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GAppNotificationWhereUniqueInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GAppNotificationWhereUniqueInput;
+  }
+
+  @override
+  void update(void Function(GAppNotificationWhereUniqueInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GAppNotificationWhereUniqueInput build() => _build();
+
+  _$GAppNotificationWhereUniqueInput _build() {
+    final _$result = _$v ?? new _$GAppNotificationWhereUniqueInput._(id: id);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GAppNotificationWhereInput extends GAppNotificationWhereInput {
+  @override
+  final BuiltList<GAppNotificationWhereInput>? AND;
+  @override
+  final BuiltList<GAppNotificationWhereInput>? OR;
+  @override
+  final BuiltList<GAppNotificationWhereInput>? NOT;
+  @override
+  final GIDFilter? id;
+  @override
+  final GDateTimeNullableFilter? createdAt;
+  @override
+  final GDateTimeNullableFilter? modifiedAt;
+  @override
+  final GNotificationTypeWhereInput? notificationType;
+  @override
+  final GStringFilter? title;
+  @override
+  final GStringFilter? body;
+  @override
+  final GUserWhereInput? user;
+
+  factory _$GAppNotificationWhereInput(
+          [void Function(GAppNotificationWhereInputBuilder)? updates]) =>
+      (new GAppNotificationWhereInputBuilder()..update(updates))._build();
+
+  _$GAppNotificationWhereInput._(
+      {this.AND,
+      this.OR,
+      this.NOT,
+      this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.notificationType,
+      this.title,
+      this.body,
+      this.user})
+      : super._();
+
+  @override
+  GAppNotificationWhereInput rebuild(
+          void Function(GAppNotificationWhereInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GAppNotificationWhereInputBuilder toBuilder() =>
+      new GAppNotificationWhereInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GAppNotificationWhereInput &&
+        AND == other.AND &&
+        OR == other.OR &&
+        NOT == other.NOT &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        notificationType == other.notificationType &&
+        title == other.title &&
+        body == other.body &&
+        user == other.user;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, AND.hashCode);
+    _$hash = $jc(_$hash, OR.hashCode);
+    _$hash = $jc(_$hash, NOT.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, notificationType.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, body.hashCode);
+    _$hash = $jc(_$hash, user.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GAppNotificationWhereInput')
+          ..add('AND', AND)
+          ..add('OR', OR)
+          ..add('NOT', NOT)
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('notificationType', notificationType)
+          ..add('title', title)
+          ..add('body', body)
+          ..add('user', user))
+        .toString();
+  }
+}
+
+class GAppNotificationWhereInputBuilder
+    implements
+        Builder<GAppNotificationWhereInput, GAppNotificationWhereInputBuilder> {
+  _$GAppNotificationWhereInput? _$v;
+
+  ListBuilder<GAppNotificationWhereInput>? _AND;
+  ListBuilder<GAppNotificationWhereInput> get AND =>
+      _$this._AND ??= new ListBuilder<GAppNotificationWhereInput>();
+  set AND(ListBuilder<GAppNotificationWhereInput>? AND) => _$this._AND = AND;
+
+  ListBuilder<GAppNotificationWhereInput>? _OR;
+  ListBuilder<GAppNotificationWhereInput> get OR =>
+      _$this._OR ??= new ListBuilder<GAppNotificationWhereInput>();
+  set OR(ListBuilder<GAppNotificationWhereInput>? OR) => _$this._OR = OR;
+
+  ListBuilder<GAppNotificationWhereInput>? _NOT;
+  ListBuilder<GAppNotificationWhereInput> get NOT =>
+      _$this._NOT ??= new ListBuilder<GAppNotificationWhereInput>();
+  set NOT(ListBuilder<GAppNotificationWhereInput>? NOT) => _$this._NOT = NOT;
+
+  GIDFilterBuilder? _id;
+  GIDFilterBuilder get id => _$this._id ??= new GIDFilterBuilder();
+  set id(GIDFilterBuilder? id) => _$this._id = id;
+
+  GDateTimeNullableFilterBuilder? _createdAt;
+  GDateTimeNullableFilterBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeNullableFilterBuilder();
+  set createdAt(GDateTimeNullableFilterBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GDateTimeNullableFilterBuilder? _modifiedAt;
+  GDateTimeNullableFilterBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeNullableFilterBuilder();
+  set modifiedAt(GDateTimeNullableFilterBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GNotificationTypeWhereInputBuilder? _notificationType;
+  GNotificationTypeWhereInputBuilder get notificationType =>
+      _$this._notificationType ??= new GNotificationTypeWhereInputBuilder();
+  set notificationType(GNotificationTypeWhereInputBuilder? notificationType) =>
+      _$this._notificationType = notificationType;
+
+  GStringFilterBuilder? _title;
+  GStringFilterBuilder get title =>
+      _$this._title ??= new GStringFilterBuilder();
+  set title(GStringFilterBuilder? title) => _$this._title = title;
+
+  GStringFilterBuilder? _body;
+  GStringFilterBuilder get body => _$this._body ??= new GStringFilterBuilder();
+  set body(GStringFilterBuilder? body) => _$this._body = body;
+
+  GUserWhereInputBuilder? _user;
+  GUserWhereInputBuilder get user =>
+      _$this._user ??= new GUserWhereInputBuilder();
+  set user(GUserWhereInputBuilder? user) => _$this._user = user;
+
+  GAppNotificationWhereInputBuilder();
+
+  GAppNotificationWhereInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _AND = $v.AND?.toBuilder();
+      _OR = $v.OR?.toBuilder();
+      _NOT = $v.NOT?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _notificationType = $v.notificationType?.toBuilder();
+      _title = $v.title?.toBuilder();
+      _body = $v.body?.toBuilder();
+      _user = $v.user?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GAppNotificationWhereInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GAppNotificationWhereInput;
+  }
+
+  @override
+  void update(void Function(GAppNotificationWhereInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GAppNotificationWhereInput build() => _build();
+
+  _$GAppNotificationWhereInput _build() {
+    _$GAppNotificationWhereInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GAppNotificationWhereInput._(
+              AND: _AND?.build(),
+              OR: _OR?.build(),
+              NOT: _NOT?.build(),
+              id: _id?.build(),
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              notificationType: _notificationType?.build(),
+              title: _title?.build(),
+              body: _body?.build(),
+              user: _user?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'AND';
+        _AND?.build();
+        _$failedField = 'OR';
+        _OR?.build();
+        _$failedField = 'NOT';
+        _NOT?.build();
+        _$failedField = 'id';
+        _id?.build();
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'notificationType';
+        _notificationType?.build();
+        _$failedField = 'title';
+        _title?.build();
+        _$failedField = 'body';
+        _body?.build();
+        _$failedField = 'user';
+        _user?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GAppNotificationWhereInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GAppNotificationOrderByInput extends GAppNotificationOrderByInput {
+  @override
+  final GOrderDirection? id;
+  @override
+  final GOrderDirection? createdAt;
+  @override
+  final GOrderDirection? modifiedAt;
+  @override
+  final GOrderDirection? title;
+  @override
+  final GOrderDirection? body;
+
+  factory _$GAppNotificationOrderByInput(
+          [void Function(GAppNotificationOrderByInputBuilder)? updates]) =>
+      (new GAppNotificationOrderByInputBuilder()..update(updates))._build();
+
+  _$GAppNotificationOrderByInput._(
+      {this.id, this.createdAt, this.modifiedAt, this.title, this.body})
+      : super._();
+
+  @override
+  GAppNotificationOrderByInput rebuild(
+          void Function(GAppNotificationOrderByInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GAppNotificationOrderByInputBuilder toBuilder() =>
+      new GAppNotificationOrderByInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GAppNotificationOrderByInput &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        title == other.title &&
+        body == other.body;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, body.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GAppNotificationOrderByInput')
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('title', title)
+          ..add('body', body))
+        .toString();
+  }
+}
+
+class GAppNotificationOrderByInputBuilder
+    implements
+        Builder<GAppNotificationOrderByInput,
+            GAppNotificationOrderByInputBuilder> {
+  _$GAppNotificationOrderByInput? _$v;
+
+  GOrderDirection? _id;
+  GOrderDirection? get id => _$this._id;
+  set id(GOrderDirection? id) => _$this._id = id;
+
+  GOrderDirection? _createdAt;
+  GOrderDirection? get createdAt => _$this._createdAt;
+  set createdAt(GOrderDirection? createdAt) => _$this._createdAt = createdAt;
+
+  GOrderDirection? _modifiedAt;
+  GOrderDirection? get modifiedAt => _$this._modifiedAt;
+  set modifiedAt(GOrderDirection? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GOrderDirection? _title;
+  GOrderDirection? get title => _$this._title;
+  set title(GOrderDirection? title) => _$this._title = title;
+
+  GOrderDirection? _body;
+  GOrderDirection? get body => _$this._body;
+  set body(GOrderDirection? body) => _$this._body = body;
+
+  GAppNotificationOrderByInputBuilder();
+
+  GAppNotificationOrderByInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _createdAt = $v.createdAt;
+      _modifiedAt = $v.modifiedAt;
+      _title = $v.title;
+      _body = $v.body;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GAppNotificationOrderByInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GAppNotificationOrderByInput;
+  }
+
+  @override
+  void update(void Function(GAppNotificationOrderByInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GAppNotificationOrderByInput build() => _build();
+
+  _$GAppNotificationOrderByInput _build() {
+    final _$result = _$v ??
+        new _$GAppNotificationOrderByInput._(
+            id: id,
+            createdAt: createdAt,
+            modifiedAt: modifiedAt,
+            title: title,
+            body: body);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GAppNotificationUpdateInput extends GAppNotificationUpdateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final GNotificationTypeRelateToOneForUpdateInput? notificationType;
+  @override
+  final String? title;
+  @override
+  final String? body;
+  @override
+  final GUserRelateToOneForUpdateInput? user;
+
+  factory _$GAppNotificationUpdateInput(
+          [void Function(GAppNotificationUpdateInputBuilder)? updates]) =>
+      (new GAppNotificationUpdateInputBuilder()..update(updates))._build();
+
+  _$GAppNotificationUpdateInput._(
+      {this.createdAt,
+      this.modifiedAt,
+      this.notificationType,
+      this.title,
+      this.body,
+      this.user})
+      : super._();
+
+  @override
+  GAppNotificationUpdateInput rebuild(
+          void Function(GAppNotificationUpdateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GAppNotificationUpdateInputBuilder toBuilder() =>
+      new GAppNotificationUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GAppNotificationUpdateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        notificationType == other.notificationType &&
+        title == other.title &&
+        body == other.body &&
+        user == other.user;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, notificationType.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, body.hashCode);
+    _$hash = $jc(_$hash, user.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GAppNotificationUpdateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('notificationType', notificationType)
+          ..add('title', title)
+          ..add('body', body)
+          ..add('user', user))
+        .toString();
+  }
+}
+
+class GAppNotificationUpdateInputBuilder
+    implements
+        Builder<GAppNotificationUpdateInput,
+            GAppNotificationUpdateInputBuilder> {
+  _$GAppNotificationUpdateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GNotificationTypeRelateToOneForUpdateInputBuilder? _notificationType;
+  GNotificationTypeRelateToOneForUpdateInputBuilder get notificationType =>
+      _$this._notificationType ??=
+          new GNotificationTypeRelateToOneForUpdateInputBuilder();
+  set notificationType(
+          GNotificationTypeRelateToOneForUpdateInputBuilder?
+              notificationType) =>
+      _$this._notificationType = notificationType;
+
+  String? _title;
+  String? get title => _$this._title;
+  set title(String? title) => _$this._title = title;
+
+  String? _body;
+  String? get body => _$this._body;
+  set body(String? body) => _$this._body = body;
+
+  GUserRelateToOneForUpdateInputBuilder? _user;
+  GUserRelateToOneForUpdateInputBuilder get user =>
+      _$this._user ??= new GUserRelateToOneForUpdateInputBuilder();
+  set user(GUserRelateToOneForUpdateInputBuilder? user) => _$this._user = user;
+
+  GAppNotificationUpdateInputBuilder();
+
+  GAppNotificationUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _notificationType = $v.notificationType?.toBuilder();
+      _title = $v.title;
+      _body = $v.body;
+      _user = $v.user?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GAppNotificationUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GAppNotificationUpdateInput;
+  }
+
+  @override
+  void update(void Function(GAppNotificationUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GAppNotificationUpdateInput build() => _build();
+
+  _$GAppNotificationUpdateInput _build() {
+    _$GAppNotificationUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GAppNotificationUpdateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              notificationType: _notificationType?.build(),
+              title: title,
+              body: body,
+              user: _user?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'notificationType';
+        _notificationType?.build();
+
+        _$failedField = 'user';
+        _user?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GAppNotificationUpdateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GAppNotificationUpdateArgs extends GAppNotificationUpdateArgs {
+  @override
+  final GAppNotificationWhereUniqueInput where;
+  @override
+  final GAppNotificationUpdateInput data;
+
+  factory _$GAppNotificationUpdateArgs(
+          [void Function(GAppNotificationUpdateArgsBuilder)? updates]) =>
+      (new GAppNotificationUpdateArgsBuilder()..update(updates))._build();
+
+  _$GAppNotificationUpdateArgs._({required this.where, required this.data})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GAppNotificationUpdateArgs', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        data, r'GAppNotificationUpdateArgs', 'data');
+  }
+
+  @override
+  GAppNotificationUpdateArgs rebuild(
+          void Function(GAppNotificationUpdateArgsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GAppNotificationUpdateArgsBuilder toBuilder() =>
+      new GAppNotificationUpdateArgsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GAppNotificationUpdateArgs &&
+        where == other.where &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GAppNotificationUpdateArgs')
+          ..add('where', where)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GAppNotificationUpdateArgsBuilder
+    implements
+        Builder<GAppNotificationUpdateArgs, GAppNotificationUpdateArgsBuilder> {
+  _$GAppNotificationUpdateArgs? _$v;
+
+  GAppNotificationWhereUniqueInputBuilder? _where;
+  GAppNotificationWhereUniqueInputBuilder get where =>
+      _$this._where ??= new GAppNotificationWhereUniqueInputBuilder();
+  set where(GAppNotificationWhereUniqueInputBuilder? where) =>
+      _$this._where = where;
+
+  GAppNotificationUpdateInputBuilder? _data;
+  GAppNotificationUpdateInputBuilder get data =>
+      _$this._data ??= new GAppNotificationUpdateInputBuilder();
+  set data(GAppNotificationUpdateInputBuilder? data) => _$this._data = data;
+
+  GAppNotificationUpdateArgsBuilder();
+
+  GAppNotificationUpdateArgsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GAppNotificationUpdateArgs other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GAppNotificationUpdateArgs;
+  }
+
+  @override
+  void update(void Function(GAppNotificationUpdateArgsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GAppNotificationUpdateArgs build() => _build();
+
+  _$GAppNotificationUpdateArgs _build() {
+    _$GAppNotificationUpdateArgs _$result;
+    try {
+      _$result = _$v ??
+          new _$GAppNotificationUpdateArgs._(
+              where: where.build(), data: data.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GAppNotificationUpdateArgs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GAppNotificationCreateInput extends GAppNotificationCreateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final GNotificationTypeRelateToOneForCreateInput? notificationType;
+  @override
+  final String? title;
+  @override
+  final String? body;
+  @override
+  final GUserRelateToOneForCreateInput? user;
+
+  factory _$GAppNotificationCreateInput(
+          [void Function(GAppNotificationCreateInputBuilder)? updates]) =>
+      (new GAppNotificationCreateInputBuilder()..update(updates))._build();
+
+  _$GAppNotificationCreateInput._(
+      {this.createdAt,
+      this.modifiedAt,
+      this.notificationType,
+      this.title,
+      this.body,
+      this.user})
+      : super._();
+
+  @override
+  GAppNotificationCreateInput rebuild(
+          void Function(GAppNotificationCreateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GAppNotificationCreateInputBuilder toBuilder() =>
+      new GAppNotificationCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GAppNotificationCreateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        notificationType == other.notificationType &&
+        title == other.title &&
+        body == other.body &&
+        user == other.user;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, notificationType.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, body.hashCode);
+    _$hash = $jc(_$hash, user.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GAppNotificationCreateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('notificationType', notificationType)
+          ..add('title', title)
+          ..add('body', body)
+          ..add('user', user))
+        .toString();
+  }
+}
+
+class GAppNotificationCreateInputBuilder
+    implements
+        Builder<GAppNotificationCreateInput,
+            GAppNotificationCreateInputBuilder> {
+  _$GAppNotificationCreateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GNotificationTypeRelateToOneForCreateInputBuilder? _notificationType;
+  GNotificationTypeRelateToOneForCreateInputBuilder get notificationType =>
+      _$this._notificationType ??=
+          new GNotificationTypeRelateToOneForCreateInputBuilder();
+  set notificationType(
+          GNotificationTypeRelateToOneForCreateInputBuilder?
+              notificationType) =>
+      _$this._notificationType = notificationType;
+
+  String? _title;
+  String? get title => _$this._title;
+  set title(String? title) => _$this._title = title;
+
+  String? _body;
+  String? get body => _$this._body;
+  set body(String? body) => _$this._body = body;
+
+  GUserRelateToOneForCreateInputBuilder? _user;
+  GUserRelateToOneForCreateInputBuilder get user =>
+      _$this._user ??= new GUserRelateToOneForCreateInputBuilder();
+  set user(GUserRelateToOneForCreateInputBuilder? user) => _$this._user = user;
+
+  GAppNotificationCreateInputBuilder();
+
+  GAppNotificationCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _notificationType = $v.notificationType?.toBuilder();
+      _title = $v.title;
+      _body = $v.body;
+      _user = $v.user?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GAppNotificationCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GAppNotificationCreateInput;
+  }
+
+  @override
+  void update(void Function(GAppNotificationCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GAppNotificationCreateInput build() => _build();
+
+  _$GAppNotificationCreateInput _build() {
+    _$GAppNotificationCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GAppNotificationCreateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              notificationType: _notificationType?.build(),
+              title: title,
+              body: body,
+              user: _user?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'notificationType';
+        _notificationType?.build();
+
+        _$failedField = 'user';
+        _user?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GAppNotificationCreateInput', _$failedField, e.toString());
       }
       rethrow;
     }
