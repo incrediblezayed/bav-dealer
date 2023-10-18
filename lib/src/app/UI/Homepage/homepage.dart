@@ -92,7 +92,7 @@ class HomePage extends ConsumerWidget {
             ),
             SizedBox(height: 10.h),
             Text(
-              '90,000',
+              '0',
               style: theme.headlineLarge!
                   .copyWith(fontSize: 36.sp, fontWeight: FontWeight.w500),
             ),

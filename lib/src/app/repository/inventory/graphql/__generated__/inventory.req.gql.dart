@@ -196,3 +196,63 @@ abstract class GVehicleDealersReq
         json,
       );
 }
+
+abstract class GCreateVehicleDealerReq
+    implements
+        Built<GCreateVehicleDealerReq, GCreateVehicleDealerReqBuilder>,
+        _i1.OperationRequest<_i2.GCreateVehicleDealerData,
+            _i3.GCreateVehicleDealerVars> {
+  GCreateVehicleDealerReq._();
+
+  factory GCreateVehicleDealerReq(
+          [Function(GCreateVehicleDealerReqBuilder b) updates]) =
+      _$GCreateVehicleDealerReq;
+
+  static void _initializeBuilder(GCreateVehicleDealerReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'CreateVehicleDealer',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GCreateVehicleDealerVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GCreateVehicleDealerData? Function(
+    _i2.GCreateVehicleDealerData?,
+    _i2.GCreateVehicleDealerData?,
+  )? get updateResult;
+  @override
+  _i2.GCreateVehicleDealerData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GCreateVehicleDealerData? parseData(Map<String, dynamic> json) =>
+      _i2.GCreateVehicleDealerData.fromJson(json);
+  static Serializer<GCreateVehicleDealerReq> get serializer =>
+      _$gCreateVehicleDealerReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GCreateVehicleDealerReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GCreateVehicleDealerReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GCreateVehicleDealerReq.serializer,
+        json,
+      );
+}

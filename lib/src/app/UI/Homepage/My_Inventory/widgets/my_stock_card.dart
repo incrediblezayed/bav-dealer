@@ -1,3 +1,4 @@
+import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
@@ -13,7 +14,7 @@ class MyStockCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context).textTheme;
-    // final inventoryPro = ref.watch(inventoryProvider);
+    final inventoryPro = ref.watch(inventoryProvider);
     return Container(
       margin: EdgeInsets.only(bottom: 8),
       padding: EdgeInsets.all(20),
@@ -123,7 +124,7 @@ class MyStockCard extends ConsumerWidget {
                         ),
                         SizedBox(width: 10.w),
                         Text(
-                          vehicleDealers.prices.toString(),
+                          (vehicleDealers.totalPrice ?? 0).toPrice(),
                           style: theme.labelLarge!.copyWith(
                             fontWeight: FontWeight.w600,
                             color: AppTheme.primaryColor,
@@ -144,7 +145,7 @@ class MyStockCard extends ConsumerWidget {
                       color: Colors.red.shade100,
                       text: 'Remove',
                       onTap: () {
-                        // inventoryPro.createStockRequest(colorId, variantId, stock, price, type)
+                        inventoryPro.createStockRequest(, variantId, stock, price, 'remove', gst, otherTaxes, incentives, totalOffRoadPrice)
                       })),
               SizedBox(
                 width: 20,

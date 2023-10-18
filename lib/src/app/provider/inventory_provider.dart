@@ -51,16 +51,35 @@ class InventoryProvider extends ChangeNotifier {
     }
   }
 
-  Future<void> createStockRequest(
-    String colorId,
-    String variantId,
-    int stock,
-    int price,
-    String type,
-  ) async {
+  Future<void> createStockRequest({
+    required String dealerId,
+    required String colorId,
+    required String variantId,
+    required int quantity,
+    required List prices,
+
+  })
+
+  /* Future<void> createStockRequest(
+      {required String? colorId,
+      required String? variantId,
+      required int? quantity,
+      required int? productPrice,
+      required String? type,
+      required int? gst,
+      required int? otherTaxes,
+      required int? incentives,
+      required int? totalOffRoadPrice}) async {
     try {
       final result = await _inventoryRepository.createStockRequest(
-          colorId, variantId, stock, price, type);
+          colorId,
+          variantId,
+          quantity,
+          productPrice,
+          type,
+          otherTaxes,
+          incentives,
+          totalOffRoadPrice);
 
       if (result) {
         await _inventoryRepository.getVehicles();
@@ -73,7 +92,7 @@ class InventoryProvider extends ChangeNotifier {
     } catch (e) {
       e.log();
     }
-  }
+  } */
 
   Future<int> getInventoryCount() async {
     try {

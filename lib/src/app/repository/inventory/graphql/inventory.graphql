@@ -83,3 +83,9 @@ query VehicleDealers($where: VehicleDealerWhereInput!) {
     totalPrice
   }
 }
+
+mutation CreateVehicleDealer($data: VehicleDealerCreateInput!) {
+  createVehicleDealer(data: $data) {
+    id
+  }
+}

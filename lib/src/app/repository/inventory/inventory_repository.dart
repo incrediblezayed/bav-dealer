@@ -36,8 +36,8 @@ class InventoryRepository {
     String colorId,
     String variantId,
     int stock,
-    int price,
-    String type,
+    List? price,
+    String type, int? otherTaxes, int? incentives, int? totalOffRoadPrice,
   ) async {
     try {
       final dealerId = cacheProvider.getDealerId();
@@ -51,7 +51,6 @@ class InventoryRepository {
                 ..data.dealer.connect.id = dealerId
                 // ..data.dealer_price = price
                 ..data.type = type,
-                
             ),
           )
           .first;
@@ -114,4 +113,11 @@ class InventoryRepository {
     }
     return [];
   }
+}
+
+class PriceModel {
+  final int price;
+  final String type;
+
+  PriceModel({required this.price, required this.type});
 }

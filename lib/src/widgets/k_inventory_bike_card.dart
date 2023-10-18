@@ -1,11 +1,13 @@
 import 'dart:ffi';
 
 import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.ast.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
+import 'package:dealerapp/src/widgets/k_textfiled.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class KInventoryBikeCard extends ConsumerStatefulWidget {
@@ -19,6 +21,12 @@ class KInventoryBikeCard extends ConsumerStatefulWidget {
 
 class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
   GVehiclesData_vehicles_variants get variants => widget.variants;
+
+  TextEditingController productPrice = TextEditingController();
+  TextEditingController gst = TextEditingController();
+  TextEditingController otherTaxes = TextEditingController();
+  TextEditingController incentives = TextEditingController();
+  TextEditingController totalOffRoadPrice = TextEditingController();
 
   late GVehiclesData_vehicles_variants_colors? selectedColor =
       variants.colors?.firstOrNull;
@@ -259,17 +267,55 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                 ),
               ),
               SizedBox(height: 10.h),
+              KTextField(
+                label: "Product Price",
+                hintText: "Enter Product Price",
+                inputType: TextInputType.number,
+                controller: productPrice,
+              ),
+              SizedBox(height: 10.h),
+              KTextField(
+                label: "GST",
+                hintText: "Enter GST",
+                inputType: TextInputType.number,
+                controller: gst,
+              ),
+              SizedBox(height: 10.h),
+              KTextField(
+                label: "Other Taxes",
+                hintText: "Enter Other Taxes",
+                inputType: TextInputType.number,
+                controller: otherTaxes,
+              ),
+              SizedBox(height: 10.h),
+              KTextField(
+                label: "Incentives (Fame 2)",
+                hintText: "Enter Incentives (Fame 2)",
+                inputType: TextInputType.number,
+                controller: incentives,
+              ),
+              SizedBox(height: 10.h),
+              KTextField(
+                label: "Total Off Road Price",
+                hintText: "Enter Total Off Road Price",
+                inputType: TextInputType.number,
+                controller: totalOffRoadPrice,
+              ),
+              SizedBox(height: 10.h),
               KButton(
                 onPressed: () {
                   inventoryPro.createStockRequest(
-                    selectedColor!.id,
-                    variants.id,
-                    selectedQuantity,
-                    1233,
-                    'add',
-                  );
+                      selectedColor!.id,
+                      variants.id,
+                      selectedQuantity,
+                      int.parse(productPrice.text),
+                      'add',
+                      int.parse(gst.text),
+                      int.parse(otherTaxes.text),
+                      int.parse(incentives.text),
+                      int.parse(totalOffRoadPrice.text));
                 },
-                text: 'Add',
+                text: 'Add Now To Update',
               ),
             ],
           ),

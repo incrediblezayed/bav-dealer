@@ -688,3 +688,60 @@ abstract class GVehicleDealersData_vehicleDealers_prices_category
         json,
       );
 }
+
+abstract class GCreateVehicleDealerData
+    implements
+        Built<GCreateVehicleDealerData, GCreateVehicleDealerDataBuilder> {
+  GCreateVehicleDealerData._();
+
+  factory GCreateVehicleDealerData(
+          [Function(GCreateVehicleDealerDataBuilder b) updates]) =
+      _$GCreateVehicleDealerData;
+
+  static void _initializeBuilder(GCreateVehicleDealerDataBuilder b) =>
+      b..G__typename = 'Mutation';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GCreateVehicleDealerData_createVehicleDealer? get createVehicleDealer;
+  static Serializer<GCreateVehicleDealerData> get serializer =>
+      _$gCreateVehicleDealerDataSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GCreateVehicleDealerData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GCreateVehicleDealerData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GCreateVehicleDealerData.serializer,
+        json,
+      );
+}
+
+abstract class GCreateVehicleDealerData_createVehicleDealer
+    implements
+        Built<GCreateVehicleDealerData_createVehicleDealer,
+            GCreateVehicleDealerData_createVehicleDealerBuilder> {
+  GCreateVehicleDealerData_createVehicleDealer._();
+
+  factory GCreateVehicleDealerData_createVehicleDealer(
+      [Function(GCreateVehicleDealerData_createVehicleDealerBuilder b)
+          updates]) = _$GCreateVehicleDealerData_createVehicleDealer;
+
+  static void _initializeBuilder(
+          GCreateVehicleDealerData_createVehicleDealerBuilder b) =>
+      b..G__typename = 'VehicleDealer';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  static Serializer<GCreateVehicleDealerData_createVehicleDealer>
+      get serializer => _$gCreateVehicleDealerDataCreateVehicleDealerSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GCreateVehicleDealerData_createVehicleDealer.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GCreateVehicleDealerData_createVehicleDealer? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GCreateVehicleDealerData_createVehicleDealer.serializer,
+        json,
+      );
+}

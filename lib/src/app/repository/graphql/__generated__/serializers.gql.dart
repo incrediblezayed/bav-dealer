@@ -446,6 +446,8 @@ import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema
         GWalletWhereUniqueInput;
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart'
     show
+        GCreateVehicleDealerData,
+        GCreateVehicleDealerData_createVehicleDealer,
         GCreateVehicleDealerStockRequestData,
         GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest,
         GVehicleDealersData,
@@ -468,10 +470,15 @@ import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inv
         GVehiclesData_vehicles_variants_vehicle_brand,
         GVehiclesData_vehicles_variants_vehicle_type;
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.req.gql.dart'
-    show GCreateVehicleDealerStockRequestReq, GVehicleDealersReq, GVehiclesReq;
+    show
+        GCreateVehicleDealerReq,
+        GCreateVehicleDealerStockRequestReq,
+        GVehicleDealersReq,
+        GVehiclesReq;
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.var.gql.dart'
     show
         GCreateVehicleDealerStockRequestVars,
+        GCreateVehicleDealerVars,
         GVehicleDealersVars,
         GVehiclesVars;
 import 'package:dealerapp/src/app/repository/notifications/graphql/__generated__/notifications.data.gql.dart'
@@ -625,10 +632,14 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GCreateUserData_createUser,
   GCreateUserReq,
   GCreateUserVars,
+  GCreateVehicleDealerData,
+  GCreateVehicleDealerData_createVehicleDealer,
+  GCreateVehicleDealerReq,
   GCreateVehicleDealerStockRequestData,
   GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest,
   GCreateVehicleDealerStockRequestReq,
   GCreateVehicleDealerStockRequestVars,
+  GCreateVehicleDealerVars,
   GCurrentUserOTPData,
   GCurrentUserOTPReq,
   GCurrentUserOTPVars,
