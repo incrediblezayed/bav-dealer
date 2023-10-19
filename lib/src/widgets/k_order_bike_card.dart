@@ -178,7 +178,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                                     ),
                                   ),
                                   SizedBox(height: 6.h),
-                                  Text(
+                                  /* Text(
                                     widget.vehiclePurchaseOrders.dealer!
                                         .vehicleVariant!.price
                                         .toString(),
@@ -186,7 +186,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                                       fontWeight: FontWeight.w600,
                                       color: AppTheme.primaryColor,
                                     ),
-                                  ),
+                                  ) */
                                 ],
                               ),
                             ),

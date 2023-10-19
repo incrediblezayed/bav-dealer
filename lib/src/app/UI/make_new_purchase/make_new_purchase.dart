@@ -266,8 +266,9 @@ class _MakeNewPurchaseState extends ConsumerState<MakeNewPurchase> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                  purchaseOrderPro.selectedVariants?.name ?? '',
-                                  style: theme.headlineLarge,),
+                                purchaseOrderPro.selectedVariants?.name ?? '',
+                                style: theme.headlineLarge,
+                              ),
                               SizedBox(height: 6.h),
                               Text(
                                 purchaseOrderPro.selectedVariants?.name ?? '',
@@ -279,7 +280,7 @@ class _MakeNewPurchaseState extends ConsumerState<MakeNewPurchase> {
                                 style: theme.labelMedium,
                               ),
                               SizedBox(height: 6.h),
-                              Text(
+                              /* Text(
                                 purchaseOrderPro.selectedVariants?.price
                                         ?.toString() ??
                                     '',
@@ -288,7 +289,7 @@ class _MakeNewPurchaseState extends ConsumerState<MakeNewPurchase> {
                                   color: AppTheme.primaryColor,
                                   fontWeight: FontWeight.w700,
                                 ),
-                              ),
+                              ) */
                             ],
                           ),
                         ),
@@ -296,12 +297,13 @@ class _MakeNewPurchaseState extends ConsumerState<MakeNewPurchase> {
                     ),
                     const Spacer(),
                     KButton(
-                        onPressed: () {
-                          AppRoutes.push(
-                            page: const MakeNewPurchaseDetailsPage(),
-                          );
-                        },
-                        text: 'Update',),
+                      onPressed: () {
+                        AppRoutes.push(
+                          page: const MakeNewPurchaseDetailsPage(),
+                        );
+                      },
+                      text: 'Update',
+                    ),
                   ],
                 ],
               ),

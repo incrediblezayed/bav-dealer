@@ -3,18 +3,31 @@ import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inv
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_bottom_bar_button.dart';
+import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class MyStockCard extends ConsumerWidget {
-
-  const MyStockCard({required this.vehicleDealers, super.key});
+class MyStockCard extends ConsumerStatefulWidget {
+  const MyStockCard({super.key, required this.vehicleDealers});
   final GVehicleDealersData_vehicleDealers vehicleDealers;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<MyStockCard> createState() => _MyStockCardState();
+}
+
+class _MyStockCardState extends ConsumerState<MyStockCard> {
+  bool isEdit = false;
+  int selectedQuantity = 1;
+  void updateQuantity(int? quantity) {
+    setState(() {
+      selectedQuantity = quantity ?? 1;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
-    final inventoryPro = ref.watch(inventoryProvider);
+    // final inventoryPro = ref.watch(inventoryProvider);
     return Container(
       margin: const EdgeInsets.only(bottom: 8),
       padding: const EdgeInsets.all(20),
@@ -26,13 +39,13 @@ class MyStockCard extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            vehicleDealers.vehicleVariant!.vehicle!.name!,
+            widget.vehicleDealers.vehicleVariant!.vehicle!.name!,
             style: theme.headlineLarge!
                 .copyWith(fontSize: 24.sp, fontWeight: FontWeight.w500),
           ),
           SizedBox(height: 10.h),
           Text(
-            vehicleDealers.vehicleVariant!.vehicle!.brand!.name!,
+            widget.vehicleDealers.vehicleVariant!.vehicle!.brand!.name!,
             style: theme.labelMedium!.copyWith(
               color: Colors.black.withOpacity(.5),
               fontWeight: FontWeight.w500,
@@ -50,8 +63,8 @@ class MyStockCard extends ConsumerWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(6.r),
                   child: KCachedNWImage(
-                    vehicleDealers
-                            .vehicleColor!.images?.firstOrNull?.image?.url ??
+                    widget.vehicleDealers.vehicleColor!.images?.firstOrNull
+                            ?.image?.url ??
                         '',
                     fit: BoxFit.cover,
                   )
@@ -81,7 +94,7 @@ class MyStockCard extends ConsumerWidget {
                         SizedBox(width: 10.w),
                         Flexible(
                           child: Text(
-                            vehicleDealers.vehicleVariant!.name!,
+                            widget.vehicleDealers.vehicleVariant!.name!,
                             style: theme.labelMedium!.copyWith(
                               color: Colors.black.withOpacity(.5),
                               fontWeight: FontWeight.w500,
@@ -103,7 +116,7 @@ class MyStockCard extends ConsumerWidget {
                         SizedBox(width: 10.w),
                         Flexible(
                           child: Text(
-                            vehicleDealers.vehicleColor!.name!,
+                            widget.vehicleDealers.vehicleColor!.name!,
                             style: theme.labelMedium!.copyWith(
                               color: Colors.black.withOpacity(.5),
                               fontWeight: FontWeight.w500,
@@ -124,7 +137,28 @@ class MyStockCard extends ConsumerWidget {
                         ),
                         SizedBox(width: 10.w),
                         Text(
-                          (vehicleDealers.totalPrice ?? 0).toPrice(),
+                          (widget.vehicleDealers.totalPrice ?? 0).toPrice(),
+                          style: theme.labelLarge!.copyWith(
+                            fontWeight: FontWeight.w600,
+                            color: AppTheme.primaryColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 6.h),
+                    Row(
+                      children: [
+                        Text(
+                          'Quantity',
+                          style: theme.labelMedium!.copyWith(
+                            color: Colors.black.withOpacity(.5),
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        SizedBox(width: 10.w),
+                        Text(
+                          selectedQuantity.toString(),
+                          // ' ${widget.vehicleDealers.stock}',
                           style: theme.labelLarge!.copyWith(
                             fontWeight: FontWeight.w600,
                             color: AppTheme.primaryColor,
@@ -137,30 +171,107 @@ class MyStockCard extends ConsumerWidget {
               ),
             ],
           ),
+          if (isEdit) ...[
+            SizedBox(height: 20.h),
+            DropdownButtonFormField<int>(
+              value: selectedQuantity,
+              onChanged: updateQuantity,
+              items: List.generate(11, (index) => index)
+                  .map(
+                    (quantity) => DropdownMenuItem<int>(
+                      value: quantity,
+                      child: Text(quantity.toString()),
+                    ),
+                  )
+                  .toList(),
+              decoration: InputDecoration(
+                labelText: 'Quantity',
+                counterText: '',
+                fillColor: AppTheme.white,
+                suffixIconColor: Colors.black.withOpacity(.2),
+                labelStyle: theme.headlineMedium,
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black.withOpacity(.2)),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black.withOpacity(.2)),
+                ),
+                hintStyle: TextStyle(color: Colors.black.withOpacity(.2)),
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black.withOpacity(.2)),
+                ),
+              ),
+            ),
+          ],
           SizedBox(height: 20.h),
-          Row(
-            children: [
-              Expanded(
-                child: KBottomBarButton(
-                  color: Colors.red.shade100,
-                  text: 'Remove',
-                  onTap: () {
-                    //TODO: Fix this @khanarifak07
-                    //inventoryPro.createStockRequest(, variantId, stock, price, 'remove', gst, otherTaxes, incentives, totalOffRoadPrice)
-                  },
+          if (!isEdit)
+            Row(
+              children: [
+                Expanded(
+                  child: KBottomBarButton(
+                    color: Colors.red.shade100,
+                    text: 'Remove',
+                    onTap: () {
+                      //TODO: Fix this @khanarifak07
+                      //inventoryPro.createStockRequest(, variantId, stock, price, 'remove', gst, otherTaxes, incentives, totalOffRoadPrice)
+                    },
+                  ),
                 ),
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              Expanded(
-                child: KBottomBarButton(
-                  text: 'Quantity: ${vehicleDealers.stock}',
-                  onTap: () {},
+                const SizedBox(
+                  width: 20,
                 ),
-              ),
-            ],
-          ),
+                Expanded(
+                  child: KBottomBarButton(
+                    // text: 'Quantity: ${widget.vehicleDealers.stock}',
+                    text: "Edit",
+                    onTap: () {
+                      setState(() {
+                        isEdit = true;
+                      });
+                    },
+                  ),
+                ),
+              ],
+            ),
+          if (isEdit) ...[
+            Row(
+              children: [
+                Expanded(
+                  child: KBottomBarButton(
+                    color: Colors.red.shade100,
+                    text: 'Remove',
+                    onTap: () {
+                      //TODO: Fix this @khanarifak07
+                      //inventoryPro.createStockRequest(, variantId, stock, price, 'remove', gst, otherTaxes, incentives, totalOffRoadPrice)
+                    },
+                  ),
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                Expanded(
+                  child: KBottomBarButton(
+                    // text: 'Quantity: ${widget.vehicleDealers.stock}',
+                    text: "Add",
+                    onTap: () {
+                      setState(() {
+                        isEdit = true;
+                      });
+                    },
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 20.h),
+            KBottomBarButton(
+                color: Colors.red.shade100,
+                text: 'Cancel',
+                onTap: () {
+                  setState(() {
+                    isEdit = false;
+                  });
+                })
+          ]
         ],
       ),
     );

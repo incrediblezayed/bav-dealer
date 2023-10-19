@@ -156,13 +156,13 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                                   ),
                                 ),
                                 SizedBox(width: 10.w),
-                                Text(
+                                /* Text(
                                   variants.price!.toString(),
                                   style: theme.labelLarge!.copyWith(
                                     fontWeight: FontWeight.w600,
                                     color: AppTheme.primaryColor,
                                   ),
-                                ),
+                                ) */
                               ],
                             ),
                           ],

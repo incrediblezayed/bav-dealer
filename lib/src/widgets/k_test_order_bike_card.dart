@@ -71,8 +71,10 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                         ),
                       ),
                       SizedBox(height: 6.h),
-                      Text(widget.vehicleTestDriveOrders.createdAt
-                          .formatTohhmmaddMMyy,),
+                      Text(
+                        widget.vehicleTestDriveOrders.createdAt
+                            .formatTohhmmaddMMyy,
+                      ),
                     ],
                   ),
                 ),
@@ -179,7 +181,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                                     ),
                                   ),
                                   SizedBox(height: 6.h),
-                                  Text(
+                                  /* Text(
                                     widget.vehicleTestDriveOrders.dealer!
                                         .vehicleVariant!.price
                                         .toString(),
@@ -187,7 +189,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                                       fontWeight: FontWeight.w600,
                                       color: AppTheme.primaryColor,
                                     ),
-                                  ),
+                                  ) */
                                 ],
                               ),
                             ),

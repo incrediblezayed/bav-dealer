@@ -19,3 +19,4 @@ final homePageProvider = ChangeNotifierProvider((ref) => HomePageProvider(ref));
 
 final notificationsProvider =
     ChangeNotifierProvider((ref) => NotificationsProvider()..init());
+
