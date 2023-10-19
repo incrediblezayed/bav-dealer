@@ -85,9 +85,9 @@ class _PaymentOptionsState extends State<PaymentOptions> {
                     color: AppTheme.cardBorders,
                   ),
                   ListTile(
-                    title: Text('Pay from New Bank Account'),
+                    title: Text('Pay Online'),
                     leading: Radio(
-                      value: PaymentOption.bankAccount,
+                      value: PaymentOption.online,
                       groupValue: _selectedOption,
                       onChanged: (PaymentOption? value) {
                         setState(() {
@@ -99,71 +99,6 @@ class _PaymentOptionsState extends State<PaymentOptions> {
                 ],
               ),
             ),
-            SizedBox(height: 20.h),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.r),
-                border: Border.all(color: AppTheme.cardBorders),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 20.h),
-                  Padding(
-                    padding: EdgeInsets.only(left: 26.w),
-                    child: Text(
-                      "Other Payment Options",
-                      style: textTheme.headlineMedium,
-                    ),
-                  ),
-                  SizedBox(height: 20.h),
-                  ListTile(
-                    title: Text('Pay with UPI'),
-                    leading: Radio(
-                      value: PaymentOption.upi,
-                      groupValue: _selectedOption,
-                      onChanged: (PaymentOption? value) {
-                        setState(() {
-                          _selectedOption = value!;
-                        });
-                      },
-                    ),
-                  ),
-                  Divider(
-                    height: 10,
-                    color: AppTheme.cardBorders,
-                  ),
-                  ListTile(
-                    title: Text('Prepaid, Debit and Credit Cards'),
-                    leading: Radio(
-                      value: PaymentOption.debitCredit,
-                      groupValue: _selectedOption,
-                      onChanged: (PaymentOption? value) {
-                        setState(() {
-                          _selectedOption = value!;
-                        });
-                      },
-                    ),
-                  ),
-                  Divider(
-                    height: 10,
-                    color: AppTheme.cardBorders,
-                  ),
-                  ListTile(
-                    title: Text('Net Banking'),
-                    leading: Radio(
-                      value: PaymentOption.netBanking,
-                      groupValue: _selectedOption,
-                      onChanged: (PaymentOption? value) {
-                        setState(() {
-                          _selectedOption = value!;
-                        });
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            )
           ],
         ),
       ),
@@ -171,4 +106,8 @@ class _PaymentOptionsState extends State<PaymentOptions> {
   }
 }
 
-enum PaymentOption { wallet, bankAccount, upi, debitCredit, netBanking, none }
+enum PaymentOption {
+  wallet,
+  online,
+  none,
+}
