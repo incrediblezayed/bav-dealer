@@ -214,12 +214,6 @@ class _$GVehiclesData_vehicles_variantsSerializer
       serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
     Object? value;
-    value = object.price;
-    if (value != null) {
-      result
-        ..add('price')
-        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
-    }
     value = object.name;
     if (value != null) {
       result
@@ -262,10 +256,6 @@ class _$GVehiclesData_vehicles_variantsSerializer
         case '__typename':
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
-          break;
-        case 'price':
-          result.price = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
           break;
         case 'name':
           result.name = serializers.deserialize(value,
@@ -1304,12 +1294,6 @@ class _$GVehicleDealersData_vehicleDealers_vehicleVariantSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(_i2.GDateTime)));
     }
-    value = object.price;
-    if (value != null) {
-      result
-        ..add('price')
-        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
-    }
     value = object.vehicle;
     if (value != null) {
       result
@@ -1349,10 +1333,6 @@ class _$GVehicleDealersData_vehicleDealers_vehicleVariantSerializer
         case 'modifiedAt':
           result.modifiedAt.replace(serializers.deserialize(value,
               specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
-          break;
-        case 'price':
-          result.price = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
           break;
         case 'vehicle':
           result.vehicle.replace(serializers.deserialize(value,
@@ -2172,8 +2152,6 @@ class _$GVehiclesData_vehicles_variants
   @override
   final String G__typename;
   @override
-  final int? price;
-  @override
   final String? name;
   @override
   final GVehiclesData_vehicles_variants_vehicle? vehicle;
@@ -2188,7 +2166,6 @@ class _$GVehiclesData_vehicles_variants
 
   _$GVehiclesData_vehicles_variants._(
       {required this.G__typename,
-      this.price,
       this.name,
       this.vehicle,
       this.colors,
@@ -2214,7 +2191,6 @@ class _$GVehiclesData_vehicles_variants
     if (identical(other, this)) return true;
     return other is GVehiclesData_vehicles_variants &&
         G__typename == other.G__typename &&
-        price == other.price &&
         name == other.name &&
         vehicle == other.vehicle &&
         colors == other.colors &&
@@ -2225,7 +2201,6 @@ class _$GVehiclesData_vehicles_variants
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, price.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, vehicle.hashCode);
     _$hash = $jc(_$hash, colors.hashCode);
@@ -2238,7 +2213,6 @@ class _$GVehiclesData_vehicles_variants
   String toString() {
     return (newBuiltValueToStringHelper(r'GVehiclesData_vehicles_variants')
           ..add('G__typename', G__typename)
-          ..add('price', price)
           ..add('name', name)
           ..add('vehicle', vehicle)
           ..add('colors', colors)
@@ -2256,10 +2230,6 @@ class GVehiclesData_vehicles_variantsBuilder
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
-
-  int? _price;
-  int? get price => _$this._price;
-  set price(int? price) => _$this._price = price;
 
   String? _name;
   String? get name => _$this._name;
@@ -2290,7 +2260,6 @@ class GVehiclesData_vehicles_variantsBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _price = $v.price;
       _name = $v.name;
       _vehicle = $v.vehicle?.toBuilder();
       _colors = $v.colors?.toBuilder();
@@ -2321,7 +2290,6 @@ class GVehiclesData_vehicles_variantsBuilder
           new _$GVehiclesData_vehicles_variants._(
               G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                   r'GVehiclesData_vehicles_variants', 'G__typename'),
-              price: price,
               name: name,
               vehicle: _vehicle?.build(),
               colors: _colors?.build(),
@@ -4308,8 +4276,6 @@ class _$GVehicleDealersData_vehicleDealers_vehicleVariant
   @override
   final _i2.GDateTime? modifiedAt;
   @override
-  final int? price;
-  @override
   final GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle? vehicle;
 
   factory _$GVehicleDealersData_vehicleDealers_vehicleVariant(
@@ -4325,7 +4291,6 @@ class _$GVehicleDealersData_vehicleDealers_vehicleVariant
       required this.id,
       this.name,
       this.modifiedAt,
-      this.price,
       this.vehicle})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
@@ -4354,7 +4319,6 @@ class _$GVehicleDealersData_vehicleDealers_vehicleVariant
         id == other.id &&
         name == other.name &&
         modifiedAt == other.modifiedAt &&
-        price == other.price &&
         vehicle == other.vehicle;
   }
 
@@ -4365,7 +4329,6 @@ class _$GVehicleDealersData_vehicleDealers_vehicleVariant
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
-    _$hash = $jc(_$hash, price.hashCode);
     _$hash = $jc(_$hash, vehicle.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -4379,7 +4342,6 @@ class _$GVehicleDealersData_vehicleDealers_vehicleVariant
           ..add('id', id)
           ..add('name', name)
           ..add('modifiedAt', modifiedAt)
-          ..add('price', price)
           ..add('vehicle', vehicle))
         .toString();
   }
@@ -4409,10 +4371,6 @@ class GVehicleDealersData_vehicleDealers_vehicleVariantBuilder
   set modifiedAt(_i2.GDateTimeBuilder? modifiedAt) =>
       _$this._modifiedAt = modifiedAt;
 
-  int? _price;
-  int? get price => _$this._price;
-  set price(int? price) => _$this._price = price;
-
   GVehicleDealersData_vehicleDealers_vehicleVariant_vehicleBuilder? _vehicle;
   GVehicleDealersData_vehicleDealers_vehicleVariant_vehicleBuilder
       get vehicle => _$this._vehicle ??=
@@ -4433,7 +4391,6 @@ class GVehicleDealersData_vehicleDealers_vehicleVariantBuilder
       _id = $v.id;
       _name = $v.name;
       _modifiedAt = $v.modifiedAt?.toBuilder();
-      _price = $v.price;
       _vehicle = $v.vehicle?.toBuilder();
       _$v = null;
     }
@@ -4469,14 +4426,12 @@ class GVehicleDealersData_vehicleDealers_vehicleVariantBuilder
                   r'GVehicleDealersData_vehicleDealers_vehicleVariant', 'id'),
               name: name,
               modifiedAt: _modifiedAt?.build(),
-              price: price,
               vehicle: _vehicle?.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'modifiedAt';
         _modifiedAt?.build();
-
         _$failedField = 'vehicle';
         _vehicle?.build();
       } catch (e) {

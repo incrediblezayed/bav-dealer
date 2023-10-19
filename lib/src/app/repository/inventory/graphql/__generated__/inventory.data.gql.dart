@@ -76,7 +76,6 @@ abstract class GVehiclesData_vehicles_variants
       b..G__typename = 'VehicleVariant';
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  int? get price;
   String? get name;
   GVehiclesData_vehicles_variants_vehicle? get vehicle;
   BuiltList<GVehiclesData_vehicles_variants_colors>? get colors;
@@ -534,7 +533,6 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleVariant
   String get id;
   String? get name;
   _i2.GDateTime? get modifiedAt;
-  int? get price;
   GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle? get vehicle;
   static Serializer<GVehicleDealersData_vehicleDealers_vehicleVariant>
       get serializer =>

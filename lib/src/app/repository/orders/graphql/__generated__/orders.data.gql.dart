@@ -122,7 +122,6 @@ abstract class GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant
   String get G__typename;
   GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle? get vehicle;
   String? get name;
-  int? get price;
   static Serializer<GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant>
       get serializer =>
           _$gVehicleOrdersDataVehicleOrdersDealerVehicleVariantSerializer;
@@ -600,7 +599,6 @@ abstract class GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle?
       get vehicle;
   String? get name;
-  int? get price;
   static Serializer<GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant>
       get serializer =>
           _$gTestDriveOrdersDataTestDriveOrdersDealerVehicleVariantSerializer;

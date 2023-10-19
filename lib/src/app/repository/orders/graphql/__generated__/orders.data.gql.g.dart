@@ -411,12 +411,6 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.price;
-    if (value != null) {
-      result
-        ..add('price')
-        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
-    }
     return result;
   }
 
@@ -446,10 +440,6 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantSerializer
         case 'name':
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
-          break;
-        case 'price':
-          result.price = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -1576,12 +1566,6 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.price;
-    if (value != null) {
-      result
-        ..add('price')
-        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
-    }
     return result;
   }
 
@@ -1611,10 +1595,6 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantSerializer
         case 'name':
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
-          break;
-        case 'price':
-          result.price = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -3031,8 +3011,6 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant
   final GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle? vehicle;
   @override
   final String? name;
-  @override
-  final int? price;
 
   factory _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant(
           [void Function(
@@ -3043,7 +3021,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant
           ._build();
 
   _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant._(
-      {required this.G__typename, this.vehicle, this.name, this.price})
+      {required this.G__typename, this.vehicle, this.name})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
@@ -3069,8 +3047,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant
     return other is GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant &&
         G__typename == other.G__typename &&
         vehicle == other.vehicle &&
-        name == other.name &&
-        price == other.price;
+        name == other.name;
   }
 
   @override
@@ -3079,7 +3056,6 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, vehicle.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, price.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -3090,8 +3066,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant
             r'GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant')
           ..add('G__typename', G__typename)
           ..add('vehicle', vehicle)
-          ..add('name', name)
-          ..add('price', price))
+          ..add('name', name))
         .toString();
   }
 }
@@ -3120,10 +3095,6 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  int? _price;
-  int? get price => _$this._price;
-  set price(int? price) => _$this._price = price;
-
   GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder() {
     GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant._initializeBuilder(
         this);
@@ -3135,7 +3106,6 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder
       _G__typename = $v.G__typename;
       _vehicle = $v.vehicle?.toBuilder();
       _name = $v.name;
-      _price = $v.price;
       _$v = null;
     }
     return this;
@@ -3168,8 +3138,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder
                   r'GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant',
                   'G__typename'),
               vehicle: _vehicle?.build(),
-              name: name,
-              price: price);
+              name: name);
     } catch (_) {
       late String _$failedField;
       try {
@@ -5328,8 +5297,6 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant
       vehicle;
   @override
   final String? name;
-  @override
-  final int? price;
 
   factory _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant(
           [void Function(
@@ -5340,7 +5307,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant
           ._build();
 
   _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant._(
-      {required this.G__typename, this.vehicle, this.name, this.price})
+      {required this.G__typename, this.vehicle, this.name})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
@@ -5368,8 +5335,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant
             is GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant &&
         G__typename == other.G__typename &&
         vehicle == other.vehicle &&
-        name == other.name &&
-        price == other.price;
+        name == other.name;
   }
 
   @override
@@ -5378,7 +5344,6 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, vehicle.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, price.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -5389,8 +5354,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant
             r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant')
           ..add('G__typename', G__typename)
           ..add('vehicle', vehicle)
-          ..add('name', name)
-          ..add('price', price))
+          ..add('name', name))
         .toString();
   }
 }
@@ -5419,10 +5383,6 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  int? _price;
-  int? get price => _$this._price;
-  set price(int? price) => _$this._price = price;
-
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder() {
     GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant
         ._initializeBuilder(this);
@@ -5434,7 +5394,6 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder
       _G__typename = $v.G__typename;
       _vehicle = $v.vehicle?.toBuilder();
       _name = $v.name;
-      _price = $v.price;
       _$v = null;
     }
     return this;
@@ -5469,8 +5428,7 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder
                   r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant',
                   'G__typename'),
               vehicle: _vehicle?.build(),
-              name: name,
-              price: price);
+              name: name);
     } catch (_) {
       late String _$failedField;
       try {

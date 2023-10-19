@@ -1,7 +1,6 @@
 query Vehicles($where: VehicleWhereInput!) {
   vehicles(where: $where) {
     variants {
-      price
       name
       vehicle {
         name
@@ -58,7 +57,6 @@ query VehicleDealers($where: VehicleDealerWhereInput!) {
       id
       name
       modifiedAt
-      price
       vehicle {
         brand {
           id
@@ -86,10 +84,9 @@ query VehicleDealers($where: VehicleDealerWhereInput!) {
 
 mutation CreateVehicleDealer($data: VehicleDealerCreateInput!) {
   createVehicleDealer(data: $data) {
-    id  
+    id
   }
 }
-
 
 query PriceCategories {
   priceCategories {
