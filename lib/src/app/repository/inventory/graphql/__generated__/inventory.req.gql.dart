@@ -256,3 +256,62 @@ abstract class GCreateVehicleDealerReq
         json,
       );
 }
+
+abstract class GPriceCategoriesReq
+    implements
+        Built<GPriceCategoriesReq, GPriceCategoriesReqBuilder>,
+        _i1
+        .OperationRequest<_i2.GPriceCategoriesData, _i3.GPriceCategoriesVars> {
+  GPriceCategoriesReq._();
+
+  factory GPriceCategoriesReq(
+      [Function(GPriceCategoriesReqBuilder b) updates]) = _$GPriceCategoriesReq;
+
+  static void _initializeBuilder(GPriceCategoriesReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'PriceCategories',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GPriceCategoriesVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GPriceCategoriesData? Function(
+    _i2.GPriceCategoriesData?,
+    _i2.GPriceCategoriesData?,
+  )? get updateResult;
+  @override
+  _i2.GPriceCategoriesData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GPriceCategoriesData? parseData(Map<String, dynamic> json) =>
+      _i2.GPriceCategoriesData.fromJson(json);
+  static Serializer<GPriceCategoriesReq> get serializer =>
+      _$gPriceCategoriesReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GPriceCategoriesReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GPriceCategoriesReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GPriceCategoriesReq.serializer,
+        json,
+      );
+}

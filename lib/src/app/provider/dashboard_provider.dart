@@ -5,10 +5,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 /// Dashboard Provider
 /// This provider is used manage the home page with bottom navigation bar
 class HomePageProvider extends ChangeNotifier {
-  final Ref ref;
   HomePageProvider(this.ref) {
     onInit();
   }
+  final Ref ref;
 
   ///Page index
   int _pageIndex = 0;
@@ -48,7 +48,7 @@ class HomePageProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void onInit() async {
+  Future<void> onInit() async {
     inventoryCount = await ref.read(inventoryProvider).getInventoryCount();
   }
 

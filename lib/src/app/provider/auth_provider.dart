@@ -64,7 +64,7 @@ class AuthProvider extends ChangeNotifier {
       AppRoutes.showErrorSnackbar(message: 'Something went wrong');
       return null;
     } else {
-      cacheProvider.setUser(data);
+      await cacheProvider.setUser(data);
       return data;
     }
   }
@@ -161,7 +161,7 @@ class AuthProvider extends ChangeNotifier {
             name: newUser!.name!,
             email: newUser.email!,
             phoneNumber: newUser.phoneNumber!,
-            image: _image?.path);
+            image: _image?.path,);
         await getCurrentUserOtp(isEmail: false);
       }
       return true;
@@ -180,7 +180,7 @@ class AuthProvider extends ChangeNotifier {
       if (otp != null) {
         AppRoutes.showSuccessSnackbar(
           message: otp,
-          duration: Duration(minutes: 1),
+          duration: const Duration(minutes: 1),
         );
       }
     } catch (e) {
@@ -310,7 +310,7 @@ class AuthProvider extends ChangeNotifier {
       required String email,
       required String phoneNumber,
       required String name,
-      String? address}) async {
+      String? address,}) async {
     try {
       final response = await _authRepository.updateUser(
           id: id,
@@ -318,7 +318,7 @@ class AuthProvider extends ChangeNotifier {
           phoneNumber: phoneNumber,
           name: name,
           image: _image?.path,
-          address: address);
+          address: address,);
       if (response == null) {
         AppRoutes.showErrorSnackbar(
           message: response ?? 'Something went wrong',

@@ -5,16 +5,16 @@ import 'package:dealerapp/src/widgets/k_order_bike_card.dart';
 import 'package:flutter/material.dart';
 
 class OrdersListPage extends StatelessWidget {
+  OrdersListPage({required this.data, required this.orderPro, super.key});
   final List<GVehicleOrdersData_vehicleOrders> data;
   OrdersProvider orderPro;
-  OrdersListPage({super.key, required this.data, required this.orderPro});
 
   @override
   Widget build(BuildContext context) {
     return data.isEmpty
-        ? EmptyWidget(title: "Uh oh! You have no orders.")
+        ? const EmptyWidget(title: 'Uh oh! You have no orders.')
         : Container(
-            color: Color(0xffececec),
+            color: const Color(0xffececec),
             child: RefreshIndicator(
               onRefresh: () async {
                 await orderPro.getPendingOrders();
@@ -27,7 +27,7 @@ class OrdersListPage extends StatelessWidget {
                 children: data
                     .map((e) => KOrderBikeCard(
                           vehiclePurchaseOrders: e,
-                        ))
+                        ),)
                     .toList(),
               ),
             ),

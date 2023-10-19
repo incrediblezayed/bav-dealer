@@ -4,6 +4,16 @@ import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 
 class InventoryProvider extends ChangeNotifier {
+  List<GPriceCategoriesData_priceCategories> _priceCategories = [];
+  List<GPriceCategoriesData_priceCategories> get priceCategories =>
+      _priceCategories;
+  set priceCategories(List<GPriceCategoriesData_priceCategories> data) {
+    _priceCategories = data;
+    notifyListeners();
+  }
+
+  List<PriceModel> prices = [];
+
   List<GVehiclesData_vehicles_variants> _vehicles = [];
   List<GVehiclesData_vehicles_variants> get vehicles => _vehicles;
   set vehicles(List<GVehiclesData_vehicles_variants> data) {
@@ -21,14 +31,17 @@ class InventoryProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void init() async {
-    await getVehicles();
+  Future<void> init() async {
     await getStocks();
+    await getPriceCategories();
+    await getVehicles();
   }
 
   Future<void> getVehicles() async {
     try {
-      final getVehicles = await _inventoryRepository.getVehicles();
+      final getVehicles = await _inventoryRepository.getVehicles(
+        vehicleDealers.map((e) => e.vehicleVariant!.id).toList(),
+      );
 
       if (getVehicles != null) {
         final check = getVehicles
@@ -51,35 +64,55 @@ class InventoryProvider extends ChangeNotifier {
     }
   }
 
+  Future<void> getPriceCategories() async {
+    try {
+      final result = await _inventoryRepository.getPriceCategories();
+      prices = result
+          .map((e) => PriceModel(price: 0, type: e.id, name: e.name!))
+          .toList();
+      priceCategories = result;
+    } catch (e) {
+      e.log();
+    }
+  }
+
   Future<void> createStockRequest({
-    required String dealerId,
     required String colorId,
     required String variantId,
     required int quantity,
-    required List prices,
-
-  })
-
-  /* Future<void> createStockRequest(
-      {required String? colorId,
-      required String? variantId,
-      required int? quantity,
-      required int? productPrice,
-      required String? type,
-      required int? gst,
-      required int? otherTaxes,
-      required int? incentives,
-      required int? totalOffRoadPrice}) async {
+    required List<PriceModel> prices,
+  }) async {
     try {
       final result = await _inventoryRepository.createStockRequest(
-          colorId,
-          variantId,
-          quantity,
-          productPrice,
-          type,
-          otherTaxes,
-          incentives,
-          totalOffRoadPrice);
+        quantity: quantity,
+        variantId: variantId,
+        colorId: colorId,
+        prices: prices,
+      );
+      if (result) {
+        AppRoutes.showSuccessSnackbar(message: 'Request added successfully');
+      } else {
+        AppRoutes.showErrorSnackbar(message: 'Failed to add vehicle request');
+      }
+    } catch (e) {
+      e.log();
+      AppRoutes.showErrorSnackbar(message: 'Failed to add vehicle');
+    }
+  }
+
+  Future<void> updateStockRequest({
+    required String colorId,
+    required String variantId,
+    required int quantity,
+    required String type,
+  }) async {
+    try {
+      final result = await _inventoryRepository.updateStockRequest(
+        colorId: colorId,
+        variantId: variantId,
+        stock: quantity,
+        type: type,
+      );
 
       if (result) {
         await _inventoryRepository.getVehicles();
@@ -92,7 +125,7 @@ class InventoryProvider extends ChangeNotifier {
     } catch (e) {
       e.log();
     }
-  } */
+  }
 
   Future<int> getInventoryCount() async {
     try {

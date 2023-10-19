@@ -14,7 +14,7 @@ final inventoryProvider =
 
 final orderProvider =
     ChangeNotifierProvider.family<OrdersProvider, OrderFamily>(
-        (ref, orderFamily) => OrdersProvider()..init(orderFamily));
+        (ref, orderFamily) => OrdersProvider()..init(orderFamily),);
 final homePageProvider = ChangeNotifierProvider((ref) => HomePageProvider(ref));
 
 final notificationsProvider =

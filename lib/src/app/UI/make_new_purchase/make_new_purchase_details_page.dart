@@ -1,11 +1,10 @@
 import 'package:dealerapp/src/app/UI/make_new_purchase/purchase_successful_page.dart';
-import 'package:dealerapp/src/app/provider/order_provider.dart';
-import 'package:dealerapp/src/widgets/total_amount_widget.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:dealerapp/src/app/provider/order_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
-import 'package:flutter/material.dart';
+import 'package:dealerapp/src/widgets/total_amount_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
@@ -23,7 +22,7 @@ class _MakeNewPurchaseDetailsPageState
     extends ConsumerState<MakeNewPurchaseDetailsPage> {
   DateTime? selectedDate;
   Future<void> _selectDate(BuildContext context) async {
-    final DateTime? picked = await showDatePicker(
+    final picked = await showDatePicker(
       context: context,
       initialDate: selectedDate ?? DateTime.now(),
       firstDate: DateTime(2000),
@@ -49,7 +48,7 @@ class _MakeNewPurchaseDetailsPageState
   TextEditingController emailIdController = TextEditingController();
   TextEditingController contactNumberController = TextEditingController();
   TextEditingController addressController = TextEditingController();
-  TextEditingController _dateController = TextEditingController();
+  final TextEditingController _dateController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +86,7 @@ class _MakeNewPurchaseDetailsPageState
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Add Buyer Information',
                 style: TextStyle(
                   color: Colors.grey,
@@ -131,7 +130,7 @@ class _MakeNewPurchaseDetailsPageState
                 height: 16.h,
               ),
               KTextField(
-                label: "Date Of Delivery",
+                label: 'Date Of Delivery',
                 controller: _dateController,
                 inputType: TextInputType.datetime,
                 readOnly: true,
@@ -139,14 +138,14 @@ class _MakeNewPurchaseDetailsPageState
                     onPressed: () {
                       _selectDate(context);
                     },
-                    icon: SvgPicture.asset(AppImages.calender)),
+                    icon: SvgPicture.asset(AppImages.calender),),
               ),
               SizedBox(height: 20.h),
-              Text("Billing Details", style: theme.headlineSmall),
+              Text('Billing Details', style: theme.headlineSmall),
               SizedBox(height: 20.h),
-              TotalAmountWidget(
-                  price: 2020200, shippingCharges: 500, serviceTax: 199),
-              Spacer(),
+              const TotalAmountWidget(
+                  price: 2020200, shippingCharges: 500, serviceTax: 199,),
+              const Spacer(),
               KButton(
                 onPressed: () {
                   if (nameController.text.isEmpty ||
@@ -155,9 +154,9 @@ class _MakeNewPurchaseDetailsPageState
                       addressController.text.isEmpty ||
                       _dateController.text.isEmpty) {
                     AppRoutes.showErrorSnackbar(
-                        message: "Please fill the details");
+                        message: 'Please fill the details',);
                   } else {
-                    AppRoutes.push(page: PurchaseSuccessPage());
+                    AppRoutes.push(page: const PurchaseSuccessPage());
                   }
                 },
                 text: 'Place Order',

@@ -8,20 +8,21 @@ import 'package:flutter/services.dart';
 ///Custom Textfield
 class KTextField extends StatelessWidget {
   ///Custom Textfield
-  const KTextField(
-      {Key? key,
-      this.hintText,
-      this.readOnly,
-      this.inputType,
-      this.controller,
-      this.inputFormatters,
-      this.label,
-      this.suffixIcon,
-      this.prefixIcon,
-      this.obsecureText = false,
-      this.maxLength,
-      this.suffixIconConstraints})
-      : super(key: key);
+  const KTextField({
+    super.key,
+    this.hintText,
+    this.readOnly,
+    this.inputType,
+    this.controller,
+    this.inputFormatters,
+    this.label,
+    this.suffixIcon,
+    this.prefixIcon,
+    this.obsecureText = false,
+    this.maxLength,
+    this.suffixIconConstraints,
+    this.onChange,
+  });
 
   ///hintText
   final String? hintText;
@@ -53,11 +54,14 @@ class KTextField extends StatelessWidget {
   ///text length
   final int? maxLength;
 
+  final void Function(String? value)? onChange;
+
   final BoxConstraints? suffixIconConstraints;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged: onChange,
       keyboardType: inputType,
       controller: controller,
       obscureText: obsecureText,

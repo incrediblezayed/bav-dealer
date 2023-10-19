@@ -745,3 +745,63 @@ abstract class GCreateVehicleDealerData_createVehicleDealer
         json,
       );
 }
+
+abstract class GPriceCategoriesData
+    implements Built<GPriceCategoriesData, GPriceCategoriesDataBuilder> {
+  GPriceCategoriesData._();
+
+  factory GPriceCategoriesData(
+          [Function(GPriceCategoriesDataBuilder b) updates]) =
+      _$GPriceCategoriesData;
+
+  static void _initializeBuilder(GPriceCategoriesDataBuilder b) =>
+      b..G__typename = 'Query';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  BuiltList<GPriceCategoriesData_priceCategories>? get priceCategories;
+  static Serializer<GPriceCategoriesData> get serializer =>
+      _$gPriceCategoriesDataSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GPriceCategoriesData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GPriceCategoriesData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GPriceCategoriesData.serializer,
+        json,
+      );
+}
+
+abstract class GPriceCategoriesData_priceCategories
+    implements
+        Built<GPriceCategoriesData_priceCategories,
+            GPriceCategoriesData_priceCategoriesBuilder> {
+  GPriceCategoriesData_priceCategories._();
+
+  factory GPriceCategoriesData_priceCategories(
+          [Function(GPriceCategoriesData_priceCategoriesBuilder b) updates]) =
+      _$GPriceCategoriesData_priceCategories;
+
+  static void _initializeBuilder(
+          GPriceCategoriesData_priceCategoriesBuilder b) =>
+      b..G__typename = 'PriceCategory';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  String? get description;
+  _i2.GDateTime? get createdAt;
+  _i2.GDateTime? get modifiedAt;
+  static Serializer<GPriceCategoriesData_priceCategories> get serializer =>
+      _$gPriceCategoriesDataPriceCategoriesSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GPriceCategoriesData_priceCategories.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GPriceCategoriesData_priceCategories? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GPriceCategoriesData_priceCategories.serializer,
+        json,
+      );
+}

@@ -133,7 +133,7 @@ class AppDrawer extends ConsumerWidget {
                               AppRoutes.push(
                                   page: const EditProfile(
                                 isPersonalInfo: false,
-                              ));
+                              ),);
                             },
                           ),
                         ],
@@ -158,7 +158,7 @@ class AppDrawer extends ConsumerWidget {
                         AppRoutes.push(
                             page: const EditProfile(
                           isPersonalInfo: true,
-                        ));
+                        ),);
                       },
                     ),
                     _drawerTile(
@@ -168,7 +168,7 @@ class AppDrawer extends ConsumerWidget {
                       width: 30,
                       isSvg: false,
                       onTap: () {
-                        AppRoutes.push(page: MakeNewPurchase());
+                        AppRoutes.push(page: const MakeNewPurchase());
                       },
                     ),
 

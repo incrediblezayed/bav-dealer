@@ -1,16 +1,14 @@
+import 'package:collection/collection.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
-import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
-import 'package:dealerapp/src/widgets/k_textfiled.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:collection/collection.dart';
 
 ///OTP Verfication Page
 class OTPVerificationPage extends ConsumerStatefulWidget {
@@ -92,10 +90,10 @@ class _OTPVerificationPageState extends ConsumerState<OTPVerificationPage> {
                 InkWell(
                     onTap: () {
                       authPro.signUpPageController.animateToPage(0,
-                          duration: Duration(milliseconds: 300),
-                          curve: Curves.easeInOut);
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeInOut,);
                     },
-                    child: SvgPicture.asset(AppImages.edit)),
+                    child: SvgPicture.asset(AppImages.edit),),
               ],
             ),
             SizedBox(

@@ -450,6 +450,8 @@ import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inv
         GCreateVehicleDealerData_createVehicleDealer,
         GCreateVehicleDealerStockRequestData,
         GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest,
+        GPriceCategoriesData,
+        GPriceCategoriesData_priceCategories,
         GVehicleDealersData,
         GVehicleDealersData_vehicleDealers,
         GVehicleDealersData_vehicleDealers_prices,
@@ -473,12 +475,14 @@ import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inv
     show
         GCreateVehicleDealerReq,
         GCreateVehicleDealerStockRequestReq,
+        GPriceCategoriesReq,
         GVehicleDealersReq,
         GVehiclesReq;
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.var.gql.dart'
     show
         GCreateVehicleDealerStockRequestVars,
         GCreateVehicleDealerVars,
+        GPriceCategoriesVars,
         GVehicleDealersVars,
         GVehiclesVars;
 import 'package:dealerapp/src/app/repository/notifications/graphql/__generated__/notifications.data.gql.dart'
@@ -773,6 +777,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GPaymentUpdateInput,
   GPaymentWhereInput,
   GPaymentWhereUniqueInput,
+  GPriceCategoriesData,
+  GPriceCategoriesData_priceCategories,
+  GPriceCategoriesReq,
+  GPriceCategoriesVars,
   GPriceCategoryCreateInput,
   GPriceCategoryOrderByInput,
   GPriceCategoryRelateToOneForCreateInput,

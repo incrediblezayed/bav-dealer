@@ -1,19 +1,11 @@
-import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
 import 'package:dealerapp/src/app/UI/make_new_purchase/make_new_purchase_details_page.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/provider/order_provider.dart';
-import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.ast.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
-import 'package:dealerapp/src/utils/app_routes.dart';
-import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
-import 'package:dealerapp/src/widgets/k_inventory_bike_card.dart';
-import 'package:dealerapp/src/widgets/k_textfiled.dart';
-import 'package:dealerapp/src/widgets/my_app_bar.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -275,7 +267,7 @@ class _MakeNewPurchaseState extends ConsumerState<MakeNewPurchase> {
                             children: [
                               Text(
                                   purchaseOrderPro.selectedVariants?.name ?? '',
-                                  style: theme.headlineLarge),
+                                  style: theme.headlineLarge,),
                               SizedBox(height: 6.h),
                               Text(
                                 purchaseOrderPro.selectedVariants?.name ?? '',
@@ -283,7 +275,7 @@ class _MakeNewPurchaseState extends ConsumerState<MakeNewPurchase> {
                               ),
                               SizedBox(height: 6.h),
                               Text(
-                                "Qty- ${selectedQuantity}",
+                                'Qty- $selectedQuantity',
                                 style: theme.labelMedium,
                               ),
                               SizedBox(height: 6.h),
@@ -302,15 +294,15 @@ class _MakeNewPurchaseState extends ConsumerState<MakeNewPurchase> {
                         ),
                       ],
                     ),
-                    Spacer(),
+                    const Spacer(),
                     KButton(
                         onPressed: () {
                           AppRoutes.push(
-                            page: MakeNewPurchaseDetailsPage(),
+                            page: const MakeNewPurchaseDetailsPage(),
                           );
                         },
-                        text: 'Update'),
-                  ]
+                        text: 'Update',),
+                  ],
                 ],
               ),
             ),

@@ -246,6 +246,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GPaymentUpdateInput.serializer)
       ..add(GPaymentWhereInput.serializer)
       ..add(GPaymentWhereUniqueInput.serializer)
+      ..add(GPriceCategoriesData.serializer)
+      ..add(GPriceCategoriesData_priceCategories.serializer)
+      ..add(GPriceCategoriesReq.serializer)
+      ..add(GPriceCategoriesVars.serializer)
       ..add(GPriceCategoryCreateInput.serializer)
       ..add(GPriceCategoryOrderByInput.serializer)
       ..add(GPriceCategoryRelateToOneForCreateInput.serializer)
@@ -907,6 +911,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GPaymentWhereUniqueInput)]),
           () => new ListBuilder<GPaymentWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GPriceCategoriesData_priceCategories)]),
+          () => new ListBuilder<GPriceCategoriesData_priceCategories>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GPriceCategoryWhereInput)]),

@@ -1,5 +1,5 @@
-query Vehicles {
-  vehicles {
+query Vehicles($where: VehicleWhereInput!) {
+  vehicles(where: $where) {
     variants {
       price
       name
@@ -86,6 +86,17 @@ query VehicleDealers($where: VehicleDealerWhereInput!) {
 
 mutation CreateVehicleDealer($data: VehicleDealerCreateInput!) {
   createVehicleDealer(data: $data) {
+    id  
+  }
+}
+
+
+query PriceCategories {
+  priceCategories {
     id
+    name
+    description
+    createdAt
+    modifiedAt
   }
 }

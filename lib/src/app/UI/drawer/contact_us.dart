@@ -57,7 +57,7 @@ class ContactUs extends StatelessWidget {
                 SizedBox(
                   width: 20.w,
                 ),
-                const Text('878797879867')
+                const Text('878797879867'),
               ],
             ),
             SizedBox(height: 20.h),
@@ -73,7 +73,7 @@ class ContactUs extends StatelessWidget {
                 SizedBox(
                   width: 20.w,
                 ),
-                const Text('878797879867')
+                const Text('878797879867'),
               ],
             ),
             SizedBox(height: 20.h),
@@ -96,7 +96,7 @@ class ContactUs extends StatelessWidget {
                 SizedBox(
                   width: 20.w,
                 ),
-                const Text('akfjasjso@gmail.com')
+                const Text('akfjasjso@gmail.com'),
               ],
             ),
             const Spacer(),

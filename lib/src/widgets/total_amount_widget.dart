@@ -1,21 +1,17 @@
 import 'package:dealerapp/src/utils/global_exports.dart';
-import 'package:flutter/material.dart';
 
 class TotalAmountWidget extends StatelessWidget {
+
+  const TotalAmountWidget({required this.price, required this.shippingCharges, required this.serviceTax, super.key,
+  });
   final double price; // Base amount
   final double shippingCharges;
   final double serviceTax;
 
-  TotalAmountWidget({
-    required this.price,
-    required this.shippingCharges,
-    required this.serviceTax,
-  });
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
-    double totalAmount = price + shippingCharges + serviceTax;
+    final totalAmount = price + shippingCharges + serviceTax;
 
     return Column(
       children: [
@@ -23,7 +19,7 @@ class TotalAmountWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Price",
+              'Price',
               style: theme.labelMedium,
             ),
             Text(
@@ -37,11 +33,11 @@ class TotalAmountWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Shipping Charges",
+              'Shipping Charges',
               style: theme.labelMedium,
             ),
             Text(
-              "${shippingCharges.toStringAsFixed(2)}",
+              shippingCharges.toStringAsFixed(2),
               style: theme.headlineSmall,
             ),
           ],
@@ -51,17 +47,17 @@ class TotalAmountWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Service Tax",
+              'Service Tax',
               style: theme.labelMedium,
             ),
             Text(
-              "${serviceTax.toStringAsFixed(2)}",
+              serviceTax.toStringAsFixed(2),
               style: theme.headlineSmall,
             ),
           ],
         ),
         SizedBox(height: 20.h),
-        Divider(
+        const Divider(
           thickness: 2,
           height: 2,
           color: AppTheme.textFieldFill,
@@ -71,11 +67,11 @@ class TotalAmountWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Total Amount",
+              'Total Amount',
               style: theme.labelLarge,
             ),
             Text(
-              "${totalAmount.toStringAsFixed(2)}",
+              totalAmount.toStringAsFixed(2),
               style: theme.headlineMedium,
             ),
           ],

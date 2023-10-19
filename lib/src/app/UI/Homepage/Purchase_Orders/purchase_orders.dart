@@ -65,12 +65,12 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
           orderPro.pendingOrders,
           orderPro.acceptedOrders,
           orderPro.rejectedOrders,
-          orderPro.deliveredOrders
+          orderPro.deliveredOrders,
         ]
             .map((e) => OrdersListPage(
                   data: e,
-                 orderPro: OrdersProvider()
-                ))
+                 orderPro: OrdersProvider(),
+                ),)
             .toList(),
       ),
     );

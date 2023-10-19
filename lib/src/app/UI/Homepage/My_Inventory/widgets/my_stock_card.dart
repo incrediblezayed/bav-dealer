@@ -7,17 +7,17 @@ import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MyStockCard extends ConsumerWidget {
-  final GVehicleDealersData_vehicleDealers vehicleDealers;
 
-  const MyStockCard({Key? key, required this.vehicleDealers}) : super(key: key);
+  const MyStockCard({required this.vehicleDealers, super.key});
+  final GVehicleDealersData_vehicleDealers vehicleDealers;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context).textTheme;
     final inventoryPro = ref.watch(inventoryProvider);
     return Container(
-      margin: EdgeInsets.only(bottom: 8),
-      padding: EdgeInsets.all(20),
+      margin: const EdgeInsets.only(bottom: 8),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: AppTheme.white,
         borderRadius: BorderRadius.circular(9),
@@ -141,13 +141,16 @@ class MyStockCard extends ConsumerWidget {
           Row(
             children: [
               Expanded(
-                  child: KBottomBarButton(
-                      color: Colors.red.shade100,
-                      text: 'Remove',
-                      onTap: () {
-                        inventoryPro.createStockRequest(, variantId, stock, price, 'remove', gst, otherTaxes, incentives, totalOffRoadPrice)
-                      })),
-              SizedBox(
+                child: KBottomBarButton(
+                  color: Colors.red.shade100,
+                  text: 'Remove',
+                  onTap: () {
+                    //TODO: Fix this @khanarifak07
+                    //inventoryPro.createStockRequest(, variantId, stock, price, 'remove', gst, otherTaxes, incentives, totalOffRoadPrice)
+                  },
+                ),
+              ),
+              const SizedBox(
                 width: 20,
               ),
               Expanded(
@@ -157,7 +160,7 @@ class MyStockCard extends ConsumerWidget {
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );

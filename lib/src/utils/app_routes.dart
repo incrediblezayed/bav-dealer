@@ -114,7 +114,7 @@ class AppRoutes {
                         fontWeight: FontWeight.w600,
                         fontSize: 18.sp,
                       ),
-                    )
+                    ),
                   ],
                 ),
               );
@@ -158,7 +158,7 @@ class AppRoutes {
                 Icons.close,
                 color: AppTheme.white,
               ),
-            )
+            ),
           ],
         ),
         backgroundColor: AppTheme.red,
@@ -177,7 +177,7 @@ class AppRoutes {
       showSuccessSnackbar(
           {String message = 'Success',
           Alignment alignment = Alignment.bottomCenter,
-          Duration duration = const Duration(seconds: 1)}) {
+          Duration duration = const Duration(seconds: 1),}) {
     return scaffoldMessengerKey.currentState?.showSnackBar(
       SnackBar(
         behavior: SnackBarBehavior.floating,
@@ -225,7 +225,7 @@ class AppRoutes {
                   Icons.close,
                   color: AppTheme.defaultBlack.withOpacity(0.6),
                 ),
-              )
+              ),
             ],
           ),
         ),

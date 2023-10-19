@@ -9,7 +9,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class KTestOrdersBikeCard extends ConsumerStatefulWidget {
   ///
-  KTestOrdersBikeCard({
+  const KTestOrdersBikeCard({
     required this.vehicleTestDriveOrders,
     super.key,
   });
@@ -33,7 +33,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
     final ordersPro = ref.read(orderProvider(OrderFamily.purchaseOrders));
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
-      child: Container(
+      child: DecoratedBox(
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(6.r),
@@ -63,7 +63,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "ORDER ID #${widget.vehicleTestDriveOrders.id}",
+                        'ORDER ID #${widget.vehicleTestDriveOrders.id}',
                         style: theme.labelLarge!.copyWith(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w700,
@@ -72,7 +72,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                       ),
                       SizedBox(height: 6.h),
                       Text(widget.vehicleTestDriveOrders.createdAt
-                          .formatTohhmmaddMMyy),
+                          .formatTohhmmaddMMyy,),
                     ],
                   ),
                 ),
@@ -172,7 +172,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                                     // widget.bikeOrderModel.color,
                                     widget.vehicleTestDriveOrders.dealer
                                             ?.vehicleColor?.name ??
-                                        "",
+                                        '',
                                     style: theme.labelMedium!.copyWith(
                                       color: Colors.black.withOpacity(.5),
                                       fontWeight: FontWeight.w500,
@@ -296,7 +296,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                       Text(
                         widget.vehicleTestDriveOrders.order!.user!.addresses!
                                 .firstOrNull?.address ??
-                            "",
+                            '',
                         style: theme.labelMedium!.copyWith(
                           color: Colors.black.withOpacity(.5),
                           fontWeight: FontWeight.w500,
@@ -472,7 +472,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                   ),
                   child: Center(
                     child: Text(
-                      "Download Invoice",
+                      'Download Invoice',
                       style: TextStyle(
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w400,

@@ -5,14 +5,14 @@ import 'package:dealerapp/src/widgets/empty_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MyStockPage extends ConsumerWidget {
-  static const String routeName = "MyStockPage";
-  const MyStockPage({Key? key}) : super(key: key);
+  const MyStockPage({super.key});
+  static const String routeName = 'MyStockPage';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final inventoryPro = ref.watch(inventoryProvider);
     return inventoryPro.vehicleDealers.isEmpty
-        ? EmptyWidget(title: 'Uh oh! You have no orders.')
+        ? const EmptyWidget(title: 'Uh oh! You have no orders.')
         : Container(
             padding: const EdgeInsets.all(6),
             color: AppTheme.textFieldFill,

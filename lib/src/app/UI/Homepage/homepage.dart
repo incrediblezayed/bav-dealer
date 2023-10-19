@@ -55,7 +55,7 @@ class HomePage extends ConsumerWidget {
                   AppRoutes.push(
                       page: const EditProfile(
                     isPersonalInfo: false,
-                  ));
+                  ),);
                 },
                 child: UserProfileImage(
                   url: user.profile_image?.url,
@@ -102,7 +102,7 @@ class HomePage extends ConsumerWidget {
               style: theme.labelMedium!.copyWith(
                   color: AppTheme.textColor,
                   fontSize: 14.sp,
-                  fontWeight: FontWeight.w600),
+                  fontWeight: FontWeight.w600,),
             ),
             SizedBox(height: 16.h),
             if (purchasePro.testDrivePendingOrders.isNotEmpty) ...[
@@ -122,7 +122,7 @@ class HomePage extends ConsumerWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      AppRoutes.push(page: TestOrders());
+                      AppRoutes.push(page: const TestOrders());
                     },
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -140,7 +140,7 @@ class HomePage extends ConsumerWidget {
                     ),
                   ),
                 ],
-              )
+              ),
             ],
             if (purchasePro.testDrivePendingOrders.isEmpty)
               Row(
@@ -159,11 +159,12 @@ class HomePage extends ConsumerWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      if (purchasePro.testDrivePendingOrders.isNotEmpty)
-                        AppRoutes.push(page: TestOrders());
+                      if (purchasePro.testDrivePendingOrders.isNotEmpty) {
+                        AppRoutes.push(page: const TestOrders());
+                      }
                     },
                     child: Text(
-                      "No notifications",
+                      'No notifications',
                       style: theme.labelMedium,
                     ),
                   ),
@@ -248,7 +249,7 @@ class HomePage extends ConsumerWidget {
                   ),
                 ],
               );
-            }),
+            },),
           ],
         ),
       ),

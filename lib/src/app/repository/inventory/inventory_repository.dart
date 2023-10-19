@@ -1,4 +1,6 @@
+import 'package:built_collection/built_collection.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema.gql.dart';
 import 'package:dealerapp/src/app/repository/graphql_client.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.req.gql.dart';
@@ -11,11 +13,15 @@ class InventoryRepository {
   final GraphqlClient _graphqlClient = getIt<GraphqlClient>();
   Client get _client => _graphqlClient.client;
 
-  Future<List<GVehiclesData_vehicles>?> getVehicles() async {
+  Future<List<GVehiclesData_vehicles>?> getVehicles([List<String>? ids]) async {
     try {
       final resonse = await _client
           .request(
-            GVehiclesReq(),
+            GVehiclesReq(
+              (b) => ids == null ? b : b
+                ..vars.where.variants.every.id.notIn =
+                    ListBuilder<String>(ids!),
+            ),
           )
           .first;
 
@@ -32,13 +38,12 @@ class InventoryRepository {
   }
 
   ///Creating Stock Request Function
-  Future<bool> createStockRequest(
-    String colorId,
-    String variantId,
-    int stock,
-    List? price,
-    String type, int? otherTaxes, int? incentives, int? totalOffRoadPrice,
-  ) async {
+  Future<bool> updateStockRequest({
+    required String colorId,
+    required String variantId,
+    required int stock,
+    required String type,
+  }) async {
     try {
       final dealerId = cacheProvider.getDealerId();
       final response = await _client
@@ -71,14 +76,17 @@ class InventoryRepository {
   Future<int> getStockCount() async {
     try {
       final result = await _client
-          .request(GVehicleDealersReq(
-            (b) => b..vars.where.dealer.id.equals = cacheProvider.getDealerId(),
-          ))
+          .request(
+            GVehicleDealersReq(
+              (b) =>
+                  b..vars.where.dealer.id.equals = cacheProvider.getDealerId(),
+            ),
+          )
           .first;
       if (result.linkException != null) {
         throw result.linkException!;
       }
-      if ((result.graphqlErrors?.isNotEmpty ?? false)) {
+      if (result.graphqlErrors?.isNotEmpty ?? false) {
         throw result.graphqlErrors!.first;
       }
       if (result.data != null) {
@@ -95,14 +103,17 @@ class InventoryRepository {
   Future<List<GVehicleDealersData_vehicleDealers>> currentStock() async {
     try {
       final result = await _client
-          .request(GVehicleDealersReq(
-            (b) => b..vars.where.dealer.id.equals = cacheProvider.getDealerId(),
-          ))
+          .request(
+            GVehicleDealersReq(
+              (b) =>
+                  b..vars.where.dealer.id.equals = cacheProvider.getDealerId(),
+            ),
+          )
           .first;
       if (result.linkException != null) {
         throw result.linkException!;
       }
-      if ((result.graphqlErrors?.isNotEmpty ?? false)) {
+      if (result.graphqlErrors?.isNotEmpty ?? false) {
         throw result.graphqlErrors!.first;
       }
       if (result.data != null) {
@@ -113,11 +124,78 @@ class InventoryRepository {
     }
     return [];
   }
+
+  Future<List<GPriceCategoriesData_priceCategories>>
+      getPriceCategories() async {
+    try {
+      final result = await _client.request(GPriceCategoriesReq()).first;
+      if (result.linkException != null) {
+        throw result.linkException!;
+      }
+      if (result.graphqlErrors?.isNotEmpty ?? false) {
+        throw result.graphqlErrors!.first;
+      }
+      if (result.data != null) {
+        return result.data!.priceCategories!.toList();
+      }
+    } catch (e) {
+      e.log();
+    }
+    return [];
+  }
+
+  Future<bool> createStockRequest({
+    required int quantity,
+    required String variantId,
+    required String colorId,
+    required List<PriceModel> prices,
+  }) async {
+    try {
+      final request = await _client
+          .request(
+            GCreateVehicleDealerReq(
+              (b) => b
+                ..vars.data.dealer.connect.id = cacheProvider.getDealerId()
+                ..vars.data.stock = quantity
+                ..vars.data.vehicleColor.connect.id = colorId
+                ..vars.data.vehicleVariant.connect.id = variantId
+                ..vars.data.prices.create = ListBuilder<GPriceCreateInput>(
+                  prices.map<GPriceCreateInput>(
+                    (e) => GPriceCreateInput(
+                      (b) => b
+                        ..amount = e.price
+                        ..category.connect.id = e.type,
+                    ),
+                  ),
+                ),
+            ),
+          )
+          .first;
+      if (request.linkException != null) {
+        throw request.linkException!;
+      }
+      if (request.graphqlErrors != null && request.graphqlErrors!.isNotEmpty) {
+        throw request.graphqlErrors!.first;
+      }
+      if (request.data?.createVehicleDealer?.id != null) {
+        return true;
+      } else {
+        throw Exception('Failed to create stock');
+      }
+    } catch (e) {
+      e.log();
+      return false;
+    }
+  }
 }
 
 class PriceModel {
-  final int price;
+  PriceModel({
+    required this.price,
+    required this.type,
+    required this.name,
+  });
+  int price;
   final String type;
-
-  PriceModel({required this.price, required this.type});
+  final String name;
 }

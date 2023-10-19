@@ -71,6 +71,11 @@ Serializer<GCreateVehicleDealerData> _$gCreateVehicleDealerDataSerializer =
 Serializer<GCreateVehicleDealerData_createVehicleDealer>
     _$gCreateVehicleDealerDataCreateVehicleDealerSerializer =
     new _$GCreateVehicleDealerData_createVehicleDealerSerializer();
+Serializer<GPriceCategoriesData> _$gPriceCategoriesDataSerializer =
+    new _$GPriceCategoriesDataSerializer();
+Serializer<GPriceCategoriesData_priceCategories>
+    _$gPriceCategoriesDataPriceCategoriesSerializer =
+    new _$GPriceCategoriesData_priceCategoriesSerializer();
 
 class _$GVehiclesDataSerializer implements StructuredSerializer<GVehiclesData> {
   @override
@@ -1768,6 +1773,162 @@ class _$GCreateVehicleDealerData_createVehicleDealerSerializer
         case 'id':
           result.id = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GPriceCategoriesDataSerializer
+    implements StructuredSerializer<GPriceCategoriesData> {
+  @override
+  final Iterable<Type> types = const [
+    GPriceCategoriesData,
+    _$GPriceCategoriesData
+  ];
+  @override
+  final String wireName = 'GPriceCategoriesData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GPriceCategoriesData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.priceCategories;
+    if (value != null) {
+      result
+        ..add('priceCategories')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GPriceCategoriesData_priceCategories)])));
+    }
+    return result;
+  }
+
+  @override
+  GPriceCategoriesData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GPriceCategoriesDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'priceCategories':
+          result.priceCategories.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GPriceCategoriesData_priceCategories)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GPriceCategoriesData_priceCategoriesSerializer
+    implements StructuredSerializer<GPriceCategoriesData_priceCategories> {
+  @override
+  final Iterable<Type> types = const [
+    GPriceCategoriesData_priceCategories,
+    _$GPriceCategoriesData_priceCategories
+  ];
+  @override
+  final String wireName = 'GPriceCategoriesData_priceCategories';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GPriceCategoriesData_priceCategories object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.GDateTime)));
+    }
+    return result;
+  }
+
+  @override
+  GPriceCategoriesData_priceCategories deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GPriceCategoriesData_priceCategoriesBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
           break;
       }
     }
@@ -5186,6 +5347,307 @@ class GCreateVehicleDealerData_createVehicleDealerBuilder
                 r'GCreateVehicleDealerData_createVehicleDealer', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'GCreateVehicleDealerData_createVehicleDealer', 'id'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GPriceCategoriesData extends GPriceCategoriesData {
+  @override
+  final String G__typename;
+  @override
+  final BuiltList<GPriceCategoriesData_priceCategories>? priceCategories;
+
+  factory _$GPriceCategoriesData(
+          [void Function(GPriceCategoriesDataBuilder)? updates]) =>
+      (new GPriceCategoriesDataBuilder()..update(updates))._build();
+
+  _$GPriceCategoriesData._({required this.G__typename, this.priceCategories})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GPriceCategoriesData', 'G__typename');
+  }
+
+  @override
+  GPriceCategoriesData rebuild(
+          void Function(GPriceCategoriesDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GPriceCategoriesDataBuilder toBuilder() =>
+      new GPriceCategoriesDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GPriceCategoriesData &&
+        G__typename == other.G__typename &&
+        priceCategories == other.priceCategories;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, priceCategories.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GPriceCategoriesData')
+          ..add('G__typename', G__typename)
+          ..add('priceCategories', priceCategories))
+        .toString();
+  }
+}
+
+class GPriceCategoriesDataBuilder
+    implements Builder<GPriceCategoriesData, GPriceCategoriesDataBuilder> {
+  _$GPriceCategoriesData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  ListBuilder<GPriceCategoriesData_priceCategories>? _priceCategories;
+  ListBuilder<GPriceCategoriesData_priceCategories> get priceCategories =>
+      _$this._priceCategories ??=
+          new ListBuilder<GPriceCategoriesData_priceCategories>();
+  set priceCategories(
+          ListBuilder<GPriceCategoriesData_priceCategories>? priceCategories) =>
+      _$this._priceCategories = priceCategories;
+
+  GPriceCategoriesDataBuilder() {
+    GPriceCategoriesData._initializeBuilder(this);
+  }
+
+  GPriceCategoriesDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _priceCategories = $v.priceCategories?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GPriceCategoriesData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GPriceCategoriesData;
+  }
+
+  @override
+  void update(void Function(GPriceCategoriesDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GPriceCategoriesData build() => _build();
+
+  _$GPriceCategoriesData _build() {
+    _$GPriceCategoriesData _$result;
+    try {
+      _$result = _$v ??
+          new _$GPriceCategoriesData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GPriceCategoriesData', 'G__typename'),
+              priceCategories: _priceCategories?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'priceCategories';
+        _priceCategories?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GPriceCategoriesData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GPriceCategoriesData_priceCategories
+    extends GPriceCategoriesData_priceCategories {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? name;
+  @override
+  final String? description;
+  @override
+  final _i2.GDateTime? createdAt;
+  @override
+  final _i2.GDateTime? modifiedAt;
+
+  factory _$GPriceCategoriesData_priceCategories(
+          [void Function(GPriceCategoriesData_priceCategoriesBuilder)?
+              updates]) =>
+      (new GPriceCategoriesData_priceCategoriesBuilder()..update(updates))
+          ._build();
+
+  _$GPriceCategoriesData_priceCategories._(
+      {required this.G__typename,
+      required this.id,
+      this.name,
+      this.description,
+      this.createdAt,
+      this.modifiedAt})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GPriceCategoriesData_priceCategories', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GPriceCategoriesData_priceCategories', 'id');
+  }
+
+  @override
+  GPriceCategoriesData_priceCategories rebuild(
+          void Function(GPriceCategoriesData_priceCategoriesBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GPriceCategoriesData_priceCategoriesBuilder toBuilder() =>
+      new GPriceCategoriesData_priceCategoriesBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GPriceCategoriesData_priceCategories &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        name == other.name &&
+        description == other.description &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GPriceCategoriesData_priceCategories')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('description', description)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt))
+        .toString();
+  }
+}
+
+class GPriceCategoriesData_priceCategoriesBuilder
+    implements
+        Builder<GPriceCategoriesData_priceCategories,
+            GPriceCategoriesData_priceCategoriesBuilder> {
+  _$GPriceCategoriesData_priceCategories? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  _i2.GDateTimeBuilder? _createdAt;
+  _i2.GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+  set createdAt(_i2.GDateTimeBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  _i2.GDateTimeBuilder? _modifiedAt;
+  _i2.GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new _i2.GDateTimeBuilder();
+  set modifiedAt(_i2.GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GPriceCategoriesData_priceCategoriesBuilder() {
+    GPriceCategoriesData_priceCategories._initializeBuilder(this);
+  }
+
+  GPriceCategoriesData_priceCategoriesBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _name = $v.name;
+      _description = $v.description;
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GPriceCategoriesData_priceCategories other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GPriceCategoriesData_priceCategories;
+  }
+
+  @override
+  void update(
+      void Function(GPriceCategoriesData_priceCategoriesBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GPriceCategoriesData_priceCategories build() => _build();
+
+  _$GPriceCategoriesData_priceCategories _build() {
+    _$GPriceCategoriesData_priceCategories _$result;
+    try {
+      _$result = _$v ??
+          new _$GPriceCategoriesData_priceCategories._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                  r'GPriceCategoriesData_priceCategories', 'G__typename'),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'GPriceCategoriesData_priceCategories', 'id'),
+              name: name,
+              description: description,
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GPriceCategoriesData_priceCategories',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

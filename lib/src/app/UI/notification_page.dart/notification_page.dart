@@ -37,7 +37,7 @@ class NotificationPage extends ConsumerWidget {
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
         child: notificationPro.notifications.isEmpty
-            ? Center(child: EmptyWidget(title: 'Uh-Oh No notifications found'))
+            ? const Center(child: EmptyWidget(title: 'Uh-Oh No notifications found'))
             : ListView(
                 physics: const BouncingScrollPhysics(),
                 children: notificationPro.notifications

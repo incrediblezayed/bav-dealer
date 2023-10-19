@@ -1,4 +1,3 @@
-import 'package:dealerapp/src/app/UI/login/login_page.dart';
 import 'package:dealerapp/src/app/UI/splash_screen/splash_screen.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';

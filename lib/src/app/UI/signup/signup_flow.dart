@@ -1,6 +1,5 @@
 import 'package:dealerapp/src/app/UI/login/login_page.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
-import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:flutter/material.dart';

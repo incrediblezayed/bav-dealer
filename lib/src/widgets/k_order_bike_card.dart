@@ -4,13 +4,12 @@ import 'package:dealerapp/src/app/provider/order_provider.dart';
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
-import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class KOrderBikeCard extends ConsumerStatefulWidget {
   ///
-  KOrderBikeCard({
+  const KOrderBikeCard({
     required this.vehiclePurchaseOrders,
     super.key,
   });
@@ -33,7 +32,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
     final ordersPro = ref.read(orderProvider(OrderFamily.purchaseOrders));
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
-      child: Container(
+      child: DecoratedBox(
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(6.r),
@@ -63,7 +62,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "ORDER ID #${widget.vehiclePurchaseOrders.id}",
+                        'ORDER ID #${widget.vehiclePurchaseOrders.id}',
                         style: theme.labelLarge!.copyWith(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w700,
@@ -72,7 +71,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                       ),
                       SizedBox(height: 6.h),
                       Text(widget
-                          .vehiclePurchaseOrders.createdAt.formatTohhmmaddMMyy),
+                          .vehiclePurchaseOrders.createdAt.formatTohhmmaddMMyy,),
                     ],
                   ),
                 ),
@@ -172,7 +171,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                                     // widget.bikeOrderModel.color,
                                     widget.vehiclePurchaseOrders.dealer
                                             ?.vehicleColor?.name ??
-                                        "",
+                                        '',
                                     style: theme.labelMedium!.copyWith(
                                       color: Colors.black.withOpacity(.5),
                                       fontWeight: FontWeight.w500,
@@ -299,7 +298,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                         Text(
                           widget.vehiclePurchaseOrders.order!.user!.addresses!
                                   .firstOrNull?.address ??
-                              "",
+                              '',
                           style: theme.labelMedium!.copyWith(
                             color: Colors.black.withOpacity(.5),
                             fontWeight: FontWeight.w500,
@@ -476,7 +475,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                   ),
                   child: Center(
                     child: Text(
-                      "Download Invoice",
+                      'Download Invoice',
                       style: TextStyle(
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
@@ -582,7 +581,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                         ref
                             .read(orderProvider(OrderFamily.purchaseOrders))
                             .rejectOrder(vehiclePurchaseOrders.id,
-                                selectedReason, true);
+                                selectedReason, true,);
                       },
                       child: Text(
                         'Submit',

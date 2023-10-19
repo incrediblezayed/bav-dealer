@@ -9,12 +9,12 @@ import 'package:flutter/material.dart';
 enum OrderFamily { purchaseOrders, testDriveOrders }
 
 enum OrderStatus {
-  pending("created"),
-  accepted("accepted"),
-  rejected("rejected"),
-  inTransit("in-transit"),
-  delivered("delivered"),
-  cancelled("cancelled");
+  pending('created'),
+  accepted('accepted'),
+  rejected('rejected'),
+  inTransit('in-transit'),
+  delivered('delivered'),
+  cancelled('cancelled');
 
   final String name;
   const OrderStatus(this.name);
@@ -124,12 +124,12 @@ class OrdersProvider extends ChangeNotifier {
   List<GTestDriveOrdersData_testDriveOrders> get testDriveDeliveredOrders =>
       _testDriveDeliveredOrders;
   set testDriveDeliveredOrders(
-      List<GTestDriveOrdersData_testDriveOrders> data) {
+      List<GTestDriveOrdersData_testDriveOrders> data,) {
     _testDriveDeliveredOrders = data;
     notifyListeners();
   }
 
-  void init(OrderFamily orderFamily) async {
+  Future<void> init(OrderFamily orderFamily) async {
     await getVehicles();
 
     if (orderFamily == OrderFamily.purchaseOrders) {
@@ -173,7 +173,7 @@ class OrdersProvider extends ChangeNotifier {
         testDrivePendingOrders = getTestDriveOrders;
       } else {
         AppRoutes.showErrorSnackbar(
-            message: "Error while fetching list of test order vehicles");
+            message: 'Error while fetching list of test order vehicles',);
       }
     } catch (e) {
       e.log();
@@ -204,7 +204,7 @@ class OrdersProvider extends ChangeNotifier {
   Future<void> getTestDriveAcceptedOrders() async {
     try {
       final getTestDriveOrders =
-          await _orderRepository.getTestDriveOrders("accepted");
+          await _orderRepository.getTestDriveOrders('accepted');
 
       if (getTestDriveOrders != null) {
         testDriveAcceptedOrders = getTestDriveOrders;
@@ -313,7 +313,7 @@ class OrdersProvider extends ChangeNotifier {
   Future<void> acceptOrder(String id) async {
     try {
       final success = await _orderRepository.updateOrderStatus(
-          vehicleOrderId: id, status: OrderStatus.accepted.name);
+          vehicleOrderId: id, status: OrderStatus.accepted.name,);
       if (success) {
         await getPendingOrders();
         await getAcceptedOrders();
@@ -322,18 +322,18 @@ class OrdersProvider extends ChangeNotifier {
       }
     } catch (e) {
       e.log();
-      AppRoutes.showErrorSnackbar(message: "Failed to accept order");
+      AppRoutes.showErrorSnackbar(message: 'Failed to accept order');
     }
   }
 
   Future<void> rejectOrder(String id, String reason, bool isPurchaseOrder,
-      [String? description]) async {
+      [String? description,]) async {
     try {
       final success = await _orderRepository.rejectOrder(
           isPurchaseOrder: isPurchaseOrder,
           orderId: id,
           reason: reason,
-          description: description);
+          description: description,);
       if (success) {
         await getPendingOrders();
         await getRejectedOrders();
@@ -342,7 +342,7 @@ class OrdersProvider extends ChangeNotifier {
       }
     } catch (e) {
       e.log();
-      AppRoutes.showErrorSnackbar(message: "Failed to reject order");
+      AppRoutes.showErrorSnackbar(message: 'Failed to reject order');
     }
   }
 }
