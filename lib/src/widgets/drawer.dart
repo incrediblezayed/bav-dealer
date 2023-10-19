@@ -132,9 +132,10 @@ class AppDrawer extends ConsumerWidget {
                             text: 'Edit Profile',
                             onTap: () {
                               AppRoutes.push(
-                                  page: const EditProfile(
-                                isPersonalInfo: false,
-                              ),);
+                                page: const EditProfile(
+                                  isPersonalInfo: false,
+                                ),
+                              );
                             },
                           ),
                         ],
@@ -157,9 +158,10 @@ class AppDrawer extends ConsumerWidget {
                       isSvg: false,
                       onTap: () {
                         AppRoutes.push(
-                            page: const EditProfile(
-                          isPersonalInfo: true,
-                        ),);
+                          page: const EditProfile(
+                            isPersonalInfo: true,
+                          ),
+                        );
                       },
                     ),
                     _drawerTile(
@@ -179,7 +181,10 @@ class AppDrawer extends ConsumerWidget {
                       title: 'My Wallet',
                       icon: AppImages.mywallet,
                       onTap: () {
-                        AppRoutes.push(page: PaymentOptions());
+                        AppRoutes.push(
+                            page: PaymentOptions(
+                          walletAmount: 230,
+                        ));
                       },
                     ),
                     _drawerTile(
