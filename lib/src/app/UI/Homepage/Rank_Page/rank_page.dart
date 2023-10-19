@@ -40,9 +40,21 @@ class _RankPageState extends State<RankPage> {
     return Scaffold(
       backgroundColor: AppTheme.primaryColor,
       appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () {
+            AppRoutes.pop();
+          },
+          child: SvgPicture.asset(
+            AppImages.arrowBack,
+            fit: BoxFit.scaleDown,
+          ),
+        ),
         backgroundColor: AppTheme.primaryColor,
         elevation: 0,
-        title: const Text('Top Seller'),
+        title: const Text(
+          'Top Seller',
+          style: TextStyle(color: Colors.white),
+        ),
         actions: [
           if (isSearching)
             Padding(
@@ -67,14 +79,14 @@ class _RankPageState extends State<RankPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 150,
             color: AppTheme.primaryColor,
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 30.h, horizontal: 20.w),
+              padding: EdgeInsets.only(
+                  left: 20.w, right: 20.w, top: 20.h, bottom: 30.h),
               child: Row(
                 children: [
                   CircleAvatar(
-                    radius: 50,
+                    radius: 45.r,
                     backgroundColor: Colors.grey,
                     child: Image.asset(AppImages.profile),
                   ),
@@ -107,6 +119,7 @@ class _RankPageState extends State<RankPage> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Text(""),
                       Text(
                         'Your Rank',
                         style: theme.labelMedium!.copyWith(color: Colors.white),
@@ -114,7 +127,7 @@ class _RankPageState extends State<RankPage> {
                       SizedBox(height: 10.h),
                       Row(
                         children: [
-                          SvgPicture.asset(AppImages.rank1),
+                          SvgPicture.asset(AppImages.rank1, height: 30.h),
                           SizedBox(height: 10.h),
                           Text(
                             '#1',
