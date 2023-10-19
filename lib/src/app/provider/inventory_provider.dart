@@ -79,12 +79,10 @@ class InventoryProvider extends ChangeNotifier {
   Future<void> createStockRequest({
     required String colorId,
     required String variantId,
-    required int quantity,
     required List<PriceModel> prices,
   }) async {
     try {
       final result = await _inventoryRepository.createStockRequest(
-        quantity: quantity,
         variantId: variantId,
         colorId: colorId,
         prices: prices,

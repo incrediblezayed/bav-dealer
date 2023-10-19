@@ -52,9 +52,8 @@ class InventoryRepository {
               (b) => b.vars
                 ..data.vehicleColor.connect.id = colorId
                 ..data.vehicleVariant.connect.id = variantId
-                ..data.stock = stock
+                ..data.stock = 0
                 ..data.dealer.connect.id = dealerId
-                // ..data.dealer_price = price
                 ..data.type = type,
             ),
           )
@@ -145,7 +144,6 @@ class InventoryRepository {
   }
 
   Future<bool> createStockRequest({
-    required int quantity,
     required String variantId,
     required String colorId,
     required List<PriceModel> prices,
@@ -156,7 +154,7 @@ class InventoryRepository {
             GCreateVehicleDealerReq(
               (b) => b
                 ..vars.data.dealer.connect.id = cacheProvider.getDealerId()
-                ..vars.data.stock = quantity
+                ..vars.data.stock = 0
                 ..vars.data.vehicleColor.connect.id = colorId
                 ..vars.data.vehicleVariant.connect.id = variantId
                 ..vars.data.prices.create = ListBuilder<GPriceCreateInput>(

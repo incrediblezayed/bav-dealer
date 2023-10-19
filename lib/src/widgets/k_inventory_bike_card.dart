@@ -272,34 +272,35 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                 ),
               ),
               SizedBox(height: 10.h),
-              ...prices.mapIndexed((i, e) => Column(
-                    children: [
-                      KTextField(
-                        label: e.name,
-                        hintText: 'Enter ${e.name}',
-                        onChange: (value) {
-                          if (value != null) {
-                            final price = int.parse(value);
-                            prices[i].price = price;
-                          }
-                        },
-                        inputType: TextInputType.number,
-                        inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly,
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10.h,
-                      ),
-                    ],
-                  ),),
+              ...prices.mapIndexed(
+                (i, e) => Column(
+                  children: [
+                    KTextField(
+                      label: e.name,
+                      hintText: 'Enter ${e.name}',
+                      onChange: (value) {
+                        if (value != null) {
+                          final price = int.parse(value);
+                          prices[i].price = price;
+                        }
+                      },
+                      inputType: TextInputType.number,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.digitsOnly,
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                  ],
+                ),
+              ),
               KButton(
                 onPressed: () {
                   inventoryPro.createStockRequest(
                     variantId: variants.id,
                     colorId: selectedColor!.id,
                     prices: prices,
-                    quantity: selectedQuantity,
                   );
                 },
                 text: 'Add Now To Update',
