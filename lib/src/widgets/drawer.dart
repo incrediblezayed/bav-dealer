@@ -1,4 +1,5 @@
 import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
+import 'package:dealerapp/src/app/UI/coming_soon.dart';
 import 'package:dealerapp/src/app/UI/drawer/about_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/contact_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/terms_conditions.dart';
@@ -95,18 +96,13 @@ class AppDrawer extends ConsumerWidget {
                   padding: EdgeInsets.only(left: 20.w, bottom: 30.h),
                   child: Row(
                     children: [
-                      /* SizedBox.square(
-                        dimension: 70.sp,
-                        child: UserProfileImage(
-                          url: homePageProv.user.profile_image?.url,
-                          size: 70.sp,
-                        ),
-                      ) */
-
-                      UserProfileImage(
+                      CircleAvatar(
+                        radius: 35.r,
+                      ),
+                      /* UserProfileImage(
                         url: user.profile_image?.url,
                         size: 80.sp,
-                      ),
+                      ), */
                       SizedBox(
                         width: 16.w,
                       ),
@@ -171,7 +167,7 @@ class AppDrawer extends ConsumerWidget {
                       width: 30,
                       isSvg: false,
                       onTap: () {
-                        AppRoutes.push(page: const MakeNewPurchase());
+                        AppRoutes.push(page: const ComingSoon());
                       },
                     ),
 
@@ -206,7 +202,7 @@ class AppDrawer extends ConsumerWidget {
                       title: 'About Us',
                       icon: AppImages.aboutus,
                       onTap: () {
-                        AppRoutes.push(page: const AboutUsPage());
+                        AppRoutes.push(page: AboutUs());
                       },
                     ),
                     _drawerTile(

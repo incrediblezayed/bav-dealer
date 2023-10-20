@@ -867,6 +867,7 @@ abstract class GDealerData_dealers
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
+  bool? get approved;
   static Serializer<GDealerData_dealers> get serializer =>
       _$gDealerDataDealersSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(

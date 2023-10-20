@@ -126,6 +126,7 @@ mutation UpdateUser($data: UserUpdateInput!, $where: UserWhereUniqueInput!) {
 query Dealer($where: DealerWhereInput!) {
   dealers(where: $where) {
     id
+    approved
   }
 }
 

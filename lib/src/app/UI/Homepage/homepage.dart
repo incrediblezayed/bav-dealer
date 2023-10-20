@@ -3,6 +3,7 @@ import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/purchase_orders.da
 import 'package:dealerapp/src/app/UI/Homepage/Rank_Page/rank_page.dart';
 import 'package:dealerapp/src/app/UI/Homepage/Test_Orders/test_orders.dart';
 import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
+import 'package:dealerapp/src/app/UI/coming_soon.dart';
 import 'package:dealerapp/src/app/UI/notification_page.dart/notification_page.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/provider/order_provider.dart';
@@ -241,7 +242,7 @@ class HomePage extends ConsumerWidget {
                           title: 'Your Rank',
                           titleColor: const Color(0xfffdb35f),
                           onTap: () {
-                            AppRoutes.push(page: const RankPage());
+                            AppRoutes.push(page: const ComingSoon());
                           },
                         ),
                       ],

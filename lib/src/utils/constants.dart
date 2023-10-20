@@ -2,6 +2,9 @@ import 'dart:core';
 
 /// Constants class
 class Constants {
+
+  static bool get isDev => const bool.fromEnvironment('isDev');
+
   /// This is the base url for the api
   static const String seen = 'seen';
 

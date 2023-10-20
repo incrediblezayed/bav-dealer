@@ -1038,15 +1038,6 @@ const StringFilter = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'mode'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'QueryMode'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'not'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -1054,20 +1045,6 @@ const StringFilter = _i1.InputObjectTypeDefinitionNode(
         isNonNull: false,
       ),
       defaultValue: null,
-    ),
-  ],
-);
-const QueryMode = _i1.EnumTypeDefinitionNode(
-  name: _i1.NameNode(value: 'QueryMode'),
-  directives: [],
-  values: [
-    _i1.EnumValueDefinitionNode(
-      name: _i1.NameNode(value: 'default'),
-      directives: [],
-    ),
-    _i1.EnumValueDefinitionNode(
-      name: _i1.NameNode(value: 'insensitive'),
-      directives: [],
     ),
   ],
 );
@@ -8734,15 +8711,6 @@ const VehicleImage = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'name'),
-      directives: [],
-      args: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'String'),
-        isNonNull: false,
-      ),
-    ),
-    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'image'),
       directives: [],
       args: [],
@@ -9025,15 +8993,6 @@ const VehicleSpecification = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'DateTime'),
-        isNonNull: false,
-      ),
-    ),
-    _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'name'),
-      directives: [],
-      args: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'String'),
         isNonNull: false,
       ),
     ),
@@ -9792,6 +9751,15 @@ const VehicleVariant = _i1.ObjectTypeDefinitionNode(
         isNonNull: false,
       ),
     ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'price'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+    ),
   ],
 );
 const VehicleVariantWhereUniqueInput = _i1.InputObjectTypeDefinitionNode(
@@ -9921,6 +9889,15 @@ const VehicleVariantWhereInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'price'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'IntNullableFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const VehicleVariantOrderByInput = _i1.InputObjectTypeDefinitionNode(
@@ -9965,6 +9942,15 @@ const VehicleVariantOrderByInput = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'default'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'price'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'OrderDirection'),
@@ -10038,6 +10024,15 @@ const VehicleVariantUpdateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'VehicleColorRelateToManyForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'price'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -10132,6 +10127,15 @@ const VehicleVariantCreateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'VehicleColorRelateToManyForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'price'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -10470,15 +10474,6 @@ const StringNullableFilter = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'mode'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'QueryMode'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -16943,15 +16938,6 @@ const Dealer = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'DateTime'),
-        isNonNull: false,
-      ),
-    ),
-    _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'name'),
-      directives: [],
-      args: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'String'),
         isNonNull: false,
       ),
     ),
@@ -35858,6 +35844,20 @@ const KeystoneAdminUIFieldMetaItemViewFieldPosition =
     ),
   ],
 );
+const QueryMode = _i1.EnumTypeDefinitionNode(
+  name: _i1.NameNode(value: 'QueryMode'),
+  directives: [],
+  values: [
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'default'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'insensitive'),
+      directives: [],
+    ),
+  ],
+);
 const KeystoneAdminUIFieldGroupMeta = _i1.ObjectTypeDefinitionNode(
   name: _i1.NameNode(value: 'KeystoneAdminUIFieldGroupMeta'),
   directives: [],
@@ -35946,7 +35946,6 @@ const document = _i1.DocumentNode(definitions: [
   IDFilter,
   DateTimeNullableFilter,
   StringFilter,
-  QueryMode,
   NestedStringFilter,
   BooleanFilter,
   AddressManyRelationFilter,
@@ -36387,6 +36386,7 @@ const document = _i1.DocumentNode(definitions: [
   KeystoneAdminUIFieldMetaItemView,
   KeystoneAdminUIFieldMetaItemViewFieldMode,
   KeystoneAdminUIFieldMetaItemViewFieldPosition,
+  QueryMode,
   KeystoneAdminUIFieldGroupMeta,
   KeystoneAdminUISort,
   KeystoneAdminUISortDirection,

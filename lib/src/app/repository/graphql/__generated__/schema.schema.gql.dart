@@ -183,7 +183,6 @@ abstract class GStringFilter
   String? get contains;
   String? get startsWith;
   String? get endsWith;
-  GQueryMode? get mode;
   GNestedStringFilter? get not;
   static Serializer<GStringFilter> get serializer => _$gStringFilterSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -195,19 +194,6 @@ abstract class GStringFilter
         GStringFilter.serializer,
         json,
       );
-}
-
-class GQueryMode extends EnumClass {
-  const GQueryMode._(String name) : super(name);
-
-  @BuiltValueEnumConst(wireName: 'default')
-  static const GQueryMode Gdefault = _$gQueryModeGdefault;
-
-  static const GQueryMode insensitive = _$gQueryModeinsensitive;
-
-  static Serializer<GQueryMode> get serializer => _$gQueryModeSerializer;
-  static BuiltSet<GQueryMode> get values => _$gQueryModeValues;
-  static GQueryMode valueOf(String name) => _$gQueryModeValueOf(name);
 }
 
 abstract class GNestedStringFilter
@@ -4245,6 +4231,7 @@ abstract class GVehicleVariantWhereInput
   GBooleanFilter? get Gdefault;
   GVehicleSpecificationManyRelationFilter? get specifications;
   GVehicleColorManyRelationFilter? get colors;
+  GIntNullableFilter? get price;
   static Serializer<GVehicleVariantWhereInput> get serializer =>
       _$gVehicleVariantWhereInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -4273,6 +4260,7 @@ abstract class GVehicleVariantOrderByInput
   GOrderDirection? get name;
   @BuiltValueField(wireName: 'default')
   GOrderDirection? get Gdefault;
+  GOrderDirection? get price;
   static Serializer<GVehicleVariantOrderByInput> get serializer =>
       _$gVehicleVariantOrderByInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -4303,6 +4291,7 @@ abstract class GVehicleVariantUpdateInput
   bool? get Gdefault;
   GVehicleSpecificationRelateToManyForUpdateInput? get specifications;
   GVehicleColorRelateToManyForUpdateInput? get colors;
+  int? get price;
   static Serializer<GVehicleVariantUpdateInput> get serializer =>
       _$gVehicleVariantUpdateInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -4357,6 +4346,7 @@ abstract class GVehicleVariantCreateInput
   bool? get Gdefault;
   GVehicleSpecificationRelateToManyForCreateInput? get specifications;
   GVehicleColorRelateToManyForCreateInput? get colors;
+  int? get price;
   static Serializer<GVehicleVariantCreateInput> get serializer =>
       _$gVehicleVariantCreateInputSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
@@ -4450,7 +4440,6 @@ abstract class GStringNullableFilter
   String? get contains;
   String? get startsWith;
   String? get endsWith;
-  GQueryMode? get mode;
   GNestedStringNullableFilter? get not;
   static Serializer<GStringNullableFilter> get serializer =>
       _$gStringNullableFilterSerializer;
@@ -10266,6 +10255,19 @@ class GKeystoneAdminUIFieldMetaItemViewFieldPosition extends EnumClass {
       _$gKeystoneAdminUIFieldMetaItemViewFieldPositionValues;
   static GKeystoneAdminUIFieldMetaItemViewFieldPosition valueOf(String name) =>
       _$gKeystoneAdminUIFieldMetaItemViewFieldPositionValueOf(name);
+}
+
+class GQueryMode extends EnumClass {
+  const GQueryMode._(String name) : super(name);
+
+  @BuiltValueEnumConst(wireName: 'default')
+  static const GQueryMode Gdefault = _$gQueryModeGdefault;
+
+  static const GQueryMode insensitive = _$gQueryModeinsensitive;
+
+  static Serializer<GQueryMode> get serializer => _$gQueryModeSerializer;
+  static BuiltSet<GQueryMode> get values => _$gQueryModeValues;
+  static GQueryMode valueOf(String name) => _$gQueryModeValueOf(name);
 }
 
 class GKeystoneAdminUISortDirection extends EnumClass {

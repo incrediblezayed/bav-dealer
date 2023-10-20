@@ -82,8 +82,8 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
-  Future<String> getDealerId() async {
-    return (await _authRepository.getDealerByUser()) ?? '';
+  Future<GDealerData_dealers?> getDealerId() async {
+    return (await _authRepository.getDealerByUser());
   }
 
   Future<void> regsiter() async {
@@ -157,18 +157,20 @@ class AuthProvider extends ChangeNotifier {
         await cacheProvider.setUser(newUser!);
       } else {
         await _authRepository.updateUser(
-            id: user.id!,
-            name: newUser!.name!,
-            email: newUser.email!,
-            phoneNumber: newUser.phoneNumber!,
-            image: _image?.path,);
+          userDio: true,
+          id: user.id!,
+          name: newUser!.name!,
+          email: newUser.email!,
+          phoneNumber: newUser.phoneNumber!,
+          image: _image?.path,
+        );
         await getCurrentUserOtp(isEmail: false);
       }
       return true;
     }
   }
 
-  /// Get CurrentUserOtp for loggedIn user 
+  /// Get CurrentUserOtp for loggedIn user
   Future<void> getCurrentUserOtp({required bool isEmail}) async {
     try {
       String? otp;
@@ -207,8 +209,22 @@ class AuthProvider extends ChangeNotifier {
     final response = await loginApi(fromSignUp: false);
     AppRoutes.pop();
     if (response) {
-      await cacheProvider.setDealerId(await getDealerId());
-      await AppRoutes.pushAndRemoveUntil(page: const HomePage());
+      var dealer = await getDealerId();
+      if (dealer != null) {
+        if (dealer.approved ?? false) {
+          await cacheProvider.setDealerId(dealer.id);
+          await AppRoutes.pushAndRemoveUntil(page: const HomePage());
+        } else {
+          AppRoutes.showErrorSnackbar(
+              message:
+                  "You are not approved yet. Please wait for approval from admin");
+          cacheProvider.clear();
+        }
+      } else {
+        AppRoutes.showErrorSnackbar(
+            message: "Something went wrong please try agian later");
+        cacheProvider.clear();
+      }
     }
   }
 
@@ -305,20 +321,23 @@ class AuthProvider extends ChangeNotifier {
   }
 
   ///Method to update the user
-  Future<void> updateUser(
-      {required String id,
-      required String email,
-      required String phoneNumber,
-      required String name,
-      String? address,}) async {
+  Future<void> updateUser({
+    required String id,
+    required String email,
+    required String phoneNumber,
+    required String name,
+    String? address,
+  }) async {
     try {
       final response = await _authRepository.updateUser(
-          id: id,
-          email: email,
-          phoneNumber: phoneNumber,
-          name: name,
-          image: _image?.path,
-          address: address,);
+        userDio: false,
+        id: id,
+        email: email,
+        phoneNumber: phoneNumber,
+        name: name,
+        image: _image?.path,
+        address: address,
+      );
       if (response == null) {
         AppRoutes.showErrorSnackbar(
           message: response ?? 'Something went wrong',

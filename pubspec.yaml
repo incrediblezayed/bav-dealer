@@ -54,6 +54,8 @@ dependencies:
   image_picker: ^1.0.4
   gql_http_link: ^1.0.1
   built_collection: ^5.1.1
+  auto_size_text: ^3.0.0
+  url_launcher: ^6.1.14
 
 
 dev_dependencies:

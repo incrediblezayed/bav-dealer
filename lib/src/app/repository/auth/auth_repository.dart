@@ -163,6 +163,7 @@ class AuthRepository {
     required String email,
     required String phoneNumber,
     required String? image,
+    required bool userDio,
     String? address,
   }) async {
     try {
@@ -175,8 +176,12 @@ class AuthRepository {
           );
         }
 
-        final response =
-            await _graphqlClient.httpClient(imageFile != null).request(
+        final response = await (userDio
+                ? _client
+                : _graphqlClient.httpClient(
+                    isMultipart: imageFile != null,
+                    token: cacheProvider.getSessionToken()!))
+            .request(
           GUpdateUserReq((b) {
             b.vars.where.id = id;
             b.vars.data.name = name;
@@ -228,7 +233,7 @@ class AuthRepository {
     return null;
   }
 
-  Future<String?> getDealerByUser() async {
+  Future<GDealerData_dealers?> getDealerByUser() async {
     try {
       final response = await _client
           .request(
@@ -237,11 +242,10 @@ class AuthRepository {
             ),
           )
           .first;
-      if (response.linkException != null ||
-          (response.graphqlErrors?.isNotEmpty ?? false)) {
-        throw Exception('Something w w');
+      if (response.linkException != null) {
+        throw Exception('Something went wrong');
       } else {
-        return response.data?.dealers?.firstOrNull?.id;
+        return response.data?.dealers?.firstOrNull;
       }
     } catch (e) {
       e.log();

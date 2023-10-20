@@ -26,7 +26,7 @@ class TermsConditionsPage extends StatelessWidget {
           ),
         ),
         title: Text(
-          'Terms & ',
+          'Terms & Conditions',
           style: theme.headlineLarge,
         ),
       ),

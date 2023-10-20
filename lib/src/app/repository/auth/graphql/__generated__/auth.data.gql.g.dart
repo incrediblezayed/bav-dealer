@@ -2077,7 +2077,14 @@ class _$GDealerData_dealersSerializer
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
-
+    Object? value;
+    value = object.approved;
+    if (value != null) {
+      result
+        ..add('approved')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -2100,6 +2107,10 @@ class _$GDealerData_dealersSerializer
         case 'id':
           result.id = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
+          break;
+        case 'approved':
+          result.approved = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -5990,12 +6001,15 @@ class _$GDealerData_dealers extends GDealerData_dealers {
   final String G__typename;
   @override
   final String id;
+  @override
+  final bool? approved;
 
   factory _$GDealerData_dealers(
           [void Function(GDealerData_dealersBuilder)? updates]) =>
       (new GDealerData_dealersBuilder()..update(updates))._build();
 
-  _$GDealerData_dealers._({required this.G__typename, required this.id})
+  _$GDealerData_dealers._(
+      {required this.G__typename, required this.id, this.approved})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GDealerData_dealers', 'G__typename');
@@ -6016,7 +6030,8 @@ class _$GDealerData_dealers extends GDealerData_dealers {
     if (identical(other, this)) return true;
     return other is GDealerData_dealers &&
         G__typename == other.G__typename &&
-        id == other.id;
+        id == other.id &&
+        approved == other.approved;
   }
 
   @override
@@ -6024,6 +6039,7 @@ class _$GDealerData_dealers extends GDealerData_dealers {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, approved.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -6032,7 +6048,8 @@ class _$GDealerData_dealers extends GDealerData_dealers {
   String toString() {
     return (newBuiltValueToStringHelper(r'GDealerData_dealers')
           ..add('G__typename', G__typename)
-          ..add('id', id))
+          ..add('id', id)
+          ..add('approved', approved))
         .toString();
   }
 }
@@ -6049,6 +6066,10 @@ class GDealerData_dealersBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
+  bool? _approved;
+  bool? get approved => _$this._approved;
+  set approved(bool? approved) => _$this._approved = approved;
+
   GDealerData_dealersBuilder() {
     GDealerData_dealers._initializeBuilder(this);
   }
@@ -6058,6 +6079,7 @@ class GDealerData_dealersBuilder
     if ($v != null) {
       _G__typename = $v.G__typename;
       _id = $v.id;
+      _approved = $v.approved;
       _$v = null;
     }
     return this;
@@ -6083,7 +6105,8 @@ class GDealerData_dealersBuilder
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GDealerData_dealers', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GDealerData_dealers', 'id'));
+                id, r'GDealerData_dealers', 'id'),
+            approved: approved);
     replace(_$result);
     return _$result;
   }

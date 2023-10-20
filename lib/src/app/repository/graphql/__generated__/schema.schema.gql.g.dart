@@ -34,26 +34,6 @@ final BuiltSet<GImageExtension> _$gImageExtensionValues =
   _$gImageExtensiongif,
 ]);
 
-const GQueryMode _$gQueryModeGdefault = const GQueryMode._('Gdefault');
-const GQueryMode _$gQueryModeinsensitive = const GQueryMode._('insensitive');
-
-GQueryMode _$gQueryModeValueOf(String name) {
-  switch (name) {
-    case 'Gdefault':
-      return _$gQueryModeGdefault;
-    case 'insensitive':
-      return _$gQueryModeinsensitive;
-    default:
-      throw new ArgumentError(name);
-  }
-}
-
-final BuiltSet<GQueryMode> _$gQueryModeValues =
-    new BuiltSet<GQueryMode>(const <GQueryMode>[
-  _$gQueryModeGdefault,
-  _$gQueryModeinsensitive,
-]);
-
 const GOrderDirection _$gOrderDirectionasc = const GOrderDirection._('asc');
 const GOrderDirection _$gOrderDirectiondesc = const GOrderDirection._('desc');
 
@@ -282,6 +262,26 @@ final BuiltSet<GKeystoneAdminUIFieldMetaItemViewFieldPosition>
   _$gKeystoneAdminUIFieldMetaItemViewFieldPositionsidebar,
 ]);
 
+const GQueryMode _$gQueryModeGdefault = const GQueryMode._('Gdefault');
+const GQueryMode _$gQueryModeinsensitive = const GQueryMode._('insensitive');
+
+GQueryMode _$gQueryModeValueOf(String name) {
+  switch (name) {
+    case 'Gdefault':
+      return _$gQueryModeGdefault;
+    case 'insensitive':
+      return _$gQueryModeinsensitive;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<GQueryMode> _$gQueryModeValues =
+    new BuiltSet<GQueryMode>(const <GQueryMode>[
+  _$gQueryModeGdefault,
+  _$gQueryModeinsensitive,
+]);
+
 const GKeystoneAdminUISortDirection _$gKeystoneAdminUISortDirectionASC =
     const GKeystoneAdminUISortDirection._('ASC');
 const GKeystoneAdminUISortDirection _$gKeystoneAdminUISortDirectionDESC =
@@ -317,7 +317,6 @@ Serializer<GDateTimeNullableFilter> _$gDateTimeNullableFilterSerializer =
     new _$GDateTimeNullableFilterSerializer();
 Serializer<GStringFilter> _$gStringFilterSerializer =
     new _$GStringFilterSerializer();
-Serializer<GQueryMode> _$gQueryModeSerializer = new _$GQueryModeSerializer();
 Serializer<GNestedStringFilter> _$gNestedStringFilterSerializer =
     new _$GNestedStringFilterSerializer();
 Serializer<GBooleanFilter> _$gBooleanFilterSerializer =
@@ -1254,6 +1253,7 @@ Serializer<GKeystoneAdminUIFieldMetaItemViewFieldMode>
 Serializer<GKeystoneAdminUIFieldMetaItemViewFieldPosition>
     _$gKeystoneAdminUIFieldMetaItemViewFieldPositionSerializer =
     new _$GKeystoneAdminUIFieldMetaItemViewFieldPositionSerializer();
+Serializer<GQueryMode> _$gQueryModeSerializer = new _$GQueryModeSerializer();
 Serializer<GKeystoneAdminUISortDirection>
     _$gKeystoneAdminUISortDirectionSerializer =
     new _$GKeystoneAdminUISortDirectionSerializer();
@@ -1976,13 +1976,6 @@ class _$GStringFilterSerializer implements StructuredSerializer<GStringFilter> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.mode;
-    if (value != null) {
-      result
-        ..add('mode')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GQueryMode)));
-    }
     value = object.not;
     if (value != null) {
       result
@@ -2049,10 +2042,6 @@ class _$GStringFilterSerializer implements StructuredSerializer<GStringFilter> {
           result.endsWith = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'mode':
-          result.mode = serializers.deserialize(value,
-              specifiedType: const FullType(GQueryMode)) as GQueryMode?;
-          break;
         case 'not':
           result.not.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GNestedStringFilter))!
@@ -2063,31 +2052,6 @@ class _$GStringFilterSerializer implements StructuredSerializer<GStringFilter> {
 
     return result.build();
   }
-}
-
-class _$GQueryModeSerializer implements PrimitiveSerializer<GQueryMode> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'Gdefault': 'default',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'default': 'Gdefault',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[GQueryMode];
-  @override
-  final String wireName = 'GQueryMode';
-
-  @override
-  Object serialize(Serializers serializers, GQueryMode object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  GQueryMode deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      GQueryMode.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
 class _$GNestedStringFilterSerializer
@@ -15661,6 +15625,13 @@ class _$GVehicleVariantWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GVehicleColorManyRelationFilter)));
     }
+    value = object.price;
+    if (value != null) {
+      result
+        ..add('price')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GIntNullableFilter)));
+    }
     return result;
   }
 
@@ -15734,6 +15705,11 @@ class _$GVehicleVariantWhereInputSerializer
                       const FullType(GVehicleColorManyRelationFilter))!
               as GVehicleColorManyRelationFilter);
           break;
+        case 'price':
+          result.price.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GIntNullableFilter))!
+              as GIntNullableFilter);
+          break;
       }
     }
 
@@ -15792,6 +15768,13 @@ class _$GVehicleVariantOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.price;
+    if (value != null) {
+      result
+        ..add('price')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     return result;
   }
 
@@ -15829,6 +15812,11 @@ class _$GVehicleVariantOrderByInputSerializer
           break;
         case 'default':
           result.Gdefault = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'price':
+          result.price = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -15906,6 +15894,12 @@ class _$GVehicleVariantUpdateInputSerializer
             specifiedType:
                 const FullType(GVehicleColorRelateToManyForUpdateInput)));
     }
+    value = object.price;
+    if (value != null) {
+      result
+        ..add('price')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -15954,6 +15948,10 @@ class _$GVehicleVariantUpdateInputSerializer
                   specifiedType:
                       const FullType(GVehicleColorRelateToManyForUpdateInput))!
               as GVehicleColorRelateToManyForUpdateInput);
+          break;
+        case 'price':
+          result.price = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -16085,6 +16083,12 @@ class _$GVehicleVariantCreateInputSerializer
             specifiedType:
                 const FullType(GVehicleColorRelateToManyForCreateInput)));
     }
+    value = object.price;
+    if (value != null) {
+      result
+        ..add('price')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -16133,6 +16137,10 @@ class _$GVehicleVariantCreateInputSerializer
                   specifiedType:
                       const FullType(GVehicleColorRelateToManyForCreateInput))!
               as GVehicleColorRelateToManyForCreateInput);
+          break;
+        case 'price':
+          result.price = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -16466,13 +16474,6 @@ class _$GStringNullableFilterSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.mode;
-    if (value != null) {
-      result
-        ..add('mode')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GQueryMode)));
-    }
     value = object.not;
     if (value != null) {
       result
@@ -16538,10 +16539,6 @@ class _$GStringNullableFilterSerializer
         case 'endsWith':
           result.endsWith = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
-          break;
-        case 'mode':
-          result.mode = serializers.deserialize(value,
-              specifiedType: const FullType(GQueryMode)) as GQueryMode?;
           break;
         case 'not':
           result.not.replace(serializers.deserialize(value,
@@ -36397,6 +36394,31 @@ class _$GKeystoneAdminUIFieldMetaItemViewFieldPositionSerializer
           serialized as String);
 }
 
+class _$GQueryModeSerializer implements PrimitiveSerializer<GQueryMode> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'Gdefault': 'default',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'default': 'Gdefault',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[GQueryMode];
+  @override
+  final String wireName = 'GQueryMode';
+
+  @override
+  Object serialize(Serializers serializers, GQueryMode object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  GQueryMode deserialize(Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      GQueryMode.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$GKeystoneAdminUISortDirectionSerializer
     implements PrimitiveSerializer<GKeystoneAdminUISortDirection> {
   @override
@@ -37420,8 +37442,6 @@ class _$GStringFilter extends GStringFilter {
   @override
   final String? endsWith;
   @override
-  final GQueryMode? mode;
-  @override
   final GNestedStringFilter? not;
 
   factory _$GStringFilter([void Function(GStringFilterBuilder)? updates]) =>
@@ -37438,7 +37458,6 @@ class _$GStringFilter extends GStringFilter {
       this.contains,
       this.startsWith,
       this.endsWith,
-      this.mode,
       this.not})
       : super._();
 
@@ -37463,7 +37482,6 @@ class _$GStringFilter extends GStringFilter {
         contains == other.contains &&
         startsWith == other.startsWith &&
         endsWith == other.endsWith &&
-        mode == other.mode &&
         not == other.not;
   }
 
@@ -37480,7 +37498,6 @@ class _$GStringFilter extends GStringFilter {
     _$hash = $jc(_$hash, contains.hashCode);
     _$hash = $jc(_$hash, startsWith.hashCode);
     _$hash = $jc(_$hash, endsWith.hashCode);
-    _$hash = $jc(_$hash, mode.hashCode);
     _$hash = $jc(_$hash, not.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -37499,7 +37516,6 @@ class _$GStringFilter extends GStringFilter {
           ..add('contains', contains)
           ..add('startsWith', startsWith)
           ..add('endsWith', endsWith)
-          ..add('mode', mode)
           ..add('not', not))
         .toString();
   }
@@ -37549,10 +37565,6 @@ class GStringFilterBuilder
   String? get endsWith => _$this._endsWith;
   set endsWith(String? endsWith) => _$this._endsWith = endsWith;
 
-  GQueryMode? _mode;
-  GQueryMode? get mode => _$this._mode;
-  set mode(GQueryMode? mode) => _$this._mode = mode;
-
   GNestedStringFilterBuilder? _not;
   GNestedStringFilterBuilder get not =>
       _$this._not ??= new GNestedStringFilterBuilder();
@@ -37573,7 +37585,6 @@ class GStringFilterBuilder
       _contains = $v.contains;
       _startsWith = $v.startsWith;
       _endsWith = $v.endsWith;
-      _mode = $v.mode;
       _not = $v.not?.toBuilder();
       _$v = null;
     }
@@ -37609,7 +37620,6 @@ class GStringFilterBuilder
               contains: contains,
               startsWith: startsWith,
               endsWith: endsWith,
-              mode: mode,
               not: _not?.build());
     } catch (_) {
       late String _$failedField;
@@ -59654,6 +59664,8 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
   final GVehicleSpecificationManyRelationFilter? specifications;
   @override
   final GVehicleColorManyRelationFilter? colors;
+  @override
+  final GIntNullableFilter? price;
 
   factory _$GVehicleVariantWhereInput(
           [void Function(GVehicleVariantWhereInputBuilder)? updates]) =>
@@ -59670,7 +59682,8 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
       this.vehicle,
       this.Gdefault,
       this.specifications,
-      this.colors})
+      this.colors,
+      this.price})
       : super._();
 
   @override
@@ -59696,7 +59709,8 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
         vehicle == other.vehicle &&
         Gdefault == other.Gdefault &&
         specifications == other.specifications &&
-        colors == other.colors;
+        colors == other.colors &&
+        price == other.price;
   }
 
   @override
@@ -59713,6 +59727,7 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
     _$hash = $jc(_$hash, Gdefault.hashCode);
     _$hash = $jc(_$hash, specifications.hashCode);
     _$hash = $jc(_$hash, colors.hashCode);
+    _$hash = $jc(_$hash, price.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -59730,7 +59745,8 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
           ..add('vehicle', vehicle)
           ..add('Gdefault', Gdefault)
           ..add('specifications', specifications)
-          ..add('colors', colors))
+          ..add('colors', colors)
+          ..add('price', price))
         .toString();
   }
 }
@@ -59799,6 +59815,11 @@ class GVehicleVariantWhereInputBuilder
   set colors(GVehicleColorManyRelationFilterBuilder? colors) =>
       _$this._colors = colors;
 
+  GIntNullableFilterBuilder? _price;
+  GIntNullableFilterBuilder get price =>
+      _$this._price ??= new GIntNullableFilterBuilder();
+  set price(GIntNullableFilterBuilder? price) => _$this._price = price;
+
   GVehicleVariantWhereInputBuilder();
 
   GVehicleVariantWhereInputBuilder get _$this {
@@ -59815,6 +59836,7 @@ class GVehicleVariantWhereInputBuilder
       _Gdefault = $v.Gdefault?.toBuilder();
       _specifications = $v.specifications?.toBuilder();
       _colors = $v.colors?.toBuilder();
+      _price = $v.price?.toBuilder();
       _$v = null;
     }
     return this;
@@ -59849,7 +59871,8 @@ class GVehicleVariantWhereInputBuilder
               vehicle: _vehicle?.build(),
               Gdefault: _Gdefault?.build(),
               specifications: _specifications?.build(),
-              colors: _colors?.build());
+              colors: _colors?.build(),
+              price: _price?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -59875,6 +59898,8 @@ class GVehicleVariantWhereInputBuilder
         _specifications?.build();
         _$failedField = 'colors';
         _colors?.build();
+        _$failedField = 'price';
+        _price?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleVariantWhereInput', _$failedField, e.toString());
@@ -59897,13 +59922,20 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
   final GOrderDirection? name;
   @override
   final GOrderDirection? Gdefault;
+  @override
+  final GOrderDirection? price;
 
   factory _$GVehicleVariantOrderByInput(
           [void Function(GVehicleVariantOrderByInputBuilder)? updates]) =>
       (new GVehicleVariantOrderByInputBuilder()..update(updates))._build();
 
   _$GVehicleVariantOrderByInput._(
-      {this.id, this.createdAt, this.modifiedAt, this.name, this.Gdefault})
+      {this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.name,
+      this.Gdefault,
+      this.price})
       : super._();
 
   @override
@@ -59923,7 +59955,8 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
-        Gdefault == other.Gdefault;
+        Gdefault == other.Gdefault &&
+        price == other.price;
   }
 
   @override
@@ -59934,6 +59967,7 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, Gdefault.hashCode);
+    _$hash = $jc(_$hash, price.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -59945,7 +59979,8 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
-          ..add('Gdefault', Gdefault))
+          ..add('Gdefault', Gdefault)
+          ..add('price', price))
         .toString();
   }
 }
@@ -59977,6 +60012,10 @@ class GVehicleVariantOrderByInputBuilder
   GOrderDirection? get Gdefault => _$this._Gdefault;
   set Gdefault(GOrderDirection? Gdefault) => _$this._Gdefault = Gdefault;
 
+  GOrderDirection? _price;
+  GOrderDirection? get price => _$this._price;
+  set price(GOrderDirection? price) => _$this._price = price;
+
   GVehicleVariantOrderByInputBuilder();
 
   GVehicleVariantOrderByInputBuilder get _$this {
@@ -59987,6 +60026,7 @@ class GVehicleVariantOrderByInputBuilder
       _modifiedAt = $v.modifiedAt;
       _name = $v.name;
       _Gdefault = $v.Gdefault;
+      _price = $v.price;
       _$v = null;
     }
     return this;
@@ -60013,7 +60053,8 @@ class GVehicleVariantOrderByInputBuilder
             createdAt: createdAt,
             modifiedAt: modifiedAt,
             name: name,
-            Gdefault: Gdefault);
+            Gdefault: Gdefault,
+            price: price);
     replace(_$result);
     return _$result;
   }
@@ -60034,6 +60075,8 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
   final GVehicleSpecificationRelateToManyForUpdateInput? specifications;
   @override
   final GVehicleColorRelateToManyForUpdateInput? colors;
+  @override
+  final int? price;
 
   factory _$GVehicleVariantUpdateInput(
           [void Function(GVehicleVariantUpdateInputBuilder)? updates]) =>
@@ -60046,7 +60089,8 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
       this.vehicle,
       this.Gdefault,
       this.specifications,
-      this.colors})
+      this.colors,
+      this.price})
       : super._();
 
   @override
@@ -60068,7 +60112,8 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
         vehicle == other.vehicle &&
         Gdefault == other.Gdefault &&
         specifications == other.specifications &&
-        colors == other.colors;
+        colors == other.colors &&
+        price == other.price;
   }
 
   @override
@@ -60081,6 +60126,7 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
     _$hash = $jc(_$hash, Gdefault.hashCode);
     _$hash = $jc(_$hash, specifications.hashCode);
     _$hash = $jc(_$hash, colors.hashCode);
+    _$hash = $jc(_$hash, price.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -60094,7 +60140,8 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
           ..add('vehicle', vehicle)
           ..add('Gdefault', Gdefault)
           ..add('specifications', specifications)
-          ..add('colors', colors))
+          ..add('colors', colors)
+          ..add('price', price))
         .toString();
   }
 }
@@ -60144,6 +60191,10 @@ class GVehicleVariantUpdateInputBuilder
   set colors(GVehicleColorRelateToManyForUpdateInputBuilder? colors) =>
       _$this._colors = colors;
 
+  int? _price;
+  int? get price => _$this._price;
+  set price(int? price) => _$this._price = price;
+
   GVehicleVariantUpdateInputBuilder();
 
   GVehicleVariantUpdateInputBuilder get _$this {
@@ -60156,6 +60207,7 @@ class GVehicleVariantUpdateInputBuilder
       _Gdefault = $v.Gdefault;
       _specifications = $v.specifications?.toBuilder();
       _colors = $v.colors?.toBuilder();
+      _price = $v.price;
       _$v = null;
     }
     return this;
@@ -60186,7 +60238,8 @@ class GVehicleVariantUpdateInputBuilder
               vehicle: _vehicle?.build(),
               Gdefault: Gdefault,
               specifications: _specifications?.build(),
-              colors: _colors?.build());
+              colors: _colors?.build(),
+              price: price);
     } catch (_) {
       late String _$failedField;
       try {
@@ -60347,6 +60400,8 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
   final GVehicleSpecificationRelateToManyForCreateInput? specifications;
   @override
   final GVehicleColorRelateToManyForCreateInput? colors;
+  @override
+  final int? price;
 
   factory _$GVehicleVariantCreateInput(
           [void Function(GVehicleVariantCreateInputBuilder)? updates]) =>
@@ -60359,7 +60414,8 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
       this.vehicle,
       this.Gdefault,
       this.specifications,
-      this.colors})
+      this.colors,
+      this.price})
       : super._();
 
   @override
@@ -60381,7 +60437,8 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
         vehicle == other.vehicle &&
         Gdefault == other.Gdefault &&
         specifications == other.specifications &&
-        colors == other.colors;
+        colors == other.colors &&
+        price == other.price;
   }
 
   @override
@@ -60394,6 +60451,7 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
     _$hash = $jc(_$hash, Gdefault.hashCode);
     _$hash = $jc(_$hash, specifications.hashCode);
     _$hash = $jc(_$hash, colors.hashCode);
+    _$hash = $jc(_$hash, price.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -60407,7 +60465,8 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
           ..add('vehicle', vehicle)
           ..add('Gdefault', Gdefault)
           ..add('specifications', specifications)
-          ..add('colors', colors))
+          ..add('colors', colors)
+          ..add('price', price))
         .toString();
   }
 }
@@ -60457,6 +60516,10 @@ class GVehicleVariantCreateInputBuilder
   set colors(GVehicleColorRelateToManyForCreateInputBuilder? colors) =>
       _$this._colors = colors;
 
+  int? _price;
+  int? get price => _$this._price;
+  set price(int? price) => _$this._price = price;
+
   GVehicleVariantCreateInputBuilder();
 
   GVehicleVariantCreateInputBuilder get _$this {
@@ -60469,6 +60532,7 @@ class GVehicleVariantCreateInputBuilder
       _Gdefault = $v.Gdefault;
       _specifications = $v.specifications?.toBuilder();
       _colors = $v.colors?.toBuilder();
+      _price = $v.price;
       _$v = null;
     }
     return this;
@@ -60499,7 +60563,8 @@ class GVehicleVariantCreateInputBuilder
               vehicle: _vehicle?.build(),
               Gdefault: Gdefault,
               specifications: _specifications?.build(),
-              colors: _colors?.build());
+              colors: _colors?.build(),
+              price: price);
     } catch (_) {
       late String _$failedField;
       try {
@@ -60919,8 +60984,6 @@ class _$GStringNullableFilter extends GStringNullableFilter {
   @override
   final String? endsWith;
   @override
-  final GQueryMode? mode;
-  @override
   final GNestedStringNullableFilter? not;
 
   factory _$GStringNullableFilter(
@@ -60938,7 +61001,6 @@ class _$GStringNullableFilter extends GStringNullableFilter {
       this.contains,
       this.startsWith,
       this.endsWith,
-      this.mode,
       this.not})
       : super._();
 
@@ -60965,7 +61027,6 @@ class _$GStringNullableFilter extends GStringNullableFilter {
         contains == other.contains &&
         startsWith == other.startsWith &&
         endsWith == other.endsWith &&
-        mode == other.mode &&
         not == other.not;
   }
 
@@ -60982,7 +61043,6 @@ class _$GStringNullableFilter extends GStringNullableFilter {
     _$hash = $jc(_$hash, contains.hashCode);
     _$hash = $jc(_$hash, startsWith.hashCode);
     _$hash = $jc(_$hash, endsWith.hashCode);
-    _$hash = $jc(_$hash, mode.hashCode);
     _$hash = $jc(_$hash, not.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -61001,7 +61061,6 @@ class _$GStringNullableFilter extends GStringNullableFilter {
           ..add('contains', contains)
           ..add('startsWith', startsWith)
           ..add('endsWith', endsWith)
-          ..add('mode', mode)
           ..add('not', not))
         .toString();
   }
@@ -61051,10 +61110,6 @@ class GStringNullableFilterBuilder
   String? get endsWith => _$this._endsWith;
   set endsWith(String? endsWith) => _$this._endsWith = endsWith;
 
-  GQueryMode? _mode;
-  GQueryMode? get mode => _$this._mode;
-  set mode(GQueryMode? mode) => _$this._mode = mode;
-
   GNestedStringNullableFilterBuilder? _not;
   GNestedStringNullableFilterBuilder get not =>
       _$this._not ??= new GNestedStringNullableFilterBuilder();
@@ -61075,7 +61130,6 @@ class GStringNullableFilterBuilder
       _contains = $v.contains;
       _startsWith = $v.startsWith;
       _endsWith = $v.endsWith;
-      _mode = $v.mode;
       _not = $v.not?.toBuilder();
       _$v = null;
     }
@@ -61111,7 +61165,6 @@ class GStringNullableFilterBuilder
               contains: contains,
               startsWith: startsWith,
               endsWith: endsWith,
-              mode: mode,
               not: _not?.build());
     } catch (_) {
       late String _$failedField;
