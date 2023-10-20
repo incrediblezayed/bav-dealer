@@ -52,7 +52,7 @@ class InventoryRepository {
               (b) => b.vars
                 ..data.vehicleColor.connect.id = colorId
                 ..data.vehicleVariant.connect.id = variantId
-                ..data.stock = 0
+                ..data.stock = stock
                 ..data.dealer.connect.id = dealerId
                 ..data.type = type,
             ),

@@ -3,7 +3,6 @@ import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inv
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_bottom_bar_button.dart';
-import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -27,7 +26,7 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
-    // final inventoryPro = ref.watch(inventoryProvider);
+    final inventoryPro = ref.watch(inventoryProvider);
     return Container(
       margin: const EdgeInsets.only(bottom: 8),
       padding: const EdgeInsets.all(20),
@@ -241,8 +240,11 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                     color: Colors.red.shade100,
                     text: 'Remove',
                     onTap: () {
-                      //TODO: Fix this @khanarifak07
-                      //inventoryPro.createStockRequest(, variantId, stock, price, 'remove', gst, otherTaxes, incentives, totalOffRoadPrice)
+                      inventoryPro.updateStockRequest(
+                          colorId: widget.vehicleDealers.vehicleColor!.id,
+                          variantId: widget.vehicleDealers.vehicleVariant!.id,
+                          quantity: selectedQuantity,
+                          type: 'remove');
                     },
                   ),
                 ),
@@ -251,12 +253,13 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                 ),
                 Expanded(
                   child: KBottomBarButton(
-                    // text: 'Quantity: ${widget.vehicleDealers.stock}',
                     text: "Add",
                     onTap: () {
-                      setState(() {
-                        isEdit = true;
-                      });
+                      inventoryPro.updateStockRequest(
+                          colorId: widget.vehicleDealers.vehicleColor!.id,
+                          variantId: widget.vehicleDealers.vehicleVariant!.id,
+                          quantity: selectedQuantity,
+                          type: 'add');
                     },
                   ),
                 ),
