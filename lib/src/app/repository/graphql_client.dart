@@ -9,10 +9,6 @@ import 'package:gql_http_link/gql_http_link.dart';
 
 ///GraphQL Client
 class GraphqlClient {
-  final Map<String, String> _headers = {
-    'Authorization': 'Bearer ${cacheProvider.getSessionToken()}',
-  };
-
   ///Local URL
   final String _localUrl = 'http://localhost:3000';
 
@@ -31,7 +27,6 @@ class GraphqlClient {
   late final Dio _dio = Dio(
     BaseOptions(
       baseUrl: _liveUrl,
-      headers: _headers,
     ),
   );
 
@@ -69,7 +64,6 @@ class GraphqlClient {
     final link = DioLink(
       _path,
       client: _dio,
-      defaultHeaders: _headers,
     );
 
     client = Client(
@@ -83,13 +77,13 @@ class GraphqlClient {
     final multiPartLink = DioLink(
       _path,
       client: _dio,
-      defaultHeaders: {..._headers, 'Content-Type': 'multipart/form-data'},
+      defaultHeaders: {'Content-Type': 'multipart/form-data'},
     );
 
     HttpLink httpLink(bool isMultipart) => HttpLink(
           baseUrl + _path,
           defaultHeaders: {
-            ..._headers,
+            'Authorization': 'Bearer ${cacheProvider.getSessionToken()}',
             if (isMultipart)
               Headers.contentTypeHeader: Headers.multipartFormDataContentType,
           },
@@ -127,8 +121,6 @@ class GraphqlClient {
             onRequest: (options, handler) {
               options.headers['Authorization'] =
                   'Bearer ${cacheProvider.getSessionToken()}';
-              options.headers['cookie'] =
-                  'session=${cacheProvider.getSessionToken()}';
 
               final headers = StringBuffer();
               for (final element in options.headers.entries) {

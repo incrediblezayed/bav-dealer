@@ -1,8 +1,5 @@
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_bottom_bar_button.dart';
-import 'package:dealerapp/src/widgets/k_button.dart';
-import 'package:dealerapp/src/widgets/my_app_bar.dart';
-import 'package:flutter/material.dart';
 
 class PaymentOptions extends StatefulWidget {
   final double walletAmount;
