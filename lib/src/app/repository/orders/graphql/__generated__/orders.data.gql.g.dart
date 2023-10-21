@@ -88,6 +88,11 @@ Serializer<GUpdateVehicleOrderData> _$gUpdateVehicleOrderDataSerializer =
 Serializer<GUpdateVehicleOrderData_updateVehicleOrder>
     _$gUpdateVehicleOrderDataUpdateVehicleOrderSerializer =
     new _$GUpdateVehicleOrderData_updateVehicleOrderSerializer();
+Serializer<GUpdateTestDriveOrderData> _$gUpdateTestDriveOrderDataSerializer =
+    new _$GUpdateTestDriveOrderDataSerializer();
+Serializer<GUpdateTestDriveOrderData_updateTestDriveOrder>
+    _$gUpdateTestDriveOrderDataUpdateTestDriveOrderSerializer =
+    new _$GUpdateTestDriveOrderData_updateTestDriveOrderSerializer();
 Serializer<GCreateOrderRejectionByDealerData>
     _$gCreateOrderRejectionByDealerDataSerializer =
     new _$GCreateOrderRejectionByDealerDataSerializer();
@@ -2347,6 +2352,119 @@ class _$GUpdateVehicleOrderData_updateVehicleOrderSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new GUpdateVehicleOrderData_updateVehicleOrderBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUpdateTestDriveOrderDataSerializer
+    implements StructuredSerializer<GUpdateTestDriveOrderData> {
+  @override
+  final Iterable<Type> types = const [
+    GUpdateTestDriveOrderData,
+    _$GUpdateTestDriveOrderData
+  ];
+  @override
+  final String wireName = 'GUpdateTestDriveOrderData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUpdateTestDriveOrderData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.updateTestDriveOrder;
+    if (value != null) {
+      result
+        ..add('updateTestDriveOrder')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GUpdateTestDriveOrderData_updateTestDriveOrder)));
+    }
+    return result;
+  }
+
+  @override
+  GUpdateTestDriveOrderData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUpdateTestDriveOrderDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'updateTestDriveOrder':
+          result.updateTestDriveOrder.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GUpdateTestDriveOrderData_updateTestDriveOrder))!
+              as GUpdateTestDriveOrderData_updateTestDriveOrder);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUpdateTestDriveOrderData_updateTestDriveOrderSerializer
+    implements
+        StructuredSerializer<GUpdateTestDriveOrderData_updateTestDriveOrder> {
+  @override
+  final Iterable<Type> types = const [
+    GUpdateTestDriveOrderData_updateTestDriveOrder,
+    _$GUpdateTestDriveOrderData_updateTestDriveOrder
+  ];
+  @override
+  final String wireName = 'GUpdateTestDriveOrderData_updateTestDriveOrder';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GUpdateTestDriveOrderData_updateTestDriveOrder object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GUpdateTestDriveOrderData_updateTestDriveOrder deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUpdateTestDriveOrderData_updateTestDriveOrderBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -6991,6 +7109,247 @@ class GUpdateVehicleOrderData_updateVehicleOrderBuilder
                 r'GUpdateVehicleOrderData_updateVehicleOrder', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'GUpdateVehicleOrderData_updateVehicleOrder', 'id'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUpdateTestDriveOrderData extends GUpdateTestDriveOrderData {
+  @override
+  final String G__typename;
+  @override
+  final GUpdateTestDriveOrderData_updateTestDriveOrder? updateTestDriveOrder;
+
+  factory _$GUpdateTestDriveOrderData(
+          [void Function(GUpdateTestDriveOrderDataBuilder)? updates]) =>
+      (new GUpdateTestDriveOrderDataBuilder()..update(updates))._build();
+
+  _$GUpdateTestDriveOrderData._(
+      {required this.G__typename, this.updateTestDriveOrder})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GUpdateTestDriveOrderData', 'G__typename');
+  }
+
+  @override
+  GUpdateTestDriveOrderData rebuild(
+          void Function(GUpdateTestDriveOrderDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUpdateTestDriveOrderDataBuilder toBuilder() =>
+      new GUpdateTestDriveOrderDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUpdateTestDriveOrderData &&
+        G__typename == other.G__typename &&
+        updateTestDriveOrder == other.updateTestDriveOrder;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, updateTestDriveOrder.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GUpdateTestDriveOrderData')
+          ..add('G__typename', G__typename)
+          ..add('updateTestDriveOrder', updateTestDriveOrder))
+        .toString();
+  }
+}
+
+class GUpdateTestDriveOrderDataBuilder
+    implements
+        Builder<GUpdateTestDriveOrderData, GUpdateTestDriveOrderDataBuilder> {
+  _$GUpdateTestDriveOrderData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GUpdateTestDriveOrderData_updateTestDriveOrderBuilder? _updateTestDriveOrder;
+  GUpdateTestDriveOrderData_updateTestDriveOrderBuilder
+      get updateTestDriveOrder => _$this._updateTestDriveOrder ??=
+          new GUpdateTestDriveOrderData_updateTestDriveOrderBuilder();
+  set updateTestDriveOrder(
+          GUpdateTestDriveOrderData_updateTestDriveOrderBuilder?
+              updateTestDriveOrder) =>
+      _$this._updateTestDriveOrder = updateTestDriveOrder;
+
+  GUpdateTestDriveOrderDataBuilder() {
+    GUpdateTestDriveOrderData._initializeBuilder(this);
+  }
+
+  GUpdateTestDriveOrderDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _updateTestDriveOrder = $v.updateTestDriveOrder?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUpdateTestDriveOrderData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUpdateTestDriveOrderData;
+  }
+
+  @override
+  void update(void Function(GUpdateTestDriveOrderDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUpdateTestDriveOrderData build() => _build();
+
+  _$GUpdateTestDriveOrderData _build() {
+    _$GUpdateTestDriveOrderData _$result;
+    try {
+      _$result = _$v ??
+          new _$GUpdateTestDriveOrderData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GUpdateTestDriveOrderData', 'G__typename'),
+              updateTestDriveOrder: _updateTestDriveOrder?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'updateTestDriveOrder';
+        _updateTestDriveOrder?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUpdateTestDriveOrderData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUpdateTestDriveOrderData_updateTestDriveOrder
+    extends GUpdateTestDriveOrderData_updateTestDriveOrder {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+
+  factory _$GUpdateTestDriveOrderData_updateTestDriveOrder(
+          [void Function(GUpdateTestDriveOrderData_updateTestDriveOrderBuilder)?
+              updates]) =>
+      (new GUpdateTestDriveOrderData_updateTestDriveOrderBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GUpdateTestDriveOrderData_updateTestDriveOrder._(
+      {required this.G__typename, required this.id})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GUpdateTestDriveOrderData_updateTestDriveOrder', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GUpdateTestDriveOrderData_updateTestDriveOrder', 'id');
+  }
+
+  @override
+  GUpdateTestDriveOrderData_updateTestDriveOrder rebuild(
+          void Function(GUpdateTestDriveOrderData_updateTestDriveOrderBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUpdateTestDriveOrderData_updateTestDriveOrderBuilder toBuilder() =>
+      new GUpdateTestDriveOrderData_updateTestDriveOrderBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUpdateTestDriveOrderData_updateTestDriveOrder &&
+        G__typename == other.G__typename &&
+        id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUpdateTestDriveOrderData_updateTestDriveOrder')
+          ..add('G__typename', G__typename)
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GUpdateTestDriveOrderData_updateTestDriveOrderBuilder
+    implements
+        Builder<GUpdateTestDriveOrderData_updateTestDriveOrder,
+            GUpdateTestDriveOrderData_updateTestDriveOrderBuilder> {
+  _$GUpdateTestDriveOrderData_updateTestDriveOrder? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GUpdateTestDriveOrderData_updateTestDriveOrderBuilder() {
+    GUpdateTestDriveOrderData_updateTestDriveOrder._initializeBuilder(this);
+  }
+
+  GUpdateTestDriveOrderData_updateTestDriveOrderBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUpdateTestDriveOrderData_updateTestDriveOrder other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUpdateTestDriveOrderData_updateTestDriveOrder;
+  }
+
+  @override
+  void update(
+      void Function(GUpdateTestDriveOrderData_updateTestDriveOrderBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUpdateTestDriveOrderData_updateTestDriveOrder build() => _build();
+
+  _$GUpdateTestDriveOrderData_updateTestDriveOrder _build() {
+    final _$result = _$v ??
+        new _$GUpdateTestDriveOrderData_updateTestDriveOrder._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GUpdateTestDriveOrderData_updateTestDriveOrder',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GUpdateTestDriveOrderData_updateTestDriveOrder', 'id'));
     replace(_$result);
     return _$result;
   }

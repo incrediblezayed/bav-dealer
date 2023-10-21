@@ -1,4 +1,5 @@
 import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:dealerapp/src/app/provider/order_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -50,6 +51,14 @@ class HomePageProvider extends ChangeNotifier {
 
   Future<void> onInit() async {
     inventoryCount = await ref.read(inventoryProvider).getInventoryCount();
+    testOrderCount = (await ref
+            .read(orderProvider(OrderFamily.testDriveOrders))
+            .getPendingOrders())
+        .length;
+    purchaseCount = (await ref
+            .read(orderProvider(OrderFamily.purchaseOrders))
+            .getPendingOrders())
+        .length;
   }
 
   ///Page controller

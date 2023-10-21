@@ -22,16 +22,22 @@ class KInventoryBikeCard extends ConsumerStatefulWidget {
 class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
   GVehiclesData_vehicles_variants get variants => widget.variants;
 
-  late GVehiclesData_vehicles_variants_colors? selectedColor =
-      variants.colors?.firstOrNull;
-  int selectedQuantity = 1;
+  late GVehiclesData_vehicles_variants_colors? selectedColor = variants.colors
+      ?.where((p0) => !ref
+          .read(inventoryProvider)
+          .vehicleDealers
+          .map((e) => e.vehicleColor!.id)
+          .contains(p0.id))
+      .firstOrNull;
 
   List<PriceModel> prices = [];
+  List<TextEditingController> controller = [];
 
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       prices = ref.read(inventoryProvider).prices;
+      controller = prices.map((e) => TextEditingController()).toList();
       setState(() {});
     });
     super.initState();
@@ -40,12 +46,6 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
   void updateColor(GVehiclesData_vehicles_variants_colors colorName) {
     setState(() {
       selectedColor = colorName;
-    });
-  }
-
-  void updateQuantity(int? quantity) {
-    setState(() {
-      selectedQuantity = quantity ?? 1;
     });
   }
 
@@ -175,24 +175,28 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        ...variants.colors!.map(
-                          (e) => GestureDetector(
-                            onTap: () => updateColor(e),
-                            child: Padding(
-                              padding: EdgeInsets.only(left: 10.w),
-                              child: CircleAvatar(
-                                backgroundColor: Colors.grey,
-                                radius: 12.5.h,
-                                child: CircleAvatar(
-                                  radius: 10.h,
-                                  backgroundColor: HexColor.fromHex(
-                                    '#${e.code}',
+                        ...variants.colors!
+                            .where((p0) => !inventoryPro.vehicleDealers
+                                .map((e) => e.vehicleColor!.id)
+                                .contains(p0.id))
+                            .map(
+                              (e) => GestureDetector(
+                                onTap: () => updateColor(e),
+                                child: Padding(
+                                  padding: EdgeInsets.only(left: 10.w),
+                                  child: CircleAvatar(
+                                    backgroundColor: Colors.grey,
+                                    radius: 12.5.h,
+                                    child: CircleAvatar(
+                                      radius: 10.h,
+                                      backgroundColor: HexColor.fromHex(
+                                        '#${e.code}',
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                        ),
 
                         /*  GestureDetector(
                           onTap: () => updateColor('Grey'),
@@ -241,41 +245,12 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                   ),
                 ],
               ),
-              SizedBox(height: 24.h),
-              DropdownButtonFormField<int>(
-                value: selectedQuantity,
-                onChanged: updateQuantity,
-                items: List.generate(11, (index) => index)
-                    .map(
-                      (quantity) => DropdownMenuItem<int>(
-                        value: quantity,
-                        child: Text(quantity.toString()),
-                      ),
-                    )
-                    .toList(),
-                decoration: InputDecoration(
-                  labelText: 'Quantity',
-                  counterText: '',
-                  fillColor: AppTheme.white,
-                  suffixIconColor: Colors.black.withOpacity(.2),
-                  labelStyle: theme.headlineMedium,
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black.withOpacity(.2)),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black.withOpacity(.2)),
-                  ),
-                  hintStyle: TextStyle(color: Colors.black.withOpacity(.2)),
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black.withOpacity(.2)),
-                  ),
-                ),
-              ),
               SizedBox(height: 10.h),
               ...prices.mapIndexed(
                 (i, e) => Column(
                   children: [
                     KTextField(
+                      controller: controller[i],
                       label: e.name,
                       hintText: 'Enter ${e.name}',
                       onChange: (value) {
@@ -297,11 +272,26 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
               ),
               KButton(
                 onPressed: () {
-                  inventoryPro.createStockRequest(
+                  inventoryPro
+                      .createStockRequest(
                     variantId: variants.id,
                     colorId: selectedColor!.id,
                     prices: prices,
-                  );
+                  )
+                      .then((value) {
+                    for (var i = 0; i < controller.length; i++) {
+                      controller[i].clear();
+                    }
+                    setState(() {
+                      selectedColor = variants.colors
+                          ?.where((p0) => !ref
+                              .read(inventoryProvider)
+                              .vehicleDealers
+                              .map((e) => e.vehicleColor!.id)
+                              .contains(p0.id))
+                          .firstOrNull;
+                    });
+                  });
                 },
                 text: 'Add Now To Update',
               ),

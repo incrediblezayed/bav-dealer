@@ -960,6 +960,64 @@ abstract class GUpdateVehicleOrderData_updateVehicleOrder
       );
 }
 
+abstract class GUpdateTestDriveOrderData
+    implements
+        Built<GUpdateTestDriveOrderData, GUpdateTestDriveOrderDataBuilder> {
+  GUpdateTestDriveOrderData._();
+
+  factory GUpdateTestDriveOrderData(
+          [Function(GUpdateTestDriveOrderDataBuilder b) updates]) =
+      _$GUpdateTestDriveOrderData;
+
+  static void _initializeBuilder(GUpdateTestDriveOrderDataBuilder b) =>
+      b..G__typename = 'Mutation';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GUpdateTestDriveOrderData_updateTestDriveOrder? get updateTestDriveOrder;
+  static Serializer<GUpdateTestDriveOrderData> get serializer =>
+      _$gUpdateTestDriveOrderDataSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateTestDriveOrderData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GUpdateTestDriveOrderData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateTestDriveOrderData.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateTestDriveOrderData_updateTestDriveOrder
+    implements
+        Built<GUpdateTestDriveOrderData_updateTestDriveOrder,
+            GUpdateTestDriveOrderData_updateTestDriveOrderBuilder> {
+  GUpdateTestDriveOrderData_updateTestDriveOrder._();
+
+  factory GUpdateTestDriveOrderData_updateTestDriveOrder(
+      [Function(GUpdateTestDriveOrderData_updateTestDriveOrderBuilder b)
+          updates]) = _$GUpdateTestDriveOrderData_updateTestDriveOrder;
+
+  static void _initializeBuilder(
+          GUpdateTestDriveOrderData_updateTestDriveOrderBuilder b) =>
+      b..G__typename = 'TestDriveOrder';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  static Serializer<GUpdateTestDriveOrderData_updateTestDriveOrder>
+      get serializer =>
+          _$gUpdateTestDriveOrderDataUpdateTestDriveOrderSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateTestDriveOrderData_updateTestDriveOrder.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GUpdateTestDriveOrderData_updateTestDriveOrder? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateTestDriveOrderData_updateTestDriveOrder.serializer,
+        json,
+      );
+}
+
 abstract class GCreateOrderRejectionByDealerData
     implements
         Built<GCreateOrderRejectionByDealerData,

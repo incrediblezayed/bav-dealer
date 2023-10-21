@@ -1,4 +1,4 @@
-import 'package:dealerapp/src/app/model/bike_order_model.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/provider/order_provider.dart';
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart';
@@ -21,10 +21,9 @@ class KTestOrdersBikeCard extends ConsumerStatefulWidget {
 }
 
 class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
-  GTestDriveOrdersData_testDriveOrders get vehiclePurchaseOrders =>
+  GTestDriveOrdersData_testDriveOrders get vehicleTestDriveOrders =>
       widget.vehicleTestDriveOrders;
 
-  Status currentStatus = Status.pending;
   String rejectionReason = '';
 
   @override
@@ -52,7 +51,6 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                   color: AppTheme.primaryColor.withOpacity(.1),
                   borderRadius: BorderRadius.circular(10.r),
                 ),
-                height: 80.h,
                 width: double.maxFinite,
                 child: Padding(
                   padding: EdgeInsets.symmetric(
@@ -62,7 +60,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      AutoSizeText(
                         'ORDER ID #${widget.vehicleTestDriveOrders.id}',
                         style: theme.labelLarge!.copyWith(
                           fontSize: 16.sp,
@@ -71,7 +69,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                         ),
                       ),
                       SizedBox(height: 6.h),
-                      Text(
+                      AutoSizeText(
                         widget.vehicleTestDriveOrders.createdAt
                             .formatTohhmmaddMMyy,
                       ),
@@ -85,7 +83,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
               padding: EdgeInsets.symmetric(
                 horizontal: 20.w,
               ),
-              child: Text(
+              child: AutoSizeText(
                 'EV Model Details',
                 style: theme.headlineMedium,
               ),
@@ -120,7 +118,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        AutoSizeText(
                           widget.vehicleTestDriveOrders.dealer!.vehicleVariant!
                               .name!,
                           style: theme.headlineMedium,
@@ -131,7 +129,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                AutoSizeText(
                                   'Model',
                                   style: theme.labelMedium!.copyWith(
                                     color: Colors.black.withOpacity(.5),
@@ -139,7 +137,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                                   ),
                                 ),
                                 SizedBox(height: 6.h),
-                                Text(
+                                AutoSizeText(
                                   'Color',
                                   style: theme.labelMedium!.copyWith(
                                     color: Colors.black.withOpacity(.5),
@@ -147,7 +145,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                                   ),
                                 ),
                                 SizedBox(height: 6.h),
-                                Text(
+                                AutoSizeText(
                                   'Price',
                                   style: theme.labelMedium!.copyWith(
                                     color: Colors.black.withOpacity(.5),
@@ -161,7 +159,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
+                                  AutoSizeText(
                                     widget.vehicleTestDriveOrders.dealer!
                                         .vehicleVariant!.name!,
                                     style: theme.labelMedium!.copyWith(
@@ -170,7 +168,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                                     ),
                                   ),
                                   SizedBox(height: 6.h),
-                                  Text(
+                                  AutoSizeText(
                                     // widget.bikeOrderModel.color,
                                     widget.vehicleTestDriveOrders.dealer
                                             ?.vehicleColor?.name ??
@@ -181,7 +179,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                                     ),
                                   ),
                                   SizedBox(height: 6.h),
-                                  /* Text(
+                                  /* AutoSizeText(
                                     widget.vehicleTestDriveOrders.dealer!
                                         .vehicleVariant!.price
                                         .toString(),
@@ -206,7 +204,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                 horizontal: 20.w,
                 vertical: 10.h,
               ),
-              child: Text(
+              child: AutoSizeText(
                 'Customer Info',
                 style: theme.headlineMedium,
               ),
@@ -218,7 +216,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      AutoSizeText(
                         'Name',
                         style: theme.labelMedium!.copyWith(
                           color: Colors.black.withOpacity(.5),
@@ -226,7 +224,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                         ),
                       ),
                       SizedBox(height: 6.h),
-                      Text(
+                      AutoSizeText(
                         'Email Id',
                         style: theme.labelMedium!.copyWith(
                           color: Colors.black.withOpacity(.5),
@@ -234,7 +232,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                         ),
                       ),
                       SizedBox(height: 6.h),
-                      Text(
+                      AutoSizeText(
                         'Contact Number',
                         style: theme.labelMedium!.copyWith(
                           color: Colors.black.withOpacity(.5),
@@ -242,7 +240,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                         ),
                       ),
                       SizedBox(height: 6.h),
-                      Text(
+                      AutoSizeText(
                         'Alternative Number',
                         style: theme.labelMedium!.copyWith(
                           color: Colors.black.withOpacity(.5),
@@ -250,7 +248,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                         ),
                       ),
                       SizedBox(height: 6.h),
-                      Text(
+                      AutoSizeText(
                         'Address',
                         style: theme.labelMedium!.copyWith(
                           color: Colors.black.withOpacity(.5),
@@ -260,51 +258,60 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                     ],
                   ),
                   SizedBox(width: 20.w),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        widget.vehicleTestDriveOrders.order!.user!.name!,
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        AutoSizeText(
+                          widget.vehicleTestDriveOrders.order!.user!.name!,
+                          maxLines: 1,
+                          style: theme.labelMedium!.copyWith(
+                            color: Colors.black.withOpacity(.5),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Text(
-                        widget.vehicleTestDriveOrders.order!.user!.email!,
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
+                        SizedBox(height: 6.h),
+                        AutoSizeText(
+                          widget.vehicleTestDriveOrders.order!.user!.email!,
+                          maxLines: 1,
+                          style: theme.labelMedium!.copyWith(
+                            color: Colors.black.withOpacity(.5),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Text(
-                        widget.vehicleTestDriveOrders.order!.user!.phoneNumber!,
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
+                        SizedBox(height: 6.h),
+                        AutoSizeText(
+                          widget
+                              .vehicleTestDriveOrders.order!.user!.phoneNumber!,
+                          maxLines: 1,
+                          style: theme.labelMedium!.copyWith(
+                            color: Colors.black.withOpacity(.5),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Text(
-                        widget.vehicleTestDriveOrders.order!.user!.phoneNumber!,
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
+                        SizedBox(height: 6.h),
+                        AutoSizeText(
+                          widget
+                              .vehicleTestDriveOrders.order!.user!.phoneNumber!,
+                          maxLines: 1,
+                          style: theme.labelMedium!.copyWith(
+                            color: Colors.black.withOpacity(.5),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Text(
-                        widget.vehicleTestDriveOrders.order!.user!.addresses!
-                                .firstOrNull?.address ??
-                            '',
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
+                        SizedBox(height: 6.h),
+                        AutoSizeText(
+                          widget.vehicleTestDriveOrders.order!.user!.addresses!
+                                  .firstOrNull?.address ??
+                              '',
+                          maxLines: 1,
+                          style: theme.labelMedium!.copyWith(
+                            color: Colors.black.withOpacity(.5),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -316,7 +323,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  if (currentStatus == Status.pending)
+                  if (vehicleTestDriveOrders.status == 'created')
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20.w),
                       child: Row(
@@ -334,7 +341,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                                 borderRadius: BorderRadius.circular(30.r),
                               ),
                               child: Center(
-                                child: Text(
+                                child: AutoSizeText(
                                   'Reject',
                                   style: theme.headlineSmall!
                                       .copyWith(color: Colors.red),
@@ -344,7 +351,8 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              ordersPro.acceptOrder(vehiclePurchaseOrders.id);
+                              ordersPro.acceptTestDriveOrder(
+                                  vehicleTestDriveOrders.id);
                             },
                             child: Container(
                               height: 50.h,
@@ -354,7 +362,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                                 borderRadius: BorderRadius.circular(30.r),
                               ),
                               child: Center(
-                                child: Text(
+                                child: AutoSizeText(
                                   'Accept',
                                   style: theme.headlineSmall!
                                       .copyWith(color: Colors.white),
@@ -365,12 +373,12 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                         ],
                       ),
                     ),
-                  if (currentStatus == Status.accepted)
+                  if (vehicleTestDriveOrders.status == 'accepted')
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20.w),
                       child: Row(
                         children: [
-                          Text(
+                          AutoSizeText(
                             'Status',
                             style: theme.labelMedium!.copyWith(
                               color: Colors.black.withOpacity(.5),
@@ -378,7 +386,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                             ),
                           ),
                           SizedBox(width: 100.w),
-                          Text(
+                          AutoSizeText(
                             'Accepted',
                             style: theme.labelMedium!.copyWith(
                               color: AppTheme.primaryColor,
@@ -388,14 +396,14 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                         ],
                       ),
                     ),
-                  if (currentStatus == Status.rejected)
+                  if (vehicleTestDriveOrders.status == 'rejected')
                     Column(
                       children: [
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 20.w),
                           child: Row(
                             children: [
-                              Text(
+                              AutoSizeText(
                                 'Status',
                                 style: theme.labelMedium!.copyWith(
                                   color: Colors.black.withOpacity(.5),
@@ -403,7 +411,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                                 ),
                               ),
                               SizedBox(width: 100.w),
-                              Text(
+                              AutoSizeText(
                                 'Rejected',
                                 style: theme.labelMedium!.copyWith(
                                   color: AppTheme.red,
@@ -418,7 +426,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                           padding: EdgeInsets.symmetric(horizontal: 20.w),
                           child: Row(
                             children: [
-                              Text(
+                              AutoSizeText(
                                 'Reason',
                                 style: theme.labelMedium!.copyWith(
                                   color: Colors.black.withOpacity(.5),
@@ -426,7 +434,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                                 ),
                               ),
                               SizedBox(width: 93.w),
-                              Text(
+                              AutoSizeText(
                                 rejectionReason,
                                 style: theme.labelMedium!.copyWith(
                                   color: Colors.black.withOpacity(.5),
@@ -444,47 +452,42 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
             SizedBox(
               height: 10.h,
             ),
-            if (currentStatus == Status.pending)
-              const Center(child: Text('OR')),
-            if (currentStatus == Status.accepted) const SizedBox.shrink(),
-            if (currentStatus == Status.rejected) const SizedBox.shrink(),
-            SizedBox(
-              height: 5.h,
-            ),
-            if (currentStatus == Status.pending)
+
+            /*       if (currentStatus == Status.pending)
               Center(
                 child: TextButton(
                   onPressed: () {},
-                  child: Text(
+                  child: AutoSizeText(
                     'Ready To Pick',
                     style: theme.headlineSmall!
                         .copyWith(color: AppTheme.primaryColor),
                   ),
                 ),
-              ),
-            InkWell(
-              onTap: () {},
-              child: Center(
-                child: Container(
-                  width: 300.w,
-                  height: 55.h,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.r),
-                    border: Border.all(color: AppTheme.primaryColor),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Download Invoice',
-                      style: TextStyle(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
-                        color: AppTheme.primaryColor,
+              ), */
+            if (vehicleTestDriveOrders.status == 'delivered')
+              InkWell(
+                onTap: () {},
+                child: Center(
+                  child: Container(
+                    width: 300.w,
+                    height: 55.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.r),
+                      border: Border.all(color: AppTheme.primaryColor),
+                    ),
+                    child: Center(
+                      child: AutoSizeText(
+                        'Download Invoice',
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: AppTheme.primaryColor,
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
             SizedBox(height: 16.h),
           ],
         ),
@@ -533,7 +536,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                   SizedBox(
                     height: 26.h,
                   ),
-                  Text(
+                  AutoSizeText(
                     'Reasong For Rejection',
                     style: theme.headlineLarge,
                   ),
@@ -555,7 +558,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                               : Colors.transparent,
                           child: Padding(
                             padding: EdgeInsets.symmetric(vertical: 16.h),
-                            child: Text(
+                            child: AutoSizeText(
                               reasons[index],
                               textAlign: TextAlign.center,
                               style: theme.headlineSmall!.copyWith(
@@ -580,12 +583,12 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                         ref
                             .read(orderProvider(OrderFamily.purchaseOrders))
                             .rejectOrder(
-                              vehiclePurchaseOrders.id,
+                              vehicleTestDriveOrders.id,
                               selectedReason,
                               false,
                             );
                       },
-                      child: Text(
+                      child: AutoSizeText(
                         'Submit',
                         style:
                             theme.headlineSmall!.copyWith(color: Colors.white),

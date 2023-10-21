@@ -211,7 +211,6 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                     color: Colors.red.shade100,
                     text: 'Remove',
                     onTap: () {
-                      //TODO: Fix this @khanarifak07
                       //inventoryPro.createStockRequest(, variantId, stock, price, 'remove', gst, otherTaxes, incentives, totalOffRoadPrice)
                     },
                   ),
@@ -237,8 +236,9 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
               children: [
                 Expanded(
                   child: KBottomBarButton(
-                    color: Colors.red.shade100,
+                    color: Colors.red,
                     text: 'Remove',
+                    secondaryColor: Colors.red,
                     onTap: () {
                       inventoryPro.updateStockRequest(
                           colorId: widget.vehicleDealers.vehicleColor!.id,
@@ -267,7 +267,8 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
             ),
             SizedBox(height: 20.h),
             KBottomBarButton(
-                color: Colors.red.shade100,
+                secondaryColor: Colors.red,
+                color: Colors.white,
                 text: 'Cancel',
                 onTap: () {
                   setState(() {

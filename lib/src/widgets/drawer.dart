@@ -3,8 +3,8 @@ import 'package:dealerapp/src/app/UI/coming_soon.dart';
 import 'package:dealerapp/src/app/UI/drawer/about_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/contact_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/terms_conditions.dart';
+import 'package:dealerapp/src/app/UI/forgot_password/forgot_password_flow.dart';
 import 'package:dealerapp/src/app/UI/login/login_page.dart';
-import 'package:dealerapp/src/app/UI/make_new_purchase/make_new_purchase.dart';
 import 'package:dealerapp/src/app/UI/wallet/payment_options.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/app_images.dart';
@@ -96,13 +96,10 @@ class AppDrawer extends ConsumerWidget {
                   padding: EdgeInsets.only(left: 20.w, bottom: 30.h),
                   child: Row(
                     children: [
-                      CircleAvatar(
-                        radius: 35.r,
-                      ),
-                      /* UserProfileImage(
+                      UserProfileImage(
                         url: user.profile_image?.url,
                         size: 80.sp,
-                      ), */
+                      ),
                       SizedBox(
                         width: 16.w,
                       ),
@@ -187,7 +184,7 @@ class AppDrawer extends ConsumerWidget {
                       title: 'Change Password',
                       icon: AppImages.change,
                       onTap: () {
-                        // AppRoutes.push(page: const MyWallet());
+                        AppRoutes.push(page: const ForgorPasswordFlow());
                       },
                     ),
                     _drawerTile(

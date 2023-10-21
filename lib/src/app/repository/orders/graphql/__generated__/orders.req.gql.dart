@@ -194,6 +194,66 @@ abstract class GUpdateVehicleOrderReq
       );
 }
 
+abstract class GUpdateTestDriveOrderReq
+    implements
+        Built<GUpdateTestDriveOrderReq, GUpdateTestDriveOrderReqBuilder>,
+        _i1.OperationRequest<_i2.GUpdateTestDriveOrderData,
+            _i3.GUpdateTestDriveOrderVars> {
+  GUpdateTestDriveOrderReq._();
+
+  factory GUpdateTestDriveOrderReq(
+          [Function(GUpdateTestDriveOrderReqBuilder b) updates]) =
+      _$GUpdateTestDriveOrderReq;
+
+  static void _initializeBuilder(GUpdateTestDriveOrderReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'UpdateTestDriveOrder',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GUpdateTestDriveOrderVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GUpdateTestDriveOrderData? Function(
+    _i2.GUpdateTestDriveOrderData?,
+    _i2.GUpdateTestDriveOrderData?,
+  )? get updateResult;
+  @override
+  _i2.GUpdateTestDriveOrderData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GUpdateTestDriveOrderData? parseData(Map<String, dynamic> json) =>
+      _i2.GUpdateTestDriveOrderData.fromJson(json);
+  static Serializer<GUpdateTestDriveOrderReq> get serializer =>
+      _$gUpdateTestDriveOrderReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GUpdateTestDriveOrderReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GUpdateTestDriveOrderReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GUpdateTestDriveOrderReq.serializer,
+        json,
+      );
+}
+
 abstract class GCreateOrderRejectionByDealerReq
     implements
         Built<GCreateOrderRejectionByDealerReq,

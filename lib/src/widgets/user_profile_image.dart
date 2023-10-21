@@ -29,6 +29,7 @@ class UserProfileImage extends StatelessWidget {
     return (url ?? '').isEmpty
         ? CircleAvatar(
             backgroundColor: AppTheme.white,
+            radius: size / 2,
             child: Icon(
               Icons.account_circle_sharp,
               size: size,

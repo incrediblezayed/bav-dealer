@@ -3,27 +3,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-
 ///Bottom bar button
 class KBottomBarButton extends StatelessWidget {
   ///Constructor for bottom bar button
-  const KBottomBarButton({
-    required this.text,
-    required this.onTap,
-    super.key,
-    this.bottomBarHeight,
-    this.imageHeight,
-    this.imageWidth,
-    this.leftPadding,
-    this.rightPadding,
-    this.image,
-    this.color = AppTheme.primaryColor,
-    this.size,
-    this.fontSize,
-    this.minSize = false,
-    this.radius = 5,
-    this.fontWeight,
-  });
+  const KBottomBarButton(
+      {required this.text,
+      required this.onTap,
+      super.key,
+      this.bottomBarHeight,
+      this.imageHeight,
+      this.imageWidth,
+      this.leftPadding,
+      this.rightPadding,
+      this.image,
+      this.color = AppTheme.primaryColor,
+      this.size,
+      this.fontSize,
+      this.minSize = false,
+      this.radius = 5,
+      this.fontWeight,
+      this.secondaryColor});
+
+  final Color? secondaryColor;
 
   ///Bottom bar height
   final double? bottomBarHeight;
@@ -80,7 +81,7 @@ class KBottomBarButton extends StatelessWidget {
           textAlign: TextAlign.center,
           style: color == AppTheme.scaffoldBgColor
               ? textTheme.titleSmall
-                  ?.copyWith(color: AppTheme.primaryColor)
+                  ?.copyWith(color: secondaryColor ?? AppTheme.primaryColor)
                   .merge(
                     TextStyle(
                       fontSize: fontSize?.sp ?? 18.sp,
@@ -108,7 +109,7 @@ class KBottomBarButton extends StatelessWidget {
           elevation: 0,
           side: BorderSide(
             color: color == AppTheme.scaffoldBgColor
-                ? AppTheme.primaryColor
+                ? secondaryColor ?? AppTheme.primaryColor
                 : Colors.transparent,
           ),
           backgroundColor: color,

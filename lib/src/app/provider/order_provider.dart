@@ -124,7 +124,8 @@ class OrdersProvider extends ChangeNotifier {
   List<GTestDriveOrdersData_testDriveOrders> get testDriveDeliveredOrders =>
       _testDriveDeliveredOrders;
   set testDriveDeliveredOrders(
-      List<GTestDriveOrdersData_testDriveOrders> data,) {
+    List<GTestDriveOrdersData_testDriveOrders> data,
+  ) {
     _testDriveDeliveredOrders = data;
     notifyListeners();
   }
@@ -145,16 +146,17 @@ class OrdersProvider extends ChangeNotifier {
     }
   }
 
-  Future<void> getPendingOrders() async {
+  Future<List<GVehicleOrdersData_vehicleOrders>> getPendingOrders() async {
     try {
       final getVehicleOrders =
           await _orderRepository.getVehicleOrders('created');
 
       if (getVehicleOrders != null) {
         pendingOrders = getVehicleOrders;
+        return pendingOrders;
       } else {
         AppRoutes.showErrorSnackbar(
-          message: 'Errow while fetching list of vehicles',
+          message: 'Error while fetching list of vehicles',
         );
       }
     } catch (e) {
@@ -162,24 +164,29 @@ class OrdersProvider extends ChangeNotifier {
     } finally {
       loading = false;
     }
+    return [];
   }
 
-  Future<void> getTestDrivePendingOrders() async {
+  Future<List<GTestDriveOrdersData_testDriveOrders>>
+      getTestDrivePendingOrders() async {
     try {
       final getTestDriveOrders =
           await _orderRepository.getTestDriveOrders('created');
 
       if (getTestDriveOrders != null) {
         testDrivePendingOrders = getTestDriveOrders;
+        return testDrivePendingOrders;
       } else {
         AppRoutes.showErrorSnackbar(
-            message: 'Error while fetching list of test order vehicles',);
+          message: 'Error while fetching list of test order vehicles',
+        );
       }
     } catch (e) {
       e.log();
     } finally {
       loading = false;
     }
+    return [];
   }
 
   Future<void> getAcceptedOrders() async {
@@ -191,7 +198,7 @@ class OrdersProvider extends ChangeNotifier {
         acceptedOrders = getVehicleOrders;
       } else {
         AppRoutes.showErrorSnackbar(
-          message: 'Errow while fetching list of vehicles',
+          message: 'Error while fetching list of vehicles',
         );
       }
     } catch (e) {
@@ -210,7 +217,7 @@ class OrdersProvider extends ChangeNotifier {
         testDriveAcceptedOrders = getTestDriveOrders;
       } else {
         AppRoutes.showErrorSnackbar(
-          message: 'Errow while fetching list of accepted test orders vehicles',
+          message: 'Error while fetching list of accepted test orders vehicles',
         );
       }
     } catch (e) {
@@ -229,7 +236,7 @@ class OrdersProvider extends ChangeNotifier {
         rejectedOrders = getVehicleOrders;
       } else {
         AppRoutes.showErrorSnackbar(
-          message: 'Errow while fetching list of vehicles',
+          message: 'Error while fetching list of vehicles',
         );
       }
     } catch (e) {
@@ -248,7 +255,7 @@ class OrdersProvider extends ChangeNotifier {
         testDriveRejectedOrders = getTestDriveOrders;
       } else {
         AppRoutes.showErrorSnackbar(
-          message: 'Errow while fetching list of test drive rejected vehicles',
+          message: 'Error while fetching list of test drive rejected vehicles',
         );
       }
     } catch (e) {
@@ -265,7 +272,7 @@ class OrdersProvider extends ChangeNotifier {
         deliveredOrders = getVehicleOrders;
       } else {
         AppRoutes.showErrorSnackbar(
-          message: 'Errow while fetching list of vehicles',
+          message: 'Error while fetching list of vehicles',
         );
       }
     } catch (e) {
@@ -284,7 +291,7 @@ class OrdersProvider extends ChangeNotifier {
         testDriveDeliveredOrders = getTestDriveOrders;
       } else {
         AppRoutes.showErrorSnackbar(
-          message: 'Errow while fetching list of delivered test drive orders',
+          message: 'Error while fetching list of delivered test drive orders',
         );
       }
     } catch (e) {
@@ -300,7 +307,7 @@ class OrdersProvider extends ChangeNotifier {
         vehicles = getVehicles;
       } else {
         AppRoutes.showErrorSnackbar(
-          message: 'Errow while fetching list of vehicles',
+          message: 'Error while fetching list of vehicles',
         );
       }
     } catch (e) {
@@ -313,7 +320,9 @@ class OrdersProvider extends ChangeNotifier {
   Future<void> acceptOrder(String id) async {
     try {
       final success = await _orderRepository.updateOrderStatus(
-          vehicleOrderId: id, status: OrderStatus.accepted.name,);
+        vehicleOrderId: id,
+        status: OrderStatus.accepted.name,
+      );
       if (success) {
         await getPendingOrders();
         await getAcceptedOrders();
@@ -326,17 +335,41 @@ class OrdersProvider extends ChangeNotifier {
     }
   }
 
-  Future<void> rejectOrder(String id, String reason, bool isPurchaseOrder,
-      [String? description,]) async {
+  Future<void> acceptTestDriveOrder(String id) async {
+    try {
+      final success = await _orderRepository.updateTestDriveOrderStatus(
+        testDriveOrderId: id,
+        status: OrderStatus.accepted.name,
+      );
+      if (success) {
+        await getPendingOrders();
+        await getAcceptedOrders();
+      } else {
+        throw Exception();
+      }
+    } catch (e) {
+      e.log();
+      AppRoutes.showErrorSnackbar(message: 'Failed to accept order');
+    }
+  }
+
+  Future<void> rejectOrder(
+    String id,
+    String reason,
+    bool isPurchaseOrder, [
+    String? description,
+  ]) async {
     try {
       final success = await _orderRepository.rejectOrder(
-          isPurchaseOrder: isPurchaseOrder,
-          orderId: id,
-          reason: reason,
-          description: description,);
+        isPurchaseOrder: isPurchaseOrder,
+        orderId: id,
+        reason: reason,
+        description: description,
+      );
       if (success) {
         await getPendingOrders();
         await getRejectedOrders();
+        AppRoutes.showSuccessSnackbar(message: 'Order rejection requested');
       } else {
         throw Exception();
       }

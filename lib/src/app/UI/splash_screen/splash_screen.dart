@@ -48,9 +48,11 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
       final model = await ref.read(authProvider).getUser(user.id);
       if (model != null) {
         await cacheProvider.setUser(model);
+        await AppRoutes.pushAndRemoveUntil(page: const HomePage());
+      } else {
+        cacheProvider.clear();
+        AppRoutes.pushAndRemoveUntil(page: LoginPage());
       }
-
-      await AppRoutes.pushAndRemoveUntil(page: const HomePage());
     }
   }
 }

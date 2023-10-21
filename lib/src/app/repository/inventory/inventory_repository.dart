@@ -15,15 +15,18 @@ class InventoryRepository {
 
   Future<List<GVehiclesData_vehicles>?> getVehicles([List<String>? ids]) async {
     try {
-      final resonse = await _client
-          .request(
-            GVehiclesReq(
-              (b) => ids == null ? b : b
-                ..vars.where.variants.every.id.notIn =
-                    ListBuilder<String>(ids!),
-            ),
-          )
-          .first;
+      final resonse = await _client.request(
+        GVehiclesReq(
+          (b) {
+            if (ids == null) {
+              return b;
+            } else {
+              return b
+                ..vars.where.variants.every.id.notIn = ListBuilder<String>(ids);
+            }
+          },
+        ),
+      ).first;
 
       if (resonse.linkException != null ||
           (resonse.graphqlErrors?.isNotEmpty ?? false)) {

@@ -127,6 +127,12 @@ mutation UpdateVehicleOrder(
   }
 }
 
+mutation UpdateTestDriveOrder($where: TestDriveOrderWhereUniqueInput!, $data: TestDriveOrderUpdateInput!) {
+  updateTestDriveOrder(where: $where, data: $data) {
+    id
+  }
+}
+
 mutation CreateOrderRejectionByDealer(
   $data: OrderRejectionByDealerCreateInput!
 ) {

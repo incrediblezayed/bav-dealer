@@ -17,6 +17,18 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
   late final TabController _tabController =
       TabController(length: 4, vsync: this);
 
+  void onTabChanged(int index, OrdersProvider provider) {
+    if (index == 0) {
+      provider.getPendingOrders();
+    } else if (index == 1) {
+      provider.getAcceptedOrders();
+    } else if (index == 2) {
+      provider.getRejectedOrders();
+    } else {
+      provider.getDeliveredOrders();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
@@ -43,6 +55,9 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
           labelColor: AppTheme.primaryColor,
           unselectedLabelColor: Colors.grey,
           controller: _tabController,
+          onTap: (index) {
+            onTabChanged(index, orderPro);
+          },
           tabs: const [
             Tab(
               text: 'Pending',
@@ -67,10 +82,12 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
           orderPro.rejectedOrders,
           orderPro.deliveredOrders,
         ]
-            .map((e) => OrdersListPage(
-                  data: e,
-                 orderPro: OrdersProvider(),
-                ),)
+            .map(
+              (e) => OrdersListPage(
+                data: e,
+                orderPro: OrdersProvider(),
+              ),
+            )
             .toList(),
       ),
     );

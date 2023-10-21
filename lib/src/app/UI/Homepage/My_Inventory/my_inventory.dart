@@ -2,7 +2,6 @@ import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/list_of_vehicles.dart
 import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/my_stock.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
-import 'package:dealerapp/src/widgets/empty_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -49,10 +48,10 @@ class _MyInventoryState extends ConsumerState<MyInventory>
             Tab(
               text: 'My Stock',
             ),
-            
-            Tab(
+
+            /*      Tab(
               text: 'Products',
-            ),
+            ), */
           ],
         ),
       ),
@@ -61,7 +60,7 @@ class _MyInventoryState extends ConsumerState<MyInventory>
         children: const [
           ListOfVehicles(),
           MyStockPage(),
-          EmptyWidget(title: 'Uh oh! You have no orders.'),
+          //EmptyWidget(title: 'Uh oh! You have no orders.'),
         ],
       ),
     );

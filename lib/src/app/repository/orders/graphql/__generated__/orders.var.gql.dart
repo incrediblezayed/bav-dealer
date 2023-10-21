@@ -80,6 +80,30 @@ abstract class GUpdateVehicleOrderVars
       );
 }
 
+abstract class GUpdateTestDriveOrderVars
+    implements
+        Built<GUpdateTestDriveOrderVars, GUpdateTestDriveOrderVarsBuilder> {
+  GUpdateTestDriveOrderVars._();
+
+  factory GUpdateTestDriveOrderVars(
+          [Function(GUpdateTestDriveOrderVarsBuilder b) updates]) =
+      _$GUpdateTestDriveOrderVars;
+
+  _i1.GTestDriveOrderWhereUniqueInput get where;
+  _i1.GTestDriveOrderUpdateInput get data;
+  static Serializer<GUpdateTestDriveOrderVars> get serializer =>
+      _$gUpdateTestDriveOrderVarsSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GUpdateTestDriveOrderVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GUpdateTestDriveOrderVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GUpdateTestDriveOrderVars.serializer,
+        json,
+      );
+}
+
 abstract class GCreateOrderRejectionByDealerVars
     implements
         Built<GCreateOrderRejectionByDealerVars,

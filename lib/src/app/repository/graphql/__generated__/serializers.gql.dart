@@ -510,6 +510,8 @@ import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders
         GTestDriveOrdersData_testDriveOrders_order,
         GTestDriveOrdersData_testDriveOrders_order_user,
         GTestDriveOrdersData_testDriveOrders_order_user_addresses,
+        GUpdateTestDriveOrderData,
+        GUpdateTestDriveOrderData_updateTestDriveOrder,
         GUpdateVehicleOrderData,
         GUpdateVehicleOrderData_updateVehicleOrder,
         GVehicleOrdersData,
@@ -530,12 +532,14 @@ import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders
     show
         GCreateOrderRejectionByDealerReq,
         GTestDriveOrdersReq,
+        GUpdateTestDriveOrderReq,
         GUpdateVehicleOrderReq,
         GVehicleOrdersReq;
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.var.gql.dart'
     show
         GCreateOrderRejectionByDealerVars,
         GTestDriveOrdersVars,
+        GUpdateTestDriveOrderVars,
         GUpdateVehicleOrderVars,
         GVehicleOrdersVars;
 import 'package:dealerapp/src/custom_serializers/upload_serializer.dart'
@@ -891,6 +895,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GTestDriveOrdersData_testDriveOrders_order_user_addresses,
   GTestDriveOrdersReq,
   GTestDriveOrdersVars,
+  GUpdateTestDriveOrderData,
+  GUpdateTestDriveOrderData_updateTestDriveOrder,
+  GUpdateTestDriveOrderReq,
+  GUpdateTestDriveOrderVars,
   GUpdateUserData,
   GUpdateUserData_updateUser,
   GUpdateUserReq,

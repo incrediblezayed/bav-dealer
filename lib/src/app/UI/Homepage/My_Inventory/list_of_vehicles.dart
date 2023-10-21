@@ -14,12 +14,19 @@ class ListOfVehicles extends ConsumerWidget {
       // padding: const EdgeInsets.all(1),
       color: AppTheme.textFieldFill,
       child: RefreshIndicator(
-        onRefresh: ()async{
+        onRefresh: () async {
           await inventoryPro.getVehicles();
         },
         child: ListView(
           shrinkWrap: true,
           children: inventoryPro.vehicles
+              .where((element) =>
+                  element.colors!
+                      .where((p0) => !inventoryPro.vehicleDealers
+                          .map((e) => e.vehicleColor!.id)
+                          .contains(p0.id))
+                      .length >
+                  0)
               .map(
                 (e) => KInventoryBikeCard(
                   variants: e,

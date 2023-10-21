@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
@@ -39,9 +41,7 @@ class InventoryProvider extends ChangeNotifier {
 
   Future<void> getVehicles() async {
     try {
-      final getVehicles = await _inventoryRepository.getVehicles(
-        vehicleDealers.map((e) => e.vehicleVariant!.id).toList(),
-      );
+      final getVehicles = await _inventoryRepository.getVehicles();
 
       if (getVehicles != null) {
         final check = getVehicles
@@ -50,13 +50,9 @@ class InventoryProvider extends ChangeNotifier {
             .reduce((value, element) => value?..addAll(element!));
 
         vehicles = check!;
-
-        for (final element in check) {
-          print(element);
-        }
       } else {
         AppRoutes.showErrorSnackbar(
-          message: 'Errow while fetching list of vehicles',
+          message: 'Error while fetching list of vehicles',
         );
       }
     } catch (e) {
@@ -81,12 +77,15 @@ class InventoryProvider extends ChangeNotifier {
     required String variantId,
     required List<PriceModel> prices,
   }) async {
+    unawaited(AppRoutes.showLoadingDialog());
     try {
       final result = await _inventoryRepository.createStockRequest(
         variantId: variantId,
         colorId: colorId,
         prices: prices,
       );
+      await getStocks();
+      await getVehicles();
       if (result) {
         AppRoutes.showSuccessSnackbar(message: 'Request added successfully');
       } else {
@@ -96,6 +95,7 @@ class InventoryProvider extends ChangeNotifier {
       e.log();
       AppRoutes.showErrorSnackbar(message: 'Failed to add vehicle');
     }
+    AppRoutes.pop();
   }
 
   Future<void> updateStockRequest({
@@ -117,7 +117,7 @@ class InventoryProvider extends ChangeNotifier {
         AppRoutes.showSuccessSnackbar(message: 'Request Created Successfully');
       } else {
         AppRoutes.showErrorSnackbar(
-          message: 'Errow while Adding Item to Stock',
+          message: 'Error while Adding Item to Stock',
         );
       }
     } catch (e) {
@@ -143,7 +143,7 @@ class InventoryProvider extends ChangeNotifier {
     } catch (e) {
       e.log();
       AppRoutes.showErrorSnackbar(
-        message: 'Errow while fetching list of vehicles',
+        message: 'Error while fetching list of vehicles',
       );
     }
   }
