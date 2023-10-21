@@ -20,11 +20,17 @@ class GraphqlClient {
   );
  */
 
-  ///Prod URL
+  /* ///Prod URL
   static const String _prodUrl = 'https://bavelectric.com';
 
   ///Live URL
-  static const String _devUrl = 'http://bavelectric.com:3000';
+  static const String _devUrl = 'http://bavelectric.com:3000'; */
+
+  ///Prod URL
+  static const String _prodUrl = 'https://api.bavelectric.com';
+
+  ///Live URL
+  static const String _devUrl = 'http://api.bavelectric.com:3000';
 
   ///Base URL
   static String get baseUrl => Constants.isDev ? _devUrl : _prodUrl;
