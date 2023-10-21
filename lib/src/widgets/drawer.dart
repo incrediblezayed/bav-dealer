@@ -43,8 +43,8 @@ class AppDrawer extends ConsumerWidget {
             )
           : Image.asset(
               icon,
-              // height: height,
-              // width: width,
+              height: 25,
+              width: 25,
             ),
       title: Text(
         title,
@@ -145,10 +145,9 @@ class AppDrawer extends ConsumerWidget {
                   children: [
                     _drawerTile(
                       title: 'Personal Information',
-                      icon: AppImages.profile,
+                      icon: AppImages.per,
                       height: 25,
                       width: 25,
-                      isSvg: false,
                       onTap: () {
                         AppRoutes.push(
                           page: const EditProfile(
@@ -159,7 +158,7 @@ class AppDrawer extends ConsumerWidget {
                     ),
                     _drawerTile(
                       title: 'Make new purchase order',
-                      icon: AppImages.purchaseNew,
+                      icon: AppImages.make,
                       height: 30,
                       width: 30,
                       isSvg: false,
@@ -204,7 +203,7 @@ class AppDrawer extends ConsumerWidget {
                     ),
                     _drawerTile(
                       title: 'Contact Us',
-                      icon: AppImages.contact,
+                      icon: AppImages.ccc,
                       onTap: () {
                         AppRoutes.push(page: const ContactUs());
                       },
