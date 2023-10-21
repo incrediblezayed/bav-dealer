@@ -60,7 +60,7 @@ class HomePage extends ConsumerWidget {
                 },
                 child: UserProfileImage(
                   url: user.profile_image?.url,
-                  size: 40.sp,
+                  size: 35.sp,
                 ),
               ),
               SizedBox(width: 10.w),

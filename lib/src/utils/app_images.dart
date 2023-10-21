@@ -27,6 +27,7 @@ class AppImages {
   static const String rank2 = '$_imagesPath/rank2.svg';
   static const String rank3 = '$_imagesPath/rank3.svg';
   static const String terms = '$_imagesPath/terms.svg';
+  static const String attach = '$_imagesPath/attach.svg';
 
   static const String logout = '$_imagesPath/logout.svg';
   static const String logoutred = '$_imagesPath/logoutred.svg';
@@ -34,6 +35,8 @@ class AppImages {
   static const String change = '$_imagesPath/change.svg';
   static const String cart = '$_imagesPath/cart.png';
   static const String arrow = '$_imagesPath/arrow.png';
+  static const String report = '$_imagesPath/report.png';
+
   static const String purchaseNew = '$_imagesPath/newPurchase.png';
 
   static const String purchaseOrder = '$_imagesPath/purchaseOrder.png';

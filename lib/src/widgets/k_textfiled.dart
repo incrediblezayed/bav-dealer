@@ -22,10 +22,13 @@ class KTextField extends StatelessWidget {
     this.maxLength,
     this.suffixIconConstraints,
     this.onChange,
+    this.maxLines
   });
 
   ///hintText
   final String? hintText;
+
+  final int? maxLines;
 
   final bool? readOnly;
 

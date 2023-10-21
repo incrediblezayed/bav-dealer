@@ -5,6 +5,7 @@ import 'package:dealerapp/src/app/UI/drawer/contact_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/terms_conditions.dart';
 import 'package:dealerapp/src/app/UI/forgot_password/forgot_password_flow.dart';
 import 'package:dealerapp/src/app/UI/login/login_page.dart';
+import 'package:dealerapp/src/app/UI/report_page/report_page.dart';
 import 'package:dealerapp/src/app/UI/wallet/payment_options.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/app_images.dart';
@@ -30,6 +31,7 @@ class AppDrawer extends ConsumerWidget {
     required void Function() onTap,
     double? height,
     double? width,
+    Icon? icons,
     bool isSvg = true,
   }) {
     return ListTile(
@@ -207,6 +209,13 @@ class AppDrawer extends ConsumerWidget {
                       icon: AppImages.contact,
                       onTap: () {
                         AppRoutes.push(page: const ContactUs());
+                      },
+                    ),
+                    _drawerTile(
+                      title: 'Report a Problem',
+                      icon: AppImages.aboutus,
+                      onTap: () {
+                        AppRoutes.push(page: ReportPage());
                       },
                     ),
                     _drawerTile(
