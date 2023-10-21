@@ -88,7 +88,8 @@ class ReportRepository {
                     (b) => b..image.upload = e,
                   ),
                 ),
-              ),
+              )
+              ..fetchPolicy = FetchPolicy.NoCache,
           ))
           .first;
       return response.data?.createReport?.id != null;

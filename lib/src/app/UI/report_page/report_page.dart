@@ -65,7 +65,7 @@ class ReportPage extends ConsumerWidget {
                         borderSide:
                             BorderSide(color: Colors.black.withOpacity(.2))),
                     fillColor: Colors.white,
-                    hintText: 'Write a description',
+                    hintText: 'Title',
                     hintStyle: TextStyle(color: Colors.black.withOpacity(.2))),
               ),
               SizedBox(height: 16.h),

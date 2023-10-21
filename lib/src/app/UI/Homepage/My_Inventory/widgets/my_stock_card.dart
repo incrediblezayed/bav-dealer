@@ -157,7 +157,6 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                         SizedBox(width: 10.w),
                         Text(
                           '${widget.vehicleDealers.stock}',
-                          // ' ${widget.vehicleDealers.stock}',
                           style: theme.labelLarge!.copyWith(
                             fontWeight: FontWeight.w600,
                             color: AppTheme.primaryColor,
@@ -220,7 +219,7 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                   child: KBottomBarButton(
                     color: Colors.red,
                     text: 'Remove',
-                    secondaryColor: Colors.red,
+                    secondaryColor: Colors.white,
                     onTap: () {
                       inventoryPro.updateStockRequest(
                           colorId: widget.vehicleDealers.vehicleColor!.id,
