@@ -204,32 +204,16 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
           ],
           SizedBox(height: 20.h),
           if (!isEdit)
-            Row(
-              children: [
-                Expanded(
-                  child: KBottomBarButton(
-                    color: Colors.red.shade100,
-                    text: 'Remove',
-                    onTap: () {
-                      //inventoryPro.createStockRequest(, variantId, stock, price, 'remove', gst, otherTaxes, incentives, totalOffRoadPrice)
-                    },
-                  ),
-                ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Expanded(
-                  child: KBottomBarButton(
-                    // text: 'Quantity: ${widget.vehicleDealers.stock}',
-                    text: "Edit",
-                    onTap: () {
-                      setState(() {
-                        isEdit = true;
-                      });
-                    },
-                  ),
-                ),
-              ],
+            Expanded(
+              child: KBottomBarButton(
+                // text: 'Quantity: ${widget.vehicleDealers.stock}',
+                text: "Edit",
+                onTap: () {
+                  setState(() {
+                    isEdit = true;
+                  });
+                },
+              ),
             ),
           if (isEdit) ...[
             Row(

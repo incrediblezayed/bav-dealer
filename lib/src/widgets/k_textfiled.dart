@@ -59,7 +59,7 @@ class KTextField extends StatelessWidget {
   ///text length
   final int? maxLength;
 
-  final void Function(String? value)? onChanged;
+  final void Function(String value)? onChanged;
 
   final FocusNode? focusNode;
 
@@ -70,6 +70,8 @@ class KTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      textAlign: TextAlign.center,
+      focusNode: focusNode,
       contextMenuBuilder: contextMenuBuilder,
       onChanged: onChanged,
       keyboardType: inputType,

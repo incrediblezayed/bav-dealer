@@ -27,10 +27,11 @@ class ForgotPassword extends ConsumerStatefulWidget {
 class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
   final formKey = GlobalKey<FormState>();
 
+  final listenerController = List.generate(6, (index) => FocusNode());
+
   Widget _buildForgetPasswordVerifyOtpInput() {
     final authPro = ref.read(authProvider);
     final textTheme = Theme.of(context).textTheme;
-    final listenerController = List.generate(6, (index) => FocusNode());
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,19 +50,27 @@ class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
               child: Row(
                 children: [
                   AutoSizeText(
-                    'Enter The OTP Shared On? ',
+                    'Enter The OTP Shared On',
                     style: textTheme.labelMedium,
                   ),
-                  AutoSizeText(
-                    '+91${authPro.phoneNumberController.text}',
-                    style: textTheme.labelMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
                   SizedBox(
-                    width: 6.w,
+                    width: 4,
                   ),
-                  const Icon(Iconsax.edit),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      AutoSizeText(
+                        '+91${authPro.phoneNumberController.text}',
+                        style: textTheme.labelMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 6.w,
+                      ),
+                      const Icon(Iconsax.edit),
+                    ],
+                  )
                 ],
               ),
             ),
@@ -124,7 +133,8 @@ class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
                         );
                       },
                       onChanged: (value) {
-                        if (value!.isNotEmpty) {
+                        print(value);
+                        if (value.isNotEmpty) {
                           if (i != 5) {
                             authPro.otpNode[i + 1].requestFocus();
                           }
@@ -312,13 +322,11 @@ class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
               style: AppTexts.textFieldStyle,
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
               keyboardType: TextInputType.number,
-              
               maxLength: 10,
               decoration: const InputDecoration(
                 counterText: '',
                 hintText: 'Enter Your Registered Mobile Number',
                 labelText: 'Mobile Number',
-                
               ),
               controller: authPRef.phoneNumberController,
             ),
