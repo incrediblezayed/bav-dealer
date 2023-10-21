@@ -25,7 +25,7 @@ class ForgotPassword extends ConsumerStatefulWidget {
 }
 
 class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
-  final formKey = GlobalKey<FormState>();
+  int index = 0;
 
   final listenerController = List.generate(6, (index) => FocusNode());
 
@@ -164,112 +164,60 @@ class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
   }
 
   Widget _buildPasswordResetForm() {
-    final authPro = ref.read(authProvider);
+    final authPro = ref.watch(authProvider);
     final textTheme = Theme.of(context).textTheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            IconButton(
-              onPressed: () {
-                authPro.signUpPageController.previousPage(
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.ease,
-                );
-              },
-              icon: const Icon(Iconsax.arrow_left),
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  AutoSizeText(
-                    'Change Password',
-                    style: textTheme.headlineLarge,
-                  ),
-                  SizedBox(
-                    height: 6.h,
-                  ),
-                  AutoSizeText(
-                    'Enter Your New Password',
-                    style: textTheme.labelMedium,
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
         SizedBox(
           height: 16.h,
         ),
-        TextField(
-          style: AppTexts.hintTextT14W5,
+        KTextField(
+          prefixIcon: Padding(
+            padding: EdgeInsets.only(left: 20.h, right: 15.h),
+            child: Icon(
+              Icons.lock_outline,
+              size: 18.w,
+            ),
+          ),
           controller: authPro.passwordController,
-          obscureText: authPro.isPassword,
-          obscuringCharacter: '*',
-          keyboardType: TextInputType.text,
-          textInputAction: TextInputAction.done,
-          cursorColor: AppTheme.primaryColor,
-          decoration: InputDecoration(
-            counterText: '',
-            prefixIcon: Padding(
-              padding: EdgeInsets.only(left: 20.h, right: 15.h),
-              child: Icon(
-                Icons.lock_outline,
-                size: 18.w,
-              ),
+          obsecureText: authPro.isPassword,
+          inputType: TextInputType.text,
+          suffixIcon: IconButton(
+            onPressed: authPro.isObsecure,
+            icon: Icon(
+              authPro.isPassword
+                  ? Icons.visibility_off_outlined
+                  : Icons.visibility_outlined,
+              size: 18.w,
             ),
-            suffixIcon: Padding(
-              padding: EdgeInsets.only(right: 5.h),
-              child: InkWell(
-                onTap: authPro.isObsecure,
-                child: Icon(
-                  authPro.isPassword
-                      ? Icons.visibility_off_outlined
-                      : Icons.visibility_outlined,
-                  size: 18.w,
-                ),
-              ),
-            ),
-            labelText: 'Enter New Password',
           ),
+          label: 'Enter New Password',
         ),
         SizedBox(
           height: 16.h,
         ),
-        TextFormField(
-          style: AppTexts.hintTextT14W5,
-          controller: authPro.confirmPasswordController,
-          obscureText: authPro.isPassword,
-          obscuringCharacter: '*',
-          keyboardType: TextInputType.text,
-          textInputAction: TextInputAction.done,
-          cursorColor: AppTheme.primaryColor,
-          decoration: InputDecoration(
-            counterText: '',
-            prefixIcon: Padding(
-              padding: EdgeInsets.only(left: 20.h, right: 15.h),
-              child: Icon(
-                Icons.lock_outline,
-                size: 18.w,
-              ),
+        KTextField(
+          prefixIcon: Padding(
+            padding: EdgeInsets.only(left: 20.h, right: 15.h),
+            child: Icon(
+              Icons.lock_outline,
+              size: 18.w,
             ),
-            suffixIcon: Padding(
-              padding: EdgeInsets.only(right: 5.h),
-              child: InkWell(
-                onTap: authPro.isObsecure,
-                child: Icon(
-                  authPro.isPassword
-                      ? Icons.visibility_off_outlined
-                      : Icons.visibility_outlined,
-                  size: 18.w,
-                ),
-              ),
-            ),
-            labelText: 'Confirm New Password',
           ),
+          controller: authPro.confirmPasswordController,
+          obsecureText: authPro.isPassword,
+          inputType: TextInputType.text,
+          suffixIcon: IconButton(
+            onPressed: authPro.isObsecure,
+            icon: Icon(
+              authPro.isPassword
+                  ? Icons.visibility_off_outlined
+                  : Icons.visibility_outlined,
+              size: 18.w,
+            ),
+          ),
+          label: 'Confirm New Password',
         ),
         SizedBox(
           height: 16.h,
@@ -289,18 +237,8 @@ class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
   int time = 60;
 
   void onPageChanged(int index) {
-    if (index == 1) {
-      _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-        if (time == 0) {
-          _timer?.cancel();
-        }
-        setState(() {
-          time--;
-        });
-      });
-    } else {
-      _timer?.cancel();
-    }
+    this.index = index;
+    setState(() {});
   }
 
   Widget _buildPhoneInput() {
@@ -376,21 +314,88 @@ class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
 
   @override
   Widget build(BuildContext context) {
-    final authPRef = ref.read(authProvider);
-    return Scaffold(
-      appBar: AppBar(),
-      body: Padding(
-        padding: EdgeInsets.all(16.w),
-        child: SafeArea(
-          child: PageView(
-            physics: NeverScrollableScrollPhysics(),
-            allowImplicitScrolling: false,
-            controller: authPRef.signUpPageController,
-            children: [
-              _buildPhoneInput(),
-              _buildForgetPasswordVerifyOtpInput(),
-              _buildPasswordResetForm(),
-            ],
+    final authPRef = ref.watch(authProvider);
+    final textTheme = Theme.of(context).textTheme;
+    return WillPopScope(
+      onWillPop: () async {
+        if (index == 0) {
+          if (!widget.isFromWithingApp) {
+            AppRoutes.pushReplacement(page: const LoginPage());
+          } else {
+            Navigator.pop(context);
+          }
+        } else {
+          authPRef.signUpPageController.previousPage(
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeInOut,
+          );
+          setState(() {});
+        }
+        authPRef.clear();
+        return false;
+      },
+      child: Scaffold(
+        appBar: AppBar(
+            title: index == 2
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AutoSizeText(
+                        'Change Password',
+                        style: textTheme.headlineLarge,
+                      ),
+                      SizedBox(
+                        height: 6.h,
+                      ),
+                      AutoSizeText(
+                        'Enter Your New Password',
+                        style: textTheme.labelMedium,
+                      ),
+                    ],
+                  )
+                : index == 1
+                    ? Text(
+                        'OTP Verification',
+                        style: textTheme.headlineLarge,
+                      )
+                    : Text(
+                        widget.isFromWithingApp
+                            ? 'Change Password'
+                            : 'Forgot Password',
+                        style: textTheme.headlineLarge,
+                      ),
+            leading: IconButton(
+              onPressed: () {
+                if (index == 0) {
+                  if (!widget.isFromWithingApp) {
+                    AppRoutes.pushReplacement(page: const LoginPage());
+                  } else {
+                    Navigator.pop(context);
+                  }
+                } else {
+                  authPRef.signUpPageController.previousPage(
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                  setState(() {});
+                }
+              },
+              icon: const Icon(Iconsax.arrow_left),
+            )),
+        body: Padding(
+          padding: EdgeInsets.all(16.w),
+          child: SafeArea(
+            child: PageView(
+              physics: NeverScrollableScrollPhysics(),
+              allowImplicitScrolling: false,
+              controller: authPRef.signUpPageController,
+              onPageChanged: onPageChanged,
+              children: [
+                _buildPhoneInput(),
+                _buildForgetPasswordVerifyOtpInput(),
+                _buildPasswordResetForm(),
+              ],
+            ),
           ),
         ),
       ),

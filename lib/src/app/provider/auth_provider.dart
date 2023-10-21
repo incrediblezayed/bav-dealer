@@ -1,8 +1,6 @@
 import 'dart:async';
 
 import 'package:dealerapp/src/app/UI/Homepage/homepage.dart';
-import 'package:dealerapp/src/app/UI/forgot_password/change_password.dart';
-import 'package:dealerapp/src/app/UI/forgot_password/forgot_password.dart';
 import 'package:dealerapp/src/app/UI/forgot_password/password_change_success_page.dart';
 import 'package:dealerapp/src/app/UI/login/login_page.dart';
 import 'package:dealerapp/src/app/UI/signup/address_page.dart';
@@ -80,7 +78,11 @@ class AuthProvider extends ChangeNotifier {
     final check = await _authRepository.createDealer(user!);
     if (check != null) {
       await cacheProvider.clear();
-      await AppRoutes.push(page: const LoginPage());
+      clear();
+      AppRoutes.showSuccessSnackbar(
+          message:
+              'Dealer Created Successfully, Please wait for admin approval & Login');
+      unawaited(AppRoutes.push(page: const LoginPage()));
     } else {
       AppRoutes.showErrorSnackbar(message: 'Something Went Wrong');
     }
@@ -217,6 +219,7 @@ class AuthProvider extends ChangeNotifier {
       if (dealer != null) {
         if (dealer.approved ?? false) {
           await cacheProvider.setDealerId(dealer.id);
+          clear();
           await AppRoutes.pushAndRemoveUntil(page: const HomePage());
         } else {
           AppRoutes.showErrorSnackbar(
@@ -295,13 +298,20 @@ class AuthProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  ///List of forgot passwaord pages
-  ///
-  final List<Widget> forgotPasswordPages = [
-    const ForgotPasswordPage(),
-    const ChangePasswordPage(),
-    // const PasswordChangeSuccessPage(),
-  ];
+  void clear() {
+    phoneNumberController.clear();
+    passwordController.clear();
+    otpController.forEach((element) {
+      element.clear();
+    });
+    firstNameController.clear();
+    lastNameController.clear();
+    emailIdController.clear();
+    confirmPasswordController.clear();
+    reTypeNewPasswordController.clear();
+    shopAddressController.clear();
+    notifyListeners();
+  }
 
   ///List of sign up pages
   final List<Widget> signUpPages = [
