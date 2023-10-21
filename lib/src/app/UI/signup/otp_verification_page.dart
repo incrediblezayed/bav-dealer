@@ -201,17 +201,22 @@ class _OTPVerificationPageState extends ConsumerState<OTPVerificationPage> {
               text: 'Confirm',
             ),
             SizedBox(height: 20.h),
-            Align(
-              child: RichText(
-                text: TextSpan(
-                  text: "Didn't Get An OTP ?",
-                  style: theme.labelMedium,
-                  children: [
-                    TextSpan(
-                      text: ' Resend SMS',
-                      style: theme.headlineSmall,
-                    ),
-                  ],
+            InkWell(
+              onTap: () {
+                authPro.resendOTPForSignUp();
+              },
+              child: Align(
+                child: RichText(
+                  text: TextSpan(
+                    text: "Didn't Get An OTP ?",
+                    style: theme.labelMedium,
+                    children: [
+                      TextSpan(
+                        text: ' Resend SMS',
+                        style: theme.headlineSmall,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

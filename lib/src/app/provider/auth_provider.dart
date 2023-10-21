@@ -136,6 +136,8 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
+  String userId = '';
+
   /// This Method hits the login api and gets the relevant data back
   /// [fromSignUp] is used to check if the user is logging in
   Future<bool> loginApi({required bool fromSignUp}) async {
@@ -158,7 +160,7 @@ class AuthProvider extends ChangeNotifier {
       await cacheProvider.setSessionToken(sessionToken);
       final newUser = await _authRepository.getUser(userId: user.id!);
       await cacheProvider.setUserId(user.id!);
-
+      userId = user.id!;
       if (!fromSignUp) {
         await cacheProvider.setUser(newUser!);
       } else {
@@ -173,6 +175,15 @@ class AuthProvider extends ChangeNotifier {
         await getCurrentUserOtp(isEmail: false);
       }
       return true;
+    }
+  }
+
+  Future<void> resendOTPForSignUp() async {
+    if (userId.isNotEmpty) {
+      await _authRepository.updateUserForOtp(
+          id: userId, phoneNumber: phoneNumberController.text);
+    } else {
+      AppRoutes.showErrorSnackbar(message: 'Something went wrong');
     }
   }
 

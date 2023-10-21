@@ -209,6 +209,38 @@ class AuthRepository {
     }
   }
 
+  ///Update user
+  /// Files will not be uploaded if [useFerry] is true
+  Future<String?> updateUserForOtp({
+    required String id,
+    required String phoneNumber,
+  }) async {
+    try {
+      {
+        final response = await _client.request(
+          GUpdateUserReq((b) {
+            b.vars.where.id = id;
+            b.vars.data.phoneNumber = phoneNumber;
+            b.fetchPolicy = FetchPolicy.NoCache;
+
+            return b;
+          }),
+        ).first;
+        if (response.linkException != null) {
+          throw response.linkException!;
+        }
+        if (response.data?.updateUser != null) {
+          return response.data!.updateUser!.id;
+        } else {
+          return null;
+        }
+      }
+    } catch (e) {
+      e.log();
+      return null;
+    }
+  }
+
   /// THis method is used to get the current otp of user immediately after sign upt   1q
   Future<String?> getCurrentOtp(String key) async {
     try {
