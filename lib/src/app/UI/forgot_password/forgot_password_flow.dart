@@ -331,7 +331,7 @@ class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
           );
           setState(() {});
         }
-        authPRef.clear();
+        authPRef.clear()ss;
         return false;
       },
       child: Scaffold(
