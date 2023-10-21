@@ -5,7 +5,6 @@ import 'package:dealerapp/src/app/UI/drawer/contact_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/terms_conditions.dart';
 import 'package:dealerapp/src/app/UI/forgot_password/forgot_password_flow.dart';
 import 'package:dealerapp/src/app/UI/login/login_page.dart';
-import 'package:dealerapp/src/app/UI/wallet/payment_options.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
@@ -174,17 +173,17 @@ class AppDrawer extends ConsumerWidget {
                       title: 'My Wallet',
                       icon: AppImages.mywallet,
                       onTap: () {
-                        AppRoutes.push(
-                            page: PaymentOptions(
-                          walletAmount: 230,
-                        ));
+                        AppRoutes.push(page: ComingSoon());
                       },
                     ),
                     _drawerTile(
                       title: 'Change Password',
                       icon: AppImages.change,
                       onTap: () {
-                        AppRoutes.push(page: const ForgorPasswordFlow());
+                        AppRoutes.push(
+                            page: const ForgotPassword(
+                          isFromWithingApp: true,
+                        ));
                       },
                     ),
                     _drawerTile(

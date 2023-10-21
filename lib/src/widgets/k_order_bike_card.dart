@@ -69,7 +69,8 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                       ),
                       SizedBox(height: 6.h),
                       Text(
-                        widget.vehiclePurchaseOrders.createdAt
+                        widget.vehiclePurchaseOrders.createdAt.toDateTime!
+                            .toLocal()
                             .formatTohhmmaddMMyy,
                       ),
                     ],

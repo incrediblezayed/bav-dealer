@@ -70,7 +70,8 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                       ),
                       SizedBox(height: 6.h),
                       AutoSizeText(
-                        widget.vehicleTestDriveOrders.createdAt
+                        widget.vehicleTestDriveOrders.createdAt!.toDateTime!
+                            .toLocal()
                             .formatTohhmmaddMMyy,
                       ),
                     ],

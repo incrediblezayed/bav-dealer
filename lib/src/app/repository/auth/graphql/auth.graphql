@@ -12,6 +12,33 @@ mutation ValidateUserOTP($key: String!, $otp: String!) {
 }
 
 
+mutation SendUserPasswordResetLink($phoneNumber: String!) {
+  sendUserPasswordResetLink(phoneNumber: $phoneNumber)
+}
+
+mutation RedeemUserPasswordResetToken(
+  $phoneNumber: String!
+  $token: String!
+  $password: String!
+) {
+  redeemUserPasswordResetToken(
+    phoneNumber: $phoneNumber
+    token: $token
+    password: $password
+  ) {
+    code
+    message
+  }
+}
+
+query ValidateUserPasswordResetToken($token: String!, $phoneNumber: String!) {
+  validateUserPasswordResetToken(token: $token, phoneNumber: $phoneNumber) {
+    code
+    message
+  }
+}
+
+
 mutation CreateDealer($data: DealerCreateInput!) {
   createDealer(data: $data) {
     id

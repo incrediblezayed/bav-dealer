@@ -1,3 +1,5 @@
+import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/purchase_orders.dart';
+import 'package:dealerapp/src/app/UI/Homepage/Test_Orders/test_orders.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -10,7 +12,6 @@ class KExpansionTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
     return ExpansionTile(
-      
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.r),
       ),
@@ -39,7 +40,9 @@ class KExpansionTile extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: 33.w),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  AppRoutes.push(page: PurchaseOrders());
+                },
                 child: Text(
                   'Purchase Order History',
                   style: theme.headlineSmall!
@@ -50,7 +53,9 @@ class KExpansionTile extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: 33.w),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  AppRoutes.push(page: TestOrders());
+                },
                 child: Text(
                   'Test Order History',
                   style: theme.headlineSmall!

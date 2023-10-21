@@ -76,6 +76,83 @@ abstract class GValidateUserOTPVars
       );
 }
 
+abstract class GSendUserPasswordResetLinkVars
+    implements
+        Built<GSendUserPasswordResetLinkVars,
+            GSendUserPasswordResetLinkVarsBuilder> {
+  GSendUserPasswordResetLinkVars._();
+
+  factory GSendUserPasswordResetLinkVars(
+          [Function(GSendUserPasswordResetLinkVarsBuilder b) updates]) =
+      _$GSendUserPasswordResetLinkVars;
+
+  String get phoneNumber;
+  static Serializer<GSendUserPasswordResetLinkVars> get serializer =>
+      _$gSendUserPasswordResetLinkVarsSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GSendUserPasswordResetLinkVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GSendUserPasswordResetLinkVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GSendUserPasswordResetLinkVars.serializer,
+        json,
+      );
+}
+
+abstract class GRedeemUserPasswordResetTokenVars
+    implements
+        Built<GRedeemUserPasswordResetTokenVars,
+            GRedeemUserPasswordResetTokenVarsBuilder> {
+  GRedeemUserPasswordResetTokenVars._();
+
+  factory GRedeemUserPasswordResetTokenVars(
+          [Function(GRedeemUserPasswordResetTokenVarsBuilder b) updates]) =
+      _$GRedeemUserPasswordResetTokenVars;
+
+  String get phoneNumber;
+  String get token;
+  String get password;
+  static Serializer<GRedeemUserPasswordResetTokenVars> get serializer =>
+      _$gRedeemUserPasswordResetTokenVarsSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GRedeemUserPasswordResetTokenVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GRedeemUserPasswordResetTokenVars? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GRedeemUserPasswordResetTokenVars.serializer,
+        json,
+      );
+}
+
+abstract class GValidateUserPasswordResetTokenVars
+    implements
+        Built<GValidateUserPasswordResetTokenVars,
+            GValidateUserPasswordResetTokenVarsBuilder> {
+  GValidateUserPasswordResetTokenVars._();
+
+  factory GValidateUserPasswordResetTokenVars(
+          [Function(GValidateUserPasswordResetTokenVarsBuilder b) updates]) =
+      _$GValidateUserPasswordResetTokenVars;
+
+  String get token;
+  String get phoneNumber;
+  static Serializer<GValidateUserPasswordResetTokenVars> get serializer =>
+      _$gValidateUserPasswordResetTokenVarsSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GValidateUserPasswordResetTokenVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GValidateUserPasswordResetTokenVars? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GValidateUserPasswordResetTokenVars.serializer,
+        json,
+      );
+}
+
 abstract class GCreateDealerVars
     implements Built<GCreateDealerVars, GCreateDealerVarsBuilder> {
   GCreateDealerVars._();

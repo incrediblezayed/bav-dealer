@@ -53,12 +53,15 @@ class HomePageProvider extends ChangeNotifier {
     inventoryCount = await ref.read(inventoryProvider).getInventoryCount();
     testOrderCount = (await ref
             .read(orderProvider(OrderFamily.testDriveOrders))
-            .getPendingOrders())
+            .getTestDrivePendingOrders())
         .length;
     purchaseCount = (await ref
             .read(orderProvider(OrderFamily.purchaseOrders))
             .getPendingOrders())
         .length;
+    Future.delayed(Duration(seconds: 10), () {
+      onInit();
+    });
   }
 
   ///Page controller

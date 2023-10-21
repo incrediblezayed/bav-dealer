@@ -85,9 +85,8 @@ class AppTheme {
   ///Label text Color
   static const labelTextColor = Color(0xff194B3F);
 
-   ///Default Caption Text Color
+  ///Default Caption Text Color
   static Color defaultCaptionColor = const Color.fromRGBO(25, 75, 63, 0.46);
-
 
   ///Drop location Color
   static const dropLocation = Color(0xff12A89D);
@@ -122,6 +121,19 @@ class AppTheme {
     border: defaultTextfieldBorder,
     filled: true,
     fillColor: textfieldFill,
+    enabledBorder: defaultTextfieldBorder,
+
+    hintStyle: const TextStyle(
+      color: hintTextColor,
+      fontWeight: FontWeight.w300,
+      fontSize: 16,
+    ),
+    labelStyle: const TextStyle(
+      color: defaultTitleColor,
+      fontWeight: FontWeight.w500,
+      fontSize: 16,
+    ),
+    focusedBorder: focusedTextfieldBorder,
 
     // focusedBorder: focusedTextfieldBorder,
   );
@@ -133,7 +145,7 @@ class AppTheme {
 
   ///Default Theme Data
   static ThemeData get theme => ThemeData(
-     appBarTheme: AppBarTheme(
+        appBarTheme: AppBarTheme(
           titleTextStyle:
               AppTexts.labelMedium?.copyWith(fontWeight: FontWeight.w700),
           backgroundColor: scaffoldBgColor,

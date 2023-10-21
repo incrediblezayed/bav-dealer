@@ -24,6 +24,9 @@ import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.dat
         GCurrentUserOTPData,
         GDealerData,
         GDealerData_dealers,
+        GRedeemUserPasswordResetTokenData,
+        GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken,
+        GSendUserPasswordResetLinkData,
         GUpdateUserData,
         GUpdateUserData_updateUser,
         GUserData,
@@ -34,7 +37,9 @@ import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.dat
         GUserData_user_favorites,
         GUserData_user_favorites_vehicleVariant,
         GUserData_user_profile_image,
-        GValidateUserOTPData;
+        GValidateUserOTPData,
+        GValidateUserPasswordResetTokenData,
+        GValidateUserPasswordResetTokenData_validateUserPasswordResetToken;
 import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.req.gql.dart'
     show
         GAuthenticateUserWithPasswordReq,
@@ -42,9 +47,12 @@ import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.req
         GCreateUserReq,
         GCurrentUserOTPReq,
         GDealerReq,
+        GRedeemUserPasswordResetTokenReq,
+        GSendUserPasswordResetLinkReq,
         GUpdateUserReq,
         GUserReq,
-        GValidateUserOTPReq;
+        GValidateUserOTPReq,
+        GValidateUserPasswordResetTokenReq;
 import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.var.gql.dart'
     show
         GAuthenticateUserWithPasswordVars,
@@ -52,9 +60,12 @@ import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.var
         GCreateUserVars,
         GCurrentUserOTPVars,
         GDealerVars,
+        GRedeemUserPasswordResetTokenVars,
+        GSendUserPasswordResetLinkVars,
         GUpdateUserVars,
         GUserVars,
-        GValidateUserOTPVars;
+        GValidateUserOTPVars,
+        GValidateUserPasswordResetTokenVars;
 import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema.gql.dart'
     show
         GAddressCreateInput,
@@ -803,6 +814,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GPriceWhereInput,
   GPriceWhereUniqueInput,
   GQueryMode,
+  GRedeemUserPasswordResetTokenData,
+  GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken,
+  GRedeemUserPasswordResetTokenReq,
+  GRedeemUserPasswordResetTokenVars,
   GReferralCodeCreateInput,
   GReferralCodeOrderByInput,
   GReferralCodeRelateToOneForCreateInput,
@@ -840,6 +855,9 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GSMSNotificationTemplateUpdateInput,
   GSMSNotificationTemplateWhereInput,
   GSMSNotificationTemplateWhereUniqueInput,
+  GSendUserPasswordResetLinkData,
+  GSendUserPasswordResetLinkReq,
+  GSendUserPasswordResetLinkVars,
   GSpecificationCategoryCreateInput,
   GSpecificationCategoryOrderByInput,
   GSpecificationCategoryRelateToOneForCreateInput,
@@ -934,6 +952,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GValidateUserOTPData,
   GValidateUserOTPReq,
   GValidateUserOTPVars,
+  GValidateUserPasswordResetTokenData,
+  GValidateUserPasswordResetTokenData_validateUserPasswordResetToken,
+  GValidateUserPasswordResetTokenReq,
+  GValidateUserPasswordResetTokenVars,
   GVehicleColorCreateInput,
   GVehicleColorManyRelationFilter,
   GVehicleColorOrderByInput,

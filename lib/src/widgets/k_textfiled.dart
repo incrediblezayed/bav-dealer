@@ -21,7 +21,9 @@ class KTextField extends StatelessWidget {
     this.obsecureText = false,
     this.maxLength,
     this.suffixIconConstraints,
-    this.onChange,
+    this.onChanged,
+    this.contextMenuBuilder,
+    this.focusNode,
   });
 
   ///hintText
@@ -54,14 +56,19 @@ class KTextField extends StatelessWidget {
   ///text length
   final int? maxLength;
 
-  final void Function(String? value)? onChange;
+  final void Function(String? value)? onChanged;
+
+  final FocusNode? focusNode;
 
   final BoxConstraints? suffixIconConstraints;
+  final Widget Function(BuildContext context, EditableTextState state)?
+      contextMenuBuilder;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      onChanged: onChange,
+      contextMenuBuilder: contextMenuBuilder,
+      onChanged: onChanged,
       keyboardType: inputType,
       controller: controller,
       obscureText: obsecureText,

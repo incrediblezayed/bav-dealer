@@ -12,6 +12,15 @@ Serializer<GCurrentUserOTPVars> _$gCurrentUserOTPVarsSerializer =
     new _$GCurrentUserOTPVarsSerializer();
 Serializer<GValidateUserOTPVars> _$gValidateUserOTPVarsSerializer =
     new _$GValidateUserOTPVarsSerializer();
+Serializer<GSendUserPasswordResetLinkVars>
+    _$gSendUserPasswordResetLinkVarsSerializer =
+    new _$GSendUserPasswordResetLinkVarsSerializer();
+Serializer<GRedeemUserPasswordResetTokenVars>
+    _$gRedeemUserPasswordResetTokenVarsSerializer =
+    new _$GRedeemUserPasswordResetTokenVarsSerializer();
+Serializer<GValidateUserPasswordResetTokenVars>
+    _$gValidateUserPasswordResetTokenVarsSerializer =
+    new _$GValidateUserPasswordResetTokenVarsSerializer();
 Serializer<GCreateDealerVars> _$gCreateDealerVarsSerializer =
     new _$GCreateDealerVarsSerializer();
 Serializer<GAuthenticateUserWithPasswordVars>
@@ -152,6 +161,165 @@ class _$GValidateUserOTPVarsSerializer
           break;
         case 'otp':
           result.otp = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GSendUserPasswordResetLinkVarsSerializer
+    implements StructuredSerializer<GSendUserPasswordResetLinkVars> {
+  @override
+  final Iterable<Type> types = const [
+    GSendUserPasswordResetLinkVars,
+    _$GSendUserPasswordResetLinkVars
+  ];
+  @override
+  final String wireName = 'GSendUserPasswordResetLinkVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GSendUserPasswordResetLinkVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'phoneNumber',
+      serializers.serialize(object.phoneNumber,
+          specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GSendUserPasswordResetLinkVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GSendUserPasswordResetLinkVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'phoneNumber':
+          result.phoneNumber = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GRedeemUserPasswordResetTokenVarsSerializer
+    implements StructuredSerializer<GRedeemUserPasswordResetTokenVars> {
+  @override
+  final Iterable<Type> types = const [
+    GRedeemUserPasswordResetTokenVars,
+    _$GRedeemUserPasswordResetTokenVars
+  ];
+  @override
+  final String wireName = 'GRedeemUserPasswordResetTokenVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GRedeemUserPasswordResetTokenVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'phoneNumber',
+      serializers.serialize(object.phoneNumber,
+          specifiedType: const FullType(String)),
+      'token',
+      serializers.serialize(object.token,
+          specifiedType: const FullType(String)),
+      'password',
+      serializers.serialize(object.password,
+          specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GRedeemUserPasswordResetTokenVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GRedeemUserPasswordResetTokenVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'phoneNumber':
+          result.phoneNumber = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'token':
+          result.token = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'password':
+          result.password = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GValidateUserPasswordResetTokenVarsSerializer
+    implements StructuredSerializer<GValidateUserPasswordResetTokenVars> {
+  @override
+  final Iterable<Type> types = const [
+    GValidateUserPasswordResetTokenVars,
+    _$GValidateUserPasswordResetTokenVars
+  ];
+  @override
+  final String wireName = 'GValidateUserPasswordResetTokenVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GValidateUserPasswordResetTokenVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'token',
+      serializers.serialize(object.token,
+          specifiedType: const FullType(String)),
+      'phoneNumber',
+      serializers.serialize(object.phoneNumber,
+          specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GValidateUserPasswordResetTokenVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GValidateUserPasswordResetTokenVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'token':
+          result.token = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'phoneNumber':
+          result.phoneNumber = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
       }
@@ -665,6 +833,329 @@ class GValidateUserOTPVarsBuilder
                 key, r'GValidateUserOTPVars', 'key'),
             otp: BuiltValueNullFieldError.checkNotNull(
                 otp, r'GValidateUserOTPVars', 'otp'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GSendUserPasswordResetLinkVars extends GSendUserPasswordResetLinkVars {
+  @override
+  final String phoneNumber;
+
+  factory _$GSendUserPasswordResetLinkVars(
+          [void Function(GSendUserPasswordResetLinkVarsBuilder)? updates]) =>
+      (new GSendUserPasswordResetLinkVarsBuilder()..update(updates))._build();
+
+  _$GSendUserPasswordResetLinkVars._({required this.phoneNumber}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        phoneNumber, r'GSendUserPasswordResetLinkVars', 'phoneNumber');
+  }
+
+  @override
+  GSendUserPasswordResetLinkVars rebuild(
+          void Function(GSendUserPasswordResetLinkVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GSendUserPasswordResetLinkVarsBuilder toBuilder() =>
+      new GSendUserPasswordResetLinkVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GSendUserPasswordResetLinkVars &&
+        phoneNumber == other.phoneNumber;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, phoneNumber.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GSendUserPasswordResetLinkVars')
+          ..add('phoneNumber', phoneNumber))
+        .toString();
+  }
+}
+
+class GSendUserPasswordResetLinkVarsBuilder
+    implements
+        Builder<GSendUserPasswordResetLinkVars,
+            GSendUserPasswordResetLinkVarsBuilder> {
+  _$GSendUserPasswordResetLinkVars? _$v;
+
+  String? _phoneNumber;
+  String? get phoneNumber => _$this._phoneNumber;
+  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
+
+  GSendUserPasswordResetLinkVarsBuilder();
+
+  GSendUserPasswordResetLinkVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _phoneNumber = $v.phoneNumber;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GSendUserPasswordResetLinkVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GSendUserPasswordResetLinkVars;
+  }
+
+  @override
+  void update(void Function(GSendUserPasswordResetLinkVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GSendUserPasswordResetLinkVars build() => _build();
+
+  _$GSendUserPasswordResetLinkVars _build() {
+    final _$result = _$v ??
+        new _$GSendUserPasswordResetLinkVars._(
+            phoneNumber: BuiltValueNullFieldError.checkNotNull(
+                phoneNumber, r'GSendUserPasswordResetLinkVars', 'phoneNumber'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GRedeemUserPasswordResetTokenVars
+    extends GRedeemUserPasswordResetTokenVars {
+  @override
+  final String phoneNumber;
+  @override
+  final String token;
+  @override
+  final String password;
+
+  factory _$GRedeemUserPasswordResetTokenVars(
+          [void Function(GRedeemUserPasswordResetTokenVarsBuilder)? updates]) =>
+      (new GRedeemUserPasswordResetTokenVarsBuilder()..update(updates))
+          ._build();
+
+  _$GRedeemUserPasswordResetTokenVars._(
+      {required this.phoneNumber, required this.token, required this.password})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        phoneNumber, r'GRedeemUserPasswordResetTokenVars', 'phoneNumber');
+    BuiltValueNullFieldError.checkNotNull(
+        token, r'GRedeemUserPasswordResetTokenVars', 'token');
+    BuiltValueNullFieldError.checkNotNull(
+        password, r'GRedeemUserPasswordResetTokenVars', 'password');
+  }
+
+  @override
+  GRedeemUserPasswordResetTokenVars rebuild(
+          void Function(GRedeemUserPasswordResetTokenVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GRedeemUserPasswordResetTokenVarsBuilder toBuilder() =>
+      new GRedeemUserPasswordResetTokenVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GRedeemUserPasswordResetTokenVars &&
+        phoneNumber == other.phoneNumber &&
+        token == other.token &&
+        password == other.password;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, phoneNumber.hashCode);
+    _$hash = $jc(_$hash, token.hashCode);
+    _$hash = $jc(_$hash, password.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GRedeemUserPasswordResetTokenVars')
+          ..add('phoneNumber', phoneNumber)
+          ..add('token', token)
+          ..add('password', password))
+        .toString();
+  }
+}
+
+class GRedeemUserPasswordResetTokenVarsBuilder
+    implements
+        Builder<GRedeemUserPasswordResetTokenVars,
+            GRedeemUserPasswordResetTokenVarsBuilder> {
+  _$GRedeemUserPasswordResetTokenVars? _$v;
+
+  String? _phoneNumber;
+  String? get phoneNumber => _$this._phoneNumber;
+  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
+
+  String? _token;
+  String? get token => _$this._token;
+  set token(String? token) => _$this._token = token;
+
+  String? _password;
+  String? get password => _$this._password;
+  set password(String? password) => _$this._password = password;
+
+  GRedeemUserPasswordResetTokenVarsBuilder();
+
+  GRedeemUserPasswordResetTokenVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _phoneNumber = $v.phoneNumber;
+      _token = $v.token;
+      _password = $v.password;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GRedeemUserPasswordResetTokenVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GRedeemUserPasswordResetTokenVars;
+  }
+
+  @override
+  void update(
+      void Function(GRedeemUserPasswordResetTokenVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GRedeemUserPasswordResetTokenVars build() => _build();
+
+  _$GRedeemUserPasswordResetTokenVars _build() {
+    final _$result = _$v ??
+        new _$GRedeemUserPasswordResetTokenVars._(
+            phoneNumber: BuiltValueNullFieldError.checkNotNull(phoneNumber,
+                r'GRedeemUserPasswordResetTokenVars', 'phoneNumber'),
+            token: BuiltValueNullFieldError.checkNotNull(
+                token, r'GRedeemUserPasswordResetTokenVars', 'token'),
+            password: BuiltValueNullFieldError.checkNotNull(
+                password, r'GRedeemUserPasswordResetTokenVars', 'password'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GValidateUserPasswordResetTokenVars
+    extends GValidateUserPasswordResetTokenVars {
+  @override
+  final String token;
+  @override
+  final String phoneNumber;
+
+  factory _$GValidateUserPasswordResetTokenVars(
+          [void Function(GValidateUserPasswordResetTokenVarsBuilder)?
+              updates]) =>
+      (new GValidateUserPasswordResetTokenVarsBuilder()..update(updates))
+          ._build();
+
+  _$GValidateUserPasswordResetTokenVars._(
+      {required this.token, required this.phoneNumber})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        token, r'GValidateUserPasswordResetTokenVars', 'token');
+    BuiltValueNullFieldError.checkNotNull(
+        phoneNumber, r'GValidateUserPasswordResetTokenVars', 'phoneNumber');
+  }
+
+  @override
+  GValidateUserPasswordResetTokenVars rebuild(
+          void Function(GValidateUserPasswordResetTokenVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GValidateUserPasswordResetTokenVarsBuilder toBuilder() =>
+      new GValidateUserPasswordResetTokenVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GValidateUserPasswordResetTokenVars &&
+        token == other.token &&
+        phoneNumber == other.phoneNumber;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, token.hashCode);
+    _$hash = $jc(_$hash, phoneNumber.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GValidateUserPasswordResetTokenVars')
+          ..add('token', token)
+          ..add('phoneNumber', phoneNumber))
+        .toString();
+  }
+}
+
+class GValidateUserPasswordResetTokenVarsBuilder
+    implements
+        Builder<GValidateUserPasswordResetTokenVars,
+            GValidateUserPasswordResetTokenVarsBuilder> {
+  _$GValidateUserPasswordResetTokenVars? _$v;
+
+  String? _token;
+  String? get token => _$this._token;
+  set token(String? token) => _$this._token = token;
+
+  String? _phoneNumber;
+  String? get phoneNumber => _$this._phoneNumber;
+  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
+
+  GValidateUserPasswordResetTokenVarsBuilder();
+
+  GValidateUserPasswordResetTokenVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _token = $v.token;
+      _phoneNumber = $v.phoneNumber;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GValidateUserPasswordResetTokenVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GValidateUserPasswordResetTokenVars;
+  }
+
+  @override
+  void update(
+      void Function(GValidateUserPasswordResetTokenVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GValidateUserPasswordResetTokenVars build() => _build();
+
+  _$GValidateUserPasswordResetTokenVars _build() {
+    final _$result = _$v ??
+        new _$GValidateUserPasswordResetTokenVars._(
+            token: BuiltValueNullFieldError.checkNotNull(
+                token, r'GValidateUserPasswordResetTokenVars', 'token'),
+            phoneNumber: BuiltValueNullFieldError.checkNotNull(phoneNumber,
+                r'GValidateUserPasswordResetTokenVars', 'phoneNumber'));
     replace(_$result);
     return _$result;
   }

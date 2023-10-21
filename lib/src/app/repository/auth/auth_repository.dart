@@ -252,4 +252,74 @@ class AuthRepository {
     }
     return null;
   }
+
+  ///Reset Password
+  Future<bool> resetPassword({
+    required String token,
+    required String phoneNumber,
+    required String password,
+  }) async {
+    try {
+      final response = await _client
+          .request(
+            GRedeemUserPasswordResetTokenReq(
+              (b) => b
+                ..vars.token = token
+                ..vars.phoneNumber = phoneNumber
+                ..vars.password = password,
+            ),
+          )
+          .first;
+
+      return response.data!.redeemUserPasswordResetToken == null;
+    } catch (e) {
+      e.log();
+    }
+    return false;
+  }
+
+  ///Send Password Reset Token
+  Future<String?> sendPasswordResetToken({
+    required String phoneNumber,
+  }) async {
+    try {
+      final response = await _client
+          .request(
+            GSendUserPasswordResetLinkReq(
+              (b) => b..vars.phoneNumber = phoneNumber,
+            ),
+          )
+          .first;
+      if (response.data?.sendUserPasswordResetLink != null) {
+        return response.data!.sendUserPasswordResetLink;
+      }
+    } catch (e) {
+      e.log();
+    }
+    return null;
+  }
+
+  ///Verify Password Reset Token
+  Future<bool> verifyPasswordResetToken({
+    required String token,
+    required String phoneNumber,
+  }) async {
+    try {
+      final response = await _client
+          .request(
+            GValidateUserPasswordResetTokenReq(
+              (b) => b
+                ..vars.token = token
+                ..vars.phoneNumber = phoneNumber,
+            ),
+          )
+          .first;
+      if (response.data?.validateUserPasswordResetToken == null) {
+        return true;
+      }
+    } catch (e) {
+      e.log();
+    }
+    return false;
+  }
 }

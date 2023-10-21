@@ -115,6 +115,165 @@ const ValidateUserOTP = _i1.OperationDefinitionNode(
     )
   ]),
 );
+const SendUserPasswordResetLink = _i1.OperationDefinitionNode(
+  type: _i1.OperationType.mutation,
+  name: _i1.NameNode(value: 'SendUserPasswordResetLink'),
+  variableDefinitions: [
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'phoneNumber')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    )
+  ],
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'sendUserPasswordResetLink'),
+      alias: null,
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'phoneNumber'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'phoneNumber')),
+        )
+      ],
+      directives: [],
+      selectionSet: null,
+    )
+  ]),
+);
+const RedeemUserPasswordResetToken = _i1.OperationDefinitionNode(
+  type: _i1.OperationType.mutation,
+  name: _i1.NameNode(value: 'RedeemUserPasswordResetToken'),
+  variableDefinitions: [
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'phoneNumber')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'token')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'password')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
+  ],
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'redeemUserPasswordResetToken'),
+      alias: null,
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'phoneNumber'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'phoneNumber')),
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'token'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'token')),
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'password'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'password')),
+        ),
+      ],
+      directives: [],
+      selectionSet: _i1.SelectionSetNode(selections: [
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'code'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'message'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+      ]),
+    )
+  ]),
+);
+const ValidateUserPasswordResetToken = _i1.OperationDefinitionNode(
+  type: _i1.OperationType.query,
+  name: _i1.NameNode(value: 'ValidateUserPasswordResetToken'),
+  variableDefinitions: [
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'token')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'phoneNumber')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
+  ],
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'validateUserPasswordResetToken'),
+      alias: null,
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'token'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'token')),
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'phoneNumber'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'phoneNumber')),
+        ),
+      ],
+      directives: [],
+      selectionSet: _i1.SelectionSetNode(selections: [
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'code'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'message'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+      ]),
+    )
+  ]),
+);
 const CreateDealer = _i1.OperationDefinitionNode(
   type: _i1.OperationType.mutation,
   name: _i1.NameNode(value: 'CreateDealer'),
@@ -862,6 +1021,9 @@ const document = _i1.DocumentNode(definitions: [
   CreateUser,
   CurrentUserOTP,
   ValidateUserOTP,
+  SendUserPasswordResetLink,
+  RedeemUserPasswordResetToken,
+  ValidateUserPasswordResetToken,
   CreateDealer,
   AuthenticateUserWithPassword,
   User,
