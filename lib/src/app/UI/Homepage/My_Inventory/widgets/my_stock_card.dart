@@ -156,7 +156,7 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                         ),
                         SizedBox(width: 10.w),
                         Text(
-                          selectedQuantity.toString(),
+                          '${widget.vehicleDealers.stock}',
                           // ' ${widget.vehicleDealers.stock}',
                           style: theme.labelLarge!.copyWith(
                             fontWeight: FontWeight.w600,
@@ -204,16 +204,14 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
           ],
           SizedBox(height: 20.h),
           if (!isEdit)
-            Expanded(
-              child: KBottomBarButton(
-                // text: 'Quantity: ${widget.vehicleDealers.stock}',
-                text: "Edit",
-                onTap: () {
-                  setState(() {
-                    isEdit = true;
-                  });
-                },
-              ),
+            KBottomBarButton(
+              // text: 'Quantity: ${widget.vehicleDealers.stock}',
+              text: "Edit",
+              onTap: () {
+                setState(() {
+                  isEdit = true;
+                });
+              },
             ),
           if (isEdit) ...[
             Row(

@@ -20,79 +20,86 @@ class _SignUpFlowState extends ConsumerState<SignUpFlow> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final authPro = ref.watch(authProvider);
-    return Scaffold(
-      backgroundColor: AppTheme.scaffoldBgColor,
-      resizeToAvoidBottomInset: false,
-      body: Padding(
-        padding: EdgeInsets.symmetric(
-          vertical: 42.5.h,
-        ),
-        child: Column(
-          children: [
-            Container(
-              width: double.maxFinite,
-              height: 10.h,
-              color: AppTheme.primaryColor.withOpacity(.3),
-              alignment: Alignment.centerLeft,
-              child: AnimatedBuilder(
-                animation: authPro.signUpPageController,
-                builder: (context, child) {
-                  final width = (size.width / authPro.signUpPages.length) *
-                      (authPro.currentPageIndex + 1);
-                  return AnimatedContainer(
-                    duration: const Duration(milliseconds: 300),
-                    width: width,
-                    decoration: BoxDecoration(
-                      color: AppTheme.primaryColor,
-                      borderRadius: BorderRadius.horizontal(
-                        right: Radius.circular(10.r),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-            Expanded(
-              child: PageView(
-                controller: authPro.signUpPageController,
-                children: authPro.signUpPages,
-                onPageChanged: (index) {
-                  authPro.currentPageIndex = index;
-                },
-              ),
-            ),
-            //SizedBox(height: 16.h),
-            //const Spacer(),
-            
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: GestureDetector(
-                onTap: () {
-                  AppRoutes.push(page: const LoginPage());
-                },
-                child: RichText(
-                  text: TextSpan(
-                    text: 'Already have an account? ',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w300,
-                    ),
-                    children: [
-                      TextSpan(
-                        text: ' Log In',
-                        style: TextStyle(
-                          color: AppTheme.textColor,
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w600,
+    return WillPopScope(
+      onWillPop: () {
+        authPro.currentPageIndex = 0;
+        return Future.value(true);
+      },
+      child: Scaffold(
+        backgroundColor: AppTheme.scaffoldBgColor,
+        resizeToAvoidBottomInset: false,
+        body: Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: 42.5.h,
+          ),
+          child: Column(
+            children: [
+              Container(
+                width: double.maxFinite,
+                height: 10.h,
+                color: AppTheme.primaryColor.withOpacity(.3),
+                alignment: Alignment.centerLeft,
+                child: AnimatedBuilder(
+                  animation: authPro.signUpPageController,
+                  builder: (context, child) {
+                    final width = (size.width / authPro.signUpPages.length) *
+                        (authPro.currentPageIndex + 1);
+                    return AnimatedContainer(
+                      duration: const Duration(milliseconds: 300),
+                      width: width,
+                      decoration: BoxDecoration(
+                        color: AppTheme.primaryColor,
+                        borderRadius: BorderRadius.horizontal(
+                          right: Radius.circular(10.r),
                         ),
                       ),
-                    ],
+                    );
+                  },
+                ),
+              ),
+              Expanded(
+                child: PageView(
+                  physics: NeverScrollableScrollPhysics(),
+                  controller: authPro.signUpPageController,
+                  children: authPro.signUpPages,
+                  onPageChanged: (index) {
+                    authPro.currentPageIndex = index;
+                  },
+                ),
+              ),
+              //SizedBox(height: 16.h),
+              //const Spacer(),
+
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: GestureDetector(
+                  onTap: () {
+                    AppRoutes.push(page: const LoginPage());
+                  },
+                  child: RichText(
+                    text: TextSpan(
+                      text: 'Already have an account? ',
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w300,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: ' Log In',
+                          style: TextStyle(
+                            color: AppTheme.textColor,
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

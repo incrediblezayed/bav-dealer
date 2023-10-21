@@ -88,37 +88,40 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
               style: textTheme.labelMedium,
             ),
             SizedBox(height: 14.h),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Theme(
-                  data: ThemeData(
-                    unselectedWidgetColor: AppTheme.primaryColor,
-                    checkboxTheme: theme.checkboxTheme.copyWith(
-                      side: const BorderSide(
-                        color: AppTheme.primaryColor,
-                        width: .5,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4.r),
-                      ),
-                    ),
+            Theme(
+              data: ThemeData(
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                unselectedWidgetColor: AppTheme.primaryColor,
+                listTileTheme: theme.listTileTheme.copyWith(
+                  contentPadding: EdgeInsets.zero,
+                  enableFeedback: true,
+                  horizontalTitleGap: 0,
+                ),
+                checkboxTheme: theme.checkboxTheme.copyWith(
+                  side: const BorderSide(
+                    color: AppTheme.primaryColor,
+                    width: .5,
                   ),
-                  child: Checkbox(
-                    activeColor: AppTheme.primaryColor,
-                    value: authPro.agree,
-                    onChanged: (value) {
-                      authPro.agree = value!;
-                    },
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.r),
                   ),
                 ),
-                Flexible(
-                  child: Text(
-                    'I Agree With Terms & Conditions',
-                    style: textTheme.labelMedium,
-                  ),
+              ),
+              child: CheckboxListTile(
+                controlAffinity: ListTileControlAffinity.leading,
+                contentPadding: EdgeInsets.zero,
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                dense: true,
+                activeColor: AppTheme.primaryColor,
+                value: authPro.agree,
+                onChanged: (value) {
+                  authPro.agree = value!;
+                },
+                title: Text(
+                  'I Agree With Terms & Conditions',
+                  style: textTheme.labelMedium,
                 ),
-              ],
+              ),
             ),
           ],
         ),

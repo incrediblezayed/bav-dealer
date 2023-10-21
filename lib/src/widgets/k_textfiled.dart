@@ -25,6 +25,7 @@ class KTextField extends StatelessWidget {
     this.contextMenuBuilder,
     this.focusNode,
     this.maxLines,
+    this.textAlign = TextAlign.start,
   });
 
   ///hintText
@@ -67,10 +68,12 @@ class KTextField extends StatelessWidget {
   final Widget Function(BuildContext context, EditableTextState state)?
       contextMenuBuilder;
 
+  final TextAlign textAlign;
+
   @override
   Widget build(BuildContext context) {
     return TextField(
-      textAlign: TextAlign.center,
+      textAlign: textAlign,
       focusNode: focusNode,
       contextMenuBuilder: contextMenuBuilder,
       onChanged: onChanged,

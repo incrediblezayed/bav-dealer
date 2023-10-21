@@ -75,6 +75,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GCartItemUpdateInput.serializer)
       ..add(GCartItemWhereInput.serializer)
       ..add(GCartItemWhereUniqueInput.serializer)
+      ..add(GCategoriesData.serializer)
+      ..add(GCategoriesData_categories.serializer)
+      ..add(GCategoriesReq.serializer)
+      ..add(GCategoriesVars.serializer)
       ..add(GCategoryCreateInput.serializer)
       ..add(GCategoryOrderByInput.serializer)
       ..add(GCategoryRelateToOneForCreateInput.serializer)
@@ -94,12 +98,20 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GCreateDealerData_createDealer.serializer)
       ..add(GCreateDealerReq.serializer)
       ..add(GCreateDealerVars.serializer)
+      ..add(GCreateFeedbackData.serializer)
+      ..add(GCreateFeedbackData_createFeedback.serializer)
+      ..add(GCreateFeedbackReq.serializer)
+      ..add(GCreateFeedbackVars.serializer)
       ..add(GCreateInitialUserInput.serializer)
       ..add(GCreateOrderRejectionByDealerData.serializer)
       ..add(GCreateOrderRejectionByDealerData_createOrderRejectionByDealer
           .serializer)
       ..add(GCreateOrderRejectionByDealerReq.serializer)
       ..add(GCreateOrderRejectionByDealerVars.serializer)
+      ..add(GCreateReportData.serializer)
+      ..add(GCreateReportData_createReport.serializer)
+      ..add(GCreateReportReq.serializer)
+      ..add(GCreateReportVars.serializer)
       ..add(GCreateUserData.serializer)
       ..add(GCreateUserData_createUser.serializer)
       ..add(GCreateUserReq.serializer)
@@ -672,6 +684,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GCartItemWhereUniqueInput)]),
           () => new ListBuilder<GCartItemWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GCategoriesData_categories)]),
+          () => new ListBuilder<GCategoriesData_categories>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GCategoryWhereInput)]),

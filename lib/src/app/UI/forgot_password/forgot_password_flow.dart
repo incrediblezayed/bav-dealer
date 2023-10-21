@@ -106,6 +106,7 @@ class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
                     },
                     child: KTextField(
                       maxLength: 1,
+                      textAlign: TextAlign.center,
                       inputFormatters: [
                         FilteringTextInputFormatter.digitsOnly,
                       ],

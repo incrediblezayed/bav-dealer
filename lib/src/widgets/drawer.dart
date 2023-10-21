@@ -210,10 +210,23 @@ class AppDrawer extends ConsumerWidget {
                       },
                     ),
                     _drawerTile(
+                      title: 'Add a Feedback',
+                      icon: AppImages.aboutus,
+                      onTap: () {
+                        AppRoutes.push(
+                            page: ReportPage(
+                          isFeedback: true,
+                        ));
+                      },
+                    ),
+                    _drawerTile(
                       title: 'Report a Problem',
                       icon: AppImages.aboutus,
                       onTap: () {
-                        AppRoutes.push(page: ReportPage());
+                        AppRoutes.push(
+                            page: ReportPage(
+                          isFeedback: false,
+                        ));
                       },
                     ),
                     _drawerTile(

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart';
@@ -23,6 +25,8 @@ enum OrderStatus {
 class OrdersProvider extends ChangeNotifier {
   final InventoryRepository _inventoryRepository = InventoryRepository();
   final OrderRepository _orderRepository = OrderRepository();
+
+  bool isInPage = false;
 
   bool _loading = true;
   bool get loading => _loading;
@@ -319,10 +323,12 @@ class OrdersProvider extends ChangeNotifier {
 
   Future<void> acceptOrder(String id) async {
     try {
+      unawaited(AppRoutes.showLoadingDialog());
       final success = await _orderRepository.updateOrderStatus(
         vehicleOrderId: id,
         status: OrderStatus.accepted.name,
       );
+      AppRoutes.pop();
       if (success) {
         await getPendingOrders();
         await getAcceptedOrders();
@@ -337,10 +343,12 @@ class OrdersProvider extends ChangeNotifier {
 
   Future<void> acceptTestDriveOrder(String id) async {
     try {
+      unawaited(AppRoutes.showLoadingDialog());
       final success = await _orderRepository.updateTestDriveOrderStatus(
         testDriveOrderId: id,
         status: OrderStatus.accepted.name,
       );
+      AppRoutes.pop();
       if (success) {
         await getPendingOrders();
         await getAcceptedOrders();
@@ -360,12 +368,14 @@ class OrdersProvider extends ChangeNotifier {
     String? description,
   ]) async {
     try {
+      unawaited(AppRoutes.showLoadingDialog());
       final success = await _orderRepository.rejectOrder(
         isPurchaseOrder: isPurchaseOrder,
         orderId: id,
         reason: reason,
         description: description,
       );
+      AppRoutes.pop();
       if (success) {
         await getPendingOrders();
         await getRejectedOrders();

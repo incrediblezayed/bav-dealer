@@ -553,6 +553,18 @@ import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders
         GUpdateTestDriveOrderVars,
         GUpdateVehicleOrderVars,
         GVehicleOrdersVars;
+import 'package:dealerapp/src/app/repository/report/graphql/__generated__/report.data.gql.dart'
+    show
+        GCategoriesData,
+        GCategoriesData_categories,
+        GCreateFeedbackData,
+        GCreateFeedbackData_createFeedback,
+        GCreateReportData,
+        GCreateReportData_createReport;
+import 'package:dealerapp/src/app/repository/report/graphql/__generated__/report.req.gql.dart'
+    show GCategoriesReq, GCreateFeedbackReq, GCreateReportReq;
+import 'package:dealerapp/src/app/repository/report/graphql/__generated__/report.var.gql.dart'
+    show GCategoriesVars, GCreateFeedbackVars, GCreateReportVars;
 import 'package:dealerapp/src/custom_serializers/upload_serializer.dart'
     show UploadSerializer;
 import 'package:ferry_exec/ferry_exec.dart';
@@ -623,6 +635,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GCartItemUpdateInput,
   GCartItemWhereInput,
   GCartItemWhereUniqueInput,
+  GCategoriesData,
+  GCategoriesData_categories,
+  GCategoriesReq,
+  GCategoriesVars,
   GCategoryCreateInput,
   GCategoryOrderByInput,
   GCategoryRelateToOneForCreateInput,
@@ -642,11 +658,19 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GCreateDealerData_createDealer,
   GCreateDealerReq,
   GCreateDealerVars,
+  GCreateFeedbackData,
+  GCreateFeedbackData_createFeedback,
+  GCreateFeedbackReq,
+  GCreateFeedbackVars,
   GCreateInitialUserInput,
   GCreateOrderRejectionByDealerData,
   GCreateOrderRejectionByDealerData_createOrderRejectionByDealer,
   GCreateOrderRejectionByDealerReq,
   GCreateOrderRejectionByDealerVars,
+  GCreateReportData,
+  GCreateReportData_createReport,
+  GCreateReportReq,
+  GCreateReportVars,
   GCreateUserData,
   GCreateUserData_createUser,
   GCreateUserReq,

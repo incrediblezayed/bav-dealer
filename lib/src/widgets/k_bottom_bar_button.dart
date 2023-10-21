@@ -88,7 +88,9 @@ class KBottomBarButton extends StatelessWidget {
                       fontWeight: fontWeight,
                     ),
                   )
-              : textTheme.titleSmall?.copyWith(color: AppTheme.white).merge(
+              : textTheme.titleSmall
+                  ?.copyWith(color: secondaryColor ?? AppTheme.white)
+                  .merge(
                     TextStyle(
                       fontSize: fontSize?.sp ?? 18.sp,
                       fontWeight: fontWeight,
@@ -110,7 +112,7 @@ class KBottomBarButton extends StatelessWidget {
           side: BorderSide(
             color: color == AppTheme.scaffoldBgColor
                 ? secondaryColor ?? AppTheme.primaryColor
-                : Colors.transparent,
+                : secondaryColor ?? Colors.transparent,
           ),
           backgroundColor: color,
           fixedSize: minSize ? null : size ?? Size(double.infinity, 48.h),
