@@ -1,11 +1,10 @@
 import 'package:dealerapp/src/app/UI/make_new_purchase/purchase_successful_page.dart';
-import 'package:dealerapp/src/app/provider/order_provider.dart';
-import 'package:dealerapp/src/widgets/total_amount_widget.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:dealerapp/src/app/provider/order_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
-import 'package:flutter/material.dart';
+import 'package:dealerapp/src/widgets/total_amount_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
@@ -23,7 +22,7 @@ class _MakeNewPurchaseDetailsPageState
     extends ConsumerState<MakeNewPurchaseDetailsPage> {
   DateTime? selectedDate;
   Future<void> _selectDate(BuildContext context) async {
-    final DateTime? picked = await showDatePicker(
+    final picked = await showDatePicker(
       context: context,
       initialDate: selectedDate ?? DateTime.now(),
       firstDate: DateTime(2000),
@@ -49,11 +48,12 @@ class _MakeNewPurchaseDetailsPageState
   TextEditingController emailIdController = TextEditingController();
   TextEditingController contactNumberController = TextEditingController();
   TextEditingController addressController = TextEditingController();
-  TextEditingController _dateController = TextEditingController();
+  final TextEditingController _dateController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final purchaseOrderPro = ref.watch(orderProvider(OrderFamily.purchaseOrders));
+    final purchaseOrderPro =
+        ref.watch(orderProvider(OrderFamily.purchaseOrders));
 
     final theme = Theme.of(context).textTheme;
     return Scaffold(
@@ -80,87 +80,89 @@ class _MakeNewPurchaseDetailsPageState
         ),
       ),
       resizeToAvoidBottomInset: false,
-      body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Add Buyer Information',
-              style: TextStyle(
-                color: Colors.grey,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Add Buyer Information',
+                style: TextStyle(
+                  color: Colors.grey,
+                ),
               ),
-            ),
-            SizedBox(height: 20.h),
-            KTextField(
-              controller: nameController,
-              hintText: 'Name',
-              label: 'Name',
-              inputType: TextInputType.name,
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            KTextField(
-              controller: emailIdController,
-              hintText: 'Enter Your Email ID',
-              label: 'Email ID',
-              inputType: TextInputType.emailAddress,
-            ),
-            SizedBox(
-              height: 14.h,
-            ),
-            KTextField(
-              controller: contactNumberController,
-              hintText: 'Contact Number',
-              label: 'Contact Number',
-              inputType: TextInputType.phone,
-              maxLength: 10,
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            KTextField(
-              controller: addressController,
-              hintText: 'Address',
-              label: 'UserAddress',
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            KTextField(
-              label: "Date Of Delivery",
-              controller: _dateController,
-              inputType: TextInputType.datetime,
-              readOnly: true,
-              suffixIcon: IconButton(
-                  onPressed: () {
-                    _selectDate(context);
-                  },
-                  icon: SvgPicture.asset(AppImages.calender)),
-            ),
-            SizedBox(height: 20.h),
-            Text("Billing Details", style: theme.headlineSmall),
-            SizedBox(height: 20.h),
-            TotalAmountWidget(
-                price: 2020200, shippingCharges: 500, serviceTax: 199),
-            Spacer(),
-            KButton(
-              onPressed: () {
-                if (nameController.text.isEmpty ||
-                    emailIdController.text.isEmpty ||
-                    contactNumberController.text.isEmpty ||
-                    addressController.text.isEmpty ||
-                    _dateController.text.isEmpty) {
-                  AppRoutes.showErrorSnackbar(
-                      message: "Please fill the details");
-                } else {
-                  AppRoutes.push(page: PurchaseSuccessPage());
-                }
-              },
-              text: 'Place Order',
-            ),
-          ],
+              SizedBox(height: 20.h),
+              KTextField(
+                controller: nameController,
+                hintText: 'Name',
+                label: 'Name',
+                inputType: TextInputType.name,
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              KTextField(
+                controller: emailIdController,
+                hintText: 'Enter Your Email ID',
+                label: 'Email ID',
+                inputType: TextInputType.emailAddress,
+              ),
+              SizedBox(
+                height: 14.h,
+              ),
+              KTextField(
+                controller: contactNumberController,
+                hintText: 'Contact Number',
+                label: 'Contact Number',
+                inputType: TextInputType.phone,
+                maxLength: 10,
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              KTextField(
+                controller: addressController,
+                hintText: 'Address',
+                label: 'UserAddress',
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              KTextField(
+                label: 'Date Of Delivery',
+                controller: _dateController,
+                inputType: TextInputType.datetime,
+                readOnly: true,
+                suffixIcon: IconButton(
+                    onPressed: () {
+                      _selectDate(context);
+                    },
+                    icon: SvgPicture.asset(AppImages.calender),),
+              ),
+              SizedBox(height: 20.h),
+              Text('Billing Details', style: theme.headlineSmall),
+              SizedBox(height: 20.h),
+              const TotalAmountWidget(
+                  price: 2020200, shippingCharges: 500, serviceTax: 199,),
+              const Spacer(),
+              KButton(
+                onPressed: () {
+                  if (nameController.text.isEmpty ||
+                      emailIdController.text.isEmpty ||
+                      contactNumberController.text.isEmpty ||
+                      addressController.text.isEmpty ||
+                      _dateController.text.isEmpty) {
+                    AppRoutes.showErrorSnackbar(
+                        message: 'Please fill the details',);
+                  } else {
+                    AppRoutes.push(page: const PurchaseSuccessPage());
+                  }
+                },
+                text: 'Place Order',
+              ),
+            ],
+          ),
         ),
       ),
     );

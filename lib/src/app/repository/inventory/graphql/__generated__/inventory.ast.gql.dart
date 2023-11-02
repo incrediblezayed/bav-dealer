@@ -7,13 +7,28 @@ import 'package:gql/ast.dart' as _i1;
 const Vehicles = _i1.OperationDefinitionNode(
   type: _i1.OperationType.query,
   name: _i1.NameNode(value: 'Vehicles'),
-  variableDefinitions: [],
+  variableDefinitions: [
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleWhereInput'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    )
+  ],
   directives: [],
   selectionSet: _i1.SelectionSetNode(selections: [
     _i1.FieldNode(
       name: _i1.NameNode(value: 'vehicles'),
       alias: null,
-      arguments: [],
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'where'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+        )
+      ],
       directives: [],
       selectionSet: _i1.SelectionSetNode(selections: [
         _i1.FieldNode(
@@ -22,13 +37,6 @@ const Vehicles = _i1.OperationDefinitionNode(
           arguments: [],
           directives: [],
           selectionSet: _i1.SelectionSetNode(selections: [
-            _i1.FieldNode(
-              name: _i1.NameNode(value: 'price'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null,
-            ),
             _i1.FieldNode(
               name: _i1.NameNode(value: 'name'),
               alias: null,
@@ -216,52 +224,7 @@ const CreateVehicleDealerStockRequest = _i1.OperationDefinitionNode(
           selectionSet: null,
         ),
         _i1.FieldNode(
-          name: _i1.NameNode(value: 'dealer_prices'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-      ]),
-    )
-  ]),
-);
-const CreateVehicleTestDriveDealerStockRequest = _i1.OperationDefinitionNode(
-  type: _i1.OperationType.mutation,
-  name: _i1.NameNode(value: 'CreateVehicleTestDriveDealerStockRequest'),
-  variableDefinitions: [
-    _i1.VariableDefinitionNode(
-      variable: _i1.VariableNode(name: _i1.NameNode(value: 'data')),
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'TestDriveDealerStockRequestCreateInput'),
-        isNonNull: true,
-      ),
-      defaultValue: _i1.DefaultValueNode(value: null),
-      directives: [],
-    )
-  ],
-  directives: [],
-  selectionSet: _i1.SelectionSetNode(selections: [
-    _i1.FieldNode(
-      name: _i1.NameNode(value: 'createTestDriveDealerStockRequest'),
-      alias: null,
-      arguments: [
-        _i1.ArgumentNode(
-          name: _i1.NameNode(value: 'data'),
-          value: _i1.VariableNode(name: _i1.NameNode(value: 'data')),
-        )
-      ],
-      directives: [],
-      selectionSet: _i1.SelectionSetNode(selections: [
-        _i1.FieldNode(
-          name: _i1.NameNode(value: 'available'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-        _i1.FieldNode(
-          name: _i1.NameNode(value: 'price'),
+          name: _i1.NameNode(value: 'totalPrice'),
           alias: null,
           arguments: [],
           directives: [],
@@ -385,13 +348,6 @@ const VehicleDealers = _i1.OperationDefinitionNode(
               selectionSet: null,
             ),
             _i1.FieldNode(
-              name: _i1.NameNode(value: 'price'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null,
-            ),
-            _i1.FieldNode(
               name: _i1.NameNode(value: 'vehicle'),
               alias: null,
               arguments: [],
@@ -445,13 +401,6 @@ const VehicleDealers = _i1.OperationDefinitionNode(
           ]),
         ),
         _i1.FieldNode(
-          name: _i1.NameNode(value: 'dealer_prices'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-        _i1.FieldNode(
           name: _i1.NameNode(value: 'id'),
           alias: null,
           arguments: [],
@@ -465,6 +414,146 @@ const VehicleDealers = _i1.OperationDefinitionNode(
           directives: [],
           selectionSet: null,
         ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'prices'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: _i1.SelectionSetNode(selections: [
+            _i1.FieldNode(
+              name: _i1.NameNode(value: 'id'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            _i1.FieldNode(
+              name: _i1.NameNode(value: 'amount'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            _i1.FieldNode(
+              name: _i1.NameNode(value: 'category'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: _i1.SelectionSetNode(selections: [
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'id'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'name'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ]),
+            ),
+          ]),
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'totalPrice'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+      ]),
+    )
+  ]),
+);
+const CreateVehicleDealer = _i1.OperationDefinitionNode(
+  type: _i1.OperationType.mutation,
+  name: _i1.NameNode(value: 'CreateVehicleDealer'),
+  variableDefinitions: [
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'data')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleDealerCreateInput'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    )
+  ],
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'createVehicleDealer'),
+      alias: null,
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'data'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'data')),
+        )
+      ],
+      directives: [],
+      selectionSet: _i1.SelectionSetNode(selections: [
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'id'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        )
+      ]),
+    )
+  ]),
+);
+const PriceCategories = _i1.OperationDefinitionNode(
+  type: _i1.OperationType.query,
+  name: _i1.NameNode(value: 'PriceCategories'),
+  variableDefinitions: [],
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'priceCategories'),
+      alias: null,
+      arguments: [],
+      directives: [],
+      selectionSet: _i1.SelectionSetNode(selections: [
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'id'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'name'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'description'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'createdAt'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'modifiedAt'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
       ]),
     )
   ]),
@@ -472,6 +561,7 @@ const VehicleDealers = _i1.OperationDefinitionNode(
 const document = _i1.DocumentNode(definitions: [
   Vehicles,
   CreateVehicleDealerStockRequest,
-  CreateVehicleTestDriveDealerStockRequest,
   VehicleDealers,
+  CreateVehicleDealer,
+  PriceCategories,
 ]);

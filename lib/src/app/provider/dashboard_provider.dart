@@ -1,14 +1,15 @@
 import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:dealerapp/src/app/provider/order_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// Dashboard Provider
 /// This provider is used manage the home page with bottom navigation bar
 class HomePageProvider extends ChangeNotifier {
-  final Ref ref;
   HomePageProvider(this.ref) {
     onInit();
   }
+  final Ref ref;
 
   ///Page index
   int _pageIndex = 0;
@@ -48,8 +49,19 @@ class HomePageProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void onInit() async {
+  Future<void> onInit() async {
     inventoryCount = await ref.read(inventoryProvider).getInventoryCount();
+    testOrderCount = (await ref
+            .read(orderProvider(OrderFamily.testDriveOrders))
+            .getTestDrivePendingOrders())
+        .length;
+    purchaseCount = (await ref
+            .read(orderProvider(OrderFamily.purchaseOrders))
+            .getPendingOrders())
+        .length;
+    Future.delayed(Duration(seconds: 10), () {
+      onInit();
+    });
   }
 
   ///Page controller

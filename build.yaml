@@ -1,6 +1,35 @@
 targets:
   $default:
+    sources:
+      exclude:
+        - lib/**/**.dart
     builders:
+      gql_build|schema_builder:
+        enabled: true
+        options:
+          schema: dealerapp|lib/src/app/repository/graphql/schema.graphql
+          type_overrides:
+            Upload:
+              name: MultipartFile
+              import: "package:http/http.dart"
+      gql_build|ast_builder:
+        enabled: true
+      gql_build|data_builder:
+        enabled: true
+        options:
+          schema: dealerapp|lib/src/app/repository/graphql/schema.graphql
+          type_overrides:
+            Upload:
+              name: MultipartFile
+              import: "package:http/http.dart"
+      gql_build|var_builder:
+        enabled: true
+        options:
+          schema: dealerapp|lib/src/app/repository/graphql/schema.graphql
+          type_overrides:
+            Upload:
+              name: MultipartFile
+              import: "package:http/http.dart"
       ferry_generator|graphql_builder:
         enabled: true
         options:

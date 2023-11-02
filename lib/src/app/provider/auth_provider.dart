@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:dealerapp/src/app/UI/Homepage/homepage.dart';
-import 'package:dealerapp/src/app/UI/forgot_password/change_password.dart';
-import 'package:dealerapp/src/app/UI/forgot_password/forgot_password.dart';
+import 'package:dealerapp/src/app/UI/forgot_password/password_change_success_page.dart';
+import 'package:dealerapp/src/app/UI/login/login_page.dart';
 import 'package:dealerapp/src/app/UI/signup/address_page.dart';
 import 'package:dealerapp/src/app/UI/signup/enter_your_details_page.dart';
 import 'package:dealerapp/src/app/UI/signup/otp_verification_page.dart';
@@ -30,6 +30,8 @@ class AuthProvider extends ChangeNotifier {
   bool get agree => _agree;
 
   XFile? _image;
+
+  List<FocusNode> otpNode = List.generate(6, (index) => FocusNode());
 
   ///Getter for image
   XFile? get image => _image;
@@ -64,7 +66,7 @@ class AuthProvider extends ChangeNotifier {
       AppRoutes.showErrorSnackbar(message: 'Something went wrong');
       return null;
     } else {
-      cacheProvider.setUser(data);
+      await cacheProvider.setUser(data);
       return data;
     }
   }
@@ -75,15 +77,19 @@ class AuthProvider extends ChangeNotifier {
     final user = cacheProvider.getUserId();
     final check = await _authRepository.createDealer(user!);
     if (check != null) {
-      await cacheProvider.setDealerId(check);
-      await AppRoutes.push(page: const HomePage());
+      await cacheProvider.clear();
+      clear();
+      AppRoutes.showSuccessSnackbar(
+          message:
+              'Dealer Created Successfully, Please wait for admin approval & Login');
+      unawaited(AppRoutes.push(page: const LoginPage()));
     } else {
       AppRoutes.showErrorSnackbar(message: 'Something Went Wrong');
     }
   }
 
-  Future<String> getDealerId() async {
-    return (await _authRepository.getDealerByUser()) ?? '';
+  Future<GDealerData_dealers?> getDealerId() async {
+    return (await _authRepository.getDealerByUser());
   }
 
   Future<void> regsiter() async {
@@ -130,6 +136,8 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
+  String userId = '';
+
   /// This Method hits the login api and gets the relevant data back
   /// [fromSignUp] is used to check if the user is logging in
   Future<bool> loginApi({required bool fromSignUp}) async {
@@ -152,23 +160,34 @@ class AuthProvider extends ChangeNotifier {
       await cacheProvider.setSessionToken(sessionToken);
       final newUser = await _authRepository.getUser(userId: user.id!);
       await cacheProvider.setUserId(user.id!);
-
+      userId = user.id!;
       if (!fromSignUp) {
         await cacheProvider.setUser(newUser!);
       } else {
         await _authRepository.updateUser(
-            id: user.id!,
-            name: newUser!.name!,
-            email: newUser.email!,
-            phoneNumber: newUser.phoneNumber!,
-            image: _image?.path);
+          userDio: true,
+          id: user.id!,
+          name: newUser!.name!,
+          email: newUser.email!,
+          phoneNumber: newUser.phoneNumber!,
+          image: _image?.path,
+        );
         await getCurrentUserOtp(isEmail: false);
       }
       return true;
     }
   }
 
-  /// Get CurrentUserOtp for loggedIn user 
+  Future<void> resendOTPForSignUp() async {
+    if (userId.isNotEmpty) {
+      await _authRepository.updateUserForOtp(
+          id: userId, phoneNumber: phoneNumberController.text);
+    } else {
+      AppRoutes.showErrorSnackbar(message: 'Something went wrong');
+    }
+  }
+
+  /// Get CurrentUserOtp for loggedIn user
   Future<void> getCurrentUserOtp({required bool isEmail}) async {
     try {
       String? otp;
@@ -178,10 +197,10 @@ class AuthProvider extends ChangeNotifier {
         otp = await _authRepository.getCurrentOtp('phoneNumberVerification');
       }
       if (otp != null) {
-        AppRoutes.showSuccessSnackbar(
+        /*    AppRoutes.showSuccessSnackbar(
           message: otp,
-          duration: Duration(minutes: 1),
-        );
+          duration: const Duration(minutes: 1),
+        ); */
       }
     } catch (e) {
       e.log();
@@ -207,8 +226,23 @@ class AuthProvider extends ChangeNotifier {
     final response = await loginApi(fromSignUp: false);
     AppRoutes.pop();
     if (response) {
-      await cacheProvider.setDealerId(await getDealerId());
-      await AppRoutes.pushAndRemoveUntil(page: const HomePage());
+      var dealer = await getDealerId();
+      if (dealer != null) {
+        if (dealer.approved ?? false) {
+          await cacheProvider.setDealerId(dealer.id);
+          clear();
+          await AppRoutes.pushAndRemoveUntil(page: const HomePage());
+        } else {
+          AppRoutes.showErrorSnackbar(
+              message:
+                  "You are not approved yet. Please wait for approval from admin");
+          cacheProvider.clear();
+        }
+      } else {
+        AppRoutes.showErrorSnackbar(
+            message: "Something went wrong please try agian later");
+        cacheProvider.clear();
+      }
     }
   }
 
@@ -275,13 +309,20 @@ class AuthProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  ///List of forgot passwaord pages
-  ///
-  final List<Widget> forgotPasswordPages = [
-    const ForgotPasswordPage(),
-    const ChangePasswordPage(),
-    // const PasswordChangeSuccessPage(),
-  ];
+  void clear() {
+    phoneNumberController.clear();
+    passwordController.clear();
+    otpController.forEach((element) {
+      element.clear();
+    });
+    firstNameController.clear();
+    lastNameController.clear();
+    emailIdController.clear();
+    confirmPasswordController.clear();
+    reTypeNewPasswordController.clear();
+    shopAddressController.clear();
+    notifyListeners();
+  }
 
   ///List of sign up pages
   final List<Widget> signUpPages = [
@@ -305,20 +346,23 @@ class AuthProvider extends ChangeNotifier {
   }
 
   ///Method to update the user
-  Future<void> updateUser(
-      {required String id,
-      required String email,
-      required String phoneNumber,
-      required String name,
-      String? address}) async {
+  Future<void> updateUser({
+    required String id,
+    required String email,
+    required String phoneNumber,
+    required String name,
+    String? address,
+  }) async {
     try {
       final response = await _authRepository.updateUser(
-          id: id,
-          email: email,
-          phoneNumber: phoneNumber,
-          name: name,
-          image: _image?.path,
-          address: address);
+        userDio: false,
+        id: id,
+        email: email,
+        phoneNumber: phoneNumber,
+        name: name,
+        image: _image?.path,
+        address: address,
+      );
       if (response == null) {
         AppRoutes.showErrorSnackbar(
           message: response ?? 'Something went wrong',
@@ -336,6 +380,101 @@ class AuthProvider extends ChangeNotifier {
       );
     } finally {
       notifyListeners();
+    }
+  }
+
+  ///Send Password Reset Token
+  ///
+  ///It is used to send the password reset token to the user
+  Future<void> sendPasswordResetToken({bool isResend = false}) async {
+    if (!isResend) {
+      if (phoneNumberController.text.isEmpty) {
+        AppRoutes.showErrorSnackbar(message: 'Please enter phone number');
+        return;
+      }
+    }
+    unawaited(AppRoutes.showLoadingDialog<void>());
+    final data = await _authRepository.sendPasswordResetToken(
+      phoneNumber: phoneNumberController.text,
+    );
+    AppRoutes.pop();
+    if (data == null) {
+      AppRoutes.showErrorSnackbar(message: 'Something went wrong');
+    } else {
+      if (isResend) {
+        AppRoutes.showSuccessSnackbar(message: 'OTP resent successfully');
+      } else {
+        AppRoutes.showSuccessSnackbar(message: 'OTP sent successfully');
+      }
+      //AppRoutes.showSuccessSnackbar(message: data);
+      'OTP: $data'.log();
+      if (!isResend) {
+        await signUpPageController.animateToPage(
+          1,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.ease,
+        );
+      }
+      notifyListeners();
+    }
+  }
+
+  ///Verify password reset token
+  ///
+  ///It is used to verify the OTP sent to the user for password reset
+  Future<void> verifyPasswordResetToken() async {
+    if (phoneNumberController.text.isEmpty) {
+      AppRoutes.showErrorSnackbar(message: 'Please enter phone number');
+      return;
+    }
+    final otp = otpController.map((e) => e.text).join();
+    if (otp.isEmpty) {
+      AppRoutes.showErrorSnackbar(message: 'Please enter OTP');
+      return;
+    }
+    if (otp.length < 6) {
+      AppRoutes.showErrorSnackbar(message: 'Please enter valid OTP');
+      return;
+    }
+    final data = await _authRepository.verifyPasswordResetToken(
+      phoneNumber: phoneNumberController.text,
+      token: otp,
+    );
+    if (!data) {
+      AppRoutes.showErrorSnackbar(message: 'Something went wrong');
+    } else {
+      AppRoutes.showSuccessSnackbar(message: 'OTP verified successfully');
+      await signUpPageController.animateToPage(
+        2,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.ease,
+      );
+      notifyListeners();
+    }
+  }
+
+  ///Reset Password
+  Future<void> resetPassword() async {
+    try {
+      if (passwordController.text.isEmpty) {
+        AppRoutes.showErrorSnackbar(message: 'Please enter password');
+        return;
+      }
+      final data = await _authRepository.resetPassword(
+        phoneNumber: phoneNumberController.text,
+        password: passwordController.text,
+        token: otpController.map((e) => e.text).join(),
+      );
+      if (!data) {
+        AppRoutes.showErrorSnackbar(message: 'Something went wrong');
+      } else {
+        AppRoutes.showSuccessSnackbar(message: 'Password reset successfully');
+        await cacheProvider.clear();
+        await AppRoutes.pushAndRemoveUntil(
+            page: const PasswordChangeSuccessPage());
+      }
+    } catch (e) {
+      AppRoutes.showErrorSnackbar(message: e.toString());
     }
   }
 }

@@ -95,13 +95,6 @@ const VehicleOrders = _i1.OperationDefinitionNode(
                   directives: [],
                   selectionSet: null,
                 ),
-                _i1.FieldNode(
-                  name: _i1.NameNode(value: 'price'),
-                  alias: null,
-                  arguments: [],
-                  directives: [],
-                  selectionSet: null,
-                ),
               ]),
             ),
             _i1.FieldNode(
@@ -186,11 +179,55 @@ const VehicleOrders = _i1.OperationDefinitionNode(
               selectionSet: null,
             ),
             _i1.FieldNode(
-              name: _i1.NameNode(value: 'dealer_prices'),
+              name: _i1.NameNode(value: 'prices'),
               alias: null,
               arguments: [],
               directives: [],
-              selectionSet: null,
+              selectionSet: _i1.SelectionSetNode(selections: [
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'amount'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'createdAt'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'id'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'category'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: _i1.SelectionSetNode(selections: [
+                    _i1.FieldNode(
+                      name: _i1.NameNode(value: 'name'),
+                      alias: null,
+                      arguments: [],
+                      directives: [],
+                      selectionSet: null,
+                    ),
+                    _i1.FieldNode(
+                      name: _i1.NameNode(value: 'id'),
+                      alias: null,
+                      arguments: [],
+                      directives: [],
+                      selectionSet: null,
+                    ),
+                  ]),
+                ),
+              ]),
             ),
           ]),
         ),
@@ -420,13 +457,6 @@ const TestDriveOrders = _i1.OperationDefinitionNode(
                 ),
                 _i1.FieldNode(
                   name: _i1.NameNode(value: 'name'),
-                  alias: null,
-                  arguments: [],
-                  directives: [],
-                  selectionSet: null,
-                ),
-                _i1.FieldNode(
-                  name: _i1.NameNode(value: 'price'),
                   alias: null,
                   arguments: [],
                   directives: [],
@@ -715,6 +745,57 @@ const UpdateVehicleOrder = _i1.OperationDefinitionNode(
     )
   ]),
 );
+const UpdateTestDriveOrder = _i1.OperationDefinitionNode(
+  type: _i1.OperationType.mutation,
+  name: _i1.NameNode(value: 'UpdateTestDriveOrder'),
+  variableDefinitions: [
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'TestDriveOrderWhereUniqueInput'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'data')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'TestDriveOrderUpdateInput'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
+  ],
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'updateTestDriveOrder'),
+      alias: null,
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'where'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'data'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'data')),
+        ),
+      ],
+      directives: [],
+      selectionSet: _i1.SelectionSetNode(selections: [
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'id'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        )
+      ]),
+    )
+  ]),
+);
 const CreateOrderRejectionByDealer = _i1.OperationDefinitionNode(
   type: _i1.OperationType.mutation,
   name: _i1.NameNode(value: 'CreateOrderRejectionByDealer'),
@@ -757,5 +838,6 @@ const document = _i1.DocumentNode(definitions: [
   VehicleOrders,
   TestDriveOrders,
   UpdateVehicleOrder,
+  UpdateTestDriveOrder,
   CreateOrderRejectionByDealer,
 ]);

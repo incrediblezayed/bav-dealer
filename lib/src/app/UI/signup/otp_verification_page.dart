@@ -1,5 +1,5 @@
+import 'package:collection/collection.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
-import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
@@ -10,7 +10,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:collection/collection.dart';
 
 ///OTP Verfication Page
 class OTPVerificationPage extends ConsumerStatefulWidget {
@@ -23,12 +22,10 @@ class OTPVerificationPage extends ConsumerStatefulWidget {
 }
 
 class _OTPVerificationPageState extends ConsumerState<OTPVerificationPage> {
-  @override
-  Widget build(
-    BuildContext context,
-  ) {
-    final focusNodes = List<FocusNode>.generate(6, (index) => FocusNode());
+  final listenerController = List.generate(6, (index) => FocusNode());
 
+  @override
+  Widget build(BuildContext context) {
     final authPro = ref.watch(authProvider);
 
     final size = MediaQuery.sizeOf(context);
@@ -90,59 +87,86 @@ class _OTPVerificationPageState extends ConsumerState<OTPVerificationPage> {
                   width: 6.w,
                 ),
                 InkWell(
-                    onTap: () {
-                      authPro.signUpPageController.animateToPage(0,
-                          duration: Duration(milliseconds: 300),
-                          curve: Curves.easeInOut);
-                    },
-                    child: SvgPicture.asset(AppImages.edit)),
+                  onTap: () {
+                    authPro.signUpPageController.animateToPage(
+                      0,
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    );
+                  },
+                  child: SvgPicture.asset(AppImages.edit),
+                ),
               ],
             ),
             SizedBox(
               height: 20.h,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: authPro.otpController
                   .mapIndexed(
                     (i, e) => SizedBox(
-                      width: size.width * 0.12,
-                      child: Center(
-                        child: TextField(
-                          textAlignVertical: TextAlignVertical.top,
+                      width: MediaQuery.sizeOf(context).width * .12,
+                      child: RawKeyboardListener(
+                        focusNode: listenerController[i],
+                        onKey: (value) {
+                          if (value is RawKeyUpEvent) {
+                            if (value.logicalKey.keyId == 4294967304) {
+                              if (i != 0) {
+                                authPro.otpNode[i - 1].requestFocus();
+                              }
+                            } else {
+                              if (authPro.otpController[i].text.isNotEmpty) {
+                                if (i != 5) {
+                                  authPro.otpNode[i + 1].requestFocus();
+                                  authPro.otpController[i + 1].text =
+                                      value.data.keyLabel;
+                                }
+                              }
+                            }
+                          }
+                        },
+                        child: KTextField(
                           maxLength: 1,
+                          textAlign: TextAlign.center,
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly,
                           ],
-                          keyboardType: TextInputType.number,
-                          decoration: const InputDecoration(
-                            focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: AppTheme.primaryColor),
-                            ),
-                            counterText: '',
-                            fillColor: Colors.white,
-                            filled: true,
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: AppTheme.cardBorders,
-                              ),
-                            ),
-                          ),
-                          controller: e,
+                          inputType: TextInputType.number,
+                          contextMenuBuilder: (context, editableTextState) {
+                            final option = ContextMenuButtonItem(
+                              label: 'Paste',
+                              onPressed: () {
+                                Clipboard.getData('text/plain').then((value) {
+                                  if (value != null &&
+                                      value.text != null &&
+                                      value.text!.isNotEmpty) {
+                                    value.text!
+                                        .split('')
+                                        .forEachIndexed((index, element) {
+                                      authPro.otpController[index].text =
+                                          element;
+                                    });
+                                  }
+                                });
+                              },
+                            );
+                            return AdaptiveTextSelectionToolbar.buttonItems(
+                              buttonItems: [option],
+                              anchors: editableTextState.contextMenuAnchors,
+                            );
+                          },
                           onChanged: (value) {
-                            if (value.isEmpty) {
-                              if (i != 0) {
-                                focusNodes[i - 1].requestFocus();
-                              }
-                            } else {
+                            print(value);
+                            if (value.isNotEmpty) {
                               if (i != 5) {
-                                focusNodes[i + 1].requestFocus();
+                                authPro.otpNode[i + 1].requestFocus();
                               }
                             }
                           },
-                          focusNode: focusNodes[i],
-                          textAlign: TextAlign.center,
+                          focusNode: authPro.otpNode[i],
+                          controller: e,
+                          hintText: '',
                         ),
                       ),
                     ),
@@ -177,17 +201,22 @@ class _OTPVerificationPageState extends ConsumerState<OTPVerificationPage> {
               text: 'Confirm',
             ),
             SizedBox(height: 20.h),
-            Align(
-              child: RichText(
-                text: TextSpan(
-                  text: "Didn't Get An OTP ?",
-                  style: theme.labelMedium,
-                  children: [
-                    TextSpan(
-                      text: ' Resend SMS',
-                      style: theme.headlineSmall,
-                    ),
-                  ],
+            InkWell(
+              onTap: () {
+                authPro.resendOTPForSignUp();
+              },
+              child: Align(
+                child: RichText(
+                  text: TextSpan(
+                    text: "Didn't Get An OTP ?",
+                    style: theme.labelMedium,
+                    children: [
+                      TextSpan(
+                        text: ' Resend SMS',
+                        style: theme.headlineSmall,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

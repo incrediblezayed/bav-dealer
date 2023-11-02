@@ -1,0 +1,14 @@
+query AppNotifications {
+  appNotifications {
+    id
+    body
+    createdAt
+    modifiedAt
+    notificationType {
+      id
+      createdAt
+      name
+    }
+    title
+  }
+}

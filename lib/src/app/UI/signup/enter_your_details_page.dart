@@ -1,5 +1,4 @@
 import 'package:dealerapp/src/app/provider/app_provider.dart';
-import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
@@ -92,6 +91,14 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
               controller: authPro.passwordController,
               hintText: 'Enter Your Password',
               label: 'New Password',
+              obsecureText: authPro.isPassword,
+              suffixIcon: IconButton(
+                  onPressed: authPro.isObsecure,
+                  icon: Icon(
+                    authPro.isPassword
+                        ? Icons.visibility_off_outlined
+                        : Icons.visibility_outlined,
+                  )),
             ),
             SizedBox(
               height: 16.h,
@@ -100,6 +107,14 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
               controller: authPro.confirmPasswordController,
               hintText: 'Enter Confirm Password',
               label: 'Confirm Password',
+              obsecureText: authPro.isPassword,
+              suffixIcon: IconButton(
+                  onPressed: authPro.isObsecure,
+                  icon: Icon(
+                    authPro.isPassword
+                        ? Icons.visibility_off_outlined
+                        : Icons.visibility_outlined,
+                  )),
             ),
             SizedBox(
               height: 16.h,

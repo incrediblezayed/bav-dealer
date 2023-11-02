@@ -1,14 +1,10 @@
 import 'package:dealerapp/src/app/provider/app_provider.dart';
-import 'package:dealerapp/src/app/provider/auth_provider.dart';
-import 'package:dealerapp/src/utils/app_routes.dart';
-import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
 import 'package:dealerapp/src/widgets/my_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:iconsax/iconsax.dart';
 
 class ForgotPasswordPage extends ConsumerWidget {
   const ForgotPasswordPage({super.key});

@@ -17,6 +17,23 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GAddressUpdateInput.serializer)
       ..add(GAddressWhereInput.serializer)
       ..add(GAddressWhereUniqueInput.serializer)
+      ..add(GAppNotificationCreateInput.serializer)
+      ..add(GAppNotificationOrderByInput.serializer)
+      ..add(GAppNotificationTemplateCreateInput.serializer)
+      ..add(GAppNotificationTemplateOrderByInput.serializer)
+      ..add(GAppNotificationTemplateUpdateArgs.serializer)
+      ..add(GAppNotificationTemplateUpdateInput.serializer)
+      ..add(GAppNotificationTemplateWhereInput.serializer)
+      ..add(GAppNotificationTemplateWhereUniqueInput.serializer)
+      ..add(GAppNotificationUpdateArgs.serializer)
+      ..add(GAppNotificationUpdateInput.serializer)
+      ..add(GAppNotificationWhereInput.serializer)
+      ..add(GAppNotificationWhereUniqueInput.serializer)
+      ..add(GAppNotificationsData.serializer)
+      ..add(GAppNotificationsData_appNotifications.serializer)
+      ..add(GAppNotificationsData_appNotifications_notificationType.serializer)
+      ..add(GAppNotificationsReq.serializer)
+      ..add(GAppNotificationsVars.serializer)
       ..add(GAuthenticateUserWithPasswordData.serializer)
       ..add(
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure
@@ -58,6 +75,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GCartItemUpdateInput.serializer)
       ..add(GCartItemWhereInput.serializer)
       ..add(GCartItemWhereUniqueInput.serializer)
+      ..add(GCategoriesData.serializer)
+      ..add(GCategoriesData_categories.serializer)
+      ..add(GCategoriesReq.serializer)
+      ..add(GCategoriesVars.serializer)
       ..add(GCategoryCreateInput.serializer)
       ..add(GCategoryOrderByInput.serializer)
       ..add(GCategoryRelateToOneForCreateInput.serializer)
@@ -67,6 +88,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GCategoryWhereInput.serializer)
       ..add(GCategoryWhereUniqueInput.serializer)
       ..add(GCouponCreateInput.serializer)
+      ..add(GCouponItemType.serializer)
       ..add(GCouponOrderByInput.serializer)
       ..add(GCouponUpdateArgs.serializer)
       ..add(GCouponUpdateInput.serializer)
@@ -76,27 +98,33 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GCreateDealerData_createDealer.serializer)
       ..add(GCreateDealerReq.serializer)
       ..add(GCreateDealerVars.serializer)
+      ..add(GCreateFeedbackData.serializer)
+      ..add(GCreateFeedbackData_createFeedback.serializer)
+      ..add(GCreateFeedbackReq.serializer)
+      ..add(GCreateFeedbackVars.serializer)
       ..add(GCreateInitialUserInput.serializer)
       ..add(GCreateOrderRejectionByDealerData.serializer)
       ..add(GCreateOrderRejectionByDealerData_createOrderRejectionByDealer
           .serializer)
       ..add(GCreateOrderRejectionByDealerReq.serializer)
       ..add(GCreateOrderRejectionByDealerVars.serializer)
+      ..add(GCreateReportData.serializer)
+      ..add(GCreateReportData_createReport.serializer)
+      ..add(GCreateReportReq.serializer)
+      ..add(GCreateReportVars.serializer)
       ..add(GCreateUserData.serializer)
       ..add(GCreateUserData_createUser.serializer)
       ..add(GCreateUserReq.serializer)
       ..add(GCreateUserVars.serializer)
+      ..add(GCreateVehicleDealerData.serializer)
+      ..add(GCreateVehicleDealerData_createVehicleDealer.serializer)
+      ..add(GCreateVehicleDealerReq.serializer)
       ..add(GCreateVehicleDealerStockRequestData.serializer)
       ..add(GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest
           .serializer)
       ..add(GCreateVehicleDealerStockRequestReq.serializer)
       ..add(GCreateVehicleDealerStockRequestVars.serializer)
-      ..add(GCreateVehicleTestDriveDealerStockRequestData.serializer)
-      ..add(
-          GCreateVehicleTestDriveDealerStockRequestData_createTestDriveDealerStockRequest
-              .serializer)
-      ..add(GCreateVehicleTestDriveDealerStockRequestReq.serializer)
-      ..add(GCreateVehicleTestDriveDealerStockRequestVars.serializer)
+      ..add(GCreateVehicleDealerVars.serializer)
       ..add(GCurrentUserOTPData.serializer)
       ..add(GCurrentUserOTPReq.serializer)
       ..add(GCurrentUserOTPVars.serializer)
@@ -172,6 +200,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GImageFieldInput.serializer)
       ..add(GIntFilter.serializer)
       ..add(GIntNullableFilter.serializer)
+      ..add(GItem.serializer)
       ..add(GKeystoneAdminUIFieldMetaCreateViewFieldMode.serializer)
       ..add(GKeystoneAdminUIFieldMetaItemViewFieldMode.serializer)
       ..add(GKeystoneAdminUIFieldMetaItemViewFieldPosition.serializer)
@@ -187,6 +216,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GNotificationTypeUpdateInput.serializer)
       ..add(GNotificationTypeWhereInput.serializer)
       ..add(GNotificationTypeWhereUniqueInput.serializer)
+      ..add(GOfferCreateInput.serializer)
+      ..add(GOfferOrderByInput.serializer)
+      ..add(GOfferUpdateArgs.serializer)
+      ..add(GOfferUpdateInput.serializer)
+      ..add(GOfferWhereInput.serializer)
+      ..add(GOfferWhereUniqueInput.serializer)
       ..add(GOrderCancellationRequestCreateInput.serializer)
       ..add(GOrderCancellationRequestOrderByInput.serializer)
       ..add(GOrderCancellationRequestUpdateArgs.serializer)
@@ -223,7 +258,33 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GPaymentUpdateInput.serializer)
       ..add(GPaymentWhereInput.serializer)
       ..add(GPaymentWhereUniqueInput.serializer)
+      ..add(GPriceCategoriesData.serializer)
+      ..add(GPriceCategoriesData_priceCategories.serializer)
+      ..add(GPriceCategoriesReq.serializer)
+      ..add(GPriceCategoriesVars.serializer)
+      ..add(GPriceCategoryCreateInput.serializer)
+      ..add(GPriceCategoryOrderByInput.serializer)
+      ..add(GPriceCategoryRelateToOneForCreateInput.serializer)
+      ..add(GPriceCategoryRelateToOneForUpdateInput.serializer)
+      ..add(GPriceCategoryUpdateArgs.serializer)
+      ..add(GPriceCategoryUpdateInput.serializer)
+      ..add(GPriceCategoryWhereInput.serializer)
+      ..add(GPriceCategoryWhereUniqueInput.serializer)
+      ..add(GPriceCreateInput.serializer)
+      ..add(GPriceManyRelationFilter.serializer)
+      ..add(GPriceOrderByInput.serializer)
+      ..add(GPriceRelateToManyForCreateInput.serializer)
+      ..add(GPriceRelateToManyForUpdateInput.serializer)
+      ..add(GPriceUpdateArgs.serializer)
+      ..add(GPriceUpdateInput.serializer)
+      ..add(GPriceWhereInput.serializer)
+      ..add(GPriceWhereUniqueInput.serializer)
       ..add(GQueryMode.serializer)
+      ..add(GRedeemUserPasswordResetTokenData.serializer)
+      ..add(GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken
+          .serializer)
+      ..add(GRedeemUserPasswordResetTokenReq.serializer)
+      ..add(GRedeemUserPasswordResetTokenVars.serializer)
       ..add(GReferralCodeCreateInput.serializer)
       ..add(GReferralCodeOrderByInput.serializer)
       ..add(GReferralCodeRelateToOneForCreateInput.serializer)
@@ -261,6 +322,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GSMSNotificationTemplateUpdateInput.serializer)
       ..add(GSMSNotificationTemplateWhereInput.serializer)
       ..add(GSMSNotificationTemplateWhereUniqueInput.serializer)
+      ..add(GSendUserPasswordResetLinkData.serializer)
+      ..add(GSendUserPasswordResetLinkReq.serializer)
+      ..add(GSendUserPasswordResetLinkVars.serializer)
       ..add(GSpecificationCategoryCreateInput.serializer)
       ..add(GSpecificationCategoryOrderByInput.serializer)
       ..add(GSpecificationCategoryRelateToOneForCreateInput.serializer)
@@ -289,12 +353,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GTestDriveDealerOrderByInput.serializer)
       ..add(GTestDriveDealerRelateToOneForCreateInput.serializer)
       ..add(GTestDriveDealerRelateToOneForUpdateInput.serializer)
-      ..add(GTestDriveDealerStockRequestCreateInput.serializer)
-      ..add(GTestDriveDealerStockRequestOrderByInput.serializer)
-      ..add(GTestDriveDealerStockRequestUpdateArgs.serializer)
-      ..add(GTestDriveDealerStockRequestUpdateInput.serializer)
-      ..add(GTestDriveDealerStockRequestWhereInput.serializer)
-      ..add(GTestDriveDealerStockRequestWhereUniqueInput.serializer)
       ..add(GTestDriveDealerUpdateArgs.serializer)
       ..add(GTestDriveDealerUpdateInput.serializer)
       ..add(GTestDriveDealerWhereInput.serializer)
@@ -328,6 +386,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           GTestDriveOrdersData_testDriveOrders_order_user_addresses.serializer)
       ..add(GTestDriveOrdersReq.serializer)
       ..add(GTestDriveOrdersVars.serializer)
+      ..add(GUpdateTestDriveOrderData.serializer)
+      ..add(GUpdateTestDriveOrderData_updateTestDriveOrder.serializer)
+      ..add(GUpdateTestDriveOrderReq.serializer)
+      ..add(GUpdateTestDriveOrderVars.serializer)
       ..add(GUpdateUserData.serializer)
       ..add(GUpdateUserData_updateUser.serializer)
       ..add(GUpdateUserReq.serializer)
@@ -363,6 +425,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GValidateUserOTPData.serializer)
       ..add(GValidateUserOTPReq.serializer)
       ..add(GValidateUserOTPVars.serializer)
+      ..add(GValidateUserPasswordResetTokenData.serializer)
+      ..add(GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
+          .serializer)
+      ..add(GValidateUserPasswordResetTokenReq.serializer)
+      ..add(GValidateUserPasswordResetTokenVars.serializer)
       ..add(GVehicleColorCreateInput.serializer)
       ..add(GVehicleColorManyRelationFilter.serializer)
       ..add(GVehicleColorOrderByInput.serializer)
@@ -391,6 +458,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleDealerWhereUniqueInput.serializer)
       ..add(GVehicleDealersData.serializer)
       ..add(GVehicleDealersData_vehicleDealers.serializer)
+      ..add(GVehicleDealersData_vehicleDealers_prices.serializer)
+      ..add(GVehicleDealersData_vehicleDealers_prices_category.serializer)
       ..add(GVehicleDealersData_vehicleDealers_vehicleColor.serializer)
       ..add(GVehicleDealersData_vehicleDealers_vehicleColor_images.serializer)
       ..add(GVehicleDealersData_vehicleDealers_vehicleColor_images_image
@@ -411,6 +480,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleImageUpdateInput.serializer)
       ..add(GVehicleImageWhereInput.serializer)
       ..add(GVehicleImageWhereUniqueInput.serializer)
+      ..add(GVehicleManyRelationFilter.serializer)
       ..add(GVehicleOrderByInput.serializer)
       ..add(GVehicleOrderCreateInput.serializer)
       ..add(GVehicleOrderManyRelationFilter.serializer)
@@ -425,6 +495,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleOrdersData_vehicleOrders.serializer)
       ..add(GVehicleOrdersData_vehicleOrders_dealer.serializer)
       ..add(GVehicleOrdersData_vehicleOrders_dealer_dealer.serializer)
+      ..add(GVehicleOrdersData_vehicleOrders_dealer_prices.serializer)
+      ..add(GVehicleOrdersData_vehicleOrders_dealer_prices_category.serializer)
       ..add(GVehicleOrdersData_vehicleOrders_dealer_vehicleColor.serializer)
       ..add(GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images
           .serializer)
@@ -438,6 +510,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleOrdersData_vehicleOrders_order_user_addresses.serializer)
       ..add(GVehicleOrdersReq.serializer)
       ..add(GVehicleOrdersVars.serializer)
+      ..add(GVehicleRelateToManyForCreateInput.serializer)
+      ..add(GVehicleRelateToManyForUpdateInput.serializer)
       ..add(GVehicleRelateToOneForCreateInput.serializer)
       ..add(GVehicleRelateToOneForUpdateInput.serializer)
       ..add(GVehicleSpecificationCreateInput.serializer)
@@ -531,6 +605,34 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(GAddressWhereUniqueInput)]),
           () => new ListBuilder<GAddressWhereUniqueInput>())
       ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GAppNotificationTemplateWhereInput)]),
+          () => new ListBuilder<GAppNotificationTemplateWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GAppNotificationTemplateWhereInput)]),
+          () => new ListBuilder<GAppNotificationTemplateWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GAppNotificationTemplateWhereInput)]),
+          () => new ListBuilder<GAppNotificationTemplateWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GAppNotificationWhereInput)]),
+          () => new ListBuilder<GAppNotificationWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GAppNotificationWhereInput)]),
+          () => new ListBuilder<GAppNotificationWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GAppNotificationWhereInput)]),
+          () => new ListBuilder<GAppNotificationWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GAppNotificationsData_appNotifications)]),
+          () => new ListBuilder<GAppNotificationsData_appNotifications>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
                 GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses)
@@ -582,6 +684,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GCartItemWhereUniqueInput)]),
           () => new ListBuilder<GCartItemWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GCategoriesData_categories)]),
+          () => new ListBuilder<GCategoriesData_categories>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GCategoryWhereInput)]),
@@ -764,6 +870,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(GNotificationTypeWhereInput)]),
           () => new ListBuilder<GNotificationTypeWhereInput>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GOfferWhereInput)]),
+          () => new ListBuilder<GOfferWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GOfferWhereInput)]),
+          () => new ListBuilder<GOfferWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GOfferWhereInput)]),
+          () => new ListBuilder<GOfferWhereInput>())
+      ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(GOrderCancellationRequestWhereInput)]),
           () => new ListBuilder<GOrderCancellationRequestWhereInput>())
@@ -829,6 +944,53 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GPaymentWhereUniqueInput)]),
           () => new ListBuilder<GPaymentWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GPriceCategoriesData_priceCategories)]),
+          () => new ListBuilder<GPriceCategoriesData_priceCategories>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GPriceCategoryWhereInput)]),
+          () => new ListBuilder<GPriceCategoryWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GPriceCategoryWhereInput)]),
+          () => new ListBuilder<GPriceCategoryWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GPriceCategoryWhereInput)]),
+          () => new ListBuilder<GPriceCategoryWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GPriceCreateInput)]),
+          () => new ListBuilder<GPriceCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GPriceWhereUniqueInput)]),
+          () => new ListBuilder<GPriceWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GPriceWhereInput)]),
+          () => new ListBuilder<GPriceWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GPriceWhereInput)]),
+          () => new ListBuilder<GPriceWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GPriceWhereInput)]),
+          () => new ListBuilder<GPriceWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GPriceWhereUniqueInput)]),
+          () => new ListBuilder<GPriceWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GPriceWhereUniqueInput)]),
+          () => new ListBuilder<GPriceWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GPriceCreateInput)]),
+          () => new ListBuilder<GPriceCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GPriceWhereUniqueInput)]),
+          () => new ListBuilder<GPriceWhereUniqueInput>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GReferralCodeWhereInput)]),
@@ -943,18 +1105,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GTagWhereInput)]),
           () => new ListBuilder<GTagWhereInput>())
-      ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(GTestDriveDealerStockRequestWhereInput)]),
-          () => new ListBuilder<GTestDriveDealerStockRequestWhereInput>())
-      ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(GTestDriveDealerStockRequestWhereInput)]),
-          () => new ListBuilder<GTestDriveDealerStockRequestWhereInput>())
-      ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(GTestDriveDealerStockRequestWhereInput)]),
-          () => new ListBuilder<GTestDriveDealerStockRequestWhereInput>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GTestDriveDealerWhereInput)]),
@@ -1091,6 +1241,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(GVehicleColorWhereUniqueInput)]),
           () => new ListBuilder<GVehicleColorWhereUniqueInput>())
       ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleCreateInput)]),
+          () => new ListBuilder<GVehicleCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleWhereUniqueInput>())
+      ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(GVehicleDealerStockRequestWhereInput)]),
           () => new ListBuilder<GVehicleDealerStockRequestWhereInput>())
@@ -1118,6 +1276,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(GVehicleDealersData_vehicleDealers)]),
           () => new ListBuilder<GVehicleDealersData_vehicleDealers>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GVehicleDealersData_vehicleDealers_prices)
+          ]),
+          () => new ListBuilder<GVehicleDealersData_vehicleDealers_prices>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
@@ -1205,6 +1368,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(GVehicleOrdersData_vehicleOrders)]),
           () => new ListBuilder<GVehicleOrdersData_vehicleOrders>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GVehicleOrdersData_vehicleOrders_dealer_prices)
+          ]),
+          () =>
+              new ListBuilder<GVehicleOrdersData_vehicleOrders_dealer_prices>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
@@ -1314,6 +1483,22 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<GVehicleWhereInput>())
       ..addBuilderFactory(
           const FullType(
+              BuiltList, const [const FullType(GVehicleWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleCreateInput)]),
+          () => new ListBuilder<GVehicleCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
               BuiltList, const [const FullType(GVehiclesData_vehicles)]),
           () => new ListBuilder<GVehiclesData_vehicles>())
       ..addBuilderFactory(
@@ -1351,6 +1536,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GWalletWhereInput)]),
           () => new ListBuilder<GWalletWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

@@ -1,4 +1,5 @@
 import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:dealerapp/src/utils/constants.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/log_colors.dart';
 import 'package:dio/dio.dart';
@@ -9,29 +10,40 @@ import 'package:gql_http_link/gql_http_link.dart';
 
 ///GraphQL Client
 class GraphqlClient {
-  final Map<String, String> _headers = {
-    'Authorization': 'Bearer ${cacheProvider.getSessionToken()}',
-  };
+/*   final _logger = Logger(
+    level: Level.info,
+    printer: PrettyPrinter(
+      errorMethodCount: 10,
+      methodCount: 0,
+      lineLength: 40,
+    ),
+  );
+ */
 
-  ///Local URL
-  final String _localUrl = 'http://localhost:3000';
+  /* ///Prod URL
+  static const String _prodUrl = 'https://bavelectric.com';
 
   ///Live URL
-  final String _liveUrl = 'http://bavelectric.com:3000';
+  static const String _devUrl = 'http://bavelectric.com:3000'; */
+
+  ///Prod URL
+  static const String _prodUrl = 'https://api.bavelectric.com';
+
+  ///Live URL
+  static const String _devUrl = 'http://api.bavelectric.com:3000';
 
   ///Base URL
-  static String baseUrl = 'http://bavelectric.com:3000';
+  static String get baseUrl => Constants.isDev ? _devUrl : _prodUrl;
 
-  // /Dio Client
-  // /
-  // /It's a Dio Client Object which is late
-  // /r
-  // /
-  // /injected while initializing the [client] object
+  ///Dio Client
+  ///
+  ///It's a Dio Client Object which is late
+  ///
+  ///
+  ///injected while initializing the [client] object
   late final Dio _dio = Dio(
     BaseOptions(
-      baseUrl: _liveUrl,
-      headers: _headers,
+      baseUrl: baseUrl,
     ),
   );
 
@@ -44,14 +56,14 @@ class GraphqlClient {
   ///which is used to make any GraphQL request
   ///
   ///and is initialized in the [initGqlClient] method
-  ///
   late Client client;
 
   ///GraphQL Client for Multipart Requests
   late Client multipartClient;
 
   /// HTTP Ferry client for temporary fix for file upload
-  late Client Function(bool isMultipart) httpClient;
+  late Client Function({required bool isMultipart, required String token})
+      httpClient;
 
   ///Initialize the GraphQL Client
   ///This method initializes the GraphQL Client
@@ -64,49 +76,90 @@ class GraphqlClient {
   ///and this should be called once [CacheProvider] is initialized
   Future<void> initGqlClient() async {
     await _setupInterceptor();
+    'Dev Environment ${Constants.isDev}'.log();
+    'Iniatiaing GraphQL Client'.log();
+    'Live URL: $_devUrl'.log(color: LogColors.yellow, name: 'URL');
+    'Base URL: $baseUrl'.log(color: LogColors.yellow, name: 'URL');
+    'GraphQL Path: $_path'.log(color: LogColors.yellow, name: 'GraphQL Path');
+
+    'Initiating Hive Store for Ferry'
+        .log(color: LogColors.cyan, name: 'GraphQL Initialization');
     final hiveStore = HiveStore(cacheProvider.graphqlBox);
+    'Initiating Cache for Ferry'
+        .log(color: LogColors.cyan, name: 'GraphQL Initialization');
     final cache = Cache(store: hiveStore);
+    'Initiating Dio Link for Ferry'.log(
+      color: LogColors.cyan,
+      name: 'Link Initialization',
+    );
     final link = DioLink(
       _path,
       client: _dio,
-      defaultHeaders: _headers,
     );
-
-    client = Client(
-      link: link,
-      cache: cache,
-      defaultFetchPolicies: {
-        OperationType.query: FetchPolicy.NetworkOnly,
-        OperationType.mutation: FetchPolicy.NetworkOnly,
-      },
-    );
-    final multiPartLink = DioLink(
-      _path,
-      client: _dio,
-      defaultHeaders: {..._headers, 'Content-Type': 'multipart/form-data'},
-    );
-
-    HttpLink httpLink(bool isMultipart) => HttpLink(
+    HttpLink httpLink({required bool isMultipart, required String token}) =>
+        HttpLink(
           baseUrl + _path,
           defaultHeaders: {
-            ..._headers,
+            'Authorization': 'Bearer ${token}',
             if (isMultipart)
               Headers.contentTypeHeader: Headers.multipartFormDataContentType,
           },
         );
+
+    'Initiating Multipart Link for Ferry'.log(
+      color: LogColors.cyan,
+      name: 'Link Initialization',
+    );
+    final multiPartLink = DioLink(
+      _path,
+      client: _dio,
+      defaultHeaders: {
+        'Authorization': 'Bearer ${cacheProvider.getSessionToken()}',
+        Headers.contentTypeHeader: Headers.multipartFormDataContentType,
+      },
+    );
+
+    'Initiating Ferry Client'.log(
+      color: LogColors.green,
+      name: 'Client Initialization',
+    );
+    client = Client(
+      link: link,
+      cache: cache,
+      defaultFetchPolicies: {
+        OperationType.query: FetchPolicy.NoCache,
+        OperationType.mutation: FetchPolicy.NoCache,
+      },
+    );
+
+    'Initiating Multipart client for Ferry'.log(
+      color: LogColors.green,
+      name: 'Client Initialization',
+    );
     multipartClient = Client(
       link: multiPartLink,
       cache: cache,
       defaultFetchPolicies: {
-        OperationType.mutation: FetchPolicy.NetworkOnly,
+        OperationType.mutation: FetchPolicy.NoCache,
+        OperationType.query: FetchPolicy.NoCache,
       },
     );
-    'Initiating http ferry cliient for file upload'
-        .log(color: LogColors.blueBg);
-    httpClient = (multipart) => Client(
-          link: httpLink(multipart),
-          cache: cache,
-        );
+
+    'Initiating http ferry client for file upload'.log(
+      color: LogColors.green,
+      name: 'Client Initialization',
+    );
+    httpClient = ({bool isMultipart = false, String token = ''}) {
+      return Client(
+        link: httpLink(isMultipart: isMultipart, token: token),
+        cache: cache,
+      );
+    };
+
+    'GraphQL Client Initialized'.log(
+      color: LogColors.green,
+      name: 'Initialization Complete',
+    );
   }
 
   ///Initialize Dio Interceptors
@@ -125,29 +178,29 @@ class GraphqlClient {
         [
           InterceptorsWrapper(
             onRequest: (options, handler) {
-              options.headers['Authorization'] =
-                  'Bearer ${cacheProvider.getSessionToken()}';
-              options.headers['cookie'] =
-                  'session=${cacheProvider.getSessionToken()}';
-
-              final headers = StringBuffer();
-              for (final element in options.headers.entries) {
-                headers.write('${element.key}: ${element.value}\n');
+              if (cacheProvider.getSessionToken() != null &&
+                  cacheProvider.getSessionToken()!.isNotEmpty) {
+                options.headers['Authorization'] =
+                    'Bearer ${cacheProvider.getSessionToken()}';
               }
-
+              options.headers.toString().log(
+                    name: 'Headers',
+                    color: LogColors.cyan,
+                  );
+              final queryData = options.data as Map;
+              (queryData['operationName'] as String)
+                  .log(name: 'Operation Name', color: LogColors.cyan);
+              (queryData['query'] as String).split('(').first.log(
+                    name: 'Query',
+                    color: LogColors.cyan,
+                  );
               handler.next(options);
             },
             onResponse: (e, handler) {
-              final headers = StringBuffer();
-              for (final element in e.headers.map.entries) {
-                headers.write('${element.key}: ${element.value}\n');
-              }
-
               handler.next(e);
             },
             onError: (e, handler) {
-              e.log();
-
+              e.message.log(color: LogColors.red, name: 'Error');
               handler.next(e);
             },
           ),

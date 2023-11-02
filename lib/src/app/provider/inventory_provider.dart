@@ -1,9 +1,21 @@
+import 'dart:async';
+
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 
 class InventoryProvider extends ChangeNotifier {
+  List<GPriceCategoriesData_priceCategories> _priceCategories = [];
+  List<GPriceCategoriesData_priceCategories> get priceCategories =>
+      _priceCategories;
+  set priceCategories(List<GPriceCategoriesData_priceCategories> data) {
+    _priceCategories = data;
+    notifyListeners();
+  }
+
+  List<PriceModel> prices = [];
+
   List<GVehiclesData_vehicles_variants> _vehicles = [];
   List<GVehiclesData_vehicles_variants> get vehicles => _vehicles;
   set vehicles(List<GVehiclesData_vehicles_variants> data) {
@@ -21,9 +33,10 @@ class InventoryProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void init() async {
-    await getVehicles();
+  Future<void> init() async {
     await getStocks();
+    await getPriceCategories();
+    await getVehicles();
   }
 
   Future<void> getVehicles() async {
@@ -37,13 +50,9 @@ class InventoryProvider extends ChangeNotifier {
             .reduce((value, element) => value?..addAll(element!));
 
         vehicles = check!;
-
-        for (final element in check) {
-          print(element);
-        }
       } else {
         AppRoutes.showErrorSnackbar(
-          message: 'Errow while fetching list of vehicles',
+          message: 'Error while fetching list of vehicles',
         );
       }
     } catch (e) {
@@ -51,20 +60,56 @@ class InventoryProvider extends ChangeNotifier {
     }
   }
 
-  Future<void> createStockRequest(
-    String colorId,
-    String variantId,
-    int stock,
-    int price,
-    String type,
-  ) async {
+  Future<void> getPriceCategories() async {
+    try {
+      final result = await _inventoryRepository.getPriceCategories();
+      prices = result
+          .map((e) => PriceModel(price: 0, type: e.id, name: e.name!))
+          .toList();
+      priceCategories = result;
+    } catch (e) {
+      e.log();
+    }
+  }
+
+  Future<void> createStockRequest({
+    required String colorId,
+    required String variantId,
+    required List<PriceModel> prices,
+  }) async {
+    unawaited(AppRoutes.showLoadingDialog());
     try {
       final result = await _inventoryRepository.createStockRequest(
-        colorId,
-        variantId,
-        stock,
-        price,
-        type
+        variantId: variantId,
+        colorId: colorId,
+        prices: prices,
+      );
+      await getStocks();
+      await getVehicles();
+      if (result) {
+        AppRoutes.showSuccessSnackbar(message: 'Request added successfully');
+      } else {
+        AppRoutes.showErrorSnackbar(message: 'Failed to add vehicle request');
+      }
+    } catch (e) {
+      e.log();
+      AppRoutes.showErrorSnackbar(message: 'Failed to add vehicle');
+    }
+    AppRoutes.pop();
+  }
+
+  Future<void> updateStockRequest({
+    required String colorId,
+    required String variantId,
+    required int quantity,
+    required String type,
+  }) async {
+    try {
+      final result = await _inventoryRepository.updateStockRequest(
+        colorId: colorId,
+        variantId: variantId,
+        stock: quantity,
+        type: type,
       );
 
       if (result) {
@@ -72,7 +117,7 @@ class InventoryProvider extends ChangeNotifier {
         AppRoutes.showSuccessSnackbar(message: 'Request Created Successfully');
       } else {
         AppRoutes.showErrorSnackbar(
-          message: 'Errow while Adding Item to Stock',
+          message: 'Error while Adding Item to Stock',
         );
       }
     } catch (e) {
@@ -98,7 +143,7 @@ class InventoryProvider extends ChangeNotifier {
     } catch (e) {
       e.log();
       AppRoutes.showErrorSnackbar(
-        message: 'Errow while fetching list of vehicles',
+        message: 'Error while fetching list of vehicles',
       );
     }
   }

@@ -4,6 +4,7 @@ import 'dart:developer' as developer;
 import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema.gql.dart';
 import 'package:dealerapp/src/utils/constants.dart';
 import 'package:dealerapp/src/utils/log_colors.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:intl/intl.dart';
 
@@ -39,7 +40,11 @@ extension HexColor on Color {
     final buffer = StringBuffer();
     if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
     buffer.write(hexString.replaceFirst('#', ''));
-    return Color(int.parse(buffer.toString(), radix: 16));
+    try {
+      return Color(int.parse(buffer.toString(), radix: 16));
+    } catch (e) {
+      return Colors.white;
+    }
   }
 
   /// Prefixes a hash sign if [leadingHashSign] is set to `true` (default is `true`).
@@ -120,5 +125,5 @@ extension DateExtensions on DateTime? {
       DateFormat('MMM dd, yyyy hh:mm a').format(this ?? DateTime.now());
 
   String get formatTohhmmaddMMyy =>
-      DateFormat("hh:mm a dd/MM/yy").format(this ?? DateTime.now());
+      DateFormat('hh:mm a dd/MM/yy').format(this ?? DateTime.now());
 }

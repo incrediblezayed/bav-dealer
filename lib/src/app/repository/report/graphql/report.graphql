@@ -1,0 +1,20 @@
+mutation CreateReport($data: ReportCreateInput!) {
+  createReport(data: $data) {
+    id
+  }
+}
+
+mutation CreateFeedback($data: FeedbackCreateInput!) {
+  createFeedback(data: $data) {
+    id
+  }
+}
+
+query Categories {
+  categories {
+    id
+    name
+    createdAt
+    description
+  }
+}

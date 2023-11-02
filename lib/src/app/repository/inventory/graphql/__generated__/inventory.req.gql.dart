@@ -139,72 +139,6 @@ abstract class GCreateVehicleDealerStockRequestReq
       );
 }
 
-abstract class GCreateVehicleTestDriveDealerStockRequestReq
-    implements
-        Built<GCreateVehicleTestDriveDealerStockRequestReq,
-            GCreateVehicleTestDriveDealerStockRequestReqBuilder>,
-        _i1.OperationRequest<_i2.GCreateVehicleTestDriveDealerStockRequestData,
-            _i3.GCreateVehicleTestDriveDealerStockRequestVars> {
-  GCreateVehicleTestDriveDealerStockRequestReq._();
-
-  factory GCreateVehicleTestDriveDealerStockRequestReq(
-      [Function(GCreateVehicleTestDriveDealerStockRequestReqBuilder b)
-          updates]) = _$GCreateVehicleTestDriveDealerStockRequestReq;
-
-  static void _initializeBuilder(
-          GCreateVehicleTestDriveDealerStockRequestReqBuilder b) =>
-      b
-        ..operation = _i4.Operation(
-          document: _i5.document,
-          operationName: 'CreateVehicleTestDriveDealerStockRequest',
-        )
-        ..executeOnListen = true;
-  @override
-  _i3.GCreateVehicleTestDriveDealerStockRequestVars get vars;
-  @override
-  _i4.Operation get operation;
-  @override
-  _i4.Request get execRequest => _i4.Request(
-        operation: operation,
-        variables: vars.toJson(),
-      );
-  @override
-  String? get requestId;
-  @override
-  @BuiltValueField(serialize: false)
-  _i2.GCreateVehicleTestDriveDealerStockRequestData? Function(
-    _i2.GCreateVehicleTestDriveDealerStockRequestData?,
-    _i2.GCreateVehicleTestDriveDealerStockRequestData?,
-  )? get updateResult;
-  @override
-  _i2.GCreateVehicleTestDriveDealerStockRequestData? get optimisticResponse;
-  @override
-  String? get updateCacheHandlerKey;
-  @override
-  Map<String, dynamic>? get updateCacheHandlerContext;
-  @override
-  _i1.FetchPolicy? get fetchPolicy;
-  @override
-  bool get executeOnListen;
-  @override
-  _i2.GCreateVehicleTestDriveDealerStockRequestData? parseData(
-          Map<String, dynamic> json) =>
-      _i2.GCreateVehicleTestDriveDealerStockRequestData.fromJson(json);
-  static Serializer<GCreateVehicleTestDriveDealerStockRequestReq>
-      get serializer =>
-          _$gCreateVehicleTestDriveDealerStockRequestReqSerializer;
-  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
-        GCreateVehicleTestDriveDealerStockRequestReq.serializer,
-        this,
-      ) as Map<String, dynamic>);
-  static GCreateVehicleTestDriveDealerStockRequestReq? fromJson(
-          Map<String, dynamic> json) =>
-      _i6.serializers.deserializeWith(
-        GCreateVehicleTestDriveDealerStockRequestReq.serializer,
-        json,
-      );
-}
-
 abstract class GVehicleDealersReq
     implements
         Built<GVehicleDealersReq, GVehicleDealersReqBuilder>,
@@ -259,6 +193,125 @@ abstract class GVehicleDealersReq
   static GVehicleDealersReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
         GVehicleDealersReq.serializer,
+        json,
+      );
+}
+
+abstract class GCreateVehicleDealerReq
+    implements
+        Built<GCreateVehicleDealerReq, GCreateVehicleDealerReqBuilder>,
+        _i1.OperationRequest<_i2.GCreateVehicleDealerData,
+            _i3.GCreateVehicleDealerVars> {
+  GCreateVehicleDealerReq._();
+
+  factory GCreateVehicleDealerReq(
+          [Function(GCreateVehicleDealerReqBuilder b) updates]) =
+      _$GCreateVehicleDealerReq;
+
+  static void _initializeBuilder(GCreateVehicleDealerReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'CreateVehicleDealer',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GCreateVehicleDealerVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GCreateVehicleDealerData? Function(
+    _i2.GCreateVehicleDealerData?,
+    _i2.GCreateVehicleDealerData?,
+  )? get updateResult;
+  @override
+  _i2.GCreateVehicleDealerData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GCreateVehicleDealerData? parseData(Map<String, dynamic> json) =>
+      _i2.GCreateVehicleDealerData.fromJson(json);
+  static Serializer<GCreateVehicleDealerReq> get serializer =>
+      _$gCreateVehicleDealerReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GCreateVehicleDealerReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GCreateVehicleDealerReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GCreateVehicleDealerReq.serializer,
+        json,
+      );
+}
+
+abstract class GPriceCategoriesReq
+    implements
+        Built<GPriceCategoriesReq, GPriceCategoriesReqBuilder>,
+        _i1
+        .OperationRequest<_i2.GPriceCategoriesData, _i3.GPriceCategoriesVars> {
+  GPriceCategoriesReq._();
+
+  factory GPriceCategoriesReq(
+      [Function(GPriceCategoriesReqBuilder b) updates]) = _$GPriceCategoriesReq;
+
+  static void _initializeBuilder(GPriceCategoriesReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'PriceCategories',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GPriceCategoriesVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GPriceCategoriesData? Function(
+    _i2.GPriceCategoriesData?,
+    _i2.GPriceCategoriesData?,
+  )? get updateResult;
+  @override
+  _i2.GPriceCategoriesData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GPriceCategoriesData? parseData(Map<String, dynamic> json) =>
+      _i2.GPriceCategoriesData.fromJson(json);
+  static Serializer<GPriceCategoriesReq> get serializer =>
+      _$gPriceCategoriesReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GPriceCategoriesReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GPriceCategoriesReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GPriceCategoriesReq.serializer,
         json,
       );
 }

@@ -7,7 +7,20 @@
         {
             "name": "bav-dealerapp",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "toolArgs": [
+                "--dart-define-from-file",
+                "devEnv.json"
+            ]
+        },
+        {
+            "name": "bav-dealerapp (prod mode)",
+            "request": "launch",
+            "type": "dart",
+            "toolArgs": [
+                "--dart-define-from-file",
+                "prodEnv.json"
+            ]
         },
         {
             "name": "bav-dealerapp (profile mode)",

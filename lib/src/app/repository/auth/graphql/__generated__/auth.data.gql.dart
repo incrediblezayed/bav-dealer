@@ -6,11 +6,11 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema.gql.dart'
-    as _i3;
+    as _i2;
 import 'package:dealerapp/src/app/repository/graphql/__generated__/serializers.gql.dart'
     as _i1;
 import 'package:gql_code_builder/src/serializers/inline_fragment_serializer.dart'
-    as _i2;
+    as _i3;
 
 part 'auth.data.gql.g.dart';
 
@@ -117,6 +117,172 @@ abstract class GValidateUserOTPData
       );
 }
 
+abstract class GSendUserPasswordResetLinkData
+    implements
+        Built<GSendUserPasswordResetLinkData,
+            GSendUserPasswordResetLinkDataBuilder> {
+  GSendUserPasswordResetLinkData._();
+
+  factory GSendUserPasswordResetLinkData(
+          [Function(GSendUserPasswordResetLinkDataBuilder b) updates]) =
+      _$GSendUserPasswordResetLinkData;
+
+  static void _initializeBuilder(GSendUserPasswordResetLinkDataBuilder b) =>
+      b..G__typename = 'Mutation';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get sendUserPasswordResetLink;
+  static Serializer<GSendUserPasswordResetLinkData> get serializer =>
+      _$gSendUserPasswordResetLinkDataSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GSendUserPasswordResetLinkData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GSendUserPasswordResetLinkData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GSendUserPasswordResetLinkData.serializer,
+        json,
+      );
+}
+
+abstract class GRedeemUserPasswordResetTokenData
+    implements
+        Built<GRedeemUserPasswordResetTokenData,
+            GRedeemUserPasswordResetTokenDataBuilder> {
+  GRedeemUserPasswordResetTokenData._();
+
+  factory GRedeemUserPasswordResetTokenData(
+          [Function(GRedeemUserPasswordResetTokenDataBuilder b) updates]) =
+      _$GRedeemUserPasswordResetTokenData;
+
+  static void _initializeBuilder(GRedeemUserPasswordResetTokenDataBuilder b) =>
+      b..G__typename = 'Mutation';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken?
+      get redeemUserPasswordResetToken;
+  static Serializer<GRedeemUserPasswordResetTokenData> get serializer =>
+      _$gRedeemUserPasswordResetTokenDataSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GRedeemUserPasswordResetTokenData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GRedeemUserPasswordResetTokenData? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GRedeemUserPasswordResetTokenData.serializer,
+        json,
+      );
+}
+
+abstract class GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken
+    implements
+        Built<GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken,
+            GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder> {
+  GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken._();
+
+  factory GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken(
+          [Function(
+                  GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder
+                      b)
+              updates]) =
+      _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken;
+
+  static void _initializeBuilder(
+          GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder
+              b) =>
+      b..G__typename = 'RedeemUserPasswordResetTokenResult';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  _i2.GPasswordResetRedemptionErrorCode get code;
+  String get message;
+  static Serializer<
+          GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken>
+      get serializer =>
+          _$gRedeemUserPasswordResetTokenDataRedeemUserPasswordResetTokenSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken
+                .serializer,
+            json,
+          );
+}
+
+abstract class GValidateUserPasswordResetTokenData
+    implements
+        Built<GValidateUserPasswordResetTokenData,
+            GValidateUserPasswordResetTokenDataBuilder> {
+  GValidateUserPasswordResetTokenData._();
+
+  factory GValidateUserPasswordResetTokenData(
+          [Function(GValidateUserPasswordResetTokenDataBuilder b) updates]) =
+      _$GValidateUserPasswordResetTokenData;
+
+  static void _initializeBuilder(
+          GValidateUserPasswordResetTokenDataBuilder b) =>
+      b..G__typename = 'Query';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GValidateUserPasswordResetTokenData_validateUserPasswordResetToken?
+      get validateUserPasswordResetToken;
+  static Serializer<GValidateUserPasswordResetTokenData> get serializer =>
+      _$gValidateUserPasswordResetTokenDataSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GValidateUserPasswordResetTokenData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GValidateUserPasswordResetTokenData? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GValidateUserPasswordResetTokenData.serializer,
+        json,
+      );
+}
+
+abstract class GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
+    implements
+        Built<
+            GValidateUserPasswordResetTokenData_validateUserPasswordResetToken,
+            GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder> {
+  GValidateUserPasswordResetTokenData_validateUserPasswordResetToken._();
+
+  factory GValidateUserPasswordResetTokenData_validateUserPasswordResetToken(
+          [Function(
+                  GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder
+                      b)
+              updates]) =
+      _$GValidateUserPasswordResetTokenData_validateUserPasswordResetToken;
+
+  static void _initializeBuilder(
+          GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder
+              b) =>
+      b..G__typename = 'ValidateUserPasswordResetTokenResult';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  _i2.GPasswordResetRedemptionErrorCode get code;
+  String get message;
+  static Serializer<
+          GValidateUserPasswordResetTokenData_validateUserPasswordResetToken>
+      get serializer =>
+          _$gValidateUserPasswordResetTokenDataValidateUserPasswordResetTokenSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GValidateUserPasswordResetTokenData_validateUserPasswordResetToken?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
+                .serializer,
+            json,
+          );
+}
+
 abstract class GCreateDealerData
     implements Built<GCreateDealerData, GCreateDealerDataBuilder> {
   GCreateDealerData._();
@@ -205,7 +371,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword {
   String get G__typename;
   static Serializer<
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword>
-      get serializer => _i2.InlineFragmentSerializer<
+      get serializer => _i3.InlineFragmentSerializer<
               GAuthenticateUserWithPasswordData_authenticateUserWithPassword>(
             'GAuthenticateUserWithPasswordData_authenticateUserWithPassword',
             GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base,
@@ -388,7 +554,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
   int get filesize;
   int get width;
   int get height;
-  _i3.GImageExtension get extension;
+  _i2.GImageExtension get extension;
   String get url;
   static Serializer<
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image>
@@ -428,8 +594,8 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
-  _i3.GDateTime? get createdAt;
-  _i3.GDateTime? get modifiedAt;
+  _i2.GDateTime? get createdAt;
+  _i2.GDateTime? get modifiedAt;
   String? get name;
   String? get phoneNumber;
   String? get pinCode;
@@ -478,8 +644,8 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
   String get G__typename;
   String get id;
   String? get code;
-  _i3.GDateTime? get modifiedAt;
-  _i3.GDateTime? get createdAt;
+  _i2.GDateTime? get modifiedAt;
+  _i2.GDateTime? get createdAt;
   static Serializer<
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode>
       get serializer =>
@@ -614,7 +780,7 @@ abstract class GUserData_user_profile_image
   int get filesize;
   int get width;
   int get height;
-  _i3.GImageExtension get extension;
+  _i2.GImageExtension get extension;
   String get url;
   static Serializer<GUserData_user_profile_image> get serializer =>
       _$gUserDataUserProfileImageSerializer;
@@ -643,8 +809,8 @@ abstract class GUserData_user_addresses
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
-  _i3.GDateTime? get createdAt;
-  _i3.GDateTime? get modifiedAt;
+  _i2.GDateTime? get createdAt;
+  _i2.GDateTime? get modifiedAt;
   String? get name;
   String? get phoneNumber;
   String? get pinCode;
@@ -867,6 +1033,7 @@ abstract class GDealerData_dealers
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
+  bool? get approved;
   static Serializer<GDealerData_dealers> get serializer =>
       _$gDealerDataDealersSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(

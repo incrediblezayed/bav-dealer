@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "flutter",
+      "command": "flutter",
+      "args": ["build", "apk", "--dart-define-from-file", "devEnv.json"],
+      "group": "build",
+      "label": "Build Bav Dealer Dev APK"
+    },
+    {
+      "type": "flutter",
+      "command": "flutter",
+      "args": ["build", "apk", "--dart-define-from-file", "prodEnv.json"],
+      "group": "build",
+
+      "label": "Build Bav Dealer Prod APK"
+    },
+    {
+      "type": "flutter",
+      "command": "flutter",
+      "args": ["build", "appbundle", "--dart-define-from-file", "devEnv.json"],
+      "group": "build",
+
+      "label": "Build Bav Dealer Dev appbundle"
+    },
+    {
+      "type": "flutter",
+      "command": "flutter",
+      "args": ["build", "appbundle", "--dart-define-from-file", "prodEnv.json"],
+      "group": "build",
+
+      "label": "Build Bav Dealer Prod appbundle"
+    },
+    {
+      "type": "dart",
+      "command": "dart",
+      "group": "build",
+      "args": ["run", "build_runner", "build", "--delete-conflicting-outputs"],
+      "label": "Dart run build_runnee"
+    }
+  ]
+}

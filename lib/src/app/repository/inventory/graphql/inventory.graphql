@@ -1,7 +1,6 @@
-query Vehicles {
-  vehicles {
+query Vehicles($where: VehicleWhereInput!) {
+  vehicles(where: $where) {
     variants {
-      price
       name
       vehicle {
         name
@@ -37,16 +36,7 @@ mutation CreateVehicleDealerStockRequest(
   createVehicleDealerStockRequest(data: $data) {
     type
     stock
-    dealer_prices
-  }
-}
-
-mutation CreateVehicleTestDriveDealerStockRequest(
-  $data: TestDriveDealerStockRequestCreateInput!
-) {
-  createTestDriveDealerStockRequest(data: $data) {
-    available
-    price
+    totalPrice
   }
 }
 
@@ -67,7 +57,6 @@ query VehicleDealers($where: VehicleDealerWhereInput!) {
       id
       name
       modifiedAt
-      price
       vehicle {
         brand {
           id
@@ -78,8 +67,33 @@ query VehicleDealers($where: VehicleDealerWhereInput!) {
         description
       }
     }
-    dealer_prices
+
     id
     stock
+    prices {
+      id
+      amount
+      category {
+        id
+        name
+      }
+    }
+    totalPrice
+  }
+}
+
+mutation CreateVehicleDealer($data: VehicleDealerCreateInput!) {
+  createVehicleDealer(data: $data) {
+    id
+  }
+}
+
+query PriceCategories {
+  priceCategories {
+    id
+    name
+    description
+    createdAt
+    modifiedAt
   }
 }

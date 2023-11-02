@@ -82,7 +82,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
               alignment: Alignment.centerRight,
               child: TextButton(
                 onPressed: () {
-                  AppRoutes.push(page: const ForgorPasswordFlow());
+                  AppRoutes.push(page: const ForgotPassword());
                 },
                 child: Text(
                   'Forgot Password',

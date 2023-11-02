@@ -1,16 +1,14 @@
-import 'package:dealerapp/src/app/model/bike_order_model.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/provider/order_provider.dart';
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
-import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class KOrderBikeCard extends ConsumerStatefulWidget {
   ///
-  KOrderBikeCard({
+  const KOrderBikeCard({
     required this.vehiclePurchaseOrders,
     super.key,
   });
@@ -24,7 +22,6 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
   GVehicleOrdersData_vehicleOrders get vehiclePurchaseOrders =>
       widget.vehiclePurchaseOrders;
 
-  Status currentStatus = Status.pending;
   String rejectionReason = '';
 
   @override
@@ -33,7 +30,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
     final ordersPro = ref.read(orderProvider(OrderFamily.purchaseOrders));
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
-      child: Container(
+      child: DecoratedBox(
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(6.r),
@@ -52,7 +49,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                   color: AppTheme.primaryColor.withOpacity(.1),
                   borderRadius: BorderRadius.circular(10.r),
                 ),
-                height: 80.h,
+                // height: 80.h,
                 width: double.maxFinite,
                 child: Padding(
                   padding: EdgeInsets.symmetric(
@@ -63,7 +60,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "ORDER ID #${widget.vehiclePurchaseOrders.id}",
+                        'ORDER ID #${widget.vehiclePurchaseOrders.id}',
                         style: theme.labelLarge!.copyWith(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w700,
@@ -71,8 +68,11 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                         ),
                       ),
                       SizedBox(height: 6.h),
-                      Text(widget
-                          .vehiclePurchaseOrders.createdAt.formatTohhmmaddMMyy),
+                      Text(
+                        widget.vehiclePurchaseOrders.createdAt.toDateTime!
+                            .toLocal()
+                            .formatTohhmmaddMMyy,
+                      ),
                     ],
                   ),
                 ),
@@ -172,14 +172,14 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                                     // widget.bikeOrderModel.color,
                                     widget.vehiclePurchaseOrders.dealer
                                             ?.vehicleColor?.name ??
-                                        "",
+                                        '',
                                     style: theme.labelMedium!.copyWith(
                                       color: Colors.black.withOpacity(.5),
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
                                   SizedBox(height: 6.h),
-                                  Text(
+                                  /* Text(
                                     widget.vehiclePurchaseOrders.dealer!
                                         .vehicleVariant!.price
                                         .toString(),
@@ -187,7 +187,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                                       fontWeight: FontWeight.w600,
                                       color: AppTheme.primaryColor,
                                     ),
-                                  ),
+                                  ) */
                                 ],
                               ),
                             ),
@@ -199,7 +199,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                 ],
               ),
             ),
-            Padding(
+            /*     Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: 20.w,
                 vertical: 10.h,
@@ -208,12 +208,12 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                 'Customer Info',
                 style: theme.headlineMedium,
               ),
-            ),
-            Padding(
+            ), */
+            /* Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Row(
                 children: [
-                  Column(
+                  /* Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
@@ -256,57 +256,61 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                         ),
                       ),
                     ],
-                  ),
-                  SizedBox(width: 20.w),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        widget.vehiclePurchaseOrders.order!.user!.name!,
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
+                  ) */
+                  //SizedBox(width: 20.w),
+                  /* Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.vehiclePurchaseOrders.order!.user!.name!,
+                          style: theme.labelMedium!.copyWith(
+                            color: Colors.black.withOpacity(.5),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Text(
-                        widget.vehiclePurchaseOrders.order!.user!.email!,
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
+                        SizedBox(height: 6.h),
+                        Text(
+                          widget.vehiclePurchaseOrders.order!.user!.email!,
+                          style: theme.labelMedium!.copyWith(
+                            color: Colors.black.withOpacity(.5),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Text(
-                        widget.vehiclePurchaseOrders.order!.user!.phoneNumber!,
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
+                        SizedBox(height: 6.h),
+                        Text(
+                          widget
+                              .vehiclePurchaseOrders.order!.user!.phoneNumber!,
+                          style: theme.labelMedium!.copyWith(
+                            color: Colors.black.withOpacity(.5),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Text(
-                        widget.vehiclePurchaseOrders.order!.user!.phoneNumber!,
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
+                        SizedBox(height: 6.h),
+                        Text(
+                          widget
+                              .vehiclePurchaseOrders.order!.user!.phoneNumber!,
+                          style: theme.labelMedium!.copyWith(
+                            color: Colors.black.withOpacity(.5),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Text(
-                        widget.vehiclePurchaseOrders.order!.user!.addresses!
-                                .firstOrNull?.address ??
-                            "",
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
+                        SizedBox(height: 6.h),
+                        Text(
+                          widget.vehiclePurchaseOrders.order!.user!.addresses!
+                                  .firstOrNull?.address ??
+                              '',
+                          style: theme.labelMedium!.copyWith(
+                            color: Colors.black.withOpacity(.5),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
+                  ) */
                 ],
               ),
-            ),
+            ) */
             SizedBox(
               height: 20.h,
             ),
@@ -314,7 +318,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  if (currentStatus == Status.pending)
+                  if (vehiclePurchaseOrders.status == 'created')
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20.w),
                       child: Row(
@@ -363,7 +367,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                         ],
                       ),
                     ),
-                  if (currentStatus == Status.accepted)
+                  if (vehiclePurchaseOrders.status == 'accepted')
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20.w),
                       child: Row(
@@ -386,7 +390,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                         ],
                       ),
                     ),
-                  if (currentStatus == Status.rejected)
+                  if (vehiclePurchaseOrders.status == 'rejected')
                     Column(
                       children: [
                         Padding(
@@ -442,14 +446,8 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
             SizedBox(
               height: 10.h,
             ),
-            if (currentStatus == Status.pending)
-              const Center(child: Text('OR')),
-            if (currentStatus == Status.accepted) const SizedBox.shrink(),
-            if (currentStatus == Status.rejected) const SizedBox.shrink(),
-            SizedBox(
-              height: 5.h,
-            ),
-            if (currentStatus == Status.pending)
+
+/*             if (vehiclePurchaseOrders.status == 'created')
               Center(
                 child: TextButton(
                   onPressed: () {},
@@ -459,30 +457,31 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                         .copyWith(color: AppTheme.primaryColor),
                   ),
                 ),
-              ),
-            InkWell(
-              onTap: () {},
-              child: Center(
-                child: Container(
-                  width: 300.w,
-                  height: 55.h,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.r),
-                    border: Border.all(color: AppTheme.primaryColor),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Download Invoice",
-                      style: TextStyle(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
-                        color: AppTheme.primaryColor,
+              ), */
+            if (vehiclePurchaseOrders.status == 'delivered')
+              InkWell(
+                onTap: () {},
+                child: Center(
+                  child: Container(
+                    width: 300.w,
+                    height: 55.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.r),
+                      border: Border.all(color: AppTheme.primaryColor),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Download Invoice',
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: AppTheme.primaryColor,
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
             SizedBox(height: 16.h),
           ],
         ),
@@ -532,7 +531,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                     height: 26.h,
                   ),
                   Text(
-                    'Reasong For Rejection',
+                    'Reason For Rejection',
                     style: theme.headlineLarge,
                   ),
                   const SizedBox(height: 20),
@@ -577,8 +576,11 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                         AppRoutes.pop();
                         ref
                             .read(orderProvider(OrderFamily.purchaseOrders))
-                            .rejectOrder(vehiclePurchaseOrders.id,
-                                selectedReason, false);
+                            .rejectOrder(
+                              vehiclePurchaseOrders.id,
+                              selectedReason,
+                              true,
+                            );
                       },
                       child: Text(
                         'Submit',

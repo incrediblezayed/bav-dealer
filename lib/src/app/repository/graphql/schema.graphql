@@ -1160,8 +1160,10 @@ type VehicleDealer {
   dealer: Dealer
   vehicleVariant: VehicleVariant
   vehicleColor: VehicleColor
-  dealer_prices: Int
+  prices(where: PriceWhereInput! = {}, orderBy: [PriceOrderByInput!]! = [], take: Int, skip: Int! = 0): [Price!]
+  pricesCount(where: PriceWhereInput! = {}): Int
   stock: Int
+  totalPrice: Int
 }
 
 input VehicleDealerWhereUniqueInput {
@@ -1178,8 +1180,14 @@ input VehicleDealerWhereInput {
   dealer: DealerWhereInput
   vehicleVariant: VehicleVariantWhereInput
   vehicleColor: VehicleColorWhereInput
-  dealer_prices: IntFilter
+  prices: PriceManyRelationFilter
   stock: IntNullableFilter
+}
+
+input PriceManyRelationFilter {
+  every: PriceWhereInput
+  some: PriceWhereInput
+  none: PriceWhereInput
 }
 
 input IntNullableFilter {
@@ -1197,7 +1205,6 @@ input VehicleDealerOrderByInput {
   id: OrderDirection
   createdAt: OrderDirection
   modifiedAt: OrderDirection
-  dealer_prices: OrderDirection
   stock: OrderDirection
 }
 
@@ -1207,8 +1214,15 @@ input VehicleDealerUpdateInput {
   dealer: DealerRelateToOneForUpdateInput
   vehicleVariant: VehicleVariantRelateToOneForUpdateInput
   vehicleColor: VehicleColorRelateToOneForUpdateInput
-  dealer_prices: Int
+  prices: PriceRelateToManyForUpdateInput
   stock: Int
+}
+
+input PriceRelateToManyForUpdateInput {
+  disconnect: [PriceWhereUniqueInput!]
+  set: [PriceWhereUniqueInput!]
+  create: [PriceCreateInput!]
+  connect: [PriceWhereUniqueInput!]
 }
 
 input VehicleDealerUpdateArgs {
@@ -1222,8 +1236,13 @@ input VehicleDealerCreateInput {
   dealer: DealerRelateToOneForCreateInput
   vehicleVariant: VehicleVariantRelateToOneForCreateInput
   vehicleColor: VehicleColorRelateToOneForCreateInput
-  dealer_prices: Int
+  prices: PriceRelateToManyForCreateInput
   stock: Int
+}
+
+input PriceRelateToManyForCreateInput {
+  create: [PriceCreateInput!]
+  connect: [PriceWhereUniqueInput!]
 }
 
 type VehicleImage {
@@ -1438,8 +1457,8 @@ type VehicleDealerStockRequest {
   dealer: Dealer
   vehicleVariant: VehicleVariant
   vehicleColor: VehicleColor
-  dealer_prices: Int
   stock: Int
+  totalPrice: Int
   accepted: Boolean
   type: String
 }
@@ -1458,7 +1477,6 @@ input VehicleDealerStockRequestWhereInput {
   dealer: DealerWhereInput
   vehicleVariant: VehicleVariantWhereInput
   vehicleColor: VehicleColorWhereInput
-  dealer_prices: IntFilter
   stock: IntNullableFilter
   accepted: BooleanFilter
   type: StringNullableFilter
@@ -1496,7 +1514,6 @@ input VehicleDealerStockRequestOrderByInput {
   id: OrderDirection
   createdAt: OrderDirection
   modifiedAt: OrderDirection
-  dealer_prices: OrderDirection
   stock: OrderDirection
   accepted: OrderDirection
   type: OrderDirection
@@ -1508,7 +1525,6 @@ input VehicleDealerStockRequestUpdateInput {
   dealer: DealerRelateToOneForUpdateInput
   vehicleVariant: VehicleVariantRelateToOneForUpdateInput
   vehicleColor: VehicleColorRelateToOneForUpdateInput
-  dealer_prices: Int
   stock: Int
   accepted: Boolean
   type: String
@@ -1525,77 +1541,119 @@ input VehicleDealerStockRequestCreateInput {
   dealer: DealerRelateToOneForCreateInput
   vehicleVariant: VehicleVariantRelateToOneForCreateInput
   vehicleColor: VehicleColorRelateToOneForCreateInput
-  dealer_prices: Int
   stock: Int
   accepted: Boolean
   type: String
 }
 
-type TestDriveDealerStockRequest {
+type PriceCategory {
   id: ID!
   createdAt: DateTime
   modifiedAt: DateTime
-  dealer: Dealer
-  vehicleVariant: VehicleVariant
-  vehicleColor: VehicleColor
-  price: Int
-  available: Boolean
-  accepted: Boolean
+  name: String
+  description: String
 }
 
-input TestDriveDealerStockRequestWhereUniqueInput {
+input PriceCategoryWhereUniqueInput {
   id: ID
 }
 
-input TestDriveDealerStockRequestWhereInput {
-  AND: [TestDriveDealerStockRequestWhereInput!]
-  OR: [TestDriveDealerStockRequestWhereInput!]
-  NOT: [TestDriveDealerStockRequestWhereInput!]
+input PriceCategoryWhereInput {
+  AND: [PriceCategoryWhereInput!]
+  OR: [PriceCategoryWhereInput!]
+  NOT: [PriceCategoryWhereInput!]
   id: IDFilter
   createdAt: DateTimeNullableFilter
   modifiedAt: DateTimeNullableFilter
-  dealer: DealerWhereInput
-  vehicleVariant: VehicleVariantWhereInput
-  vehicleColor: VehicleColorWhereInput
-  price: IntFilter
-  available: BooleanFilter
-  accepted: BooleanFilter
+  name: StringFilter
+  description: StringFilter
 }
 
-input TestDriveDealerStockRequestOrderByInput {
+input PriceCategoryOrderByInput {
   id: OrderDirection
   createdAt: OrderDirection
   modifiedAt: OrderDirection
-  price: OrderDirection
-  available: OrderDirection
-  accepted: OrderDirection
+  name: OrderDirection
+  description: OrderDirection
 }
 
-input TestDriveDealerStockRequestUpdateInput {
+input PriceCategoryUpdateInput {
   createdAt: DateTime
   modifiedAt: DateTime
-  dealer: DealerRelateToOneForUpdateInput
-  vehicleVariant: VehicleVariantRelateToOneForUpdateInput
-  vehicleColor: VehicleColorRelateToOneForUpdateInput
-  price: Int
-  available: Boolean
-  accepted: Boolean
+  name: String
+  description: String
 }
 
-input TestDriveDealerStockRequestUpdateArgs {
-  where: TestDriveDealerStockRequestWhereUniqueInput!
-  data: TestDriveDealerStockRequestUpdateInput!
+input PriceCategoryUpdateArgs {
+  where: PriceCategoryWhereUniqueInput!
+  data: PriceCategoryUpdateInput!
 }
 
-input TestDriveDealerStockRequestCreateInput {
+input PriceCategoryCreateInput {
   createdAt: DateTime
   modifiedAt: DateTime
-  dealer: DealerRelateToOneForCreateInput
-  vehicleVariant: VehicleVariantRelateToOneForCreateInput
-  vehicleColor: VehicleColorRelateToOneForCreateInput
-  price: Int
-  available: Boolean
-  accepted: Boolean
+  name: String
+  description: String
+}
+
+type Price {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  category: PriceCategory
+  amount: Int
+}
+
+input PriceWhereUniqueInput {
+  id: ID
+}
+
+input PriceWhereInput {
+  AND: [PriceWhereInput!]
+  OR: [PriceWhereInput!]
+  NOT: [PriceWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  category: PriceCategoryWhereInput
+  amount: IntFilter
+}
+
+input PriceOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  amount: OrderDirection
+}
+
+input PriceUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  category: PriceCategoryRelateToOneForUpdateInput
+  amount: Int
+}
+
+input PriceCategoryRelateToOneForUpdateInput {
+  create: PriceCategoryCreateInput
+  connect: PriceCategoryWhereUniqueInput
+  disconnect: Boolean
+}
+
+input PriceUpdateArgs {
+  where: PriceWhereUniqueInput!
+  data: PriceUpdateInput!
+}
+
+input PriceCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  category: PriceCategoryRelateToOneForCreateInput
+  amount: Int
+}
+
+input PriceCategoryRelateToOneForCreateInput {
+  create: PriceCategoryCreateInput
+  connect: PriceCategoryWhereUniqueInput
 }
 
 type Wallet {
@@ -2557,6 +2615,118 @@ input SMSNotificationTemplateCreateInput {
   shortURL: Boolean
 }
 
+type AppNotificationTemplate {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationType
+  title: String
+  body: String
+}
+
+input AppNotificationTemplateWhereUniqueInput {
+  id: ID
+}
+
+input AppNotificationTemplateWhereInput {
+  AND: [AppNotificationTemplateWhereInput!]
+  OR: [AppNotificationTemplateWhereInput!]
+  NOT: [AppNotificationTemplateWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  notificationType: NotificationTypeWhereInput
+  title: StringFilter
+  body: StringFilter
+}
+
+input AppNotificationTemplateOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  title: OrderDirection
+  body: OrderDirection
+}
+
+input AppNotificationTemplateUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationTypeRelateToOneForUpdateInput
+  title: String
+  body: String
+}
+
+input AppNotificationTemplateUpdateArgs {
+  where: AppNotificationTemplateWhereUniqueInput!
+  data: AppNotificationTemplateUpdateInput!
+}
+
+input AppNotificationTemplateCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationTypeRelateToOneForCreateInput
+  title: String
+  body: String
+}
+
+type AppNotification {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationType
+  title: String
+  body: String
+  user: User
+}
+
+input AppNotificationWhereUniqueInput {
+  id: ID
+}
+
+input AppNotificationWhereInput {
+  AND: [AppNotificationWhereInput!]
+  OR: [AppNotificationWhereInput!]
+  NOT: [AppNotificationWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  notificationType: NotificationTypeWhereInput
+  title: StringFilter
+  body: StringFilter
+  user: UserWhereInput
+}
+
+input AppNotificationOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  title: OrderDirection
+  body: OrderDirection
+}
+
+input AppNotificationUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationTypeRelateToOneForUpdateInput
+  title: String
+  body: String
+  user: UserRelateToOneForUpdateInput
+}
+
+input AppNotificationUpdateArgs {
+  where: AppNotificationWhereUniqueInput!
+  data: AppNotificationUpdateInput!
+}
+
+input AppNotificationCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  notificationType: NotificationTypeRelateToOneForCreateInput
+  title: String
+  body: String
+  user: UserRelateToOneForCreateInput
+}
+
 type FAQ {
   id: ID!
   createdAt: DateTime
@@ -2740,8 +2910,13 @@ type Coupon {
   createdAt: DateTime
   modifiedAt: DateTime
   code: String
+  description: String
   logic: JSON
+  startFrom: DateTime
   expireBy: DateTime
+  vehicles(where: VehicleWhereInput! = {}, orderBy: [VehicleOrderByInput!]! = [], take: Int, skip: Int! = 0): [Vehicle!]
+  vehiclesCount(where: VehicleWhereInput! = {}): Int
+  vehiclesCondition: String
 }
 
 input CouponWhereUniqueInput {
@@ -2757,7 +2932,17 @@ input CouponWhereInput {
   createdAt: DateTimeNullableFilter
   modifiedAt: DateTimeNullableFilter
   code: StringFilter
+  description: StringFilter
+  startFrom: DateTimeNullableFilter
   expireBy: DateTimeNullableFilter
+  vehicles: VehicleManyRelationFilter
+  vehiclesCondition: StringNullableFilter
+}
+
+input VehicleManyRelationFilter {
+  every: VehicleWhereInput
+  some: VehicleWhereInput
+  none: VehicleWhereInput
 }
 
 input CouponOrderByInput {
@@ -2765,15 +2950,29 @@ input CouponOrderByInput {
   createdAt: OrderDirection
   modifiedAt: OrderDirection
   code: OrderDirection
+  description: OrderDirection
+  startFrom: OrderDirection
   expireBy: OrderDirection
+  vehiclesCondition: OrderDirection
 }
 
 input CouponUpdateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   code: String
+  description: String
   logic: JSON
+  startFrom: DateTime
   expireBy: DateTime
+  vehicles: VehicleRelateToManyForUpdateInput
+  vehiclesCondition: String
+}
+
+input VehicleRelateToManyForUpdateInput {
+  disconnect: [VehicleWhereUniqueInput!]
+  set: [VehicleWhereUniqueInput!]
+  create: [VehicleCreateInput!]
+  connect: [VehicleWhereUniqueInput!]
 }
 
 input CouponUpdateArgs {
@@ -2785,8 +2984,91 @@ input CouponCreateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   code: String
+  description: String
   logic: JSON
+  startFrom: DateTime
   expireBy: DateTime
+  vehicles: VehicleRelateToManyForCreateInput
+  vehiclesCondition: String
+}
+
+input VehicleRelateToManyForCreateInput {
+  create: [VehicleCreateInput!]
+  connect: [VehicleWhereUniqueInput!]
+}
+
+type Offer {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  code: String
+  description: String
+  logic: JSON
+  startFrom: DateTime
+  expireBy: DateTime
+  vehicles(where: VehicleWhereInput! = {}, orderBy: [VehicleOrderByInput!]! = [], take: Int, skip: Int! = 0): [Vehicle!]
+  vehiclesCount(where: VehicleWhereInput! = {}): Int
+  vehiclesCondition: String
+}
+
+input OfferWhereUniqueInput {
+  id: ID
+  code: String
+}
+
+input OfferWhereInput {
+  AND: [OfferWhereInput!]
+  OR: [OfferWhereInput!]
+  NOT: [OfferWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  code: StringFilter
+  description: StringFilter
+  startFrom: DateTimeNullableFilter
+  expireBy: DateTimeNullableFilter
+  vehicles: VehicleManyRelationFilter
+  vehiclesCondition: StringNullableFilter
+}
+
+input OfferOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  code: OrderDirection
+  description: OrderDirection
+  startFrom: OrderDirection
+  expireBy: OrderDirection
+  vehiclesCondition: OrderDirection
+}
+
+input OfferUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  code: String
+  description: String
+  logic: JSON
+  startFrom: DateTime
+  expireBy: DateTime
+  vehicles: VehicleRelateToManyForUpdateInput
+  vehiclesCondition: String
+}
+
+input OfferUpdateArgs {
+  where: OfferWhereUniqueInput!
+  data: OfferUpdateInput!
+}
+
+input OfferCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  code: String
+  description: String
+  logic: JSON
+  startFrom: DateTime
+  expireBy: DateTime
+  vehicles: VehicleRelateToManyForCreateInput
+  vehiclesCondition: String
 }
 
 type Feedback {
@@ -3236,12 +3518,18 @@ type Mutation {
   updateVehicleDealerStockRequests(data: [VehicleDealerStockRequestUpdateArgs!]!): [VehicleDealerStockRequest]
   deleteVehicleDealerStockRequest(where: VehicleDealerStockRequestWhereUniqueInput!): VehicleDealerStockRequest
   deleteVehicleDealerStockRequests(where: [VehicleDealerStockRequestWhereUniqueInput!]!): [VehicleDealerStockRequest]
-  createTestDriveDealerStockRequest(data: TestDriveDealerStockRequestCreateInput!): TestDriveDealerStockRequest
-  createTestDriveDealerStockRequests(data: [TestDriveDealerStockRequestCreateInput!]!): [TestDriveDealerStockRequest]
-  updateTestDriveDealerStockRequest(where: TestDriveDealerStockRequestWhereUniqueInput!, data: TestDriveDealerStockRequestUpdateInput!): TestDriveDealerStockRequest
-  updateTestDriveDealerStockRequests(data: [TestDriveDealerStockRequestUpdateArgs!]!): [TestDriveDealerStockRequest]
-  deleteTestDriveDealerStockRequest(where: TestDriveDealerStockRequestWhereUniqueInput!): TestDriveDealerStockRequest
-  deleteTestDriveDealerStockRequests(where: [TestDriveDealerStockRequestWhereUniqueInput!]!): [TestDriveDealerStockRequest]
+  createPriceCategory(data: PriceCategoryCreateInput!): PriceCategory
+  createPriceCategories(data: [PriceCategoryCreateInput!]!): [PriceCategory]
+  updatePriceCategory(where: PriceCategoryWhereUniqueInput!, data: PriceCategoryUpdateInput!): PriceCategory
+  updatePriceCategories(data: [PriceCategoryUpdateArgs!]!): [PriceCategory]
+  deletePriceCategory(where: PriceCategoryWhereUniqueInput!): PriceCategory
+  deletePriceCategories(where: [PriceCategoryWhereUniqueInput!]!): [PriceCategory]
+  createPrice(data: PriceCreateInput!): Price
+  createPrices(data: [PriceCreateInput!]!): [Price]
+  updatePrice(where: PriceWhereUniqueInput!, data: PriceUpdateInput!): Price
+  updatePrices(data: [PriceUpdateArgs!]!): [Price]
+  deletePrice(where: PriceWhereUniqueInput!): Price
+  deletePrices(where: [PriceWhereUniqueInput!]!): [Price]
   createWallet(data: WalletCreateInput!): Wallet
   createWallets(data: [WalletCreateInput!]!): [Wallet]
   updateWallet(where: WalletWhereUniqueInput!, data: WalletUpdateInput!): Wallet
@@ -3326,6 +3614,18 @@ type Mutation {
   updateSMSNotificationTemplates(data: [SMSNotificationTemplateUpdateArgs!]!): [SMSNotificationTemplate]
   deleteSMSNotificationTemplate(where: SMSNotificationTemplateWhereUniqueInput!): SMSNotificationTemplate
   deleteSMSNotificationTemplates(where: [SMSNotificationTemplateWhereUniqueInput!]!): [SMSNotificationTemplate]
+  createAppNotificationTemplate(data: AppNotificationTemplateCreateInput!): AppNotificationTemplate
+  createAppNotificationTemplates(data: [AppNotificationTemplateCreateInput!]!): [AppNotificationTemplate]
+  updateAppNotificationTemplate(where: AppNotificationTemplateWhereUniqueInput!, data: AppNotificationTemplateUpdateInput!): AppNotificationTemplate
+  updateAppNotificationTemplates(data: [AppNotificationTemplateUpdateArgs!]!): [AppNotificationTemplate]
+  deleteAppNotificationTemplate(where: AppNotificationTemplateWhereUniqueInput!): AppNotificationTemplate
+  deleteAppNotificationTemplates(where: [AppNotificationTemplateWhereUniqueInput!]!): [AppNotificationTemplate]
+  createAppNotification(data: AppNotificationCreateInput!): AppNotification
+  createAppNotifications(data: [AppNotificationCreateInput!]!): [AppNotification]
+  updateAppNotification(where: AppNotificationWhereUniqueInput!, data: AppNotificationUpdateInput!): AppNotification
+  updateAppNotifications(data: [AppNotificationUpdateArgs!]!): [AppNotification]
+  deleteAppNotification(where: AppNotificationWhereUniqueInput!): AppNotification
+  deleteAppNotifications(where: [AppNotificationWhereUniqueInput!]!): [AppNotification]
   createFAQ(data: FAQCreateInput!): FAQ
   createFAQS(data: [FAQCreateInput!]!): [FAQ]
   updateFAQ(where: FAQWhereUniqueInput!, data: FAQUpdateInput!): FAQ
@@ -3350,6 +3650,12 @@ type Mutation {
   updateCoupons(data: [CouponUpdateArgs!]!): [Coupon]
   deleteCoupon(where: CouponWhereUniqueInput!): Coupon
   deleteCoupons(where: [CouponWhereUniqueInput!]!): [Coupon]
+  createOffer(data: OfferCreateInput!): Offer
+  createOffers(data: [OfferCreateInput!]!): [Offer]
+  updateOffer(where: OfferWhereUniqueInput!, data: OfferUpdateInput!): Offer
+  updateOffers(data: [OfferUpdateArgs!]!): [Offer]
+  deleteOffer(where: OfferWhereUniqueInput!): Offer
+  deleteOffers(where: [OfferWhereUniqueInput!]!): [Offer]
   createFeedback(data: FeedbackCreateInput!): Feedback
   createFeedbacks(data: [FeedbackCreateInput!]!): [Feedback]
   updateFeedback(where: FeedbackWhereUniqueInput!, data: FeedbackUpdateInput!): Feedback
@@ -3394,7 +3700,7 @@ type Mutation {
   verifyOrderPayment(razorpayPaymentId: String!, razorpayOrderId: String!, razorpaySignature: String): JSON
   addAmountToWallet(amount: Int!): JSON
   verifyWalletPayment(razorpayPaymentId: String!, razorpayOrderId: String!, razorpaySignature: String): JSON
-  submitReferralCode(code: String!, userId: ID!): Boolean
+  submitReferralCode(code: String!): Boolean
 }
 
 input OrderItem {
@@ -3502,9 +3808,12 @@ type Query {
   vehicleDealerStockRequests(where: VehicleDealerStockRequestWhereInput! = {}, orderBy: [VehicleDealerStockRequestOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleDealerStockRequest!]
   vehicleDealerStockRequest(where: VehicleDealerStockRequestWhereUniqueInput!): VehicleDealerStockRequest
   vehicleDealerStockRequestsCount(where: VehicleDealerStockRequestWhereInput! = {}): Int
-  testDriveDealerStockRequests(where: TestDriveDealerStockRequestWhereInput! = {}, orderBy: [TestDriveDealerStockRequestOrderByInput!]! = [], take: Int, skip: Int! = 0): [TestDriveDealerStockRequest!]
-  testDriveDealerStockRequest(where: TestDriveDealerStockRequestWhereUniqueInput!): TestDriveDealerStockRequest
-  testDriveDealerStockRequestsCount(where: TestDriveDealerStockRequestWhereInput! = {}): Int
+  priceCategories(where: PriceCategoryWhereInput! = {}, orderBy: [PriceCategoryOrderByInput!]! = [], take: Int, skip: Int! = 0): [PriceCategory!]
+  priceCategory(where: PriceCategoryWhereUniqueInput!): PriceCategory
+  priceCategoriesCount(where: PriceCategoryWhereInput! = {}): Int
+  prices(where: PriceWhereInput! = {}, orderBy: [PriceOrderByInput!]! = [], take: Int, skip: Int! = 0): [Price!]
+  price(where: PriceWhereUniqueInput!): Price
+  pricesCount(where: PriceWhereInput! = {}): Int
   wallets(where: WalletWhereInput! = {}, orderBy: [WalletOrderByInput!]! = [], take: Int, skip: Int! = 0): [Wallet!]
   wallet(where: WalletWhereUniqueInput!): Wallet
   walletsCount(where: WalletWhereInput! = {}): Int
@@ -3547,6 +3856,12 @@ type Query {
   sMSNotificationTemplates(where: SMSNotificationTemplateWhereInput! = {}, orderBy: [SMSNotificationTemplateOrderByInput!]! = [], take: Int, skip: Int! = 0): [SMSNotificationTemplate!]
   sMSNotificationTemplate(where: SMSNotificationTemplateWhereUniqueInput!): SMSNotificationTemplate
   sMSNotificationTemplatesCount(where: SMSNotificationTemplateWhereInput! = {}): Int
+  appNotificationTemplates(where: AppNotificationTemplateWhereInput! = {}, orderBy: [AppNotificationTemplateOrderByInput!]! = [], take: Int, skip: Int! = 0): [AppNotificationTemplate!]
+  appNotificationTemplate(where: AppNotificationTemplateWhereUniqueInput!): AppNotificationTemplate
+  appNotificationTemplatesCount(where: AppNotificationTemplateWhereInput! = {}): Int
+  appNotifications(where: AppNotificationWhereInput! = {}, orderBy: [AppNotificationOrderByInput!]! = [], take: Int, skip: Int! = 0): [AppNotification!]
+  appNotification(where: AppNotificationWhereUniqueInput!): AppNotification
+  appNotificationsCount(where: AppNotificationWhereInput! = {}): Int
   fAQS(where: FAQWhereInput! = {}, orderBy: [FAQOrderByInput!]! = [], take: Int, skip: Int! = 0): [FAQ!]
   fAQ(where: FAQWhereUniqueInput!): FAQ
   fAQSCount(where: FAQWhereInput! = {}): Int
@@ -3559,6 +3874,9 @@ type Query {
   coupons(where: CouponWhereInput! = {}, orderBy: [CouponOrderByInput!]! = [], take: Int, skip: Int! = 0): [Coupon!]
   coupon(where: CouponWhereUniqueInput!): Coupon
   couponsCount(where: CouponWhereInput! = {}): Int
+  offers(where: OfferWhereInput! = {}, orderBy: [OfferOrderByInput!]! = [], take: Int, skip: Int! = 0): [Offer!]
+  offer(where: OfferWhereUniqueInput!): Offer
+  offersCount(where: OfferWhereInput! = {}): Int
   feedbacks(where: FeedbackWhereInput! = {}, orderBy: [FeedbackOrderByInput!]! = [], take: Int, skip: Int! = 0): [Feedback!]
   feedback(where: FeedbackWhereUniqueInput!): Feedback
   feedbacksCount(where: FeedbackWhereInput! = {}): Int
@@ -3583,6 +3901,17 @@ type Query {
   getPincode(pincode: String!): JSON
   authenticatedItem: AuthenticatedItem
   validateUserPasswordResetToken(phoneNumber: String!, token: String!): ValidateUserPasswordResetTokenResult
+  getCouponAppliedDetails(couponCode: String!, items: [Item!]!): JSON
+  getOfferAppliedDetails(items: [Item!]!): JSON
+}
+
+input Item {
+  type: CouponItemType!
+  ids: [ID!]!
+}
+
+enum CouponItemType {
+  vehicleDealer
 }
 
 union AuthenticatedItem = User

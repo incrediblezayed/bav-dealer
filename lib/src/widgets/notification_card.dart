@@ -1,9 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:dealerapp/src/app/model/notification_model.dart';
+import 'package:dealerapp/src/app/repository/notifications/graphql/__generated__/notifications.data.gql.dart';
+import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
+import 'package:intl/intl.dart';
 
 class NotificationCard extends StatelessWidget {
-  final NotificationModel notificationModel;
+  final GAppNotificationsData_appNotifications notificationModel;
 
   const NotificationCard({
     required this.notificationModel,
@@ -18,7 +21,7 @@ class NotificationCard extends StatelessWidget {
       // height: 100,
       width: double.maxFinite,
       decoration: BoxDecoration(
-        color: notificationModel.notificationType.cardColor,
+        color: NotificationType.orderNotification.cardColor,
         borderRadius: BorderRadius.circular(16.r),
       ),
       child: Column(
@@ -26,9 +29,9 @@ class NotificationCard extends StatelessWidget {
           Row(
             children: [
               CircleAvatar(
-                backgroundColor: notificationModel.notificationType.iconColor,
+                backgroundColor: NotificationType.orderNotification.iconColor,
                 radius: 30,
-                child: Image.asset(notificationModel.notificationType.icon),
+                child: Image.asset(NotificationType.orderNotification.icon),
               ),
               SizedBox(width: 10.w),
               Flexible(
@@ -36,7 +39,7 @@ class NotificationCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      notificationModel.title,
+                      notificationModel.title!,
                       style: theme.headlineMedium!.copyWith(
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w500,
@@ -44,7 +47,8 @@ class NotificationCard extends StatelessWidget {
                     ),
                     SizedBox(height: 10.h),
                     Text(
-                      notificationModel.dateTime.toString(),
+                      DateFormat('MMM, dd yyyy At hh:mm a')
+                          .format(notificationModel.createdAt!.toDateTime!),
                       style: theme.labelMedium,
                     ),
                   ],
@@ -54,7 +58,7 @@ class NotificationCard extends StatelessWidget {
           ),
           SizedBox(height: 10.h),
           Text(
-            notificationModel.subtitle,
+            notificationModel.body!,
             style: theme.headlineSmall!
                 .copyWith(fontSize: 14.sp, fontWeight: FontWeight.w300),
           ),

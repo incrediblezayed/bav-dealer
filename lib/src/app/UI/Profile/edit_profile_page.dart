@@ -15,7 +15,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 ///Profile page
 class EditProfile extends ConsumerStatefulWidget {
   ///Constructor for profile page
-  const EditProfile({super.key, required this.isPersonalInfo});
+  const EditProfile({required this.isPersonalInfo, super.key});
   final bool isPersonalInfo;
 
   @override
@@ -71,8 +71,8 @@ class _ProfilePageState extends ConsumerState<EditProfile> {
                       isPersonalInfo = false;
                     });
                   },
-                  child: Text('Edit Profile'),
-                )
+                  child: const Text('Edit Profile'),
+                ),
               ]
             : null,
       ),

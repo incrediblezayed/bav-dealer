@@ -12,6 +12,15 @@ Serializer<GCurrentUserOTPReq> _$gCurrentUserOTPReqSerializer =
     new _$GCurrentUserOTPReqSerializer();
 Serializer<GValidateUserOTPReq> _$gValidateUserOTPReqSerializer =
     new _$GValidateUserOTPReqSerializer();
+Serializer<GSendUserPasswordResetLinkReq>
+    _$gSendUserPasswordResetLinkReqSerializer =
+    new _$GSendUserPasswordResetLinkReqSerializer();
+Serializer<GRedeemUserPasswordResetTokenReq>
+    _$gRedeemUserPasswordResetTokenReqSerializer =
+    new _$GRedeemUserPasswordResetTokenReqSerializer();
+Serializer<GValidateUserPasswordResetTokenReq>
+    _$gValidateUserPasswordResetTokenReqSerializer =
+    new _$GValidateUserPasswordResetTokenReqSerializer();
 Serializer<GCreateDealerReq> _$gCreateDealerReqSerializer =
     new _$GCreateDealerReqSerializer();
 Serializer<GAuthenticateUserWithPasswordReq>
@@ -353,6 +362,381 @@ class _$GValidateUserOTPReqSerializer
           result.optimisticResponse.replace(serializers.deserialize(value,
                   specifiedType: const FullType(_i2.GValidateUserOTPData))!
               as _i2.GValidateUserOTPData);
+          break;
+        case 'updateCacheHandlerKey':
+          result.updateCacheHandlerKey = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'updateCacheHandlerContext':
+          result.updateCacheHandlerContext = serializers.deserialize(value,
+              specifiedType: const FullType(Map, const [
+                const FullType(String),
+                const FullType(dynamic)
+              ])) as Map<String, dynamic>?;
+          break;
+        case 'fetchPolicy':
+          result.fetchPolicy = serializers.deserialize(value,
+                  specifiedType: const FullType(_i1.FetchPolicy))
+              as _i1.FetchPolicy?;
+          break;
+        case 'executeOnListen':
+          result.executeOnListen = serializers.deserialize(value,
+              specifiedType: const FullType(bool))! as bool;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GSendUserPasswordResetLinkReqSerializer
+    implements StructuredSerializer<GSendUserPasswordResetLinkReq> {
+  @override
+  final Iterable<Type> types = const [
+    GSendUserPasswordResetLinkReq,
+    _$GSendUserPasswordResetLinkReq
+  ];
+  @override
+  final String wireName = 'GSendUserPasswordResetLinkReq';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GSendUserPasswordResetLinkReq object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'vars',
+      serializers.serialize(object.vars,
+          specifiedType: const FullType(_i3.GSendUserPasswordResetLinkVars)),
+      'operation',
+      serializers.serialize(object.operation,
+          specifiedType: const FullType(_i4.Operation)),
+      'executeOnListen',
+      serializers.serialize(object.executeOnListen,
+          specifiedType: const FullType(bool)),
+    ];
+    Object? value;
+    value = object.requestId;
+    if (value != null) {
+      result
+        ..add('requestId')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.optimisticResponse;
+    if (value != null) {
+      result
+        ..add('optimisticResponse')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.GSendUserPasswordResetLinkData)));
+    }
+    value = object.updateCacheHandlerKey;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerKey')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.updateCacheHandlerContext;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerContext')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                Map, const [const FullType(String), const FullType(dynamic)])));
+    }
+    value = object.fetchPolicy;
+    if (value != null) {
+      result
+        ..add('fetchPolicy')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i1.FetchPolicy)));
+    }
+    return result;
+  }
+
+  @override
+  GSendUserPasswordResetLinkReq deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GSendUserPasswordResetLinkReqBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'vars':
+          result.vars.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(_i3.GSendUserPasswordResetLinkVars))!
+              as _i3.GSendUserPasswordResetLinkVars);
+          break;
+        case 'operation':
+          result.operation = serializers.deserialize(value,
+              specifiedType: const FullType(_i4.Operation))! as _i4.Operation;
+          break;
+        case 'requestId':
+          result.requestId = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'optimisticResponse':
+          result.optimisticResponse.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(_i2.GSendUserPasswordResetLinkData))!
+              as _i2.GSendUserPasswordResetLinkData);
+          break;
+        case 'updateCacheHandlerKey':
+          result.updateCacheHandlerKey = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'updateCacheHandlerContext':
+          result.updateCacheHandlerContext = serializers.deserialize(value,
+              specifiedType: const FullType(Map, const [
+                const FullType(String),
+                const FullType(dynamic)
+              ])) as Map<String, dynamic>?;
+          break;
+        case 'fetchPolicy':
+          result.fetchPolicy = serializers.deserialize(value,
+                  specifiedType: const FullType(_i1.FetchPolicy))
+              as _i1.FetchPolicy?;
+          break;
+        case 'executeOnListen':
+          result.executeOnListen = serializers.deserialize(value,
+              specifiedType: const FullType(bool))! as bool;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GRedeemUserPasswordResetTokenReqSerializer
+    implements StructuredSerializer<GRedeemUserPasswordResetTokenReq> {
+  @override
+  final Iterable<Type> types = const [
+    GRedeemUserPasswordResetTokenReq,
+    _$GRedeemUserPasswordResetTokenReq
+  ];
+  @override
+  final String wireName = 'GRedeemUserPasswordResetTokenReq';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GRedeemUserPasswordResetTokenReq object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'vars',
+      serializers.serialize(object.vars,
+          specifiedType: const FullType(_i3.GRedeemUserPasswordResetTokenVars)),
+      'operation',
+      serializers.serialize(object.operation,
+          specifiedType: const FullType(_i4.Operation)),
+      'executeOnListen',
+      serializers.serialize(object.executeOnListen,
+          specifiedType: const FullType(bool)),
+    ];
+    Object? value;
+    value = object.requestId;
+    if (value != null) {
+      result
+        ..add('requestId')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.optimisticResponse;
+    if (value != null) {
+      result
+        ..add('optimisticResponse')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(_i2.GRedeemUserPasswordResetTokenData)));
+    }
+    value = object.updateCacheHandlerKey;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerKey')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.updateCacheHandlerContext;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerContext')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                Map, const [const FullType(String), const FullType(dynamic)])));
+    }
+    value = object.fetchPolicy;
+    if (value != null) {
+      result
+        ..add('fetchPolicy')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i1.FetchPolicy)));
+    }
+    return result;
+  }
+
+  @override
+  GRedeemUserPasswordResetTokenReq deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GRedeemUserPasswordResetTokenReqBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'vars':
+          result.vars.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(_i3.GRedeemUserPasswordResetTokenVars))!
+              as _i3.GRedeemUserPasswordResetTokenVars);
+          break;
+        case 'operation':
+          result.operation = serializers.deserialize(value,
+              specifiedType: const FullType(_i4.Operation))! as _i4.Operation;
+          break;
+        case 'requestId':
+          result.requestId = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'optimisticResponse':
+          result.optimisticResponse.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(_i2.GRedeemUserPasswordResetTokenData))!
+              as _i2.GRedeemUserPasswordResetTokenData);
+          break;
+        case 'updateCacheHandlerKey':
+          result.updateCacheHandlerKey = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'updateCacheHandlerContext':
+          result.updateCacheHandlerContext = serializers.deserialize(value,
+              specifiedType: const FullType(Map, const [
+                const FullType(String),
+                const FullType(dynamic)
+              ])) as Map<String, dynamic>?;
+          break;
+        case 'fetchPolicy':
+          result.fetchPolicy = serializers.deserialize(value,
+                  specifiedType: const FullType(_i1.FetchPolicy))
+              as _i1.FetchPolicy?;
+          break;
+        case 'executeOnListen':
+          result.executeOnListen = serializers.deserialize(value,
+              specifiedType: const FullType(bool))! as bool;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GValidateUserPasswordResetTokenReqSerializer
+    implements StructuredSerializer<GValidateUserPasswordResetTokenReq> {
+  @override
+  final Iterable<Type> types = const [
+    GValidateUserPasswordResetTokenReq,
+    _$GValidateUserPasswordResetTokenReq
+  ];
+  @override
+  final String wireName = 'GValidateUserPasswordResetTokenReq';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GValidateUserPasswordResetTokenReq object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'vars',
+      serializers.serialize(object.vars,
+          specifiedType:
+              const FullType(_i3.GValidateUserPasswordResetTokenVars)),
+      'operation',
+      serializers.serialize(object.operation,
+          specifiedType: const FullType(_i4.Operation)),
+      'executeOnListen',
+      serializers.serialize(object.executeOnListen,
+          specifiedType: const FullType(bool)),
+    ];
+    Object? value;
+    value = object.requestId;
+    if (value != null) {
+      result
+        ..add('requestId')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.optimisticResponse;
+    if (value != null) {
+      result
+        ..add('optimisticResponse')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(_i2.GValidateUserPasswordResetTokenData)));
+    }
+    value = object.updateCacheHandlerKey;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerKey')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.updateCacheHandlerContext;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerContext')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                Map, const [const FullType(String), const FullType(dynamic)])));
+    }
+    value = object.fetchPolicy;
+    if (value != null) {
+      result
+        ..add('fetchPolicy')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i1.FetchPolicy)));
+    }
+    return result;
+  }
+
+  @override
+  GValidateUserPasswordResetTokenReq deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GValidateUserPasswordResetTokenReqBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'vars':
+          result.vars.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(_i3.GValidateUserPasswordResetTokenVars))!
+              as _i3.GValidateUserPasswordResetTokenVars);
+          break;
+        case 'operation':
+          result.operation = serializers.deserialize(value,
+              specifiedType: const FullType(_i4.Operation))! as _i4.Operation;
+          break;
+        case 'requestId':
+          result.requestId = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'optimisticResponse':
+          result.optimisticResponse.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(_i2.GValidateUserPasswordResetTokenData))!
+              as _i2.GValidateUserPasswordResetTokenData);
           break;
         case 'updateCacheHandlerKey':
           result.updateCacheHandlerKey = serializers.deserialize(value,
@@ -1639,6 +2023,725 @@ class GValidateUserOTPReqBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GValidateUserOTPReq', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GSendUserPasswordResetLinkReq extends GSendUserPasswordResetLinkReq {
+  @override
+  final _i3.GSendUserPasswordResetLinkVars vars;
+  @override
+  final _i4.Operation operation;
+  @override
+  final String? requestId;
+  @override
+  final _i2.GSendUserPasswordResetLinkData? Function(
+      _i2.GSendUserPasswordResetLinkData?,
+      _i2.GSendUserPasswordResetLinkData?)? updateResult;
+  @override
+  final _i2.GSendUserPasswordResetLinkData? optimisticResponse;
+  @override
+  final String? updateCacheHandlerKey;
+  @override
+  final Map<String, dynamic>? updateCacheHandlerContext;
+  @override
+  final _i1.FetchPolicy? fetchPolicy;
+  @override
+  final bool executeOnListen;
+
+  factory _$GSendUserPasswordResetLinkReq(
+          [void Function(GSendUserPasswordResetLinkReqBuilder)? updates]) =>
+      (new GSendUserPasswordResetLinkReqBuilder()..update(updates))._build();
+
+  _$GSendUserPasswordResetLinkReq._(
+      {required this.vars,
+      required this.operation,
+      this.requestId,
+      this.updateResult,
+      this.optimisticResponse,
+      this.updateCacheHandlerKey,
+      this.updateCacheHandlerContext,
+      this.fetchPolicy,
+      required this.executeOnListen})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        vars, r'GSendUserPasswordResetLinkReq', 'vars');
+    BuiltValueNullFieldError.checkNotNull(
+        operation, r'GSendUserPasswordResetLinkReq', 'operation');
+    BuiltValueNullFieldError.checkNotNull(
+        executeOnListen, r'GSendUserPasswordResetLinkReq', 'executeOnListen');
+  }
+
+  @override
+  GSendUserPasswordResetLinkReq rebuild(
+          void Function(GSendUserPasswordResetLinkReqBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GSendUserPasswordResetLinkReqBuilder toBuilder() =>
+      new GSendUserPasswordResetLinkReqBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    final dynamic _$dynamicOther = other;
+    return other is GSendUserPasswordResetLinkReq &&
+        vars == other.vars &&
+        operation == other.operation &&
+        requestId == other.requestId &&
+        updateResult == _$dynamicOther.updateResult &&
+        optimisticResponse == other.optimisticResponse &&
+        updateCacheHandlerKey == other.updateCacheHandlerKey &&
+        updateCacheHandlerContext == other.updateCacheHandlerContext &&
+        fetchPolicy == other.fetchPolicy &&
+        executeOnListen == other.executeOnListen;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, vars.hashCode);
+    _$hash = $jc(_$hash, operation.hashCode);
+    _$hash = $jc(_$hash, requestId.hashCode);
+    _$hash = $jc(_$hash, updateResult.hashCode);
+    _$hash = $jc(_$hash, optimisticResponse.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerKey.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
+    _$hash = $jc(_$hash, fetchPolicy.hashCode);
+    _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GSendUserPasswordResetLinkReq')
+          ..add('vars', vars)
+          ..add('operation', operation)
+          ..add('requestId', requestId)
+          ..add('updateResult', updateResult)
+          ..add('optimisticResponse', optimisticResponse)
+          ..add('updateCacheHandlerKey', updateCacheHandlerKey)
+          ..add('updateCacheHandlerContext', updateCacheHandlerContext)
+          ..add('fetchPolicy', fetchPolicy)
+          ..add('executeOnListen', executeOnListen))
+        .toString();
+  }
+}
+
+class GSendUserPasswordResetLinkReqBuilder
+    implements
+        Builder<GSendUserPasswordResetLinkReq,
+            GSendUserPasswordResetLinkReqBuilder> {
+  _$GSendUserPasswordResetLinkReq? _$v;
+
+  _i3.GSendUserPasswordResetLinkVarsBuilder? _vars;
+  _i3.GSendUserPasswordResetLinkVarsBuilder get vars =>
+      _$this._vars ??= new _i3.GSendUserPasswordResetLinkVarsBuilder();
+  set vars(_i3.GSendUserPasswordResetLinkVarsBuilder? vars) =>
+      _$this._vars = vars;
+
+  _i4.Operation? _operation;
+  _i4.Operation? get operation => _$this._operation;
+  set operation(_i4.Operation? operation) => _$this._operation = operation;
+
+  String? _requestId;
+  String? get requestId => _$this._requestId;
+  set requestId(String? requestId) => _$this._requestId = requestId;
+
+  _i2.GSendUserPasswordResetLinkData? Function(
+      _i2.GSendUserPasswordResetLinkData?,
+      _i2.GSendUserPasswordResetLinkData?)? _updateResult;
+  _i2.GSendUserPasswordResetLinkData? Function(
+          _i2.GSendUserPasswordResetLinkData?,
+          _i2.GSendUserPasswordResetLinkData?)?
+      get updateResult => _$this._updateResult;
+  set updateResult(
+          _i2.GSendUserPasswordResetLinkData? Function(
+                  _i2.GSendUserPasswordResetLinkData?,
+                  _i2.GSendUserPasswordResetLinkData?)?
+              updateResult) =>
+      _$this._updateResult = updateResult;
+
+  _i2.GSendUserPasswordResetLinkDataBuilder? _optimisticResponse;
+  _i2.GSendUserPasswordResetLinkDataBuilder get optimisticResponse =>
+      _$this._optimisticResponse ??=
+          new _i2.GSendUserPasswordResetLinkDataBuilder();
+  set optimisticResponse(
+          _i2.GSendUserPasswordResetLinkDataBuilder? optimisticResponse) =>
+      _$this._optimisticResponse = optimisticResponse;
+
+  String? _updateCacheHandlerKey;
+  String? get updateCacheHandlerKey => _$this._updateCacheHandlerKey;
+  set updateCacheHandlerKey(String? updateCacheHandlerKey) =>
+      _$this._updateCacheHandlerKey = updateCacheHandlerKey;
+
+  Map<String, dynamic>? _updateCacheHandlerContext;
+  Map<String, dynamic>? get updateCacheHandlerContext =>
+      _$this._updateCacheHandlerContext;
+  set updateCacheHandlerContext(
+          Map<String, dynamic>? updateCacheHandlerContext) =>
+      _$this._updateCacheHandlerContext = updateCacheHandlerContext;
+
+  _i1.FetchPolicy? _fetchPolicy;
+  _i1.FetchPolicy? get fetchPolicy => _$this._fetchPolicy;
+  set fetchPolicy(_i1.FetchPolicy? fetchPolicy) =>
+      _$this._fetchPolicy = fetchPolicy;
+
+  bool? _executeOnListen;
+  bool? get executeOnListen => _$this._executeOnListen;
+  set executeOnListen(bool? executeOnListen) =>
+      _$this._executeOnListen = executeOnListen;
+
+  GSendUserPasswordResetLinkReqBuilder() {
+    GSendUserPasswordResetLinkReq._initializeBuilder(this);
+  }
+
+  GSendUserPasswordResetLinkReqBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _vars = $v.vars.toBuilder();
+      _operation = $v.operation;
+      _requestId = $v.requestId;
+      _updateResult = $v.updateResult;
+      _optimisticResponse = $v.optimisticResponse?.toBuilder();
+      _updateCacheHandlerKey = $v.updateCacheHandlerKey;
+      _updateCacheHandlerContext = $v.updateCacheHandlerContext;
+      _fetchPolicy = $v.fetchPolicy;
+      _executeOnListen = $v.executeOnListen;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GSendUserPasswordResetLinkReq other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GSendUserPasswordResetLinkReq;
+  }
+
+  @override
+  void update(void Function(GSendUserPasswordResetLinkReqBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GSendUserPasswordResetLinkReq build() => _build();
+
+  _$GSendUserPasswordResetLinkReq _build() {
+    _$GSendUserPasswordResetLinkReq _$result;
+    try {
+      _$result = _$v ??
+          new _$GSendUserPasswordResetLinkReq._(
+              vars: vars.build(),
+              operation: BuiltValueNullFieldError.checkNotNull(
+                  operation, r'GSendUserPasswordResetLinkReq', 'operation'),
+              requestId: requestId,
+              updateResult: updateResult,
+              optimisticResponse: _optimisticResponse?.build(),
+              updateCacheHandlerKey: updateCacheHandlerKey,
+              updateCacheHandlerContext: updateCacheHandlerContext,
+              fetchPolicy: fetchPolicy,
+              executeOnListen: BuiltValueNullFieldError.checkNotNull(
+                  executeOnListen,
+                  r'GSendUserPasswordResetLinkReq',
+                  'executeOnListen'));
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'vars';
+        vars.build();
+
+        _$failedField = 'optimisticResponse';
+        _optimisticResponse?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GSendUserPasswordResetLinkReq', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GRedeemUserPasswordResetTokenReq
+    extends GRedeemUserPasswordResetTokenReq {
+  @override
+  final _i3.GRedeemUserPasswordResetTokenVars vars;
+  @override
+  final _i4.Operation operation;
+  @override
+  final String? requestId;
+  @override
+  final _i2.GRedeemUserPasswordResetTokenData? Function(
+      _i2.GRedeemUserPasswordResetTokenData?,
+      _i2.GRedeemUserPasswordResetTokenData?)? updateResult;
+  @override
+  final _i2.GRedeemUserPasswordResetTokenData? optimisticResponse;
+  @override
+  final String? updateCacheHandlerKey;
+  @override
+  final Map<String, dynamic>? updateCacheHandlerContext;
+  @override
+  final _i1.FetchPolicy? fetchPolicy;
+  @override
+  final bool executeOnListen;
+
+  factory _$GRedeemUserPasswordResetTokenReq(
+          [void Function(GRedeemUserPasswordResetTokenReqBuilder)? updates]) =>
+      (new GRedeemUserPasswordResetTokenReqBuilder()..update(updates))._build();
+
+  _$GRedeemUserPasswordResetTokenReq._(
+      {required this.vars,
+      required this.operation,
+      this.requestId,
+      this.updateResult,
+      this.optimisticResponse,
+      this.updateCacheHandlerKey,
+      this.updateCacheHandlerContext,
+      this.fetchPolicy,
+      required this.executeOnListen})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        vars, r'GRedeemUserPasswordResetTokenReq', 'vars');
+    BuiltValueNullFieldError.checkNotNull(
+        operation, r'GRedeemUserPasswordResetTokenReq', 'operation');
+    BuiltValueNullFieldError.checkNotNull(executeOnListen,
+        r'GRedeemUserPasswordResetTokenReq', 'executeOnListen');
+  }
+
+  @override
+  GRedeemUserPasswordResetTokenReq rebuild(
+          void Function(GRedeemUserPasswordResetTokenReqBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GRedeemUserPasswordResetTokenReqBuilder toBuilder() =>
+      new GRedeemUserPasswordResetTokenReqBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    final dynamic _$dynamicOther = other;
+    return other is GRedeemUserPasswordResetTokenReq &&
+        vars == other.vars &&
+        operation == other.operation &&
+        requestId == other.requestId &&
+        updateResult == _$dynamicOther.updateResult &&
+        optimisticResponse == other.optimisticResponse &&
+        updateCacheHandlerKey == other.updateCacheHandlerKey &&
+        updateCacheHandlerContext == other.updateCacheHandlerContext &&
+        fetchPolicy == other.fetchPolicy &&
+        executeOnListen == other.executeOnListen;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, vars.hashCode);
+    _$hash = $jc(_$hash, operation.hashCode);
+    _$hash = $jc(_$hash, requestId.hashCode);
+    _$hash = $jc(_$hash, updateResult.hashCode);
+    _$hash = $jc(_$hash, optimisticResponse.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerKey.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
+    _$hash = $jc(_$hash, fetchPolicy.hashCode);
+    _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GRedeemUserPasswordResetTokenReq')
+          ..add('vars', vars)
+          ..add('operation', operation)
+          ..add('requestId', requestId)
+          ..add('updateResult', updateResult)
+          ..add('optimisticResponse', optimisticResponse)
+          ..add('updateCacheHandlerKey', updateCacheHandlerKey)
+          ..add('updateCacheHandlerContext', updateCacheHandlerContext)
+          ..add('fetchPolicy', fetchPolicy)
+          ..add('executeOnListen', executeOnListen))
+        .toString();
+  }
+}
+
+class GRedeemUserPasswordResetTokenReqBuilder
+    implements
+        Builder<GRedeemUserPasswordResetTokenReq,
+            GRedeemUserPasswordResetTokenReqBuilder> {
+  _$GRedeemUserPasswordResetTokenReq? _$v;
+
+  _i3.GRedeemUserPasswordResetTokenVarsBuilder? _vars;
+  _i3.GRedeemUserPasswordResetTokenVarsBuilder get vars =>
+      _$this._vars ??= new _i3.GRedeemUserPasswordResetTokenVarsBuilder();
+  set vars(_i3.GRedeemUserPasswordResetTokenVarsBuilder? vars) =>
+      _$this._vars = vars;
+
+  _i4.Operation? _operation;
+  _i4.Operation? get operation => _$this._operation;
+  set operation(_i4.Operation? operation) => _$this._operation = operation;
+
+  String? _requestId;
+  String? get requestId => _$this._requestId;
+  set requestId(String? requestId) => _$this._requestId = requestId;
+
+  _i2.GRedeemUserPasswordResetTokenData? Function(
+      _i2.GRedeemUserPasswordResetTokenData?,
+      _i2.GRedeemUserPasswordResetTokenData?)? _updateResult;
+  _i2.GRedeemUserPasswordResetTokenData? Function(
+          _i2.GRedeemUserPasswordResetTokenData?,
+          _i2.GRedeemUserPasswordResetTokenData?)?
+      get updateResult => _$this._updateResult;
+  set updateResult(
+          _i2.GRedeemUserPasswordResetTokenData? Function(
+                  _i2.GRedeemUserPasswordResetTokenData?,
+                  _i2.GRedeemUserPasswordResetTokenData?)?
+              updateResult) =>
+      _$this._updateResult = updateResult;
+
+  _i2.GRedeemUserPasswordResetTokenDataBuilder? _optimisticResponse;
+  _i2.GRedeemUserPasswordResetTokenDataBuilder get optimisticResponse =>
+      _$this._optimisticResponse ??=
+          new _i2.GRedeemUserPasswordResetTokenDataBuilder();
+  set optimisticResponse(
+          _i2.GRedeemUserPasswordResetTokenDataBuilder? optimisticResponse) =>
+      _$this._optimisticResponse = optimisticResponse;
+
+  String? _updateCacheHandlerKey;
+  String? get updateCacheHandlerKey => _$this._updateCacheHandlerKey;
+  set updateCacheHandlerKey(String? updateCacheHandlerKey) =>
+      _$this._updateCacheHandlerKey = updateCacheHandlerKey;
+
+  Map<String, dynamic>? _updateCacheHandlerContext;
+  Map<String, dynamic>? get updateCacheHandlerContext =>
+      _$this._updateCacheHandlerContext;
+  set updateCacheHandlerContext(
+          Map<String, dynamic>? updateCacheHandlerContext) =>
+      _$this._updateCacheHandlerContext = updateCacheHandlerContext;
+
+  _i1.FetchPolicy? _fetchPolicy;
+  _i1.FetchPolicy? get fetchPolicy => _$this._fetchPolicy;
+  set fetchPolicy(_i1.FetchPolicy? fetchPolicy) =>
+      _$this._fetchPolicy = fetchPolicy;
+
+  bool? _executeOnListen;
+  bool? get executeOnListen => _$this._executeOnListen;
+  set executeOnListen(bool? executeOnListen) =>
+      _$this._executeOnListen = executeOnListen;
+
+  GRedeemUserPasswordResetTokenReqBuilder() {
+    GRedeemUserPasswordResetTokenReq._initializeBuilder(this);
+  }
+
+  GRedeemUserPasswordResetTokenReqBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _vars = $v.vars.toBuilder();
+      _operation = $v.operation;
+      _requestId = $v.requestId;
+      _updateResult = $v.updateResult;
+      _optimisticResponse = $v.optimisticResponse?.toBuilder();
+      _updateCacheHandlerKey = $v.updateCacheHandlerKey;
+      _updateCacheHandlerContext = $v.updateCacheHandlerContext;
+      _fetchPolicy = $v.fetchPolicy;
+      _executeOnListen = $v.executeOnListen;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GRedeemUserPasswordResetTokenReq other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GRedeemUserPasswordResetTokenReq;
+  }
+
+  @override
+  void update(void Function(GRedeemUserPasswordResetTokenReqBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GRedeemUserPasswordResetTokenReq build() => _build();
+
+  _$GRedeemUserPasswordResetTokenReq _build() {
+    _$GRedeemUserPasswordResetTokenReq _$result;
+    try {
+      _$result = _$v ??
+          new _$GRedeemUserPasswordResetTokenReq._(
+              vars: vars.build(),
+              operation: BuiltValueNullFieldError.checkNotNull(
+                  operation, r'GRedeemUserPasswordResetTokenReq', 'operation'),
+              requestId: requestId,
+              updateResult: updateResult,
+              optimisticResponse: _optimisticResponse?.build(),
+              updateCacheHandlerKey: updateCacheHandlerKey,
+              updateCacheHandlerContext: updateCacheHandlerContext,
+              fetchPolicy: fetchPolicy,
+              executeOnListen: BuiltValueNullFieldError.checkNotNull(
+                  executeOnListen,
+                  r'GRedeemUserPasswordResetTokenReq',
+                  'executeOnListen'));
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'vars';
+        vars.build();
+
+        _$failedField = 'optimisticResponse';
+        _optimisticResponse?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GRedeemUserPasswordResetTokenReq', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GValidateUserPasswordResetTokenReq
+    extends GValidateUserPasswordResetTokenReq {
+  @override
+  final _i3.GValidateUserPasswordResetTokenVars vars;
+  @override
+  final _i4.Operation operation;
+  @override
+  final String? requestId;
+  @override
+  final _i2.GValidateUserPasswordResetTokenData? Function(
+      _i2.GValidateUserPasswordResetTokenData?,
+      _i2.GValidateUserPasswordResetTokenData?)? updateResult;
+  @override
+  final _i2.GValidateUserPasswordResetTokenData? optimisticResponse;
+  @override
+  final String? updateCacheHandlerKey;
+  @override
+  final Map<String, dynamic>? updateCacheHandlerContext;
+  @override
+  final _i1.FetchPolicy? fetchPolicy;
+  @override
+  final bool executeOnListen;
+
+  factory _$GValidateUserPasswordResetTokenReq(
+          [void Function(GValidateUserPasswordResetTokenReqBuilder)?
+              updates]) =>
+      (new GValidateUserPasswordResetTokenReqBuilder()..update(updates))
+          ._build();
+
+  _$GValidateUserPasswordResetTokenReq._(
+      {required this.vars,
+      required this.operation,
+      this.requestId,
+      this.updateResult,
+      this.optimisticResponse,
+      this.updateCacheHandlerKey,
+      this.updateCacheHandlerContext,
+      this.fetchPolicy,
+      required this.executeOnListen})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        vars, r'GValidateUserPasswordResetTokenReq', 'vars');
+    BuiltValueNullFieldError.checkNotNull(
+        operation, r'GValidateUserPasswordResetTokenReq', 'operation');
+    BuiltValueNullFieldError.checkNotNull(executeOnListen,
+        r'GValidateUserPasswordResetTokenReq', 'executeOnListen');
+  }
+
+  @override
+  GValidateUserPasswordResetTokenReq rebuild(
+          void Function(GValidateUserPasswordResetTokenReqBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GValidateUserPasswordResetTokenReqBuilder toBuilder() =>
+      new GValidateUserPasswordResetTokenReqBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    final dynamic _$dynamicOther = other;
+    return other is GValidateUserPasswordResetTokenReq &&
+        vars == other.vars &&
+        operation == other.operation &&
+        requestId == other.requestId &&
+        updateResult == _$dynamicOther.updateResult &&
+        optimisticResponse == other.optimisticResponse &&
+        updateCacheHandlerKey == other.updateCacheHandlerKey &&
+        updateCacheHandlerContext == other.updateCacheHandlerContext &&
+        fetchPolicy == other.fetchPolicy &&
+        executeOnListen == other.executeOnListen;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, vars.hashCode);
+    _$hash = $jc(_$hash, operation.hashCode);
+    _$hash = $jc(_$hash, requestId.hashCode);
+    _$hash = $jc(_$hash, updateResult.hashCode);
+    _$hash = $jc(_$hash, optimisticResponse.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerKey.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
+    _$hash = $jc(_$hash, fetchPolicy.hashCode);
+    _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GValidateUserPasswordResetTokenReq')
+          ..add('vars', vars)
+          ..add('operation', operation)
+          ..add('requestId', requestId)
+          ..add('updateResult', updateResult)
+          ..add('optimisticResponse', optimisticResponse)
+          ..add('updateCacheHandlerKey', updateCacheHandlerKey)
+          ..add('updateCacheHandlerContext', updateCacheHandlerContext)
+          ..add('fetchPolicy', fetchPolicy)
+          ..add('executeOnListen', executeOnListen))
+        .toString();
+  }
+}
+
+class GValidateUserPasswordResetTokenReqBuilder
+    implements
+        Builder<GValidateUserPasswordResetTokenReq,
+            GValidateUserPasswordResetTokenReqBuilder> {
+  _$GValidateUserPasswordResetTokenReq? _$v;
+
+  _i3.GValidateUserPasswordResetTokenVarsBuilder? _vars;
+  _i3.GValidateUserPasswordResetTokenVarsBuilder get vars =>
+      _$this._vars ??= new _i3.GValidateUserPasswordResetTokenVarsBuilder();
+  set vars(_i3.GValidateUserPasswordResetTokenVarsBuilder? vars) =>
+      _$this._vars = vars;
+
+  _i4.Operation? _operation;
+  _i4.Operation? get operation => _$this._operation;
+  set operation(_i4.Operation? operation) => _$this._operation = operation;
+
+  String? _requestId;
+  String? get requestId => _$this._requestId;
+  set requestId(String? requestId) => _$this._requestId = requestId;
+
+  _i2.GValidateUserPasswordResetTokenData? Function(
+      _i2.GValidateUserPasswordResetTokenData?,
+      _i2.GValidateUserPasswordResetTokenData?)? _updateResult;
+  _i2.GValidateUserPasswordResetTokenData? Function(
+          _i2.GValidateUserPasswordResetTokenData?,
+          _i2.GValidateUserPasswordResetTokenData?)?
+      get updateResult => _$this._updateResult;
+  set updateResult(
+          _i2.GValidateUserPasswordResetTokenData? Function(
+                  _i2.GValidateUserPasswordResetTokenData?,
+                  _i2.GValidateUserPasswordResetTokenData?)?
+              updateResult) =>
+      _$this._updateResult = updateResult;
+
+  _i2.GValidateUserPasswordResetTokenDataBuilder? _optimisticResponse;
+  _i2.GValidateUserPasswordResetTokenDataBuilder get optimisticResponse =>
+      _$this._optimisticResponse ??=
+          new _i2.GValidateUserPasswordResetTokenDataBuilder();
+  set optimisticResponse(
+          _i2.GValidateUserPasswordResetTokenDataBuilder? optimisticResponse) =>
+      _$this._optimisticResponse = optimisticResponse;
+
+  String? _updateCacheHandlerKey;
+  String? get updateCacheHandlerKey => _$this._updateCacheHandlerKey;
+  set updateCacheHandlerKey(String? updateCacheHandlerKey) =>
+      _$this._updateCacheHandlerKey = updateCacheHandlerKey;
+
+  Map<String, dynamic>? _updateCacheHandlerContext;
+  Map<String, dynamic>? get updateCacheHandlerContext =>
+      _$this._updateCacheHandlerContext;
+  set updateCacheHandlerContext(
+          Map<String, dynamic>? updateCacheHandlerContext) =>
+      _$this._updateCacheHandlerContext = updateCacheHandlerContext;
+
+  _i1.FetchPolicy? _fetchPolicy;
+  _i1.FetchPolicy? get fetchPolicy => _$this._fetchPolicy;
+  set fetchPolicy(_i1.FetchPolicy? fetchPolicy) =>
+      _$this._fetchPolicy = fetchPolicy;
+
+  bool? _executeOnListen;
+  bool? get executeOnListen => _$this._executeOnListen;
+  set executeOnListen(bool? executeOnListen) =>
+      _$this._executeOnListen = executeOnListen;
+
+  GValidateUserPasswordResetTokenReqBuilder() {
+    GValidateUserPasswordResetTokenReq._initializeBuilder(this);
+  }
+
+  GValidateUserPasswordResetTokenReqBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _vars = $v.vars.toBuilder();
+      _operation = $v.operation;
+      _requestId = $v.requestId;
+      _updateResult = $v.updateResult;
+      _optimisticResponse = $v.optimisticResponse?.toBuilder();
+      _updateCacheHandlerKey = $v.updateCacheHandlerKey;
+      _updateCacheHandlerContext = $v.updateCacheHandlerContext;
+      _fetchPolicy = $v.fetchPolicy;
+      _executeOnListen = $v.executeOnListen;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GValidateUserPasswordResetTokenReq other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GValidateUserPasswordResetTokenReq;
+  }
+
+  @override
+  void update(
+      void Function(GValidateUserPasswordResetTokenReqBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GValidateUserPasswordResetTokenReq build() => _build();
+
+  _$GValidateUserPasswordResetTokenReq _build() {
+    _$GValidateUserPasswordResetTokenReq _$result;
+    try {
+      _$result = _$v ??
+          new _$GValidateUserPasswordResetTokenReq._(
+              vars: vars.build(),
+              operation: BuiltValueNullFieldError.checkNotNull(operation,
+                  r'GValidateUserPasswordResetTokenReq', 'operation'),
+              requestId: requestId,
+              updateResult: updateResult,
+              optimisticResponse: _optimisticResponse?.build(),
+              updateCacheHandlerKey: updateCacheHandlerKey,
+              updateCacheHandlerContext: updateCacheHandlerContext,
+              fetchPolicy: fetchPolicy,
+              executeOnListen: BuiltValueNullFieldError.checkNotNull(
+                  executeOnListen,
+                  r'GValidateUserPasswordResetTokenReq',
+                  'executeOnListen'));
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'vars';
+        vars.build();
+
+        _$failedField = 'optimisticResponse';
+        _optimisticResponse?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GValidateUserPasswordResetTokenReq', _$failedField, e.toString());
       }
       rethrow;
     }

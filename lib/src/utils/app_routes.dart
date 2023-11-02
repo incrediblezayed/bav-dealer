@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:another_flushbar/flushbar.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -114,7 +115,7 @@ class AppRoutes {
                         fontWeight: FontWeight.w600,
                         fontSize: 18.sp,
                       ),
-                    )
+                    ),
                   ],
                 ),
               );
@@ -126,118 +127,66 @@ class AppRoutes {
   }
 
   ///Shows a snackbar with a default title as 'Error'
-  static ScaffoldFeatureController<SnackBar, SnackBarClosedReason>?
-      showErrorSnackbar({
-    String message = 'Error..',
-    Alignment alignment = Alignment.topCenter,
-  }) {
-    // message.log();
-    return scaffoldMessengerKey.currentState?.showSnackBar(
-      SnackBar(
-        behavior: SnackBarBehavior.floating,
-        duration: const Duration(seconds: 1),
-        elevation: 1,
-        //padding: EdgeInsets.zero,
-        content: Row(
-          children: [
-            Text(
-              message,
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                color: AppTheme.white,
-                fontWeight: FontWeight.w600,
-                fontSize: 14.sp,
-              ),
-            ),
-            IconButton(
-              onPressed: () {
-                scaffoldMessengerKey.currentState?.hideCurrentSnackBar();
-              },
-              icon: const Icon(
-                Icons.close,
-                color: AppTheme.white,
-              ),
-            )
-          ],
-        ),
-        backgroundColor: AppTheme.red,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(6.r),
-          side: BorderSide(
-            color: AppTheme.defaultBlack.withOpacity(0.06),
-          ),
+  static void showErrorSnackbar({String message = 'Error..'}) {
+    Future.delayed(Duration.zero, () {
+      _showErrorFlushbar(message);
+    });
+  }
+
+  static Flushbar? _currentFlushbar;
+
+  static void _showErrorFlushbar(String message) {
+    _currentFlushbar?.dismiss();
+    _currentFlushbar = Flushbar(
+      message: message,
+      duration: const Duration(seconds: 2),
+      backgroundColor: AppTheme.red,
+      flushbarPosition: FlushbarPosition.TOP,
+      margin: EdgeInsets.all(16.w),
+      borderRadius: BorderRadius.circular(6),
+      mainButton: IconButton(
+        onPressed: () {
+          _currentFlushbar?.dismiss();
+        },
+        icon: const Icon(
+          Icons.close,
+          color: Colors.white,
         ),
       ),
     );
+    _currentFlushbar!.show(navigatorKey.currentState!.overlay!.context);
+  }
+
+  static void _showSuccessFlushbar(String message) {
+    _currentFlushbar?.dismiss();
+    _currentFlushbar = Flushbar(
+      message: message,
+      duration: const Duration(seconds: 2),
+      backgroundColor: AppTheme.primaryColor,
+      flushbarPosition: FlushbarPosition.TOP,
+      margin: EdgeInsets.all(16.w),
+      borderRadius: BorderRadius.circular(6),
+      mainButton: IconButton(
+        onPressed: () {
+          _currentFlushbar?.dismiss();
+        },
+        icon: const Icon(
+          Icons.close,
+          color: AppTheme.white,
+        ),
+      ),
+    );
+
+    _currentFlushbar!.show(navigatorKey.currentState!.overlay!.context);
   }
 
   ///Shows a snackbar with a default title as 'Success'
-  static ScaffoldFeatureController<SnackBar, SnackBarClosedReason>?
-      showSuccessSnackbar(
-          {String message = 'Success',
-          Alignment alignment = Alignment.bottomCenter,
-          Duration duration = const Duration(seconds: 1)}) {
-    return scaffoldMessengerKey.currentState?.showSnackBar(
-      SnackBar(
-        behavior: SnackBarBehavior.floating,
-        duration: duration,
-        elevation: 1,
-        padding: EdgeInsets.zero,
-        content: Align(
-          alignment: alignment,
-          child: Row(
-            children: [
-              Container(
-                height: 56.h,
-                width: 6.w,
-                decoration: BoxDecoration(
-                  color: AppTheme.primaryColor,
-                  borderRadius:
-                      BorderRadius.horizontal(left: Radius.circular(6.r)),
-                ),
-              ),
-              SizedBox(
-                width: 24.w,
-              ),
-              Icon(
-                Icons.check_circle,
-                size: 24.sp,
-                color: AppTheme.primaryColor,
-              ),
-              SizedBox(
-                width: 10.w,
-              ),
-              Text(
-                message,
-                style: TextStyle(
-                  color: AppTheme.defaultBlack,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 14.sp,
-                ),
-              ),
-              const Spacer(),
-              IconButton(
-                onPressed: () {
-                  scaffoldMessengerKey.currentState?.hideCurrentSnackBar();
-                },
-                icon: Icon(
-                  Icons.close,
-                  color: AppTheme.defaultBlack.withOpacity(0.6),
-                ),
-              )
-            ],
-          ),
-        ),
-        backgroundColor: AppTheme.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(6.r),
-          side: BorderSide(
-            color: AppTheme.defaultBlack.withOpacity(0.06),
-          ),
-        ),
-      ),
-    );
+  static void showSuccessSnackbar(
+      {String message = 'Success',
+      Duration duration = const Duration(seconds: 2)}) {
+    Future.delayed(Duration.zero, () {
+      _showSuccessFlushbar(message);
+    });
   }
 
   ///Wraps the widget in the Route

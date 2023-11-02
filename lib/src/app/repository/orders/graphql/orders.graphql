@@ -11,7 +11,6 @@ query VehicleOrders(
           name
         }
         name
-        price
       }
       vehicleColor {
         name
@@ -28,7 +27,15 @@ query VehicleOrders(
         id
       }
       id
-      dealer_prices
+      prices {
+        amount
+        createdAt
+        id
+        category {
+          name
+          id
+        }
+      }
     }
     status
     order {
@@ -55,7 +62,10 @@ query VehicleOrders(
   }
 }
 
-query TestDriveOrders($where: TestDriveOrderWhereInput!, $orderBy: [TestDriveOrderOrderByInput!]!) {
+query TestDriveOrders(
+  $where: TestDriveOrderWhereInput!
+  $orderBy: [TestDriveOrderOrderByInput!]!
+) {
   testDriveOrders(where: $where, orderBy: $orderBy) {
     id
     price
@@ -65,7 +75,6 @@ query TestDriveOrders($where: TestDriveOrderWhereInput!, $orderBy: [TestDriveOrd
           name
         }
         name
-        price
       }
       vehicleColor {
         name
@@ -118,7 +127,15 @@ mutation UpdateVehicleOrder(
   }
 }
 
-mutation CreateOrderRejectionByDealer($data: OrderRejectionByDealerCreateInput!) {
+mutation UpdateTestDriveOrder($where: TestDriveOrderWhereUniqueInput!, $data: TestDriveOrderUpdateInput!) {
+  updateTestDriveOrder(where: $where, data: $data) {
+    id
+  }
+}
+
+mutation CreateOrderRejectionByDealer(
+  $data: OrderRejectionByDealerCreateInput!
+) {
   createOrderRejectionByDealer(data: $data) {
     id
   }

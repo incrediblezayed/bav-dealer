@@ -1,7 +1,8 @@
 import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/my_inventory.dart';
 import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/purchase_orders.dart';
-import 'package:dealerapp/src/app/UI/Homepage/Rank_Page/rank_page.dart';
 import 'package:dealerapp/src/app/UI/Homepage/Test_Orders/test_orders.dart';
+import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
+import 'package:dealerapp/src/app/UI/coming_soon.dart';
 import 'package:dealerapp/src/app/UI/notification_page.dart/notification_page.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/provider/order_provider.dart';
@@ -49,14 +50,20 @@ class HomePage extends ConsumerWidget {
                 child: SvgPicture.asset(AppImages.notification),
               ),
               SizedBox(width: 12.w),
-              Padding(
-                padding: EdgeInsets.only(right: 20.w),
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey.withOpacity(.3),
-                  radius: 20,
-                  child: Image.asset(AppImages.profile),
+              GestureDetector(
+                onTap: () {
+                  AppRoutes.push(
+                    page: const EditProfile(
+                      isPersonalInfo: false,
+                    ),
+                  );
+                },
+                child: UserProfileImage(
+                  url: user.profile_image?.url,
+                  size: 35.sp,
                 ),
               ),
+              SizedBox(width: 10.w),
             ],
           ),
         ],
@@ -86,7 +93,7 @@ class HomePage extends ConsumerWidget {
             ),
             SizedBox(height: 10.h),
             Text(
-              '90,000',
+              '0',
               style: theme.headlineLarge!
                   .copyWith(fontSize: 36.sp, fontWeight: FontWeight.w500),
             ),
@@ -94,9 +101,10 @@ class HomePage extends ConsumerWidget {
             Text(
               'Recent Notification',
               style: theme.labelMedium!.copyWith(
-                  color: AppTheme.textColor,
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w600),
+                color: AppTheme.textColor,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+              ),
             ),
             SizedBox(height: 16.h),
             if (purchasePro.testDrivePendingOrders.isNotEmpty) ...[
@@ -116,7 +124,7 @@ class HomePage extends ConsumerWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      AppRoutes.push(page: TestOrders());
+                      AppRoutes.push(page: const TestOrders());
                     },
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,7 +142,7 @@ class HomePage extends ConsumerWidget {
                     ),
                   ),
                 ],
-              )
+              ),
             ],
             if (purchasePro.testDrivePendingOrders.isEmpty)
               Row(
@@ -153,95 +161,99 @@ class HomePage extends ConsumerWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      AppRoutes.push(page: TestOrders());
+                      if (purchasePro.testDrivePendingOrders.isNotEmpty) {
+                        AppRoutes.push(page: const TestOrders());
+                      }
                     },
                     child: Text(
-                      "No notifications",
+                      'No notifications',
                       style: theme.labelMedium,
                     ),
                   ),
                 ],
               ),
             SizedBox(height: 20.h),
-            LayoutBuilder(builder: (context, constraints) {
-              return Row(
-                children: [
-                  Expanded(
-                    flex: 13,
-                    child: Column(
-                      children: [
-                        StagerredContainer(
-                          height: MediaQuery.of(context).size.height * .19,
-                          count: controller.purchaseCount.toString(),
-                          countColor: AppTheme.primaryColor,
-                          arrowColor: AppTheme.primaryColor,
-                          containerBgColor: const Color(0xffc8eccb),
-                          iconBgColor: AppTheme.primaryColor,
-                          image: AppImages.cart,
-                          title: 'Purchase orders',
-                          titleColor: AppTheme.primaryColor,
-                          onTap: () {
-                            AppRoutes.push(page: const PurchaseOrders());
-                          },
-                        ),
-                        SizedBox(height: 10.h),
-                        StagerredContainer(
-                          height: MediaQuery.of(context).size.height * .25,
-                          count: controller.inventoryCount.toString(),
-                          countColor: const Color(0xff358fe1),
-                          arrowColor: const Color(0xff358fe1),
-                          containerBgColor: const Color(0xffbee0ff),
-                          iconBgColor: const Color(0xffa0d2ff),
-                          image: AppImages.s3,
-                          title: 'My Inventory',
-                          titleColor: const Color(0xff358fe1),
-                          onTap: () {
-                            AppRoutes.push(page: const MyInventory());
-                          },
-                        ),
-                      ],
+            LayoutBuilder(
+              builder: (context, constraints) {
+                return Row(
+                  children: [
+                    Expanded(
+                      flex: 13,
+                      child: Column(
+                        children: [
+                          StagerredContainer(
+                            height: MediaQuery.of(context).size.height * .19,
+                            count: controller.purchaseCount.toString(),
+                            countColor: AppTheme.primaryColor,
+                            arrowColor: AppTheme.primaryColor,
+                            containerBgColor: const Color(0xffc8eccb),
+                            iconBgColor: AppTheme.primaryColor,
+                            image: AppImages.cart,
+                            title: 'Purchase orders',
+                            titleColor: AppTheme.primaryColor,
+                            onTap: () {
+                              AppRoutes.push(page: const PurchaseOrders());
+                            },
+                          ),
+                          SizedBox(height: 10.h),
+                          StagerredContainer(
+                            height: MediaQuery.of(context).size.height * .25,
+                            count: controller.inventoryCount.toString(),
+                            countColor: const Color(0xff358fe1),
+                            arrowColor: const Color(0xff358fe1),
+                            containerBgColor: const Color(0xffbee0ff),
+                            iconBgColor: const Color(0xffa0d2ff),
+                            image: AppImages.s3,
+                            title: 'My Inventory',
+                            titleColor: const Color(0xff358fe1),
+                            onTap: () {
+                              AppRoutes.push(page: const MyInventory());
+                            },
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 10.w),
-                  Expanded(
-                    flex: 15,
-                    child: Column(
-                      children: [
-                        StagerredContainer(
-                          height: 215.h,
-                          count: controller.testOrderCount.toString(),
-                          countColor: const Color(0xff6a29a8),
-                          arrowColor: const Color(0xff6a29a8),
-                          containerBgColor: const Color(0xffb883ec),
-                          iconBgColor: const Color(0xffa95cf3),
-                          image: AppImages.s3,
-                          title: 'Test Orders',
-                          titleColor: const Color(0xff6a29a8),
-                          onTap: () {
-                            AppRoutes.push(page: const TestOrders());
-                          },
-                        ),
-                        SizedBox(height: 10.h),
-                        StagerredContainer(
-                          height: 138.h,
-                          count: controller.rankCount.toString(),
-                          countColor: const Color(0xfffdb35f),
-                          arrowColor: const Color(0xfffdb35f),
-                          containerBgColor: const Color(0xffffec8a),
-                          iconBgColor: const Color(0xffffdc53),
-                          image: AppImages.s3,
-                          title: 'Your Rank',
-                          titleColor: const Color(0xfffdb35f),
-                          onTap: () {
-                            AppRoutes.push(page: const RankPage());
-                          },
-                        ),
-                      ],
+                    SizedBox(width: 10.w),
+                    Expanded(
+                      flex: 15,
+                      child: Column(
+                        children: [
+                          StagerredContainer(
+                            height: 215.h,
+                            count: controller.testOrderCount.toString(),
+                            countColor: const Color(0xff6a29a8),
+                            arrowColor: const Color(0xff6a29a8),
+                            containerBgColor: const Color(0xffb883ec),
+                            iconBgColor: const Color(0xffa95cf3),
+                            image: AppImages.s3,
+                            title: 'Test Orders',
+                            titleColor: const Color(0xff6a29a8),
+                            onTap: () {
+                              AppRoutes.push(page: const TestOrders());
+                            },
+                          ),
+                          SizedBox(height: 10.h),
+                          StagerredContainer(
+                            height: 138.h,
+                            count: controller.rankCount.toString(),
+                            countColor: const Color(0xfffdb35f),
+                            arrowColor: const Color(0xfffdb35f),
+                            containerBgColor: const Color(0xffffec8a),
+                            iconBgColor: const Color(0xffffdc53),
+                            image: AppImages.s3,
+                            title: 'Your Rank',
+                            titleColor: const Color(0xfffdb35f),
+                            onTap: () {
+                              AppRoutes.push(page: const ComingSoon());
+                            },
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
-              );
-            }),
+                  ],
+                );
+              },
+            ),
           ],
         ),
       ),

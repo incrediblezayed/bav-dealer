@@ -11,8 +11,12 @@ class AppImages {
   static const String sbisvg = '$_imagesPath/sbisvg.svg';
   static const String search = '$_imagesPath/search.svg';
   static const String search1 = '$_imagesPath/search1.svg';
+  static const String ccc = '$_imagesPath/ccc.svg';
+
 
   static const String menu = '$_imagesPath/menu.svg';
+  static const String per = '$_imagesPath/per.svg';
+
 
   static const String purchase = '$_imagesPath/purchase.svg';
 
@@ -26,6 +30,8 @@ class AppImages {
   static const String rank1 = '$_imagesPath/rank1.svg';
   static const String rank2 = '$_imagesPath/rank2.svg';
   static const String rank3 = '$_imagesPath/rank3.svg';
+  static const String terms = '$_imagesPath/terms.svg';
+  static const String attach = '$_imagesPath/attach.svg';
 
   static const String logout = '$_imagesPath/logout.svg';
   static const String logoutred = '$_imagesPath/logoutred.svg';
@@ -33,13 +39,18 @@ class AppImages {
   static const String change = '$_imagesPath/change.svg';
   static const String cart = '$_imagesPath/cart.png';
   static const String arrow = '$_imagesPath/arrow.png';
-  static const String purchaseNew = '$_imagesPath/newPurchase.png';
+  static const String report = '$_imagesPath/report.png';
+  static const String make = '$_imagesPath/make.png';
 
-  static const String terms = '$_imagesPath/terms.png';
+
+  static const String purchaseNew = '$_imagesPath/newPurchase.png';
   static const String purchaseOrder = '$_imagesPath/purchaseOrder.png';
+  static const String termsNew = '$_imagesPath/termsNew.png';
+
   static const String profile = '$_imagesPath/profile.png';
   static const String person = '$_imagesPath/person.png';
   static const String bike = '$_imagesPath/bike.png';
+  static const String newLogo = '$_imagesPath/newSplashLogo.png';
 
   static const String bank = '$_imagesPath/bank.png';
   static const String s2 = '$_imagesPath/s2.png';

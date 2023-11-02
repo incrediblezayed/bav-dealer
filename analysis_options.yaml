@@ -11,4 +11,4 @@
 #     prefer_single_quotes: true
 #     unnecessary_lambdas: false
 #     avoid_dynamic_calls: false
-#     # lines_longer_than_80_chars: false
+    # lines_longer_than_80_chars: false

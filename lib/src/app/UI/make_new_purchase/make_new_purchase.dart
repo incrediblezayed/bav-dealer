@@ -1,19 +1,11 @@
-import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
 import 'package:dealerapp/src/app/UI/make_new_purchase/make_new_purchase_details_page.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/provider/order_provider.dart';
-import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.ast.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
-import 'package:dealerapp/src/utils/app_routes.dart';
-import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
-import 'package:dealerapp/src/widgets/k_inventory_bike_card.dart';
-import 'package:dealerapp/src/widgets/k_textfiled.dart';
-import 'package:dealerapp/src/widgets/my_app_bar.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -50,7 +42,8 @@ class _MakeNewPurchaseState extends ConsumerState<MakeNewPurchase> {
 
   @override
   Widget build(BuildContext context) {
-    final purchaseOrderPro = ref.watch(orderProvider(OrderFamily.purchaseOrders));
+    final purchaseOrderPro =
+        ref.watch(orderProvider(OrderFamily.purchaseOrders));
     final theme = Theme.of(context).textTheme;
 
     return Scaffold(
@@ -273,8 +266,9 @@ class _MakeNewPurchaseState extends ConsumerState<MakeNewPurchase> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                  purchaseOrderPro.selectedVariants?.name ?? '',
-                                  style: theme.headlineLarge),
+                                purchaseOrderPro.selectedVariants?.name ?? '',
+                                style: theme.headlineLarge,
+                              ),
                               SizedBox(height: 6.h),
                               Text(
                                 purchaseOrderPro.selectedVariants?.name ?? '',
@@ -282,11 +276,11 @@ class _MakeNewPurchaseState extends ConsumerState<MakeNewPurchase> {
                               ),
                               SizedBox(height: 6.h),
                               Text(
-                                "Qty- ${selectedQuantity}",
+                                'Qty- $selectedQuantity',
                                 style: theme.labelMedium,
                               ),
                               SizedBox(height: 6.h),
-                              Text(
+                              /* Text(
                                 purchaseOrderPro.selectedVariants?.price
                                         ?.toString() ??
                                     '',
@@ -295,21 +289,22 @@ class _MakeNewPurchaseState extends ConsumerState<MakeNewPurchase> {
                                   color: AppTheme.primaryColor,
                                   fontWeight: FontWeight.w700,
                                 ),
-                              ),
+                              ) */
                             ],
                           ),
                         ),
                       ],
                     ),
-                    Spacer(),
+                    const Spacer(),
                     KButton(
-                        onPressed: () {
-                          AppRoutes.push(
-                            page: MakeNewPurchaseDetailsPage(),
-                          );
-                        },
-                        text: 'Update'),
-                  ]
+                      onPressed: () {
+                        AppRoutes.push(
+                          page: const MakeNewPurchaseDetailsPage(),
+                        );
+                      },
+                      text: 'Update',
+                    ),
+                  ],
                 ],
               ),
             ),

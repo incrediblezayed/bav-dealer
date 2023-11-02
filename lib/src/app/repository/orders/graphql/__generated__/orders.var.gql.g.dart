@@ -12,6 +12,8 @@ Serializer<GTestDriveOrdersVars> _$gTestDriveOrdersVarsSerializer =
     new _$GTestDriveOrdersVarsSerializer();
 Serializer<GUpdateVehicleOrderVars> _$gUpdateVehicleOrderVarsSerializer =
     new _$GUpdateVehicleOrderVarsSerializer();
+Serializer<GUpdateTestDriveOrderVars> _$gUpdateTestDriveOrderVarsSerializer =
+    new _$GUpdateTestDriveOrderVarsSerializer();
 Serializer<GCreateOrderRejectionByDealerVars>
     _$gCreateOrderRejectionByDealerVarsSerializer =
     new _$GCreateOrderRejectionByDealerVarsSerializer();
@@ -175,6 +177,63 @@ class _$GUpdateVehicleOrderVarsSerializer
           result.data.replace(serializers.deserialize(value,
                   specifiedType: const FullType(_i1.GVehicleOrderUpdateInput))!
               as _i1.GVehicleOrderUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUpdateTestDriveOrderVarsSerializer
+    implements StructuredSerializer<GUpdateTestDriveOrderVars> {
+  @override
+  final Iterable<Type> types = const [
+    GUpdateTestDriveOrderVars,
+    _$GUpdateTestDriveOrderVars
+  ];
+  @override
+  final String wireName = 'GUpdateTestDriveOrderVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUpdateTestDriveOrderVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(_i1.GTestDriveOrderWhereUniqueInput)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(_i1.GTestDriveOrderUpdateInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GUpdateTestDriveOrderVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUpdateTestDriveOrderVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(_i1.GTestDriveOrderWhereUniqueInput))!
+              as _i1.GTestDriveOrderWhereUniqueInput);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(_i1.GTestDriveOrderUpdateInput))!
+              as _i1.GTestDriveOrderUpdateInput);
           break;
       }
     }
@@ -580,6 +639,125 @@ class GUpdateVehicleOrderVarsBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GUpdateVehicleOrderVars', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUpdateTestDriveOrderVars extends GUpdateTestDriveOrderVars {
+  @override
+  final _i1.GTestDriveOrderWhereUniqueInput where;
+  @override
+  final _i1.GTestDriveOrderUpdateInput data;
+
+  factory _$GUpdateTestDriveOrderVars(
+          [void Function(GUpdateTestDriveOrderVarsBuilder)? updates]) =>
+      (new GUpdateTestDriveOrderVarsBuilder()..update(updates))._build();
+
+  _$GUpdateTestDriveOrderVars._({required this.where, required this.data})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GUpdateTestDriveOrderVars', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        data, r'GUpdateTestDriveOrderVars', 'data');
+  }
+
+  @override
+  GUpdateTestDriveOrderVars rebuild(
+          void Function(GUpdateTestDriveOrderVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUpdateTestDriveOrderVarsBuilder toBuilder() =>
+      new GUpdateTestDriveOrderVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUpdateTestDriveOrderVars &&
+        where == other.where &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GUpdateTestDriveOrderVars')
+          ..add('where', where)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GUpdateTestDriveOrderVarsBuilder
+    implements
+        Builder<GUpdateTestDriveOrderVars, GUpdateTestDriveOrderVarsBuilder> {
+  _$GUpdateTestDriveOrderVars? _$v;
+
+  _i1.GTestDriveOrderWhereUniqueInputBuilder? _where;
+  _i1.GTestDriveOrderWhereUniqueInputBuilder get where =>
+      _$this._where ??= new _i1.GTestDriveOrderWhereUniqueInputBuilder();
+  set where(_i1.GTestDriveOrderWhereUniqueInputBuilder? where) =>
+      _$this._where = where;
+
+  _i1.GTestDriveOrderUpdateInputBuilder? _data;
+  _i1.GTestDriveOrderUpdateInputBuilder get data =>
+      _$this._data ??= new _i1.GTestDriveOrderUpdateInputBuilder();
+  set data(_i1.GTestDriveOrderUpdateInputBuilder? data) => _$this._data = data;
+
+  GUpdateTestDriveOrderVarsBuilder();
+
+  GUpdateTestDriveOrderVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUpdateTestDriveOrderVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUpdateTestDriveOrderVars;
+  }
+
+  @override
+  void update(void Function(GUpdateTestDriveOrderVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUpdateTestDriveOrderVars build() => _build();
+
+  _$GUpdateTestDriveOrderVars _build() {
+    _$GUpdateTestDriveOrderVars _$result;
+    try {
+      _$result = _$v ??
+          new _$GUpdateTestDriveOrderVars._(
+              where: where.build(), data: data.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUpdateTestDriveOrderVars', _$failedField, e.toString());
       }
       rethrow;
     }

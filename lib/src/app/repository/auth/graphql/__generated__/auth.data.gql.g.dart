@@ -14,6 +14,21 @@ Serializer<GCurrentUserOTPData> _$gCurrentUserOTPDataSerializer =
     new _$GCurrentUserOTPDataSerializer();
 Serializer<GValidateUserOTPData> _$gValidateUserOTPDataSerializer =
     new _$GValidateUserOTPDataSerializer();
+Serializer<GSendUserPasswordResetLinkData>
+    _$gSendUserPasswordResetLinkDataSerializer =
+    new _$GSendUserPasswordResetLinkDataSerializer();
+Serializer<GRedeemUserPasswordResetTokenData>
+    _$gRedeemUserPasswordResetTokenDataSerializer =
+    new _$GRedeemUserPasswordResetTokenDataSerializer();
+Serializer<GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken>
+    _$gRedeemUserPasswordResetTokenDataRedeemUserPasswordResetTokenSerializer =
+    new _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenSerializer();
+Serializer<GValidateUserPasswordResetTokenData>
+    _$gValidateUserPasswordResetTokenDataSerializer =
+    new _$GValidateUserPasswordResetTokenDataSerializer();
+Serializer<GValidateUserPasswordResetTokenData_validateUserPasswordResetToken>
+    _$gValidateUserPasswordResetTokenDataValidateUserPasswordResetTokenSerializer =
+    new _$GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenSerializer();
 Serializer<GCreateDealerData> _$gCreateDealerDataSerializer =
     new _$GCreateDealerDataSerializer();
 Serializer<GCreateDealerData_createDealer>
@@ -286,6 +301,313 @@ class _$GValidateUserOTPDataSerializer
         case 'validateUserOTP':
           result.validateUserOTP = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GSendUserPasswordResetLinkDataSerializer
+    implements StructuredSerializer<GSendUserPasswordResetLinkData> {
+  @override
+  final Iterable<Type> types = const [
+    GSendUserPasswordResetLinkData,
+    _$GSendUserPasswordResetLinkData
+  ];
+  @override
+  final String wireName = 'GSendUserPasswordResetLinkData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GSendUserPasswordResetLinkData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'sendUserPasswordResetLink',
+      serializers.serialize(object.sendUserPasswordResetLink,
+          specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GSendUserPasswordResetLinkData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GSendUserPasswordResetLinkDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'sendUserPasswordResetLink':
+          result.sendUserPasswordResetLink = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GRedeemUserPasswordResetTokenDataSerializer
+    implements StructuredSerializer<GRedeemUserPasswordResetTokenData> {
+  @override
+  final Iterable<Type> types = const [
+    GRedeemUserPasswordResetTokenData,
+    _$GRedeemUserPasswordResetTokenData
+  ];
+  @override
+  final String wireName = 'GRedeemUserPasswordResetTokenData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GRedeemUserPasswordResetTokenData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.redeemUserPasswordResetToken;
+    if (value != null) {
+      result
+        ..add('redeemUserPasswordResetToken')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken)));
+    }
+    return result;
+  }
+
+  @override
+  GRedeemUserPasswordResetTokenData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GRedeemUserPasswordResetTokenDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'redeemUserPasswordResetToken':
+          result.redeemUserPasswordResetToken.replace(serializers.deserialize(
+                  value,
+                  specifiedType: const FullType(
+                      GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken))!
+              as GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenSerializer
+    implements
+        StructuredSerializer<
+            GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken> {
+  @override
+  final Iterable<Type> types = const [
+    GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken,
+    _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken
+  ];
+  @override
+  final String wireName =
+      'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'code',
+      serializers.serialize(object.code,
+          specifiedType: const FullType(_i2.GPasswordResetRedemptionErrorCode)),
+      'message',
+      serializers.serialize(object.message,
+          specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'code':
+          result.code = serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(_i2.GPasswordResetRedemptionErrorCode))!
+              as _i2.GPasswordResetRedemptionErrorCode;
+          break;
+        case 'message':
+          result.message = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GValidateUserPasswordResetTokenDataSerializer
+    implements StructuredSerializer<GValidateUserPasswordResetTokenData> {
+  @override
+  final Iterable<Type> types = const [
+    GValidateUserPasswordResetTokenData,
+    _$GValidateUserPasswordResetTokenData
+  ];
+  @override
+  final String wireName = 'GValidateUserPasswordResetTokenData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GValidateUserPasswordResetTokenData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.validateUserPasswordResetToken;
+    if (value != null) {
+      result
+        ..add('validateUserPasswordResetToken')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GValidateUserPasswordResetTokenData_validateUserPasswordResetToken)));
+    }
+    return result;
+  }
+
+  @override
+  GValidateUserPasswordResetTokenData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GValidateUserPasswordResetTokenDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'validateUserPasswordResetToken':
+          result.validateUserPasswordResetToken.replace(serializers.deserialize(
+                  value,
+                  specifiedType: const FullType(
+                      GValidateUserPasswordResetTokenData_validateUserPasswordResetToken))!
+              as GValidateUserPasswordResetTokenData_validateUserPasswordResetToken);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenSerializer
+    implements
+        StructuredSerializer<
+            GValidateUserPasswordResetTokenData_validateUserPasswordResetToken> {
+  @override
+  final Iterable<Type> types = const [
+    GValidateUserPasswordResetTokenData_validateUserPasswordResetToken,
+    _$GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
+  ];
+  @override
+  final String wireName =
+      'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GValidateUserPasswordResetTokenData_validateUserPasswordResetToken object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'code',
+      serializers.serialize(object.code,
+          specifiedType: const FullType(_i2.GPasswordResetRedemptionErrorCode)),
+      'message',
+      serializers.serialize(object.message,
+          specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'code':
+          result.code = serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(_i2.GPasswordResetRedemptionErrorCode))!
+              as _i2.GPasswordResetRedemptionErrorCode;
+          break;
+        case 'message':
+          result.message = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -796,7 +1118,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
       serializers.serialize(object.height, specifiedType: const FullType(int)),
       'extension',
       serializers.serialize(object.extension,
-          specifiedType: const FullType(_i3.GImageExtension)),
+          specifiedType: const FullType(_i2.GImageExtension)),
       'url',
       serializers.serialize(object.url, specifiedType: const FullType(String)),
     ];
@@ -839,8 +1161,8 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
           break;
         case 'extension':
           result.extension = serializers.deserialize(value,
-                  specifiedType: const FullType(_i3.GImageExtension))!
-              as _i3.GImageExtension;
+                  specifiedType: const FullType(_i2.GImageExtension))!
+              as _i2.GImageExtension;
           break;
         case 'url':
           result.url = serializers.deserialize(value,
@@ -885,14 +1207,14 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
       result
         ..add('createdAt')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i3.GDateTime)));
+            specifiedType: const FullType(_i2.GDateTime)));
     }
     value = object.modifiedAt;
     if (value != null) {
       result
         ..add('modifiedAt')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i3.GDateTime)));
+            specifiedType: const FullType(_i2.GDateTime)));
     }
     value = object.name;
     if (value != null) {
@@ -976,11 +1298,11 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
           break;
         case 'createdAt':
           result.createdAt.replace(serializers.deserialize(value,
-              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
+              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
           break;
         case 'modifiedAt':
           result.modifiedAt.replace(serializers.deserialize(value,
-              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
+              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
           break;
         case 'name':
           result.name = serializers.deserialize(value,
@@ -1060,14 +1382,14 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
       result
         ..add('modifiedAt')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i3.GDateTime)));
+            specifiedType: const FullType(_i2.GDateTime)));
     }
     value = object.createdAt;
     if (value != null) {
       result
         ..add('createdAt')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i3.GDateTime)));
+            specifiedType: const FullType(_i2.GDateTime)));
     }
     return result;
   }
@@ -1099,11 +1421,11 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
           break;
         case 'modifiedAt':
           result.modifiedAt.replace(serializers.deserialize(value,
-              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
+              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
           break;
         case 'createdAt':
           result.createdAt.replace(serializers.deserialize(value,
-              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
+              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
           break;
       }
     }
@@ -1442,7 +1764,7 @@ class _$GUserData_user_profile_imageSerializer
       serializers.serialize(object.height, specifiedType: const FullType(int)),
       'extension',
       serializers.serialize(object.extension,
-          specifiedType: const FullType(_i3.GImageExtension)),
+          specifiedType: const FullType(_i2.GImageExtension)),
       'url',
       serializers.serialize(object.url, specifiedType: const FullType(String)),
     ];
@@ -1484,8 +1806,8 @@ class _$GUserData_user_profile_imageSerializer
           break;
         case 'extension':
           result.extension = serializers.deserialize(value,
-                  specifiedType: const FullType(_i3.GImageExtension))!
-              as _i3.GImageExtension;
+                  specifiedType: const FullType(_i2.GImageExtension))!
+              as _i2.GImageExtension;
           break;
         case 'url':
           result.url = serializers.deserialize(value,
@@ -1525,14 +1847,14 @@ class _$GUserData_user_addressesSerializer
       result
         ..add('createdAt')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i3.GDateTime)));
+            specifiedType: const FullType(_i2.GDateTime)));
     }
     value = object.modifiedAt;
     if (value != null) {
       result
         ..add('modifiedAt')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i3.GDateTime)));
+            specifiedType: const FullType(_i2.GDateTime)));
     }
     value = object.name;
     if (value != null) {
@@ -1615,11 +1937,11 @@ class _$GUserData_user_addressesSerializer
           break;
         case 'createdAt':
           result.createdAt.replace(serializers.deserialize(value,
-              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
+              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
           break;
         case 'modifiedAt':
           result.modifiedAt.replace(serializers.deserialize(value,
-              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
+              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
           break;
         case 'name':
           result.name = serializers.deserialize(value,
@@ -2077,7 +2399,14 @@ class _$GDealerData_dealersSerializer
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
-
+    Object? value;
+    value = object.approved;
+    if (value != null) {
+      result
+        ..add('approved')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -2100,6 +2429,10 @@ class _$GDealerData_dealersSerializer
         case 'id':
           result.id = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
+          break;
+        case 'approved':
+          result.approved = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -2530,6 +2863,693 @@ class GValidateUserOTPDataBuilder
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GValidateUserOTPData', 'G__typename'),
             validateUserOTP: validateUserOTP);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GSendUserPasswordResetLinkData extends GSendUserPasswordResetLinkData {
+  @override
+  final String G__typename;
+  @override
+  final String sendUserPasswordResetLink;
+
+  factory _$GSendUserPasswordResetLinkData(
+          [void Function(GSendUserPasswordResetLinkDataBuilder)? updates]) =>
+      (new GSendUserPasswordResetLinkDataBuilder()..update(updates))._build();
+
+  _$GSendUserPasswordResetLinkData._(
+      {required this.G__typename, required this.sendUserPasswordResetLink})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GSendUserPasswordResetLinkData', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(sendUserPasswordResetLink,
+        r'GSendUserPasswordResetLinkData', 'sendUserPasswordResetLink');
+  }
+
+  @override
+  GSendUserPasswordResetLinkData rebuild(
+          void Function(GSendUserPasswordResetLinkDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GSendUserPasswordResetLinkDataBuilder toBuilder() =>
+      new GSendUserPasswordResetLinkDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GSendUserPasswordResetLinkData &&
+        G__typename == other.G__typename &&
+        sendUserPasswordResetLink == other.sendUserPasswordResetLink;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, sendUserPasswordResetLink.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GSendUserPasswordResetLinkData')
+          ..add('G__typename', G__typename)
+          ..add('sendUserPasswordResetLink', sendUserPasswordResetLink))
+        .toString();
+  }
+}
+
+class GSendUserPasswordResetLinkDataBuilder
+    implements
+        Builder<GSendUserPasswordResetLinkData,
+            GSendUserPasswordResetLinkDataBuilder> {
+  _$GSendUserPasswordResetLinkData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _sendUserPasswordResetLink;
+  String? get sendUserPasswordResetLink => _$this._sendUserPasswordResetLink;
+  set sendUserPasswordResetLink(String? sendUserPasswordResetLink) =>
+      _$this._sendUserPasswordResetLink = sendUserPasswordResetLink;
+
+  GSendUserPasswordResetLinkDataBuilder() {
+    GSendUserPasswordResetLinkData._initializeBuilder(this);
+  }
+
+  GSendUserPasswordResetLinkDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _sendUserPasswordResetLink = $v.sendUserPasswordResetLink;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GSendUserPasswordResetLinkData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GSendUserPasswordResetLinkData;
+  }
+
+  @override
+  void update(void Function(GSendUserPasswordResetLinkDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GSendUserPasswordResetLinkData build() => _build();
+
+  _$GSendUserPasswordResetLinkData _build() {
+    final _$result = _$v ??
+        new _$GSendUserPasswordResetLinkData._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GSendUserPasswordResetLinkData', 'G__typename'),
+            sendUserPasswordResetLink: BuiltValueNullFieldError.checkNotNull(
+                sendUserPasswordResetLink,
+                r'GSendUserPasswordResetLinkData',
+                'sendUserPasswordResetLink'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GRedeemUserPasswordResetTokenData
+    extends GRedeemUserPasswordResetTokenData {
+  @override
+  final String G__typename;
+  @override
+  final GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken?
+      redeemUserPasswordResetToken;
+
+  factory _$GRedeemUserPasswordResetTokenData(
+          [void Function(GRedeemUserPasswordResetTokenDataBuilder)? updates]) =>
+      (new GRedeemUserPasswordResetTokenDataBuilder()..update(updates))
+          ._build();
+
+  _$GRedeemUserPasswordResetTokenData._(
+      {required this.G__typename, this.redeemUserPasswordResetToken})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GRedeemUserPasswordResetTokenData', 'G__typename');
+  }
+
+  @override
+  GRedeemUserPasswordResetTokenData rebuild(
+          void Function(GRedeemUserPasswordResetTokenDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GRedeemUserPasswordResetTokenDataBuilder toBuilder() =>
+      new GRedeemUserPasswordResetTokenDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GRedeemUserPasswordResetTokenData &&
+        G__typename == other.G__typename &&
+        redeemUserPasswordResetToken == other.redeemUserPasswordResetToken;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, redeemUserPasswordResetToken.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GRedeemUserPasswordResetTokenData')
+          ..add('G__typename', G__typename)
+          ..add('redeemUserPasswordResetToken', redeemUserPasswordResetToken))
+        .toString();
+  }
+}
+
+class GRedeemUserPasswordResetTokenDataBuilder
+    implements
+        Builder<GRedeemUserPasswordResetTokenData,
+            GRedeemUserPasswordResetTokenDataBuilder> {
+  _$GRedeemUserPasswordResetTokenData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder?
+      _redeemUserPasswordResetToken;
+  GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder
+      get redeemUserPasswordResetToken => _$this
+              ._redeemUserPasswordResetToken ??=
+          new GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder();
+  set redeemUserPasswordResetToken(
+          GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder?
+              redeemUserPasswordResetToken) =>
+      _$this._redeemUserPasswordResetToken = redeemUserPasswordResetToken;
+
+  GRedeemUserPasswordResetTokenDataBuilder() {
+    GRedeemUserPasswordResetTokenData._initializeBuilder(this);
+  }
+
+  GRedeemUserPasswordResetTokenDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _redeemUserPasswordResetToken =
+          $v.redeemUserPasswordResetToken?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GRedeemUserPasswordResetTokenData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GRedeemUserPasswordResetTokenData;
+  }
+
+  @override
+  void update(
+      void Function(GRedeemUserPasswordResetTokenDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GRedeemUserPasswordResetTokenData build() => _build();
+
+  _$GRedeemUserPasswordResetTokenData _build() {
+    _$GRedeemUserPasswordResetTokenData _$result;
+    try {
+      _$result = _$v ??
+          new _$GRedeemUserPasswordResetTokenData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                  r'GRedeemUserPasswordResetTokenData', 'G__typename'),
+              redeemUserPasswordResetToken:
+                  _redeemUserPasswordResetToken?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'redeemUserPasswordResetToken';
+        _redeemUserPasswordResetToken?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GRedeemUserPasswordResetTokenData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken
+    extends GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken {
+  @override
+  final String G__typename;
+  @override
+  final _i2.GPasswordResetRedemptionErrorCode code;
+  @override
+  final String message;
+
+  factory _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken(
+          [void Function(
+                  GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder)?
+              updates]) =>
+      (new GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken._(
+      {required this.G__typename, required this.code, required this.message})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        code,
+        r'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken',
+        'code');
+    BuiltValueNullFieldError.checkNotNull(
+        message,
+        r'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken',
+        'message');
+  }
+
+  @override
+  GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken rebuild(
+          void Function(
+                  GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder
+      toBuilder() =>
+          new GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken &&
+        G__typename == other.G__typename &&
+        code == other.code &&
+        message == other.message;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken')
+          ..add('G__typename', G__typename)
+          ..add('code', code)
+          ..add('message', message))
+        .toString();
+  }
+}
+
+class GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder
+    implements
+        Builder<GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken,
+            GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder> {
+  _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  _i2.GPasswordResetRedemptionErrorCode? _code;
+  _i2.GPasswordResetRedemptionErrorCode? get code => _$this._code;
+  set code(_i2.GPasswordResetRedemptionErrorCode? code) => _$this._code = code;
+
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
+
+  GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder() {
+    GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken
+        ._initializeBuilder(this);
+  }
+
+  GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _code = $v.code;
+      _message = $v.message;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken;
+  }
+
+  @override
+  void update(
+      void Function(
+              GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken build() =>
+      _build();
+
+  _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken _build() {
+    final _$result = _$v ??
+        new _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken',
+                'G__typename'),
+            code: BuiltValueNullFieldError.checkNotNull(
+                code,
+                r'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken',
+                'code'),
+            message: BuiltValueNullFieldError.checkNotNull(
+                message,
+                r'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken',
+                'message'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GValidateUserPasswordResetTokenData
+    extends GValidateUserPasswordResetTokenData {
+  @override
+  final String G__typename;
+  @override
+  final GValidateUserPasswordResetTokenData_validateUserPasswordResetToken?
+      validateUserPasswordResetToken;
+
+  factory _$GValidateUserPasswordResetTokenData(
+          [void Function(GValidateUserPasswordResetTokenDataBuilder)?
+              updates]) =>
+      (new GValidateUserPasswordResetTokenDataBuilder()..update(updates))
+          ._build();
+
+  _$GValidateUserPasswordResetTokenData._(
+      {required this.G__typename, this.validateUserPasswordResetToken})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GValidateUserPasswordResetTokenData', 'G__typename');
+  }
+
+  @override
+  GValidateUserPasswordResetTokenData rebuild(
+          void Function(GValidateUserPasswordResetTokenDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GValidateUserPasswordResetTokenDataBuilder toBuilder() =>
+      new GValidateUserPasswordResetTokenDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GValidateUserPasswordResetTokenData &&
+        G__typename == other.G__typename &&
+        validateUserPasswordResetToken == other.validateUserPasswordResetToken;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, validateUserPasswordResetToken.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GValidateUserPasswordResetTokenData')
+          ..add('G__typename', G__typename)
+          ..add(
+              'validateUserPasswordResetToken', validateUserPasswordResetToken))
+        .toString();
+  }
+}
+
+class GValidateUserPasswordResetTokenDataBuilder
+    implements
+        Builder<GValidateUserPasswordResetTokenData,
+            GValidateUserPasswordResetTokenDataBuilder> {
+  _$GValidateUserPasswordResetTokenData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder?
+      _validateUserPasswordResetToken;
+  GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder
+      get validateUserPasswordResetToken => _$this
+              ._validateUserPasswordResetToken ??=
+          new GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder();
+  set validateUserPasswordResetToken(
+          GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder?
+              validateUserPasswordResetToken) =>
+      _$this._validateUserPasswordResetToken = validateUserPasswordResetToken;
+
+  GValidateUserPasswordResetTokenDataBuilder() {
+    GValidateUserPasswordResetTokenData._initializeBuilder(this);
+  }
+
+  GValidateUserPasswordResetTokenDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _validateUserPasswordResetToken =
+          $v.validateUserPasswordResetToken?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GValidateUserPasswordResetTokenData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GValidateUserPasswordResetTokenData;
+  }
+
+  @override
+  void update(
+      void Function(GValidateUserPasswordResetTokenDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GValidateUserPasswordResetTokenData build() => _build();
+
+  _$GValidateUserPasswordResetTokenData _build() {
+    _$GValidateUserPasswordResetTokenData _$result;
+    try {
+      _$result = _$v ??
+          new _$GValidateUserPasswordResetTokenData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                  r'GValidateUserPasswordResetTokenData', 'G__typename'),
+              validateUserPasswordResetToken:
+                  _validateUserPasswordResetToken?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'validateUserPasswordResetToken';
+        _validateUserPasswordResetToken?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GValidateUserPasswordResetTokenData',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
+    extends GValidateUserPasswordResetTokenData_validateUserPasswordResetToken {
+  @override
+  final String G__typename;
+  @override
+  final _i2.GPasswordResetRedemptionErrorCode code;
+  @override
+  final String message;
+
+  factory _$GValidateUserPasswordResetTokenData_validateUserPasswordResetToken(
+          [void Function(
+                  GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder)?
+              updates]) =>
+      (new GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GValidateUserPasswordResetTokenData_validateUserPasswordResetToken._(
+      {required this.G__typename, required this.code, required this.message})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        code,
+        r'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken',
+        'code');
+    BuiltValueNullFieldError.checkNotNull(
+        message,
+        r'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken',
+        'message');
+  }
+
+  @override
+  GValidateUserPasswordResetTokenData_validateUserPasswordResetToken rebuild(
+          void Function(
+                  GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder
+      toBuilder() =>
+          new GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GValidateUserPasswordResetTokenData_validateUserPasswordResetToken &&
+        G__typename == other.G__typename &&
+        code == other.code &&
+        message == other.message;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken')
+          ..add('G__typename', G__typename)
+          ..add('code', code)
+          ..add('message', message))
+        .toString();
+  }
+}
+
+class GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder
+    implements
+        Builder<
+            GValidateUserPasswordResetTokenData_validateUserPasswordResetToken,
+            GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder> {
+  _$GValidateUserPasswordResetTokenData_validateUserPasswordResetToken? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  _i2.GPasswordResetRedemptionErrorCode? _code;
+  _i2.GPasswordResetRedemptionErrorCode? get code => _$this._code;
+  set code(_i2.GPasswordResetRedemptionErrorCode? code) => _$this._code = code;
+
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
+
+  GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder() {
+    GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
+        ._initializeBuilder(this);
+  }
+
+  GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _code = $v.code;
+      _message = $v.message;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GValidateUserPasswordResetTokenData_validateUserPasswordResetToken;
+  }
+
+  @override
+  void update(
+      void Function(
+              GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GValidateUserPasswordResetTokenData_validateUserPasswordResetToken build() =>
+      _build();
+
+  _$GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
+      _build() {
+    final _$result = _$v ??
+        new _$GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
+            ._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken',
+                'G__typename'),
+            code: BuiltValueNullFieldError.checkNotNull(
+                code,
+                r'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken',
+                'code'),
+            message: BuiltValueNullFieldError.checkNotNull(
+                message,
+                r'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken',
+                'message'));
     replace(_$result);
     return _$result;
   }
@@ -3498,7 +4518,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
   @override
   final int height;
   @override
-  final _i3.GImageExtension extension;
+  final _i2.GImageExtension extension;
   @override
   final String url;
 
@@ -3634,9 +4654,9 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
   int? get height => _$this._height;
   set height(int? height) => _$this._height = height;
 
-  _i3.GImageExtension? _extension;
-  _i3.GImageExtension? get extension => _$this._extension;
-  set extension(_i3.GImageExtension? extension) =>
+  _i2.GImageExtension? _extension;
+  _i2.GImageExtension? get extension => _$this._extension;
+  set extension(_i2.GImageExtension? extension) =>
       _$this._extension = extension;
 
   String? _url;
@@ -3718,9 +4738,9 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
   @override
   final String id;
   @override
-  final _i3.GDateTime? createdAt;
+  final _i2.GDateTime? createdAt;
   @override
-  final _i3.GDateTime? modifiedAt;
+  final _i2.GDateTime? modifiedAt;
   @override
   final String? name;
   @override
@@ -3858,16 +4878,16 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  _i3.GDateTimeBuilder? _createdAt;
-  _i3.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i3.GDateTimeBuilder();
-  set createdAt(_i3.GDateTimeBuilder? createdAt) =>
+  _i2.GDateTimeBuilder? _createdAt;
+  _i2.GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+  set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
-  _i3.GDateTimeBuilder? _modifiedAt;
-  _i3.GDateTimeBuilder get modifiedAt =>
-      _$this._modifiedAt ??= new _i3.GDateTimeBuilder();
-  set modifiedAt(_i3.GDateTimeBuilder? modifiedAt) =>
+  _i2.GDateTimeBuilder? _modifiedAt;
+  _i2.GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new _i2.GDateTimeBuilder();
+  set modifiedAt(_i2.GDateTimeBuilder? modifiedAt) =>
       _$this._modifiedAt = modifiedAt;
 
   String? _name;
@@ -4004,9 +5024,9 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
   @override
   final String? code;
   @override
-  final _i3.GDateTime? modifiedAt;
+  final _i2.GDateTime? modifiedAt;
   @override
-  final _i3.GDateTime? createdAt;
+  final _i2.GDateTime? createdAt;
 
   factory _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode(
           [void Function(
@@ -4104,16 +5124,16 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
   String? get code => _$this._code;
   set code(String? code) => _$this._code = code;
 
-  _i3.GDateTimeBuilder? _modifiedAt;
-  _i3.GDateTimeBuilder get modifiedAt =>
-      _$this._modifiedAt ??= new _i3.GDateTimeBuilder();
-  set modifiedAt(_i3.GDateTimeBuilder? modifiedAt) =>
+  _i2.GDateTimeBuilder? _modifiedAt;
+  _i2.GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new _i2.GDateTimeBuilder();
+  set modifiedAt(_i2.GDateTimeBuilder? modifiedAt) =>
       _$this._modifiedAt = modifiedAt;
 
-  _i3.GDateTimeBuilder? _createdAt;
-  _i3.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i3.GDateTimeBuilder();
-  set createdAt(_i3.GDateTimeBuilder? createdAt) =>
+  _i2.GDateTimeBuilder? _createdAt;
+  _i2.GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+  set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCodeBuilder() {
@@ -4741,7 +5761,7 @@ class _$GUserData_user_profile_image extends GUserData_user_profile_image {
   @override
   final int height;
   @override
-  final _i3.GImageExtension extension;
+  final _i2.GImageExtension extension;
   @override
   final String url;
 
@@ -4850,9 +5870,9 @@ class GUserData_user_profile_imageBuilder
   int? get height => _$this._height;
   set height(int? height) => _$this._height = height;
 
-  _i3.GImageExtension? _extension;
-  _i3.GImageExtension? get extension => _$this._extension;
-  set extension(_i3.GImageExtension? extension) =>
+  _i2.GImageExtension? _extension;
+  _i2.GImageExtension? get extension => _$this._extension;
+  set extension(_i2.GImageExtension? extension) =>
       _$this._extension = extension;
 
   String? _url;
@@ -4920,9 +5940,9 @@ class _$GUserData_user_addresses extends GUserData_user_addresses {
   @override
   final String id;
   @override
-  final _i3.GDateTime? createdAt;
+  final _i2.GDateTime? createdAt;
   @override
-  final _i3.GDateTime? modifiedAt;
+  final _i2.GDateTime? modifiedAt;
   @override
   final String? name;
   @override
@@ -5042,16 +6062,16 @@ class GUserData_user_addressesBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  _i3.GDateTimeBuilder? _createdAt;
-  _i3.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i3.GDateTimeBuilder();
-  set createdAt(_i3.GDateTimeBuilder? createdAt) =>
+  _i2.GDateTimeBuilder? _createdAt;
+  _i2.GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+  set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
-  _i3.GDateTimeBuilder? _modifiedAt;
-  _i3.GDateTimeBuilder get modifiedAt =>
-      _$this._modifiedAt ??= new _i3.GDateTimeBuilder();
-  set modifiedAt(_i3.GDateTimeBuilder? modifiedAt) =>
+  _i2.GDateTimeBuilder? _modifiedAt;
+  _i2.GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new _i2.GDateTimeBuilder();
+  set modifiedAt(_i2.GDateTimeBuilder? modifiedAt) =>
       _$this._modifiedAt = modifiedAt;
 
   String? _name;
@@ -5990,12 +7010,15 @@ class _$GDealerData_dealers extends GDealerData_dealers {
   final String G__typename;
   @override
   final String id;
+  @override
+  final bool? approved;
 
   factory _$GDealerData_dealers(
           [void Function(GDealerData_dealersBuilder)? updates]) =>
       (new GDealerData_dealersBuilder()..update(updates))._build();
 
-  _$GDealerData_dealers._({required this.G__typename, required this.id})
+  _$GDealerData_dealers._(
+      {required this.G__typename, required this.id, this.approved})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GDealerData_dealers', 'G__typename');
@@ -6016,7 +7039,8 @@ class _$GDealerData_dealers extends GDealerData_dealers {
     if (identical(other, this)) return true;
     return other is GDealerData_dealers &&
         G__typename == other.G__typename &&
-        id == other.id;
+        id == other.id &&
+        approved == other.approved;
   }
 
   @override
@@ -6024,6 +7048,7 @@ class _$GDealerData_dealers extends GDealerData_dealers {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, approved.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -6032,7 +7057,8 @@ class _$GDealerData_dealers extends GDealerData_dealers {
   String toString() {
     return (newBuiltValueToStringHelper(r'GDealerData_dealers')
           ..add('G__typename', G__typename)
-          ..add('id', id))
+          ..add('id', id)
+          ..add('approved', approved))
         .toString();
   }
 }
@@ -6049,6 +7075,10 @@ class GDealerData_dealersBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
+  bool? _approved;
+  bool? get approved => _$this._approved;
+  set approved(bool? approved) => _$this._approved = approved;
+
   GDealerData_dealersBuilder() {
     GDealerData_dealers._initializeBuilder(this);
   }
@@ -6058,6 +7088,7 @@ class GDealerData_dealersBuilder
     if ($v != null) {
       _G__typename = $v.G__typename;
       _id = $v.id;
+      _approved = $v.approved;
       _$v = null;
     }
     return this;
@@ -6083,7 +7114,8 @@ class GDealerData_dealersBuilder
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GDealerData_dealers', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GDealerData_dealers', 'id'));
+                id, r'GDealerData_dealers', 'id'),
+            approved: approved);
     replace(_$result);
     return _$result;
   }

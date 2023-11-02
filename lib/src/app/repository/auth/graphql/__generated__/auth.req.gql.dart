@@ -192,6 +192,193 @@ abstract class GValidateUserOTPReq
       );
 }
 
+abstract class GSendUserPasswordResetLinkReq
+    implements
+        Built<GSendUserPasswordResetLinkReq,
+            GSendUserPasswordResetLinkReqBuilder>,
+        _i1.OperationRequest<_i2.GSendUserPasswordResetLinkData,
+            _i3.GSendUserPasswordResetLinkVars> {
+  GSendUserPasswordResetLinkReq._();
+
+  factory GSendUserPasswordResetLinkReq(
+          [Function(GSendUserPasswordResetLinkReqBuilder b) updates]) =
+      _$GSendUserPasswordResetLinkReq;
+
+  static void _initializeBuilder(GSendUserPasswordResetLinkReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'SendUserPasswordResetLink',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GSendUserPasswordResetLinkVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GSendUserPasswordResetLinkData? Function(
+    _i2.GSendUserPasswordResetLinkData?,
+    _i2.GSendUserPasswordResetLinkData?,
+  )? get updateResult;
+  @override
+  _i2.GSendUserPasswordResetLinkData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GSendUserPasswordResetLinkData? parseData(Map<String, dynamic> json) =>
+      _i2.GSendUserPasswordResetLinkData.fromJson(json);
+  static Serializer<GSendUserPasswordResetLinkReq> get serializer =>
+      _$gSendUserPasswordResetLinkReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GSendUserPasswordResetLinkReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GSendUserPasswordResetLinkReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GSendUserPasswordResetLinkReq.serializer,
+        json,
+      );
+}
+
+abstract class GRedeemUserPasswordResetTokenReq
+    implements
+        Built<GRedeemUserPasswordResetTokenReq,
+            GRedeemUserPasswordResetTokenReqBuilder>,
+        _i1.OperationRequest<_i2.GRedeemUserPasswordResetTokenData,
+            _i3.GRedeemUserPasswordResetTokenVars> {
+  GRedeemUserPasswordResetTokenReq._();
+
+  factory GRedeemUserPasswordResetTokenReq(
+          [Function(GRedeemUserPasswordResetTokenReqBuilder b) updates]) =
+      _$GRedeemUserPasswordResetTokenReq;
+
+  static void _initializeBuilder(GRedeemUserPasswordResetTokenReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'RedeemUserPasswordResetToken',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GRedeemUserPasswordResetTokenVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GRedeemUserPasswordResetTokenData? Function(
+    _i2.GRedeemUserPasswordResetTokenData?,
+    _i2.GRedeemUserPasswordResetTokenData?,
+  )? get updateResult;
+  @override
+  _i2.GRedeemUserPasswordResetTokenData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GRedeemUserPasswordResetTokenData? parseData(Map<String, dynamic> json) =>
+      _i2.GRedeemUserPasswordResetTokenData.fromJson(json);
+  static Serializer<GRedeemUserPasswordResetTokenReq> get serializer =>
+      _$gRedeemUserPasswordResetTokenReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GRedeemUserPasswordResetTokenReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GRedeemUserPasswordResetTokenReq? fromJson(
+          Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GRedeemUserPasswordResetTokenReq.serializer,
+        json,
+      );
+}
+
+abstract class GValidateUserPasswordResetTokenReq
+    implements
+        Built<GValidateUserPasswordResetTokenReq,
+            GValidateUserPasswordResetTokenReqBuilder>,
+        _i1.OperationRequest<_i2.GValidateUserPasswordResetTokenData,
+            _i3.GValidateUserPasswordResetTokenVars> {
+  GValidateUserPasswordResetTokenReq._();
+
+  factory GValidateUserPasswordResetTokenReq(
+          [Function(GValidateUserPasswordResetTokenReqBuilder b) updates]) =
+      _$GValidateUserPasswordResetTokenReq;
+
+  static void _initializeBuilder(GValidateUserPasswordResetTokenReqBuilder b) =>
+      b
+        ..operation = _i4.Operation(
+          document: _i5.document,
+          operationName: 'ValidateUserPasswordResetToken',
+        )
+        ..executeOnListen = true;
+  @override
+  _i3.GValidateUserPasswordResetTokenVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GValidateUserPasswordResetTokenData? Function(
+    _i2.GValidateUserPasswordResetTokenData?,
+    _i2.GValidateUserPasswordResetTokenData?,
+  )? get updateResult;
+  @override
+  _i2.GValidateUserPasswordResetTokenData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GValidateUserPasswordResetTokenData? parseData(
+          Map<String, dynamic> json) =>
+      _i2.GValidateUserPasswordResetTokenData.fromJson(json);
+  static Serializer<GValidateUserPasswordResetTokenReq> get serializer =>
+      _$gValidateUserPasswordResetTokenReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GValidateUserPasswordResetTokenReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GValidateUserPasswordResetTokenReq? fromJson(
+          Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GValidateUserPasswordResetTokenReq.serializer,
+        json,
+      );
+}
+
 abstract class GCreateDealerReq
     implements
         Built<GCreateDealerReq, GCreateDealerReqBuilder>,

@@ -60,7 +60,7 @@ class SearchBankPage extends StatelessWidget {
             Text(
               'Add Your Bank',
               style: theme.labelLarge,
-            )
+            ),
           ],
         ),
       ),

@@ -8,23 +8,30 @@ import 'package:flutter/services.dart';
 ///Custom Textfield
 class KTextField extends StatelessWidget {
   ///Custom Textfield
-  const KTextField(
-      {Key? key,
-      this.hintText,
-      this.readOnly,
-      this.inputType,
-      this.controller,
-      this.inputFormatters,
-      this.label,
-      this.suffixIcon,
-      this.prefixIcon,
-      this.obsecureText = false,
-      this.maxLength,
-      this.suffixIconConstraints})
-      : super(key: key);
+  const KTextField({
+    super.key,
+    this.hintText,
+    this.readOnly,
+    this.inputType,
+    this.controller,
+    this.inputFormatters,
+    this.label,
+    this.suffixIcon,
+    this.prefixIcon,
+    this.obsecureText = false,
+    this.maxLength,
+    this.suffixIconConstraints,
+    this.onChanged,
+    this.contextMenuBuilder,
+    this.focusNode,
+    this.maxLines,
+    this.textAlign = TextAlign.start,
+  });
 
   ///hintText
   final String? hintText;
+
+  final int? maxLines;
 
   final bool? readOnly;
 
@@ -53,11 +60,23 @@ class KTextField extends StatelessWidget {
   ///text length
   final int? maxLength;
 
+  final void Function(String value)? onChanged;
+
+  final FocusNode? focusNode;
+
   final BoxConstraints? suffixIconConstraints;
+  final Widget Function(BuildContext context, EditableTextState state)?
+      contextMenuBuilder;
+
+  final TextAlign textAlign;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      textAlign: textAlign,
+      focusNode: focusNode,
+      contextMenuBuilder: contextMenuBuilder,
+      onChanged: onChanged,
       keyboardType: inputType,
       controller: controller,
       obscureText: obsecureText,

@@ -1,7 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
-import 'package:dealerapp/src/utils/global_exports.dart';
+import 'package:dealerapp/src/utils/app_images.dart';
+import 'package:flutter/material.dart';
+
 
 enum NotificationType {
   orderNotification(
@@ -36,12 +38,13 @@ enum NotificationType {
   });
 }
 
+@immutable
 class NotificationModel {
   final String title;
   final String subtitle;
   final NotificationType notificationType;
   final DateTime dateTime;
-  NotificationModel({
+  const NotificationModel({
     required this.title,
     required this.subtitle,
     required this.notificationType,
@@ -88,7 +91,6 @@ class NotificationModel {
 
   @override
   String toString() {
-    // ignore: lines_longer_than_80_chars
     return 'NotificationModel(title: $title, subtitle: $subtitle, notificationType: $notificationType, dateTime: $dateTime)';
   }
 

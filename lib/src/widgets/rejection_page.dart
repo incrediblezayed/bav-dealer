@@ -59,7 +59,7 @@ class _RejectionPageState extends State<RejectionPage> {
               onPressed: () {
                 Navigator.pop(context, {
                   'selectedReason': selectedReason,
-                  'customReason': customReason
+                  'customReason': customReason,
                 });
               },
               child: const Text('Submit'),

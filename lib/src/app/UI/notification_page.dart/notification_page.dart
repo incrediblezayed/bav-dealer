@@ -1,48 +1,20 @@
-import 'package:dealerapp/src/app/model/notification_model.dart';
+
+import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
+import 'package:dealerapp/src/widgets/empty_widget.dart';
 import 'package:dealerapp/src/widgets/notification_card.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:iconsax/iconsax.dart';
 
-class NotificationPage extends StatefulWidget {
+/// Notification Page
+class NotificationPage extends ConsumerWidget {
+  /// Notification Page to display notifications
   const NotificationPage({super.key});
 
   @override
-  State<NotificationPage> createState() => _NotificationPageState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final notificationPro = ref.watch(notificationsProvider);
 
-class _NotificationPageState extends State<NotificationPage> {
-  List<NotificationModel> notificationList = [
-    NotificationModel(
-      title: 'your test order has been successfully delivered',
-      dateTime: DateTime.now(),
-      subtitle:
-          'orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,',
-      notificationType: NotificationType.orderNotification,
-    ),
-    NotificationModel(
-      title: 'Your password has been successfully changed',
-      dateTime: DateTime.now(),
-      subtitle:
-          'orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,',
-      notificationType: NotificationType.passwordNotification,
-    ),
-    NotificationModel(
-      title: 'Your profile has been successfully updated',
-      dateTime: DateTime.now(),
-      subtitle:
-          'orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,',
-      notificationType: NotificationType.profileNotification,
-    ),
-    NotificationModel(
-      title: 'Your security settings has been successfully updated',
-      dateTime: DateTime.now(),
-      subtitle:
-          'orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,',
-      notificationType: NotificationType.securityNotification,
-    ),
-  ];
-  @override
-  Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
@@ -59,24 +31,26 @@ class _NotificationPageState extends State<NotificationPage> {
         ),
         title: Text(
           'Notification',
-          style: theme.headlineLarge,
+          style: theme.headlineMedium,
         ),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
-        child: ListView(
-          physics: const BouncingScrollPhysics(),
-          children: notificationList
-              .map(
-                (e) => Padding(
-                  padding: const EdgeInsets.only(bottom: 10),
-                  child: NotificationCard(
-                    notificationModel: e,
-                  ),
-                ),
-              )
-              .toList(),
-        ),
+        child: notificationPro.notifications.isEmpty
+            ? const Center(child: EmptyWidget(title: 'Uh-Oh No notifications found'))
+            : ListView(
+                physics: const BouncingScrollPhysics(),
+                children: notificationPro.notifications
+                    .map(
+                      (e) => Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: NotificationCard(
+                          notificationModel: e,
+                        ),
+                      ),
+                    )
+                    .toList(),
+              ),
       ),
     );
   }
