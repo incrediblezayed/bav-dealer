@@ -5,11 +5,11 @@ on:
   push:
     branches:
       - main
-name: "Test Build"
+name: "Build"
 jobs:
   build:
-    name: Test Build
-    runs-on: ubuntu-latest
+    name: Build Apps
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-java@v1
@@ -17,15 +17,23 @@ jobs:
           java-version: "12.x"
       - uses: subosito/flutter-action@v1
         with:
-          flutter-version: "3.13.0"
+          flutter-version: "3.13.8"
       - uses: dart-lang/setup-dart@v1
         with:
           sdk: "3.1.0"
       - run: flutter update-packages --force-upgrade
       - run: flutter pub get
-      - run: flutter build apk --release
+      - run: mkdir releaseBuilds
+      - run: flutter build apk --dart-define-from-file devEnv.json
+      - run: flutter build appbundle --dart-define-from-file devEnv.json
+      - run: mv build/app/outputs/apk/release/app-release.apk releaseBuilds/BAV_Dealer_Dev.apk
+      - run: mv build/app/outputs/bundle/release/app-release.aab releaseBuilds/BAV_Dealer_Dev.aab
+      - run: flutter build apk --dart-define-from-file prodEnv.json
+      - run: flutter build appbundle --dart-define-from-file prodEnv.json
+      - run: mv build/app/outputs/apk/release/app-release.apk releaseBuilds/BAV_Dealer_Prod.apk
+      - run: mv build/app/outputs/bundle/release/app-release.aab releaseBuilds/BAV_Dealer_Prod.aab
       - name: Push Test Build
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "build/app/outputs/apk/release/*"
+          artifacts: "releaseBuilds/*"
           tag: v1.0.${{ github.run_number }}
