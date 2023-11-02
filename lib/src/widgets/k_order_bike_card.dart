@@ -531,7 +531,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                     height: 26.h,
                   ),
                   Text(
-                    'Reasong For Rejection',
+                    'Reason For Rejection',
                     style: theme.headlineLarge,
                   ),
                   const SizedBox(height: 20),
