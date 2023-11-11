@@ -16,6 +16,8 @@ class AppImages {
 
   static const String menu = '$_imagesPath/menu.svg';
   static const String per = '$_imagesPath/per.svg';
+  static const String feedbacksvg = '$_imagesPath/feedbacksvg.svg';
+
 
 
   static const String purchase = '$_imagesPath/purchase.svg';
