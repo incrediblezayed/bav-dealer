@@ -13,12 +13,10 @@ class AppImages {
   static const String search1 = '$_imagesPath/search1.svg';
   static const String ccc = '$_imagesPath/ccc.svg';
 
-
   static const String menu = '$_imagesPath/menu.svg';
   static const String per = '$_imagesPath/per.svg';
   static const String feedbacksvg = '$_imagesPath/feedbacksvg.svg';
-
-
+  static const String reportsvg = '$_imagesPath/reportsvg.svg';
 
   static const String purchase = '$_imagesPath/purchase.svg';
 
@@ -43,7 +41,6 @@ class AppImages {
   static const String arrow = '$_imagesPath/arrow.png';
   static const String report = '$_imagesPath/report.png';
   static const String make = '$_imagesPath/make.png';
-
 
   static const String purchaseNew = '$_imagesPath/newPurchase.png';
   static const String purchaseOrder = '$_imagesPath/purchaseOrder.png';
