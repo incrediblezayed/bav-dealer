@@ -1,5 +1,79 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:dealerapp/src/app/repository/graphql_client.dart';
+import 'package:flutter/material.dart';
+
+///Cached network image
+class KCachedNWImage extends Image {
+  ///Constructor for cached network image
+  ///
+  ///[isExternal] is used to check if the image is external or not
+  ///
+  ///If the image is external then the [imageUrl] is used as it is
+  ///
+  ///If the image is not external then the [imageUrl] is appended with the [GraphqlClient.baseUrl]
+  ///
+  ///This is done to avoid the CORS error
+  ///
+  ///[placeholder] is used to show the placeholder image
+  ///
+  ///[errorWidget] is used to show the error image
+  ///
+  ///[placeholderFadeInDuration] is used to set the duration for the placeholder fade in animation
+  ///
+  ///
+  KCachedNWImage(
+    String? imageUrl, {
+    super.key,
+    bool isExternal = false,
+    super.fit,
+    super.width,
+    super.height,
+    super.alignment,
+    super.repeat,
+    super.matchTextDirection,
+    super.filterQuality,
+    super.errorBuilder,
+  }) : super.network(
+          imageUrl == null
+              ? ''
+              : isExternal || imageUrl.contains('https')
+                  ? imageUrl
+                  : GraphqlClient.baseUrl + imageUrl,
+          loadingBuilder: (context, child, loadingProgress) {
+            if (loadingProgress == null) {
+              return child;
+            }
+            return Center(
+              child: CircularProgressIndicator.adaptive(),
+            );
+          },
+        );
+}
+
+/// Cached Network image provider
+/* class KCachedNWImageProvider extends AssetImage {
+  ///Constructor for cached network image provider
+  ///
+  ///[isExternal] is used to check if the image is external or not
+  ///
+  ///If the image is external then the [imageUrl] is used as it is
+  ///
+  ///If the image is not external then the [imageUrl] is appended with the [GraphqlClient.baseUrl]
+  ///
+  ///This is done to avoid the CORS error
+  ///
+  KCachedNWImageProvider(
+    String imageUrl, {
+    bool isExternal = false,
+  }) : super(
+          isExternal ? imageUrl : GraphqlClient.baseUrl + imageUrl,
+        );
+}
+ */
+
+/* // ignore_for_file: must_be_immutable
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dealerapp/src/app/repository/graphql_client.dart';
 import 'package:flutter/material.dart';
@@ -70,3 +144,4 @@ class KCachedNWImageProvider extends CachedNetworkImageProvider {
           isExternal ? imageUrl : GraphqlClient.baseUrl + imageUrl,
         );
 }
+ */
