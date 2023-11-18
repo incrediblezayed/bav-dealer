@@ -210,7 +210,7 @@ class AppDrawer extends ConsumerWidget {
                     ),
                     _drawerTile(
                       title: 'Add a Feedback',
-                      icon: AppImages.aboutus,
+                      icon: AppImages.feedbacksvg,
                       onTap: () {
                         AppRoutes.push(
                             page: ReportPage(
@@ -220,7 +220,7 @@ class AppDrawer extends ConsumerWidget {
                     ),
                     _drawerTile(
                       title: 'Report a Problem',
-                      icon: AppImages.aboutus,
+                      icon: AppImages.reportsvg,
                       onTap: () {
                         AppRoutes.push(
                             page: ReportPage(
