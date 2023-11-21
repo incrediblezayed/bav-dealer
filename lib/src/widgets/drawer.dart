@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
 import 'package:dealerapp/src/app/UI/coming_soon.dart';
 import 'package:dealerapp/src/app/UI/drawer/about_us.dart';
@@ -95,6 +96,7 @@ class AppDrawer extends ConsumerWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 20.w, bottom: 30.h),
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       UserProfileImage(
                         url: user.profile_image?.url,
@@ -103,35 +105,31 @@ class AppDrawer extends ConsumerWidget {
                       SizedBox(
                         width: 16.w,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            user.name!,
-                            style: theme.headlineLarge,
-                          ),
-                          SizedBox(height: 6.h),
-                          //const Text('@Tanmay'),
-                          SizedBox(height: 6.h),
-
-                          /* Text(
-                              homePageProv.user.name ?? '',
-                              style: theme.textTheme.headlineMedium,
-                              ) */
-                          KBottomBarButton(
-                            minSize: true,
-                            fontSize: 12,
-                            radius: 100,
-                            text: 'Edit Profile',
-                            onTap: () {
-                              AppRoutes.push(
-                                page: const EditProfile(
-                                  isPersonalInfo: false,
-                                ),
-                              );
-                            },
-                          ),
-                        ],
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            AutoSizeText(
+                              user.name!,
+                              style: theme.headlineLarge,
+                              maxLines: 2,
+                            ),
+                            SizedBox(height: 6.h),
+                            KBottomBarButton(
+                              minSize: true,
+                              fontSize: 12,
+                              radius: 100,
+                              text: 'Edit Profile',
+                              onTap: () {
+                                AppRoutes.push(
+                                  page: const EditProfile(
+                                    isPersonalInfo: false,
+                                  ),
+                                );
+                              },
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
