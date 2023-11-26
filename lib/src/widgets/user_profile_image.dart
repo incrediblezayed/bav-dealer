@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dealerapp/src/app/repository/graphql_client.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
+import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
 
 ///User profile image
 class UserProfileImage extends StatelessWidget {
@@ -42,20 +42,15 @@ class UserProfileImage extends StatelessWidget {
             backgroundImage: isFile ? FileImage(File(url!)) : null,
             child: isFile
                 ? null
-                : CachedNetworkImage(
-                    imageUrl: GraphqlClient.baseUrl + url!,
-                    imageBuilder: (context, imageProvider) {
+                : KCachedNWImage(
+                    url!,
+                    frameBuilder:
+                        (context, child, frame, wasSynchronouslyLoaded) {
                       return ClipRRect(
-                        borderRadius: BorderRadius.circular(size),
-                        child: Image(
-                          image: imageProvider,
-                          fit: BoxFit.cover,
-                          width: size,
-                          height: size,
-                        ),
-                      );
+                          borderRadius: BorderRadius.circular(size),
+                          child: child);
                     },
-                    errorWidget: (context, url, error) {
+                    errorBuilder: (context, url, error) {
                       error.log();
                       url.log();
                       return CircleAvatar(

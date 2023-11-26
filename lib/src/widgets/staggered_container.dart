@@ -60,7 +60,10 @@ class StagerredContainer extends StatelessWidget {
                       borderRadius: BorderRadius.circular(6.r),
                     ),
                     padding: const EdgeInsets.all(10),
-                    child: Image.asset(image),
+                    child: Image.asset(
+                      image,
+                      height: MediaQuery.of(context).size.height * 0.01,
+                    ),
                   ),
                   Image.asset(
                     AppImages.arrow,
@@ -68,21 +71,26 @@ class StagerredContainer extends StatelessWidget {
                   ),
                 ],
               ),
-              const Spacer(),
-              Text(
-                count,
-                style: theme.headlineLarge!.copyWith(
-                  fontSize: 36.sp,
-                  fontWeight: FontWeight.w600,
-                  color: countColor,
-                ),
-              ),
-              const Spacer(),
-              Text(
-                title,
-                style: theme.headlineSmall!.copyWith(color: titleColor),
-              ),
-              SizedBox(height: 10.h),
+              Expanded(
+                  child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    count,
+                    style: theme.headlineLarge!.copyWith(
+                      fontSize: MediaQuery.sizeOf(context).height * 0.04,
+                      fontWeight: FontWeight.w600,
+                      color: countColor,
+                    ),
+                  ),
+                  Text(
+                    title,
+                    style: theme.headlineSmall!.copyWith(color: titleColor,
+                    fontSize: MediaQuery.sizeOf(context).height * 0.02
+                    ),
+                  ),
+                ],
+              ))
             ],
           ),
         ),
