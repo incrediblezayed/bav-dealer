@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class OrdersListPage extends StatelessWidget {
   OrdersListPage({required this.data, required this.orderPro, super.key});
   final List<GVehicleOrdersData_vehicleOrders> data;
-  OrdersProvider orderPro;
+  final OrdersProvider orderPro;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +25,11 @@ class OrdersListPage extends StatelessWidget {
               child: ListView(
                 shrinkWrap: true,
                 children: data
-                    .map((e) => KOrderBikeCard(
-                          vehiclePurchaseOrders: e,
-                        ),)
+                    .map(
+                      (e) => KOrderBikeCard(
+                        vehiclePurchaseOrders: e,
+                      ),
+                    )
                     .toList(),
               ),
             ),

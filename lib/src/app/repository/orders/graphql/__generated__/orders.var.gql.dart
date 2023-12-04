@@ -23,10 +23,12 @@ abstract class GVehicleOrdersVars
   _i1.GVehicleOrderWhereInput get where;
   static Serializer<GVehicleOrdersVars> get serializer =>
       _$gVehicleOrdersVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleOrdersVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleOrdersVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleOrdersVars.serializer,
@@ -46,10 +48,12 @@ abstract class GTestDriveOrdersVars
   BuiltList<_i1.GTestDriveOrderOrderByInput> get orderBy;
   static Serializer<GTestDriveOrdersVars> get serializer =>
       _$gTestDriveOrdersVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveOrdersVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveOrdersVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveOrdersVars.serializer,
@@ -69,10 +73,12 @@ abstract class GUpdateVehicleOrderVars
   _i1.GVehicleOrderUpdateInput get data;
   static Serializer<GUpdateVehicleOrderVars> get serializer =>
       _$gUpdateVehicleOrderVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUpdateVehicleOrderVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUpdateVehicleOrderVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUpdateVehicleOrderVars.serializer,
@@ -93,10 +99,12 @@ abstract class GUpdateTestDriveOrderVars
   _i1.GTestDriveOrderUpdateInput get data;
   static Serializer<GUpdateTestDriveOrderVars> get serializer =>
       _$gUpdateTestDriveOrderVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUpdateTestDriveOrderVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUpdateTestDriveOrderVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUpdateTestDriveOrderVars.serializer,
@@ -117,10 +125,12 @@ abstract class GCreateOrderRejectionByDealerVars
   _i1.GOrderRejectionByDealerCreateInput get data;
   static Serializer<GCreateOrderRejectionByDealerVars> get serializer =>
       _$gCreateOrderRejectionByDealerVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCreateOrderRejectionByDealerVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateOrderRejectionByDealerVars? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(

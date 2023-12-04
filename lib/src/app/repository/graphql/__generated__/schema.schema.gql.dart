@@ -40,7 +40,9 @@ class GImageExtension extends EnumClass {
 
   static Serializer<GImageExtension> get serializer =>
       _$gImageExtensionSerializer;
+
   static BuiltSet<GImageExtension> get values => _$gImageExtensionValues;
+
   static GImageExtension valueOf(String name) => _$gImageExtensionValueOf(name);
 }
 
@@ -57,10 +59,12 @@ abstract class GUserWhereUniqueInput
   String? get email;
   static Serializer<GUserWhereUniqueInput> get serializer =>
       _$gUserWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUserWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUserWhereUniqueInput.serializer,
@@ -98,10 +102,12 @@ abstract class GUserWhereInput
   GDateTimeNullableFilter? get passwordResetRedeemedAt;
   static Serializer<GUserWhereInput> get serializer =>
       _$gUserWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUserWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUserWhereInput.serializer,
@@ -124,10 +130,12 @@ abstract class GIDFilter implements Built<GIDFilter, GIDFilterBuilder> {
   String? get gte;
   GIDFilter? get not;
   static Serializer<GIDFilter> get serializer => _$gIDFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GIDFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GIDFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GIDFilter.serializer,
@@ -154,10 +162,12 @@ abstract class GDateTimeNullableFilter
   GDateTimeNullableFilter? get not;
   static Serializer<GDateTimeNullableFilter> get serializer =>
       _$gDateTimeNullableFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GDateTimeNullableFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GDateTimeNullableFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GDateTimeNullableFilter.serializer,
@@ -185,10 +195,12 @@ abstract class GStringFilter
   String? get endsWith;
   GNestedStringFilter? get not;
   static Serializer<GStringFilter> get serializer => _$gStringFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GStringFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GStringFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GStringFilter.serializer,
@@ -217,10 +229,12 @@ abstract class GNestedStringFilter
   GNestedStringFilter? get not;
   static Serializer<GNestedStringFilter> get serializer =>
       _$gNestedStringFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GNestedStringFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GNestedStringFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GNestedStringFilter.serializer,
@@ -239,10 +253,12 @@ abstract class GBooleanFilter
   GBooleanFilter? get not;
   static Serializer<GBooleanFilter> get serializer =>
       _$gBooleanFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GBooleanFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GBooleanFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GBooleanFilter.serializer,
@@ -264,10 +280,12 @@ abstract class GAddressManyRelationFilter
   GAddressWhereInput? get none;
   static Serializer<GAddressManyRelationFilter> get serializer =>
       _$gAddressManyRelationFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAddressManyRelationFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAddressManyRelationFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GAddressManyRelationFilter.serializer,
@@ -289,10 +307,12 @@ abstract class GFavoriteManyRelationFilter
   GFavoriteWhereInput? get none;
   static Serializer<GFavoriteManyRelationFilter> get serializer =>
       _$gFavoriteManyRelationFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFavoriteManyRelationFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFavoriteManyRelationFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFavoriteManyRelationFilter.serializer,
@@ -314,10 +334,12 @@ abstract class GCartItemManyRelationFilter
   GCartItemWhereInput? get none;
   static Serializer<GCartItemManyRelationFilter> get serializer =>
       _$gCartItemManyRelationFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCartItemManyRelationFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCartItemManyRelationFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCartItemManyRelationFilter.serializer,
@@ -335,10 +357,12 @@ abstract class GPasswordFilter
   bool get isSet;
   static Serializer<GPasswordFilter> get serializer =>
       _$gPasswordFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPasswordFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPasswordFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPasswordFilter.serializer,
@@ -367,10 +391,12 @@ abstract class GUserOrderByInput
   GOrderDirection? get passwordResetRedeemedAt;
   static Serializer<GUserOrderByInput> get serializer =>
       _$gUserOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUserOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUserOrderByInput.serializer,
@@ -387,7 +413,9 @@ class GOrderDirection extends EnumClass {
 
   static Serializer<GOrderDirection> get serializer =>
       _$gOrderDirectionSerializer;
+
   static BuiltSet<GOrderDirection> get values => _$gOrderDirectionValues;
+
   static GOrderDirection valueOf(String name) => _$gOrderDirectionValueOf(name);
 }
 
@@ -421,10 +449,12 @@ abstract class GUserUpdateInput
   GDateTime? get passwordResetRedeemedAt;
   static Serializer<GUserUpdateInput> get serializer =>
       _$gUserUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUserUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUserUpdateInput.serializer,
@@ -442,10 +472,12 @@ abstract class GImageFieldInput
   _i3.MultipartFile get upload;
   static Serializer<GImageFieldInput> get serializer =>
       _$gImageFieldInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GImageFieldInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GImageFieldInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GImageFieldInput.serializer,
@@ -463,10 +495,12 @@ abstract class GFileFieldInput
   _i3.MultipartFile get upload;
   static Serializer<GFileFieldInput> get serializer =>
       _$gFileFieldInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFileFieldInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFileFieldInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFileFieldInput.serializer,
@@ -490,10 +524,12 @@ abstract class GAddressRelateToManyForUpdateInput
   BuiltList<GAddressWhereUniqueInput>? get connect;
   static Serializer<GAddressRelateToManyForUpdateInput> get serializer =>
       _$gAddressRelateToManyForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAddressRelateToManyForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAddressRelateToManyForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -518,10 +554,12 @@ abstract class GFavoriteRelateToManyForUpdateInput
   BuiltList<GFavoriteWhereUniqueInput>? get connect;
   static Serializer<GFavoriteRelateToManyForUpdateInput> get serializer =>
       _$gFavoriteRelateToManyForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFavoriteRelateToManyForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFavoriteRelateToManyForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -546,10 +584,12 @@ abstract class GCartItemRelateToManyForUpdateInput
   BuiltList<GCartItemWhereUniqueInput>? get connect;
   static Serializer<GCartItemRelateToManyForUpdateInput> get serializer =>
       _$gCartItemRelateToManyForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCartItemRelateToManyForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCartItemRelateToManyForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -573,10 +613,12 @@ abstract class GWalletRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GWalletRelateToOneForUpdateInput> get serializer =>
       _$gWalletRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GWalletRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GWalletRelateToOneForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -600,10 +642,12 @@ abstract class GReferralCodeRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GReferralCodeRelateToOneForUpdateInput> get serializer =>
       _$gReferralCodeRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReferralCodeRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReferralCodeRelateToOneForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -623,10 +667,12 @@ abstract class GUserUpdateArgs
   GUserUpdateInput get data;
   static Serializer<GUserUpdateArgs> get serializer =>
       _$gUserUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUserUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUserUpdateArgs.serializer,
@@ -664,10 +710,12 @@ abstract class GUserCreateInput
   GDateTime? get passwordResetRedeemedAt;
   static Serializer<GUserCreateInput> get serializer =>
       _$gUserCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUserCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUserCreateInput.serializer,
@@ -689,10 +737,12 @@ abstract class GAddressRelateToManyForCreateInput
   BuiltList<GAddressWhereUniqueInput>? get connect;
   static Serializer<GAddressRelateToManyForCreateInput> get serializer =>
       _$gAddressRelateToManyForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAddressRelateToManyForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAddressRelateToManyForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -715,10 +765,12 @@ abstract class GFavoriteRelateToManyForCreateInput
   BuiltList<GFavoriteWhereUniqueInput>? get connect;
   static Serializer<GFavoriteRelateToManyForCreateInput> get serializer =>
       _$gFavoriteRelateToManyForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFavoriteRelateToManyForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFavoriteRelateToManyForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -741,10 +793,12 @@ abstract class GCartItemRelateToManyForCreateInput
   BuiltList<GCartItemWhereUniqueInput>? get connect;
   static Serializer<GCartItemRelateToManyForCreateInput> get serializer =>
       _$gCartItemRelateToManyForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCartItemRelateToManyForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCartItemRelateToManyForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -767,10 +821,12 @@ abstract class GWalletRelateToOneForCreateInput
   GWalletWhereUniqueInput? get connect;
   static Serializer<GWalletRelateToOneForCreateInput> get serializer =>
       _$gWalletRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GWalletRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GWalletRelateToOneForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -793,10 +849,12 @@ abstract class GReferralCodeRelateToOneForCreateInput
   GReferralCodeWhereUniqueInput? get connect;
   static Serializer<GReferralCodeRelateToOneForCreateInput> get serializer =>
       _$gReferralCodeRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReferralCodeRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReferralCodeRelateToOneForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -819,10 +877,12 @@ abstract class GReferralCodeWhereUniqueInput
   String? get code;
   static Serializer<GReferralCodeWhereUniqueInput> get serializer =>
       _$gReferralCodeWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReferralCodeWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReferralCodeWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReferralCodeWhereUniqueInput.serializer,
@@ -848,10 +908,12 @@ abstract class GReferralCodeWhereInput
   GStringFilter? get code;
   static Serializer<GReferralCodeWhereInput> get serializer =>
       _$gReferralCodeWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReferralCodeWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReferralCodeWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReferralCodeWhereInput.serializer,
@@ -874,10 +936,12 @@ abstract class GReferralCodeOrderByInput
   GOrderDirection? get code;
   static Serializer<GReferralCodeOrderByInput> get serializer =>
       _$gReferralCodeOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReferralCodeOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReferralCodeOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReferralCodeOrderByInput.serializer,
@@ -900,10 +964,12 @@ abstract class GReferralCodeUpdateInput
   String? get code;
   static Serializer<GReferralCodeUpdateInput> get serializer =>
       _$gReferralCodeUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReferralCodeUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReferralCodeUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReferralCodeUpdateInput.serializer,
@@ -926,10 +992,12 @@ abstract class GUserRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GUserRelateToOneForUpdateInput> get serializer =>
       _$gUserRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUserRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserRelateToOneForUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUserRelateToOneForUpdateInput.serializer,
@@ -949,10 +1017,12 @@ abstract class GReferralCodeUpdateArgs
   GReferralCodeUpdateInput get data;
   static Serializer<GReferralCodeUpdateArgs> get serializer =>
       _$gReferralCodeUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReferralCodeUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReferralCodeUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReferralCodeUpdateArgs.serializer,
@@ -975,10 +1045,12 @@ abstract class GReferralCodeCreateInput
   String? get code;
   static Serializer<GReferralCodeCreateInput> get serializer =>
       _$gReferralCodeCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReferralCodeCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReferralCodeCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReferralCodeCreateInput.serializer,
@@ -1000,10 +1072,12 @@ abstract class GUserRelateToOneForCreateInput
   GUserWhereUniqueInput? get connect;
   static Serializer<GUserRelateToOneForCreateInput> get serializer =>
       _$gUserRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUserRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserRelateToOneForCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUserRelateToOneForCreateInput.serializer,
@@ -1024,10 +1098,12 @@ abstract class GReferralUserWhereUniqueInput
   String? get id;
   static Serializer<GReferralUserWhereUniqueInput> get serializer =>
       _$gReferralUserWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReferralUserWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReferralUserWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReferralUserWhereUniqueInput.serializer,
@@ -1053,10 +1129,12 @@ abstract class GReferralUserWhereInput
   GUserWhereInput? get referee;
   static Serializer<GReferralUserWhereInput> get serializer =>
       _$gReferralUserWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReferralUserWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReferralUserWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReferralUserWhereInput.serializer,
@@ -1078,10 +1156,12 @@ abstract class GReferralUserOrderByInput
   GOrderDirection? get modifiedAt;
   static Serializer<GReferralUserOrderByInput> get serializer =>
       _$gReferralUserOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReferralUserOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReferralUserOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReferralUserOrderByInput.serializer,
@@ -1104,10 +1184,12 @@ abstract class GReferralUserUpdateInput
   GUserRelateToOneForUpdateInput? get referee;
   static Serializer<GReferralUserUpdateInput> get serializer =>
       _$gReferralUserUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReferralUserUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReferralUserUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReferralUserUpdateInput.serializer,
@@ -1127,10 +1209,12 @@ abstract class GReferralUserUpdateArgs
   GReferralUserUpdateInput get data;
   static Serializer<GReferralUserUpdateArgs> get serializer =>
       _$gReferralUserUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReferralUserUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReferralUserUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReferralUserUpdateArgs.serializer,
@@ -1153,10 +1237,12 @@ abstract class GReferralUserCreateInput
   GUserRelateToOneForCreateInput? get referee;
   static Serializer<GReferralUserCreateInput> get serializer =>
       _$gReferralUserCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReferralUserCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReferralUserCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReferralUserCreateInput.serializer,
@@ -1176,10 +1262,12 @@ abstract class GAddressWhereUniqueInput
   String? get id;
   static Serializer<GAddressWhereUniqueInput> get serializer =>
       _$gAddressWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAddressWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAddressWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GAddressWhereUniqueInput.serializer,
@@ -1212,10 +1300,12 @@ abstract class GAddressWhereInput
   GUserWhereInput? get user;
   static Serializer<GAddressWhereInput> get serializer =>
       _$gAddressWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAddressWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAddressWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GAddressWhereInput.serializer,
@@ -1245,10 +1335,12 @@ abstract class GAddressOrderByInput
   GOrderDirection? get Gdefault;
   static Serializer<GAddressOrderByInput> get serializer =>
       _$gAddressOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAddressOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAddressOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GAddressOrderByInput.serializer,
@@ -1277,10 +1369,12 @@ abstract class GAddressUpdateInput
   GUserRelateToOneForUpdateInput? get user;
   static Serializer<GAddressUpdateInput> get serializer =>
       _$gAddressUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAddressUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAddressUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GAddressUpdateInput.serializer,
@@ -1299,10 +1393,12 @@ abstract class GAddressUpdateArgs
   GAddressUpdateInput get data;
   static Serializer<GAddressUpdateArgs> get serializer =>
       _$gAddressUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAddressUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAddressUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GAddressUpdateArgs.serializer,
@@ -1331,10 +1427,12 @@ abstract class GAddressCreateInput
   GUserRelateToOneForCreateInput? get user;
   static Serializer<GAddressCreateInput> get serializer =>
       _$gAddressCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAddressCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAddressCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GAddressCreateInput.serializer,
@@ -1354,10 +1452,12 @@ abstract class GFavoriteWhereUniqueInput
   String? get id;
   static Serializer<GFavoriteWhereUniqueInput> get serializer =>
       _$gFavoriteWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFavoriteWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFavoriteWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFavoriteWhereUniqueInput.serializer,
@@ -1382,10 +1482,12 @@ abstract class GFavoriteWhereInput
   GUserWhereInput? get user;
   static Serializer<GFavoriteWhereInput> get serializer =>
       _$gFavoriteWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFavoriteWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFavoriteWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFavoriteWhereInput.serializer,
@@ -1406,10 +1508,12 @@ abstract class GFavoriteOrderByInput
   GOrderDirection? get modifiedAt;
   static Serializer<GFavoriteOrderByInput> get serializer =>
       _$gFavoriteOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFavoriteOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFavoriteOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFavoriteOrderByInput.serializer,
@@ -1431,10 +1535,12 @@ abstract class GFavoriteUpdateInput
   GUserRelateToOneForUpdateInput? get user;
   static Serializer<GFavoriteUpdateInput> get serializer =>
       _$gFavoriteUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFavoriteUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFavoriteUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFavoriteUpdateInput.serializer,
@@ -1457,10 +1563,12 @@ abstract class GVehicleVariantRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GVehicleVariantRelateToOneForUpdateInput> get serializer =>
       _$gVehicleVariantRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleVariantRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleVariantRelateToOneForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -1480,10 +1588,12 @@ abstract class GFavoriteUpdateArgs
   GFavoriteUpdateInput get data;
   static Serializer<GFavoriteUpdateArgs> get serializer =>
       _$gFavoriteUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFavoriteUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFavoriteUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFavoriteUpdateArgs.serializer,
@@ -1505,10 +1615,12 @@ abstract class GFavoriteCreateInput
   GUserRelateToOneForCreateInput? get user;
   static Serializer<GFavoriteCreateInput> get serializer =>
       _$gFavoriteCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFavoriteCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFavoriteCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFavoriteCreateInput.serializer,
@@ -1530,10 +1642,12 @@ abstract class GVehicleVariantRelateToOneForCreateInput
   GVehicleVariantWhereUniqueInput? get connect;
   static Serializer<GVehicleVariantRelateToOneForCreateInput> get serializer =>
       _$gVehicleVariantRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleVariantRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleVariantRelateToOneForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -1554,10 +1668,12 @@ abstract class GCartItemWhereUniqueInput
   String? get id;
   static Serializer<GCartItemWhereUniqueInput> get serializer =>
       _$gCartItemWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCartItemWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCartItemWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCartItemWhereUniqueInput.serializer,
@@ -1582,10 +1698,12 @@ abstract class GCartItemWhereInput
   GUserWhereInput? get user;
   static Serializer<GCartItemWhereInput> get serializer =>
       _$gCartItemWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCartItemWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCartItemWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCartItemWhereInput.serializer,
@@ -1606,10 +1724,12 @@ abstract class GCartItemOrderByInput
   GOrderDirection? get modifiedAt;
   static Serializer<GCartItemOrderByInput> get serializer =>
       _$gCartItemOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCartItemOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCartItemOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCartItemOrderByInput.serializer,
@@ -1631,10 +1751,12 @@ abstract class GCartItemUpdateInput
   GUserRelateToOneForUpdateInput? get user;
   static Serializer<GCartItemUpdateInput> get serializer =>
       _$gCartItemUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCartItemUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCartItemUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCartItemUpdateInput.serializer,
@@ -1657,10 +1779,12 @@ abstract class GVehicleDealerRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GVehicleDealerRelateToOneForUpdateInput> get serializer =>
       _$gVehicleDealerRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleDealerRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealerRelateToOneForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -1680,10 +1804,12 @@ abstract class GCartItemUpdateArgs
   GCartItemUpdateInput get data;
   static Serializer<GCartItemUpdateArgs> get serializer =>
       _$gCartItemUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCartItemUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCartItemUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCartItemUpdateArgs.serializer,
@@ -1705,10 +1831,12 @@ abstract class GCartItemCreateInput
   GUserRelateToOneForCreateInput? get user;
   static Serializer<GCartItemCreateInput> get serializer =>
       _$gCartItemCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCartItemCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCartItemCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCartItemCreateInput.serializer,
@@ -1730,10 +1858,12 @@ abstract class GVehicleDealerRelateToOneForCreateInput
   GVehicleDealerWhereUniqueInput? get connect;
   static Serializer<GVehicleDealerRelateToOneForCreateInput> get serializer =>
       _$gVehicleDealerRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleDealerRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealerRelateToOneForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -1755,10 +1885,12 @@ abstract class GVehicleTypeWhereUniqueInput
   String? get id;
   static Serializer<GVehicleTypeWhereUniqueInput> get serializer =>
       _$gVehicleTypeWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleTypeWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleTypeWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleTypeWhereUniqueInput.serializer,
@@ -1784,10 +1916,12 @@ abstract class GVehicleTypeWhereInput
   GStringFilter? get description;
   static Serializer<GVehicleTypeWhereInput> get serializer =>
       _$gVehicleTypeWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleTypeWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleTypeWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleTypeWhereInput.serializer,
@@ -1811,10 +1945,12 @@ abstract class GVehicleTypeOrderByInput
   GOrderDirection? get description;
   static Serializer<GVehicleTypeOrderByInput> get serializer =>
       _$gVehicleTypeOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleTypeOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleTypeOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleTypeOrderByInput.serializer,
@@ -1836,10 +1972,12 @@ abstract class GVehicleTypeUpdateInput
   String? get description;
   static Serializer<GVehicleTypeUpdateInput> get serializer =>
       _$gVehicleTypeUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleTypeUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleTypeUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleTypeUpdateInput.serializer,
@@ -1859,10 +1997,12 @@ abstract class GVehicleTypeUpdateArgs
   GVehicleTypeUpdateInput get data;
   static Serializer<GVehicleTypeUpdateArgs> get serializer =>
       _$gVehicleTypeUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleTypeUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleTypeUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleTypeUpdateArgs.serializer,
@@ -1884,10 +2024,12 @@ abstract class GVehicleTypeCreateInput
   String? get description;
   static Serializer<GVehicleTypeCreateInput> get serializer =>
       _$gVehicleTypeCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleTypeCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleTypeCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleTypeCreateInput.serializer,
@@ -1906,10 +2048,12 @@ abstract class GBrandWhereUniqueInput
   String? get id;
   static Serializer<GBrandWhereUniqueInput> get serializer =>
       _$gBrandWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GBrandWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GBrandWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GBrandWhereUniqueInput.serializer,
@@ -1933,10 +2077,12 @@ abstract class GBrandWhereInput
   GStringFilter? get name;
   static Serializer<GBrandWhereInput> get serializer =>
       _$gBrandWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GBrandWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GBrandWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GBrandWhereInput.serializer,
@@ -1957,10 +2103,12 @@ abstract class GBrandOrderByInput
   GOrderDirection? get name;
   static Serializer<GBrandOrderByInput> get serializer =>
       _$gBrandOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GBrandOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GBrandOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GBrandOrderByInput.serializer,
@@ -1980,10 +2128,12 @@ abstract class GBrandUpdateInput
   String? get name;
   static Serializer<GBrandUpdateInput> get serializer =>
       _$gBrandUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GBrandUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GBrandUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GBrandUpdateInput.serializer,
@@ -2002,10 +2152,12 @@ abstract class GBrandUpdateArgs
   GBrandUpdateInput get data;
   static Serializer<GBrandUpdateArgs> get serializer =>
       _$gBrandUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GBrandUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GBrandUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GBrandUpdateArgs.serializer,
@@ -2025,10 +2177,12 @@ abstract class GBrandCreateInput
   String? get name;
   static Serializer<GBrandCreateInput> get serializer =>
       _$gBrandCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GBrandCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GBrandCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GBrandCreateInput.serializer,
@@ -2050,10 +2204,12 @@ abstract class GSpecificationWhereUniqueInput
   String? get name;
   static Serializer<GSpecificationWhereUniqueInput> get serializer =>
       _$gSpecificationWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSpecificationWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSpecificationWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GSpecificationWhereUniqueInput.serializer,
@@ -2081,10 +2237,12 @@ abstract class GSpecificationWhereInput
   GStringFilter? get unit;
   static Serializer<GSpecificationWhereInput> get serializer =>
       _$gSpecificationWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSpecificationWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSpecificationWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GSpecificationWhereInput.serializer,
@@ -2109,10 +2267,12 @@ abstract class GSpecificationOrderByInput
   GOrderDirection? get unit;
   static Serializer<GSpecificationOrderByInput> get serializer =>
       _$gSpecificationOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSpecificationOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSpecificationOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GSpecificationOrderByInput.serializer,
@@ -2136,10 +2296,12 @@ abstract class GSpecificationUpdateInput
   String? get unit;
   static Serializer<GSpecificationUpdateInput> get serializer =>
       _$gSpecificationUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSpecificationUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSpecificationUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GSpecificationUpdateInput.serializer,
@@ -2160,10 +2322,12 @@ abstract class GSpecificationUpdateArgs
   GSpecificationUpdateInput get data;
   static Serializer<GSpecificationUpdateArgs> get serializer =>
       _$gSpecificationUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSpecificationUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSpecificationUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GSpecificationUpdateArgs.serializer,
@@ -2187,10 +2351,12 @@ abstract class GSpecificationCreateInput
   String? get unit;
   static Serializer<GSpecificationCreateInput> get serializer =>
       _$gSpecificationCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSpecificationCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSpecificationCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GSpecificationCreateInput.serializer,
@@ -2212,10 +2378,12 @@ abstract class GSpecificationCategoryWhereUniqueInput
   String? get name;
   static Serializer<GSpecificationCategoryWhereUniqueInput> get serializer =>
       _$gSpecificationCategoryWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSpecificationCategoryWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSpecificationCategoryWhereUniqueInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -2244,10 +2412,12 @@ abstract class GSpecificationCategoryWhereInput
   GStringFilter? get description;
   static Serializer<GSpecificationCategoryWhereInput> get serializer =>
       _$gSpecificationCategoryWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSpecificationCategoryWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSpecificationCategoryWhereInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -2273,10 +2443,12 @@ abstract class GSpecificationCategoryOrderByInput
   GOrderDirection? get description;
   static Serializer<GSpecificationCategoryOrderByInput> get serializer =>
       _$gSpecificationCategoryOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSpecificationCategoryOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSpecificationCategoryOrderByInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -2301,10 +2473,12 @@ abstract class GSpecificationCategoryUpdateInput
   String? get description;
   static Serializer<GSpecificationCategoryUpdateInput> get serializer =>
       _$gSpecificationCategoryUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSpecificationCategoryUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSpecificationCategoryUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -2327,10 +2501,12 @@ abstract class GSpecificationCategoryUpdateArgs
   GSpecificationCategoryUpdateInput get data;
   static Serializer<GSpecificationCategoryUpdateArgs> get serializer =>
       _$gSpecificationCategoryUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSpecificationCategoryUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSpecificationCategoryUpdateArgs? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -2355,10 +2531,12 @@ abstract class GSpecificationCategoryCreateInput
   String? get description;
   static Serializer<GSpecificationCategoryCreateInput> get serializer =>
       _$gSpecificationCategoryCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSpecificationCategoryCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSpecificationCategoryCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -2380,10 +2558,12 @@ abstract class GTestDriveDealerWhereUniqueInput
   String? get id;
   static Serializer<GTestDriveDealerWhereUniqueInput> get serializer =>
       _$gTestDriveDealerWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveDealerWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveDealerWhereUniqueInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -2414,10 +2594,12 @@ abstract class GTestDriveDealerWhereInput
   GBooleanFilter? get available;
   static Serializer<GTestDriveDealerWhereInput> get serializer =>
       _$gTestDriveDealerWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveDealerWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveDealerWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveDealerWhereInput.serializer,
@@ -2440,10 +2622,12 @@ abstract class GIntFilter implements Built<GIntFilter, GIntFilterBuilder> {
   int? get gte;
   GIntFilter? get not;
   static Serializer<GIntFilter> get serializer => _$gIntFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GIntFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GIntFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GIntFilter.serializer,
@@ -2468,10 +2652,12 @@ abstract class GTestDriveDealerOrderByInput
   GOrderDirection? get available;
   static Serializer<GTestDriveDealerOrderByInput> get serializer =>
       _$gTestDriveDealerOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveDealerOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveDealerOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveDealerOrderByInput.serializer,
@@ -2497,10 +2683,12 @@ abstract class GTestDriveDealerUpdateInput
   bool? get available;
   static Serializer<GTestDriveDealerUpdateInput> get serializer =>
       _$gTestDriveDealerUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveDealerUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveDealerUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveDealerUpdateInput.serializer,
@@ -2523,10 +2711,12 @@ abstract class GDealerRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GDealerRelateToOneForUpdateInput> get serializer =>
       _$gDealerRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GDealerRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GDealerRelateToOneForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -2550,10 +2740,12 @@ abstract class GVehicleColorRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GVehicleColorRelateToOneForUpdateInput> get serializer =>
       _$gVehicleColorRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleColorRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleColorRelateToOneForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -2575,10 +2767,12 @@ abstract class GTestDriveDealerUpdateArgs
   GTestDriveDealerUpdateInput get data;
   static Serializer<GTestDriveDealerUpdateArgs> get serializer =>
       _$gTestDriveDealerUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveDealerUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveDealerUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveDealerUpdateArgs.serializer,
@@ -2604,10 +2798,12 @@ abstract class GTestDriveDealerCreateInput
   bool? get available;
   static Serializer<GTestDriveDealerCreateInput> get serializer =>
       _$gTestDriveDealerCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveDealerCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveDealerCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveDealerCreateInput.serializer,
@@ -2629,10 +2825,12 @@ abstract class GDealerRelateToOneForCreateInput
   GDealerWhereUniqueInput? get connect;
   static Serializer<GDealerRelateToOneForCreateInput> get serializer =>
       _$gDealerRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GDealerRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GDealerRelateToOneForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -2655,10 +2853,12 @@ abstract class GVehicleColorRelateToOneForCreateInput
   GVehicleColorWhereUniqueInput? get connect;
   static Serializer<GVehicleColorRelateToOneForCreateInput> get serializer =>
       _$gVehicleColorRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleColorRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleColorRelateToOneForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -2679,10 +2879,12 @@ abstract class GVehicleWhereUniqueInput
   String? get id;
   static Serializer<GVehicleWhereUniqueInput> get serializer =>
       _$gVehicleWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleWhereUniqueInput.serializer,
@@ -2712,10 +2914,12 @@ abstract class GVehicleWhereInput
   GVehicleColorManyRelationFilter? get colors;
   static Serializer<GVehicleWhereInput> get serializer =>
       _$gVehicleWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleWhereInput.serializer,
@@ -2738,10 +2942,12 @@ abstract class GVehicleVariantManyRelationFilter
   GVehicleVariantWhereInput? get none;
   static Serializer<GVehicleVariantManyRelationFilter> get serializer =>
       _$gVehicleVariantManyRelationFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleVariantManyRelationFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleVariantManyRelationFilter? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -2765,10 +2971,12 @@ abstract class GVehicleSpecificationManyRelationFilter
   GVehicleSpecificationWhereInput? get none;
   static Serializer<GVehicleSpecificationManyRelationFilter> get serializer =>
       _$gVehicleSpecificationManyRelationFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleSpecificationManyRelationFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleSpecificationManyRelationFilter? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -2792,10 +3000,12 @@ abstract class GVehicleColorManyRelationFilter
   GVehicleColorWhereInput? get none;
   static Serializer<GVehicleColorManyRelationFilter> get serializer =>
       _$gVehicleColorManyRelationFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleColorManyRelationFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleColorManyRelationFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleColorManyRelationFilter.serializer,
@@ -2818,10 +3028,12 @@ abstract class GVehicleOrderByInput
   GOrderDirection? get description;
   static Serializer<GVehicleOrderByInput> get serializer =>
       _$gVehicleOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleOrderByInput.serializer,
@@ -2847,10 +3059,12 @@ abstract class GVehicleUpdateInput
   GVehicleColorRelateToManyForUpdateInput? get colors;
   static Serializer<GVehicleUpdateInput> get serializer =>
       _$gVehicleUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleUpdateInput.serializer,
@@ -2873,10 +3087,12 @@ abstract class GVehicleTypeRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GVehicleTypeRelateToOneForUpdateInput> get serializer =>
       _$gVehicleTypeRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleTypeRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleTypeRelateToOneForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -2900,10 +3116,12 @@ abstract class GBrandRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GBrandRelateToOneForUpdateInput> get serializer =>
       _$gBrandRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GBrandRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GBrandRelateToOneForUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GBrandRelateToOneForUpdateInput.serializer,
@@ -2927,10 +3145,12 @@ abstract class GVehicleVariantRelateToManyForUpdateInput
   BuiltList<GVehicleVariantWhereUniqueInput>? get connect;
   static Serializer<GVehicleVariantRelateToManyForUpdateInput> get serializer =>
       _$gVehicleVariantRelateToManyForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleVariantRelateToManyForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleVariantRelateToManyForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -2956,10 +3176,12 @@ abstract class GVehicleSpecificationRelateToManyForUpdateInput
   static Serializer<GVehicleSpecificationRelateToManyForUpdateInput>
       get serializer =>
           _$gVehicleSpecificationRelateToManyForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleSpecificationRelateToManyForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleSpecificationRelateToManyForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -2984,10 +3206,12 @@ abstract class GVehicleColorRelateToManyForUpdateInput
   BuiltList<GVehicleColorWhereUniqueInput>? get connect;
   static Serializer<GVehicleColorRelateToManyForUpdateInput> get serializer =>
       _$gVehicleColorRelateToManyForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleColorRelateToManyForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleColorRelateToManyForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -3007,10 +3231,12 @@ abstract class GVehicleUpdateArgs
   GVehicleUpdateInput get data;
   static Serializer<GVehicleUpdateArgs> get serializer =>
       _$gVehicleUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleUpdateArgs.serializer,
@@ -3036,10 +3262,12 @@ abstract class GVehicleCreateInput
   GVehicleColorRelateToManyForCreateInput? get colors;
   static Serializer<GVehicleCreateInput> get serializer =>
       _$gVehicleCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleCreateInput.serializer,
@@ -3061,10 +3289,12 @@ abstract class GVehicleTypeRelateToOneForCreateInput
   GVehicleTypeWhereUniqueInput? get connect;
   static Serializer<GVehicleTypeRelateToOneForCreateInput> get serializer =>
       _$gVehicleTypeRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleTypeRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleTypeRelateToOneForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -3087,10 +3317,12 @@ abstract class GBrandRelateToOneForCreateInput
   GBrandWhereUniqueInput? get connect;
   static Serializer<GBrandRelateToOneForCreateInput> get serializer =>
       _$gBrandRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GBrandRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GBrandRelateToOneForCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GBrandRelateToOneForCreateInput.serializer,
@@ -3112,10 +3344,12 @@ abstract class GVehicleVariantRelateToManyForCreateInput
   BuiltList<GVehicleVariantWhereUniqueInput>? get connect;
   static Serializer<GVehicleVariantRelateToManyForCreateInput> get serializer =>
       _$gVehicleVariantRelateToManyForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleVariantRelateToManyForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleVariantRelateToManyForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -3139,10 +3373,12 @@ abstract class GVehicleSpecificationRelateToManyForCreateInput
   static Serializer<GVehicleSpecificationRelateToManyForCreateInput>
       get serializer =>
           _$gVehicleSpecificationRelateToManyForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleSpecificationRelateToManyForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleSpecificationRelateToManyForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -3165,10 +3401,12 @@ abstract class GVehicleColorRelateToManyForCreateInput
   BuiltList<GVehicleColorWhereUniqueInput>? get connect;
   static Serializer<GVehicleColorRelateToManyForCreateInput> get serializer =>
       _$gVehicleColorRelateToManyForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleColorRelateToManyForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleColorRelateToManyForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -3190,10 +3428,12 @@ abstract class GVehicleColorWhereUniqueInput
   String? get id;
   static Serializer<GVehicleColorWhereUniqueInput> get serializer =>
       _$gVehicleColorWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleColorWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleColorWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleColorWhereUniqueInput.serializer,
@@ -3222,10 +3462,12 @@ abstract class GVehicleColorWhereInput
   GVehicleImageManyRelationFilter? get images;
   static Serializer<GVehicleColorWhereInput> get serializer =>
       _$gVehicleColorWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleColorWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleColorWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleColorWhereInput.serializer,
@@ -3248,10 +3490,12 @@ abstract class GVehicleImageManyRelationFilter
   GVehicleImageWhereInput? get none;
   static Serializer<GVehicleImageManyRelationFilter> get serializer =>
       _$gVehicleImageManyRelationFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleImageManyRelationFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleImageManyRelationFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleImageManyRelationFilter.serializer,
@@ -3275,10 +3519,12 @@ abstract class GVehicleColorOrderByInput
   GOrderDirection? get code;
   static Serializer<GVehicleColorOrderByInput> get serializer =>
       _$gVehicleColorOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleColorOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleColorOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleColorOrderByInput.serializer,
@@ -3304,10 +3550,12 @@ abstract class GVehicleColorUpdateInput
   GVehicleImageRelateToManyForUpdateInput? get images;
   static Serializer<GVehicleColorUpdateInput> get serializer =>
       _$gVehicleColorUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleColorUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleColorUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleColorUpdateInput.serializer,
@@ -3330,10 +3578,12 @@ abstract class GVehicleRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GVehicleRelateToOneForUpdateInput> get serializer =>
       _$gVehicleRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleRelateToOneForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -3358,10 +3608,12 @@ abstract class GVehicleImageRelateToManyForUpdateInput
   BuiltList<GVehicleImageWhereUniqueInput>? get connect;
   static Serializer<GVehicleImageRelateToManyForUpdateInput> get serializer =>
       _$gVehicleImageRelateToManyForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleImageRelateToManyForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleImageRelateToManyForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -3382,10 +3634,12 @@ abstract class GVehicleColorUpdateArgs
   GVehicleColorUpdateInput get data;
   static Serializer<GVehicleColorUpdateArgs> get serializer =>
       _$gVehicleColorUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleColorUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleColorUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleColorUpdateArgs.serializer,
@@ -3411,10 +3665,12 @@ abstract class GVehicleColorCreateInput
   GVehicleImageRelateToManyForCreateInput? get images;
   static Serializer<GVehicleColorCreateInput> get serializer =>
       _$gVehicleColorCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleColorCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleColorCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleColorCreateInput.serializer,
@@ -3436,10 +3692,12 @@ abstract class GVehicleRelateToOneForCreateInput
   GVehicleWhereUniqueInput? get connect;
   static Serializer<GVehicleRelateToOneForCreateInput> get serializer =>
       _$gVehicleRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleRelateToOneForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -3462,10 +3720,12 @@ abstract class GVehicleImageRelateToManyForCreateInput
   BuiltList<GVehicleImageWhereUniqueInput>? get connect;
   static Serializer<GVehicleImageRelateToManyForCreateInput> get serializer =>
       _$gVehicleImageRelateToManyForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleImageRelateToManyForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleImageRelateToManyForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -3487,10 +3747,12 @@ abstract class GVehicleDealerWhereUniqueInput
   String? get id;
   static Serializer<GVehicleDealerWhereUniqueInput> get serializer =>
       _$gVehicleDealerWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleDealerWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealerWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleDealerWhereUniqueInput.serializer,
@@ -3520,10 +3782,12 @@ abstract class GVehicleDealerWhereInput
   GIntNullableFilter? get stock;
   static Serializer<GVehicleDealerWhereInput> get serializer =>
       _$gVehicleDealerWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleDealerWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealerWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleDealerWhereInput.serializer,
@@ -3545,10 +3809,12 @@ abstract class GPriceManyRelationFilter
   GPriceWhereInput? get none;
   static Serializer<GPriceManyRelationFilter> get serializer =>
       _$gPriceManyRelationFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPriceManyRelationFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceManyRelationFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPriceManyRelationFilter.serializer,
@@ -3574,10 +3840,12 @@ abstract class GIntNullableFilter
   GIntNullableFilter? get not;
   static Serializer<GIntNullableFilter> get serializer =>
       _$gIntNullableFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GIntNullableFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GIntNullableFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GIntNullableFilter.serializer,
@@ -3600,10 +3868,12 @@ abstract class GVehicleDealerOrderByInput
   GOrderDirection? get stock;
   static Serializer<GVehicleDealerOrderByInput> get serializer =>
       _$gVehicleDealerOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleDealerOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealerOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleDealerOrderByInput.serializer,
@@ -3629,10 +3899,12 @@ abstract class GVehicleDealerUpdateInput
   int? get stock;
   static Serializer<GVehicleDealerUpdateInput> get serializer =>
       _$gVehicleDealerUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleDealerUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealerUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleDealerUpdateInput.serializer,
@@ -3656,10 +3928,12 @@ abstract class GPriceRelateToManyForUpdateInput
   BuiltList<GPriceWhereUniqueInput>? get connect;
   static Serializer<GPriceRelateToManyForUpdateInput> get serializer =>
       _$gPriceRelateToManyForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPriceRelateToManyForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceRelateToManyForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -3681,10 +3955,12 @@ abstract class GVehicleDealerUpdateArgs
   GVehicleDealerUpdateInput get data;
   static Serializer<GVehicleDealerUpdateArgs> get serializer =>
       _$gVehicleDealerUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleDealerUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealerUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleDealerUpdateArgs.serializer,
@@ -3710,10 +3986,12 @@ abstract class GVehicleDealerCreateInput
   int? get stock;
   static Serializer<GVehicleDealerCreateInput> get serializer =>
       _$gVehicleDealerCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleDealerCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealerCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleDealerCreateInput.serializer,
@@ -3735,10 +4013,12 @@ abstract class GPriceRelateToManyForCreateInput
   BuiltList<GPriceWhereUniqueInput>? get connect;
   static Serializer<GPriceRelateToManyForCreateInput> get serializer =>
       _$gPriceRelateToManyForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPriceRelateToManyForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceRelateToManyForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -3760,10 +4040,12 @@ abstract class GVehicleImageWhereUniqueInput
   String? get id;
   static Serializer<GVehicleImageWhereUniqueInput> get serializer =>
       _$gVehicleImageWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleImageWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleImageWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleImageWhereUniqueInput.serializer,
@@ -3788,10 +4070,12 @@ abstract class GVehicleImageWhereInput
   GVehicleColorWhereInput? get color;
   static Serializer<GVehicleImageWhereInput> get serializer =>
       _$gVehicleImageWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleImageWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleImageWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleImageWhereInput.serializer,
@@ -3813,10 +4097,12 @@ abstract class GVehicleImageOrderByInput
   GOrderDirection? get modifiedAt;
   static Serializer<GVehicleImageOrderByInput> get serializer =>
       _$gVehicleImageOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleImageOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleImageOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleImageOrderByInput.serializer,
@@ -3839,10 +4125,12 @@ abstract class GVehicleImageUpdateInput
   GVehicleColorRelateToOneForUpdateInput? get color;
   static Serializer<GVehicleImageUpdateInput> get serializer =>
       _$gVehicleImageUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleImageUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleImageUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleImageUpdateInput.serializer,
@@ -3862,10 +4150,12 @@ abstract class GVehicleImageUpdateArgs
   GVehicleImageUpdateInput get data;
   static Serializer<GVehicleImageUpdateArgs> get serializer =>
       _$gVehicleImageUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleImageUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleImageUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleImageUpdateArgs.serializer,
@@ -3888,10 +4178,12 @@ abstract class GVehicleImageCreateInput
   GVehicleColorRelateToOneForCreateInput? get color;
   static Serializer<GVehicleImageCreateInput> get serializer =>
       _$gVehicleImageCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleImageCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleImageCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleImageCreateInput.serializer,
@@ -3912,10 +4204,12 @@ abstract class GVehicleSpecificationWhereUniqueInput
   String? get id;
   static Serializer<GVehicleSpecificationWhereUniqueInput> get serializer =>
       _$gVehicleSpecificationWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleSpecificationWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleSpecificationWhereUniqueInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -3948,10 +4242,12 @@ abstract class GVehicleSpecificationWhereInput
   GVehicleWhereInput? get vehicle;
   static Serializer<GVehicleSpecificationWhereInput> get serializer =>
       _$gVehicleSpecificationWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleSpecificationWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleSpecificationWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleSpecificationWhereInput.serializer,
@@ -3977,10 +4273,12 @@ abstract class GVehicleSpecificationOrderByInput
   GOrderDirection? get stringValue;
   static Serializer<GVehicleSpecificationOrderByInput> get serializer =>
       _$gVehicleSpecificationOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleSpecificationOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleSpecificationOrderByInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -4009,10 +4307,12 @@ abstract class GVehicleSpecificationUpdateInput
   GVehicleRelateToOneForUpdateInput? get vehicle;
   static Serializer<GVehicleSpecificationUpdateInput> get serializer =>
       _$gVehicleSpecificationUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleSpecificationUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleSpecificationUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -4036,10 +4336,12 @@ abstract class GSpecificationRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GSpecificationRelateToOneForUpdateInput> get serializer =>
       _$gSpecificationRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSpecificationRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSpecificationRelateToOneForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -4064,10 +4366,12 @@ abstract class GSpecificationCategoryRelateToOneForUpdateInput
   static Serializer<GSpecificationCategoryRelateToOneForUpdateInput>
       get serializer =>
           _$gSpecificationCategoryRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSpecificationCategoryRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSpecificationCategoryRelateToOneForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -4090,10 +4394,12 @@ abstract class GVehicleSpecificationUpdateArgs
   GVehicleSpecificationUpdateInput get data;
   static Serializer<GVehicleSpecificationUpdateArgs> get serializer =>
       _$gVehicleSpecificationUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleSpecificationUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleSpecificationUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleSpecificationUpdateArgs.serializer,
@@ -4121,10 +4427,12 @@ abstract class GVehicleSpecificationCreateInput
   GVehicleRelateToOneForCreateInput? get vehicle;
   static Serializer<GVehicleSpecificationCreateInput> get serializer =>
       _$gVehicleSpecificationCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleSpecificationCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleSpecificationCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -4147,10 +4455,12 @@ abstract class GSpecificationRelateToOneForCreateInput
   GSpecificationWhereUniqueInput? get connect;
   static Serializer<GSpecificationRelateToOneForCreateInput> get serializer =>
       _$gSpecificationRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSpecificationRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSpecificationRelateToOneForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -4174,10 +4484,12 @@ abstract class GSpecificationCategoryRelateToOneForCreateInput
   static Serializer<GSpecificationCategoryRelateToOneForCreateInput>
       get serializer =>
           _$gSpecificationCategoryRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSpecificationCategoryRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSpecificationCategoryRelateToOneForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -4199,10 +4511,12 @@ abstract class GVehicleVariantWhereUniqueInput
   String? get id;
   static Serializer<GVehicleVariantWhereUniqueInput> get serializer =>
       _$gVehicleVariantWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleVariantWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleVariantWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleVariantWhereUniqueInput.serializer,
@@ -4234,10 +4548,12 @@ abstract class GVehicleVariantWhereInput
   GIntNullableFilter? get price;
   static Serializer<GVehicleVariantWhereInput> get serializer =>
       _$gVehicleVariantWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleVariantWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleVariantWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleVariantWhereInput.serializer,
@@ -4263,10 +4579,12 @@ abstract class GVehicleVariantOrderByInput
   GOrderDirection? get price;
   static Serializer<GVehicleVariantOrderByInput> get serializer =>
       _$gVehicleVariantOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleVariantOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleVariantOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleVariantOrderByInput.serializer,
@@ -4294,10 +4612,12 @@ abstract class GVehicleVariantUpdateInput
   int? get price;
   static Serializer<GVehicleVariantUpdateInput> get serializer =>
       _$gVehicleVariantUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleVariantUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleVariantUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleVariantUpdateInput.serializer,
@@ -4318,10 +4638,12 @@ abstract class GVehicleVariantUpdateArgs
   GVehicleVariantUpdateInput get data;
   static Serializer<GVehicleVariantUpdateArgs> get serializer =>
       _$gVehicleVariantUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleVariantUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleVariantUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleVariantUpdateArgs.serializer,
@@ -4349,10 +4671,12 @@ abstract class GVehicleVariantCreateInput
   int? get price;
   static Serializer<GVehicleVariantCreateInput> get serializer =>
       _$gVehicleVariantCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleVariantCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleVariantCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleVariantCreateInput.serializer,
@@ -4373,10 +4697,12 @@ abstract class GVehicleDealerStockRequestWhereUniqueInput
   String? get id;
   static Serializer<GVehicleDealerStockRequestWhereUniqueInput>
       get serializer => _$gVehicleDealerStockRequestWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleDealerStockRequestWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealerStockRequestWhereUniqueInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -4409,10 +4735,12 @@ abstract class GVehicleDealerStockRequestWhereInput
   GStringNullableFilter? get type;
   static Serializer<GVehicleDealerStockRequestWhereInput> get serializer =>
       _$gVehicleDealerStockRequestWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleDealerStockRequestWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealerStockRequestWhereInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -4443,10 +4771,12 @@ abstract class GStringNullableFilter
   GNestedStringNullableFilter? get not;
   static Serializer<GStringNullableFilter> get serializer =>
       _$gStringNullableFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GStringNullableFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GStringNullableFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GStringNullableFilter.serializer,
@@ -4477,10 +4807,12 @@ abstract class GNestedStringNullableFilter
   GNestedStringNullableFilter? get not;
   static Serializer<GNestedStringNullableFilter> get serializer =>
       _$gNestedStringNullableFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GNestedStringNullableFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GNestedStringNullableFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GNestedStringNullableFilter.serializer,
@@ -4506,10 +4838,12 @@ abstract class GVehicleDealerStockRequestOrderByInput
   GOrderDirection? get type;
   static Serializer<GVehicleDealerStockRequestOrderByInput> get serializer =>
       _$gVehicleDealerStockRequestOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleDealerStockRequestOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealerStockRequestOrderByInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -4538,10 +4872,12 @@ abstract class GVehicleDealerStockRequestUpdateInput
   String? get type;
   static Serializer<GVehicleDealerStockRequestUpdateInput> get serializer =>
       _$gVehicleDealerStockRequestUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleDealerStockRequestUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealerStockRequestUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -4564,10 +4900,12 @@ abstract class GVehicleDealerStockRequestUpdateArgs
   GVehicleDealerStockRequestUpdateInput get data;
   static Serializer<GVehicleDealerStockRequestUpdateArgs> get serializer =>
       _$gVehicleDealerStockRequestUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleDealerStockRequestUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealerStockRequestUpdateArgs? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -4596,10 +4934,12 @@ abstract class GVehicleDealerStockRequestCreateInput
   String? get type;
   static Serializer<GVehicleDealerStockRequestCreateInput> get serializer =>
       _$gVehicleDealerStockRequestCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleDealerStockRequestCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealerStockRequestCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -4621,10 +4961,12 @@ abstract class GPriceCategoryWhereUniqueInput
   String? get id;
   static Serializer<GPriceCategoryWhereUniqueInput> get serializer =>
       _$gPriceCategoryWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPriceCategoryWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceCategoryWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPriceCategoryWhereUniqueInput.serializer,
@@ -4651,10 +4993,12 @@ abstract class GPriceCategoryWhereInput
   GStringFilter? get description;
   static Serializer<GPriceCategoryWhereInput> get serializer =>
       _$gPriceCategoryWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPriceCategoryWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceCategoryWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPriceCategoryWhereInput.serializer,
@@ -4678,10 +5022,12 @@ abstract class GPriceCategoryOrderByInput
   GOrderDirection? get description;
   static Serializer<GPriceCategoryOrderByInput> get serializer =>
       _$gPriceCategoryOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPriceCategoryOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceCategoryOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPriceCategoryOrderByInput.serializer,
@@ -4704,10 +5050,12 @@ abstract class GPriceCategoryUpdateInput
   String? get description;
   static Serializer<GPriceCategoryUpdateInput> get serializer =>
       _$gPriceCategoryUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPriceCategoryUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceCategoryUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPriceCategoryUpdateInput.serializer,
@@ -4728,10 +5076,12 @@ abstract class GPriceCategoryUpdateArgs
   GPriceCategoryUpdateInput get data;
   static Serializer<GPriceCategoryUpdateArgs> get serializer =>
       _$gPriceCategoryUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPriceCategoryUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceCategoryUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPriceCategoryUpdateArgs.serializer,
@@ -4754,10 +5104,12 @@ abstract class GPriceCategoryCreateInput
   String? get description;
   static Serializer<GPriceCategoryCreateInput> get serializer =>
       _$gPriceCategoryCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPriceCategoryCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceCategoryCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPriceCategoryCreateInput.serializer,
@@ -4776,10 +5128,12 @@ abstract class GPriceWhereUniqueInput
   String? get id;
   static Serializer<GPriceWhereUniqueInput> get serializer =>
       _$gPriceWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPriceWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPriceWhereUniqueInput.serializer,
@@ -4804,10 +5158,12 @@ abstract class GPriceWhereInput
   GIntFilter? get amount;
   static Serializer<GPriceWhereInput> get serializer =>
       _$gPriceWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPriceWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPriceWhereInput.serializer,
@@ -4828,10 +5184,12 @@ abstract class GPriceOrderByInput
   GOrderDirection? get amount;
   static Serializer<GPriceOrderByInput> get serializer =>
       _$gPriceOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPriceOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPriceOrderByInput.serializer,
@@ -4852,10 +5210,12 @@ abstract class GPriceUpdateInput
   int? get amount;
   static Serializer<GPriceUpdateInput> get serializer =>
       _$gPriceUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPriceUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPriceUpdateInput.serializer,
@@ -4878,10 +5238,12 @@ abstract class GPriceCategoryRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GPriceCategoryRelateToOneForUpdateInput> get serializer =>
       _$gPriceCategoryRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPriceCategoryRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceCategoryRelateToOneForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -4901,10 +5263,12 @@ abstract class GPriceUpdateArgs
   GPriceUpdateInput get data;
   static Serializer<GPriceUpdateArgs> get serializer =>
       _$gPriceUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPriceUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPriceUpdateArgs.serializer,
@@ -4925,10 +5289,12 @@ abstract class GPriceCreateInput
   int? get amount;
   static Serializer<GPriceCreateInput> get serializer =>
       _$gPriceCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPriceCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPriceCreateInput.serializer,
@@ -4950,10 +5316,12 @@ abstract class GPriceCategoryRelateToOneForCreateInput
   GPriceCategoryWhereUniqueInput? get connect;
   static Serializer<GPriceCategoryRelateToOneForCreateInput> get serializer =>
       _$gPriceCategoryRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPriceCategoryRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceCategoryRelateToOneForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -4973,10 +5341,12 @@ abstract class GWalletWhereUniqueInput
   String? get id;
   static Serializer<GWalletWhereUniqueInput> get serializer =>
       _$gWalletWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GWalletWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GWalletWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GWalletWhereUniqueInput.serializer,
@@ -5001,10 +5371,12 @@ abstract class GWalletWhereInput
   GFloatNullableFilter? get amount;
   static Serializer<GWalletWhereInput> get serializer =>
       _$gWalletWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GWalletWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GWalletWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GWalletWhereInput.serializer,
@@ -5031,10 +5403,12 @@ abstract class GFloatNullableFilter
   GFloatNullableFilter? get not;
   static Serializer<GFloatNullableFilter> get serializer =>
       _$gFloatNullableFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFloatNullableFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFloatNullableFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFloatNullableFilter.serializer,
@@ -5055,10 +5429,12 @@ abstract class GWalletOrderByInput
   GOrderDirection? get amount;
   static Serializer<GWalletOrderByInput> get serializer =>
       _$gWalletOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GWalletOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GWalletOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GWalletOrderByInput.serializer,
@@ -5079,10 +5455,12 @@ abstract class GWalletUpdateInput
   double? get amount;
   static Serializer<GWalletUpdateInput> get serializer =>
       _$gWalletUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GWalletUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GWalletUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GWalletUpdateInput.serializer,
@@ -5101,10 +5479,12 @@ abstract class GWalletUpdateArgs
   GWalletUpdateInput get data;
   static Serializer<GWalletUpdateArgs> get serializer =>
       _$gWalletUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GWalletUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GWalletUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GWalletUpdateArgs.serializer,
@@ -5125,10 +5505,12 @@ abstract class GWalletCreateInput
   double? get amount;
   static Serializer<GWalletCreateInput> get serializer =>
       _$gWalletCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GWalletCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GWalletCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GWalletCreateInput.serializer,
@@ -5149,10 +5531,12 @@ abstract class GWalletTransactionWhereUniqueInput
   String? get id;
   static Serializer<GWalletTransactionWhereUniqueInput> get serializer =>
       _$gWalletTransactionWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GWalletTransactionWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GWalletTransactionWhereUniqueInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -5189,10 +5573,12 @@ abstract class GWalletTransactionWhereInput
   GStringFilter? get message;
   static Serializer<GWalletTransactionWhereInput> get serializer =>
       _$gWalletTransactionWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GWalletTransactionWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GWalletTransactionWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GWalletTransactionWhereInput.serializer,
@@ -5224,10 +5610,12 @@ abstract class GWalletTransactionOrderByInput
   GOrderDirection? get message;
   static Serializer<GWalletTransactionOrderByInput> get serializer =>
       _$gWalletTransactionOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GWalletTransactionOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GWalletTransactionOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GWalletTransactionOrderByInput.serializer,
@@ -5259,10 +5647,12 @@ abstract class GWalletTransactionUpdateInput
   String? get message;
   static Serializer<GWalletTransactionUpdateInput> get serializer =>
       _$gWalletTransactionUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GWalletTransactionUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GWalletTransactionUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GWalletTransactionUpdateInput.serializer,
@@ -5284,10 +5674,12 @@ abstract class GWalletTransactionUpdateArgs
   GWalletTransactionUpdateInput get data;
   static Serializer<GWalletTransactionUpdateArgs> get serializer =>
       _$gWalletTransactionUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GWalletTransactionUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GWalletTransactionUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GWalletTransactionUpdateArgs.serializer,
@@ -5319,10 +5711,12 @@ abstract class GWalletTransactionCreateInput
   String? get message;
   static Serializer<GWalletTransactionCreateInput> get serializer =>
       _$gWalletTransactionCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GWalletTransactionCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GWalletTransactionCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GWalletTransactionCreateInput.serializer,
@@ -5341,10 +5735,12 @@ abstract class GOrderWhereUniqueInput
   String? get id;
   static Serializer<GOrderWhereUniqueInput> get serializer =>
       _$gOrderWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GOrderWhereUniqueInput.serializer,
@@ -5371,10 +5767,12 @@ abstract class GOrderWhereInput
   GPaymentManyRelationFilter? get payments;
   static Serializer<GOrderWhereInput> get serializer =>
       _$gOrderWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GOrderWhereInput.serializer,
@@ -5397,10 +5795,12 @@ abstract class GVehicleOrderManyRelationFilter
   GVehicleOrderWhereInput? get none;
   static Serializer<GVehicleOrderManyRelationFilter> get serializer =>
       _$gVehicleOrderManyRelationFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleOrderManyRelationFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleOrderManyRelationFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleOrderManyRelationFilter.serializer,
@@ -5423,10 +5823,12 @@ abstract class GTestDriveOrderManyRelationFilter
   GTestDriveOrderWhereInput? get none;
   static Serializer<GTestDriveOrderManyRelationFilter> get serializer =>
       _$gTestDriveOrderManyRelationFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveOrderManyRelationFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveOrderManyRelationFilter? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -5449,10 +5851,12 @@ abstract class GPaymentManyRelationFilter
   GPaymentWhereInput? get none;
   static Serializer<GPaymentManyRelationFilter> get serializer =>
       _$gPaymentManyRelationFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPaymentManyRelationFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPaymentManyRelationFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPaymentManyRelationFilter.serializer,
@@ -5472,10 +5876,12 @@ abstract class GOrderOrderByInput
   GOrderDirection? get modifiedAt;
   static Serializer<GOrderOrderByInput> get serializer =>
       _$gOrderOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GOrderOrderByInput.serializer,
@@ -5498,10 +5904,12 @@ abstract class GOrderUpdateInput
   GPaymentRelateToManyForUpdateInput? get payments;
   static Serializer<GOrderUpdateInput> get serializer =>
       _$gOrderUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GOrderUpdateInput.serializer,
@@ -5525,10 +5933,12 @@ abstract class GVehicleOrderRelateToManyForUpdateInput
   BuiltList<GVehicleOrderWhereUniqueInput>? get connect;
   static Serializer<GVehicleOrderRelateToManyForUpdateInput> get serializer =>
       _$gVehicleOrderRelateToManyForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleOrderRelateToManyForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleOrderRelateToManyForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -5553,10 +5963,12 @@ abstract class GTestDriveOrderRelateToManyForUpdateInput
   BuiltList<GTestDriveOrderWhereUniqueInput>? get connect;
   static Serializer<GTestDriveOrderRelateToManyForUpdateInput> get serializer =>
       _$gTestDriveOrderRelateToManyForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveOrderRelateToManyForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveOrderRelateToManyForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -5581,10 +5993,12 @@ abstract class GPaymentRelateToManyForUpdateInput
   BuiltList<GPaymentWhereUniqueInput>? get connect;
   static Serializer<GPaymentRelateToManyForUpdateInput> get serializer =>
       _$gPaymentRelateToManyForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPaymentRelateToManyForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPaymentRelateToManyForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -5604,10 +6018,12 @@ abstract class GOrderUpdateArgs
   GOrderUpdateInput get data;
   static Serializer<GOrderUpdateArgs> get serializer =>
       _$gOrderUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GOrderUpdateArgs.serializer,
@@ -5630,10 +6046,12 @@ abstract class GOrderCreateInput
   GPaymentRelateToManyForCreateInput? get payments;
   static Serializer<GOrderCreateInput> get serializer =>
       _$gOrderCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GOrderCreateInput.serializer,
@@ -5655,10 +6073,12 @@ abstract class GVehicleOrderRelateToManyForCreateInput
   BuiltList<GVehicleOrderWhereUniqueInput>? get connect;
   static Serializer<GVehicleOrderRelateToManyForCreateInput> get serializer =>
       _$gVehicleOrderRelateToManyForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleOrderRelateToManyForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleOrderRelateToManyForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -5681,10 +6101,12 @@ abstract class GTestDriveOrderRelateToManyForCreateInput
   BuiltList<GTestDriveOrderWhereUniqueInput>? get connect;
   static Serializer<GTestDriveOrderRelateToManyForCreateInput> get serializer =>
       _$gTestDriveOrderRelateToManyForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveOrderRelateToManyForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveOrderRelateToManyForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -5707,10 +6129,12 @@ abstract class GPaymentRelateToManyForCreateInput
   BuiltList<GPaymentWhereUniqueInput>? get connect;
   static Serializer<GPaymentRelateToManyForCreateInput> get serializer =>
       _$gPaymentRelateToManyForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPaymentRelateToManyForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPaymentRelateToManyForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -5731,10 +6155,12 @@ abstract class GPaymentWhereUniqueInput
   String? get id;
   static Serializer<GPaymentWhereUniqueInput> get serializer =>
       _$gPaymentWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPaymentWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPaymentWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPaymentWhereUniqueInput.serializer,
@@ -5765,10 +6191,12 @@ abstract class GPaymentWhereInput
   GStringFilter? get mode;
   static Serializer<GPaymentWhereInput> get serializer =>
       _$gPaymentWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPaymentWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPaymentWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPaymentWhereInput.serializer,
@@ -5793,10 +6221,12 @@ abstract class GFloatFilter
   double? get gte;
   GFloatFilter? get not;
   static Serializer<GFloatFilter> get serializer => _$gFloatFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFloatFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFloatFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFloatFilter.serializer,
@@ -5824,10 +6254,12 @@ abstract class GPaymentOrderByInput
   GOrderDirection? get mode;
   static Serializer<GPaymentOrderByInput> get serializer =>
       _$gPaymentOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPaymentOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPaymentOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPaymentOrderByInput.serializer,
@@ -5854,10 +6286,12 @@ abstract class GPaymentUpdateInput
   String? get mode;
   static Serializer<GPaymentUpdateInput> get serializer =>
       _$gPaymentUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPaymentUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPaymentUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPaymentUpdateInput.serializer,
@@ -5880,10 +6314,12 @@ abstract class GOrderRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GOrderRelateToOneForUpdateInput> get serializer =>
       _$gOrderRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderRelateToOneForUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GOrderRelateToOneForUpdateInput.serializer,
@@ -5902,10 +6338,12 @@ abstract class GPaymentUpdateArgs
   GPaymentUpdateInput get data;
   static Serializer<GPaymentUpdateArgs> get serializer =>
       _$gPaymentUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPaymentUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPaymentUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPaymentUpdateArgs.serializer,
@@ -5932,10 +6370,12 @@ abstract class GPaymentCreateInput
   String? get mode;
   static Serializer<GPaymentCreateInput> get serializer =>
       _$gPaymentCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPaymentCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPaymentCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPaymentCreateInput.serializer,
@@ -5957,10 +6397,12 @@ abstract class GOrderRelateToOneForCreateInput
   GOrderWhereUniqueInput? get connect;
   static Serializer<GOrderRelateToOneForCreateInput> get serializer =>
       _$gOrderRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderRelateToOneForCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GOrderRelateToOneForCreateInput.serializer,
@@ -5981,10 +6423,12 @@ abstract class GVehicleOrderWhereUniqueInput
   String? get id;
   static Serializer<GVehicleOrderWhereUniqueInput> get serializer =>
       _$gVehicleOrderWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleOrderWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleOrderWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleOrderWhereUniqueInput.serializer,
@@ -6012,10 +6456,12 @@ abstract class GVehicleOrderWhereInput
   GStringNullableFilter? get status;
   static Serializer<GVehicleOrderWhereInput> get serializer =>
       _$gVehicleOrderWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleOrderWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleOrderWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleOrderWhereInput.serializer,
@@ -6039,10 +6485,12 @@ abstract class GVehicleOrderOrderByInput
   GOrderDirection? get status;
   static Serializer<GVehicleOrderOrderByInput> get serializer =>
       _$gVehicleOrderOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleOrderOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleOrderOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleOrderOrderByInput.serializer,
@@ -6067,10 +6515,12 @@ abstract class GVehicleOrderUpdateInput
   String? get status;
   static Serializer<GVehicleOrderUpdateInput> get serializer =>
       _$gVehicleOrderUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleOrderUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleOrderUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleOrderUpdateInput.serializer,
@@ -6090,10 +6540,12 @@ abstract class GVehicleOrderUpdateArgs
   GVehicleOrderUpdateInput get data;
   static Serializer<GVehicleOrderUpdateArgs> get serializer =>
       _$gVehicleOrderUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleOrderUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleOrderUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleOrderUpdateArgs.serializer,
@@ -6118,10 +6570,12 @@ abstract class GVehicleOrderCreateInput
   String? get status;
   static Serializer<GVehicleOrderCreateInput> get serializer =>
       _$gVehicleOrderCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleOrderCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleOrderCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleOrderCreateInput.serializer,
@@ -6142,10 +6596,12 @@ abstract class GTestDriveOrderWhereUniqueInput
   String? get id;
   static Serializer<GTestDriveOrderWhereUniqueInput> get serializer =>
       _$gTestDriveOrderWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveOrderWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveOrderWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveOrderWhereUniqueInput.serializer,
@@ -6174,10 +6630,12 @@ abstract class GTestDriveOrderWhereInput
   GStringNullableFilter? get status;
   static Serializer<GTestDriveOrderWhereInput> get serializer =>
       _$gTestDriveOrderWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveOrderWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveOrderWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveOrderWhereInput.serializer,
@@ -6201,10 +6659,12 @@ abstract class GTestDriveOrderOrderByInput
   GOrderDirection? get status;
   static Serializer<GTestDriveOrderOrderByInput> get serializer =>
       _$gTestDriveOrderOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveOrderOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveOrderOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveOrderOrderByInput.serializer,
@@ -6229,10 +6689,12 @@ abstract class GTestDriveOrderUpdateInput
   String? get status;
   static Serializer<GTestDriveOrderUpdateInput> get serializer =>
       _$gTestDriveOrderUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveOrderUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveOrderUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveOrderUpdateInput.serializer,
@@ -6255,10 +6717,12 @@ abstract class GTestDriveDealerRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GTestDriveDealerRelateToOneForUpdateInput> get serializer =>
       _$gTestDriveDealerRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveDealerRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveDealerRelateToOneForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -6280,10 +6744,12 @@ abstract class GTestDriveOrderUpdateArgs
   GTestDriveOrderUpdateInput get data;
   static Serializer<GTestDriveOrderUpdateArgs> get serializer =>
       _$gTestDriveOrderUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveOrderUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveOrderUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveOrderUpdateArgs.serializer,
@@ -6308,10 +6774,12 @@ abstract class GTestDriveOrderCreateInput
   String? get status;
   static Serializer<GTestDriveOrderCreateInput> get serializer =>
       _$gTestDriveOrderCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveOrderCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveOrderCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveOrderCreateInput.serializer,
@@ -6333,10 +6801,12 @@ abstract class GTestDriveDealerRelateToOneForCreateInput
   GTestDriveDealerWhereUniqueInput? get connect;
   static Serializer<GTestDriveDealerRelateToOneForCreateInput> get serializer =>
       _$gTestDriveDealerRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTestDriveDealerRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTestDriveDealerRelateToOneForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -6358,10 +6828,12 @@ abstract class GOrderCancellationRequestWhereUniqueInput
   String? get id;
   static Serializer<GOrderCancellationRequestWhereUniqueInput> get serializer =>
       _$gOrderCancellationRequestWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderCancellationRequestWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderCancellationRequestWhereUniqueInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -6393,10 +6865,12 @@ abstract class GOrderCancellationRequestWhereInput
   GStringFilter? get description;
   static Serializer<GOrderCancellationRequestWhereInput> get serializer =>
       _$gOrderCancellationRequestWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderCancellationRequestWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderCancellationRequestWhereInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -6423,10 +6897,12 @@ abstract class GOrderCancellationRequestOrderByInput
   GOrderDirection? get description;
   static Serializer<GOrderCancellationRequestOrderByInput> get serializer =>
       _$gOrderCancellationRequestOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderCancellationRequestOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderCancellationRequestOrderByInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -6454,10 +6930,12 @@ abstract class GOrderCancellationRequestUpdateInput
   String? get description;
   static Serializer<GOrderCancellationRequestUpdateInput> get serializer =>
       _$gOrderCancellationRequestUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderCancellationRequestUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderCancellationRequestUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -6480,10 +6958,12 @@ abstract class GOrderCancellationRequestUpdateArgs
   GOrderCancellationRequestUpdateInput get data;
   static Serializer<GOrderCancellationRequestUpdateArgs> get serializer =>
       _$gOrderCancellationRequestUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderCancellationRequestUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderCancellationRequestUpdateArgs? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -6511,10 +6991,12 @@ abstract class GOrderCancellationRequestCreateInput
   String? get description;
   static Serializer<GOrderCancellationRequestCreateInput> get serializer =>
       _$gOrderCancellationRequestCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderCancellationRequestCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderCancellationRequestCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -6536,10 +7018,12 @@ abstract class GOrderRejectionByDealerWhereUniqueInput
   String? get id;
   static Serializer<GOrderRejectionByDealerWhereUniqueInput> get serializer =>
       _$gOrderRejectionByDealerWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderRejectionByDealerWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderRejectionByDealerWhereUniqueInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -6571,10 +7055,12 @@ abstract class GOrderRejectionByDealerWhereInput
   GStringFilter? get description;
   static Serializer<GOrderRejectionByDealerWhereInput> get serializer =>
       _$gOrderRejectionByDealerWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderRejectionByDealerWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderRejectionByDealerWhereInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -6601,10 +7087,12 @@ abstract class GOrderRejectionByDealerOrderByInput
   GOrderDirection? get description;
   static Serializer<GOrderRejectionByDealerOrderByInput> get serializer =>
       _$gOrderRejectionByDealerOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderRejectionByDealerOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderRejectionByDealerOrderByInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -6632,10 +7120,12 @@ abstract class GOrderRejectionByDealerUpdateInput
   String? get description;
   static Serializer<GOrderRejectionByDealerUpdateInput> get serializer =>
       _$gOrderRejectionByDealerUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderRejectionByDealerUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderRejectionByDealerUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -6658,10 +7148,12 @@ abstract class GOrderRejectionByDealerUpdateArgs
   GOrderRejectionByDealerUpdateInput get data;
   static Serializer<GOrderRejectionByDealerUpdateArgs> get serializer =>
       _$gOrderRejectionByDealerUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderRejectionByDealerUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderRejectionByDealerUpdateArgs? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -6689,10 +7181,12 @@ abstract class GOrderRejectionByDealerCreateInput
   String? get description;
   static Serializer<GOrderRejectionByDealerCreateInput> get serializer =>
       _$gOrderRejectionByDealerCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderRejectionByDealerCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderRejectionByDealerCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -6714,10 +7208,12 @@ abstract class GUserVehicleReviewWhereUniqueInput
   String? get id;
   static Serializer<GUserVehicleReviewWhereUniqueInput> get serializer =>
       _$gUserVehicleReviewWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUserVehicleReviewWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserVehicleReviewWhereUniqueInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -6748,10 +7244,12 @@ abstract class GUserVehicleReviewWhereInput
   GIntFilter? get rating;
   static Serializer<GUserVehicleReviewWhereInput> get serializer =>
       _$gUserVehicleReviewWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUserVehicleReviewWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserVehicleReviewWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUserVehicleReviewWhereInput.serializer,
@@ -6776,10 +7274,12 @@ abstract class GUserVehicleReviewOrderByInput
   GOrderDirection? get rating;
   static Serializer<GUserVehicleReviewOrderByInput> get serializer =>
       _$gUserVehicleReviewOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUserVehicleReviewOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserVehicleReviewOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUserVehicleReviewOrderByInput.serializer,
@@ -6805,10 +7305,12 @@ abstract class GUserVehicleReviewUpdateInput
   int? get rating;
   static Serializer<GUserVehicleReviewUpdateInput> get serializer =>
       _$gUserVehicleReviewUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUserVehicleReviewUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserVehicleReviewUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUserVehicleReviewUpdateInput.serializer,
@@ -6830,10 +7332,12 @@ abstract class GUserVehicleReviewUpdateArgs
   GUserVehicleReviewUpdateInput get data;
   static Serializer<GUserVehicleReviewUpdateArgs> get serializer =>
       _$gUserVehicleReviewUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUserVehicleReviewUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserVehicleReviewUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUserVehicleReviewUpdateArgs.serializer,
@@ -6859,10 +7363,12 @@ abstract class GUserVehicleReviewCreateInput
   int? get rating;
   static Serializer<GUserVehicleReviewCreateInput> get serializer =>
       _$gUserVehicleReviewCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUserVehicleReviewCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserVehicleReviewCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUserVehicleReviewCreateInput.serializer,
@@ -6883,10 +7389,12 @@ abstract class GExpertReviewWhereUniqueInput
   String? get id;
   static Serializer<GExpertReviewWhereUniqueInput> get serializer =>
       _$gExpertReviewWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GExpertReviewWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GExpertReviewWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GExpertReviewWhereUniqueInput.serializer,
@@ -6914,10 +7422,12 @@ abstract class GExpertReviewWhereInput
   GIntNullableFilter? get likes;
   static Serializer<GExpertReviewWhereInput> get serializer =>
       _$gExpertReviewWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GExpertReviewWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GExpertReviewWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GExpertReviewWhereInput.serializer,
@@ -6942,10 +7452,12 @@ abstract class GExpertReviewOrderByInput
   GOrderDirection? get likes;
   static Serializer<GExpertReviewOrderByInput> get serializer =>
       _$gExpertReviewOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GExpertReviewOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GExpertReviewOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GExpertReviewOrderByInput.serializer,
@@ -6970,10 +7482,12 @@ abstract class GExpertReviewUpdateInput
   int? get likes;
   static Serializer<GExpertReviewUpdateInput> get serializer =>
       _$gExpertReviewUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GExpertReviewUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GExpertReviewUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GExpertReviewUpdateInput.serializer,
@@ -6993,10 +7507,12 @@ abstract class GExpertReviewUpdateArgs
   GExpertReviewUpdateInput get data;
   static Serializer<GExpertReviewUpdateArgs> get serializer =>
       _$gExpertReviewUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GExpertReviewUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GExpertReviewUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GExpertReviewUpdateArgs.serializer,
@@ -7021,10 +7537,12 @@ abstract class GExpertReviewCreateInput
   int? get likes;
   static Serializer<GExpertReviewCreateInput> get serializer =>
       _$gExpertReviewCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GExpertReviewCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GExpertReviewCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GExpertReviewCreateInput.serializer,
@@ -7043,10 +7561,12 @@ abstract class GDealerWhereUniqueInput
   String? get id;
   static Serializer<GDealerWhereUniqueInput> get serializer =>
       _$gDealerWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GDealerWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GDealerWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GDealerWhereUniqueInput.serializer,
@@ -7071,10 +7591,12 @@ abstract class GDealerWhereInput
   GBooleanFilter? get approved;
   static Serializer<GDealerWhereInput> get serializer =>
       _$gDealerWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GDealerWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GDealerWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GDealerWhereInput.serializer,
@@ -7095,10 +7617,12 @@ abstract class GDealerOrderByInput
   GOrderDirection? get approved;
   static Serializer<GDealerOrderByInput> get serializer =>
       _$gDealerOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GDealerOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GDealerOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GDealerOrderByInput.serializer,
@@ -7119,10 +7643,12 @@ abstract class GDealerUpdateInput
   bool? get approved;
   static Serializer<GDealerUpdateInput> get serializer =>
       _$gDealerUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GDealerUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GDealerUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GDealerUpdateInput.serializer,
@@ -7141,10 +7667,12 @@ abstract class GDealerUpdateArgs
   GDealerUpdateInput get data;
   static Serializer<GDealerUpdateArgs> get serializer =>
       _$gDealerUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GDealerUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GDealerUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GDealerUpdateArgs.serializer,
@@ -7165,10 +7693,12 @@ abstract class GDealerCreateInput
   bool? get approved;
   static Serializer<GDealerCreateInput> get serializer =>
       _$gDealerCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GDealerCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GDealerCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GDealerCreateInput.serializer,
@@ -7190,10 +7720,12 @@ abstract class GNotificationTypeWhereUniqueInput
   String? get name;
   static Serializer<GNotificationTypeWhereUniqueInput> get serializer =>
       _$gNotificationTypeWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GNotificationTypeWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GNotificationTypeWhereUniqueInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7220,10 +7752,12 @@ abstract class GNotificationTypeWhereInput
   GStringFilter? get name;
   static Serializer<GNotificationTypeWhereInput> get serializer =>
       _$gNotificationTypeWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GNotificationTypeWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GNotificationTypeWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GNotificationTypeWhereInput.serializer,
@@ -7247,10 +7781,12 @@ abstract class GNotificationTypeOrderByInput
   GOrderDirection? get name;
   static Serializer<GNotificationTypeOrderByInput> get serializer =>
       _$gNotificationTypeOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GNotificationTypeOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GNotificationTypeOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GNotificationTypeOrderByInput.serializer,
@@ -7273,10 +7809,12 @@ abstract class GNotificationTypeUpdateInput
   String? get name;
   static Serializer<GNotificationTypeUpdateInput> get serializer =>
       _$gNotificationTypeUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GNotificationTypeUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GNotificationTypeUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GNotificationTypeUpdateInput.serializer,
@@ -7297,10 +7835,12 @@ abstract class GNotificationTypeUpdateArgs
   GNotificationTypeUpdateInput get data;
   static Serializer<GNotificationTypeUpdateArgs> get serializer =>
       _$gNotificationTypeUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GNotificationTypeUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GNotificationTypeUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GNotificationTypeUpdateArgs.serializer,
@@ -7323,10 +7863,12 @@ abstract class GNotificationTypeCreateInput
   String? get name;
   static Serializer<GNotificationTypeCreateInput> get serializer =>
       _$gNotificationTypeCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GNotificationTypeCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GNotificationTypeCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GNotificationTypeCreateInput.serializer,
@@ -7347,10 +7889,12 @@ abstract class GEmailNotificationTemplateWhereUniqueInput
   String? get id;
   static Serializer<GEmailNotificationTemplateWhereUniqueInput>
       get serializer => _$gEmailNotificationTemplateWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GEmailNotificationTemplateWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GEmailNotificationTemplateWhereUniqueInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7380,10 +7924,12 @@ abstract class GEmailNotificationTemplateWhereInput
   GStringFilter? get body;
   static Serializer<GEmailNotificationTemplateWhereInput> get serializer =>
       _$gEmailNotificationTemplateWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GEmailNotificationTemplateWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GEmailNotificationTemplateWhereInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7409,10 +7955,12 @@ abstract class GEmailNotificationTemplateOrderByInput
   GOrderDirection? get body;
   static Serializer<GEmailNotificationTemplateOrderByInput> get serializer =>
       _$gEmailNotificationTemplateOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GEmailNotificationTemplateOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GEmailNotificationTemplateOrderByInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7438,10 +7986,12 @@ abstract class GEmailNotificationTemplateUpdateInput
   String? get body;
   static Serializer<GEmailNotificationTemplateUpdateInput> get serializer =>
       _$gEmailNotificationTemplateUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GEmailNotificationTemplateUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GEmailNotificationTemplateUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7465,10 +8015,12 @@ abstract class GNotificationTypeRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GNotificationTypeRelateToOneForUpdateInput>
       get serializer => _$gNotificationTypeRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GNotificationTypeRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GNotificationTypeRelateToOneForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7491,10 +8043,12 @@ abstract class GEmailNotificationTemplateUpdateArgs
   GEmailNotificationTemplateUpdateInput get data;
   static Serializer<GEmailNotificationTemplateUpdateArgs> get serializer =>
       _$gEmailNotificationTemplateUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GEmailNotificationTemplateUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GEmailNotificationTemplateUpdateArgs? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7520,10 +8074,12 @@ abstract class GEmailNotificationTemplateCreateInput
   String? get body;
   static Serializer<GEmailNotificationTemplateCreateInput> get serializer =>
       _$gEmailNotificationTemplateCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GEmailNotificationTemplateCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GEmailNotificationTemplateCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7546,10 +8102,12 @@ abstract class GNotificationTypeRelateToOneForCreateInput
   GNotificationTypeWhereUniqueInput? get connect;
   static Serializer<GNotificationTypeRelateToOneForCreateInput>
       get serializer => _$gNotificationTypeRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GNotificationTypeRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GNotificationTypeRelateToOneForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7571,10 +8129,12 @@ abstract class GSMSNotificationTemplateWhereUniqueInput
   String? get id;
   static Serializer<GSMSNotificationTemplateWhereUniqueInput> get serializer =>
       _$gSMSNotificationTemplateWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSMSNotificationTemplateWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSMSNotificationTemplateWhereUniqueInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7605,10 +8165,12 @@ abstract class GSMSNotificationTemplateWhereInput
   GBooleanFilter? get shortURL;
   static Serializer<GSMSNotificationTemplateWhereInput> get serializer =>
       _$gSMSNotificationTemplateWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSMSNotificationTemplateWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSMSNotificationTemplateWhereInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7635,10 +8197,12 @@ abstract class GSMSNotificationTemplateOrderByInput
   GOrderDirection? get shortURL;
   static Serializer<GSMSNotificationTemplateOrderByInput> get serializer =>
       _$gSMSNotificationTemplateOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSMSNotificationTemplateOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSMSNotificationTemplateOrderByInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7666,10 +8230,12 @@ abstract class GSMSNotificationTemplateUpdateInput
   bool? get shortURL;
   static Serializer<GSMSNotificationTemplateUpdateInput> get serializer =>
       _$gSMSNotificationTemplateUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSMSNotificationTemplateUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSMSNotificationTemplateUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7692,10 +8258,12 @@ abstract class GSMSNotificationTemplateUpdateArgs
   GSMSNotificationTemplateUpdateInput get data;
   static Serializer<GSMSNotificationTemplateUpdateArgs> get serializer =>
       _$gSMSNotificationTemplateUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSMSNotificationTemplateUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSMSNotificationTemplateUpdateArgs? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7723,10 +8291,12 @@ abstract class GSMSNotificationTemplateCreateInput
   bool? get shortURL;
   static Serializer<GSMSNotificationTemplateCreateInput> get serializer =>
       _$gSMSNotificationTemplateCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSMSNotificationTemplateCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSMSNotificationTemplateCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7748,10 +8318,12 @@ abstract class GAppNotificationTemplateWhereUniqueInput
   String? get id;
   static Serializer<GAppNotificationTemplateWhereUniqueInput> get serializer =>
       _$gAppNotificationTemplateWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAppNotificationTemplateWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAppNotificationTemplateWhereUniqueInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7781,10 +8353,12 @@ abstract class GAppNotificationTemplateWhereInput
   GStringFilter? get body;
   static Serializer<GAppNotificationTemplateWhereInput> get serializer =>
       _$gAppNotificationTemplateWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAppNotificationTemplateWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAppNotificationTemplateWhereInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7810,10 +8384,12 @@ abstract class GAppNotificationTemplateOrderByInput
   GOrderDirection? get body;
   static Serializer<GAppNotificationTemplateOrderByInput> get serializer =>
       _$gAppNotificationTemplateOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAppNotificationTemplateOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAppNotificationTemplateOrderByInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7839,10 +8415,12 @@ abstract class GAppNotificationTemplateUpdateInput
   String? get body;
   static Serializer<GAppNotificationTemplateUpdateInput> get serializer =>
       _$gAppNotificationTemplateUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAppNotificationTemplateUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAppNotificationTemplateUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7865,10 +8443,12 @@ abstract class GAppNotificationTemplateUpdateArgs
   GAppNotificationTemplateUpdateInput get data;
   static Serializer<GAppNotificationTemplateUpdateArgs> get serializer =>
       _$gAppNotificationTemplateUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAppNotificationTemplateUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAppNotificationTemplateUpdateArgs? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7894,10 +8474,12 @@ abstract class GAppNotificationTemplateCreateInput
   String? get body;
   static Serializer<GAppNotificationTemplateCreateInput> get serializer =>
       _$gAppNotificationTemplateCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAppNotificationTemplateCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAppNotificationTemplateCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7919,10 +8501,12 @@ abstract class GAppNotificationWhereUniqueInput
   String? get id;
   static Serializer<GAppNotificationWhereUniqueInput> get serializer =>
       _$gAppNotificationWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAppNotificationWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAppNotificationWhereUniqueInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -7952,10 +8536,12 @@ abstract class GAppNotificationWhereInput
   GUserWhereInput? get user;
   static Serializer<GAppNotificationWhereInput> get serializer =>
       _$gAppNotificationWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAppNotificationWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAppNotificationWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GAppNotificationWhereInput.serializer,
@@ -7980,10 +8566,12 @@ abstract class GAppNotificationOrderByInput
   GOrderDirection? get body;
   static Serializer<GAppNotificationOrderByInput> get serializer =>
       _$gAppNotificationOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAppNotificationOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAppNotificationOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GAppNotificationOrderByInput.serializer,
@@ -8008,10 +8596,12 @@ abstract class GAppNotificationUpdateInput
   GUserRelateToOneForUpdateInput? get user;
   static Serializer<GAppNotificationUpdateInput> get serializer =>
       _$gAppNotificationUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAppNotificationUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAppNotificationUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GAppNotificationUpdateInput.serializer,
@@ -8032,10 +8622,12 @@ abstract class GAppNotificationUpdateArgs
   GAppNotificationUpdateInput get data;
   static Serializer<GAppNotificationUpdateArgs> get serializer =>
       _$gAppNotificationUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAppNotificationUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAppNotificationUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GAppNotificationUpdateArgs.serializer,
@@ -8060,10 +8652,12 @@ abstract class GAppNotificationCreateInput
   GUserRelateToOneForCreateInput? get user;
   static Serializer<GAppNotificationCreateInput> get serializer =>
       _$gAppNotificationCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAppNotificationCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAppNotificationCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GAppNotificationCreateInput.serializer,
@@ -8082,10 +8676,12 @@ abstract class GFAQWhereUniqueInput
   String? get id;
   static Serializer<GFAQWhereUniqueInput> get serializer =>
       _$gFAQWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFAQWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFAQWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFAQWhereUniqueInput.serializer,
@@ -8111,10 +8707,12 @@ abstract class GFAQWhereInput
   GCategoryWhereInput? get category;
   static Serializer<GFAQWhereInput> get serializer =>
       _$gFAQWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFAQWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFAQWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFAQWhereInput.serializer,
@@ -8136,10 +8734,12 @@ abstract class GFAQOrderByInput
   GOrderDirection? get answer;
   static Serializer<GFAQOrderByInput> get serializer =>
       _$gFAQOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFAQOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFAQOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFAQOrderByInput.serializer,
@@ -8161,10 +8761,12 @@ abstract class GFAQUpdateInput
   GCategoryRelateToOneForUpdateInput? get category;
   static Serializer<GFAQUpdateInput> get serializer =>
       _$gFAQUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFAQUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFAQUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFAQUpdateInput.serializer,
@@ -8187,10 +8789,12 @@ abstract class GCategoryRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GCategoryRelateToOneForUpdateInput> get serializer =>
       _$gCategoryRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCategoryRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCategoryRelateToOneForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -8210,10 +8814,12 @@ abstract class GFAQUpdateArgs
   GFAQUpdateInput get data;
   static Serializer<GFAQUpdateArgs> get serializer =>
       _$gFAQUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFAQUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFAQUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFAQUpdateArgs.serializer,
@@ -8235,10 +8841,12 @@ abstract class GFAQCreateInput
   GCategoryRelateToOneForCreateInput? get category;
   static Serializer<GFAQCreateInput> get serializer =>
       _$gFAQCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFAQCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFAQCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFAQCreateInput.serializer,
@@ -8260,10 +8868,12 @@ abstract class GCategoryRelateToOneForCreateInput
   GCategoryWhereUniqueInput? get connect;
   static Serializer<GCategoryRelateToOneForCreateInput> get serializer =>
       _$gCategoryRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCategoryRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCategoryRelateToOneForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -8285,10 +8895,12 @@ abstract class GHelpSupportWhereUniqueInput
   String? get id;
   static Serializer<GHelpSupportWhereUniqueInput> get serializer =>
       _$gHelpSupportWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GHelpSupportWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GHelpSupportWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GHelpSupportWhereUniqueInput.serializer,
@@ -8317,10 +8929,12 @@ abstract class GHelpSupportWhereInput
   GUserWhereInput? get user;
   static Serializer<GHelpSupportWhereInput> get serializer =>
       _$gHelpSupportWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GHelpSupportWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GHelpSupportWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GHelpSupportWhereInput.serializer,
@@ -8345,10 +8959,12 @@ abstract class GHelpSupportOrderByInput
   GOrderDirection? get solved;
   static Serializer<GHelpSupportOrderByInput> get serializer =>
       _$gHelpSupportOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GHelpSupportOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GHelpSupportOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GHelpSupportOrderByInput.serializer,
@@ -8373,10 +8989,12 @@ abstract class GHelpSupportUpdateInput
   GUserRelateToOneForUpdateInput? get user;
   static Serializer<GHelpSupportUpdateInput> get serializer =>
       _$gHelpSupportUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GHelpSupportUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GHelpSupportUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GHelpSupportUpdateInput.serializer,
@@ -8396,10 +9014,12 @@ abstract class GHelpSupportUpdateArgs
   GHelpSupportUpdateInput get data;
   static Serializer<GHelpSupportUpdateArgs> get serializer =>
       _$gHelpSupportUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GHelpSupportUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GHelpSupportUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GHelpSupportUpdateArgs.serializer,
@@ -8424,10 +9044,12 @@ abstract class GHelpSupportCreateInput
   GUserRelateToOneForCreateInput? get user;
   static Serializer<GHelpSupportCreateInput> get serializer =>
       _$gHelpSupportCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GHelpSupportCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GHelpSupportCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GHelpSupportCreateInput.serializer,
@@ -8446,10 +9068,12 @@ abstract class GTagWhereUniqueInput
   String? get id;
   static Serializer<GTagWhereUniqueInput> get serializer =>
       _$gTagWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTagWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTagWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTagWhereUniqueInput.serializer,
@@ -8474,10 +9098,12 @@ abstract class GTagWhereInput
   GStringFilter? get description;
   static Serializer<GTagWhereInput> get serializer =>
       _$gTagWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTagWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTagWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTagWhereInput.serializer,
@@ -8499,10 +9125,12 @@ abstract class GTagOrderByInput
   GOrderDirection? get description;
   static Serializer<GTagOrderByInput> get serializer =>
       _$gTagOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTagOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTagOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTagOrderByInput.serializer,
@@ -8523,10 +9151,12 @@ abstract class GTagUpdateInput
   String? get description;
   static Serializer<GTagUpdateInput> get serializer =>
       _$gTagUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTagUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTagUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTagUpdateInput.serializer,
@@ -8545,10 +9175,12 @@ abstract class GTagUpdateArgs
   GTagUpdateInput get data;
   static Serializer<GTagUpdateArgs> get serializer =>
       _$gTagUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTagUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTagUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTagUpdateArgs.serializer,
@@ -8569,10 +9201,12 @@ abstract class GTagCreateInput
   String? get description;
   static Serializer<GTagCreateInput> get serializer =>
       _$gTagCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GTagCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GTagCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTagCreateInput.serializer,
@@ -8592,10 +9226,12 @@ abstract class GCouponWhereUniqueInput
   String? get code;
   static Serializer<GCouponWhereUniqueInput> get serializer =>
       _$gCouponWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCouponWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCouponWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCouponWhereUniqueInput.serializer,
@@ -8624,10 +9260,12 @@ abstract class GCouponWhereInput
   GStringNullableFilter? get vehiclesCondition;
   static Serializer<GCouponWhereInput> get serializer =>
       _$gCouponWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCouponWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCouponWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCouponWhereInput.serializer,
@@ -8649,10 +9287,12 @@ abstract class GVehicleManyRelationFilter
   GVehicleWhereInput? get none;
   static Serializer<GVehicleManyRelationFilter> get serializer =>
       _$gVehicleManyRelationFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleManyRelationFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleManyRelationFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleManyRelationFilter.serializer,
@@ -8677,10 +9317,12 @@ abstract class GCouponOrderByInput
   GOrderDirection? get vehiclesCondition;
   static Serializer<GCouponOrderByInput> get serializer =>
       _$gCouponOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCouponOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCouponOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCouponOrderByInput.serializer,
@@ -8706,10 +9348,12 @@ abstract class GCouponUpdateInput
   String? get vehiclesCondition;
   static Serializer<GCouponUpdateInput> get serializer =>
       _$gCouponUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCouponUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCouponUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCouponUpdateInput.serializer,
@@ -8733,10 +9377,12 @@ abstract class GVehicleRelateToManyForUpdateInput
   BuiltList<GVehicleWhereUniqueInput>? get connect;
   static Serializer<GVehicleRelateToManyForUpdateInput> get serializer =>
       _$gVehicleRelateToManyForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleRelateToManyForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleRelateToManyForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -8756,10 +9402,12 @@ abstract class GCouponUpdateArgs
   GCouponUpdateInput get data;
   static Serializer<GCouponUpdateArgs> get serializer =>
       _$gCouponUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCouponUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCouponUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCouponUpdateArgs.serializer,
@@ -8785,10 +9433,12 @@ abstract class GCouponCreateInput
   String? get vehiclesCondition;
   static Serializer<GCouponCreateInput> get serializer =>
       _$gCouponCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCouponCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCouponCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCouponCreateInput.serializer,
@@ -8810,10 +9460,12 @@ abstract class GVehicleRelateToManyForCreateInput
   BuiltList<GVehicleWhereUniqueInput>? get connect;
   static Serializer<GVehicleRelateToManyForCreateInput> get serializer =>
       _$gVehicleRelateToManyForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GVehicleRelateToManyForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleRelateToManyForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -8834,10 +9486,12 @@ abstract class GOfferWhereUniqueInput
   String? get code;
   static Serializer<GOfferWhereUniqueInput> get serializer =>
       _$gOfferWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOfferWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOfferWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GOfferWhereUniqueInput.serializer,
@@ -8866,10 +9520,12 @@ abstract class GOfferWhereInput
   GStringNullableFilter? get vehiclesCondition;
   static Serializer<GOfferWhereInput> get serializer =>
       _$gOfferWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOfferWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOfferWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GOfferWhereInput.serializer,
@@ -8894,10 +9550,12 @@ abstract class GOfferOrderByInput
   GOrderDirection? get vehiclesCondition;
   static Serializer<GOfferOrderByInput> get serializer =>
       _$gOfferOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOfferOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOfferOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GOfferOrderByInput.serializer,
@@ -8923,10 +9581,12 @@ abstract class GOfferUpdateInput
   String? get vehiclesCondition;
   static Serializer<GOfferUpdateInput> get serializer =>
       _$gOfferUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOfferUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOfferUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GOfferUpdateInput.serializer,
@@ -8945,10 +9605,12 @@ abstract class GOfferUpdateArgs
   GOfferUpdateInput get data;
   static Serializer<GOfferUpdateArgs> get serializer =>
       _$gOfferUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOfferUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOfferUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GOfferUpdateArgs.serializer,
@@ -8974,10 +9636,12 @@ abstract class GOfferCreateInput
   String? get vehiclesCondition;
   static Serializer<GOfferCreateInput> get serializer =>
       _$gOfferCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOfferCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOfferCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GOfferCreateInput.serializer,
@@ -8997,10 +9661,12 @@ abstract class GFeedbackWhereUniqueInput
   String? get id;
   static Serializer<GFeedbackWhereUniqueInput> get serializer =>
       _$gFeedbackWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFeedbackWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFeedbackWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFeedbackWhereUniqueInput.serializer,
@@ -9028,10 +9694,12 @@ abstract class GFeedbackWhereInput
   GFeedbackAttachmentManyRelationFilter? get attachments;
   static Serializer<GFeedbackWhereInput> get serializer =>
       _$gFeedbackWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFeedbackWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFeedbackWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFeedbackWhereInput.serializer,
@@ -9054,10 +9722,12 @@ abstract class GFeedbackAttachmentManyRelationFilter
   GFeedbackAttachmentWhereInput? get none;
   static Serializer<GFeedbackAttachmentManyRelationFilter> get serializer =>
       _$gFeedbackAttachmentManyRelationFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFeedbackAttachmentManyRelationFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFeedbackAttachmentManyRelationFilter? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -9081,10 +9751,12 @@ abstract class GFeedbackOrderByInput
   GOrderDirection? get description;
   static Serializer<GFeedbackOrderByInput> get serializer =>
       _$gFeedbackOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFeedbackOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFeedbackOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFeedbackOrderByInput.serializer,
@@ -9109,10 +9781,12 @@ abstract class GFeedbackUpdateInput
   GFeedbackAttachmentRelateToManyForUpdateInput? get attachments;
   static Serializer<GFeedbackUpdateInput> get serializer =>
       _$gFeedbackUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFeedbackUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFeedbackUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFeedbackUpdateInput.serializer,
@@ -9137,10 +9811,12 @@ abstract class GFeedbackAttachmentRelateToManyForUpdateInput
   static Serializer<GFeedbackAttachmentRelateToManyForUpdateInput>
       get serializer =>
           _$gFeedbackAttachmentRelateToManyForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFeedbackAttachmentRelateToManyForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFeedbackAttachmentRelateToManyForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -9160,10 +9836,12 @@ abstract class GFeedbackUpdateArgs
   GFeedbackUpdateInput get data;
   static Serializer<GFeedbackUpdateArgs> get serializer =>
       _$gFeedbackUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFeedbackUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFeedbackUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFeedbackUpdateArgs.serializer,
@@ -9188,10 +9866,12 @@ abstract class GFeedbackCreateInput
   GFeedbackAttachmentRelateToManyForCreateInput? get attachments;
   static Serializer<GFeedbackCreateInput> get serializer =>
       _$gFeedbackCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFeedbackCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFeedbackCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFeedbackCreateInput.serializer,
@@ -9214,10 +9894,12 @@ abstract class GFeedbackAttachmentRelateToManyForCreateInput
   static Serializer<GFeedbackAttachmentRelateToManyForCreateInput>
       get serializer =>
           _$gFeedbackAttachmentRelateToManyForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFeedbackAttachmentRelateToManyForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFeedbackAttachmentRelateToManyForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -9239,10 +9921,12 @@ abstract class GFeedbackAttachmentWhereUniqueInput
   String? get id;
   static Serializer<GFeedbackAttachmentWhereUniqueInput> get serializer =>
       _$gFeedbackAttachmentWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFeedbackAttachmentWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFeedbackAttachmentWhereUniqueInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -9270,10 +9954,12 @@ abstract class GFeedbackAttachmentWhereInput
   GFeedbackWhereInput? get feedback;
   static Serializer<GFeedbackAttachmentWhereInput> get serializer =>
       _$gFeedbackAttachmentWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFeedbackAttachmentWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFeedbackAttachmentWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFeedbackAttachmentWhereInput.serializer,
@@ -9296,10 +9982,12 @@ abstract class GFeedbackAttachmentOrderByInput
   GOrderDirection? get modifiedAt;
   static Serializer<GFeedbackAttachmentOrderByInput> get serializer =>
       _$gFeedbackAttachmentOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFeedbackAttachmentOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFeedbackAttachmentOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFeedbackAttachmentOrderByInput.serializer,
@@ -9323,10 +10011,12 @@ abstract class GFeedbackAttachmentUpdateInput
   GImageFieldInput? get image;
   static Serializer<GFeedbackAttachmentUpdateInput> get serializer =>
       _$gFeedbackAttachmentUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFeedbackAttachmentUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFeedbackAttachmentUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFeedbackAttachmentUpdateInput.serializer,
@@ -9349,10 +10039,12 @@ abstract class GFeedbackRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GFeedbackRelateToOneForUpdateInput> get serializer =>
       _$gFeedbackRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFeedbackRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFeedbackRelateToOneForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -9375,10 +10067,12 @@ abstract class GFeedbackAttachmentUpdateArgs
   GFeedbackAttachmentUpdateInput get data;
   static Serializer<GFeedbackAttachmentUpdateArgs> get serializer =>
       _$gFeedbackAttachmentUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFeedbackAttachmentUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFeedbackAttachmentUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFeedbackAttachmentUpdateArgs.serializer,
@@ -9402,10 +10096,12 @@ abstract class GFeedbackAttachmentCreateInput
   GImageFieldInput? get image;
   static Serializer<GFeedbackAttachmentCreateInput> get serializer =>
       _$gFeedbackAttachmentCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFeedbackAttachmentCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFeedbackAttachmentCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GFeedbackAttachmentCreateInput.serializer,
@@ -9427,10 +10123,12 @@ abstract class GFeedbackRelateToOneForCreateInput
   GFeedbackWhereUniqueInput? get connect;
   static Serializer<GFeedbackRelateToOneForCreateInput> get serializer =>
       _$gFeedbackRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GFeedbackRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GFeedbackRelateToOneForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -9450,10 +10148,12 @@ abstract class GReportWhereUniqueInput
   String? get id;
   static Serializer<GReportWhereUniqueInput> get serializer =>
       _$gReportWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReportWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReportWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReportWhereUniqueInput.serializer,
@@ -9482,10 +10182,12 @@ abstract class GReportWhereInput
   GReportAttachmentManyRelationFilter? get attachments;
   static Serializer<GReportWhereInput> get serializer =>
       _$gReportWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReportWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReportWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReportWhereInput.serializer,
@@ -9508,10 +10210,12 @@ abstract class GReportAttachmentManyRelationFilter
   GReportAttachmentWhereInput? get none;
   static Serializer<GReportAttachmentManyRelationFilter> get serializer =>
       _$gReportAttachmentManyRelationFilterSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReportAttachmentManyRelationFilter.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReportAttachmentManyRelationFilter? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -9535,10 +10239,12 @@ abstract class GReportOrderByInput
   GOrderDirection? get description;
   static Serializer<GReportOrderByInput> get serializer =>
       _$gReportOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReportOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReportOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReportOrderByInput.serializer,
@@ -9563,10 +10269,12 @@ abstract class GReportUpdateInput
   GReportAttachmentRelateToManyForUpdateInput? get attachments;
   static Serializer<GReportUpdateInput> get serializer =>
       _$gReportUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReportUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReportUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReportUpdateInput.serializer,
@@ -9590,10 +10298,12 @@ abstract class GReportAttachmentRelateToManyForUpdateInput
   BuiltList<GReportAttachmentWhereUniqueInput>? get connect;
   static Serializer<GReportAttachmentRelateToManyForUpdateInput>
       get serializer => _$gReportAttachmentRelateToManyForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReportAttachmentRelateToManyForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReportAttachmentRelateToManyForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -9613,10 +10323,12 @@ abstract class GReportUpdateArgs
   GReportUpdateInput get data;
   static Serializer<GReportUpdateArgs> get serializer =>
       _$gReportUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReportUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReportUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReportUpdateArgs.serializer,
@@ -9641,10 +10353,12 @@ abstract class GReportCreateInput
   GReportAttachmentRelateToManyForCreateInput? get attachments;
   static Serializer<GReportCreateInput> get serializer =>
       _$gReportCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReportCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReportCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReportCreateInput.serializer,
@@ -9666,10 +10380,12 @@ abstract class GReportAttachmentRelateToManyForCreateInput
   BuiltList<GReportAttachmentWhereUniqueInput>? get connect;
   static Serializer<GReportAttachmentRelateToManyForCreateInput>
       get serializer => _$gReportAttachmentRelateToManyForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReportAttachmentRelateToManyForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReportAttachmentRelateToManyForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -9691,10 +10407,12 @@ abstract class GReportAttachmentWhereUniqueInput
   String? get id;
   static Serializer<GReportAttachmentWhereUniqueInput> get serializer =>
       _$gReportAttachmentWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReportAttachmentWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReportAttachmentWhereUniqueInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -9721,10 +10439,12 @@ abstract class GReportAttachmentWhereInput
   GReportWhereInput? get report;
   static Serializer<GReportAttachmentWhereInput> get serializer =>
       _$gReportAttachmentWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReportAttachmentWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReportAttachmentWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReportAttachmentWhereInput.serializer,
@@ -9747,10 +10467,12 @@ abstract class GReportAttachmentOrderByInput
   GOrderDirection? get modifiedAt;
   static Serializer<GReportAttachmentOrderByInput> get serializer =>
       _$gReportAttachmentOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReportAttachmentOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReportAttachmentOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReportAttachmentOrderByInput.serializer,
@@ -9774,10 +10496,12 @@ abstract class GReportAttachmentUpdateInput
   GImageFieldInput? get image;
   static Serializer<GReportAttachmentUpdateInput> get serializer =>
       _$gReportAttachmentUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReportAttachmentUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReportAttachmentUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReportAttachmentUpdateInput.serializer,
@@ -9800,10 +10524,12 @@ abstract class GReportRelateToOneForUpdateInput
   bool? get disconnect;
   static Serializer<GReportRelateToOneForUpdateInput> get serializer =>
       _$gReportRelateToOneForUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReportRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReportRelateToOneForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -9825,10 +10551,12 @@ abstract class GReportAttachmentUpdateArgs
   GReportAttachmentUpdateInput get data;
   static Serializer<GReportAttachmentUpdateArgs> get serializer =>
       _$gReportAttachmentUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReportAttachmentUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReportAttachmentUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReportAttachmentUpdateArgs.serializer,
@@ -9852,10 +10580,12 @@ abstract class GReportAttachmentCreateInput
   GImageFieldInput? get image;
   static Serializer<GReportAttachmentCreateInput> get serializer =>
       _$gReportAttachmentCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReportAttachmentCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReportAttachmentCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GReportAttachmentCreateInput.serializer,
@@ -9877,10 +10607,12 @@ abstract class GReportRelateToOneForCreateInput
   GReportWhereUniqueInput? get connect;
   static Serializer<GReportRelateToOneForCreateInput> get serializer =>
       _$gReportRelateToOneForCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GReportRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GReportRelateToOneForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -9901,10 +10633,12 @@ abstract class GCategoryWhereUniqueInput
   String? get id;
   static Serializer<GCategoryWhereUniqueInput> get serializer =>
       _$gCategoryWhereUniqueInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCategoryWhereUniqueInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCategoryWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCategoryWhereUniqueInput.serializer,
@@ -9929,10 +10663,12 @@ abstract class GCategoryWhereInput
   GStringFilter? get description;
   static Serializer<GCategoryWhereInput> get serializer =>
       _$gCategoryWhereInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCategoryWhereInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCategoryWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCategoryWhereInput.serializer,
@@ -9955,10 +10691,12 @@ abstract class GCategoryOrderByInput
   GOrderDirection? get description;
   static Serializer<GCategoryOrderByInput> get serializer =>
       _$gCategoryOrderByInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCategoryOrderByInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCategoryOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCategoryOrderByInput.serializer,
@@ -9980,10 +10718,12 @@ abstract class GCategoryUpdateInput
   String? get description;
   static Serializer<GCategoryUpdateInput> get serializer =>
       _$gCategoryUpdateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCategoryUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCategoryUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCategoryUpdateInput.serializer,
@@ -10002,10 +10742,12 @@ abstract class GCategoryUpdateArgs
   GCategoryUpdateInput get data;
   static Serializer<GCategoryUpdateArgs> get serializer =>
       _$gCategoryUpdateArgsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCategoryUpdateArgs.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCategoryUpdateArgs? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCategoryUpdateArgs.serializer,
@@ -10027,10 +10769,12 @@ abstract class GCategoryCreateInput
   String? get description;
   static Serializer<GCategoryCreateInput> get serializer =>
       _$gCategoryCreateInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCategoryCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCategoryCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCategoryCreateInput.serializer,
@@ -10046,10 +10790,12 @@ abstract class GOrderItem implements Built<GOrderItem, GOrderItemBuilder> {
   GOrderItemType get type;
   BuiltList<String> get ids;
   static Serializer<GOrderItem> get serializer => _$gOrderItemSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GOrderItem.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GOrderItem? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GOrderItem.serializer,
@@ -10066,7 +10812,9 @@ class GOrderItemType extends EnumClass {
 
   static Serializer<GOrderItemType> get serializer =>
       _$gOrderItemTypeSerializer;
+
   static BuiltSet<GOrderItemType> get values => _$gOrderItemTypeValues;
+
   static GOrderItemType valueOf(String name) => _$gOrderItemTypeValueOf(name);
 }
 
@@ -10080,10 +10828,12 @@ abstract class GPaymentItem
   GPaymentItemType get type;
   int get amount;
   static Serializer<GPaymentItem> get serializer => _$gPaymentItemSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GPaymentItem.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPaymentItem? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPaymentItem.serializer,
@@ -10102,7 +10852,9 @@ class GPaymentItemType extends EnumClass {
 
   static Serializer<GPaymentItemType> get serializer =>
       _$gPaymentItemTypeSerializer;
+
   static BuiltSet<GPaymentItemType> get values => _$gPaymentItemTypeValues;
+
   static GPaymentItemType valueOf(String name) =>
       _$gPaymentItemTypeValueOf(name);
 }
@@ -10121,10 +10873,12 @@ abstract class GCreateInitialUserInput
   String? get password;
   static Serializer<GCreateInitialUserInput> get serializer =>
       _$gCreateInitialUserInputSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCreateInitialUserInput.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateInitialUserInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCreateInitialUserInput.serializer,
@@ -10146,8 +10900,10 @@ class GPasswordResetRedemptionErrorCode extends EnumClass {
 
   static Serializer<GPasswordResetRedemptionErrorCode> get serializer =>
       _$gPasswordResetRedemptionErrorCodeSerializer;
+
   static BuiltSet<GPasswordResetRedemptionErrorCode> get values =>
       _$gPasswordResetRedemptionErrorCodeValues;
+
   static GPasswordResetRedemptionErrorCode valueOf(String name) =>
       _$gPasswordResetRedemptionErrorCodeValueOf(name);
 }
@@ -10160,10 +10916,12 @@ abstract class GItem implements Built<GItem, GItemBuilder> {
   GCouponItemType get type;
   BuiltList<String> get ids;
   static Serializer<GItem> get serializer => _$gItemSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GItem.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GItem? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GItem.serializer,
@@ -10178,7 +10936,9 @@ class GCouponItemType extends EnumClass {
 
   static Serializer<GCouponItemType> get serializer =>
       _$gCouponItemTypeSerializer;
+
   static BuiltSet<GCouponItemType> get values => _$gCouponItemTypeValues;
+
   static GCouponItemType valueOf(String name) => _$gCouponItemTypeValueOf(name);
 }
 
@@ -10195,8 +10955,10 @@ class GKeystoneAdminUIFieldMetaCreateViewFieldMode extends EnumClass {
   static Serializer<GKeystoneAdminUIFieldMetaCreateViewFieldMode>
       get serializer =>
           _$gKeystoneAdminUIFieldMetaCreateViewFieldModeSerializer;
+
   static BuiltSet<GKeystoneAdminUIFieldMetaCreateViewFieldMode> get values =>
       _$gKeystoneAdminUIFieldMetaCreateViewFieldModeValues;
+
   static GKeystoneAdminUIFieldMetaCreateViewFieldMode valueOf(String name) =>
       _$gKeystoneAdminUIFieldMetaCreateViewFieldModeValueOf(name);
 }
@@ -10212,8 +10974,10 @@ class GKeystoneAdminUIFieldMetaListViewFieldMode extends EnumClass {
 
   static Serializer<GKeystoneAdminUIFieldMetaListViewFieldMode>
       get serializer => _$gKeystoneAdminUIFieldMetaListViewFieldModeSerializer;
+
   static BuiltSet<GKeystoneAdminUIFieldMetaListViewFieldMode> get values =>
       _$gKeystoneAdminUIFieldMetaListViewFieldModeValues;
+
   static GKeystoneAdminUIFieldMetaListViewFieldMode valueOf(String name) =>
       _$gKeystoneAdminUIFieldMetaListViewFieldModeValueOf(name);
 }
@@ -10232,8 +10996,10 @@ class GKeystoneAdminUIFieldMetaItemViewFieldMode extends EnumClass {
 
   static Serializer<GKeystoneAdminUIFieldMetaItemViewFieldMode>
       get serializer => _$gKeystoneAdminUIFieldMetaItemViewFieldModeSerializer;
+
   static BuiltSet<GKeystoneAdminUIFieldMetaItemViewFieldMode> get values =>
       _$gKeystoneAdminUIFieldMetaItemViewFieldModeValues;
+
   static GKeystoneAdminUIFieldMetaItemViewFieldMode valueOf(String name) =>
       _$gKeystoneAdminUIFieldMetaItemViewFieldModeValueOf(name);
 }
@@ -10251,8 +11017,10 @@ class GKeystoneAdminUIFieldMetaItemViewFieldPosition extends EnumClass {
   static Serializer<GKeystoneAdminUIFieldMetaItemViewFieldPosition>
       get serializer =>
           _$gKeystoneAdminUIFieldMetaItemViewFieldPositionSerializer;
+
   static BuiltSet<GKeystoneAdminUIFieldMetaItemViewFieldPosition> get values =>
       _$gKeystoneAdminUIFieldMetaItemViewFieldPositionValues;
+
   static GKeystoneAdminUIFieldMetaItemViewFieldPosition valueOf(String name) =>
       _$gKeystoneAdminUIFieldMetaItemViewFieldPositionValueOf(name);
 }
@@ -10266,7 +11034,9 @@ class GQueryMode extends EnumClass {
   static const GQueryMode insensitive = _$gQueryModeinsensitive;
 
   static Serializer<GQueryMode> get serializer => _$gQueryModeSerializer;
+
   static BuiltSet<GQueryMode> get values => _$gQueryModeValues;
+
   static GQueryMode valueOf(String name) => _$gQueryModeValueOf(name);
 }
 
@@ -10281,8 +11051,10 @@ class GKeystoneAdminUISortDirection extends EnumClass {
 
   static Serializer<GKeystoneAdminUISortDirection> get serializer =>
       _$gKeystoneAdminUISortDirectionSerializer;
+
   static BuiltSet<GKeystoneAdminUISortDirection> get values =>
       _$gKeystoneAdminUISortDirectionValues;
+
   static GKeystoneAdminUISortDirection valueOf(String name) =>
       _$gKeystoneAdminUISortDirectionValueOf(name);
 }

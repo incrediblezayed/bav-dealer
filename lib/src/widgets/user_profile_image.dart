@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:dealerapp/src/app/repository/graphql_client.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_cached_network_image.dart';

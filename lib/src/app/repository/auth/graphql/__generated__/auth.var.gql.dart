@@ -21,10 +21,12 @@ abstract class GCreateUserVars
   _i1.GUserCreateInput get data;
   static Serializer<GCreateUserVars> get serializer =>
       _$gCreateUserVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCreateUserVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateUserVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCreateUserVars.serializer,
@@ -42,10 +44,12 @@ abstract class GCurrentUserOTPVars
   String get key;
   static Serializer<GCurrentUserOTPVars> get serializer =>
       _$gCurrentUserOTPVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCurrentUserOTPVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCurrentUserOTPVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCurrentUserOTPVars.serializer,
@@ -65,10 +69,12 @@ abstract class GValidateUserOTPVars
   String get otp;
   static Serializer<GValidateUserOTPVars> get serializer =>
       _$gValidateUserOTPVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GValidateUserOTPVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GValidateUserOTPVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GValidateUserOTPVars.serializer,
@@ -89,10 +95,12 @@ abstract class GSendUserPasswordResetLinkVars
   String get phoneNumber;
   static Serializer<GSendUserPasswordResetLinkVars> get serializer =>
       _$gSendUserPasswordResetLinkVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GSendUserPasswordResetLinkVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSendUserPasswordResetLinkVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GSendUserPasswordResetLinkVars.serializer,
@@ -115,10 +123,12 @@ abstract class GRedeemUserPasswordResetTokenVars
   String get password;
   static Serializer<GRedeemUserPasswordResetTokenVars> get serializer =>
       _$gRedeemUserPasswordResetTokenVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GRedeemUserPasswordResetTokenVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GRedeemUserPasswordResetTokenVars? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -141,10 +151,12 @@ abstract class GValidateUserPasswordResetTokenVars
   String get phoneNumber;
   static Serializer<GValidateUserPasswordResetTokenVars> get serializer =>
       _$gValidateUserPasswordResetTokenVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GValidateUserPasswordResetTokenVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GValidateUserPasswordResetTokenVars? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -163,10 +175,12 @@ abstract class GCreateDealerVars
   _i1.GDealerCreateInput get data;
   static Serializer<GCreateDealerVars> get serializer =>
       _$gCreateDealerVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCreateDealerVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateDealerVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCreateDealerVars.serializer,
@@ -188,10 +202,12 @@ abstract class GAuthenticateUserWithPasswordVars
   String get password;
   static Serializer<GAuthenticateUserWithPasswordVars> get serializer =>
       _$gAuthenticateUserWithPasswordVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GAuthenticateUserWithPasswordVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAuthenticateUserWithPasswordVars? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
@@ -207,10 +223,12 @@ abstract class GUserVars implements Built<GUserVars, GUserVarsBuilder> {
 
   _i1.GUserWhereUniqueInput get where;
   static Serializer<GUserVars> get serializer => _$gUserVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUserVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUserVars.serializer,
@@ -229,10 +247,12 @@ abstract class GUpdateUserVars
   _i1.GUserWhereUniqueInput get where;
   static Serializer<GUpdateUserVars> get serializer =>
       _$gUpdateUserVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GUpdateUserVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUpdateUserVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUpdateUserVars.serializer,
@@ -247,10 +267,12 @@ abstract class GDealerVars implements Built<GDealerVars, GDealerVarsBuilder> {
 
   _i1.GDealerWhereInput get where;
   static Serializer<GDealerVars> get serializer => _$gDealerVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GDealerVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GDealerVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GDealerVars.serializer,

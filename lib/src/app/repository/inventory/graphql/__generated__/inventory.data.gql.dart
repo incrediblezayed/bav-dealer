@@ -21,14 +21,17 @@ abstract class GVehiclesData
 
   static void _initializeBuilder(GVehiclesDataBuilder b) =>
       b..G__typename = 'Query';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   BuiltList<GVehiclesData_vehicles>? get vehicles;
   static Serializer<GVehiclesData> get serializer => _$gVehiclesDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehiclesData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehiclesData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GVehiclesData.serializer,
@@ -46,15 +49,18 @@ abstract class GVehiclesData_vehicles
 
   static void _initializeBuilder(GVehiclesData_vehiclesBuilder b) =>
       b..G__typename = 'Vehicle';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   BuiltList<GVehiclesData_vehicles_variants>? get variants;
   static Serializer<GVehiclesData_vehicles> get serializer =>
       _$gVehiclesDataVehiclesSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehiclesData_vehicles.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehiclesData_vehicles? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GVehiclesData_vehicles.serializer,
@@ -74,6 +80,7 @@ abstract class GVehiclesData_vehicles_variants
 
   static void _initializeBuilder(GVehiclesData_vehicles_variantsBuilder b) =>
       b..G__typename = 'VehicleVariant';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String? get name;
@@ -82,10 +89,12 @@ abstract class GVehiclesData_vehicles_variants
   String get id;
   static Serializer<GVehiclesData_vehicles_variants> get serializer =>
       _$gVehiclesDataVehiclesVariantsSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehiclesData_vehicles_variants.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehiclesData_vehicles_variants? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GVehiclesData_vehicles_variants.serializer,
@@ -106,6 +115,7 @@ abstract class GVehiclesData_vehicles_variants_vehicle
   static void _initializeBuilder(
           GVehiclesData_vehicles_variants_vehicleBuilder b) =>
       b..G__typename = 'Vehicle';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String? get name;
@@ -114,10 +124,12 @@ abstract class GVehiclesData_vehicles_variants_vehicle
   String get id;
   static Serializer<GVehiclesData_vehicles_variants_vehicle> get serializer =>
       _$gVehiclesDataVehiclesVariantsVehicleSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehiclesData_vehicles_variants_vehicle.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehiclesData_vehicles_variants_vehicle? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -139,16 +151,19 @@ abstract class GVehiclesData_vehicles_variants_vehicle_brand
   static void _initializeBuilder(
           GVehiclesData_vehicles_variants_vehicle_brandBuilder b) =>
       b..G__typename = 'Brand';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String? get name;
   String get id;
   static Serializer<GVehiclesData_vehicles_variants_vehicle_brand>
       get serializer => _$gVehiclesDataVehiclesVariantsVehicleBrandSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehiclesData_vehicles_variants_vehicle_brand.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehiclesData_vehicles_variants_vehicle_brand? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -170,6 +185,7 @@ abstract class GVehiclesData_vehicles_variants_vehicle_type
   static void _initializeBuilder(
           GVehiclesData_vehicles_variants_vehicle_typeBuilder b) =>
       b..G__typename = 'VehicleType';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String? get name;
@@ -177,10 +193,12 @@ abstract class GVehiclesData_vehicles_variants_vehicle_type
   String get id;
   static Serializer<GVehiclesData_vehicles_variants_vehicle_type>
       get serializer => _$gVehiclesDataVehiclesVariantsVehicleTypeSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehiclesData_vehicles_variants_vehicle_type.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehiclesData_vehicles_variants_vehicle_type? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -202,6 +220,7 @@ abstract class GVehiclesData_vehicles_variants_colors
   static void _initializeBuilder(
           GVehiclesData_vehicles_variants_colorsBuilder b) =>
       b..G__typename = 'VehicleColor';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -210,10 +229,12 @@ abstract class GVehiclesData_vehicles_variants_colors
   BuiltList<GVehiclesData_vehicles_variants_colors_images>? get images;
   static Serializer<GVehiclesData_vehicles_variants_colors> get serializer =>
       _$gVehiclesDataVehiclesVariantsColorsSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehiclesData_vehicles_variants_colors.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehiclesData_vehicles_variants_colors? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -235,15 +256,18 @@ abstract class GVehiclesData_vehicles_variants_colors_images
   static void _initializeBuilder(
           GVehiclesData_vehicles_variants_colors_imagesBuilder b) =>
       b..G__typename = 'VehicleImage';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   GVehiclesData_vehicles_variants_colors_images_image? get image;
   static Serializer<GVehiclesData_vehicles_variants_colors_images>
       get serializer => _$gVehiclesDataVehiclesVariantsColorsImagesSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehiclesData_vehicles_variants_colors_images.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehiclesData_vehicles_variants_colors_images? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -265,16 +289,19 @@ abstract class GVehiclesData_vehicles_variants_colors_images_image
   static void _initializeBuilder(
           GVehiclesData_vehicles_variants_colors_images_imageBuilder b) =>
       b..G__typename = 'ImageFieldOutput';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get url;
   static Serializer<GVehiclesData_vehicles_variants_colors_images_image>
       get serializer =>
           _$gVehiclesDataVehiclesVariantsColorsImagesImageSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehiclesData_vehicles_variants_colors_images_image.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehiclesData_vehicles_variants_colors_images_image? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -296,16 +323,19 @@ abstract class GCreateVehicleDealerStockRequestData
   static void _initializeBuilder(
           GCreateVehicleDealerStockRequestDataBuilder b) =>
       b..G__typename = 'Mutation';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest?
       get createVehicleDealerStockRequest;
   static Serializer<GCreateVehicleDealerStockRequestData> get serializer =>
       _$gCreateVehicleDealerStockRequestDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GCreateVehicleDealerStockRequestData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateVehicleDealerStockRequestData? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -332,6 +362,7 @@ abstract class GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequ
           GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequestBuilder
               b) =>
       b..G__typename = 'VehicleDealerStockRequest';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String? get type;
@@ -341,11 +372,13 @@ abstract class GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequ
           GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest>
       get serializer =>
           _$gCreateVehicleDealerStockRequestDataCreateVehicleDealerStockRequestSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest
             .serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
             GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest
@@ -363,15 +396,18 @@ abstract class GVehicleDealersData
 
   static void _initializeBuilder(GVehicleDealersDataBuilder b) =>
       b..G__typename = 'Query';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   BuiltList<GVehicleDealersData_vehicleDealers>? get vehicleDealers;
   static Serializer<GVehicleDealersData> get serializer =>
       _$gVehicleDealersDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehicleDealersData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealersData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GVehicleDealersData.serializer,
@@ -391,6 +427,7 @@ abstract class GVehicleDealersData_vehicleDealers
 
   static void _initializeBuilder(GVehicleDealersData_vehicleDealersBuilder b) =>
       b..G__typename = 'VehicleDealer';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   GVehicleDealersData_vehicleDealers_vehicleColor? get vehicleColor;
@@ -401,10 +438,12 @@ abstract class GVehicleDealersData_vehicleDealers
   int? get totalPrice;
   static Serializer<GVehicleDealersData_vehicleDealers> get serializer =>
       _$gVehicleDealersDataVehicleDealersSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehicleDealersData_vehicleDealers.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealersData_vehicleDealers? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -426,6 +465,7 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleColor
   static void _initializeBuilder(
           GVehicleDealersData_vehicleDealers_vehicleColorBuilder b) =>
       b..G__typename = 'VehicleColor';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -435,10 +475,12 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleColor
   static Serializer<GVehicleDealersData_vehicleDealers_vehicleColor>
       get serializer =>
           _$gVehicleDealersDataVehicleDealersVehicleColorSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehicleDealersData_vehicleDealers_vehicleColor.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealersData_vehicleDealers_vehicleColor? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -460,6 +502,7 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleColor_images
   static void _initializeBuilder(
           GVehicleDealersData_vehicleDealers_vehicleColor_imagesBuilder b) =>
       b..G__typename = 'VehicleImage';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -467,10 +510,12 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleColor_images
   static Serializer<GVehicleDealersData_vehicleDealers_vehicleColor_images>
       get serializer =>
           _$gVehicleDealersDataVehicleDealersVehicleColorImagesSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehicleDealersData_vehicleDealers_vehicleColor_images.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealersData_vehicleDealers_vehicleColor_images? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -496,6 +541,7 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleColor_images_image
           GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder
               b) =>
       b..G__typename = 'ImageFieldOutput';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get url;
@@ -503,10 +549,12 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleColor_images_image
           GVehicleDealersData_vehicleDealers_vehicleColor_images_image>
       get serializer =>
           _$gVehicleDealersDataVehicleDealersVehicleColorImagesImageSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehicleDealersData_vehicleDealers_vehicleColor_images_image.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealersData_vehicleDealers_vehicleColor_images_image? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -528,6 +576,7 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleVariant
   static void _initializeBuilder(
           GVehicleDealersData_vehicleDealers_vehicleVariantBuilder b) =>
       b..G__typename = 'VehicleVariant';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -537,10 +586,12 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleVariant
   static Serializer<GVehicleDealersData_vehicleDealers_vehicleVariant>
       get serializer =>
           _$gVehicleDealersDataVehicleDealersVehicleVariantSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehicleDealersData_vehicleDealers_vehicleVariant.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealersData_vehicleDealers_vehicleVariant? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -564,6 +615,7 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle
   static void _initializeBuilder(
           GVehicleDealersData_vehicleDealers_vehicleVariant_vehicleBuilder b) =>
       b..G__typename = 'Vehicle';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand? get brand;
@@ -573,10 +625,12 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle
   static Serializer<GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle>
       get serializer =>
           _$gVehicleDealersDataVehicleDealersVehicleVariantVehicleSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -602,6 +656,7 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand
           GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brandBuilder
               b) =>
       b..G__typename = 'Brand';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -610,11 +665,13 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand
           GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand>
       get serializer =>
           _$gVehicleDealersDataVehicleDealersVehicleVariantVehicleBrandSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand
             .serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
             GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand
@@ -636,6 +693,7 @@ abstract class GVehicleDealersData_vehicleDealers_prices
   static void _initializeBuilder(
           GVehicleDealersData_vehicleDealers_pricesBuilder b) =>
       b..G__typename = 'Price';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -643,10 +701,12 @@ abstract class GVehicleDealersData_vehicleDealers_prices
   GVehicleDealersData_vehicleDealers_prices_category? get category;
   static Serializer<GVehicleDealersData_vehicleDealers_prices> get serializer =>
       _$gVehicleDealersDataVehicleDealersPricesSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehicleDealersData_vehicleDealers_prices.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealersData_vehicleDealers_prices? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -668,6 +728,7 @@ abstract class GVehicleDealersData_vehicleDealers_prices_category
   static void _initializeBuilder(
           GVehicleDealersData_vehicleDealers_prices_categoryBuilder b) =>
       b..G__typename = 'PriceCategory';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -675,10 +736,12 @@ abstract class GVehicleDealersData_vehicleDealers_prices_category
   static Serializer<GVehicleDealersData_vehicleDealers_prices_category>
       get serializer =>
           _$gVehicleDealersDataVehicleDealersPricesCategorySerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GVehicleDealersData_vehicleDealers_prices_category.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GVehicleDealersData_vehicleDealers_prices_category? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -698,15 +761,18 @@ abstract class GCreateVehicleDealerData
 
   static void _initializeBuilder(GCreateVehicleDealerDataBuilder b) =>
       b..G__typename = 'Mutation';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   GCreateVehicleDealerData_createVehicleDealer? get createVehicleDealer;
   static Serializer<GCreateVehicleDealerData> get serializer =>
       _$gCreateVehicleDealerDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GCreateVehicleDealerData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateVehicleDealerData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GCreateVehicleDealerData.serializer,
@@ -727,15 +793,18 @@ abstract class GCreateVehicleDealerData_createVehicleDealer
   static void _initializeBuilder(
           GCreateVehicleDealerData_createVehicleDealerBuilder b) =>
       b..G__typename = 'VehicleDealer';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
   static Serializer<GCreateVehicleDealerData_createVehicleDealer>
       get serializer => _$gCreateVehicleDealerDataCreateVehicleDealerSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GCreateVehicleDealerData_createVehicleDealer.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateVehicleDealerData_createVehicleDealer? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -754,15 +823,18 @@ abstract class GPriceCategoriesData
 
   static void _initializeBuilder(GPriceCategoriesDataBuilder b) =>
       b..G__typename = 'Query';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   BuiltList<GPriceCategoriesData_priceCategories>? get priceCategories;
   static Serializer<GPriceCategoriesData> get serializer =>
       _$gPriceCategoriesDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GPriceCategoriesData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceCategoriesData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GPriceCategoriesData.serializer,
@@ -783,6 +855,7 @@ abstract class GPriceCategoriesData_priceCategories
   static void _initializeBuilder(
           GPriceCategoriesData_priceCategoriesBuilder b) =>
       b..G__typename = 'PriceCategory';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -792,10 +865,12 @@ abstract class GPriceCategoriesData_priceCategories
   _i2.GDateTime? get modifiedAt;
   static Serializer<GPriceCategoriesData_priceCategories> get serializer =>
       _$gPriceCategoriesDataPriceCategoriesSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GPriceCategoriesData_priceCategories.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GPriceCategoriesData_priceCategories? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(

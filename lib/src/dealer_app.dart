@@ -16,7 +16,7 @@ class DealerApp extends StatelessWidget {
       designSize: const Size(375, 812),
       builder: (context, child) {
         return MaterialApp(
-	debugShowCheckedModeBanner: false,
+          debugShowCheckedModeBanner: false,
           scaffoldMessengerKey: AppRoutes.scaffoldMessengerKey,
           navigatorKey: AppRoutes.navigatorKey,
           theme: AppTheme.theme,

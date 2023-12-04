@@ -34,6 +34,7 @@ abstract class GAppNotificationsReq
       operationName: 'AppNotifications',
     )
     ..executeOnListen = true;
+
   @override
   _i3.GAppNotificationsVars get vars;
   @override
@@ -43,6 +44,7 @@ abstract class GAppNotificationsReq
         operation: operation,
         variables: vars.toJson(),
       );
+
   @override
   String? get requestId;
   @override
@@ -64,12 +66,26 @@ abstract class GAppNotificationsReq
   @override
   _i2.GAppNotificationsData? parseData(Map<String, dynamic> json) =>
       _i2.GAppNotificationsData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GAppNotificationsData, _i3.GAppNotificationsVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
+
   static Serializer<GAppNotificationsReq> get serializer =>
       _$gAppNotificationsReqSerializer;
+
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
         GAppNotificationsReq.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAppNotificationsReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
         GAppNotificationsReq.serializer,

@@ -1,9 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/app_texts.dart';
-import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
-import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 ///About us
@@ -119,7 +116,6 @@ class AboutUs extends StatelessWidget {
                             ),
                           ),
                         ),
-                   
                         SizedBox(
                           height: 10.h,
                         ),
@@ -260,7 +256,6 @@ class AboutUs extends StatelessWidget {
             'assets/images/charging_stations.png',
             height: 150,
           ),
-       
         ],
       ),
     );

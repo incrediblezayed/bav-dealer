@@ -21,15 +21,18 @@ abstract class GCreateReportData
 
   static void _initializeBuilder(GCreateReportDataBuilder b) =>
       b..G__typename = 'Mutation';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   GCreateReportData_createReport? get createReport;
   static Serializer<GCreateReportData> get serializer =>
       _$gCreateReportDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GCreateReportData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateReportData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GCreateReportData.serializer,
@@ -49,15 +52,18 @@ abstract class GCreateReportData_createReport
 
   static void _initializeBuilder(GCreateReportData_createReportBuilder b) =>
       b..G__typename = 'Report';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
   static Serializer<GCreateReportData_createReport> get serializer =>
       _$gCreateReportDataCreateReportSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GCreateReportData_createReport.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateReportData_createReport? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GCreateReportData_createReport.serializer,
@@ -74,15 +80,18 @@ abstract class GCreateFeedbackData
 
   static void _initializeBuilder(GCreateFeedbackDataBuilder b) =>
       b..G__typename = 'Mutation';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   GCreateFeedbackData_createFeedback? get createFeedback;
   static Serializer<GCreateFeedbackData> get serializer =>
       _$gCreateFeedbackDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GCreateFeedbackData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateFeedbackData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GCreateFeedbackData.serializer,
@@ -102,15 +111,18 @@ abstract class GCreateFeedbackData_createFeedback
 
   static void _initializeBuilder(GCreateFeedbackData_createFeedbackBuilder b) =>
       b..G__typename = 'Feedback';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
   static Serializer<GCreateFeedbackData_createFeedback> get serializer =>
       _$gCreateFeedbackDataCreateFeedbackSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GCreateFeedbackData_createFeedback.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateFeedbackData_createFeedback? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -128,15 +140,18 @@ abstract class GCategoriesData
 
   static void _initializeBuilder(GCategoriesDataBuilder b) =>
       b..G__typename = 'Query';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   BuiltList<GCategoriesData_categories>? get categories;
   static Serializer<GCategoriesData> get serializer =>
       _$gCategoriesDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GCategoriesData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCategoriesData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GCategoriesData.serializer,
@@ -155,6 +170,7 @@ abstract class GCategoriesData_categories
 
   static void _initializeBuilder(GCategoriesData_categoriesBuilder b) =>
       b..G__typename = 'Category';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -163,10 +179,12 @@ abstract class GCategoriesData_categories
   String? get description;
   static Serializer<GCategoriesData_categories> get serializer =>
       _$gCategoriesDataCategoriesSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GCategoriesData_categories.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCategoriesData_categories? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GCategoriesData_categories.serializer,

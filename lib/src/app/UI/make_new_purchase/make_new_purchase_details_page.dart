@@ -135,16 +135,20 @@ class _MakeNewPurchaseDetailsPageState
                 inputType: TextInputType.datetime,
                 readOnly: true,
                 suffixIcon: IconButton(
-                    onPressed: () {
-                      _selectDate(context);
-                    },
-                    icon: SvgPicture.asset(AppImages.calender),),
+                  onPressed: () {
+                    _selectDate(context);
+                  },
+                  icon: SvgPicture.asset(AppImages.calender),
+                ),
               ),
               SizedBox(height: 20.h),
               Text('Billing Details', style: theme.headlineSmall),
               SizedBox(height: 20.h),
               const TotalAmountWidget(
-                  price: 2020200, shippingCharges: 500, serviceTax: 199,),
+                price: 2020200,
+                shippingCharges: 500,
+                serviceTax: 199,
+              ),
               const Spacer(),
               KButton(
                 onPressed: () {
@@ -154,7 +158,8 @@ class _MakeNewPurchaseDetailsPageState
                       addressController.text.isEmpty ||
                       _dateController.text.isEmpty) {
                     AppRoutes.showErrorSnackbar(
-                        message: 'Please fill the details',);
+                      message: 'Please fill the details',
+                    );
                   } else {
                     AppRoutes.push(page: const PurchaseSuccessPage());
                   }

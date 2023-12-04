@@ -19,10 +19,12 @@ abstract class GAppNotificationsVars
 
   static Serializer<GAppNotificationsVars> get serializer =>
       _$gAppNotificationsVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GAppNotificationsVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAppNotificationsVars? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GAppNotificationsVars.serializer,

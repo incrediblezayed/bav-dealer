@@ -17,22 +17,22 @@ class StagerredContainer extends StatelessWidget {
     super.key,
   });
 
-  double height;
+  final double height;
 
   ///
-  String count;
+  final String count;
 
   ///
-  String title;
+  final String title;
 
-  String image;
-  Color arrowColor;
-  Color containerBgColor;
-  Color iconBgColor;
-  Color countColor;
-  Color titleColor;
+  final String image;
+  final Color arrowColor;
+  final Color containerBgColor;
+  final Color iconBgColor;
+  final Color countColor;
+  final Color titleColor;
 
-  Function()? onTap;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -85,9 +85,9 @@ class StagerredContainer extends StatelessWidget {
                   ),
                   Text(
                     title,
-                    style: theme.headlineSmall!.copyWith(color: titleColor,
-                    fontSize: MediaQuery.sizeOf(context).height * 0.02
-                    ),
+                    style: theme.headlineSmall!.copyWith(
+                        color: titleColor,
+                        fontSize: MediaQuery.sizeOf(context).height * 0.02),
                   ),
                 ],
               ))
