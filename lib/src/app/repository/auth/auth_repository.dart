@@ -354,4 +354,21 @@ class AuthRepository {
     }
     return false;
   }
+
+  Future<bool> deactivateUser() async {
+    final user = cacheProvider.getUser();
+    final response = await _client
+        .request(
+          GUpdateUserReq(
+            (b) => b
+              ..vars.data.deactivate = true
+              ..vars.where.id = user!.id,
+          ),
+        )
+        .first;
+    if (response.data?.updateUser?.id != null) {
+      return true;
+    }
+    return false;
+  }
 }

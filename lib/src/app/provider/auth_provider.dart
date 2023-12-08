@@ -477,4 +477,14 @@ class AuthProvider extends ChangeNotifier {
       AppRoutes.showErrorSnackbar(message: e.toString());
     }
   }
+
+  Future<void> deactivateUser() async {
+    final res = await _authRepository.deactivateUser();
+    if (res) {
+      cacheProvider.clear();
+      AppRoutes.pushAndRemoveUntil(page: const LoginPage());
+    } else {
+      AppRoutes.showErrorSnackbar(message: 'Something went wrong');
+    }
+  }
 }

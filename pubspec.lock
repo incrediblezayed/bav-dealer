@@ -18,7 +18,7 @@ packages:
     source: hosted
     version: "1.2.0"
   analyzer:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: analyzer
       sha256: ea3d8652bda62982addfd92fdc2d0214e5f82e43325104990d4f4c4a2a313562
@@ -109,10 +109,10 @@ packages:
     dependency: "direct dev"
     description:
       name: build_runner
-      sha256: "10c6bcdbf9d049a0b666702cf1cee4ddfdc38f02a19d35ae392863b47519848b"
+      sha256: "67d591d602906ef9201caf93452495ad1812bea2074f04e25dbd7c133785821b"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.6"
+    version: "2.4.7"
   build_runner_core:
     dependency: transitive
     description:
@@ -229,10 +229,10 @@ packages:
     dependency: "direct main"
     description:
       name: dio
-      sha256: "01870acd87986f768e0c09cc4d7a19a59d814af7b34cbeb0b437d2c33bdfea4c"
+      sha256: "797e1e341c3dd2f69f2dad42564a6feff3bfb87187d05abb93b9609e6f1645c3"
       url: "https://pub.dev"
     source: hosted
-    version: "5.3.4"
+    version: "5.4.0"
   fake_async:
     dependency: transitive
     description:
@@ -245,34 +245,34 @@ packages:
     dependency: "direct main"
     description:
       name: ferry
-      sha256: "712f94fb2a4b996e05db2afd4d26f0eb2c7c1f6b40af43dc49f5e418b34916a5"
+      sha256: b96c1c74d2f3b0c2c151be0a0e1cb21dab0c5d6801bc11c229db0b97f70c6f10
       url: "https://pub.dev"
     source: hosted
-    version: "0.14.2+1"
+    version: "0.15.0+1"
   ferry_cache:
     dependency: transitive
     description:
       name: ferry_cache
-      sha256: "6d0afa3d2451d1c57c7894254c60cb683c8a8be5598a2ba97c48837f1deb3254"
+      sha256: e02cc8bb9079be24e7ecfbf48ba03f423668784cc788634232349fa8678f4b59
       url: "https://pub.dev"
     source: hosted
-    version: "0.7.1+2"
+    version: "0.8.0"
   ferry_exec:
     dependency: transitive
     description:
       name: ferry_exec
-      sha256: "2da33c4b4396d9874af5af37cc72692dbcd2194310871c77381f08b5327cec9d"
+      sha256: dfa916794065e65f35842b716026fe6ed930dc41d3ad49496204f0ef7da55c2d
       url: "https://pub.dev"
     source: hosted
-    version: "0.3.1"
+    version: "0.5.0"
   ferry_generator:
     dependency: "direct dev"
     description:
       name: ferry_generator
-      sha256: dc744553cb9f969c9a784246b3a238f72b4058dce829cb3b4bd6fcf2713cf12f
+      sha256: "50ad933562e3807f0259d8d9402e576dae9a333b49ba7b8a218ceea2de8460ec"
       url: "https://pub.dev"
     source: hosted
-    version: "0.8.1"
+    version: "0.8.2"
   ferry_hive_store:
     dependency: "direct main"
     description:
@@ -354,10 +354,10 @@ packages:
     dependency: "direct dev"
     description:
       name: flutter_lints
-      sha256: a25a15ebbdfc33ab1cd26c63a6ee519df92338a9c10f122adda92938253bef04
+      sha256: e2a421b7e59244faef694ba7b30562e489c2b489866e505074eb005cd7060db7
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.3"
+    version: "3.0.1"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -370,10 +370,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_riverpod
-      sha256: d261b0f2461e0595b96f92ed807841eb72cea84a6b12b8fd0c76e5ed803e7921
+      sha256: da9591d1f8d5881628ccd5c25c40e74fc3eef50ba45e40c3905a06e1712412d5
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.8"
+    version: "2.4.9"
   flutter_screenutil:
     dependency: "direct main"
     description:
@@ -436,10 +436,10 @@ packages:
     dependency: "direct main"
     description:
       name: google_fonts
-      sha256: e20ff62b158b96f392bfc8afe29dee1503c94fbea2cbe8186fd59b756b8ae982
+      sha256: f0b8d115a13ecf827013ec9fc883390ccc0e87a96ed5347a3114cac177ef18e8
       url: "https://pub.dev"
     source: hosted
-    version: "5.1.0"
+    version: "6.1.0"
   gql:
     dependency: transitive
     description:
@@ -452,10 +452,10 @@ packages:
     dependency: transitive
     description:
       name: gql_code_builder
-      sha256: "6e386a85f5d91daae82915337f566a43dfeb0a0df38caa372387fbc07d31b8c1"
+      sha256: "673324fdb3241dcac63f02c78c9b883fd363604c26154420836a2b243ef776d0"
       url: "https://pub.dev"
     source: hosted
-    version: "0.7.2"
+    version: "0.8.0"
   gql_dio_link:
     dependency: "direct main"
     description:
@@ -644,10 +644,10 @@ packages:
     dependency: transitive
     description:
       name: lints
-      sha256: "0a217c6c989d21039f1498c3ed9f3ed71b354e69873f13a8dfc3c9fe76f1b452"
+      sha256: cbf8d4b858bb0134ef3ef87841abdf8d63bfc255c266b7bf6b39daa1085c4290
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.1"
+    version: "3.0.0"
   logging:
     dependency: transitive
     description:
@@ -692,10 +692,10 @@ packages:
     dependency: transitive
     description:
       name: normalize
-      sha256: "8a60e37de5b608eeaf9b839273370c71ebba445e9f73b08eee7725e0d92dbc43"
+      sha256: "07c294801f8c4bd4e71f4595bc864af80caa373a5cf2e8120849c78a232a44b9"
       url: "https://pub.dev"
     source: hosted
-    version: "0.8.2+1"
+    version: "0.9.0"
   package_config:
     dependency: transitive
     description:
@@ -844,10 +844,10 @@ packages:
     dependency: transitive
     description:
       name: riverpod
-      sha256: "08451ddbaad6eae73e2422d8109775885623340d721c6637b8719c9f4b478848"
+      sha256: "942999ee48b899f8a46a860f1e13cee36f2f77609eb54c5b7a669bb20d550b11"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.8"
+    version: "2.4.9"
   rxdart:
     dependency: transitive
     description:
@@ -1097,10 +1097,10 @@ packages:
     dependency: "direct main"
     description:
       name: very_good_analysis
-      sha256: ebc48c51db35beeeec8c414e32f7bd78e612bd7f5992ccb0d46e19edaeb40b08
+      sha256: "9ae7f3a3bd5764fb021b335ca28a34f040cd0ab6eec00a1b213b445dae58a4b8"
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.0+1"
+    version: "5.1.0"
   watcher:
     dependency: transitive
     description:

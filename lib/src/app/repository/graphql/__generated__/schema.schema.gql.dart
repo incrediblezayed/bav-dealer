@@ -97,6 +97,7 @@ abstract class GUserWhereInput
   GCartItemManyRelationFilter? get cartItems;
   GWalletWhereInput? get wallet;
   GReferralCodeWhereInput? get referralCode;
+  GBooleanFilter? get deactivate;
   GPasswordFilter? get passwordResetToken;
   GDateTimeNullableFilter? get passwordResetIssuedAt;
   GDateTimeNullableFilter? get passwordResetRedeemedAt;
@@ -193,6 +194,7 @@ abstract class GStringFilter
   String? get contains;
   String? get startsWith;
   String? get endsWith;
+  GQueryMode? get mode;
   GNestedStringFilter? get not;
   static Serializer<GStringFilter> get serializer => _$gStringFilterSerializer;
 
@@ -206,6 +208,21 @@ abstract class GStringFilter
         GStringFilter.serializer,
         json,
       );
+}
+
+class GQueryMode extends EnumClass {
+  const GQueryMode._(String name) : super(name);
+
+  @BuiltValueEnumConst(wireName: 'default')
+  static const GQueryMode Gdefault = _$gQueryModeGdefault;
+
+  static const GQueryMode insensitive = _$gQueryModeinsensitive;
+
+  static Serializer<GQueryMode> get serializer => _$gQueryModeSerializer;
+
+  static BuiltSet<GQueryMode> get values => _$gQueryModeValues;
+
+  static GQueryMode valueOf(String name) => _$gQueryModeValueOf(name);
 }
 
 abstract class GNestedStringFilter
@@ -387,6 +404,7 @@ abstract class GUserOrderByInput
   GOrderDirection? get emailVerified;
   GOrderDirection? get phoneNumberVerified;
   GOrderDirection? get isAdmin;
+  GOrderDirection? get deactivate;
   GOrderDirection? get passwordResetIssuedAt;
   GOrderDirection? get passwordResetRedeemedAt;
   static Serializer<GUserOrderByInput> get serializer =>
@@ -444,6 +462,7 @@ abstract class GUserUpdateInput
   GCartItemRelateToManyForUpdateInput? get cartItems;
   GWalletRelateToOneForUpdateInput? get wallet;
   GReferralCodeRelateToOneForUpdateInput? get referralCode;
+  bool? get deactivate;
   String? get passwordResetToken;
   GDateTime? get passwordResetIssuedAt;
   GDateTime? get passwordResetRedeemedAt;
@@ -705,6 +724,7 @@ abstract class GUserCreateInput
   GCartItemRelateToManyForCreateInput? get cartItems;
   GWalletRelateToOneForCreateInput? get wallet;
   GReferralCodeRelateToOneForCreateInput? get referralCode;
+  bool? get deactivate;
   String? get passwordResetToken;
   GDateTime? get passwordResetIssuedAt;
   GDateTime? get passwordResetRedeemedAt;
@@ -1440,6 +1460,255 @@ abstract class GAddressCreateInput
       );
 }
 
+abstract class GDealerAddressWhereUniqueInput
+    implements
+        Built<GDealerAddressWhereUniqueInput,
+            GDealerAddressWhereUniqueInputBuilder> {
+  GDealerAddressWhereUniqueInput._();
+
+  factory GDealerAddressWhereUniqueInput(
+          [Function(GDealerAddressWhereUniqueInputBuilder b) updates]) =
+      _$GDealerAddressWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GDealerAddressWhereUniqueInput> get serializer =>
+      _$gDealerAddressWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GDealerAddressWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GDealerAddressWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GDealerAddressWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GDealerAddressWhereInput
+    implements
+        Built<GDealerAddressWhereInput, GDealerAddressWhereInputBuilder> {
+  GDealerAddressWhereInput._();
+
+  factory GDealerAddressWhereInput(
+          [Function(GDealerAddressWhereInputBuilder b) updates]) =
+      _$GDealerAddressWhereInput;
+
+  BuiltList<GDealerAddressWhereInput>? get AND;
+  BuiltList<GDealerAddressWhereInput>? get OR;
+  BuiltList<GDealerAddressWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GStringFilter? get name;
+  GStringFilter? get phoneNumber;
+  GStringFilter? get pinCode;
+  GStringFilter? get address;
+  GStringFilter? get town;
+  GStringFilter? get district;
+  GStringFilter? get state;
+  GDealerWhereInput? get dealer;
+  static Serializer<GDealerAddressWhereInput> get serializer =>
+      _$gDealerAddressWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GDealerAddressWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GDealerAddressWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GDealerAddressWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GDealerAddressOrderByInput
+    implements
+        Built<GDealerAddressOrderByInput, GDealerAddressOrderByInputBuilder> {
+  GDealerAddressOrderByInput._();
+
+  factory GDealerAddressOrderByInput(
+          [Function(GDealerAddressOrderByInputBuilder b) updates]) =
+      _$GDealerAddressOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get name;
+  GOrderDirection? get phoneNumber;
+  GOrderDirection? get pinCode;
+  GOrderDirection? get address;
+  GOrderDirection? get town;
+  GOrderDirection? get district;
+  GOrderDirection? get state;
+  static Serializer<GDealerAddressOrderByInput> get serializer =>
+      _$gDealerAddressOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GDealerAddressOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GDealerAddressOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GDealerAddressOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GDealerAddressUpdateInput
+    implements
+        Built<GDealerAddressUpdateInput, GDealerAddressUpdateInputBuilder> {
+  GDealerAddressUpdateInput._();
+
+  factory GDealerAddressUpdateInput(
+          [Function(GDealerAddressUpdateInputBuilder b) updates]) =
+      _$GDealerAddressUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get name;
+  String? get phoneNumber;
+  String? get pinCode;
+  String? get address;
+  String? get town;
+  String? get district;
+  String? get state;
+  GDealerRelateToOneForUpdateInput? get dealer;
+  static Serializer<GDealerAddressUpdateInput> get serializer =>
+      _$gDealerAddressUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GDealerAddressUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GDealerAddressUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GDealerAddressUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GDealerRelateToOneForUpdateInput
+    implements
+        Built<GDealerRelateToOneForUpdateInput,
+            GDealerRelateToOneForUpdateInputBuilder> {
+  GDealerRelateToOneForUpdateInput._();
+
+  factory GDealerRelateToOneForUpdateInput(
+          [Function(GDealerRelateToOneForUpdateInputBuilder b) updates]) =
+      _$GDealerRelateToOneForUpdateInput;
+
+  GDealerCreateInput? get create;
+  GDealerWhereUniqueInput? get connect;
+  bool? get disconnect;
+  static Serializer<GDealerRelateToOneForUpdateInput> get serializer =>
+      _$gDealerRelateToOneForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GDealerRelateToOneForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GDealerRelateToOneForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GDealerRelateToOneForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GDealerAddressUpdateArgs
+    implements
+        Built<GDealerAddressUpdateArgs, GDealerAddressUpdateArgsBuilder> {
+  GDealerAddressUpdateArgs._();
+
+  factory GDealerAddressUpdateArgs(
+          [Function(GDealerAddressUpdateArgsBuilder b) updates]) =
+      _$GDealerAddressUpdateArgs;
+
+  GDealerAddressWhereUniqueInput get where;
+  GDealerAddressUpdateInput get data;
+  static Serializer<GDealerAddressUpdateArgs> get serializer =>
+      _$gDealerAddressUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GDealerAddressUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GDealerAddressUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GDealerAddressUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GDealerAddressCreateInput
+    implements
+        Built<GDealerAddressCreateInput, GDealerAddressCreateInputBuilder> {
+  GDealerAddressCreateInput._();
+
+  factory GDealerAddressCreateInput(
+          [Function(GDealerAddressCreateInputBuilder b) updates]) =
+      _$GDealerAddressCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get name;
+  String? get phoneNumber;
+  String? get pinCode;
+  String? get address;
+  String? get town;
+  String? get district;
+  String? get state;
+  GDealerRelateToOneForCreateInput? get dealer;
+  static Serializer<GDealerAddressCreateInput> get serializer =>
+      _$gDealerAddressCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GDealerAddressCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GDealerAddressCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GDealerAddressCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GDealerRelateToOneForCreateInput
+    implements
+        Built<GDealerRelateToOneForCreateInput,
+            GDealerRelateToOneForCreateInputBuilder> {
+  GDealerRelateToOneForCreateInput._();
+
+  factory GDealerRelateToOneForCreateInput(
+          [Function(GDealerRelateToOneForCreateInputBuilder b) updates]) =
+      _$GDealerRelateToOneForCreateInput;
+
+  GDealerCreateInput? get create;
+  GDealerWhereUniqueInput? get connect;
+  static Serializer<GDealerRelateToOneForCreateInput> get serializer =>
+      _$gDealerRelateToOneForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GDealerRelateToOneForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GDealerRelateToOneForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GDealerRelateToOneForCreateInput.serializer,
+        json,
+      );
+}
+
 abstract class GFavoriteWhereUniqueInput
     implements
         Built<GFavoriteWhereUniqueInput, GFavoriteWhereUniqueInputBuilder> {
@@ -2126,6 +2395,7 @@ abstract class GBrandUpdateInput
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
   String? get name;
+  GImageFieldInput? get logo;
   static Serializer<GBrandUpdateInput> get serializer =>
       _$gBrandUpdateInputSerializer;
 
@@ -2175,6 +2445,7 @@ abstract class GBrandCreateInput
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
   String? get name;
+  GImageFieldInput? get logo;
   static Serializer<GBrandCreateInput> get serializer =>
       _$gBrandCreateInputSerializer;
 
@@ -2696,35 +2967,6 @@ abstract class GTestDriveDealerUpdateInput
       );
 }
 
-abstract class GDealerRelateToOneForUpdateInput
-    implements
-        Built<GDealerRelateToOneForUpdateInput,
-            GDealerRelateToOneForUpdateInputBuilder> {
-  GDealerRelateToOneForUpdateInput._();
-
-  factory GDealerRelateToOneForUpdateInput(
-          [Function(GDealerRelateToOneForUpdateInputBuilder b) updates]) =
-      _$GDealerRelateToOneForUpdateInput;
-
-  GDealerCreateInput? get create;
-  GDealerWhereUniqueInput? get connect;
-  bool? get disconnect;
-  static Serializer<GDealerRelateToOneForUpdateInput> get serializer =>
-      _$gDealerRelateToOneForUpdateInputSerializer;
-
-  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
-        GDealerRelateToOneForUpdateInput.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GDealerRelateToOneForUpdateInput? fromJson(
-          Map<String, dynamic> json) =>
-      _i2.serializers.deserializeWith(
-        GDealerRelateToOneForUpdateInput.serializer,
-        json,
-      );
-}
-
 abstract class GVehicleColorRelateToOneForUpdateInput
     implements
         Built<GVehicleColorRelateToOneForUpdateInput,
@@ -2807,34 +3049,6 @@ abstract class GTestDriveDealerCreateInput
   static GTestDriveDealerCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveDealerCreateInput.serializer,
-        json,
-      );
-}
-
-abstract class GDealerRelateToOneForCreateInput
-    implements
-        Built<GDealerRelateToOneForCreateInput,
-            GDealerRelateToOneForCreateInputBuilder> {
-  GDealerRelateToOneForCreateInput._();
-
-  factory GDealerRelateToOneForCreateInput(
-          [Function(GDealerRelateToOneForCreateInputBuilder b) updates]) =
-      _$GDealerRelateToOneForCreateInput;
-
-  GDealerCreateInput? get create;
-  GDealerWhereUniqueInput? get connect;
-  static Serializer<GDealerRelateToOneForCreateInput> get serializer =>
-      _$gDealerRelateToOneForCreateInputSerializer;
-
-  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
-        GDealerRelateToOneForCreateInput.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GDealerRelateToOneForCreateInput? fromJson(
-          Map<String, dynamic> json) =>
-      _i2.serializers.deserializeWith(
-        GDealerRelateToOneForCreateInput.serializer,
         json,
       );
 }
@@ -4545,7 +4759,7 @@ abstract class GVehicleVariantWhereInput
   GBooleanFilter? get Gdefault;
   GVehicleSpecificationManyRelationFilter? get specifications;
   GVehicleColorManyRelationFilter? get colors;
-  GIntNullableFilter? get price;
+  GTagManyRelationFilter? get tags;
   static Serializer<GVehicleVariantWhereInput> get serializer =>
       _$gVehicleVariantWhereInputSerializer;
 
@@ -4557,6 +4771,32 @@ abstract class GVehicleVariantWhereInput
   static GVehicleVariantWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleVariantWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GTagManyRelationFilter
+    implements Built<GTagManyRelationFilter, GTagManyRelationFilterBuilder> {
+  GTagManyRelationFilter._();
+
+  factory GTagManyRelationFilter(
+          [Function(GTagManyRelationFilterBuilder b) updates]) =
+      _$GTagManyRelationFilter;
+
+  GTagWhereInput? get every;
+  GTagWhereInput? get some;
+  GTagWhereInput? get none;
+  static Serializer<GTagManyRelationFilter> get serializer =>
+      _$gTagManyRelationFilterSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GTagManyRelationFilter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GTagManyRelationFilter? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GTagManyRelationFilter.serializer,
         json,
       );
 }
@@ -4576,7 +4816,6 @@ abstract class GVehicleVariantOrderByInput
   GOrderDirection? get name;
   @BuiltValueField(wireName: 'default')
   GOrderDirection? get Gdefault;
-  GOrderDirection? get price;
   static Serializer<GVehicleVariantOrderByInput> get serializer =>
       _$gVehicleVariantOrderByInputSerializer;
 
@@ -4609,7 +4848,7 @@ abstract class GVehicleVariantUpdateInput
   bool? get Gdefault;
   GVehicleSpecificationRelateToManyForUpdateInput? get specifications;
   GVehicleColorRelateToManyForUpdateInput? get colors;
-  int? get price;
+  GTagRelateToManyForUpdateInput? get tags;
   static Serializer<GVehicleVariantUpdateInput> get serializer =>
       _$gVehicleVariantUpdateInputSerializer;
 
@@ -4621,6 +4860,35 @@ abstract class GVehicleVariantUpdateInput
   static GVehicleVariantUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleVariantUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GTagRelateToManyForUpdateInput
+    implements
+        Built<GTagRelateToManyForUpdateInput,
+            GTagRelateToManyForUpdateInputBuilder> {
+  GTagRelateToManyForUpdateInput._();
+
+  factory GTagRelateToManyForUpdateInput(
+          [Function(GTagRelateToManyForUpdateInputBuilder b) updates]) =
+      _$GTagRelateToManyForUpdateInput;
+
+  BuiltList<GTagWhereUniqueInput>? get disconnect;
+  BuiltList<GTagWhereUniqueInput>? get set;
+  BuiltList<GTagCreateInput>? get create;
+  BuiltList<GTagWhereUniqueInput>? get connect;
+  static Serializer<GTagRelateToManyForUpdateInput> get serializer =>
+      _$gTagRelateToManyForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GTagRelateToManyForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GTagRelateToManyForUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GTagRelateToManyForUpdateInput.serializer,
         json,
       );
 }
@@ -4668,7 +4936,7 @@ abstract class GVehicleVariantCreateInput
   bool? get Gdefault;
   GVehicleSpecificationRelateToManyForCreateInput? get specifications;
   GVehicleColorRelateToManyForCreateInput? get colors;
-  int? get price;
+  GTagRelateToManyForCreateInput? get tags;
   static Serializer<GVehicleVariantCreateInput> get serializer =>
       _$gVehicleVariantCreateInputSerializer;
 
@@ -4680,6 +4948,33 @@ abstract class GVehicleVariantCreateInput
   static GVehicleVariantCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleVariantCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GTagRelateToManyForCreateInput
+    implements
+        Built<GTagRelateToManyForCreateInput,
+            GTagRelateToManyForCreateInputBuilder> {
+  GTagRelateToManyForCreateInput._();
+
+  factory GTagRelateToManyForCreateInput(
+          [Function(GTagRelateToManyForCreateInputBuilder b) updates]) =
+      _$GTagRelateToManyForCreateInput;
+
+  BuiltList<GTagCreateInput>? get create;
+  BuiltList<GTagWhereUniqueInput>? get connect;
+  static Serializer<GTagRelateToManyForCreateInput> get serializer =>
+      _$gTagRelateToManyForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GTagRelateToManyForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GTagRelateToManyForCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GTagRelateToManyForCreateInput.serializer,
         json,
       );
 }
@@ -4768,6 +5063,7 @@ abstract class GStringNullableFilter
   String? get contains;
   String? get startsWith;
   String? get endsWith;
+  GQueryMode? get mode;
   GNestedStringNullableFilter? get not;
   static Serializer<GStringNullableFilter> get serializer =>
       _$gStringNullableFilterSerializer;
@@ -7589,6 +7885,9 @@ abstract class GDealerWhereInput
   GDateTimeNullableFilter? get modifiedAt;
   GUserWhereInput? get user;
   GBooleanFilter? get approved;
+  GDealerAddressManyRelationFilter? get addresses;
+  GFloatNullableFilter? get lLat;
+  GFloatNullableFilter? get lLng;
   static Serializer<GDealerWhereInput> get serializer =>
       _$gDealerWhereInputSerializer;
 
@@ -7604,6 +7903,35 @@ abstract class GDealerWhereInput
       );
 }
 
+abstract class GDealerAddressManyRelationFilter
+    implements
+        Built<GDealerAddressManyRelationFilter,
+            GDealerAddressManyRelationFilterBuilder> {
+  GDealerAddressManyRelationFilter._();
+
+  factory GDealerAddressManyRelationFilter(
+          [Function(GDealerAddressManyRelationFilterBuilder b) updates]) =
+      _$GDealerAddressManyRelationFilter;
+
+  GDealerAddressWhereInput? get every;
+  GDealerAddressWhereInput? get some;
+  GDealerAddressWhereInput? get none;
+  static Serializer<GDealerAddressManyRelationFilter> get serializer =>
+      _$gDealerAddressManyRelationFilterSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GDealerAddressManyRelationFilter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GDealerAddressManyRelationFilter? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GDealerAddressManyRelationFilter.serializer,
+        json,
+      );
+}
+
 abstract class GDealerOrderByInput
     implements Built<GDealerOrderByInput, GDealerOrderByInputBuilder> {
   GDealerOrderByInput._();
@@ -7615,6 +7943,8 @@ abstract class GDealerOrderByInput
   GOrderDirection? get createdAt;
   GOrderDirection? get modifiedAt;
   GOrderDirection? get approved;
+  GOrderDirection? get lLat;
+  GOrderDirection? get lLng;
   static Serializer<GDealerOrderByInput> get serializer =>
       _$gDealerOrderByInputSerializer;
 
@@ -7641,6 +7971,9 @@ abstract class GDealerUpdateInput
   GDateTime? get modifiedAt;
   GUserRelateToOneForUpdateInput? get user;
   bool? get approved;
+  GDealerAddressRelateToManyForUpdateInput? get addresses;
+  double? get lLat;
+  double? get lLng;
   static Serializer<GDealerUpdateInput> get serializer =>
       _$gDealerUpdateInputSerializer;
 
@@ -7652,6 +7985,36 @@ abstract class GDealerUpdateInput
   static GDealerUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GDealerUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GDealerAddressRelateToManyForUpdateInput
+    implements
+        Built<GDealerAddressRelateToManyForUpdateInput,
+            GDealerAddressRelateToManyForUpdateInputBuilder> {
+  GDealerAddressRelateToManyForUpdateInput._();
+
+  factory GDealerAddressRelateToManyForUpdateInput(
+      [Function(GDealerAddressRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GDealerAddressRelateToManyForUpdateInput;
+
+  BuiltList<GDealerAddressWhereUniqueInput>? get disconnect;
+  BuiltList<GDealerAddressWhereUniqueInput>? get set;
+  BuiltList<GDealerAddressCreateInput>? get create;
+  BuiltList<GDealerAddressWhereUniqueInput>? get connect;
+  static Serializer<GDealerAddressRelateToManyForUpdateInput> get serializer =>
+      _$gDealerAddressRelateToManyForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GDealerAddressRelateToManyForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GDealerAddressRelateToManyForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GDealerAddressRelateToManyForUpdateInput.serializer,
         json,
       );
 }
@@ -7691,6 +8054,9 @@ abstract class GDealerCreateInput
   GDateTime? get modifiedAt;
   GUserRelateToOneForCreateInput? get user;
   bool? get approved;
+  GDealerAddressRelateToManyForCreateInput? get addresses;
+  double? get lLat;
+  double? get lLng;
   static Serializer<GDealerCreateInput> get serializer =>
       _$gDealerCreateInputSerializer;
 
@@ -7702,6 +8068,34 @@ abstract class GDealerCreateInput
   static GDealerCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GDealerCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GDealerAddressRelateToManyForCreateInput
+    implements
+        Built<GDealerAddressRelateToManyForCreateInput,
+            GDealerAddressRelateToManyForCreateInputBuilder> {
+  GDealerAddressRelateToManyForCreateInput._();
+
+  factory GDealerAddressRelateToManyForCreateInput(
+      [Function(GDealerAddressRelateToManyForCreateInputBuilder b)
+          updates]) = _$GDealerAddressRelateToManyForCreateInput;
+
+  BuiltList<GDealerAddressCreateInput>? get create;
+  BuiltList<GDealerAddressWhereUniqueInput>? get connect;
+  static Serializer<GDealerAddressRelateToManyForCreateInput> get serializer =>
+      _$gDealerAddressRelateToManyForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GDealerAddressRelateToManyForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GDealerAddressRelateToManyForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GDealerAddressRelateToManyForCreateInput.serializer,
         json,
       );
 }
@@ -11023,21 +11417,6 @@ class GKeystoneAdminUIFieldMetaItemViewFieldPosition extends EnumClass {
 
   static GKeystoneAdminUIFieldMetaItemViewFieldPosition valueOf(String name) =>
       _$gKeystoneAdminUIFieldMetaItemViewFieldPositionValueOf(name);
-}
-
-class GQueryMode extends EnumClass {
-  const GQueryMode._(String name) : super(name);
-
-  @BuiltValueEnumConst(wireName: 'default')
-  static const GQueryMode Gdefault = _$gQueryModeGdefault;
-
-  static const GQueryMode insensitive = _$gQueryModeinsensitive;
-
-  static Serializer<GQueryMode> get serializer => _$gQueryModeSerializer;
-
-  static BuiltSet<GQueryMode> get values => _$gQueryModeValues;
-
-  static GQueryMode valueOf(String name) => _$gQueryModeValueOf(name);
 }
 
 class GKeystoneAdminUISortDirection extends EnumClass {

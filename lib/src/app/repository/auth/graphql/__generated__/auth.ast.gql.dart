@@ -593,6 +593,13 @@ const AuthenticateUserWithPassword = _i1.OperationDefinitionNode(
                     ),
                   ]),
                 ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'deactivate'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
               ]),
             ),
             _i1.FieldNode(
@@ -844,6 +851,42 @@ const User = _i1.OperationDefinitionNode(
           selectionSet: null,
         ),
         _i1.FieldNode(
+          name: _i1.NameNode(value: 'referralCode'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: _i1.SelectionSetNode(selections: [
+            _i1.FieldNode(
+              name: _i1.NameNode(value: 'id'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            _i1.FieldNode(
+              name: _i1.NameNode(value: 'code'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            _i1.FieldNode(
+              name: _i1.NameNode(value: 'modifiedAt'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            _i1.FieldNode(
+              name: _i1.NameNode(value: 'createdAt'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+          ]),
+        ),
+        _i1.FieldNode(
           name: _i1.NameNode(value: 'favorites'),
           alias: null,
           arguments: [],
@@ -916,6 +959,13 @@ const User = _i1.OperationDefinitionNode(
               selectionSet: null,
             ),
           ]),
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'deactivate'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
         ),
       ]),
     )

@@ -34,6 +34,26 @@ final BuiltSet<GImageExtension> _$gImageExtensionValues =
   _$gImageExtensiongif,
 ]);
 
+const GQueryMode _$gQueryModeGdefault = const GQueryMode._('Gdefault');
+const GQueryMode _$gQueryModeinsensitive = const GQueryMode._('insensitive');
+
+GQueryMode _$gQueryModeValueOf(String name) {
+  switch (name) {
+    case 'Gdefault':
+      return _$gQueryModeGdefault;
+    case 'insensitive':
+      return _$gQueryModeinsensitive;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<GQueryMode> _$gQueryModeValues =
+    new BuiltSet<GQueryMode>(const <GQueryMode>[
+  _$gQueryModeGdefault,
+  _$gQueryModeinsensitive,
+]);
+
 const GOrderDirection _$gOrderDirectionasc = const GOrderDirection._('asc');
 const GOrderDirection _$gOrderDirectiondesc = const GOrderDirection._('desc');
 
@@ -262,26 +282,6 @@ final BuiltSet<GKeystoneAdminUIFieldMetaItemViewFieldPosition>
   _$gKeystoneAdminUIFieldMetaItemViewFieldPositionsidebar,
 ]);
 
-const GQueryMode _$gQueryModeGdefault = const GQueryMode._('Gdefault');
-const GQueryMode _$gQueryModeinsensitive = const GQueryMode._('insensitive');
-
-GQueryMode _$gQueryModeValueOf(String name) {
-  switch (name) {
-    case 'Gdefault':
-      return _$gQueryModeGdefault;
-    case 'insensitive':
-      return _$gQueryModeinsensitive;
-    default:
-      throw new ArgumentError(name);
-  }
-}
-
-final BuiltSet<GQueryMode> _$gQueryModeValues =
-    new BuiltSet<GQueryMode>(const <GQueryMode>[
-  _$gQueryModeGdefault,
-  _$gQueryModeinsensitive,
-]);
-
 const GKeystoneAdminUISortDirection _$gKeystoneAdminUISortDirectionASC =
     const GKeystoneAdminUISortDirection._('ASC');
 const GKeystoneAdminUISortDirection _$gKeystoneAdminUISortDirectionDESC =
@@ -317,6 +317,7 @@ Serializer<GDateTimeNullableFilter> _$gDateTimeNullableFilterSerializer =
     new _$GDateTimeNullableFilterSerializer();
 Serializer<GStringFilter> _$gStringFilterSerializer =
     new _$GStringFilterSerializer();
+Serializer<GQueryMode> _$gQueryModeSerializer = new _$GQueryModeSerializer();
 Serializer<GNestedStringFilter> _$gNestedStringFilterSerializer =
     new _$GNestedStringFilterSerializer();
 Serializer<GBooleanFilter> _$gBooleanFilterSerializer =
@@ -419,6 +420,25 @@ Serializer<GAddressUpdateArgs> _$gAddressUpdateArgsSerializer =
     new _$GAddressUpdateArgsSerializer();
 Serializer<GAddressCreateInput> _$gAddressCreateInputSerializer =
     new _$GAddressCreateInputSerializer();
+Serializer<GDealerAddressWhereUniqueInput>
+    _$gDealerAddressWhereUniqueInputSerializer =
+    new _$GDealerAddressWhereUniqueInputSerializer();
+Serializer<GDealerAddressWhereInput> _$gDealerAddressWhereInputSerializer =
+    new _$GDealerAddressWhereInputSerializer();
+Serializer<GDealerAddressOrderByInput> _$gDealerAddressOrderByInputSerializer =
+    new _$GDealerAddressOrderByInputSerializer();
+Serializer<GDealerAddressUpdateInput> _$gDealerAddressUpdateInputSerializer =
+    new _$GDealerAddressUpdateInputSerializer();
+Serializer<GDealerRelateToOneForUpdateInput>
+    _$gDealerRelateToOneForUpdateInputSerializer =
+    new _$GDealerRelateToOneForUpdateInputSerializer();
+Serializer<GDealerAddressUpdateArgs> _$gDealerAddressUpdateArgsSerializer =
+    new _$GDealerAddressUpdateArgsSerializer();
+Serializer<GDealerAddressCreateInput> _$gDealerAddressCreateInputSerializer =
+    new _$GDealerAddressCreateInputSerializer();
+Serializer<GDealerRelateToOneForCreateInput>
+    _$gDealerRelateToOneForCreateInputSerializer =
+    new _$GDealerRelateToOneForCreateInputSerializer();
 Serializer<GFavoriteWhereUniqueInput> _$gFavoriteWhereUniqueInputSerializer =
     new _$GFavoriteWhereUniqueInputSerializer();
 Serializer<GFavoriteWhereInput> _$gFavoriteWhereInputSerializer =
@@ -523,9 +543,6 @@ Serializer<GTestDriveDealerOrderByInput>
 Serializer<GTestDriveDealerUpdateInput>
     _$gTestDriveDealerUpdateInputSerializer =
     new _$GTestDriveDealerUpdateInputSerializer();
-Serializer<GDealerRelateToOneForUpdateInput>
-    _$gDealerRelateToOneForUpdateInputSerializer =
-    new _$GDealerRelateToOneForUpdateInputSerializer();
 Serializer<GVehicleColorRelateToOneForUpdateInput>
     _$gVehicleColorRelateToOneForUpdateInputSerializer =
     new _$GVehicleColorRelateToOneForUpdateInputSerializer();
@@ -534,9 +551,6 @@ Serializer<GTestDriveDealerUpdateArgs> _$gTestDriveDealerUpdateArgsSerializer =
 Serializer<GTestDriveDealerCreateInput>
     _$gTestDriveDealerCreateInputSerializer =
     new _$GTestDriveDealerCreateInputSerializer();
-Serializer<GDealerRelateToOneForCreateInput>
-    _$gDealerRelateToOneForCreateInputSerializer =
-    new _$GDealerRelateToOneForCreateInputSerializer();
 Serializer<GVehicleColorRelateToOneForCreateInput>
     _$gVehicleColorRelateToOneForCreateInputSerializer =
     new _$GVehicleColorRelateToOneForCreateInputSerializer();
@@ -690,15 +704,23 @@ Serializer<GVehicleVariantWhereUniqueInput>
     new _$GVehicleVariantWhereUniqueInputSerializer();
 Serializer<GVehicleVariantWhereInput> _$gVehicleVariantWhereInputSerializer =
     new _$GVehicleVariantWhereInputSerializer();
+Serializer<GTagManyRelationFilter> _$gTagManyRelationFilterSerializer =
+    new _$GTagManyRelationFilterSerializer();
 Serializer<GVehicleVariantOrderByInput>
     _$gVehicleVariantOrderByInputSerializer =
     new _$GVehicleVariantOrderByInputSerializer();
 Serializer<GVehicleVariantUpdateInput> _$gVehicleVariantUpdateInputSerializer =
     new _$GVehicleVariantUpdateInputSerializer();
+Serializer<GTagRelateToManyForUpdateInput>
+    _$gTagRelateToManyForUpdateInputSerializer =
+    new _$GTagRelateToManyForUpdateInputSerializer();
 Serializer<GVehicleVariantUpdateArgs> _$gVehicleVariantUpdateArgsSerializer =
     new _$GVehicleVariantUpdateArgsSerializer();
 Serializer<GVehicleVariantCreateInput> _$gVehicleVariantCreateInputSerializer =
     new _$GVehicleVariantCreateInputSerializer();
+Serializer<GTagRelateToManyForCreateInput>
+    _$gTagRelateToManyForCreateInputSerializer =
+    new _$GTagRelateToManyForCreateInputSerializer();
 Serializer<GVehicleDealerStockRequestWhereUniqueInput>
     _$gVehicleDealerStockRequestWhereUniqueInputSerializer =
     new _$GVehicleDealerStockRequestWhereUniqueInputSerializer();
@@ -947,14 +969,23 @@ Serializer<GDealerWhereUniqueInput> _$gDealerWhereUniqueInputSerializer =
     new _$GDealerWhereUniqueInputSerializer();
 Serializer<GDealerWhereInput> _$gDealerWhereInputSerializer =
     new _$GDealerWhereInputSerializer();
+Serializer<GDealerAddressManyRelationFilter>
+    _$gDealerAddressManyRelationFilterSerializer =
+    new _$GDealerAddressManyRelationFilterSerializer();
 Serializer<GDealerOrderByInput> _$gDealerOrderByInputSerializer =
     new _$GDealerOrderByInputSerializer();
 Serializer<GDealerUpdateInput> _$gDealerUpdateInputSerializer =
     new _$GDealerUpdateInputSerializer();
+Serializer<GDealerAddressRelateToManyForUpdateInput>
+    _$gDealerAddressRelateToManyForUpdateInputSerializer =
+    new _$GDealerAddressRelateToManyForUpdateInputSerializer();
 Serializer<GDealerUpdateArgs> _$gDealerUpdateArgsSerializer =
     new _$GDealerUpdateArgsSerializer();
 Serializer<GDealerCreateInput> _$gDealerCreateInputSerializer =
     new _$GDealerCreateInputSerializer();
+Serializer<GDealerAddressRelateToManyForCreateInput>
+    _$gDealerAddressRelateToManyForCreateInputSerializer =
+    new _$GDealerAddressRelateToManyForCreateInputSerializer();
 Serializer<GNotificationTypeWhereUniqueInput>
     _$gNotificationTypeWhereUniqueInputSerializer =
     new _$GNotificationTypeWhereUniqueInputSerializer();
@@ -1253,7 +1284,6 @@ Serializer<GKeystoneAdminUIFieldMetaItemViewFieldMode>
 Serializer<GKeystoneAdminUIFieldMetaItemViewFieldPosition>
     _$gKeystoneAdminUIFieldMetaItemViewFieldPositionSerializer =
     new _$GKeystoneAdminUIFieldMetaItemViewFieldPositionSerializer();
-Serializer<GQueryMode> _$gQueryModeSerializer = new _$GQueryModeSerializer();
 Serializer<GKeystoneAdminUISortDirection>
     _$gKeystoneAdminUISortDirectionSerializer =
     new _$GKeystoneAdminUISortDirectionSerializer();
@@ -1488,6 +1518,13 @@ class _$GUserWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GReferralCodeWhereInput)));
     }
+    value = object.deactivate;
+    if (value != null) {
+      result
+        ..add('deactivate')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GBooleanFilter)));
+    }
     value = object.passwordResetToken;
     if (value != null) {
       result
@@ -1611,6 +1648,11 @@ class _$GUserWhereInputSerializer
           result.referralCode.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GReferralCodeWhereInput))!
               as GReferralCodeWhereInput);
+          break;
+        case 'deactivate':
+          result.deactivate.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GBooleanFilter))!
+              as GBooleanFilter);
           break;
         case 'passwordResetToken':
           result.passwordResetToken.replace(serializers.deserialize(value,
@@ -1976,6 +2018,13 @@ class _$GStringFilterSerializer implements StructuredSerializer<GStringFilter> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.mode;
+    if (value != null) {
+      result
+        ..add('mode')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GQueryMode)));
+    }
     value = object.not;
     if (value != null) {
       result
@@ -2042,6 +2091,10 @@ class _$GStringFilterSerializer implements StructuredSerializer<GStringFilter> {
           result.endsWith = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'mode':
+          result.mode = serializers.deserialize(value,
+              specifiedType: const FullType(GQueryMode)) as GQueryMode?;
+          break;
         case 'not':
           result.not.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GNestedStringFilter))!
@@ -2052,6 +2105,31 @@ class _$GStringFilterSerializer implements StructuredSerializer<GStringFilter> {
 
     return result.build();
   }
+}
+
+class _$GQueryModeSerializer implements PrimitiveSerializer<GQueryMode> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'Gdefault': 'default',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'default': 'Gdefault',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[GQueryMode];
+  @override
+  final String wireName = 'GQueryMode';
+
+  @override
+  Object serialize(Serializers serializers, GQueryMode object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  GQueryMode deserialize(Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      GQueryMode.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
 class _$GNestedStringFilterSerializer
@@ -2622,6 +2700,13 @@ class _$GUserOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.deactivate;
+    if (value != null) {
+      result
+        ..add('deactivate')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     value = object.passwordResetIssuedAt;
     if (value != null) {
       result
@@ -2698,6 +2783,11 @@ class _$GUserOrderByInputSerializer
           break;
         case 'isAdmin':
           result.isAdmin = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'deactivate':
+          result.deactivate = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -2877,6 +2967,13 @@ class _$GUserUpdateInputSerializer
             specifiedType:
                 const FullType(GReferralCodeRelateToOneForUpdateInput)));
     }
+    value = object.deactivate;
+    if (value != null) {
+      result
+        ..add('deactivate')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     value = object.passwordResetToken;
     if (value != null) {
       result
@@ -2997,6 +3094,10 @@ class _$GUserUpdateInputSerializer
                   specifiedType:
                       const FullType(GReferralCodeRelateToOneForUpdateInput))!
               as GReferralCodeRelateToOneForUpdateInput);
+          break;
+        case 'deactivate':
+          result.deactivate = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
         case 'passwordResetToken':
           result.passwordResetToken = serializers.deserialize(value,
@@ -3723,6 +3824,13 @@ class _$GUserCreateInputSerializer
             specifiedType:
                 const FullType(GReferralCodeRelateToOneForCreateInput)));
     }
+    value = object.deactivate;
+    if (value != null) {
+      result
+        ..add('deactivate')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     value = object.passwordResetToken;
     if (value != null) {
       result
@@ -3843,6 +3951,10 @@ class _$GUserCreateInputSerializer
                   specifiedType:
                       const FullType(GReferralCodeRelateToOneForCreateInput))!
               as GReferralCodeRelateToOneForCreateInput);
+          break;
+        case 'deactivate':
+          result.deactivate = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
         case 'passwordResetToken':
           result.passwordResetToken = serializers.deserialize(value,
@@ -6122,6 +6234,908 @@ class _$GAddressCreateInputSerializer
   }
 }
 
+class _$GDealerAddressWhereUniqueInputSerializer
+    implements StructuredSerializer<GDealerAddressWhereUniqueInput> {
+  @override
+  final Iterable<Type> types = const [
+    GDealerAddressWhereUniqueInput,
+    _$GDealerAddressWhereUniqueInput
+  ];
+  @override
+  final String wireName = 'GDealerAddressWhereUniqueInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GDealerAddressWhereUniqueInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GDealerAddressWhereUniqueInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GDealerAddressWhereUniqueInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GDealerAddressWhereInputSerializer
+    implements StructuredSerializer<GDealerAddressWhereInput> {
+  @override
+  final Iterable<Type> types = const [
+    GDealerAddressWhereInput,
+    _$GDealerAddressWhereInput
+  ];
+  @override
+  final String wireName = 'GDealerAddressWhereInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GDealerAddressWhereInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.AND;
+    if (value != null) {
+      result
+        ..add('AND')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GDealerAddressWhereInput)])));
+    }
+    value = object.OR;
+    if (value != null) {
+      result
+        ..add('OR')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GDealerAddressWhereInput)])));
+    }
+    value = object.NOT;
+    if (value != null) {
+      result
+        ..add('NOT')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GDealerAddressWhereInput)])));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GIDFilter)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.phoneNumber;
+    if (value != null) {
+      result
+        ..add('phoneNumber')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.pinCode;
+    if (value != null) {
+      result
+        ..add('pinCode')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.address;
+    if (value != null) {
+      result
+        ..add('address')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.town;
+    if (value != null) {
+      result
+        ..add('town')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.district;
+    if (value != null) {
+      result
+        ..add('district')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.state;
+    if (value != null) {
+      result
+        ..add('state')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.dealer;
+    if (value != null) {
+      result
+        ..add('dealer')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDealerWhereInput)));
+    }
+    return result;
+  }
+
+  @override
+  GDealerAddressWhereInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GDealerAddressWhereInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'AND':
+          result.AND.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GDealerAddressWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'OR':
+          result.OR.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GDealerAddressWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'NOT':
+          result.NOT.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GDealerAddressWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GIDFilter))! as GIDFilter);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'name':
+          result.name.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'phoneNumber':
+          result.phoneNumber.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'pinCode':
+          result.pinCode.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'address':
+          result.address.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'town':
+          result.town.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'district':
+          result.district.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'state':
+          result.state.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'dealer':
+          result.dealer.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDealerWhereInput))!
+              as GDealerWhereInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GDealerAddressOrderByInputSerializer
+    implements StructuredSerializer<GDealerAddressOrderByInput> {
+  @override
+  final Iterable<Type> types = const [
+    GDealerAddressOrderByInput,
+    _$GDealerAddressOrderByInput
+  ];
+  @override
+  final String wireName = 'GDealerAddressOrderByInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GDealerAddressOrderByInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.phoneNumber;
+    if (value != null) {
+      result
+        ..add('phoneNumber')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.pinCode;
+    if (value != null) {
+      result
+        ..add('pinCode')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.address;
+    if (value != null) {
+      result
+        ..add('address')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.town;
+    if (value != null) {
+      result
+        ..add('town')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.district;
+    if (value != null) {
+      result
+        ..add('district')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.state;
+    if (value != null) {
+      result
+        ..add('state')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    return result;
+  }
+
+  @override
+  GDealerAddressOrderByInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GDealerAddressOrderByInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'createdAt':
+          result.createdAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'modifiedAt':
+          result.modifiedAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'phoneNumber':
+          result.phoneNumber = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'pinCode':
+          result.pinCode = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'address':
+          result.address = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'town':
+          result.town = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'district':
+          result.district = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'state':
+          result.state = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GDealerAddressUpdateInputSerializer
+    implements StructuredSerializer<GDealerAddressUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GDealerAddressUpdateInput,
+    _$GDealerAddressUpdateInput
+  ];
+  @override
+  final String wireName = 'GDealerAddressUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GDealerAddressUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.phoneNumber;
+    if (value != null) {
+      result
+        ..add('phoneNumber')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.pinCode;
+    if (value != null) {
+      result
+        ..add('pinCode')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.address;
+    if (value != null) {
+      result
+        ..add('address')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.town;
+    if (value != null) {
+      result
+        ..add('town')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.district;
+    if (value != null) {
+      result
+        ..add('district')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.state;
+    if (value != null) {
+      result
+        ..add('state')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.dealer;
+    if (value != null) {
+      result
+        ..add('dealer')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDealerRelateToOneForUpdateInput)));
+    }
+    return result;
+  }
+
+  @override
+  GDealerAddressUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GDealerAddressUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'phoneNumber':
+          result.phoneNumber = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'pinCode':
+          result.pinCode = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'address':
+          result.address = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'town':
+          result.town = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'district':
+          result.district = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'state':
+          result.state = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'dealer':
+          result.dealer.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GDealerRelateToOneForUpdateInput))!
+              as GDealerRelateToOneForUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GDealerRelateToOneForUpdateInputSerializer
+    implements StructuredSerializer<GDealerRelateToOneForUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GDealerRelateToOneForUpdateInput,
+    _$GDealerRelateToOneForUpdateInput
+  ];
+  @override
+  final String wireName = 'GDealerRelateToOneForUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GDealerRelateToOneForUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDealerCreateInput)));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDealerWhereUniqueInput)));
+    }
+    value = object.disconnect;
+    if (value != null) {
+      result
+        ..add('disconnect')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    return result;
+  }
+
+  @override
+  GDealerRelateToOneForUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GDealerRelateToOneForUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDealerCreateInput))!
+              as GDealerCreateInput);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDealerWhereUniqueInput))!
+              as GDealerWhereUniqueInput);
+          break;
+        case 'disconnect':
+          result.disconnect = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GDealerAddressUpdateArgsSerializer
+    implements StructuredSerializer<GDealerAddressUpdateArgs> {
+  @override
+  final Iterable<Type> types = const [
+    GDealerAddressUpdateArgs,
+    _$GDealerAddressUpdateArgs
+  ];
+  @override
+  final String wireName = 'GDealerAddressUpdateArgs';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GDealerAddressUpdateArgs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(GDealerAddressWhereUniqueInput)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(GDealerAddressUpdateInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GDealerAddressUpdateArgs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GDealerAddressUpdateArgsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GDealerAddressWhereUniqueInput))!
+              as GDealerAddressWhereUniqueInput);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDealerAddressUpdateInput))!
+              as GDealerAddressUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GDealerAddressCreateInputSerializer
+    implements StructuredSerializer<GDealerAddressCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GDealerAddressCreateInput,
+    _$GDealerAddressCreateInput
+  ];
+  @override
+  final String wireName = 'GDealerAddressCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GDealerAddressCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.phoneNumber;
+    if (value != null) {
+      result
+        ..add('phoneNumber')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.pinCode;
+    if (value != null) {
+      result
+        ..add('pinCode')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.address;
+    if (value != null) {
+      result
+        ..add('address')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.town;
+    if (value != null) {
+      result
+        ..add('town')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.district;
+    if (value != null) {
+      result
+        ..add('district')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.state;
+    if (value != null) {
+      result
+        ..add('state')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.dealer;
+    if (value != null) {
+      result
+        ..add('dealer')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDealerRelateToOneForCreateInput)));
+    }
+    return result;
+  }
+
+  @override
+  GDealerAddressCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GDealerAddressCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'phoneNumber':
+          result.phoneNumber = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'pinCode':
+          result.pinCode = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'address':
+          result.address = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'town':
+          result.town = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'district':
+          result.district = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'state':
+          result.state = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'dealer':
+          result.dealer.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GDealerRelateToOneForCreateInput))!
+              as GDealerRelateToOneForCreateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GDealerRelateToOneForCreateInputSerializer
+    implements StructuredSerializer<GDealerRelateToOneForCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GDealerRelateToOneForCreateInput,
+    _$GDealerRelateToOneForCreateInput
+  ];
+  @override
+  final String wireName = 'GDealerRelateToOneForCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GDealerRelateToOneForCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDealerCreateInput)));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDealerWhereUniqueInput)));
+    }
+    return result;
+  }
+
+  @override
+  GDealerRelateToOneForCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GDealerRelateToOneForCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDealerCreateInput))!
+              as GDealerCreateInput);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDealerWhereUniqueInput))!
+              as GDealerWhereUniqueInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$GFavoriteWhereUniqueInputSerializer
     implements StructuredSerializer<GFavoriteWhereUniqueInput> {
   @override
@@ -8168,6 +9182,13 @@ class _$GBrandUpdateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.logo;
+    if (value != null) {
+      result
+        ..add('logo')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GImageFieldInput)));
+    }
     return result;
   }
 
@@ -8194,6 +9215,11 @@ class _$GBrandUpdateInputSerializer
         case 'name':
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
+          break;
+        case 'logo':
+          result.logo.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GImageFieldInput))!
+              as GImageFieldInput);
           break;
       }
     }
@@ -8286,6 +9312,13 @@ class _$GBrandCreateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.logo;
+    if (value != null) {
+      result
+        ..add('logo')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GImageFieldInput)));
+    }
     return result;
   }
 
@@ -8312,6 +9345,11 @@ class _$GBrandCreateInputSerializer
         case 'name':
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
+          break;
+        case 'logo':
+          result.logo.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GImageFieldInput))!
+              as GImageFieldInput);
           break;
       }
     }
@@ -9961,79 +10999,6 @@ class _$GTestDriveDealerUpdateInputSerializer
   }
 }
 
-class _$GDealerRelateToOneForUpdateInputSerializer
-    implements StructuredSerializer<GDealerRelateToOneForUpdateInput> {
-  @override
-  final Iterable<Type> types = const [
-    GDealerRelateToOneForUpdateInput,
-    _$GDealerRelateToOneForUpdateInput
-  ];
-  @override
-  final String wireName = 'GDealerRelateToOneForUpdateInput';
-
-  @override
-  Iterable<Object?> serialize(
-      Serializers serializers, GDealerRelateToOneForUpdateInput object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.create;
-    if (value != null) {
-      result
-        ..add('create')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GDealerCreateInput)));
-    }
-    value = object.connect;
-    if (value != null) {
-      result
-        ..add('connect')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GDealerWhereUniqueInput)));
-    }
-    value = object.disconnect;
-    if (value != null) {
-      result
-        ..add('disconnect')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(bool)));
-    }
-    return result;
-  }
-
-  @override
-  GDealerRelateToOneForUpdateInput deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GDealerRelateToOneForUpdateInputBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'create':
-          result.create.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GDealerCreateInput))!
-              as GDealerCreateInput);
-          break;
-        case 'connect':
-          result.connect.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GDealerWhereUniqueInput))!
-              as GDealerWhereUniqueInput);
-          break;
-        case 'disconnect':
-          result.disconnect = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool?;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
 class _$GVehicleColorRelateToOneForUpdateInputSerializer
     implements StructuredSerializer<GVehicleColorRelateToOneForUpdateInput> {
   @override
@@ -10277,68 +11242,6 @@ class _$GTestDriveDealerCreateInputSerializer
         case 'available':
           result.available = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GDealerRelateToOneForCreateInputSerializer
-    implements StructuredSerializer<GDealerRelateToOneForCreateInput> {
-  @override
-  final Iterable<Type> types = const [
-    GDealerRelateToOneForCreateInput,
-    _$GDealerRelateToOneForCreateInput
-  ];
-  @override
-  final String wireName = 'GDealerRelateToOneForCreateInput';
-
-  @override
-  Iterable<Object?> serialize(
-      Serializers serializers, GDealerRelateToOneForCreateInput object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.create;
-    if (value != null) {
-      result
-        ..add('create')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GDealerCreateInput)));
-    }
-    value = object.connect;
-    if (value != null) {
-      result
-        ..add('connect')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GDealerWhereUniqueInput)));
-    }
-    return result;
-  }
-
-  @override
-  GDealerRelateToOneForCreateInput deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GDealerRelateToOneForCreateInputBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'create':
-          result.create.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GDealerCreateInput))!
-              as GDealerCreateInput);
-          break;
-        case 'connect':
-          result.connect.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GDealerWhereUniqueInput))!
-              as GDealerWhereUniqueInput);
           break;
       }
     }
@@ -15625,12 +16528,12 @@ class _$GVehicleVariantWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GVehicleColorManyRelationFilter)));
     }
-    value = object.price;
+    value = object.tags;
     if (value != null) {
       result
-        ..add('price')
+        ..add('tags')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(GIntNullableFilter)));
+            specifiedType: const FullType(GTagManyRelationFilter)));
     }
     return result;
   }
@@ -15705,10 +16608,84 @@ class _$GVehicleVariantWhereInputSerializer
                       const FullType(GVehicleColorManyRelationFilter))!
               as GVehicleColorManyRelationFilter);
           break;
-        case 'price':
-          result.price.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GIntNullableFilter))!
-              as GIntNullableFilter);
+        case 'tags':
+          result.tags.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GTagManyRelationFilter))!
+              as GTagManyRelationFilter);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GTagManyRelationFilterSerializer
+    implements StructuredSerializer<GTagManyRelationFilter> {
+  @override
+  final Iterable<Type> types = const [
+    GTagManyRelationFilter,
+    _$GTagManyRelationFilter
+  ];
+  @override
+  final String wireName = 'GTagManyRelationFilter';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GTagManyRelationFilter object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.every;
+    if (value != null) {
+      result
+        ..add('every')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GTagWhereInput)));
+    }
+    value = object.some;
+    if (value != null) {
+      result
+        ..add('some')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GTagWhereInput)));
+    }
+    value = object.none;
+    if (value != null) {
+      result
+        ..add('none')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GTagWhereInput)));
+    }
+    return result;
+  }
+
+  @override
+  GTagManyRelationFilter deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GTagManyRelationFilterBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'every':
+          result.every.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GTagWhereInput))!
+              as GTagWhereInput);
+          break;
+        case 'some':
+          result.some.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GTagWhereInput))!
+              as GTagWhereInput);
+          break;
+        case 'none':
+          result.none.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GTagWhereInput))!
+              as GTagWhereInput);
           break;
       }
     }
@@ -15768,13 +16745,6 @@ class _$GVehicleVariantOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
-    value = object.price;
-    if (value != null) {
-      result
-        ..add('price')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GOrderDirection)));
-    }
     return result;
   }
 
@@ -15812,11 +16782,6 @@ class _$GVehicleVariantOrderByInputSerializer
           break;
         case 'default':
           result.Gdefault = serializers.deserialize(value,
-                  specifiedType: const FullType(GOrderDirection))
-              as GOrderDirection?;
-          break;
-        case 'price':
-          result.price = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -15894,11 +16859,12 @@ class _$GVehicleVariantUpdateInputSerializer
             specifiedType:
                 const FullType(GVehicleColorRelateToManyForUpdateInput)));
     }
-    value = object.price;
+    value = object.tags;
     if (value != null) {
       result
-        ..add('price')
-        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+        ..add('tags')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GTagRelateToManyForUpdateInput)));
     }
     return result;
   }
@@ -15949,9 +16915,105 @@ class _$GVehicleVariantUpdateInputSerializer
                       const FullType(GVehicleColorRelateToManyForUpdateInput))!
               as GVehicleColorRelateToManyForUpdateInput);
           break;
-        case 'price':
-          result.price = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
+        case 'tags':
+          result.tags.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GTagRelateToManyForUpdateInput))!
+              as GTagRelateToManyForUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GTagRelateToManyForUpdateInputSerializer
+    implements StructuredSerializer<GTagRelateToManyForUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GTagRelateToManyForUpdateInput,
+    _$GTagRelateToManyForUpdateInput
+  ];
+  @override
+  final String wireName = 'GTagRelateToManyForUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GTagRelateToManyForUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.disconnect;
+    if (value != null) {
+      result
+        ..add('disconnect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GTagWhereUniqueInput)])));
+    }
+    value = object.set;
+    if (value != null) {
+      result
+        ..add('set')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GTagWhereUniqueInput)])));
+    }
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GTagCreateInput)])));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GTagWhereUniqueInput)])));
+    }
+    return result;
+  }
+
+  @override
+  GTagRelateToManyForUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GTagRelateToManyForUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'disconnect':
+          result.disconnect.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(GTagWhereUniqueInput)]))!
+              as BuiltList<Object?>);
+          break;
+        case 'set':
+          result.set.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(GTagWhereUniqueInput)]))!
+              as BuiltList<Object?>);
+          break;
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(GTagCreateInput)]))!
+              as BuiltList<Object?>);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(GTagWhereUniqueInput)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -16083,11 +17145,12 @@ class _$GVehicleVariantCreateInputSerializer
             specifiedType:
                 const FullType(GVehicleColorRelateToManyForCreateInput)));
     }
-    value = object.price;
+    value = object.tags;
     if (value != null) {
       result
-        ..add('price')
-        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+        ..add('tags')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GTagRelateToManyForCreateInput)));
     }
     return result;
   }
@@ -16138,9 +17201,77 @@ class _$GVehicleVariantCreateInputSerializer
                       const FullType(GVehicleColorRelateToManyForCreateInput))!
               as GVehicleColorRelateToManyForCreateInput);
           break;
-        case 'price':
-          result.price = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
+        case 'tags':
+          result.tags.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GTagRelateToManyForCreateInput))!
+              as GTagRelateToManyForCreateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GTagRelateToManyForCreateInputSerializer
+    implements StructuredSerializer<GTagRelateToManyForCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GTagRelateToManyForCreateInput,
+    _$GTagRelateToManyForCreateInput
+  ];
+  @override
+  final String wireName = 'GTagRelateToManyForCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GTagRelateToManyForCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GTagCreateInput)])));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GTagWhereUniqueInput)])));
+    }
+    return result;
+  }
+
+  @override
+  GTagRelateToManyForCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GTagRelateToManyForCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(GTagCreateInput)]))!
+              as BuiltList<Object?>);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(GTagWhereUniqueInput)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -16474,6 +17605,13 @@ class _$GStringNullableFilterSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.mode;
+    if (value != null) {
+      result
+        ..add('mode')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GQueryMode)));
+    }
     value = object.not;
     if (value != null) {
       result
@@ -16539,6 +17677,10 @@ class _$GStringNullableFilterSerializer
         case 'endsWith':
           result.endsWith = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
+          break;
+        case 'mode':
+          result.mode = serializers.deserialize(value,
+              specifiedType: const FullType(GQueryMode)) as GQueryMode?;
           break;
         case 'not':
           result.not.replace(serializers.deserialize(value,
@@ -25875,6 +27017,27 @@ class _$GDealerWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GBooleanFilter)));
     }
+    value = object.addresses;
+    if (value != null) {
+      result
+        ..add('addresses')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDealerAddressManyRelationFilter)));
+    }
+    value = object.lLat;
+    if (value != null) {
+      result
+        ..add('lLat')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GFloatNullableFilter)));
+    }
+    value = object.lLng;
+    if (value != null) {
+      result
+        ..add('lLng')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GFloatNullableFilter)));
+    }
     return result;
   }
 
@@ -25932,6 +27095,96 @@ class _$GDealerWhereInputSerializer
                   specifiedType: const FullType(GBooleanFilter))!
               as GBooleanFilter);
           break;
+        case 'addresses':
+          result.addresses.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GDealerAddressManyRelationFilter))!
+              as GDealerAddressManyRelationFilter);
+          break;
+        case 'lLat':
+          result.lLat.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GFloatNullableFilter))!
+              as GFloatNullableFilter);
+          break;
+        case 'lLng':
+          result.lLng.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GFloatNullableFilter))!
+              as GFloatNullableFilter);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GDealerAddressManyRelationFilterSerializer
+    implements StructuredSerializer<GDealerAddressManyRelationFilter> {
+  @override
+  final Iterable<Type> types = const [
+    GDealerAddressManyRelationFilter,
+    _$GDealerAddressManyRelationFilter
+  ];
+  @override
+  final String wireName = 'GDealerAddressManyRelationFilter';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GDealerAddressManyRelationFilter object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.every;
+    if (value != null) {
+      result
+        ..add('every')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDealerAddressWhereInput)));
+    }
+    value = object.some;
+    if (value != null) {
+      result
+        ..add('some')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDealerAddressWhereInput)));
+    }
+    value = object.none;
+    if (value != null) {
+      result
+        ..add('none')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDealerAddressWhereInput)));
+    }
+    return result;
+  }
+
+  @override
+  GDealerAddressManyRelationFilter deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GDealerAddressManyRelationFilterBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'every':
+          result.every.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDealerAddressWhereInput))!
+              as GDealerAddressWhereInput);
+          break;
+        case 'some':
+          result.some.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDealerAddressWhereInput))!
+              as GDealerAddressWhereInput);
+          break;
+        case 'none':
+          result.none.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDealerAddressWhereInput))!
+              as GDealerAddressWhereInput);
+          break;
       }
     }
 
@@ -25983,6 +27236,20 @@ class _$GDealerOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.lLat;
+    if (value != null) {
+      result
+        ..add('lLat')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.lLng;
+    if (value != null) {
+      result
+        ..add('lLng')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     return result;
   }
 
@@ -26015,6 +27282,16 @@ class _$GDealerOrderByInputSerializer
           break;
         case 'approved':
           result.approved = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'lLat':
+          result.lLat = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'lLng':
+          result.lLng = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -26066,6 +27343,28 @@ class _$GDealerUpdateInputSerializer
         ..add(
             serializers.serialize(value, specifiedType: const FullType(bool)));
     }
+    value = object.addresses;
+    if (value != null) {
+      result
+        ..add('addresses')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GDealerAddressRelateToManyForUpdateInput)));
+    }
+    value = object.lLat;
+    if (value != null) {
+      result
+        ..add('lLat')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(double)));
+    }
+    value = object.lLng;
+    if (value != null) {
+      result
+        ..add('lLng')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(double)));
+    }
     return result;
   }
 
@@ -26098,6 +27397,114 @@ class _$GDealerUpdateInputSerializer
         case 'approved':
           result.approved = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'addresses':
+          result.addresses.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GDealerAddressRelateToManyForUpdateInput))!
+              as GDealerAddressRelateToManyForUpdateInput);
+          break;
+        case 'lLat':
+          result.lLat = serializers.deserialize(value,
+              specifiedType: const FullType(double)) as double?;
+          break;
+        case 'lLng':
+          result.lLng = serializers.deserialize(value,
+              specifiedType: const FullType(double)) as double?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GDealerAddressRelateToManyForUpdateInputSerializer
+    implements StructuredSerializer<GDealerAddressRelateToManyForUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GDealerAddressRelateToManyForUpdateInput,
+    _$GDealerAddressRelateToManyForUpdateInput
+  ];
+  @override
+  final String wireName = 'GDealerAddressRelateToManyForUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GDealerAddressRelateToManyForUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.disconnect;
+    if (value != null) {
+      result
+        ..add('disconnect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GDealerAddressWhereUniqueInput)])));
+    }
+    value = object.set;
+    if (value != null) {
+      result
+        ..add('set')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GDealerAddressWhereUniqueInput)])));
+    }
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GDealerAddressCreateInput)])));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GDealerAddressWhereUniqueInput)])));
+    }
+    return result;
+  }
+
+  @override
+  GDealerAddressRelateToManyForUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GDealerAddressRelateToManyForUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'disconnect':
+          result.disconnect.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GDealerAddressWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'set':
+          result.set.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GDealerAddressWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GDealerAddressCreateInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GDealerAddressWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -26198,6 +27605,28 @@ class _$GDealerCreateInputSerializer
         ..add(
             serializers.serialize(value, specifiedType: const FullType(bool)));
     }
+    value = object.addresses;
+    if (value != null) {
+      result
+        ..add('addresses')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GDealerAddressRelateToManyForCreateInput)));
+    }
+    value = object.lLat;
+    if (value != null) {
+      result
+        ..add('lLat')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(double)));
+    }
+    value = object.lLng;
+    if (value != null) {
+      result
+        ..add('lLng')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(double)));
+    }
     return result;
   }
 
@@ -26230,6 +27659,86 @@ class _$GDealerCreateInputSerializer
         case 'approved':
           result.approved = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'addresses':
+          result.addresses.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GDealerAddressRelateToManyForCreateInput))!
+              as GDealerAddressRelateToManyForCreateInput);
+          break;
+        case 'lLat':
+          result.lLat = serializers.deserialize(value,
+              specifiedType: const FullType(double)) as double?;
+          break;
+        case 'lLng':
+          result.lLng = serializers.deserialize(value,
+              specifiedType: const FullType(double)) as double?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GDealerAddressRelateToManyForCreateInputSerializer
+    implements StructuredSerializer<GDealerAddressRelateToManyForCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GDealerAddressRelateToManyForCreateInput,
+    _$GDealerAddressRelateToManyForCreateInput
+  ];
+  @override
+  final String wireName = 'GDealerAddressRelateToManyForCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GDealerAddressRelateToManyForCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GDealerAddressCreateInput)])));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GDealerAddressWhereUniqueInput)])));
+    }
+    return result;
+  }
+
+  @override
+  GDealerAddressRelateToManyForCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GDealerAddressRelateToManyForCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GDealerAddressCreateInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GDealerAddressWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -36394,31 +37903,6 @@ class _$GKeystoneAdminUIFieldMetaItemViewFieldPositionSerializer
           serialized as String);
 }
 
-class _$GQueryModeSerializer implements PrimitiveSerializer<GQueryMode> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'Gdefault': 'default',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'default': 'Gdefault',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[GQueryMode];
-  @override
-  final String wireName = 'GQueryMode';
-
-  @override
-  Object serialize(Serializers serializers, GQueryMode object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  GQueryMode deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      GQueryMode.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
-
 class _$GKeystoneAdminUISortDirectionSerializer
     implements PrimitiveSerializer<GKeystoneAdminUISortDirection> {
   @override
@@ -36663,6 +38147,8 @@ class _$GUserWhereInput extends GUserWhereInput {
   @override
   final GReferralCodeWhereInput? referralCode;
   @override
+  final GBooleanFilter? deactivate;
+  @override
   final GPasswordFilter? passwordResetToken;
   @override
   final GDateTimeNullableFilter? passwordResetIssuedAt;
@@ -36691,6 +38177,7 @@ class _$GUserWhereInput extends GUserWhereInput {
       this.cartItems,
       this.wallet,
       this.referralCode,
+      this.deactivate,
       this.passwordResetToken,
       this.passwordResetIssuedAt,
       this.passwordResetRedeemedAt})
@@ -36726,6 +38213,7 @@ class _$GUserWhereInput extends GUserWhereInput {
         cartItems == other.cartItems &&
         wallet == other.wallet &&
         referralCode == other.referralCode &&
+        deactivate == other.deactivate &&
         passwordResetToken == other.passwordResetToken &&
         passwordResetIssuedAt == other.passwordResetIssuedAt &&
         passwordResetRedeemedAt == other.passwordResetRedeemedAt;
@@ -36752,6 +38240,7 @@ class _$GUserWhereInput extends GUserWhereInput {
     _$hash = $jc(_$hash, cartItems.hashCode);
     _$hash = $jc(_$hash, wallet.hashCode);
     _$hash = $jc(_$hash, referralCode.hashCode);
+    _$hash = $jc(_$hash, deactivate.hashCode);
     _$hash = $jc(_$hash, passwordResetToken.hashCode);
     _$hash = $jc(_$hash, passwordResetIssuedAt.hashCode);
     _$hash = $jc(_$hash, passwordResetRedeemedAt.hashCode);
@@ -36780,6 +38269,7 @@ class _$GUserWhereInput extends GUserWhereInput {
           ..add('cartItems', cartItems)
           ..add('wallet', wallet)
           ..add('referralCode', referralCode)
+          ..add('deactivate', deactivate)
           ..add('passwordResetToken', passwordResetToken)
           ..add('passwordResetIssuedAt', passwordResetIssuedAt)
           ..add('passwordResetRedeemedAt', passwordResetRedeemedAt))
@@ -36888,6 +38378,12 @@ class GUserWhereInputBuilder
   set referralCode(GReferralCodeWhereInputBuilder? referralCode) =>
       _$this._referralCode = referralCode;
 
+  GBooleanFilterBuilder? _deactivate;
+  GBooleanFilterBuilder get deactivate =>
+      _$this._deactivate ??= new GBooleanFilterBuilder();
+  set deactivate(GBooleanFilterBuilder? deactivate) =>
+      _$this._deactivate = deactivate;
+
   GPasswordFilterBuilder? _passwordResetToken;
   GPasswordFilterBuilder get passwordResetToken =>
       _$this._passwordResetToken ??= new GPasswordFilterBuilder();
@@ -36931,6 +38427,7 @@ class GUserWhereInputBuilder
       _cartItems = $v.cartItems?.toBuilder();
       _wallet = $v.wallet?.toBuilder();
       _referralCode = $v.referralCode?.toBuilder();
+      _deactivate = $v.deactivate?.toBuilder();
       _passwordResetToken = $v.passwordResetToken?.toBuilder();
       _passwordResetIssuedAt = $v.passwordResetIssuedAt?.toBuilder();
       _passwordResetRedeemedAt = $v.passwordResetRedeemedAt?.toBuilder();
@@ -36976,6 +38473,7 @@ class GUserWhereInputBuilder
               cartItems: _cartItems?.build(),
               wallet: _wallet?.build(),
               referralCode: _referralCode?.build(),
+              deactivate: _deactivate?.build(),
               passwordResetToken: _passwordResetToken?.build(),
               passwordResetIssuedAt: _passwordResetIssuedAt?.build(),
               passwordResetRedeemedAt: _passwordResetRedeemedAt?.build());
@@ -37018,6 +38516,8 @@ class GUserWhereInputBuilder
         _wallet?.build();
         _$failedField = 'referralCode';
         _referralCode?.build();
+        _$failedField = 'deactivate';
+        _deactivate?.build();
         _$failedField = 'passwordResetToken';
         _passwordResetToken?.build();
         _$failedField = 'passwordResetIssuedAt';
@@ -37442,6 +38942,8 @@ class _$GStringFilter extends GStringFilter {
   @override
   final String? endsWith;
   @override
+  final GQueryMode? mode;
+  @override
   final GNestedStringFilter? not;
 
   factory _$GStringFilter([void Function(GStringFilterBuilder)? updates]) =>
@@ -37458,6 +38960,7 @@ class _$GStringFilter extends GStringFilter {
       this.contains,
       this.startsWith,
       this.endsWith,
+      this.mode,
       this.not})
       : super._();
 
@@ -37482,6 +38985,7 @@ class _$GStringFilter extends GStringFilter {
         contains == other.contains &&
         startsWith == other.startsWith &&
         endsWith == other.endsWith &&
+        mode == other.mode &&
         not == other.not;
   }
 
@@ -37498,6 +39002,7 @@ class _$GStringFilter extends GStringFilter {
     _$hash = $jc(_$hash, contains.hashCode);
     _$hash = $jc(_$hash, startsWith.hashCode);
     _$hash = $jc(_$hash, endsWith.hashCode);
+    _$hash = $jc(_$hash, mode.hashCode);
     _$hash = $jc(_$hash, not.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -37516,6 +39021,7 @@ class _$GStringFilter extends GStringFilter {
           ..add('contains', contains)
           ..add('startsWith', startsWith)
           ..add('endsWith', endsWith)
+          ..add('mode', mode)
           ..add('not', not))
         .toString();
   }
@@ -37565,6 +39071,10 @@ class GStringFilterBuilder
   String? get endsWith => _$this._endsWith;
   set endsWith(String? endsWith) => _$this._endsWith = endsWith;
 
+  GQueryMode? _mode;
+  GQueryMode? get mode => _$this._mode;
+  set mode(GQueryMode? mode) => _$this._mode = mode;
+
   GNestedStringFilterBuilder? _not;
   GNestedStringFilterBuilder get not =>
       _$this._not ??= new GNestedStringFilterBuilder();
@@ -37585,6 +39095,7 @@ class GStringFilterBuilder
       _contains = $v.contains;
       _startsWith = $v.startsWith;
       _endsWith = $v.endsWith;
+      _mode = $v.mode;
       _not = $v.not?.toBuilder();
       _$v = null;
     }
@@ -37620,6 +39131,7 @@ class GStringFilterBuilder
               contains: contains,
               startsWith: startsWith,
               endsWith: endsWith,
+              mode: mode,
               not: _not?.build());
     } catch (_) {
       late String _$failedField;
@@ -38463,6 +39975,8 @@ class _$GUserOrderByInput extends GUserOrderByInput {
   @override
   final GOrderDirection? isAdmin;
   @override
+  final GOrderDirection? deactivate;
+  @override
   final GOrderDirection? passwordResetIssuedAt;
   @override
   final GOrderDirection? passwordResetRedeemedAt;
@@ -38482,6 +39996,7 @@ class _$GUserOrderByInput extends GUserOrderByInput {
       this.emailVerified,
       this.phoneNumberVerified,
       this.isAdmin,
+      this.deactivate,
       this.passwordResetIssuedAt,
       this.passwordResetRedeemedAt})
       : super._();
@@ -38508,6 +40023,7 @@ class _$GUserOrderByInput extends GUserOrderByInput {
         emailVerified == other.emailVerified &&
         phoneNumberVerified == other.phoneNumberVerified &&
         isAdmin == other.isAdmin &&
+        deactivate == other.deactivate &&
         passwordResetIssuedAt == other.passwordResetIssuedAt &&
         passwordResetRedeemedAt == other.passwordResetRedeemedAt;
   }
@@ -38525,6 +40041,7 @@ class _$GUserOrderByInput extends GUserOrderByInput {
     _$hash = $jc(_$hash, emailVerified.hashCode);
     _$hash = $jc(_$hash, phoneNumberVerified.hashCode);
     _$hash = $jc(_$hash, isAdmin.hashCode);
+    _$hash = $jc(_$hash, deactivate.hashCode);
     _$hash = $jc(_$hash, passwordResetIssuedAt.hashCode);
     _$hash = $jc(_$hash, passwordResetRedeemedAt.hashCode);
     _$hash = $jf(_$hash);
@@ -38544,6 +40061,7 @@ class _$GUserOrderByInput extends GUserOrderByInput {
           ..add('emailVerified', emailVerified)
           ..add('phoneNumberVerified', phoneNumberVerified)
           ..add('isAdmin', isAdmin)
+          ..add('deactivate', deactivate)
           ..add('passwordResetIssuedAt', passwordResetIssuedAt)
           ..add('passwordResetRedeemedAt', passwordResetRedeemedAt))
         .toString();
@@ -38598,6 +40116,11 @@ class GUserOrderByInputBuilder
   GOrderDirection? get isAdmin => _$this._isAdmin;
   set isAdmin(GOrderDirection? isAdmin) => _$this._isAdmin = isAdmin;
 
+  GOrderDirection? _deactivate;
+  GOrderDirection? get deactivate => _$this._deactivate;
+  set deactivate(GOrderDirection? deactivate) =>
+      _$this._deactivate = deactivate;
+
   GOrderDirection? _passwordResetIssuedAt;
   GOrderDirection? get passwordResetIssuedAt => _$this._passwordResetIssuedAt;
   set passwordResetIssuedAt(GOrderDirection? passwordResetIssuedAt) =>
@@ -38624,6 +40147,7 @@ class GUserOrderByInputBuilder
       _emailVerified = $v.emailVerified;
       _phoneNumberVerified = $v.phoneNumberVerified;
       _isAdmin = $v.isAdmin;
+      _deactivate = $v.deactivate;
       _passwordResetIssuedAt = $v.passwordResetIssuedAt;
       _passwordResetRedeemedAt = $v.passwordResetRedeemedAt;
       _$v = null;
@@ -38658,6 +40182,7 @@ class GUserOrderByInputBuilder
             emailVerified: emailVerified,
             phoneNumberVerified: phoneNumberVerified,
             isAdmin: isAdmin,
+            deactivate: deactivate,
             passwordResetIssuedAt: passwordResetIssuedAt,
             passwordResetRedeemedAt: passwordResetRedeemedAt);
     replace(_$result);
@@ -38703,6 +40228,8 @@ class _$GUserUpdateInput extends GUserUpdateInput {
   @override
   final GReferralCodeRelateToOneForUpdateInput? referralCode;
   @override
+  final bool? deactivate;
+  @override
   final String? passwordResetToken;
   @override
   final GDateTime? passwordResetIssuedAt;
@@ -38732,6 +40259,7 @@ class _$GUserUpdateInput extends GUserUpdateInput {
       this.cartItems,
       this.wallet,
       this.referralCode,
+      this.deactivate,
       this.passwordResetToken,
       this.passwordResetIssuedAt,
       this.passwordResetRedeemedAt})
@@ -38767,6 +40295,7 @@ class _$GUserUpdateInput extends GUserUpdateInput {
         cartItems == other.cartItems &&
         wallet == other.wallet &&
         referralCode == other.referralCode &&
+        deactivate == other.deactivate &&
         passwordResetToken == other.passwordResetToken &&
         passwordResetIssuedAt == other.passwordResetIssuedAt &&
         passwordResetRedeemedAt == other.passwordResetRedeemedAt;
@@ -38793,6 +40322,7 @@ class _$GUserUpdateInput extends GUserUpdateInput {
     _$hash = $jc(_$hash, cartItems.hashCode);
     _$hash = $jc(_$hash, wallet.hashCode);
     _$hash = $jc(_$hash, referralCode.hashCode);
+    _$hash = $jc(_$hash, deactivate.hashCode);
     _$hash = $jc(_$hash, passwordResetToken.hashCode);
     _$hash = $jc(_$hash, passwordResetIssuedAt.hashCode);
     _$hash = $jc(_$hash, passwordResetRedeemedAt.hashCode);
@@ -38821,6 +40351,7 @@ class _$GUserUpdateInput extends GUserUpdateInput {
           ..add('cartItems', cartItems)
           ..add('wallet', wallet)
           ..add('referralCode', referralCode)
+          ..add('deactivate', deactivate)
           ..add('passwordResetToken', passwordResetToken)
           ..add('passwordResetIssuedAt', passwordResetIssuedAt)
           ..add('passwordResetRedeemedAt', passwordResetRedeemedAt))
@@ -38926,6 +40457,10 @@ class GUserUpdateInputBuilder
           GReferralCodeRelateToOneForUpdateInputBuilder? referralCode) =>
       _$this._referralCode = referralCode;
 
+  bool? _deactivate;
+  bool? get deactivate => _$this._deactivate;
+  set deactivate(bool? deactivate) => _$this._deactivate = deactivate;
+
   String? _passwordResetToken;
   String? get passwordResetToken => _$this._passwordResetToken;
   set passwordResetToken(String? passwordResetToken) =>
@@ -38966,6 +40501,7 @@ class GUserUpdateInputBuilder
       _cartItems = $v.cartItems?.toBuilder();
       _wallet = $v.wallet?.toBuilder();
       _referralCode = $v.referralCode?.toBuilder();
+      _deactivate = $v.deactivate;
       _passwordResetToken = $v.passwordResetToken;
       _passwordResetIssuedAt = $v.passwordResetIssuedAt?.toBuilder();
       _passwordResetRedeemedAt = $v.passwordResetRedeemedAt?.toBuilder();
@@ -39011,6 +40547,7 @@ class GUserUpdateInputBuilder
               cartItems: _cartItems?.build(),
               wallet: _wallet?.build(),
               referralCode: _referralCode?.build(),
+              deactivate: deactivate,
               passwordResetToken: passwordResetToken,
               passwordResetIssuedAt: _passwordResetIssuedAt?.build(),
               passwordResetRedeemedAt: _passwordResetRedeemedAt?.build());
@@ -40096,6 +41633,8 @@ class _$GUserCreateInput extends GUserCreateInput {
   @override
   final GReferralCodeRelateToOneForCreateInput? referralCode;
   @override
+  final bool? deactivate;
+  @override
   final String? passwordResetToken;
   @override
   final GDateTime? passwordResetIssuedAt;
@@ -40125,6 +41664,7 @@ class _$GUserCreateInput extends GUserCreateInput {
       this.cartItems,
       this.wallet,
       this.referralCode,
+      this.deactivate,
       this.passwordResetToken,
       this.passwordResetIssuedAt,
       this.passwordResetRedeemedAt})
@@ -40160,6 +41700,7 @@ class _$GUserCreateInput extends GUserCreateInput {
         cartItems == other.cartItems &&
         wallet == other.wallet &&
         referralCode == other.referralCode &&
+        deactivate == other.deactivate &&
         passwordResetToken == other.passwordResetToken &&
         passwordResetIssuedAt == other.passwordResetIssuedAt &&
         passwordResetRedeemedAt == other.passwordResetRedeemedAt;
@@ -40186,6 +41727,7 @@ class _$GUserCreateInput extends GUserCreateInput {
     _$hash = $jc(_$hash, cartItems.hashCode);
     _$hash = $jc(_$hash, wallet.hashCode);
     _$hash = $jc(_$hash, referralCode.hashCode);
+    _$hash = $jc(_$hash, deactivate.hashCode);
     _$hash = $jc(_$hash, passwordResetToken.hashCode);
     _$hash = $jc(_$hash, passwordResetIssuedAt.hashCode);
     _$hash = $jc(_$hash, passwordResetRedeemedAt.hashCode);
@@ -40214,6 +41756,7 @@ class _$GUserCreateInput extends GUserCreateInput {
           ..add('cartItems', cartItems)
           ..add('wallet', wallet)
           ..add('referralCode', referralCode)
+          ..add('deactivate', deactivate)
           ..add('passwordResetToken', passwordResetToken)
           ..add('passwordResetIssuedAt', passwordResetIssuedAt)
           ..add('passwordResetRedeemedAt', passwordResetRedeemedAt))
@@ -40319,6 +41862,10 @@ class GUserCreateInputBuilder
           GReferralCodeRelateToOneForCreateInputBuilder? referralCode) =>
       _$this._referralCode = referralCode;
 
+  bool? _deactivate;
+  bool? get deactivate => _$this._deactivate;
+  set deactivate(bool? deactivate) => _$this._deactivate = deactivate;
+
   String? _passwordResetToken;
   String? get passwordResetToken => _$this._passwordResetToken;
   set passwordResetToken(String? passwordResetToken) =>
@@ -40359,6 +41906,7 @@ class GUserCreateInputBuilder
       _cartItems = $v.cartItems?.toBuilder();
       _wallet = $v.wallet?.toBuilder();
       _referralCode = $v.referralCode?.toBuilder();
+      _deactivate = $v.deactivate;
       _passwordResetToken = $v.passwordResetToken;
       _passwordResetIssuedAt = $v.passwordResetIssuedAt?.toBuilder();
       _passwordResetRedeemedAt = $v.passwordResetRedeemedAt?.toBuilder();
@@ -40404,6 +41952,7 @@ class GUserCreateInputBuilder
               cartItems: _cartItems?.build(),
               wallet: _wallet?.build(),
               referralCode: _referralCode?.build(),
+              deactivate: deactivate,
               passwordResetToken: passwordResetToken,
               passwordResetIssuedAt: _passwordResetIssuedAt?.build(),
               passwordResetRedeemedAt: _passwordResetRedeemedAt?.build());
@@ -44091,6 +45640,1381 @@ class GAddressCreateInputBuilder
   }
 }
 
+class _$GDealerAddressWhereUniqueInput extends GDealerAddressWhereUniqueInput {
+  @override
+  final String? id;
+
+  factory _$GDealerAddressWhereUniqueInput(
+          [void Function(GDealerAddressWhereUniqueInputBuilder)? updates]) =>
+      (new GDealerAddressWhereUniqueInputBuilder()..update(updates))._build();
+
+  _$GDealerAddressWhereUniqueInput._({this.id}) : super._();
+
+  @override
+  GDealerAddressWhereUniqueInput rebuild(
+          void Function(GDealerAddressWhereUniqueInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GDealerAddressWhereUniqueInputBuilder toBuilder() =>
+      new GDealerAddressWhereUniqueInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GDealerAddressWhereUniqueInput && id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GDealerAddressWhereUniqueInput')
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GDealerAddressWhereUniqueInputBuilder
+    implements
+        Builder<GDealerAddressWhereUniqueInput,
+            GDealerAddressWhereUniqueInputBuilder> {
+  _$GDealerAddressWhereUniqueInput? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GDealerAddressWhereUniqueInputBuilder();
+
+  GDealerAddressWhereUniqueInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GDealerAddressWhereUniqueInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GDealerAddressWhereUniqueInput;
+  }
+
+  @override
+  void update(void Function(GDealerAddressWhereUniqueInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GDealerAddressWhereUniqueInput build() => _build();
+
+  _$GDealerAddressWhereUniqueInput _build() {
+    final _$result = _$v ?? new _$GDealerAddressWhereUniqueInput._(id: id);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GDealerAddressWhereInput extends GDealerAddressWhereInput {
+  @override
+  final BuiltList<GDealerAddressWhereInput>? AND;
+  @override
+  final BuiltList<GDealerAddressWhereInput>? OR;
+  @override
+  final BuiltList<GDealerAddressWhereInput>? NOT;
+  @override
+  final GIDFilter? id;
+  @override
+  final GDateTimeNullableFilter? createdAt;
+  @override
+  final GDateTimeNullableFilter? modifiedAt;
+  @override
+  final GStringFilter? name;
+  @override
+  final GStringFilter? phoneNumber;
+  @override
+  final GStringFilter? pinCode;
+  @override
+  final GStringFilter? address;
+  @override
+  final GStringFilter? town;
+  @override
+  final GStringFilter? district;
+  @override
+  final GStringFilter? state;
+  @override
+  final GDealerWhereInput? dealer;
+
+  factory _$GDealerAddressWhereInput(
+          [void Function(GDealerAddressWhereInputBuilder)? updates]) =>
+      (new GDealerAddressWhereInputBuilder()..update(updates))._build();
+
+  _$GDealerAddressWhereInput._(
+      {this.AND,
+      this.OR,
+      this.NOT,
+      this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.name,
+      this.phoneNumber,
+      this.pinCode,
+      this.address,
+      this.town,
+      this.district,
+      this.state,
+      this.dealer})
+      : super._();
+
+  @override
+  GDealerAddressWhereInput rebuild(
+          void Function(GDealerAddressWhereInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GDealerAddressWhereInputBuilder toBuilder() =>
+      new GDealerAddressWhereInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GDealerAddressWhereInput &&
+        AND == other.AND &&
+        OR == other.OR &&
+        NOT == other.NOT &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        name == other.name &&
+        phoneNumber == other.phoneNumber &&
+        pinCode == other.pinCode &&
+        address == other.address &&
+        town == other.town &&
+        district == other.district &&
+        state == other.state &&
+        dealer == other.dealer;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, AND.hashCode);
+    _$hash = $jc(_$hash, OR.hashCode);
+    _$hash = $jc(_$hash, NOT.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, phoneNumber.hashCode);
+    _$hash = $jc(_$hash, pinCode.hashCode);
+    _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, town.hashCode);
+    _$hash = $jc(_$hash, district.hashCode);
+    _$hash = $jc(_$hash, state.hashCode);
+    _$hash = $jc(_$hash, dealer.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GDealerAddressWhereInput')
+          ..add('AND', AND)
+          ..add('OR', OR)
+          ..add('NOT', NOT)
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('name', name)
+          ..add('phoneNumber', phoneNumber)
+          ..add('pinCode', pinCode)
+          ..add('address', address)
+          ..add('town', town)
+          ..add('district', district)
+          ..add('state', state)
+          ..add('dealer', dealer))
+        .toString();
+  }
+}
+
+class GDealerAddressWhereInputBuilder
+    implements
+        Builder<GDealerAddressWhereInput, GDealerAddressWhereInputBuilder> {
+  _$GDealerAddressWhereInput? _$v;
+
+  ListBuilder<GDealerAddressWhereInput>? _AND;
+  ListBuilder<GDealerAddressWhereInput> get AND =>
+      _$this._AND ??= new ListBuilder<GDealerAddressWhereInput>();
+  set AND(ListBuilder<GDealerAddressWhereInput>? AND) => _$this._AND = AND;
+
+  ListBuilder<GDealerAddressWhereInput>? _OR;
+  ListBuilder<GDealerAddressWhereInput> get OR =>
+      _$this._OR ??= new ListBuilder<GDealerAddressWhereInput>();
+  set OR(ListBuilder<GDealerAddressWhereInput>? OR) => _$this._OR = OR;
+
+  ListBuilder<GDealerAddressWhereInput>? _NOT;
+  ListBuilder<GDealerAddressWhereInput> get NOT =>
+      _$this._NOT ??= new ListBuilder<GDealerAddressWhereInput>();
+  set NOT(ListBuilder<GDealerAddressWhereInput>? NOT) => _$this._NOT = NOT;
+
+  GIDFilterBuilder? _id;
+  GIDFilterBuilder get id => _$this._id ??= new GIDFilterBuilder();
+  set id(GIDFilterBuilder? id) => _$this._id = id;
+
+  GDateTimeNullableFilterBuilder? _createdAt;
+  GDateTimeNullableFilterBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeNullableFilterBuilder();
+  set createdAt(GDateTimeNullableFilterBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GDateTimeNullableFilterBuilder? _modifiedAt;
+  GDateTimeNullableFilterBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeNullableFilterBuilder();
+  set modifiedAt(GDateTimeNullableFilterBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GStringFilterBuilder? _name;
+  GStringFilterBuilder get name => _$this._name ??= new GStringFilterBuilder();
+  set name(GStringFilterBuilder? name) => _$this._name = name;
+
+  GStringFilterBuilder? _phoneNumber;
+  GStringFilterBuilder get phoneNumber =>
+      _$this._phoneNumber ??= new GStringFilterBuilder();
+  set phoneNumber(GStringFilterBuilder? phoneNumber) =>
+      _$this._phoneNumber = phoneNumber;
+
+  GStringFilterBuilder? _pinCode;
+  GStringFilterBuilder get pinCode =>
+      _$this._pinCode ??= new GStringFilterBuilder();
+  set pinCode(GStringFilterBuilder? pinCode) => _$this._pinCode = pinCode;
+
+  GStringFilterBuilder? _address;
+  GStringFilterBuilder get address =>
+      _$this._address ??= new GStringFilterBuilder();
+  set address(GStringFilterBuilder? address) => _$this._address = address;
+
+  GStringFilterBuilder? _town;
+  GStringFilterBuilder get town => _$this._town ??= new GStringFilterBuilder();
+  set town(GStringFilterBuilder? town) => _$this._town = town;
+
+  GStringFilterBuilder? _district;
+  GStringFilterBuilder get district =>
+      _$this._district ??= new GStringFilterBuilder();
+  set district(GStringFilterBuilder? district) => _$this._district = district;
+
+  GStringFilterBuilder? _state;
+  GStringFilterBuilder get state =>
+      _$this._state ??= new GStringFilterBuilder();
+  set state(GStringFilterBuilder? state) => _$this._state = state;
+
+  GDealerWhereInputBuilder? _dealer;
+  GDealerWhereInputBuilder get dealer =>
+      _$this._dealer ??= new GDealerWhereInputBuilder();
+  set dealer(GDealerWhereInputBuilder? dealer) => _$this._dealer = dealer;
+
+  GDealerAddressWhereInputBuilder();
+
+  GDealerAddressWhereInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _AND = $v.AND?.toBuilder();
+      _OR = $v.OR?.toBuilder();
+      _NOT = $v.NOT?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _name = $v.name?.toBuilder();
+      _phoneNumber = $v.phoneNumber?.toBuilder();
+      _pinCode = $v.pinCode?.toBuilder();
+      _address = $v.address?.toBuilder();
+      _town = $v.town?.toBuilder();
+      _district = $v.district?.toBuilder();
+      _state = $v.state?.toBuilder();
+      _dealer = $v.dealer?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GDealerAddressWhereInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GDealerAddressWhereInput;
+  }
+
+  @override
+  void update(void Function(GDealerAddressWhereInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GDealerAddressWhereInput build() => _build();
+
+  _$GDealerAddressWhereInput _build() {
+    _$GDealerAddressWhereInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GDealerAddressWhereInput._(
+              AND: _AND?.build(),
+              OR: _OR?.build(),
+              NOT: _NOT?.build(),
+              id: _id?.build(),
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              name: _name?.build(),
+              phoneNumber: _phoneNumber?.build(),
+              pinCode: _pinCode?.build(),
+              address: _address?.build(),
+              town: _town?.build(),
+              district: _district?.build(),
+              state: _state?.build(),
+              dealer: _dealer?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'AND';
+        _AND?.build();
+        _$failedField = 'OR';
+        _OR?.build();
+        _$failedField = 'NOT';
+        _NOT?.build();
+        _$failedField = 'id';
+        _id?.build();
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'name';
+        _name?.build();
+        _$failedField = 'phoneNumber';
+        _phoneNumber?.build();
+        _$failedField = 'pinCode';
+        _pinCode?.build();
+        _$failedField = 'address';
+        _address?.build();
+        _$failedField = 'town';
+        _town?.build();
+        _$failedField = 'district';
+        _district?.build();
+        _$failedField = 'state';
+        _state?.build();
+        _$failedField = 'dealer';
+        _dealer?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GDealerAddressWhereInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GDealerAddressOrderByInput extends GDealerAddressOrderByInput {
+  @override
+  final GOrderDirection? id;
+  @override
+  final GOrderDirection? createdAt;
+  @override
+  final GOrderDirection? modifiedAt;
+  @override
+  final GOrderDirection? name;
+  @override
+  final GOrderDirection? phoneNumber;
+  @override
+  final GOrderDirection? pinCode;
+  @override
+  final GOrderDirection? address;
+  @override
+  final GOrderDirection? town;
+  @override
+  final GOrderDirection? district;
+  @override
+  final GOrderDirection? state;
+
+  factory _$GDealerAddressOrderByInput(
+          [void Function(GDealerAddressOrderByInputBuilder)? updates]) =>
+      (new GDealerAddressOrderByInputBuilder()..update(updates))._build();
+
+  _$GDealerAddressOrderByInput._(
+      {this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.name,
+      this.phoneNumber,
+      this.pinCode,
+      this.address,
+      this.town,
+      this.district,
+      this.state})
+      : super._();
+
+  @override
+  GDealerAddressOrderByInput rebuild(
+          void Function(GDealerAddressOrderByInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GDealerAddressOrderByInputBuilder toBuilder() =>
+      new GDealerAddressOrderByInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GDealerAddressOrderByInput &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        name == other.name &&
+        phoneNumber == other.phoneNumber &&
+        pinCode == other.pinCode &&
+        address == other.address &&
+        town == other.town &&
+        district == other.district &&
+        state == other.state;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, phoneNumber.hashCode);
+    _$hash = $jc(_$hash, pinCode.hashCode);
+    _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, town.hashCode);
+    _$hash = $jc(_$hash, district.hashCode);
+    _$hash = $jc(_$hash, state.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GDealerAddressOrderByInput')
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('name', name)
+          ..add('phoneNumber', phoneNumber)
+          ..add('pinCode', pinCode)
+          ..add('address', address)
+          ..add('town', town)
+          ..add('district', district)
+          ..add('state', state))
+        .toString();
+  }
+}
+
+class GDealerAddressOrderByInputBuilder
+    implements
+        Builder<GDealerAddressOrderByInput, GDealerAddressOrderByInputBuilder> {
+  _$GDealerAddressOrderByInput? _$v;
+
+  GOrderDirection? _id;
+  GOrderDirection? get id => _$this._id;
+  set id(GOrderDirection? id) => _$this._id = id;
+
+  GOrderDirection? _createdAt;
+  GOrderDirection? get createdAt => _$this._createdAt;
+  set createdAt(GOrderDirection? createdAt) => _$this._createdAt = createdAt;
+
+  GOrderDirection? _modifiedAt;
+  GOrderDirection? get modifiedAt => _$this._modifiedAt;
+  set modifiedAt(GOrderDirection? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GOrderDirection? _name;
+  GOrderDirection? get name => _$this._name;
+  set name(GOrderDirection? name) => _$this._name = name;
+
+  GOrderDirection? _phoneNumber;
+  GOrderDirection? get phoneNumber => _$this._phoneNumber;
+  set phoneNumber(GOrderDirection? phoneNumber) =>
+      _$this._phoneNumber = phoneNumber;
+
+  GOrderDirection? _pinCode;
+  GOrderDirection? get pinCode => _$this._pinCode;
+  set pinCode(GOrderDirection? pinCode) => _$this._pinCode = pinCode;
+
+  GOrderDirection? _address;
+  GOrderDirection? get address => _$this._address;
+  set address(GOrderDirection? address) => _$this._address = address;
+
+  GOrderDirection? _town;
+  GOrderDirection? get town => _$this._town;
+  set town(GOrderDirection? town) => _$this._town = town;
+
+  GOrderDirection? _district;
+  GOrderDirection? get district => _$this._district;
+  set district(GOrderDirection? district) => _$this._district = district;
+
+  GOrderDirection? _state;
+  GOrderDirection? get state => _$this._state;
+  set state(GOrderDirection? state) => _$this._state = state;
+
+  GDealerAddressOrderByInputBuilder();
+
+  GDealerAddressOrderByInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _createdAt = $v.createdAt;
+      _modifiedAt = $v.modifiedAt;
+      _name = $v.name;
+      _phoneNumber = $v.phoneNumber;
+      _pinCode = $v.pinCode;
+      _address = $v.address;
+      _town = $v.town;
+      _district = $v.district;
+      _state = $v.state;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GDealerAddressOrderByInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GDealerAddressOrderByInput;
+  }
+
+  @override
+  void update(void Function(GDealerAddressOrderByInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GDealerAddressOrderByInput build() => _build();
+
+  _$GDealerAddressOrderByInput _build() {
+    final _$result = _$v ??
+        new _$GDealerAddressOrderByInput._(
+            id: id,
+            createdAt: createdAt,
+            modifiedAt: modifiedAt,
+            name: name,
+            phoneNumber: phoneNumber,
+            pinCode: pinCode,
+            address: address,
+            town: town,
+            district: district,
+            state: state);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GDealerAddressUpdateInput extends GDealerAddressUpdateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final String? name;
+  @override
+  final String? phoneNumber;
+  @override
+  final String? pinCode;
+  @override
+  final String? address;
+  @override
+  final String? town;
+  @override
+  final String? district;
+  @override
+  final String? state;
+  @override
+  final GDealerRelateToOneForUpdateInput? dealer;
+
+  factory _$GDealerAddressUpdateInput(
+          [void Function(GDealerAddressUpdateInputBuilder)? updates]) =>
+      (new GDealerAddressUpdateInputBuilder()..update(updates))._build();
+
+  _$GDealerAddressUpdateInput._(
+      {this.createdAt,
+      this.modifiedAt,
+      this.name,
+      this.phoneNumber,
+      this.pinCode,
+      this.address,
+      this.town,
+      this.district,
+      this.state,
+      this.dealer})
+      : super._();
+
+  @override
+  GDealerAddressUpdateInput rebuild(
+          void Function(GDealerAddressUpdateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GDealerAddressUpdateInputBuilder toBuilder() =>
+      new GDealerAddressUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GDealerAddressUpdateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        name == other.name &&
+        phoneNumber == other.phoneNumber &&
+        pinCode == other.pinCode &&
+        address == other.address &&
+        town == other.town &&
+        district == other.district &&
+        state == other.state &&
+        dealer == other.dealer;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, phoneNumber.hashCode);
+    _$hash = $jc(_$hash, pinCode.hashCode);
+    _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, town.hashCode);
+    _$hash = $jc(_$hash, district.hashCode);
+    _$hash = $jc(_$hash, state.hashCode);
+    _$hash = $jc(_$hash, dealer.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GDealerAddressUpdateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('name', name)
+          ..add('phoneNumber', phoneNumber)
+          ..add('pinCode', pinCode)
+          ..add('address', address)
+          ..add('town', town)
+          ..add('district', district)
+          ..add('state', state)
+          ..add('dealer', dealer))
+        .toString();
+  }
+}
+
+class GDealerAddressUpdateInputBuilder
+    implements
+        Builder<GDealerAddressUpdateInput, GDealerAddressUpdateInputBuilder> {
+  _$GDealerAddressUpdateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _phoneNumber;
+  String? get phoneNumber => _$this._phoneNumber;
+  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
+
+  String? _pinCode;
+  String? get pinCode => _$this._pinCode;
+  set pinCode(String? pinCode) => _$this._pinCode = pinCode;
+
+  String? _address;
+  String? get address => _$this._address;
+  set address(String? address) => _$this._address = address;
+
+  String? _town;
+  String? get town => _$this._town;
+  set town(String? town) => _$this._town = town;
+
+  String? _district;
+  String? get district => _$this._district;
+  set district(String? district) => _$this._district = district;
+
+  String? _state;
+  String? get state => _$this._state;
+  set state(String? state) => _$this._state = state;
+
+  GDealerRelateToOneForUpdateInputBuilder? _dealer;
+  GDealerRelateToOneForUpdateInputBuilder get dealer =>
+      _$this._dealer ??= new GDealerRelateToOneForUpdateInputBuilder();
+  set dealer(GDealerRelateToOneForUpdateInputBuilder? dealer) =>
+      _$this._dealer = dealer;
+
+  GDealerAddressUpdateInputBuilder();
+
+  GDealerAddressUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _name = $v.name;
+      _phoneNumber = $v.phoneNumber;
+      _pinCode = $v.pinCode;
+      _address = $v.address;
+      _town = $v.town;
+      _district = $v.district;
+      _state = $v.state;
+      _dealer = $v.dealer?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GDealerAddressUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GDealerAddressUpdateInput;
+  }
+
+  @override
+  void update(void Function(GDealerAddressUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GDealerAddressUpdateInput build() => _build();
+
+  _$GDealerAddressUpdateInput _build() {
+    _$GDealerAddressUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GDealerAddressUpdateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              name: name,
+              phoneNumber: phoneNumber,
+              pinCode: pinCode,
+              address: address,
+              town: town,
+              district: district,
+              state: state,
+              dealer: _dealer?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+
+        _$failedField = 'dealer';
+        _dealer?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GDealerAddressUpdateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GDealerRelateToOneForUpdateInput
+    extends GDealerRelateToOneForUpdateInput {
+  @override
+  final GDealerCreateInput? create;
+  @override
+  final GDealerWhereUniqueInput? connect;
+  @override
+  final bool? disconnect;
+
+  factory _$GDealerRelateToOneForUpdateInput(
+          [void Function(GDealerRelateToOneForUpdateInputBuilder)? updates]) =>
+      (new GDealerRelateToOneForUpdateInputBuilder()..update(updates))._build();
+
+  _$GDealerRelateToOneForUpdateInput._(
+      {this.create, this.connect, this.disconnect})
+      : super._();
+
+  @override
+  GDealerRelateToOneForUpdateInput rebuild(
+          void Function(GDealerRelateToOneForUpdateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GDealerRelateToOneForUpdateInputBuilder toBuilder() =>
+      new GDealerRelateToOneForUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GDealerRelateToOneForUpdateInput &&
+        create == other.create &&
+        connect == other.connect &&
+        disconnect == other.disconnect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jc(_$hash, disconnect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GDealerRelateToOneForUpdateInput')
+          ..add('create', create)
+          ..add('connect', connect)
+          ..add('disconnect', disconnect))
+        .toString();
+  }
+}
+
+class GDealerRelateToOneForUpdateInputBuilder
+    implements
+        Builder<GDealerRelateToOneForUpdateInput,
+            GDealerRelateToOneForUpdateInputBuilder> {
+  _$GDealerRelateToOneForUpdateInput? _$v;
+
+  GDealerCreateInputBuilder? _create;
+  GDealerCreateInputBuilder get create =>
+      _$this._create ??= new GDealerCreateInputBuilder();
+  set create(GDealerCreateInputBuilder? create) => _$this._create = create;
+
+  GDealerWhereUniqueInputBuilder? _connect;
+  GDealerWhereUniqueInputBuilder get connect =>
+      _$this._connect ??= new GDealerWhereUniqueInputBuilder();
+  set connect(GDealerWhereUniqueInputBuilder? connect) =>
+      _$this._connect = connect;
+
+  bool? _disconnect;
+  bool? get disconnect => _$this._disconnect;
+  set disconnect(bool? disconnect) => _$this._disconnect = disconnect;
+
+  GDealerRelateToOneForUpdateInputBuilder();
+
+  GDealerRelateToOneForUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _disconnect = $v.disconnect;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GDealerRelateToOneForUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GDealerRelateToOneForUpdateInput;
+  }
+
+  @override
+  void update(void Function(GDealerRelateToOneForUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GDealerRelateToOneForUpdateInput build() => _build();
+
+  _$GDealerRelateToOneForUpdateInput _build() {
+    _$GDealerRelateToOneForUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GDealerRelateToOneForUpdateInput._(
+              create: _create?.build(),
+              connect: _connect?.build(),
+              disconnect: disconnect);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GDealerRelateToOneForUpdateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GDealerAddressUpdateArgs extends GDealerAddressUpdateArgs {
+  @override
+  final GDealerAddressWhereUniqueInput where;
+  @override
+  final GDealerAddressUpdateInput data;
+
+  factory _$GDealerAddressUpdateArgs(
+          [void Function(GDealerAddressUpdateArgsBuilder)? updates]) =>
+      (new GDealerAddressUpdateArgsBuilder()..update(updates))._build();
+
+  _$GDealerAddressUpdateArgs._({required this.where, required this.data})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GDealerAddressUpdateArgs', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        data, r'GDealerAddressUpdateArgs', 'data');
+  }
+
+  @override
+  GDealerAddressUpdateArgs rebuild(
+          void Function(GDealerAddressUpdateArgsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GDealerAddressUpdateArgsBuilder toBuilder() =>
+      new GDealerAddressUpdateArgsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GDealerAddressUpdateArgs &&
+        where == other.where &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GDealerAddressUpdateArgs')
+          ..add('where', where)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GDealerAddressUpdateArgsBuilder
+    implements
+        Builder<GDealerAddressUpdateArgs, GDealerAddressUpdateArgsBuilder> {
+  _$GDealerAddressUpdateArgs? _$v;
+
+  GDealerAddressWhereUniqueInputBuilder? _where;
+  GDealerAddressWhereUniqueInputBuilder get where =>
+      _$this._where ??= new GDealerAddressWhereUniqueInputBuilder();
+  set where(GDealerAddressWhereUniqueInputBuilder? where) =>
+      _$this._where = where;
+
+  GDealerAddressUpdateInputBuilder? _data;
+  GDealerAddressUpdateInputBuilder get data =>
+      _$this._data ??= new GDealerAddressUpdateInputBuilder();
+  set data(GDealerAddressUpdateInputBuilder? data) => _$this._data = data;
+
+  GDealerAddressUpdateArgsBuilder();
+
+  GDealerAddressUpdateArgsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GDealerAddressUpdateArgs other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GDealerAddressUpdateArgs;
+  }
+
+  @override
+  void update(void Function(GDealerAddressUpdateArgsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GDealerAddressUpdateArgs build() => _build();
+
+  _$GDealerAddressUpdateArgs _build() {
+    _$GDealerAddressUpdateArgs _$result;
+    try {
+      _$result = _$v ??
+          new _$GDealerAddressUpdateArgs._(
+              where: where.build(), data: data.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GDealerAddressUpdateArgs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GDealerAddressCreateInput extends GDealerAddressCreateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final String? name;
+  @override
+  final String? phoneNumber;
+  @override
+  final String? pinCode;
+  @override
+  final String? address;
+  @override
+  final String? town;
+  @override
+  final String? district;
+  @override
+  final String? state;
+  @override
+  final GDealerRelateToOneForCreateInput? dealer;
+
+  factory _$GDealerAddressCreateInput(
+          [void Function(GDealerAddressCreateInputBuilder)? updates]) =>
+      (new GDealerAddressCreateInputBuilder()..update(updates))._build();
+
+  _$GDealerAddressCreateInput._(
+      {this.createdAt,
+      this.modifiedAt,
+      this.name,
+      this.phoneNumber,
+      this.pinCode,
+      this.address,
+      this.town,
+      this.district,
+      this.state,
+      this.dealer})
+      : super._();
+
+  @override
+  GDealerAddressCreateInput rebuild(
+          void Function(GDealerAddressCreateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GDealerAddressCreateInputBuilder toBuilder() =>
+      new GDealerAddressCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GDealerAddressCreateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        name == other.name &&
+        phoneNumber == other.phoneNumber &&
+        pinCode == other.pinCode &&
+        address == other.address &&
+        town == other.town &&
+        district == other.district &&
+        state == other.state &&
+        dealer == other.dealer;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, phoneNumber.hashCode);
+    _$hash = $jc(_$hash, pinCode.hashCode);
+    _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, town.hashCode);
+    _$hash = $jc(_$hash, district.hashCode);
+    _$hash = $jc(_$hash, state.hashCode);
+    _$hash = $jc(_$hash, dealer.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GDealerAddressCreateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('name', name)
+          ..add('phoneNumber', phoneNumber)
+          ..add('pinCode', pinCode)
+          ..add('address', address)
+          ..add('town', town)
+          ..add('district', district)
+          ..add('state', state)
+          ..add('dealer', dealer))
+        .toString();
+  }
+}
+
+class GDealerAddressCreateInputBuilder
+    implements
+        Builder<GDealerAddressCreateInput, GDealerAddressCreateInputBuilder> {
+  _$GDealerAddressCreateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _phoneNumber;
+  String? get phoneNumber => _$this._phoneNumber;
+  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
+
+  String? _pinCode;
+  String? get pinCode => _$this._pinCode;
+  set pinCode(String? pinCode) => _$this._pinCode = pinCode;
+
+  String? _address;
+  String? get address => _$this._address;
+  set address(String? address) => _$this._address = address;
+
+  String? _town;
+  String? get town => _$this._town;
+  set town(String? town) => _$this._town = town;
+
+  String? _district;
+  String? get district => _$this._district;
+  set district(String? district) => _$this._district = district;
+
+  String? _state;
+  String? get state => _$this._state;
+  set state(String? state) => _$this._state = state;
+
+  GDealerRelateToOneForCreateInputBuilder? _dealer;
+  GDealerRelateToOneForCreateInputBuilder get dealer =>
+      _$this._dealer ??= new GDealerRelateToOneForCreateInputBuilder();
+  set dealer(GDealerRelateToOneForCreateInputBuilder? dealer) =>
+      _$this._dealer = dealer;
+
+  GDealerAddressCreateInputBuilder();
+
+  GDealerAddressCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _name = $v.name;
+      _phoneNumber = $v.phoneNumber;
+      _pinCode = $v.pinCode;
+      _address = $v.address;
+      _town = $v.town;
+      _district = $v.district;
+      _state = $v.state;
+      _dealer = $v.dealer?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GDealerAddressCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GDealerAddressCreateInput;
+  }
+
+  @override
+  void update(void Function(GDealerAddressCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GDealerAddressCreateInput build() => _build();
+
+  _$GDealerAddressCreateInput _build() {
+    _$GDealerAddressCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GDealerAddressCreateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              name: name,
+              phoneNumber: phoneNumber,
+              pinCode: pinCode,
+              address: address,
+              town: town,
+              district: district,
+              state: state,
+              dealer: _dealer?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+
+        _$failedField = 'dealer';
+        _dealer?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GDealerAddressCreateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GDealerRelateToOneForCreateInput
+    extends GDealerRelateToOneForCreateInput {
+  @override
+  final GDealerCreateInput? create;
+  @override
+  final GDealerWhereUniqueInput? connect;
+
+  factory _$GDealerRelateToOneForCreateInput(
+          [void Function(GDealerRelateToOneForCreateInputBuilder)? updates]) =>
+      (new GDealerRelateToOneForCreateInputBuilder()..update(updates))._build();
+
+  _$GDealerRelateToOneForCreateInput._({this.create, this.connect}) : super._();
+
+  @override
+  GDealerRelateToOneForCreateInput rebuild(
+          void Function(GDealerRelateToOneForCreateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GDealerRelateToOneForCreateInputBuilder toBuilder() =>
+      new GDealerRelateToOneForCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GDealerRelateToOneForCreateInput &&
+        create == other.create &&
+        connect == other.connect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GDealerRelateToOneForCreateInput')
+          ..add('create', create)
+          ..add('connect', connect))
+        .toString();
+  }
+}
+
+class GDealerRelateToOneForCreateInputBuilder
+    implements
+        Builder<GDealerRelateToOneForCreateInput,
+            GDealerRelateToOneForCreateInputBuilder> {
+  _$GDealerRelateToOneForCreateInput? _$v;
+
+  GDealerCreateInputBuilder? _create;
+  GDealerCreateInputBuilder get create =>
+      _$this._create ??= new GDealerCreateInputBuilder();
+  set create(GDealerCreateInputBuilder? create) => _$this._create = create;
+
+  GDealerWhereUniqueInputBuilder? _connect;
+  GDealerWhereUniqueInputBuilder get connect =>
+      _$this._connect ??= new GDealerWhereUniqueInputBuilder();
+  set connect(GDealerWhereUniqueInputBuilder? connect) =>
+      _$this._connect = connect;
+
+  GDealerRelateToOneForCreateInputBuilder();
+
+  GDealerRelateToOneForCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GDealerRelateToOneForCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GDealerRelateToOneForCreateInput;
+  }
+
+  @override
+  void update(void Function(GDealerRelateToOneForCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GDealerRelateToOneForCreateInput build() => _build();
+
+  _$GDealerRelateToOneForCreateInput _build() {
+    _$GDealerRelateToOneForCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GDealerRelateToOneForCreateInput._(
+              create: _create?.build(), connect: _connect?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GDealerRelateToOneForCreateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$GFavoriteWhereUniqueInput extends GFavoriteWhereUniqueInput {
   @override
   final String? id;
@@ -47422,12 +50346,14 @@ class _$GBrandUpdateInput extends GBrandUpdateInput {
   final GDateTime? modifiedAt;
   @override
   final String? name;
+  @override
+  final GImageFieldInput? logo;
 
   factory _$GBrandUpdateInput(
           [void Function(GBrandUpdateInputBuilder)? updates]) =>
       (new GBrandUpdateInputBuilder()..update(updates))._build();
 
-  _$GBrandUpdateInput._({this.createdAt, this.modifiedAt, this.name})
+  _$GBrandUpdateInput._({this.createdAt, this.modifiedAt, this.name, this.logo})
       : super._();
 
   @override
@@ -47444,7 +50370,8 @@ class _$GBrandUpdateInput extends GBrandUpdateInput {
     return other is GBrandUpdateInput &&
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
-        name == other.name;
+        name == other.name &&
+        logo == other.logo;
   }
 
   @override
@@ -47453,6 +50380,7 @@ class _$GBrandUpdateInput extends GBrandUpdateInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, logo.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -47462,7 +50390,8 @@ class _$GBrandUpdateInput extends GBrandUpdateInput {
     return (newBuiltValueToStringHelper(r'GBrandUpdateInput')
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('logo', logo))
         .toString();
   }
 }
@@ -47486,6 +50415,11 @@ class GBrandUpdateInputBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  GImageFieldInputBuilder? _logo;
+  GImageFieldInputBuilder get logo =>
+      _$this._logo ??= new GImageFieldInputBuilder();
+  set logo(GImageFieldInputBuilder? logo) => _$this._logo = logo;
+
   GBrandUpdateInputBuilder();
 
   GBrandUpdateInputBuilder get _$this {
@@ -47494,6 +50428,7 @@ class GBrandUpdateInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _name = $v.name;
+      _logo = $v.logo?.toBuilder();
       _$v = null;
     }
     return this;
@@ -47520,7 +50455,8 @@ class GBrandUpdateInputBuilder
           new _$GBrandUpdateInput._(
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
-              name: name);
+              name: name,
+              logo: _logo?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -47528,6 +50464,9 @@ class GBrandUpdateInputBuilder
         _createdAt?.build();
         _$failedField = 'modifiedAt';
         _modifiedAt?.build();
+
+        _$failedField = 'logo';
+        _logo?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GBrandUpdateInput', _$failedField, e.toString());
@@ -47658,12 +50597,14 @@ class _$GBrandCreateInput extends GBrandCreateInput {
   final GDateTime? modifiedAt;
   @override
   final String? name;
+  @override
+  final GImageFieldInput? logo;
 
   factory _$GBrandCreateInput(
           [void Function(GBrandCreateInputBuilder)? updates]) =>
       (new GBrandCreateInputBuilder()..update(updates))._build();
 
-  _$GBrandCreateInput._({this.createdAt, this.modifiedAt, this.name})
+  _$GBrandCreateInput._({this.createdAt, this.modifiedAt, this.name, this.logo})
       : super._();
 
   @override
@@ -47680,7 +50621,8 @@ class _$GBrandCreateInput extends GBrandCreateInput {
     return other is GBrandCreateInput &&
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
-        name == other.name;
+        name == other.name &&
+        logo == other.logo;
   }
 
   @override
@@ -47689,6 +50631,7 @@ class _$GBrandCreateInput extends GBrandCreateInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, logo.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -47698,7 +50641,8 @@ class _$GBrandCreateInput extends GBrandCreateInput {
     return (newBuiltValueToStringHelper(r'GBrandCreateInput')
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('logo', logo))
         .toString();
   }
 }
@@ -47722,6 +50666,11 @@ class GBrandCreateInputBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  GImageFieldInputBuilder? _logo;
+  GImageFieldInputBuilder get logo =>
+      _$this._logo ??= new GImageFieldInputBuilder();
+  set logo(GImageFieldInputBuilder? logo) => _$this._logo = logo;
+
   GBrandCreateInputBuilder();
 
   GBrandCreateInputBuilder get _$this {
@@ -47730,6 +50679,7 @@ class GBrandCreateInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _name = $v.name;
+      _logo = $v.logo?.toBuilder();
       _$v = null;
     }
     return this;
@@ -47756,7 +50706,8 @@ class GBrandCreateInputBuilder
           new _$GBrandCreateInput._(
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
-              name: name);
+              name: name,
+              logo: _logo?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -47764,6 +50715,9 @@ class GBrandCreateInputBuilder
         _createdAt?.build();
         _$failedField = 'modifiedAt';
         _modifiedAt?.build();
+
+        _$failedField = 'logo';
+        _logo?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GBrandCreateInput', _$failedField, e.toString());
@@ -50363,135 +53317,6 @@ class GTestDriveDealerUpdateInputBuilder
   }
 }
 
-class _$GDealerRelateToOneForUpdateInput
-    extends GDealerRelateToOneForUpdateInput {
-  @override
-  final GDealerCreateInput? create;
-  @override
-  final GDealerWhereUniqueInput? connect;
-  @override
-  final bool? disconnect;
-
-  factory _$GDealerRelateToOneForUpdateInput(
-          [void Function(GDealerRelateToOneForUpdateInputBuilder)? updates]) =>
-      (new GDealerRelateToOneForUpdateInputBuilder()..update(updates))._build();
-
-  _$GDealerRelateToOneForUpdateInput._(
-      {this.create, this.connect, this.disconnect})
-      : super._();
-
-  @override
-  GDealerRelateToOneForUpdateInput rebuild(
-          void Function(GDealerRelateToOneForUpdateInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GDealerRelateToOneForUpdateInputBuilder toBuilder() =>
-      new GDealerRelateToOneForUpdateInputBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GDealerRelateToOneForUpdateInput &&
-        create == other.create &&
-        connect == other.connect &&
-        disconnect == other.disconnect;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, create.hashCode);
-    _$hash = $jc(_$hash, connect.hashCode);
-    _$hash = $jc(_$hash, disconnect.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'GDealerRelateToOneForUpdateInput')
-          ..add('create', create)
-          ..add('connect', connect)
-          ..add('disconnect', disconnect))
-        .toString();
-  }
-}
-
-class GDealerRelateToOneForUpdateInputBuilder
-    implements
-        Builder<GDealerRelateToOneForUpdateInput,
-            GDealerRelateToOneForUpdateInputBuilder> {
-  _$GDealerRelateToOneForUpdateInput? _$v;
-
-  GDealerCreateInputBuilder? _create;
-  GDealerCreateInputBuilder get create =>
-      _$this._create ??= new GDealerCreateInputBuilder();
-  set create(GDealerCreateInputBuilder? create) => _$this._create = create;
-
-  GDealerWhereUniqueInputBuilder? _connect;
-  GDealerWhereUniqueInputBuilder get connect =>
-      _$this._connect ??= new GDealerWhereUniqueInputBuilder();
-  set connect(GDealerWhereUniqueInputBuilder? connect) =>
-      _$this._connect = connect;
-
-  bool? _disconnect;
-  bool? get disconnect => _$this._disconnect;
-  set disconnect(bool? disconnect) => _$this._disconnect = disconnect;
-
-  GDealerRelateToOneForUpdateInputBuilder();
-
-  GDealerRelateToOneForUpdateInputBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _create = $v.create?.toBuilder();
-      _connect = $v.connect?.toBuilder();
-      _disconnect = $v.disconnect;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(GDealerRelateToOneForUpdateInput other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GDealerRelateToOneForUpdateInput;
-  }
-
-  @override
-  void update(void Function(GDealerRelateToOneForUpdateInputBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GDealerRelateToOneForUpdateInput build() => _build();
-
-  _$GDealerRelateToOneForUpdateInput _build() {
-    _$GDealerRelateToOneForUpdateInput _$result;
-    try {
-      _$result = _$v ??
-          new _$GDealerRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'create';
-        _create?.build();
-        _$failedField = 'connect';
-        _connect?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GDealerRelateToOneForUpdateInput', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
 class _$GVehicleColorRelateToOneForUpdateInput
     extends GVehicleColorRelateToOneForUpdateInput {
   @override
@@ -50934,121 +53759,6 @@ class GTestDriveDealerCreateInputBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GTestDriveDealerCreateInput', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GDealerRelateToOneForCreateInput
-    extends GDealerRelateToOneForCreateInput {
-  @override
-  final GDealerCreateInput? create;
-  @override
-  final GDealerWhereUniqueInput? connect;
-
-  factory _$GDealerRelateToOneForCreateInput(
-          [void Function(GDealerRelateToOneForCreateInputBuilder)? updates]) =>
-      (new GDealerRelateToOneForCreateInputBuilder()..update(updates))._build();
-
-  _$GDealerRelateToOneForCreateInput._({this.create, this.connect}) : super._();
-
-  @override
-  GDealerRelateToOneForCreateInput rebuild(
-          void Function(GDealerRelateToOneForCreateInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GDealerRelateToOneForCreateInputBuilder toBuilder() =>
-      new GDealerRelateToOneForCreateInputBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GDealerRelateToOneForCreateInput &&
-        create == other.create &&
-        connect == other.connect;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, create.hashCode);
-    _$hash = $jc(_$hash, connect.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'GDealerRelateToOneForCreateInput')
-          ..add('create', create)
-          ..add('connect', connect))
-        .toString();
-  }
-}
-
-class GDealerRelateToOneForCreateInputBuilder
-    implements
-        Builder<GDealerRelateToOneForCreateInput,
-            GDealerRelateToOneForCreateInputBuilder> {
-  _$GDealerRelateToOneForCreateInput? _$v;
-
-  GDealerCreateInputBuilder? _create;
-  GDealerCreateInputBuilder get create =>
-      _$this._create ??= new GDealerCreateInputBuilder();
-  set create(GDealerCreateInputBuilder? create) => _$this._create = create;
-
-  GDealerWhereUniqueInputBuilder? _connect;
-  GDealerWhereUniqueInputBuilder get connect =>
-      _$this._connect ??= new GDealerWhereUniqueInputBuilder();
-  set connect(GDealerWhereUniqueInputBuilder? connect) =>
-      _$this._connect = connect;
-
-  GDealerRelateToOneForCreateInputBuilder();
-
-  GDealerRelateToOneForCreateInputBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _create = $v.create?.toBuilder();
-      _connect = $v.connect?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(GDealerRelateToOneForCreateInput other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GDealerRelateToOneForCreateInput;
-  }
-
-  @override
-  void update(void Function(GDealerRelateToOneForCreateInputBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GDealerRelateToOneForCreateInput build() => _build();
-
-  _$GDealerRelateToOneForCreateInput _build() {
-    _$GDealerRelateToOneForCreateInput _$result;
-    try {
-      _$result = _$v ??
-          new _$GDealerRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'create';
-        _create?.build();
-        _$failedField = 'connect';
-        _connect?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GDealerRelateToOneForCreateInput', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -59665,7 +62375,7 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
   @override
   final GVehicleColorManyRelationFilter? colors;
   @override
-  final GIntNullableFilter? price;
+  final GTagManyRelationFilter? tags;
 
   factory _$GVehicleVariantWhereInput(
           [void Function(GVehicleVariantWhereInputBuilder)? updates]) =>
@@ -59683,7 +62393,7 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
       this.Gdefault,
       this.specifications,
       this.colors,
-      this.price})
+      this.tags})
       : super._();
 
   @override
@@ -59710,7 +62420,7 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
         Gdefault == other.Gdefault &&
         specifications == other.specifications &&
         colors == other.colors &&
-        price == other.price;
+        tags == other.tags;
   }
 
   @override
@@ -59727,7 +62437,7 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
     _$hash = $jc(_$hash, Gdefault.hashCode);
     _$hash = $jc(_$hash, specifications.hashCode);
     _$hash = $jc(_$hash, colors.hashCode);
-    _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -59746,7 +62456,7 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
           ..add('Gdefault', Gdefault)
           ..add('specifications', specifications)
           ..add('colors', colors)
-          ..add('price', price))
+          ..add('tags', tags))
         .toString();
   }
 }
@@ -59815,10 +62525,10 @@ class GVehicleVariantWhereInputBuilder
   set colors(GVehicleColorManyRelationFilterBuilder? colors) =>
       _$this._colors = colors;
 
-  GIntNullableFilterBuilder? _price;
-  GIntNullableFilterBuilder get price =>
-      _$this._price ??= new GIntNullableFilterBuilder();
-  set price(GIntNullableFilterBuilder? price) => _$this._price = price;
+  GTagManyRelationFilterBuilder? _tags;
+  GTagManyRelationFilterBuilder get tags =>
+      _$this._tags ??= new GTagManyRelationFilterBuilder();
+  set tags(GTagManyRelationFilterBuilder? tags) => _$this._tags = tags;
 
   GVehicleVariantWhereInputBuilder();
 
@@ -59836,7 +62546,7 @@ class GVehicleVariantWhereInputBuilder
       _Gdefault = $v.Gdefault?.toBuilder();
       _specifications = $v.specifications?.toBuilder();
       _colors = $v.colors?.toBuilder();
-      _price = $v.price?.toBuilder();
+      _tags = $v.tags?.toBuilder();
       _$v = null;
     }
     return this;
@@ -59872,7 +62582,7 @@ class GVehicleVariantWhereInputBuilder
               Gdefault: _Gdefault?.build(),
               specifications: _specifications?.build(),
               colors: _colors?.build(),
-              price: _price?.build());
+              tags: _tags?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -59898,11 +62608,137 @@ class GVehicleVariantWhereInputBuilder
         _specifications?.build();
         _$failedField = 'colors';
         _colors?.build();
-        _$failedField = 'price';
-        _price?.build();
+        _$failedField = 'tags';
+        _tags?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleVariantWhereInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GTagManyRelationFilter extends GTagManyRelationFilter {
+  @override
+  final GTagWhereInput? every;
+  @override
+  final GTagWhereInput? some;
+  @override
+  final GTagWhereInput? none;
+
+  factory _$GTagManyRelationFilter(
+          [void Function(GTagManyRelationFilterBuilder)? updates]) =>
+      (new GTagManyRelationFilterBuilder()..update(updates))._build();
+
+  _$GTagManyRelationFilter._({this.every, this.some, this.none}) : super._();
+
+  @override
+  GTagManyRelationFilter rebuild(
+          void Function(GTagManyRelationFilterBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GTagManyRelationFilterBuilder toBuilder() =>
+      new GTagManyRelationFilterBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GTagManyRelationFilter &&
+        every == other.every &&
+        some == other.some &&
+        none == other.none;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, every.hashCode);
+    _$hash = $jc(_$hash, some.hashCode);
+    _$hash = $jc(_$hash, none.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GTagManyRelationFilter')
+          ..add('every', every)
+          ..add('some', some)
+          ..add('none', none))
+        .toString();
+  }
+}
+
+class GTagManyRelationFilterBuilder
+    implements Builder<GTagManyRelationFilter, GTagManyRelationFilterBuilder> {
+  _$GTagManyRelationFilter? _$v;
+
+  GTagWhereInputBuilder? _every;
+  GTagWhereInputBuilder get every =>
+      _$this._every ??= new GTagWhereInputBuilder();
+  set every(GTagWhereInputBuilder? every) => _$this._every = every;
+
+  GTagWhereInputBuilder? _some;
+  GTagWhereInputBuilder get some =>
+      _$this._some ??= new GTagWhereInputBuilder();
+  set some(GTagWhereInputBuilder? some) => _$this._some = some;
+
+  GTagWhereInputBuilder? _none;
+  GTagWhereInputBuilder get none =>
+      _$this._none ??= new GTagWhereInputBuilder();
+  set none(GTagWhereInputBuilder? none) => _$this._none = none;
+
+  GTagManyRelationFilterBuilder();
+
+  GTagManyRelationFilterBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _every = $v.every?.toBuilder();
+      _some = $v.some?.toBuilder();
+      _none = $v.none?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GTagManyRelationFilter other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GTagManyRelationFilter;
+  }
+
+  @override
+  void update(void Function(GTagManyRelationFilterBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GTagManyRelationFilter build() => _build();
+
+  _$GTagManyRelationFilter _build() {
+    _$GTagManyRelationFilter _$result;
+    try {
+      _$result = _$v ??
+          new _$GTagManyRelationFilter._(
+              every: _every?.build(),
+              some: _some?.build(),
+              none: _none?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'every';
+        _every?.build();
+        _$failedField = 'some';
+        _some?.build();
+        _$failedField = 'none';
+        _none?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GTagManyRelationFilter', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -59922,20 +62758,13 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
   final GOrderDirection? name;
   @override
   final GOrderDirection? Gdefault;
-  @override
-  final GOrderDirection? price;
 
   factory _$GVehicleVariantOrderByInput(
           [void Function(GVehicleVariantOrderByInputBuilder)? updates]) =>
       (new GVehicleVariantOrderByInputBuilder()..update(updates))._build();
 
   _$GVehicleVariantOrderByInput._(
-      {this.id,
-      this.createdAt,
-      this.modifiedAt,
-      this.name,
-      this.Gdefault,
-      this.price})
+      {this.id, this.createdAt, this.modifiedAt, this.name, this.Gdefault})
       : super._();
 
   @override
@@ -59955,8 +62784,7 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
-        Gdefault == other.Gdefault &&
-        price == other.price;
+        Gdefault == other.Gdefault;
   }
 
   @override
@@ -59967,7 +62795,6 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, Gdefault.hashCode);
-    _$hash = $jc(_$hash, price.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -59979,8 +62806,7 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
-          ..add('Gdefault', Gdefault)
-          ..add('price', price))
+          ..add('Gdefault', Gdefault))
         .toString();
   }
 }
@@ -60012,10 +62838,6 @@ class GVehicleVariantOrderByInputBuilder
   GOrderDirection? get Gdefault => _$this._Gdefault;
   set Gdefault(GOrderDirection? Gdefault) => _$this._Gdefault = Gdefault;
 
-  GOrderDirection? _price;
-  GOrderDirection? get price => _$this._price;
-  set price(GOrderDirection? price) => _$this._price = price;
-
   GVehicleVariantOrderByInputBuilder();
 
   GVehicleVariantOrderByInputBuilder get _$this {
@@ -60026,7 +62848,6 @@ class GVehicleVariantOrderByInputBuilder
       _modifiedAt = $v.modifiedAt;
       _name = $v.name;
       _Gdefault = $v.Gdefault;
-      _price = $v.price;
       _$v = null;
     }
     return this;
@@ -60053,8 +62874,7 @@ class GVehicleVariantOrderByInputBuilder
             createdAt: createdAt,
             modifiedAt: modifiedAt,
             name: name,
-            Gdefault: Gdefault,
-            price: price);
+            Gdefault: Gdefault);
     replace(_$result);
     return _$result;
   }
@@ -60076,7 +62896,7 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
   @override
   final GVehicleColorRelateToManyForUpdateInput? colors;
   @override
-  final int? price;
+  final GTagRelateToManyForUpdateInput? tags;
 
   factory _$GVehicleVariantUpdateInput(
           [void Function(GVehicleVariantUpdateInputBuilder)? updates]) =>
@@ -60090,7 +62910,7 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
       this.Gdefault,
       this.specifications,
       this.colors,
-      this.price})
+      this.tags})
       : super._();
 
   @override
@@ -60113,7 +62933,7 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
         Gdefault == other.Gdefault &&
         specifications == other.specifications &&
         colors == other.colors &&
-        price == other.price;
+        tags == other.tags;
   }
 
   @override
@@ -60126,7 +62946,7 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
     _$hash = $jc(_$hash, Gdefault.hashCode);
     _$hash = $jc(_$hash, specifications.hashCode);
     _$hash = $jc(_$hash, colors.hashCode);
-    _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -60141,7 +62961,7 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
           ..add('Gdefault', Gdefault)
           ..add('specifications', specifications)
           ..add('colors', colors)
-          ..add('price', price))
+          ..add('tags', tags))
         .toString();
   }
 }
@@ -60191,9 +63011,10 @@ class GVehicleVariantUpdateInputBuilder
   set colors(GVehicleColorRelateToManyForUpdateInputBuilder? colors) =>
       _$this._colors = colors;
 
-  int? _price;
-  int? get price => _$this._price;
-  set price(int? price) => _$this._price = price;
+  GTagRelateToManyForUpdateInputBuilder? _tags;
+  GTagRelateToManyForUpdateInputBuilder get tags =>
+      _$this._tags ??= new GTagRelateToManyForUpdateInputBuilder();
+  set tags(GTagRelateToManyForUpdateInputBuilder? tags) => _$this._tags = tags;
 
   GVehicleVariantUpdateInputBuilder();
 
@@ -60207,7 +63028,7 @@ class GVehicleVariantUpdateInputBuilder
       _Gdefault = $v.Gdefault;
       _specifications = $v.specifications?.toBuilder();
       _colors = $v.colors?.toBuilder();
-      _price = $v.price;
+      _tags = $v.tags?.toBuilder();
       _$v = null;
     }
     return this;
@@ -60239,7 +63060,7 @@ class GVehicleVariantUpdateInputBuilder
               Gdefault: Gdefault,
               specifications: _specifications?.build(),
               colors: _colors?.build(),
-              price: price);
+              tags: _tags?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -60255,9 +63076,157 @@ class GVehicleVariantUpdateInputBuilder
         _specifications?.build();
         _$failedField = 'colors';
         _colors?.build();
+        _$failedField = 'tags';
+        _tags?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleVariantUpdateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GTagRelateToManyForUpdateInput extends GTagRelateToManyForUpdateInput {
+  @override
+  final BuiltList<GTagWhereUniqueInput>? disconnect;
+  @override
+  final BuiltList<GTagWhereUniqueInput>? set;
+  @override
+  final BuiltList<GTagCreateInput>? create;
+  @override
+  final BuiltList<GTagWhereUniqueInput>? connect;
+
+  factory _$GTagRelateToManyForUpdateInput(
+          [void Function(GTagRelateToManyForUpdateInputBuilder)? updates]) =>
+      (new GTagRelateToManyForUpdateInputBuilder()..update(updates))._build();
+
+  _$GTagRelateToManyForUpdateInput._(
+      {this.disconnect, this.set, this.create, this.connect})
+      : super._();
+
+  @override
+  GTagRelateToManyForUpdateInput rebuild(
+          void Function(GTagRelateToManyForUpdateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GTagRelateToManyForUpdateInputBuilder toBuilder() =>
+      new GTagRelateToManyForUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GTagRelateToManyForUpdateInput &&
+        disconnect == other.disconnect &&
+        set == other.set &&
+        create == other.create &&
+        connect == other.connect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, disconnect.hashCode);
+    _$hash = $jc(_$hash, set.hashCode);
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GTagRelateToManyForUpdateInput')
+          ..add('disconnect', disconnect)
+          ..add('set', set)
+          ..add('create', create)
+          ..add('connect', connect))
+        .toString();
+  }
+}
+
+class GTagRelateToManyForUpdateInputBuilder
+    implements
+        Builder<GTagRelateToManyForUpdateInput,
+            GTagRelateToManyForUpdateInputBuilder> {
+  _$GTagRelateToManyForUpdateInput? _$v;
+
+  ListBuilder<GTagWhereUniqueInput>? _disconnect;
+  ListBuilder<GTagWhereUniqueInput> get disconnect =>
+      _$this._disconnect ??= new ListBuilder<GTagWhereUniqueInput>();
+  set disconnect(ListBuilder<GTagWhereUniqueInput>? disconnect) =>
+      _$this._disconnect = disconnect;
+
+  ListBuilder<GTagWhereUniqueInput>? _set;
+  ListBuilder<GTagWhereUniqueInput> get set =>
+      _$this._set ??= new ListBuilder<GTagWhereUniqueInput>();
+  set set(ListBuilder<GTagWhereUniqueInput>? set) => _$this._set = set;
+
+  ListBuilder<GTagCreateInput>? _create;
+  ListBuilder<GTagCreateInput> get create =>
+      _$this._create ??= new ListBuilder<GTagCreateInput>();
+  set create(ListBuilder<GTagCreateInput>? create) => _$this._create = create;
+
+  ListBuilder<GTagWhereUniqueInput>? _connect;
+  ListBuilder<GTagWhereUniqueInput> get connect =>
+      _$this._connect ??= new ListBuilder<GTagWhereUniqueInput>();
+  set connect(ListBuilder<GTagWhereUniqueInput>? connect) =>
+      _$this._connect = connect;
+
+  GTagRelateToManyForUpdateInputBuilder();
+
+  GTagRelateToManyForUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _disconnect = $v.disconnect?.toBuilder();
+      _set = $v.set?.toBuilder();
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GTagRelateToManyForUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GTagRelateToManyForUpdateInput;
+  }
+
+  @override
+  void update(void Function(GTagRelateToManyForUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GTagRelateToManyForUpdateInput build() => _build();
+
+  _$GTagRelateToManyForUpdateInput _build() {
+    _$GTagRelateToManyForUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GTagRelateToManyForUpdateInput._(
+              disconnect: _disconnect?.build(),
+              set: _set?.build(),
+              create: _create?.build(),
+              connect: _connect?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'disconnect';
+        _disconnect?.build();
+        _$failedField = 'set';
+        _set?.build();
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GTagRelateToManyForUpdateInput', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -60401,7 +63370,7 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
   @override
   final GVehicleColorRelateToManyForCreateInput? colors;
   @override
-  final int? price;
+  final GTagRelateToManyForCreateInput? tags;
 
   factory _$GVehicleVariantCreateInput(
           [void Function(GVehicleVariantCreateInputBuilder)? updates]) =>
@@ -60415,7 +63384,7 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
       this.Gdefault,
       this.specifications,
       this.colors,
-      this.price})
+      this.tags})
       : super._();
 
   @override
@@ -60438,7 +63407,7 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
         Gdefault == other.Gdefault &&
         specifications == other.specifications &&
         colors == other.colors &&
-        price == other.price;
+        tags == other.tags;
   }
 
   @override
@@ -60451,7 +63420,7 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
     _$hash = $jc(_$hash, Gdefault.hashCode);
     _$hash = $jc(_$hash, specifications.hashCode);
     _$hash = $jc(_$hash, colors.hashCode);
-    _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -60466,7 +63435,7 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
           ..add('Gdefault', Gdefault)
           ..add('specifications', specifications)
           ..add('colors', colors)
-          ..add('price', price))
+          ..add('tags', tags))
         .toString();
   }
 }
@@ -60516,9 +63485,10 @@ class GVehicleVariantCreateInputBuilder
   set colors(GVehicleColorRelateToManyForCreateInputBuilder? colors) =>
       _$this._colors = colors;
 
-  int? _price;
-  int? get price => _$this._price;
-  set price(int? price) => _$this._price = price;
+  GTagRelateToManyForCreateInputBuilder? _tags;
+  GTagRelateToManyForCreateInputBuilder get tags =>
+      _$this._tags ??= new GTagRelateToManyForCreateInputBuilder();
+  set tags(GTagRelateToManyForCreateInputBuilder? tags) => _$this._tags = tags;
 
   GVehicleVariantCreateInputBuilder();
 
@@ -60532,7 +63502,7 @@ class GVehicleVariantCreateInputBuilder
       _Gdefault = $v.Gdefault;
       _specifications = $v.specifications?.toBuilder();
       _colors = $v.colors?.toBuilder();
-      _price = $v.price;
+      _tags = $v.tags?.toBuilder();
       _$v = null;
     }
     return this;
@@ -60564,7 +63534,7 @@ class GVehicleVariantCreateInputBuilder
               Gdefault: Gdefault,
               specifications: _specifications?.build(),
               colors: _colors?.build(),
-              price: price);
+              tags: _tags?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -60580,9 +63550,125 @@ class GVehicleVariantCreateInputBuilder
         _specifications?.build();
         _$failedField = 'colors';
         _colors?.build();
+        _$failedField = 'tags';
+        _tags?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleVariantCreateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GTagRelateToManyForCreateInput extends GTagRelateToManyForCreateInput {
+  @override
+  final BuiltList<GTagCreateInput>? create;
+  @override
+  final BuiltList<GTagWhereUniqueInput>? connect;
+
+  factory _$GTagRelateToManyForCreateInput(
+          [void Function(GTagRelateToManyForCreateInputBuilder)? updates]) =>
+      (new GTagRelateToManyForCreateInputBuilder()..update(updates))._build();
+
+  _$GTagRelateToManyForCreateInput._({this.create, this.connect}) : super._();
+
+  @override
+  GTagRelateToManyForCreateInput rebuild(
+          void Function(GTagRelateToManyForCreateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GTagRelateToManyForCreateInputBuilder toBuilder() =>
+      new GTagRelateToManyForCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GTagRelateToManyForCreateInput &&
+        create == other.create &&
+        connect == other.connect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GTagRelateToManyForCreateInput')
+          ..add('create', create)
+          ..add('connect', connect))
+        .toString();
+  }
+}
+
+class GTagRelateToManyForCreateInputBuilder
+    implements
+        Builder<GTagRelateToManyForCreateInput,
+            GTagRelateToManyForCreateInputBuilder> {
+  _$GTagRelateToManyForCreateInput? _$v;
+
+  ListBuilder<GTagCreateInput>? _create;
+  ListBuilder<GTagCreateInput> get create =>
+      _$this._create ??= new ListBuilder<GTagCreateInput>();
+  set create(ListBuilder<GTagCreateInput>? create) => _$this._create = create;
+
+  ListBuilder<GTagWhereUniqueInput>? _connect;
+  ListBuilder<GTagWhereUniqueInput> get connect =>
+      _$this._connect ??= new ListBuilder<GTagWhereUniqueInput>();
+  set connect(ListBuilder<GTagWhereUniqueInput>? connect) =>
+      _$this._connect = connect;
+
+  GTagRelateToManyForCreateInputBuilder();
+
+  GTagRelateToManyForCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GTagRelateToManyForCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GTagRelateToManyForCreateInput;
+  }
+
+  @override
+  void update(void Function(GTagRelateToManyForCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GTagRelateToManyForCreateInput build() => _build();
+
+  _$GTagRelateToManyForCreateInput _build() {
+    _$GTagRelateToManyForCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GTagRelateToManyForCreateInput._(
+              create: _create?.build(), connect: _connect?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GTagRelateToManyForCreateInput', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -60984,6 +64070,8 @@ class _$GStringNullableFilter extends GStringNullableFilter {
   @override
   final String? endsWith;
   @override
+  final GQueryMode? mode;
+  @override
   final GNestedStringNullableFilter? not;
 
   factory _$GStringNullableFilter(
@@ -61001,6 +64089,7 @@ class _$GStringNullableFilter extends GStringNullableFilter {
       this.contains,
       this.startsWith,
       this.endsWith,
+      this.mode,
       this.not})
       : super._();
 
@@ -61027,6 +64116,7 @@ class _$GStringNullableFilter extends GStringNullableFilter {
         contains == other.contains &&
         startsWith == other.startsWith &&
         endsWith == other.endsWith &&
+        mode == other.mode &&
         not == other.not;
   }
 
@@ -61043,6 +64133,7 @@ class _$GStringNullableFilter extends GStringNullableFilter {
     _$hash = $jc(_$hash, contains.hashCode);
     _$hash = $jc(_$hash, startsWith.hashCode);
     _$hash = $jc(_$hash, endsWith.hashCode);
+    _$hash = $jc(_$hash, mode.hashCode);
     _$hash = $jc(_$hash, not.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -61061,6 +64152,7 @@ class _$GStringNullableFilter extends GStringNullableFilter {
           ..add('contains', contains)
           ..add('startsWith', startsWith)
           ..add('endsWith', endsWith)
+          ..add('mode', mode)
           ..add('not', not))
         .toString();
   }
@@ -61110,6 +64202,10 @@ class GStringNullableFilterBuilder
   String? get endsWith => _$this._endsWith;
   set endsWith(String? endsWith) => _$this._endsWith = endsWith;
 
+  GQueryMode? _mode;
+  GQueryMode? get mode => _$this._mode;
+  set mode(GQueryMode? mode) => _$this._mode = mode;
+
   GNestedStringNullableFilterBuilder? _not;
   GNestedStringNullableFilterBuilder get not =>
       _$this._not ??= new GNestedStringNullableFilterBuilder();
@@ -61130,6 +64226,7 @@ class GStringNullableFilterBuilder
       _contains = $v.contains;
       _startsWith = $v.startsWith;
       _endsWith = $v.endsWith;
+      _mode = $v.mode;
       _not = $v.not?.toBuilder();
       _$v = null;
     }
@@ -61165,6 +64262,7 @@ class GStringNullableFilterBuilder
               contains: contains,
               startsWith: startsWith,
               endsWith: endsWith,
+              mode: mode,
               not: _not?.build());
     } catch (_) {
       late String _$failedField;
@@ -76016,6 +79114,12 @@ class _$GDealerWhereInput extends GDealerWhereInput {
   final GUserWhereInput? user;
   @override
   final GBooleanFilter? approved;
+  @override
+  final GDealerAddressManyRelationFilter? addresses;
+  @override
+  final GFloatNullableFilter? lLat;
+  @override
+  final GFloatNullableFilter? lLng;
 
   factory _$GDealerWhereInput(
           [void Function(GDealerWhereInputBuilder)? updates]) =>
@@ -76029,7 +79133,10 @@ class _$GDealerWhereInput extends GDealerWhereInput {
       this.createdAt,
       this.modifiedAt,
       this.user,
-      this.approved})
+      this.approved,
+      this.addresses,
+      this.lLat,
+      this.lLng})
       : super._();
 
   @override
@@ -76051,7 +79158,10 @@ class _$GDealerWhereInput extends GDealerWhereInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         user == other.user &&
-        approved == other.approved;
+        approved == other.approved &&
+        addresses == other.addresses &&
+        lLat == other.lLat &&
+        lLng == other.lLng;
   }
 
   @override
@@ -76065,6 +79175,9 @@ class _$GDealerWhereInput extends GDealerWhereInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, approved.hashCode);
+    _$hash = $jc(_$hash, addresses.hashCode);
+    _$hash = $jc(_$hash, lLat.hashCode);
+    _$hash = $jc(_$hash, lLng.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -76079,7 +79192,10 @@ class _$GDealerWhereInput extends GDealerWhereInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('user', user)
-          ..add('approved', approved))
+          ..add('approved', approved)
+          ..add('addresses', addresses)
+          ..add('lLat', lLat)
+          ..add('lLng', lLng))
         .toString();
   }
 }
@@ -76129,6 +79245,22 @@ class GDealerWhereInputBuilder
       _$this._approved ??= new GBooleanFilterBuilder();
   set approved(GBooleanFilterBuilder? approved) => _$this._approved = approved;
 
+  GDealerAddressManyRelationFilterBuilder? _addresses;
+  GDealerAddressManyRelationFilterBuilder get addresses =>
+      _$this._addresses ??= new GDealerAddressManyRelationFilterBuilder();
+  set addresses(GDealerAddressManyRelationFilterBuilder? addresses) =>
+      _$this._addresses = addresses;
+
+  GFloatNullableFilterBuilder? _lLat;
+  GFloatNullableFilterBuilder get lLat =>
+      _$this._lLat ??= new GFloatNullableFilterBuilder();
+  set lLat(GFloatNullableFilterBuilder? lLat) => _$this._lLat = lLat;
+
+  GFloatNullableFilterBuilder? _lLng;
+  GFloatNullableFilterBuilder get lLng =>
+      _$this._lLng ??= new GFloatNullableFilterBuilder();
+  set lLng(GFloatNullableFilterBuilder? lLng) => _$this._lLng = lLng;
+
   GDealerWhereInputBuilder();
 
   GDealerWhereInputBuilder get _$this {
@@ -76142,6 +79274,9 @@ class GDealerWhereInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _user = $v.user?.toBuilder();
       _approved = $v.approved?.toBuilder();
+      _addresses = $v.addresses?.toBuilder();
+      _lLat = $v.lLat?.toBuilder();
+      _lLng = $v.lLng?.toBuilder();
       _$v = null;
     }
     return this;
@@ -76173,7 +79308,10 @@ class GDealerWhereInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               user: _user?.build(),
-              approved: _approved?.build());
+              approved: _approved?.build(),
+              addresses: _addresses?.build(),
+              lLat: _lLat?.build(),
+              lLng: _lLng?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -76193,9 +79331,145 @@ class GDealerWhereInputBuilder
         _user?.build();
         _$failedField = 'approved';
         _approved?.build();
+        _$failedField = 'addresses';
+        _addresses?.build();
+        _$failedField = 'lLat';
+        _lLat?.build();
+        _$failedField = 'lLng';
+        _lLng?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GDealerWhereInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GDealerAddressManyRelationFilter
+    extends GDealerAddressManyRelationFilter {
+  @override
+  final GDealerAddressWhereInput? every;
+  @override
+  final GDealerAddressWhereInput? some;
+  @override
+  final GDealerAddressWhereInput? none;
+
+  factory _$GDealerAddressManyRelationFilter(
+          [void Function(GDealerAddressManyRelationFilterBuilder)? updates]) =>
+      (new GDealerAddressManyRelationFilterBuilder()..update(updates))._build();
+
+  _$GDealerAddressManyRelationFilter._({this.every, this.some, this.none})
+      : super._();
+
+  @override
+  GDealerAddressManyRelationFilter rebuild(
+          void Function(GDealerAddressManyRelationFilterBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GDealerAddressManyRelationFilterBuilder toBuilder() =>
+      new GDealerAddressManyRelationFilterBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GDealerAddressManyRelationFilter &&
+        every == other.every &&
+        some == other.some &&
+        none == other.none;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, every.hashCode);
+    _$hash = $jc(_$hash, some.hashCode);
+    _$hash = $jc(_$hash, none.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GDealerAddressManyRelationFilter')
+          ..add('every', every)
+          ..add('some', some)
+          ..add('none', none))
+        .toString();
+  }
+}
+
+class GDealerAddressManyRelationFilterBuilder
+    implements
+        Builder<GDealerAddressManyRelationFilter,
+            GDealerAddressManyRelationFilterBuilder> {
+  _$GDealerAddressManyRelationFilter? _$v;
+
+  GDealerAddressWhereInputBuilder? _every;
+  GDealerAddressWhereInputBuilder get every =>
+      _$this._every ??= new GDealerAddressWhereInputBuilder();
+  set every(GDealerAddressWhereInputBuilder? every) => _$this._every = every;
+
+  GDealerAddressWhereInputBuilder? _some;
+  GDealerAddressWhereInputBuilder get some =>
+      _$this._some ??= new GDealerAddressWhereInputBuilder();
+  set some(GDealerAddressWhereInputBuilder? some) => _$this._some = some;
+
+  GDealerAddressWhereInputBuilder? _none;
+  GDealerAddressWhereInputBuilder get none =>
+      _$this._none ??= new GDealerAddressWhereInputBuilder();
+  set none(GDealerAddressWhereInputBuilder? none) => _$this._none = none;
+
+  GDealerAddressManyRelationFilterBuilder();
+
+  GDealerAddressManyRelationFilterBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _every = $v.every?.toBuilder();
+      _some = $v.some?.toBuilder();
+      _none = $v.none?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GDealerAddressManyRelationFilter other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GDealerAddressManyRelationFilter;
+  }
+
+  @override
+  void update(void Function(GDealerAddressManyRelationFilterBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GDealerAddressManyRelationFilter build() => _build();
+
+  _$GDealerAddressManyRelationFilter _build() {
+    _$GDealerAddressManyRelationFilter _$result;
+    try {
+      _$result = _$v ??
+          new _$GDealerAddressManyRelationFilter._(
+              every: _every?.build(),
+              some: _some?.build(),
+              none: _none?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'every';
+        _every?.build();
+        _$failedField = 'some';
+        _some?.build();
+        _$failedField = 'none';
+        _none?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GDealerAddressManyRelationFilter', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -76213,13 +79487,22 @@ class _$GDealerOrderByInput extends GDealerOrderByInput {
   final GOrderDirection? modifiedAt;
   @override
   final GOrderDirection? approved;
+  @override
+  final GOrderDirection? lLat;
+  @override
+  final GOrderDirection? lLng;
 
   factory _$GDealerOrderByInput(
           [void Function(GDealerOrderByInputBuilder)? updates]) =>
       (new GDealerOrderByInputBuilder()..update(updates))._build();
 
   _$GDealerOrderByInput._(
-      {this.id, this.createdAt, this.modifiedAt, this.approved})
+      {this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.approved,
+      this.lLat,
+      this.lLng})
       : super._();
 
   @override
@@ -76238,7 +79521,9 @@ class _$GDealerOrderByInput extends GDealerOrderByInput {
         id == other.id &&
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
-        approved == other.approved;
+        approved == other.approved &&
+        lLat == other.lLat &&
+        lLng == other.lLng;
   }
 
   @override
@@ -76248,6 +79533,8 @@ class _$GDealerOrderByInput extends GDealerOrderByInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, approved.hashCode);
+    _$hash = $jc(_$hash, lLat.hashCode);
+    _$hash = $jc(_$hash, lLng.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -76258,7 +79545,9 @@ class _$GDealerOrderByInput extends GDealerOrderByInput {
           ..add('id', id)
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
-          ..add('approved', approved))
+          ..add('approved', approved)
+          ..add('lLat', lLat)
+          ..add('lLng', lLng))
         .toString();
   }
 }
@@ -76284,6 +79573,14 @@ class GDealerOrderByInputBuilder
   GOrderDirection? get approved => _$this._approved;
   set approved(GOrderDirection? approved) => _$this._approved = approved;
 
+  GOrderDirection? _lLat;
+  GOrderDirection? get lLat => _$this._lLat;
+  set lLat(GOrderDirection? lLat) => _$this._lLat = lLat;
+
+  GOrderDirection? _lLng;
+  GOrderDirection? get lLng => _$this._lLng;
+  set lLng(GOrderDirection? lLng) => _$this._lLng = lLng;
+
   GDealerOrderByInputBuilder();
 
   GDealerOrderByInputBuilder get _$this {
@@ -76293,6 +79590,8 @@ class GDealerOrderByInputBuilder
       _createdAt = $v.createdAt;
       _modifiedAt = $v.modifiedAt;
       _approved = $v.approved;
+      _lLat = $v.lLat;
+      _lLng = $v.lLng;
       _$v = null;
     }
     return this;
@@ -76318,7 +79617,9 @@ class GDealerOrderByInputBuilder
             id: id,
             createdAt: createdAt,
             modifiedAt: modifiedAt,
-            approved: approved);
+            approved: approved,
+            lLat: lLat,
+            lLng: lLng);
     replace(_$result);
     return _$result;
   }
@@ -76333,13 +79634,25 @@ class _$GDealerUpdateInput extends GDealerUpdateInput {
   final GUserRelateToOneForUpdateInput? user;
   @override
   final bool? approved;
+  @override
+  final GDealerAddressRelateToManyForUpdateInput? addresses;
+  @override
+  final double? lLat;
+  @override
+  final double? lLng;
 
   factory _$GDealerUpdateInput(
           [void Function(GDealerUpdateInputBuilder)? updates]) =>
       (new GDealerUpdateInputBuilder()..update(updates))._build();
 
   _$GDealerUpdateInput._(
-      {this.createdAt, this.modifiedAt, this.user, this.approved})
+      {this.createdAt,
+      this.modifiedAt,
+      this.user,
+      this.approved,
+      this.addresses,
+      this.lLat,
+      this.lLng})
       : super._();
 
   @override
@@ -76358,7 +79671,10 @@ class _$GDealerUpdateInput extends GDealerUpdateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         user == other.user &&
-        approved == other.approved;
+        approved == other.approved &&
+        addresses == other.addresses &&
+        lLat == other.lLat &&
+        lLng == other.lLng;
   }
 
   @override
@@ -76368,6 +79684,9 @@ class _$GDealerUpdateInput extends GDealerUpdateInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, approved.hashCode);
+    _$hash = $jc(_$hash, addresses.hashCode);
+    _$hash = $jc(_$hash, lLat.hashCode);
+    _$hash = $jc(_$hash, lLng.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -76378,7 +79697,10 @@ class _$GDealerUpdateInput extends GDealerUpdateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('user', user)
-          ..add('approved', approved))
+          ..add('approved', approved)
+          ..add('addresses', addresses)
+          ..add('lLat', lLat)
+          ..add('lLng', lLng))
         .toString();
   }
 }
@@ -76407,6 +79729,21 @@ class GDealerUpdateInputBuilder
   bool? get approved => _$this._approved;
   set approved(bool? approved) => _$this._approved = approved;
 
+  GDealerAddressRelateToManyForUpdateInputBuilder? _addresses;
+  GDealerAddressRelateToManyForUpdateInputBuilder get addresses =>
+      _$this._addresses ??=
+          new GDealerAddressRelateToManyForUpdateInputBuilder();
+  set addresses(GDealerAddressRelateToManyForUpdateInputBuilder? addresses) =>
+      _$this._addresses = addresses;
+
+  double? _lLat;
+  double? get lLat => _$this._lLat;
+  set lLat(double? lLat) => _$this._lLat = lLat;
+
+  double? _lLng;
+  double? get lLng => _$this._lLng;
+  set lLng(double? lLng) => _$this._lLng = lLng;
+
   GDealerUpdateInputBuilder();
 
   GDealerUpdateInputBuilder get _$this {
@@ -76416,6 +79753,9 @@ class GDealerUpdateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _user = $v.user?.toBuilder();
       _approved = $v.approved;
+      _addresses = $v.addresses?.toBuilder();
+      _lLat = $v.lLat;
+      _lLng = $v.lLng;
       _$v = null;
     }
     return this;
@@ -76443,7 +79783,10 @@ class GDealerUpdateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               user: _user?.build(),
-              approved: approved);
+              approved: approved,
+              addresses: _addresses?.build(),
+              lLat: lLat,
+              lLng: lLng);
     } catch (_) {
       late String _$failedField;
       try {
@@ -76453,9 +79796,168 @@ class GDealerUpdateInputBuilder
         _modifiedAt?.build();
         _$failedField = 'user';
         _user?.build();
+
+        _$failedField = 'addresses';
+        _addresses?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GDealerUpdateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GDealerAddressRelateToManyForUpdateInput
+    extends GDealerAddressRelateToManyForUpdateInput {
+  @override
+  final BuiltList<GDealerAddressWhereUniqueInput>? disconnect;
+  @override
+  final BuiltList<GDealerAddressWhereUniqueInput>? set;
+  @override
+  final BuiltList<GDealerAddressCreateInput>? create;
+  @override
+  final BuiltList<GDealerAddressWhereUniqueInput>? connect;
+
+  factory _$GDealerAddressRelateToManyForUpdateInput(
+          [void Function(GDealerAddressRelateToManyForUpdateInputBuilder)?
+              updates]) =>
+      (new GDealerAddressRelateToManyForUpdateInputBuilder()..update(updates))
+          ._build();
+
+  _$GDealerAddressRelateToManyForUpdateInput._(
+      {this.disconnect, this.set, this.create, this.connect})
+      : super._();
+
+  @override
+  GDealerAddressRelateToManyForUpdateInput rebuild(
+          void Function(GDealerAddressRelateToManyForUpdateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GDealerAddressRelateToManyForUpdateInputBuilder toBuilder() =>
+      new GDealerAddressRelateToManyForUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GDealerAddressRelateToManyForUpdateInput &&
+        disconnect == other.disconnect &&
+        set == other.set &&
+        create == other.create &&
+        connect == other.connect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, disconnect.hashCode);
+    _$hash = $jc(_$hash, set.hashCode);
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GDealerAddressRelateToManyForUpdateInput')
+          ..add('disconnect', disconnect)
+          ..add('set', set)
+          ..add('create', create)
+          ..add('connect', connect))
+        .toString();
+  }
+}
+
+class GDealerAddressRelateToManyForUpdateInputBuilder
+    implements
+        Builder<GDealerAddressRelateToManyForUpdateInput,
+            GDealerAddressRelateToManyForUpdateInputBuilder> {
+  _$GDealerAddressRelateToManyForUpdateInput? _$v;
+
+  ListBuilder<GDealerAddressWhereUniqueInput>? _disconnect;
+  ListBuilder<GDealerAddressWhereUniqueInput> get disconnect =>
+      _$this._disconnect ??= new ListBuilder<GDealerAddressWhereUniqueInput>();
+  set disconnect(ListBuilder<GDealerAddressWhereUniqueInput>? disconnect) =>
+      _$this._disconnect = disconnect;
+
+  ListBuilder<GDealerAddressWhereUniqueInput>? _set;
+  ListBuilder<GDealerAddressWhereUniqueInput> get set =>
+      _$this._set ??= new ListBuilder<GDealerAddressWhereUniqueInput>();
+  set set(ListBuilder<GDealerAddressWhereUniqueInput>? set) =>
+      _$this._set = set;
+
+  ListBuilder<GDealerAddressCreateInput>? _create;
+  ListBuilder<GDealerAddressCreateInput> get create =>
+      _$this._create ??= new ListBuilder<GDealerAddressCreateInput>();
+  set create(ListBuilder<GDealerAddressCreateInput>? create) =>
+      _$this._create = create;
+
+  ListBuilder<GDealerAddressWhereUniqueInput>? _connect;
+  ListBuilder<GDealerAddressWhereUniqueInput> get connect =>
+      _$this._connect ??= new ListBuilder<GDealerAddressWhereUniqueInput>();
+  set connect(ListBuilder<GDealerAddressWhereUniqueInput>? connect) =>
+      _$this._connect = connect;
+
+  GDealerAddressRelateToManyForUpdateInputBuilder();
+
+  GDealerAddressRelateToManyForUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _disconnect = $v.disconnect?.toBuilder();
+      _set = $v.set?.toBuilder();
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GDealerAddressRelateToManyForUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GDealerAddressRelateToManyForUpdateInput;
+  }
+
+  @override
+  void update(
+      void Function(GDealerAddressRelateToManyForUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GDealerAddressRelateToManyForUpdateInput build() => _build();
+
+  _$GDealerAddressRelateToManyForUpdateInput _build() {
+    _$GDealerAddressRelateToManyForUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GDealerAddressRelateToManyForUpdateInput._(
+              disconnect: _disconnect?.build(),
+              set: _set?.build(),
+              create: _create?.build(),
+              connect: _connect?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'disconnect';
+        _disconnect?.build();
+        _$failedField = 'set';
+        _set?.build();
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GDealerAddressRelateToManyForUpdateInput',
+            _$failedField,
+            e.toString());
       }
       rethrow;
     }
@@ -76585,13 +80087,25 @@ class _$GDealerCreateInput extends GDealerCreateInput {
   final GUserRelateToOneForCreateInput? user;
   @override
   final bool? approved;
+  @override
+  final GDealerAddressRelateToManyForCreateInput? addresses;
+  @override
+  final double? lLat;
+  @override
+  final double? lLng;
 
   factory _$GDealerCreateInput(
           [void Function(GDealerCreateInputBuilder)? updates]) =>
       (new GDealerCreateInputBuilder()..update(updates))._build();
 
   _$GDealerCreateInput._(
-      {this.createdAt, this.modifiedAt, this.user, this.approved})
+      {this.createdAt,
+      this.modifiedAt,
+      this.user,
+      this.approved,
+      this.addresses,
+      this.lLat,
+      this.lLng})
       : super._();
 
   @override
@@ -76610,7 +80124,10 @@ class _$GDealerCreateInput extends GDealerCreateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         user == other.user &&
-        approved == other.approved;
+        approved == other.approved &&
+        addresses == other.addresses &&
+        lLat == other.lLat &&
+        lLng == other.lLng;
   }
 
   @override
@@ -76620,6 +80137,9 @@ class _$GDealerCreateInput extends GDealerCreateInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, approved.hashCode);
+    _$hash = $jc(_$hash, addresses.hashCode);
+    _$hash = $jc(_$hash, lLat.hashCode);
+    _$hash = $jc(_$hash, lLng.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -76630,7 +80150,10 @@ class _$GDealerCreateInput extends GDealerCreateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('user', user)
-          ..add('approved', approved))
+          ..add('approved', approved)
+          ..add('addresses', addresses)
+          ..add('lLat', lLat)
+          ..add('lLng', lLng))
         .toString();
   }
 }
@@ -76659,6 +80182,21 @@ class GDealerCreateInputBuilder
   bool? get approved => _$this._approved;
   set approved(bool? approved) => _$this._approved = approved;
 
+  GDealerAddressRelateToManyForCreateInputBuilder? _addresses;
+  GDealerAddressRelateToManyForCreateInputBuilder get addresses =>
+      _$this._addresses ??=
+          new GDealerAddressRelateToManyForCreateInputBuilder();
+  set addresses(GDealerAddressRelateToManyForCreateInputBuilder? addresses) =>
+      _$this._addresses = addresses;
+
+  double? _lLat;
+  double? get lLat => _$this._lLat;
+  set lLat(double? lLat) => _$this._lLat = lLat;
+
+  double? _lLng;
+  double? get lLng => _$this._lLng;
+  set lLng(double? lLng) => _$this._lLng = lLng;
+
   GDealerCreateInputBuilder();
 
   GDealerCreateInputBuilder get _$this {
@@ -76668,6 +80206,9 @@ class GDealerCreateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _user = $v.user?.toBuilder();
       _approved = $v.approved;
+      _addresses = $v.addresses?.toBuilder();
+      _lLat = $v.lLat;
+      _lLng = $v.lLng;
       _$v = null;
     }
     return this;
@@ -76695,7 +80236,10 @@ class GDealerCreateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               user: _user?.build(),
-              approved: approved);
+              approved: approved,
+              addresses: _addresses?.build(),
+              lLat: lLat,
+              lLng: lLng);
     } catch (_) {
       late String _$failedField;
       try {
@@ -76705,9 +80249,136 @@ class GDealerCreateInputBuilder
         _modifiedAt?.build();
         _$failedField = 'user';
         _user?.build();
+
+        _$failedField = 'addresses';
+        _addresses?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GDealerCreateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GDealerAddressRelateToManyForCreateInput
+    extends GDealerAddressRelateToManyForCreateInput {
+  @override
+  final BuiltList<GDealerAddressCreateInput>? create;
+  @override
+  final BuiltList<GDealerAddressWhereUniqueInput>? connect;
+
+  factory _$GDealerAddressRelateToManyForCreateInput(
+          [void Function(GDealerAddressRelateToManyForCreateInputBuilder)?
+              updates]) =>
+      (new GDealerAddressRelateToManyForCreateInputBuilder()..update(updates))
+          ._build();
+
+  _$GDealerAddressRelateToManyForCreateInput._({this.create, this.connect})
+      : super._();
+
+  @override
+  GDealerAddressRelateToManyForCreateInput rebuild(
+          void Function(GDealerAddressRelateToManyForCreateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GDealerAddressRelateToManyForCreateInputBuilder toBuilder() =>
+      new GDealerAddressRelateToManyForCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GDealerAddressRelateToManyForCreateInput &&
+        create == other.create &&
+        connect == other.connect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GDealerAddressRelateToManyForCreateInput')
+          ..add('create', create)
+          ..add('connect', connect))
+        .toString();
+  }
+}
+
+class GDealerAddressRelateToManyForCreateInputBuilder
+    implements
+        Builder<GDealerAddressRelateToManyForCreateInput,
+            GDealerAddressRelateToManyForCreateInputBuilder> {
+  _$GDealerAddressRelateToManyForCreateInput? _$v;
+
+  ListBuilder<GDealerAddressCreateInput>? _create;
+  ListBuilder<GDealerAddressCreateInput> get create =>
+      _$this._create ??= new ListBuilder<GDealerAddressCreateInput>();
+  set create(ListBuilder<GDealerAddressCreateInput>? create) =>
+      _$this._create = create;
+
+  ListBuilder<GDealerAddressWhereUniqueInput>? _connect;
+  ListBuilder<GDealerAddressWhereUniqueInput> get connect =>
+      _$this._connect ??= new ListBuilder<GDealerAddressWhereUniqueInput>();
+  set connect(ListBuilder<GDealerAddressWhereUniqueInput>? connect) =>
+      _$this._connect = connect;
+
+  GDealerAddressRelateToManyForCreateInputBuilder();
+
+  GDealerAddressRelateToManyForCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GDealerAddressRelateToManyForCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GDealerAddressRelateToManyForCreateInput;
+  }
+
+  @override
+  void update(
+      void Function(GDealerAddressRelateToManyForCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GDealerAddressRelateToManyForCreateInput build() => _build();
+
+  _$GDealerAddressRelateToManyForCreateInput _build() {
+    _$GDealerAddressRelateToManyForCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GDealerAddressRelateToManyForCreateInput._(
+              create: _create?.build(), connect: _connect?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GDealerAddressRelateToManyForCreateInput',
+            _$failedField,
+            e.toString());
       }
       rethrow;
     }

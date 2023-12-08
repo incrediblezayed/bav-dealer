@@ -558,6 +558,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
   bool? get emailVerified;
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode?
       get referralCode;
+  bool? get deactivate;
   static Serializer<
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item>
       get serializer =>
@@ -810,9 +811,11 @@ abstract class GUserData_user
   GUserData_user_profile_image? get profile_image;
   BuiltList<GUserData_user_addresses>? get addresses;
   bool? get emailVerified;
+  GUserData_user_referralCode? get referralCode;
   BuiltList<GUserData_user_favorites>? get favorites;
   GUserData_user_aadhaar? get aadhaar;
   GUserData_user_driving_license? get driving_license;
+  bool? get deactivate;
   static Serializer<GUserData_user> get serializer => _$gUserDataUserSerializer;
 
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -900,6 +903,39 @@ abstract class GUserData_user_addresses
   static GUserData_user_addresses? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GUserData_user_addresses.serializer,
+        json,
+      );
+}
+
+abstract class GUserData_user_referralCode
+    implements
+        Built<GUserData_user_referralCode, GUserData_user_referralCodeBuilder> {
+  GUserData_user_referralCode._();
+
+  factory GUserData_user_referralCode(
+          [Function(GUserData_user_referralCodeBuilder b) updates]) =
+      _$GUserData_user_referralCode;
+
+  static void _initializeBuilder(GUserData_user_referralCodeBuilder b) =>
+      b..G__typename = 'ReferralCode';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get code;
+  _i2.GDateTime? get modifiedAt;
+  _i2.GDateTime? get createdAt;
+  static Serializer<GUserData_user_referralCode> get serializer =>
+      _$gUserDataUserReferralCodeSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUserData_user_referralCode.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUserData_user_referralCode? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUserData_user_referralCode.serializer,
         json,
       );
 }

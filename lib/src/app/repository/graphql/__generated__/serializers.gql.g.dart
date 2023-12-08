@@ -130,6 +130,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GCurrentUserOTPVars.serializer)
       ..add(GDateTime.serializer)
       ..add(GDateTimeNullableFilter.serializer)
+      ..add(GDealerAddressCreateInput.serializer)
+      ..add(GDealerAddressManyRelationFilter.serializer)
+      ..add(GDealerAddressOrderByInput.serializer)
+      ..add(GDealerAddressRelateToManyForCreateInput.serializer)
+      ..add(GDealerAddressRelateToManyForUpdateInput.serializer)
+      ..add(GDealerAddressUpdateArgs.serializer)
+      ..add(GDealerAddressUpdateInput.serializer)
+      ..add(GDealerAddressWhereInput.serializer)
+      ..add(GDealerAddressWhereUniqueInput.serializer)
       ..add(GDealerCreateInput.serializer)
       ..add(GDealerData.serializer)
       ..add(GDealerData_dealers.serializer)
@@ -344,7 +353,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GStringFilter.serializer)
       ..add(GStringNullableFilter.serializer)
       ..add(GTagCreateInput.serializer)
+      ..add(GTagManyRelationFilter.serializer)
       ..add(GTagOrderByInput.serializer)
+      ..add(GTagRelateToManyForCreateInput.serializer)
+      ..add(GTagRelateToManyForUpdateInput.serializer)
       ..add(GTagUpdateArgs.serializer)
       ..add(GTagUpdateInput.serializer)
       ..add(GTagWhereInput.serializer)
@@ -407,6 +419,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GUserData_user_favorites.serializer)
       ..add(GUserData_user_favorites_vehicleVariant.serializer)
       ..add(GUserData_user_profile_image.serializer)
+      ..add(GUserData_user_referralCode.serializer)
       ..add(GUserOrderByInput.serializer)
       ..add(GUserRelateToOneForCreateInput.serializer)
       ..add(GUserRelateToOneForUpdateInput.serializer)
@@ -715,6 +728,42 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GDateTime)]),
           () => new ListBuilder<GDateTime>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GDealerAddressCreateInput)]),
+          () => new ListBuilder<GDealerAddressCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GDealerAddressWhereUniqueInput)]),
+          () => new ListBuilder<GDealerAddressWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GDealerAddressWhereInput)]),
+          () => new ListBuilder<GDealerAddressWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GDealerAddressWhereInput)]),
+          () => new ListBuilder<GDealerAddressWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GDealerAddressWhereInput)]),
+          () => new ListBuilder<GDealerAddressWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GDealerAddressWhereUniqueInput)]),
+          () => new ListBuilder<GDealerAddressWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GDealerAddressWhereUniqueInput)]),
+          () => new ListBuilder<GDealerAddressWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GDealerAddressCreateInput)]),
+          () => new ListBuilder<GDealerAddressCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GDealerAddressWhereUniqueInput)]),
+          () => new ListBuilder<GDealerAddressWhereUniqueInput>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GDealerData_dealers)]),
@@ -1097,14 +1146,36 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(GSpecificationWhereInput)]),
           () => new ListBuilder<GSpecificationWhereInput>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(GTagWhereInput)]),
-          () => new ListBuilder<GTagWhereInput>())
+          const FullType(BuiltList, const [const FullType(GTagCreateInput)]),
+          () => new ListBuilder<GTagCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GTagWhereUniqueInput)]),
+          () => new ListBuilder<GTagWhereUniqueInput>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GTagWhereInput)]),
           () => new ListBuilder<GTagWhereInput>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GTagWhereInput)]),
           () => new ListBuilder<GTagWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GTagWhereInput)]),
+          () => new ListBuilder<GTagWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GTagWhereUniqueInput)]),
+          () => new ListBuilder<GTagWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GTagWhereUniqueInput)]),
+          () => new ListBuilder<GTagWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GTagCreateInput)]),
+          () => new ListBuilder<GTagCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GTagWhereUniqueInput)]),
+          () => new ListBuilder<GTagWhereUniqueInput>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GTestDriveDealerWhereInput)]),

@@ -21,6 +21,7 @@ type User {
   cartItemsCount(where: CartItemWhereInput! = {}): Int
   wallet: Wallet
   referralCode: ReferralCode
+  deactivate: Boolean
   passwordResetToken: PasswordState
   passwordResetIssuedAt: DateTime
   passwordResetRedeemedAt: DateTime
@@ -79,6 +80,7 @@ input UserWhereInput {
   cartItems: CartItemManyRelationFilter
   wallet: WalletWhereInput
   referralCode: ReferralCodeWhereInput
+  deactivate: BooleanFilter
   passwordResetToken: PasswordFilter
   passwordResetIssuedAt: DateTimeNullableFilter
   passwordResetRedeemedAt: DateTimeNullableFilter
@@ -117,7 +119,13 @@ input StringFilter {
   contains: String
   startsWith: String
   endsWith: String
+  mode: QueryMode
   not: NestedStringFilter
+}
+
+enum QueryMode {
+  default
+  insensitive
 }
 
 input NestedStringFilter {
@@ -172,6 +180,7 @@ input UserOrderByInput {
   emailVerified: OrderDirection
   phoneNumberVerified: OrderDirection
   isAdmin: OrderDirection
+  deactivate: OrderDirection
   passwordResetIssuedAt: OrderDirection
   passwordResetRedeemedAt: OrderDirection
 }
@@ -200,6 +209,7 @@ input UserUpdateInput {
   cartItems: CartItemRelateToManyForUpdateInput
   wallet: WalletRelateToOneForUpdateInput
   referralCode: ReferralCodeRelateToOneForUpdateInput
+  deactivate: Boolean
   passwordResetToken: String
   passwordResetIssuedAt: DateTime
   passwordResetRedeemedAt: DateTime
@@ -273,6 +283,7 @@ input UserCreateInput {
   cartItems: CartItemRelateToManyForCreateInput
   wallet: WalletRelateToOneForCreateInput
   referralCode: ReferralCodeRelateToOneForCreateInput
+  deactivate: Boolean
   passwordResetToken: String
   passwordResetIssuedAt: DateTime
   passwordResetRedeemedAt: DateTime
@@ -496,6 +507,96 @@ input AddressCreateInput {
   user: UserRelateToOneForCreateInput
 }
 
+type DealerAddress {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  phoneNumber: String
+  pinCode: String
+  address: String
+  town: String
+  district: String
+  state: String
+  dealer: Dealer
+}
+
+input DealerAddressWhereUniqueInput {
+  id: ID
+}
+
+input DealerAddressWhereInput {
+  AND: [DealerAddressWhereInput!]
+  OR: [DealerAddressWhereInput!]
+  NOT: [DealerAddressWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  name: StringFilter
+  phoneNumber: StringFilter
+  pinCode: StringFilter
+  address: StringFilter
+  town: StringFilter
+  district: StringFilter
+  state: StringFilter
+  dealer: DealerWhereInput
+}
+
+input DealerAddressOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  name: OrderDirection
+  phoneNumber: OrderDirection
+  pinCode: OrderDirection
+  address: OrderDirection
+  town: OrderDirection
+  district: OrderDirection
+  state: OrderDirection
+}
+
+input DealerAddressUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  phoneNumber: String
+  pinCode: String
+  address: String
+  town: String
+  district: String
+  state: String
+  dealer: DealerRelateToOneForUpdateInput
+}
+
+input DealerRelateToOneForUpdateInput {
+  create: DealerCreateInput
+  connect: DealerWhereUniqueInput
+  disconnect: Boolean
+}
+
+input DealerAddressUpdateArgs {
+  where: DealerAddressWhereUniqueInput!
+  data: DealerAddressUpdateInput!
+}
+
+input DealerAddressCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  phoneNumber: String
+  pinCode: String
+  address: String
+  town: String
+  district: String
+  state: String
+  dealer: DealerRelateToOneForCreateInput
+}
+
+input DealerRelateToOneForCreateInput {
+  create: DealerCreateInput
+  connect: DealerWhereUniqueInput
+}
+
 type Favorite {
   id: ID!
   createdAt: DateTime
@@ -669,6 +770,7 @@ type Brand {
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  logo: ImageFieldOutput
 }
 
 input BrandWhereUniqueInput {
@@ -696,6 +798,7 @@ input BrandUpdateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  logo: ImageFieldInput
 }
 
 input BrandUpdateArgs {
@@ -707,6 +810,7 @@ input BrandCreateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  logo: ImageFieldInput
 }
 
 type Specification {
@@ -874,12 +978,6 @@ input TestDriveDealerUpdateInput {
   available: Boolean
 }
 
-input DealerRelateToOneForUpdateInput {
-  create: DealerCreateInput
-  connect: DealerWhereUniqueInput
-  disconnect: Boolean
-}
-
 input VehicleColorRelateToOneForUpdateInput {
   create: VehicleColorCreateInput
   connect: VehicleColorWhereUniqueInput
@@ -899,11 +997,6 @@ input TestDriveDealerCreateInput {
   vehicleColor: VehicleColorRelateToOneForCreateInput
   price: Int
   available: Boolean
-}
-
-input DealerRelateToOneForCreateInput {
-  create: DealerCreateInput
-  connect: DealerWhereUniqueInput
 }
 
 input VehicleColorRelateToOneForCreateInput {
@@ -1249,6 +1342,7 @@ type VehicleImage {
   id: ID!
   createdAt: DateTime
   modifiedAt: DateTime
+  name: String
   image: ImageFieldOutput
   color: VehicleColor
 }
@@ -1296,6 +1390,7 @@ type VehicleSpecification {
   id: ID!
   createdAt: DateTime
   modifiedAt: DateTime
+  name: String
   specification: Specification
   type: String
   intValue: Int
@@ -1392,7 +1487,9 @@ type VehicleVariant {
   specificationsCount(where: VehicleSpecificationWhereInput! = {}): Int
   colors(where: VehicleColorWhereInput! = {}, orderBy: [VehicleColorOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleColor!]
   colorsCount(where: VehicleColorWhereInput! = {}): Int
-  price: Int
+  tags(where: TagWhereInput! = {}, orderBy: [TagOrderByInput!]! = [], take: Int, skip: Int! = 0): [Tag!]
+  tagsCount(where: TagWhereInput! = {}): Int
+  availableVehicleDealer(location: [Float!], vehicleColorId: ID, limit: Int, offset: Int): JSON
 }
 
 input VehicleVariantWhereUniqueInput {
@@ -1411,7 +1508,13 @@ input VehicleVariantWhereInput {
   default: BooleanFilter
   specifications: VehicleSpecificationManyRelationFilter
   colors: VehicleColorManyRelationFilter
-  price: IntNullableFilter
+  tags: TagManyRelationFilter
+}
+
+input TagManyRelationFilter {
+  every: TagWhereInput
+  some: TagWhereInput
+  none: TagWhereInput
 }
 
 input VehicleVariantOrderByInput {
@@ -1420,7 +1523,6 @@ input VehicleVariantOrderByInput {
   modifiedAt: OrderDirection
   name: OrderDirection
   default: OrderDirection
-  price: OrderDirection
 }
 
 input VehicleVariantUpdateInput {
@@ -1431,7 +1533,14 @@ input VehicleVariantUpdateInput {
   default: Boolean
   specifications: VehicleSpecificationRelateToManyForUpdateInput
   colors: VehicleColorRelateToManyForUpdateInput
-  price: Int
+  tags: TagRelateToManyForUpdateInput
+}
+
+input TagRelateToManyForUpdateInput {
+  disconnect: [TagWhereUniqueInput!]
+  set: [TagWhereUniqueInput!]
+  create: [TagCreateInput!]
+  connect: [TagWhereUniqueInput!]
 }
 
 input VehicleVariantUpdateArgs {
@@ -1447,7 +1556,12 @@ input VehicleVariantCreateInput {
   default: Boolean
   specifications: VehicleSpecificationRelateToManyForCreateInput
   colors: VehicleColorRelateToManyForCreateInput
-  price: Int
+  tags: TagRelateToManyForCreateInput
+}
+
+input TagRelateToManyForCreateInput {
+  create: [TagCreateInput!]
+  connect: [TagWhereUniqueInput!]
 }
 
 type VehicleDealerStockRequest {
@@ -1493,6 +1607,7 @@ input StringNullableFilter {
   contains: String
   startsWith: String
   endsWith: String
+  mode: QueryMode
   not: NestedStringNullableFilter
 }
 
@@ -2397,8 +2512,14 @@ type Dealer {
   id: ID!
   createdAt: DateTime
   modifiedAt: DateTime
+  name: String
   user: User
   approved: Boolean
+  addresses(where: DealerAddressWhereInput! = {}, orderBy: [DealerAddressOrderByInput!]! = [], take: Int, skip: Int! = 0): [DealerAddress!]
+  addressesCount(where: DealerAddressWhereInput! = {}): Int
+  lLat: Float
+  lLng: Float
+  location: [Float]
 }
 
 input DealerWhereUniqueInput {
@@ -2414,6 +2535,15 @@ input DealerWhereInput {
   modifiedAt: DateTimeNullableFilter
   user: UserWhereInput
   approved: BooleanFilter
+  addresses: DealerAddressManyRelationFilter
+  lLat: FloatNullableFilter
+  lLng: FloatNullableFilter
+}
+
+input DealerAddressManyRelationFilter {
+  every: DealerAddressWhereInput
+  some: DealerAddressWhereInput
+  none: DealerAddressWhereInput
 }
 
 input DealerOrderByInput {
@@ -2421,6 +2551,8 @@ input DealerOrderByInput {
   createdAt: OrderDirection
   modifiedAt: OrderDirection
   approved: OrderDirection
+  lLat: OrderDirection
+  lLng: OrderDirection
 }
 
 input DealerUpdateInput {
@@ -2428,6 +2560,16 @@ input DealerUpdateInput {
   modifiedAt: DateTime
   user: UserRelateToOneForUpdateInput
   approved: Boolean
+  addresses: DealerAddressRelateToManyForUpdateInput
+  lLat: Float
+  lLng: Float
+}
+
+input DealerAddressRelateToManyForUpdateInput {
+  disconnect: [DealerAddressWhereUniqueInput!]
+  set: [DealerAddressWhereUniqueInput!]
+  create: [DealerAddressCreateInput!]
+  connect: [DealerAddressWhereUniqueInput!]
 }
 
 input DealerUpdateArgs {
@@ -2440,6 +2582,14 @@ input DealerCreateInput {
   modifiedAt: DateTime
   user: UserRelateToOneForCreateInput
   approved: Boolean
+  addresses: DealerAddressRelateToManyForCreateInput
+  lLat: Float
+  lLng: Float
+}
+
+input DealerAddressRelateToManyForCreateInput {
+  create: [DealerAddressCreateInput!]
+  connect: [DealerAddressWhereUniqueInput!]
 }
 
 type NotificationType {
@@ -3434,6 +3584,12 @@ type Mutation {
   updateAddresses(data: [AddressUpdateArgs!]!): [Address]
   deleteAddress(where: AddressWhereUniqueInput!): Address
   deleteAddresses(where: [AddressWhereUniqueInput!]!): [Address]
+  createDealerAddress(data: DealerAddressCreateInput!): DealerAddress
+  createDealerAddresses(data: [DealerAddressCreateInput!]!): [DealerAddress]
+  updateDealerAddress(where: DealerAddressWhereUniqueInput!, data: DealerAddressUpdateInput!): DealerAddress
+  updateDealerAddresses(data: [DealerAddressUpdateArgs!]!): [DealerAddress]
+  deleteDealerAddress(where: DealerAddressWhereUniqueInput!): DealerAddress
+  deleteDealerAddresses(where: [DealerAddressWhereUniqueInput!]!): [DealerAddress]
   createFavorite(data: FavoriteCreateInput!): Favorite
   createFavorites(data: [FavoriteCreateInput!]!): [Favorite]
   updateFavorite(where: FavoriteWhereUniqueInput!, data: FavoriteUpdateInput!): Favorite
@@ -3766,6 +3922,9 @@ type Query {
   addresses(where: AddressWhereInput! = {}, orderBy: [AddressOrderByInput!]! = [], take: Int, skip: Int! = 0): [Address!]
   address(where: AddressWhereUniqueInput!): Address
   addressesCount(where: AddressWhereInput! = {}): Int
+  dealerAddresses(where: DealerAddressWhereInput! = {}, orderBy: [DealerAddressOrderByInput!]! = [], take: Int, skip: Int! = 0): [DealerAddress!]
+  dealerAddress(where: DealerAddressWhereUniqueInput!): DealerAddress
+  dealerAddressesCount(where: DealerAddressWhereInput! = {}): Int
   favorites(where: FavoriteWhereInput! = {}, orderBy: [FavoriteOrderByInput!]! = [], take: Int, skip: Int! = 0): [Favorite!]
   favorite(where: FavoriteWhereUniqueInput!): Favorite
   favoritesCount(where: FavoriteWhereInput! = {}): Int
@@ -3903,6 +4062,14 @@ type Query {
   validateUserPasswordResetToken(phoneNumber: String!, token: String!): ValidateUserPasswordResetTokenResult
   getCouponAppliedDetails(couponCode: String!, items: [Item!]!): JSON
   getOfferAppliedDetails(items: [Item!]!): JSON
+  getNearestDealers(location: [Float!]!): [NearestDealer!]
+}
+
+type NearestDealer {
+  id: ID!
+  lat: Float!
+  lng: Float!
+  distance: Float!
 }
 
 input Item {
@@ -3998,11 +4165,6 @@ enum KeystoneAdminUIFieldMetaItemViewFieldMode {
 enum KeystoneAdminUIFieldMetaItemViewFieldPosition {
   form
   sidebar
-}
-
-enum QueryMode {
-  default
-  insensitive
 }
 
 type KeystoneAdminUIFieldGroupMeta {

@@ -64,6 +64,70 @@ class AppDrawer extends ConsumerWidget {
     );
   }
 
+  Future<void> showDeleteAccountSheet(
+      BuildContext context, WidgetRef ref) async {
+    return showModalBottomSheet(
+      context: context,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20.r),
+          topRight: Radius.circular(20.r),
+        ),
+      ),
+      isScrollControlled: true,
+      builder: (context) {
+        return Container(
+          decoration: BoxDecoration(
+            color: AppTheme.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20.r),
+              topRight: Radius.circular(20.r),
+            ),
+          ),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'Are you sure you want to delete your account?',
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: KBottomBarButton(
+                      color: AppTheme.red,
+                      text: 'Yes',
+                      onTap: () {
+                        ref.read(authProvider).deactivateUser();
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    width: 20.w,
+                  ),
+                  Expanded(
+                    child: KBottomBarButton(
+                      text: 'No',
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context).textTheme;
@@ -232,6 +296,13 @@ class AppDrawer extends ConsumerWidget {
                       onTap: () {
                         cacheProvider.clear();
                         AppRoutes.pushAndRemoveUntil(page: const LoginPage());
+                      },
+                    ),
+                    _drawerTile(
+                      title: 'Delete Account',
+                      icon: AppImages.logout,
+                      onTap: () {
+                        showDeleteAccountSheet(context, ref);
                       },
                     ),
                   ],
