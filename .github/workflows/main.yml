@@ -17,10 +17,10 @@ jobs:
           java-version: "12.x"
       - uses: subosito/flutter-action@v1
         with:
-          flutter-version: "3.13.8"
+          flutter-version: "3.16.3"
       - uses: dart-lang/setup-dart@v1
         with:
-          sdk: "3.1.0"
+          sdk: "3.2.1"
       - run: flutter update-packages --force-upgrade
       - run: flutter pub get
       - run: mkdir releaseBuilds

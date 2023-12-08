@@ -33,6 +33,27 @@
       "label": "Build Bav Dealer Prod appbundle"
     },
     {
+      "type": "flutter",
+      "command": "flutter",
+      "args": ["build", "ipa", "--dart-define-from-file", "devEnv.json"],
+      "group": "build",
+      "problemMatcher": [],
+      "label": "Build Bav Dev ipa"
+    },
+    {
+      "type": "flutter",
+      "command": "flutter",
+      "args": [
+        "build",
+        "ipa",
+        "--dart-define-from-file",
+        "prodEnv.json"
+      ],
+      "group": "build",
+      "problemMatcher": [],
+      "label": "Build Bav Prod ipa"
+    },
+    {
       "type": "dart",
       "command": "dart",
       "group": "build",
