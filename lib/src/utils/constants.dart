@@ -13,4 +13,7 @@ class Constants {
 
   ///Rupee
   static const String rupee = '₹';
+
+  static  bool shouldTrack = true;
+
 }

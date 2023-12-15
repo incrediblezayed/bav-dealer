@@ -62,6 +62,14 @@ abstract class GVehicleOrdersReq
   @override
   _i2.GVehicleOrdersData? parseData(Map<String, dynamic> json) =>
       _i2.GVehicleOrdersData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GVehicleOrdersData, _i3.GVehicleOrdersVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GVehicleOrdersReq> get serializer =>
       _$gVehicleOrdersReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
@@ -121,6 +129,14 @@ abstract class GTestDriveOrdersReq
   @override
   _i2.GTestDriveOrdersData? parseData(Map<String, dynamic> json) =>
       _i2.GTestDriveOrdersData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GTestDriveOrdersData, _i3.GTestDriveOrdersVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GTestDriveOrdersReq> get serializer =>
       _$gTestDriveOrdersReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
@@ -181,6 +197,14 @@ abstract class GUpdateVehicleOrderReq
   @override
   _i2.GUpdateVehicleOrderData? parseData(Map<String, dynamic> json) =>
       _i2.GUpdateVehicleOrderData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GUpdateVehicleOrderData, _i3.GUpdateVehicleOrderVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GUpdateVehicleOrderReq> get serializer =>
       _$gUpdateVehicleOrderReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
@@ -241,6 +265,15 @@ abstract class GUpdateTestDriveOrderReq
   @override
   _i2.GUpdateTestDriveOrderData? parseData(Map<String, dynamic> json) =>
       _i2.GUpdateTestDriveOrderData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GUpdateTestDriveOrderData,
+      _i3.GUpdateTestDriveOrderVars> transformOperation(
+          _i4.Operation Function(_i4.Operation) transform) =>
+      this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GUpdateTestDriveOrderReq> get serializer =>
       _$gUpdateTestDriveOrderReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
@@ -302,6 +335,15 @@ abstract class GCreateOrderRejectionByDealerReq
   @override
   _i2.GCreateOrderRejectionByDealerData? parseData(Map<String, dynamic> json) =>
       _i2.GCreateOrderRejectionByDealerData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GCreateOrderRejectionByDealerData,
+      _i3.GCreateOrderRejectionByDealerVars> transformOperation(
+          _i4.Operation Function(_i4.Operation) transform) =>
+      this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GCreateOrderRejectionByDealerReq> get serializer =>
       _$gCreateOrderRejectionByDealerReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(

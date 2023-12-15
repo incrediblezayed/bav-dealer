@@ -62,6 +62,14 @@ abstract class GCreateUserReq
   @override
   _i2.GCreateUserData? parseData(Map<String, dynamic> json) =>
       _i2.GCreateUserData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GCreateUserData, _i3.GCreateUserVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GCreateUserReq> get serializer =>
       _$gCreateUserReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
@@ -120,6 +128,14 @@ abstract class GCurrentUserOTPReq
   @override
   _i2.GCurrentUserOTPData? parseData(Map<String, dynamic> json) =>
       _i2.GCurrentUserOTPData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GCurrentUserOTPData, _i3.GCurrentUserOTPVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GCurrentUserOTPReq> get serializer =>
       _$gCurrentUserOTPReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
@@ -179,6 +195,14 @@ abstract class GValidateUserOTPReq
   @override
   _i2.GValidateUserOTPData? parseData(Map<String, dynamic> json) =>
       _i2.GValidateUserOTPData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GValidateUserOTPData, _i3.GValidateUserOTPVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GValidateUserOTPReq> get serializer =>
       _$gValidateUserOTPReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
@@ -240,6 +264,15 @@ abstract class GSendUserPasswordResetLinkReq
   @override
   _i2.GSendUserPasswordResetLinkData? parseData(Map<String, dynamic> json) =>
       _i2.GSendUserPasswordResetLinkData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GSendUserPasswordResetLinkData,
+      _i3.GSendUserPasswordResetLinkVars> transformOperation(
+          _i4.Operation Function(_i4.Operation) transform) =>
+      this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GSendUserPasswordResetLinkReq> get serializer =>
       _$gSendUserPasswordResetLinkReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
@@ -301,6 +334,15 @@ abstract class GRedeemUserPasswordResetTokenReq
   @override
   _i2.GRedeemUserPasswordResetTokenData? parseData(Map<String, dynamic> json) =>
       _i2.GRedeemUserPasswordResetTokenData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GRedeemUserPasswordResetTokenData,
+      _i3.GRedeemUserPasswordResetTokenVars> transformOperation(
+          _i4.Operation Function(_i4.Operation) transform) =>
+      this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GRedeemUserPasswordResetTokenReq> get serializer =>
       _$gRedeemUserPasswordResetTokenReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
@@ -365,6 +407,15 @@ abstract class GValidateUserPasswordResetTokenReq
   _i2.GValidateUserPasswordResetTokenData? parseData(
           Map<String, dynamic> json) =>
       _i2.GValidateUserPasswordResetTokenData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GValidateUserPasswordResetTokenData,
+      _i3.GValidateUserPasswordResetTokenVars> transformOperation(
+          _i4.Operation Function(_i4.Operation) transform) =>
+      this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GValidateUserPasswordResetTokenReq> get serializer =>
       _$gValidateUserPasswordResetTokenReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
@@ -424,6 +475,14 @@ abstract class GCreateDealerReq
   @override
   _i2.GCreateDealerData? parseData(Map<String, dynamic> json) =>
       _i2.GCreateDealerData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GCreateDealerData, _i3.GCreateDealerVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GCreateDealerReq> get serializer =>
       _$gCreateDealerReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
@@ -485,6 +544,15 @@ abstract class GAuthenticateUserWithPasswordReq
   @override
   _i2.GAuthenticateUserWithPasswordData? parseData(Map<String, dynamic> json) =>
       _i2.GAuthenticateUserWithPasswordData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GAuthenticateUserWithPasswordData,
+      _i3.GAuthenticateUserWithPasswordVars> transformOperation(
+          _i4.Operation Function(_i4.Operation) transform) =>
+      this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GAuthenticateUserWithPasswordReq> get serializer =>
       _$gAuthenticateUserWithPasswordReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
@@ -543,6 +611,14 @@ abstract class GUserReq
   @override
   _i2.GUserData? parseData(Map<String, dynamic> json) =>
       _i2.GUserData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GUserData, _i3.GUserVars> transformOperation(
+          _i4.Operation Function(_i4.Operation) transform) =>
+      this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GUserReq> get serializer => _$gUserReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
         GUserReq.serializer,
@@ -600,6 +676,14 @@ abstract class GUpdateUserReq
   @override
   _i2.GUpdateUserData? parseData(Map<String, dynamic> json) =>
       _i2.GUpdateUserData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GUpdateUserData, _i3.GUpdateUserVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GUpdateUserReq> get serializer =>
       _$gUpdateUserReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
@@ -657,6 +741,14 @@ abstract class GDealerReq
   @override
   _i2.GDealerData? parseData(Map<String, dynamic> json) =>
       _i2.GDealerData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GDealerData, _i3.GDealerVars> transformOperation(
+          _i4.Operation Function(_i4.Operation) transform) =>
+      this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GDealerReq> get serializer => _$gDealerReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
         GDealerReq.serializer,

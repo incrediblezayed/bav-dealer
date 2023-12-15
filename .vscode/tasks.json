@@ -47,18 +47,20 @@
         "build",
         "ipa",
         "--dart-define-from-file",
-        "prodEnv.json"
-      ],
+        "prodEnv.json",
+        "--build-name=1.0.0",
+        "--build-number=6"
+      ],  
       "group": "build",
       "problemMatcher": [],
-      "label": "Build Bav Prod ipa"
+      "label": "Build Bav Dealer Prod ipa"
     },
     {
       "type": "dart",
       "command": "dart",
       "group": "build",
       "args": ["run", "build_runner", "build", "--delete-conflicting-outputs"],
-      "label": "Dart run build_runnee"
+      "label": "Dart run build_runner"
     }
   ]
 }

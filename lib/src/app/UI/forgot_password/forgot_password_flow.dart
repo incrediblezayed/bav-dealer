@@ -165,7 +165,7 @@ class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
 
   Widget _buildPasswordResetForm() {
     final authPro = ref.watch(authProvider);
-    final textTheme = Theme.of(context).textTheme;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -232,8 +232,7 @@ class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
     );
   }
 
-  Timer? _timer;
-
+  
   int time = 60;
 
   void onPageChanged(int index) {

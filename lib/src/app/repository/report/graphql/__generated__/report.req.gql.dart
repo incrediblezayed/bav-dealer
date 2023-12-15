@@ -62,6 +62,14 @@ abstract class GCreateReportReq
   @override
   _i2.GCreateReportData? parseData(Map<String, dynamic> json) =>
       _i2.GCreateReportData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GCreateReportData, _i3.GCreateReportVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GCreateReportReq> get serializer =>
       _$gCreateReportReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
@@ -120,6 +128,14 @@ abstract class GCreateFeedbackReq
   @override
   _i2.GCreateFeedbackData? parseData(Map<String, dynamic> json) =>
       _i2.GCreateFeedbackData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GCreateFeedbackData, _i3.GCreateFeedbackVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GCreateFeedbackReq> get serializer =>
       _$gCreateFeedbackReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
@@ -178,6 +194,14 @@ abstract class GCategoriesReq
   @override
   _i2.GCategoriesData? parseData(Map<String, dynamic> json) =>
       _i2.GCategoriesData.fromJson(json);
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  @override
+  _i1.OperationRequest<_i2.GCategoriesData, _i3.GCategoriesVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
   static Serializer<GCategoriesReq> get serializer =>
       _$gCategoriesReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(

@@ -155,6 +155,10 @@ class AuthProvider extends ChangeNotifier {
           AppRoutes.showErrorSnackbar(message: 'User not verified');
           return false;
         }
+        if (user.deactivate) {
+          AppRoutes.showErrorSnackbar(message: 'User not found');
+          return false;
+        }
       }
       final sessionToken = data['sessionToken'] as String;
       await cacheProvider.setSessionToken(sessionToken);
@@ -475,6 +479,16 @@ class AuthProvider extends ChangeNotifier {
       }
     } catch (e) {
       AppRoutes.showErrorSnackbar(message: e.toString());
+    }
+  }
+
+  Future<void> deactivateUser() async {
+    final res = await _authRepository.deactivateUser();
+    if (res) {
+      cacheProvider.clear();
+      AppRoutes.pushAndRemoveUntil(page: const LoginPage());
+    } else {
+      AppRoutes.showErrorSnackbar(message: 'Something went wrong');
     }
   }
 }

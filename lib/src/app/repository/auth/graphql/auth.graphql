@@ -11,7 +11,6 @@ mutation ValidateUserOTP($key: String!, $otp: String!) {
   validateUserOTP(key: $key, otp: $otp)
 }
 
-
 mutation SendUserPasswordResetLink($phoneNumber: String!) {
   sendUserPasswordResetLink(phoneNumber: $phoneNumber)
 }
@@ -38,7 +37,6 @@ query ValidateUserPasswordResetToken($token: String!, $phoneNumber: String!) {
   }
 }
 
-
 mutation CreateDealer($data: DealerCreateInput!) {
   createDealer(data: $data) {
     id
@@ -46,7 +44,6 @@ mutation CreateDealer($data: DealerCreateInput!) {
 }
 mutation AuthenticateUserWithPassword(
   $phoneNumber: String!
-  
   $password: String!
 ) {
   authenticateUserWithPassword(phoneNumber: $phoneNumber, password: $password) {
@@ -87,6 +84,7 @@ mutation AuthenticateUserWithPassword(
           modifiedAt
           createdAt
         }
+        deactivate
       }
       sessionToken
     }
@@ -141,6 +139,7 @@ query User($where: UserWhereUniqueInput!) {
       url
       filename
     }
+    deactivate
   }
 }
 
@@ -156,4 +155,3 @@ query Dealer($where: DealerWhereInput!) {
     approved
   }
 }
-

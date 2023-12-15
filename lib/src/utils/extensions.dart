@@ -20,6 +20,14 @@ extension Log on Object? {
     int? sequenceNumber,
     StackTrace? stackTrace,
   }) {
+       if (Constants.shouldTrack) {
+      if (this is Exception) {
+        Sentry.captureException(
+          this,
+          stackTrace: stackTrace,
+        );
+      }
+    }
     developer.log(
       '$color ${DateFormat('yyyy-MM-dd HH:mm:ss').format(DateTime.now())} $this ${LogColors.black}',
       name: color + name + LogColors.black,

@@ -1006,6 +1006,13 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
             specifiedType: const FullType(
                 GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode)));
     }
+    value = object.deactivate;
+    if (value != null) {
+      result
+        ..add('deactivate')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -1076,6 +1083,10 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
                   specifiedType: const FullType(
                       GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode))!
               as GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode);
+          break;
+        case 'deactivate':
+          result.deactivate = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -1649,6 +1660,13 @@ class _$GUserData_userSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GUserData_user_driving_license)));
     }
+    value = object.deactivate;
+    if (value != null) {
+      result
+        ..add('deactivate')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -1727,6 +1745,10 @@ class _$GUserData_userSerializer
                   specifiedType:
                       const FullType(GUserData_user_driving_license))!
               as GUserData_user_driving_license);
+          break;
+        case 'deactivate':
+          result.deactivate = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -4225,6 +4247,8 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
   @override
   final GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode?
       referralCode;
+  @override
+  final bool? deactivate;
 
   factory _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item(
           [void Function(
@@ -4246,7 +4270,8 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
       this.profile_image,
       this.addresses,
       this.emailVerified,
-      this.referralCode})
+      this.referralCode,
+      this.deactivate})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
@@ -4288,7 +4313,8 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
         profile_image == other.profile_image &&
         addresses == other.addresses &&
         emailVerified == other.emailVerified &&
-        referralCode == other.referralCode;
+        referralCode == other.referralCode &&
+        deactivate == other.deactivate;
   }
 
   @override
@@ -4306,6 +4332,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
     _$hash = $jc(_$hash, addresses.hashCode);
     _$hash = $jc(_$hash, emailVerified.hashCode);
     _$hash = $jc(_$hash, referralCode.hashCode);
+    _$hash = $jc(_$hash, deactivate.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -4325,7 +4352,8 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
           ..add('profile_image', profile_image)
           ..add('addresses', addresses)
           ..add('emailVerified', emailVerified)
-          ..add('referralCode', referralCode))
+          ..add('referralCode', referralCode)
+          ..add('deactivate', deactivate))
         .toString();
   }
 }
@@ -4409,6 +4437,10 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
               referralCode) =>
       _$this._referralCode = referralCode;
 
+  bool? _deactivate;
+  bool? get deactivate => _$this._deactivate;
+  set deactivate(bool? deactivate) => _$this._deactivate = deactivate;
+
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_itemBuilder() {
     GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item
         ._initializeBuilder(this);
@@ -4430,6 +4462,7 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
       _addresses = $v.addresses?.toBuilder();
       _emailVerified = $v.emailVerified;
       _referralCode = $v.referralCode?.toBuilder();
+      _deactivate = $v.deactivate;
       _$v = null;
     }
     return this;
@@ -4481,7 +4514,8 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
               profile_image: _profile_image?.build(),
               addresses: _addresses?.build(),
               emailVerified: emailVerified,
-              referralCode: _referralCode?.build());
+              referralCode: _referralCode?.build(),
+              deactivate: deactivate);
     } catch (_) {
       late String _$failedField;
       try {
@@ -5496,6 +5530,8 @@ class _$GUserData_user extends GUserData_user {
   final GUserData_user_aadhaar? aadhaar;
   @override
   final GUserData_user_driving_license? driving_license;
+  @override
+  final bool? deactivate;
 
   factory _$GUserData_user([void Function(GUserData_userBuilder)? updates]) =>
       (new GUserData_userBuilder()..update(updates))._build();
@@ -5514,7 +5550,8 @@ class _$GUserData_user extends GUserData_user {
       this.emailVerified,
       this.favorites,
       this.aadhaar,
-      this.driving_license})
+      this.driving_license,
+      this.deactivate})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GUserData_user', 'G__typename');
@@ -5546,7 +5583,8 @@ class _$GUserData_user extends GUserData_user {
         emailVerified == other.emailVerified &&
         favorites == other.favorites &&
         aadhaar == other.aadhaar &&
-        driving_license == other.driving_license;
+        driving_license == other.driving_license &&
+        deactivate == other.deactivate;
   }
 
   @override
@@ -5566,6 +5604,7 @@ class _$GUserData_user extends GUserData_user {
     _$hash = $jc(_$hash, favorites.hashCode);
     _$hash = $jc(_$hash, aadhaar.hashCode);
     _$hash = $jc(_$hash, driving_license.hashCode);
+    _$hash = $jc(_$hash, deactivate.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -5586,7 +5625,8 @@ class _$GUserData_user extends GUserData_user {
           ..add('emailVerified', emailVerified)
           ..add('favorites', favorites)
           ..add('aadhaar', aadhaar)
-          ..add('driving_license', driving_license))
+          ..add('driving_license', driving_license)
+          ..add('deactivate', deactivate))
         .toString();
   }
 }
@@ -5663,6 +5703,10 @@ class GUserData_userBuilder
   set driving_license(GUserData_user_driving_licenseBuilder? driving_license) =>
       _$this._driving_license = driving_license;
 
+  bool? _deactivate;
+  bool? get deactivate => _$this._deactivate;
+  set deactivate(bool? deactivate) => _$this._deactivate = deactivate;
+
   GUserData_userBuilder() {
     GUserData_user._initializeBuilder(this);
   }
@@ -5684,6 +5728,7 @@ class GUserData_userBuilder
       _favorites = $v.favorites?.toBuilder();
       _aadhaar = $v.aadhaar?.toBuilder();
       _driving_license = $v.driving_license?.toBuilder();
+      _deactivate = $v.deactivate;
       _$v = null;
     }
     return this;
@@ -5723,7 +5768,8 @@ class GUserData_userBuilder
               emailVerified: emailVerified,
               favorites: _favorites?.build(),
               aadhaar: _aadhaar?.build(),
-              driving_license: _driving_license?.build());
+              driving_license: _driving_license?.build(),
+              deactivate: deactivate);
     } catch (_) {
       late String _$failedField;
       try {

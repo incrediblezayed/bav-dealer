@@ -593,6 +593,13 @@ const AuthenticateUserWithPassword = _i1.OperationDefinitionNode(
                     ),
                   ]),
                 ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'deactivate'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
               ]),
             ),
             _i1.FieldNode(
@@ -916,6 +923,13 @@ const User = _i1.OperationDefinitionNode(
               selectionSet: null,
             ),
           ]),
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'deactivate'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
         ),
       ]),
     )

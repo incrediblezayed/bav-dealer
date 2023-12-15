@@ -513,6 +513,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
   bool? get emailVerified;
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode?
       get referralCode;
+  bool? get deactivate;
   static Serializer<
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item>
       get serializer =>
@@ -750,6 +751,7 @@ abstract class GUserData_user
   BuiltList<GUserData_user_favorites>? get favorites;
   GUserData_user_aadhaar? get aadhaar;
   GUserData_user_driving_license? get driving_license;
+  bool? get deactivate;
   static Serializer<GUserData_user> get serializer => _$gUserDataUserSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GUserData_user.serializer,
