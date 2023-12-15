@@ -254,10 +254,8 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                       label: e.name,
                       hintText: 'Enter ${e.name}',
                       onChanged: (value) {
-                        if (value != null) {
-                          final price = int.parse(value);
-                          prices[i].price = price;
-                        }
+                        final price = int.parse(value);
+                        prices[i].price = price;
                       },
                       inputType: TextInputType.number,
                       inputFormatters: [

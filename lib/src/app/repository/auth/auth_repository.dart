@@ -355,7 +355,7 @@ class AuthRepository {
     return false;
   }
 
-    Future<bool> deactivateUser() async {
+  Future<bool> deactivateUser() async {
     final user = cacheProvider.getUser();
     final response = await _client
         .request(

@@ -8,7 +8,7 @@ on:
 name: "Build"
 jobs:
   build:
-    name: Build Apps
+    name: Build Dealer Apps
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1

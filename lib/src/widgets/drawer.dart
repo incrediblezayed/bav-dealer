@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
 import 'package:dealerapp/src/app/UI/coming_soon.dart';
 import 'package:dealerapp/src/app/UI/drawer/about_us.dart';
@@ -60,6 +61,70 @@ class AppDrawer extends ConsumerWidget {
         size: 15.h,
         color: Colors.grey,
       ),
+    );
+  }
+
+  Future<void> showDeleteAccountSheet(
+      BuildContext context, WidgetRef ref) async {
+    return showModalBottomSheet(
+      context: context,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20.r),
+          topRight: Radius.circular(20.r),
+        ),
+      ),
+      isScrollControlled: true,
+      builder: (context) {
+        return Container(
+          decoration: BoxDecoration(
+            color: AppTheme.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20.r),
+              topRight: Radius.circular(20.r),
+            ),
+          ),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'Are you sure you want to delete your account?',
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: KBottomBarButton(
+                      color: AppTheme.red,
+                      text: 'Yes',
+                      onTap: () {
+                        ref.read(authProvider).deactivateUser();
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    width: 20.w,
+                  ),
+                  Expanded(
+                    child: KBottomBarButton(
+                      text: 'No',
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 
@@ -158,6 +223,7 @@ class AppDrawer extends ConsumerWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 20.w, bottom: 30.h),
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       UserProfileImage(
                         url: user.profile_image?.url,
@@ -166,35 +232,31 @@ class AppDrawer extends ConsumerWidget {
                       SizedBox(
                         width: 16.w,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            user.name!,
-                            style: theme.headlineLarge,
-                          ),
-                          SizedBox(height: 6.h),
-                          //const Text('@Tanmay'),
-                          SizedBox(height: 6.h),
-
-                          /* Text(
-                              homePageProv.user.name ?? '',
-                              style: theme.textTheme.headlineMedium,
-                              ) */
-                          KBottomBarButton(
-                            minSize: true,
-                            fontSize: 12,
-                            radius: 100,
-                            text: 'Edit Profile',
-                            onTap: () {
-                              AppRoutes.push(
-                                page: const EditProfile(
-                                  isPersonalInfo: false,
-                                ),
-                              );
-                            },
-                          ),
-                        ],
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            AutoSizeText(
+                              user.name!,
+                              style: theme.headlineLarge,
+                              maxLines: 2,
+                            ),
+                            SizedBox(height: 6.h),
+                            KBottomBarButton(
+                              minSize: true,
+                              fontSize: 12,
+                              radius: 100,
+                              text: 'Edit Profile',
+                              onTap: () {
+                                AppRoutes.push(
+                                  page: const EditProfile(
+                                    isPersonalInfo: false,
+                                  ),
+                                );
+                              },
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -273,7 +335,7 @@ class AppDrawer extends ConsumerWidget {
                     ),
                     _drawerTile(
                       title: 'Add a Feedback',
-                      icon: AppImages.aboutus,
+                      icon: AppImages.feedbacksvg,
                       onTap: () {
                         AppRoutes.push(
                             page: ReportPage(
@@ -283,7 +345,7 @@ class AppDrawer extends ConsumerWidget {
                     ),
                     _drawerTile(
                       title: 'Report a Problem',
-                      icon: AppImages.aboutus,
+                      icon: AppImages.reportsvg,
                       onTap: () {
                         AppRoutes.push(
                             page: ReportPage(
@@ -299,7 +361,7 @@ class AppDrawer extends ConsumerWidget {
                         AppRoutes.pushAndRemoveUntil(page: const LoginPage());
                       },
                     ),
-                      _drawerTile(
+                    _drawerTile(
                       title: 'Delete Account',
                       icon: AppImages.logout,
                       onTap: () {

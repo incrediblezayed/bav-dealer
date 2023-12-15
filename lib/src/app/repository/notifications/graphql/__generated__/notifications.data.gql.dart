@@ -22,15 +22,18 @@ abstract class GAppNotificationsData
 
   static void _initializeBuilder(GAppNotificationsDataBuilder b) =>
       b..G__typename = 'Query';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   BuiltList<GAppNotificationsData_appNotifications>? get appNotifications;
   static Serializer<GAppNotificationsData> get serializer =>
       _$gAppNotificationsDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GAppNotificationsData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAppNotificationsData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GAppNotificationsData.serializer,
@@ -51,6 +54,7 @@ abstract class GAppNotificationsData_appNotifications
   static void _initializeBuilder(
           GAppNotificationsData_appNotificationsBuilder b) =>
       b..G__typename = 'AppNotification';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -61,10 +65,12 @@ abstract class GAppNotificationsData_appNotifications
   String? get title;
   static Serializer<GAppNotificationsData_appNotifications> get serializer =>
       _$gAppNotificationsDataAppNotificationsSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GAppNotificationsData_appNotifications.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAppNotificationsData_appNotifications? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -87,6 +93,7 @@ abstract class GAppNotificationsData_appNotifications_notificationType
   static void _initializeBuilder(
           GAppNotificationsData_appNotifications_notificationTypeBuilder b) =>
       b..G__typename = 'NotificationType';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -95,10 +102,12 @@ abstract class GAppNotificationsData_appNotifications_notificationType
   static Serializer<GAppNotificationsData_appNotifications_notificationType>
       get serializer =>
           _$gAppNotificationsDataAppNotificationsNotificationTypeSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GAppNotificationsData_appNotifications_notificationType.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAppNotificationsData_appNotifications_notificationType? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(

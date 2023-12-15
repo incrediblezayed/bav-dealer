@@ -32,6 +32,7 @@ abstract class GCreateUserReq
       operationName: 'CreateUser',
     )
     ..executeOnListen = true;
+
   @override
   _i3.GCreateUserVars get vars;
   @override
@@ -41,6 +42,7 @@ abstract class GCreateUserReq
         operation: operation,
         variables: vars.toJson(),
       );
+
   @override
   String? get requestId;
   @override
@@ -62,20 +64,26 @@ abstract class GCreateUserReq
   @override
   _i2.GCreateUserData? parseData(Map<String, dynamic> json) =>
       _i2.GCreateUserData.fromJson(json);
+
   @override
   Map<String, dynamic> varsToJson() => vars.toJson();
+
   @override
   Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+
   @override
   _i1.OperationRequest<_i2.GCreateUserData, _i3.GCreateUserVars>
       transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
           this.rebuild((b) => b..operation = transform(operation));
+
   static Serializer<GCreateUserReq> get serializer =>
       _$gCreateUserReqSerializer;
+
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
         GCreateUserReq.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateUserReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
         GCreateUserReq.serializer,
@@ -98,6 +106,7 @@ abstract class GCurrentUserOTPReq
       operationName: 'CurrentUserOTP',
     )
     ..executeOnListen = true;
+
   @override
   _i3.GCurrentUserOTPVars get vars;
   @override
@@ -107,6 +116,7 @@ abstract class GCurrentUserOTPReq
         operation: operation,
         variables: vars.toJson(),
       );
+
   @override
   String? get requestId;
   @override
@@ -128,20 +138,26 @@ abstract class GCurrentUserOTPReq
   @override
   _i2.GCurrentUserOTPData? parseData(Map<String, dynamic> json) =>
       _i2.GCurrentUserOTPData.fromJson(json);
+
   @override
   Map<String, dynamic> varsToJson() => vars.toJson();
+
   @override
   Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+
   @override
   _i1.OperationRequest<_i2.GCurrentUserOTPData, _i3.GCurrentUserOTPVars>
       transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
           this.rebuild((b) => b..operation = transform(operation));
+
   static Serializer<GCurrentUserOTPReq> get serializer =>
       _$gCurrentUserOTPReqSerializer;
+
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
         GCurrentUserOTPReq.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCurrentUserOTPReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
         GCurrentUserOTPReq.serializer,
@@ -165,6 +181,7 @@ abstract class GValidateUserOTPReq
       operationName: 'ValidateUserOTP',
     )
     ..executeOnListen = true;
+
   @override
   _i3.GValidateUserOTPVars get vars;
   @override
@@ -174,6 +191,7 @@ abstract class GValidateUserOTPReq
         operation: operation,
         variables: vars.toJson(),
       );
+
   @override
   String? get requestId;
   @override
@@ -195,20 +213,26 @@ abstract class GValidateUserOTPReq
   @override
   _i2.GValidateUserOTPData? parseData(Map<String, dynamic> json) =>
       _i2.GValidateUserOTPData.fromJson(json);
+
   @override
   Map<String, dynamic> varsToJson() => vars.toJson();
+
   @override
   Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+
   @override
   _i1.OperationRequest<_i2.GValidateUserOTPData, _i3.GValidateUserOTPVars>
       transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
           this.rebuild((b) => b..operation = transform(operation));
+
   static Serializer<GValidateUserOTPReq> get serializer =>
       _$gValidateUserOTPReqSerializer;
+
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
         GValidateUserOTPReq.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GValidateUserOTPReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
         GValidateUserOTPReq.serializer,
@@ -234,6 +258,7 @@ abstract class GSendUserPasswordResetLinkReq
       operationName: 'SendUserPasswordResetLink',
     )
     ..executeOnListen = true;
+
   @override
   _i3.GSendUserPasswordResetLinkVars get vars;
   @override
@@ -243,6 +268,7 @@ abstract class GSendUserPasswordResetLinkReq
         operation: operation,
         variables: vars.toJson(),
       );
+
   @override
   String? get requestId;
   @override
@@ -264,21 +290,27 @@ abstract class GSendUserPasswordResetLinkReq
   @override
   _i2.GSendUserPasswordResetLinkData? parseData(Map<String, dynamic> json) =>
       _i2.GSendUserPasswordResetLinkData.fromJson(json);
+
   @override
   Map<String, dynamic> varsToJson() => vars.toJson();
+
   @override
   Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+
   @override
   _i1.OperationRequest<_i2.GSendUserPasswordResetLinkData,
       _i3.GSendUserPasswordResetLinkVars> transformOperation(
           _i4.Operation Function(_i4.Operation) transform) =>
       this.rebuild((b) => b..operation = transform(operation));
+
   static Serializer<GSendUserPasswordResetLinkReq> get serializer =>
       _$gSendUserPasswordResetLinkReqSerializer;
+
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
         GSendUserPasswordResetLinkReq.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSendUserPasswordResetLinkReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
         GSendUserPasswordResetLinkReq.serializer,
@@ -304,6 +336,7 @@ abstract class GRedeemUserPasswordResetTokenReq
       operationName: 'RedeemUserPasswordResetToken',
     )
     ..executeOnListen = true;
+
   @override
   _i3.GRedeemUserPasswordResetTokenVars get vars;
   @override
@@ -313,6 +346,7 @@ abstract class GRedeemUserPasswordResetTokenReq
         operation: operation,
         variables: vars.toJson(),
       );
+
   @override
   String? get requestId;
   @override
@@ -334,21 +368,27 @@ abstract class GRedeemUserPasswordResetTokenReq
   @override
   _i2.GRedeemUserPasswordResetTokenData? parseData(Map<String, dynamic> json) =>
       _i2.GRedeemUserPasswordResetTokenData.fromJson(json);
+
   @override
   Map<String, dynamic> varsToJson() => vars.toJson();
+
   @override
   Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+
   @override
   _i1.OperationRequest<_i2.GRedeemUserPasswordResetTokenData,
       _i3.GRedeemUserPasswordResetTokenVars> transformOperation(
           _i4.Operation Function(_i4.Operation) transform) =>
       this.rebuild((b) => b..operation = transform(operation));
+
   static Serializer<GRedeemUserPasswordResetTokenReq> get serializer =>
       _$gRedeemUserPasswordResetTokenReqSerializer;
+
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
         GRedeemUserPasswordResetTokenReq.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GRedeemUserPasswordResetTokenReq? fromJson(
           Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
@@ -376,6 +416,7 @@ abstract class GValidateUserPasswordResetTokenReq
           operationName: 'ValidateUserPasswordResetToken',
         )
         ..executeOnListen = true;
+
   @override
   _i3.GValidateUserPasswordResetTokenVars get vars;
   @override
@@ -385,6 +426,7 @@ abstract class GValidateUserPasswordResetTokenReq
         operation: operation,
         variables: vars.toJson(),
       );
+
   @override
   String? get requestId;
   @override
@@ -407,21 +449,27 @@ abstract class GValidateUserPasswordResetTokenReq
   _i2.GValidateUserPasswordResetTokenData? parseData(
           Map<String, dynamic> json) =>
       _i2.GValidateUserPasswordResetTokenData.fromJson(json);
+
   @override
   Map<String, dynamic> varsToJson() => vars.toJson();
+
   @override
   Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+
   @override
   _i1.OperationRequest<_i2.GValidateUserPasswordResetTokenData,
       _i3.GValidateUserPasswordResetTokenVars> transformOperation(
           _i4.Operation Function(_i4.Operation) transform) =>
       this.rebuild((b) => b..operation = transform(operation));
+
   static Serializer<GValidateUserPasswordResetTokenReq> get serializer =>
       _$gValidateUserPasswordResetTokenReqSerializer;
+
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
         GValidateUserPasswordResetTokenReq.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GValidateUserPasswordResetTokenReq? fromJson(
           Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
@@ -445,6 +493,7 @@ abstract class GCreateDealerReq
       operationName: 'CreateDealer',
     )
     ..executeOnListen = true;
+
   @override
   _i3.GCreateDealerVars get vars;
   @override
@@ -454,6 +503,7 @@ abstract class GCreateDealerReq
         operation: operation,
         variables: vars.toJson(),
       );
+
   @override
   String? get requestId;
   @override
@@ -475,20 +525,26 @@ abstract class GCreateDealerReq
   @override
   _i2.GCreateDealerData? parseData(Map<String, dynamic> json) =>
       _i2.GCreateDealerData.fromJson(json);
+
   @override
   Map<String, dynamic> varsToJson() => vars.toJson();
+
   @override
   Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+
   @override
   _i1.OperationRequest<_i2.GCreateDealerData, _i3.GCreateDealerVars>
       transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
           this.rebuild((b) => b..operation = transform(operation));
+
   static Serializer<GCreateDealerReq> get serializer =>
       _$gCreateDealerReqSerializer;
+
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
         GCreateDealerReq.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateDealerReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
         GCreateDealerReq.serializer,
@@ -514,6 +570,7 @@ abstract class GAuthenticateUserWithPasswordReq
       operationName: 'AuthenticateUserWithPassword',
     )
     ..executeOnListen = true;
+
   @override
   _i3.GAuthenticateUserWithPasswordVars get vars;
   @override
@@ -523,6 +580,7 @@ abstract class GAuthenticateUserWithPasswordReq
         operation: operation,
         variables: vars.toJson(),
       );
+
   @override
   String? get requestId;
   @override
@@ -544,21 +602,27 @@ abstract class GAuthenticateUserWithPasswordReq
   @override
   _i2.GAuthenticateUserWithPasswordData? parseData(Map<String, dynamic> json) =>
       _i2.GAuthenticateUserWithPasswordData.fromJson(json);
+
   @override
   Map<String, dynamic> varsToJson() => vars.toJson();
+
   @override
   Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+
   @override
   _i1.OperationRequest<_i2.GAuthenticateUserWithPasswordData,
       _i3.GAuthenticateUserWithPasswordVars> transformOperation(
           _i4.Operation Function(_i4.Operation) transform) =>
       this.rebuild((b) => b..operation = transform(operation));
+
   static Serializer<GAuthenticateUserWithPasswordReq> get serializer =>
       _$gAuthenticateUserWithPasswordReqSerializer;
+
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
         GAuthenticateUserWithPasswordReq.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAuthenticateUserWithPasswordReq? fromJson(
           Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
@@ -581,6 +645,7 @@ abstract class GUserReq
       operationName: 'User',
     )
     ..executeOnListen = true;
+
   @override
   _i3.GUserVars get vars;
   @override
@@ -590,6 +655,7 @@ abstract class GUserReq
         operation: operation,
         variables: vars.toJson(),
       );
+
   @override
   String? get requestId;
   @override
@@ -611,19 +677,25 @@ abstract class GUserReq
   @override
   _i2.GUserData? parseData(Map<String, dynamic> json) =>
       _i2.GUserData.fromJson(json);
+
   @override
   Map<String, dynamic> varsToJson() => vars.toJson();
+
   @override
   Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+
   @override
   _i1.OperationRequest<_i2.GUserData, _i3.GUserVars> transformOperation(
           _i4.Operation Function(_i4.Operation) transform) =>
       this.rebuild((b) => b..operation = transform(operation));
+
   static Serializer<GUserReq> get serializer => _$gUserReqSerializer;
+
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
         GUserReq.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
         GUserReq.serializer,
@@ -646,6 +718,7 @@ abstract class GUpdateUserReq
       operationName: 'UpdateUser',
     )
     ..executeOnListen = true;
+
   @override
   _i3.GUpdateUserVars get vars;
   @override
@@ -655,6 +728,7 @@ abstract class GUpdateUserReq
         operation: operation,
         variables: vars.toJson(),
       );
+
   @override
   String? get requestId;
   @override
@@ -676,20 +750,26 @@ abstract class GUpdateUserReq
   @override
   _i2.GUpdateUserData? parseData(Map<String, dynamic> json) =>
       _i2.GUpdateUserData.fromJson(json);
+
   @override
   Map<String, dynamic> varsToJson() => vars.toJson();
+
   @override
   Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+
   @override
   _i1.OperationRequest<_i2.GUpdateUserData, _i3.GUpdateUserVars>
       transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
           this.rebuild((b) => b..operation = transform(operation));
+
   static Serializer<GUpdateUserReq> get serializer =>
       _$gUpdateUserReqSerializer;
+
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
         GUpdateUserReq.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUpdateUserReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
         GUpdateUserReq.serializer,
@@ -711,6 +791,7 @@ abstract class GDealerReq
       operationName: 'Dealer',
     )
     ..executeOnListen = true;
+
   @override
   _i3.GDealerVars get vars;
   @override
@@ -720,6 +801,7 @@ abstract class GDealerReq
         operation: operation,
         variables: vars.toJson(),
       );
+
   @override
   String? get requestId;
   @override
@@ -741,19 +823,25 @@ abstract class GDealerReq
   @override
   _i2.GDealerData? parseData(Map<String, dynamic> json) =>
       _i2.GDealerData.fromJson(json);
+
   @override
   Map<String, dynamic> varsToJson() => vars.toJson();
+
   @override
   Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+
   @override
   _i1.OperationRequest<_i2.GDealerData, _i3.GDealerVars> transformOperation(
           _i4.Operation Function(_i4.Operation) transform) =>
       this.rebuild((b) => b..operation = transform(operation));
+
   static Serializer<GDealerReq> get serializer => _$gDealerReqSerializer;
+
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
         GDealerReq.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GDealerReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
         GDealerReq.serializer,

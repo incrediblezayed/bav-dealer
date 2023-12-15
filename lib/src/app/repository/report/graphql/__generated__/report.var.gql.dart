@@ -21,10 +21,12 @@ abstract class GCreateReportVars
   _i1.GReportCreateInput get data;
   static Serializer<GCreateReportVars> get serializer =>
       _$gCreateReportVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCreateReportVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateReportVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCreateReportVars.serializer,
@@ -42,10 +44,12 @@ abstract class GCreateFeedbackVars
   _i1.GFeedbackCreateInput get data;
   static Serializer<GCreateFeedbackVars> get serializer =>
       _$gCreateFeedbackVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCreateFeedbackVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateFeedbackVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCreateFeedbackVars.serializer,
@@ -62,10 +66,12 @@ abstract class GCategoriesVars
 
   static Serializer<GCategoriesVars> get serializer =>
       _$gCategoriesVarsSerializer;
+
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
         GCategoriesVars.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCategoriesVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCategoriesVars.serializer,

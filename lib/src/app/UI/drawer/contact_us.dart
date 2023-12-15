@@ -1,9 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:dealerapp/src/utils/app_images.dart';
-import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/my_app_bar.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 

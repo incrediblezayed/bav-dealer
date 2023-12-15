@@ -6,6 +6,7 @@
       "command": "flutter",
       "args": ["build", "apk", "--dart-define-from-file", "devEnv.json"],
       "group": "build",
+      "problemMatcher": [],
       "label": "Build Bav Dealer Dev APK"
     },
     {
@@ -13,7 +14,7 @@
       "command": "flutter",
       "args": ["build", "apk", "--dart-define-from-file", "prodEnv.json"],
       "group": "build",
-
+      "problemMatcher": [],
       "label": "Build Bav Dealer Prod APK"
     },
     {
@@ -21,7 +22,7 @@
       "command": "flutter",
       "args": ["build", "appbundle", "--dart-define-from-file", "devEnv.json"],
       "group": "build",
-
+      "problemMatcher": [],
       "label": "Build Bav Dealer Dev appbundle"
     },
     {
@@ -29,7 +30,7 @@
       "command": "flutter",
       "args": ["build", "appbundle", "--dart-define-from-file", "prodEnv.json"],
       "group": "build",
-
+      "problemMatcher": [],
       "label": "Build Bav Dealer Prod appbundle"
     },
     {
@@ -38,7 +39,7 @@
       "args": ["build", "ipa", "--dart-define-from-file", "devEnv.json"],
       "group": "build",
       "problemMatcher": [],
-      "label": "Build Bav Dev ipa"
+      "label": "Build Bav Dealer Dev ipa"
     },
     {
       "type": "flutter",
@@ -49,8 +50,8 @@
         "--dart-define-from-file",
         "prodEnv.json",
         "--build-name=1.0.0",
-        "--build-number=6"
-      ],  
+        "--build-number=7"
+      ],
       "group": "build",
       "problemMatcher": [],
       "label": "Build Bav Dealer Prod ipa"

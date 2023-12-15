@@ -37,6 +37,7 @@ import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.dat
         GUserData_user_favorites,
         GUserData_user_favorites_vehicleVariant,
         GUserData_user_profile_image,
+        GUserData_user_referralCode,
         GValidateUserOTPData,
         GValidateUserPasswordResetTokenData,
         GValidateUserPasswordResetTokenData_validateUserPasswordResetToken;
@@ -982,6 +983,7 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GUserData_user_favorites,
   GUserData_user_favorites_vehicleVariant,
   GUserData_user_profile_image,
+  GUserData_user_referralCode,
   GUserOrderByInput,
   GUserRelateToOneForCreateInput,
   GUserRelateToOneForUpdateInput,

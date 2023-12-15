@@ -5,8 +5,8 @@ import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema
 import 'package:dealerapp/src/utils/constants.dart';
 import 'package:dealerapp/src/utils/log_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:intl/intl.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
 
 ///Extensions for logging
 extension Log on Object? {
@@ -20,7 +20,7 @@ extension Log on Object? {
     int? sequenceNumber,
     StackTrace? stackTrace,
   }) {
-       if (Constants.shouldTrack) {
+    if (Constants.shouldTrack) {
       if (this is Exception) {
         Sentry.captureException(
           this,

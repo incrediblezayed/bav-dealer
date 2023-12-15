@@ -23,15 +23,18 @@ abstract class GCreateUserData
 
   static void _initializeBuilder(GCreateUserDataBuilder b) =>
       b..G__typename = 'Mutation';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   GCreateUserData_createUser? get createUser;
   static Serializer<GCreateUserData> get serializer =>
       _$gCreateUserDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GCreateUserData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateUserData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GCreateUserData.serializer,
@@ -50,15 +53,18 @@ abstract class GCreateUserData_createUser
 
   static void _initializeBuilder(GCreateUserData_createUserBuilder b) =>
       b..G__typename = 'User';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
   static Serializer<GCreateUserData_createUser> get serializer =>
       _$gCreateUserDataCreateUserSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GCreateUserData_createUser.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateUserData_createUser? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GCreateUserData_createUser.serializer,
@@ -75,15 +81,18 @@ abstract class GCurrentUserOTPData
 
   static void _initializeBuilder(GCurrentUserOTPDataBuilder b) =>
       b..G__typename = 'Query';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String? get currentUserOTP;
   static Serializer<GCurrentUserOTPData> get serializer =>
       _$gCurrentUserOTPDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GCurrentUserOTPData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCurrentUserOTPData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GCurrentUserOTPData.serializer,
@@ -101,15 +110,18 @@ abstract class GValidateUserOTPData
 
   static void _initializeBuilder(GValidateUserOTPDataBuilder b) =>
       b..G__typename = 'Mutation';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String? get validateUserOTP;
   static Serializer<GValidateUserOTPData> get serializer =>
       _$gValidateUserOTPDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GValidateUserOTPData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GValidateUserOTPData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GValidateUserOTPData.serializer,
@@ -129,15 +141,18 @@ abstract class GSendUserPasswordResetLinkData
 
   static void _initializeBuilder(GSendUserPasswordResetLinkDataBuilder b) =>
       b..G__typename = 'Mutation';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get sendUserPasswordResetLink;
   static Serializer<GSendUserPasswordResetLinkData> get serializer =>
       _$gSendUserPasswordResetLinkDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GSendUserPasswordResetLinkData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GSendUserPasswordResetLinkData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GSendUserPasswordResetLinkData.serializer,
@@ -157,16 +172,19 @@ abstract class GRedeemUserPasswordResetTokenData
 
   static void _initializeBuilder(GRedeemUserPasswordResetTokenDataBuilder b) =>
       b..G__typename = 'Mutation';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken?
       get redeemUserPasswordResetToken;
   static Serializer<GRedeemUserPasswordResetTokenData> get serializer =>
       _$gRedeemUserPasswordResetTokenDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GRedeemUserPasswordResetTokenData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GRedeemUserPasswordResetTokenData? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -192,6 +210,7 @@ abstract class GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken
           GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder
               b) =>
       b..G__typename = 'RedeemUserPasswordResetTokenResult';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   _i2.GPasswordResetRedemptionErrorCode get code;
@@ -200,11 +219,13 @@ abstract class GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken
           GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken>
       get serializer =>
           _$gRedeemUserPasswordResetTokenDataRedeemUserPasswordResetTokenSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken
             .serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
             GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken
@@ -226,16 +247,19 @@ abstract class GValidateUserPasswordResetTokenData
   static void _initializeBuilder(
           GValidateUserPasswordResetTokenDataBuilder b) =>
       b..G__typename = 'Query';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   GValidateUserPasswordResetTokenData_validateUserPasswordResetToken?
       get validateUserPasswordResetToken;
   static Serializer<GValidateUserPasswordResetTokenData> get serializer =>
       _$gValidateUserPasswordResetTokenDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GValidateUserPasswordResetTokenData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GValidateUserPasswordResetTokenData? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -262,6 +286,7 @@ abstract class GValidateUserPasswordResetTokenData_validateUserPasswordResetToke
           GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder
               b) =>
       b..G__typename = 'ValidateUserPasswordResetTokenResult';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   _i2.GPasswordResetRedemptionErrorCode get code;
@@ -270,11 +295,13 @@ abstract class GValidateUserPasswordResetTokenData_validateUserPasswordResetToke
           GValidateUserPasswordResetTokenData_validateUserPasswordResetToken>
       get serializer =>
           _$gValidateUserPasswordResetTokenDataValidateUserPasswordResetTokenSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
             .serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GValidateUserPasswordResetTokenData_validateUserPasswordResetToken?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
             GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
@@ -292,15 +319,18 @@ abstract class GCreateDealerData
 
   static void _initializeBuilder(GCreateDealerDataBuilder b) =>
       b..G__typename = 'Mutation';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   GCreateDealerData_createDealer? get createDealer;
   static Serializer<GCreateDealerData> get serializer =>
       _$gCreateDealerDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GCreateDealerData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateDealerData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GCreateDealerData.serializer,
@@ -320,15 +350,18 @@ abstract class GCreateDealerData_createDealer
 
   static void _initializeBuilder(GCreateDealerData_createDealerBuilder b) =>
       b..G__typename = 'Dealer';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
   static Serializer<GCreateDealerData_createDealer> get serializer =>
       _$gCreateDealerDataCreateDealerSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GCreateDealerData_createDealer.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GCreateDealerData_createDealer? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GCreateDealerData_createDealer.serializer,
@@ -348,16 +381,19 @@ abstract class GAuthenticateUserWithPasswordData
 
   static void _initializeBuilder(GAuthenticateUserWithPasswordDataBuilder b) =>
       b..G__typename = 'Mutation';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword?
       get authenticateUserWithPassword;
   static Serializer<GAuthenticateUserWithPasswordData> get serializer =>
       _$gAuthenticateUserWithPasswordDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GAuthenticateUserWithPasswordData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAuthenticateUserWithPasswordData? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -382,11 +418,13 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword {
                   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure,
             },
           );
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GAuthenticateUserWithPasswordData_authenticateUserWithPassword
             .serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAuthenticateUserWithPasswordData_authenticateUserWithPassword?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
             GAuthenticateUserWithPasswordData_authenticateUserWithPassword
@@ -414,6 +452,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__b
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__baseBuilder
               b) =>
       b..G__typename = 'UserAuthenticationWithPasswordResult';
+
   @override
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
@@ -421,12 +460,14 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__b
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base>
       get serializer =>
           _$gAuthenticateUserWithPasswordDataAuthenticateUserWithPasswordBaseSerializer;
+
   @override
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base
             .serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
             GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base
@@ -454,6 +495,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccessBuilder
               b) =>
       b..G__typename = 'UserAuthenticationWithPasswordSuccess';
+
   @override
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
@@ -464,12 +506,14 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess>
       get serializer =>
           _$gAuthenticateUserWithPasswordDataAuthenticateUserWithPasswordAsUserAuthenticationWithPasswordSuccessSerializer;
+
   @override
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess
             .serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
             GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess
@@ -496,6 +540,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_itemBuilder
               b) =>
       b..G__typename = 'User';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -518,11 +563,13 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item>
       get serializer =>
           _$gAuthenticateUserWithPasswordDataAuthenticateUserWithPasswordAsUserAuthenticationWithPasswordSuccessItemSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item
             .serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
             GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item
@@ -549,6 +596,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_imageBuilder
               b) =>
       b..G__typename = 'ImageFieldOutput';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -561,11 +609,13 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image>
       get serializer =>
           _$gAuthenticateUserWithPasswordDataAuthenticateUserWithPasswordAsUserAuthenticationWithPasswordSuccessItemProfileImageSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image
             .serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
             GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image
@@ -592,6 +642,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addressesBuilder
               b) =>
       b..G__typename = 'Address';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -610,11 +661,13 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses>
       get serializer =>
           _$gAuthenticateUserWithPasswordDataAuthenticateUserWithPasswordAsUserAuthenticationWithPasswordSuccessItemAddressesSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses
             .serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
             GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses
@@ -641,6 +694,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCodeBuilder
               b) =>
       b..G__typename = 'ReferralCode';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -651,11 +705,13 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode>
       get serializer =>
           _$gAuthenticateUserWithPasswordDataAuthenticateUserWithPasswordAsUserAuthenticationWithPasswordSuccessItemReferralCodeSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode
             .serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
             GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode
@@ -683,6 +739,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailureBuilder
               b) =>
       b..G__typename = 'UserAuthenticationWithPasswordFailure';
+
   @override
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
@@ -691,12 +748,14 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure>
       get serializer =>
           _$gAuthenticateUserWithPasswordDataAuthenticateUserWithPasswordAsUserAuthenticationWithPasswordFailureSerializer;
+
   @override
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure
             .serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
             GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure
@@ -712,14 +771,17 @@ abstract class GUserData implements Built<GUserData, GUserDataBuilder> {
 
   static void _initializeBuilder(GUserDataBuilder b) =>
       b..G__typename = 'Query';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   GUserData_user? get user;
   static Serializer<GUserData> get serializer => _$gUserDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GUserData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GUserData.serializer,
@@ -736,6 +798,7 @@ abstract class GUserData_user
 
   static void _initializeBuilder(GUserData_userBuilder b) =>
       b..G__typename = 'User';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -748,15 +811,18 @@ abstract class GUserData_user
   GUserData_user_profile_image? get profile_image;
   BuiltList<GUserData_user_addresses>? get addresses;
   bool? get emailVerified;
+  GUserData_user_referralCode? get referralCode;
   BuiltList<GUserData_user_favorites>? get favorites;
   GUserData_user_aadhaar? get aadhaar;
   GUserData_user_driving_license? get driving_license;
   bool? get deactivate;
   static Serializer<GUserData_user> get serializer => _$gUserDataUserSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GUserData_user.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserData_user? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GUserData_user.serializer,
@@ -776,6 +842,7 @@ abstract class GUserData_user_profile_image
 
   static void _initializeBuilder(GUserData_user_profile_imageBuilder b) =>
       b..G__typename = 'ImageFieldOutput';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -786,10 +853,12 @@ abstract class GUserData_user_profile_image
   String get url;
   static Serializer<GUserData_user_profile_image> get serializer =>
       _$gUserDataUserProfileImageSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GUserData_user_profile_image.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserData_user_profile_image? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GUserData_user_profile_image.serializer,
@@ -808,6 +877,7 @@ abstract class GUserData_user_addresses
 
   static void _initializeBuilder(GUserData_user_addressesBuilder b) =>
       b..G__typename = 'Address';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
@@ -824,13 +894,48 @@ abstract class GUserData_user_addresses
   bool? get Gdefault;
   static Serializer<GUserData_user_addresses> get serializer =>
       _$gUserDataUserAddressesSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GUserData_user_addresses.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserData_user_addresses? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GUserData_user_addresses.serializer,
+        json,
+      );
+}
+
+abstract class GUserData_user_referralCode
+    implements
+        Built<GUserData_user_referralCode, GUserData_user_referralCodeBuilder> {
+  GUserData_user_referralCode._();
+
+  factory GUserData_user_referralCode(
+          [Function(GUserData_user_referralCodeBuilder b) updates]) =
+      _$GUserData_user_referralCode;
+
+  static void _initializeBuilder(GUserData_user_referralCodeBuilder b) =>
+      b..G__typename = 'ReferralCode';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get code;
+  _i2.GDateTime? get modifiedAt;
+  _i2.GDateTime? get createdAt;
+  static Serializer<GUserData_user_referralCode> get serializer =>
+      _$gUserDataUserReferralCodeSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUserData_user_referralCode.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUserData_user_referralCode? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUserData_user_referralCode.serializer,
         json,
       );
 }
@@ -846,16 +951,19 @@ abstract class GUserData_user_favorites
 
   static void _initializeBuilder(GUserData_user_favoritesBuilder b) =>
       b..G__typename = 'Favorite';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   GUserData_user_favorites_vehicleVariant? get vehicleVariant;
   String get id;
   static Serializer<GUserData_user_favorites> get serializer =>
       _$gUserDataUserFavoritesSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GUserData_user_favorites.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserData_user_favorites? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GUserData_user_favorites.serializer,
@@ -876,15 +984,18 @@ abstract class GUserData_user_favorites_vehicleVariant
   static void _initializeBuilder(
           GUserData_user_favorites_vehicleVariantBuilder b) =>
       b..G__typename = 'VehicleVariant';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
   static Serializer<GUserData_user_favorites_vehicleVariant> get serializer =>
       _$gUserDataUserFavoritesVehicleVariantSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GUserData_user_favorites_vehicleVariant.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserData_user_favorites_vehicleVariant? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
@@ -903,16 +1014,19 @@ abstract class GUserData_user_aadhaar
 
   static void _initializeBuilder(GUserData_user_aadhaarBuilder b) =>
       b..G__typename = 'FileFieldOutput';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get url;
   String get filename;
   static Serializer<GUserData_user_aadhaar> get serializer =>
       _$gUserDataUserAadhaarSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GUserData_user_aadhaar.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserData_user_aadhaar? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GUserData_user_aadhaar.serializer,
@@ -932,16 +1046,19 @@ abstract class GUserData_user_driving_license
 
   static void _initializeBuilder(GUserData_user_driving_licenseBuilder b) =>
       b..G__typename = 'FileFieldOutput';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get url;
   String get filename;
   static Serializer<GUserData_user_driving_license> get serializer =>
       _$gUserDataUserDrivingLicenseSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GUserData_user_driving_license.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUserData_user_driving_license? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GUserData_user_driving_license.serializer,
@@ -958,15 +1075,18 @@ abstract class GUpdateUserData
 
   static void _initializeBuilder(GUpdateUserDataBuilder b) =>
       b..G__typename = 'Mutation';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   GUpdateUserData_updateUser? get updateUser;
   static Serializer<GUpdateUserData> get serializer =>
       _$gUpdateUserDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GUpdateUserData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUpdateUserData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GUpdateUserData.serializer,
@@ -985,15 +1105,18 @@ abstract class GUpdateUserData_updateUser
 
   static void _initializeBuilder(GUpdateUserData_updateUserBuilder b) =>
       b..G__typename = 'User';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
   static Serializer<GUpdateUserData_updateUser> get serializer =>
       _$gUpdateUserDataUpdateUserSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GUpdateUserData_updateUser.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GUpdateUserData_updateUser? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GUpdateUserData_updateUser.serializer,
@@ -1008,14 +1131,17 @@ abstract class GDealerData implements Built<GDealerData, GDealerDataBuilder> {
 
   static void _initializeBuilder(GDealerDataBuilder b) =>
       b..G__typename = 'Query';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   BuiltList<GDealerData_dealers>? get dealers;
   static Serializer<GDealerData> get serializer => _$gDealerDataSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GDealerData.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GDealerData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GDealerData.serializer,
@@ -1032,16 +1158,19 @@ abstract class GDealerData_dealers
 
   static void _initializeBuilder(GDealerData_dealersBuilder b) =>
       b..G__typename = 'Dealer';
+
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
   bool? get approved;
   static Serializer<GDealerData_dealers> get serializer =>
       _$gDealerDataDealersSerializer;
+
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GDealerData_dealers.serializer,
         this,
       ) as Map<String, dynamic>);
+
   static GDealerData_dealers? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GDealerData_dealers.serializer,

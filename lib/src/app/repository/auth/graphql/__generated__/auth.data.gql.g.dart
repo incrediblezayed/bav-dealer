@@ -71,6 +71,8 @@ Serializer<GUserData_user_profile_image> _$gUserDataUserProfileImageSerializer =
     new _$GUserData_user_profile_imageSerializer();
 Serializer<GUserData_user_addresses> _$gUserDataUserAddressesSerializer =
     new _$GUserData_user_addressesSerializer();
+Serializer<GUserData_user_referralCode> _$gUserDataUserReferralCodeSerializer =
+    new _$GUserData_user_referralCodeSerializer();
 Serializer<GUserData_user_favorites> _$gUserDataUserFavoritesSerializer =
     new _$GUserData_user_favoritesSerializer();
 Serializer<GUserData_user_favorites_vehicleVariant>
@@ -1638,6 +1640,13 @@ class _$GUserData_userSerializer
         ..add(
             serializers.serialize(value, specifiedType: const FullType(bool)));
     }
+    value = object.referralCode;
+    if (value != null) {
+      result
+        ..add('referralCode')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserData_user_referralCode)));
+    }
     value = object.favorites;
     if (value != null) {
       result
@@ -1728,6 +1737,11 @@ class _$GUserData_userSerializer
         case 'emailVerified':
           result.emailVerified = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'referralCode':
+          result.referralCode.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GUserData_user_referralCode))!
+              as GUserData_user_referralCode);
           break;
         case 'favorites':
           result.favorites.replace(serializers.deserialize(value,
@@ -1996,6 +2010,91 @@ class _$GUserData_user_addressesSerializer
         case 'default':
           result.Gdefault = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserData_user_referralCodeSerializer
+    implements StructuredSerializer<GUserData_user_referralCode> {
+  @override
+  final Iterable<Type> types = const [
+    GUserData_user_referralCode,
+    _$GUserData_user_referralCode
+  ];
+  @override
+  final String wireName = 'GUserData_user_referralCode';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUserData_user_referralCode object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.code;
+    if (value != null) {
+      result
+        ..add('code')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.GDateTime)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.GDateTime)));
+    }
+    return result;
+  }
+
+  @override
+  GUserData_user_referralCode deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserData_user_referralCodeBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'code':
+          result.code = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
           break;
       }
     }
@@ -5525,6 +5624,8 @@ class _$GUserData_user extends GUserData_user {
   @override
   final bool? emailVerified;
   @override
+  final GUserData_user_referralCode? referralCode;
+  @override
   final BuiltList<GUserData_user_favorites>? favorites;
   @override
   final GUserData_user_aadhaar? aadhaar;
@@ -5548,6 +5649,7 @@ class _$GUserData_user extends GUserData_user {
       this.profile_image,
       this.addresses,
       this.emailVerified,
+      this.referralCode,
       this.favorites,
       this.aadhaar,
       this.driving_license,
@@ -5581,6 +5683,7 @@ class _$GUserData_user extends GUserData_user {
         profile_image == other.profile_image &&
         addresses == other.addresses &&
         emailVerified == other.emailVerified &&
+        referralCode == other.referralCode &&
         favorites == other.favorites &&
         aadhaar == other.aadhaar &&
         driving_license == other.driving_license &&
@@ -5601,6 +5704,7 @@ class _$GUserData_user extends GUserData_user {
     _$hash = $jc(_$hash, profile_image.hashCode);
     _$hash = $jc(_$hash, addresses.hashCode);
     _$hash = $jc(_$hash, emailVerified.hashCode);
+    _$hash = $jc(_$hash, referralCode.hashCode);
     _$hash = $jc(_$hash, favorites.hashCode);
     _$hash = $jc(_$hash, aadhaar.hashCode);
     _$hash = $jc(_$hash, driving_license.hashCode);
@@ -5623,6 +5727,7 @@ class _$GUserData_user extends GUserData_user {
           ..add('profile_image', profile_image)
           ..add('addresses', addresses)
           ..add('emailVerified', emailVerified)
+          ..add('referralCode', referralCode)
           ..add('favorites', favorites)
           ..add('aadhaar', aadhaar)
           ..add('driving_license', driving_license)
@@ -5685,6 +5790,12 @@ class GUserData_userBuilder
   set emailVerified(bool? emailVerified) =>
       _$this._emailVerified = emailVerified;
 
+  GUserData_user_referralCodeBuilder? _referralCode;
+  GUserData_user_referralCodeBuilder get referralCode =>
+      _$this._referralCode ??= new GUserData_user_referralCodeBuilder();
+  set referralCode(GUserData_user_referralCodeBuilder? referralCode) =>
+      _$this._referralCode = referralCode;
+
   ListBuilder<GUserData_user_favorites>? _favorites;
   ListBuilder<GUserData_user_favorites> get favorites =>
       _$this._favorites ??= new ListBuilder<GUserData_user_favorites>();
@@ -5725,6 +5836,7 @@ class GUserData_userBuilder
       _profile_image = $v.profile_image?.toBuilder();
       _addresses = $v.addresses?.toBuilder();
       _emailVerified = $v.emailVerified;
+      _referralCode = $v.referralCode?.toBuilder();
       _favorites = $v.favorites?.toBuilder();
       _aadhaar = $v.aadhaar?.toBuilder();
       _driving_license = $v.driving_license?.toBuilder();
@@ -5766,6 +5878,7 @@ class GUserData_userBuilder
               profile_image: _profile_image?.build(),
               addresses: _addresses?.build(),
               emailVerified: emailVerified,
+              referralCode: _referralCode?.build(),
               favorites: _favorites?.build(),
               aadhaar: _aadhaar?.build(),
               driving_license: _driving_license?.build(),
@@ -5778,6 +5891,8 @@ class GUserData_userBuilder
         _$failedField = 'addresses';
         _addresses?.build();
 
+        _$failedField = 'referralCode';
+        _referralCode?.build();
         _$failedField = 'favorites';
         _favorites?.build();
         _$failedField = 'aadhaar';
@@ -6219,6 +6334,170 @@ class GUserData_user_addressesBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GUserData_user_addresses', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserData_user_referralCode extends GUserData_user_referralCode {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? code;
+  @override
+  final _i2.GDateTime? modifiedAt;
+  @override
+  final _i2.GDateTime? createdAt;
+
+  factory _$GUserData_user_referralCode(
+          [void Function(GUserData_user_referralCodeBuilder)? updates]) =>
+      (new GUserData_user_referralCodeBuilder()..update(updates))._build();
+
+  _$GUserData_user_referralCode._(
+      {required this.G__typename,
+      required this.id,
+      this.code,
+      this.modifiedAt,
+      this.createdAt})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GUserData_user_referralCode', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GUserData_user_referralCode', 'id');
+  }
+
+  @override
+  GUserData_user_referralCode rebuild(
+          void Function(GUserData_user_referralCodeBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserData_user_referralCodeBuilder toBuilder() =>
+      new GUserData_user_referralCodeBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserData_user_referralCode &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        code == other.code &&
+        modifiedAt == other.modifiedAt &&
+        createdAt == other.createdAt;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GUserData_user_referralCode')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('code', code)
+          ..add('modifiedAt', modifiedAt)
+          ..add('createdAt', createdAt))
+        .toString();
+  }
+}
+
+class GUserData_user_referralCodeBuilder
+    implements
+        Builder<GUserData_user_referralCode,
+            GUserData_user_referralCodeBuilder> {
+  _$GUserData_user_referralCode? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _code;
+  String? get code => _$this._code;
+  set code(String? code) => _$this._code = code;
+
+  _i2.GDateTimeBuilder? _modifiedAt;
+  _i2.GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new _i2.GDateTimeBuilder();
+  set modifiedAt(_i2.GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  _i2.GDateTimeBuilder? _createdAt;
+  _i2.GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+  set createdAt(_i2.GDateTimeBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GUserData_user_referralCodeBuilder() {
+    GUserData_user_referralCode._initializeBuilder(this);
+  }
+
+  GUserData_user_referralCodeBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _code = $v.code;
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _createdAt = $v.createdAt?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserData_user_referralCode other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserData_user_referralCode;
+  }
+
+  @override
+  void update(void Function(GUserData_user_referralCodeBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserData_user_referralCode build() => _build();
+
+  _$GUserData_user_referralCode _build() {
+    _$GUserData_user_referralCode _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserData_user_referralCode._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GUserData_user_referralCode', 'G__typename'),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'GUserData_user_referralCode', 'id'),
+              code: code,
+              modifiedAt: _modifiedAt?.build(),
+              createdAt: _createdAt?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserData_user_referralCode', _$failedField, e.toString());
       }
       rethrow;
     }

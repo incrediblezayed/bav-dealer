@@ -34,12 +34,14 @@ class KCachedNWImage extends Image {
     super.matchTextDirection,
     super.filterQuality,
     super.errorBuilder,
+    super.frameBuilder,
   }) : super.network(
           imageUrl == null
               ? ''
               : isExternal || imageUrl.contains('https')
                   ? imageUrl
                   : GraphqlClient.baseUrl + imageUrl,
+      
           loadingBuilder: (context, child, loadingProgress) {
             if (loadingProgress == null) {
               return child;

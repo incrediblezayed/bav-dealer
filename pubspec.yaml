@@ -6,7 +6,6 @@ version: 1.0.0+6
 environment:
   sdk: ">=3.0.0 <4.0.0"
 
-
 dependencies:
   flutter:
     sdk: flutter
@@ -32,11 +31,11 @@ dependencies:
   gql_http_link: ^1.0.1+1
   built_collection: ^5.1.1
   auto_size_text: ^3.0.0
-  url_launcher: ^6.2.2
+  url_launcher: ^6.2.1
   another_flushbar: ^1.12.30
   webview_flutter: ^4.4.2
+  sentry_flutter: ^7.13.2
   app_tracking_transparency: ^2.0.4
-
 
 dev_dependencies:
   flutter_test:
@@ -61,6 +60,7 @@ flutter:
         - asset: assets/fonts/Outfit-Light.ttf
           weight: 300
         - asset: assets/fonts/Outfit-Regular.ttf
+          weight: 400
         - asset: assets/fonts/Outfit-Medium.ttf
           weight: 500
         - asset: assets/fonts/Outfit-SemiBold.ttf

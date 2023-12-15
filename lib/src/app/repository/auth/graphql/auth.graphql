@@ -125,6 +125,12 @@ query User($where: UserWhereUniqueInput!) {
       default
     }
     emailVerified
+    referralCode {
+      id
+      code
+      modifiedAt
+      createdAt
+    }
     favorites {
       vehicleVariant {
         id
