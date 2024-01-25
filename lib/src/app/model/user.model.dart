@@ -9,57 +9,60 @@ import 'package:dealerapp/src/app/repository/graphql_client.dart';
 ///Data Model for User
 class UserModel {
   ///User Model Default Constructor
-  UserModel(
-      {this.id,
-      this.address,
-      this.addresses,
-      this.email,
-      this.emailVerified,
-      this.favorites,
-      this.createdAt,
-      this.cartItemsCount,
-      this.cartItems,
-      this.addressesCount,
-      this.isAdmin,
-      this.name,
-      this.modifiedAt,
-      this.phoneNumberVerified,
-      this.phoneNumber,
-      this.profileImage,
-      this.favoritesCount,
-      this.deactivate = false});
+  UserModel({
+    this.id,
+    this.address,
+    this.addresses,
+    this.email,
+    this.emailVerified,
+    this.favorites,
+    this.createdAt,
+    this.cartItemsCount,
+    this.cartItems,
+    this.addressesCount,
+    this.isAdmin,
+    this.name,
+    this.modifiedAt,
+    this.phoneNumberVerified,
+    this.phoneNumber,
+    this.profileImage,
+    this.favoritesCount,
+    this.deactivate = false,
+  });
 
   ///From Json Method to create new constructor with data
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
-      id: json['id'],
-      address: json['address'],
-      addresses: json['addresses'] == null
-          ? []
-          : List<dynamic>.from(json['addresses']!.map((x) => x)),
-      email: json['email'],
-      emailVerified: json['emailVerified'],
-      favorites: json['favorites'] == null
-          ? []
-          : List<dynamic>.from(json['favorites']!.map((x) => x)),
-      createdAt:
-          json['createdAt'] == null ? null : DateTime.parse(json['createdAt']),
-      cartItemsCount: json['cartItemsCount'],
-      cartItems: json['cartItems'] == null
-          ? []
-          : List<dynamic>.from(json['cartItems']!.map((x) => x)),
-      addressesCount: json['addressesCount'],
-      isAdmin: json['isAdmin'],
-      name: json['name'],
-      modifiedAt: json['modifiedAt'] == null
-          ? null
-          : DateTime.parse(json['modifiedAt']),
-      phoneNumberVerified: json['phoneNumberVerified'],
-      phoneNumber: json['phoneNumber'],
-      profileImage: json['profile_image'] == null
-          ? null
-          : ImageFieldOutput.fromJson(json['profile_image']),
-      favoritesCount: json['favoritesCount'],
-      deactivate: json['deactivate'] ?? false);
+        id: json['id'],
+        address: json['address'],
+        addresses: json['addresses'] == null
+            ? []
+            : List<dynamic>.from(json['addresses']!.map((x) => x)),
+        email: json['email'],
+        emailVerified: json['emailVerified'],
+        favorites: json['favorites'] == null
+            ? []
+            : List<dynamic>.from(json['favorites']!.map((x) => x)),
+        createdAt: json['createdAt'] == null
+            ? null
+            : DateTime.parse(json['createdAt']),
+        cartItemsCount: json['cartItemsCount'],
+        cartItems: json['cartItems'] == null
+            ? []
+            : List<dynamic>.from(json['cartItems']!.map((x) => x)),
+        addressesCount: json['addressesCount'],
+        isAdmin: json['isAdmin'],
+        name: json['name'],
+        modifiedAt: json['modifiedAt'] == null
+            ? null
+            : DateTime.parse(json['modifiedAt']),
+        phoneNumberVerified: json['phoneNumberVerified'],
+        phoneNumber: json['phoneNumber'],
+        profileImage: json['profile_image'] == null
+            ? null
+            : ImageFieldOutput.fromJson(json['profile_image']),
+        favoritesCount: json['favoritesCount'],
+        deactivate: json['deactivate'] ?? false,
+      );
 
   ///From Raw Json Method to create new constructor with data
   factory UserModel.fromRawJson(String str) =>

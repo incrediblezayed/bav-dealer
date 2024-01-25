@@ -17,24 +17,25 @@ import 'package:gql_exec/gql_exec.dart' as _i4;
 
 part 'inventory.req.gql.g.dart';
 
-abstract class GVehiclesReq
+abstract class GVehicleVariantsReq
     implements
-        Built<GVehiclesReq, GVehiclesReqBuilder>,
-        _i1.OperationRequest<_i2.GVehiclesData, _i3.GVehiclesVars> {
-  GVehiclesReq._();
+        Built<GVehicleVariantsReq, GVehicleVariantsReqBuilder>,
+        _i1
+        .OperationRequest<_i2.GVehicleVariantsData, _i3.GVehicleVariantsVars> {
+  GVehicleVariantsReq._();
 
-  factory GVehiclesReq([Function(GVehiclesReqBuilder b) updates]) =
-      _$GVehiclesReq;
+  factory GVehicleVariantsReq(
+      [Function(GVehicleVariantsReqBuilder b) updates]) = _$GVehicleVariantsReq;
 
-  static void _initializeBuilder(GVehiclesReqBuilder b) => b
+  static void _initializeBuilder(GVehicleVariantsReqBuilder b) => b
     ..operation = _i4.Operation(
       document: _i5.document,
-      operationName: 'Vehicles',
+      operationName: 'VehicleVariants',
     )
     ..executeOnListen = true;
 
   @override
-  _i3.GVehiclesVars get vars;
+  _i3.GVehicleVariantsVars get vars;
   @override
   _i4.Operation get operation;
   @override
@@ -47,12 +48,12 @@ abstract class GVehiclesReq
   String? get requestId;
   @override
   @BuiltValueField(serialize: false)
-  _i2.GVehiclesData? Function(
-    _i2.GVehiclesData?,
-    _i2.GVehiclesData?,
+  _i2.GVehicleVariantsData? Function(
+    _i2.GVehicleVariantsData?,
+    _i2.GVehicleVariantsData?,
   )? get updateResult;
   @override
-  _i2.GVehiclesData? get optimisticResponse;
+  _i2.GVehicleVariantsData? get optimisticResponse;
   @override
   String? get updateCacheHandlerKey;
   @override
@@ -62,8 +63,8 @@ abstract class GVehiclesReq
   @override
   bool get executeOnListen;
   @override
-  _i2.GVehiclesData? parseData(Map<String, dynamic> json) =>
-      _i2.GVehiclesData.fromJson(json);
+  _i2.GVehicleVariantsData? parseData(Map<String, dynamic> json) =>
+      _i2.GVehicleVariantsData.fromJson(json);
 
   @override
   Map<String, dynamic> varsToJson() => vars.toJson();
@@ -72,20 +73,21 @@ abstract class GVehiclesReq
   Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
 
   @override
-  _i1.OperationRequest<_i2.GVehiclesData, _i3.GVehiclesVars> transformOperation(
-          _i4.Operation Function(_i4.Operation) transform) =>
-      this.rebuild((b) => b..operation = transform(operation));
+  _i1.OperationRequest<_i2.GVehicleVariantsData, _i3.GVehicleVariantsVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
 
-  static Serializer<GVehiclesReq> get serializer => _$gVehiclesReqSerializer;
+  static Serializer<GVehicleVariantsReq> get serializer =>
+      _$gVehicleVariantsReqSerializer;
 
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
-        GVehiclesReq.serializer,
+        GVehicleVariantsReq.serializer,
         this,
       ) as Map<String, dynamic>);
 
-  static GVehiclesReq? fromJson(Map<String, dynamic> json) =>
+  static GVehicleVariantsReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
-        GVehiclesReq.serializer,
+        GVehicleVariantsReq.serializer,
         json,
       );
 }

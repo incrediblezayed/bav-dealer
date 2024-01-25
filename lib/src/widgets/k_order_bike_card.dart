@@ -577,9 +577,9 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                         ref
                             .read(orderProvider(OrderFamily.purchaseOrders))
                             .rejectOrder(
-                              vehiclePurchaseOrders.id,
-                              selectedReason,
-                              true,
+                              id: vehiclePurchaseOrders.id,
+                              reason: selectedReason,
+                              isPurchaseOrder: true,
                             );
                       },
                       child: Text(

@@ -2,12 +2,11 @@ import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_bottom_bar_button.dart';
 
 class PaymentOptions extends StatefulWidget {
+  const PaymentOptions({required this.walletAmount, super.key});
   final double walletAmount;
 
-  PaymentOptions({required this.walletAmount});
-
   @override
-  _PaymentOptionsState createState() => _PaymentOptionsState();
+  State<PaymentOptions> createState() => _PaymentOptionsState();
 }
 
 class _PaymentOptionsState extends State<PaymentOptions> {
@@ -33,7 +32,7 @@ class _PaymentOptionsState extends State<PaymentOptions> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Select an option to pay",
+              'Select an option to pay',
               style: textTheme.headlineLarge,
             ),
             SizedBox(height: 20.h),
@@ -61,9 +60,10 @@ class _PaymentOptionsState extends State<PaymentOptions> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Wallet Amount'),
+                              const Text('Wallet Amount'),
                               Text(
-                                  '\₹${widget.walletAmount.toStringAsFixed(2)}')
+                                '₹${widget.walletAmount.toStringAsFixed(2)}',
+                              ),
                             ],
                           ),
                         ),
@@ -73,16 +73,17 @@ class _PaymentOptionsState extends State<PaymentOptions> {
                   SizedBox(
                     width: 280.w,
                     child: KBottomBarButton(
-                        text: 'Pay \₹${widget.walletAmount.toStringAsFixed(2)}',
-                        onTap: () {}),
+                      text: 'Pay ₹${widget.walletAmount.toStringAsFixed(2)}',
+                      onTap: () {},
+                    ),
                   ),
                   SizedBox(height: 20.h),
-                  Divider(
+                  const Divider(
                     height: 10,
                     color: AppTheme.cardBorders,
                   ),
                   ListTile(
-                    title: Text('Pay Online'),
+                    title: const Text('Pay Online'),
                     leading: Radio(
                       value: PaymentOption.online,
                       groupValue: _selectedOption,

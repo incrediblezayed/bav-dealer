@@ -1,5 +1,6 @@
 import 'package:dealerapp/src/app/UI/forgot_password/forgot_password_flow.dart';
 import 'package:dealerapp/src/app/UI/signup/signup_flow.dart';
+import 'package:dealerapp/src/app/UI/splash_screen/splash_screen.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
@@ -18,6 +19,13 @@ class LoginPage extends ConsumerStatefulWidget {
 }
 
 class _LoginPageState extends ConsumerState<LoginPage> {
+
+@override
+  void initState() {
+    initTracking();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final authPro = ref.watch(authProvider);

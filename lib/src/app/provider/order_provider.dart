@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
+import 'package:dealerapp/src/app/model/variant_details.model.dart';
 import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart';
 import 'package:dealerapp/src/app/repository/orders/orders_repository.dart';
@@ -18,8 +18,8 @@ enum OrderStatus {
   delivered('delivered'),
   cancelled('cancelled');
 
-  final String name;
   const OrderStatus(this.name);
+  final String name;
 }
 
 class OrdersProvider extends ChangeNotifier {
@@ -37,36 +37,36 @@ class OrdersProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  GVehiclesData_vehicles? _selectedVehicle;
+  VariantDetailsModel? _selectedVehicle;
 
   ///
-  GVehiclesData_vehicles? get selectedVehicle => _selectedVehicle;
+  VariantDetailsModel? get selectedVehicle => _selectedVehicle;
 
   ///
-  set selectedVehicle(GVehiclesData_vehicles? data) {
+  set selectedVehicle(VariantDetailsModel? data) {
     _selectedVehicle = data;
     notifyListeners();
   }
 
-  GVehiclesData_vehicles_variants? _selectedVariants;
+  VariantDetailsModel? _selectedVariants;
 
   ///
-  GVehiclesData_vehicles_variants? get selectedVariants => _selectedVariants;
-  set selectedVariants(GVehiclesData_vehicles_variants? data) {
+  VariantDetailsModel? get selectedVariants => _selectedVariants;
+  set selectedVariants(VariantDetailsModel? data) {
     _selectedVariants = data;
     notifyListeners();
   }
 
-  GVehiclesData_vehicles_variants_colors? _selectedColor;
-  GVehiclesData_vehicles_variants_colors? get selectedColor => _selectedColor;
-  set selectedColor(GVehiclesData_vehicles_variants_colors? data) {
+  VehicleColor? _selectedColor;
+  VehicleColor? get selectedColor => _selectedColor;
+  set selectedColor(VehicleColor? data) {
     _selectedColor = data;
     notifyListeners();
   }
 
-  List<GVehiclesData_vehicles> _vehicles = [];
-  List<GVehiclesData_vehicles> get vehicles => _vehicles;
-  set vehicles(List<GVehiclesData_vehicles> data) {
+  List<Vehicle> _vehicles = [];
+  List<Vehicle> get vehicles => _vehicles;
+  set vehicles(List<Vehicle> data) {
     _vehicles = data;
     notifyListeners();
   }
@@ -157,9 +157,9 @@ class OrdersProvider extends ChangeNotifier {
 
       if (getVehicleOrders != null) {
         pendingOrders = getVehicleOrders;
-        return pendingOrders;
+        return getVehicleOrders;
       } else {
-        AppRoutes.showErrorSnackbar(
+        await AppRoutes.showErrorSnackbar(
           message: 'Error while fetching list of vehicles',
         );
       }
@@ -178,10 +178,9 @@ class OrdersProvider extends ChangeNotifier {
           await _orderRepository.getTestDriveOrders('created');
 
       if (getTestDriveOrders != null) {
-        testDrivePendingOrders = getTestDriveOrders;
-        return testDrivePendingOrders;
+        return testDrivePendingOrders = getTestDriveOrders;
       } else {
-        AppRoutes.showErrorSnackbar(
+        await AppRoutes.showErrorSnackbar(
           message: 'Error while fetching list of test order vehicles',
         );
       }
@@ -201,7 +200,7 @@ class OrdersProvider extends ChangeNotifier {
       if (getVehicleOrders != null) {
         acceptedOrders = getVehicleOrders;
       } else {
-        AppRoutes.showErrorSnackbar(
+        await AppRoutes.showErrorSnackbar(
           message: 'Error while fetching list of vehicles',
         );
       }
@@ -220,7 +219,7 @@ class OrdersProvider extends ChangeNotifier {
       if (getTestDriveOrders != null) {
         testDriveAcceptedOrders = getTestDriveOrders;
       } else {
-        AppRoutes.showErrorSnackbar(
+        await AppRoutes.showErrorSnackbar(
           message: 'Error while fetching list of accepted test orders vehicles',
         );
       }
@@ -239,7 +238,7 @@ class OrdersProvider extends ChangeNotifier {
       if (getVehicleOrders != null) {
         rejectedOrders = getVehicleOrders;
       } else {
-        AppRoutes.showErrorSnackbar(
+        await AppRoutes.showErrorSnackbar(
           message: 'Error while fetching list of vehicles',
         );
       }
@@ -258,7 +257,7 @@ class OrdersProvider extends ChangeNotifier {
       if (getTestDriveOrders != null) {
         testDriveRejectedOrders = getTestDriveOrders;
       } else {
-        AppRoutes.showErrorSnackbar(
+        await AppRoutes.showErrorSnackbar(
           message: 'Error while fetching list of test drive rejected vehicles',
         );
       }
@@ -275,7 +274,7 @@ class OrdersProvider extends ChangeNotifier {
       if (getVehicleOrders != null) {
         deliveredOrders = getVehicleOrders;
       } else {
-        AppRoutes.showErrorSnackbar(
+        await AppRoutes.showErrorSnackbar(
           message: 'Error while fetching list of vehicles',
         );
       }
@@ -294,7 +293,7 @@ class OrdersProvider extends ChangeNotifier {
       if (getTestDriveOrders != null) {
         testDriveDeliveredOrders = getTestDriveOrders;
       } else {
-        AppRoutes.showErrorSnackbar(
+        await AppRoutes.showErrorSnackbar(
           message: 'Error while fetching list of delivered test drive orders',
         );
       }
@@ -308,9 +307,9 @@ class OrdersProvider extends ChangeNotifier {
       final getVehicles = await _inventoryRepository.getVehicles();
 
       if (getVehicles != null) {
-        vehicles = getVehicles;
+        //vehicles = getVehicles;
       } else {
-        AppRoutes.showErrorSnackbar(
+        await AppRoutes.showErrorSnackbar(
           message: 'Error while fetching list of vehicles',
         );
       }
@@ -337,7 +336,7 @@ class OrdersProvider extends ChangeNotifier {
       }
     } catch (e) {
       e.log();
-      AppRoutes.showErrorSnackbar(message: 'Failed to accept order');
+      await AppRoutes.showErrorSnackbar(message: 'Failed to accept order');
     }
   }
 
@@ -357,16 +356,16 @@ class OrdersProvider extends ChangeNotifier {
       }
     } catch (e) {
       e.log();
-      AppRoutes.showErrorSnackbar(message: 'Failed to accept order');
+      await AppRoutes.showErrorSnackbar(message: 'Failed to accept order');
     }
   }
 
-  Future<void> rejectOrder(
-    String id,
-    String reason,
-    bool isPurchaseOrder, [
+  Future<void> rejectOrder({
+    required String id,
+    required String reason,
+    required bool isPurchaseOrder,
     String? description,
-  ]) async {
+  }) async {
     try {
       unawaited(AppRoutes.showLoadingDialog());
       final success = await _orderRepository.rejectOrder(
@@ -379,13 +378,15 @@ class OrdersProvider extends ChangeNotifier {
       if (success) {
         await getPendingOrders();
         await getRejectedOrders();
-        AppRoutes.showSuccessSnackbar(message: 'Order rejection requested');
+        await AppRoutes.showSuccessSnackbar(
+          message: 'Order rejection requested',
+        );
       } else {
         throw Exception();
       }
     } catch (e) {
       e.log();
-      AppRoutes.showErrorSnackbar(message: 'Failed to reject order');
+      await AppRoutes.showErrorSnackbar(message: 'Failed to reject order');
     }
   }
 }

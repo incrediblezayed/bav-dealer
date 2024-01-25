@@ -53,7 +53,7 @@ class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
                     'Enter The OTP Shared On',
                     style: textTheme.labelMedium,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 4,
                   ),
                   Row(
@@ -70,7 +70,7 @@ class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
                       ),
                       const Icon(Iconsax.edit),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
@@ -319,12 +319,12 @@ class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
       onWillPop: () async {
         if (index == 0) {
           if (!widget.isFromWithingApp) {
-            AppRoutes.pushReplacement(page: const LoginPage());
+            await AppRoutes.pushReplacement(page: const LoginPage());
           } else {
             Navigator.pop(context);
           }
         } else {
-          authPRef.signUpPageController.previousPage(
+          await authPRef.signUpPageController.previousPage(
             duration: const Duration(milliseconds: 300),
             curve: Curves.easeInOut,
           );
@@ -335,58 +335,58 @@ class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
       },
       child: Scaffold(
         appBar: AppBar(
-            title: index == 2
-                ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      AutoSizeText(
-                        'Change Password',
-                        style: textTheme.headlineLarge,
-                      ),
-                      SizedBox(
-                        height: 6.h,
-                      ),
-                      AutoSizeText(
-                        'Enter Your New Password',
-                        style: textTheme.labelMedium,
-                      ),
-                    ],
-                  )
-                : index == 1
-                    ? Text(
-                        'OTP Verification',
-                        style: textTheme.headlineLarge,
-                      )
-                    : Text(
-                        widget.isFromWithingApp
-                            ? 'Change Password'
-                            : 'Forgot Password',
-                        style: textTheme.headlineLarge,
-                      ),
-            leading: IconButton(
-              onPressed: () {
-                if (index == 0) {
-                  if (!widget.isFromWithingApp) {
-                    AppRoutes.pushReplacement(page: const LoginPage());
-                  } else {
-                    Navigator.pop(context);
-                  }
+          title: index == 2
+              ? Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AutoSizeText(
+                      'Change Password',
+                      style: textTheme.headlineLarge,
+                    ),
+                    SizedBox(
+                      height: 6.h,
+                    ),
+                    AutoSizeText(
+                      'Enter Your New Password',
+                      style: textTheme.labelMedium,
+                    ),
+                  ],
+                )
+              : index == 1
+                  ? Text(
+                      'OTP Verification',
+                      style: textTheme.headlineLarge,
+                    )
+                  : Text(
+                      widget.isFromWithingApp
+                          ? 'Change Password'
+                          : 'Forgot Password',
+                      style: textTheme.headlineLarge,
+                    ),
+          leading: IconButton(
+            onPressed: () {
+              if (index == 0) {
+                if (!widget.isFromWithingApp) {
+                  AppRoutes.pushReplacement(page: const LoginPage());
                 } else {
-                  authPRef.signUpPageController.previousPage(
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
-                  setState(() {});
+                  Navigator.pop(context);
                 }
-              },
-              icon: const Icon(Iconsax.arrow_left),
-            )),
+              } else {
+                authPRef.signUpPageController.previousPage(
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
+                setState(() {});
+              }
+            },
+            icon: const Icon(Iconsax.arrow_left),
+          ),
+        ),
         body: Padding(
           padding: EdgeInsets.all(16.w),
           child: SafeArea(
             child: PageView(
-              physics: NeverScrollableScrollPhysics(),
-              allowImplicitScrolling: false,
+              physics: const NeverScrollableScrollPhysics(),
               controller: authPRef.signUpPageController,
               onPageChanged: onPageChanged,
               children: [

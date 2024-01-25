@@ -10,6 +10,20 @@ import 'package:dealerapp/src/utils/constants.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+Future<void> initTracking() async {
+  if (Platform.isIOS) {
+    var status = await AppTrackingTransparency.trackingAuthorizationStatus;
+
+    if (status == TrackingStatus.notDetermined) {
+      await Future.delayed(const Duration(seconds: 1));
+      status = await AppTrackingTransparency.requestTrackingAuthorization();
+    }
+    if (status != TrackingStatus.authorized) {
+      Constants.shouldTrack = false;
+    }
+  }
+}
+
 ///Splash Screen
 class SplashScreen extends ConsumerStatefulWidget {
   ///Splash Screen
@@ -26,17 +40,10 @@ class SplashScreen extends ConsumerStatefulWidget {
 
 class _SplashScreenState extends ConsumerState<SplashScreen>
     with AfterLayoutMixin {
-
-Future<void> init() async {
-    if (Platform.isIOS) {
-      var status = await AppTrackingTransparency.trackingAuthorizationStatus;
-      if (status == TrackingStatus.notDetermined) {
-        status = await AppTrackingTransparency.requestTrackingAuthorization();
-      }
-      if (status != TrackingStatus.authorized) {
-        Constants.shouldTrack = false;
-      }
-    }
+  @override
+  void initState() {
+    super.initState();
+    initTracking();
   }
 
   @override
@@ -51,9 +58,8 @@ Future<void> init() async {
 
   @override
   FutureOr<void> afterFirstLayout(BuildContext context) async {
-    init();
     final user = cacheProvider.getUser();
-
+    await initTracking();
     if (user == null) {
       Future.delayed(
         const Duration(seconds: 1),
@@ -67,8 +73,8 @@ Future<void> init() async {
         await cacheProvider.setUser(model);
         await AppRoutes.pushAndRemoveUntil(page: const HomePage());
       } else {
-        cacheProvider.clear();
-        AppRoutes.pushAndRemoveUntil(page: LoginPage());
+        await cacheProvider.clear();
+        await AppRoutes.pushAndRemoveUntil(page: const LoginPage());
       }
     }
   }

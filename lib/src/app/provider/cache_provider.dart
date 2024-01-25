@@ -96,13 +96,10 @@ class CacheProvider {
     switch (value.runtimeType) {
       case String:
         await _stringBox.put(key, value as String);
-        break;
       case int:
         await _intBox.put(key, value as int);
-        break;
       case bool:
         await _boolBox.put(key, value as bool);
-        break;
       default:
         throw Exception('Invalid Type ${value.runtimeType} for $value');
     }

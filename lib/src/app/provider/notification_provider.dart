@@ -25,7 +25,7 @@ class NotificationsProvider extends ChangeNotifier {
       final notifications = await _notificationRepository.getNotifications();
       this.notifications = notifications;
     } catch (e) {
-      AppRoutes.showErrorSnackbar(message: e.toString());
+      await AppRoutes.showErrorSnackbar(message: e.toString());
     }
   }
 }

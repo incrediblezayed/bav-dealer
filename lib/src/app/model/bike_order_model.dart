@@ -1,8 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
+import 'package:dealerapp/src/utils/global_exports.dart';
+
 enum Status { pending, accepted, rejected }
 
+@immutable
 class BikeOrderModel {
   final Status currentStatus;
   final String orderID;
@@ -17,7 +20,7 @@ class BikeOrderModel {
   final String customerContact;
   final String customerAlternateContact;
   final String customerAddress;
-  BikeOrderModel({
+  const BikeOrderModel({
     required this.currentStatus,
     required this.orderID,
     required this.dateTime,

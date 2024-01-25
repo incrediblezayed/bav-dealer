@@ -1,7 +1,6 @@
+import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'package:dealerapp/src/utils/app_images.dart';
 
 class EmptyWidget extends StatelessWidget {
   const EmptyWidget({required this.title, super.key, this.subTitle});

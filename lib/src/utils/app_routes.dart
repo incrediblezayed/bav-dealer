@@ -127,16 +127,14 @@ class AppRoutes {
   }
 
   ///Shows a snackbar with a default title as 'Error'
-  static void showErrorSnackbar({String message = 'Error..'}) {
-    Future.delayed(Duration.zero, () {
-      _showErrorFlushbar(message);
-    });
+  static Future<void> showErrorSnackbar({String message = 'Error..'}) {
+    return _showErrorFlushbar(message);
   }
 
-  static Flushbar? _currentFlushbar;
+  static Flushbar<dynamic>? _currentFlushbar;
 
-  static void _showErrorFlushbar(String message) {
-    _currentFlushbar?.dismiss();
+  static Future<dynamic> _showErrorFlushbar(String message) async {
+    await _currentFlushbar?.dismiss();
     _currentFlushbar = Flushbar(
       message: message,
       duration: const Duration(seconds: 2),
@@ -154,11 +152,11 @@ class AppRoutes {
         ),
       ),
     );
-    _currentFlushbar!.show(navigatorKey.currentState!.overlay!.context);
+    return _currentFlushbar!.show(navigatorKey.currentState!.overlay!.context);
   }
 
-  static void _showSuccessFlushbar(String message) {
-    _currentFlushbar?.dismiss();
+  static Future<dynamic> _showSuccessFlushbar(String message) async {
+    await _currentFlushbar?.dismiss();
     _currentFlushbar = Flushbar(
       message: message,
       duration: const Duration(seconds: 2),
@@ -176,17 +174,15 @@ class AppRoutes {
         ),
       ),
     );
-
-    _currentFlushbar!.show(navigatorKey.currentState!.overlay!.context);
+    return _currentFlushbar!.show(navigatorKey.currentState!.overlay!.context);
   }
 
   ///Shows a snackbar with a default title as 'Success'
-  static void showSuccessSnackbar(
-      {String message = 'Success',
-      Duration duration = const Duration(seconds: 2)}) {
-    Future.delayed(Duration.zero, () {
-      _showSuccessFlushbar(message);
-    });
+  static Future<dynamic> showSuccessSnackbar({
+    String message = 'Success',
+    Duration duration = const Duration(seconds: 2),
+  }) async {
+    return _showSuccessFlushbar(message);
   }
 
   ///Wraps the widget in the Route

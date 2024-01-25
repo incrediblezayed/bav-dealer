@@ -1,4 +1,5 @@
 import 'package:built_collection/built_collection.dart';
+import 'package:dealerapp/src/app/model/variant_details.model.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema.gql.dart';
 import 'package:dealerapp/src/app/repository/graphql_client.dart';
@@ -13,26 +14,36 @@ class InventoryRepository {
   final GraphqlClient _graphqlClient = getIt<GraphqlClient>();
   Client get _client => _graphqlClient.client;
 
-  Future<List<GVehiclesData_vehicles>?> getVehicles([List<String>? ids]) async {
+  Future<List<VariantDetailsModel>?> getVehicles({
+    List<String>? ids,
+    String search = '',
+  }) async {
     try {
-      final resonse = await _client.request(
-        GVehiclesReq(
+      final response = await _client.request(
+        GVehicleVariantsReq(
           (b) {
             if (ids == null) {
-              return b;
+              return b..vars.where.name.contains = search;
             } else {
               return b
-                ..vars.where.variants.every.id.notIn = ListBuilder<String>(ids);
+                ..vars.where.id.notIn = ListBuilder<String>(ids)
+                ..vars.where.name.contains = search;
             }
           },
         ),
       ).first;
 
-      if (resonse.linkException != null ||
-          (resonse.graphqlErrors?.isNotEmpty ?? false)) {
+      if (response.linkException != null ||
+          (response.graphqlErrors?.isNotEmpty ?? false)) {
         throw Exception('Somthing went wrong while getting list of vehicles');
       } else {
-        return resonse.data?.vehicles?.toList();
+        if (response.data?.vehicleVariants == null) {
+          return null;
+        } else {
+          return response.data!.vehicleVariants!
+              .map((p0) => VariantDetailsModel.fromJson(p0.toJson()))
+              .toList();
+        }
       }
     } catch (e) {
       e.log();
@@ -102,13 +113,16 @@ class InventoryRepository {
     return 0;
   }
 
-  Future<List<GVehicleDealersData_vehicleDealers>> currentStock() async {
+  Future<List<GVehicleDealersData_vehicleDealers>> currentStock({
+    String text = '',
+  }) async {
     try {
       final result = await _client
           .request(
             GVehicleDealersReq(
-              (b) =>
-                  b..vars.where.dealer.id.equals = cacheProvider.getDealerId(),
+              (b) => b
+                ..vars.where.dealer.id.equals = cacheProvider.getDealerId()
+                ..vars.where.vehicleVariant.name.contains = text,
             ),
           )
           .first;
@@ -119,7 +133,9 @@ class InventoryRepository {
         throw result.graphqlErrors!.first;
       }
       if (result.data != null) {
-        return result.data!.vehicleDealers!.toList();
+        return result.data!.vehicleDealers!
+            .where((p0) => p0.vehicleVariant != null)
+            .toList();
       }
     } catch (e) {
       e.log();

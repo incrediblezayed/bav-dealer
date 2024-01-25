@@ -82,7 +82,7 @@ class _RankPageState extends State<RankPage> {
             color: AppTheme.primaryColor,
             child: Padding(
               padding: EdgeInsets.only(
-                  left: 20.w, right: 20.w, top: 20.h, bottom: 30.h),
+                  left: 20.w, right: 20.w, top: 20.h, bottom: 30.h,),
               child: Row(
                 children: [
                   CircleAvatar(
@@ -119,7 +119,7 @@ class _RankPageState extends State<RankPage> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(""),
+                      const Text(''),
                       Text(
                         'Your Rank',
                         style: theme.labelMedium!.copyWith(color: Colors.white),

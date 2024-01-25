@@ -6,31 +6,35 @@ part of 'inventory.data.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GVehiclesData> _$gVehiclesDataSerializer =
-    new _$GVehiclesDataSerializer();
-Serializer<GVehiclesData_vehicles> _$gVehiclesDataVehiclesSerializer =
-    new _$GVehiclesData_vehiclesSerializer();
-Serializer<GVehiclesData_vehicles_variants>
-    _$gVehiclesDataVehiclesVariantsSerializer =
-    new _$GVehiclesData_vehicles_variantsSerializer();
-Serializer<GVehiclesData_vehicles_variants_vehicle>
-    _$gVehiclesDataVehiclesVariantsVehicleSerializer =
-    new _$GVehiclesData_vehicles_variants_vehicleSerializer();
-Serializer<GVehiclesData_vehicles_variants_vehicle_brand>
-    _$gVehiclesDataVehiclesVariantsVehicleBrandSerializer =
-    new _$GVehiclesData_vehicles_variants_vehicle_brandSerializer();
-Serializer<GVehiclesData_vehicles_variants_vehicle_type>
-    _$gVehiclesDataVehiclesVariantsVehicleTypeSerializer =
-    new _$GVehiclesData_vehicles_variants_vehicle_typeSerializer();
-Serializer<GVehiclesData_vehicles_variants_colors>
-    _$gVehiclesDataVehiclesVariantsColorsSerializer =
-    new _$GVehiclesData_vehicles_variants_colorsSerializer();
-Serializer<GVehiclesData_vehicles_variants_colors_images>
-    _$gVehiclesDataVehiclesVariantsColorsImagesSerializer =
-    new _$GVehiclesData_vehicles_variants_colors_imagesSerializer();
-Serializer<GVehiclesData_vehicles_variants_colors_images_image>
-    _$gVehiclesDataVehiclesVariantsColorsImagesImageSerializer =
-    new _$GVehiclesData_vehicles_variants_colors_images_imageSerializer();
+Serializer<GVehicleVariantsData> _$gVehicleVariantsDataSerializer =
+    new _$GVehicleVariantsDataSerializer();
+Serializer<GVehicleVariantsData_vehicleVariants>
+    _$gVehicleVariantsDataVehicleVariantsSerializer =
+    new _$GVehicleVariantsData_vehicleVariantsSerializer();
+Serializer<GVehicleVariantsData_vehicleVariants_prices>
+    _$gVehicleVariantsDataVehicleVariantsPricesSerializer =
+    new _$GVehicleVariantsData_vehicleVariants_pricesSerializer();
+Serializer<GVehicleVariantsData_vehicleVariants_prices_category>
+    _$gVehicleVariantsDataVehicleVariantsPricesCategorySerializer =
+    new _$GVehicleVariantsData_vehicleVariants_prices_categorySerializer();
+Serializer<GVehicleVariantsData_vehicleVariants_colors>
+    _$gVehicleVariantsDataVehicleVariantsColorsSerializer =
+    new _$GVehicleVariantsData_vehicleVariants_colorsSerializer();
+Serializer<GVehicleVariantsData_vehicleVariants_colors_images>
+    _$gVehicleVariantsDataVehicleVariantsColorsImagesSerializer =
+    new _$GVehicleVariantsData_vehicleVariants_colors_imagesSerializer();
+Serializer<GVehicleVariantsData_vehicleVariants_colors_images_image>
+    _$gVehicleVariantsDataVehicleVariantsColorsImagesImageSerializer =
+    new _$GVehicleVariantsData_vehicleVariants_colors_images_imageSerializer();
+Serializer<GVehicleVariantsData_vehicleVariants_vehicle>
+    _$gVehicleVariantsDataVehicleVariantsVehicleSerializer =
+    new _$GVehicleVariantsData_vehicleVariants_vehicleSerializer();
+Serializer<GVehicleVariantsData_vehicleVariants_vehicle_brand>
+    _$gVehicleVariantsDataVehicleVariantsVehicleBrandSerializer =
+    new _$GVehicleVariantsData_vehicleVariants_vehicle_brandSerializer();
+Serializer<GVehicleVariantsData_vehicleVariants_vehicle_type>
+    _$gVehicleVariantsDataVehicleVariantsVehicleTypeSerializer =
+    new _$GVehicleVariantsData_vehicleVariants_vehicle_typeSerializer();
 Serializer<GCreateVehicleDealerStockRequestData>
     _$gCreateVehicleDealerStockRequestDataSerializer =
     new _$GCreateVehicleDealerStockRequestDataSerializer();
@@ -77,74 +81,19 @@ Serializer<GPriceCategoriesData_priceCategories>
     _$gPriceCategoriesDataPriceCategoriesSerializer =
     new _$GPriceCategoriesData_priceCategoriesSerializer();
 
-class _$GVehiclesDataSerializer implements StructuredSerializer<GVehiclesData> {
-  @override
-  final Iterable<Type> types = const [GVehiclesData, _$GVehiclesData];
-  @override
-  final String wireName = 'GVehiclesData';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, GVehiclesData object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
-    ];
-    Object? value;
-    value = object.vehicles;
-    if (value != null) {
-      result
-        ..add('vehicles')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                BuiltList, const [const FullType(GVehiclesData_vehicles)])));
-    }
-    return result;
-  }
-
-  @override
-  GVehiclesData deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehiclesDataBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'vehicles':
-          result.vehicles.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [
-                const FullType(GVehiclesData_vehicles)
-              ]))! as BuiltList<Object?>);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GVehiclesData_vehiclesSerializer
-    implements StructuredSerializer<GVehiclesData_vehicles> {
+class _$GVehicleVariantsDataSerializer
+    implements StructuredSerializer<GVehicleVariantsData> {
   @override
   final Iterable<Type> types = const [
-    GVehiclesData_vehicles,
-    _$GVehiclesData_vehicles
+    GVehicleVariantsData,
+    _$GVehicleVariantsData
   ];
   @override
-  final String wireName = 'GVehiclesData_vehicles';
+  final String wireName = 'GVehicleVariantsData';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GVehiclesData_vehicles object,
+      Serializers serializers, GVehicleVariantsData object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
@@ -152,22 +101,22 @@ class _$GVehiclesData_vehiclesSerializer
           specifiedType: const FullType(String)),
     ];
     Object? value;
-    value = object.variants;
+    value = object.vehicleVariants;
     if (value != null) {
       result
-        ..add('variants')
+        ..add('vehicleVariants')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(BuiltList,
-                const [const FullType(GVehiclesData_vehicles_variants)])));
+                const [const FullType(GVehicleVariantsData_vehicleVariants)])));
     }
     return result;
   }
 
   @override
-  GVehiclesData_vehicles deserialize(
+  GVehicleVariantsData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehiclesData_vehiclesBuilder();
+    final result = new GVehicleVariantsDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -179,10 +128,10 @@ class _$GVehiclesData_vehiclesSerializer
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
-        case 'variants':
-          result.variants.replace(serializers.deserialize(value,
+        case 'vehicleVariants':
+          result.vehicleVariants.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
-                const FullType(GVehiclesData_vehicles_variants)
+                const FullType(GVehicleVariantsData_vehicleVariants)
               ]))! as BuiltList<Object?>);
           break;
       }
@@ -192,19 +141,19 @@ class _$GVehiclesData_vehiclesSerializer
   }
 }
 
-class _$GVehiclesData_vehicles_variantsSerializer
-    implements StructuredSerializer<GVehiclesData_vehicles_variants> {
+class _$GVehicleVariantsData_vehicleVariantsSerializer
+    implements StructuredSerializer<GVehicleVariantsData_vehicleVariants> {
   @override
   final Iterable<Type> types = const [
-    GVehiclesData_vehicles_variants,
-    _$GVehiclesData_vehicles_variants
+    GVehicleVariantsData_vehicleVariants,
+    _$GVehicleVariantsData_vehicleVariants
   ];
   @override
-  final String wireName = 'GVehiclesData_vehicles_variants';
+  final String wireName = 'GVehicleVariantsData_vehicleVariants';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GVehiclesData_vehicles_variants object,
+      Serializers serializers, GVehicleVariantsData_vehicleVariants object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
@@ -214,20 +163,14 @@ class _$GVehiclesData_vehicles_variantsSerializer
       serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
     Object? value;
-    value = object.name;
+    value = object.prices;
     if (value != null) {
       result
-        ..add('name')
+        ..add('prices')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.vehicle;
-    if (value != null) {
-      result
-        ..add('vehicle')
-        ..add(serializers.serialize(value,
-            specifiedType:
-                const FullType(GVehiclesData_vehicles_variants_vehicle)));
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GVehicleVariantsData_vehicleVariants_prices)
+            ])));
     }
     value = object.colors;
     if (value != null) {
@@ -235,17 +178,45 @@ class _$GVehiclesData_vehicles_variantsSerializer
         ..add('colors')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(BuiltList, const [
-              const FullType(GVehiclesData_vehicles_variants_colors)
+              const FullType(GVehicleVariantsData_vehicleVariants_colors)
             ])));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.Gdefault;
+    if (value != null) {
+      result
+        ..add('default')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.totalPrice;
+    if (value != null) {
+      result
+        ..add('totalPrice')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.vehicle;
+    if (value != null) {
+      result
+        ..add('vehicle')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GVehicleVariantsData_vehicleVariants_vehicle)));
     }
     return result;
   }
 
   @override
-  GVehiclesData_vehicles_variants deserialize(
+  GVehicleVariantsData_vehicleVariants deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehiclesData_vehicles_variantsBuilder();
+    final result = new GVehicleVariantsData_vehicleVariantsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -257,25 +228,39 @@ class _$GVehiclesData_vehicles_variantsSerializer
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
-        case 'name':
-          result.name = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'vehicle':
-          result.vehicle.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(GVehiclesData_vehicles_variants_vehicle))!
-              as GVehiclesData_vehicles_variants_vehicle);
+        case 'prices':
+          result.prices.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GVehicleVariantsData_vehicleVariants_prices)
+              ]))! as BuiltList<Object?>);
           break;
         case 'colors':
           result.colors.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
-                const FullType(GVehiclesData_vehicles_variants_colors)
+                const FullType(GVehicleVariantsData_vehicleVariants_colors)
               ]))! as BuiltList<Object?>);
           break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'default':
+          result.Gdefault = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
         case 'id':
           result.id = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
+          break;
+        case 'totalPrice':
+          result.totalPrice = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'vehicle':
+          result.vehicle.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GVehicleVariantsData_vehicleVariants_vehicle))!
+              as GVehicleVariantsData_vehicleVariants_vehicle);
           break;
       }
     }
@@ -284,59 +269,49 @@ class _$GVehiclesData_vehicles_variantsSerializer
   }
 }
 
-class _$GVehiclesData_vehicles_variants_vehicleSerializer
-    implements StructuredSerializer<GVehiclesData_vehicles_variants_vehicle> {
+class _$GVehicleVariantsData_vehicleVariants_pricesSerializer
+    implements
+        StructuredSerializer<GVehicleVariantsData_vehicleVariants_prices> {
   @override
   final Iterable<Type> types = const [
-    GVehiclesData_vehicles_variants_vehicle,
-    _$GVehiclesData_vehicles_variants_vehicle
+    GVehicleVariantsData_vehicleVariants_prices,
+    _$GVehicleVariantsData_vehicleVariants_prices
   ];
   @override
-  final String wireName = 'GVehiclesData_vehicles_variants_vehicle';
+  final String wireName = 'GVehicleVariantsData_vehicleVariants_prices';
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, GVehiclesData_vehicles_variants_vehicle object,
+  Iterable<Object?> serialize(Serializers serializers,
+      GVehicleVariantsData_vehicleVariants_prices object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
       serializers.serialize(object.G__typename,
           specifiedType: const FullType(String)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
     Object? value;
-    value = object.name;
+    value = object.amount;
     if (value != null) {
       result
-        ..add('name')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add('amount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    value = object.brand;
+    value = object.category;
     if (value != null) {
       result
-        ..add('brand')
+        ..add('category')
         ..add(serializers.serialize(value,
-            specifiedType:
-                const FullType(GVehiclesData_vehicles_variants_vehicle_brand)));
-    }
-    value = object.type;
-    if (value != null) {
-      result
-        ..add('type')
-        ..add(serializers.serialize(value,
-            specifiedType:
-                const FullType(GVehiclesData_vehicles_variants_vehicle_type)));
+            specifiedType: const FullType(
+                GVehicleVariantsData_vehicleVariants_prices_category)));
     }
     return result;
   }
 
   @override
-  GVehiclesData_vehicles_variants_vehicle deserialize(
+  GVehicleVariantsData_vehicleVariants_prices deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehiclesData_vehicles_variants_vehicleBuilder();
+    final result = new GVehicleVariantsData_vehicleVariants_pricesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -348,25 +323,15 @@ class _$GVehiclesData_vehicles_variants_vehicleSerializer
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
-        case 'name':
-          result.name = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+        case 'amount':
+          result.amount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
-        case 'brand':
-          result.brand.replace(serializers.deserialize(value,
+        case 'category':
+          result.category.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      GVehiclesData_vehicles_variants_vehicle_brand))!
-              as GVehiclesData_vehicles_variants_vehicle_brand);
-          break;
-        case 'type':
-          result.type.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      GVehiclesData_vehicles_variants_vehicle_type))!
-              as GVehiclesData_vehicles_variants_vehicle_type);
-          break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+                      GVehicleVariantsData_vehicleVariants_prices_category))!
+              as GVehicleVariantsData_vehicleVariants_prices_category);
           break;
       }
     }
@@ -375,91 +340,27 @@ class _$GVehiclesData_vehicles_variants_vehicleSerializer
   }
 }
 
-class _$GVehiclesData_vehicles_variants_vehicle_brandSerializer
+class _$GVehicleVariantsData_vehicleVariants_prices_categorySerializer
     implements
-        StructuredSerializer<GVehiclesData_vehicles_variants_vehicle_brand> {
+        StructuredSerializer<
+            GVehicleVariantsData_vehicleVariants_prices_category> {
   @override
   final Iterable<Type> types = const [
-    GVehiclesData_vehicles_variants_vehicle_brand,
-    _$GVehiclesData_vehicles_variants_vehicle_brand
+    GVehicleVariantsData_vehicleVariants_prices_category,
+    _$GVehicleVariantsData_vehicleVariants_prices_category
   ];
   @override
-  final String wireName = 'GVehiclesData_vehicles_variants_vehicle_brand';
+  final String wireName =
+      'GVehicleVariantsData_vehicleVariants_prices_category';
 
   @override
   Iterable<Object?> serialize(Serializers serializers,
-      GVehiclesData_vehicles_variants_vehicle_brand object,
+      GVehicleVariantsData_vehicleVariants_prices_category object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
       serializers.serialize(object.G__typename,
           specifiedType: const FullType(String)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
-    ];
-    Object? value;
-    value = object.name;
-    if (value != null) {
-      result
-        ..add('name')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    return result;
-  }
-
-  @override
-  GVehiclesData_vehicles_variants_vehicle_brand deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehiclesData_vehicles_variants_vehicle_brandBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'name':
-          result.name = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GVehiclesData_vehicles_variants_vehicle_typeSerializer
-    implements
-        StructuredSerializer<GVehiclesData_vehicles_variants_vehicle_type> {
-  @override
-  final Iterable<Type> types = const [
-    GVehiclesData_vehicles_variants_vehicle_type,
-    _$GVehiclesData_vehicles_variants_vehicle_type
-  ];
-  @override
-  final String wireName = 'GVehiclesData_vehicles_variants_vehicle_type';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers,
-      GVehiclesData_vehicles_variants_vehicle_type object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
     Object? value;
     value = object.name;
@@ -480,10 +381,11 @@ class _$GVehiclesData_vehicles_variants_vehicle_typeSerializer
   }
 
   @override
-  GVehiclesData_vehicles_variants_vehicle_type deserialize(
+  GVehicleVariantsData_vehicleVariants_prices_category deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehiclesData_vehicles_variants_vehicle_typeBuilder();
+    final result =
+        new GVehicleVariantsData_vehicleVariants_prices_categoryBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -503,6 +405,235 @@ class _$GVehiclesData_vehicles_variants_vehicle_typeSerializer
           result.description = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleVariantsData_vehicleVariants_colorsSerializer
+    implements
+        StructuredSerializer<GVehicleVariantsData_vehicleVariants_colors> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleVariantsData_vehicleVariants_colors,
+    _$GVehicleVariantsData_vehicleVariants_colors
+  ];
+  @override
+  final String wireName = 'GVehicleVariantsData_vehicleVariants_colors';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GVehicleVariantsData_vehicleVariants_colors object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.code;
+    if (value != null) {
+      result
+        ..add('code')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.images;
+    if (value != null) {
+      result
+        ..add('images')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GVehicleVariantsData_vehicleVariants_colors_images)
+            ])));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleVariantsData_vehicleVariants_colors deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleVariantsData_vehicleVariants_colorsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'code':
+          result.code = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'images':
+          result.images.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(
+                    GVehicleVariantsData_vehicleVariants_colors_images)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleVariantsData_vehicleVariants_colors_imagesSerializer
+    implements
+        StructuredSerializer<
+            GVehicleVariantsData_vehicleVariants_colors_images> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleVariantsData_vehicleVariants_colors_images,
+    _$GVehicleVariantsData_vehicleVariants_colors_images
+  ];
+  @override
+  final String wireName = 'GVehicleVariantsData_vehicleVariants_colors_images';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GVehicleVariantsData_vehicleVariants_colors_images object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.image;
+    if (value != null) {
+      result
+        ..add('image')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GVehicleVariantsData_vehicleVariants_colors_images_image)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleVariantsData_vehicleVariants_colors_images deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GVehicleVariantsData_vehicleVariants_colors_imagesBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'image':
+          result.image.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GVehicleVariantsData_vehicleVariants_colors_images_image))!
+              as GVehicleVariantsData_vehicleVariants_colors_images_image);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleVariantsData_vehicleVariants_colors_images_imageSerializer
+    implements
+        StructuredSerializer<
+            GVehicleVariantsData_vehicleVariants_colors_images_image> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleVariantsData_vehicleVariants_colors_images_image,
+    _$GVehicleVariantsData_vehicleVariants_colors_images_image
+  ];
+  @override
+  final String wireName =
+      'GVehicleVariantsData_vehicleVariants_colors_images_image';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GVehicleVariantsData_vehicleVariants_colors_images_image object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'url',
+      serializers.serialize(object.url, specifiedType: const FullType(String)),
+      'width',
+      serializers.serialize(object.width, specifiedType: const FullType(int)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GVehicleVariantsData_vehicleVariants_colors_images_image deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'url':
+          result.url = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'width':
+          result.width = serializers.deserialize(value,
+              specifiedType: const FullType(int))! as int;
+          break;
         case 'id':
           result.id = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
@@ -514,19 +645,113 @@ class _$GVehiclesData_vehicles_variants_vehicle_typeSerializer
   }
 }
 
-class _$GVehiclesData_vehicles_variants_colorsSerializer
-    implements StructuredSerializer<GVehiclesData_vehicles_variants_colors> {
+class _$GVehicleVariantsData_vehicleVariants_vehicleSerializer
+    implements
+        StructuredSerializer<GVehicleVariantsData_vehicleVariants_vehicle> {
   @override
   final Iterable<Type> types = const [
-    GVehiclesData_vehicles_variants_colors,
-    _$GVehiclesData_vehicles_variants_colors
+    GVehicleVariantsData_vehicleVariants_vehicle,
+    _$GVehicleVariantsData_vehicleVariants_vehicle
   ];
   @override
-  final String wireName = 'GVehiclesData_vehicles_variants_colors';
+  final String wireName = 'GVehicleVariantsData_vehicleVariants_vehicle';
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, GVehiclesData_vehicles_variants_colors object,
+  Iterable<Object?> serialize(Serializers serializers,
+      GVehicleVariantsData_vehicleVariants_vehicle object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.brand;
+    if (value != null) {
+      result
+        ..add('brand')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GVehicleVariantsData_vehicleVariants_vehicle_brand)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GVehicleVariantsData_vehicleVariants_vehicle_type)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleVariantsData_vehicleVariants_vehicle deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleVariantsData_vehicleVariants_vehicleBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'brand':
+          result.brand.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GVehicleVariantsData_vehicleVariants_vehicle_brand))!
+              as GVehicleVariantsData_vehicleVariants_vehicle_brand);
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'type':
+          result.type.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GVehicleVariantsData_vehicleVariants_vehicle_type))!
+              as GVehicleVariantsData_vehicleVariants_vehicle_type);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleVariantsData_vehicleVariants_vehicle_brandSerializer
+    implements
+        StructuredSerializer<
+            GVehicleVariantsData_vehicleVariants_vehicle_brand> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleVariantsData_vehicleVariants_vehicle_brand,
+    _$GVehicleVariantsData_vehicleVariants_vehicle_brand
+  ];
+  @override
+  final String wireName = 'GVehicleVariantsData_vehicleVariants_vehicle_brand';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GVehicleVariantsData_vehicleVariants_vehicle_brand object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
@@ -543,30 +768,15 @@ class _$GVehiclesData_vehicles_variants_colorsSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.code;
-    if (value != null) {
-      result
-        ..add('code')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.images;
-    if (value != null) {
-      result
-        ..add('images')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(BuiltList, const [
-              const FullType(GVehiclesData_vehicles_variants_colors_images)
-            ])));
-    }
     return result;
   }
 
   @override
-  GVehiclesData_vehicles_variants_colors deserialize(
+  GVehicleVariantsData_vehicleVariants_vehicle_brand deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehiclesData_vehicles_variants_colorsBuilder();
+    final result =
+        new GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -586,16 +796,6 @@ class _$GVehiclesData_vehicles_variants_colorsSerializer
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'code':
-          result.code = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'images':
-          result.images.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [
-                const FullType(GVehiclesData_vehicles_variants_colors_images)
-              ]))! as BuiltList<Object?>);
-          break;
       }
     }
 
@@ -603,20 +803,21 @@ class _$GVehiclesData_vehicles_variants_colorsSerializer
   }
 }
 
-class _$GVehiclesData_vehicles_variants_colors_imagesSerializer
+class _$GVehicleVariantsData_vehicleVariants_vehicle_typeSerializer
     implements
-        StructuredSerializer<GVehiclesData_vehicles_variants_colors_images> {
+        StructuredSerializer<
+            GVehicleVariantsData_vehicleVariants_vehicle_type> {
   @override
   final Iterable<Type> types = const [
-    GVehiclesData_vehicles_variants_colors_images,
-    _$GVehiclesData_vehicles_variants_colors_images
+    GVehicleVariantsData_vehicleVariants_vehicle_type,
+    _$GVehicleVariantsData_vehicleVariants_vehicle_type
   ];
   @override
-  final String wireName = 'GVehiclesData_vehicles_variants_colors_images';
+  final String wireName = 'GVehicleVariantsData_vehicleVariants_vehicle_type';
 
   @override
   Iterable<Object?> serialize(Serializers serializers,
-      GVehiclesData_vehicles_variants_colors_images object,
+      GVehicleVariantsData_vehicleVariants_vehicle_type object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
@@ -624,79 +825,22 @@ class _$GVehiclesData_vehicles_variants_colors_imagesSerializer
           specifiedType: const FullType(String)),
     ];
     Object? value;
-    value = object.image;
+    value = object.name;
     if (value != null) {
       result
-        ..add('image')
+        ..add('name')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                GVehiclesData_vehicles_variants_colors_images_image)));
+            specifiedType: const FullType(String)));
     }
     return result;
   }
 
   @override
-  GVehiclesData_vehicles_variants_colors_images deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehiclesData_vehicles_variants_colors_imagesBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'image':
-          result.image.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      GVehiclesData_vehicles_variants_colors_images_image))!
-              as GVehiclesData_vehicles_variants_colors_images_image);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GVehiclesData_vehicles_variants_colors_images_imageSerializer
-    implements
-        StructuredSerializer<
-            GVehiclesData_vehicles_variants_colors_images_image> {
-  @override
-  final Iterable<Type> types = const [
-    GVehiclesData_vehicles_variants_colors_images_image,
-    _$GVehiclesData_vehicles_variants_colors_images_image
-  ];
-  @override
-  final String wireName = 'GVehiclesData_vehicles_variants_colors_images_image';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers,
-      GVehiclesData_vehicles_variants_colors_images_image object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
-      'url',
-      serializers.serialize(object.url, specifiedType: const FullType(String)),
-    ];
-
-    return result;
-  }
-
-  @override
-  GVehiclesData_vehicles_variants_colors_images_image deserialize(
+  GVehicleVariantsData_vehicleVariants_vehicle_type deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GVehiclesData_vehicles_variants_colors_images_imageBuilder();
+        new GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -708,9 +852,9 @@ class _$GVehiclesData_vehicles_variants_colors_images_imageSerializer
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
-        case 'url':
-          result.url = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -1917,228 +2061,117 @@ class _$GPriceCategoriesData_priceCategoriesSerializer
   }
 }
 
-class _$GVehiclesData extends GVehiclesData {
+class _$GVehicleVariantsData extends GVehicleVariantsData {
   @override
   final String G__typename;
   @override
-  final BuiltList<GVehiclesData_vehicles>? vehicles;
+  final BuiltList<GVehicleVariantsData_vehicleVariants>? vehicleVariants;
 
-  factory _$GVehiclesData([void Function(GVehiclesDataBuilder)? updates]) =>
-      (new GVehiclesDataBuilder()..update(updates))._build();
+  factory _$GVehicleVariantsData(
+          [void Function(GVehicleVariantsDataBuilder)? updates]) =>
+      (new GVehicleVariantsDataBuilder()..update(updates))._build();
 
-  _$GVehiclesData._({required this.G__typename, this.vehicles}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GVehiclesData', 'G__typename');
-  }
-
-  @override
-  GVehiclesData rebuild(void Function(GVehiclesDataBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GVehiclesDataBuilder toBuilder() => new GVehiclesDataBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GVehiclesData &&
-        G__typename == other.G__typename &&
-        vehicles == other.vehicles;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, vehicles.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'GVehiclesData')
-          ..add('G__typename', G__typename)
-          ..add('vehicles', vehicles))
-        .toString();
-  }
-}
-
-class GVehiclesDataBuilder
-    implements Builder<GVehiclesData, GVehiclesDataBuilder> {
-  _$GVehiclesData? _$v;
-
-  String? _G__typename;
-  String? get G__typename => _$this._G__typename;
-  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
-
-  ListBuilder<GVehiclesData_vehicles>? _vehicles;
-  ListBuilder<GVehiclesData_vehicles> get vehicles =>
-      _$this._vehicles ??= new ListBuilder<GVehiclesData_vehicles>();
-  set vehicles(ListBuilder<GVehiclesData_vehicles>? vehicles) =>
-      _$this._vehicles = vehicles;
-
-  GVehiclesDataBuilder() {
-    GVehiclesData._initializeBuilder(this);
-  }
-
-  GVehiclesDataBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _G__typename = $v.G__typename;
-      _vehicles = $v.vehicles?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(GVehiclesData other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GVehiclesData;
-  }
-
-  @override
-  void update(void Function(GVehiclesDataBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GVehiclesData build() => _build();
-
-  _$GVehiclesData _build() {
-    _$GVehiclesData _$result;
-    try {
-      _$result = _$v ??
-          new _$GVehiclesData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GVehiclesData', 'G__typename'),
-              vehicles: _vehicles?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'vehicles';
-        _vehicles?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GVehiclesData', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GVehiclesData_vehicles extends GVehiclesData_vehicles {
-  @override
-  final String G__typename;
-  @override
-  final BuiltList<GVehiclesData_vehicles_variants>? variants;
-
-  factory _$GVehiclesData_vehicles(
-          [void Function(GVehiclesData_vehiclesBuilder)? updates]) =>
-      (new GVehiclesData_vehiclesBuilder()..update(updates))._build();
-
-  _$GVehiclesData_vehicles._({required this.G__typename, this.variants})
+  _$GVehicleVariantsData._({required this.G__typename, this.vehicleVariants})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GVehiclesData_vehicles', 'G__typename');
+        G__typename, r'GVehicleVariantsData', 'G__typename');
   }
 
   @override
-  GVehiclesData_vehicles rebuild(
-          void Function(GVehiclesData_vehiclesBuilder) updates) =>
+  GVehicleVariantsData rebuild(
+          void Function(GVehicleVariantsDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GVehiclesData_vehiclesBuilder toBuilder() =>
-      new GVehiclesData_vehiclesBuilder()..replace(this);
+  GVehicleVariantsDataBuilder toBuilder() =>
+      new GVehicleVariantsDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GVehiclesData_vehicles &&
+    return other is GVehicleVariantsData &&
         G__typename == other.G__typename &&
-        variants == other.variants;
+        vehicleVariants == other.vehicleVariants;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, variants.hashCode);
+    _$hash = $jc(_$hash, vehicleVariants.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GVehiclesData_vehicles')
+    return (newBuiltValueToStringHelper(r'GVehicleVariantsData')
           ..add('G__typename', G__typename)
-          ..add('variants', variants))
+          ..add('vehicleVariants', vehicleVariants))
         .toString();
   }
 }
 
-class GVehiclesData_vehiclesBuilder
-    implements Builder<GVehiclesData_vehicles, GVehiclesData_vehiclesBuilder> {
-  _$GVehiclesData_vehicles? _$v;
+class GVehicleVariantsDataBuilder
+    implements Builder<GVehicleVariantsData, GVehicleVariantsDataBuilder> {
+  _$GVehicleVariantsData? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  ListBuilder<GVehiclesData_vehicles_variants>? _variants;
-  ListBuilder<GVehiclesData_vehicles_variants> get variants =>
-      _$this._variants ??= new ListBuilder<GVehiclesData_vehicles_variants>();
-  set variants(ListBuilder<GVehiclesData_vehicles_variants>? variants) =>
-      _$this._variants = variants;
+  ListBuilder<GVehicleVariantsData_vehicleVariants>? _vehicleVariants;
+  ListBuilder<GVehicleVariantsData_vehicleVariants> get vehicleVariants =>
+      _$this._vehicleVariants ??=
+          new ListBuilder<GVehicleVariantsData_vehicleVariants>();
+  set vehicleVariants(
+          ListBuilder<GVehicleVariantsData_vehicleVariants>? vehicleVariants) =>
+      _$this._vehicleVariants = vehicleVariants;
 
-  GVehiclesData_vehiclesBuilder() {
-    GVehiclesData_vehicles._initializeBuilder(this);
+  GVehicleVariantsDataBuilder() {
+    GVehicleVariantsData._initializeBuilder(this);
   }
 
-  GVehiclesData_vehiclesBuilder get _$this {
+  GVehicleVariantsDataBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _variants = $v.variants?.toBuilder();
+      _vehicleVariants = $v.vehicleVariants?.toBuilder();
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(GVehiclesData_vehicles other) {
+  void replace(GVehicleVariantsData other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GVehiclesData_vehicles;
+    _$v = other as _$GVehicleVariantsData;
   }
 
   @override
-  void update(void Function(GVehiclesData_vehiclesBuilder)? updates) {
+  void update(void Function(GVehicleVariantsDataBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GVehiclesData_vehicles build() => _build();
+  GVehicleVariantsData build() => _build();
 
-  _$GVehiclesData_vehicles _build() {
-    _$GVehiclesData_vehicles _$result;
+  _$GVehicleVariantsData _build() {
+    _$GVehicleVariantsData _$result;
     try {
       _$result = _$v ??
-          new _$GVehiclesData_vehicles._(
+          new _$GVehicleVariantsData._(
               G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GVehiclesData_vehicles', 'G__typename'),
-              variants: _variants?.build());
+                  G__typename, r'GVehicleVariantsData', 'G__typename'),
+              vehicleVariants: _vehicleVariants?.build());
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'variants';
-        _variants?.build();
+        _$failedField = 'vehicleVariants';
+        _vehicleVariants?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GVehiclesData_vehicles', _$failedField, e.toString());
+            r'GVehicleVariantsData', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -2147,336 +2180,212 @@ class GVehiclesData_vehiclesBuilder
   }
 }
 
-class _$GVehiclesData_vehicles_variants
-    extends GVehiclesData_vehicles_variants {
+class _$GVehicleVariantsData_vehicleVariants
+    extends GVehicleVariantsData_vehicleVariants {
   @override
   final String G__typename;
+  @override
+  final BuiltList<GVehicleVariantsData_vehicleVariants_prices>? prices;
+  @override
+  final BuiltList<GVehicleVariantsData_vehicleVariants_colors>? colors;
   @override
   final String? name;
   @override
-  final GVehiclesData_vehicles_variants_vehicle? vehicle;
-  @override
-  final BuiltList<GVehiclesData_vehicles_variants_colors>? colors;
+  final bool? Gdefault;
   @override
   final String id;
-
-  factory _$GVehiclesData_vehicles_variants(
-          [void Function(GVehiclesData_vehicles_variantsBuilder)? updates]) =>
-      (new GVehiclesData_vehicles_variantsBuilder()..update(updates))._build();
-
-  _$GVehiclesData_vehicles_variants._(
-      {required this.G__typename,
-      this.name,
-      this.vehicle,
-      this.colors,
-      required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GVehiclesData_vehicles_variants', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GVehiclesData_vehicles_variants', 'id');
-  }
-
   @override
-  GVehiclesData_vehicles_variants rebuild(
-          void Function(GVehiclesData_vehicles_variantsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
+  final int? totalPrice;
   @override
-  GVehiclesData_vehicles_variantsBuilder toBuilder() =>
-      new GVehiclesData_vehicles_variantsBuilder()..replace(this);
+  final GVehicleVariantsData_vehicleVariants_vehicle? vehicle;
 
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GVehiclesData_vehicles_variants &&
-        G__typename == other.G__typename &&
-        name == other.name &&
-        vehicle == other.vehicle &&
-        colors == other.colors &&
-        id == other.id;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, vehicle.hashCode);
-    _$hash = $jc(_$hash, colors.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'GVehiclesData_vehicles_variants')
-          ..add('G__typename', G__typename)
-          ..add('name', name)
-          ..add('vehicle', vehicle)
-          ..add('colors', colors)
-          ..add('id', id))
-        .toString();
-  }
-}
-
-class GVehiclesData_vehicles_variantsBuilder
-    implements
-        Builder<GVehiclesData_vehicles_variants,
-            GVehiclesData_vehicles_variantsBuilder> {
-  _$GVehiclesData_vehicles_variants? _$v;
-
-  String? _G__typename;
-  String? get G__typename => _$this._G__typename;
-  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  GVehiclesData_vehicles_variants_vehicleBuilder? _vehicle;
-  GVehiclesData_vehicles_variants_vehicleBuilder get vehicle =>
-      _$this._vehicle ??= new GVehiclesData_vehicles_variants_vehicleBuilder();
-  set vehicle(GVehiclesData_vehicles_variants_vehicleBuilder? vehicle) =>
-      _$this._vehicle = vehicle;
-
-  ListBuilder<GVehiclesData_vehicles_variants_colors>? _colors;
-  ListBuilder<GVehiclesData_vehicles_variants_colors> get colors =>
-      _$this._colors ??=
-          new ListBuilder<GVehiclesData_vehicles_variants_colors>();
-  set colors(ListBuilder<GVehiclesData_vehicles_variants_colors>? colors) =>
-      _$this._colors = colors;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  GVehiclesData_vehicles_variantsBuilder() {
-    GVehiclesData_vehicles_variants._initializeBuilder(this);
-  }
-
-  GVehiclesData_vehicles_variantsBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _G__typename = $v.G__typename;
-      _name = $v.name;
-      _vehicle = $v.vehicle?.toBuilder();
-      _colors = $v.colors?.toBuilder();
-      _id = $v.id;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(GVehiclesData_vehicles_variants other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GVehiclesData_vehicles_variants;
-  }
-
-  @override
-  void update(void Function(GVehiclesData_vehicles_variantsBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GVehiclesData_vehicles_variants build() => _build();
-
-  _$GVehiclesData_vehicles_variants _build() {
-    _$GVehiclesData_vehicles_variants _$result;
-    try {
-      _$result = _$v ??
-          new _$GVehiclesData_vehicles_variants._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GVehiclesData_vehicles_variants', 'G__typename'),
-              name: name,
-              vehicle: _vehicle?.build(),
-              colors: _colors?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GVehiclesData_vehicles_variants', 'id'));
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'vehicle';
-        _vehicle?.build();
-        _$failedField = 'colors';
-        _colors?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GVehiclesData_vehicles_variants', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GVehiclesData_vehicles_variants_vehicle
-    extends GVehiclesData_vehicles_variants_vehicle {
-  @override
-  final String G__typename;
-  @override
-  final String? name;
-  @override
-  final GVehiclesData_vehicles_variants_vehicle_brand? brand;
-  @override
-  final GVehiclesData_vehicles_variants_vehicle_type? type;
-  @override
-  final String id;
-
-  factory _$GVehiclesData_vehicles_variants_vehicle(
-          [void Function(GVehiclesData_vehicles_variants_vehicleBuilder)?
+  factory _$GVehicleVariantsData_vehicleVariants(
+          [void Function(GVehicleVariantsData_vehicleVariantsBuilder)?
               updates]) =>
-      (new GVehiclesData_vehicles_variants_vehicleBuilder()..update(updates))
+      (new GVehicleVariantsData_vehicleVariantsBuilder()..update(updates))
           ._build();
 
-  _$GVehiclesData_vehicles_variants_vehicle._(
+  _$GVehicleVariantsData_vehicleVariants._(
       {required this.G__typename,
+      this.prices,
+      this.colors,
       this.name,
-      this.brand,
-      this.type,
-      required this.id})
+      this.Gdefault,
+      required this.id,
+      this.totalPrice,
+      this.vehicle})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GVehiclesData_vehicles_variants_vehicle', 'G__typename');
+        G__typename, r'GVehicleVariantsData_vehicleVariants', 'G__typename');
     BuiltValueNullFieldError.checkNotNull(
-        id, r'GVehiclesData_vehicles_variants_vehicle', 'id');
+        id, r'GVehicleVariantsData_vehicleVariants', 'id');
   }
 
   @override
-  GVehiclesData_vehicles_variants_vehicle rebuild(
-          void Function(GVehiclesData_vehicles_variants_vehicleBuilder)
-              updates) =>
+  GVehicleVariantsData_vehicleVariants rebuild(
+          void Function(GVehicleVariantsData_vehicleVariantsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GVehiclesData_vehicles_variants_vehicleBuilder toBuilder() =>
-      new GVehiclesData_vehicles_variants_vehicleBuilder()..replace(this);
+  GVehicleVariantsData_vehicleVariantsBuilder toBuilder() =>
+      new GVehicleVariantsData_vehicleVariantsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GVehiclesData_vehicles_variants_vehicle &&
+    return other is GVehicleVariantsData_vehicleVariants &&
         G__typename == other.G__typename &&
+        prices == other.prices &&
+        colors == other.colors &&
         name == other.name &&
-        brand == other.brand &&
-        type == other.type &&
-        id == other.id;
+        Gdefault == other.Gdefault &&
+        id == other.id &&
+        totalPrice == other.totalPrice &&
+        vehicle == other.vehicle;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, prices.hashCode);
+    _$hash = $jc(_$hash, colors.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, brand.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, Gdefault.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, totalPrice.hashCode);
+    _$hash = $jc(_$hash, vehicle.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(
-            r'GVehiclesData_vehicles_variants_vehicle')
+    return (newBuiltValueToStringHelper(r'GVehicleVariantsData_vehicleVariants')
           ..add('G__typename', G__typename)
+          ..add('prices', prices)
+          ..add('colors', colors)
           ..add('name', name)
-          ..add('brand', brand)
-          ..add('type', type)
-          ..add('id', id))
+          ..add('Gdefault', Gdefault)
+          ..add('id', id)
+          ..add('totalPrice', totalPrice)
+          ..add('vehicle', vehicle))
         .toString();
   }
 }
 
-class GVehiclesData_vehicles_variants_vehicleBuilder
+class GVehicleVariantsData_vehicleVariantsBuilder
     implements
-        Builder<GVehiclesData_vehicles_variants_vehicle,
-            GVehiclesData_vehicles_variants_vehicleBuilder> {
-  _$GVehiclesData_vehicles_variants_vehicle? _$v;
+        Builder<GVehicleVariantsData_vehicleVariants,
+            GVehicleVariantsData_vehicleVariantsBuilder> {
+  _$GVehicleVariantsData_vehicleVariants? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
+  ListBuilder<GVehicleVariantsData_vehicleVariants_prices>? _prices;
+  ListBuilder<GVehicleVariantsData_vehicleVariants_prices> get prices =>
+      _$this._prices ??=
+          new ListBuilder<GVehicleVariantsData_vehicleVariants_prices>();
+  set prices(
+          ListBuilder<GVehicleVariantsData_vehicleVariants_prices>? prices) =>
+      _$this._prices = prices;
+
+  ListBuilder<GVehicleVariantsData_vehicleVariants_colors>? _colors;
+  ListBuilder<GVehicleVariantsData_vehicleVariants_colors> get colors =>
+      _$this._colors ??=
+          new ListBuilder<GVehicleVariantsData_vehicleVariants_colors>();
+  set colors(
+          ListBuilder<GVehicleVariantsData_vehicleVariants_colors>? colors) =>
+      _$this._colors = colors;
+
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  GVehiclesData_vehicles_variants_vehicle_brandBuilder? _brand;
-  GVehiclesData_vehicles_variants_vehicle_brandBuilder get brand =>
-      _$this._brand ??=
-          new GVehiclesData_vehicles_variants_vehicle_brandBuilder();
-  set brand(GVehiclesData_vehicles_variants_vehicle_brandBuilder? brand) =>
-      _$this._brand = brand;
-
-  GVehiclesData_vehicles_variants_vehicle_typeBuilder? _type;
-  GVehiclesData_vehicles_variants_vehicle_typeBuilder get type =>
-      _$this._type ??=
-          new GVehiclesData_vehicles_variants_vehicle_typeBuilder();
-  set type(GVehiclesData_vehicles_variants_vehicle_typeBuilder? type) =>
-      _$this._type = type;
+  bool? _Gdefault;
+  bool? get Gdefault => _$this._Gdefault;
+  set Gdefault(bool? Gdefault) => _$this._Gdefault = Gdefault;
 
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  GVehiclesData_vehicles_variants_vehicleBuilder() {
-    GVehiclesData_vehicles_variants_vehicle._initializeBuilder(this);
+  int? _totalPrice;
+  int? get totalPrice => _$this._totalPrice;
+  set totalPrice(int? totalPrice) => _$this._totalPrice = totalPrice;
+
+  GVehicleVariantsData_vehicleVariants_vehicleBuilder? _vehicle;
+  GVehicleVariantsData_vehicleVariants_vehicleBuilder get vehicle =>
+      _$this._vehicle ??=
+          new GVehicleVariantsData_vehicleVariants_vehicleBuilder();
+  set vehicle(GVehicleVariantsData_vehicleVariants_vehicleBuilder? vehicle) =>
+      _$this._vehicle = vehicle;
+
+  GVehicleVariantsData_vehicleVariantsBuilder() {
+    GVehicleVariantsData_vehicleVariants._initializeBuilder(this);
   }
 
-  GVehiclesData_vehicles_variants_vehicleBuilder get _$this {
+  GVehicleVariantsData_vehicleVariantsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
+      _prices = $v.prices?.toBuilder();
+      _colors = $v.colors?.toBuilder();
       _name = $v.name;
-      _brand = $v.brand?.toBuilder();
-      _type = $v.type?.toBuilder();
+      _Gdefault = $v.Gdefault;
       _id = $v.id;
+      _totalPrice = $v.totalPrice;
+      _vehicle = $v.vehicle?.toBuilder();
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(GVehiclesData_vehicles_variants_vehicle other) {
+  void replace(GVehicleVariantsData_vehicleVariants other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GVehiclesData_vehicles_variants_vehicle;
+    _$v = other as _$GVehicleVariantsData_vehicleVariants;
   }
 
   @override
   void update(
-      void Function(GVehiclesData_vehicles_variants_vehicleBuilder)? updates) {
+      void Function(GVehicleVariantsData_vehicleVariantsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GVehiclesData_vehicles_variants_vehicle build() => _build();
+  GVehicleVariantsData_vehicleVariants build() => _build();
 
-  _$GVehiclesData_vehicles_variants_vehicle _build() {
-    _$GVehiclesData_vehicles_variants_vehicle _$result;
+  _$GVehicleVariantsData_vehicleVariants _build() {
+    _$GVehicleVariantsData_vehicleVariants _$result;
     try {
       _$result = _$v ??
-          new _$GVehiclesData_vehicles_variants_vehicle._(
+          new _$GVehicleVariantsData_vehicleVariants._(
               G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GVehiclesData_vehicles_variants_vehicle', 'G__typename'),
+                  r'GVehicleVariantsData_vehicleVariants', 'G__typename'),
+              prices: _prices?.build(),
+              colors: _colors?.build(),
               name: name,
-              brand: _brand?.build(),
-              type: _type?.build(),
+              Gdefault: Gdefault,
               id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GVehiclesData_vehicles_variants_vehicle', 'id'));
+                  id, r'GVehicleVariantsData_vehicleVariants', 'id'),
+              totalPrice: totalPrice,
+              vehicle: _vehicle?.build());
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'brand';
-        _brand?.build();
-        _$failedField = 'type';
-        _type?.build();
+        _$failedField = 'prices';
+        _prices?.build();
+        _$failedField = 'colors';
+        _colors?.build();
+
+        _$failedField = 'vehicle';
+        _vehicle?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GVehiclesData_vehicles_variants_vehicle',
+            r'GVehicleVariantsData_vehicleVariants',
             _$failedField,
             e.toString());
       }
@@ -2487,56 +2396,54 @@ class GVehiclesData_vehicles_variants_vehicleBuilder
   }
 }
 
-class _$GVehiclesData_vehicles_variants_vehicle_brand
-    extends GVehiclesData_vehicles_variants_vehicle_brand {
+class _$GVehicleVariantsData_vehicleVariants_prices
+    extends GVehicleVariantsData_vehicleVariants_prices {
   @override
   final String G__typename;
   @override
-  final String? name;
+  final int? amount;
   @override
-  final String id;
+  final GVehicleVariantsData_vehicleVariants_prices_category? category;
 
-  factory _$GVehiclesData_vehicles_variants_vehicle_brand(
-          [void Function(GVehiclesData_vehicles_variants_vehicle_brandBuilder)?
+  factory _$GVehicleVariantsData_vehicleVariants_prices(
+          [void Function(GVehicleVariantsData_vehicleVariants_pricesBuilder)?
               updates]) =>
-      (new GVehiclesData_vehicles_variants_vehicle_brandBuilder()
+      (new GVehicleVariantsData_vehicleVariants_pricesBuilder()
             ..update(updates))
           ._build();
 
-  _$GVehiclesData_vehicles_variants_vehicle_brand._(
-      {required this.G__typename, this.name, required this.id})
+  _$GVehicleVariantsData_vehicleVariants_prices._(
+      {required this.G__typename, this.amount, this.category})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GVehiclesData_vehicles_variants_vehicle_brand', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GVehiclesData_vehicles_variants_vehicle_brand', 'id');
+        r'GVehicleVariantsData_vehicleVariants_prices', 'G__typename');
   }
 
   @override
-  GVehiclesData_vehicles_variants_vehicle_brand rebuild(
-          void Function(GVehiclesData_vehicles_variants_vehicle_brandBuilder)
+  GVehicleVariantsData_vehicleVariants_prices rebuild(
+          void Function(GVehicleVariantsData_vehicleVariants_pricesBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GVehiclesData_vehicles_variants_vehicle_brandBuilder toBuilder() =>
-      new GVehiclesData_vehicles_variants_vehicle_brandBuilder()..replace(this);
+  GVehicleVariantsData_vehicleVariants_pricesBuilder toBuilder() =>
+      new GVehicleVariantsData_vehicleVariants_pricesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GVehiclesData_vehicles_variants_vehicle_brand &&
+    return other is GVehicleVariantsData_vehicleVariants_prices &&
         G__typename == other.G__typename &&
-        name == other.name &&
-        id == other.id;
+        amount == other.amount &&
+        category == other.category;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, category.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -2544,126 +2451,140 @@ class _$GVehiclesData_vehicles_variants_vehicle_brand
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'GVehiclesData_vehicles_variants_vehicle_brand')
+            r'GVehicleVariantsData_vehicleVariants_prices')
           ..add('G__typename', G__typename)
-          ..add('name', name)
-          ..add('id', id))
+          ..add('amount', amount)
+          ..add('category', category))
         .toString();
   }
 }
 
-class GVehiclesData_vehicles_variants_vehicle_brandBuilder
+class GVehicleVariantsData_vehicleVariants_pricesBuilder
     implements
-        Builder<GVehiclesData_vehicles_variants_vehicle_brand,
-            GVehiclesData_vehicles_variants_vehicle_brandBuilder> {
-  _$GVehiclesData_vehicles_variants_vehicle_brand? _$v;
+        Builder<GVehicleVariantsData_vehicleVariants_prices,
+            GVehicleVariantsData_vehicleVariants_pricesBuilder> {
+  _$GVehicleVariantsData_vehicleVariants_prices? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
+  int? _amount;
+  int? get amount => _$this._amount;
+  set amount(int? amount) => _$this._amount = amount;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
+  GVehicleVariantsData_vehicleVariants_prices_categoryBuilder? _category;
+  GVehicleVariantsData_vehicleVariants_prices_categoryBuilder get category =>
+      _$this._category ??=
+          new GVehicleVariantsData_vehicleVariants_prices_categoryBuilder();
+  set category(
+          GVehicleVariantsData_vehicleVariants_prices_categoryBuilder?
+              category) =>
+      _$this._category = category;
 
-  GVehiclesData_vehicles_variants_vehicle_brandBuilder() {
-    GVehiclesData_vehicles_variants_vehicle_brand._initializeBuilder(this);
+  GVehicleVariantsData_vehicleVariants_pricesBuilder() {
+    GVehicleVariantsData_vehicleVariants_prices._initializeBuilder(this);
   }
 
-  GVehiclesData_vehicles_variants_vehicle_brandBuilder get _$this {
+  GVehicleVariantsData_vehicleVariants_pricesBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _name = $v.name;
-      _id = $v.id;
+      _amount = $v.amount;
+      _category = $v.category?.toBuilder();
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(GVehiclesData_vehicles_variants_vehicle_brand other) {
+  void replace(GVehicleVariantsData_vehicleVariants_prices other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GVehiclesData_vehicles_variants_vehicle_brand;
+    _$v = other as _$GVehicleVariantsData_vehicleVariants_prices;
   }
 
   @override
   void update(
-      void Function(GVehiclesData_vehicles_variants_vehicle_brandBuilder)?
+      void Function(GVehicleVariantsData_vehicleVariants_pricesBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GVehiclesData_vehicles_variants_vehicle_brand build() => _build();
+  GVehicleVariantsData_vehicleVariants_prices build() => _build();
 
-  _$GVehiclesData_vehicles_variants_vehicle_brand _build() {
-    final _$result = _$v ??
-        new _$GVehiclesData_vehicles_variants_vehicle_brand._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GVehiclesData_vehicles_variants_vehicle_brand',
-                'G__typename'),
-            name: name,
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GVehiclesData_vehicles_variants_vehicle_brand', 'id'));
+  _$GVehicleVariantsData_vehicleVariants_prices _build() {
+    _$GVehicleVariantsData_vehicleVariants_prices _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleVariantsData_vehicleVariants_prices._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GVehicleVariantsData_vehicleVariants_prices',
+                  'G__typename'),
+              amount: amount,
+              category: _category?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'category';
+        _category?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleVariantsData_vehicleVariants_prices',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }
 }
 
-class _$GVehiclesData_vehicles_variants_vehicle_type
-    extends GVehiclesData_vehicles_variants_vehicle_type {
+class _$GVehicleVariantsData_vehicleVariants_prices_category
+    extends GVehicleVariantsData_vehicleVariants_prices_category {
   @override
   final String G__typename;
   @override
   final String? name;
   @override
   final String? description;
-  @override
-  final String id;
 
-  factory _$GVehiclesData_vehicles_variants_vehicle_type(
-          [void Function(GVehiclesData_vehicles_variants_vehicle_typeBuilder)?
+  factory _$GVehicleVariantsData_vehicleVariants_prices_category(
+          [void Function(
+                  GVehicleVariantsData_vehicleVariants_prices_categoryBuilder)?
               updates]) =>
-      (new GVehiclesData_vehicles_variants_vehicle_typeBuilder()
+      (new GVehicleVariantsData_vehicleVariants_prices_categoryBuilder()
             ..update(updates))
           ._build();
 
-  _$GVehiclesData_vehicles_variants_vehicle_type._(
-      {required this.G__typename,
-      this.name,
-      this.description,
-      required this.id})
+  _$GVehicleVariantsData_vehicleVariants_prices_category._(
+      {required this.G__typename, this.name, this.description})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GVehiclesData_vehicles_variants_vehicle_type', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GVehiclesData_vehicles_variants_vehicle_type', 'id');
+        r'GVehicleVariantsData_vehicleVariants_prices_category', 'G__typename');
   }
 
   @override
-  GVehiclesData_vehicles_variants_vehicle_type rebuild(
-          void Function(GVehiclesData_vehicles_variants_vehicle_typeBuilder)
+  GVehicleVariantsData_vehicleVariants_prices_category rebuild(
+          void Function(
+                  GVehicleVariantsData_vehicleVariants_prices_categoryBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GVehiclesData_vehicles_variants_vehicle_typeBuilder toBuilder() =>
-      new GVehiclesData_vehicles_variants_vehicle_typeBuilder()..replace(this);
+  GVehicleVariantsData_vehicleVariants_prices_categoryBuilder toBuilder() =>
+      new GVehicleVariantsData_vehicleVariants_prices_categoryBuilder()
+        ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GVehiclesData_vehicles_variants_vehicle_type &&
+    return other is GVehicleVariantsData_vehicleVariants_prices_category &&
         G__typename == other.G__typename &&
         name == other.name &&
-        description == other.description &&
-        id == other.id;
+        description == other.description;
   }
 
   @override
@@ -2672,7 +2593,6 @@ class _$GVehiclesData_vehicles_variants_vehicle_type
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -2680,20 +2600,19 @@ class _$GVehiclesData_vehicles_variants_vehicle_type
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'GVehiclesData_vehicles_variants_vehicle_type')
+            r'GVehicleVariantsData_vehicleVariants_prices_category')
           ..add('G__typename', G__typename)
           ..add('name', name)
-          ..add('description', description)
-          ..add('id', id))
+          ..add('description', description))
         .toString();
   }
 }
 
-class GVehiclesData_vehicles_variants_vehicle_typeBuilder
+class GVehicleVariantsData_vehicleVariants_prices_categoryBuilder
     implements
-        Builder<GVehiclesData_vehicles_variants_vehicle_type,
-            GVehiclesData_vehicles_variants_vehicle_typeBuilder> {
-  _$GVehiclesData_vehicles_variants_vehicle_type? _$v;
+        Builder<GVehicleVariantsData_vehicleVariants_prices_category,
+            GVehicleVariantsData_vehicleVariants_prices_categoryBuilder> {
+  _$GVehicleVariantsData_vehicleVariants_prices_category? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
@@ -2707,20 +2626,492 @@ class GVehiclesData_vehicles_variants_vehicle_typeBuilder
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  GVehiclesData_vehicles_variants_vehicle_typeBuilder() {
-    GVehiclesData_vehicles_variants_vehicle_type._initializeBuilder(this);
+  GVehicleVariantsData_vehicleVariants_prices_categoryBuilder() {
+    GVehicleVariantsData_vehicleVariants_prices_category._initializeBuilder(
+        this);
   }
 
-  GVehiclesData_vehicles_variants_vehicle_typeBuilder get _$this {
+  GVehicleVariantsData_vehicleVariants_prices_categoryBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
       _name = $v.name;
       _description = $v.description;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleVariantsData_vehicleVariants_prices_category other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleVariantsData_vehicleVariants_prices_category;
+  }
+
+  @override
+  void update(
+      void Function(
+              GVehicleVariantsData_vehicleVariants_prices_categoryBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleVariantsData_vehicleVariants_prices_category build() => _build();
+
+  _$GVehicleVariantsData_vehicleVariants_prices_category _build() {
+    final _$result = _$v ??
+        new _$GVehicleVariantsData_vehicleVariants_prices_category._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GVehicleVariantsData_vehicleVariants_prices_category',
+                'G__typename'),
+            name: name,
+            description: description);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleVariantsData_vehicleVariants_colors
+    extends GVehicleVariantsData_vehicleVariants_colors {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? code;
+  @override
+  final BuiltList<GVehicleVariantsData_vehicleVariants_colors_images>? images;
+  @override
+  final String? name;
+
+  factory _$GVehicleVariantsData_vehicleVariants_colors(
+          [void Function(GVehicleVariantsData_vehicleVariants_colorsBuilder)?
+              updates]) =>
+      (new GVehicleVariantsData_vehicleVariants_colorsBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GVehicleVariantsData_vehicleVariants_colors._(
+      {required this.G__typename,
+      required this.id,
+      this.code,
+      this.images,
+      this.name})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GVehicleVariantsData_vehicleVariants_colors', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GVehicleVariantsData_vehicleVariants_colors', 'id');
+  }
+
+  @override
+  GVehicleVariantsData_vehicleVariants_colors rebuild(
+          void Function(GVehicleVariantsData_vehicleVariants_colorsBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleVariantsData_vehicleVariants_colorsBuilder toBuilder() =>
+      new GVehicleVariantsData_vehicleVariants_colorsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleVariantsData_vehicleVariants_colors &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        code == other.code &&
+        images == other.images &&
+        name == other.name;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
+    _$hash = $jc(_$hash, images.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GVehicleVariantsData_vehicleVariants_colors')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('code', code)
+          ..add('images', images)
+          ..add('name', name))
+        .toString();
+  }
+}
+
+class GVehicleVariantsData_vehicleVariants_colorsBuilder
+    implements
+        Builder<GVehicleVariantsData_vehicleVariants_colors,
+            GVehicleVariantsData_vehicleVariants_colorsBuilder> {
+  _$GVehicleVariantsData_vehicleVariants_colors? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _code;
+  String? get code => _$this._code;
+  set code(String? code) => _$this._code = code;
+
+  ListBuilder<GVehicleVariantsData_vehicleVariants_colors_images>? _images;
+  ListBuilder<GVehicleVariantsData_vehicleVariants_colors_images> get images =>
+      _$this._images ??=
+          new ListBuilder<GVehicleVariantsData_vehicleVariants_colors_images>();
+  set images(
+          ListBuilder<GVehicleVariantsData_vehicleVariants_colors_images>?
+              images) =>
+      _$this._images = images;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  GVehicleVariantsData_vehicleVariants_colorsBuilder() {
+    GVehicleVariantsData_vehicleVariants_colors._initializeBuilder(this);
+  }
+
+  GVehicleVariantsData_vehicleVariants_colorsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _code = $v.code;
+      _images = $v.images?.toBuilder();
+      _name = $v.name;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleVariantsData_vehicleVariants_colors other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleVariantsData_vehicleVariants_colors;
+  }
+
+  @override
+  void update(
+      void Function(GVehicleVariantsData_vehicleVariants_colorsBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleVariantsData_vehicleVariants_colors build() => _build();
+
+  _$GVehicleVariantsData_vehicleVariants_colors _build() {
+    _$GVehicleVariantsData_vehicleVariants_colors _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleVariantsData_vehicleVariants_colors._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GVehicleVariantsData_vehicleVariants_colors',
+                  'G__typename'),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'GVehicleVariantsData_vehicleVariants_colors', 'id'),
+              code: code,
+              images: _images?.build(),
+              name: name);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'images';
+        _images?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleVariantsData_vehicleVariants_colors',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleVariantsData_vehicleVariants_colors_images
+    extends GVehicleVariantsData_vehicleVariants_colors_images {
+  @override
+  final String G__typename;
+  @override
+  final String? name;
+  @override
+  final GVehicleVariantsData_vehicleVariants_colors_images_image? image;
+
+  factory _$GVehicleVariantsData_vehicleVariants_colors_images(
+          [void Function(
+                  GVehicleVariantsData_vehicleVariants_colors_imagesBuilder)?
+              updates]) =>
+      (new GVehicleVariantsData_vehicleVariants_colors_imagesBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GVehicleVariantsData_vehicleVariants_colors_images._(
+      {required this.G__typename, this.name, this.image})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GVehicleVariantsData_vehicleVariants_colors_images', 'G__typename');
+  }
+
+  @override
+  GVehicleVariantsData_vehicleVariants_colors_images rebuild(
+          void Function(
+                  GVehicleVariantsData_vehicleVariants_colors_imagesBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleVariantsData_vehicleVariants_colors_imagesBuilder toBuilder() =>
+      new GVehicleVariantsData_vehicleVariants_colors_imagesBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleVariantsData_vehicleVariants_colors_images &&
+        G__typename == other.G__typename &&
+        name == other.name &&
+        image == other.image;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GVehicleVariantsData_vehicleVariants_colors_images')
+          ..add('G__typename', G__typename)
+          ..add('name', name)
+          ..add('image', image))
+        .toString();
+  }
+}
+
+class GVehicleVariantsData_vehicleVariants_colors_imagesBuilder
+    implements
+        Builder<GVehicleVariantsData_vehicleVariants_colors_images,
+            GVehicleVariantsData_vehicleVariants_colors_imagesBuilder> {
+  _$GVehicleVariantsData_vehicleVariants_colors_images? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder? _image;
+  GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder get image =>
+      _$this._image ??=
+          new GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder();
+  set image(
+          GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder?
+              image) =>
+      _$this._image = image;
+
+  GVehicleVariantsData_vehicleVariants_colors_imagesBuilder() {
+    GVehicleVariantsData_vehicleVariants_colors_images._initializeBuilder(this);
+  }
+
+  GVehicleVariantsData_vehicleVariants_colors_imagesBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _name = $v.name;
+      _image = $v.image?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleVariantsData_vehicleVariants_colors_images other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleVariantsData_vehicleVariants_colors_images;
+  }
+
+  @override
+  void update(
+      void Function(GVehicleVariantsData_vehicleVariants_colors_imagesBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleVariantsData_vehicleVariants_colors_images build() => _build();
+
+  _$GVehicleVariantsData_vehicleVariants_colors_images _build() {
+    _$GVehicleVariantsData_vehicleVariants_colors_images _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleVariantsData_vehicleVariants_colors_images._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GVehicleVariantsData_vehicleVariants_colors_images',
+                  'G__typename'),
+              name: name,
+              image: _image?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'image';
+        _image?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleVariantsData_vehicleVariants_colors_images',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleVariantsData_vehicleVariants_colors_images_image
+    extends GVehicleVariantsData_vehicleVariants_colors_images_image {
+  @override
+  final String G__typename;
+  @override
+  final String url;
+  @override
+  final int width;
+  @override
+  final String id;
+
+  factory _$GVehicleVariantsData_vehicleVariants_colors_images_image(
+          [void Function(
+                  GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder)?
+              updates]) =>
+      (new GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GVehicleVariantsData_vehicleVariants_colors_images_image._(
+      {required this.G__typename,
+      required this.url,
+      required this.width,
+      required this.id})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GVehicleVariantsData_vehicleVariants_colors_images_image',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(url,
+        r'GVehicleVariantsData_vehicleVariants_colors_images_image', 'url');
+    BuiltValueNullFieldError.checkNotNull(width,
+        r'GVehicleVariantsData_vehicleVariants_colors_images_image', 'width');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GVehicleVariantsData_vehicleVariants_colors_images_image', 'id');
+  }
+
+  @override
+  GVehicleVariantsData_vehicleVariants_colors_images_image rebuild(
+          void Function(
+                  GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder toBuilder() =>
+      new GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleVariantsData_vehicleVariants_colors_images_image &&
+        G__typename == other.G__typename &&
+        url == other.url &&
+        width == other.width &&
+        id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jc(_$hash, width.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GVehicleVariantsData_vehicleVariants_colors_images_image')
+          ..add('G__typename', G__typename)
+          ..add('url', url)
+          ..add('width', width)
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder
+    implements
+        Builder<GVehicleVariantsData_vehicleVariants_colors_images_image,
+            GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder> {
+  _$GVehicleVariantsData_vehicleVariants_colors_images_image? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
+
+  int? _width;
+  int? get width => _$this._width;
+  set width(int? width) => _$this._width = width;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder() {
+    GVehicleVariantsData_vehicleVariants_colors_images_image._initializeBuilder(
+        this);
+  }
+
+  GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _url = $v.url;
+      _width = $v.width;
       _id = $v.id;
       _$v = null;
     }
@@ -2728,86 +3119,270 @@ class GVehiclesData_vehicles_variants_vehicle_typeBuilder
   }
 
   @override
-  void replace(GVehiclesData_vehicles_variants_vehicle_type other) {
+  void replace(GVehicleVariantsData_vehicleVariants_colors_images_image other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GVehiclesData_vehicles_variants_vehicle_type;
+    _$v = other as _$GVehicleVariantsData_vehicleVariants_colors_images_image;
   }
 
   @override
   void update(
-      void Function(GVehiclesData_vehicles_variants_vehicle_typeBuilder)?
+      void Function(
+              GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GVehiclesData_vehicles_variants_vehicle_type build() => _build();
+  GVehicleVariantsData_vehicleVariants_colors_images_image build() => _build();
 
-  _$GVehiclesData_vehicles_variants_vehicle_type _build() {
+  _$GVehicleVariantsData_vehicleVariants_colors_images_image _build() {
     final _$result = _$v ??
-        new _$GVehiclesData_vehicles_variants_vehicle_type._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                r'GVehiclesData_vehicles_variants_vehicle_type', 'G__typename'),
-            name: name,
-            description: description,
+        new _$GVehicleVariantsData_vehicleVariants_colors_images_image._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GVehicleVariantsData_vehicleVariants_colors_images_image',
+                'G__typename'),
+            url: BuiltValueNullFieldError.checkNotNull(
+                url,
+                r'GVehicleVariantsData_vehicleVariants_colors_images_image',
+                'url'),
+            width: BuiltValueNullFieldError.checkNotNull(
+                width,
+                r'GVehicleVariantsData_vehicleVariants_colors_images_image',
+                'width'),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GVehiclesData_vehicles_variants_vehicle_type', 'id'));
+                id,
+                r'GVehicleVariantsData_vehicleVariants_colors_images_image',
+                'id'));
     replace(_$result);
     return _$result;
   }
 }
 
-class _$GVehiclesData_vehicles_variants_colors
-    extends GVehiclesData_vehicles_variants_colors {
+class _$GVehicleVariantsData_vehicleVariants_vehicle
+    extends GVehicleVariantsData_vehicleVariants_vehicle {
+  @override
+  final String G__typename;
+  @override
+  final GVehicleVariantsData_vehicleVariants_vehicle_brand? brand;
+  @override
+  final String? name;
+  @override
+  final String id;
+  @override
+  final GVehicleVariantsData_vehicleVariants_vehicle_type? type;
+
+  factory _$GVehicleVariantsData_vehicleVariants_vehicle(
+          [void Function(GVehicleVariantsData_vehicleVariants_vehicleBuilder)?
+              updates]) =>
+      (new GVehicleVariantsData_vehicleVariants_vehicleBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GVehicleVariantsData_vehicleVariants_vehicle._(
+      {required this.G__typename,
+      this.brand,
+      this.name,
+      required this.id,
+      this.type})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GVehicleVariantsData_vehicleVariants_vehicle', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GVehicleVariantsData_vehicleVariants_vehicle', 'id');
+  }
+
+  @override
+  GVehicleVariantsData_vehicleVariants_vehicle rebuild(
+          void Function(GVehicleVariantsData_vehicleVariants_vehicleBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleVariantsData_vehicleVariants_vehicleBuilder toBuilder() =>
+      new GVehicleVariantsData_vehicleVariants_vehicleBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleVariantsData_vehicleVariants_vehicle &&
+        G__typename == other.G__typename &&
+        brand == other.brand &&
+        name == other.name &&
+        id == other.id &&
+        type == other.type;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, brand.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GVehicleVariantsData_vehicleVariants_vehicle')
+          ..add('G__typename', G__typename)
+          ..add('brand', brand)
+          ..add('name', name)
+          ..add('id', id)
+          ..add('type', type))
+        .toString();
+  }
+}
+
+class GVehicleVariantsData_vehicleVariants_vehicleBuilder
+    implements
+        Builder<GVehicleVariantsData_vehicleVariants_vehicle,
+            GVehicleVariantsData_vehicleVariants_vehicleBuilder> {
+  _$GVehicleVariantsData_vehicleVariants_vehicle? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder? _brand;
+  GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder get brand =>
+      _$this._brand ??=
+          new GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder();
+  set brand(GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder? brand) =>
+      _$this._brand = brand;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder? _type;
+  GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder get type =>
+      _$this._type ??=
+          new GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder();
+  set type(GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder? type) =>
+      _$this._type = type;
+
+  GVehicleVariantsData_vehicleVariants_vehicleBuilder() {
+    GVehicleVariantsData_vehicleVariants_vehicle._initializeBuilder(this);
+  }
+
+  GVehicleVariantsData_vehicleVariants_vehicleBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _brand = $v.brand?.toBuilder();
+      _name = $v.name;
+      _id = $v.id;
+      _type = $v.type?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleVariantsData_vehicleVariants_vehicle other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleVariantsData_vehicleVariants_vehicle;
+  }
+
+  @override
+  void update(
+      void Function(GVehicleVariantsData_vehicleVariants_vehicleBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleVariantsData_vehicleVariants_vehicle build() => _build();
+
+  _$GVehicleVariantsData_vehicleVariants_vehicle _build() {
+    _$GVehicleVariantsData_vehicleVariants_vehicle _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleVariantsData_vehicleVariants_vehicle._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GVehicleVariantsData_vehicleVariants_vehicle',
+                  'G__typename'),
+              brand: _brand?.build(),
+              name: name,
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'GVehicleVariantsData_vehicleVariants_vehicle', 'id'),
+              type: _type?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'brand';
+        _brand?.build();
+
+        _$failedField = 'type';
+        _type?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleVariantsData_vehicleVariants_vehicle',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleVariantsData_vehicleVariants_vehicle_brand
+    extends GVehicleVariantsData_vehicleVariants_vehicle_brand {
   @override
   final String G__typename;
   @override
   final String id;
   @override
   final String? name;
-  @override
-  final String? code;
-  @override
-  final BuiltList<GVehiclesData_vehicles_variants_colors_images>? images;
 
-  factory _$GVehiclesData_vehicles_variants_colors(
-          [void Function(GVehiclesData_vehicles_variants_colorsBuilder)?
+  factory _$GVehicleVariantsData_vehicleVariants_vehicle_brand(
+          [void Function(
+                  GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder)?
               updates]) =>
-      (new GVehiclesData_vehicles_variants_colorsBuilder()..update(updates))
+      (new GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder()
+            ..update(updates))
           ._build();
 
-  _$GVehiclesData_vehicles_variants_colors._(
-      {required this.G__typename,
-      required this.id,
-      this.name,
-      this.code,
-      this.images})
+  _$GVehicleVariantsData_vehicleVariants_vehicle_brand._(
+      {required this.G__typename, required this.id, this.name})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GVehicleVariantsData_vehicleVariants_vehicle_brand', 'G__typename');
     BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GVehiclesData_vehicles_variants_colors', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GVehiclesData_vehicles_variants_colors', 'id');
+        id, r'GVehicleVariantsData_vehicleVariants_vehicle_brand', 'id');
   }
 
   @override
-  GVehiclesData_vehicles_variants_colors rebuild(
-          void Function(GVehiclesData_vehicles_variants_colorsBuilder)
+  GVehicleVariantsData_vehicleVariants_vehicle_brand rebuild(
+          void Function(
+                  GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GVehiclesData_vehicles_variants_colorsBuilder toBuilder() =>
-      new GVehiclesData_vehicles_variants_colorsBuilder()..replace(this);
+  GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder toBuilder() =>
+      new GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder()
+        ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GVehiclesData_vehicles_variants_colors &&
+    return other is GVehicleVariantsData_vehicleVariants_vehicle_brand &&
         G__typename == other.G__typename &&
         id == other.id &&
-        name == other.name &&
-        code == other.code &&
-        images == other.images;
+        name == other.name;
   }
 
   @override
@@ -2816,8 +3391,6 @@ class _$GVehiclesData_vehicles_variants_colors
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, code.hashCode);
-    _$hash = $jc(_$hash, images.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -2825,21 +3398,19 @@ class _$GVehiclesData_vehicles_variants_colors
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'GVehiclesData_vehicles_variants_colors')
+            r'GVehicleVariantsData_vehicleVariants_vehicle_brand')
           ..add('G__typename', G__typename)
           ..add('id', id)
-          ..add('name', name)
-          ..add('code', code)
-          ..add('images', images))
+          ..add('name', name))
         .toString();
   }
 }
 
-class GVehiclesData_vehicles_variants_colorsBuilder
+class GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder
     implements
-        Builder<GVehiclesData_vehicles_variants_colors,
-            GVehiclesData_vehicles_variants_colorsBuilder> {
-  _$GVehiclesData_vehicles_variants_colors? _$v;
+        Builder<GVehicleVariantsData_vehicleVariants_vehicle_brand,
+            GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder> {
+  _$GVehicleVariantsData_vehicleVariants_vehicle_brand? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
@@ -2853,263 +3424,99 @@ class GVehiclesData_vehicles_variants_colorsBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  String? _code;
-  String? get code => _$this._code;
-  set code(String? code) => _$this._code = code;
-
-  ListBuilder<GVehiclesData_vehicles_variants_colors_images>? _images;
-  ListBuilder<GVehiclesData_vehicles_variants_colors_images> get images =>
-      _$this._images ??=
-          new ListBuilder<GVehiclesData_vehicles_variants_colors_images>();
-  set images(
-          ListBuilder<GVehiclesData_vehicles_variants_colors_images>? images) =>
-      _$this._images = images;
-
-  GVehiclesData_vehicles_variants_colorsBuilder() {
-    GVehiclesData_vehicles_variants_colors._initializeBuilder(this);
+  GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder() {
+    GVehicleVariantsData_vehicleVariants_vehicle_brand._initializeBuilder(this);
   }
 
-  GVehiclesData_vehicles_variants_colorsBuilder get _$this {
+  GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
       _id = $v.id;
       _name = $v.name;
-      _code = $v.code;
-      _images = $v.images?.toBuilder();
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(GVehiclesData_vehicles_variants_colors other) {
+  void replace(GVehicleVariantsData_vehicleVariants_vehicle_brand other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GVehiclesData_vehicles_variants_colors;
+    _$v = other as _$GVehicleVariantsData_vehicleVariants_vehicle_brand;
   }
 
   @override
   void update(
-      void Function(GVehiclesData_vehicles_variants_colorsBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GVehiclesData_vehicles_variants_colors build() => _build();
-
-  _$GVehiclesData_vehicles_variants_colors _build() {
-    _$GVehiclesData_vehicles_variants_colors _$result;
-    try {
-      _$result = _$v ??
-          new _$GVehiclesData_vehicles_variants_colors._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GVehiclesData_vehicles_variants_colors', 'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GVehiclesData_vehicles_variants_colors', 'id'),
-              name: name,
-              code: code,
-              images: _images?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'images';
-        _images?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GVehiclesData_vehicles_variants_colors',
-            _$failedField,
-            e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GVehiclesData_vehicles_variants_colors_images
-    extends GVehiclesData_vehicles_variants_colors_images {
-  @override
-  final String G__typename;
-  @override
-  final GVehiclesData_vehicles_variants_colors_images_image? image;
-
-  factory _$GVehiclesData_vehicles_variants_colors_images(
-          [void Function(GVehiclesData_vehicles_variants_colors_imagesBuilder)?
-              updates]) =>
-      (new GVehiclesData_vehicles_variants_colors_imagesBuilder()
-            ..update(updates))
-          ._build();
-
-  _$GVehiclesData_vehicles_variants_colors_images._(
-      {required this.G__typename, this.image})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GVehiclesData_vehicles_variants_colors_images', 'G__typename');
-  }
-
-  @override
-  GVehiclesData_vehicles_variants_colors_images rebuild(
-          void Function(GVehiclesData_vehicles_variants_colors_imagesBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GVehiclesData_vehicles_variants_colors_imagesBuilder toBuilder() =>
-      new GVehiclesData_vehicles_variants_colors_imagesBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GVehiclesData_vehicles_variants_colors_images &&
-        G__typename == other.G__typename &&
-        image == other.image;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, image.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(
-            r'GVehiclesData_vehicles_variants_colors_images')
-          ..add('G__typename', G__typename)
-          ..add('image', image))
-        .toString();
-  }
-}
-
-class GVehiclesData_vehicles_variants_colors_imagesBuilder
-    implements
-        Builder<GVehiclesData_vehicles_variants_colors_images,
-            GVehiclesData_vehicles_variants_colors_imagesBuilder> {
-  _$GVehiclesData_vehicles_variants_colors_images? _$v;
-
-  String? _G__typename;
-  String? get G__typename => _$this._G__typename;
-  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
-
-  GVehiclesData_vehicles_variants_colors_images_imageBuilder? _image;
-  GVehiclesData_vehicles_variants_colors_images_imageBuilder get image =>
-      _$this._image ??=
-          new GVehiclesData_vehicles_variants_colors_images_imageBuilder();
-  set image(
-          GVehiclesData_vehicles_variants_colors_images_imageBuilder? image) =>
-      _$this._image = image;
-
-  GVehiclesData_vehicles_variants_colors_imagesBuilder() {
-    GVehiclesData_vehicles_variants_colors_images._initializeBuilder(this);
-  }
-
-  GVehiclesData_vehicles_variants_colors_imagesBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _G__typename = $v.G__typename;
-      _image = $v.image?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(GVehiclesData_vehicles_variants_colors_images other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GVehiclesData_vehicles_variants_colors_images;
-  }
-
-  @override
-  void update(
-      void Function(GVehiclesData_vehicles_variants_colors_imagesBuilder)?
+      void Function(GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GVehiclesData_vehicles_variants_colors_images build() => _build();
+  GVehicleVariantsData_vehicleVariants_vehicle_brand build() => _build();
 
-  _$GVehiclesData_vehicles_variants_colors_images _build() {
-    _$GVehiclesData_vehicles_variants_colors_images _$result;
-    try {
-      _$result = _$v ??
-          new _$GVehiclesData_vehicles_variants_colors_images._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehiclesData_vehicles_variants_colors_images',
-                  'G__typename'),
-              image: _image?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'image';
-        _image?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GVehiclesData_vehicles_variants_colors_images',
-            _$failedField,
-            e.toString());
-      }
-      rethrow;
-    }
+  _$GVehicleVariantsData_vehicleVariants_vehicle_brand _build() {
+    final _$result = _$v ??
+        new _$GVehicleVariantsData_vehicleVariants_vehicle_brand._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GVehicleVariantsData_vehicleVariants_vehicle_brand',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(id,
+                r'GVehicleVariantsData_vehicleVariants_vehicle_brand', 'id'),
+            name: name);
     replace(_$result);
     return _$result;
   }
 }
 
-class _$GVehiclesData_vehicles_variants_colors_images_image
-    extends GVehiclesData_vehicles_variants_colors_images_image {
+class _$GVehicleVariantsData_vehicleVariants_vehicle_type
+    extends GVehicleVariantsData_vehicleVariants_vehicle_type {
   @override
   final String G__typename;
   @override
-  final String url;
+  final String? name;
 
-  factory _$GVehiclesData_vehicles_variants_colors_images_image(
+  factory _$GVehicleVariantsData_vehicleVariants_vehicle_type(
           [void Function(
-                  GVehiclesData_vehicles_variants_colors_images_imageBuilder)?
+                  GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder)?
               updates]) =>
-      (new GVehiclesData_vehicles_variants_colors_images_imageBuilder()
+      (new GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder()
             ..update(updates))
           ._build();
 
-  _$GVehiclesData_vehicles_variants_colors_images_image._(
-      {required this.G__typename, required this.url})
+  _$GVehicleVariantsData_vehicleVariants_vehicle_type._(
+      {required this.G__typename, this.name})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GVehiclesData_vehicles_variants_colors_images_image', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        url, r'GVehiclesData_vehicles_variants_colors_images_image', 'url');
+        r'GVehicleVariantsData_vehicleVariants_vehicle_type', 'G__typename');
   }
 
   @override
-  GVehiclesData_vehicles_variants_colors_images_image rebuild(
+  GVehicleVariantsData_vehicleVariants_vehicle_type rebuild(
           void Function(
-                  GVehiclesData_vehicles_variants_colors_images_imageBuilder)
+                  GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GVehiclesData_vehicles_variants_colors_images_imageBuilder toBuilder() =>
-      new GVehiclesData_vehicles_variants_colors_images_imageBuilder()
+  GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder toBuilder() =>
+      new GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder()
         ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GVehiclesData_vehicles_variants_colors_images_image &&
+    return other is GVehicleVariantsData_vehicleVariants_vehicle_type &&
         G__typename == other.G__typename &&
-        url == other.url;
+        name == other.name;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -3117,67 +3524,65 @@ class _$GVehiclesData_vehicles_variants_colors_images_image
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'GVehiclesData_vehicles_variants_colors_images_image')
+            r'GVehicleVariantsData_vehicleVariants_vehicle_type')
           ..add('G__typename', G__typename)
-          ..add('url', url))
+          ..add('name', name))
         .toString();
   }
 }
 
-class GVehiclesData_vehicles_variants_colors_images_imageBuilder
+class GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder
     implements
-        Builder<GVehiclesData_vehicles_variants_colors_images_image,
-            GVehiclesData_vehicles_variants_colors_images_imageBuilder> {
-  _$GVehiclesData_vehicles_variants_colors_images_image? _$v;
+        Builder<GVehicleVariantsData_vehicleVariants_vehicle_type,
+            GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder> {
+  _$GVehicleVariantsData_vehicleVariants_vehicle_type? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  String? _url;
-  String? get url => _$this._url;
-  set url(String? url) => _$this._url = url;
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
-  GVehiclesData_vehicles_variants_colors_images_imageBuilder() {
-    GVehiclesData_vehicles_variants_colors_images_image._initializeBuilder(
-        this);
+  GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder() {
+    GVehicleVariantsData_vehicleVariants_vehicle_type._initializeBuilder(this);
   }
 
-  GVehiclesData_vehicles_variants_colors_images_imageBuilder get _$this {
+  GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _url = $v.url;
+      _name = $v.name;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(GVehiclesData_vehicles_variants_colors_images_image other) {
+  void replace(GVehicleVariantsData_vehicleVariants_vehicle_type other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GVehiclesData_vehicles_variants_colors_images_image;
+    _$v = other as _$GVehicleVariantsData_vehicleVariants_vehicle_type;
   }
 
   @override
   void update(
-      void Function(GVehiclesData_vehicles_variants_colors_images_imageBuilder)?
+      void Function(GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GVehiclesData_vehicles_variants_colors_images_image build() => _build();
+  GVehicleVariantsData_vehicleVariants_vehicle_type build() => _build();
 
-  _$GVehiclesData_vehicles_variants_colors_images_image _build() {
+  _$GVehicleVariantsData_vehicleVariants_vehicle_type _build() {
     final _$result = _$v ??
-        new _$GVehiclesData_vehicles_variants_colors_images_image._(
+        new _$GVehicleVariantsData_vehicleVariants_vehicle_type._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
-                r'GVehiclesData_vehicles_variants_colors_images_image',
+                r'GVehicleVariantsData_vehicleVariants_vehicle_type',
                 'G__typename'),
-            url: BuiltValueNullFieldError.checkNotNull(url,
-                r'GVehiclesData_vehicles_variants_colors_images_image', 'url'));
+            name: name);
     replace(_$result);
     return _$result;
   }

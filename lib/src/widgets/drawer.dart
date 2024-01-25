@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
-import 'package:dealerapp/src/app/UI/coming_soon.dart';
 import 'package:dealerapp/src/app/UI/drawer/about_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/contact_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/terms_conditions.dart';
@@ -65,7 +64,9 @@ class AppDrawer extends ConsumerWidget {
   }
 
   Future<void> showDeleteAccountSheet(
-      BuildContext context, WidgetRef ref) async {
+    BuildContext context,
+    WidgetRef ref,
+  ) async {
     return showModalBottomSheet(
       context: context,
       shape: RoundedRectangleBorder(
@@ -133,7 +134,7 @@ class AppDrawer extends ConsumerWidget {
     final theme = Theme.of(context).textTheme;
     final user = cacheProvider.getUser()!;
 
-      Future<void> showDeleteAccountSheet() async {
+    Future<void> showDeleteAccountSheet() async {
       return showModalBottomSheet(
         context: context,
         shape: RoundedRectangleBorder(
@@ -195,6 +196,7 @@ class AppDrawer extends ConsumerWidget {
         },
       );
     }
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -281,7 +283,7 @@ class AppDrawer extends ConsumerWidget {
                         );
                       },
                     ),
-                    _drawerTile(
+                    /*   _drawerTile(
                       title: 'Make new purchase order',
                       icon: AppImages.make,
                       height: 30,
@@ -290,25 +292,26 @@ class AppDrawer extends ConsumerWidget {
                       onTap: () {
                         AppRoutes.push(page: const ComingSoon());
                       },
-                    ),
+                    ), */
 
                     ///Order History Expansion Tile
                     const KExpansionTile(),
-                    _drawerTile(
+                    /* _drawerTile(
                       title: 'My Wallet',
                       icon: AppImages.mywallet,
                       onTap: () {
                         AppRoutes.push(page: ComingSoon());
                       },
-                    ),
+                    ), */
                     _drawerTile(
                       title: 'Change Password',
                       icon: AppImages.change,
                       onTap: () {
                         AppRoutes.push(
-                            page: const ForgotPassword(
-                          isFromWithingApp: true,
-                        ));
+                          page: const ForgotPassword(
+                            isFromWithingApp: true,
+                          ),
+                        );
                       },
                     ),
                     _drawerTile(
@@ -323,7 +326,7 @@ class AppDrawer extends ConsumerWidget {
                       title: 'About Us',
                       icon: AppImages.aboutus,
                       onTap: () {
-                        AppRoutes.push(page: AboutUs());
+                        AppRoutes.push(page: const AboutUs());
                       },
                     ),
                     _drawerTile(
@@ -338,9 +341,10 @@ class AppDrawer extends ConsumerWidget {
                       icon: AppImages.feedbacksvg,
                       onTap: () {
                         AppRoutes.push(
-                            page: ReportPage(
-                          isFeedback: true,
-                        ));
+                          page: const ReportPage(
+                            isFeedback: true,
+                          ),
+                        );
                       },
                     ),
                     _drawerTile(
@@ -348,9 +352,10 @@ class AppDrawer extends ConsumerWidget {
                       icon: AppImages.reportsvg,
                       onTap: () {
                         AppRoutes.push(
-                            page: ReportPage(
-                          isFeedback: false,
-                        ));
+                          page: const ReportPage(
+                            isFeedback: false,
+                          ),
+                        );
                       },
                     ),
                     _drawerTile(
