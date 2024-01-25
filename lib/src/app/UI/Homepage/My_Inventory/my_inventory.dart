@@ -14,7 +14,7 @@ class MyInventory extends ConsumerStatefulWidget {
 
 class _MyInventoryState extends ConsumerState<MyInventory>
     with TickerProviderStateMixin {
-  late final _tabController = TabController(length: 3, vsync: this);
+  late final _tabController = TabController(length: 2, vsync: this);
   @override
   Widget build(BuildContext context) {
     print(cacheProvider.getDealerId());

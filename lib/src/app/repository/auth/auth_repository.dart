@@ -180,7 +180,8 @@ class AuthRepository {
                 ? _client
                 : _graphqlClient.httpClient(
                     isMultipart: imageFile != null,
-                    token: cacheProvider.getSessionToken()!))
+                    token: cacheProvider.getSessionToken()!,
+                  ))
             .request(
           GUpdateUserReq((b) {
             b.vars.where.id = id;

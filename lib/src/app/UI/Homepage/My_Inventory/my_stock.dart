@@ -11,22 +11,39 @@ class MyStockPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final inventoryPro = ref.watch(inventoryProvider);
-    return inventoryPro.vehicleDealers.isEmpty
-        ? const EmptyWidget(title: 'Uh oh! You have no orders.')
-        : Container(
-            padding: const EdgeInsets.all(6),
-            color: AppTheme.textFieldFill,
+    return Container(
+      padding: const EdgeInsets.all(6),
+      color: AppTheme.textFieldFill,
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8),
+            child: TextField(
+              controller: inventoryPro.myStockSearchController,
+              decoration: const InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
+                hintText: 'Search',
+              ),
+            ),
+          ),
+          Expanded(
             child: RefreshIndicator(
               onRefresh: () async {
                 await inventoryPro.getStocks();
               },
-              child: ListView(
-                shrinkWrap: true,
-                children: inventoryPro.vehicleDealers
-                    .map((e) => MyStockCard(vehicleDealers: e))
-                    .toList(),
-              ),
+              child: inventoryPro.vehicleDealers.isEmpty
+                  ? const EmptyWidget(title: 'Uh oh! You have no orders.')
+                  : ListView(
+                      shrinkWrap: true,
+                      children: inventoryPro.vehicleDealers
+                          .map((e) => MyStockCard(vehicleDealers: e))
+                          .toList(),
+                    ),
             ),
-          );
+          ),
+        ],
+      ),
+    );
   }
 }

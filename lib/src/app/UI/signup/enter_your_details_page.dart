@@ -98,7 +98,7 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
                     authPro.isPassword
                         ? Icons.visibility_off_outlined
                         : Icons.visibility_outlined,
-                  )),
+                  ),),
             ),
             SizedBox(
               height: 16.h,
@@ -114,7 +114,7 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
                     authPro.isPassword
                         ? Icons.visibility_off_outlined
                         : Icons.visibility_outlined,
-                  )),
+                  ),),
             ),
             SizedBox(
               height: 16.h,

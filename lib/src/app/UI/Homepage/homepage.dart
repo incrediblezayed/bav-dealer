@@ -2,8 +2,9 @@ import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/my_inventory.dart';
 import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/purchase_orders.dart';
 import 'package:dealerapp/src/app/UI/Homepage/Test_Orders/test_orders.dart';
 import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
-import 'package:dealerapp/src/app/UI/coming_soon.dart';
 import 'package:dealerapp/src/app/UI/notification_page.dart/notification_page.dart';
+import 'package:dealerapp/src/app/UI/report_page/report_page.dart';
+import 'package:dealerapp/src/app/UI/splash_screen/splash_screen.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/provider/order_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
@@ -20,6 +21,7 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    initTracking();
     final theme = Theme.of(context).textTheme;
     final user = cacheProvider.getUser()!;
     final controller = ref.watch(homePageProvider);
@@ -241,10 +243,14 @@ class HomePage extends ConsumerWidget {
                             containerBgColor: const Color(0xffffec8a),
                             iconBgColor: const Color(0xffffdc53),
                             image: AppImages.s3,
-                            title: 'Your Rank',
+                            title: 'Add Feedback',
                             titleColor: const Color(0xfffdb35f),
                             onTap: () {
-                              AppRoutes.push(page: const ComingSoon());
+                              AppRoutes.push(
+                                page: const ReportPage(
+                                  isFeedback: true,
+                                ),
+                              );
                             },
                           ),
                         ],

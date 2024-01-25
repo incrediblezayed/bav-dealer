@@ -1318,6 +1318,8 @@ abstract class GAddressWhereInput
   @BuiltValueField(wireName: 'default')
   GBooleanFilter? get Gdefault;
   GUserWhereInput? get user;
+  GFloatNullableFilter? get lLat;
+  GFloatNullableFilter? get lLng;
   static Serializer<GAddressWhereInput> get serializer =>
       _$gAddressWhereInputSerializer;
 
@@ -1329,6 +1331,38 @@ abstract class GAddressWhereInput
   static GAddressWhereInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GAddressWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GFloatNullableFilter
+    implements Built<GFloatNullableFilter, GFloatNullableFilterBuilder> {
+  GFloatNullableFilter._();
+
+  factory GFloatNullableFilter(
+          [Function(GFloatNullableFilterBuilder b) updates]) =
+      _$GFloatNullableFilter;
+
+  double? get equals;
+  @BuiltValueField(wireName: 'in')
+  BuiltList<double>? get Gin;
+  BuiltList<double>? get notIn;
+  double? get lt;
+  double? get lte;
+  double? get gt;
+  double? get gte;
+  GFloatNullableFilter? get not;
+  static Serializer<GFloatNullableFilter> get serializer =>
+      _$gFloatNullableFilterSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GFloatNullableFilter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GFloatNullableFilter? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GFloatNullableFilter.serializer,
         json,
       );
 }
@@ -1353,6 +1387,8 @@ abstract class GAddressOrderByInput
   GOrderDirection? get state;
   @BuiltValueField(wireName: 'default')
   GOrderDirection? get Gdefault;
+  GOrderDirection? get lLat;
+  GOrderDirection? get lLng;
   static Serializer<GAddressOrderByInput> get serializer =>
       _$gAddressOrderByInputSerializer;
 
@@ -1387,6 +1423,8 @@ abstract class GAddressUpdateInput
   @BuiltValueField(wireName: 'default')
   bool? get Gdefault;
   GUserRelateToOneForUpdateInput? get user;
+  double? get lLat;
+  double? get lLng;
   static Serializer<GAddressUpdateInput> get serializer =>
       _$gAddressUpdateInputSerializer;
 
@@ -1445,6 +1483,8 @@ abstract class GAddressCreateInput
   @BuiltValueField(wireName: 'default')
   bool? get Gdefault;
   GUserRelateToOneForCreateInput? get user;
+  double? get lLat;
+  double? get lLng;
   static Serializer<GAddressCreateInput> get serializer =>
       _$gAddressCreateInputSerializer;
 
@@ -1749,6 +1789,7 @@ abstract class GFavoriteWhereInput
   GDateTimeNullableFilter? get modifiedAt;
   GVehicleVariantWhereInput? get vehicleVariant;
   GUserWhereInput? get user;
+  GProductVariantWhereInput? get productVariant;
   static Serializer<GFavoriteWhereInput> get serializer =>
       _$gFavoriteWhereInputSerializer;
 
@@ -1802,6 +1843,7 @@ abstract class GFavoriteUpdateInput
   GDateTime? get modifiedAt;
   GVehicleVariantRelateToOneForUpdateInput? get vehicleVariant;
   GUserRelateToOneForUpdateInput? get user;
+  GProductVariantRelateToOneForUpdateInput? get productVariant;
   static Serializer<GFavoriteUpdateInput> get serializer =>
       _$gFavoriteUpdateInputSerializer;
 
@@ -1846,6 +1888,35 @@ abstract class GVehicleVariantRelateToOneForUpdateInput
       );
 }
 
+abstract class GProductVariantRelateToOneForUpdateInput
+    implements
+        Built<GProductVariantRelateToOneForUpdateInput,
+            GProductVariantRelateToOneForUpdateInputBuilder> {
+  GProductVariantRelateToOneForUpdateInput._();
+
+  factory GProductVariantRelateToOneForUpdateInput(
+      [Function(GProductVariantRelateToOneForUpdateInputBuilder b)
+          updates]) = _$GProductVariantRelateToOneForUpdateInput;
+
+  GProductVariantCreateInput? get create;
+  GProductVariantWhereUniqueInput? get connect;
+  bool? get disconnect;
+  static Serializer<GProductVariantRelateToOneForUpdateInput> get serializer =>
+      _$gProductVariantRelateToOneForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVariantRelateToOneForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantRelateToOneForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVariantRelateToOneForUpdateInput.serializer,
+        json,
+      );
+}
+
 abstract class GFavoriteUpdateArgs
     implements Built<GFavoriteUpdateArgs, GFavoriteUpdateArgsBuilder> {
   GFavoriteUpdateArgs._();
@@ -1882,6 +1953,7 @@ abstract class GFavoriteCreateInput
   GDateTime? get modifiedAt;
   GVehicleVariantRelateToOneForCreateInput? get vehicleVariant;
   GUserRelateToOneForCreateInput? get user;
+  GProductVariantRelateToOneForCreateInput? get productVariant;
   static Serializer<GFavoriteCreateInput> get serializer =>
       _$gFavoriteCreateInputSerializer;
 
@@ -1925,6 +1997,34 @@ abstract class GVehicleVariantRelateToOneForCreateInput
       );
 }
 
+abstract class GProductVariantRelateToOneForCreateInput
+    implements
+        Built<GProductVariantRelateToOneForCreateInput,
+            GProductVariantRelateToOneForCreateInputBuilder> {
+  GProductVariantRelateToOneForCreateInput._();
+
+  factory GProductVariantRelateToOneForCreateInput(
+      [Function(GProductVariantRelateToOneForCreateInputBuilder b)
+          updates]) = _$GProductVariantRelateToOneForCreateInput;
+
+  GProductVariantCreateInput? get create;
+  GProductVariantWhereUniqueInput? get connect;
+  static Serializer<GProductVariantRelateToOneForCreateInput> get serializer =>
+      _$gProductVariantRelateToOneForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVariantRelateToOneForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantRelateToOneForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVariantRelateToOneForCreateInput.serializer,
+        json,
+      );
+}
+
 abstract class GCartItemWhereUniqueInput
     implements
         Built<GCartItemWhereUniqueInput, GCartItemWhereUniqueInputBuilder> {
@@ -1963,7 +2063,9 @@ abstract class GCartItemWhereInput
   GIDFilter? get id;
   GDateTimeNullableFilter? get createdAt;
   GDateTimeNullableFilter? get modifiedAt;
-  GVehicleDealerWhereInput? get dealer;
+  GVehicleColorWhereInput? get vehicleColor;
+  GVehicleVariantWhereInput? get vehicleVariant;
+  GProductVariantWhereInput? get productVariant;
   GUserWhereInput? get user;
   static Serializer<GCartItemWhereInput> get serializer =>
       _$gCartItemWhereInputSerializer;
@@ -2016,7 +2118,9 @@ abstract class GCartItemUpdateInput
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
-  GVehicleDealerRelateToOneForUpdateInput? get dealer;
+  GVehicleColorRelateToOneForUpdateInput? get vehicleColor;
+  GVehicleVariantRelateToOneForUpdateInput? get vehicleVariant;
+  GProductVariantRelateToOneForUpdateInput? get productVariant;
   GUserRelateToOneForUpdateInput? get user;
   static Serializer<GCartItemUpdateInput> get serializer =>
       _$gCartItemUpdateInputSerializer;
@@ -2033,31 +2137,31 @@ abstract class GCartItemUpdateInput
       );
 }
 
-abstract class GVehicleDealerRelateToOneForUpdateInput
+abstract class GVehicleColorRelateToOneForUpdateInput
     implements
-        Built<GVehicleDealerRelateToOneForUpdateInput,
-            GVehicleDealerRelateToOneForUpdateInputBuilder> {
-  GVehicleDealerRelateToOneForUpdateInput._();
+        Built<GVehicleColorRelateToOneForUpdateInput,
+            GVehicleColorRelateToOneForUpdateInputBuilder> {
+  GVehicleColorRelateToOneForUpdateInput._();
 
-  factory GVehicleDealerRelateToOneForUpdateInput(
-      [Function(GVehicleDealerRelateToOneForUpdateInputBuilder b)
-          updates]) = _$GVehicleDealerRelateToOneForUpdateInput;
+  factory GVehicleColorRelateToOneForUpdateInput(
+          [Function(GVehicleColorRelateToOneForUpdateInputBuilder b) updates]) =
+      _$GVehicleColorRelateToOneForUpdateInput;
 
-  GVehicleDealerCreateInput? get create;
-  GVehicleDealerWhereUniqueInput? get connect;
+  GVehicleColorCreateInput? get create;
+  GVehicleColorWhereUniqueInput? get connect;
   bool? get disconnect;
-  static Serializer<GVehicleDealerRelateToOneForUpdateInput> get serializer =>
-      _$gVehicleDealerRelateToOneForUpdateInputSerializer;
+  static Serializer<GVehicleColorRelateToOneForUpdateInput> get serializer =>
+      _$gVehicleColorRelateToOneForUpdateInputSerializer;
 
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
-        GVehicleDealerRelateToOneForUpdateInput.serializer,
+        GVehicleColorRelateToOneForUpdateInput.serializer,
         this,
       ) as Map<String, dynamic>);
 
-  static GVehicleDealerRelateToOneForUpdateInput? fromJson(
+  static GVehicleColorRelateToOneForUpdateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
-        GVehicleDealerRelateToOneForUpdateInput.serializer,
+        GVehicleColorRelateToOneForUpdateInput.serializer,
         json,
       );
 }
@@ -2096,7 +2200,9 @@ abstract class GCartItemCreateInput
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
-  GVehicleDealerRelateToOneForCreateInput? get dealer;
+  GVehicleColorRelateToOneForCreateInput? get vehicleColor;
+  GVehicleVariantRelateToOneForCreateInput? get vehicleVariant;
+  GProductVariantRelateToOneForCreateInput? get productVariant;
   GUserRelateToOneForCreateInput? get user;
   static Serializer<GCartItemCreateInput> get serializer =>
       _$gCartItemCreateInputSerializer;
@@ -2113,30 +2219,30 @@ abstract class GCartItemCreateInput
       );
 }
 
-abstract class GVehicleDealerRelateToOneForCreateInput
+abstract class GVehicleColorRelateToOneForCreateInput
     implements
-        Built<GVehicleDealerRelateToOneForCreateInput,
-            GVehicleDealerRelateToOneForCreateInputBuilder> {
-  GVehicleDealerRelateToOneForCreateInput._();
+        Built<GVehicleColorRelateToOneForCreateInput,
+            GVehicleColorRelateToOneForCreateInputBuilder> {
+  GVehicleColorRelateToOneForCreateInput._();
 
-  factory GVehicleDealerRelateToOneForCreateInput(
-      [Function(GVehicleDealerRelateToOneForCreateInputBuilder b)
-          updates]) = _$GVehicleDealerRelateToOneForCreateInput;
+  factory GVehicleColorRelateToOneForCreateInput(
+          [Function(GVehicleColorRelateToOneForCreateInputBuilder b) updates]) =
+      _$GVehicleColorRelateToOneForCreateInput;
 
-  GVehicleDealerCreateInput? get create;
-  GVehicleDealerWhereUniqueInput? get connect;
-  static Serializer<GVehicleDealerRelateToOneForCreateInput> get serializer =>
-      _$gVehicleDealerRelateToOneForCreateInputSerializer;
+  GVehicleColorCreateInput? get create;
+  GVehicleColorWhereUniqueInput? get connect;
+  static Serializer<GVehicleColorRelateToOneForCreateInput> get serializer =>
+      _$gVehicleColorRelateToOneForCreateInputSerializer;
 
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
-        GVehicleDealerRelateToOneForCreateInput.serializer,
+        GVehicleColorRelateToOneForCreateInput.serializer,
         this,
       ) as Map<String, dynamic>);
 
-  static GVehicleDealerRelateToOneForCreateInput? fromJson(
+  static GVehicleColorRelateToOneForCreateInput? fromJson(
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
-        GVehicleDealerRelateToOneForCreateInput.serializer,
+        GVehicleColorRelateToOneForCreateInput.serializer,
         json,
       );
 }
@@ -2562,6 +2668,7 @@ abstract class GSpecificationUpdateInput
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
+  GImageFieldInput? get image;
   String? get name;
   String? get description;
   String? get unit;
@@ -2617,6 +2724,7 @@ abstract class GSpecificationCreateInput
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
+  GImageFieldInput? get image;
   String? get name;
   String? get description;
   String? get unit;
@@ -2967,35 +3075,6 @@ abstract class GTestDriveDealerUpdateInput
       );
 }
 
-abstract class GVehicleColorRelateToOneForUpdateInput
-    implements
-        Built<GVehicleColorRelateToOneForUpdateInput,
-            GVehicleColorRelateToOneForUpdateInputBuilder> {
-  GVehicleColorRelateToOneForUpdateInput._();
-
-  factory GVehicleColorRelateToOneForUpdateInput(
-          [Function(GVehicleColorRelateToOneForUpdateInputBuilder b) updates]) =
-      _$GVehicleColorRelateToOneForUpdateInput;
-
-  GVehicleColorCreateInput? get create;
-  GVehicleColorWhereUniqueInput? get connect;
-  bool? get disconnect;
-  static Serializer<GVehicleColorRelateToOneForUpdateInput> get serializer =>
-      _$gVehicleColorRelateToOneForUpdateInputSerializer;
-
-  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
-        GVehicleColorRelateToOneForUpdateInput.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GVehicleColorRelateToOneForUpdateInput? fromJson(
-          Map<String, dynamic> json) =>
-      _i2.serializers.deserializeWith(
-        GVehicleColorRelateToOneForUpdateInput.serializer,
-        json,
-      );
-}
-
 abstract class GTestDriveDealerUpdateArgs
     implements
         Built<GTestDriveDealerUpdateArgs, GTestDriveDealerUpdateArgsBuilder> {
@@ -3053,34 +3132,6 @@ abstract class GTestDriveDealerCreateInput
       );
 }
 
-abstract class GVehicleColorRelateToOneForCreateInput
-    implements
-        Built<GVehicleColorRelateToOneForCreateInput,
-            GVehicleColorRelateToOneForCreateInputBuilder> {
-  GVehicleColorRelateToOneForCreateInput._();
-
-  factory GVehicleColorRelateToOneForCreateInput(
-          [Function(GVehicleColorRelateToOneForCreateInputBuilder b) updates]) =
-      _$GVehicleColorRelateToOneForCreateInput;
-
-  GVehicleColorCreateInput? get create;
-  GVehicleColorWhereUniqueInput? get connect;
-  static Serializer<GVehicleColorRelateToOneForCreateInput> get serializer =>
-      _$gVehicleColorRelateToOneForCreateInputSerializer;
-
-  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
-        GVehicleColorRelateToOneForCreateInput.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GVehicleColorRelateToOneForCreateInput? fromJson(
-          Map<String, dynamic> json) =>
-      _i2.serializers.deserializeWith(
-        GVehicleColorRelateToOneForCreateInput.serializer,
-        json,
-      );
-}
-
 abstract class GVehicleWhereUniqueInput
     implements
         Built<GVehicleWhereUniqueInput, GVehicleWhereUniqueInputBuilder> {
@@ -3126,6 +3177,7 @@ abstract class GVehicleWhereInput
   GVehicleVariantManyRelationFilter? get variants;
   GVehicleSpecificationManyRelationFilter? get specifications;
   GVehicleColorManyRelationFilter? get colors;
+  GBooleanFilter? get informative;
   static Serializer<GVehicleWhereInput> get serializer =>
       _$gVehicleWhereInputSerializer;
 
@@ -3240,6 +3292,7 @@ abstract class GVehicleOrderByInput
   GOrderDirection? get modifiedAt;
   GOrderDirection? get name;
   GOrderDirection? get description;
+  GOrderDirection? get informative;
   static Serializer<GVehicleOrderByInput> get serializer =>
       _$gVehicleOrderByInputSerializer;
 
@@ -3271,6 +3324,7 @@ abstract class GVehicleUpdateInput
   GVehicleVariantRelateToManyForUpdateInput? get variants;
   GVehicleSpecificationRelateToManyForUpdateInput? get specifications;
   GVehicleColorRelateToManyForUpdateInput? get colors;
+  bool? get informative;
   static Serializer<GVehicleUpdateInput> get serializer =>
       _$gVehicleUpdateInputSerializer;
 
@@ -3474,6 +3528,7 @@ abstract class GVehicleCreateInput
   GVehicleVariantRelateToManyForCreateInput? get variants;
   GVehicleSpecificationRelateToManyForCreateInput? get specifications;
   GVehicleColorRelateToManyForCreateInput? get colors;
+  bool? get informative;
   static Serializer<GVehicleCreateInput> get serializer =>
       _$gVehicleCreateInputSerializer;
 
@@ -3674,6 +3729,9 @@ abstract class GVehicleColorWhereInput
   GVehicleWhereInput? get vehicle;
   GVehicleVariantManyRelationFilter? get vehicleVariant;
   GVehicleImageManyRelationFilter? get images;
+  GVehicleVideoManyRelationFilter? get videos;
+  GVehicleGalleryItemManyRelationFilter? get gallery;
+  GVehicleReelManyRelationFilter? get reels;
   static Serializer<GVehicleColorWhereInput> get serializer =>
       _$gVehicleColorWhereInputSerializer;
 
@@ -3713,6 +3771,91 @@ abstract class GVehicleImageManyRelationFilter
   static GVehicleImageManyRelationFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleImageManyRelationFilter.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleVideoManyRelationFilter
+    implements
+        Built<GVehicleVideoManyRelationFilter,
+            GVehicleVideoManyRelationFilterBuilder> {
+  GVehicleVideoManyRelationFilter._();
+
+  factory GVehicleVideoManyRelationFilter(
+          [Function(GVehicleVideoManyRelationFilterBuilder b) updates]) =
+      _$GVehicleVideoManyRelationFilter;
+
+  GVehicleVideoWhereInput? get every;
+  GVehicleVideoWhereInput? get some;
+  GVehicleVideoWhereInput? get none;
+  static Serializer<GVehicleVideoManyRelationFilter> get serializer =>
+      _$gVehicleVideoManyRelationFilterSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleVideoManyRelationFilter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleVideoManyRelationFilter? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleVideoManyRelationFilter.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleGalleryItemManyRelationFilter
+    implements
+        Built<GVehicleGalleryItemManyRelationFilter,
+            GVehicleGalleryItemManyRelationFilterBuilder> {
+  GVehicleGalleryItemManyRelationFilter._();
+
+  factory GVehicleGalleryItemManyRelationFilter(
+          [Function(GVehicleGalleryItemManyRelationFilterBuilder b) updates]) =
+      _$GVehicleGalleryItemManyRelationFilter;
+
+  GVehicleGalleryItemWhereInput? get every;
+  GVehicleGalleryItemWhereInput? get some;
+  GVehicleGalleryItemWhereInput? get none;
+  static Serializer<GVehicleGalleryItemManyRelationFilter> get serializer =>
+      _$gVehicleGalleryItemManyRelationFilterSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleGalleryItemManyRelationFilter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleGalleryItemManyRelationFilter? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleGalleryItemManyRelationFilter.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleReelManyRelationFilter
+    implements
+        Built<GVehicleReelManyRelationFilter,
+            GVehicleReelManyRelationFilterBuilder> {
+  GVehicleReelManyRelationFilter._();
+
+  factory GVehicleReelManyRelationFilter(
+          [Function(GVehicleReelManyRelationFilterBuilder b) updates]) =
+      _$GVehicleReelManyRelationFilter;
+
+  GVehicleReelWhereInput? get every;
+  GVehicleReelWhereInput? get some;
+  GVehicleReelWhereInput? get none;
+  static Serializer<GVehicleReelManyRelationFilter> get serializer =>
+      _$gVehicleReelManyRelationFilterSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleReelManyRelationFilter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleReelManyRelationFilter? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleReelManyRelationFilter.serializer,
         json,
       );
 }
@@ -3762,6 +3905,9 @@ abstract class GVehicleColorUpdateInput
   GVehicleRelateToOneForUpdateInput? get vehicle;
   GVehicleVariantRelateToManyForUpdateInput? get vehicleVariant;
   GVehicleImageRelateToManyForUpdateInput? get images;
+  GVehicleVideoRelateToManyForUpdateInput? get videos;
+  GVehicleGalleryItemRelateToManyForUpdateInput? get gallery;
+  GVehicleReelRelateToManyForUpdateInput? get reels;
   static Serializer<GVehicleColorUpdateInput> get serializer =>
       _$gVehicleColorUpdateInputSerializer;
 
@@ -3836,6 +3982,97 @@ abstract class GVehicleImageRelateToManyForUpdateInput
       );
 }
 
+abstract class GVehicleVideoRelateToManyForUpdateInput
+    implements
+        Built<GVehicleVideoRelateToManyForUpdateInput,
+            GVehicleVideoRelateToManyForUpdateInputBuilder> {
+  GVehicleVideoRelateToManyForUpdateInput._();
+
+  factory GVehicleVideoRelateToManyForUpdateInput(
+      [Function(GVehicleVideoRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GVehicleVideoRelateToManyForUpdateInput;
+
+  BuiltList<GVehicleVideoWhereUniqueInput>? get disconnect;
+  BuiltList<GVehicleVideoWhereUniqueInput>? get set;
+  BuiltList<GVehicleVideoCreateInput>? get create;
+  BuiltList<GVehicleVideoWhereUniqueInput>? get connect;
+  static Serializer<GVehicleVideoRelateToManyForUpdateInput> get serializer =>
+      _$gVehicleVideoRelateToManyForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleVideoRelateToManyForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleVideoRelateToManyForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleVideoRelateToManyForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleGalleryItemRelateToManyForUpdateInput
+    implements
+        Built<GVehicleGalleryItemRelateToManyForUpdateInput,
+            GVehicleGalleryItemRelateToManyForUpdateInputBuilder> {
+  GVehicleGalleryItemRelateToManyForUpdateInput._();
+
+  factory GVehicleGalleryItemRelateToManyForUpdateInput(
+      [Function(GVehicleGalleryItemRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GVehicleGalleryItemRelateToManyForUpdateInput;
+
+  BuiltList<GVehicleGalleryItemWhereUniqueInput>? get disconnect;
+  BuiltList<GVehicleGalleryItemWhereUniqueInput>? get set;
+  BuiltList<GVehicleGalleryItemCreateInput>? get create;
+  BuiltList<GVehicleGalleryItemWhereUniqueInput>? get connect;
+  static Serializer<GVehicleGalleryItemRelateToManyForUpdateInput>
+      get serializer =>
+          _$gVehicleGalleryItemRelateToManyForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleGalleryItemRelateToManyForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleGalleryItemRelateToManyForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleGalleryItemRelateToManyForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleReelRelateToManyForUpdateInput
+    implements
+        Built<GVehicleReelRelateToManyForUpdateInput,
+            GVehicleReelRelateToManyForUpdateInputBuilder> {
+  GVehicleReelRelateToManyForUpdateInput._();
+
+  factory GVehicleReelRelateToManyForUpdateInput(
+          [Function(GVehicleReelRelateToManyForUpdateInputBuilder b) updates]) =
+      _$GVehicleReelRelateToManyForUpdateInput;
+
+  BuiltList<GVehicleReelWhereUniqueInput>? get disconnect;
+  BuiltList<GVehicleReelWhereUniqueInput>? get set;
+  BuiltList<GVehicleReelCreateInput>? get create;
+  BuiltList<GVehicleReelWhereUniqueInput>? get connect;
+  static Serializer<GVehicleReelRelateToManyForUpdateInput> get serializer =>
+      _$gVehicleReelRelateToManyForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleReelRelateToManyForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleReelRelateToManyForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleReelRelateToManyForUpdateInput.serializer,
+        json,
+      );
+}
+
 abstract class GVehicleColorUpdateArgs
     implements Built<GVehicleColorUpdateArgs, GVehicleColorUpdateArgsBuilder> {
   GVehicleColorUpdateArgs._();
@@ -3877,6 +4114,9 @@ abstract class GVehicleColorCreateInput
   GVehicleRelateToOneForCreateInput? get vehicle;
   GVehicleVariantRelateToManyForCreateInput? get vehicleVariant;
   GVehicleImageRelateToManyForCreateInput? get images;
+  GVehicleVideoRelateToManyForCreateInput? get videos;
+  GVehicleGalleryItemRelateToManyForCreateInput? get gallery;
+  GVehicleReelRelateToManyForCreateInput? get reels;
   static Serializer<GVehicleColorCreateInput> get serializer =>
       _$gVehicleColorCreateInputSerializer;
 
@@ -3944,6 +4184,476 @@ abstract class GVehicleImageRelateToManyForCreateInput
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleImageRelateToManyForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleVideoRelateToManyForCreateInput
+    implements
+        Built<GVehicleVideoRelateToManyForCreateInput,
+            GVehicleVideoRelateToManyForCreateInputBuilder> {
+  GVehicleVideoRelateToManyForCreateInput._();
+
+  factory GVehicleVideoRelateToManyForCreateInput(
+      [Function(GVehicleVideoRelateToManyForCreateInputBuilder b)
+          updates]) = _$GVehicleVideoRelateToManyForCreateInput;
+
+  BuiltList<GVehicleVideoCreateInput>? get create;
+  BuiltList<GVehicleVideoWhereUniqueInput>? get connect;
+  static Serializer<GVehicleVideoRelateToManyForCreateInput> get serializer =>
+      _$gVehicleVideoRelateToManyForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleVideoRelateToManyForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleVideoRelateToManyForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleVideoRelateToManyForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleGalleryItemRelateToManyForCreateInput
+    implements
+        Built<GVehicleGalleryItemRelateToManyForCreateInput,
+            GVehicleGalleryItemRelateToManyForCreateInputBuilder> {
+  GVehicleGalleryItemRelateToManyForCreateInput._();
+
+  factory GVehicleGalleryItemRelateToManyForCreateInput(
+      [Function(GVehicleGalleryItemRelateToManyForCreateInputBuilder b)
+          updates]) = _$GVehicleGalleryItemRelateToManyForCreateInput;
+
+  BuiltList<GVehicleGalleryItemCreateInput>? get create;
+  BuiltList<GVehicleGalleryItemWhereUniqueInput>? get connect;
+  static Serializer<GVehicleGalleryItemRelateToManyForCreateInput>
+      get serializer =>
+          _$gVehicleGalleryItemRelateToManyForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleGalleryItemRelateToManyForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleGalleryItemRelateToManyForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleGalleryItemRelateToManyForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleReelRelateToManyForCreateInput
+    implements
+        Built<GVehicleReelRelateToManyForCreateInput,
+            GVehicleReelRelateToManyForCreateInputBuilder> {
+  GVehicleReelRelateToManyForCreateInput._();
+
+  factory GVehicleReelRelateToManyForCreateInput(
+          [Function(GVehicleReelRelateToManyForCreateInputBuilder b) updates]) =
+      _$GVehicleReelRelateToManyForCreateInput;
+
+  BuiltList<GVehicleReelCreateInput>? get create;
+  BuiltList<GVehicleReelWhereUniqueInput>? get connect;
+  static Serializer<GVehicleReelRelateToManyForCreateInput> get serializer =>
+      _$gVehicleReelRelateToManyForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleReelRelateToManyForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleReelRelateToManyForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleReelRelateToManyForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleGalleryItemWhereUniqueInput
+    implements
+        Built<GVehicleGalleryItemWhereUniqueInput,
+            GVehicleGalleryItemWhereUniqueInputBuilder> {
+  GVehicleGalleryItemWhereUniqueInput._();
+
+  factory GVehicleGalleryItemWhereUniqueInput(
+          [Function(GVehicleGalleryItemWhereUniqueInputBuilder b) updates]) =
+      _$GVehicleGalleryItemWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GVehicleGalleryItemWhereUniqueInput> get serializer =>
+      _$gVehicleGalleryItemWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleGalleryItemWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleGalleryItemWhereUniqueInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleGalleryItemWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleGalleryItemWhereInput
+    implements
+        Built<GVehicleGalleryItemWhereInput,
+            GVehicleGalleryItemWhereInputBuilder> {
+  GVehicleGalleryItemWhereInput._();
+
+  factory GVehicleGalleryItemWhereInput(
+          [Function(GVehicleGalleryItemWhereInputBuilder b) updates]) =
+      _$GVehicleGalleryItemWhereInput;
+
+  BuiltList<GVehicleGalleryItemWhereInput>? get AND;
+  BuiltList<GVehicleGalleryItemWhereInput>? get OR;
+  BuiltList<GVehicleGalleryItemWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GStringFilter? get type;
+  GStringFilter? get fileId;
+  GVehicleColorWhereInput? get color;
+  GIntNullableFilter? get index;
+  static Serializer<GVehicleGalleryItemWhereInput> get serializer =>
+      _$gVehicleGalleryItemWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleGalleryItemWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleGalleryItemWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleGalleryItemWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GIntNullableFilter
+    implements Built<GIntNullableFilter, GIntNullableFilterBuilder> {
+  GIntNullableFilter._();
+
+  factory GIntNullableFilter([Function(GIntNullableFilterBuilder b) updates]) =
+      _$GIntNullableFilter;
+
+  int? get equals;
+  @BuiltValueField(wireName: 'in')
+  BuiltList<int>? get Gin;
+  BuiltList<int>? get notIn;
+  int? get lt;
+  int? get lte;
+  int? get gt;
+  int? get gte;
+  GIntNullableFilter? get not;
+  static Serializer<GIntNullableFilter> get serializer =>
+      _$gIntNullableFilterSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GIntNullableFilter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GIntNullableFilter? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GIntNullableFilter.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleGalleryItemOrderByInput
+    implements
+        Built<GVehicleGalleryItemOrderByInput,
+            GVehicleGalleryItemOrderByInputBuilder> {
+  GVehicleGalleryItemOrderByInput._();
+
+  factory GVehicleGalleryItemOrderByInput(
+          [Function(GVehicleGalleryItemOrderByInputBuilder b) updates]) =
+      _$GVehicleGalleryItemOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get type;
+  GOrderDirection? get fileId;
+  GOrderDirection? get index;
+  static Serializer<GVehicleGalleryItemOrderByInput> get serializer =>
+      _$gVehicleGalleryItemOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleGalleryItemOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleGalleryItemOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleGalleryItemOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleGalleryItemUpdateInput
+    implements
+        Built<GVehicleGalleryItemUpdateInput,
+            GVehicleGalleryItemUpdateInputBuilder> {
+  GVehicleGalleryItemUpdateInput._();
+
+  factory GVehicleGalleryItemUpdateInput(
+          [Function(GVehicleGalleryItemUpdateInputBuilder b) updates]) =
+      _$GVehicleGalleryItemUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get type;
+  String? get fileId;
+  GVehicleColorRelateToOneForUpdateInput? get color;
+  int? get index;
+  static Serializer<GVehicleGalleryItemUpdateInput> get serializer =>
+      _$gVehicleGalleryItemUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleGalleryItemUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleGalleryItemUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleGalleryItemUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleGalleryItemUpdateArgs
+    implements
+        Built<GVehicleGalleryItemUpdateArgs,
+            GVehicleGalleryItemUpdateArgsBuilder> {
+  GVehicleGalleryItemUpdateArgs._();
+
+  factory GVehicleGalleryItemUpdateArgs(
+          [Function(GVehicleGalleryItemUpdateArgsBuilder b) updates]) =
+      _$GVehicleGalleryItemUpdateArgs;
+
+  GVehicleGalleryItemWhereUniqueInput get where;
+  GVehicleGalleryItemUpdateInput get data;
+  static Serializer<GVehicleGalleryItemUpdateArgs> get serializer =>
+      _$gVehicleGalleryItemUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleGalleryItemUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleGalleryItemUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleGalleryItemUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleGalleryItemCreateInput
+    implements
+        Built<GVehicleGalleryItemCreateInput,
+            GVehicleGalleryItemCreateInputBuilder> {
+  GVehicleGalleryItemCreateInput._();
+
+  factory GVehicleGalleryItemCreateInput(
+          [Function(GVehicleGalleryItemCreateInputBuilder b) updates]) =
+      _$GVehicleGalleryItemCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get type;
+  String? get fileId;
+  GVehicleColorRelateToOneForCreateInput? get color;
+  int? get index;
+  static Serializer<GVehicleGalleryItemCreateInput> get serializer =>
+      _$gVehicleGalleryItemCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleGalleryItemCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleGalleryItemCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleGalleryItemCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleReelWhereUniqueInput
+    implements
+        Built<GVehicleReelWhereUniqueInput,
+            GVehicleReelWhereUniqueInputBuilder> {
+  GVehicleReelWhereUniqueInput._();
+
+  factory GVehicleReelWhereUniqueInput(
+          [Function(GVehicleReelWhereUniqueInputBuilder b) updates]) =
+      _$GVehicleReelWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GVehicleReelWhereUniqueInput> get serializer =>
+      _$gVehicleReelWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleReelWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleReelWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleReelWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleReelWhereInput
+    implements Built<GVehicleReelWhereInput, GVehicleReelWhereInputBuilder> {
+  GVehicleReelWhereInput._();
+
+  factory GVehicleReelWhereInput(
+          [Function(GVehicleReelWhereInputBuilder b) updates]) =
+      _$GVehicleReelWhereInput;
+
+  BuiltList<GVehicleReelWhereInput>? get AND;
+  BuiltList<GVehicleReelWhereInput>? get OR;
+  BuiltList<GVehicleReelWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GStringFilter? get type;
+  GStringFilter? get fileId;
+  GVehicleColorWhereInput? get color;
+  GIntNullableFilter? get index;
+  static Serializer<GVehicleReelWhereInput> get serializer =>
+      _$gVehicleReelWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleReelWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleReelWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleReelWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleReelOrderByInput
+    implements
+        Built<GVehicleReelOrderByInput, GVehicleReelOrderByInputBuilder> {
+  GVehicleReelOrderByInput._();
+
+  factory GVehicleReelOrderByInput(
+          [Function(GVehicleReelOrderByInputBuilder b) updates]) =
+      _$GVehicleReelOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get type;
+  GOrderDirection? get fileId;
+  GOrderDirection? get index;
+  static Serializer<GVehicleReelOrderByInput> get serializer =>
+      _$gVehicleReelOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleReelOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleReelOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleReelOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleReelUpdateInput
+    implements Built<GVehicleReelUpdateInput, GVehicleReelUpdateInputBuilder> {
+  GVehicleReelUpdateInput._();
+
+  factory GVehicleReelUpdateInput(
+          [Function(GVehicleReelUpdateInputBuilder b) updates]) =
+      _$GVehicleReelUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get type;
+  String? get fileId;
+  GVehicleColorRelateToOneForUpdateInput? get color;
+  int? get index;
+  static Serializer<GVehicleReelUpdateInput> get serializer =>
+      _$gVehicleReelUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleReelUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleReelUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleReelUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleReelUpdateArgs
+    implements Built<GVehicleReelUpdateArgs, GVehicleReelUpdateArgsBuilder> {
+  GVehicleReelUpdateArgs._();
+
+  factory GVehicleReelUpdateArgs(
+          [Function(GVehicleReelUpdateArgsBuilder b) updates]) =
+      _$GVehicleReelUpdateArgs;
+
+  GVehicleReelWhereUniqueInput get where;
+  GVehicleReelUpdateInput get data;
+  static Serializer<GVehicleReelUpdateArgs> get serializer =>
+      _$gVehicleReelUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleReelUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleReelUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleReelUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleReelCreateInput
+    implements Built<GVehicleReelCreateInput, GVehicleReelCreateInputBuilder> {
+  GVehicleReelCreateInput._();
+
+  factory GVehicleReelCreateInput(
+          [Function(GVehicleReelCreateInputBuilder b) updates]) =
+      _$GVehicleReelCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get type;
+  String? get fileId;
+  GVehicleColorRelateToOneForCreateInput? get color;
+  int? get index;
+  static Serializer<GVehicleReelCreateInput> get serializer =>
+      _$gVehicleReelCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleReelCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleReelCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleReelCreateInput.serializer,
         json,
       );
 }
@@ -4032,37 +4742,6 @@ abstract class GPriceManyRelationFilter
   static GPriceManyRelationFilter? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GPriceManyRelationFilter.serializer,
-        json,
-      );
-}
-
-abstract class GIntNullableFilter
-    implements Built<GIntNullableFilter, GIntNullableFilterBuilder> {
-  GIntNullableFilter._();
-
-  factory GIntNullableFilter([Function(GIntNullableFilterBuilder b) updates]) =
-      _$GIntNullableFilter;
-
-  int? get equals;
-  @BuiltValueField(wireName: 'in')
-  BuiltList<int>? get Gin;
-  BuiltList<int>? get notIn;
-  int? get lt;
-  int? get lte;
-  int? get gt;
-  int? get gte;
-  GIntNullableFilter? get not;
-  static Serializer<GIntNullableFilter> get serializer =>
-      _$gIntNullableFilterSerializer;
-
-  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
-        GIntNullableFilter.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GIntNullableFilter? fromJson(Map<String, dynamic> json) =>
-      _i2.serializers.deserializeWith(
-        GIntNullableFilter.serializer,
         json,
       );
 }
@@ -4405,6 +5084,170 @@ abstract class GVehicleImageCreateInput
       );
 }
 
+abstract class GVehicleVideoWhereUniqueInput
+    implements
+        Built<GVehicleVideoWhereUniqueInput,
+            GVehicleVideoWhereUniqueInputBuilder> {
+  GVehicleVideoWhereUniqueInput._();
+
+  factory GVehicleVideoWhereUniqueInput(
+          [Function(GVehicleVideoWhereUniqueInputBuilder b) updates]) =
+      _$GVehicleVideoWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GVehicleVideoWhereUniqueInput> get serializer =>
+      _$gVehicleVideoWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleVideoWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleVideoWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleVideoWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleVideoWhereInput
+    implements Built<GVehicleVideoWhereInput, GVehicleVideoWhereInputBuilder> {
+  GVehicleVideoWhereInput._();
+
+  factory GVehicleVideoWhereInput(
+          [Function(GVehicleVideoWhereInputBuilder b) updates]) =
+      _$GVehicleVideoWhereInput;
+
+  BuiltList<GVehicleVideoWhereInput>? get AND;
+  BuiltList<GVehicleVideoWhereInput>? get OR;
+  BuiltList<GVehicleVideoWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GVehicleColorWhereInput? get color;
+  static Serializer<GVehicleVideoWhereInput> get serializer =>
+      _$gVehicleVideoWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleVideoWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleVideoWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleVideoWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleVideoOrderByInput
+    implements
+        Built<GVehicleVideoOrderByInput, GVehicleVideoOrderByInputBuilder> {
+  GVehicleVideoOrderByInput._();
+
+  factory GVehicleVideoOrderByInput(
+          [Function(GVehicleVideoOrderByInputBuilder b) updates]) =
+      _$GVehicleVideoOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  static Serializer<GVehicleVideoOrderByInput> get serializer =>
+      _$gVehicleVideoOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleVideoOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleVideoOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleVideoOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleVideoUpdateInput
+    implements
+        Built<GVehicleVideoUpdateInput, GVehicleVideoUpdateInputBuilder> {
+  GVehicleVideoUpdateInput._();
+
+  factory GVehicleVideoUpdateInput(
+          [Function(GVehicleVideoUpdateInputBuilder b) updates]) =
+      _$GVehicleVideoUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GFileFieldInput? get video;
+  GVehicleColorRelateToOneForUpdateInput? get color;
+  static Serializer<GVehicleVideoUpdateInput> get serializer =>
+      _$gVehicleVideoUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleVideoUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleVideoUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleVideoUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleVideoUpdateArgs
+    implements Built<GVehicleVideoUpdateArgs, GVehicleVideoUpdateArgsBuilder> {
+  GVehicleVideoUpdateArgs._();
+
+  factory GVehicleVideoUpdateArgs(
+          [Function(GVehicleVideoUpdateArgsBuilder b) updates]) =
+      _$GVehicleVideoUpdateArgs;
+
+  GVehicleVideoWhereUniqueInput get where;
+  GVehicleVideoUpdateInput get data;
+  static Serializer<GVehicleVideoUpdateArgs> get serializer =>
+      _$gVehicleVideoUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleVideoUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleVideoUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleVideoUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleVideoCreateInput
+    implements
+        Built<GVehicleVideoCreateInput, GVehicleVideoCreateInputBuilder> {
+  GVehicleVideoCreateInput._();
+
+  factory GVehicleVideoCreateInput(
+          [Function(GVehicleVideoCreateInputBuilder b) updates]) =
+      _$GVehicleVideoCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GFileFieldInput? get video;
+  GVehicleColorRelateToOneForCreateInput? get color;
+  static Serializer<GVehicleVideoCreateInput> get serializer =>
+      _$gVehicleVideoCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleVideoCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleVideoCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleVideoCreateInput.serializer,
+        json,
+      );
+}
+
 abstract class GVehicleSpecificationWhereUniqueInput
     implements
         Built<GVehicleSpecificationWhereUniqueInput,
@@ -4454,6 +5297,7 @@ abstract class GVehicleSpecificationWhereInput
   GStringFilter? get stringValue;
   GSpecificationCategoryWhereInput? get category;
   GVehicleWhereInput? get vehicle;
+  GBooleanFilter? get isKeyFeature;
   static Serializer<GVehicleSpecificationWhereInput> get serializer =>
       _$gVehicleSpecificationWhereInputSerializer;
 
@@ -4485,6 +5329,7 @@ abstract class GVehicleSpecificationOrderByInput
   GOrderDirection? get type;
   GOrderDirection? get intValue;
   GOrderDirection? get stringValue;
+  GOrderDirection? get isKeyFeature;
   static Serializer<GVehicleSpecificationOrderByInput> get serializer =>
       _$gVehicleSpecificationOrderByInputSerializer;
 
@@ -4519,6 +5364,7 @@ abstract class GVehicleSpecificationUpdateInput
   String? get stringValue;
   GSpecificationCategoryRelateToOneForUpdateInput? get category;
   GVehicleRelateToOneForUpdateInput? get vehicle;
+  bool? get isKeyFeature;
   static Serializer<GVehicleSpecificationUpdateInput> get serializer =>
       _$gVehicleSpecificationUpdateInputSerializer;
 
@@ -4639,6 +5485,7 @@ abstract class GVehicleSpecificationCreateInput
   String? get stringValue;
   GSpecificationCategoryRelateToOneForCreateInput? get category;
   GVehicleRelateToOneForCreateInput? get vehicle;
+  bool? get isKeyFeature;
   static Serializer<GVehicleSpecificationCreateInput> get serializer =>
       _$gVehicleSpecificationCreateInputSerializer;
 
@@ -4760,6 +5607,8 @@ abstract class GVehicleVariantWhereInput
   GVehicleSpecificationManyRelationFilter? get specifications;
   GVehicleColorManyRelationFilter? get colors;
   GTagManyRelationFilter? get tags;
+  GBooleanFilter? get informative;
+  GPriceManyRelationFilter? get prices;
   static Serializer<GVehicleVariantWhereInput> get serializer =>
       _$gVehicleVariantWhereInputSerializer;
 
@@ -4816,6 +5665,7 @@ abstract class GVehicleVariantOrderByInput
   GOrderDirection? get name;
   @BuiltValueField(wireName: 'default')
   GOrderDirection? get Gdefault;
+  GOrderDirection? get informative;
   static Serializer<GVehicleVariantOrderByInput> get serializer =>
       _$gVehicleVariantOrderByInputSerializer;
 
@@ -4849,6 +5699,8 @@ abstract class GVehicleVariantUpdateInput
   GVehicleSpecificationRelateToManyForUpdateInput? get specifications;
   GVehicleColorRelateToManyForUpdateInput? get colors;
   GTagRelateToManyForUpdateInput? get tags;
+  bool? get informative;
+  GPriceRelateToManyForUpdateInput? get prices;
   static Serializer<GVehicleVariantUpdateInput> get serializer =>
       _$gVehicleVariantUpdateInputSerializer;
 
@@ -4937,6 +5789,8 @@ abstract class GVehicleVariantCreateInput
   GVehicleSpecificationRelateToManyForCreateInput? get specifications;
   GVehicleColorRelateToManyForCreateInput? get colors;
   GTagRelateToManyForCreateInput? get tags;
+  bool? get informative;
+  GPriceRelateToManyForCreateInput? get prices;
   static Serializer<GVehicleVariantCreateInput> get serializer =>
       _$gVehicleVariantCreateInputSerializer;
 
@@ -5680,38 +6534,6 @@ abstract class GWalletWhereInput
       );
 }
 
-abstract class GFloatNullableFilter
-    implements Built<GFloatNullableFilter, GFloatNullableFilterBuilder> {
-  GFloatNullableFilter._();
-
-  factory GFloatNullableFilter(
-          [Function(GFloatNullableFilterBuilder b) updates]) =
-      _$GFloatNullableFilter;
-
-  double? get equals;
-  @BuiltValueField(wireName: 'in')
-  BuiltList<double>? get Gin;
-  BuiltList<double>? get notIn;
-  double? get lt;
-  double? get lte;
-  double? get gt;
-  double? get gte;
-  GFloatNullableFilter? get not;
-  static Serializer<GFloatNullableFilter> get serializer =>
-      _$gFloatNullableFilterSerializer;
-
-  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
-        GFloatNullableFilter.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GFloatNullableFilter? fromJson(Map<String, dynamic> json) =>
-      _i2.serializers.deserializeWith(
-        GFloatNullableFilter.serializer,
-        json,
-      );
-}
-
 abstract class GWalletOrderByInput
     implements Built<GWalletOrderByInput, GWalletOrderByInputBuilder> {
   GWalletOrderByInput._();
@@ -6060,6 +6882,7 @@ abstract class GOrderWhereInput
   GUserWhereInput? get user;
   GVehicleOrderManyRelationFilter? get vehicleOrders;
   GTestDriveOrderManyRelationFilter? get testDriveOrders;
+  GProductOrderManyRelationFilter? get productOrders;
   GPaymentManyRelationFilter? get payments;
   static Serializer<GOrderWhereInput> get serializer =>
       _$gOrderWhereInputSerializer;
@@ -6133,6 +6956,34 @@ abstract class GTestDriveOrderManyRelationFilter
       );
 }
 
+abstract class GProductOrderManyRelationFilter
+    implements
+        Built<GProductOrderManyRelationFilter,
+            GProductOrderManyRelationFilterBuilder> {
+  GProductOrderManyRelationFilter._();
+
+  factory GProductOrderManyRelationFilter(
+          [Function(GProductOrderManyRelationFilterBuilder b) updates]) =
+      _$GProductOrderManyRelationFilter;
+
+  GProductOrderWhereInput? get every;
+  GProductOrderWhereInput? get some;
+  GProductOrderWhereInput? get none;
+  static Serializer<GProductOrderManyRelationFilter> get serializer =>
+      _$gProductOrderManyRelationFilterSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductOrderManyRelationFilter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrderManyRelationFilter? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductOrderManyRelationFilter.serializer,
+        json,
+      );
+}
+
 abstract class GPaymentManyRelationFilter
     implements
         Built<GPaymentManyRelationFilter, GPaymentManyRelationFilterBuilder> {
@@ -6197,6 +7048,7 @@ abstract class GOrderUpdateInput
   GUserRelateToOneForUpdateInput? get user;
   GVehicleOrderRelateToManyForUpdateInput? get vehicleOrders;
   GTestDriveOrderRelateToManyForUpdateInput? get testDriveOrders;
+  GProductOrderRelateToManyForUpdateInput? get productOrders;
   GPaymentRelateToManyForUpdateInput? get payments;
   static Serializer<GOrderUpdateInput> get serializer =>
       _$gOrderUpdateInputSerializer;
@@ -6273,6 +7125,36 @@ abstract class GTestDriveOrderRelateToManyForUpdateInput
       );
 }
 
+abstract class GProductOrderRelateToManyForUpdateInput
+    implements
+        Built<GProductOrderRelateToManyForUpdateInput,
+            GProductOrderRelateToManyForUpdateInputBuilder> {
+  GProductOrderRelateToManyForUpdateInput._();
+
+  factory GProductOrderRelateToManyForUpdateInput(
+      [Function(GProductOrderRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GProductOrderRelateToManyForUpdateInput;
+
+  BuiltList<GProductOrderWhereUniqueInput>? get disconnect;
+  BuiltList<GProductOrderWhereUniqueInput>? get set;
+  BuiltList<GProductOrderCreateInput>? get create;
+  BuiltList<GProductOrderWhereUniqueInput>? get connect;
+  static Serializer<GProductOrderRelateToManyForUpdateInput> get serializer =>
+      _$gProductOrderRelateToManyForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductOrderRelateToManyForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrderRelateToManyForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductOrderRelateToManyForUpdateInput.serializer,
+        json,
+      );
+}
+
 abstract class GPaymentRelateToManyForUpdateInput
     implements
         Built<GPaymentRelateToManyForUpdateInput,
@@ -6339,6 +7221,7 @@ abstract class GOrderCreateInput
   GUserRelateToOneForCreateInput? get user;
   GVehicleOrderRelateToManyForCreateInput? get vehicleOrders;
   GTestDriveOrderRelateToManyForCreateInput? get testDriveOrders;
+  GProductOrderRelateToManyForCreateInput? get productOrders;
   GPaymentRelateToManyForCreateInput? get payments;
   static Serializer<GOrderCreateInput> get serializer =>
       _$gOrderCreateInputSerializer;
@@ -6407,6 +7290,34 @@ abstract class GTestDriveOrderRelateToManyForCreateInput
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveOrderRelateToManyForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductOrderRelateToManyForCreateInput
+    implements
+        Built<GProductOrderRelateToManyForCreateInput,
+            GProductOrderRelateToManyForCreateInputBuilder> {
+  GProductOrderRelateToManyForCreateInput._();
+
+  factory GProductOrderRelateToManyForCreateInput(
+      [Function(GProductOrderRelateToManyForCreateInputBuilder b)
+          updates]) = _$GProductOrderRelateToManyForCreateInput;
+
+  BuiltList<GProductOrderCreateInput>? get create;
+  BuiltList<GProductOrderWhereUniqueInput>? get connect;
+  static Serializer<GProductOrderRelateToManyForCreateInput> get serializer =>
+      _$gProductOrderRelateToManyForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductOrderRelateToManyForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrderRelateToManyForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductOrderRelateToManyForCreateInput.serializer,
         json,
       );
 }
@@ -6750,6 +7661,7 @@ abstract class GVehicleOrderWhereInput
   GOrderWhereInput? get order;
   GIntNullableFilter? get price;
   GStringNullableFilter? get status;
+  GAddressWhereInput? get address;
   static Serializer<GVehicleOrderWhereInput> get serializer =>
       _$gVehicleOrderWhereInputSerializer;
 
@@ -6809,6 +7721,7 @@ abstract class GVehicleOrderUpdateInput
   GOrderRelateToOneForUpdateInput? get order;
   int? get price;
   String? get status;
+  GAddressRelateToOneForUpdateInput? get address;
   static Serializer<GVehicleOrderUpdateInput> get serializer =>
       _$gVehicleOrderUpdateInputSerializer;
 
@@ -6820,6 +7733,64 @@ abstract class GVehicleOrderUpdateInput
   static GVehicleOrderUpdateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleOrderUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleDealerRelateToOneForUpdateInput
+    implements
+        Built<GVehicleDealerRelateToOneForUpdateInput,
+            GVehicleDealerRelateToOneForUpdateInputBuilder> {
+  GVehicleDealerRelateToOneForUpdateInput._();
+
+  factory GVehicleDealerRelateToOneForUpdateInput(
+      [Function(GVehicleDealerRelateToOneForUpdateInputBuilder b)
+          updates]) = _$GVehicleDealerRelateToOneForUpdateInput;
+
+  GVehicleDealerCreateInput? get create;
+  GVehicleDealerWhereUniqueInput? get connect;
+  bool? get disconnect;
+  static Serializer<GVehicleDealerRelateToOneForUpdateInput> get serializer =>
+      _$gVehicleDealerRelateToOneForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleDealerRelateToOneForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleDealerRelateToOneForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleDealerRelateToOneForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GAddressRelateToOneForUpdateInput
+    implements
+        Built<GAddressRelateToOneForUpdateInput,
+            GAddressRelateToOneForUpdateInputBuilder> {
+  GAddressRelateToOneForUpdateInput._();
+
+  factory GAddressRelateToOneForUpdateInput(
+          [Function(GAddressRelateToOneForUpdateInputBuilder b) updates]) =
+      _$GAddressRelateToOneForUpdateInput;
+
+  GAddressCreateInput? get create;
+  GAddressWhereUniqueInput? get connect;
+  bool? get disconnect;
+  static Serializer<GAddressRelateToOneForUpdateInput> get serializer =>
+      _$gAddressRelateToOneForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GAddressRelateToOneForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GAddressRelateToOneForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GAddressRelateToOneForUpdateInput.serializer,
         json,
       );
 }
@@ -6864,6 +7835,7 @@ abstract class GVehicleOrderCreateInput
   GOrderRelateToOneForCreateInput? get order;
   int? get price;
   String? get status;
+  GAddressRelateToOneForCreateInput? get address;
   static Serializer<GVehicleOrderCreateInput> get serializer =>
       _$gVehicleOrderCreateInputSerializer;
 
@@ -6875,6 +7847,62 @@ abstract class GVehicleOrderCreateInput
   static GVehicleOrderCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleOrderCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleDealerRelateToOneForCreateInput
+    implements
+        Built<GVehicleDealerRelateToOneForCreateInput,
+            GVehicleDealerRelateToOneForCreateInputBuilder> {
+  GVehicleDealerRelateToOneForCreateInput._();
+
+  factory GVehicleDealerRelateToOneForCreateInput(
+      [Function(GVehicleDealerRelateToOneForCreateInputBuilder b)
+          updates]) = _$GVehicleDealerRelateToOneForCreateInput;
+
+  GVehicleDealerCreateInput? get create;
+  GVehicleDealerWhereUniqueInput? get connect;
+  static Serializer<GVehicleDealerRelateToOneForCreateInput> get serializer =>
+      _$gVehicleDealerRelateToOneForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleDealerRelateToOneForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleDealerRelateToOneForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleDealerRelateToOneForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GAddressRelateToOneForCreateInput
+    implements
+        Built<GAddressRelateToOneForCreateInput,
+            GAddressRelateToOneForCreateInputBuilder> {
+  GAddressRelateToOneForCreateInput._();
+
+  factory GAddressRelateToOneForCreateInput(
+          [Function(GAddressRelateToOneForCreateInputBuilder b) updates]) =
+      _$GAddressRelateToOneForCreateInput;
+
+  GAddressCreateInput? get create;
+  GAddressWhereUniqueInput? get connect;
+  static Serializer<GAddressRelateToOneForCreateInput> get serializer =>
+      _$gAddressRelateToOneForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GAddressRelateToOneForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GAddressRelateToOneForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GAddressRelateToOneForCreateInput.serializer,
         json,
       );
 }
@@ -6924,6 +7952,7 @@ abstract class GTestDriveOrderWhereInput
   GOrderWhereInput? get order;
   GIntNullableFilter? get price;
   GStringNullableFilter? get status;
+  GAddressWhereInput? get address;
   static Serializer<GTestDriveOrderWhereInput> get serializer =>
       _$gTestDriveOrderWhereInputSerializer;
 
@@ -6983,6 +8012,7 @@ abstract class GTestDriveOrderUpdateInput
   GOrderRelateToOneForUpdateInput? get order;
   int? get price;
   String? get status;
+  GAddressRelateToOneForUpdateInput? get address;
   static Serializer<GTestDriveOrderUpdateInput> get serializer =>
       _$gTestDriveOrderUpdateInputSerializer;
 
@@ -7068,6 +8098,7 @@ abstract class GTestDriveOrderCreateInput
   GOrderRelateToOneForCreateInput? get order;
   int? get price;
   String? get status;
+  GAddressRelateToOneForCreateInput? get address;
   static Serializer<GTestDriveOrderCreateInput> get serializer =>
       _$gTestDriveOrderCreateInputSerializer;
 
@@ -7107,6 +8138,239 @@ abstract class GTestDriveDealerRelateToOneForCreateInput
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveDealerRelateToOneForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductOrderWhereUniqueInput
+    implements
+        Built<GProductOrderWhereUniqueInput,
+            GProductOrderWhereUniqueInputBuilder> {
+  GProductOrderWhereUniqueInput._();
+
+  factory GProductOrderWhereUniqueInput(
+          [Function(GProductOrderWhereUniqueInputBuilder b) updates]) =
+      _$GProductOrderWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GProductOrderWhereUniqueInput> get serializer =>
+      _$gProductOrderWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductOrderWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrderWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductOrderWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductOrderWhereInput
+    implements Built<GProductOrderWhereInput, GProductOrderWhereInputBuilder> {
+  GProductOrderWhereInput._();
+
+  factory GProductOrderWhereInput(
+          [Function(GProductOrderWhereInputBuilder b) updates]) =
+      _$GProductOrderWhereInput;
+
+  BuiltList<GProductOrderWhereInput>? get AND;
+  BuiltList<GProductOrderWhereInput>? get OR;
+  BuiltList<GProductOrderWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GProductDealerWhereInput? get dealer;
+  GOrderWhereInput? get order;
+  GIntNullableFilter? get price;
+  GStringNullableFilter? get status;
+  GAddressWhereInput? get address;
+  static Serializer<GProductOrderWhereInput> get serializer =>
+      _$gProductOrderWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductOrderWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrderWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductOrderWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductOrderOrderByInput
+    implements
+        Built<GProductOrderOrderByInput, GProductOrderOrderByInputBuilder> {
+  GProductOrderOrderByInput._();
+
+  factory GProductOrderOrderByInput(
+          [Function(GProductOrderOrderByInputBuilder b) updates]) =
+      _$GProductOrderOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get price;
+  GOrderDirection? get status;
+  static Serializer<GProductOrderOrderByInput> get serializer =>
+      _$gProductOrderOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductOrderOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrderOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductOrderOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductOrderUpdateInput
+    implements
+        Built<GProductOrderUpdateInput, GProductOrderUpdateInputBuilder> {
+  GProductOrderUpdateInput._();
+
+  factory GProductOrderUpdateInput(
+          [Function(GProductOrderUpdateInputBuilder b) updates]) =
+      _$GProductOrderUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GProductDealerRelateToOneForUpdateInput? get dealer;
+  GOrderRelateToOneForUpdateInput? get order;
+  int? get price;
+  String? get status;
+  GAddressRelateToOneForUpdateInput? get address;
+  static Serializer<GProductOrderUpdateInput> get serializer =>
+      _$gProductOrderUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductOrderUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrderUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductOrderUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealerRelateToOneForUpdateInput
+    implements
+        Built<GProductDealerRelateToOneForUpdateInput,
+            GProductDealerRelateToOneForUpdateInputBuilder> {
+  GProductDealerRelateToOneForUpdateInput._();
+
+  factory GProductDealerRelateToOneForUpdateInput(
+      [Function(GProductDealerRelateToOneForUpdateInputBuilder b)
+          updates]) = _$GProductDealerRelateToOneForUpdateInput;
+
+  GProductDealerCreateInput? get create;
+  GProductDealerWhereUniqueInput? get connect;
+  bool? get disconnect;
+  static Serializer<GProductDealerRelateToOneForUpdateInput> get serializer =>
+      _$gProductDealerRelateToOneForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductDealerRelateToOneForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealerRelateToOneForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductDealerRelateToOneForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductOrderUpdateArgs
+    implements Built<GProductOrderUpdateArgs, GProductOrderUpdateArgsBuilder> {
+  GProductOrderUpdateArgs._();
+
+  factory GProductOrderUpdateArgs(
+          [Function(GProductOrderUpdateArgsBuilder b) updates]) =
+      _$GProductOrderUpdateArgs;
+
+  GProductOrderWhereUniqueInput get where;
+  GProductOrderUpdateInput get data;
+  static Serializer<GProductOrderUpdateArgs> get serializer =>
+      _$gProductOrderUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductOrderUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrderUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductOrderUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GProductOrderCreateInput
+    implements
+        Built<GProductOrderCreateInput, GProductOrderCreateInputBuilder> {
+  GProductOrderCreateInput._();
+
+  factory GProductOrderCreateInput(
+          [Function(GProductOrderCreateInputBuilder b) updates]) =
+      _$GProductOrderCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GProductDealerRelateToOneForCreateInput? get dealer;
+  GOrderRelateToOneForCreateInput? get order;
+  int? get price;
+  String? get status;
+  GAddressRelateToOneForCreateInput? get address;
+  static Serializer<GProductOrderCreateInput> get serializer =>
+      _$gProductOrderCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductOrderCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrderCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductOrderCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealerRelateToOneForCreateInput
+    implements
+        Built<GProductDealerRelateToOneForCreateInput,
+            GProductDealerRelateToOneForCreateInputBuilder> {
+  GProductDealerRelateToOneForCreateInput._();
+
+  factory GProductDealerRelateToOneForCreateInput(
+      [Function(GProductDealerRelateToOneForCreateInputBuilder b)
+          updates]) = _$GProductDealerRelateToOneForCreateInput;
+
+  GProductDealerCreateInput? get create;
+  GProductDealerWhereUniqueInput? get connect;
+  static Serializer<GProductDealerRelateToOneForCreateInput> get serializer =>
+      _$gProductDealerRelateToOneForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductDealerRelateToOneForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealerRelateToOneForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductDealerRelateToOneForCreateInput.serializer,
         json,
       );
 }
@@ -7156,6 +8420,7 @@ abstract class GOrderCancellationRequestWhereInput
   GDateTimeNullableFilter? get modifiedAt;
   GVehicleOrderManyRelationFilter? get vehicleOrders;
   GTestDriveOrderManyRelationFilter? get testDriveOrders;
+  GProductOrderManyRelationFilter? get productOrders;
   GBooleanFilter? get approved;
   GStringFilter? get reason;
   GStringFilter? get description;
@@ -7221,6 +8486,7 @@ abstract class GOrderCancellationRequestUpdateInput
   GDateTime? get modifiedAt;
   GVehicleOrderRelateToManyForUpdateInput? get vehicleOrders;
   GTestDriveOrderRelateToManyForUpdateInput? get testDriveOrders;
+  GProductOrderRelateToManyForUpdateInput? get productOrders;
   bool? get approved;
   String? get reason;
   String? get description;
@@ -7282,6 +8548,7 @@ abstract class GOrderCancellationRequestCreateInput
   GDateTime? get modifiedAt;
   GVehicleOrderRelateToManyForCreateInput? get vehicleOrders;
   GTestDriveOrderRelateToManyForCreateInput? get testDriveOrders;
+  GProductOrderRelateToManyForCreateInput? get productOrders;
   bool? get approved;
   String? get reason;
   String? get description;
@@ -7346,6 +8613,7 @@ abstract class GOrderRejectionByDealerWhereInput
   GDateTimeNullableFilter? get modifiedAt;
   GVehicleOrderManyRelationFilter? get vehicleOrders;
   GTestDriveOrderManyRelationFilter? get testDriveOrders;
+  GProductOrderManyRelationFilter? get productOrders;
   GBooleanFilter? get approved;
   GStringFilter? get reason;
   GStringFilter? get description;
@@ -7411,6 +8679,7 @@ abstract class GOrderRejectionByDealerUpdateInput
   GDateTime? get modifiedAt;
   GVehicleOrderRelateToManyForUpdateInput? get vehicleOrders;
   GTestDriveOrderRelateToManyForUpdateInput? get testDriveOrders;
+  GProductOrderRelateToManyForUpdateInput? get productOrders;
   bool? get approved;
   String? get reason;
   String? get description;
@@ -7472,6 +8741,7 @@ abstract class GOrderRejectionByDealerCreateInput
   GDateTime? get modifiedAt;
   GVehicleOrderRelateToManyForCreateInput? get vehicleOrders;
   GTestDriveOrderRelateToManyForCreateInput? get testDriveOrders;
+  GProductOrderRelateToManyForCreateInput? get productOrders;
   bool? get approved;
   String? get reason;
   String? get description;
@@ -7668,6 +8938,244 @@ abstract class GUserVehicleReviewCreateInput
   static GUserVehicleReviewCreateInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUserVehicleReviewCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GUserProductReviewWhereUniqueInput
+    implements
+        Built<GUserProductReviewWhereUniqueInput,
+            GUserProductReviewWhereUniqueInputBuilder> {
+  GUserProductReviewWhereUniqueInput._();
+
+  factory GUserProductReviewWhereUniqueInput(
+          [Function(GUserProductReviewWhereUniqueInputBuilder b) updates]) =
+      _$GUserProductReviewWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GUserProductReviewWhereUniqueInput> get serializer =>
+      _$gUserProductReviewWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GUserProductReviewWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUserProductReviewWhereUniqueInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GUserProductReviewWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GUserProductReviewWhereInput
+    implements
+        Built<GUserProductReviewWhereInput,
+            GUserProductReviewWhereInputBuilder> {
+  GUserProductReviewWhereInput._();
+
+  factory GUserProductReviewWhereInput(
+          [Function(GUserProductReviewWhereInputBuilder b) updates]) =
+      _$GUserProductReviewWhereInput;
+
+  BuiltList<GUserProductReviewWhereInput>? get AND;
+  BuiltList<GUserProductReviewWhereInput>? get OR;
+  BuiltList<GUserProductReviewWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GUserWhereInput? get user;
+  GProductWhereInput? get product;
+  GStringFilter? get review;
+  GIntFilter? get rating;
+  static Serializer<GUserProductReviewWhereInput> get serializer =>
+      _$gUserProductReviewWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GUserProductReviewWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUserProductReviewWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GUserProductReviewWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GUserProductReviewOrderByInput
+    implements
+        Built<GUserProductReviewOrderByInput,
+            GUserProductReviewOrderByInputBuilder> {
+  GUserProductReviewOrderByInput._();
+
+  factory GUserProductReviewOrderByInput(
+          [Function(GUserProductReviewOrderByInputBuilder b) updates]) =
+      _$GUserProductReviewOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get review;
+  GOrderDirection? get rating;
+  static Serializer<GUserProductReviewOrderByInput> get serializer =>
+      _$gUserProductReviewOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GUserProductReviewOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUserProductReviewOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GUserProductReviewOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GUserProductReviewUpdateInput
+    implements
+        Built<GUserProductReviewUpdateInput,
+            GUserProductReviewUpdateInputBuilder> {
+  GUserProductReviewUpdateInput._();
+
+  factory GUserProductReviewUpdateInput(
+          [Function(GUserProductReviewUpdateInputBuilder b) updates]) =
+      _$GUserProductReviewUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GUserRelateToOneForUpdateInput? get user;
+  GProductRelateToOneForUpdateInput? get product;
+  String? get review;
+  int? get rating;
+  static Serializer<GUserProductReviewUpdateInput> get serializer =>
+      _$gUserProductReviewUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GUserProductReviewUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUserProductReviewUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GUserProductReviewUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductRelateToOneForUpdateInput
+    implements
+        Built<GProductRelateToOneForUpdateInput,
+            GProductRelateToOneForUpdateInputBuilder> {
+  GProductRelateToOneForUpdateInput._();
+
+  factory GProductRelateToOneForUpdateInput(
+          [Function(GProductRelateToOneForUpdateInputBuilder b) updates]) =
+      _$GProductRelateToOneForUpdateInput;
+
+  GProductCreateInput? get create;
+  GProductWhereUniqueInput? get connect;
+  bool? get disconnect;
+  static Serializer<GProductRelateToOneForUpdateInput> get serializer =>
+      _$gProductRelateToOneForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductRelateToOneForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductRelateToOneForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductRelateToOneForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GUserProductReviewUpdateArgs
+    implements
+        Built<GUserProductReviewUpdateArgs,
+            GUserProductReviewUpdateArgsBuilder> {
+  GUserProductReviewUpdateArgs._();
+
+  factory GUserProductReviewUpdateArgs(
+          [Function(GUserProductReviewUpdateArgsBuilder b) updates]) =
+      _$GUserProductReviewUpdateArgs;
+
+  GUserProductReviewWhereUniqueInput get where;
+  GUserProductReviewUpdateInput get data;
+  static Serializer<GUserProductReviewUpdateArgs> get serializer =>
+      _$gUserProductReviewUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GUserProductReviewUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUserProductReviewUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GUserProductReviewUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GUserProductReviewCreateInput
+    implements
+        Built<GUserProductReviewCreateInput,
+            GUserProductReviewCreateInputBuilder> {
+  GUserProductReviewCreateInput._();
+
+  factory GUserProductReviewCreateInput(
+          [Function(GUserProductReviewCreateInputBuilder b) updates]) =
+      _$GUserProductReviewCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GUserRelateToOneForCreateInput? get user;
+  GProductRelateToOneForCreateInput? get product;
+  String? get review;
+  int? get rating;
+  static Serializer<GUserProductReviewCreateInput> get serializer =>
+      _$gUserProductReviewCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GUserProductReviewCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUserProductReviewCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GUserProductReviewCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductRelateToOneForCreateInput
+    implements
+        Built<GProductRelateToOneForCreateInput,
+            GProductRelateToOneForCreateInputBuilder> {
+  GProductRelateToOneForCreateInput._();
+
+  factory GProductRelateToOneForCreateInput(
+          [Function(GProductRelateToOneForCreateInputBuilder b) updates]) =
+      _$GProductRelateToOneForCreateInput;
+
+  GProductCreateInput? get create;
+  GProductWhereUniqueInput? get connect;
+  static Serializer<GProductRelateToOneForCreateInput> get serializer =>
+      _$gProductRelateToOneForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductRelateToOneForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductRelateToOneForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductRelateToOneForCreateInput.serializer,
         json,
       );
 }
@@ -9608,6 +11116,1043 @@ abstract class GTagCreateInput
       );
 }
 
+abstract class GNewsItemWhereUniqueInput
+    implements
+        Built<GNewsItemWhereUniqueInput, GNewsItemWhereUniqueInputBuilder> {
+  GNewsItemWhereUniqueInput._();
+
+  factory GNewsItemWhereUniqueInput(
+          [Function(GNewsItemWhereUniqueInputBuilder b) updates]) =
+      _$GNewsItemWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GNewsItemWhereUniqueInput> get serializer =>
+      _$gNewsItemWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsItemWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsItemWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsItemWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsItemWhereInput
+    implements Built<GNewsItemWhereInput, GNewsItemWhereInputBuilder> {
+  GNewsItemWhereInput._();
+
+  factory GNewsItemWhereInput(
+      [Function(GNewsItemWhereInputBuilder b) updates]) = _$GNewsItemWhereInput;
+
+  BuiltList<GNewsItemWhereInput>? get AND;
+  BuiltList<GNewsItemWhereInput>? get OR;
+  BuiltList<GNewsItemWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GStringFilter? get title;
+  GStringFilter? get description;
+  GStringFilter? get authorName;
+  GNewsCategoryManyRelationFilter? get categories;
+  GKeywordManyRelationFilter? get keywords;
+  GNewsAttachmentWhereInput? get banner;
+  GNewsAttachmentManyRelationFilter? get newsAttachments;
+  static Serializer<GNewsItemWhereInput> get serializer =>
+      _$gNewsItemWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsItemWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsItemWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsItemWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsCategoryManyRelationFilter
+    implements
+        Built<GNewsCategoryManyRelationFilter,
+            GNewsCategoryManyRelationFilterBuilder> {
+  GNewsCategoryManyRelationFilter._();
+
+  factory GNewsCategoryManyRelationFilter(
+          [Function(GNewsCategoryManyRelationFilterBuilder b) updates]) =
+      _$GNewsCategoryManyRelationFilter;
+
+  GNewsCategoryWhereInput? get every;
+  GNewsCategoryWhereInput? get some;
+  GNewsCategoryWhereInput? get none;
+  static Serializer<GNewsCategoryManyRelationFilter> get serializer =>
+      _$gNewsCategoryManyRelationFilterSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsCategoryManyRelationFilter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsCategoryManyRelationFilter? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsCategoryManyRelationFilter.serializer,
+        json,
+      );
+}
+
+abstract class GKeywordManyRelationFilter
+    implements
+        Built<GKeywordManyRelationFilter, GKeywordManyRelationFilterBuilder> {
+  GKeywordManyRelationFilter._();
+
+  factory GKeywordManyRelationFilter(
+          [Function(GKeywordManyRelationFilterBuilder b) updates]) =
+      _$GKeywordManyRelationFilter;
+
+  GKeywordWhereInput? get every;
+  GKeywordWhereInput? get some;
+  GKeywordWhereInput? get none;
+  static Serializer<GKeywordManyRelationFilter> get serializer =>
+      _$gKeywordManyRelationFilterSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GKeywordManyRelationFilter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GKeywordManyRelationFilter? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GKeywordManyRelationFilter.serializer,
+        json,
+      );
+}
+
+abstract class GNewsAttachmentManyRelationFilter
+    implements
+        Built<GNewsAttachmentManyRelationFilter,
+            GNewsAttachmentManyRelationFilterBuilder> {
+  GNewsAttachmentManyRelationFilter._();
+
+  factory GNewsAttachmentManyRelationFilter(
+          [Function(GNewsAttachmentManyRelationFilterBuilder b) updates]) =
+      _$GNewsAttachmentManyRelationFilter;
+
+  GNewsAttachmentWhereInput? get every;
+  GNewsAttachmentWhereInput? get some;
+  GNewsAttachmentWhereInput? get none;
+  static Serializer<GNewsAttachmentManyRelationFilter> get serializer =>
+      _$gNewsAttachmentManyRelationFilterSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsAttachmentManyRelationFilter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsAttachmentManyRelationFilter? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsAttachmentManyRelationFilter.serializer,
+        json,
+      );
+}
+
+abstract class GNewsItemOrderByInput
+    implements Built<GNewsItemOrderByInput, GNewsItemOrderByInputBuilder> {
+  GNewsItemOrderByInput._();
+
+  factory GNewsItemOrderByInput(
+          [Function(GNewsItemOrderByInputBuilder b) updates]) =
+      _$GNewsItemOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get title;
+  GOrderDirection? get description;
+  GOrderDirection? get authorName;
+  static Serializer<GNewsItemOrderByInput> get serializer =>
+      _$gNewsItemOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsItemOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsItemOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsItemOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsItemUpdateInput
+    implements Built<GNewsItemUpdateInput, GNewsItemUpdateInputBuilder> {
+  GNewsItemUpdateInput._();
+
+  factory GNewsItemUpdateInput(
+          [Function(GNewsItemUpdateInputBuilder b) updates]) =
+      _$GNewsItemUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get title;
+  String? get description;
+  String? get authorName;
+  GNewsCategoryRelateToManyForUpdateInput? get categories;
+  GKeywordRelateToManyForUpdateInput? get keywords;
+  GNewsAttachmentRelateToOneForUpdateInput? get banner;
+  GNewsAttachmentRelateToManyForUpdateInput? get newsAttachments;
+  static Serializer<GNewsItemUpdateInput> get serializer =>
+      _$gNewsItemUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsItemUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsItemUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsItemUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsCategoryRelateToManyForUpdateInput
+    implements
+        Built<GNewsCategoryRelateToManyForUpdateInput,
+            GNewsCategoryRelateToManyForUpdateInputBuilder> {
+  GNewsCategoryRelateToManyForUpdateInput._();
+
+  factory GNewsCategoryRelateToManyForUpdateInput(
+      [Function(GNewsCategoryRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GNewsCategoryRelateToManyForUpdateInput;
+
+  BuiltList<GNewsCategoryWhereUniqueInput>? get disconnect;
+  BuiltList<GNewsCategoryWhereUniqueInput>? get set;
+  BuiltList<GNewsCategoryCreateInput>? get create;
+  BuiltList<GNewsCategoryWhereUniqueInput>? get connect;
+  static Serializer<GNewsCategoryRelateToManyForUpdateInput> get serializer =>
+      _$gNewsCategoryRelateToManyForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsCategoryRelateToManyForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsCategoryRelateToManyForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsCategoryRelateToManyForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GKeywordRelateToManyForUpdateInput
+    implements
+        Built<GKeywordRelateToManyForUpdateInput,
+            GKeywordRelateToManyForUpdateInputBuilder> {
+  GKeywordRelateToManyForUpdateInput._();
+
+  factory GKeywordRelateToManyForUpdateInput(
+          [Function(GKeywordRelateToManyForUpdateInputBuilder b) updates]) =
+      _$GKeywordRelateToManyForUpdateInput;
+
+  BuiltList<GKeywordWhereUniqueInput>? get disconnect;
+  BuiltList<GKeywordWhereUniqueInput>? get set;
+  BuiltList<GKeywordCreateInput>? get create;
+  BuiltList<GKeywordWhereUniqueInput>? get connect;
+  static Serializer<GKeywordRelateToManyForUpdateInput> get serializer =>
+      _$gKeywordRelateToManyForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GKeywordRelateToManyForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GKeywordRelateToManyForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GKeywordRelateToManyForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsAttachmentRelateToOneForUpdateInput
+    implements
+        Built<GNewsAttachmentRelateToOneForUpdateInput,
+            GNewsAttachmentRelateToOneForUpdateInputBuilder> {
+  GNewsAttachmentRelateToOneForUpdateInput._();
+
+  factory GNewsAttachmentRelateToOneForUpdateInput(
+      [Function(GNewsAttachmentRelateToOneForUpdateInputBuilder b)
+          updates]) = _$GNewsAttachmentRelateToOneForUpdateInput;
+
+  GNewsAttachmentCreateInput? get create;
+  GNewsAttachmentWhereUniqueInput? get connect;
+  bool? get disconnect;
+  static Serializer<GNewsAttachmentRelateToOneForUpdateInput> get serializer =>
+      _$gNewsAttachmentRelateToOneForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsAttachmentRelateToOneForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsAttachmentRelateToOneForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsAttachmentRelateToOneForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsAttachmentRelateToManyForUpdateInput
+    implements
+        Built<GNewsAttachmentRelateToManyForUpdateInput,
+            GNewsAttachmentRelateToManyForUpdateInputBuilder> {
+  GNewsAttachmentRelateToManyForUpdateInput._();
+
+  factory GNewsAttachmentRelateToManyForUpdateInput(
+      [Function(GNewsAttachmentRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GNewsAttachmentRelateToManyForUpdateInput;
+
+  BuiltList<GNewsAttachmentWhereUniqueInput>? get disconnect;
+  BuiltList<GNewsAttachmentWhereUniqueInput>? get set;
+  BuiltList<GNewsAttachmentCreateInput>? get create;
+  BuiltList<GNewsAttachmentWhereUniqueInput>? get connect;
+  static Serializer<GNewsAttachmentRelateToManyForUpdateInput> get serializer =>
+      _$gNewsAttachmentRelateToManyForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsAttachmentRelateToManyForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsAttachmentRelateToManyForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsAttachmentRelateToManyForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsItemUpdateArgs
+    implements Built<GNewsItemUpdateArgs, GNewsItemUpdateArgsBuilder> {
+  GNewsItemUpdateArgs._();
+
+  factory GNewsItemUpdateArgs(
+      [Function(GNewsItemUpdateArgsBuilder b) updates]) = _$GNewsItemUpdateArgs;
+
+  GNewsItemWhereUniqueInput get where;
+  GNewsItemUpdateInput get data;
+  static Serializer<GNewsItemUpdateArgs> get serializer =>
+      _$gNewsItemUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsItemUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsItemUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsItemUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GNewsItemCreateInput
+    implements Built<GNewsItemCreateInput, GNewsItemCreateInputBuilder> {
+  GNewsItemCreateInput._();
+
+  factory GNewsItemCreateInput(
+          [Function(GNewsItemCreateInputBuilder b) updates]) =
+      _$GNewsItemCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get title;
+  String? get description;
+  String? get authorName;
+  GNewsCategoryRelateToManyForCreateInput? get categories;
+  GKeywordRelateToManyForCreateInput? get keywords;
+  GNewsAttachmentRelateToOneForCreateInput? get banner;
+  GNewsAttachmentRelateToManyForCreateInput? get newsAttachments;
+  static Serializer<GNewsItemCreateInput> get serializer =>
+      _$gNewsItemCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsItemCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsItemCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsItemCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsCategoryRelateToManyForCreateInput
+    implements
+        Built<GNewsCategoryRelateToManyForCreateInput,
+            GNewsCategoryRelateToManyForCreateInputBuilder> {
+  GNewsCategoryRelateToManyForCreateInput._();
+
+  factory GNewsCategoryRelateToManyForCreateInput(
+      [Function(GNewsCategoryRelateToManyForCreateInputBuilder b)
+          updates]) = _$GNewsCategoryRelateToManyForCreateInput;
+
+  BuiltList<GNewsCategoryCreateInput>? get create;
+  BuiltList<GNewsCategoryWhereUniqueInput>? get connect;
+  static Serializer<GNewsCategoryRelateToManyForCreateInput> get serializer =>
+      _$gNewsCategoryRelateToManyForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsCategoryRelateToManyForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsCategoryRelateToManyForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsCategoryRelateToManyForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GKeywordRelateToManyForCreateInput
+    implements
+        Built<GKeywordRelateToManyForCreateInput,
+            GKeywordRelateToManyForCreateInputBuilder> {
+  GKeywordRelateToManyForCreateInput._();
+
+  factory GKeywordRelateToManyForCreateInput(
+          [Function(GKeywordRelateToManyForCreateInputBuilder b) updates]) =
+      _$GKeywordRelateToManyForCreateInput;
+
+  BuiltList<GKeywordCreateInput>? get create;
+  BuiltList<GKeywordWhereUniqueInput>? get connect;
+  static Serializer<GKeywordRelateToManyForCreateInput> get serializer =>
+      _$gKeywordRelateToManyForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GKeywordRelateToManyForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GKeywordRelateToManyForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GKeywordRelateToManyForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsAttachmentRelateToOneForCreateInput
+    implements
+        Built<GNewsAttachmentRelateToOneForCreateInput,
+            GNewsAttachmentRelateToOneForCreateInputBuilder> {
+  GNewsAttachmentRelateToOneForCreateInput._();
+
+  factory GNewsAttachmentRelateToOneForCreateInput(
+      [Function(GNewsAttachmentRelateToOneForCreateInputBuilder b)
+          updates]) = _$GNewsAttachmentRelateToOneForCreateInput;
+
+  GNewsAttachmentCreateInput? get create;
+  GNewsAttachmentWhereUniqueInput? get connect;
+  static Serializer<GNewsAttachmentRelateToOneForCreateInput> get serializer =>
+      _$gNewsAttachmentRelateToOneForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsAttachmentRelateToOneForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsAttachmentRelateToOneForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsAttachmentRelateToOneForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsAttachmentRelateToManyForCreateInput
+    implements
+        Built<GNewsAttachmentRelateToManyForCreateInput,
+            GNewsAttachmentRelateToManyForCreateInputBuilder> {
+  GNewsAttachmentRelateToManyForCreateInput._();
+
+  factory GNewsAttachmentRelateToManyForCreateInput(
+      [Function(GNewsAttachmentRelateToManyForCreateInputBuilder b)
+          updates]) = _$GNewsAttachmentRelateToManyForCreateInput;
+
+  BuiltList<GNewsAttachmentCreateInput>? get create;
+  BuiltList<GNewsAttachmentWhereUniqueInput>? get connect;
+  static Serializer<GNewsAttachmentRelateToManyForCreateInput> get serializer =>
+      _$gNewsAttachmentRelateToManyForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsAttachmentRelateToManyForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsAttachmentRelateToManyForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsAttachmentRelateToManyForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsCategoryWhereUniqueInput
+    implements
+        Built<GNewsCategoryWhereUniqueInput,
+            GNewsCategoryWhereUniqueInputBuilder> {
+  GNewsCategoryWhereUniqueInput._();
+
+  factory GNewsCategoryWhereUniqueInput(
+          [Function(GNewsCategoryWhereUniqueInputBuilder b) updates]) =
+      _$GNewsCategoryWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GNewsCategoryWhereUniqueInput> get serializer =>
+      _$gNewsCategoryWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsCategoryWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsCategoryWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsCategoryWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsCategoryWhereInput
+    implements Built<GNewsCategoryWhereInput, GNewsCategoryWhereInputBuilder> {
+  GNewsCategoryWhereInput._();
+
+  factory GNewsCategoryWhereInput(
+          [Function(GNewsCategoryWhereInputBuilder b) updates]) =
+      _$GNewsCategoryWhereInput;
+
+  BuiltList<GNewsCategoryWhereInput>? get AND;
+  BuiltList<GNewsCategoryWhereInput>? get OR;
+  BuiltList<GNewsCategoryWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GStringFilter? get title;
+  GStringFilter? get description;
+  static Serializer<GNewsCategoryWhereInput> get serializer =>
+      _$gNewsCategoryWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsCategoryWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsCategoryWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsCategoryWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsCategoryOrderByInput
+    implements
+        Built<GNewsCategoryOrderByInput, GNewsCategoryOrderByInputBuilder> {
+  GNewsCategoryOrderByInput._();
+
+  factory GNewsCategoryOrderByInput(
+          [Function(GNewsCategoryOrderByInputBuilder b) updates]) =
+      _$GNewsCategoryOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get title;
+  GOrderDirection? get description;
+  static Serializer<GNewsCategoryOrderByInput> get serializer =>
+      _$gNewsCategoryOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsCategoryOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsCategoryOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsCategoryOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsCategoryUpdateInput
+    implements
+        Built<GNewsCategoryUpdateInput, GNewsCategoryUpdateInputBuilder> {
+  GNewsCategoryUpdateInput._();
+
+  factory GNewsCategoryUpdateInput(
+          [Function(GNewsCategoryUpdateInputBuilder b) updates]) =
+      _$GNewsCategoryUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get title;
+  String? get description;
+  static Serializer<GNewsCategoryUpdateInput> get serializer =>
+      _$gNewsCategoryUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsCategoryUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsCategoryUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsCategoryUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsCategoryUpdateArgs
+    implements Built<GNewsCategoryUpdateArgs, GNewsCategoryUpdateArgsBuilder> {
+  GNewsCategoryUpdateArgs._();
+
+  factory GNewsCategoryUpdateArgs(
+          [Function(GNewsCategoryUpdateArgsBuilder b) updates]) =
+      _$GNewsCategoryUpdateArgs;
+
+  GNewsCategoryWhereUniqueInput get where;
+  GNewsCategoryUpdateInput get data;
+  static Serializer<GNewsCategoryUpdateArgs> get serializer =>
+      _$gNewsCategoryUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsCategoryUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsCategoryUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsCategoryUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GNewsCategoryCreateInput
+    implements
+        Built<GNewsCategoryCreateInput, GNewsCategoryCreateInputBuilder> {
+  GNewsCategoryCreateInput._();
+
+  factory GNewsCategoryCreateInput(
+          [Function(GNewsCategoryCreateInputBuilder b) updates]) =
+      _$GNewsCategoryCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get title;
+  String? get description;
+  static Serializer<GNewsCategoryCreateInput> get serializer =>
+      _$gNewsCategoryCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsCategoryCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsCategoryCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsCategoryCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsAttachmentWhereUniqueInput
+    implements
+        Built<GNewsAttachmentWhereUniqueInput,
+            GNewsAttachmentWhereUniqueInputBuilder> {
+  GNewsAttachmentWhereUniqueInput._();
+
+  factory GNewsAttachmentWhereUniqueInput(
+          [Function(GNewsAttachmentWhereUniqueInputBuilder b) updates]) =
+      _$GNewsAttachmentWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GNewsAttachmentWhereUniqueInput> get serializer =>
+      _$gNewsAttachmentWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsAttachmentWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsAttachmentWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsAttachmentWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsAttachmentWhereInput
+    implements
+        Built<GNewsAttachmentWhereInput, GNewsAttachmentWhereInputBuilder> {
+  GNewsAttachmentWhereInput._();
+
+  factory GNewsAttachmentWhereInput(
+          [Function(GNewsAttachmentWhereInputBuilder b) updates]) =
+      _$GNewsAttachmentWhereInput;
+
+  BuiltList<GNewsAttachmentWhereInput>? get AND;
+  BuiltList<GNewsAttachmentWhereInput>? get OR;
+  BuiltList<GNewsAttachmentWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GNewsItemWhereInput? get news;
+  static Serializer<GNewsAttachmentWhereInput> get serializer =>
+      _$gNewsAttachmentWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsAttachmentWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsAttachmentWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsAttachmentWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsAttachmentOrderByInput
+    implements
+        Built<GNewsAttachmentOrderByInput, GNewsAttachmentOrderByInputBuilder> {
+  GNewsAttachmentOrderByInput._();
+
+  factory GNewsAttachmentOrderByInput(
+          [Function(GNewsAttachmentOrderByInputBuilder b) updates]) =
+      _$GNewsAttachmentOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  static Serializer<GNewsAttachmentOrderByInput> get serializer =>
+      _$gNewsAttachmentOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsAttachmentOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsAttachmentOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsAttachmentOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsAttachmentUpdateInput
+    implements
+        Built<GNewsAttachmentUpdateInput, GNewsAttachmentUpdateInputBuilder> {
+  GNewsAttachmentUpdateInput._();
+
+  factory GNewsAttachmentUpdateInput(
+          [Function(GNewsAttachmentUpdateInputBuilder b) updates]) =
+      _$GNewsAttachmentUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GFileFieldInput? get file;
+  GNewsItemRelateToOneForUpdateInput? get news;
+  static Serializer<GNewsAttachmentUpdateInput> get serializer =>
+      _$gNewsAttachmentUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsAttachmentUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsAttachmentUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsAttachmentUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsItemRelateToOneForUpdateInput
+    implements
+        Built<GNewsItemRelateToOneForUpdateInput,
+            GNewsItemRelateToOneForUpdateInputBuilder> {
+  GNewsItemRelateToOneForUpdateInput._();
+
+  factory GNewsItemRelateToOneForUpdateInput(
+          [Function(GNewsItemRelateToOneForUpdateInputBuilder b) updates]) =
+      _$GNewsItemRelateToOneForUpdateInput;
+
+  GNewsItemCreateInput? get create;
+  GNewsItemWhereUniqueInput? get connect;
+  bool? get disconnect;
+  static Serializer<GNewsItemRelateToOneForUpdateInput> get serializer =>
+      _$gNewsItemRelateToOneForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsItemRelateToOneForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsItemRelateToOneForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsItemRelateToOneForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsAttachmentUpdateArgs
+    implements
+        Built<GNewsAttachmentUpdateArgs, GNewsAttachmentUpdateArgsBuilder> {
+  GNewsAttachmentUpdateArgs._();
+
+  factory GNewsAttachmentUpdateArgs(
+          [Function(GNewsAttachmentUpdateArgsBuilder b) updates]) =
+      _$GNewsAttachmentUpdateArgs;
+
+  GNewsAttachmentWhereUniqueInput get where;
+  GNewsAttachmentUpdateInput get data;
+  static Serializer<GNewsAttachmentUpdateArgs> get serializer =>
+      _$gNewsAttachmentUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsAttachmentUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsAttachmentUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsAttachmentUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GNewsAttachmentCreateInput
+    implements
+        Built<GNewsAttachmentCreateInput, GNewsAttachmentCreateInputBuilder> {
+  GNewsAttachmentCreateInput._();
+
+  factory GNewsAttachmentCreateInput(
+          [Function(GNewsAttachmentCreateInputBuilder b) updates]) =
+      _$GNewsAttachmentCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GFileFieldInput? get file;
+  GNewsItemRelateToOneForCreateInput? get news;
+  static Serializer<GNewsAttachmentCreateInput> get serializer =>
+      _$gNewsAttachmentCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsAttachmentCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsAttachmentCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsAttachmentCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GNewsItemRelateToOneForCreateInput
+    implements
+        Built<GNewsItemRelateToOneForCreateInput,
+            GNewsItemRelateToOneForCreateInputBuilder> {
+  GNewsItemRelateToOneForCreateInput._();
+
+  factory GNewsItemRelateToOneForCreateInput(
+          [Function(GNewsItemRelateToOneForCreateInputBuilder b) updates]) =
+      _$GNewsItemRelateToOneForCreateInput;
+
+  GNewsItemCreateInput? get create;
+  GNewsItemWhereUniqueInput? get connect;
+  static Serializer<GNewsItemRelateToOneForCreateInput> get serializer =>
+      _$gNewsItemRelateToOneForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNewsItemRelateToOneForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNewsItemRelateToOneForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNewsItemRelateToOneForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GKeywordWhereUniqueInput
+    implements
+        Built<GKeywordWhereUniqueInput, GKeywordWhereUniqueInputBuilder> {
+  GKeywordWhereUniqueInput._();
+
+  factory GKeywordWhereUniqueInput(
+          [Function(GKeywordWhereUniqueInputBuilder b) updates]) =
+      _$GKeywordWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GKeywordWhereUniqueInput> get serializer =>
+      _$gKeywordWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GKeywordWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GKeywordWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GKeywordWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GKeywordWhereInput
+    implements Built<GKeywordWhereInput, GKeywordWhereInputBuilder> {
+  GKeywordWhereInput._();
+
+  factory GKeywordWhereInput([Function(GKeywordWhereInputBuilder b) updates]) =
+      _$GKeywordWhereInput;
+
+  BuiltList<GKeywordWhereInput>? get AND;
+  BuiltList<GKeywordWhereInput>? get OR;
+  BuiltList<GKeywordWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GStringFilter? get name;
+  static Serializer<GKeywordWhereInput> get serializer =>
+      _$gKeywordWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GKeywordWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GKeywordWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GKeywordWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GKeywordOrderByInput
+    implements Built<GKeywordOrderByInput, GKeywordOrderByInputBuilder> {
+  GKeywordOrderByInput._();
+
+  factory GKeywordOrderByInput(
+          [Function(GKeywordOrderByInputBuilder b) updates]) =
+      _$GKeywordOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get name;
+  static Serializer<GKeywordOrderByInput> get serializer =>
+      _$gKeywordOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GKeywordOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GKeywordOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GKeywordOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GKeywordUpdateInput
+    implements Built<GKeywordUpdateInput, GKeywordUpdateInputBuilder> {
+  GKeywordUpdateInput._();
+
+  factory GKeywordUpdateInput(
+      [Function(GKeywordUpdateInputBuilder b) updates]) = _$GKeywordUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get name;
+  static Serializer<GKeywordUpdateInput> get serializer =>
+      _$gKeywordUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GKeywordUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GKeywordUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GKeywordUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GKeywordUpdateArgs
+    implements Built<GKeywordUpdateArgs, GKeywordUpdateArgsBuilder> {
+  GKeywordUpdateArgs._();
+
+  factory GKeywordUpdateArgs([Function(GKeywordUpdateArgsBuilder b) updates]) =
+      _$GKeywordUpdateArgs;
+
+  GKeywordWhereUniqueInput get where;
+  GKeywordUpdateInput get data;
+  static Serializer<GKeywordUpdateArgs> get serializer =>
+      _$gKeywordUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GKeywordUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GKeywordUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GKeywordUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GKeywordCreateInput
+    implements Built<GKeywordCreateInput, GKeywordCreateInputBuilder> {
+  GKeywordCreateInput._();
+
+  factory GKeywordCreateInput(
+      [Function(GKeywordCreateInputBuilder b) updates]) = _$GKeywordCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get name;
+  static Serializer<GKeywordCreateInput> get serializer =>
+      _$gKeywordCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GKeywordCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GKeywordCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GKeywordCreateInput.serializer,
+        json,
+      );
+}
+
 abstract class GCouponWhereUniqueInput
     implements Built<GCouponWhereUniqueInput, GCouponWhereUniqueInputBuilder> {
   GCouponWhereUniqueInput._();
@@ -11015,6 +13560,2360 @@ abstract class GReportRelateToOneForCreateInput
       );
 }
 
+abstract class GProductTypeWhereUniqueInput
+    implements
+        Built<GProductTypeWhereUniqueInput,
+            GProductTypeWhereUniqueInputBuilder> {
+  GProductTypeWhereUniqueInput._();
+
+  factory GProductTypeWhereUniqueInput(
+          [Function(GProductTypeWhereUniqueInputBuilder b) updates]) =
+      _$GProductTypeWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GProductTypeWhereUniqueInput> get serializer =>
+      _$gProductTypeWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductTypeWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductTypeWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductTypeWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductTypeWhereInput
+    implements Built<GProductTypeWhereInput, GProductTypeWhereInputBuilder> {
+  GProductTypeWhereInput._();
+
+  factory GProductTypeWhereInput(
+          [Function(GProductTypeWhereInputBuilder b) updates]) =
+      _$GProductTypeWhereInput;
+
+  BuiltList<GProductTypeWhereInput>? get AND;
+  BuiltList<GProductTypeWhereInput>? get OR;
+  BuiltList<GProductTypeWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GStringFilter? get name;
+  GStringFilter? get description;
+  static Serializer<GProductTypeWhereInput> get serializer =>
+      _$gProductTypeWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductTypeWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductTypeWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductTypeWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductTypeOrderByInput
+    implements
+        Built<GProductTypeOrderByInput, GProductTypeOrderByInputBuilder> {
+  GProductTypeOrderByInput._();
+
+  factory GProductTypeOrderByInput(
+          [Function(GProductTypeOrderByInputBuilder b) updates]) =
+      _$GProductTypeOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get name;
+  GOrderDirection? get description;
+  static Serializer<GProductTypeOrderByInput> get serializer =>
+      _$gProductTypeOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductTypeOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductTypeOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductTypeOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductTypeUpdateInput
+    implements Built<GProductTypeUpdateInput, GProductTypeUpdateInputBuilder> {
+  GProductTypeUpdateInput._();
+
+  factory GProductTypeUpdateInput(
+          [Function(GProductTypeUpdateInputBuilder b) updates]) =
+      _$GProductTypeUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get name;
+  String? get description;
+  static Serializer<GProductTypeUpdateInput> get serializer =>
+      _$gProductTypeUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductTypeUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductTypeUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductTypeUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductTypeUpdateArgs
+    implements Built<GProductTypeUpdateArgs, GProductTypeUpdateArgsBuilder> {
+  GProductTypeUpdateArgs._();
+
+  factory GProductTypeUpdateArgs(
+          [Function(GProductTypeUpdateArgsBuilder b) updates]) =
+      _$GProductTypeUpdateArgs;
+
+  GProductTypeWhereUniqueInput get where;
+  GProductTypeUpdateInput get data;
+  static Serializer<GProductTypeUpdateArgs> get serializer =>
+      _$gProductTypeUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductTypeUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductTypeUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductTypeUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GProductTypeCreateInput
+    implements Built<GProductTypeCreateInput, GProductTypeCreateInputBuilder> {
+  GProductTypeCreateInput._();
+
+  factory GProductTypeCreateInput(
+          [Function(GProductTypeCreateInputBuilder b) updates]) =
+      _$GProductTypeCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get name;
+  String? get description;
+  static Serializer<GProductTypeCreateInput> get serializer =>
+      _$gProductTypeCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductTypeCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductTypeCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductTypeCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductWhereUniqueInput
+    implements
+        Built<GProductWhereUniqueInput, GProductWhereUniqueInputBuilder> {
+  GProductWhereUniqueInput._();
+
+  factory GProductWhereUniqueInput(
+          [Function(GProductWhereUniqueInputBuilder b) updates]) =
+      _$GProductWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GProductWhereUniqueInput> get serializer =>
+      _$gProductWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductWhereInput
+    implements Built<GProductWhereInput, GProductWhereInputBuilder> {
+  GProductWhereInput._();
+
+  factory GProductWhereInput([Function(GProductWhereInputBuilder b) updates]) =
+      _$GProductWhereInput;
+
+  BuiltList<GProductWhereInput>? get AND;
+  BuiltList<GProductWhereInput>? get OR;
+  BuiltList<GProductWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GStringFilter? get name;
+  GStringFilter? get description;
+  GProductTypeWhereInput? get type;
+  GBrandWhereInput? get brand;
+  GProductVariantManyRelationFilter? get variants;
+  GProductSpecificationManyRelationFilter? get specifications;
+  static Serializer<GProductWhereInput> get serializer =>
+      _$gProductWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductVariantManyRelationFilter
+    implements
+        Built<GProductVariantManyRelationFilter,
+            GProductVariantManyRelationFilterBuilder> {
+  GProductVariantManyRelationFilter._();
+
+  factory GProductVariantManyRelationFilter(
+          [Function(GProductVariantManyRelationFilterBuilder b) updates]) =
+      _$GProductVariantManyRelationFilter;
+
+  GProductVariantWhereInput? get every;
+  GProductVariantWhereInput? get some;
+  GProductVariantWhereInput? get none;
+  static Serializer<GProductVariantManyRelationFilter> get serializer =>
+      _$gProductVariantManyRelationFilterSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVariantManyRelationFilter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantManyRelationFilter? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVariantManyRelationFilter.serializer,
+        json,
+      );
+}
+
+abstract class GProductSpecificationManyRelationFilter
+    implements
+        Built<GProductSpecificationManyRelationFilter,
+            GProductSpecificationManyRelationFilterBuilder> {
+  GProductSpecificationManyRelationFilter._();
+
+  factory GProductSpecificationManyRelationFilter(
+      [Function(GProductSpecificationManyRelationFilterBuilder b)
+          updates]) = _$GProductSpecificationManyRelationFilter;
+
+  GProductSpecificationWhereInput? get every;
+  GProductSpecificationWhereInput? get some;
+  GProductSpecificationWhereInput? get none;
+  static Serializer<GProductSpecificationManyRelationFilter> get serializer =>
+      _$gProductSpecificationManyRelationFilterSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductSpecificationManyRelationFilter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductSpecificationManyRelationFilter? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductSpecificationManyRelationFilter.serializer,
+        json,
+      );
+}
+
+abstract class GProductOrderByInput
+    implements Built<GProductOrderByInput, GProductOrderByInputBuilder> {
+  GProductOrderByInput._();
+
+  factory GProductOrderByInput(
+          [Function(GProductOrderByInputBuilder b) updates]) =
+      _$GProductOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get name;
+  GOrderDirection? get description;
+  static Serializer<GProductOrderByInput> get serializer =>
+      _$gProductOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductUpdateInput
+    implements Built<GProductUpdateInput, GProductUpdateInputBuilder> {
+  GProductUpdateInput._();
+
+  factory GProductUpdateInput(
+      [Function(GProductUpdateInputBuilder b) updates]) = _$GProductUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get name;
+  String? get description;
+  GProductTypeRelateToOneForUpdateInput? get type;
+  GBrandRelateToOneForUpdateInput? get brand;
+  GProductVariantRelateToManyForUpdateInput? get variants;
+  GProductSpecificationRelateToManyForUpdateInput? get specifications;
+  static Serializer<GProductUpdateInput> get serializer =>
+      _$gProductUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductTypeRelateToOneForUpdateInput
+    implements
+        Built<GProductTypeRelateToOneForUpdateInput,
+            GProductTypeRelateToOneForUpdateInputBuilder> {
+  GProductTypeRelateToOneForUpdateInput._();
+
+  factory GProductTypeRelateToOneForUpdateInput(
+          [Function(GProductTypeRelateToOneForUpdateInputBuilder b) updates]) =
+      _$GProductTypeRelateToOneForUpdateInput;
+
+  GProductTypeCreateInput? get create;
+  GProductTypeWhereUniqueInput? get connect;
+  bool? get disconnect;
+  static Serializer<GProductTypeRelateToOneForUpdateInput> get serializer =>
+      _$gProductTypeRelateToOneForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductTypeRelateToOneForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductTypeRelateToOneForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductTypeRelateToOneForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductVariantRelateToManyForUpdateInput
+    implements
+        Built<GProductVariantRelateToManyForUpdateInput,
+            GProductVariantRelateToManyForUpdateInputBuilder> {
+  GProductVariantRelateToManyForUpdateInput._();
+
+  factory GProductVariantRelateToManyForUpdateInput(
+      [Function(GProductVariantRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GProductVariantRelateToManyForUpdateInput;
+
+  BuiltList<GProductVariantWhereUniqueInput>? get disconnect;
+  BuiltList<GProductVariantWhereUniqueInput>? get set;
+  BuiltList<GProductVariantCreateInput>? get create;
+  BuiltList<GProductVariantWhereUniqueInput>? get connect;
+  static Serializer<GProductVariantRelateToManyForUpdateInput> get serializer =>
+      _$gProductVariantRelateToManyForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVariantRelateToManyForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantRelateToManyForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVariantRelateToManyForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductSpecificationRelateToManyForUpdateInput
+    implements
+        Built<GProductSpecificationRelateToManyForUpdateInput,
+            GProductSpecificationRelateToManyForUpdateInputBuilder> {
+  GProductSpecificationRelateToManyForUpdateInput._();
+
+  factory GProductSpecificationRelateToManyForUpdateInput(
+      [Function(GProductSpecificationRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GProductSpecificationRelateToManyForUpdateInput;
+
+  BuiltList<GProductSpecificationWhereUniqueInput>? get disconnect;
+  BuiltList<GProductSpecificationWhereUniqueInput>? get set;
+  BuiltList<GProductSpecificationCreateInput>? get create;
+  BuiltList<GProductSpecificationWhereUniqueInput>? get connect;
+  static Serializer<GProductSpecificationRelateToManyForUpdateInput>
+      get serializer =>
+          _$gProductSpecificationRelateToManyForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductSpecificationRelateToManyForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductSpecificationRelateToManyForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductSpecificationRelateToManyForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductUpdateArgs
+    implements Built<GProductUpdateArgs, GProductUpdateArgsBuilder> {
+  GProductUpdateArgs._();
+
+  factory GProductUpdateArgs([Function(GProductUpdateArgsBuilder b) updates]) =
+      _$GProductUpdateArgs;
+
+  GProductWhereUniqueInput get where;
+  GProductUpdateInput get data;
+  static Serializer<GProductUpdateArgs> get serializer =>
+      _$gProductUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GProductCreateInput
+    implements Built<GProductCreateInput, GProductCreateInputBuilder> {
+  GProductCreateInput._();
+
+  factory GProductCreateInput(
+      [Function(GProductCreateInputBuilder b) updates]) = _$GProductCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get name;
+  String? get description;
+  GProductTypeRelateToOneForCreateInput? get type;
+  GBrandRelateToOneForCreateInput? get brand;
+  GProductVariantRelateToManyForCreateInput? get variants;
+  GProductSpecificationRelateToManyForCreateInput? get specifications;
+  static Serializer<GProductCreateInput> get serializer =>
+      _$gProductCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductTypeRelateToOneForCreateInput
+    implements
+        Built<GProductTypeRelateToOneForCreateInput,
+            GProductTypeRelateToOneForCreateInputBuilder> {
+  GProductTypeRelateToOneForCreateInput._();
+
+  factory GProductTypeRelateToOneForCreateInput(
+          [Function(GProductTypeRelateToOneForCreateInputBuilder b) updates]) =
+      _$GProductTypeRelateToOneForCreateInput;
+
+  GProductTypeCreateInput? get create;
+  GProductTypeWhereUniqueInput? get connect;
+  static Serializer<GProductTypeRelateToOneForCreateInput> get serializer =>
+      _$gProductTypeRelateToOneForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductTypeRelateToOneForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductTypeRelateToOneForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductTypeRelateToOneForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductVariantRelateToManyForCreateInput
+    implements
+        Built<GProductVariantRelateToManyForCreateInput,
+            GProductVariantRelateToManyForCreateInputBuilder> {
+  GProductVariantRelateToManyForCreateInput._();
+
+  factory GProductVariantRelateToManyForCreateInput(
+      [Function(GProductVariantRelateToManyForCreateInputBuilder b)
+          updates]) = _$GProductVariantRelateToManyForCreateInput;
+
+  BuiltList<GProductVariantCreateInput>? get create;
+  BuiltList<GProductVariantWhereUniqueInput>? get connect;
+  static Serializer<GProductVariantRelateToManyForCreateInput> get serializer =>
+      _$gProductVariantRelateToManyForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVariantRelateToManyForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantRelateToManyForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVariantRelateToManyForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductSpecificationRelateToManyForCreateInput
+    implements
+        Built<GProductSpecificationRelateToManyForCreateInput,
+            GProductSpecificationRelateToManyForCreateInputBuilder> {
+  GProductSpecificationRelateToManyForCreateInput._();
+
+  factory GProductSpecificationRelateToManyForCreateInput(
+      [Function(GProductSpecificationRelateToManyForCreateInputBuilder b)
+          updates]) = _$GProductSpecificationRelateToManyForCreateInput;
+
+  BuiltList<GProductSpecificationCreateInput>? get create;
+  BuiltList<GProductSpecificationWhereUniqueInput>? get connect;
+  static Serializer<GProductSpecificationRelateToManyForCreateInput>
+      get serializer =>
+          _$gProductSpecificationRelateToManyForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductSpecificationRelateToManyForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductSpecificationRelateToManyForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductSpecificationRelateToManyForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductSpecificationWhereUniqueInput
+    implements
+        Built<GProductSpecificationWhereUniqueInput,
+            GProductSpecificationWhereUniqueInputBuilder> {
+  GProductSpecificationWhereUniqueInput._();
+
+  factory GProductSpecificationWhereUniqueInput(
+          [Function(GProductSpecificationWhereUniqueInputBuilder b) updates]) =
+      _$GProductSpecificationWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GProductSpecificationWhereUniqueInput> get serializer =>
+      _$gProductSpecificationWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductSpecificationWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductSpecificationWhereUniqueInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductSpecificationWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductSpecificationWhereInput
+    implements
+        Built<GProductSpecificationWhereInput,
+            GProductSpecificationWhereInputBuilder> {
+  GProductSpecificationWhereInput._();
+
+  factory GProductSpecificationWhereInput(
+          [Function(GProductSpecificationWhereInputBuilder b) updates]) =
+      _$GProductSpecificationWhereInput;
+
+  BuiltList<GProductSpecificationWhereInput>? get AND;
+  BuiltList<GProductSpecificationWhereInput>? get OR;
+  BuiltList<GProductSpecificationWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GSpecificationWhereInput? get specification;
+  GStringFilter? get type;
+  GIntNullableFilter? get intValue;
+  GStringFilter? get stringValue;
+  GSpecificationCategoryWhereInput? get category;
+  GProductWhereInput? get product;
+  GBooleanFilter? get isKeyFeature;
+  static Serializer<GProductSpecificationWhereInput> get serializer =>
+      _$gProductSpecificationWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductSpecificationWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductSpecificationWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductSpecificationWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductSpecificationOrderByInput
+    implements
+        Built<GProductSpecificationOrderByInput,
+            GProductSpecificationOrderByInputBuilder> {
+  GProductSpecificationOrderByInput._();
+
+  factory GProductSpecificationOrderByInput(
+          [Function(GProductSpecificationOrderByInputBuilder b) updates]) =
+      _$GProductSpecificationOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get type;
+  GOrderDirection? get intValue;
+  GOrderDirection? get stringValue;
+  GOrderDirection? get isKeyFeature;
+  static Serializer<GProductSpecificationOrderByInput> get serializer =>
+      _$gProductSpecificationOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductSpecificationOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductSpecificationOrderByInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductSpecificationOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductSpecificationUpdateInput
+    implements
+        Built<GProductSpecificationUpdateInput,
+            GProductSpecificationUpdateInputBuilder> {
+  GProductSpecificationUpdateInput._();
+
+  factory GProductSpecificationUpdateInput(
+          [Function(GProductSpecificationUpdateInputBuilder b) updates]) =
+      _$GProductSpecificationUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GSpecificationRelateToOneForUpdateInput? get specification;
+  String? get type;
+  int? get intValue;
+  String? get stringValue;
+  GSpecificationCategoryRelateToOneForUpdateInput? get category;
+  GProductRelateToOneForUpdateInput? get product;
+  bool? get isKeyFeature;
+  static Serializer<GProductSpecificationUpdateInput> get serializer =>
+      _$gProductSpecificationUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductSpecificationUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductSpecificationUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductSpecificationUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductSpecificationUpdateArgs
+    implements
+        Built<GProductSpecificationUpdateArgs,
+            GProductSpecificationUpdateArgsBuilder> {
+  GProductSpecificationUpdateArgs._();
+
+  factory GProductSpecificationUpdateArgs(
+          [Function(GProductSpecificationUpdateArgsBuilder b) updates]) =
+      _$GProductSpecificationUpdateArgs;
+
+  GProductSpecificationWhereUniqueInput get where;
+  GProductSpecificationUpdateInput get data;
+  static Serializer<GProductSpecificationUpdateArgs> get serializer =>
+      _$gProductSpecificationUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductSpecificationUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductSpecificationUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductSpecificationUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GProductSpecificationCreateInput
+    implements
+        Built<GProductSpecificationCreateInput,
+            GProductSpecificationCreateInputBuilder> {
+  GProductSpecificationCreateInput._();
+
+  factory GProductSpecificationCreateInput(
+          [Function(GProductSpecificationCreateInputBuilder b) updates]) =
+      _$GProductSpecificationCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GSpecificationRelateToOneForCreateInput? get specification;
+  String? get type;
+  int? get intValue;
+  String? get stringValue;
+  GSpecificationCategoryRelateToOneForCreateInput? get category;
+  GProductRelateToOneForCreateInput? get product;
+  bool? get isKeyFeature;
+  static Serializer<GProductSpecificationCreateInput> get serializer =>
+      _$gProductSpecificationCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductSpecificationCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductSpecificationCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductSpecificationCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductVariantWhereUniqueInput
+    implements
+        Built<GProductVariantWhereUniqueInput,
+            GProductVariantWhereUniqueInputBuilder> {
+  GProductVariantWhereUniqueInput._();
+
+  factory GProductVariantWhereUniqueInput(
+          [Function(GProductVariantWhereUniqueInputBuilder b) updates]) =
+      _$GProductVariantWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GProductVariantWhereUniqueInput> get serializer =>
+      _$gProductVariantWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVariantWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVariantWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductVariantWhereInput
+    implements
+        Built<GProductVariantWhereInput, GProductVariantWhereInputBuilder> {
+  GProductVariantWhereInput._();
+
+  factory GProductVariantWhereInput(
+          [Function(GProductVariantWhereInputBuilder b) updates]) =
+      _$GProductVariantWhereInput;
+
+  BuiltList<GProductVariantWhereInput>? get AND;
+  BuiltList<GProductVariantWhereInput>? get OR;
+  BuiltList<GProductVariantWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GStringFilter? get name;
+  GProductWhereInput? get product;
+  @BuiltValueField(wireName: 'default')
+  GBooleanFilter? get Gdefault;
+  GProductSpecificationManyRelationFilter? get specifications;
+  GTagManyRelationFilter? get tags;
+  GPriceManyRelationFilter? get prices;
+  GProductImageManyRelationFilter? get images;
+  GProductVideoManyRelationFilter? get videos;
+  GProductGalleryItemManyRelationFilter? get gallery;
+  GProductReelManyRelationFilter? get reels;
+  static Serializer<GProductVariantWhereInput> get serializer =>
+      _$gProductVariantWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVariantWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVariantWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductImageManyRelationFilter
+    implements
+        Built<GProductImageManyRelationFilter,
+            GProductImageManyRelationFilterBuilder> {
+  GProductImageManyRelationFilter._();
+
+  factory GProductImageManyRelationFilter(
+          [Function(GProductImageManyRelationFilterBuilder b) updates]) =
+      _$GProductImageManyRelationFilter;
+
+  GProductImageWhereInput? get every;
+  GProductImageWhereInput? get some;
+  GProductImageWhereInput? get none;
+  static Serializer<GProductImageManyRelationFilter> get serializer =>
+      _$gProductImageManyRelationFilterSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductImageManyRelationFilter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductImageManyRelationFilter? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductImageManyRelationFilter.serializer,
+        json,
+      );
+}
+
+abstract class GProductVideoManyRelationFilter
+    implements
+        Built<GProductVideoManyRelationFilter,
+            GProductVideoManyRelationFilterBuilder> {
+  GProductVideoManyRelationFilter._();
+
+  factory GProductVideoManyRelationFilter(
+          [Function(GProductVideoManyRelationFilterBuilder b) updates]) =
+      _$GProductVideoManyRelationFilter;
+
+  GProductVideoWhereInput? get every;
+  GProductVideoWhereInput? get some;
+  GProductVideoWhereInput? get none;
+  static Serializer<GProductVideoManyRelationFilter> get serializer =>
+      _$gProductVideoManyRelationFilterSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVideoManyRelationFilter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVideoManyRelationFilter? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVideoManyRelationFilter.serializer,
+        json,
+      );
+}
+
+abstract class GProductGalleryItemManyRelationFilter
+    implements
+        Built<GProductGalleryItemManyRelationFilter,
+            GProductGalleryItemManyRelationFilterBuilder> {
+  GProductGalleryItemManyRelationFilter._();
+
+  factory GProductGalleryItemManyRelationFilter(
+          [Function(GProductGalleryItemManyRelationFilterBuilder b) updates]) =
+      _$GProductGalleryItemManyRelationFilter;
+
+  GProductGalleryItemWhereInput? get every;
+  GProductGalleryItemWhereInput? get some;
+  GProductGalleryItemWhereInput? get none;
+  static Serializer<GProductGalleryItemManyRelationFilter> get serializer =>
+      _$gProductGalleryItemManyRelationFilterSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductGalleryItemManyRelationFilter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductGalleryItemManyRelationFilter? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductGalleryItemManyRelationFilter.serializer,
+        json,
+      );
+}
+
+abstract class GProductReelManyRelationFilter
+    implements
+        Built<GProductReelManyRelationFilter,
+            GProductReelManyRelationFilterBuilder> {
+  GProductReelManyRelationFilter._();
+
+  factory GProductReelManyRelationFilter(
+          [Function(GProductReelManyRelationFilterBuilder b) updates]) =
+      _$GProductReelManyRelationFilter;
+
+  GProductReelWhereInput? get every;
+  GProductReelWhereInput? get some;
+  GProductReelWhereInput? get none;
+  static Serializer<GProductReelManyRelationFilter> get serializer =>
+      _$gProductReelManyRelationFilterSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductReelManyRelationFilter.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductReelManyRelationFilter? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductReelManyRelationFilter.serializer,
+        json,
+      );
+}
+
+abstract class GProductVariantOrderByInput
+    implements
+        Built<GProductVariantOrderByInput, GProductVariantOrderByInputBuilder> {
+  GProductVariantOrderByInput._();
+
+  factory GProductVariantOrderByInput(
+          [Function(GProductVariantOrderByInputBuilder b) updates]) =
+      _$GProductVariantOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get name;
+  @BuiltValueField(wireName: 'default')
+  GOrderDirection? get Gdefault;
+  static Serializer<GProductVariantOrderByInput> get serializer =>
+      _$gProductVariantOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVariantOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVariantOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductVariantUpdateInput
+    implements
+        Built<GProductVariantUpdateInput, GProductVariantUpdateInputBuilder> {
+  GProductVariantUpdateInput._();
+
+  factory GProductVariantUpdateInput(
+          [Function(GProductVariantUpdateInputBuilder b) updates]) =
+      _$GProductVariantUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get name;
+  GProductRelateToOneForUpdateInput? get product;
+  @BuiltValueField(wireName: 'default')
+  bool? get Gdefault;
+  GProductSpecificationRelateToManyForUpdateInput? get specifications;
+  GTagRelateToManyForUpdateInput? get tags;
+  GPriceRelateToManyForUpdateInput? get prices;
+  GProductImageRelateToManyForUpdateInput? get images;
+  GProductVideoRelateToManyForUpdateInput? get videos;
+  GProductGalleryItemRelateToManyForUpdateInput? get gallery;
+  GProductReelRelateToManyForUpdateInput? get reels;
+  static Serializer<GProductVariantUpdateInput> get serializer =>
+      _$gProductVariantUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVariantUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVariantUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductImageRelateToManyForUpdateInput
+    implements
+        Built<GProductImageRelateToManyForUpdateInput,
+            GProductImageRelateToManyForUpdateInputBuilder> {
+  GProductImageRelateToManyForUpdateInput._();
+
+  factory GProductImageRelateToManyForUpdateInput(
+      [Function(GProductImageRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GProductImageRelateToManyForUpdateInput;
+
+  BuiltList<GProductImageWhereUniqueInput>? get disconnect;
+  BuiltList<GProductImageWhereUniqueInput>? get set;
+  BuiltList<GProductImageCreateInput>? get create;
+  BuiltList<GProductImageWhereUniqueInput>? get connect;
+  static Serializer<GProductImageRelateToManyForUpdateInput> get serializer =>
+      _$gProductImageRelateToManyForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductImageRelateToManyForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductImageRelateToManyForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductImageRelateToManyForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductVideoRelateToManyForUpdateInput
+    implements
+        Built<GProductVideoRelateToManyForUpdateInput,
+            GProductVideoRelateToManyForUpdateInputBuilder> {
+  GProductVideoRelateToManyForUpdateInput._();
+
+  factory GProductVideoRelateToManyForUpdateInput(
+      [Function(GProductVideoRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GProductVideoRelateToManyForUpdateInput;
+
+  BuiltList<GProductVideoWhereUniqueInput>? get disconnect;
+  BuiltList<GProductVideoWhereUniqueInput>? get set;
+  BuiltList<GProductVideoCreateInput>? get create;
+  BuiltList<GProductVideoWhereUniqueInput>? get connect;
+  static Serializer<GProductVideoRelateToManyForUpdateInput> get serializer =>
+      _$gProductVideoRelateToManyForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVideoRelateToManyForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVideoRelateToManyForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVideoRelateToManyForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductGalleryItemRelateToManyForUpdateInput
+    implements
+        Built<GProductGalleryItemRelateToManyForUpdateInput,
+            GProductGalleryItemRelateToManyForUpdateInputBuilder> {
+  GProductGalleryItemRelateToManyForUpdateInput._();
+
+  factory GProductGalleryItemRelateToManyForUpdateInput(
+      [Function(GProductGalleryItemRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GProductGalleryItemRelateToManyForUpdateInput;
+
+  BuiltList<GProductGalleryItemWhereUniqueInput>? get disconnect;
+  BuiltList<GProductGalleryItemWhereUniqueInput>? get set;
+  BuiltList<GProductGalleryItemCreateInput>? get create;
+  BuiltList<GProductGalleryItemWhereUniqueInput>? get connect;
+  static Serializer<GProductGalleryItemRelateToManyForUpdateInput>
+      get serializer =>
+          _$gProductGalleryItemRelateToManyForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductGalleryItemRelateToManyForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductGalleryItemRelateToManyForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductGalleryItemRelateToManyForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductReelRelateToManyForUpdateInput
+    implements
+        Built<GProductReelRelateToManyForUpdateInput,
+            GProductReelRelateToManyForUpdateInputBuilder> {
+  GProductReelRelateToManyForUpdateInput._();
+
+  factory GProductReelRelateToManyForUpdateInput(
+          [Function(GProductReelRelateToManyForUpdateInputBuilder b) updates]) =
+      _$GProductReelRelateToManyForUpdateInput;
+
+  BuiltList<GProductReelWhereUniqueInput>? get disconnect;
+  BuiltList<GProductReelWhereUniqueInput>? get set;
+  BuiltList<GProductReelCreateInput>? get create;
+  BuiltList<GProductReelWhereUniqueInput>? get connect;
+  static Serializer<GProductReelRelateToManyForUpdateInput> get serializer =>
+      _$gProductReelRelateToManyForUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductReelRelateToManyForUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductReelRelateToManyForUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductReelRelateToManyForUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductVariantUpdateArgs
+    implements
+        Built<GProductVariantUpdateArgs, GProductVariantUpdateArgsBuilder> {
+  GProductVariantUpdateArgs._();
+
+  factory GProductVariantUpdateArgs(
+          [Function(GProductVariantUpdateArgsBuilder b) updates]) =
+      _$GProductVariantUpdateArgs;
+
+  GProductVariantWhereUniqueInput get where;
+  GProductVariantUpdateInput get data;
+  static Serializer<GProductVariantUpdateArgs> get serializer =>
+      _$gProductVariantUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVariantUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVariantUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GProductVariantCreateInput
+    implements
+        Built<GProductVariantCreateInput, GProductVariantCreateInputBuilder> {
+  GProductVariantCreateInput._();
+
+  factory GProductVariantCreateInput(
+          [Function(GProductVariantCreateInputBuilder b) updates]) =
+      _$GProductVariantCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get name;
+  GProductRelateToOneForCreateInput? get product;
+  @BuiltValueField(wireName: 'default')
+  bool? get Gdefault;
+  GProductSpecificationRelateToManyForCreateInput? get specifications;
+  GTagRelateToManyForCreateInput? get tags;
+  GPriceRelateToManyForCreateInput? get prices;
+  GProductImageRelateToManyForCreateInput? get images;
+  GProductVideoRelateToManyForCreateInput? get videos;
+  GProductGalleryItemRelateToManyForCreateInput? get gallery;
+  GProductReelRelateToManyForCreateInput? get reels;
+  static Serializer<GProductVariantCreateInput> get serializer =>
+      _$gProductVariantCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVariantCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVariantCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductImageRelateToManyForCreateInput
+    implements
+        Built<GProductImageRelateToManyForCreateInput,
+            GProductImageRelateToManyForCreateInputBuilder> {
+  GProductImageRelateToManyForCreateInput._();
+
+  factory GProductImageRelateToManyForCreateInput(
+      [Function(GProductImageRelateToManyForCreateInputBuilder b)
+          updates]) = _$GProductImageRelateToManyForCreateInput;
+
+  BuiltList<GProductImageCreateInput>? get create;
+  BuiltList<GProductImageWhereUniqueInput>? get connect;
+  static Serializer<GProductImageRelateToManyForCreateInput> get serializer =>
+      _$gProductImageRelateToManyForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductImageRelateToManyForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductImageRelateToManyForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductImageRelateToManyForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductVideoRelateToManyForCreateInput
+    implements
+        Built<GProductVideoRelateToManyForCreateInput,
+            GProductVideoRelateToManyForCreateInputBuilder> {
+  GProductVideoRelateToManyForCreateInput._();
+
+  factory GProductVideoRelateToManyForCreateInput(
+      [Function(GProductVideoRelateToManyForCreateInputBuilder b)
+          updates]) = _$GProductVideoRelateToManyForCreateInput;
+
+  BuiltList<GProductVideoCreateInput>? get create;
+  BuiltList<GProductVideoWhereUniqueInput>? get connect;
+  static Serializer<GProductVideoRelateToManyForCreateInput> get serializer =>
+      _$gProductVideoRelateToManyForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVideoRelateToManyForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVideoRelateToManyForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVideoRelateToManyForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductGalleryItemRelateToManyForCreateInput
+    implements
+        Built<GProductGalleryItemRelateToManyForCreateInput,
+            GProductGalleryItemRelateToManyForCreateInputBuilder> {
+  GProductGalleryItemRelateToManyForCreateInput._();
+
+  factory GProductGalleryItemRelateToManyForCreateInput(
+      [Function(GProductGalleryItemRelateToManyForCreateInputBuilder b)
+          updates]) = _$GProductGalleryItemRelateToManyForCreateInput;
+
+  BuiltList<GProductGalleryItemCreateInput>? get create;
+  BuiltList<GProductGalleryItemWhereUniqueInput>? get connect;
+  static Serializer<GProductGalleryItemRelateToManyForCreateInput>
+      get serializer =>
+          _$gProductGalleryItemRelateToManyForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductGalleryItemRelateToManyForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductGalleryItemRelateToManyForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductGalleryItemRelateToManyForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductReelRelateToManyForCreateInput
+    implements
+        Built<GProductReelRelateToManyForCreateInput,
+            GProductReelRelateToManyForCreateInputBuilder> {
+  GProductReelRelateToManyForCreateInput._();
+
+  factory GProductReelRelateToManyForCreateInput(
+          [Function(GProductReelRelateToManyForCreateInputBuilder b) updates]) =
+      _$GProductReelRelateToManyForCreateInput;
+
+  BuiltList<GProductReelCreateInput>? get create;
+  BuiltList<GProductReelWhereUniqueInput>? get connect;
+  static Serializer<GProductReelRelateToManyForCreateInput> get serializer =>
+      _$gProductReelRelateToManyForCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductReelRelateToManyForCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductReelRelateToManyForCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductReelRelateToManyForCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductImageWhereUniqueInput
+    implements
+        Built<GProductImageWhereUniqueInput,
+            GProductImageWhereUniqueInputBuilder> {
+  GProductImageWhereUniqueInput._();
+
+  factory GProductImageWhereUniqueInput(
+          [Function(GProductImageWhereUniqueInputBuilder b) updates]) =
+      _$GProductImageWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GProductImageWhereUniqueInput> get serializer =>
+      _$gProductImageWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductImageWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductImageWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductImageWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductImageWhereInput
+    implements Built<GProductImageWhereInput, GProductImageWhereInputBuilder> {
+  GProductImageWhereInput._();
+
+  factory GProductImageWhereInput(
+          [Function(GProductImageWhereInputBuilder b) updates]) =
+      _$GProductImageWhereInput;
+
+  BuiltList<GProductImageWhereInput>? get AND;
+  BuiltList<GProductImageWhereInput>? get OR;
+  BuiltList<GProductImageWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GProductVariantWhereInput? get variant;
+  static Serializer<GProductImageWhereInput> get serializer =>
+      _$gProductImageWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductImageWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductImageWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductImageWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductImageOrderByInput
+    implements
+        Built<GProductImageOrderByInput, GProductImageOrderByInputBuilder> {
+  GProductImageOrderByInput._();
+
+  factory GProductImageOrderByInput(
+          [Function(GProductImageOrderByInputBuilder b) updates]) =
+      _$GProductImageOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  static Serializer<GProductImageOrderByInput> get serializer =>
+      _$gProductImageOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductImageOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductImageOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductImageOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductImageUpdateInput
+    implements
+        Built<GProductImageUpdateInput, GProductImageUpdateInputBuilder> {
+  GProductImageUpdateInput._();
+
+  factory GProductImageUpdateInput(
+          [Function(GProductImageUpdateInputBuilder b) updates]) =
+      _$GProductImageUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GImageFieldInput? get image;
+  GProductVariantRelateToOneForUpdateInput? get variant;
+  static Serializer<GProductImageUpdateInput> get serializer =>
+      _$gProductImageUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductImageUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductImageUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductImageUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductImageUpdateArgs
+    implements Built<GProductImageUpdateArgs, GProductImageUpdateArgsBuilder> {
+  GProductImageUpdateArgs._();
+
+  factory GProductImageUpdateArgs(
+          [Function(GProductImageUpdateArgsBuilder b) updates]) =
+      _$GProductImageUpdateArgs;
+
+  GProductImageWhereUniqueInput get where;
+  GProductImageUpdateInput get data;
+  static Serializer<GProductImageUpdateArgs> get serializer =>
+      _$gProductImageUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductImageUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductImageUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductImageUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GProductImageCreateInput
+    implements
+        Built<GProductImageCreateInput, GProductImageCreateInputBuilder> {
+  GProductImageCreateInput._();
+
+  factory GProductImageCreateInput(
+          [Function(GProductImageCreateInputBuilder b) updates]) =
+      _$GProductImageCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GImageFieldInput? get image;
+  GProductVariantRelateToOneForCreateInput? get variant;
+  static Serializer<GProductImageCreateInput> get serializer =>
+      _$gProductImageCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductImageCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductImageCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductImageCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductVideoWhereUniqueInput
+    implements
+        Built<GProductVideoWhereUniqueInput,
+            GProductVideoWhereUniqueInputBuilder> {
+  GProductVideoWhereUniqueInput._();
+
+  factory GProductVideoWhereUniqueInput(
+          [Function(GProductVideoWhereUniqueInputBuilder b) updates]) =
+      _$GProductVideoWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GProductVideoWhereUniqueInput> get serializer =>
+      _$gProductVideoWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVideoWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVideoWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVideoWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductVideoWhereInput
+    implements Built<GProductVideoWhereInput, GProductVideoWhereInputBuilder> {
+  GProductVideoWhereInput._();
+
+  factory GProductVideoWhereInput(
+          [Function(GProductVideoWhereInputBuilder b) updates]) =
+      _$GProductVideoWhereInput;
+
+  BuiltList<GProductVideoWhereInput>? get AND;
+  BuiltList<GProductVideoWhereInput>? get OR;
+  BuiltList<GProductVideoWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GProductVariantWhereInput? get variant;
+  static Serializer<GProductVideoWhereInput> get serializer =>
+      _$gProductVideoWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVideoWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVideoWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVideoWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductVideoOrderByInput
+    implements
+        Built<GProductVideoOrderByInput, GProductVideoOrderByInputBuilder> {
+  GProductVideoOrderByInput._();
+
+  factory GProductVideoOrderByInput(
+          [Function(GProductVideoOrderByInputBuilder b) updates]) =
+      _$GProductVideoOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  static Serializer<GProductVideoOrderByInput> get serializer =>
+      _$gProductVideoOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVideoOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVideoOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVideoOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductVideoUpdateInput
+    implements
+        Built<GProductVideoUpdateInput, GProductVideoUpdateInputBuilder> {
+  GProductVideoUpdateInput._();
+
+  factory GProductVideoUpdateInput(
+          [Function(GProductVideoUpdateInputBuilder b) updates]) =
+      _$GProductVideoUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GFileFieldInput? get video;
+  GProductVariantRelateToOneForUpdateInput? get variant;
+  static Serializer<GProductVideoUpdateInput> get serializer =>
+      _$gProductVideoUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVideoUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVideoUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVideoUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductVideoUpdateArgs
+    implements Built<GProductVideoUpdateArgs, GProductVideoUpdateArgsBuilder> {
+  GProductVideoUpdateArgs._();
+
+  factory GProductVideoUpdateArgs(
+          [Function(GProductVideoUpdateArgsBuilder b) updates]) =
+      _$GProductVideoUpdateArgs;
+
+  GProductVideoWhereUniqueInput get where;
+  GProductVideoUpdateInput get data;
+  static Serializer<GProductVideoUpdateArgs> get serializer =>
+      _$gProductVideoUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVideoUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVideoUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVideoUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GProductVideoCreateInput
+    implements
+        Built<GProductVideoCreateInput, GProductVideoCreateInputBuilder> {
+  GProductVideoCreateInput._();
+
+  factory GProductVideoCreateInput(
+          [Function(GProductVideoCreateInputBuilder b) updates]) =
+      _$GProductVideoCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GFileFieldInput? get video;
+  GProductVariantRelateToOneForCreateInput? get variant;
+  static Serializer<GProductVideoCreateInput> get serializer =>
+      _$gProductVideoCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVideoCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVideoCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVideoCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductGalleryItemWhereUniqueInput
+    implements
+        Built<GProductGalleryItemWhereUniqueInput,
+            GProductGalleryItemWhereUniqueInputBuilder> {
+  GProductGalleryItemWhereUniqueInput._();
+
+  factory GProductGalleryItemWhereUniqueInput(
+          [Function(GProductGalleryItemWhereUniqueInputBuilder b) updates]) =
+      _$GProductGalleryItemWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GProductGalleryItemWhereUniqueInput> get serializer =>
+      _$gProductGalleryItemWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductGalleryItemWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductGalleryItemWhereUniqueInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductGalleryItemWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductGalleryItemWhereInput
+    implements
+        Built<GProductGalleryItemWhereInput,
+            GProductGalleryItemWhereInputBuilder> {
+  GProductGalleryItemWhereInput._();
+
+  factory GProductGalleryItemWhereInput(
+          [Function(GProductGalleryItemWhereInputBuilder b) updates]) =
+      _$GProductGalleryItemWhereInput;
+
+  BuiltList<GProductGalleryItemWhereInput>? get AND;
+  BuiltList<GProductGalleryItemWhereInput>? get OR;
+  BuiltList<GProductGalleryItemWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GStringFilter? get type;
+  GStringFilter? get fileId;
+  GProductVariantWhereInput? get variant;
+  GIntNullableFilter? get index;
+  static Serializer<GProductGalleryItemWhereInput> get serializer =>
+      _$gProductGalleryItemWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductGalleryItemWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductGalleryItemWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductGalleryItemWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductGalleryItemOrderByInput
+    implements
+        Built<GProductGalleryItemOrderByInput,
+            GProductGalleryItemOrderByInputBuilder> {
+  GProductGalleryItemOrderByInput._();
+
+  factory GProductGalleryItemOrderByInput(
+          [Function(GProductGalleryItemOrderByInputBuilder b) updates]) =
+      _$GProductGalleryItemOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get type;
+  GOrderDirection? get fileId;
+  GOrderDirection? get index;
+  static Serializer<GProductGalleryItemOrderByInput> get serializer =>
+      _$gProductGalleryItemOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductGalleryItemOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductGalleryItemOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductGalleryItemOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductGalleryItemUpdateInput
+    implements
+        Built<GProductGalleryItemUpdateInput,
+            GProductGalleryItemUpdateInputBuilder> {
+  GProductGalleryItemUpdateInput._();
+
+  factory GProductGalleryItemUpdateInput(
+          [Function(GProductGalleryItemUpdateInputBuilder b) updates]) =
+      _$GProductGalleryItemUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get type;
+  String? get fileId;
+  GProductVariantRelateToOneForUpdateInput? get variant;
+  int? get index;
+  static Serializer<GProductGalleryItemUpdateInput> get serializer =>
+      _$gProductGalleryItemUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductGalleryItemUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductGalleryItemUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductGalleryItemUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductGalleryItemUpdateArgs
+    implements
+        Built<GProductGalleryItemUpdateArgs,
+            GProductGalleryItemUpdateArgsBuilder> {
+  GProductGalleryItemUpdateArgs._();
+
+  factory GProductGalleryItemUpdateArgs(
+          [Function(GProductGalleryItemUpdateArgsBuilder b) updates]) =
+      _$GProductGalleryItemUpdateArgs;
+
+  GProductGalleryItemWhereUniqueInput get where;
+  GProductGalleryItemUpdateInput get data;
+  static Serializer<GProductGalleryItemUpdateArgs> get serializer =>
+      _$gProductGalleryItemUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductGalleryItemUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductGalleryItemUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductGalleryItemUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GProductGalleryItemCreateInput
+    implements
+        Built<GProductGalleryItemCreateInput,
+            GProductGalleryItemCreateInputBuilder> {
+  GProductGalleryItemCreateInput._();
+
+  factory GProductGalleryItemCreateInput(
+          [Function(GProductGalleryItemCreateInputBuilder b) updates]) =
+      _$GProductGalleryItemCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get type;
+  String? get fileId;
+  GProductVariantRelateToOneForCreateInput? get variant;
+  int? get index;
+  static Serializer<GProductGalleryItemCreateInput> get serializer =>
+      _$gProductGalleryItemCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductGalleryItemCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductGalleryItemCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductGalleryItemCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductReelWhereUniqueInput
+    implements
+        Built<GProductReelWhereUniqueInput,
+            GProductReelWhereUniqueInputBuilder> {
+  GProductReelWhereUniqueInput._();
+
+  factory GProductReelWhereUniqueInput(
+          [Function(GProductReelWhereUniqueInputBuilder b) updates]) =
+      _$GProductReelWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GProductReelWhereUniqueInput> get serializer =>
+      _$gProductReelWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductReelWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductReelWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductReelWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductReelWhereInput
+    implements Built<GProductReelWhereInput, GProductReelWhereInputBuilder> {
+  GProductReelWhereInput._();
+
+  factory GProductReelWhereInput(
+          [Function(GProductReelWhereInputBuilder b) updates]) =
+      _$GProductReelWhereInput;
+
+  BuiltList<GProductReelWhereInput>? get AND;
+  BuiltList<GProductReelWhereInput>? get OR;
+  BuiltList<GProductReelWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GStringFilter? get type;
+  GStringFilter? get fileId;
+  GProductVariantWhereInput? get variant;
+  GIntNullableFilter? get index;
+  static Serializer<GProductReelWhereInput> get serializer =>
+      _$gProductReelWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductReelWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductReelWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductReelWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductReelOrderByInput
+    implements
+        Built<GProductReelOrderByInput, GProductReelOrderByInputBuilder> {
+  GProductReelOrderByInput._();
+
+  factory GProductReelOrderByInput(
+          [Function(GProductReelOrderByInputBuilder b) updates]) =
+      _$GProductReelOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get type;
+  GOrderDirection? get fileId;
+  GOrderDirection? get index;
+  static Serializer<GProductReelOrderByInput> get serializer =>
+      _$gProductReelOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductReelOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductReelOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductReelOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductReelUpdateInput
+    implements Built<GProductReelUpdateInput, GProductReelUpdateInputBuilder> {
+  GProductReelUpdateInput._();
+
+  factory GProductReelUpdateInput(
+          [Function(GProductReelUpdateInputBuilder b) updates]) =
+      _$GProductReelUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get type;
+  String? get fileId;
+  GProductVariantRelateToOneForUpdateInput? get variant;
+  int? get index;
+  static Serializer<GProductReelUpdateInput> get serializer =>
+      _$gProductReelUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductReelUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductReelUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductReelUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductReelUpdateArgs
+    implements Built<GProductReelUpdateArgs, GProductReelUpdateArgsBuilder> {
+  GProductReelUpdateArgs._();
+
+  factory GProductReelUpdateArgs(
+          [Function(GProductReelUpdateArgsBuilder b) updates]) =
+      _$GProductReelUpdateArgs;
+
+  GProductReelWhereUniqueInput get where;
+  GProductReelUpdateInput get data;
+  static Serializer<GProductReelUpdateArgs> get serializer =>
+      _$gProductReelUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductReelUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductReelUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductReelUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GProductReelCreateInput
+    implements Built<GProductReelCreateInput, GProductReelCreateInputBuilder> {
+  GProductReelCreateInput._();
+
+  factory GProductReelCreateInput(
+          [Function(GProductReelCreateInputBuilder b) updates]) =
+      _$GProductReelCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get type;
+  String? get fileId;
+  GProductVariantRelateToOneForCreateInput? get variant;
+  int? get index;
+  static Serializer<GProductReelCreateInput> get serializer =>
+      _$gProductReelCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductReelCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductReelCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductReelCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealerWhereUniqueInput
+    implements
+        Built<GProductDealerWhereUniqueInput,
+            GProductDealerWhereUniqueInputBuilder> {
+  GProductDealerWhereUniqueInput._();
+
+  factory GProductDealerWhereUniqueInput(
+          [Function(GProductDealerWhereUniqueInputBuilder b) updates]) =
+      _$GProductDealerWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GProductDealerWhereUniqueInput> get serializer =>
+      _$gProductDealerWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductDealerWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealerWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductDealerWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealerWhereInput
+    implements
+        Built<GProductDealerWhereInput, GProductDealerWhereInputBuilder> {
+  GProductDealerWhereInput._();
+
+  factory GProductDealerWhereInput(
+          [Function(GProductDealerWhereInputBuilder b) updates]) =
+      _$GProductDealerWhereInput;
+
+  BuiltList<GProductDealerWhereInput>? get AND;
+  BuiltList<GProductDealerWhereInput>? get OR;
+  BuiltList<GProductDealerWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GDealerWhereInput? get dealer;
+  GProductVariantWhereInput? get productVariant;
+  GPriceManyRelationFilter? get prices;
+  GIntNullableFilter? get stock;
+  static Serializer<GProductDealerWhereInput> get serializer =>
+      _$gProductDealerWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductDealerWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealerWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductDealerWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealerOrderByInput
+    implements
+        Built<GProductDealerOrderByInput, GProductDealerOrderByInputBuilder> {
+  GProductDealerOrderByInput._();
+
+  factory GProductDealerOrderByInput(
+          [Function(GProductDealerOrderByInputBuilder b) updates]) =
+      _$GProductDealerOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get stock;
+  static Serializer<GProductDealerOrderByInput> get serializer =>
+      _$gProductDealerOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductDealerOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealerOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductDealerOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealerUpdateInput
+    implements
+        Built<GProductDealerUpdateInput, GProductDealerUpdateInputBuilder> {
+  GProductDealerUpdateInput._();
+
+  factory GProductDealerUpdateInput(
+          [Function(GProductDealerUpdateInputBuilder b) updates]) =
+      _$GProductDealerUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GDealerRelateToOneForUpdateInput? get dealer;
+  GProductVariantRelateToOneForUpdateInput? get productVariant;
+  GPriceRelateToManyForUpdateInput? get prices;
+  int? get stock;
+  static Serializer<GProductDealerUpdateInput> get serializer =>
+      _$gProductDealerUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductDealerUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealerUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductDealerUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealerUpdateArgs
+    implements
+        Built<GProductDealerUpdateArgs, GProductDealerUpdateArgsBuilder> {
+  GProductDealerUpdateArgs._();
+
+  factory GProductDealerUpdateArgs(
+          [Function(GProductDealerUpdateArgsBuilder b) updates]) =
+      _$GProductDealerUpdateArgs;
+
+  GProductDealerWhereUniqueInput get where;
+  GProductDealerUpdateInput get data;
+  static Serializer<GProductDealerUpdateArgs> get serializer =>
+      _$gProductDealerUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductDealerUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealerUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductDealerUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealerCreateInput
+    implements
+        Built<GProductDealerCreateInput, GProductDealerCreateInputBuilder> {
+  GProductDealerCreateInput._();
+
+  factory GProductDealerCreateInput(
+          [Function(GProductDealerCreateInputBuilder b) updates]) =
+      _$GProductDealerCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GDealerRelateToOneForCreateInput? get dealer;
+  GProductVariantRelateToOneForCreateInput? get productVariant;
+  GPriceRelateToManyForCreateInput? get prices;
+  int? get stock;
+  static Serializer<GProductDealerCreateInput> get serializer =>
+      _$gProductDealerCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductDealerCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealerCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductDealerCreateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealerStockRequestWhereUniqueInput
+    implements
+        Built<GProductDealerStockRequestWhereUniqueInput,
+            GProductDealerStockRequestWhereUniqueInputBuilder> {
+  GProductDealerStockRequestWhereUniqueInput._();
+
+  factory GProductDealerStockRequestWhereUniqueInput(
+      [Function(GProductDealerStockRequestWhereUniqueInputBuilder b)
+          updates]) = _$GProductDealerStockRequestWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GProductDealerStockRequestWhereUniqueInput>
+      get serializer => _$gProductDealerStockRequestWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductDealerStockRequestWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealerStockRequestWhereUniqueInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductDealerStockRequestWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealerStockRequestWhereInput
+    implements
+        Built<GProductDealerStockRequestWhereInput,
+            GProductDealerStockRequestWhereInputBuilder> {
+  GProductDealerStockRequestWhereInput._();
+
+  factory GProductDealerStockRequestWhereInput(
+          [Function(GProductDealerStockRequestWhereInputBuilder b) updates]) =
+      _$GProductDealerStockRequestWhereInput;
+
+  BuiltList<GProductDealerStockRequestWhereInput>? get AND;
+  BuiltList<GProductDealerStockRequestWhereInput>? get OR;
+  BuiltList<GProductDealerStockRequestWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GDealerWhereInput? get dealer;
+  GProductVariantWhereInput? get productVariant;
+  GIntNullableFilter? get stock;
+  GBooleanFilter? get accepted;
+  GStringNullableFilter? get type;
+  static Serializer<GProductDealerStockRequestWhereInput> get serializer =>
+      _$gProductDealerStockRequestWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductDealerStockRequestWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealerStockRequestWhereInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductDealerStockRequestWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealerStockRequestOrderByInput
+    implements
+        Built<GProductDealerStockRequestOrderByInput,
+            GProductDealerStockRequestOrderByInputBuilder> {
+  GProductDealerStockRequestOrderByInput._();
+
+  factory GProductDealerStockRequestOrderByInput(
+          [Function(GProductDealerStockRequestOrderByInputBuilder b) updates]) =
+      _$GProductDealerStockRequestOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get stock;
+  GOrderDirection? get accepted;
+  GOrderDirection? get type;
+  static Serializer<GProductDealerStockRequestOrderByInput> get serializer =>
+      _$gProductDealerStockRequestOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductDealerStockRequestOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealerStockRequestOrderByInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductDealerStockRequestOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealerStockRequestUpdateInput
+    implements
+        Built<GProductDealerStockRequestUpdateInput,
+            GProductDealerStockRequestUpdateInputBuilder> {
+  GProductDealerStockRequestUpdateInput._();
+
+  factory GProductDealerStockRequestUpdateInput(
+          [Function(GProductDealerStockRequestUpdateInputBuilder b) updates]) =
+      _$GProductDealerStockRequestUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GDealerRelateToOneForUpdateInput? get dealer;
+  GProductVariantRelateToOneForUpdateInput? get productVariant;
+  int? get stock;
+  bool? get accepted;
+  String? get type;
+  static Serializer<GProductDealerStockRequestUpdateInput> get serializer =>
+      _$gProductDealerStockRequestUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductDealerStockRequestUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealerStockRequestUpdateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductDealerStockRequestUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealerStockRequestUpdateArgs
+    implements
+        Built<GProductDealerStockRequestUpdateArgs,
+            GProductDealerStockRequestUpdateArgsBuilder> {
+  GProductDealerStockRequestUpdateArgs._();
+
+  factory GProductDealerStockRequestUpdateArgs(
+          [Function(GProductDealerStockRequestUpdateArgsBuilder b) updates]) =
+      _$GProductDealerStockRequestUpdateArgs;
+
+  GProductDealerStockRequestWhereUniqueInput get where;
+  GProductDealerStockRequestUpdateInput get data;
+  static Serializer<GProductDealerStockRequestUpdateArgs> get serializer =>
+      _$gProductDealerStockRequestUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductDealerStockRequestUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealerStockRequestUpdateArgs? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductDealerStockRequestUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealerStockRequestCreateInput
+    implements
+        Built<GProductDealerStockRequestCreateInput,
+            GProductDealerStockRequestCreateInputBuilder> {
+  GProductDealerStockRequestCreateInput._();
+
+  factory GProductDealerStockRequestCreateInput(
+          [Function(GProductDealerStockRequestCreateInputBuilder b) updates]) =
+      _$GProductDealerStockRequestCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GDealerRelateToOneForCreateInput? get dealer;
+  GProductVariantRelateToOneForCreateInput? get productVariant;
+  int? get stock;
+  bool? get accepted;
+  String? get type;
+  static Serializer<GProductDealerStockRequestCreateInput> get serializer =>
+      _$gProductDealerStockRequestCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductDealerStockRequestCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealerStockRequestCreateInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductDealerStockRequestCreateInput.serializer,
+        json,
+      );
+}
+
 abstract class GCategoryWhereUniqueInput
     implements
         Built<GCategoryWhereUniqueInput, GCategoryWhereUniqueInputBuilder> {
@@ -11203,6 +16102,8 @@ class GOrderItemType extends EnumClass {
   static const GOrderItemType vehicleDealer = _$gOrderItemTypevehicleDealer;
 
   static const GOrderItemType testDriveDealer = _$gOrderItemTypetestDriveDealer;
+
+  static const GOrderItemType productDealer = _$gOrderItemTypeproductDealer;
 
   static Serializer<GOrderItemType> get serializer =>
       _$gOrderItemTypeSerializer;

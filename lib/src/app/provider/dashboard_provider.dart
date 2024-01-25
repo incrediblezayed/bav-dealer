@@ -59,7 +59,7 @@ class HomePageProvider extends ChangeNotifier {
             .read(orderProvider(OrderFamily.purchaseOrders))
             .getPendingOrders())
         .length;
-    Future.delayed(Duration(seconds: 10), () {
+    Future.delayed(const Duration(seconds: 10), () {
       onInit();
     });
   }

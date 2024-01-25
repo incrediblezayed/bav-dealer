@@ -5,7 +5,7 @@ import 'package:dealerapp/src/widgets/k_order_bike_card.dart';
 import 'package:flutter/material.dart';
 
 class OrdersListPage extends StatelessWidget {
-  OrdersListPage({required this.data, required this.orderPro, super.key});
+  const OrdersListPage({required this.data, required this.orderPro, super.key});
   final List<GVehicleOrdersData_vehicleOrders> data;
   final OrdersProvider orderPro;
 

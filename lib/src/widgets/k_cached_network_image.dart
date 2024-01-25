@@ -46,7 +46,7 @@ class KCachedNWImage extends Image {
             if (loadingProgress == null) {
               return child;
             }
-            return Center(
+            return const Center(
               child: CircularProgressIndicator.adaptive(),
             );
           },

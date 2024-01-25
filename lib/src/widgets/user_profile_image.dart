@@ -42,12 +42,12 @@ class UserProfileImage extends StatelessWidget {
             child: isFile
                 ? null
                 : KCachedNWImage(
-                    url!,
+                    url,
                     frameBuilder:
                         (context, child, frame, wasSynchronouslyLoaded) {
                       return ClipRRect(
                           borderRadius: BorderRadius.circular(size),
-                          child: child);
+                          child: child,);
                     },
                     errorBuilder: (context, url, error) {
                       error.log();

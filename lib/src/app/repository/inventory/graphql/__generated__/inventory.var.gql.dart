@@ -2,6 +2,7 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema.gql.dart'
@@ -11,24 +12,27 @@ import 'package:dealerapp/src/app/repository/graphql/__generated__/serializers.g
 
 part 'inventory.var.gql.g.dart';
 
-abstract class GVehiclesVars
-    implements Built<GVehiclesVars, GVehiclesVarsBuilder> {
-  GVehiclesVars._();
+abstract class GVehicleVariantsVars
+    implements Built<GVehicleVariantsVars, GVehicleVariantsVarsBuilder> {
+  GVehicleVariantsVars._();
 
-  factory GVehiclesVars([Function(GVehiclesVarsBuilder b) updates]) =
-      _$GVehiclesVars;
+  factory GVehicleVariantsVars(
+          [Function(GVehicleVariantsVarsBuilder b) updates]) =
+      _$GVehicleVariantsVars;
 
-  _i1.GVehicleWhereInput get where;
-  static Serializer<GVehiclesVars> get serializer => _$gVehiclesVarsSerializer;
+  _i1.GVehicleVariantWhereInput get where;
+  BuiltList<_i1.GVehicleVariantOrderByInput> get orderBy;
+  static Serializer<GVehicleVariantsVars> get serializer =>
+      _$gVehicleVariantsVarsSerializer;
 
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
-        GVehiclesVars.serializer,
+        GVehicleVariantsVars.serializer,
         this,
       ) as Map<String, dynamic>);
 
-  static GVehiclesVars? fromJson(Map<String, dynamic> json) =>
+  static GVehicleVariantsVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
-        GVehiclesVars.serializer,
+        GVehicleVariantsVars.serializer,
         json,
       );
 }

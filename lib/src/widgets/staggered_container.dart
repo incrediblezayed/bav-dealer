@@ -3,7 +3,7 @@ import 'package:dealerapp/src/utils/global_exports.dart';
 ///
 class StagerredContainer extends StatelessWidget {
   ///
-  StagerredContainer({
+  const StagerredContainer({
     required this.height,
     required this.count,
     required this.onTap,
@@ -87,10 +87,10 @@ class StagerredContainer extends StatelessWidget {
                     title,
                     style: theme.headlineSmall!.copyWith(
                         color: titleColor,
-                        fontSize: MediaQuery.sizeOf(context).height * 0.02),
+                        fontSize: MediaQuery.sizeOf(context).height * 0.02,),
                   ),
                 ],
-              ))
+              ),),
             ],
           ),
         ),

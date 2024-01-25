@@ -8,9 +8,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ReportPage extends ConsumerWidget {
-  final bool isFeedback;
 
-  ReportPage({super.key, required this.isFeedback});
+  const ReportPage({required this.isFeedback, super.key});
+  final bool isFeedback;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context).textTheme;
@@ -40,7 +40,7 @@ class ReportPage extends ConsumerWidget {
                 }).toList(),
                 decoration: InputDecoration(
                   // labelText: 'Choose Reason',
-                  hintText: "Choose Reason",
+                  hintText: 'Choose Reason',
                   counterText: '',
                   fillColor: AppTheme.white,
                   suffixIconColor: Colors.black.withOpacity(.2),
@@ -63,10 +63,10 @@ class ReportPage extends ConsumerWidget {
                 decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                         borderSide:
-                            BorderSide(color: Colors.black.withOpacity(.2))),
+                            BorderSide(color: Colors.black.withOpacity(.2)),),
                     fillColor: Colors.white,
                     hintText: 'Title',
-                    hintStyle: TextStyle(color: Colors.black.withOpacity(.2))),
+                    hintStyle: TextStyle(color: Colors.black.withOpacity(.2)),),
               ),
               SizedBox(height: 16.h),
               Stack(
@@ -77,13 +77,13 @@ class ReportPage extends ConsumerWidget {
                     decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                                color: Colors.black.withOpacity(.2))),
+                                color: Colors.black.withOpacity(.2),),),
                         fillColor: Colors.white,
                         hintText: isFeedback
                             ? 'Write you detailed feedback'
                             : 'Write a reason for reporting',
                         hintStyle:
-                            TextStyle(color: Colors.black.withOpacity(.2))),
+                            TextStyle(color: Colors.black.withOpacity(.2)),),
                   ),
                   Positioned(
                     right: 8,
@@ -94,11 +94,11 @@ class ReportPage extends ConsumerWidget {
                         reportPro.pickImage();
                       },
                     ),
-                  )
+                  ),
                 ],
               ),
               if (reportPro.attachments.isNotEmpty) ...[
-                SizedBox(
+                const SizedBox(
                   height: 12,
                 ),
                 GridView.count(
@@ -121,17 +121,17 @@ class ReportPage extends ConsumerWidget {
                                       right: 0,
                                       top: 0,
                                       child: IconButton(
-                                        icon: Icon(Icons.close),
+                                        icon: const Icon(Icons.close),
                                         onPressed: () {
                                           reportPro.removeAttachment(e);
                                         },
                                       ),
-                                    )
+                                    ),
                                   ],
                                 );
-                              }))
+                              },),)
                       .toList(),
-                )
+                ),
               ],
               SizedBox(height: 20.h),
               KBottomBarButton(
@@ -142,7 +142,7 @@ class ReportPage extends ConsumerWidget {
                     } else {
                       reportPro.createReport();
                     }
-                  }),
+                  },),
             ],
           ),
         ),

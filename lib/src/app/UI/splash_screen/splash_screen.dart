@@ -10,6 +10,20 @@ import 'package:dealerapp/src/utils/constants.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+Future<void> initTracking() async {
+  if (Platform.isIOS) {
+    var status = await AppTrackingTransparency.trackingAuthorizationStatus;
+
+    if (status == TrackingStatus.notDetermined) {
+      await Future.delayed(const Duration(seconds: 1));
+      status = await AppTrackingTransparency.requestTrackingAuthorization();
+    }
+    if (status != TrackingStatus.authorized) {
+      Constants.shouldTrack = false;
+    }
+  }
+}
+
 ///Splash Screen
 class SplashScreen extends ConsumerStatefulWidget {
   ///Splash Screen
@@ -25,25 +39,11 @@ class SplashScreen extends ConsumerStatefulWidget {
 }
 
 class _SplashScreenState extends ConsumerState<SplashScreen>
-    with AfterLayoutMixin<SplashScreen> {
-
-  
+    with AfterLayoutMixin {
   @override
   void initState() {
     super.initState();
-    init();
-  }
-
-  Future<void> init() async {
-    if (Platform.isIOS) {
-      var status = await AppTrackingTransparency.trackingAuthorizationStatus;
-      if (status == TrackingStatus.notDetermined) {
-        status = await AppTrackingTransparency.requestTrackingAuthorization();
-      }
-      if (status != TrackingStatus.authorized) {
-        Constants.shouldTrack = false;
-      }
-    }
+    initTracking();
   }
 
   @override
@@ -59,7 +59,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
   @override
   FutureOr<void> afterFirstLayout(BuildContext context) async {
     final user = cacheProvider.getUser();
-
+    await initTracking();
     if (user == null) {
       Future.delayed(
         const Duration(seconds: 1),
@@ -73,8 +73,8 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
         await cacheProvider.setUser(model);
         await AppRoutes.pushAndRemoveUntil(page: const HomePage());
       } else {
-        cacheProvider.clear();
-        AppRoutes.pushAndRemoveUntil(page: LoginPage());
+        await cacheProvider.clear();
+        await AppRoutes.pushAndRemoveUntil(page: const LoginPage());
       }
     }
   }

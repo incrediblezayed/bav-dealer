@@ -6,8 +6,8 @@ part of 'inventory.req.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GVehiclesReq> _$gVehiclesReqSerializer =
-    new _$GVehiclesReqSerializer();
+Serializer<GVehicleVariantsReq> _$gVehicleVariantsReqSerializer =
+    new _$GVehicleVariantsReqSerializer();
 Serializer<GCreateVehicleDealerStockRequestReq>
     _$gCreateVehicleDealerStockRequestReqSerializer =
     new _$GCreateVehicleDealerStockRequestReqSerializer();
@@ -18,19 +18,24 @@ Serializer<GCreateVehicleDealerReq> _$gCreateVehicleDealerReqSerializer =
 Serializer<GPriceCategoriesReq> _$gPriceCategoriesReqSerializer =
     new _$GPriceCategoriesReqSerializer();
 
-class _$GVehiclesReqSerializer implements StructuredSerializer<GVehiclesReq> {
+class _$GVehicleVariantsReqSerializer
+    implements StructuredSerializer<GVehicleVariantsReq> {
   @override
-  final Iterable<Type> types = const [GVehiclesReq, _$GVehiclesReq];
+  final Iterable<Type> types = const [
+    GVehicleVariantsReq,
+    _$GVehicleVariantsReq
+  ];
   @override
-  final String wireName = 'GVehiclesReq';
+  final String wireName = 'GVehicleVariantsReq';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, GVehiclesReq object,
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleVariantsReq object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'vars',
       serializers.serialize(object.vars,
-          specifiedType: const FullType(_i3.GVehiclesVars)),
+          specifiedType: const FullType(_i3.GVehicleVariantsVars)),
       'operation',
       serializers.serialize(object.operation,
           specifiedType: const FullType(_i4.Operation)),
@@ -51,7 +56,7 @@ class _$GVehiclesReqSerializer implements StructuredSerializer<GVehiclesReq> {
       result
         ..add('optimisticResponse')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i2.GVehiclesData)));
+            specifiedType: const FullType(_i2.GVehicleVariantsData)));
     }
     value = object.updateCacheHandlerKey;
     if (value != null) {
@@ -79,10 +84,10 @@ class _$GVehiclesReqSerializer implements StructuredSerializer<GVehiclesReq> {
   }
 
   @override
-  GVehiclesReq deserialize(
+  GVehicleVariantsReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehiclesReqBuilder();
+    final result = new GVehicleVariantsReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -92,8 +97,8 @@ class _$GVehiclesReqSerializer implements StructuredSerializer<GVehiclesReq> {
       switch (key) {
         case 'vars':
           result.vars.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(_i3.GVehiclesVars))!
-              as _i3.GVehiclesVars);
+                  specifiedType: const FullType(_i3.GVehicleVariantsVars))!
+              as _i3.GVehicleVariantsVars);
           break;
         case 'operation':
           result.operation = serializers.deserialize(value,
@@ -105,8 +110,8 @@ class _$GVehiclesReqSerializer implements StructuredSerializer<GVehiclesReq> {
           break;
         case 'optimisticResponse':
           result.optimisticResponse.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(_i2.GVehiclesData))!
-              as _i2.GVehiclesData);
+                  specifiedType: const FullType(_i2.GVehicleVariantsData))!
+              as _i2.GVehicleVariantsData);
           break;
         case 'updateCacheHandlerKey':
           result.updateCacheHandlerKey = serializers.deserialize(value,
@@ -624,18 +629,18 @@ class _$GPriceCategoriesReqSerializer
   }
 }
 
-class _$GVehiclesReq extends GVehiclesReq {
+class _$GVehicleVariantsReq extends GVehicleVariantsReq {
   @override
-  final _i3.GVehiclesVars vars;
+  final _i3.GVehicleVariantsVars vars;
   @override
   final _i4.Operation operation;
   @override
   final String? requestId;
   @override
-  final _i2.GVehiclesData? Function(_i2.GVehiclesData?, _i2.GVehiclesData?)?
-      updateResult;
+  final _i2.GVehicleVariantsData? Function(
+      _i2.GVehicleVariantsData?, _i2.GVehicleVariantsData?)? updateResult;
   @override
-  final _i2.GVehiclesData? optimisticResponse;
+  final _i2.GVehicleVariantsData? optimisticResponse;
   @override
   final String? updateCacheHandlerKey;
   @override
@@ -645,10 +650,11 @@ class _$GVehiclesReq extends GVehiclesReq {
   @override
   final bool executeOnListen;
 
-  factory _$GVehiclesReq([void Function(GVehiclesReqBuilder)? updates]) =>
-      (new GVehiclesReqBuilder()..update(updates))._build();
+  factory _$GVehicleVariantsReq(
+          [void Function(GVehicleVariantsReqBuilder)? updates]) =>
+      (new GVehicleVariantsReqBuilder()..update(updates))._build();
 
-  _$GVehiclesReq._(
+  _$GVehicleVariantsReq._(
       {required this.vars,
       required this.operation,
       this.requestId,
@@ -659,25 +665,27 @@ class _$GVehiclesReq extends GVehiclesReq {
       this.fetchPolicy,
       required this.executeOnListen})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(vars, r'GVehiclesReq', 'vars');
+    BuiltValueNullFieldError.checkNotNull(vars, r'GVehicleVariantsReq', 'vars');
     BuiltValueNullFieldError.checkNotNull(
-        operation, r'GVehiclesReq', 'operation');
+        operation, r'GVehicleVariantsReq', 'operation');
     BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GVehiclesReq', 'executeOnListen');
+        executeOnListen, r'GVehicleVariantsReq', 'executeOnListen');
   }
 
   @override
-  GVehiclesReq rebuild(void Function(GVehiclesReqBuilder) updates) =>
+  GVehicleVariantsReq rebuild(
+          void Function(GVehicleVariantsReqBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GVehiclesReqBuilder toBuilder() => new GVehiclesReqBuilder()..replace(this);
+  GVehicleVariantsReqBuilder toBuilder() =>
+      new GVehicleVariantsReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     final dynamic _$dynamicOther = other;
-    return other is GVehiclesReq &&
+    return other is GVehicleVariantsReq &&
         vars == other.vars &&
         operation == other.operation &&
         requestId == other.requestId &&
@@ -707,7 +715,7 @@ class _$GVehiclesReq extends GVehiclesReq {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GVehiclesReq')
+    return (newBuiltValueToStringHelper(r'GVehicleVariantsReq')
           ..add('vars', vars)
           ..add('operation', operation)
           ..add('requestId', requestId)
@@ -721,14 +729,14 @@ class _$GVehiclesReq extends GVehiclesReq {
   }
 }
 
-class GVehiclesReqBuilder
-    implements Builder<GVehiclesReq, GVehiclesReqBuilder> {
-  _$GVehiclesReq? _$v;
+class GVehicleVariantsReqBuilder
+    implements Builder<GVehicleVariantsReq, GVehicleVariantsReqBuilder> {
+  _$GVehicleVariantsReq? _$v;
 
-  _i3.GVehiclesVarsBuilder? _vars;
-  _i3.GVehiclesVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GVehiclesVarsBuilder();
-  set vars(_i3.GVehiclesVarsBuilder? vars) => _$this._vars = vars;
+  _i3.GVehicleVariantsVarsBuilder? _vars;
+  _i3.GVehicleVariantsVarsBuilder get vars =>
+      _$this._vars ??= new _i3.GVehicleVariantsVarsBuilder();
+  set vars(_i3.GVehicleVariantsVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
   _i4.Operation? get operation => _$this._operation;
@@ -738,19 +746,21 @@ class GVehiclesReqBuilder
   String? get requestId => _$this._requestId;
   set requestId(String? requestId) => _$this._requestId = requestId;
 
-  _i2.GVehiclesData? Function(_i2.GVehiclesData?, _i2.GVehiclesData?)?
-      _updateResult;
-  _i2.GVehiclesData? Function(_i2.GVehiclesData?, _i2.GVehiclesData?)?
+  _i2.GVehicleVariantsData? Function(
+      _i2.GVehicleVariantsData?, _i2.GVehicleVariantsData?)? _updateResult;
+  _i2.GVehicleVariantsData? Function(
+          _i2.GVehicleVariantsData?, _i2.GVehicleVariantsData?)?
       get updateResult => _$this._updateResult;
   set updateResult(
-          _i2.GVehiclesData? Function(_i2.GVehiclesData?, _i2.GVehiclesData?)?
+          _i2.GVehicleVariantsData? Function(
+                  _i2.GVehicleVariantsData?, _i2.GVehicleVariantsData?)?
               updateResult) =>
       _$this._updateResult = updateResult;
 
-  _i2.GVehiclesDataBuilder? _optimisticResponse;
-  _i2.GVehiclesDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GVehiclesDataBuilder();
-  set optimisticResponse(_i2.GVehiclesDataBuilder? optimisticResponse) =>
+  _i2.GVehicleVariantsDataBuilder? _optimisticResponse;
+  _i2.GVehicleVariantsDataBuilder get optimisticResponse =>
+      _$this._optimisticResponse ??= new _i2.GVehicleVariantsDataBuilder();
+  set optimisticResponse(_i2.GVehicleVariantsDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
   String? _updateCacheHandlerKey;
@@ -775,11 +785,11 @@ class GVehiclesReqBuilder
   set executeOnListen(bool? executeOnListen) =>
       _$this._executeOnListen = executeOnListen;
 
-  GVehiclesReqBuilder() {
-    GVehiclesReq._initializeBuilder(this);
+  GVehicleVariantsReqBuilder() {
+    GVehicleVariantsReq._initializeBuilder(this);
   }
 
-  GVehiclesReqBuilder get _$this {
+  GVehicleVariantsReqBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _vars = $v.vars.toBuilder();
@@ -797,27 +807,27 @@ class GVehiclesReqBuilder
   }
 
   @override
-  void replace(GVehiclesReq other) {
+  void replace(GVehicleVariantsReq other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GVehiclesReq;
+    _$v = other as _$GVehicleVariantsReq;
   }
 
   @override
-  void update(void Function(GVehiclesReqBuilder)? updates) {
+  void update(void Function(GVehicleVariantsReqBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GVehiclesReq build() => _build();
+  GVehicleVariantsReq build() => _build();
 
-  _$GVehiclesReq _build() {
-    _$GVehiclesReq _$result;
+  _$GVehicleVariantsReq _build() {
+    _$GVehicleVariantsReq _$result;
     try {
       _$result = _$v ??
-          new _$GVehiclesReq._(
+          new _$GVehicleVariantsReq._(
               vars: vars.build(),
               operation: BuiltValueNullFieldError.checkNotNull(
-                  operation, r'GVehiclesReq', 'operation'),
+                  operation, r'GVehicleVariantsReq', 'operation'),
               requestId: requestId,
               updateResult: updateResult,
               optimisticResponse: _optimisticResponse?.build(),
@@ -825,7 +835,7 @@ class GVehiclesReqBuilder
               updateCacheHandlerContext: updateCacheHandlerContext,
               fetchPolicy: fetchPolicy,
               executeOnListen: BuiltValueNullFieldError.checkNotNull(
-                  executeOnListen, r'GVehiclesReq', 'executeOnListen'));
+                  executeOnListen, r'GVehicleVariantsReq', 'executeOnListen'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -836,7 +846,7 @@ class GVehiclesReqBuilder
         _optimisticResponse?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GVehiclesReq', _$failedField, e.toString());
+            r'GVehicleVariantsReq', _$failedField, e.toString());
       }
       rethrow;
     }

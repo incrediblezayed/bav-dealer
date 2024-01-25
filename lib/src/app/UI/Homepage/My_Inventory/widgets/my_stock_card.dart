@@ -7,7 +7,7 @@ import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MyStockCard extends ConsumerStatefulWidget {
-  const MyStockCard({super.key, required this.vehicleDealers});
+  const MyStockCard({required this.vehicleDealers, super.key});
   final GVehicleDealersData_vehicleDealers vehicleDealers;
 
   @override
@@ -205,7 +205,7 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
           if (!isEdit)
             KBottomBarButton(
               // text: 'Quantity: ${widget.vehicleDealers.stock}',
-              text: "Edit",
+              text: 'Edit',
               onTap: () {
                 setState(() {
                   isEdit = true;
@@ -225,7 +225,7 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                           colorId: widget.vehicleDealers.vehicleColor!.id,
                           variantId: widget.vehicleDealers.vehicleVariant!.id,
                           quantity: selectedQuantity,
-                          type: 'remove');
+                          type: 'remove',);
                     },
                   ),
                 ),
@@ -234,13 +234,13 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                 ),
                 Expanded(
                   child: KBottomBarButton(
-                    text: "Add",
+                    text: 'Add',
                     onTap: () {
                       inventoryPro.updateStockRequest(
                           colorId: widget.vehicleDealers.vehicleColor!.id,
                           variantId: widget.vehicleDealers.vehicleVariant!.id,
                           quantity: selectedQuantity,
-                          type: 'add');
+                          type: 'add',);
                     },
                   ),
                 ),
@@ -255,8 +255,8 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                   setState(() {
                     isEdit = false;
                   });
-                })
-          ]
+                },),
+          ],
         ],
       ),
     );

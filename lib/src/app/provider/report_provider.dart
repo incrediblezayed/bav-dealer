@@ -6,7 +6,7 @@ import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ReportProvider extends ChangeNotifier {
-  ReportRepository _reportRepository = ReportRepository();
+  final ReportRepository _reportRepository = ReportRepository();
 
   List<GCategoriesData_categories> _categories = [];
   List<GCategoriesData_categories> get categories => _categories;
@@ -67,11 +67,11 @@ class ReportProvider extends ChangeNotifier {
 
   Future<void> createReport() async {
     if (_selectedCategory == null) {
-      AppRoutes.showErrorSnackbar(message: 'Please select a category');
+      await AppRoutes.showErrorSnackbar(message: 'Please select a category');
     } else if (title.text.isEmpty) {
-      AppRoutes.showErrorSnackbar(message: 'Please enter a title');
+      await AppRoutes.showErrorSnackbar(message: 'Please enter a title');
     } else if (description.text.isEmpty) {
-      AppRoutes.showErrorSnackbar(message: 'Please enter a description');
+      await AppRoutes.showErrorSnackbar(message: 'Please enter a description');
     } else {
       unawaited(AppRoutes.showLoadingDialog());
 
@@ -83,22 +83,23 @@ class ReportProvider extends ChangeNotifier {
       );
       AppRoutes.pop();
       if (response) {
-        AppRoutes.showSuccessSnackbar(
-            message: 'Feedback submitted successfully');
+        await AppRoutes.showSuccessSnackbar(
+          message: 'Feedback submitted successfully',
+        );
         clear();
       } else {
-        AppRoutes.showErrorSnackbar(message: 'Something went wrong');
+        await AppRoutes.showErrorSnackbar(message: 'Something went wrong');
       }
     }
   }
 
   Future<void> createFeedback() async {
     if (_selectedCategory == null) {
-      AppRoutes.showErrorSnackbar(message: 'Please select a category');
+      await AppRoutes.showErrorSnackbar(message: 'Please select a category');
     } else if (title.text.isEmpty) {
-      AppRoutes.showErrorSnackbar(message: 'Please enter a title');
+      await AppRoutes.showErrorSnackbar(message: 'Please enter a title');
     } else if (description.text.isEmpty) {
-      AppRoutes.showErrorSnackbar(message: 'Please enter a description');
+      await AppRoutes.showErrorSnackbar(message: 'Please enter a description');
     } else {
       unawaited(AppRoutes.showLoadingDialog());
 
@@ -110,11 +111,12 @@ class ReportProvider extends ChangeNotifier {
       );
       AppRoutes.pop();
       if (response) {
-        AppRoutes.showSuccessSnackbar(
-            message: 'Feedback submitted successfully');
+        await AppRoutes.showSuccessSnackbar(
+          message: 'Feedback submitted successfully',
+        );
         clear();
       } else {
-        AppRoutes.showErrorSnackbar(message: 'Something went wrong');
+        await AppRoutes.showErrorSnackbar(message: 'Something went wrong');
       }
     }
   }

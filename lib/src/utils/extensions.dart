@@ -45,12 +45,15 @@ extension Log on Object? {
 extension HexColor on Color {
   /// String is in the format "aabbcc" or "ffaabbcc" with an optional leading "#".
   static Color fromHex(String hexString) {
+    final colorString = hexString.trim();
+
     final buffer = StringBuffer();
-    if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
-    buffer.write(hexString.replaceFirst('#', ''));
+    if (colorString.length == 6 || colorString.length == 7) buffer.write('ff');
+    buffer.write(colorString.replaceAll('#', ''));
     try {
       return Color(int.parse(buffer.toString(), radix: 16));
-    } catch (e) {
+    } catch (e, trace) {
+      e.log(stackTrace: trace);
       return Colors.white;
     }
   }

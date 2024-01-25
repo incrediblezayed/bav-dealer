@@ -22,7 +22,7 @@ class KBottomBarButton extends StatelessWidget {
       this.minSize = false,
       this.radius = 5,
       this.fontWeight,
-      this.secondaryColor});
+      this.secondaryColor,});
 
   final Color? secondaryColor;
 

@@ -6,8 +6,8 @@ part of 'inventory.var.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GVehiclesVars> _$gVehiclesVarsSerializer =
-    new _$GVehiclesVarsSerializer();
+Serializer<GVehicleVariantsVars> _$gVehicleVariantsVarsSerializer =
+    new _$GVehicleVariantsVarsSerializer();
 Serializer<GCreateVehicleDealerStockRequestVars>
     _$gCreateVehicleDealerStockRequestVarsSerializer =
     new _$GCreateVehicleDealerStockRequestVarsSerializer();
@@ -18,29 +18,38 @@ Serializer<GCreateVehicleDealerVars> _$gCreateVehicleDealerVarsSerializer =
 Serializer<GPriceCategoriesVars> _$gPriceCategoriesVarsSerializer =
     new _$GPriceCategoriesVarsSerializer();
 
-class _$GVehiclesVarsSerializer implements StructuredSerializer<GVehiclesVars> {
+class _$GVehicleVariantsVarsSerializer
+    implements StructuredSerializer<GVehicleVariantsVars> {
   @override
-  final Iterable<Type> types = const [GVehiclesVars, _$GVehiclesVars];
+  final Iterable<Type> types = const [
+    GVehicleVariantsVars,
+    _$GVehicleVariantsVars
+  ];
   @override
-  final String wireName = 'GVehiclesVars';
+  final String wireName = 'GVehicleVariantsVars';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, GVehiclesVars object,
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleVariantsVars object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'where',
       serializers.serialize(object.where,
-          specifiedType: const FullType(_i1.GVehicleWhereInput)),
+          specifiedType: const FullType(_i1.GVehicleVariantWhereInput)),
+      'orderBy',
+      serializers.serialize(object.orderBy,
+          specifiedType: const FullType(BuiltList,
+              const [const FullType(_i1.GVehicleVariantOrderByInput)])),
     ];
 
     return result;
   }
 
   @override
-  GVehiclesVars deserialize(
+  GVehicleVariantsVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehiclesVarsBuilder();
+    final result = new GVehicleVariantsVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -50,8 +59,14 @@ class _$GVehiclesVarsSerializer implements StructuredSerializer<GVehiclesVars> {
       switch (key) {
         case 'where':
           result.where.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(_i1.GVehicleWhereInput))!
-              as _i1.GVehicleWhereInput);
+                  specifiedType: const FullType(_i1.GVehicleVariantWhereInput))!
+              as _i1.GVehicleVariantWhereInput);
+          break;
+        case 'orderBy':
+          result.orderBy.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(_i1.GVehicleVariantOrderByInput)
+              ]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -228,91 +243,117 @@ class _$GPriceCategoriesVarsSerializer
   }
 }
 
-class _$GVehiclesVars extends GVehiclesVars {
+class _$GVehicleVariantsVars extends GVehicleVariantsVars {
   @override
-  final _i1.GVehicleWhereInput where;
+  final _i1.GVehicleVariantWhereInput where;
+  @override
+  final BuiltList<_i1.GVehicleVariantOrderByInput> orderBy;
 
-  factory _$GVehiclesVars([void Function(GVehiclesVarsBuilder)? updates]) =>
-      (new GVehiclesVarsBuilder()..update(updates))._build();
+  factory _$GVehicleVariantsVars(
+          [void Function(GVehicleVariantsVarsBuilder)? updates]) =>
+      (new GVehicleVariantsVarsBuilder()..update(updates))._build();
 
-  _$GVehiclesVars._({required this.where}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(where, r'GVehiclesVars', 'where');
+  _$GVehicleVariantsVars._({required this.where, required this.orderBy})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GVehicleVariantsVars', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        orderBy, r'GVehicleVariantsVars', 'orderBy');
   }
 
   @override
-  GVehiclesVars rebuild(void Function(GVehiclesVarsBuilder) updates) =>
+  GVehicleVariantsVars rebuild(
+          void Function(GVehicleVariantsVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GVehiclesVarsBuilder toBuilder() => new GVehiclesVarsBuilder()..replace(this);
+  GVehicleVariantsVarsBuilder toBuilder() =>
+      new GVehicleVariantsVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GVehiclesVars && where == other.where;
+    return other is GVehicleVariantsVars &&
+        where == other.where &&
+        orderBy == other.orderBy;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, orderBy.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GVehiclesVars')..add('where', where))
+    return (newBuiltValueToStringHelper(r'GVehicleVariantsVars')
+          ..add('where', where)
+          ..add('orderBy', orderBy))
         .toString();
   }
 }
 
-class GVehiclesVarsBuilder
-    implements Builder<GVehiclesVars, GVehiclesVarsBuilder> {
-  _$GVehiclesVars? _$v;
+class GVehicleVariantsVarsBuilder
+    implements Builder<GVehicleVariantsVars, GVehicleVariantsVarsBuilder> {
+  _$GVehicleVariantsVars? _$v;
 
-  _i1.GVehicleWhereInputBuilder? _where;
-  _i1.GVehicleWhereInputBuilder get where =>
-      _$this._where ??= new _i1.GVehicleWhereInputBuilder();
-  set where(_i1.GVehicleWhereInputBuilder? where) => _$this._where = where;
+  _i1.GVehicleVariantWhereInputBuilder? _where;
+  _i1.GVehicleVariantWhereInputBuilder get where =>
+      _$this._where ??= new _i1.GVehicleVariantWhereInputBuilder();
+  set where(_i1.GVehicleVariantWhereInputBuilder? where) =>
+      _$this._where = where;
 
-  GVehiclesVarsBuilder();
+  ListBuilder<_i1.GVehicleVariantOrderByInput>? _orderBy;
+  ListBuilder<_i1.GVehicleVariantOrderByInput> get orderBy =>
+      _$this._orderBy ??= new ListBuilder<_i1.GVehicleVariantOrderByInput>();
+  set orderBy(ListBuilder<_i1.GVehicleVariantOrderByInput>? orderBy) =>
+      _$this._orderBy = orderBy;
 
-  GVehiclesVarsBuilder get _$this {
+  GVehicleVariantsVarsBuilder();
+
+  GVehicleVariantsVarsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _where = $v.where.toBuilder();
+      _orderBy = $v.orderBy.toBuilder();
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(GVehiclesVars other) {
+  void replace(GVehicleVariantsVars other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GVehiclesVars;
+    _$v = other as _$GVehicleVariantsVars;
   }
 
   @override
-  void update(void Function(GVehiclesVarsBuilder)? updates) {
+  void update(void Function(GVehicleVariantsVarsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GVehiclesVars build() => _build();
+  GVehicleVariantsVars build() => _build();
 
-  _$GVehiclesVars _build() {
-    _$GVehiclesVars _$result;
+  _$GVehicleVariantsVars _build() {
+    _$GVehicleVariantsVars _$result;
     try {
-      _$result = _$v ?? new _$GVehiclesVars._(where: where.build());
+      _$result = _$v ??
+          new _$GVehicleVariantsVars._(
+              where: where.build(), orderBy: orderBy.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'where';
         where.build();
+        _$failedField = 'orderBy';
+        orderBy.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GVehiclesVars', _$failedField, e.toString());
+            r'GVehicleVariantsVars', _$failedField, e.toString());
       }
       rethrow;
     }

@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:dealerapp/src/app/repository/graphql_client.dart';
 
-
 //ignore_for_file: argument_type_not_assignable
 //ignore_for_file: inference_failure_on_untyped_parameter
 //ignore_for_file: inference_failure_on_collection_literal
@@ -28,6 +27,7 @@ class UserModel {
     this.phoneNumber,
     this.profileImage,
     this.favoritesCount,
+    this.deactivate = false,
   });
 
   ///From Json Method to create new constructor with data
@@ -61,6 +61,7 @@ class UserModel {
             ? null
             : ImageFieldOutput.fromJson(json['profile_image']),
         favoritesCount: json['favoritesCount'],
+        deactivate: json['deactivate'] ?? false,
       );
 
   ///From Raw Json Method to create new constructor with data
@@ -117,6 +118,8 @@ class UserModel {
 
   ///User Favorites Count
   final int? favoritesCount;
+
+  final bool deactivate;
 }
 
 ///Data Model for Image Field Output

@@ -15,7 +15,7 @@ class PasswordChangeSuccessPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        AppRoutes.pushAndRemoveUntil(page: const LoginPage());
+        await AppRoutes.pushAndRemoveUntil(page: const LoginPage());
         return false;
       },
       child: Scaffold(
@@ -42,14 +42,14 @@ class PasswordChangeSuccessPage extends StatelessWidget {
                   height: 40.h,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: KBottomBarButton(
                       secondaryColor: Colors.white,
                       text: 'Back To Home',
                       onTap: () {
                         AppRoutes.push(page: const LoginPage());
-                      }),
-                )
+                      },),
+                ),
               ],
             ),
           ),

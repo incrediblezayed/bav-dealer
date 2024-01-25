@@ -59,7 +59,7 @@ class _SignUpFlowState extends ConsumerState<SignUpFlow> {
               ),
               Expanded(
                 child: PageView(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   controller: authPro.signUpPageController,
                   children: authPro.signUpPages,
                   onPageChanged: (index) {

@@ -1,4 +1,4 @@
-import 'package:dealerapp/src/app/UI/make_new_purchase/make_new_purchase_details_page.dart';
+/* import 'package:dealerapp/src/app/UI/make_new_purchase/make_new_purchase_details_page.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/provider/order_provider.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
@@ -311,3 +311,4 @@ class _MakeNewPurchaseState extends ConsumerState<MakeNewPurchase> {
     );
   }
 }
+ */

@@ -214,7 +214,7 @@ class AboutUs extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 20, right: 20),
             child: AutoSizeText(
-              'BUY A VEHICLE is the India\'s first virtual electric vehicle showroom. We provide door step delivery for 2 wheeler electric vehicles',
+              "BUY A VEHICLE is the India's first virtual electric vehicle showroom. We provide door step delivery for 2 wheeler electric vehicles",
               style: TextStyle(fontSize: 14.sp, color: Colors.grey),
             ),
           ),

@@ -50,7 +50,7 @@
         "--dart-define-from-file",
         "prodEnv.json",
         "--build-name=1.0.0",
-        "--build-number=1"
+        "--build-number=11"
       ],
       "group": "build",
       "problemMatcher": [],

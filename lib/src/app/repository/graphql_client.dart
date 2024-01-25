@@ -100,7 +100,7 @@ class GraphqlClient {
         HttpLink(
           baseUrl + _path,
           defaultHeaders: {
-            'Authorization': 'Bearer ${token}',
+            'Authorization': 'Bearer $token',
             if (isMultipart)
               Headers.contentTypeHeader: Headers.multipartFormDataContentType,
           },

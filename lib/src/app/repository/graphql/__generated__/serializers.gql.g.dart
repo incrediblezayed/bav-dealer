@@ -13,6 +13,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GAddressOrderByInput.serializer)
       ..add(GAddressRelateToManyForCreateInput.serializer)
       ..add(GAddressRelateToManyForUpdateInput.serializer)
+      ..add(GAddressRelateToOneForCreateInput.serializer)
+      ..add(GAddressRelateToOneForUpdateInput.serializer)
       ..add(GAddressUpdateArgs.serializer)
       ..add(GAddressUpdateInput.serializer)
       ..add(GAddressWhereInput.serializer)
@@ -215,8 +217,45 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GKeystoneAdminUIFieldMetaItemViewFieldPosition.serializer)
       ..add(GKeystoneAdminUIFieldMetaListViewFieldMode.serializer)
       ..add(GKeystoneAdminUISortDirection.serializer)
+      ..add(GKeywordCreateInput.serializer)
+      ..add(GKeywordManyRelationFilter.serializer)
+      ..add(GKeywordOrderByInput.serializer)
+      ..add(GKeywordRelateToManyForCreateInput.serializer)
+      ..add(GKeywordRelateToManyForUpdateInput.serializer)
+      ..add(GKeywordUpdateArgs.serializer)
+      ..add(GKeywordUpdateInput.serializer)
+      ..add(GKeywordWhereInput.serializer)
+      ..add(GKeywordWhereUniqueInput.serializer)
       ..add(GNestedStringFilter.serializer)
       ..add(GNestedStringNullableFilter.serializer)
+      ..add(GNewsAttachmentCreateInput.serializer)
+      ..add(GNewsAttachmentManyRelationFilter.serializer)
+      ..add(GNewsAttachmentOrderByInput.serializer)
+      ..add(GNewsAttachmentRelateToManyForCreateInput.serializer)
+      ..add(GNewsAttachmentRelateToManyForUpdateInput.serializer)
+      ..add(GNewsAttachmentRelateToOneForCreateInput.serializer)
+      ..add(GNewsAttachmentRelateToOneForUpdateInput.serializer)
+      ..add(GNewsAttachmentUpdateArgs.serializer)
+      ..add(GNewsAttachmentUpdateInput.serializer)
+      ..add(GNewsAttachmentWhereInput.serializer)
+      ..add(GNewsAttachmentWhereUniqueInput.serializer)
+      ..add(GNewsCategoryCreateInput.serializer)
+      ..add(GNewsCategoryManyRelationFilter.serializer)
+      ..add(GNewsCategoryOrderByInput.serializer)
+      ..add(GNewsCategoryRelateToManyForCreateInput.serializer)
+      ..add(GNewsCategoryRelateToManyForUpdateInput.serializer)
+      ..add(GNewsCategoryUpdateArgs.serializer)
+      ..add(GNewsCategoryUpdateInput.serializer)
+      ..add(GNewsCategoryWhereInput.serializer)
+      ..add(GNewsCategoryWhereUniqueInput.serializer)
+      ..add(GNewsItemCreateInput.serializer)
+      ..add(GNewsItemOrderByInput.serializer)
+      ..add(GNewsItemRelateToOneForCreateInput.serializer)
+      ..add(GNewsItemRelateToOneForUpdateInput.serializer)
+      ..add(GNewsItemUpdateArgs.serializer)
+      ..add(GNewsItemUpdateInput.serializer)
+      ..add(GNewsItemWhereInput.serializer)
+      ..add(GNewsItemWhereUniqueInput.serializer)
       ..add(GNotificationTypeCreateInput.serializer)
       ..add(GNotificationTypeOrderByInput.serializer)
       ..add(GNotificationTypeRelateToOneForCreateInput.serializer)
@@ -288,6 +327,101 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GPriceUpdateInput.serializer)
       ..add(GPriceWhereInput.serializer)
       ..add(GPriceWhereUniqueInput.serializer)
+      ..add(GProductCreateInput.serializer)
+      ..add(GProductDealerCreateInput.serializer)
+      ..add(GProductDealerOrderByInput.serializer)
+      ..add(GProductDealerRelateToOneForCreateInput.serializer)
+      ..add(GProductDealerRelateToOneForUpdateInput.serializer)
+      ..add(GProductDealerStockRequestCreateInput.serializer)
+      ..add(GProductDealerStockRequestOrderByInput.serializer)
+      ..add(GProductDealerStockRequestUpdateArgs.serializer)
+      ..add(GProductDealerStockRequestUpdateInput.serializer)
+      ..add(GProductDealerStockRequestWhereInput.serializer)
+      ..add(GProductDealerStockRequestWhereUniqueInput.serializer)
+      ..add(GProductDealerUpdateArgs.serializer)
+      ..add(GProductDealerUpdateInput.serializer)
+      ..add(GProductDealerWhereInput.serializer)
+      ..add(GProductDealerWhereUniqueInput.serializer)
+      ..add(GProductGalleryItemCreateInput.serializer)
+      ..add(GProductGalleryItemManyRelationFilter.serializer)
+      ..add(GProductGalleryItemOrderByInput.serializer)
+      ..add(GProductGalleryItemRelateToManyForCreateInput.serializer)
+      ..add(GProductGalleryItemRelateToManyForUpdateInput.serializer)
+      ..add(GProductGalleryItemUpdateArgs.serializer)
+      ..add(GProductGalleryItemUpdateInput.serializer)
+      ..add(GProductGalleryItemWhereInput.serializer)
+      ..add(GProductGalleryItemWhereUniqueInput.serializer)
+      ..add(GProductImageCreateInput.serializer)
+      ..add(GProductImageManyRelationFilter.serializer)
+      ..add(GProductImageOrderByInput.serializer)
+      ..add(GProductImageRelateToManyForCreateInput.serializer)
+      ..add(GProductImageRelateToManyForUpdateInput.serializer)
+      ..add(GProductImageUpdateArgs.serializer)
+      ..add(GProductImageUpdateInput.serializer)
+      ..add(GProductImageWhereInput.serializer)
+      ..add(GProductImageWhereUniqueInput.serializer)
+      ..add(GProductOrderByInput.serializer)
+      ..add(GProductOrderCreateInput.serializer)
+      ..add(GProductOrderManyRelationFilter.serializer)
+      ..add(GProductOrderOrderByInput.serializer)
+      ..add(GProductOrderRelateToManyForCreateInput.serializer)
+      ..add(GProductOrderRelateToManyForUpdateInput.serializer)
+      ..add(GProductOrderUpdateArgs.serializer)
+      ..add(GProductOrderUpdateInput.serializer)
+      ..add(GProductOrderWhereInput.serializer)
+      ..add(GProductOrderWhereUniqueInput.serializer)
+      ..add(GProductReelCreateInput.serializer)
+      ..add(GProductReelManyRelationFilter.serializer)
+      ..add(GProductReelOrderByInput.serializer)
+      ..add(GProductReelRelateToManyForCreateInput.serializer)
+      ..add(GProductReelRelateToManyForUpdateInput.serializer)
+      ..add(GProductReelUpdateArgs.serializer)
+      ..add(GProductReelUpdateInput.serializer)
+      ..add(GProductReelWhereInput.serializer)
+      ..add(GProductReelWhereUniqueInput.serializer)
+      ..add(GProductRelateToOneForCreateInput.serializer)
+      ..add(GProductRelateToOneForUpdateInput.serializer)
+      ..add(GProductSpecificationCreateInput.serializer)
+      ..add(GProductSpecificationManyRelationFilter.serializer)
+      ..add(GProductSpecificationOrderByInput.serializer)
+      ..add(GProductSpecificationRelateToManyForCreateInput.serializer)
+      ..add(GProductSpecificationRelateToManyForUpdateInput.serializer)
+      ..add(GProductSpecificationUpdateArgs.serializer)
+      ..add(GProductSpecificationUpdateInput.serializer)
+      ..add(GProductSpecificationWhereInput.serializer)
+      ..add(GProductSpecificationWhereUniqueInput.serializer)
+      ..add(GProductTypeCreateInput.serializer)
+      ..add(GProductTypeOrderByInput.serializer)
+      ..add(GProductTypeRelateToOneForCreateInput.serializer)
+      ..add(GProductTypeRelateToOneForUpdateInput.serializer)
+      ..add(GProductTypeUpdateArgs.serializer)
+      ..add(GProductTypeUpdateInput.serializer)
+      ..add(GProductTypeWhereInput.serializer)
+      ..add(GProductTypeWhereUniqueInput.serializer)
+      ..add(GProductUpdateArgs.serializer)
+      ..add(GProductUpdateInput.serializer)
+      ..add(GProductVariantCreateInput.serializer)
+      ..add(GProductVariantManyRelationFilter.serializer)
+      ..add(GProductVariantOrderByInput.serializer)
+      ..add(GProductVariantRelateToManyForCreateInput.serializer)
+      ..add(GProductVariantRelateToManyForUpdateInput.serializer)
+      ..add(GProductVariantRelateToOneForCreateInput.serializer)
+      ..add(GProductVariantRelateToOneForUpdateInput.serializer)
+      ..add(GProductVariantUpdateArgs.serializer)
+      ..add(GProductVariantUpdateInput.serializer)
+      ..add(GProductVariantWhereInput.serializer)
+      ..add(GProductVariantWhereUniqueInput.serializer)
+      ..add(GProductVideoCreateInput.serializer)
+      ..add(GProductVideoManyRelationFilter.serializer)
+      ..add(GProductVideoOrderByInput.serializer)
+      ..add(GProductVideoRelateToManyForCreateInput.serializer)
+      ..add(GProductVideoRelateToManyForUpdateInput.serializer)
+      ..add(GProductVideoUpdateArgs.serializer)
+      ..add(GProductVideoUpdateInput.serializer)
+      ..add(GProductVideoWhereInput.serializer)
+      ..add(GProductVideoWhereUniqueInput.serializer)
+      ..add(GProductWhereInput.serializer)
+      ..add(GProductWhereUniqueInput.serializer)
       ..add(GQueryMode.serializer)
       ..add(GRedeemUserPasswordResetTokenData.serializer)
       ..add(GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken
@@ -421,6 +555,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GUserData_user_profile_image.serializer)
       ..add(GUserData_user_referralCode.serializer)
       ..add(GUserOrderByInput.serializer)
+      ..add(GUserProductReviewCreateInput.serializer)
+      ..add(GUserProductReviewOrderByInput.serializer)
+      ..add(GUserProductReviewUpdateArgs.serializer)
+      ..add(GUserProductReviewUpdateInput.serializer)
+      ..add(GUserProductReviewWhereInput.serializer)
+      ..add(GUserProductReviewWhereUniqueInput.serializer)
       ..add(GUserRelateToOneForCreateInput.serializer)
       ..add(GUserRelateToOneForUpdateInput.serializer)
       ..add(GUserReq.serializer)
@@ -484,6 +624,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
           .serializer)
       ..add(GVehicleDealersReq.serializer)
       ..add(GVehicleDealersVars.serializer)
+      ..add(GVehicleGalleryItemCreateInput.serializer)
+      ..add(GVehicleGalleryItemManyRelationFilter.serializer)
+      ..add(GVehicleGalleryItemOrderByInput.serializer)
+      ..add(GVehicleGalleryItemRelateToManyForCreateInput.serializer)
+      ..add(GVehicleGalleryItemRelateToManyForUpdateInput.serializer)
+      ..add(GVehicleGalleryItemUpdateArgs.serializer)
+      ..add(GVehicleGalleryItemUpdateInput.serializer)
+      ..add(GVehicleGalleryItemWhereInput.serializer)
+      ..add(GVehicleGalleryItemWhereUniqueInput.serializer)
       ..add(GVehicleImageCreateInput.serializer)
       ..add(GVehicleImageManyRelationFilter.serializer)
       ..add(GVehicleImageOrderByInput.serializer)
@@ -523,6 +672,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleOrdersData_vehicleOrders_order_user_addresses.serializer)
       ..add(GVehicleOrdersReq.serializer)
       ..add(GVehicleOrdersVars.serializer)
+      ..add(GVehicleReelCreateInput.serializer)
+      ..add(GVehicleReelManyRelationFilter.serializer)
+      ..add(GVehicleReelOrderByInput.serializer)
+      ..add(GVehicleReelRelateToManyForCreateInput.serializer)
+      ..add(GVehicleReelRelateToManyForUpdateInput.serializer)
+      ..add(GVehicleReelUpdateArgs.serializer)
+      ..add(GVehicleReelUpdateInput.serializer)
+      ..add(GVehicleReelWhereInput.serializer)
+      ..add(GVehicleReelWhereUniqueInput.serializer)
       ..add(GVehicleRelateToManyForCreateInput.serializer)
       ..add(GVehicleRelateToManyForUpdateInput.serializer)
       ..add(GVehicleRelateToOneForCreateInput.serializer)
@@ -557,19 +715,29 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleVariantUpdateInput.serializer)
       ..add(GVehicleVariantWhereInput.serializer)
       ..add(GVehicleVariantWhereUniqueInput.serializer)
+      ..add(GVehicleVariantsData.serializer)
+      ..add(GVehicleVariantsData_vehicleVariants.serializer)
+      ..add(GVehicleVariantsData_vehicleVariants_colors.serializer)
+      ..add(GVehicleVariantsData_vehicleVariants_colors_images.serializer)
+      ..add(GVehicleVariantsData_vehicleVariants_colors_images_image.serializer)
+      ..add(GVehicleVariantsData_vehicleVariants_prices.serializer)
+      ..add(GVehicleVariantsData_vehicleVariants_prices_category.serializer)
+      ..add(GVehicleVariantsData_vehicleVariants_vehicle.serializer)
+      ..add(GVehicleVariantsData_vehicleVariants_vehicle_brand.serializer)
+      ..add(GVehicleVariantsData_vehicleVariants_vehicle_type.serializer)
+      ..add(GVehicleVariantsReq.serializer)
+      ..add(GVehicleVariantsVars.serializer)
+      ..add(GVehicleVideoCreateInput.serializer)
+      ..add(GVehicleVideoManyRelationFilter.serializer)
+      ..add(GVehicleVideoOrderByInput.serializer)
+      ..add(GVehicleVideoRelateToManyForCreateInput.serializer)
+      ..add(GVehicleVideoRelateToManyForUpdateInput.serializer)
+      ..add(GVehicleVideoUpdateArgs.serializer)
+      ..add(GVehicleVideoUpdateInput.serializer)
+      ..add(GVehicleVideoWhereInput.serializer)
+      ..add(GVehicleVideoWhereUniqueInput.serializer)
       ..add(GVehicleWhereInput.serializer)
       ..add(GVehicleWhereUniqueInput.serializer)
-      ..add(GVehiclesData.serializer)
-      ..add(GVehiclesData_vehicles.serializer)
-      ..add(GVehiclesData_vehicles_variants.serializer)
-      ..add(GVehiclesData_vehicles_variants_colors.serializer)
-      ..add(GVehiclesData_vehicles_variants_colors_images.serializer)
-      ..add(GVehiclesData_vehicles_variants_colors_images_image.serializer)
-      ..add(GVehiclesData_vehicles_variants_vehicle.serializer)
-      ..add(GVehiclesData_vehicles_variants_vehicle_brand.serializer)
-      ..add(GVehiclesData_vehicles_variants_vehicle_type.serializer)
-      ..add(GVehiclesReq.serializer)
-      ..add(GVehiclesVars.serializer)
       ..add(GWalletCreateInput.serializer)
       ..add(GWalletOrderByInput.serializer)
       ..add(GWalletRelateToOneForCreateInput.serializer)
@@ -908,6 +1076,123 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<GHelpSupportWhereInput>())
       ..addBuilderFactory(
           const FullType(
+              BuiltList, const [const FullType(GKeywordCreateInput)]),
+          () => new ListBuilder<GKeywordCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GKeywordWhereUniqueInput)]),
+          () => new ListBuilder<GKeywordWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GKeywordWhereInput)]),
+          () => new ListBuilder<GKeywordWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GKeywordWhereInput)]),
+          () => new ListBuilder<GKeywordWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GKeywordWhereInput)]),
+          () => new ListBuilder<GKeywordWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GKeywordWhereUniqueInput)]),
+          () => new ListBuilder<GKeywordWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GKeywordWhereUniqueInput)]),
+          () => new ListBuilder<GKeywordWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GKeywordCreateInput)]),
+          () => new ListBuilder<GKeywordCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GKeywordWhereUniqueInput)]),
+          () => new ListBuilder<GKeywordWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNewsAttachmentCreateInput)]),
+          () => new ListBuilder<GNewsAttachmentCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GNewsAttachmentWhereUniqueInput)]),
+          () => new ListBuilder<GNewsAttachmentWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNewsAttachmentWhereInput)]),
+          () => new ListBuilder<GNewsAttachmentWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNewsAttachmentWhereInput)]),
+          () => new ListBuilder<GNewsAttachmentWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNewsAttachmentWhereInput)]),
+          () => new ListBuilder<GNewsAttachmentWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GNewsAttachmentWhereUniqueInput)]),
+          () => new ListBuilder<GNewsAttachmentWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GNewsAttachmentWhereUniqueInput)]),
+          () => new ListBuilder<GNewsAttachmentWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNewsAttachmentCreateInput)]),
+          () => new ListBuilder<GNewsAttachmentCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GNewsAttachmentWhereUniqueInput)]),
+          () => new ListBuilder<GNewsAttachmentWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNewsCategoryCreateInput)]),
+          () => new ListBuilder<GNewsCategoryCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNewsCategoryWhereUniqueInput)]),
+          () => new ListBuilder<GNewsCategoryWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNewsCategoryWhereInput)]),
+          () => new ListBuilder<GNewsCategoryWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNewsCategoryWhereInput)]),
+          () => new ListBuilder<GNewsCategoryWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNewsCategoryWhereInput)]),
+          () => new ListBuilder<GNewsCategoryWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNewsCategoryWhereUniqueInput)]),
+          () => new ListBuilder<GNewsCategoryWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNewsCategoryWhereUniqueInput)]),
+          () => new ListBuilder<GNewsCategoryWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNewsCategoryCreateInput)]),
+          () => new ListBuilder<GNewsCategoryCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNewsCategoryWhereUniqueInput)]),
+          () => new ListBuilder<GNewsCategoryWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNewsItemWhereInput)]),
+          () => new ListBuilder<GNewsItemWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNewsItemWhereInput)]),
+          () => new ListBuilder<GNewsItemWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNewsItemWhereInput)]),
+          () => new ListBuilder<GNewsItemWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
               BuiltList, const [const FullType(GNotificationTypeWhereInput)]),
           () => new ListBuilder<GNotificationTypeWhereInput>())
       ..addBuilderFactory(
@@ -1040,6 +1325,303 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GPriceWhereUniqueInput)]),
           () => new ListBuilder<GPriceWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductDealerStockRequestWhereInput)]),
+          () => new ListBuilder<GProductDealerStockRequestWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductDealerStockRequestWhereInput)]),
+          () => new ListBuilder<GProductDealerStockRequestWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductDealerStockRequestWhereInput)]),
+          () => new ListBuilder<GProductDealerStockRequestWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductDealerWhereInput)]),
+          () => new ListBuilder<GProductDealerWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductDealerWhereInput)]),
+          () => new ListBuilder<GProductDealerWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductDealerWhereInput)]),
+          () => new ListBuilder<GProductDealerWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductGalleryItemCreateInput)]),
+          () => new ListBuilder<GProductGalleryItemCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductGalleryItemWhereUniqueInput)]),
+          () => new ListBuilder<GProductGalleryItemWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductGalleryItemWhereInput)]),
+          () => new ListBuilder<GProductGalleryItemWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductGalleryItemWhereInput)]),
+          () => new ListBuilder<GProductGalleryItemWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductGalleryItemWhereInput)]),
+          () => new ListBuilder<GProductGalleryItemWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductGalleryItemWhereUniqueInput)]),
+          () => new ListBuilder<GProductGalleryItemWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductGalleryItemWhereUniqueInput)]),
+          () => new ListBuilder<GProductGalleryItemWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductGalleryItemCreateInput)]),
+          () => new ListBuilder<GProductGalleryItemCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductGalleryItemWhereUniqueInput)]),
+          () => new ListBuilder<GProductGalleryItemWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductImageCreateInput)]),
+          () => new ListBuilder<GProductImageCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductImageWhereUniqueInput)]),
+          () => new ListBuilder<GProductImageWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductImageWhereInput)]),
+          () => new ListBuilder<GProductImageWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductImageWhereInput)]),
+          () => new ListBuilder<GProductImageWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductImageWhereInput)]),
+          () => new ListBuilder<GProductImageWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductImageWhereUniqueInput)]),
+          () => new ListBuilder<GProductImageWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductImageWhereUniqueInput)]),
+          () => new ListBuilder<GProductImageWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductImageCreateInput)]),
+          () => new ListBuilder<GProductImageCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductImageWhereUniqueInput)]),
+          () => new ListBuilder<GProductImageWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductOrderCreateInput)]),
+          () => new ListBuilder<GProductOrderCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductOrderWhereUniqueInput)]),
+          () => new ListBuilder<GProductOrderWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductOrderWhereInput)]),
+          () => new ListBuilder<GProductOrderWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductOrderWhereInput)]),
+          () => new ListBuilder<GProductOrderWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductOrderWhereInput)]),
+          () => new ListBuilder<GProductOrderWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductOrderWhereUniqueInput)]),
+          () => new ListBuilder<GProductOrderWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductOrderWhereUniqueInput)]),
+          () => new ListBuilder<GProductOrderWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductOrderCreateInput)]),
+          () => new ListBuilder<GProductOrderCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductOrderWhereUniqueInput)]),
+          () => new ListBuilder<GProductOrderWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductReelCreateInput)]),
+          () => new ListBuilder<GProductReelCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductReelWhereUniqueInput)]),
+          () => new ListBuilder<GProductReelWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductReelWhereInput)]),
+          () => new ListBuilder<GProductReelWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductReelWhereInput)]),
+          () => new ListBuilder<GProductReelWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductReelWhereInput)]),
+          () => new ListBuilder<GProductReelWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductReelWhereUniqueInput)]),
+          () => new ListBuilder<GProductReelWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductReelWhereUniqueInput)]),
+          () => new ListBuilder<GProductReelWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductReelCreateInput)]),
+          () => new ListBuilder<GProductReelCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductReelWhereUniqueInput)]),
+          () => new ListBuilder<GProductReelWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductSpecificationCreateInput)]),
+          () => new ListBuilder<GProductSpecificationCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductSpecificationWhereUniqueInput)]),
+          () => new ListBuilder<GProductSpecificationWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductSpecificationWhereInput)]),
+          () => new ListBuilder<GProductSpecificationWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductSpecificationWhereInput)]),
+          () => new ListBuilder<GProductSpecificationWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductSpecificationWhereInput)]),
+          () => new ListBuilder<GProductSpecificationWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductSpecificationWhereUniqueInput)]),
+          () => new ListBuilder<GProductSpecificationWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductSpecificationWhereUniqueInput)]),
+          () => new ListBuilder<GProductSpecificationWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductSpecificationCreateInput)]),
+          () => new ListBuilder<GProductSpecificationCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductSpecificationWhereUniqueInput)]),
+          () => new ListBuilder<GProductSpecificationWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductTypeWhereInput)]),
+          () => new ListBuilder<GProductTypeWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductTypeWhereInput)]),
+          () => new ListBuilder<GProductTypeWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductTypeWhereInput)]),
+          () => new ListBuilder<GProductTypeWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductVariantCreateInput)]),
+          () => new ListBuilder<GProductVariantCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductVariantWhereUniqueInput)]),
+          () => new ListBuilder<GProductVariantWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductVariantWhereInput)]),
+          () => new ListBuilder<GProductVariantWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductVariantWhereInput)]),
+          () => new ListBuilder<GProductVariantWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductVariantWhereInput)]),
+          () => new ListBuilder<GProductVariantWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductVariantWhereUniqueInput)]),
+          () => new ListBuilder<GProductVariantWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductVariantWhereUniqueInput)]),
+          () => new ListBuilder<GProductVariantWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductVariantCreateInput)]),
+          () => new ListBuilder<GProductVariantCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductVariantWhereUniqueInput)]),
+          () => new ListBuilder<GProductVariantWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductVideoCreateInput)]),
+          () => new ListBuilder<GProductVideoCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductVideoWhereUniqueInput)]),
+          () => new ListBuilder<GProductVideoWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductVideoWhereInput)]),
+          () => new ListBuilder<GProductVideoWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductVideoWhereInput)]),
+          () => new ListBuilder<GProductVideoWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductVideoWhereInput)]),
+          () => new ListBuilder<GProductVideoWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductVideoWhereUniqueInput)]),
+          () => new ListBuilder<GProductVideoWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductVideoWhereUniqueInput)]),
+          () => new ListBuilder<GProductVideoWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductVideoCreateInput)]),
+          () => new ListBuilder<GProductVideoCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductVideoWhereUniqueInput)]),
+          () => new ListBuilder<GProductVideoWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GProductWhereInput)]),
+          () => new ListBuilder<GProductWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GProductWhereInput)]),
+          () => new ListBuilder<GProductWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GProductWhereInput)]),
+          () => new ListBuilder<GProductWhereInput>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GReferralCodeWhereInput)]),
@@ -1256,6 +1838,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<GUserData_user_favorites>())
       ..addBuilderFactory(
           const FullType(
+              BuiltList, const [const FullType(GUserProductReviewWhereInput)]),
+          () => new ListBuilder<GUserProductReviewWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GUserProductReviewWhereInput)]),
+          () => new ListBuilder<GUserProductReviewWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GUserProductReviewWhereInput)]),
+          () => new ListBuilder<GUserProductReviewWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
               BuiltList, const [const FullType(GUserVehicleReviewWhereInput)]),
           () => new ListBuilder<GUserVehicleReviewWhereInput>())
       ..addBuilderFactory(
@@ -1360,6 +1954,42 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<
               GVehicleDealersData_vehicleDealers_vehicleColor_images>())
       ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehicleGalleryItemCreateInput)]),
+          () => new ListBuilder<GVehicleGalleryItemCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehicleGalleryItemWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleGalleryItemWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleGalleryItemWhereInput)]),
+          () => new ListBuilder<GVehicleGalleryItemWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleGalleryItemWhereInput)]),
+          () => new ListBuilder<GVehicleGalleryItemWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleGalleryItemWhereInput)]),
+          () => new ListBuilder<GVehicleGalleryItemWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehicleGalleryItemWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleGalleryItemWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehicleGalleryItemWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleGalleryItemWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehicleGalleryItemCreateInput)]),
+          () => new ListBuilder<GVehicleGalleryItemCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehicleGalleryItemWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleGalleryItemWhereUniqueInput>())
+      ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GVehicleImageCreateInput)]),
           () => new ListBuilder<GVehicleImageCreateInput>())
@@ -1460,6 +2090,42 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<
               GVehicleOrdersData_vehicleOrders_order_user_addresses>())
       ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleReelCreateInput)]),
+          () => new ListBuilder<GVehicleReelCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleReelWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleReelWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleReelWhereInput)]),
+          () => new ListBuilder<GVehicleReelWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleReelWhereInput)]),
+          () => new ListBuilder<GVehicleReelWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleReelWhereInput)]),
+          () => new ListBuilder<GVehicleReelWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleReelWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleReelWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleReelWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleReelWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleReelCreateInput)]),
+          () => new ListBuilder<GVehicleReelCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleReelWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleReelWhereUniqueInput>())
+      ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(GVehicleSpecificationCreateInput)]),
           () => new ListBuilder<GVehicleSpecificationCreateInput>())
@@ -1517,6 +2183,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<GVehicleVariantWhereUniqueInput>())
       ..addBuilderFactory(
           const FullType(
+              BuiltList, const [const FullType(GVehicleVariantOrderByInput)]),
+          () => new ListBuilder<GVehicleVariantOrderByInput>())
+      ..addBuilderFactory(
+          const FullType(
               BuiltList, const [const FullType(GVehicleVariantWhereInput)]),
           () => new ListBuilder<GVehicleVariantWhereInput>())
       ..addBuilderFactory(
@@ -1543,6 +2213,62 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(GVehicleVariantWhereUniqueInput)]),
           () => new ListBuilder<GVehicleVariantWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehicleVariantsData_vehicleVariants)]),
+          () => new ListBuilder<GVehicleVariantsData_vehicleVariants>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GVehicleVariantsData_vehicleVariants_colors_images)
+          ]),
+          () => new ListBuilder<
+              GVehicleVariantsData_vehicleVariants_colors_images>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GVehicleVariantsData_vehicleVariants_prices)
+          ]),
+          () => new ListBuilder<GVehicleVariantsData_vehicleVariants_prices>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GVehicleVariantsData_vehicleVariants_colors)
+          ]),
+          () => new ListBuilder<GVehicleVariantsData_vehicleVariants_colors>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleVideoCreateInput)]),
+          () => new ListBuilder<GVehicleVideoCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleVideoWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleVideoWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleVideoWhereInput)]),
+          () => new ListBuilder<GVehicleVideoWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleVideoWhereInput)]),
+          () => new ListBuilder<GVehicleVideoWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleVideoWhereInput)]),
+          () => new ListBuilder<GVehicleVideoWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleVideoWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleVideoWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleVideoWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleVideoWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleVideoCreateInput)]),
+          () => new ListBuilder<GVehicleVideoCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleVideoWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleVideoWhereUniqueInput>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GVehicleWhereInput)]),
           () => new ListBuilder<GVehicleWhereInput>())
@@ -1568,24 +2294,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GVehicleWhereUniqueInput)]),
           () => new ListBuilder<GVehicleWhereUniqueInput>())
-      ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(GVehiclesData_vehicles)]),
-          () => new ListBuilder<GVehiclesData_vehicles>())
-      ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(GVehiclesData_vehicles_variants)]),
-          () => new ListBuilder<GVehiclesData_vehicles_variants>())
-      ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(GVehiclesData_vehicles_variants_colors)]),
-          () => new ListBuilder<GVehiclesData_vehicles_variants_colors>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [
-            const FullType(GVehiclesData_vehicles_variants_colors_images)
-          ]),
-          () =>
-              new ListBuilder<GVehiclesData_vehicles_variants_colors_images>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GWalletTransactionWhereInput)]),

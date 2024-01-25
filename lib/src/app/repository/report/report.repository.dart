@@ -15,11 +15,11 @@ class ReportRepository {
       {required String title,
       required String description,
       required String categoryId,
-      required List<String> attachments}) async {
+      required List<String> attachments,}) async {
     try {
       final userId = cacheProvider.getUserId();
 
-      List<http.MultipartFile> files = [];
+      final files = <http.MultipartFile>[];
       for (var i = 0; i < attachments.length; i++) {
         final file = await http.MultipartFile.fromPath(
           '',
@@ -31,7 +31,7 @@ class ReportRepository {
       final response = await _client
           .httpClient(
               isMultipart: files.isNotEmpty,
-              token: cacheProvider.getSessionToken()!)
+              token: cacheProvider.getSessionToken()!,)
           .request(GCreateFeedbackReq(
             (b) => b
               ..vars.data.title = title
@@ -47,7 +47,7 @@ class ReportRepository {
                 ),
               )
               ..fetchPolicy = FetchPolicy.NoCache,
-          ))
+          ),)
           .first;
       return response.data?.createFeedback?.id != null;
     } catch (e) {
@@ -60,21 +60,21 @@ class ReportRepository {
       {required String title,
       required String description,
       required String categoryId,
-      required List<String> attachments}) async {
+      required List<String> attachments,}) async {
     try {
       final userId = cacheProvider.getUserId();
 
-      List<http.MultipartFile> files = [];
+      final files = <http.MultipartFile>[];
       for (var i = 0; i < attachments.length; i++) {
         final file = await http.MultipartFile.fromPath('image', attachments[i],
-            filename: attachments[i].split('/').last);
+            filename: attachments[i].split('/').last,);
         files.add(file);
       }
 
       final response = await _client
           .httpClient(
               isMultipart: files.isNotEmpty,
-              token: cacheProvider.getSessionToken()!)
+              token: cacheProvider.getSessionToken()!,)
           .request(GCreateReportReq(
             (b) => b
               ..vars.data.title = title
@@ -90,7 +90,7 @@ class ReportRepository {
                 ),
               )
               ..fetchPolicy = FetchPolicy.NoCache,
-          ))
+          ),)
           .first;
       return response.data?.createReport?.id != null;
     } catch (e) {

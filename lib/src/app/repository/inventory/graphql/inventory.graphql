@@ -1,31 +1,42 @@
-query Vehicles($where: VehicleWhereInput!) {
-  vehicles(where: $where) {
-    variants {
-      name
-      vehicle {
+query VehicleVariants(
+  $where: VehicleVariantWhereInput!
+  $orderBy: [VehicleVariantOrderByInput!]!
+) {
+  vehicleVariants(where: $where, orderBy: $orderBy) {
+    prices {
+      amount
+      category {
         name
-        brand {
-          name
-          id
-        }
-        type {
-          name
-          description
-          id
-        }
-        id
+        description
       }
-      colors {
-        id
-        name
-        code
-        images {
-          image {
-            url
-          }
-        }
-      }
+    }
+    colors {
       id
+      code
+      images {
+        name
+        image {
+          url
+          width
+          id
+        }
+      }
+      name
+    }
+    name
+    default
+    id
+    totalPrice
+    vehicle {
+      brand {
+        id
+        name
+      }
+      name
+      id
+      type {
+        name
+      }
     }
   }
 }

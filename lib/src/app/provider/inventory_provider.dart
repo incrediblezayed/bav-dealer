@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:dealerapp/src/app/model/variant_details.model.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
@@ -16,9 +17,10 @@ class InventoryProvider extends ChangeNotifier {
 
   List<PriceModel> prices = [];
 
-  List<GVehiclesData_vehicles_variants> _vehicles = [];
-  List<GVehiclesData_vehicles_variants> get vehicles => _vehicles;
-  set vehicles(List<GVehiclesData_vehicles_variants> data) {
+  List<VariantDetailsModel> _vehicles = [];
+  List<VariantDetailsModel> get vehicles => _vehicles;
+
+  set vehicles(List<VariantDetailsModel> data) {
     _vehicles = data;
     notifyListeners();
   }
@@ -39,19 +41,36 @@ class InventoryProvider extends ChangeNotifier {
     await getVehicles();
   }
 
+  Timer? _inventoryDebounce;
+
+  late TextEditingController inventorySearchController = TextEditingController()
+    ..addListener(() {
+      _inventoryDebounce?.cancel();
+      _inventoryDebounce = Timer(const Duration(milliseconds: 500), () {
+        getVehicles();
+      });
+    });
+
+  Timer? _myStockDebounce;
+
+  late TextEditingController myStockSearchController = TextEditingController()
+    ..addListener(() {
+      _myStockDebounce?.cancel();
+      _myStockDebounce = Timer(const Duration(milliseconds: 500), () {
+        getStocks();
+      });
+    });
+
   Future<void> getVehicles() async {
     try {
-      final getVehicles = await _inventoryRepository.getVehicles();
+      final getVehicles = await _inventoryRepository.getVehicles(
+        search: inventorySearchController.text,
+      );
 
       if (getVehicles != null) {
-        final check = getVehicles
-            .map((e) => e.variants?.toList())
-            .toList()
-            .reduce((value, element) => value?..addAll(element!));
-
-        vehicles = check!;
+        vehicles = getVehicles;
       } else {
-        AppRoutes.showErrorSnackbar(
+        await AppRoutes.showErrorSnackbar(
           message: 'Error while fetching list of vehicles',
         );
       }
@@ -87,13 +106,17 @@ class InventoryProvider extends ChangeNotifier {
       await getStocks();
       await getVehicles();
       if (result) {
-        AppRoutes.showSuccessSnackbar(message: 'Request added successfully');
+        await AppRoutes.showSuccessSnackbar(
+          message: 'Request added successfully',
+        );
       } else {
-        AppRoutes.showErrorSnackbar(message: 'Failed to add vehicle request');
+        await AppRoutes.showErrorSnackbar(
+          message: 'Failed to add vehicle request',
+        );
       }
     } catch (e) {
       e.log();
-      AppRoutes.showErrorSnackbar(message: 'Failed to add vehicle');
+      await AppRoutes.showErrorSnackbar(message: 'Failed to add vehicle');
     }
     AppRoutes.pop();
   }
@@ -113,10 +136,12 @@ class InventoryProvider extends ChangeNotifier {
       );
 
       if (result) {
-        await _inventoryRepository.getVehicles();
-        AppRoutes.showSuccessSnackbar(message: 'Request Created Successfully');
+        await getVehicles();
+        await AppRoutes.showSuccessSnackbar(
+          message: 'Request Created Successfully',
+        );
       } else {
-        AppRoutes.showErrorSnackbar(
+        await AppRoutes.showErrorSnackbar(
           message: 'Error while Adding Item to Stock',
         );
       }
@@ -137,12 +162,14 @@ class InventoryProvider extends ChangeNotifier {
 
   Future<void> getStocks() async {
     try {
-      final result = await _inventoryRepository.currentStock();
+      final result = await _inventoryRepository.currentStock(
+        text: myStockSearchController.text,
+      );
 
       vehicleDealers = result;
     } catch (e) {
       e.log();
-      AppRoutes.showErrorSnackbar(
+      await AppRoutes.showErrorSnackbar(
         message: 'Error while fetching list of vehicles',
       );
     }

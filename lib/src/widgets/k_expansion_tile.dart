@@ -41,7 +41,7 @@ class KExpansionTile extends StatelessWidget {
               padding: EdgeInsets.only(left: 33.w),
               child: TextButton(
                 onPressed: () {
-                  AppRoutes.push(page: PurchaseOrders());
+                  AppRoutes.push(page: const PurchaseOrders());
                 },
                 child: Text(
                   'Purchase Order History',
@@ -54,7 +54,7 @@ class KExpansionTile extends StatelessWidget {
               padding: EdgeInsets.only(left: 33.w),
               child: TextButton(
                 onPressed: () {
-                  AppRoutes.push(page: TestOrders());
+                  AppRoutes.push(page: const TestOrders());
                 },
                 child: Text(
                   'Test Order History',

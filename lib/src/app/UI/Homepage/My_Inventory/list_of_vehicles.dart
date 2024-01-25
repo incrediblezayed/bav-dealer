@@ -10,30 +10,49 @@ class ListOfVehicles extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final inventoryPro = ref.watch(inventoryProvider);
-    return Container(
+    final data = inventoryPro.vehicles.where(
+      (element) => element.colors
+          .where(
+            (p0) => !inventoryPro.vehicleDealers
+                .map((e) => e.vehicleColor!.id)
+                .contains(p0.id),
+          )
+          .isNotEmpty,
+    );
+    return ColoredBox(
       // padding: const EdgeInsets.all(1),
       color: AppTheme.textFieldFill,
-      child: RefreshIndicator(
-        onRefresh: () async {
-          await inventoryPro.getVehicles();
-        },
-        child: ListView(
-          shrinkWrap: true,
-          children: inventoryPro.vehicles
-              .where((element) =>
-                  element.colors!
-                      .where((p0) => !inventoryPro.vehicleDealers
-                          .map((e) => e.vehicleColor!.id)
-                          .contains(p0.id))
-                      .length >
-                  0)
-              .map(
-                (e) => KInventoryBikeCard(
-                  variants: e,
-                ),
-              )
-              .toList(),
-        ),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8),
+            child: TextField(
+              controller: inventoryPro.inventorySearchController,
+              decoration: const InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
+                hintText: 'Search',
+              ),
+            ),
+          ),
+          Expanded(
+            child: RefreshIndicator(
+              onRefresh: () async {
+                await inventoryPro.getVehicles();
+              },
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: data.length,
+                itemBuilder: (context, index) {
+                  final item = data.elementAt(index);
+                  return KInventoryBikeCard(
+                    variant: item,
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

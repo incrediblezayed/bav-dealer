@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
-import 'package:dealerapp/src/app/UI/coming_soon.dart';
 import 'package:dealerapp/src/app/UI/drawer/about_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/contact_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/terms_conditions.dart';
@@ -65,7 +64,9 @@ class AppDrawer extends ConsumerWidget {
   }
 
   Future<void> showDeleteAccountSheet(
-      BuildContext context, WidgetRef ref) async {
+    BuildContext context,
+    WidgetRef ref,
+  ) async {
     return showModalBottomSheet(
       context: context,
       shape: RoundedRectangleBorder(
@@ -132,6 +133,70 @@ class AppDrawer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context).textTheme;
     final user = cacheProvider.getUser()!;
+
+    Future<void> showDeleteAccountSheet() async {
+      return showModalBottomSheet(
+        context: context,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20.r),
+            topRight: Radius.circular(20.r),
+          ),
+        ),
+        isScrollControlled: true,
+        builder: (context) {
+          return Container(
+            decoration: BoxDecoration(
+              color: AppTheme.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20.r),
+                topRight: Radius.circular(20.r),
+              ),
+            ),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  'Are you sure you want to delete your account?',
+                  style: Theme.of(context).textTheme.headlineSmall,
+                ),
+                SizedBox(
+                  height: 20.h,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: KBottomBarButton(
+                        color: AppTheme.red,
+                        text: 'Yes',
+                        onTap: () {
+                          ref.read(authProvider).deactivateUser();
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      width: 20.w,
+                    ),
+                    Expanded(
+                      child: KBottomBarButton(
+                        text: 'No',
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          );
+        },
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -218,7 +283,7 @@ class AppDrawer extends ConsumerWidget {
                         );
                       },
                     ),
-                    _drawerTile(
+                    /*   _drawerTile(
                       title: 'Make new purchase order',
                       icon: AppImages.make,
                       height: 30,
@@ -227,25 +292,26 @@ class AppDrawer extends ConsumerWidget {
                       onTap: () {
                         AppRoutes.push(page: const ComingSoon());
                       },
-                    ),
+                    ), */
 
                     ///Order History Expansion Tile
                     const KExpansionTile(),
-                    _drawerTile(
+                    /* _drawerTile(
                       title: 'My Wallet',
                       icon: AppImages.mywallet,
                       onTap: () {
                         AppRoutes.push(page: ComingSoon());
                       },
-                    ),
+                    ), */
                     _drawerTile(
                       title: 'Change Password',
                       icon: AppImages.change,
                       onTap: () {
                         AppRoutes.push(
-                            page: const ForgotPassword(
-                          isFromWithingApp: true,
-                        ));
+                          page: const ForgotPassword(
+                            isFromWithingApp: true,
+                          ),
+                        );
                       },
                     ),
                     _drawerTile(
@@ -260,7 +326,7 @@ class AppDrawer extends ConsumerWidget {
                       title: 'About Us',
                       icon: AppImages.aboutus,
                       onTap: () {
-                        AppRoutes.push(page: AboutUs());
+                        AppRoutes.push(page: const AboutUs());
                       },
                     ),
                     _drawerTile(
@@ -275,9 +341,10 @@ class AppDrawer extends ConsumerWidget {
                       icon: AppImages.feedbacksvg,
                       onTap: () {
                         AppRoutes.push(
-                            page: ReportPage(
-                          isFeedback: true,
-                        ));
+                          page: const ReportPage(
+                            isFeedback: true,
+                          ),
+                        );
                       },
                     ),
                     _drawerTile(
@@ -285,9 +352,10 @@ class AppDrawer extends ConsumerWidget {
                       icon: AppImages.reportsvg,
                       onTap: () {
                         AppRoutes.push(
-                            page: ReportPage(
-                          isFeedback: false,
-                        ));
+                          page: const ReportPage(
+                            isFeedback: false,
+                          ),
+                        );
                       },
                     ),
                     _drawerTile(
@@ -302,7 +370,7 @@ class AppDrawer extends ConsumerWidget {
                       title: 'Delete Account',
                       icon: AppImages.logout,
                       onTap: () {
-                        showDeleteAccountSheet(context, ref);
+                        showDeleteAccountSheet();
                       },
                     ),
                   ],
