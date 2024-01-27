@@ -13,6 +13,7 @@ import 'package:dealerapp/src/app/repository/auth/auth_repository.dart';
 import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.data.gql.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -161,7 +162,7 @@ class AuthProvider extends ChangeNotifier {
           return false;
         }
         if (user.deactivate) {
-          AppRoutes.showErrorSnackbar(message: 'User not found');
+          await AppRoutes.showErrorSnackbar(message: 'User not found');
           return false;
         }
       }
@@ -301,13 +302,15 @@ class AuthProvider extends ChangeNotifier {
   TextEditingController lastNameController = TextEditingController();
 
   ///
-  TextEditingController phoneNumberController = TextEditingController();
+  TextEditingController phoneNumberController =
+      TextEditingController(text: kDebugMode ? '8179988228' : '');
 
   ///
   TextEditingController emailIdController = TextEditingController();
 
   ///
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController passwordController =
+      TextEditingController(text: kDebugMode ? '123456789' : '');
 
   ///
   TextEditingController confirmPasswordController = TextEditingController();

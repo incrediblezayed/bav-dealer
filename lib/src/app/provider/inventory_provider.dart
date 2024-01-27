@@ -65,15 +65,44 @@ class InventoryProvider extends ChangeNotifier {
     try {
       final getVehicles = await _inventoryRepository.getVehicles(
         search: inventorySearchController.text,
+        skip: 0,
+        take: 15,
       );
 
-      if (getVehicles != null) {
-        vehicles = getVehicles;
+      if (getVehicles.$2 != null) {
+        count = getVehicles.$1;
+        vehicles = getVehicles.$2!;
       } else {
         await AppRoutes.showErrorSnackbar(
           message: 'Error while fetching list of vehicles',
         );
       }
+    } catch (e) {
+      e.log();
+    }
+  }
+
+  int count = 0;
+
+  bool isCallInProgress = false;
+
+  Future<void> getPaginatedVehicles() async {
+    try {
+      if (isCallInProgress) {
+        return;
+      }
+      isCallInProgress = true;
+      final response = await _inventoryRepository.getVehicles(
+        take: 15,
+        skip: vehicles.length,
+        search: inventorySearchController.text,
+      );
+
+      if (response.$2 != null) {
+        vehicles.addAll(response.$2!);
+        notifyListeners();
+      }
+      isCallInProgress = false;
     } catch (e) {
       e.log();
     }

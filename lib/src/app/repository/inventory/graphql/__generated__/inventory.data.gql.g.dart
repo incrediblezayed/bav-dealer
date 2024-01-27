@@ -35,6 +35,8 @@ Serializer<GVehicleVariantsData_vehicleVariants_vehicle_brand>
 Serializer<GVehicleVariantsData_vehicleVariants_vehicle_type>
     _$gVehicleVariantsDataVehicleVariantsVehicleTypeSerializer =
     new _$GVehicleVariantsData_vehicleVariants_vehicle_typeSerializer();
+Serializer<GVehicleVariantsCountData> _$gVehicleVariantsCountDataSerializer =
+    new _$GVehicleVariantsCountDataSerializer();
 Serializer<GCreateVehicleDealerStockRequestData>
     _$gCreateVehicleDealerStockRequestDataSerializer =
     new _$GCreateVehicleDealerStockRequestDataSerializer();
@@ -855,6 +857,62 @@ class _$GVehicleVariantsData_vehicleVariants_vehicle_typeSerializer
         case 'name':
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleVariantsCountDataSerializer
+    implements StructuredSerializer<GVehicleVariantsCountData> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleVariantsCountData,
+    _$GVehicleVariantsCountData
+  ];
+  @override
+  final String wireName = 'GVehicleVariantsCountData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleVariantsCountData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.vehicleVariantsCount;
+    if (value != null) {
+      result
+        ..add('vehicleVariantsCount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleVariantsCountData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleVariantsCountDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'vehicleVariantsCount':
+          result.vehicleVariantsCount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -3583,6 +3641,111 @@ class GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder
                 r'GVehicleVariantsData_vehicleVariants_vehicle_type',
                 'G__typename'),
             name: name);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleVariantsCountData extends GVehicleVariantsCountData {
+  @override
+  final String G__typename;
+  @override
+  final int? vehicleVariantsCount;
+
+  factory _$GVehicleVariantsCountData(
+          [void Function(GVehicleVariantsCountDataBuilder)? updates]) =>
+      (new GVehicleVariantsCountDataBuilder()..update(updates))._build();
+
+  _$GVehicleVariantsCountData._(
+      {required this.G__typename, this.vehicleVariantsCount})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GVehicleVariantsCountData', 'G__typename');
+  }
+
+  @override
+  GVehicleVariantsCountData rebuild(
+          void Function(GVehicleVariantsCountDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleVariantsCountDataBuilder toBuilder() =>
+      new GVehicleVariantsCountDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleVariantsCountData &&
+        G__typename == other.G__typename &&
+        vehicleVariantsCount == other.vehicleVariantsCount;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, vehicleVariantsCount.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GVehicleVariantsCountData')
+          ..add('G__typename', G__typename)
+          ..add('vehicleVariantsCount', vehicleVariantsCount))
+        .toString();
+  }
+}
+
+class GVehicleVariantsCountDataBuilder
+    implements
+        Builder<GVehicleVariantsCountData, GVehicleVariantsCountDataBuilder> {
+  _$GVehicleVariantsCountData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _vehicleVariantsCount;
+  int? get vehicleVariantsCount => _$this._vehicleVariantsCount;
+  set vehicleVariantsCount(int? vehicleVariantsCount) =>
+      _$this._vehicleVariantsCount = vehicleVariantsCount;
+
+  GVehicleVariantsCountDataBuilder() {
+    GVehicleVariantsCountData._initializeBuilder(this);
+  }
+
+  GVehicleVariantsCountDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _vehicleVariantsCount = $v.vehicleVariantsCount;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleVariantsCountData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleVariantsCountData;
+  }
+
+  @override
+  void update(void Function(GVehicleVariantsCountDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleVariantsCountData build() => _build();
+
+  _$GVehicleVariantsCountData _build() {
+    final _$result = _$v ??
+        new _$GVehicleVariantsCountData._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GVehicleVariantsCountData', 'G__typename'),
+            vehicleVariantsCount: vehicleVariantsCount);
     replace(_$result);
     return _$result;
   }

@@ -22,6 +22,8 @@ abstract class GVehicleVariantsVars
 
   _i1.GVehicleVariantWhereInput get where;
   BuiltList<_i1.GVehicleVariantOrderByInput> get orderBy;
+  int get skip;
+  int? get take;
   static Serializer<GVehicleVariantsVars> get serializer =>
       _$gVehicleVariantsVarsSerializer;
 
@@ -33,6 +35,31 @@ abstract class GVehicleVariantsVars
   static GVehicleVariantsVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GVehicleVariantsVars.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleVariantsCountVars
+    implements
+        Built<GVehicleVariantsCountVars, GVehicleVariantsCountVarsBuilder> {
+  GVehicleVariantsCountVars._();
+
+  factory GVehicleVariantsCountVars(
+          [Function(GVehicleVariantsCountVarsBuilder b) updates]) =
+      _$GVehicleVariantsCountVars;
+
+  _i1.GVehicleVariantWhereInput get where;
+  static Serializer<GVehicleVariantsCountVars> get serializer =>
+      _$gVehicleVariantsCountVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleVariantsCountVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleVariantsCountVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleVariantsCountVars.serializer,
         json,
       );
 }

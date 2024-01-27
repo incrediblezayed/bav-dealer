@@ -363,6 +363,36 @@ abstract class GVehicleVariantsData_vehicleVariants_vehicle_type
       );
 }
 
+abstract class GVehicleVariantsCountData
+    implements
+        Built<GVehicleVariantsCountData, GVehicleVariantsCountDataBuilder> {
+  GVehicleVariantsCountData._();
+
+  factory GVehicleVariantsCountData(
+          [Function(GVehicleVariantsCountDataBuilder b) updates]) =
+      _$GVehicleVariantsCountData;
+
+  static void _initializeBuilder(GVehicleVariantsCountDataBuilder b) =>
+      b..G__typename = 'Query';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int? get vehicleVariantsCount;
+  static Serializer<GVehicleVariantsCountData> get serializer =>
+      _$gVehicleVariantsCountDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GVehicleVariantsCountData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleVariantsCountData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GVehicleVariantsCountData.serializer,
+        json,
+      );
+}
+
 abstract class GCreateVehicleDealerStockRequestData
     implements
         Built<GCreateVehicleDealerStockRequestData,

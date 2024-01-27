@@ -653,6 +653,7 @@ import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inv
         GVehicleDealersData_vehicleDealers_vehicleVariant,
         GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle,
         GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand,
+        GVehicleVariantsCountData,
         GVehicleVariantsData,
         GVehicleVariantsData_vehicleVariants,
         GVehicleVariantsData_vehicleVariants_colors,
@@ -669,6 +670,7 @@ import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inv
         GCreateVehicleDealerStockRequestReq,
         GPriceCategoriesReq,
         GVehicleDealersReq,
+        GVehicleVariantsCountReq,
         GVehicleVariantsReq;
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.var.gql.dart'
     show
@@ -676,6 +678,7 @@ import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inv
         GCreateVehicleDealerVars,
         GPriceCategoriesVars,
         GVehicleDealersVars,
+        GVehicleVariantsCountVars,
         GVehicleVariantsVars;
 import 'package:dealerapp/src/app/repository/notifications/graphql/__generated__/notifications.data.gql.dart'
     show
@@ -1440,6 +1443,9 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GVehicleVariantUpdateInput,
   GVehicleVariantWhereInput,
   GVehicleVariantWhereUniqueInput,
+  GVehicleVariantsCountData,
+  GVehicleVariantsCountReq,
+  GVehicleVariantsCountVars,
   GVehicleVariantsData,
   GVehicleVariantsData_vehicleVariants,
   GVehicleVariantsData_vehicleVariants_colors,

@@ -84,6 +84,7 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
               Column(
                 children: [
                   Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         height: 125.h,
@@ -94,7 +95,7 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(6.r),
                           child: KCachedNWImage(
-                            selectedColor?.images.firstOrNull?.image.url ?? '',
+                            selectedColor?.images.firstOrNull?.image?.url ?? '',
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -170,8 +171,9 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                               ],
                             ),
                             SizedBox(height: 16.h),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                            Wrap(
+                              runSpacing: 10,
+                              spacing: 10,
                               children: [
                                 ...variants.colors
                                     .where(
@@ -182,15 +184,12 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                                     .map(
                                       (e) => GestureDetector(
                                         onTap: () => updateColor(e),
-                                        child: Padding(
-                                          padding: EdgeInsets.only(left: 10.w),
+                                        child: CircleAvatar(
+                                          backgroundColor: Colors.grey,
+                                          radius: 12.5.h,
                                           child: CircleAvatar(
-                                            backgroundColor: Colors.grey,
-                                            radius: 12.5.h,
-                                            child: CircleAvatar(
-                                              radius: 10.h,
-                                              backgroundColor: e.code,
-                                            ),
+                                            radius: 10.h,
+                                            backgroundColor: e.code,
                                           ),
                                         ),
                                       ),

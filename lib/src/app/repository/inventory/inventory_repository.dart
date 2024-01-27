@@ -14,7 +14,9 @@ class InventoryRepository {
   final GraphqlClient _graphqlClient = getIt<GraphqlClient>();
   Client get _client => _graphqlClient.client;
 
-  Future<List<VariantDetailsModel>?> getVehicles({
+  Future<(int, List<VariantDetailsModel>?)> getVehicles({
+    required int take,
+    required int skip,
     List<String>? ids,
     String search = '',
   }) async {
@@ -22,12 +24,15 @@ class InventoryRepository {
       final response = await _client.request(
         GVehicleVariantsReq(
           (b) {
+            b
+              ..vars.skip = skip
+              ..vars.take = take
+              ..vars.where.name.contains = search
+              ..vars.where.name.mode = GQueryMode.insensitive;
             if (ids == null) {
-              return b..vars.where.name.contains = search;
+              return b;
             } else {
-              return b
-                ..vars.where.id.notIn = ListBuilder<String>(ids)
-                ..vars.where.name.contains = search;
+              return b..vars.where.id.notIn = ListBuilder<String>(ids);
             }
           },
         ),
@@ -38,17 +43,30 @@ class InventoryRepository {
         throw Exception('Somthing went wrong while getting list of vehicles');
       } else {
         if (response.data?.vehicleVariants == null) {
-          return null;
+          return (0, null);
         } else {
-          return response.data!.vehicleVariants!
-              .map((p0) => VariantDetailsModel.fromJson(p0.toJson()))
-              .toList();
+          final countQuery = await _client
+              .request(
+                GVehicleVariantsCountReq(
+                  (b) => b
+                    ..vars.where =
+                        response.operationRequest.vars.where.toBuilder(),
+                ),
+              )
+              .first;
+          final count = countQuery.data?.vehicleVariantsCount ?? 0;
+          return (
+            count,
+            response.data!.vehicleVariants!
+                .map((p0) => VariantDetailsModel.fromJson(p0.toJson()))
+                .toList()
+          );
         }
       }
     } catch (e) {
       e.log();
     }
-    return null;
+    return (0, null);
   }
 
   ///Creating Stock Request Function
@@ -122,7 +140,8 @@ class InventoryRepository {
             GVehicleDealersReq(
               (b) => b
                 ..vars.where.dealer.id.equals = cacheProvider.getDealerId()
-                ..vars.where.vehicleVariant.name.contains = text,
+                ..vars.where.vehicleVariant.name.contains = text
+                ..vars.where.vehicleVariant.name.mode = GQueryMode.insensitive,
             ),
           )
           .first;

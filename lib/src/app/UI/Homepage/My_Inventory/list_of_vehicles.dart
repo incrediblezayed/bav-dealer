@@ -1,5 +1,7 @@
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
+import 'package:dealerapp/src/utils/extensions.dart';
+import 'package:dealerapp/src/utils/log_colors.dart';
 import 'package:dealerapp/src/widgets/k_inventory_bike_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -42,8 +44,25 @@ class ListOfVehicles extends ConsumerWidget {
               },
               child: ListView.builder(
                 shrinkWrap: true,
-                itemCount: data.length,
+                itemCount: data.length +
+                    (inventoryPro.count >= inventoryPro.vehicles.length
+                        ? 1
+                        : 0),
                 itemBuilder: (context, index) {
+                  index.log(
+                    color: LogColors.green,
+                    name: 'Index',
+                  );
+                  inventoryPro.count.log(
+                    name: 'Total Vehicle Count',
+                  );
+
+                  if (index >= data.length) {
+                    inventoryPro.getPaginatedVehicles();
+                    return const Center(
+                      child: CircularProgressIndicator.adaptive(),
+                    );
+                  }
                   final item = data.elementAt(index);
                   return KInventoryBikeCard(
                     variant: item,

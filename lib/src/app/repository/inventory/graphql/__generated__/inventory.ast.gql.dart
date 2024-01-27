@@ -29,6 +29,24 @@ const VehicleVariants = _i1.OperationDefinitionNode(
       defaultValue: _i1.DefaultValueNode(value: null),
       directives: [],
     ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'skip')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'take')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
   ],
   directives: [],
   selectionSet: _i1.SelectionSetNode(selections: [
@@ -43,6 +61,14 @@ const VehicleVariants = _i1.OperationDefinitionNode(
         _i1.ArgumentNode(
           name: _i1.NameNode(value: 'orderBy'),
           value: _i1.VariableNode(name: _i1.NameNode(value: 'orderBy')),
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'skip'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'skip')),
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'take'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'take')),
         ),
       ],
       directives: [],
@@ -245,6 +271,36 @@ const VehicleVariants = _i1.OperationDefinitionNode(
           ]),
         ),
       ]),
+    )
+  ]),
+);
+const VehicleVariantsCount = _i1.OperationDefinitionNode(
+  type: _i1.OperationType.query,
+  name: _i1.NameNode(value: 'VehicleVariantsCount'),
+  variableDefinitions: [
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleVariantWhereInput'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    )
+  ],
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'vehicleVariantsCount'),
+      alias: null,
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'where'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+        )
+      ],
+      directives: [],
+      selectionSet: null,
     )
   ]),
 );
@@ -626,6 +682,7 @@ const PriceCategories = _i1.OperationDefinitionNode(
 );
 const document = _i1.DocumentNode(definitions: [
   VehicleVariants,
+  VehicleVariantsCount,
   CreateVehicleDealerStockRequest,
   VehicleDealers,
   CreateVehicleDealer,

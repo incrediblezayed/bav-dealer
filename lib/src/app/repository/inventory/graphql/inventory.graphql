@@ -1,8 +1,10 @@
 query VehicleVariants(
   $where: VehicleVariantWhereInput!
   $orderBy: [VehicleVariantOrderByInput!]!
+  $skip: Int!
+  $take: Int
 ) {
-  vehicleVariants(where: $where, orderBy: $orderBy) {
+  vehicleVariants(where: $where, orderBy: $orderBy, skip: $skip, take: $take) {
     prices {
       amount
       category {
@@ -41,6 +43,10 @@ query VehicleVariants(
   }
 }
 
+query VehicleVariantsCount($where: VehicleVariantWhereInput!) {
+  vehicleVariantsCount(where: $where)
+}
+
 mutation CreateVehicleDealerStockRequest(
   $data: VehicleDealerStockRequestCreateInput!
 ) {
@@ -49,6 +55,7 @@ mutation CreateVehicleDealerStockRequest(
     stock
     totalPrice
   }
+  
 }
 
 query VehicleDealers($where: VehicleDealerWhereInput!) {

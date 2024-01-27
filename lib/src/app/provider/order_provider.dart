@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:dealerapp/src/app/model/variant_details.model.dart';
-import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart';
 import 'package:dealerapp/src/app/repository/orders/orders_repository.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
@@ -23,7 +22,6 @@ enum OrderStatus {
 }
 
 class OrdersProvider extends ChangeNotifier {
-  final InventoryRepository _inventoryRepository = InventoryRepository();
   final OrderRepository _orderRepository = OrderRepository();
 
   bool isInPage = false;
@@ -64,12 +62,12 @@ class OrdersProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<Vehicle> _vehicles = [];
+/*   List<Vehicle> _vehicles = [];
   List<Vehicle> get vehicles => _vehicles;
   set vehicles(List<Vehicle> data) {
     _vehicles = data;
     notifyListeners();
-  }
+  } */
 
   List<GVehicleOrdersData_vehicleOrders> _pendingOrders = [];
   List<GVehicleOrdersData_vehicleOrders> get pendingOrders => _pendingOrders;
@@ -135,7 +133,7 @@ class OrdersProvider extends ChangeNotifier {
   }
 
   Future<void> init(OrderFamily orderFamily) async {
-    await getVehicles();
+    //await getVehicles();
 
     if (orderFamily == OrderFamily.purchaseOrders) {
       await getPendingOrders();
@@ -302,9 +300,12 @@ class OrdersProvider extends ChangeNotifier {
     }
   }
 
-  Future<void> getVehicles() async {
+/*   Future<void> getVehicles() async {
     try {
-      final getVehicles = await _inventoryRepository.getVehicles();
+      final getVehicles = await _inventoryRepository.getVehicles(
+        skip: 0,
+        take: 15,
+      );
 
       if (getVehicles != null) {
         //vehicles = getVehicles;
@@ -318,7 +319,7 @@ class OrdersProvider extends ChangeNotifier {
     } finally {
       loading = false;
     }
-  }
+  } */
 
   Future<void> acceptOrder(String id) async {
     try {

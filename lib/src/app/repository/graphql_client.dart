@@ -5,27 +5,12 @@ import 'package:dealerapp/src/utils/log_colors.dart';
 import 'package:dio/dio.dart';
 import 'package:ferry/ferry.dart';
 import 'package:ferry_hive_store/ferry_hive_store.dart';
+import 'package:flutter/foundation.dart';
 import 'package:gql_dio_link/gql_dio_link.dart';
 import 'package:gql_http_link/gql_http_link.dart';
 
 ///GraphQL Client
 class GraphqlClient {
-/*   final _logger = Logger(
-    level: Level.info,
-    printer: PrettyPrinter(
-      errorMethodCount: 10,
-      methodCount: 0,
-      lineLength: 40,
-    ),
-  );
- */
-
-  /* ///Prod URL
-  static const String _prodUrl = 'https://bavelectric.com';
-
-  ///Live URL
-  static const String _devUrl = 'http://bavelectric.com:3000'; */
-
   ///Prod URL
   static const String _prodUrl = 'https://api.bavelectric.com';
 
@@ -174,6 +159,7 @@ class GraphqlClient {
   ///
   Future<void> _setupInterceptor() async {
     try {
+      _dio.interceptors.clear();
       _dio.interceptors.addAll(
         [
           InterceptorsWrapper(
@@ -183,17 +169,31 @@ class GraphqlClient {
                 options.headers['Authorization'] =
                     'Bearer ${cacheProvider.getSessionToken()}';
               }
-              options.headers.toString().log(
-                    name: 'Headers',
-                    color: LogColors.cyan,
-                  );
+
               final queryData = options.data as Map;
-              (queryData['operationName'] as String)
-                  .log(name: 'Operation Name', color: LogColors.cyan);
-              (queryData['query'] as String).split('(').first.log(
-                    name: 'Query',
-                    color: LogColors.cyan,
-                  );
+              final name = (queryData['operationName'] as String)
+                ..log(name: 'Operation Name', color: LogColors.cyan);
+              if (kDebugMode) {
+                if (queryData['variables'] != null &&
+                    queryData['variables'] is Map &&
+                    queryData['variables']['location'] != null &&
+                    queryData['variables']['location'] is List) {
+                  final locationList =
+                      List<double?>.from(queryData['variables']['location']);
+                  locationList.join(', ').log(
+                        name: 'Variables',
+                        color: LogColors.cyan,
+                      );
+                }
+              }
+              final queryString = queryData['query'] as String;
+              (queryString.split('(').length > 1
+                      ? queryString.split('(').first
+                      : queryString.split('{').first)
+                  .log(
+                name: 'Query',
+                color: LogColors.magenta,
+              );
               handler.next(options);
             },
             onResponse: (e, handler) {
@@ -206,8 +206,8 @@ class GraphqlClient {
           ),
         ],
       );
-    } catch (e) {
-      e.log();
+    } catch (e, trace) {
+      e.log(stackTrace: trace);
     }
   }
 }

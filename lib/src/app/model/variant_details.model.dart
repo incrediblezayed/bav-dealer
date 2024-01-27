@@ -198,10 +198,10 @@ class ImageElement {
 
   factory ImageElement.fromJson(Map<String, dynamic> json) => ImageElement(
         name: json['name'],
-        image: Logo.fromJson(json['image']),
+        image: json['image'] == null ? null : Logo.fromJson(json['image']),
       );
   final String name;
-  final Logo image;
+  final Logo? image;
 }
 
 class Logo {

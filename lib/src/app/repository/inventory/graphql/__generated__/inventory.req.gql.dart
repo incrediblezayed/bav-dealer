@@ -92,6 +92,83 @@ abstract class GVehicleVariantsReq
       );
 }
 
+abstract class GVehicleVariantsCountReq
+    implements
+        Built<GVehicleVariantsCountReq, GVehicleVariantsCountReqBuilder>,
+        _i1.OperationRequest<_i2.GVehicleVariantsCountData,
+            _i3.GVehicleVariantsCountVars> {
+  GVehicleVariantsCountReq._();
+
+  factory GVehicleVariantsCountReq(
+          [Function(GVehicleVariantsCountReqBuilder b) updates]) =
+      _$GVehicleVariantsCountReq;
+
+  static void _initializeBuilder(GVehicleVariantsCountReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'VehicleVariantsCount',
+    )
+    ..executeOnListen = true;
+
+  @override
+  _i3.GVehicleVariantsCountVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GVehicleVariantsCountData? Function(
+    _i2.GVehicleVariantsCountData?,
+    _i2.GVehicleVariantsCountData?,
+  )? get updateResult;
+  @override
+  _i2.GVehicleVariantsCountData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GVehicleVariantsCountData? parseData(Map<String, dynamic> json) =>
+      _i2.GVehicleVariantsCountData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GVehicleVariantsCountData,
+      _i3.GVehicleVariantsCountVars> transformOperation(
+          _i4.Operation Function(_i4.Operation) transform) =>
+      this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GVehicleVariantsCountReq> get serializer =>
+      _$gVehicleVariantsCountReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GVehicleVariantsCountReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleVariantsCountReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GVehicleVariantsCountReq.serializer,
+        json,
+      );
+}
+
 abstract class GCreateVehicleDealerStockRequestReq
     implements
         Built<GCreateVehicleDealerStockRequestReq,
