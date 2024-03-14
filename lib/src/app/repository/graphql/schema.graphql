@@ -3464,6 +3464,17 @@ type AppNotification {
   user: User
 }
 
+
+type Guarantees {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+}
+
+
+
 input AppNotificationWhereUniqueInput {
   id: ID
 }
@@ -3481,12 +3492,33 @@ input AppNotificationWhereInput {
   user: UserWhereInput
 }
 
+input GuaranteeWhereInput {
+  AND: [AppNotificationWhereInput!]
+  NOT: [AppNotificationWhereInput!]
+  OR: [AppNotificationWhereInput!]
+  createdAt: DateTimeNullableFilter
+  description: StringFilter
+  id: IDFilter
+  modifiedAt: DateTimeNullableFilter
+  name: StringFilter
+}
+
+
+
 input AppNotificationOrderByInput {
   id: OrderDirection
   createdAt: OrderDirection
   modifiedAt: OrderDirection
   title: OrderDirection
   body: OrderDirection
+}
+
+input GuaranteeOrderByInput {
+  createdAt: OrderDirection
+  description: OrderDirection
+  id: OrderDirection
+  modifiedAt: OrderDirection
+  name: OrderDirection
 }
 
 input AppNotificationUpdateInput {
@@ -6551,6 +6583,11 @@ type Query {
     take: Int
     skip: Int! = 0
   ): [AppNotification!]
+  guarantees(
+    where: GuaranteeWhereInput! = {}
+    orderBy: [GuaranteeOrderByInput!]! = []
+    take: Int
+    skip: Int!=0): [Guarantees!]
   appNotification(where: AppNotificationWhereUniqueInput!): AppNotification
   appNotificationsCount(where: AppNotificationWhereInput! = {}): Int
   fAQS(

@@ -1,6 +1,7 @@
 import 'package:dealerapp/src/app/provider/auth_provider.dart';
 import 'package:dealerapp/src/app/provider/cache_provider.dart';
 import 'package:dealerapp/src/app/provider/dashboard_provider.dart';
+import 'package:dealerapp/src/app/provider/guarantees_provider.dart';
 import 'package:dealerapp/src/app/provider/inventory_provider.dart';
 import 'package:dealerapp/src/app/provider/notification_provider.dart';
 import 'package:dealerapp/src/app/provider/order_provider.dart';
@@ -21,6 +22,9 @@ final homePageProvider = ChangeNotifierProvider((ref) => HomePageProvider(ref));
 
 final notificationsProvider =
     ChangeNotifierProvider((ref) => NotificationsProvider()..init());
+
+final guaranteesProvider =
+    ChangeNotifierProvider((ref) => GuaranteesProvider()..init());
 
 final reportProvider =
     ChangeNotifierProvider((ref) => ReportProvider()..getCategories());

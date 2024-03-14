@@ -5,6 +5,8 @@ import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../../widgets/empty_widget.dart';
+
 class MyInventory extends ConsumerStatefulWidget {
   const MyInventory({super.key});
 
@@ -14,7 +16,7 @@ class MyInventory extends ConsumerStatefulWidget {
 
 class _MyInventoryState extends ConsumerState<MyInventory>
     with TickerProviderStateMixin {
-  late final _tabController = TabController(length: 2, vsync: this);
+  late final _tabController = TabController(length: 3, vsync: this);
   @override
   Widget build(BuildContext context) {
     print(cacheProvider.getDealerId());
@@ -48,10 +50,9 @@ class _MyInventoryState extends ConsumerState<MyInventory>
             Tab(
               text: 'My Stock',
             ),
-
-            /*      Tab(
+            Tab(
               text: 'Products',
-            ), */
+            ),
           ],
         ),
       ),
@@ -60,7 +61,7 @@ class _MyInventoryState extends ConsumerState<MyInventory>
         children: const [
           ListOfVehicles(),
           MyStockPage(),
-          //EmptyWidget(title: 'Uh oh! You have no orders.'),
+          EmptyWidget(title: 'Uh oh! You have no products.'),
         ],
       ),
     );

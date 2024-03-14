@@ -10451,6 +10451,37 @@ abstract class GAppNotificationWhereInput
       );
 }
 
+abstract class GGuaranteeWhereInput
+    implements Built<GGuaranteeWhereInput, GGuaranteeWhereInputBuilder> {
+  GGuaranteeWhereInput._();
+
+  factory GGuaranteeWhereInput(
+          [Function(GGuaranteeWhereInputBuilder b) updates]) =
+      _$GGuaranteeWhereInput;
+
+  BuiltList<GAppNotificationWhereInput>? get AND;
+  BuiltList<GAppNotificationWhereInput>? get NOT;
+  BuiltList<GAppNotificationWhereInput>? get OR;
+  GDateTimeNullableFilter? get createdAt;
+  GStringFilter? get description;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get modifiedAt;
+  GStringFilter? get name;
+  static Serializer<GGuaranteeWhereInput> get serializer =>
+      _$gGuaranteeWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GGuaranteeWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GGuaranteeWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GGuaranteeWhereInput.serializer,
+        json,
+      );
+}
+
 abstract class GAppNotificationOrderByInput
     implements
         Built<GAppNotificationOrderByInput,
@@ -10477,6 +10508,34 @@ abstract class GAppNotificationOrderByInput
   static GAppNotificationOrderByInput? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GAppNotificationOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GGuaranteeOrderByInput
+    implements Built<GGuaranteeOrderByInput, GGuaranteeOrderByInputBuilder> {
+  GGuaranteeOrderByInput._();
+
+  factory GGuaranteeOrderByInput(
+          [Function(GGuaranteeOrderByInputBuilder b) updates]) =
+      _$GGuaranteeOrderByInput;
+
+  GOrderDirection? get createdAt;
+  GOrderDirection? get description;
+  GOrderDirection? get id;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get name;
+  static Serializer<GGuaranteeOrderByInput> get serializer =>
+      _$gGuaranteeOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GGuaranteeOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GGuaranteeOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GGuaranteeOrderByInput.serializer,
         json,
       );
 }

@@ -192,6 +192,8 @@ import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema
         GFileFieldInput,
         GFloatFilter,
         GFloatNullableFilter,
+        GGuaranteeOrderByInput,
+        GGuaranteeWhereInput,
         GHelpSupportCreateInput,
         GHelpSupportOrderByInput,
         GHelpSupportUpdateArgs,
@@ -635,6 +637,12 @@ import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema
         GWalletUpdateInput,
         GWalletWhereInput,
         GWalletWhereUniqueInput;
+import 'package:dealerapp/src/app/repository/guarantees/graphql/__generated__/guarantees.data.gql.dart'
+    show GGuaranteesData, GGuaranteesData_guarantees;
+import 'package:dealerapp/src/app/repository/guarantees/graphql/__generated__/guarantees.req.gql.dart'
+    show GGuaranteesReq;
+import 'package:dealerapp/src/app/repository/guarantees/graphql/__generated__/guarantees.var.gql.dart'
+    show GGuaranteesVars;
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart'
     show
         GCreateVehicleDealerData,
@@ -942,6 +950,12 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GFileFieldInput,
   GFloatFilter,
   GFloatNullableFilter,
+  GGuaranteeOrderByInput,
+  GGuaranteeWhereInput,
+  GGuaranteesData,
+  GGuaranteesData_guarantees,
+  GGuaranteesReq,
+  GGuaranteesVars,
   GHelpSupportCreateInput,
   GHelpSupportOrderByInput,
   GHelpSupportUpdateArgs,

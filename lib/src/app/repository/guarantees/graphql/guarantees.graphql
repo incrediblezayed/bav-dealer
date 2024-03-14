@@ -1,0 +1,6 @@
+query Guarantees {
+    guarantees {
+        id
+        name
+    }
+}

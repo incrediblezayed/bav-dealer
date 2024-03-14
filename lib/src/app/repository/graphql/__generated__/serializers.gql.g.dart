@@ -200,6 +200,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GFileFieldInput.serializer)
       ..add(GFloatFilter.serializer)
       ..add(GFloatNullableFilter.serializer)
+      ..add(GGuaranteeOrderByInput.serializer)
+      ..add(GGuaranteeWhereInput.serializer)
+      ..add(GGuaranteesData.serializer)
+      ..add(GGuaranteesData_guarantees.serializer)
+      ..add(GGuaranteesReq.serializer)
+      ..add(GGuaranteesVars.serializer)
       ..add(GHelpSupportCreateInput.serializer)
       ..add(GHelpSupportOrderByInput.serializer)
       ..add(GHelpSupportUpdateArgs.serializer)
@@ -813,6 +819,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(GAppNotificationWhereInput)]),
           () => new ListBuilder<GAppNotificationWhereInput>())
       ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GAppNotificationWhereInput)]),
+          () => new ListBuilder<GAppNotificationWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GAppNotificationWhereInput)]),
+          () => new ListBuilder<GAppNotificationWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GAppNotificationWhereInput)]),
+          () => new ListBuilder<GAppNotificationWhereInput>())
+      ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(GAppNotificationsData_appNotifications)]),
           () => new ListBuilder<GAppNotificationsData_appNotifications>())
@@ -1065,6 +1083,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GFeedbackWhereInput)]),
           () => new ListBuilder<GFeedbackWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GGuaranteesData_guarantees)]),
+          () => new ListBuilder<GGuaranteesData_guarantees>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GHelpSupportWhereInput)]),

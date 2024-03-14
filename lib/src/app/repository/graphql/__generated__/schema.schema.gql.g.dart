@@ -1209,9 +1209,13 @@ Serializer<GAppNotificationWhereUniqueInput>
     new _$GAppNotificationWhereUniqueInputSerializer();
 Serializer<GAppNotificationWhereInput> _$gAppNotificationWhereInputSerializer =
     new _$GAppNotificationWhereInputSerializer();
+Serializer<GGuaranteeWhereInput> _$gGuaranteeWhereInputSerializer =
+    new _$GGuaranteeWhereInputSerializer();
 Serializer<GAppNotificationOrderByInput>
     _$gAppNotificationOrderByInputSerializer =
     new _$GAppNotificationOrderByInputSerializer();
+Serializer<GGuaranteeOrderByInput> _$gGuaranteeOrderByInputSerializer =
+    new _$GGuaranteeOrderByInputSerializer();
 Serializer<GAppNotificationUpdateInput>
     _$gAppNotificationUpdateInputSerializer =
     new _$GAppNotificationUpdateInputSerializer();
@@ -35774,6 +35778,143 @@ class _$GAppNotificationWhereInputSerializer
   }
 }
 
+class _$GGuaranteeWhereInputSerializer
+    implements StructuredSerializer<GGuaranteeWhereInput> {
+  @override
+  final Iterable<Type> types = const [
+    GGuaranteeWhereInput,
+    _$GGuaranteeWhereInput
+  ];
+  @override
+  final String wireName = 'GGuaranteeWhereInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GGuaranteeWhereInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.AND;
+    if (value != null) {
+      result
+        ..add('AND')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GAppNotificationWhereInput)])));
+    }
+    value = object.NOT;
+    if (value != null) {
+      result
+        ..add('NOT')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GAppNotificationWhereInput)])));
+    }
+    value = object.OR;
+    if (value != null) {
+      result
+        ..add('OR')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GAppNotificationWhereInput)])));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GIDFilter)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    return result;
+  }
+
+  @override
+  GGuaranteeWhereInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GGuaranteeWhereInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'AND':
+          result.AND.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GAppNotificationWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'NOT':
+          result.NOT.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GAppNotificationWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'OR':
+          result.OR.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GAppNotificationWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'description':
+          result.description.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GIDFilter))! as GIDFilter);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'name':
+          result.name.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$GAppNotificationOrderByInputSerializer
     implements StructuredSerializer<GAppNotificationOrderByInput> {
   @override
@@ -35862,6 +36003,104 @@ class _$GAppNotificationOrderByInputSerializer
           break;
         case 'body':
           result.body = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGuaranteeOrderByInputSerializer
+    implements StructuredSerializer<GGuaranteeOrderByInput> {
+  @override
+  final Iterable<Type> types = const [
+    GGuaranteeOrderByInput,
+    _$GGuaranteeOrderByInput
+  ];
+  @override
+  final String wireName = 'GGuaranteeOrderByInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GGuaranteeOrderByInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    return result;
+  }
+
+  @override
+  GGuaranteeOrderByInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GGuaranteeOrderByInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'modifiedAt':
+          result.modifiedAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -108939,6 +109178,212 @@ class GAppNotificationWhereInputBuilder
   }
 }
 
+class _$GGuaranteeWhereInput extends GGuaranteeWhereInput {
+  @override
+  final BuiltList<GAppNotificationWhereInput>? AND;
+  @override
+  final BuiltList<GAppNotificationWhereInput>? NOT;
+  @override
+  final BuiltList<GAppNotificationWhereInput>? OR;
+  @override
+  final GDateTimeNullableFilter? createdAt;
+  @override
+  final GStringFilter? description;
+  @override
+  final GIDFilter? id;
+  @override
+  final GDateTimeNullableFilter? modifiedAt;
+  @override
+  final GStringFilter? name;
+
+  factory _$GGuaranteeWhereInput(
+          [void Function(GGuaranteeWhereInputBuilder)? updates]) =>
+      (new GGuaranteeWhereInputBuilder()..update(updates))._build();
+
+  _$GGuaranteeWhereInput._(
+      {this.AND,
+      this.NOT,
+      this.OR,
+      this.createdAt,
+      this.description,
+      this.id,
+      this.modifiedAt,
+      this.name})
+      : super._();
+
+  @override
+  GGuaranteeWhereInput rebuild(
+          void Function(GGuaranteeWhereInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGuaranteeWhereInputBuilder toBuilder() =>
+      new GGuaranteeWhereInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGuaranteeWhereInput &&
+        AND == other.AND &&
+        NOT == other.NOT &&
+        OR == other.OR &&
+        createdAt == other.createdAt &&
+        description == other.description &&
+        id == other.id &&
+        modifiedAt == other.modifiedAt &&
+        name == other.name;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, AND.hashCode);
+    _$hash = $jc(_$hash, NOT.hashCode);
+    _$hash = $jc(_$hash, OR.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GGuaranteeWhereInput')
+          ..add('AND', AND)
+          ..add('NOT', NOT)
+          ..add('OR', OR)
+          ..add('createdAt', createdAt)
+          ..add('description', description)
+          ..add('id', id)
+          ..add('modifiedAt', modifiedAt)
+          ..add('name', name))
+        .toString();
+  }
+}
+
+class GGuaranteeWhereInputBuilder
+    implements Builder<GGuaranteeWhereInput, GGuaranteeWhereInputBuilder> {
+  _$GGuaranteeWhereInput? _$v;
+
+  ListBuilder<GAppNotificationWhereInput>? _AND;
+  ListBuilder<GAppNotificationWhereInput> get AND =>
+      _$this._AND ??= new ListBuilder<GAppNotificationWhereInput>();
+  set AND(ListBuilder<GAppNotificationWhereInput>? AND) => _$this._AND = AND;
+
+  ListBuilder<GAppNotificationWhereInput>? _NOT;
+  ListBuilder<GAppNotificationWhereInput> get NOT =>
+      _$this._NOT ??= new ListBuilder<GAppNotificationWhereInput>();
+  set NOT(ListBuilder<GAppNotificationWhereInput>? NOT) => _$this._NOT = NOT;
+
+  ListBuilder<GAppNotificationWhereInput>? _OR;
+  ListBuilder<GAppNotificationWhereInput> get OR =>
+      _$this._OR ??= new ListBuilder<GAppNotificationWhereInput>();
+  set OR(ListBuilder<GAppNotificationWhereInput>? OR) => _$this._OR = OR;
+
+  GDateTimeNullableFilterBuilder? _createdAt;
+  GDateTimeNullableFilterBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeNullableFilterBuilder();
+  set createdAt(GDateTimeNullableFilterBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GStringFilterBuilder? _description;
+  GStringFilterBuilder get description =>
+      _$this._description ??= new GStringFilterBuilder();
+  set description(GStringFilterBuilder? description) =>
+      _$this._description = description;
+
+  GIDFilterBuilder? _id;
+  GIDFilterBuilder get id => _$this._id ??= new GIDFilterBuilder();
+  set id(GIDFilterBuilder? id) => _$this._id = id;
+
+  GDateTimeNullableFilterBuilder? _modifiedAt;
+  GDateTimeNullableFilterBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeNullableFilterBuilder();
+  set modifiedAt(GDateTimeNullableFilterBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GStringFilterBuilder? _name;
+  GStringFilterBuilder get name => _$this._name ??= new GStringFilterBuilder();
+  set name(GStringFilterBuilder? name) => _$this._name = name;
+
+  GGuaranteeWhereInputBuilder();
+
+  GGuaranteeWhereInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _AND = $v.AND?.toBuilder();
+      _NOT = $v.NOT?.toBuilder();
+      _OR = $v.OR?.toBuilder();
+      _createdAt = $v.createdAt?.toBuilder();
+      _description = $v.description?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _name = $v.name?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGuaranteeWhereInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GGuaranteeWhereInput;
+  }
+
+  @override
+  void update(void Function(GGuaranteeWhereInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGuaranteeWhereInput build() => _build();
+
+  _$GGuaranteeWhereInput _build() {
+    _$GGuaranteeWhereInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GGuaranteeWhereInput._(
+              AND: _AND?.build(),
+              NOT: _NOT?.build(),
+              OR: _OR?.build(),
+              createdAt: _createdAt?.build(),
+              description: _description?.build(),
+              id: _id?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              name: _name?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'AND';
+        _AND?.build();
+        _$failedField = 'NOT';
+        _NOT?.build();
+        _$failedField = 'OR';
+        _OR?.build();
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'description';
+        _description?.build();
+        _$failedField = 'id';
+        _id?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'name';
+        _name?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GGuaranteeWhereInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$GAppNotificationOrderByInput extends GAppNotificationOrderByInput {
   @override
   final GOrderDirection? id;
@@ -109067,6 +109512,138 @@ class GAppNotificationOrderByInputBuilder
             modifiedAt: modifiedAt,
             title: title,
             body: body);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGuaranteeOrderByInput extends GGuaranteeOrderByInput {
+  @override
+  final GOrderDirection? createdAt;
+  @override
+  final GOrderDirection? description;
+  @override
+  final GOrderDirection? id;
+  @override
+  final GOrderDirection? modifiedAt;
+  @override
+  final GOrderDirection? name;
+
+  factory _$GGuaranteeOrderByInput(
+          [void Function(GGuaranteeOrderByInputBuilder)? updates]) =>
+      (new GGuaranteeOrderByInputBuilder()..update(updates))._build();
+
+  _$GGuaranteeOrderByInput._(
+      {this.createdAt, this.description, this.id, this.modifiedAt, this.name})
+      : super._();
+
+  @override
+  GGuaranteeOrderByInput rebuild(
+          void Function(GGuaranteeOrderByInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGuaranteeOrderByInputBuilder toBuilder() =>
+      new GGuaranteeOrderByInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGuaranteeOrderByInput &&
+        createdAt == other.createdAt &&
+        description == other.description &&
+        id == other.id &&
+        modifiedAt == other.modifiedAt &&
+        name == other.name;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GGuaranteeOrderByInput')
+          ..add('createdAt', createdAt)
+          ..add('description', description)
+          ..add('id', id)
+          ..add('modifiedAt', modifiedAt)
+          ..add('name', name))
+        .toString();
+  }
+}
+
+class GGuaranteeOrderByInputBuilder
+    implements Builder<GGuaranteeOrderByInput, GGuaranteeOrderByInputBuilder> {
+  _$GGuaranteeOrderByInput? _$v;
+
+  GOrderDirection? _createdAt;
+  GOrderDirection? get createdAt => _$this._createdAt;
+  set createdAt(GOrderDirection? createdAt) => _$this._createdAt = createdAt;
+
+  GOrderDirection? _description;
+  GOrderDirection? get description => _$this._description;
+  set description(GOrderDirection? description) =>
+      _$this._description = description;
+
+  GOrderDirection? _id;
+  GOrderDirection? get id => _$this._id;
+  set id(GOrderDirection? id) => _$this._id = id;
+
+  GOrderDirection? _modifiedAt;
+  GOrderDirection? get modifiedAt => _$this._modifiedAt;
+  set modifiedAt(GOrderDirection? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GOrderDirection? _name;
+  GOrderDirection? get name => _$this._name;
+  set name(GOrderDirection? name) => _$this._name = name;
+
+  GGuaranteeOrderByInputBuilder();
+
+  GGuaranteeOrderByInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt;
+      _description = $v.description;
+      _id = $v.id;
+      _modifiedAt = $v.modifiedAt;
+      _name = $v.name;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGuaranteeOrderByInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GGuaranteeOrderByInput;
+  }
+
+  @override
+  void update(void Function(GGuaranteeOrderByInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGuaranteeOrderByInput build() => _build();
+
+  _$GGuaranteeOrderByInput _build() {
+    final _$result = _$v ??
+        new _$GGuaranteeOrderByInput._(
+            createdAt: createdAt,
+            description: description,
+            id: id,
+            modifiedAt: modifiedAt,
+            name: name);
     replace(_$result);
     return _$result;
   }
