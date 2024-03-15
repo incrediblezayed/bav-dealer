@@ -300,7 +300,18 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                     context: context,
                     builder: (BuildContext context) {
                       return AlertDialog(
-                        title: Text('Test Ride Details'),
+                        title:  Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         children: [
+                           Text('Test Ride Details'),
+                           IconButton(
+                             icon: Icon(Icons.close),
+                             onPressed: () {
+                               Navigator.of(context).pop();
+                             },
+                           ),
+                         ],
+                        ),
                         content: Wrap(
                           runSpacing: 10,
                           spacing: 10,
@@ -366,7 +377,7 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                             // ),
                             DropdownButton<VehicleColor>(
                               isExpanded: true,
-                              value: testRideColor,
+                              value: null,
                               onChanged: (newValue) {
                                 setState(() {
                                   testRideColor = newValue;
@@ -378,26 +389,37 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                                       value: e,
                                       child: Row(
                                         children: [
-                                          Container(
-                                            height: 40,
-                                            width: 30,
-                                            decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(7.0),
-                                            ),
-                                            child: ClipRRect(
-                                              borderRadius: BorderRadius.circular(6.0),
-                                              child: KCachedNWImage(
-                                                // e.images.firstOrNull?.image!.url,
-                                                e.gallery.firstOrNull?.file?.image.url,
-                                                // e.images.firstOrNull?.image?.url,
-                                                // e.galleryView.firstOrNull?.file.image.url,
-                                                // Helpers.getFirstNonNullImage(variant),
-                                                fit: BoxFit.fill,
-                                                width: 30,
-                                                height: 40,
-                                              ),
-                                            ),
-                                          ),
+                                          // GestureDetector(
+                                          //     onTap: () => updateColor(e),
+                                          //     child: CircleAvatar(
+                                          //       backgroundColor: Colors.grey,
+                                          //       radius: 12.5.h,
+                                          //       child: CircleAvatar(
+                                          //         radius: 10.h,
+                                          //         backgroundColor: e.code,
+                                          //       ),
+                                          //     ),
+                                          // ),
+                                          // Container(
+                                          //   height: 40,
+                                          //   width: 30,
+                                          //   decoration: BoxDecoration(
+                                          //     borderRadius: BorderRadius.circular(7.0),
+                                          //   ),
+                                          //   child: ClipRRect(
+                                          //     borderRadius: BorderRadius.circular(6.0),
+                                          //     child: KCachedNWImage(
+                                          //       // e.images.firstOrNull?.image!.url,
+                                          //       e.gallery.firstOrNull?.file?.image.url,
+                                          //       // e.images.firstOrNull?.image?.url,
+                                          //       // e.galleryView.firstOrNull?.file.image.url,
+                                          //       // Helpers.getFirstNonNullImage(variant),
+                                          //       fit: BoxFit.fill,
+                                          //       width: 30,
+                                          //       height: 40,
+                                          //     ),
+                                          //   ),
+                                          // ),
                                           const SizedBox(
                                             width: 15.0,
                                           ),
@@ -425,24 +447,44 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                           ],
                         ),
                         actions: [
-                          IconButton(
-                            icon: Icon(Icons.close),
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SizedBox(
+                                height: 50.0,
+                                width: MediaQuery.sizeOf(context).width*0.3,
+                                child: KButton(
+                                  onPressed: (){
+                                    Navigator.of(context).pop();
+                                  },
+                                  text: 'Cancel',
+                                ),
+                              ),
+                              SizedBox(
+                                height: 50.0,
+                                width: MediaQuery.sizeOf(context).width*0.3,
+                                child: KButton(
+                                  onPressed: (){
+                                    Navigator.of(context).pop();
+                                  },
+                                  text: 'Submit',
+                                ),
+                              ),
+                            ],
                           ),
-                          ElevatedButton(
-                            onPressed: () {
-                              // Perform submit action
-                            },
-                            child: Text('Submit'),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: Text('Cancel'),
-                          ),
+
+                          // ElevatedButton(
+                          //   onPressed: () {
+                          //     // Perform submit action
+                          //   },
+                          //   child: Text('Submit'),
+                          // ),
+                          // ElevatedButton(
+                          //   onPressed: () {
+                          //     Navigator.of(context).pop();
+                          //   },
+                          //   child: Text('Cancel'),
+                          // ),
                         ],
                       );
                     },
