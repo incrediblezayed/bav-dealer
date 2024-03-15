@@ -35,6 +35,8 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
       selectedQuantity = quantity ?? 1;
     });
   }
+  late VehicleColor? testRideColor = variants.colors.first;
+
 
   late VehicleColor? selectedColor = variants.colors
       .where(
@@ -46,15 +48,15 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
       )
       .firstOrNull;
 
-  late VehicleColor? testRideColor = variants.colors
-      .where(
-        (p0) => !ref
-        .read(inventoryProvider)
-        .vehicleDealers
-        .map((e) => e.vehicleColor!.id)
-        .contains(p0.id),
-  )
-      .firstOrNull;
+  // late VehicleColor? testRideColor = variants.colors
+  //     .where(
+  //       (p0) => !ref
+  //       .read(inventoryProvider)
+  //       .vehicleDealers
+  //       .map((e) => e.vehicleColor!.id)
+  //       .contains(p0.id),
+  // )
+  //     .firstOrNull;
 
 
 
@@ -378,59 +380,54 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                             DropdownButton<VehicleColor>(
                               isExpanded: true,
                               value: null,
-                              onChanged: (newValue) {
+                              onChanged: (VehicleColor? newValue) {
                                 setState(() {
                                   testRideColor = newValue;
                                 });
                               },
-                              items: variants.colors
-                                  .map<DropdownMenuItem<VehicleColor>>(
-                                    (e) => DropdownMenuItem<VehicleColor>(
-                                      value: e,
-                                      child: Row(
-                                        children: [
-                                          // GestureDetector(
-                                          //     onTap: () => updateColor(e),
-                                          //     child: CircleAvatar(
-                                          //       backgroundColor: Colors.grey,
-                                          //       radius: 12.5.h,
-                                          //       child: CircleAvatar(
-                                          //         radius: 10.h,
-                                          //         backgroundColor: e.code,
-                                          //       ),
-                                          //     ),
-                                          // ),
-                                          // Container(
-                                          //   height: 40,
-                                          //   width: 30,
-                                          //   decoration: BoxDecoration(
-                                          //     borderRadius: BorderRadius.circular(7.0),
-                                          //   ),
-                                          //   child: ClipRRect(
-                                          //     borderRadius: BorderRadius.circular(6.0),
-                                          //     child: KCachedNWImage(
-                                          //       // e.images.firstOrNull?.image!.url,
-                                          //       e.gallery.firstOrNull?.file?.image.url,
-                                          //       // e.images.firstOrNull?.image?.url,
-                                          //       // e.galleryView.firstOrNull?.file.image.url,
-                                          //       // Helpers.getFirstNonNullImage(variant),
-                                          //       fit: BoxFit.fill,
-                                          //       width: 30,
-                                          //       height: 40,
-                                          //     ),
-                                          //   ),
-                                          // ),
-                                          const SizedBox(
-                                            width: 15.0,
-                                          ),
-                                          Text(
-                                            e.name,
-                                          ),
-                                        ],
+                              items: variants.colors.map((VehicleColor item) {
+                                return DropdownMenuItem<VehicleColor>(
+                                  value: item,
+                                  child: Row(
+                                    children: [
+                                      CircleAvatar(
+                                        backgroundColor: Colors.grey,
+                                        radius: 12.5.h,
+                                        child: CircleAvatar(
+                                          radius: 10.h,
+                                          backgroundColor: item.code,
+                                        ),
                                       ),
-                                    ),
-                                  )
-                                  .toList(),
+                                      // Container(
+                                      //   height: 40,
+                                      //   width: 30,
+                                      //   decoration: BoxDecoration(
+                                      //     borderRadius: BorderRadius.circular(7.0),
+                                      //   ),
+                                      //   child: ClipRRect(
+                                      //     borderRadius: BorderRadius.circular(6.0),
+                                      //     child: KCachedNWImage(
+                                      //       // e.images.firstOrNull?.image!.url,
+                                      //       e.gallery.firstOrNull?.file?.image.url,
+                                      //       // e.images.firstOrNull?.image?.url,
+                                      //       // e.galleryView.firstOrNull?.file.image.url,
+                                      //       // Helpers.getFirstNonNullImage(variant),
+                                      //       fit: BoxFit.fill,
+                                      //       width: 30,
+                                      //       height: 40,
+                                      //     ),
+                                      //   ),
+                                      // ),
+                                      const SizedBox(
+                                        width: 15.0,
+                                      ),
+                                      Text(
+                                        item.name,
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              }).toList(),
                             ),
                             KTextField(
                               // controller: controller[i],

@@ -18,12 +18,10 @@ import 'k_button.dart';
 import 'k_textfiled.dart';
 
 class QuantityScreen extends ConsumerStatefulWidget {
-  const QuantityScreen({
-    required this.variant,
-    super.key});
-  
+  const QuantityScreen({required this.variant, super.key});
+
   final VariantDetailsModel variant;
-  
+
   @override
   ConsumerState<QuantityScreen> createState() => _QuantityScreenState();
 }
@@ -32,21 +30,22 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
   List<PriceModel> prices = [];
   List<TextEditingController> controller = [];
   List<GGuaranteesData_guarantees> guarantees = [];
+  String? vehicleGuarantee;
   VariantDetailsModel get variants => widget.variant;
   late VehicleColor? selectedColor = variants.colors
       .where(
         (p0) => !ref
-        .read(inventoryProvider)
-        .vehicleDealers
-        .map((e) => e.vehicleColor!.id)
-        .contains(p0.id),
-  )
+            .read(inventoryProvider)
+            .vehicleDealers
+            .map((e) => e.vehicleColor!.id)
+            .contains(p0.id),
+      )
       .firstOrNull;
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       prices = ref.read(inventoryProvider).prices;
-      guarantees= ref.read(guaranteesProvider).guarantees;
+      guarantees = ref.read(guaranteesProvider).guarantees;
       controller = prices.map((e) => TextEditingController()).toList();
       setState(() {});
     });
@@ -57,7 +56,6 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
   Widget build(BuildContext context) {
     final inventoryPro = ref.watch(inventoryProvider);
     final guaranteePro = ref.watch(guaranteesProvider);
-    print(guarantees.length);
     return Scaffold(
       appBar: AppBar(
         title: Text('Vehicle Details'),
@@ -69,19 +67,44 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
               SizedBox(
                 height: 10.h,
               ),
-               KDropDownButton(
-                 items: guaranteePro.guarantees.map((item) {
-                   return DropdownMenuItem<String>(
-                     value: item.name,
-                     child: Text(item.name??"Guarantee"),
-                   );
-                 }).toList(),
-               ),
+              DropdownButtonFormField<String>(
+                decoration: InputDecoration(
+                  fillColor: AppTheme.white,
+                  suffixIconColor: Colors.black.withOpacity(.2),
+                  labelStyle: const TextStyle(
+                    color: AppTheme.textColor,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black.withOpacity(.2)),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black.withOpacity(.2)),
+                  ),
+                  hintStyle: TextStyle(color: Colors.black.withOpacity(.2)),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black.withOpacity(.2)),
+                  ),
+                ),
+                isExpanded: true,
+                value: vehicleGuarantee ?? guaranteePro.guarantees.firstOrNull?.name,
+                onChanged: (newValue) {
+                  setState(() {
+                    vehicleGuarantee = newValue;
+                  });
+                },
+                items:  guaranteePro.guarantees.map((item) {
+                  return DropdownMenuItem<String>(
+                    value: item.name,
+                    child: Text(item.name ?? "Guarantee"),
+                  );
+                }).toList(),
+              ),
               SizedBox(
                 height: 10.h,
               ),
               ...prices.mapIndexed(
-                    (i, e) => Column(
+                (i, e) => Column(
                   children: [
                     KTextField(
                       controller: controller[i],
@@ -107,7 +130,7 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                 children: [
                   SizedBox(
                     height: 50.0,
-                    width: MediaQuery.sizeOf(context).width*0.4,
+                    width: MediaQuery.sizeOf(context).width * 0.4,
                     child: KButton(
                       onPressed: () {
                         Navigator.pop(context);
@@ -117,7 +140,7 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                   ),
                   SizedBox(
                     height: 50.0,
-                    width: MediaQuery.sizeOf(context).width*0.4,
+                    width: MediaQuery.sizeOf(context).width * 0.4,
                     child: KButton(
                       onPressed: () {
                         inventoryPro
@@ -134,11 +157,11 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                             selectedColor = variants.colors
                                 .where(
                                   (p0) => !ref
-                                  .read(inventoryProvider)
-                                  .vehicleDealers
-                                  .map((e) => e.vehicleColor!.id)
-                                  .contains(p0.id),
-                            )
+                                      .read(inventoryProvider)
+                                      .vehicleDealers
+                                      .map((e) => e.vehicleColor!.id)
+                                      .contains(p0.id),
+                                )
                                 .firstOrNull;
                           });
                         });
@@ -149,93 +172,10 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                   ),
                 ],
               ),
-              // KButton(
-              //   onPressed: () {
-              //     // Navigator.push(
-              //     //   context,
-              //     //   MaterialPageRoute(builder: (context) => QuantityScreen(
-              //     //     variant: widget.variant,
-              //     //   ),
-              //     //   ),
-              //     // );
-              //     inventoryPro
-              //         .createStockRequest(
-              //       variantId: variants.id,
-              //       colorId: selectedColor!.id,
-              //       prices: prices,
-              //     )
-              //         .then((value) {
-              //       for (var i = 0; i < controller.length; i++) {
-              //         controller[i].clear();
-              //       }
-              //       setState(() {
-              //         selectedColor = variants.colors
-              //             .where(
-              //               (p0) => !ref
-              //                   .read(inventoryProvider)
-              //                   .vehicleDealers
-              //                   .map((e) => e.vehicleColor!.id)
-              //                   .contains(p0.id),
-              //             )
-              //             .firstOrNull;
-              //       });
-              //     });
-              //   },
-              //   text: 'Add Now To Update',
-              // ),
             ],
           ),
         ),
       ),
-      // bottomNavigationBar: BottomAppBar(
-      //   color: Colors.white,
-      //   child: Row(
-      //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //     children: [
-      //       SizedBox(
-      //         height: 60.0,
-      //         width: MediaQuery.sizeOf(context).width*0.4,
-      //         child: KButton(
-      //           onPressed: () {
-      //             Navigator.pop(context);
-      //           },
-      //           text: 'Cancel',
-      //         ),
-      //       ),
-      //       SizedBox(
-      //         height: 60.0,
-      //         width: MediaQuery.sizeOf(context).width*0.4,
-      //         child: KButton(
-      //           onPressed: () {
-      //             inventoryPro
-      //                 .createStockRequest(
-      //               variantId: variants.id,
-      //               colorId: selectedColor!.id,
-      //               prices: prices,
-      //             )
-      //                 .then((value) {
-      //               for (var i = 0; i < controller.length; i++) {
-      //                 controller[i].clear();
-      //               }
-      //               setState(() {
-      //                 selectedColor = variants.colors
-      //                     .where(
-      //                       (p0) => !ref
-      //                           .read(inventoryProvider)
-      //                           .vehicleDealers
-      //                           .map((e) => e.vehicleColor!.id)
-      //                           .contains(p0.id),
-      //                     )
-      //                     .firstOrNull;
-      //               });
-      //             });
-      //           },
-      //           text: 'Submit',
-      //         ),
-      //       ),
-      //     ],
-      //   ),
-      // ),
     );
   }
 }
