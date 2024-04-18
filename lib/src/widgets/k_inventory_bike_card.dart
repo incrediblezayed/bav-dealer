@@ -6,16 +6,10 @@ import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
-import 'package:dealerapp/src/widgets/k_drop_down_button.dart';
+import 'package:dealerapp/src/widgets/k_inventory_bike_quantity.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'k_bottom_bar_button.dart';
-import 'k_inventory_bike_quantity.dart';
 
 class KInventoryBikeCard extends ConsumerStatefulWidget {
   const KInventoryBikeCard({required this.variant, super.key});
@@ -35,8 +29,8 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
       selectedQuantity = quantity ?? 1;
     });
   }
-  late VehicleColor? testRideColor = variants.colors.first;
 
+  late VehicleColor? testRideColor = variants.colors.first;
 
   late VehicleColor? selectedColor = variants.colors
       .where(
@@ -57,8 +51,6 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
   //       .contains(p0.id),
   // )
   //     .firstOrNull;
-
-
 
   List<PriceModel> prices = [];
   List<TextEditingController> controller = [];
@@ -265,6 +257,7 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                     MaterialPageRoute(
                       builder: (context) => QuantityScreen(
                         variant: widget.variant,
+                        vehicleColor: selectedColor,
                       ),
                     ),
                   );
@@ -302,17 +295,17 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                     context: context,
                     builder: (BuildContext context) {
                       return AlertDialog(
-                        title:  Row(
+                        title: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                         children: [
-                           Text('Test Ride Details'),
-                           IconButton(
-                             icon: Icon(Icons.close),
-                             onPressed: () {
-                               Navigator.of(context).pop();
-                             },
-                           ),
-                         ],
+                          children: [
+                            const Text('Test Ride Details'),
+                            IconButton(
+                              icon: const Icon(Icons.close),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ],
                         ),
                         content: Wrap(
                           runSpacing: 10,
@@ -379,7 +372,6 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                             // ),
                             DropdownButton<VehicleColor>(
                               isExpanded: true,
-                              value: null,
                               onChanged: (VehicleColor? newValue) {
                                 setState(() {
                                   testRideColor = newValue;
@@ -419,7 +411,7 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                                       //   ),
                                       // ),
                                       const SizedBox(
-                                        width: 15.0,
+                                        width: 15,
                                       ),
                                       Text(
                                         item.name,
@@ -433,9 +425,7 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                               // controller: controller[i],
                               label: 'Test Ride',
                               hintText: 'Enter amount',
-                              onChanged: (value) {
-
-                              },
+                              onChanged: (value) {},
                               inputType: TextInputType.number,
                               inputFormatters: [
                                 FilteringTextInputFormatter.digitsOnly,
@@ -448,20 +438,20 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               SizedBox(
-                                height: 50.0,
-                                width: MediaQuery.sizeOf(context).width*0.3,
+                                height: 50,
+                                width: MediaQuery.sizeOf(context).width * 0.3,
                                 child: KButton(
-                                  onPressed: (){
+                                  onPressed: () {
                                     Navigator.of(context).pop();
                                   },
                                   text: 'Cancel',
                                 ),
                               ),
                               SizedBox(
-                                height: 50.0,
-                                width: MediaQuery.sizeOf(context).width*0.3,
+                                height: 50,
+                                width: MediaQuery.sizeOf(context).width * 0.3,
                                 child: KButton(
-                                  onPressed: (){
+                                  onPressed: () {
                                     Navigator.of(context).pop();
                                   },
                                   text: 'Submit',

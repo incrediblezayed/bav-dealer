@@ -1,26 +1,23 @@
-import 'package:dealerapp/src/utils/global_exports.dart';
-import 'package:dealerapp/src/widgets/k_drop_down_button.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:collection/src/list_extensions.dart';
-import 'package:dealerapp/src/utils/extensions.dart';
-import '../app/model/guarantees_model.dart';
-import '../app/model/variant_details.model.dart';
-import '../app/provider/app_provider.dart';
-import '../app/provider/guarantees_provider.dart';
-import '../app/provider/inventory_provider.dart';
-import '../app/repository/guarantees/graphql/__generated__/guarantees.data.gql.dart';
-import '../app/repository/inventory/inventory_repository.dart';
-import 'k_button.dart';
-import 'k_textfiled.dart';
+import 'package:dealerapp/src/app/model/variant_details.model.dart';
+import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:dealerapp/src/app/repository/guarantees/graphql/__generated__/guarantees.data.gql.dart';
+import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
+import 'package:dealerapp/src/utils/global_exports.dart';
+import 'package:dealerapp/src/widgets/k_button.dart';
+import 'package:dealerapp/src/widgets/k_textfiled.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class QuantityScreen extends ConsumerStatefulWidget {
-  const QuantityScreen({required this.variant, super.key});
+  const QuantityScreen({
+    required this.variant,
+    required this.vehicleColor,
+    super.key,
+  });
 
   final VariantDetailsModel variant;
+  final VehicleColor? vehicleColor;
 
   @override
   ConsumerState<QuantityScreen> createState() => _QuantityScreenState();
@@ -32,15 +29,7 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
   List<GGuaranteesData_guarantees> guarantees = [];
   String? vehicleGuarantee;
   VariantDetailsModel get variants => widget.variant;
-  late VehicleColor? selectedColor = variants.colors
-      .where(
-        (p0) => !ref
-            .read(inventoryProvider)
-            .vehicleDealers
-            .map((e) => e.vehicleColor!.id)
-            .contains(p0.id),
-      )
-      .firstOrNull;
+  late VehicleColor? selectedColor = widget.vehicleColor;
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
@@ -58,7 +47,7 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
     final guaranteePro = ref.watch(guaranteesProvider);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Vehicle Details'),
+        title: const Text('Vehicle Details'),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -87,16 +76,17 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                   ),
                 ),
                 isExpanded: true,
-                value: vehicleGuarantee ?? guaranteePro.guarantees.firstOrNull?.name,
+                value: vehicleGuarantee ??
+                    guaranteePro.guarantees.firstOrNull?.name,
                 onChanged: (newValue) {
                   setState(() {
                     vehicleGuarantee = newValue;
                   });
                 },
-                items:  guaranteePro.guarantees.map((item) {
+                items: guaranteePro.guarantees.map((item) {
                   return DropdownMenuItem<String>(
                     value: item.name,
-                    child: Text(item.name ?? "Guarantee"),
+                    child: Text(item.name ?? 'Guarantee'),
                   );
                 }).toList(),
               ),
@@ -129,7 +119,7 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
-                    height: 50.0,
+                    height: 50,
                     width: MediaQuery.sizeOf(context).width * 0.4,
                     child: KButton(
                       onPressed: () {
@@ -139,7 +129,7 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                     ),
                   ),
                   SizedBox(
-                    height: 50.0,
+                    height: 50,
                     width: MediaQuery.sizeOf(context).width * 0.4,
                     child: KButton(
                       onPressed: () {
