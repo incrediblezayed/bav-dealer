@@ -13,26 +13,11 @@ type User {
   profile_image: ImageFieldOutput
   aadhaar: FileFieldOutput
   driving_license: FileFieldOutput
-  addresses(
-    where: AddressWhereInput! = {}
-    orderBy: [AddressOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Address!]
+  addresses(where: AddressWhereInput! = {}, orderBy: [AddressOrderByInput!]! = [], take: Int, skip: Int! = 0): [Address!]
   addressesCount(where: AddressWhereInput! = {}): Int
-  favorites(
-    where: FavoriteWhereInput! = {}
-    orderBy: [FavoriteOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Favorite!]
+  favorites(where: FavoriteWhereInput! = {}, orderBy: [FavoriteOrderByInput!]! = [], take: Int, skip: Int! = 0): [Favorite!]
   favoritesCount(where: FavoriteWhereInput! = {}): Int
-  cartItems(
-    where: CartItemWhereInput! = {}
-    orderBy: [CartItemOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [CartItem!]
+  cartItems(where: CartItemWhereInput! = {}, orderBy: [CartItemOrderByInput!]! = [], take: Int, skip: Int! = 0): [CartItem!]
   cartItemsCount(where: CartItemWhereInput! = {}): Int
   wallet: Wallet
   referralCode: ReferralCode
@@ -234,9 +219,7 @@ input ImageFieldInput {
   upload: Upload!
 }
 
-"""
-The `Upload` scalar type represents a file upload.
-"""
+"""The `Upload` scalar type represents a file upload."""
 scalar Upload
 
 input FileFieldInput {
@@ -829,11 +812,77 @@ input VehicleTypeCreateInput {
   description: String
 }
 
+type VehicleSubType {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+  vehicleType: VehicleType
+}
+
+input VehicleSubTypeWhereUniqueInput {
+  id: ID
+}
+
+input VehicleSubTypeWhereInput {
+  AND: [VehicleSubTypeWhereInput!]
+  OR: [VehicleSubTypeWhereInput!]
+  NOT: [VehicleSubTypeWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  name: StringFilter
+  description: StringFilter
+  vehicleType: VehicleTypeWhereInput
+}
+
+input VehicleSubTypeOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  name: OrderDirection
+  description: OrderDirection
+}
+
+input VehicleSubTypeUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+  vehicleType: VehicleTypeRelateToOneForUpdateInput
+}
+
+input VehicleTypeRelateToOneForUpdateInput {
+  create: VehicleTypeCreateInput
+  connect: VehicleTypeWhereUniqueInput
+  disconnect: Boolean
+}
+
+input VehicleSubTypeUpdateArgs {
+  where: VehicleSubTypeWhereUniqueInput!
+  data: VehicleSubTypeUpdateInput!
+}
+
+input VehicleSubTypeCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+  vehicleType: VehicleTypeRelateToOneForCreateInput
+}
+
+input VehicleTypeRelateToOneForCreateInput {
+  create: VehicleTypeCreateInput
+  connect: VehicleTypeWhereUniqueInput
+}
+
 type Brand {
   id: ID!
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  type: [String!]
   logo: ImageFieldOutput
 }
 
@@ -862,6 +911,7 @@ input BrandUpdateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  type: [String!]
   logo: ImageFieldInput
 }
 
@@ -874,6 +924,7 @@ input BrandCreateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  type: [String!]
   logo: ImageFieldInput
 }
 
@@ -1066,28 +1117,16 @@ type Vehicle {
   modifiedAt: DateTime
   name: String
   description: String
+  longDescription: String
   type: VehicleType
+  subType(where: VehicleSubTypeWhereInput! = {}, orderBy: [VehicleSubTypeOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleSubType!]
+  subTypeCount(where: VehicleSubTypeWhereInput! = {}): Int
   brand: Brand
-  variants(
-    where: VehicleVariantWhereInput! = {}
-    orderBy: [VehicleVariantOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleVariant!]
+  variants(where: VehicleVariantWhereInput! = {}, orderBy: [VehicleVariantOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleVariant!]
   variantsCount(where: VehicleVariantWhereInput! = {}): Int
-  specifications(
-    where: VehicleSpecificationWhereInput! = {}
-    orderBy: [VehicleSpecificationOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleSpecification!]
+  specifications(where: VehicleSpecificationWhereInput! = {}, orderBy: [VehicleSpecificationOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleSpecification!]
   specificationsCount(where: VehicleSpecificationWhereInput! = {}): Int
-  colors(
-    where: VehicleColorWhereInput! = {}
-    orderBy: [VehicleColorOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleColor!]
+  colors(where: VehicleColorWhereInput! = {}, orderBy: [VehicleColorOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleColor!]
   colorsCount(where: VehicleColorWhereInput! = {}): Int
   informative: Boolean
 }
@@ -1105,12 +1144,20 @@ input VehicleWhereInput {
   modifiedAt: DateTimeNullableFilter
   name: StringFilter
   description: StringFilter
+  longDescription: StringFilter
   type: VehicleTypeWhereInput
+  subType: VehicleSubTypeManyRelationFilter
   brand: BrandWhereInput
   variants: VehicleVariantManyRelationFilter
   specifications: VehicleSpecificationManyRelationFilter
   colors: VehicleColorManyRelationFilter
   informative: BooleanFilter
+}
+
+input VehicleSubTypeManyRelationFilter {
+  every: VehicleSubTypeWhereInput
+  some: VehicleSubTypeWhereInput
+  none: VehicleSubTypeWhereInput
 }
 
 input VehicleVariantManyRelationFilter {
@@ -1137,6 +1184,7 @@ input VehicleOrderByInput {
   modifiedAt: OrderDirection
   name: OrderDirection
   description: OrderDirection
+  longDescription: OrderDirection
   informative: OrderDirection
 }
 
@@ -1145,7 +1193,9 @@ input VehicleUpdateInput {
   modifiedAt: DateTime
   name: String
   description: String
+  longDescription: String
   type: VehicleTypeRelateToOneForUpdateInput
+  subType: VehicleSubTypeRelateToManyForUpdateInput
   brand: BrandRelateToOneForUpdateInput
   variants: VehicleVariantRelateToManyForUpdateInput
   specifications: VehicleSpecificationRelateToManyForUpdateInput
@@ -1153,10 +1203,11 @@ input VehicleUpdateInput {
   informative: Boolean
 }
 
-input VehicleTypeRelateToOneForUpdateInput {
-  create: VehicleTypeCreateInput
-  connect: VehicleTypeWhereUniqueInput
-  disconnect: Boolean
+input VehicleSubTypeRelateToManyForUpdateInput {
+  disconnect: [VehicleSubTypeWhereUniqueInput!]
+  set: [VehicleSubTypeWhereUniqueInput!]
+  create: [VehicleSubTypeCreateInput!]
+  connect: [VehicleSubTypeWhereUniqueInput!]
 }
 
 input BrandRelateToOneForUpdateInput {
@@ -1196,7 +1247,9 @@ input VehicleCreateInput {
   modifiedAt: DateTime
   name: String
   description: String
+  longDescription: String
   type: VehicleTypeRelateToOneForCreateInput
+  subType: VehicleSubTypeRelateToManyForCreateInput
   brand: BrandRelateToOneForCreateInput
   variants: VehicleVariantRelateToManyForCreateInput
   specifications: VehicleSpecificationRelateToManyForCreateInput
@@ -1204,9 +1257,9 @@ input VehicleCreateInput {
   informative: Boolean
 }
 
-input VehicleTypeRelateToOneForCreateInput {
-  create: VehicleTypeCreateInput
-  connect: VehicleTypeWhereUniqueInput
+input VehicleSubTypeRelateToManyForCreateInput {
+  create: [VehicleSubTypeCreateInput!]
+  connect: [VehicleSubTypeWhereUniqueInput!]
 }
 
 input BrandRelateToOneForCreateInput {
@@ -1236,43 +1289,19 @@ type VehicleColor {
   name: String
   code: String
   vehicle: Vehicle
-  vehicleVariant(
-    where: VehicleVariantWhereInput! = {}
-    orderBy: [VehicleVariantOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleVariant!]
+  vehicleVariant(where: VehicleVariantWhereInput! = {}, orderBy: [VehicleVariantOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleVariant!]
   vehicleVariantCount(where: VehicleVariantWhereInput! = {}): Int
-  images(
-    where: VehicleImageWhereInput! = {}
-    orderBy: [VehicleImageOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleImage!]
+  images(where: VehicleImageWhereInput! = {}, orderBy: [VehicleImageOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleImage!]
   imagesCount(where: VehicleImageWhereInput! = {}): Int
-  videos(
-    where: VehicleVideoWhereInput! = {}
-    orderBy: [VehicleVideoOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleVideo!]
+  videos(where: VehicleVideoWhereInput! = {}, orderBy: [VehicleVideoOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleVideo!]
   videosCount(where: VehicleVideoWhereInput! = {}): Int
-  gallery(
-    where: VehicleGalleryItemWhereInput! = {}
-    orderBy: [VehicleGalleryItemOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleGalleryItem!]
+  gallery(where: VehicleGalleryItemWhereInput! = {}, orderBy: [VehicleGalleryItemOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleGalleryItem!]
   galleryCount(where: VehicleGalleryItemWhereInput! = {}): Int
   galleryView: JSON
-  reels(
-    where: VehicleReelWhereInput! = {}
-    orderBy: [VehicleReelOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleReel!]
+  reels(where: VehicleReelWhereInput! = {}, orderBy: [VehicleReelOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleReel!]
   reelsCount(where: VehicleReelWhereInput! = {}): Int
   reelsView: JSON
+  disabled: Boolean
 }
 
 input VehicleColorWhereUniqueInput {
@@ -1294,6 +1323,7 @@ input VehicleColorWhereInput {
   videos: VehicleVideoManyRelationFilter
   gallery: VehicleGalleryItemManyRelationFilter
   reels: VehicleReelManyRelationFilter
+  disabled: BooleanFilter
 }
 
 input VehicleImageManyRelationFilter {
@@ -1326,6 +1356,7 @@ input VehicleColorOrderByInput {
   modifiedAt: OrderDirection
   name: OrderDirection
   code: OrderDirection
+  disabled: OrderDirection
 }
 
 input VehicleColorUpdateInput {
@@ -1339,6 +1370,7 @@ input VehicleColorUpdateInput {
   videos: VehicleVideoRelateToManyForUpdateInput
   gallery: VehicleGalleryItemRelateToManyForUpdateInput
   reels: VehicleReelRelateToManyForUpdateInput
+  disabled: Boolean
 }
 
 input VehicleRelateToOneForUpdateInput {
@@ -1391,6 +1423,7 @@ input VehicleColorCreateInput {
   videos: VehicleVideoRelateToManyForCreateInput
   gallery: VehicleGalleryItemRelateToManyForCreateInput
   reels: VehicleReelRelateToManyForCreateInput
+  disabled: Boolean
 }
 
 input VehicleRelateToOneForCreateInput {
@@ -1498,6 +1531,7 @@ type VehicleReel {
   color: VehicleColor
   index: Int
   file: JSON
+  disabled: Boolean
 }
 
 input VehicleReelWhereUniqueInput {
@@ -1515,6 +1549,7 @@ input VehicleReelWhereInput {
   fileId: StringFilter
   color: VehicleColorWhereInput
   index: IntNullableFilter
+  disabled: BooleanFilter
 }
 
 input VehicleReelOrderByInput {
@@ -1524,6 +1559,7 @@ input VehicleReelOrderByInput {
   type: OrderDirection
   fileId: OrderDirection
   index: OrderDirection
+  disabled: OrderDirection
 }
 
 input VehicleReelUpdateInput {
@@ -1533,6 +1569,7 @@ input VehicleReelUpdateInput {
   fileId: String
   color: VehicleColorRelateToOneForUpdateInput
   index: Int
+  disabled: Boolean
 }
 
 input VehicleReelUpdateArgs {
@@ -1547,6 +1584,100 @@ input VehicleReelCreateInput {
   fileId: String
   color: VehicleColorRelateToOneForCreateInput
   index: Int
+  disabled: Boolean
+}
+
+type Guarantee {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+}
+
+input GuaranteeWhereUniqueInput {
+  id: ID
+}
+
+input GuaranteeWhereInput {
+  AND: [GuaranteeWhereInput!]
+  OR: [GuaranteeWhereInput!]
+  NOT: [GuaranteeWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  name: StringFilter
+  description: StringFilter
+}
+
+input GuaranteeOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  name: OrderDirection
+  description: OrderDirection
+}
+
+input GuaranteeUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+}
+
+input GuaranteeUpdateArgs {
+  where: GuaranteeWhereUniqueInput!
+  data: GuaranteeUpdateInput!
+}
+
+input GuaranteeCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  description: String
+}
+
+type GuaranteeFile {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  file: FileFieldOutput
+}
+
+input GuaranteeFileWhereUniqueInput {
+  id: ID
+}
+
+input GuaranteeFileWhereInput {
+  AND: [GuaranteeFileWhereInput!]
+  OR: [GuaranteeFileWhereInput!]
+  NOT: [GuaranteeFileWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+}
+
+input GuaranteeFileOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+}
+
+input GuaranteeFileUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  file: FileFieldInput
+}
+
+input GuaranteeFileUpdateArgs {
+  where: GuaranteeFileWhereUniqueInput!
+  data: GuaranteeFileUpdateInput!
+}
+
+input GuaranteeFileCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  file: FileFieldInput
 }
 
 type VehicleDealer {
@@ -1555,13 +1686,10 @@ type VehicleDealer {
   modifiedAt: DateTime
   dealer: Dealer
   vehicleVariant: VehicleVariant
+  guarantees(where: GuaranteeWhereInput! = {}, orderBy: [GuaranteeOrderByInput!]! = [], take: Int, skip: Int! = 0): [Guarantee!]
+  guaranteesCount(where: GuaranteeWhereInput! = {}): Int
   vehicleColor: VehicleColor
-  prices(
-    where: PriceWhereInput! = {}
-    orderBy: [PriceOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Price!]
+  prices(where: PriceWhereInput! = {}, orderBy: [PriceOrderByInput!]! = [], take: Int, skip: Int! = 0): [Price!]
   pricesCount(where: PriceWhereInput! = {}): Int
   stock: Int
   totalPrice: Int
@@ -1580,9 +1708,16 @@ input VehicleDealerWhereInput {
   modifiedAt: DateTimeNullableFilter
   dealer: DealerWhereInput
   vehicleVariant: VehicleVariantWhereInput
+  guarantees: GuaranteeManyRelationFilter
   vehicleColor: VehicleColorWhereInput
   prices: PriceManyRelationFilter
   stock: IntNullableFilter
+}
+
+input GuaranteeManyRelationFilter {
+  every: GuaranteeWhereInput
+  some: GuaranteeWhereInput
+  none: GuaranteeWhereInput
 }
 
 input PriceManyRelationFilter {
@@ -1603,9 +1738,17 @@ input VehicleDealerUpdateInput {
   modifiedAt: DateTime
   dealer: DealerRelateToOneForUpdateInput
   vehicleVariant: VehicleVariantRelateToOneForUpdateInput
+  guarantees: GuaranteeRelateToManyForUpdateInput
   vehicleColor: VehicleColorRelateToOneForUpdateInput
   prices: PriceRelateToManyForUpdateInput
   stock: Int
+}
+
+input GuaranteeRelateToManyForUpdateInput {
+  disconnect: [GuaranteeWhereUniqueInput!]
+  set: [GuaranteeWhereUniqueInput!]
+  create: [GuaranteeCreateInput!]
+  connect: [GuaranteeWhereUniqueInput!]
 }
 
 input PriceRelateToManyForUpdateInput {
@@ -1625,9 +1768,15 @@ input VehicleDealerCreateInput {
   modifiedAt: DateTime
   dealer: DealerRelateToOneForCreateInput
   vehicleVariant: VehicleVariantRelateToOneForCreateInput
+  guarantees: GuaranteeRelateToManyForCreateInput
   vehicleColor: VehicleColorRelateToOneForCreateInput
   prices: PriceRelateToManyForCreateInput
   stock: Int
+}
+
+input GuaranteeRelateToManyForCreateInput {
+  create: [GuaranteeCreateInput!]
+  connect: [GuaranteeWhereUniqueInput!]
 }
 
 input PriceRelateToManyForCreateInput {
@@ -1833,42 +1982,19 @@ type VehicleVariant {
   name: String
   vehicle: Vehicle
   default: Boolean
-  specifications(
-    where: VehicleSpecificationWhereInput! = {}
-    orderBy: [VehicleSpecificationOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleSpecification!]
+  specifications(where: VehicleSpecificationWhereInput! = {}, orderBy: [VehicleSpecificationOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleSpecification!]
   specificationsCount(where: VehicleSpecificationWhereInput! = {}): Int
-  colors(
-    where: VehicleColorWhereInput! = {}
-    orderBy: [VehicleColorOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleColor!]
+  colors(where: VehicleColorWhereInput! = {}, orderBy: [VehicleColorOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleColor!]
   colorsCount(where: VehicleColorWhereInput! = {}): Int
-  tags(
-    where: TagWhereInput! = {}
-    orderBy: [TagOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Tag!]
+  tags(where: TagWhereInput! = {}, orderBy: [TagOrderByInput!]! = [], take: Int, skip: Int! = 0): [Tag!]
   tagsCount(where: TagWhereInput! = {}): Int
   informative: Boolean
-  prices(
-    where: PriceWhereInput! = {}
-    orderBy: [PriceOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Price!]
+  prices(where: PriceWhereInput! = {}, orderBy: [PriceOrderByInput!]! = [], take: Int, skip: Int! = 0): [Price!]
   pricesCount(where: PriceWhereInput! = {}): Int
   totalPrice: Int
-  availableVehicleDealer(
-    location: [Float!]
-    vehicleColorId: ID
-    limit: Int
-    offset: Int
-  ): JSON
+  availableVehicleDealer(location: [Float!], vehicleColorId: ID, limit: Int, offset: Int): JSON
+  availableTestDriveDealer(location: [Float!], vehicleColorId: ID, limit: Int, offset: Int): JSON
+  disabled: Boolean
 }
 
 input VehicleVariantWhereUniqueInput {
@@ -1890,6 +2016,7 @@ input VehicleVariantWhereInput {
   tags: TagManyRelationFilter
   informative: BooleanFilter
   prices: PriceManyRelationFilter
+  disabled: BooleanFilter
 }
 
 input TagManyRelationFilter {
@@ -1905,6 +2032,7 @@ input VehicleVariantOrderByInput {
   name: OrderDirection
   default: OrderDirection
   informative: OrderDirection
+  disabled: OrderDirection
 }
 
 input VehicleVariantUpdateInput {
@@ -1918,6 +2046,7 @@ input VehicleVariantUpdateInput {
   tags: TagRelateToManyForUpdateInput
   informative: Boolean
   prices: PriceRelateToManyForUpdateInput
+  disabled: Boolean
 }
 
 input TagRelateToManyForUpdateInput {
@@ -1943,6 +2072,7 @@ input VehicleVariantCreateInput {
   tags: TagRelateToManyForCreateInput
   informative: Boolean
   prices: PriceRelateToManyForCreateInput
+  disabled: Boolean
 }
 
 input TagRelateToManyForCreateInput {
@@ -1956,6 +2086,8 @@ type VehicleDealerStockRequest {
   modifiedAt: DateTime
   dealer: Dealer
   vehicleVariant: VehicleVariant
+  guarantees(where: GuaranteeWhereInput! = {}, orderBy: [GuaranteeOrderByInput!]! = [], take: Int, skip: Int! = 0): [Guarantee!]
+  guaranteesCount(where: GuaranteeWhereInput! = {}): Int
   vehicleColor: VehicleColor
   stock: Int
   totalPrice: Int
@@ -1976,6 +2108,7 @@ input VehicleDealerStockRequestWhereInput {
   modifiedAt: DateTimeNullableFilter
   dealer: DealerWhereInput
   vehicleVariant: VehicleVariantWhereInput
+  guarantees: GuaranteeManyRelationFilter
   vehicleColor: VehicleColorWhereInput
   stock: IntNullableFilter
   accepted: BooleanFilter
@@ -2025,6 +2158,7 @@ input VehicleDealerStockRequestUpdateInput {
   modifiedAt: DateTime
   dealer: DealerRelateToOneForUpdateInput
   vehicleVariant: VehicleVariantRelateToOneForUpdateInput
+  guarantees: GuaranteeRelateToManyForUpdateInput
   vehicleColor: VehicleColorRelateToOneForUpdateInput
   stock: Int
   accepted: Boolean
@@ -2041,6 +2175,7 @@ input VehicleDealerStockRequestCreateInput {
   modifiedAt: DateTime
   dealer: DealerRelateToOneForCreateInput
   vehicleVariant: VehicleVariantRelateToOneForCreateInput
+  guarantees: GuaranteeRelateToManyForCreateInput
   vehicleColor: VehicleColorRelateToOneForCreateInput
   stock: Int
   accepted: Boolean
@@ -2300,33 +2435,13 @@ type Order {
   createdAt: DateTime
   modifiedAt: DateTime
   user: User
-  vehicleOrders(
-    where: VehicleOrderWhereInput! = {}
-    orderBy: [VehicleOrderOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleOrder!]
+  vehicleOrders(where: VehicleOrderWhereInput! = {}, orderBy: [VehicleOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleOrder!]
   vehicleOrdersCount(where: VehicleOrderWhereInput! = {}): Int
-  testDriveOrders(
-    where: TestDriveOrderWhereInput! = {}
-    orderBy: [TestDriveOrderOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [TestDriveOrder!]
+  testDriveOrders(where: TestDriveOrderWhereInput! = {}, orderBy: [TestDriveOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [TestDriveOrder!]
   testDriveOrdersCount(where: TestDriveOrderWhereInput! = {}): Int
-  productOrders(
-    where: ProductOrderWhereInput! = {}
-    orderBy: [ProductOrderOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductOrder!]
+  productOrders(where: ProductOrderWhereInput! = {}, orderBy: [ProductOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductOrder!]
   productOrdersCount(where: ProductOrderWhereInput! = {}): Int
-  payments(
-    where: PaymentWhereInput! = {}
-    orderBy: [PaymentOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Payment!]
+  payments(where: PaymentWhereInput! = {}, orderBy: [PaymentOrderByInput!]! = [], take: Int, skip: Int! = 0): [Payment!]
   paymentsCount(where: PaymentWhereInput! = {}): Int
 }
 
@@ -2559,8 +2674,10 @@ type VehicleOrder {
   dealer: VehicleDealer
   order: Order
   price: Int
+  priceInfo: JSON
   status: String
   address: Address
+  additionalInfo: VehicleOrderAdditionalInfo
 }
 
 input VehicleOrderWhereUniqueInput {
@@ -2579,6 +2696,7 @@ input VehicleOrderWhereInput {
   price: IntNullableFilter
   status: StringNullableFilter
   address: AddressWhereInput
+  additionalInfo: VehicleOrderAdditionalInfoWhereInput
 }
 
 input VehicleOrderOrderByInput {
@@ -2595,8 +2713,10 @@ input VehicleOrderUpdateInput {
   dealer: VehicleDealerRelateToOneForUpdateInput
   order: OrderRelateToOneForUpdateInput
   price: Int
+  priceInfo: JSON
   status: String
   address: AddressRelateToOneForUpdateInput
+  additionalInfo: VehicleOrderAdditionalInfoRelateToOneForUpdateInput
 }
 
 input VehicleDealerRelateToOneForUpdateInput {
@@ -2611,6 +2731,12 @@ input AddressRelateToOneForUpdateInput {
   disconnect: Boolean
 }
 
+input VehicleOrderAdditionalInfoRelateToOneForUpdateInput {
+  create: VehicleOrderAdditionalInfoCreateInput
+  connect: VehicleOrderAdditionalInfoWhereUniqueInput
+  disconnect: Boolean
+}
+
 input VehicleOrderUpdateArgs {
   where: VehicleOrderWhereUniqueInput!
   data: VehicleOrderUpdateInput!
@@ -2622,8 +2748,10 @@ input VehicleOrderCreateInput {
   dealer: VehicleDealerRelateToOneForCreateInput
   order: OrderRelateToOneForCreateInput
   price: Int
+  priceInfo: JSON
   status: String
   address: AddressRelateToOneForCreateInput
+  additionalInfo: VehicleOrderAdditionalInfoRelateToOneForCreateInput
 }
 
 input VehicleDealerRelateToOneForCreateInput {
@@ -2634,6 +2762,11 @@ input VehicleDealerRelateToOneForCreateInput {
 input AddressRelateToOneForCreateInput {
   create: AddressCreateInput
   connect: AddressWhereUniqueInput
+}
+
+input VehicleOrderAdditionalInfoRelateToOneForCreateInput {
+  create: VehicleOrderAdditionalInfoCreateInput
+  connect: VehicleOrderAdditionalInfoWhereUniqueInput
 }
 
 type TestDriveOrder {
@@ -2716,6 +2849,7 @@ type ProductOrder {
   dealer: ProductDealer
   order: Order
   price: Int
+  priceInfo: JSON
   status: String
   address: Address
 }
@@ -2752,6 +2886,7 @@ input ProductOrderUpdateInput {
   dealer: ProductDealerRelateToOneForUpdateInput
   order: OrderRelateToOneForUpdateInput
   price: Int
+  priceInfo: JSON
   status: String
   address: AddressRelateToOneForUpdateInput
 }
@@ -2773,6 +2908,7 @@ input ProductOrderCreateInput {
   dealer: ProductDealerRelateToOneForCreateInput
   order: OrderRelateToOneForCreateInput
   price: Int
+  priceInfo: JSON
   status: String
   address: AddressRelateToOneForCreateInput
 }
@@ -2786,26 +2922,11 @@ type OrderCancellationRequest {
   id: ID!
   createdAt: DateTime
   modifiedAt: DateTime
-  vehicleOrders(
-    where: VehicleOrderWhereInput! = {}
-    orderBy: [VehicleOrderOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleOrder!]
+  vehicleOrders(where: VehicleOrderWhereInput! = {}, orderBy: [VehicleOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleOrder!]
   vehicleOrdersCount(where: VehicleOrderWhereInput! = {}): Int
-  testDriveOrders(
-    where: TestDriveOrderWhereInput! = {}
-    orderBy: [TestDriveOrderOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [TestDriveOrder!]
+  testDriveOrders(where: TestDriveOrderWhereInput! = {}, orderBy: [TestDriveOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [TestDriveOrder!]
   testDriveOrdersCount(where: TestDriveOrderWhereInput! = {}): Int
-  productOrders(
-    where: ProductOrderWhereInput! = {}
-    orderBy: [ProductOrderOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductOrder!]
+  productOrders(where: ProductOrderWhereInput! = {}, orderBy: [ProductOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductOrder!]
   productOrdersCount(where: ProductOrderWhereInput! = {}): Int
   approved: Boolean
   reason: String
@@ -2871,26 +2992,11 @@ type OrderRejectionByDealer {
   id: ID!
   createdAt: DateTime
   modifiedAt: DateTime
-  vehicleOrders(
-    where: VehicleOrderWhereInput! = {}
-    orderBy: [VehicleOrderOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleOrder!]
+  vehicleOrders(where: VehicleOrderWhereInput! = {}, orderBy: [VehicleOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleOrder!]
   vehicleOrdersCount(where: VehicleOrderWhereInput! = {}): Int
-  testDriveOrders(
-    where: TestDriveOrderWhereInput! = {}
-    orderBy: [TestDriveOrderOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [TestDriveOrder!]
+  testDriveOrders(where: TestDriveOrderWhereInput! = {}, orderBy: [TestDriveOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [TestDriveOrder!]
   testDriveOrdersCount(where: TestDriveOrderWhereInput! = {}): Int
-  productOrders(
-    where: ProductOrderWhereInput! = {}
-    orderBy: [ProductOrderOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductOrder!]
+  productOrders(where: ProductOrderWhereInput! = {}, orderBy: [ProductOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductOrder!]
   productOrdersCount(where: ProductOrderWhereInput! = {}): Int
   approved: Boolean
   reason: String
@@ -2952,6 +3058,61 @@ input OrderRejectionByDealerCreateInput {
   description: String
 }
 
+type VehicleOrderAdditionalInfo {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  code: String
+  hsnCode: String
+  vehicleOrder(where: VehicleOrderWhereInput! = {}, orderBy: [VehicleOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleOrder!]
+  vehicleOrderCount(where: VehicleOrderWhereInput! = {}): Int
+}
+
+input VehicleOrderAdditionalInfoWhereUniqueInput {
+  id: ID
+}
+
+input VehicleOrderAdditionalInfoWhereInput {
+  AND: [VehicleOrderAdditionalInfoWhereInput!]
+  OR: [VehicleOrderAdditionalInfoWhereInput!]
+  NOT: [VehicleOrderAdditionalInfoWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  code: StringFilter
+  hsnCode: StringFilter
+  vehicleOrder: VehicleOrderManyRelationFilter
+}
+
+input VehicleOrderAdditionalInfoOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  code: OrderDirection
+  hsnCode: OrderDirection
+}
+
+input VehicleOrderAdditionalInfoUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  code: String
+  hsnCode: String
+  vehicleOrder: VehicleOrderRelateToManyForUpdateInput
+}
+
+input VehicleOrderAdditionalInfoUpdateArgs {
+  where: VehicleOrderAdditionalInfoWhereUniqueInput!
+  data: VehicleOrderAdditionalInfoUpdateInput!
+}
+
+input VehicleOrderAdditionalInfoCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  code: String
+  hsnCode: String
+  vehicleOrder: VehicleOrderRelateToManyForCreateInput
+}
+
 type UserVehicleReview {
   id: ID!
   createdAt: DateTime
@@ -2960,6 +3121,8 @@ type UserVehicleReview {
   vehicle: Vehicle
   review: String
   rating: Int
+  attachments(where: UserVehicleReviewAttachmentWhereInput! = {}, orderBy: [UserVehicleReviewAttachmentOrderByInput!]! = [], take: Int, skip: Int! = 0): [UserVehicleReviewAttachment!]
+  attachmentsCount(where: UserVehicleReviewAttachmentWhereInput! = {}): Int
 }
 
 input UserVehicleReviewWhereUniqueInput {
@@ -2977,6 +3140,13 @@ input UserVehicleReviewWhereInput {
   vehicle: VehicleWhereInput
   review: StringFilter
   rating: IntFilter
+  attachments: UserVehicleReviewAttachmentManyRelationFilter
+}
+
+input UserVehicleReviewAttachmentManyRelationFilter {
+  every: UserVehicleReviewAttachmentWhereInput
+  some: UserVehicleReviewAttachmentWhereInput
+  none: UserVehicleReviewAttachmentWhereInput
 }
 
 input UserVehicleReviewOrderByInput {
@@ -2994,6 +3164,14 @@ input UserVehicleReviewUpdateInput {
   vehicle: VehicleRelateToOneForUpdateInput
   review: String
   rating: Int
+  attachments: UserVehicleReviewAttachmentRelateToManyForUpdateInput
+}
+
+input UserVehicleReviewAttachmentRelateToManyForUpdateInput {
+  disconnect: [UserVehicleReviewAttachmentWhereUniqueInput!]
+  set: [UserVehicleReviewAttachmentWhereUniqueInput!]
+  create: [UserVehicleReviewAttachmentCreateInput!]
+  connect: [UserVehicleReviewAttachmentWhereUniqueInput!]
 }
 
 input UserVehicleReviewUpdateArgs {
@@ -3008,6 +3186,70 @@ input UserVehicleReviewCreateInput {
   vehicle: VehicleRelateToOneForCreateInput
   review: String
   rating: Int
+  attachments: UserVehicleReviewAttachmentRelateToManyForCreateInput
+}
+
+input UserVehicleReviewAttachmentRelateToManyForCreateInput {
+  create: [UserVehicleReviewAttachmentCreateInput!]
+  connect: [UserVehicleReviewAttachmentWhereUniqueInput!]
+}
+
+type UserVehicleReviewAttachment {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  file: FileFieldOutput
+  review: UserVehicleReview
+}
+
+input UserVehicleReviewAttachmentWhereUniqueInput {
+  id: ID
+}
+
+input UserVehicleReviewAttachmentWhereInput {
+  AND: [UserVehicleReviewAttachmentWhereInput!]
+  OR: [UserVehicleReviewAttachmentWhereInput!]
+  NOT: [UserVehicleReviewAttachmentWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  review: UserVehicleReviewWhereInput
+}
+
+input UserVehicleReviewAttachmentOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+}
+
+input UserVehicleReviewAttachmentUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  file: FileFieldInput
+  review: UserVehicleReviewRelateToOneForUpdateInput
+}
+
+input UserVehicleReviewRelateToOneForUpdateInput {
+  create: UserVehicleReviewCreateInput
+  connect: UserVehicleReviewWhereUniqueInput
+  disconnect: Boolean
+}
+
+input UserVehicleReviewAttachmentUpdateArgs {
+  where: UserVehicleReviewAttachmentWhereUniqueInput!
+  data: UserVehicleReviewAttachmentUpdateInput!
+}
+
+input UserVehicleReviewAttachmentCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  file: FileFieldInput
+  review: UserVehicleReviewRelateToOneForCreateInput
+}
+
+input UserVehicleReviewRelateToOneForCreateInput {
+  create: UserVehicleReviewCreateInput
+  connect: UserVehicleReviewWhereUniqueInput
 }
 
 type UserProductReview {
@@ -3018,6 +3260,8 @@ type UserProductReview {
   product: Product
   review: String
   rating: Int
+  attachments(where: UserProductReviewAttachmentWhereInput! = {}, orderBy: [UserProductReviewAttachmentOrderByInput!]! = [], take: Int, skip: Int! = 0): [UserProductReviewAttachment!]
+  attachmentsCount(where: UserProductReviewAttachmentWhereInput! = {}): Int
 }
 
 input UserProductReviewWhereUniqueInput {
@@ -3035,6 +3279,13 @@ input UserProductReviewWhereInput {
   product: ProductWhereInput
   review: StringFilter
   rating: IntFilter
+  attachments: UserProductReviewAttachmentManyRelationFilter
+}
+
+input UserProductReviewAttachmentManyRelationFilter {
+  every: UserProductReviewAttachmentWhereInput
+  some: UserProductReviewAttachmentWhereInput
+  none: UserProductReviewAttachmentWhereInput
 }
 
 input UserProductReviewOrderByInput {
@@ -3052,12 +3303,20 @@ input UserProductReviewUpdateInput {
   product: ProductRelateToOneForUpdateInput
   review: String
   rating: Int
+  attachments: UserProductReviewAttachmentRelateToManyForUpdateInput
 }
 
 input ProductRelateToOneForUpdateInput {
   create: ProductCreateInput
   connect: ProductWhereUniqueInput
   disconnect: Boolean
+}
+
+input UserProductReviewAttachmentRelateToManyForUpdateInput {
+  disconnect: [UserProductReviewAttachmentWhereUniqueInput!]
+  set: [UserProductReviewAttachmentWhereUniqueInput!]
+  create: [UserProductReviewAttachmentCreateInput!]
+  connect: [UserProductReviewAttachmentWhereUniqueInput!]
 }
 
 input UserProductReviewUpdateArgs {
@@ -3072,11 +3331,75 @@ input UserProductReviewCreateInput {
   product: ProductRelateToOneForCreateInput
   review: String
   rating: Int
+  attachments: UserProductReviewAttachmentRelateToManyForCreateInput
 }
 
 input ProductRelateToOneForCreateInput {
   create: ProductCreateInput
   connect: ProductWhereUniqueInput
+}
+
+input UserProductReviewAttachmentRelateToManyForCreateInput {
+  create: [UserProductReviewAttachmentCreateInput!]
+  connect: [UserProductReviewAttachmentWhereUniqueInput!]
+}
+
+type UserProductReviewAttachment {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  file: FileFieldOutput
+  review: UserProductReview
+}
+
+input UserProductReviewAttachmentWhereUniqueInput {
+  id: ID
+}
+
+input UserProductReviewAttachmentWhereInput {
+  AND: [UserProductReviewAttachmentWhereInput!]
+  OR: [UserProductReviewAttachmentWhereInput!]
+  NOT: [UserProductReviewAttachmentWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  review: UserProductReviewWhereInput
+}
+
+input UserProductReviewAttachmentOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+}
+
+input UserProductReviewAttachmentUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  file: FileFieldInput
+  review: UserProductReviewRelateToOneForUpdateInput
+}
+
+input UserProductReviewRelateToOneForUpdateInput {
+  create: UserProductReviewCreateInput
+  connect: UserProductReviewWhereUniqueInput
+  disconnect: Boolean
+}
+
+input UserProductReviewAttachmentUpdateArgs {
+  where: UserProductReviewAttachmentWhereUniqueInput!
+  data: UserProductReviewAttachmentUpdateInput!
+}
+
+input UserProductReviewAttachmentCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  file: FileFieldInput
+  review: UserProductReviewRelateToOneForCreateInput
+}
+
+input UserProductReviewRelateToOneForCreateInput {
+  create: UserProductReviewCreateInput
+  connect: UserProductReviewWhereUniqueInput
 }
 
 type ExpertReview {
@@ -3085,8 +3408,10 @@ type ExpertReview {
   modifiedAt: DateTime
   title: String
   description: String
+  banner: ImageFieldOutput
   user: User
   likes: Int
+  disabled: Boolean
 }
 
 input ExpertReviewWhereUniqueInput {
@@ -3104,6 +3429,7 @@ input ExpertReviewWhereInput {
   description: StringFilter
   user: UserWhereInput
   likes: IntNullableFilter
+  disabled: BooleanFilter
 }
 
 input ExpertReviewOrderByInput {
@@ -3113,6 +3439,7 @@ input ExpertReviewOrderByInput {
   title: OrderDirection
   description: OrderDirection
   likes: OrderDirection
+  disabled: OrderDirection
 }
 
 input ExpertReviewUpdateInput {
@@ -3120,8 +3447,10 @@ input ExpertReviewUpdateInput {
   modifiedAt: DateTime
   title: String
   description: String
+  banner: ImageFieldInput
   user: UserRelateToOneForUpdateInput
   likes: Int
+  disabled: Boolean
 }
 
 input ExpertReviewUpdateArgs {
@@ -3134,8 +3463,10 @@ input ExpertReviewCreateInput {
   modifiedAt: DateTime
   title: String
   description: String
+  banner: ImageFieldInput
   user: UserRelateToOneForCreateInput
   likes: Int
+  disabled: Boolean
 }
 
 type Dealer {
@@ -3145,12 +3476,7 @@ type Dealer {
   name: String
   user: User
   approved: Boolean
-  addresses(
-    where: DealerAddressWhereInput! = {}
-    orderBy: [DealerAddressOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [DealerAddress!]
+  addresses(where: DealerAddressWhereInput! = {}, orderBy: [DealerAddressOrderByInput!]! = [], take: Int, skip: Int! = 0): [DealerAddress!]
   addressesCount(where: DealerAddressWhereInput! = {}): Int
   lLat: Float
   lLng: Float
@@ -3464,17 +3790,6 @@ type AppNotification {
   user: User
 }
 
-
-type Guarantees {
-  id: ID!
-  createdAt: DateTime
-  modifiedAt: DateTime
-  name: String
-  description: String
-}
-
-
-
 input AppNotificationWhereUniqueInput {
   id: ID
 }
@@ -3492,33 +3807,12 @@ input AppNotificationWhereInput {
   user: UserWhereInput
 }
 
-input GuaranteeWhereInput {
-  AND: [AppNotificationWhereInput!]
-  NOT: [AppNotificationWhereInput!]
-  OR: [AppNotificationWhereInput!]
-  createdAt: DateTimeNullableFilter
-  description: StringFilter
-  id: IDFilter
-  modifiedAt: DateTimeNullableFilter
-  name: StringFilter
-}
-
-
-
 input AppNotificationOrderByInput {
   id: OrderDirection
   createdAt: OrderDirection
   modifiedAt: OrderDirection
   title: OrderDirection
   body: OrderDirection
-}
-
-input GuaranteeOrderByInput {
-  createdAt: OrderDirection
-  description: OrderDirection
-  id: OrderDirection
-  modifiedAt: OrderDirection
-  name: OrderDirection
 }
 
 input AppNotificationUpdateInput {
@@ -3729,28 +4023,14 @@ type NewsItem {
   title: String
   description: String
   authorName: String
-  categories(
-    where: NewsCategoryWhereInput! = {}
-    orderBy: [NewsCategoryOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [NewsCategory!]
+  categories(where: NewsCategoryWhereInput! = {}, orderBy: [NewsCategoryOrderByInput!]! = [], take: Int, skip: Int! = 0): [NewsCategory!]
   categoriesCount(where: NewsCategoryWhereInput! = {}): Int
-  keywords(
-    where: KeywordWhereInput! = {}
-    orderBy: [KeywordOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Keyword!]
+  keywords(where: KeywordWhereInput! = {}, orderBy: [KeywordOrderByInput!]! = [], take: Int, skip: Int! = 0): [Keyword!]
   keywordsCount(where: KeywordWhereInput! = {}): Int
   banner: NewsAttachment
-  newsAttachments(
-    where: NewsAttachmentWhereInput! = {}
-    orderBy: [NewsAttachmentOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [NewsAttachment!]
+  newsAttachments(where: NewsAttachmentWhereInput! = {}, orderBy: [NewsAttachmentOrderByInput!]! = [], take: Int, skip: Int! = 0): [NewsAttachment!]
   newsAttachmentsCount(where: NewsAttachmentWhereInput! = {}): Int
+  disabled: Boolean
 }
 
 input NewsItemWhereUniqueInput {
@@ -3771,6 +4051,7 @@ input NewsItemWhereInput {
   keywords: KeywordManyRelationFilter
   banner: NewsAttachmentWhereInput
   newsAttachments: NewsAttachmentManyRelationFilter
+  disabled: BooleanFilter
 }
 
 input NewsCategoryManyRelationFilter {
@@ -3798,6 +4079,7 @@ input NewsItemOrderByInput {
   title: OrderDirection
   description: OrderDirection
   authorName: OrderDirection
+  disabled: OrderDirection
 }
 
 input NewsItemUpdateInput {
@@ -3810,6 +4092,7 @@ input NewsItemUpdateInput {
   keywords: KeywordRelateToManyForUpdateInput
   banner: NewsAttachmentRelateToOneForUpdateInput
   newsAttachments: NewsAttachmentRelateToManyForUpdateInput
+  disabled: Boolean
 }
 
 input NewsCategoryRelateToManyForUpdateInput {
@@ -3854,6 +4137,7 @@ input NewsItemCreateInput {
   keywords: KeywordRelateToManyForCreateInput
   banner: NewsAttachmentRelateToOneForCreateInput
   newsAttachments: NewsAttachmentRelateToManyForCreateInput
+  disabled: Boolean
 }
 
 input NewsCategoryRelateToManyForCreateInput {
@@ -4038,14 +4322,12 @@ type Coupon {
   logic: JSON
   startFrom: DateTime
   expireBy: DateTime
-  vehicles(
-    where: VehicleWhereInput! = {}
-    orderBy: [VehicleOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Vehicle!]
+  vehicles(where: VehicleWhereInput! = {}, orderBy: [VehicleOrderByInput!]! = [], take: Int, skip: Int! = 0): [Vehicle!]
   vehiclesCount(where: VehicleWhereInput! = {}): Int
   vehiclesCondition: String
+  products(where: ProductWhereInput! = {}, orderBy: [ProductOrderByInput!]! = [], take: Int, skip: Int! = 0): [Product!]
+  productsCount(where: ProductWhereInput! = {}): Int
+  productsCondition: String
 }
 
 input CouponWhereUniqueInput {
@@ -4066,12 +4348,20 @@ input CouponWhereInput {
   expireBy: DateTimeNullableFilter
   vehicles: VehicleManyRelationFilter
   vehiclesCondition: StringNullableFilter
+  products: ProductManyRelationFilter
+  productsCondition: StringNullableFilter
 }
 
 input VehicleManyRelationFilter {
   every: VehicleWhereInput
   some: VehicleWhereInput
   none: VehicleWhereInput
+}
+
+input ProductManyRelationFilter {
+  every: ProductWhereInput
+  some: ProductWhereInput
+  none: ProductWhereInput
 }
 
 input CouponOrderByInput {
@@ -4083,6 +4373,7 @@ input CouponOrderByInput {
   startFrom: OrderDirection
   expireBy: OrderDirection
   vehiclesCondition: OrderDirection
+  productsCondition: OrderDirection
 }
 
 input CouponUpdateInput {
@@ -4095,6 +4386,8 @@ input CouponUpdateInput {
   expireBy: DateTime
   vehicles: VehicleRelateToManyForUpdateInput
   vehiclesCondition: String
+  products: ProductRelateToManyForUpdateInput
+  productsCondition: String
 }
 
 input VehicleRelateToManyForUpdateInput {
@@ -4102,6 +4395,13 @@ input VehicleRelateToManyForUpdateInput {
   set: [VehicleWhereUniqueInput!]
   create: [VehicleCreateInput!]
   connect: [VehicleWhereUniqueInput!]
+}
+
+input ProductRelateToManyForUpdateInput {
+  disconnect: [ProductWhereUniqueInput!]
+  set: [ProductWhereUniqueInput!]
+  create: [ProductCreateInput!]
+  connect: [ProductWhereUniqueInput!]
 }
 
 input CouponUpdateArgs {
@@ -4119,11 +4419,18 @@ input CouponCreateInput {
   expireBy: DateTime
   vehicles: VehicleRelateToManyForCreateInput
   vehiclesCondition: String
+  products: ProductRelateToManyForCreateInput
+  productsCondition: String
 }
 
 input VehicleRelateToManyForCreateInput {
   create: [VehicleCreateInput!]
   connect: [VehicleWhereUniqueInput!]
+}
+
+input ProductRelateToManyForCreateInput {
+  create: [ProductCreateInput!]
+  connect: [ProductWhereUniqueInput!]
 }
 
 type Offer {
@@ -4135,14 +4442,12 @@ type Offer {
   logic: JSON
   startFrom: DateTime
   expireBy: DateTime
-  vehicles(
-    where: VehicleWhereInput! = {}
-    orderBy: [VehicleOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Vehicle!]
+  vehicles(where: VehicleWhereInput! = {}, orderBy: [VehicleOrderByInput!]! = [], take: Int, skip: Int! = 0): [Vehicle!]
   vehiclesCount(where: VehicleWhereInput! = {}): Int
   vehiclesCondition: String
+  products(where: ProductWhereInput! = {}, orderBy: [ProductOrderByInput!]! = [], take: Int, skip: Int! = 0): [Product!]
+  productsCount(where: ProductWhereInput! = {}): Int
+  productsCondition: String
 }
 
 input OfferWhereUniqueInput {
@@ -4163,6 +4468,8 @@ input OfferWhereInput {
   expireBy: DateTimeNullableFilter
   vehicles: VehicleManyRelationFilter
   vehiclesCondition: StringNullableFilter
+  products: ProductManyRelationFilter
+  productsCondition: StringNullableFilter
 }
 
 input OfferOrderByInput {
@@ -4174,6 +4481,7 @@ input OfferOrderByInput {
   startFrom: OrderDirection
   expireBy: OrderDirection
   vehiclesCondition: OrderDirection
+  productsCondition: OrderDirection
 }
 
 input OfferUpdateInput {
@@ -4186,6 +4494,8 @@ input OfferUpdateInput {
   expireBy: DateTime
   vehicles: VehicleRelateToManyForUpdateInput
   vehiclesCondition: String
+  products: ProductRelateToManyForUpdateInput
+  productsCondition: String
 }
 
 input OfferUpdateArgs {
@@ -4203,6 +4513,8 @@ input OfferCreateInput {
   expireBy: DateTime
   vehicles: VehicleRelateToManyForCreateInput
   vehiclesCondition: String
+  products: ProductRelateToManyForCreateInput
+  productsCondition: String
 }
 
 type Feedback {
@@ -4213,12 +4525,7 @@ type Feedback {
   category: Category
   title: String
   description: String
-  attachments(
-    where: FeedbackAttachmentWhereInput! = {}
-    orderBy: [FeedbackAttachmentOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [FeedbackAttachment!]
+  attachments(where: FeedbackAttachmentWhereInput! = {}, orderBy: [FeedbackAttachmentOrderByInput!]! = [], take: Int, skip: Int! = 0): [FeedbackAttachment!]
   attachmentsCount(where: FeedbackAttachmentWhereInput! = {}): Int
 }
 
@@ -4358,12 +4665,7 @@ type Report {
   category: Category
   title: String
   description: String
-  attachments(
-    where: ReportAttachmentWhereInput! = {}
-    orderBy: [ReportAttachmentOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ReportAttachment!]
+  attachments(where: ReportAttachmentWhereInput! = {}, orderBy: [ReportAttachmentOrderByInput!]! = [], take: Int, skip: Int! = 0): [ReportAttachment!]
   attachmentsCount(where: ReportAttachmentWhereInput! = {}): Int
 }
 
@@ -4554,21 +4856,12 @@ type Product {
   modifiedAt: DateTime
   name: String
   description: String
+  longDescription: String
   type: ProductType
   brand: Brand
-  variants(
-    where: ProductVariantWhereInput! = {}
-    orderBy: [ProductVariantOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductVariant!]
+  variants(where: ProductVariantWhereInput! = {}, orderBy: [ProductVariantOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductVariant!]
   variantsCount(where: ProductVariantWhereInput! = {}): Int
-  specifications(
-    where: ProductSpecificationWhereInput! = {}
-    orderBy: [ProductSpecificationOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductSpecification!]
+  specifications(where: ProductSpecificationWhereInput! = {}, orderBy: [ProductSpecificationOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductSpecification!]
   specificationsCount(where: ProductSpecificationWhereInput! = {}): Int
 }
 
@@ -4585,6 +4878,7 @@ input ProductWhereInput {
   modifiedAt: DateTimeNullableFilter
   name: StringFilter
   description: StringFilter
+  longDescription: StringFilter
   type: ProductTypeWhereInput
   brand: BrandWhereInput
   variants: ProductVariantManyRelationFilter
@@ -4609,6 +4903,7 @@ input ProductOrderByInput {
   modifiedAt: OrderDirection
   name: OrderDirection
   description: OrderDirection
+  longDescription: OrderDirection
 }
 
 input ProductUpdateInput {
@@ -4616,6 +4911,7 @@ input ProductUpdateInput {
   modifiedAt: DateTime
   name: String
   description: String
+  longDescription: String
   type: ProductTypeRelateToOneForUpdateInput
   brand: BrandRelateToOneForUpdateInput
   variants: ProductVariantRelateToManyForUpdateInput
@@ -4652,6 +4948,7 @@ input ProductCreateInput {
   modifiedAt: DateTime
   name: String
   description: String
+  longDescription: String
   type: ProductTypeRelateToOneForCreateInput
   brand: BrandRelateToOneForCreateInput
   variants: ProductVariantRelateToManyForCreateInput
@@ -4753,59 +5050,25 @@ type ProductVariant {
   name: String
   product: Product
   default: Boolean
-  specifications(
-    where: ProductSpecificationWhereInput! = {}
-    orderBy: [ProductSpecificationOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductSpecification!]
+  specifications(where: ProductSpecificationWhereInput! = {}, orderBy: [ProductSpecificationOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductSpecification!]
   specificationsCount(where: ProductSpecificationWhereInput! = {}): Int
-  tags(
-    where: TagWhereInput! = {}
-    orderBy: [TagOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Tag!]
+  tags(where: TagWhereInput! = {}, orderBy: [TagOrderByInput!]! = [], take: Int, skip: Int! = 0): [Tag!]
   tagsCount(where: TagWhereInput! = {}): Int
-  prices(
-    where: PriceWhereInput! = {}
-    orderBy: [PriceOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Price!]
+  prices(where: PriceWhereInput! = {}, orderBy: [PriceOrderByInput!]! = [], take: Int, skip: Int! = 0): [Price!]
   pricesCount(where: PriceWhereInput! = {}): Int
-  images(
-    where: ProductImageWhereInput! = {}
-    orderBy: [ProductImageOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductImage!]
+  images(where: ProductImageWhereInput! = {}, orderBy: [ProductImageOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductImage!]
   imagesCount(where: ProductImageWhereInput! = {}): Int
-  videos(
-    where: ProductVideoWhereInput! = {}
-    orderBy: [ProductVideoOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductVideo!]
+  videos(where: ProductVideoWhereInput! = {}, orderBy: [ProductVideoOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductVideo!]
   videosCount(where: ProductVideoWhereInput! = {}): Int
-  gallery(
-    where: ProductGalleryItemWhereInput! = {}
-    orderBy: [ProductGalleryItemOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductGalleryItem!]
+  gallery(where: ProductGalleryItemWhereInput! = {}, orderBy: [ProductGalleryItemOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductGalleryItem!]
   galleryCount(where: ProductGalleryItemWhereInput! = {}): Int
   galleryView: JSON
-  reels(
-    where: ProductReelWhereInput! = {}
-    orderBy: [ProductReelOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductReel!]
+  reels(where: ProductReelWhereInput! = {}, orderBy: [ProductReelOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductReel!]
   reelsCount(where: ProductReelWhereInput! = {}): Int
   reelsView: JSON
   totalPrice: Int
   availableProductDealer(location: [Float!], limit: Int, offset: Int): JSON
+  disabled: Boolean
 }
 
 input ProductVariantWhereUniqueInput {
@@ -4829,6 +5092,7 @@ input ProductVariantWhereInput {
   videos: ProductVideoManyRelationFilter
   gallery: ProductGalleryItemManyRelationFilter
   reels: ProductReelManyRelationFilter
+  disabled: BooleanFilter
 }
 
 input ProductImageManyRelationFilter {
@@ -4861,6 +5125,7 @@ input ProductVariantOrderByInput {
   modifiedAt: OrderDirection
   name: OrderDirection
   default: OrderDirection
+  disabled: OrderDirection
 }
 
 input ProductVariantUpdateInput {
@@ -4876,6 +5141,7 @@ input ProductVariantUpdateInput {
   videos: ProductVideoRelateToManyForUpdateInput
   gallery: ProductGalleryItemRelateToManyForUpdateInput
   reels: ProductReelRelateToManyForUpdateInput
+  disabled: Boolean
 }
 
 input ProductImageRelateToManyForUpdateInput {
@@ -4924,6 +5190,7 @@ input ProductVariantCreateInput {
   videos: ProductVideoRelateToManyForCreateInput
   gallery: ProductGalleryItemRelateToManyForCreateInput
   reels: ProductReelRelateToManyForCreateInput
+  disabled: Boolean
 }
 
 input ProductImageRelateToManyForCreateInput {
@@ -5111,6 +5378,7 @@ type ProductReel {
   variant: ProductVariant
   index: Int
   file: JSON
+  disabled: Boolean
 }
 
 input ProductReelWhereUniqueInput {
@@ -5128,6 +5396,7 @@ input ProductReelWhereInput {
   fileId: StringFilter
   variant: ProductVariantWhereInput
   index: IntNullableFilter
+  disabled: BooleanFilter
 }
 
 input ProductReelOrderByInput {
@@ -5137,6 +5406,7 @@ input ProductReelOrderByInput {
   type: OrderDirection
   fileId: OrderDirection
   index: OrderDirection
+  disabled: OrderDirection
 }
 
 input ProductReelUpdateInput {
@@ -5146,6 +5416,7 @@ input ProductReelUpdateInput {
   fileId: String
   variant: ProductVariantRelateToOneForUpdateInput
   index: Int
+  disabled: Boolean
 }
 
 input ProductReelUpdateArgs {
@@ -5160,6 +5431,7 @@ input ProductReelCreateInput {
   fileId: String
   variant: ProductVariantRelateToOneForCreateInput
   index: Int
+  disabled: Boolean
 }
 
 type ProductDealer {
@@ -5168,12 +5440,9 @@ type ProductDealer {
   modifiedAt: DateTime
   dealer: Dealer
   productVariant: ProductVariant
-  prices(
-    where: PriceWhereInput! = {}
-    orderBy: [PriceOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Price!]
+  guarantees(where: GuaranteeWhereInput! = {}, orderBy: [GuaranteeOrderByInput!]! = [], take: Int, skip: Int! = 0): [Guarantee!]
+  guaranteesCount(where: GuaranteeWhereInput! = {}): Int
+  prices(where: PriceWhereInput! = {}, orderBy: [PriceOrderByInput!]! = [], take: Int, skip: Int! = 0): [Price!]
   pricesCount(where: PriceWhereInput! = {}): Int
   stock: Int
   totalPrice: Int
@@ -5192,6 +5461,7 @@ input ProductDealerWhereInput {
   modifiedAt: DateTimeNullableFilter
   dealer: DealerWhereInput
   productVariant: ProductVariantWhereInput
+  guarantees: GuaranteeManyRelationFilter
   prices: PriceManyRelationFilter
   stock: IntNullableFilter
 }
@@ -5208,6 +5478,7 @@ input ProductDealerUpdateInput {
   modifiedAt: DateTime
   dealer: DealerRelateToOneForUpdateInput
   productVariant: ProductVariantRelateToOneForUpdateInput
+  guarantees: GuaranteeRelateToManyForUpdateInput
   prices: PriceRelateToManyForUpdateInput
   stock: Int
 }
@@ -5222,6 +5493,7 @@ input ProductDealerCreateInput {
   modifiedAt: DateTime
   dealer: DealerRelateToOneForCreateInput
   productVariant: ProductVariantRelateToOneForCreateInput
+  guarantees: GuaranteeRelateToManyForCreateInput
   prices: PriceRelateToManyForCreateInput
   stock: Int
 }
@@ -5232,6 +5504,8 @@ type ProductDealerStockRequest {
   modifiedAt: DateTime
   dealer: Dealer
   productVariant: ProductVariant
+  guarantees(where: GuaranteeWhereInput! = {}, orderBy: [GuaranteeOrderByInput!]! = [], take: Int, skip: Int! = 0): [Guarantee!]
+  guaranteesCount(where: GuaranteeWhereInput! = {}): Int
   stock: Int
   totalPrice: Int
   accepted: Boolean
@@ -5251,6 +5525,7 @@ input ProductDealerStockRequestWhereInput {
   modifiedAt: DateTimeNullableFilter
   dealer: DealerWhereInput
   productVariant: ProductVariantWhereInput
+  guarantees: GuaranteeManyRelationFilter
   stock: IntNullableFilter
   accepted: BooleanFilter
   type: StringNullableFilter
@@ -5270,6 +5545,7 @@ input ProductDealerStockRequestUpdateInput {
   modifiedAt: DateTime
   dealer: DealerRelateToOneForUpdateInput
   productVariant: ProductVariantRelateToOneForUpdateInput
+  guarantees: GuaranteeRelateToManyForUpdateInput
   stock: Int
   accepted: Boolean
   type: String
@@ -5285,6 +5561,7 @@ input ProductDealerStockRequestCreateInput {
   modifiedAt: DateTime
   dealer: DealerRelateToOneForCreateInput
   productVariant: ProductVariantRelateToOneForCreateInput
+  guarantees: GuaranteeRelateToManyForCreateInput
   stock: Int
   accepted: Boolean
   type: String
@@ -5354,69 +5631,52 @@ type Mutation {
   deleteUsers(where: [UserWhereUniqueInput!]!): [User]
   createReferralCode(data: ReferralCodeCreateInput!): ReferralCode
   createReferralCodes(data: [ReferralCodeCreateInput!]!): [ReferralCode]
-  updateReferralCode(
-    where: ReferralCodeWhereUniqueInput!
-    data: ReferralCodeUpdateInput!
-  ): ReferralCode
+  updateReferralCode(where: ReferralCodeWhereUniqueInput!, data: ReferralCodeUpdateInput!): ReferralCode
   updateReferralCodes(data: [ReferralCodeUpdateArgs!]!): [ReferralCode]
   deleteReferralCode(where: ReferralCodeWhereUniqueInput!): ReferralCode
   deleteReferralCodes(where: [ReferralCodeWhereUniqueInput!]!): [ReferralCode]
   createReferralUser(data: ReferralUserCreateInput!): ReferralUser
   createReferralUsers(data: [ReferralUserCreateInput!]!): [ReferralUser]
-  updateReferralUser(
-    where: ReferralUserWhereUniqueInput!
-    data: ReferralUserUpdateInput!
-  ): ReferralUser
+  updateReferralUser(where: ReferralUserWhereUniqueInput!, data: ReferralUserUpdateInput!): ReferralUser
   updateReferralUsers(data: [ReferralUserUpdateArgs!]!): [ReferralUser]
   deleteReferralUser(where: ReferralUserWhereUniqueInput!): ReferralUser
   deleteReferralUsers(where: [ReferralUserWhereUniqueInput!]!): [ReferralUser]
   createAddress(data: AddressCreateInput!): Address
   createAddresses(data: [AddressCreateInput!]!): [Address]
-  updateAddress(
-    where: AddressWhereUniqueInput!
-    data: AddressUpdateInput!
-  ): Address
+  updateAddress(where: AddressWhereUniqueInput!, data: AddressUpdateInput!): Address
   updateAddresses(data: [AddressUpdateArgs!]!): [Address]
   deleteAddress(where: AddressWhereUniqueInput!): Address
   deleteAddresses(where: [AddressWhereUniqueInput!]!): [Address]
   createDealerAddress(data: DealerAddressCreateInput!): DealerAddress
   createDealerAddresses(data: [DealerAddressCreateInput!]!): [DealerAddress]
-  updateDealerAddress(
-    where: DealerAddressWhereUniqueInput!
-    data: DealerAddressUpdateInput!
-  ): DealerAddress
+  updateDealerAddress(where: DealerAddressWhereUniqueInput!, data: DealerAddressUpdateInput!): DealerAddress
   updateDealerAddresses(data: [DealerAddressUpdateArgs!]!): [DealerAddress]
   deleteDealerAddress(where: DealerAddressWhereUniqueInput!): DealerAddress
-  deleteDealerAddresses(
-    where: [DealerAddressWhereUniqueInput!]!
-  ): [DealerAddress]
+  deleteDealerAddresses(where: [DealerAddressWhereUniqueInput!]!): [DealerAddress]
   createFavorite(data: FavoriteCreateInput!): Favorite
   createFavorites(data: [FavoriteCreateInput!]!): [Favorite]
-  updateFavorite(
-    where: FavoriteWhereUniqueInput!
-    data: FavoriteUpdateInput!
-  ): Favorite
+  updateFavorite(where: FavoriteWhereUniqueInput!, data: FavoriteUpdateInput!): Favorite
   updateFavorites(data: [FavoriteUpdateArgs!]!): [Favorite]
   deleteFavorite(where: FavoriteWhereUniqueInput!): Favorite
   deleteFavorites(where: [FavoriteWhereUniqueInput!]!): [Favorite]
   createCartItem(data: CartItemCreateInput!): CartItem
   createCartItems(data: [CartItemCreateInput!]!): [CartItem]
-  updateCartItem(
-    where: CartItemWhereUniqueInput!
-    data: CartItemUpdateInput!
-  ): CartItem
+  updateCartItem(where: CartItemWhereUniqueInput!, data: CartItemUpdateInput!): CartItem
   updateCartItems(data: [CartItemUpdateArgs!]!): [CartItem]
   deleteCartItem(where: CartItemWhereUniqueInput!): CartItem
   deleteCartItems(where: [CartItemWhereUniqueInput!]!): [CartItem]
   createVehicleType(data: VehicleTypeCreateInput!): VehicleType
   createVehicleTypes(data: [VehicleTypeCreateInput!]!): [VehicleType]
-  updateVehicleType(
-    where: VehicleTypeWhereUniqueInput!
-    data: VehicleTypeUpdateInput!
-  ): VehicleType
+  updateVehicleType(where: VehicleTypeWhereUniqueInput!, data: VehicleTypeUpdateInput!): VehicleType
   updateVehicleTypes(data: [VehicleTypeUpdateArgs!]!): [VehicleType]
   deleteVehicleType(where: VehicleTypeWhereUniqueInput!): VehicleType
   deleteVehicleTypes(where: [VehicleTypeWhereUniqueInput!]!): [VehicleType]
+  createVehicleSubType(data: VehicleSubTypeCreateInput!): VehicleSubType
+  createVehicleSubTypes(data: [VehicleSubTypeCreateInput!]!): [VehicleSubType]
+  updateVehicleSubType(where: VehicleSubTypeWhereUniqueInput!, data: VehicleSubTypeUpdateInput!): VehicleSubType
+  updateVehicleSubTypes(data: [VehicleSubTypeUpdateArgs!]!): [VehicleSubType]
+  deleteVehicleSubType(where: VehicleSubTypeWhereUniqueInput!): VehicleSubType
+  deleteVehicleSubTypes(where: [VehicleSubTypeWhereUniqueInput!]!): [VehicleSubType]
   createBrand(data: BrandCreateInput!): Brand
   createBrands(data: [BrandCreateInput!]!): [Brand]
   updateBrand(where: BrandWhereUniqueInput!, data: BrandUpdateInput!): Brand
@@ -5425,184 +5685,100 @@ type Mutation {
   deleteBrands(where: [BrandWhereUniqueInput!]!): [Brand]
   createSpecification(data: SpecificationCreateInput!): Specification
   createSpecifications(data: [SpecificationCreateInput!]!): [Specification]
-  updateSpecification(
-    where: SpecificationWhereUniqueInput!
-    data: SpecificationUpdateInput!
-  ): Specification
+  updateSpecification(where: SpecificationWhereUniqueInput!, data: SpecificationUpdateInput!): Specification
   updateSpecifications(data: [SpecificationUpdateArgs!]!): [Specification]
   deleteSpecification(where: SpecificationWhereUniqueInput!): Specification
-  deleteSpecifications(
-    where: [SpecificationWhereUniqueInput!]!
-  ): [Specification]
-  createSpecificationCategory(
-    data: SpecificationCategoryCreateInput!
-  ): SpecificationCategory
-  createSpecificationCategories(
-    data: [SpecificationCategoryCreateInput!]!
-  ): [SpecificationCategory]
-  updateSpecificationCategory(
-    where: SpecificationCategoryWhereUniqueInput!
-    data: SpecificationCategoryUpdateInput!
-  ): SpecificationCategory
-  updateSpecificationCategories(
-    data: [SpecificationCategoryUpdateArgs!]!
-  ): [SpecificationCategory]
-  deleteSpecificationCategory(
-    where: SpecificationCategoryWhereUniqueInput!
-  ): SpecificationCategory
-  deleteSpecificationCategories(
-    where: [SpecificationCategoryWhereUniqueInput!]!
-  ): [SpecificationCategory]
+  deleteSpecifications(where: [SpecificationWhereUniqueInput!]!): [Specification]
+  createSpecificationCategory(data: SpecificationCategoryCreateInput!): SpecificationCategory
+  createSpecificationCategories(data: [SpecificationCategoryCreateInput!]!): [SpecificationCategory]
+  updateSpecificationCategory(where: SpecificationCategoryWhereUniqueInput!, data: SpecificationCategoryUpdateInput!): SpecificationCategory
+  updateSpecificationCategories(data: [SpecificationCategoryUpdateArgs!]!): [SpecificationCategory]
+  deleteSpecificationCategory(where: SpecificationCategoryWhereUniqueInput!): SpecificationCategory
+  deleteSpecificationCategories(where: [SpecificationCategoryWhereUniqueInput!]!): [SpecificationCategory]
   createTestDriveDealer(data: TestDriveDealerCreateInput!): TestDriveDealer
-  createTestDriveDealers(
-    data: [TestDriveDealerCreateInput!]!
-  ): [TestDriveDealer]
-  updateTestDriveDealer(
-    where: TestDriveDealerWhereUniqueInput!
-    data: TestDriveDealerUpdateInput!
-  ): TestDriveDealer
+  createTestDriveDealers(data: [TestDriveDealerCreateInput!]!): [TestDriveDealer]
+  updateTestDriveDealer(where: TestDriveDealerWhereUniqueInput!, data: TestDriveDealerUpdateInput!): TestDriveDealer
   updateTestDriveDealers(data: [TestDriveDealerUpdateArgs!]!): [TestDriveDealer]
-  deleteTestDriveDealer(
-    where: TestDriveDealerWhereUniqueInput!
-  ): TestDriveDealer
-  deleteTestDriveDealers(
-    where: [TestDriveDealerWhereUniqueInput!]!
-  ): [TestDriveDealer]
+  deleteTestDriveDealer(where: TestDriveDealerWhereUniqueInput!): TestDriveDealer
+  deleteTestDriveDealers(where: [TestDriveDealerWhereUniqueInput!]!): [TestDriveDealer]
   createVehicle(data: VehicleCreateInput!): Vehicle
   createVehicles(data: [VehicleCreateInput!]!): [Vehicle]
-  updateVehicle(
-    where: VehicleWhereUniqueInput!
-    data: VehicleUpdateInput!
-  ): Vehicle
+  updateVehicle(where: VehicleWhereUniqueInput!, data: VehicleUpdateInput!): Vehicle
   updateVehicles(data: [VehicleUpdateArgs!]!): [Vehicle]
   deleteVehicle(where: VehicleWhereUniqueInput!): Vehicle
   deleteVehicles(where: [VehicleWhereUniqueInput!]!): [Vehicle]
   createVehicleColor(data: VehicleColorCreateInput!): VehicleColor
   createVehicleColors(data: [VehicleColorCreateInput!]!): [VehicleColor]
-  updateVehicleColor(
-    where: VehicleColorWhereUniqueInput!
-    data: VehicleColorUpdateInput!
-  ): VehicleColor
+  updateVehicleColor(where: VehicleColorWhereUniqueInput!, data: VehicleColorUpdateInput!): VehicleColor
   updateVehicleColors(data: [VehicleColorUpdateArgs!]!): [VehicleColor]
   deleteVehicleColor(where: VehicleColorWhereUniqueInput!): VehicleColor
   deleteVehicleColors(where: [VehicleColorWhereUniqueInput!]!): [VehicleColor]
-  createVehicleGalleryItem(
-    data: VehicleGalleryItemCreateInput!
-  ): VehicleGalleryItem
-  createVehicleGalleryItems(
-    data: [VehicleGalleryItemCreateInput!]!
-  ): [VehicleGalleryItem]
-  updateVehicleGalleryItem(
-    where: VehicleGalleryItemWhereUniqueInput!
-    data: VehicleGalleryItemUpdateInput!
-  ): VehicleGalleryItem
-  updateVehicleGalleryItems(
-    data: [VehicleGalleryItemUpdateArgs!]!
-  ): [VehicleGalleryItem]
-  deleteVehicleGalleryItem(
-    where: VehicleGalleryItemWhereUniqueInput!
-  ): VehicleGalleryItem
-  deleteVehicleGalleryItems(
-    where: [VehicleGalleryItemWhereUniqueInput!]!
-  ): [VehicleGalleryItem]
+  createVehicleGalleryItem(data: VehicleGalleryItemCreateInput!): VehicleGalleryItem
+  createVehicleGalleryItems(data: [VehicleGalleryItemCreateInput!]!): [VehicleGalleryItem]
+  updateVehicleGalleryItem(where: VehicleGalleryItemWhereUniqueInput!, data: VehicleGalleryItemUpdateInput!): VehicleGalleryItem
+  updateVehicleGalleryItems(data: [VehicleGalleryItemUpdateArgs!]!): [VehicleGalleryItem]
+  deleteVehicleGalleryItem(where: VehicleGalleryItemWhereUniqueInput!): VehicleGalleryItem
+  deleteVehicleGalleryItems(where: [VehicleGalleryItemWhereUniqueInput!]!): [VehicleGalleryItem]
   createVehicleReel(data: VehicleReelCreateInput!): VehicleReel
   createVehicleReels(data: [VehicleReelCreateInput!]!): [VehicleReel]
-  updateVehicleReel(
-    where: VehicleReelWhereUniqueInput!
-    data: VehicleReelUpdateInput!
-  ): VehicleReel
+  updateVehicleReel(where: VehicleReelWhereUniqueInput!, data: VehicleReelUpdateInput!): VehicleReel
   updateVehicleReels(data: [VehicleReelUpdateArgs!]!): [VehicleReel]
   deleteVehicleReel(where: VehicleReelWhereUniqueInput!): VehicleReel
   deleteVehicleReels(where: [VehicleReelWhereUniqueInput!]!): [VehicleReel]
+  createGuarantee(data: GuaranteeCreateInput!): Guarantee
+  createGuarantees(data: [GuaranteeCreateInput!]!): [Guarantee]
+  updateGuarantee(where: GuaranteeWhereUniqueInput!, data: GuaranteeUpdateInput!): Guarantee
+  updateGuarantees(data: [GuaranteeUpdateArgs!]!): [Guarantee]
+  deleteGuarantee(where: GuaranteeWhereUniqueInput!): Guarantee
+  deleteGuarantees(where: [GuaranteeWhereUniqueInput!]!): [Guarantee]
+  createGuaranteeFile(data: GuaranteeFileCreateInput!): GuaranteeFile
+  createGuaranteeFiles(data: [GuaranteeFileCreateInput!]!): [GuaranteeFile]
+  updateGuaranteeFile(where: GuaranteeFileWhereUniqueInput!, data: GuaranteeFileUpdateInput!): GuaranteeFile
+  updateGuaranteeFiles(data: [GuaranteeFileUpdateArgs!]!): [GuaranteeFile]
+  deleteGuaranteeFile(where: GuaranteeFileWhereUniqueInput!): GuaranteeFile
+  deleteGuaranteeFiles(where: [GuaranteeFileWhereUniqueInput!]!): [GuaranteeFile]
   createVehicleDealer(data: VehicleDealerCreateInput!): VehicleDealer
   createVehicleDealers(data: [VehicleDealerCreateInput!]!): [VehicleDealer]
-  updateVehicleDealer(
-    where: VehicleDealerWhereUniqueInput!
-    data: VehicleDealerUpdateInput!
-  ): VehicleDealer
+  updateVehicleDealer(where: VehicleDealerWhereUniqueInput!, data: VehicleDealerUpdateInput!): VehicleDealer
   updateVehicleDealers(data: [VehicleDealerUpdateArgs!]!): [VehicleDealer]
   deleteVehicleDealer(where: VehicleDealerWhereUniqueInput!): VehicleDealer
-  deleteVehicleDealers(
-    where: [VehicleDealerWhereUniqueInput!]!
-  ): [VehicleDealer]
+  deleteVehicleDealers(where: [VehicleDealerWhereUniqueInput!]!): [VehicleDealer]
   createVehicleImage(data: VehicleImageCreateInput!): VehicleImage
   createVehicleImages(data: [VehicleImageCreateInput!]!): [VehicleImage]
-  updateVehicleImage(
-    where: VehicleImageWhereUniqueInput!
-    data: VehicleImageUpdateInput!
-  ): VehicleImage
+  updateVehicleImage(where: VehicleImageWhereUniqueInput!, data: VehicleImageUpdateInput!): VehicleImage
   updateVehicleImages(data: [VehicleImageUpdateArgs!]!): [VehicleImage]
   deleteVehicleImage(where: VehicleImageWhereUniqueInput!): VehicleImage
   deleteVehicleImages(where: [VehicleImageWhereUniqueInput!]!): [VehicleImage]
   createVehicleVideo(data: VehicleVideoCreateInput!): VehicleVideo
   createVehicleVideos(data: [VehicleVideoCreateInput!]!): [VehicleVideo]
-  updateVehicleVideo(
-    where: VehicleVideoWhereUniqueInput!
-    data: VehicleVideoUpdateInput!
-  ): VehicleVideo
+  updateVehicleVideo(where: VehicleVideoWhereUniqueInput!, data: VehicleVideoUpdateInput!): VehicleVideo
   updateVehicleVideos(data: [VehicleVideoUpdateArgs!]!): [VehicleVideo]
   deleteVehicleVideo(where: VehicleVideoWhereUniqueInput!): VehicleVideo
   deleteVehicleVideos(where: [VehicleVideoWhereUniqueInput!]!): [VehicleVideo]
-  createVehicleSpecification(
-    data: VehicleSpecificationCreateInput!
-  ): VehicleSpecification
-  createVehicleSpecifications(
-    data: [VehicleSpecificationCreateInput!]!
-  ): [VehicleSpecification]
-  updateVehicleSpecification(
-    where: VehicleSpecificationWhereUniqueInput!
-    data: VehicleSpecificationUpdateInput!
-  ): VehicleSpecification
-  updateVehicleSpecifications(
-    data: [VehicleSpecificationUpdateArgs!]!
-  ): [VehicleSpecification]
-  deleteVehicleSpecification(
-    where: VehicleSpecificationWhereUniqueInput!
-  ): VehicleSpecification
-  deleteVehicleSpecifications(
-    where: [VehicleSpecificationWhereUniqueInput!]!
-  ): [VehicleSpecification]
+  createVehicleSpecification(data: VehicleSpecificationCreateInput!): VehicleSpecification
+  createVehicleSpecifications(data: [VehicleSpecificationCreateInput!]!): [VehicleSpecification]
+  updateVehicleSpecification(where: VehicleSpecificationWhereUniqueInput!, data: VehicleSpecificationUpdateInput!): VehicleSpecification
+  updateVehicleSpecifications(data: [VehicleSpecificationUpdateArgs!]!): [VehicleSpecification]
+  deleteVehicleSpecification(where: VehicleSpecificationWhereUniqueInput!): VehicleSpecification
+  deleteVehicleSpecifications(where: [VehicleSpecificationWhereUniqueInput!]!): [VehicleSpecification]
   createVehicleVariant(data: VehicleVariantCreateInput!): VehicleVariant
   createVehicleVariants(data: [VehicleVariantCreateInput!]!): [VehicleVariant]
-  updateVehicleVariant(
-    where: VehicleVariantWhereUniqueInput!
-    data: VehicleVariantUpdateInput!
-  ): VehicleVariant
+  updateVehicleVariant(where: VehicleVariantWhereUniqueInput!, data: VehicleVariantUpdateInput!): VehicleVariant
   updateVehicleVariants(data: [VehicleVariantUpdateArgs!]!): [VehicleVariant]
   deleteVehicleVariant(where: VehicleVariantWhereUniqueInput!): VehicleVariant
-  deleteVehicleVariants(
-    where: [VehicleVariantWhereUniqueInput!]!
-  ): [VehicleVariant]
-  createVehicleDealerStockRequest(
-    data: VehicleDealerStockRequestCreateInput!
-  ): VehicleDealerStockRequest
-  createVehicleDealerStockRequests(
-    data: [VehicleDealerStockRequestCreateInput!]!
-  ): [VehicleDealerStockRequest]
-  updateVehicleDealerStockRequest(
-    where: VehicleDealerStockRequestWhereUniqueInput!
-    data: VehicleDealerStockRequestUpdateInput!
-  ): VehicleDealerStockRequest
-  updateVehicleDealerStockRequests(
-    data: [VehicleDealerStockRequestUpdateArgs!]!
-  ): [VehicleDealerStockRequest]
-  deleteVehicleDealerStockRequest(
-    where: VehicleDealerStockRequestWhereUniqueInput!
-  ): VehicleDealerStockRequest
-  deleteVehicleDealerStockRequests(
-    where: [VehicleDealerStockRequestWhereUniqueInput!]!
-  ): [VehicleDealerStockRequest]
+  deleteVehicleVariants(where: [VehicleVariantWhereUniqueInput!]!): [VehicleVariant]
+  createVehicleDealerStockRequest(data: VehicleDealerStockRequestCreateInput!): VehicleDealerStockRequest
+  createVehicleDealerStockRequests(data: [VehicleDealerStockRequestCreateInput!]!): [VehicleDealerStockRequest]
+  updateVehicleDealerStockRequest(where: VehicleDealerStockRequestWhereUniqueInput!, data: VehicleDealerStockRequestUpdateInput!): VehicleDealerStockRequest
+  updateVehicleDealerStockRequests(data: [VehicleDealerStockRequestUpdateArgs!]!): [VehicleDealerStockRequest]
+  deleteVehicleDealerStockRequest(where: VehicleDealerStockRequestWhereUniqueInput!): VehicleDealerStockRequest
+  deleteVehicleDealerStockRequests(where: [VehicleDealerStockRequestWhereUniqueInput!]!): [VehicleDealerStockRequest]
   createPriceCategory(data: PriceCategoryCreateInput!): PriceCategory
   createPriceCategories(data: [PriceCategoryCreateInput!]!): [PriceCategory]
-  updatePriceCategory(
-    where: PriceCategoryWhereUniqueInput!
-    data: PriceCategoryUpdateInput!
-  ): PriceCategory
+  updatePriceCategory(where: PriceCategoryWhereUniqueInput!, data: PriceCategoryUpdateInput!): PriceCategory
   updatePriceCategories(data: [PriceCategoryUpdateArgs!]!): [PriceCategory]
   deletePriceCategory(where: PriceCategoryWhereUniqueInput!): PriceCategory
-  deletePriceCategories(
-    where: [PriceCategoryWhereUniqueInput!]!
-  ): [PriceCategory]
+  deletePriceCategories(where: [PriceCategoryWhereUniqueInput!]!): [PriceCategory]
   createPrice(data: PriceCreateInput!): Price
   createPrices(data: [PriceCreateInput!]!): [Price]
   updatePrice(where: PriceWhereUniqueInput!, data: PriceUpdateInput!): Price
@@ -5615,25 +5791,12 @@ type Mutation {
   updateWallets(data: [WalletUpdateArgs!]!): [Wallet]
   deleteWallet(where: WalletWhereUniqueInput!): Wallet
   deleteWallets(where: [WalletWhereUniqueInput!]!): [Wallet]
-  createWalletTransaction(
-    data: WalletTransactionCreateInput!
-  ): WalletTransaction
-  createWalletTransactions(
-    data: [WalletTransactionCreateInput!]!
-  ): [WalletTransaction]
-  updateWalletTransaction(
-    where: WalletTransactionWhereUniqueInput!
-    data: WalletTransactionUpdateInput!
-  ): WalletTransaction
-  updateWalletTransactions(
-    data: [WalletTransactionUpdateArgs!]!
-  ): [WalletTransaction]
-  deleteWalletTransaction(
-    where: WalletTransactionWhereUniqueInput!
-  ): WalletTransaction
-  deleteWalletTransactions(
-    where: [WalletTransactionWhereUniqueInput!]!
-  ): [WalletTransaction]
+  createWalletTransaction(data: WalletTransactionCreateInput!): WalletTransaction
+  createWalletTransactions(data: [WalletTransactionCreateInput!]!): [WalletTransaction]
+  updateWalletTransaction(where: WalletTransactionWhereUniqueInput!, data: WalletTransactionUpdateInput!): WalletTransaction
+  updateWalletTransactions(data: [WalletTransactionUpdateArgs!]!): [WalletTransaction]
+  deleteWalletTransaction(where: WalletTransactionWhereUniqueInput!): WalletTransaction
+  deleteWalletTransactions(where: [WalletTransactionWhereUniqueInput!]!): [WalletTransaction]
   createOrder(data: OrderCreateInput!): Order
   createOrders(data: [OrderCreateInput!]!): [Order]
   updateOrder(where: OrderWhereUniqueInput!, data: OrderUpdateInput!): Order
@@ -5642,124 +5805,73 @@ type Mutation {
   deleteOrders(where: [OrderWhereUniqueInput!]!): [Order]
   createPayment(data: PaymentCreateInput!): Payment
   createPayments(data: [PaymentCreateInput!]!): [Payment]
-  updatePayment(
-    where: PaymentWhereUniqueInput!
-    data: PaymentUpdateInput!
-  ): Payment
+  updatePayment(where: PaymentWhereUniqueInput!, data: PaymentUpdateInput!): Payment
   updatePayments(data: [PaymentUpdateArgs!]!): [Payment]
   deletePayment(where: PaymentWhereUniqueInput!): Payment
   deletePayments(where: [PaymentWhereUniqueInput!]!): [Payment]
   createVehicleOrder(data: VehicleOrderCreateInput!): VehicleOrder
   createVehicleOrders(data: [VehicleOrderCreateInput!]!): [VehicleOrder]
-  updateVehicleOrder(
-    where: VehicleOrderWhereUniqueInput!
-    data: VehicleOrderUpdateInput!
-  ): VehicleOrder
+  updateVehicleOrder(where: VehicleOrderWhereUniqueInput!, data: VehicleOrderUpdateInput!): VehicleOrder
   updateVehicleOrders(data: [VehicleOrderUpdateArgs!]!): [VehicleOrder]
   deleteVehicleOrder(where: VehicleOrderWhereUniqueInput!): VehicleOrder
   deleteVehicleOrders(where: [VehicleOrderWhereUniqueInput!]!): [VehicleOrder]
   createTestDriveOrder(data: TestDriveOrderCreateInput!): TestDriveOrder
   createTestDriveOrders(data: [TestDriveOrderCreateInput!]!): [TestDriveOrder]
-  updateTestDriveOrder(
-    where: TestDriveOrderWhereUniqueInput!
-    data: TestDriveOrderUpdateInput!
-  ): TestDriveOrder
+  updateTestDriveOrder(where: TestDriveOrderWhereUniqueInput!, data: TestDriveOrderUpdateInput!): TestDriveOrder
   updateTestDriveOrders(data: [TestDriveOrderUpdateArgs!]!): [TestDriveOrder]
   deleteTestDriveOrder(where: TestDriveOrderWhereUniqueInput!): TestDriveOrder
-  deleteTestDriveOrders(
-    where: [TestDriveOrderWhereUniqueInput!]!
-  ): [TestDriveOrder]
+  deleteTestDriveOrders(where: [TestDriveOrderWhereUniqueInput!]!): [TestDriveOrder]
   createProductOrder(data: ProductOrderCreateInput!): ProductOrder
   createProductOrders(data: [ProductOrderCreateInput!]!): [ProductOrder]
-  updateProductOrder(
-    where: ProductOrderWhereUniqueInput!
-    data: ProductOrderUpdateInput!
-  ): ProductOrder
+  updateProductOrder(where: ProductOrderWhereUniqueInput!, data: ProductOrderUpdateInput!): ProductOrder
   updateProductOrders(data: [ProductOrderUpdateArgs!]!): [ProductOrder]
   deleteProductOrder(where: ProductOrderWhereUniqueInput!): ProductOrder
   deleteProductOrders(where: [ProductOrderWhereUniqueInput!]!): [ProductOrder]
-  createOrderCancellationRequest(
-    data: OrderCancellationRequestCreateInput!
-  ): OrderCancellationRequest
-  createOrderCancellationRequests(
-    data: [OrderCancellationRequestCreateInput!]!
-  ): [OrderCancellationRequest]
-  updateOrderCancellationRequest(
-    where: OrderCancellationRequestWhereUniqueInput!
-    data: OrderCancellationRequestUpdateInput!
-  ): OrderCancellationRequest
-  updateOrderCancellationRequests(
-    data: [OrderCancellationRequestUpdateArgs!]!
-  ): [OrderCancellationRequest]
-  deleteOrderCancellationRequest(
-    where: OrderCancellationRequestWhereUniqueInput!
-  ): OrderCancellationRequest
-  deleteOrderCancellationRequests(
-    where: [OrderCancellationRequestWhereUniqueInput!]!
-  ): [OrderCancellationRequest]
-  createOrderRejectionByDealer(
-    data: OrderRejectionByDealerCreateInput!
-  ): OrderRejectionByDealer
-  createOrderRejectionByDealers(
-    data: [OrderRejectionByDealerCreateInput!]!
-  ): [OrderRejectionByDealer]
-  updateOrderRejectionByDealer(
-    where: OrderRejectionByDealerWhereUniqueInput!
-    data: OrderRejectionByDealerUpdateInput!
-  ): OrderRejectionByDealer
-  updateOrderRejectionByDealers(
-    data: [OrderRejectionByDealerUpdateArgs!]!
-  ): [OrderRejectionByDealer]
-  deleteOrderRejectionByDealer(
-    where: OrderRejectionByDealerWhereUniqueInput!
-  ): OrderRejectionByDealer
-  deleteOrderRejectionByDealers(
-    where: [OrderRejectionByDealerWhereUniqueInput!]!
-  ): [OrderRejectionByDealer]
-  createUserVehicleReview(
-    data: UserVehicleReviewCreateInput!
-  ): UserVehicleReview
-  createUserVehicleReviews(
-    data: [UserVehicleReviewCreateInput!]!
-  ): [UserVehicleReview]
-  updateUserVehicleReview(
-    where: UserVehicleReviewWhereUniqueInput!
-    data: UserVehicleReviewUpdateInput!
-  ): UserVehicleReview
-  updateUserVehicleReviews(
-    data: [UserVehicleReviewUpdateArgs!]!
-  ): [UserVehicleReview]
-  deleteUserVehicleReview(
-    where: UserVehicleReviewWhereUniqueInput!
-  ): UserVehicleReview
-  deleteUserVehicleReviews(
-    where: [UserVehicleReviewWhereUniqueInput!]!
-  ): [UserVehicleReview]
-  createUserProductReview(
-    data: UserProductReviewCreateInput!
-  ): UserProductReview
-  createUserProductReviews(
-    data: [UserProductReviewCreateInput!]!
-  ): [UserProductReview]
-  updateUserProductReview(
-    where: UserProductReviewWhereUniqueInput!
-    data: UserProductReviewUpdateInput!
-  ): UserProductReview
-  updateUserProductReviews(
-    data: [UserProductReviewUpdateArgs!]!
-  ): [UserProductReview]
-  deleteUserProductReview(
-    where: UserProductReviewWhereUniqueInput!
-  ): UserProductReview
-  deleteUserProductReviews(
-    where: [UserProductReviewWhereUniqueInput!]!
-  ): [UserProductReview]
+  createOrderCancellationRequest(data: OrderCancellationRequestCreateInput!): OrderCancellationRequest
+  createOrderCancellationRequests(data: [OrderCancellationRequestCreateInput!]!): [OrderCancellationRequest]
+  updateOrderCancellationRequest(where: OrderCancellationRequestWhereUniqueInput!, data: OrderCancellationRequestUpdateInput!): OrderCancellationRequest
+  updateOrderCancellationRequests(data: [OrderCancellationRequestUpdateArgs!]!): [OrderCancellationRequest]
+  deleteOrderCancellationRequest(where: OrderCancellationRequestWhereUniqueInput!): OrderCancellationRequest
+  deleteOrderCancellationRequests(where: [OrderCancellationRequestWhereUniqueInput!]!): [OrderCancellationRequest]
+  createOrderRejectionByDealer(data: OrderRejectionByDealerCreateInput!): OrderRejectionByDealer
+  createOrderRejectionByDealers(data: [OrderRejectionByDealerCreateInput!]!): [OrderRejectionByDealer]
+  updateOrderRejectionByDealer(where: OrderRejectionByDealerWhereUniqueInput!, data: OrderRejectionByDealerUpdateInput!): OrderRejectionByDealer
+  updateOrderRejectionByDealers(data: [OrderRejectionByDealerUpdateArgs!]!): [OrderRejectionByDealer]
+  deleteOrderRejectionByDealer(where: OrderRejectionByDealerWhereUniqueInput!): OrderRejectionByDealer
+  deleteOrderRejectionByDealers(where: [OrderRejectionByDealerWhereUniqueInput!]!): [OrderRejectionByDealer]
+  createVehicleOrderAdditionalInfo(data: VehicleOrderAdditionalInfoCreateInput!): VehicleOrderAdditionalInfo
+  createVehicleOrderAdditionalInfos(data: [VehicleOrderAdditionalInfoCreateInput!]!): [VehicleOrderAdditionalInfo]
+  updateVehicleOrderAdditionalInfo(where: VehicleOrderAdditionalInfoWhereUniqueInput!, data: VehicleOrderAdditionalInfoUpdateInput!): VehicleOrderAdditionalInfo
+  updateVehicleOrderAdditionalInfos(data: [VehicleOrderAdditionalInfoUpdateArgs!]!): [VehicleOrderAdditionalInfo]
+  deleteVehicleOrderAdditionalInfo(where: VehicleOrderAdditionalInfoWhereUniqueInput!): VehicleOrderAdditionalInfo
+  deleteVehicleOrderAdditionalInfos(where: [VehicleOrderAdditionalInfoWhereUniqueInput!]!): [VehicleOrderAdditionalInfo]
+  createUserVehicleReview(data: UserVehicleReviewCreateInput!): UserVehicleReview
+  createUserVehicleReviews(data: [UserVehicleReviewCreateInput!]!): [UserVehicleReview]
+  updateUserVehicleReview(where: UserVehicleReviewWhereUniqueInput!, data: UserVehicleReviewUpdateInput!): UserVehicleReview
+  updateUserVehicleReviews(data: [UserVehicleReviewUpdateArgs!]!): [UserVehicleReview]
+  deleteUserVehicleReview(where: UserVehicleReviewWhereUniqueInput!): UserVehicleReview
+  deleteUserVehicleReviews(where: [UserVehicleReviewWhereUniqueInput!]!): [UserVehicleReview]
+  createUserVehicleReviewAttachment(data: UserVehicleReviewAttachmentCreateInput!): UserVehicleReviewAttachment
+  createUserVehicleReviewAttachments(data: [UserVehicleReviewAttachmentCreateInput!]!): [UserVehicleReviewAttachment]
+  updateUserVehicleReviewAttachment(where: UserVehicleReviewAttachmentWhereUniqueInput!, data: UserVehicleReviewAttachmentUpdateInput!): UserVehicleReviewAttachment
+  updateUserVehicleReviewAttachments(data: [UserVehicleReviewAttachmentUpdateArgs!]!): [UserVehicleReviewAttachment]
+  deleteUserVehicleReviewAttachment(where: UserVehicleReviewAttachmentWhereUniqueInput!): UserVehicleReviewAttachment
+  deleteUserVehicleReviewAttachments(where: [UserVehicleReviewAttachmentWhereUniqueInput!]!): [UserVehicleReviewAttachment]
+  createUserProductReview(data: UserProductReviewCreateInput!): UserProductReview
+  createUserProductReviews(data: [UserProductReviewCreateInput!]!): [UserProductReview]
+  updateUserProductReview(where: UserProductReviewWhereUniqueInput!, data: UserProductReviewUpdateInput!): UserProductReview
+  updateUserProductReviews(data: [UserProductReviewUpdateArgs!]!): [UserProductReview]
+  deleteUserProductReview(where: UserProductReviewWhereUniqueInput!): UserProductReview
+  deleteUserProductReviews(where: [UserProductReviewWhereUniqueInput!]!): [UserProductReview]
+  createUserProductReviewAttachment(data: UserProductReviewAttachmentCreateInput!): UserProductReviewAttachment
+  createUserProductReviewAttachments(data: [UserProductReviewAttachmentCreateInput!]!): [UserProductReviewAttachment]
+  updateUserProductReviewAttachment(where: UserProductReviewAttachmentWhereUniqueInput!, data: UserProductReviewAttachmentUpdateInput!): UserProductReviewAttachment
+  updateUserProductReviewAttachments(data: [UserProductReviewAttachmentUpdateArgs!]!): [UserProductReviewAttachment]
+  deleteUserProductReviewAttachment(where: UserProductReviewAttachmentWhereUniqueInput!): UserProductReviewAttachment
+  deleteUserProductReviewAttachments(where: [UserProductReviewAttachmentWhereUniqueInput!]!): [UserProductReviewAttachment]
   createExpertReview(data: ExpertReviewCreateInput!): ExpertReview
   createExpertReviews(data: [ExpertReviewCreateInput!]!): [ExpertReview]
-  updateExpertReview(
-    where: ExpertReviewWhereUniqueInput!
-    data: ExpertReviewUpdateInput!
-  ): ExpertReview
+  updateExpertReview(where: ExpertReviewWhereUniqueInput!, data: ExpertReviewUpdateInput!): ExpertReview
   updateExpertReviews(data: [ExpertReviewUpdateArgs!]!): [ExpertReview]
   deleteExpertReview(where: ExpertReviewWhereUniqueInput!): ExpertReview
   deleteExpertReviews(where: [ExpertReviewWhereUniqueInput!]!): [ExpertReview]
@@ -5770,94 +5882,35 @@ type Mutation {
   deleteDealer(where: DealerWhereUniqueInput!): Dealer
   deleteDealers(where: [DealerWhereUniqueInput!]!): [Dealer]
   createNotificationType(data: NotificationTypeCreateInput!): NotificationType
-  createNotificationTypes(
-    data: [NotificationTypeCreateInput!]!
-  ): [NotificationType]
-  updateNotificationType(
-    where: NotificationTypeWhereUniqueInput!
-    data: NotificationTypeUpdateInput!
-  ): NotificationType
-  updateNotificationTypes(
-    data: [NotificationTypeUpdateArgs!]!
-  ): [NotificationType]
-  deleteNotificationType(
-    where: NotificationTypeWhereUniqueInput!
-  ): NotificationType
-  deleteNotificationTypes(
-    where: [NotificationTypeWhereUniqueInput!]!
-  ): [NotificationType]
-  createEmailNotificationTemplate(
-    data: EmailNotificationTemplateCreateInput!
-  ): EmailNotificationTemplate
-  createEmailNotificationTemplates(
-    data: [EmailNotificationTemplateCreateInput!]!
-  ): [EmailNotificationTemplate]
-  updateEmailNotificationTemplate(
-    where: EmailNotificationTemplateWhereUniqueInput!
-    data: EmailNotificationTemplateUpdateInput!
-  ): EmailNotificationTemplate
-  updateEmailNotificationTemplates(
-    data: [EmailNotificationTemplateUpdateArgs!]!
-  ): [EmailNotificationTemplate]
-  deleteEmailNotificationTemplate(
-    where: EmailNotificationTemplateWhereUniqueInput!
-  ): EmailNotificationTemplate
-  deleteEmailNotificationTemplates(
-    where: [EmailNotificationTemplateWhereUniqueInput!]!
-  ): [EmailNotificationTemplate]
-  createSMSNotificationTemplate(
-    data: SMSNotificationTemplateCreateInput!
-  ): SMSNotificationTemplate
-  createSMSNotificationTemplates(
-    data: [SMSNotificationTemplateCreateInput!]!
-  ): [SMSNotificationTemplate]
-  updateSMSNotificationTemplate(
-    where: SMSNotificationTemplateWhereUniqueInput!
-    data: SMSNotificationTemplateUpdateInput!
-  ): SMSNotificationTemplate
-  updateSMSNotificationTemplates(
-    data: [SMSNotificationTemplateUpdateArgs!]!
-  ): [SMSNotificationTemplate]
-  deleteSMSNotificationTemplate(
-    where: SMSNotificationTemplateWhereUniqueInput!
-  ): SMSNotificationTemplate
-  deleteSMSNotificationTemplates(
-    where: [SMSNotificationTemplateWhereUniqueInput!]!
-  ): [SMSNotificationTemplate]
-  createAppNotificationTemplate(
-    data: AppNotificationTemplateCreateInput!
-  ): AppNotificationTemplate
-  createAppNotificationTemplates(
-    data: [AppNotificationTemplateCreateInput!]!
-  ): [AppNotificationTemplate]
-  updateAppNotificationTemplate(
-    where: AppNotificationTemplateWhereUniqueInput!
-    data: AppNotificationTemplateUpdateInput!
-  ): AppNotificationTemplate
-  updateAppNotificationTemplates(
-    data: [AppNotificationTemplateUpdateArgs!]!
-  ): [AppNotificationTemplate]
-  deleteAppNotificationTemplate(
-    where: AppNotificationTemplateWhereUniqueInput!
-  ): AppNotificationTemplate
-  deleteAppNotificationTemplates(
-    where: [AppNotificationTemplateWhereUniqueInput!]!
-  ): [AppNotificationTemplate]
+  createNotificationTypes(data: [NotificationTypeCreateInput!]!): [NotificationType]
+  updateNotificationType(where: NotificationTypeWhereUniqueInput!, data: NotificationTypeUpdateInput!): NotificationType
+  updateNotificationTypes(data: [NotificationTypeUpdateArgs!]!): [NotificationType]
+  deleteNotificationType(where: NotificationTypeWhereUniqueInput!): NotificationType
+  deleteNotificationTypes(where: [NotificationTypeWhereUniqueInput!]!): [NotificationType]
+  createEmailNotificationTemplate(data: EmailNotificationTemplateCreateInput!): EmailNotificationTemplate
+  createEmailNotificationTemplates(data: [EmailNotificationTemplateCreateInput!]!): [EmailNotificationTemplate]
+  updateEmailNotificationTemplate(where: EmailNotificationTemplateWhereUniqueInput!, data: EmailNotificationTemplateUpdateInput!): EmailNotificationTemplate
+  updateEmailNotificationTemplates(data: [EmailNotificationTemplateUpdateArgs!]!): [EmailNotificationTemplate]
+  deleteEmailNotificationTemplate(where: EmailNotificationTemplateWhereUniqueInput!): EmailNotificationTemplate
+  deleteEmailNotificationTemplates(where: [EmailNotificationTemplateWhereUniqueInput!]!): [EmailNotificationTemplate]
+  createSMSNotificationTemplate(data: SMSNotificationTemplateCreateInput!): SMSNotificationTemplate
+  createSMSNotificationTemplates(data: [SMSNotificationTemplateCreateInput!]!): [SMSNotificationTemplate]
+  updateSMSNotificationTemplate(where: SMSNotificationTemplateWhereUniqueInput!, data: SMSNotificationTemplateUpdateInput!): SMSNotificationTemplate
+  updateSMSNotificationTemplates(data: [SMSNotificationTemplateUpdateArgs!]!): [SMSNotificationTemplate]
+  deleteSMSNotificationTemplate(where: SMSNotificationTemplateWhereUniqueInput!): SMSNotificationTemplate
+  deleteSMSNotificationTemplates(where: [SMSNotificationTemplateWhereUniqueInput!]!): [SMSNotificationTemplate]
+  createAppNotificationTemplate(data: AppNotificationTemplateCreateInput!): AppNotificationTemplate
+  createAppNotificationTemplates(data: [AppNotificationTemplateCreateInput!]!): [AppNotificationTemplate]
+  updateAppNotificationTemplate(where: AppNotificationTemplateWhereUniqueInput!, data: AppNotificationTemplateUpdateInput!): AppNotificationTemplate
+  updateAppNotificationTemplates(data: [AppNotificationTemplateUpdateArgs!]!): [AppNotificationTemplate]
+  deleteAppNotificationTemplate(where: AppNotificationTemplateWhereUniqueInput!): AppNotificationTemplate
+  deleteAppNotificationTemplates(where: [AppNotificationTemplateWhereUniqueInput!]!): [AppNotificationTemplate]
   createAppNotification(data: AppNotificationCreateInput!): AppNotification
-  createAppNotifications(
-    data: [AppNotificationCreateInput!]!
-  ): [AppNotification]
-  updateAppNotification(
-    where: AppNotificationWhereUniqueInput!
-    data: AppNotificationUpdateInput!
-  ): AppNotification
+  createAppNotifications(data: [AppNotificationCreateInput!]!): [AppNotification]
+  updateAppNotification(where: AppNotificationWhereUniqueInput!, data: AppNotificationUpdateInput!): AppNotification
   updateAppNotifications(data: [AppNotificationUpdateArgs!]!): [AppNotification]
-  deleteAppNotification(
-    where: AppNotificationWhereUniqueInput!
-  ): AppNotification
-  deleteAppNotifications(
-    where: [AppNotificationWhereUniqueInput!]!
-  ): [AppNotification]
+  deleteAppNotification(where: AppNotificationWhereUniqueInput!): AppNotification
+  deleteAppNotifications(where: [AppNotificationWhereUniqueInput!]!): [AppNotification]
   createFAQ(data: FAQCreateInput!): FAQ
   createFAQS(data: [FAQCreateInput!]!): [FAQ]
   updateFAQ(where: FAQWhereUniqueInput!, data: FAQUpdateInput!): FAQ
@@ -5866,10 +5919,7 @@ type Mutation {
   deleteFAQS(where: [FAQWhereUniqueInput!]!): [FAQ]
   createHelpSupport(data: HelpSupportCreateInput!): HelpSupport
   createHelpSupports(data: [HelpSupportCreateInput!]!): [HelpSupport]
-  updateHelpSupport(
-    where: HelpSupportWhereUniqueInput!
-    data: HelpSupportUpdateInput!
-  ): HelpSupport
+  updateHelpSupport(where: HelpSupportWhereUniqueInput!, data: HelpSupportUpdateInput!): HelpSupport
   updateHelpSupports(data: [HelpSupportUpdateArgs!]!): [HelpSupport]
   deleteHelpSupport(where: HelpSupportWhereUniqueInput!): HelpSupport
   deleteHelpSupports(where: [HelpSupportWhereUniqueInput!]!): [HelpSupport]
@@ -5881,39 +5931,25 @@ type Mutation {
   deleteTags(where: [TagWhereUniqueInput!]!): [Tag]
   createNewsItem(data: NewsItemCreateInput!): NewsItem
   createNewsItems(data: [NewsItemCreateInput!]!): [NewsItem]
-  updateNewsItem(
-    where: NewsItemWhereUniqueInput!
-    data: NewsItemUpdateInput!
-  ): NewsItem
+  updateNewsItem(where: NewsItemWhereUniqueInput!, data: NewsItemUpdateInput!): NewsItem
   updateNewsItems(data: [NewsItemUpdateArgs!]!): [NewsItem]
   deleteNewsItem(where: NewsItemWhereUniqueInput!): NewsItem
   deleteNewsItems(where: [NewsItemWhereUniqueInput!]!): [NewsItem]
   createNewsCategory(data: NewsCategoryCreateInput!): NewsCategory
   createNewsCategories(data: [NewsCategoryCreateInput!]!): [NewsCategory]
-  updateNewsCategory(
-    where: NewsCategoryWhereUniqueInput!
-    data: NewsCategoryUpdateInput!
-  ): NewsCategory
+  updateNewsCategory(where: NewsCategoryWhereUniqueInput!, data: NewsCategoryUpdateInput!): NewsCategory
   updateNewsCategories(data: [NewsCategoryUpdateArgs!]!): [NewsCategory]
   deleteNewsCategory(where: NewsCategoryWhereUniqueInput!): NewsCategory
   deleteNewsCategories(where: [NewsCategoryWhereUniqueInput!]!): [NewsCategory]
   createNewsAttachment(data: NewsAttachmentCreateInput!): NewsAttachment
   createNewsAttachments(data: [NewsAttachmentCreateInput!]!): [NewsAttachment]
-  updateNewsAttachment(
-    where: NewsAttachmentWhereUniqueInput!
-    data: NewsAttachmentUpdateInput!
-  ): NewsAttachment
+  updateNewsAttachment(where: NewsAttachmentWhereUniqueInput!, data: NewsAttachmentUpdateInput!): NewsAttachment
   updateNewsAttachments(data: [NewsAttachmentUpdateArgs!]!): [NewsAttachment]
   deleteNewsAttachment(where: NewsAttachmentWhereUniqueInput!): NewsAttachment
-  deleteNewsAttachments(
-    where: [NewsAttachmentWhereUniqueInput!]!
-  ): [NewsAttachment]
+  deleteNewsAttachments(where: [NewsAttachmentWhereUniqueInput!]!): [NewsAttachment]
   createKeyword(data: KeywordCreateInput!): Keyword
   createKeywords(data: [KeywordCreateInput!]!): [Keyword]
-  updateKeyword(
-    where: KeywordWhereUniqueInput!
-    data: KeywordUpdateInput!
-  ): Keyword
+  updateKeyword(where: KeywordWhereUniqueInput!, data: KeywordUpdateInput!): Keyword
   updateKeywords(data: [KeywordUpdateArgs!]!): [Keyword]
   deleteKeyword(where: KeywordWhereUniqueInput!): Keyword
   deleteKeywords(where: [KeywordWhereUniqueInput!]!): [Keyword]
@@ -5931,32 +5967,16 @@ type Mutation {
   deleteOffers(where: [OfferWhereUniqueInput!]!): [Offer]
   createFeedback(data: FeedbackCreateInput!): Feedback
   createFeedbacks(data: [FeedbackCreateInput!]!): [Feedback]
-  updateFeedback(
-    where: FeedbackWhereUniqueInput!
-    data: FeedbackUpdateInput!
-  ): Feedback
+  updateFeedback(where: FeedbackWhereUniqueInput!, data: FeedbackUpdateInput!): Feedback
   updateFeedbacks(data: [FeedbackUpdateArgs!]!): [Feedback]
   deleteFeedback(where: FeedbackWhereUniqueInput!): Feedback
   deleteFeedbacks(where: [FeedbackWhereUniqueInput!]!): [Feedback]
-  createFeedbackAttachment(
-    data: FeedbackAttachmentCreateInput!
-  ): FeedbackAttachment
-  createFeedbackAttachments(
-    data: [FeedbackAttachmentCreateInput!]!
-  ): [FeedbackAttachment]
-  updateFeedbackAttachment(
-    where: FeedbackAttachmentWhereUniqueInput!
-    data: FeedbackAttachmentUpdateInput!
-  ): FeedbackAttachment
-  updateFeedbackAttachments(
-    data: [FeedbackAttachmentUpdateArgs!]!
-  ): [FeedbackAttachment]
-  deleteFeedbackAttachment(
-    where: FeedbackAttachmentWhereUniqueInput!
-  ): FeedbackAttachment
-  deleteFeedbackAttachments(
-    where: [FeedbackAttachmentWhereUniqueInput!]!
-  ): [FeedbackAttachment]
+  createFeedbackAttachment(data: FeedbackAttachmentCreateInput!): FeedbackAttachment
+  createFeedbackAttachments(data: [FeedbackAttachmentCreateInput!]!): [FeedbackAttachment]
+  updateFeedbackAttachment(where: FeedbackAttachmentWhereUniqueInput!, data: FeedbackAttachmentUpdateInput!): FeedbackAttachment
+  updateFeedbackAttachments(data: [FeedbackAttachmentUpdateArgs!]!): [FeedbackAttachment]
+  deleteFeedbackAttachment(where: FeedbackAttachmentWhereUniqueInput!): FeedbackAttachment
+  deleteFeedbackAttachments(where: [FeedbackAttachmentWhereUniqueInput!]!): [FeedbackAttachment]
   createReport(data: ReportCreateInput!): Report
   createReports(data: [ReportCreateInput!]!): [Report]
   updateReport(where: ReportWhereUniqueInput!, data: ReportUpdateInput!): Report
@@ -5964,196 +5984,91 @@ type Mutation {
   deleteReport(where: ReportWhereUniqueInput!): Report
   deleteReports(where: [ReportWhereUniqueInput!]!): [Report]
   createReportAttachment(data: ReportAttachmentCreateInput!): ReportAttachment
-  createReportAttachments(
-    data: [ReportAttachmentCreateInput!]!
-  ): [ReportAttachment]
-  updateReportAttachment(
-    where: ReportAttachmentWhereUniqueInput!
-    data: ReportAttachmentUpdateInput!
-  ): ReportAttachment
-  updateReportAttachments(
-    data: [ReportAttachmentUpdateArgs!]!
-  ): [ReportAttachment]
-  deleteReportAttachment(
-    where: ReportAttachmentWhereUniqueInput!
-  ): ReportAttachment
-  deleteReportAttachments(
-    where: [ReportAttachmentWhereUniqueInput!]!
-  ): [ReportAttachment]
+  createReportAttachments(data: [ReportAttachmentCreateInput!]!): [ReportAttachment]
+  updateReportAttachment(where: ReportAttachmentWhereUniqueInput!, data: ReportAttachmentUpdateInput!): ReportAttachment
+  updateReportAttachments(data: [ReportAttachmentUpdateArgs!]!): [ReportAttachment]
+  deleteReportAttachment(where: ReportAttachmentWhereUniqueInput!): ReportAttachment
+  deleteReportAttachments(where: [ReportAttachmentWhereUniqueInput!]!): [ReportAttachment]
   createProductType(data: ProductTypeCreateInput!): ProductType
   createProductTypes(data: [ProductTypeCreateInput!]!): [ProductType]
-  updateProductType(
-    where: ProductTypeWhereUniqueInput!
-    data: ProductTypeUpdateInput!
-  ): ProductType
+  updateProductType(where: ProductTypeWhereUniqueInput!, data: ProductTypeUpdateInput!): ProductType
   updateProductTypes(data: [ProductTypeUpdateArgs!]!): [ProductType]
   deleteProductType(where: ProductTypeWhereUniqueInput!): ProductType
   deleteProductTypes(where: [ProductTypeWhereUniqueInput!]!): [ProductType]
   createProduct(data: ProductCreateInput!): Product
   createProducts(data: [ProductCreateInput!]!): [Product]
-  updateProduct(
-    where: ProductWhereUniqueInput!
-    data: ProductUpdateInput!
-  ): Product
+  updateProduct(where: ProductWhereUniqueInput!, data: ProductUpdateInput!): Product
   updateProducts(data: [ProductUpdateArgs!]!): [Product]
   deleteProduct(where: ProductWhereUniqueInput!): Product
   deleteProducts(where: [ProductWhereUniqueInput!]!): [Product]
-  createProductSpecification(
-    data: ProductSpecificationCreateInput!
-  ): ProductSpecification
-  createProductSpecifications(
-    data: [ProductSpecificationCreateInput!]!
-  ): [ProductSpecification]
-  updateProductSpecification(
-    where: ProductSpecificationWhereUniqueInput!
-    data: ProductSpecificationUpdateInput!
-  ): ProductSpecification
-  updateProductSpecifications(
-    data: [ProductSpecificationUpdateArgs!]!
-  ): [ProductSpecification]
-  deleteProductSpecification(
-    where: ProductSpecificationWhereUniqueInput!
-  ): ProductSpecification
-  deleteProductSpecifications(
-    where: [ProductSpecificationWhereUniqueInput!]!
-  ): [ProductSpecification]
+  createProductSpecification(data: ProductSpecificationCreateInput!): ProductSpecification
+  createProductSpecifications(data: [ProductSpecificationCreateInput!]!): [ProductSpecification]
+  updateProductSpecification(where: ProductSpecificationWhereUniqueInput!, data: ProductSpecificationUpdateInput!): ProductSpecification
+  updateProductSpecifications(data: [ProductSpecificationUpdateArgs!]!): [ProductSpecification]
+  deleteProductSpecification(where: ProductSpecificationWhereUniqueInput!): ProductSpecification
+  deleteProductSpecifications(where: [ProductSpecificationWhereUniqueInput!]!): [ProductSpecification]
   createProductVariant(data: ProductVariantCreateInput!): ProductVariant
   createProductVariants(data: [ProductVariantCreateInput!]!): [ProductVariant]
-  updateProductVariant(
-    where: ProductVariantWhereUniqueInput!
-    data: ProductVariantUpdateInput!
-  ): ProductVariant
+  updateProductVariant(where: ProductVariantWhereUniqueInput!, data: ProductVariantUpdateInput!): ProductVariant
   updateProductVariants(data: [ProductVariantUpdateArgs!]!): [ProductVariant]
   deleteProductVariant(where: ProductVariantWhereUniqueInput!): ProductVariant
-  deleteProductVariants(
-    where: [ProductVariantWhereUniqueInput!]!
-  ): [ProductVariant]
+  deleteProductVariants(where: [ProductVariantWhereUniqueInput!]!): [ProductVariant]
   createProductImage(data: ProductImageCreateInput!): ProductImage
   createProductImages(data: [ProductImageCreateInput!]!): [ProductImage]
-  updateProductImage(
-    where: ProductImageWhereUniqueInput!
-    data: ProductImageUpdateInput!
-  ): ProductImage
+  updateProductImage(where: ProductImageWhereUniqueInput!, data: ProductImageUpdateInput!): ProductImage
   updateProductImages(data: [ProductImageUpdateArgs!]!): [ProductImage]
   deleteProductImage(where: ProductImageWhereUniqueInput!): ProductImage
   deleteProductImages(where: [ProductImageWhereUniqueInput!]!): [ProductImage]
   createProductVideo(data: ProductVideoCreateInput!): ProductVideo
   createProductVideos(data: [ProductVideoCreateInput!]!): [ProductVideo]
-  updateProductVideo(
-    where: ProductVideoWhereUniqueInput!
-    data: ProductVideoUpdateInput!
-  ): ProductVideo
+  updateProductVideo(where: ProductVideoWhereUniqueInput!, data: ProductVideoUpdateInput!): ProductVideo
   updateProductVideos(data: [ProductVideoUpdateArgs!]!): [ProductVideo]
   deleteProductVideo(where: ProductVideoWhereUniqueInput!): ProductVideo
   deleteProductVideos(where: [ProductVideoWhereUniqueInput!]!): [ProductVideo]
-  createProductGalleryItem(
-    data: ProductGalleryItemCreateInput!
-  ): ProductGalleryItem
-  createProductGalleryItems(
-    data: [ProductGalleryItemCreateInput!]!
-  ): [ProductGalleryItem]
-  updateProductGalleryItem(
-    where: ProductGalleryItemWhereUniqueInput!
-    data: ProductGalleryItemUpdateInput!
-  ): ProductGalleryItem
-  updateProductGalleryItems(
-    data: [ProductGalleryItemUpdateArgs!]!
-  ): [ProductGalleryItem]
-  deleteProductGalleryItem(
-    where: ProductGalleryItemWhereUniqueInput!
-  ): ProductGalleryItem
-  deleteProductGalleryItems(
-    where: [ProductGalleryItemWhereUniqueInput!]!
-  ): [ProductGalleryItem]
+  createProductGalleryItem(data: ProductGalleryItemCreateInput!): ProductGalleryItem
+  createProductGalleryItems(data: [ProductGalleryItemCreateInput!]!): [ProductGalleryItem]
+  updateProductGalleryItem(where: ProductGalleryItemWhereUniqueInput!, data: ProductGalleryItemUpdateInput!): ProductGalleryItem
+  updateProductGalleryItems(data: [ProductGalleryItemUpdateArgs!]!): [ProductGalleryItem]
+  deleteProductGalleryItem(where: ProductGalleryItemWhereUniqueInput!): ProductGalleryItem
+  deleteProductGalleryItems(where: [ProductGalleryItemWhereUniqueInput!]!): [ProductGalleryItem]
   createProductReel(data: ProductReelCreateInput!): ProductReel
   createProductReels(data: [ProductReelCreateInput!]!): [ProductReel]
-  updateProductReel(
-    where: ProductReelWhereUniqueInput!
-    data: ProductReelUpdateInput!
-  ): ProductReel
+  updateProductReel(where: ProductReelWhereUniqueInput!, data: ProductReelUpdateInput!): ProductReel
   updateProductReels(data: [ProductReelUpdateArgs!]!): [ProductReel]
   deleteProductReel(where: ProductReelWhereUniqueInput!): ProductReel
   deleteProductReels(where: [ProductReelWhereUniqueInput!]!): [ProductReel]
   createProductDealer(data: ProductDealerCreateInput!): ProductDealer
   createProductDealers(data: [ProductDealerCreateInput!]!): [ProductDealer]
-  updateProductDealer(
-    where: ProductDealerWhereUniqueInput!
-    data: ProductDealerUpdateInput!
-  ): ProductDealer
+  updateProductDealer(where: ProductDealerWhereUniqueInput!, data: ProductDealerUpdateInput!): ProductDealer
   updateProductDealers(data: [ProductDealerUpdateArgs!]!): [ProductDealer]
   deleteProductDealer(where: ProductDealerWhereUniqueInput!): ProductDealer
-  deleteProductDealers(
-    where: [ProductDealerWhereUniqueInput!]!
-  ): [ProductDealer]
-  createProductDealerStockRequest(
-    data: ProductDealerStockRequestCreateInput!
-  ): ProductDealerStockRequest
-  createProductDealerStockRequests(
-    data: [ProductDealerStockRequestCreateInput!]!
-  ): [ProductDealerStockRequest]
-  updateProductDealerStockRequest(
-    where: ProductDealerStockRequestWhereUniqueInput!
-    data: ProductDealerStockRequestUpdateInput!
-  ): ProductDealerStockRequest
-  updateProductDealerStockRequests(
-    data: [ProductDealerStockRequestUpdateArgs!]!
-  ): [ProductDealerStockRequest]
-  deleteProductDealerStockRequest(
-    where: ProductDealerStockRequestWhereUniqueInput!
-  ): ProductDealerStockRequest
-  deleteProductDealerStockRequests(
-    where: [ProductDealerStockRequestWhereUniqueInput!]!
-  ): [ProductDealerStockRequest]
+  deleteProductDealers(where: [ProductDealerWhereUniqueInput!]!): [ProductDealer]
+  createProductDealerStockRequest(data: ProductDealerStockRequestCreateInput!): ProductDealerStockRequest
+  createProductDealerStockRequests(data: [ProductDealerStockRequestCreateInput!]!): [ProductDealerStockRequest]
+  updateProductDealerStockRequest(where: ProductDealerStockRequestWhereUniqueInput!, data: ProductDealerStockRequestUpdateInput!): ProductDealerStockRequest
+  updateProductDealerStockRequests(data: [ProductDealerStockRequestUpdateArgs!]!): [ProductDealerStockRequest]
+  deleteProductDealerStockRequest(where: ProductDealerStockRequestWhereUniqueInput!): ProductDealerStockRequest
+  deleteProductDealerStockRequests(where: [ProductDealerStockRequestWhereUniqueInput!]!): [ProductDealerStockRequest]
   createCategory(data: CategoryCreateInput!): Category
   createCategories(data: [CategoryCreateInput!]!): [Category]
-  updateCategory(
-    where: CategoryWhereUniqueInput!
-    data: CategoryUpdateInput!
-  ): Category
+  updateCategory(where: CategoryWhereUniqueInput!, data: CategoryUpdateInput!): Category
   updateCategories(data: [CategoryUpdateArgs!]!): [Category]
   deleteCategory(where: CategoryWhereUniqueInput!): Category
   deleteCategories(where: [CategoryWhereUniqueInput!]!): [Category]
   endSession: Boolean!
-  startTransaction(
-    deviceId: String!
-    connectorId: Int
-    duration: Int
-    walletUsageLimit: Int
-  ): JSON
+  startTransaction(deviceId: String!, connectorId: Int, duration: Int, walletUsageLimit: Int): JSON
   stopTransaction(deviceId: String!, connectorId: Int): JSON
   enableDevice(deviceId: String!): JSON
   disableDevice(deviceId: String!): JSON
   validateUserOTP(key: String!, otp: String!, value: JSON): String
-  authenticateUserWithPassword(
-    phoneNumber: String!
-    password: String!
-  ): UserAuthenticationWithPasswordResult
-  createInitialUser(
-    data: CreateInitialUserInput!
-  ): UserAuthenticationWithPasswordSuccess!
+  authenticateUserWithPassword(phoneNumber: String!, password: String!): UserAuthenticationWithPasswordResult
+  createInitialUser(data: CreateInitialUserInput!): UserAuthenticationWithPasswordSuccess!
   sendUserPasswordResetLink(phoneNumber: String!): String!
-  redeemUserPasswordResetToken(
-    phoneNumber: String!
-    token: String!
-    password: String!
-  ): RedeemUserPasswordResetTokenResult
-  startOrder(
-    addressId: ID!
-    items: [OrderItem!]!
-    payments: [PaymentItem!]!
-    couponCode: String
-  ): JSON
-  verifyOrderPayment(
-    razorpayPaymentId: String!
-    razorpayOrderId: String!
-    razorpaySignature: String
-  ): JSON
+  redeemUserPasswordResetToken(phoneNumber: String!, token: String!, password: String!): RedeemUserPasswordResetTokenResult
+  startOrder(addressId: ID!, items: [OrderItem!]!, payments: [PaymentItem!]!, couponCode: String): JSON
+  verifyOrderPayment(razorpayPaymentId: String!, razorpayOrderId: String!, razorpaySignature: String): JSON
   addAmountToWallet(amount: Int!): JSON
-  verifyWalletPayment(
-    razorpayPaymentId: String!
-    razorpayOrderId: String!
-    razorpaySignature: String
-  ): JSON
+  verifyWalletPayment(razorpayPaymentId: String!, razorpayOrderId: String!, razorpaySignature: String): JSON
   submitReferralCode(code: String!): Boolean
 }
 
@@ -6170,7 +6085,7 @@ enum OrderItemType {
 
 input PaymentItem {
   type: PaymentItemType!
-  amount: Int!
+  amount: Float!
 }
 
 enum PaymentItemType {
@@ -6179,9 +6094,7 @@ enum PaymentItemType {
   cash
 }
 
-union UserAuthenticationWithPasswordResult =
-    UserAuthenticationWithPasswordSuccess
-  | UserAuthenticationWithPasswordFailure
+union UserAuthenticationWithPasswordResult = UserAuthenticationWithPasswordSuccess | UserAuthenticationWithPasswordFailure
 
 type UserAuthenticationWithPasswordSuccess {
   sessionToken: String!
@@ -6211,607 +6124,237 @@ enum PasswordResetRedemptionErrorCode {
 }
 
 type Query {
-  users(
-    where: UserWhereInput! = {}
-    orderBy: [UserOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [User!]
+  users(where: UserWhereInput! = {}, orderBy: [UserOrderByInput!]! = [], take: Int, skip: Int! = 0): [User!]
   user(where: UserWhereUniqueInput!): User
   usersCount(where: UserWhereInput! = {}): Int
-  referralCodes(
-    where: ReferralCodeWhereInput! = {}
-    orderBy: [ReferralCodeOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ReferralCode!]
+  referralCodes(where: ReferralCodeWhereInput! = {}, orderBy: [ReferralCodeOrderByInput!]! = [], take: Int, skip: Int! = 0): [ReferralCode!]
   referralCode(where: ReferralCodeWhereUniqueInput!): ReferralCode
   referralCodesCount(where: ReferralCodeWhereInput! = {}): Int
-  referralUsers(
-    where: ReferralUserWhereInput! = {}
-    orderBy: [ReferralUserOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ReferralUser!]
+  referralUsers(where: ReferralUserWhereInput! = {}, orderBy: [ReferralUserOrderByInput!]! = [], take: Int, skip: Int! = 0): [ReferralUser!]
   referralUser(where: ReferralUserWhereUniqueInput!): ReferralUser
   referralUsersCount(where: ReferralUserWhereInput! = {}): Int
-  addresses(
-    where: AddressWhereInput! = {}
-    orderBy: [AddressOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Address!]
+  addresses(where: AddressWhereInput! = {}, orderBy: [AddressOrderByInput!]! = [], take: Int, skip: Int! = 0): [Address!]
   address(where: AddressWhereUniqueInput!): Address
   addressesCount(where: AddressWhereInput! = {}): Int
-  dealerAddresses(
-    where: DealerAddressWhereInput! = {}
-    orderBy: [DealerAddressOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [DealerAddress!]
+  dealerAddresses(where: DealerAddressWhereInput! = {}, orderBy: [DealerAddressOrderByInput!]! = [], take: Int, skip: Int! = 0): [DealerAddress!]
   dealerAddress(where: DealerAddressWhereUniqueInput!): DealerAddress
   dealerAddressesCount(where: DealerAddressWhereInput! = {}): Int
-  favorites(
-    where: FavoriteWhereInput! = {}
-    orderBy: [FavoriteOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Favorite!]
+  favorites(where: FavoriteWhereInput! = {}, orderBy: [FavoriteOrderByInput!]! = [], take: Int, skip: Int! = 0): [Favorite!]
   favorite(where: FavoriteWhereUniqueInput!): Favorite
   favoritesCount(where: FavoriteWhereInput! = {}): Int
-  cartItems(
-    where: CartItemWhereInput! = {}
-    orderBy: [CartItemOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [CartItem!]
+  cartItems(where: CartItemWhereInput! = {}, orderBy: [CartItemOrderByInput!]! = [], take: Int, skip: Int! = 0): [CartItem!]
   cartItem(where: CartItemWhereUniqueInput!): CartItem
   cartItemsCount(where: CartItemWhereInput! = {}): Int
-  vehicleTypes(
-    where: VehicleTypeWhereInput! = {}
-    orderBy: [VehicleTypeOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleType!]
+  vehicleTypes(where: VehicleTypeWhereInput! = {}, orderBy: [VehicleTypeOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleType!]
   vehicleType(where: VehicleTypeWhereUniqueInput!): VehicleType
   vehicleTypesCount(where: VehicleTypeWhereInput! = {}): Int
-  brands(
-    where: BrandWhereInput! = {}
-    orderBy: [BrandOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Brand!]
+  vehicleSubTypes(where: VehicleSubTypeWhereInput! = {}, orderBy: [VehicleSubTypeOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleSubType!]
+  vehicleSubType(where: VehicleSubTypeWhereUniqueInput!): VehicleSubType
+  vehicleSubTypesCount(where: VehicleSubTypeWhereInput! = {}): Int
+  brands(where: BrandWhereInput! = {}, orderBy: [BrandOrderByInput!]! = [], take: Int, skip: Int! = 0): [Brand!]
   brand(where: BrandWhereUniqueInput!): Brand
   brandsCount(where: BrandWhereInput! = {}): Int
-  specifications(
-    where: SpecificationWhereInput! = {}
-    orderBy: [SpecificationOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Specification!]
+  specifications(where: SpecificationWhereInput! = {}, orderBy: [SpecificationOrderByInput!]! = [], take: Int, skip: Int! = 0): [Specification!]
   specification(where: SpecificationWhereUniqueInput!): Specification
   specificationsCount(where: SpecificationWhereInput! = {}): Int
-  specificationCategories(
-    where: SpecificationCategoryWhereInput! = {}
-    orderBy: [SpecificationCategoryOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [SpecificationCategory!]
-  specificationCategory(
-    where: SpecificationCategoryWhereUniqueInput!
-  ): SpecificationCategory
-  specificationCategoriesCount(
-    where: SpecificationCategoryWhereInput! = {}
-  ): Int
-  testDriveDealers(
-    where: TestDriveDealerWhereInput! = {}
-    orderBy: [TestDriveDealerOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [TestDriveDealer!]
+  specificationCategories(where: SpecificationCategoryWhereInput! = {}, orderBy: [SpecificationCategoryOrderByInput!]! = [], take: Int, skip: Int! = 0): [SpecificationCategory!]
+  specificationCategory(where: SpecificationCategoryWhereUniqueInput!): SpecificationCategory
+  specificationCategoriesCount(where: SpecificationCategoryWhereInput! = {}): Int
+  testDriveDealers(where: TestDriveDealerWhereInput! = {}, orderBy: [TestDriveDealerOrderByInput!]! = [], take: Int, skip: Int! = 0): [TestDriveDealer!]
   testDriveDealer(where: TestDriveDealerWhereUniqueInput!): TestDriveDealer
   testDriveDealersCount(where: TestDriveDealerWhereInput! = {}): Int
-  vehicles(
-    where: VehicleWhereInput! = {}
-    orderBy: [VehicleOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Vehicle!]
+  vehicles(where: VehicleWhereInput! = {}, orderBy: [VehicleOrderByInput!]! = [], take: Int, skip: Int! = 0): [Vehicle!]
   vehicle(where: VehicleWhereUniqueInput!): Vehicle
   vehiclesCount(where: VehicleWhereInput! = {}): Int
-  vehicleColors(
-    where: VehicleColorWhereInput! = {}
-    orderBy: [VehicleColorOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleColor!]
+  vehicleColors(where: VehicleColorWhereInput! = {}, orderBy: [VehicleColorOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleColor!]
   vehicleColor(where: VehicleColorWhereUniqueInput!): VehicleColor
   vehicleColorsCount(where: VehicleColorWhereInput! = {}): Int
-  vehicleGalleryItems(
-    where: VehicleGalleryItemWhereInput! = {}
-    orderBy: [VehicleGalleryItemOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleGalleryItem!]
-  vehicleGalleryItem(
-    where: VehicleGalleryItemWhereUniqueInput!
-  ): VehicleGalleryItem
+  vehicleGalleryItems(where: VehicleGalleryItemWhereInput! = {}, orderBy: [VehicleGalleryItemOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleGalleryItem!]
+  vehicleGalleryItem(where: VehicleGalleryItemWhereUniqueInput!): VehicleGalleryItem
   vehicleGalleryItemsCount(where: VehicleGalleryItemWhereInput! = {}): Int
-  vehicleReels(
-    where: VehicleReelWhereInput! = {}
-    orderBy: [VehicleReelOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleReel!]
+  vehicleReels(where: VehicleReelWhereInput! = {}, orderBy: [VehicleReelOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleReel!]
   vehicleReel(where: VehicleReelWhereUniqueInput!): VehicleReel
   vehicleReelsCount(where: VehicleReelWhereInput! = {}): Int
-  vehicleDealers(
-    where: VehicleDealerWhereInput! = {}
-    orderBy: [VehicleDealerOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleDealer!]
+  guarantees(where: GuaranteeWhereInput! = {}, orderBy: [GuaranteeOrderByInput!]! = [], take: Int, skip: Int! = 0): [Guarantee!]
+  guarantee(where: GuaranteeWhereUniqueInput!): Guarantee
+  guaranteesCount(where: GuaranteeWhereInput! = {}): Int
+  guaranteeFiles(where: GuaranteeFileWhereInput! = {}, orderBy: [GuaranteeFileOrderByInput!]! = [], take: Int, skip: Int! = 0): [GuaranteeFile!]
+  guaranteeFile(where: GuaranteeFileWhereUniqueInput!): GuaranteeFile
+  guaranteeFilesCount(where: GuaranteeFileWhereInput! = {}): Int
+  vehicleDealers(where: VehicleDealerWhereInput! = {}, orderBy: [VehicleDealerOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleDealer!]
   vehicleDealer(where: VehicleDealerWhereUniqueInput!): VehicleDealer
   vehicleDealersCount(where: VehicleDealerWhereInput! = {}): Int
-  vehicleImages(
-    where: VehicleImageWhereInput! = {}
-    orderBy: [VehicleImageOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleImage!]
+  vehicleImages(where: VehicleImageWhereInput! = {}, orderBy: [VehicleImageOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleImage!]
   vehicleImage(where: VehicleImageWhereUniqueInput!): VehicleImage
   vehicleImagesCount(where: VehicleImageWhereInput! = {}): Int
-  vehicleVideos(
-    where: VehicleVideoWhereInput! = {}
-    orderBy: [VehicleVideoOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleVideo!]
+  vehicleVideos(where: VehicleVideoWhereInput! = {}, orderBy: [VehicleVideoOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleVideo!]
   vehicleVideo(where: VehicleVideoWhereUniqueInput!): VehicleVideo
   vehicleVideosCount(where: VehicleVideoWhereInput! = {}): Int
-  vehicleSpecifications(
-    where: VehicleSpecificationWhereInput! = {}
-    orderBy: [VehicleSpecificationOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleSpecification!]
-  vehicleSpecification(
-    where: VehicleSpecificationWhereUniqueInput!
-  ): VehicleSpecification
+  vehicleSpecifications(where: VehicleSpecificationWhereInput! = {}, orderBy: [VehicleSpecificationOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleSpecification!]
+  vehicleSpecification(where: VehicleSpecificationWhereUniqueInput!): VehicleSpecification
   vehicleSpecificationsCount(where: VehicleSpecificationWhereInput! = {}): Int
-  vehicleVariants(
-    where: VehicleVariantWhereInput! = {}
-    orderBy: [VehicleVariantOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleVariant!]
+  vehicleVariants(where: VehicleVariantWhereInput! = {}, orderBy: [VehicleVariantOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleVariant!]
   vehicleVariant(where: VehicleVariantWhereUniqueInput!): VehicleVariant
   vehicleVariantsCount(where: VehicleVariantWhereInput! = {}): Int
-  vehicleDealerStockRequests(
-    where: VehicleDealerStockRequestWhereInput! = {}
-    orderBy: [VehicleDealerStockRequestOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleDealerStockRequest!]
-  vehicleDealerStockRequest(
-    where: VehicleDealerStockRequestWhereUniqueInput!
-  ): VehicleDealerStockRequest
-  vehicleDealerStockRequestsCount(
-    where: VehicleDealerStockRequestWhereInput! = {}
-  ): Int
-  priceCategories(
-    where: PriceCategoryWhereInput! = {}
-    orderBy: [PriceCategoryOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [PriceCategory!]
+  vehicleDealerStockRequests(where: VehicleDealerStockRequestWhereInput! = {}, orderBy: [VehicleDealerStockRequestOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleDealerStockRequest!]
+  vehicleDealerStockRequest(where: VehicleDealerStockRequestWhereUniqueInput!): VehicleDealerStockRequest
+  vehicleDealerStockRequestsCount(where: VehicleDealerStockRequestWhereInput! = {}): Int
+  priceCategories(where: PriceCategoryWhereInput! = {}, orderBy: [PriceCategoryOrderByInput!]! = [], take: Int, skip: Int! = 0): [PriceCategory!]
   priceCategory(where: PriceCategoryWhereUniqueInput!): PriceCategory
   priceCategoriesCount(where: PriceCategoryWhereInput! = {}): Int
-  prices(
-    where: PriceWhereInput! = {}
-    orderBy: [PriceOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Price!]
+  prices(where: PriceWhereInput! = {}, orderBy: [PriceOrderByInput!]! = [], take: Int, skip: Int! = 0): [Price!]
   price(where: PriceWhereUniqueInput!): Price
   pricesCount(where: PriceWhereInput! = {}): Int
-  wallets(
-    where: WalletWhereInput! = {}
-    orderBy: [WalletOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Wallet!]
+  wallets(where: WalletWhereInput! = {}, orderBy: [WalletOrderByInput!]! = [], take: Int, skip: Int! = 0): [Wallet!]
   wallet(where: WalletWhereUniqueInput!): Wallet
   walletsCount(where: WalletWhereInput! = {}): Int
-  walletTransactions(
-    where: WalletTransactionWhereInput! = {}
-    orderBy: [WalletTransactionOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [WalletTransaction!]
-  walletTransaction(
-    where: WalletTransactionWhereUniqueInput!
-  ): WalletTransaction
+  walletTransactions(where: WalletTransactionWhereInput! = {}, orderBy: [WalletTransactionOrderByInput!]! = [], take: Int, skip: Int! = 0): [WalletTransaction!]
+  walletTransaction(where: WalletTransactionWhereUniqueInput!): WalletTransaction
   walletTransactionsCount(where: WalletTransactionWhereInput! = {}): Int
-  orders(
-    where: OrderWhereInput! = {}
-    orderBy: [OrderOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Order!]
+  orders(where: OrderWhereInput! = {}, orderBy: [OrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [Order!]
   order(where: OrderWhereUniqueInput!): Order
   ordersCount(where: OrderWhereInput! = {}): Int
-  payments(
-    where: PaymentWhereInput! = {}
-    orderBy: [PaymentOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Payment!]
+  payments(where: PaymentWhereInput! = {}, orderBy: [PaymentOrderByInput!]! = [], take: Int, skip: Int! = 0): [Payment!]
   payment(where: PaymentWhereUniqueInput!): Payment
   paymentsCount(where: PaymentWhereInput! = {}): Int
-  vehicleOrders(
-    where: VehicleOrderWhereInput! = {}
-    orderBy: [VehicleOrderOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [VehicleOrder!]
+  vehicleOrders(where: VehicleOrderWhereInput! = {}, orderBy: [VehicleOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleOrder!]
   vehicleOrder(where: VehicleOrderWhereUniqueInput!): VehicleOrder
   vehicleOrdersCount(where: VehicleOrderWhereInput! = {}): Int
-  testDriveOrders(
-    where: TestDriveOrderWhereInput! = {}
-    orderBy: [TestDriveOrderOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [TestDriveOrder!]
+  testDriveOrders(where: TestDriveOrderWhereInput! = {}, orderBy: [TestDriveOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [TestDriveOrder!]
   testDriveOrder(where: TestDriveOrderWhereUniqueInput!): TestDriveOrder
   testDriveOrdersCount(where: TestDriveOrderWhereInput! = {}): Int
-  productOrders(
-    where: ProductOrderWhereInput! = {}
-    orderBy: [ProductOrderOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductOrder!]
+  productOrders(where: ProductOrderWhereInput! = {}, orderBy: [ProductOrderOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductOrder!]
   productOrder(where: ProductOrderWhereUniqueInput!): ProductOrder
   productOrdersCount(where: ProductOrderWhereInput! = {}): Int
-  orderCancellationRequests(
-    where: OrderCancellationRequestWhereInput! = {}
-    orderBy: [OrderCancellationRequestOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [OrderCancellationRequest!]
-  orderCancellationRequest(
-    where: OrderCancellationRequestWhereUniqueInput!
-  ): OrderCancellationRequest
-  orderCancellationRequestsCount(
-    where: OrderCancellationRequestWhereInput! = {}
-  ): Int
-  orderRejectionByDealers(
-    where: OrderRejectionByDealerWhereInput! = {}
-    orderBy: [OrderRejectionByDealerOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [OrderRejectionByDealer!]
-  orderRejectionByDealer(
-    where: OrderRejectionByDealerWhereUniqueInput!
-  ): OrderRejectionByDealer
-  orderRejectionByDealersCount(
-    where: OrderRejectionByDealerWhereInput! = {}
-  ): Int
-  userVehicleReviews(
-    where: UserVehicleReviewWhereInput! = {}
-    orderBy: [UserVehicleReviewOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [UserVehicleReview!]
-  userVehicleReview(
-    where: UserVehicleReviewWhereUniqueInput!
-  ): UserVehicleReview
+  orderCancellationRequests(where: OrderCancellationRequestWhereInput! = {}, orderBy: [OrderCancellationRequestOrderByInput!]! = [], take: Int, skip: Int! = 0): [OrderCancellationRequest!]
+  orderCancellationRequest(where: OrderCancellationRequestWhereUniqueInput!): OrderCancellationRequest
+  orderCancellationRequestsCount(where: OrderCancellationRequestWhereInput! = {}): Int
+  orderRejectionByDealers(where: OrderRejectionByDealerWhereInput! = {}, orderBy: [OrderRejectionByDealerOrderByInput!]! = [], take: Int, skip: Int! = 0): [OrderRejectionByDealer!]
+  orderRejectionByDealer(where: OrderRejectionByDealerWhereUniqueInput!): OrderRejectionByDealer
+  orderRejectionByDealersCount(where: OrderRejectionByDealerWhereInput! = {}): Int
+  vehicleOrderAdditionalInfos(where: VehicleOrderAdditionalInfoWhereInput! = {}, orderBy: [VehicleOrderAdditionalInfoOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleOrderAdditionalInfo!]
+  vehicleOrderAdditionalInfo(where: VehicleOrderAdditionalInfoWhereUniqueInput!): VehicleOrderAdditionalInfo
+  vehicleOrderAdditionalInfosCount(where: VehicleOrderAdditionalInfoWhereInput! = {}): Int
+  userVehicleReviews(where: UserVehicleReviewWhereInput! = {}, orderBy: [UserVehicleReviewOrderByInput!]! = [], take: Int, skip: Int! = 0): [UserVehicleReview!]
+  userVehicleReview(where: UserVehicleReviewWhereUniqueInput!): UserVehicleReview
   userVehicleReviewsCount(where: UserVehicleReviewWhereInput! = {}): Int
-  userProductReviews(
-    where: UserProductReviewWhereInput! = {}
-    orderBy: [UserProductReviewOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [UserProductReview!]
-  userProductReview(
-    where: UserProductReviewWhereUniqueInput!
-  ): UserProductReview
+  userVehicleReviewAttachments(where: UserVehicleReviewAttachmentWhereInput! = {}, orderBy: [UserVehicleReviewAttachmentOrderByInput!]! = [], take: Int, skip: Int! = 0): [UserVehicleReviewAttachment!]
+  userVehicleReviewAttachment(where: UserVehicleReviewAttachmentWhereUniqueInput!): UserVehicleReviewAttachment
+  userVehicleReviewAttachmentsCount(where: UserVehicleReviewAttachmentWhereInput! = {}): Int
+  userProductReviews(where: UserProductReviewWhereInput! = {}, orderBy: [UserProductReviewOrderByInput!]! = [], take: Int, skip: Int! = 0): [UserProductReview!]
+  userProductReview(where: UserProductReviewWhereUniqueInput!): UserProductReview
   userProductReviewsCount(where: UserProductReviewWhereInput! = {}): Int
-  expertReviews(
-    where: ExpertReviewWhereInput! = {}
-    orderBy: [ExpertReviewOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ExpertReview!]
+  userProductReviewAttachments(where: UserProductReviewAttachmentWhereInput! = {}, orderBy: [UserProductReviewAttachmentOrderByInput!]! = [], take: Int, skip: Int! = 0): [UserProductReviewAttachment!]
+  userProductReviewAttachment(where: UserProductReviewAttachmentWhereUniqueInput!): UserProductReviewAttachment
+  userProductReviewAttachmentsCount(where: UserProductReviewAttachmentWhereInput! = {}): Int
+  expertReviews(where: ExpertReviewWhereInput! = {}, orderBy: [ExpertReviewOrderByInput!]! = [], take: Int, skip: Int! = 0): [ExpertReview!]
   expertReview(where: ExpertReviewWhereUniqueInput!): ExpertReview
   expertReviewsCount(where: ExpertReviewWhereInput! = {}): Int
-  dealers(
-    where: DealerWhereInput! = {}
-    orderBy: [DealerOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Dealer!]
+  dealers(where: DealerWhereInput! = {}, orderBy: [DealerOrderByInput!]! = [], take: Int, skip: Int! = 0): [Dealer!]
   dealer(where: DealerWhereUniqueInput!): Dealer
   dealersCount(where: DealerWhereInput! = {}): Int
-  notificationTypes(
-    where: NotificationTypeWhereInput! = {}
-    orderBy: [NotificationTypeOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [NotificationType!]
+  notificationTypes(where: NotificationTypeWhereInput! = {}, orderBy: [NotificationTypeOrderByInput!]! = [], take: Int, skip: Int! = 0): [NotificationType!]
   notificationType(where: NotificationTypeWhereUniqueInput!): NotificationType
   notificationTypesCount(where: NotificationTypeWhereInput! = {}): Int
-  emailNotificationTemplates(
-    where: EmailNotificationTemplateWhereInput! = {}
-    orderBy: [EmailNotificationTemplateOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [EmailNotificationTemplate!]
-  emailNotificationTemplate(
-    where: EmailNotificationTemplateWhereUniqueInput!
-  ): EmailNotificationTemplate
-  emailNotificationTemplatesCount(
-    where: EmailNotificationTemplateWhereInput! = {}
-  ): Int
-  sMSNotificationTemplates(
-    where: SMSNotificationTemplateWhereInput! = {}
-    orderBy: [SMSNotificationTemplateOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [SMSNotificationTemplate!]
-  sMSNotificationTemplate(
-    where: SMSNotificationTemplateWhereUniqueInput!
-  ): SMSNotificationTemplate
-  sMSNotificationTemplatesCount(
-    where: SMSNotificationTemplateWhereInput! = {}
-  ): Int
-  appNotificationTemplates(
-    where: AppNotificationTemplateWhereInput! = {}
-    orderBy: [AppNotificationTemplateOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [AppNotificationTemplate!]
-  appNotificationTemplate(
-    where: AppNotificationTemplateWhereUniqueInput!
-  ): AppNotificationTemplate
-  appNotificationTemplatesCount(
-    where: AppNotificationTemplateWhereInput! = {}
-  ): Int
-  appNotifications(
-    where: AppNotificationWhereInput! = {}
-    orderBy: [AppNotificationOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [AppNotification!]
-  guarantees(
-    where: GuaranteeWhereInput! = {}
-    orderBy: [GuaranteeOrderByInput!]! = []
-    take: Int
-    skip: Int!=0): [Guarantees!]
+  emailNotificationTemplates(where: EmailNotificationTemplateWhereInput! = {}, orderBy: [EmailNotificationTemplateOrderByInput!]! = [], take: Int, skip: Int! = 0): [EmailNotificationTemplate!]
+  emailNotificationTemplate(where: EmailNotificationTemplateWhereUniqueInput!): EmailNotificationTemplate
+  emailNotificationTemplatesCount(where: EmailNotificationTemplateWhereInput! = {}): Int
+  sMSNotificationTemplates(where: SMSNotificationTemplateWhereInput! = {}, orderBy: [SMSNotificationTemplateOrderByInput!]! = [], take: Int, skip: Int! = 0): [SMSNotificationTemplate!]
+  sMSNotificationTemplate(where: SMSNotificationTemplateWhereUniqueInput!): SMSNotificationTemplate
+  sMSNotificationTemplatesCount(where: SMSNotificationTemplateWhereInput! = {}): Int
+  appNotificationTemplates(where: AppNotificationTemplateWhereInput! = {}, orderBy: [AppNotificationTemplateOrderByInput!]! = [], take: Int, skip: Int! = 0): [AppNotificationTemplate!]
+  appNotificationTemplate(where: AppNotificationTemplateWhereUniqueInput!): AppNotificationTemplate
+  appNotificationTemplatesCount(where: AppNotificationTemplateWhereInput! = {}): Int
+  appNotifications(where: AppNotificationWhereInput! = {}, orderBy: [AppNotificationOrderByInput!]! = [], take: Int, skip: Int! = 0): [AppNotification!]
   appNotification(where: AppNotificationWhereUniqueInput!): AppNotification
   appNotificationsCount(where: AppNotificationWhereInput! = {}): Int
-  fAQS(
-    where: FAQWhereInput! = {}
-    orderBy: [FAQOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [FAQ!]
+  fAQS(where: FAQWhereInput! = {}, orderBy: [FAQOrderByInput!]! = [], take: Int, skip: Int! = 0): [FAQ!]
   fAQ(where: FAQWhereUniqueInput!): FAQ
   fAQSCount(where: FAQWhereInput! = {}): Int
-  helpSupports(
-    where: HelpSupportWhereInput! = {}
-    orderBy: [HelpSupportOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [HelpSupport!]
+  helpSupports(where: HelpSupportWhereInput! = {}, orderBy: [HelpSupportOrderByInput!]! = [], take: Int, skip: Int! = 0): [HelpSupport!]
   helpSupport(where: HelpSupportWhereUniqueInput!): HelpSupport
   helpSupportsCount(where: HelpSupportWhereInput! = {}): Int
-  tags(
-    where: TagWhereInput! = {}
-    orderBy: [TagOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Tag!]
+  tags(where: TagWhereInput! = {}, orderBy: [TagOrderByInput!]! = [], take: Int, skip: Int! = 0): [Tag!]
   tag(where: TagWhereUniqueInput!): Tag
   tagsCount(where: TagWhereInput! = {}): Int
-  newsItems(
-    where: NewsItemWhereInput! = {}
-    orderBy: [NewsItemOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [NewsItem!]
+  newsItems(where: NewsItemWhereInput! = {}, orderBy: [NewsItemOrderByInput!]! = [], take: Int, skip: Int! = 0): [NewsItem!]
   newsItem(where: NewsItemWhereUniqueInput!): NewsItem
   newsItemsCount(where: NewsItemWhereInput! = {}): Int
-  newsCategories(
-    where: NewsCategoryWhereInput! = {}
-    orderBy: [NewsCategoryOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [NewsCategory!]
+  newsCategories(where: NewsCategoryWhereInput! = {}, orderBy: [NewsCategoryOrderByInput!]! = [], take: Int, skip: Int! = 0): [NewsCategory!]
   newsCategory(where: NewsCategoryWhereUniqueInput!): NewsCategory
   newsCategoriesCount(where: NewsCategoryWhereInput! = {}): Int
-  newsAttachments(
-    where: NewsAttachmentWhereInput! = {}
-    orderBy: [NewsAttachmentOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [NewsAttachment!]
+  newsAttachments(where: NewsAttachmentWhereInput! = {}, orderBy: [NewsAttachmentOrderByInput!]! = [], take: Int, skip: Int! = 0): [NewsAttachment!]
   newsAttachment(where: NewsAttachmentWhereUniqueInput!): NewsAttachment
   newsAttachmentsCount(where: NewsAttachmentWhereInput! = {}): Int
-  keywords(
-    where: KeywordWhereInput! = {}
-    orderBy: [KeywordOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Keyword!]
+  keywords(where: KeywordWhereInput! = {}, orderBy: [KeywordOrderByInput!]! = [], take: Int, skip: Int! = 0): [Keyword!]
   keyword(where: KeywordWhereUniqueInput!): Keyword
   keywordsCount(where: KeywordWhereInput! = {}): Int
-  coupons(
-    where: CouponWhereInput! = {}
-    orderBy: [CouponOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Coupon!]
+  coupons(where: CouponWhereInput! = {}, orderBy: [CouponOrderByInput!]! = [], take: Int, skip: Int! = 0): [Coupon!]
   coupon(where: CouponWhereUniqueInput!): Coupon
   couponsCount(where: CouponWhereInput! = {}): Int
-  offers(
-    where: OfferWhereInput! = {}
-    orderBy: [OfferOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Offer!]
+  offers(where: OfferWhereInput! = {}, orderBy: [OfferOrderByInput!]! = [], take: Int, skip: Int! = 0): [Offer!]
   offer(where: OfferWhereUniqueInput!): Offer
   offersCount(where: OfferWhereInput! = {}): Int
-  feedbacks(
-    where: FeedbackWhereInput! = {}
-    orderBy: [FeedbackOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Feedback!]
+  feedbacks(where: FeedbackWhereInput! = {}, orderBy: [FeedbackOrderByInput!]! = [], take: Int, skip: Int! = 0): [Feedback!]
   feedback(where: FeedbackWhereUniqueInput!): Feedback
   feedbacksCount(where: FeedbackWhereInput! = {}): Int
-  feedbackAttachments(
-    where: FeedbackAttachmentWhereInput! = {}
-    orderBy: [FeedbackAttachmentOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [FeedbackAttachment!]
-  feedbackAttachment(
-    where: FeedbackAttachmentWhereUniqueInput!
-  ): FeedbackAttachment
+  feedbackAttachments(where: FeedbackAttachmentWhereInput! = {}, orderBy: [FeedbackAttachmentOrderByInput!]! = [], take: Int, skip: Int! = 0): [FeedbackAttachment!]
+  feedbackAttachment(where: FeedbackAttachmentWhereUniqueInput!): FeedbackAttachment
   feedbackAttachmentsCount(where: FeedbackAttachmentWhereInput! = {}): Int
-  reports(
-    where: ReportWhereInput! = {}
-    orderBy: [ReportOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Report!]
+  reports(where: ReportWhereInput! = {}, orderBy: [ReportOrderByInput!]! = [], take: Int, skip: Int! = 0): [Report!]
   report(where: ReportWhereUniqueInput!): Report
   reportsCount(where: ReportWhereInput! = {}): Int
-  reportAttachments(
-    where: ReportAttachmentWhereInput! = {}
-    orderBy: [ReportAttachmentOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ReportAttachment!]
+  reportAttachments(where: ReportAttachmentWhereInput! = {}, orderBy: [ReportAttachmentOrderByInput!]! = [], take: Int, skip: Int! = 0): [ReportAttachment!]
   reportAttachment(where: ReportAttachmentWhereUniqueInput!): ReportAttachment
   reportAttachmentsCount(where: ReportAttachmentWhereInput! = {}): Int
-  productTypes(
-    where: ProductTypeWhereInput! = {}
-    orderBy: [ProductTypeOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductType!]
+  productTypes(where: ProductTypeWhereInput! = {}, orderBy: [ProductTypeOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductType!]
   productType(where: ProductTypeWhereUniqueInput!): ProductType
   productTypesCount(where: ProductTypeWhereInput! = {}): Int
-  products(
-    where: ProductWhereInput! = {}
-    orderBy: [ProductOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Product!]
+  products(where: ProductWhereInput! = {}, orderBy: [ProductOrderByInput!]! = [], take: Int, skip: Int! = 0): [Product!]
   product(where: ProductWhereUniqueInput!): Product
   productsCount(where: ProductWhereInput! = {}): Int
-  productSpecifications(
-    where: ProductSpecificationWhereInput! = {}
-    orderBy: [ProductSpecificationOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductSpecification!]
-  productSpecification(
-    where: ProductSpecificationWhereUniqueInput!
-  ): ProductSpecification
+  productSpecifications(where: ProductSpecificationWhereInput! = {}, orderBy: [ProductSpecificationOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductSpecification!]
+  productSpecification(where: ProductSpecificationWhereUniqueInput!): ProductSpecification
   productSpecificationsCount(where: ProductSpecificationWhereInput! = {}): Int
-  productVariants(
-    where: ProductVariantWhereInput! = {}
-    orderBy: [ProductVariantOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductVariant!]
+  productVariants(where: ProductVariantWhereInput! = {}, orderBy: [ProductVariantOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductVariant!]
   productVariant(where: ProductVariantWhereUniqueInput!): ProductVariant
   productVariantsCount(where: ProductVariantWhereInput! = {}): Int
-  productImages(
-    where: ProductImageWhereInput! = {}
-    orderBy: [ProductImageOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductImage!]
+  productImages(where: ProductImageWhereInput! = {}, orderBy: [ProductImageOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductImage!]
   productImage(where: ProductImageWhereUniqueInput!): ProductImage
   productImagesCount(where: ProductImageWhereInput! = {}): Int
-  productVideos(
-    where: ProductVideoWhereInput! = {}
-    orderBy: [ProductVideoOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductVideo!]
+  productVideos(where: ProductVideoWhereInput! = {}, orderBy: [ProductVideoOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductVideo!]
   productVideo(where: ProductVideoWhereUniqueInput!): ProductVideo
   productVideosCount(where: ProductVideoWhereInput! = {}): Int
-  productGalleryItems(
-    where: ProductGalleryItemWhereInput! = {}
-    orderBy: [ProductGalleryItemOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductGalleryItem!]
-  productGalleryItem(
-    where: ProductGalleryItemWhereUniqueInput!
-  ): ProductGalleryItem
+  productGalleryItems(where: ProductGalleryItemWhereInput! = {}, orderBy: [ProductGalleryItemOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductGalleryItem!]
+  productGalleryItem(where: ProductGalleryItemWhereUniqueInput!): ProductGalleryItem
   productGalleryItemsCount(where: ProductGalleryItemWhereInput! = {}): Int
-  productReels(
-    where: ProductReelWhereInput! = {}
-    orderBy: [ProductReelOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductReel!]
+  productReels(where: ProductReelWhereInput! = {}, orderBy: [ProductReelOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductReel!]
   productReel(where: ProductReelWhereUniqueInput!): ProductReel
   productReelsCount(where: ProductReelWhereInput! = {}): Int
-  productDealers(
-    where: ProductDealerWhereInput! = {}
-    orderBy: [ProductDealerOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductDealer!]
+  productDealers(where: ProductDealerWhereInput! = {}, orderBy: [ProductDealerOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductDealer!]
   productDealer(where: ProductDealerWhereUniqueInput!): ProductDealer
   productDealersCount(where: ProductDealerWhereInput! = {}): Int
-  productDealerStockRequests(
-    where: ProductDealerStockRequestWhereInput! = {}
-    orderBy: [ProductDealerStockRequestOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [ProductDealerStockRequest!]
-  productDealerStockRequest(
-    where: ProductDealerStockRequestWhereUniqueInput!
-  ): ProductDealerStockRequest
-  productDealerStockRequestsCount(
-    where: ProductDealerStockRequestWhereInput! = {}
-  ): Int
-  categories(
-    where: CategoryWhereInput! = {}
-    orderBy: [CategoryOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Category!]
+  productDealerStockRequests(where: ProductDealerStockRequestWhereInput! = {}, orderBy: [ProductDealerStockRequestOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductDealerStockRequest!]
+  productDealerStockRequest(where: ProductDealerStockRequestWhereUniqueInput!): ProductDealerStockRequest
+  productDealerStockRequestsCount(where: ProductDealerStockRequestWhereInput! = {}): Int
+  categories(where: CategoryWhereInput! = {}, orderBy: [CategoryOrderByInput!]! = [], take: Int, skip: Int! = 0): [Category!]
   category(where: CategoryWhereUniqueInput!): Category
   categoriesCount(where: CategoryWhereInput! = {}): Int
   keystone: KeystoneMeta!
   getDeviceState(deviceId: String!): JSON
-  getDeviceDetails(
-    deviceId: String
-    location: [Float!]
-    distance: Int
-    fullAddress: Boolean = false
-  ): JSON
+  getDeviceDetails(deviceId: String, location: [Float!], distance: Int, fullAddress: Boolean = false): JSON
   getUserTransactions(startTime: DateTime, endTime: DateTime): JSON
   getTransactionDetails(txnId: String!): JSON
   currentUserOTP(key: String!): String
   getPincode(pincode: String!): JSON
   authenticatedItem: AuthenticatedItem
-  validateUserPasswordResetToken(
-    phoneNumber: String!
-    token: String!
-  ): ValidateUserPasswordResetTokenResult
+  validateUserPasswordResetToken(phoneNumber: String!, token: String!): ValidateUserPasswordResetTokenResult
   getCouponAppliedDetails(couponCode: String!, items: [Item!]!): JSON
   getOfferAppliedDetails(items: [Item!]!): JSON
   getNearestDealers(location: [Float!]!): [NearestDealer!]
+  vehicleOrderInvoice(vehicleOrderId: ID!): JSON
+  testDriveOrderInvoice(testDriveOrderId: ID!): JSON
+  productOrderInvoice(productOrderId: ID!): JSON
 }
 
 type NearestDealer {
@@ -6828,6 +6371,7 @@ input Item {
 
 enum CouponItemType {
   vehicleDealer
+  productDealer
 }
 
 union AuthenticatedItem = User

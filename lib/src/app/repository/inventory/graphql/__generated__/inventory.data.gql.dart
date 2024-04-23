@@ -519,6 +519,7 @@ abstract class GVehicleDealersData_vehicleDealers
   int? get stock;
   BuiltList<GVehicleDealersData_vehicleDealers_prices>? get prices;
   int? get totalPrice;
+  BuiltList<GVehicleDealersData_vehicleDealers_guarantees>? get guarantees;
   static Serializer<GVehicleDealersData_vehicleDealers> get serializer =>
       _$gVehicleDealersDataVehicleDealersSerializer;
 
@@ -829,6 +830,41 @@ abstract class GVehicleDealersData_vehicleDealers_prices_category
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GVehicleDealersData_vehicleDealers_prices_category.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleDealersData_vehicleDealers_guarantees
+    implements
+        Built<GVehicleDealersData_vehicleDealers_guarantees,
+            GVehicleDealersData_vehicleDealers_guaranteesBuilder> {
+  GVehicleDealersData_vehicleDealers_guarantees._();
+
+  factory GVehicleDealersData_vehicleDealers_guarantees(
+      [Function(GVehicleDealersData_vehicleDealers_guaranteesBuilder b)
+          updates]) = _$GVehicleDealersData_vehicleDealers_guarantees;
+
+  static void _initializeBuilder(
+          GVehicleDealersData_vehicleDealers_guaranteesBuilder b) =>
+      b..G__typename = 'Guarantee';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String? get name;
+  String get id;
+  String? get description;
+  static Serializer<GVehicleDealersData_vehicleDealers_guarantees>
+      get serializer => _$gVehicleDealersDataVehicleDealersGuaranteesSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GVehicleDealersData_vehicleDealers_guarantees.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleDealersData_vehicleDealers_guarantees? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GVehicleDealersData_vehicleDealers_guarantees.serializer,
         json,
       );
 }

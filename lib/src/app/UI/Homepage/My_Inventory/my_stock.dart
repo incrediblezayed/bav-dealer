@@ -5,7 +5,8 @@ import 'package:dealerapp/src/widgets/empty_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MyStockPage extends ConsumerWidget {
-  const MyStockPage({super.key});
+  const MyStockPage({required this.showSearch, super.key});
+  final bool showSearch;
   static const String routeName = 'MyStockPage';
 
   @override
@@ -16,17 +17,18 @@ class MyStockPage extends ConsumerWidget {
       color: AppTheme.textFieldFill,
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: TextField(
-              controller: inventoryPro.myStockSearchController,
-              decoration: const InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                hintText: 'Search',
+          if (showSearch)
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: TextField(
+                controller: inventoryPro.myStockSearchController,
+                decoration: const InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  hintText: 'Search',
+                ),
               ),
             ),
-          ),
           Expanded(
             child: RefreshIndicator(
               onRefresh: () async {

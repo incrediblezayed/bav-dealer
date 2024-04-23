@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ListOfVehicles extends ConsumerWidget {
-  const ListOfVehicles({super.key});
+  const ListOfVehicles({required this.showSearch, super.key});
+  final bool showSearch;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -22,21 +23,21 @@ class ListOfVehicles extends ConsumerWidget {
           .isNotEmpty,
     );
     return ColoredBox(
-      // padding: const EdgeInsets.all(1),
       color: AppTheme.textFieldFill,
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: TextField(
-              controller: inventoryPro.inventorySearchController,
-              decoration: const InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                hintText: 'Search',
+          if (showSearch)
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: TextField(
+                controller: inventoryPro.inventorySearchController,
+                decoration: const InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  hintText: 'Search',
+                ),
               ),
             ),
-          ),
           Expanded(
             child: RefreshIndicator(
               onRefresh: () async {

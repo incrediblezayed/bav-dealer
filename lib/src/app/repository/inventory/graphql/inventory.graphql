@@ -97,6 +97,11 @@ query VehicleDealers($where: VehicleDealerWhereInput!) {
       }
     }
     totalPrice
+    guarantees {
+      name
+      id
+      description
+    }
   }
 }
 

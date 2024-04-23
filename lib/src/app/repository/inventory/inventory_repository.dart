@@ -185,6 +185,7 @@ class InventoryRepository {
     required String variantId,
     required String colorId,
     required List<PriceModel> prices,
+    required List<String> guarantees,
   }) async {
     try {
       final request = await _client
@@ -193,6 +194,14 @@ class InventoryRepository {
               (b) => b
                 ..vars.data.dealer.connect.id = cacheProvider.getDealerId()
                 ..vars.data.stock = 0
+                ..vars.data.guarantees.connect =
+                    ListBuilder<GGuaranteeWhereUniqueInput>(
+                  guarantees.map<GGuaranteeWhereUniqueInput>(
+                    (e) => GGuaranteeWhereUniqueInput(
+                      (b) => b..id = e,
+                    ),
+                  ),
+                )
                 ..vars.data.vehicleColor.connect.id = colorId
                 ..vars.data.vehicleVariant.connect.id = variantId
                 ..vars.data.prices.create = ListBuilder<GPriceCreateInput>(

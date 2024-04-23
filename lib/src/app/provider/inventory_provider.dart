@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:dealerapp/src/app/model/variant_details.model.dart';
+import 'package:dealerapp/src/app/repository/guarantees/graphql/__generated__/guarantees.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
@@ -124,6 +125,7 @@ class InventoryProvider extends ChangeNotifier {
     required String colorId,
     required String variantId,
     required List<PriceModel> prices,
+    required List<GGuaranteesData_guarantees> guarantees,
   }) async {
     unawaited(AppRoutes.showLoadingDialog());
     try {
@@ -131,6 +133,7 @@ class InventoryProvider extends ChangeNotifier {
         variantId: variantId,
         colorId: colorId,
         prices: prices,
+        guarantees: guarantees.map((e) => e.id).toList(),
       );
       await getStocks();
       await getVehicles();

@@ -200,8 +200,21 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GFileFieldInput.serializer)
       ..add(GFloatFilter.serializer)
       ..add(GFloatNullableFilter.serializer)
+      ..add(GGuaranteeCreateInput.serializer)
+      ..add(GGuaranteeFileCreateInput.serializer)
+      ..add(GGuaranteeFileOrderByInput.serializer)
+      ..add(GGuaranteeFileUpdateArgs.serializer)
+      ..add(GGuaranteeFileUpdateInput.serializer)
+      ..add(GGuaranteeFileWhereInput.serializer)
+      ..add(GGuaranteeFileWhereUniqueInput.serializer)
+      ..add(GGuaranteeManyRelationFilter.serializer)
       ..add(GGuaranteeOrderByInput.serializer)
+      ..add(GGuaranteeRelateToManyForCreateInput.serializer)
+      ..add(GGuaranteeRelateToManyForUpdateInput.serializer)
+      ..add(GGuaranteeUpdateArgs.serializer)
+      ..add(GGuaranteeUpdateInput.serializer)
       ..add(GGuaranteeWhereInput.serializer)
+      ..add(GGuaranteeWhereUniqueInput.serializer)
       ..add(GGuaranteesData.serializer)
       ..add(GGuaranteesData_guarantees.serializer)
       ..add(GGuaranteesReq.serializer)
@@ -366,6 +379,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GProductImageUpdateInput.serializer)
       ..add(GProductImageWhereInput.serializer)
       ..add(GProductImageWhereUniqueInput.serializer)
+      ..add(GProductManyRelationFilter.serializer)
       ..add(GProductOrderByInput.serializer)
       ..add(GProductOrderCreateInput.serializer)
       ..add(GProductOrderManyRelationFilter.serializer)
@@ -385,6 +399,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GProductReelUpdateInput.serializer)
       ..add(GProductReelWhereInput.serializer)
       ..add(GProductReelWhereUniqueInput.serializer)
+      ..add(GProductRelateToManyForCreateInput.serializer)
+      ..add(GProductRelateToManyForUpdateInput.serializer)
       ..add(GProductRelateToOneForCreateInput.serializer)
       ..add(GProductRelateToOneForUpdateInput.serializer)
       ..add(GProductSpecificationCreateInput.serializer)
@@ -561,8 +577,19 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GUserData_user_profile_image.serializer)
       ..add(GUserData_user_referralCode.serializer)
       ..add(GUserOrderByInput.serializer)
+      ..add(GUserProductReviewAttachmentCreateInput.serializer)
+      ..add(GUserProductReviewAttachmentManyRelationFilter.serializer)
+      ..add(GUserProductReviewAttachmentOrderByInput.serializer)
+      ..add(GUserProductReviewAttachmentRelateToManyForCreateInput.serializer)
+      ..add(GUserProductReviewAttachmentRelateToManyForUpdateInput.serializer)
+      ..add(GUserProductReviewAttachmentUpdateArgs.serializer)
+      ..add(GUserProductReviewAttachmentUpdateInput.serializer)
+      ..add(GUserProductReviewAttachmentWhereInput.serializer)
+      ..add(GUserProductReviewAttachmentWhereUniqueInput.serializer)
       ..add(GUserProductReviewCreateInput.serializer)
       ..add(GUserProductReviewOrderByInput.serializer)
+      ..add(GUserProductReviewRelateToOneForCreateInput.serializer)
+      ..add(GUserProductReviewRelateToOneForUpdateInput.serializer)
       ..add(GUserProductReviewUpdateArgs.serializer)
       ..add(GUserProductReviewUpdateInput.serializer)
       ..add(GUserProductReviewWhereInput.serializer)
@@ -573,8 +600,19 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GUserUpdateArgs.serializer)
       ..add(GUserUpdateInput.serializer)
       ..add(GUserVars.serializer)
+      ..add(GUserVehicleReviewAttachmentCreateInput.serializer)
+      ..add(GUserVehicleReviewAttachmentManyRelationFilter.serializer)
+      ..add(GUserVehicleReviewAttachmentOrderByInput.serializer)
+      ..add(GUserVehicleReviewAttachmentRelateToManyForCreateInput.serializer)
+      ..add(GUserVehicleReviewAttachmentRelateToManyForUpdateInput.serializer)
+      ..add(GUserVehicleReviewAttachmentUpdateArgs.serializer)
+      ..add(GUserVehicleReviewAttachmentUpdateInput.serializer)
+      ..add(GUserVehicleReviewAttachmentWhereInput.serializer)
+      ..add(GUserVehicleReviewAttachmentWhereUniqueInput.serializer)
       ..add(GUserVehicleReviewCreateInput.serializer)
       ..add(GUserVehicleReviewOrderByInput.serializer)
+      ..add(GUserVehicleReviewRelateToOneForCreateInput.serializer)
+      ..add(GUserVehicleReviewRelateToOneForUpdateInput.serializer)
       ..add(GUserVehicleReviewUpdateArgs.serializer)
       ..add(GUserVehicleReviewUpdateInput.serializer)
       ..add(GUserVehicleReviewWhereInput.serializer)
@@ -617,6 +655,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleDealerWhereUniqueInput.serializer)
       ..add(GVehicleDealersData.serializer)
       ..add(GVehicleDealersData_vehicleDealers.serializer)
+      ..add(GVehicleDealersData_vehicleDealers_guarantees.serializer)
       ..add(GVehicleDealersData_vehicleDealers_prices.serializer)
       ..add(GVehicleDealersData_vehicleDealers_prices_category.serializer)
       ..add(GVehicleDealersData_vehicleDealers_vehicleColor.serializer)
@@ -649,6 +688,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleImageWhereInput.serializer)
       ..add(GVehicleImageWhereUniqueInput.serializer)
       ..add(GVehicleManyRelationFilter.serializer)
+      ..add(GVehicleOrderAdditionalInfoCreateInput.serializer)
+      ..add(GVehicleOrderAdditionalInfoOrderByInput.serializer)
+      ..add(GVehicleOrderAdditionalInfoRelateToOneForCreateInput.serializer)
+      ..add(GVehicleOrderAdditionalInfoRelateToOneForUpdateInput.serializer)
+      ..add(GVehicleOrderAdditionalInfoUpdateArgs.serializer)
+      ..add(GVehicleOrderAdditionalInfoUpdateInput.serializer)
+      ..add(GVehicleOrderAdditionalInfoWhereInput.serializer)
+      ..add(GVehicleOrderAdditionalInfoWhereUniqueInput.serializer)
       ..add(GVehicleOrderByInput.serializer)
       ..add(GVehicleOrderCreateInput.serializer)
       ..add(GVehicleOrderManyRelationFilter.serializer)
@@ -700,6 +747,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleSpecificationUpdateInput.serializer)
       ..add(GVehicleSpecificationWhereInput.serializer)
       ..add(GVehicleSpecificationWhereUniqueInput.serializer)
+      ..add(GVehicleSubTypeCreateInput.serializer)
+      ..add(GVehicleSubTypeManyRelationFilter.serializer)
+      ..add(GVehicleSubTypeOrderByInput.serializer)
+      ..add(GVehicleSubTypeRelateToManyForCreateInput.serializer)
+      ..add(GVehicleSubTypeRelateToManyForUpdateInput.serializer)
+      ..add(GVehicleSubTypeUpdateArgs.serializer)
+      ..add(GVehicleSubTypeUpdateInput.serializer)
+      ..add(GVehicleSubTypeWhereInput.serializer)
+      ..add(GVehicleSubTypeWhereUniqueInput.serializer)
       ..add(GVehicleTypeCreateInput.serializer)
       ..add(GVehicleTypeOrderByInput.serializer)
       ..add(GVehicleTypeRelateToOneForCreateInput.serializer)
@@ -806,18 +862,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(GAppNotificationTemplateWhereInput)]),
           () => new ListBuilder<GAppNotificationTemplateWhereInput>())
-      ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(GAppNotificationWhereInput)]),
-          () => new ListBuilder<GAppNotificationWhereInput>())
-      ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(GAppNotificationWhereInput)]),
-          () => new ListBuilder<GAppNotificationWhereInput>())
-      ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(GAppNotificationWhereInput)]),
-          () => new ListBuilder<GAppNotificationWhereInput>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GAppNotificationWhereInput)]),
@@ -1083,6 +1127,54 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GFeedbackWhereInput)]),
           () => new ListBuilder<GFeedbackWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GGuaranteeCreateInput)]),
+          () => new ListBuilder<GGuaranteeCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GGuaranteeWhereUniqueInput)]),
+          () => new ListBuilder<GGuaranteeWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GGuaranteeFileWhereInput)]),
+          () => new ListBuilder<GGuaranteeFileWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GGuaranteeFileWhereInput)]),
+          () => new ListBuilder<GGuaranteeFileWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GGuaranteeFileWhereInput)]),
+          () => new ListBuilder<GGuaranteeFileWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GGuaranteeWhereInput)]),
+          () => new ListBuilder<GGuaranteeWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GGuaranteeWhereInput)]),
+          () => new ListBuilder<GGuaranteeWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GGuaranteeWhereInput)]),
+          () => new ListBuilder<GGuaranteeWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GGuaranteeWhereUniqueInput)]),
+          () => new ListBuilder<GGuaranteeWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GGuaranteeWhereUniqueInput)]),
+          () => new ListBuilder<GGuaranteeWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GGuaranteeCreateInput)]),
+          () => new ListBuilder<GGuaranteeCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GGuaranteeWhereUniqueInput)]),
+          () => new ListBuilder<GGuaranteeWhereUniqueInput>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GGuaranteesData_guarantees)]),
@@ -1351,6 +1443,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(GPriceWhereUniqueInput)]),
           () => new ListBuilder<GPriceWhereUniqueInput>())
       ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductCreateInput)]),
+          () => new ListBuilder<GProductCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductWhereUniqueInput)]),
+          () => new ListBuilder<GProductWhereUniqueInput>())
+      ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(GProductDealerStockRequestWhereInput)]),
           () => new ListBuilder<GProductDealerStockRequestWhereInput>())
@@ -1647,6 +1747,22 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GProductWhereInput)]),
           () => new ListBuilder<GProductWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductWhereUniqueInput)]),
+          () => new ListBuilder<GProductWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductWhereUniqueInput)]),
+          () => new ListBuilder<GProductWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductCreateInput)]),
+          () => new ListBuilder<GProductCreateInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductWhereUniqueInput)]),
+          () => new ListBuilder<GProductWhereUniqueInput>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GReferralCodeWhereInput)]),
@@ -1862,9 +1978,45 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(GUserData_user_favorites)]),
           () => new ListBuilder<GUserData_user_favorites>())
       ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(GUserProductReviewWhereInput)]),
-          () => new ListBuilder<GUserProductReviewWhereInput>())
+          const FullType(BuiltList,
+              const [const FullType(GUserProductReviewAttachmentCreateInput)]),
+          () => new ListBuilder<GUserProductReviewAttachmentCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GUserProductReviewAttachmentWhereUniqueInput)
+          ]),
+          () => new ListBuilder<GUserProductReviewAttachmentWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GUserProductReviewAttachmentWhereInput)]),
+          () => new ListBuilder<GUserProductReviewAttachmentWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GUserProductReviewAttachmentWhereInput)]),
+          () => new ListBuilder<GUserProductReviewAttachmentWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GUserProductReviewAttachmentWhereInput)]),
+          () => new ListBuilder<GUserProductReviewAttachmentWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GUserProductReviewAttachmentWhereUniqueInput)
+          ]),
+          () => new ListBuilder<GUserProductReviewAttachmentWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GUserProductReviewAttachmentWhereUniqueInput)
+          ]),
+          () => new ListBuilder<GUserProductReviewAttachmentWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GUserProductReviewAttachmentCreateInput)]),
+          () => new ListBuilder<GUserProductReviewAttachmentCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GUserProductReviewAttachmentWhereUniqueInput)
+          ]),
+          () => new ListBuilder<GUserProductReviewAttachmentWhereUniqueInput>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GUserProductReviewWhereInput)]),
@@ -1873,6 +2025,50 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GUserProductReviewWhereInput)]),
           () => new ListBuilder<GUserProductReviewWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GUserProductReviewWhereInput)]),
+          () => new ListBuilder<GUserProductReviewWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GUserVehicleReviewAttachmentCreateInput)]),
+          () => new ListBuilder<GUserVehicleReviewAttachmentCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GUserVehicleReviewAttachmentWhereUniqueInput)
+          ]),
+          () => new ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GUserVehicleReviewAttachmentWhereInput)]),
+          () => new ListBuilder<GUserVehicleReviewAttachmentWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GUserVehicleReviewAttachmentWhereInput)]),
+          () => new ListBuilder<GUserVehicleReviewAttachmentWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GUserVehicleReviewAttachmentWhereInput)]),
+          () => new ListBuilder<GUserVehicleReviewAttachmentWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GUserVehicleReviewAttachmentWhereUniqueInput)
+          ]),
+          () => new ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GUserVehicleReviewAttachmentWhereUniqueInput)
+          ]),
+          () => new ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GUserVehicleReviewAttachmentCreateInput)]),
+          () => new ListBuilder<GUserVehicleReviewAttachmentCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GUserVehicleReviewAttachmentWhereUniqueInput)
+          ]),
+          () => new ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GUserVehicleReviewWhereInput)]),
@@ -1973,6 +2169,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<GVehicleDealersData_vehicleDealers_prices>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
+            const FullType(GVehicleDealersData_vehicleDealers_guarantees)
+          ]),
+          () =>
+              new ListBuilder<GVehicleDealersData_vehicleDealers_guarantees>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
             const FullType(
                 GVehicleDealersData_vehicleDealers_vehicleColor_images)
           ]),
@@ -2050,6 +2252,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GVehicleImageWhereUniqueInput)]),
           () => new ListBuilder<GVehicleImageWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehicleOrderAdditionalInfoWhereInput)]),
+          () => new ListBuilder<GVehicleOrderAdditionalInfoWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehicleOrderAdditionalInfoWhereInput)]),
+          () => new ListBuilder<GVehicleOrderAdditionalInfoWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehicleOrderAdditionalInfoWhereInput)]),
+          () => new ListBuilder<GVehicleOrderAdditionalInfoWhereInput>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GVehicleOrderCreateInput)]),
@@ -2186,6 +2400,42 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(GVehicleSpecificationWhereUniqueInput)]),
           () => new ListBuilder<GVehicleSpecificationWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleSubTypeCreateInput)]),
+          () => new ListBuilder<GVehicleSubTypeCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehicleSubTypeWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleSubTypeWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleSubTypeWhereInput)]),
+          () => new ListBuilder<GVehicleSubTypeWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleSubTypeWhereInput)]),
+          () => new ListBuilder<GVehicleSubTypeWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleSubTypeWhereInput)]),
+          () => new ListBuilder<GVehicleSubTypeWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehicleSubTypeWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleSubTypeWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehicleSubTypeWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleSubTypeWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleSubTypeCreateInput)]),
+          () => new ListBuilder<GVehicleSubTypeCreateInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GVehicleSubTypeWhereUniqueInput)]),
+          () => new ListBuilder<GVehicleSubTypeWhereUniqueInput>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GVehicleTypeWhereInput)]),
@@ -2340,6 +2590,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GWalletWhereInput)]),
           () => new ListBuilder<GWalletWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

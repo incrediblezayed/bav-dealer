@@ -5674,6 +5674,412 @@ const VehicleTypeCreateInput = _i1.InputObjectTypeDefinitionNode(
     ),
   ],
 );
+const VehicleSubType = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleSubType'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ID'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'name'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'vehicleType'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleType'),
+        isNonNull: false,
+      ),
+    ),
+  ],
+);
+const VehicleSubTypeWhereUniqueInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleSubTypeWhereUniqueInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ID'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    )
+  ],
+);
+const VehicleSubTypeWhereInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleSubTypeWhereInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'AND'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleSubTypeWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'OR'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleSubTypeWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'NOT'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleSubTypeWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'IDFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTimeNullableFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTimeNullableFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'name'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'StringFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'StringFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'vehicleType'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleTypeWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const VehicleSubTypeOrderByInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleSubTypeOrderByInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'name'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const VehicleSubTypeUpdateInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleSubTypeUpdateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'name'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'vehicleType'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleTypeRelateToOneForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const VehicleTypeRelateToOneForUpdateInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleTypeRelateToOneForUpdateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'create'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleTypeCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'connect'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleTypeWhereUniqueInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disconnect'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const VehicleSubTypeUpdateArgs = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleSubTypeUpdateArgs'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'where'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleSubTypeWhereUniqueInput'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'data'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleSubTypeUpdateInput'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const VehicleSubTypeCreateInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleSubTypeCreateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'name'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'vehicleType'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleTypeRelateToOneForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const VehicleTypeRelateToOneForCreateInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleTypeRelateToOneForCreateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'create'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleTypeCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'connect'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleTypeWhereUniqueInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
 const Brand = _i1.ObjectTypeDefinitionNode(
   name: _i1.NameNode(value: 'Brand'),
   directives: [],
@@ -5712,6 +6118,18 @@ const Brand = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'type'),
+      directives: [],
+      args: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'String'),
+          isNonNull: true,
+        ),
         isNonNull: false,
       ),
     ),
@@ -5893,6 +6311,18 @@ const BrandUpdateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'type'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'String'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'logo'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -5954,6 +6384,18 @@ const BrandCreateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'type'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'String'),
+          isNonNull: true,
+        ),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -7241,11 +7683,91 @@ const Vehicle = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'longDescription'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'type'),
       directives: [],
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'VehicleType'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'subType'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'VehicleSubTypeWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'orderBy'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'VehicleSubTypeOrderByInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ListValueNode(values: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'take'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'skip'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.IntValueNode(value: '0'),
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleSubType'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'subTypeCount'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'VehicleSubTypeWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
         isNonNull: false,
       ),
     ),
@@ -7583,10 +8105,28 @@ const VehicleWhereInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'longDescription'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'StringFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'type'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'VehicleTypeWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'subType'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleSubTypeManyRelationFilter'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -7632,6 +8172,39 @@ const VehicleWhereInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'BooleanFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const VehicleSubTypeManyRelationFilter = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleSubTypeManyRelationFilter'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'every'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleSubTypeWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'some'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleSubTypeWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'none'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleSubTypeWhereInput'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -7788,6 +8361,15 @@ const VehicleOrderByInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'longDescription'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'informative'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -7839,10 +8421,28 @@ const VehicleUpdateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'longDescription'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'type'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'VehicleTypeRelateToOneForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'subType'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleSubTypeRelateToManyForUpdateInput'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -7895,15 +8495,43 @@ const VehicleUpdateInput = _i1.InputObjectTypeDefinitionNode(
     ),
   ],
 );
-const VehicleTypeRelateToOneForUpdateInput = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'VehicleTypeRelateToOneForUpdateInput'),
+const VehicleSubTypeRelateToManyForUpdateInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleSubTypeRelateToManyForUpdateInput'),
   directives: [],
   fields: [
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disconnect'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleSubTypeWhereUniqueInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'set'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleSubTypeWhereUniqueInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'create'),
       directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'VehicleTypeCreateInput'),
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleSubTypeCreateInput'),
+          isNonNull: true,
+        ),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -7911,17 +8539,11 @@ const VehicleTypeRelateToOneForUpdateInput = _i1.InputObjectTypeDefinitionNode(
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'connect'),
       directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'VehicleTypeWhereUniqueInput'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'disconnect'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'Boolean'),
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleSubTypeWhereUniqueInput'),
+          isNonNull: true,
+        ),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -8191,10 +8813,28 @@ const VehicleCreateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'longDescription'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'type'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'VehicleTypeRelateToOneForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'subType'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleSubTypeRelateToManyForCreateInput'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -8247,15 +8887,19 @@ const VehicleCreateInput = _i1.InputObjectTypeDefinitionNode(
     ),
   ],
 );
-const VehicleTypeRelateToOneForCreateInput = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'VehicleTypeRelateToOneForCreateInput'),
+const VehicleSubTypeRelateToManyForCreateInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleSubTypeRelateToManyForCreateInput'),
   directives: [],
   fields: [
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'create'),
       directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'VehicleTypeCreateInput'),
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleSubTypeCreateInput'),
+          isNonNull: true,
+        ),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -8263,8 +8907,11 @@ const VehicleTypeRelateToOneForCreateInput = _i1.InputObjectTypeDefinitionNode(
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'connect'),
       directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'VehicleTypeWhereUniqueInput'),
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleSubTypeWhereUniqueInput'),
+          isNonNull: true,
+        ),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -8820,6 +9467,15 @@ const VehicleColor = _i1.ObjectTypeDefinitionNode(
         isNonNull: false,
       ),
     ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+    ),
   ],
 );
 const VehicleColorWhereUniqueInput = _i1.InputObjectTypeDefinitionNode(
@@ -8972,6 +9628,15 @@ const VehicleColorWhereInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'VehicleReelManyRelationFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'BooleanFilter'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -9159,6 +9824,15 @@ const VehicleColorOrderByInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const VehicleColorUpdateInput = _i1.InputObjectTypeDefinitionNode(
@@ -9252,6 +9926,15 @@ const VehicleColorUpdateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'VehicleReelRelateToManyForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -9625,6 +10308,15 @@ const VehicleColorCreateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'VehicleReelRelateToManyForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -10342,6 +11034,15 @@ const VehicleReel = _i1.ObjectTypeDefinitionNode(
         isNonNull: false,
       ),
     ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+    ),
   ],
 );
 const VehicleReelWhereUniqueInput = _i1.InputObjectTypeDefinitionNode(
@@ -10462,6 +11163,15 @@ const VehicleReelWhereInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'BooleanFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const VehicleReelOrderByInput = _i1.InputObjectTypeDefinitionNode(
@@ -10515,6 +11225,15 @@ const VehicleReelOrderByInput = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'index'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'OrderDirection'),
@@ -10578,6 +11297,15 @@ const VehicleReelUpdateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -10666,6 +11394,578 @@ const VehicleReelCreateInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const Guarantee = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'Guarantee'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ID'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'name'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+  ],
+);
+const GuaranteeWhereUniqueInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'GuaranteeWhereUniqueInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ID'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    )
+  ],
+);
+const GuaranteeWhereInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'GuaranteeWhereInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'AND'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'GuaranteeWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'OR'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'GuaranteeWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'NOT'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'GuaranteeWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'IDFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTimeNullableFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTimeNullableFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'name'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'StringFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'StringFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const GuaranteeOrderByInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'GuaranteeOrderByInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'name'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const GuaranteeUpdateInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'GuaranteeUpdateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'name'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const GuaranteeUpdateArgs = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'GuaranteeUpdateArgs'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'where'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeWhereUniqueInput'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'data'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeUpdateInput'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const GuaranteeCreateInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'GuaranteeCreateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'name'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'description'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const GuaranteeFile = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'GuaranteeFile'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ID'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'file'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'FileFieldOutput'),
+        isNonNull: false,
+      ),
+    ),
+  ],
+);
+const GuaranteeFileWhereUniqueInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'GuaranteeFileWhereUniqueInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ID'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    )
+  ],
+);
+const GuaranteeFileWhereInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'GuaranteeFileWhereInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'AND'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'GuaranteeFileWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'OR'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'GuaranteeFileWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'NOT'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'GuaranteeFileWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'IDFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTimeNullableFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTimeNullableFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const GuaranteeFileOrderByInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'GuaranteeFileOrderByInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const GuaranteeFileUpdateInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'GuaranteeFileUpdateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'file'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'FileFieldInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const GuaranteeFileUpdateArgs = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'GuaranteeFileUpdateArgs'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'where'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeFileWhereUniqueInput'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'data'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeFileUpdateInput'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const GuaranteeFileCreateInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'GuaranteeFileCreateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'file'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'FileFieldInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const VehicleDealer = _i1.ObjectTypeDefinitionNode(
@@ -10715,6 +12015,77 @@ const VehicleDealer = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'VehicleVariant'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'guarantees'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'orderBy'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'GuaranteeOrderByInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ListValueNode(values: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'take'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'skip'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.IntValueNode(value: '0'),
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'Guarantee'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'guaranteesCount'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
         isNonNull: false,
       ),
     ),
@@ -10919,6 +12290,15 @@ const VehicleDealerWhereInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'guarantees'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeManyRelationFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'vehicleColor'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -10941,6 +12321,39 @@ const VehicleDealerWhereInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'IntNullableFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const GuaranteeManyRelationFilter = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'GuaranteeManyRelationFilter'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'every'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'some'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'none'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeWhereInput'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -11063,6 +12476,15 @@ const VehicleDealerUpdateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'guarantees'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeRelateToManyForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'vehicleColor'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -11085,6 +12507,60 @@ const VehicleDealerUpdateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const GuaranteeRelateToManyForUpdateInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'GuaranteeRelateToManyForUpdateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disconnect'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'GuaranteeWhereUniqueInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'set'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'GuaranteeWhereUniqueInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'create'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'GuaranteeCreateInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'connect'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'GuaranteeWhereUniqueInput'),
+          isNonNull: true,
+        ),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -11210,6 +12686,15 @@ const VehicleDealerCreateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'guarantees'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeRelateToManyForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'vehicleColor'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -11232,6 +12717,36 @@ const VehicleDealerCreateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const GuaranteeRelateToManyForCreateInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'GuaranteeRelateToManyForCreateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'create'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'GuaranteeCreateInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'connect'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'GuaranteeWhereUniqueInput'),
+          isNonNull: true,
+        ),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -12908,6 +14423,64 @@ const VehicleVariant = _i1.ObjectTypeDefinitionNode(
         isNonNull: false,
       ),
     ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'availableTestDriveDealer'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'location'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Float'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'vehicleColorId'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'ID'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'limit'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'offset'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'JSON'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+    ),
   ],
 );
 const VehicleVariantWhereUniqueInput = _i1.InputObjectTypeDefinitionNode(
@@ -13064,6 +14637,15 @@ const VehicleVariantWhereInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'BooleanFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const TagManyRelationFilter = _i1.InputObjectTypeDefinitionNode(
@@ -13150,6 +14732,15 @@ const VehicleVariantOrderByInput = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'informative'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'OrderDirection'),
@@ -13250,6 +14841,15 @@ const VehicleVariantUpdateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'PriceRelateToManyForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -13429,6 +15029,15 @@ const VehicleVariantCreateInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const TagRelateToManyForCreateInput = _i1.InputObjectTypeDefinitionNode(
@@ -13508,6 +15117,77 @@ const VehicleDealerStockRequest = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'VehicleVariant'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'guarantees'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'orderBy'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'GuaranteeOrderByInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ListValueNode(values: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'take'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'skip'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.IntValueNode(value: '0'),
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'Guarantee'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'guaranteesCount'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
         isNonNull: false,
       ),
     ),
@@ -13655,6 +15335,15 @@ const VehicleDealerStockRequestWhereInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'VehicleVariantWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'guarantees'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeManyRelationFilter'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -14029,6 +15718,15 @@ const VehicleDealerStockRequestUpdateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'guarantees'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeRelateToManyForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'vehicleColor'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -14126,6 +15824,15 @@ const VehicleDealerStockRequestCreateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'VehicleVariantRelateToOneForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'guarantees'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeRelateToManyForCreateInput'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -17712,6 +19419,15 @@ const VehicleOrder = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'priceInfo'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'JSON'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'status'),
       directives: [],
       args: [],
@@ -17726,6 +19442,15 @@ const VehicleOrder = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'Address'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'additionalInfo'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleOrderAdditionalInfo'),
         isNonNull: false,
       ),
     ),
@@ -17858,6 +19583,15 @@ const VehicleOrderWhereInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'additionalInfo'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const VehicleOrderOrderByInput = _i1.InputObjectTypeDefinitionNode(
@@ -17961,6 +19695,15 @@ const VehicleOrderUpdateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'priceInfo'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'JSON'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'status'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -17974,6 +19717,16 @@ const VehicleOrderUpdateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'AddressRelateToOneForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'additionalInfo'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(
+            value: 'VehicleOrderAdditionalInfoRelateToOneForUpdateInput'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -18032,6 +19785,41 @@ const AddressRelateToOneForUpdateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'AddressWhereUniqueInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disconnect'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const VehicleOrderAdditionalInfoRelateToOneForUpdateInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(
+      value: 'VehicleOrderAdditionalInfoRelateToOneForUpdateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'create'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'connect'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoWhereUniqueInput'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -18121,6 +19909,15 @@ const VehicleOrderCreateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'priceInfo'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'JSON'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'status'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -18134,6 +19931,16 @@ const VehicleOrderCreateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'AddressRelateToOneForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'additionalInfo'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(
+            value: 'VehicleOrderAdditionalInfoRelateToOneForCreateInput'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -18183,6 +19990,32 @@ const AddressRelateToOneForCreateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'AddressWhereUniqueInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const VehicleOrderAdditionalInfoRelateToOneForCreateInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(
+      value: 'VehicleOrderAdditionalInfoRelateToOneForCreateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'create'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'connect'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoWhereUniqueInput'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -18729,6 +20562,15 @@ const ProductOrder = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'priceInfo'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'JSON'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'status'),
       directives: [],
       args: [],
@@ -18978,6 +20820,15 @@ const ProductOrderUpdateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'priceInfo'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'JSON'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'status'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -19100,6 +20951,15 @@ const ProductOrderCreateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'priceInfo'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'JSON'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -20455,6 +22315,419 @@ const OrderRejectionByDealerCreateInput = _i1.InputObjectTypeDefinitionNode(
     ),
   ],
 );
+const VehicleOrderAdditionalInfo = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleOrderAdditionalInfo'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ID'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'code'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'hsnCode'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'vehicleOrder'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'VehicleOrderWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'orderBy'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'VehicleOrderOrderByInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ListValueNode(values: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'take'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'skip'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.IntValueNode(value: '0'),
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleOrder'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'vehicleOrderCount'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'VehicleOrderWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+    ),
+  ],
+);
+const VehicleOrderAdditionalInfoWhereUniqueInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoWhereUniqueInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ID'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    )
+  ],
+);
+const VehicleOrderAdditionalInfoWhereInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoWhereInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'AND'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'OR'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'NOT'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'IDFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTimeNullableFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTimeNullableFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'code'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'StringFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'hsnCode'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'StringFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'vehicleOrder'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleOrderManyRelationFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const VehicleOrderAdditionalInfoOrderByInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoOrderByInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'code'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'hsnCode'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const VehicleOrderAdditionalInfoUpdateInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoUpdateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'code'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'hsnCode'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'vehicleOrder'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleOrderRelateToManyForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const VehicleOrderAdditionalInfoUpdateArgs = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoUpdateArgs'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'where'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoWhereUniqueInput'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'data'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoUpdateInput'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const VehicleOrderAdditionalInfoCreateInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoCreateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'code'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'hsnCode'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'vehicleOrder'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleOrderRelateToManyForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
 const UserVehicleReview = _i1.ObjectTypeDefinitionNode(
   name: _i1.NameNode(value: 'UserVehicleReview'),
   directives: [],
@@ -20518,6 +22791,78 @@ const UserVehicleReview = _i1.ObjectTypeDefinitionNode(
       name: _i1.NameNode(value: 'rating'),
       directives: [],
       args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'attachments'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'UserVehicleReviewAttachmentWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'orderBy'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(
+                  value: 'UserVehicleReviewAttachmentOrderByInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ListValueNode(values: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'take'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'skip'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.IntValueNode(value: '0'),
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserVehicleReviewAttachment'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'attachmentsCount'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'UserVehicleReviewAttachmentWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        )
+      ],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'Int'),
         isNonNull: false,
@@ -20643,6 +22988,50 @@ const UserVehicleReviewWhereInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'attachments'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(
+            value: 'UserVehicleReviewAttachmentManyRelationFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserVehicleReviewAttachmentManyRelationFilter =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserVehicleReviewAttachmentManyRelationFilter'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'every'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserVehicleReviewAttachmentWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'some'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserVehicleReviewAttachmentWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'none'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserVehicleReviewAttachmentWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const UserVehicleReviewOrderByInput = _i1.InputObjectTypeDefinitionNode(
@@ -20754,6 +23143,75 @@ const UserVehicleReviewUpdateInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'attachments'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(
+            value: 'UserVehicleReviewAttachmentRelateToManyForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserVehicleReviewAttachmentRelateToManyForUpdateInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(
+      value: 'UserVehicleReviewAttachmentRelateToManyForUpdateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disconnect'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(
+              value: 'UserVehicleReviewAttachmentWhereUniqueInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'set'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(
+              value: 'UserVehicleReviewAttachmentWhereUniqueInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'create'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserVehicleReviewAttachmentCreateInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'connect'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(
+              value: 'UserVehicleReviewAttachmentWhereUniqueInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const UserVehicleReviewUpdateArgs = _i1.InputObjectTypeDefinitionNode(
@@ -20838,6 +23296,399 @@ const UserVehicleReviewCreateInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'attachments'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(
+            value: 'UserVehicleReviewAttachmentRelateToManyForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserVehicleReviewAttachmentRelateToManyForCreateInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(
+      value: 'UserVehicleReviewAttachmentRelateToManyForCreateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'create'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserVehicleReviewAttachmentCreateInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'connect'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(
+              value: 'UserVehicleReviewAttachmentWhereUniqueInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserVehicleReviewAttachment = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserVehicleReviewAttachment'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ID'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'file'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'FileFieldOutput'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'review'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserVehicleReview'),
+        isNonNull: false,
+      ),
+    ),
+  ],
+);
+const UserVehicleReviewAttachmentWhereUniqueInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserVehicleReviewAttachmentWhereUniqueInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ID'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    )
+  ],
+);
+const UserVehicleReviewAttachmentWhereInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserVehicleReviewAttachmentWhereInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'AND'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserVehicleReviewAttachmentWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'OR'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserVehicleReviewAttachmentWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'NOT'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserVehicleReviewAttachmentWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'IDFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTimeNullableFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTimeNullableFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'review'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserVehicleReviewWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserVehicleReviewAttachmentOrderByInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserVehicleReviewAttachmentOrderByInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserVehicleReviewAttachmentUpdateInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserVehicleReviewAttachmentUpdateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'file'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'FileFieldInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'review'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserVehicleReviewRelateToOneForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserVehicleReviewRelateToOneForUpdateInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserVehicleReviewRelateToOneForUpdateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'create'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserVehicleReviewCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'connect'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserVehicleReviewWhereUniqueInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disconnect'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserVehicleReviewAttachmentUpdateArgs = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserVehicleReviewAttachmentUpdateArgs'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'where'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name:
+            _i1.NameNode(value: 'UserVehicleReviewAttachmentWhereUniqueInput'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'data'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserVehicleReviewAttachmentUpdateInput'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserVehicleReviewAttachmentCreateInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserVehicleReviewAttachmentCreateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'file'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'FileFieldInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'review'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserVehicleReviewRelateToOneForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserVehicleReviewRelateToOneForCreateInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserVehicleReviewRelateToOneForCreateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'create'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserVehicleReviewCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'connect'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserVehicleReviewWhereUniqueInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const UserProductReview = _i1.ObjectTypeDefinitionNode(
@@ -20903,6 +23754,78 @@ const UserProductReview = _i1.ObjectTypeDefinitionNode(
       name: _i1.NameNode(value: 'rating'),
       directives: [],
       args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'attachments'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'UserProductReviewAttachmentWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'orderBy'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(
+                  value: 'UserProductReviewAttachmentOrderByInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ListValueNode(values: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'take'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'skip'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.IntValueNode(value: '0'),
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserProductReviewAttachment'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'attachmentsCount'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'UserProductReviewAttachmentWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        )
+      ],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'Int'),
         isNonNull: false,
@@ -21028,6 +23951,50 @@ const UserProductReviewWhereInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'attachments'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(
+            value: 'UserProductReviewAttachmentManyRelationFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserProductReviewAttachmentManyRelationFilter =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserProductReviewAttachmentManyRelationFilter'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'every'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserProductReviewAttachmentWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'some'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserProductReviewAttachmentWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'none'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserProductReviewAttachmentWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const UserProductReviewOrderByInput = _i1.InputObjectTypeDefinitionNode(
@@ -21139,6 +24106,16 @@ const UserProductReviewUpdateInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'attachments'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(
+            value: 'UserProductReviewAttachmentRelateToManyForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const ProductRelateToOneForUpdateInput = _i1.InputObjectTypeDefinitionNode(
@@ -21168,6 +24145,65 @@ const ProductRelateToOneForUpdateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserProductReviewAttachmentRelateToManyForUpdateInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(
+      value: 'UserProductReviewAttachmentRelateToManyForUpdateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disconnect'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(
+              value: 'UserProductReviewAttachmentWhereUniqueInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'set'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(
+              value: 'UserProductReviewAttachmentWhereUniqueInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'create'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserProductReviewAttachmentCreateInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'connect'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(
+              value: 'UserProductReviewAttachmentWhereUniqueInput'),
+          isNonNull: true,
+        ),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -21256,6 +24292,16 @@ const UserProductReviewCreateInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'attachments'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(
+            value: 'UserProductReviewAttachmentRelateToManyForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const ProductRelateToOneForCreateInput = _i1.InputObjectTypeDefinitionNode(
@@ -21276,6 +24322,389 @@ const ProductRelateToOneForCreateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'ProductWhereUniqueInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserProductReviewAttachmentRelateToManyForCreateInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(
+      value: 'UserProductReviewAttachmentRelateToManyForCreateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'create'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserProductReviewAttachmentCreateInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'connect'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(
+              value: 'UserProductReviewAttachmentWhereUniqueInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserProductReviewAttachment = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserProductReviewAttachment'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ID'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'file'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'FileFieldOutput'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'review'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserProductReview'),
+        isNonNull: false,
+      ),
+    ),
+  ],
+);
+const UserProductReviewAttachmentWhereUniqueInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserProductReviewAttachmentWhereUniqueInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ID'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    )
+  ],
+);
+const UserProductReviewAttachmentWhereInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserProductReviewAttachmentWhereInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'AND'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserProductReviewAttachmentWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'OR'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserProductReviewAttachmentWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'NOT'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserProductReviewAttachmentWhereInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'IDFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTimeNullableFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTimeNullableFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'review'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserProductReviewWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserProductReviewAttachmentOrderByInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserProductReviewAttachmentOrderByInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserProductReviewAttachmentUpdateInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserProductReviewAttachmentUpdateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'file'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'FileFieldInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'review'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserProductReviewRelateToOneForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserProductReviewRelateToOneForUpdateInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserProductReviewRelateToOneForUpdateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'create'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserProductReviewCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'connect'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserProductReviewWhereUniqueInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disconnect'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserProductReviewAttachmentUpdateArgs = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserProductReviewAttachmentUpdateArgs'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'where'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name:
+            _i1.NameNode(value: 'UserProductReviewAttachmentWhereUniqueInput'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'data'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserProductReviewAttachmentUpdateInput'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserProductReviewAttachmentCreateInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserProductReviewAttachmentCreateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'createdAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'modifiedAt'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DateTime'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'file'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'FileFieldInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'review'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserProductReviewRelateToOneForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const UserProductReviewRelateToOneForCreateInput =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'UserProductReviewRelateToOneForCreateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'create'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserProductReviewCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'connect'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserProductReviewWhereUniqueInput'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -21333,6 +24762,15 @@ const ExpertReview = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'banner'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ImageFieldOutput'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'user'),
       directives: [],
       args: [],
@@ -21347,6 +24785,15 @@ const ExpertReview = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
     ),
@@ -21470,6 +24917,15 @@ const ExpertReviewWhereInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'BooleanFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const ExpertReviewOrderByInput = _i1.InputObjectTypeDefinitionNode(
@@ -21530,6 +24986,15 @@ const ExpertReviewOrderByInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const ExpertReviewUpdateInput = _i1.InputObjectTypeDefinitionNode(
@@ -21573,6 +25038,15 @@ const ExpertReviewUpdateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'banner'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ImageFieldInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'user'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -21586,6 +25060,15 @@ const ExpertReviewUpdateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -21657,6 +25140,15 @@ const ExpertReviewCreateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'banner'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ImageFieldInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'user'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -21670,6 +25162,15 @@ const ExpertReviewCreateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -23836,58 +27337,6 @@ const AppNotification = _i1.ObjectTypeDefinitionNode(
     ),
   ],
 );
-const Guarantees = _i1.ObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'Guarantees'),
-  directives: [],
-  interfaces: [],
-  fields: [
-    _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'id'),
-      directives: [],
-      args: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'ID'),
-        isNonNull: true,
-      ),
-    ),
-    _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'createdAt'),
-      directives: [],
-      args: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'DateTime'),
-        isNonNull: false,
-      ),
-    ),
-    _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'modifiedAt'),
-      directives: [],
-      args: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'DateTime'),
-        isNonNull: false,
-      ),
-    ),
-    _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'name'),
-      directives: [],
-      args: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'String'),
-        isNonNull: false,
-      ),
-    ),
-    _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'description'),
-      directives: [],
-      args: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'String'),
-        isNonNull: false,
-      ),
-    ),
-  ],
-);
 const AppNotificationWhereUniqueInput = _i1.InputObjectTypeDefinitionNode(
   name: _i1.NameNode(value: 'AppNotificationWhereUniqueInput'),
   directives: [],
@@ -24008,93 +27457,6 @@ const AppNotificationWhereInput = _i1.InputObjectTypeDefinitionNode(
     ),
   ],
 );
-const GuaranteeWhereInput = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'GuaranteeWhereInput'),
-  directives: [],
-  fields: [
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'AND'),
-      directives: [],
-      type: _i1.ListTypeNode(
-        type: _i1.NamedTypeNode(
-          name: _i1.NameNode(value: 'AppNotificationWhereInput'),
-          isNonNull: true,
-        ),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'NOT'),
-      directives: [],
-      type: _i1.ListTypeNode(
-        type: _i1.NamedTypeNode(
-          name: _i1.NameNode(value: 'AppNotificationWhereInput'),
-          isNonNull: true,
-        ),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'OR'),
-      directives: [],
-      type: _i1.ListTypeNode(
-        type: _i1.NamedTypeNode(
-          name: _i1.NameNode(value: 'AppNotificationWhereInput'),
-          isNonNull: true,
-        ),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'createdAt'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'DateTimeNullableFilter'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'description'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'StringFilter'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'id'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'IDFilter'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'modifiedAt'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'DateTimeNullableFilter'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'name'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'StringFilter'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-  ],
-);
 const AppNotificationOrderByInput = _i1.InputObjectTypeDefinitionNode(
   name: _i1.NameNode(value: 'AppNotificationOrderByInput'),
   directives: [],
@@ -24137,57 +27499,6 @@ const AppNotificationOrderByInput = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'body'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'OrderDirection'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-  ],
-);
-const GuaranteeOrderByInput = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'GuaranteeOrderByInput'),
-  directives: [],
-  fields: [
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'createdAt'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'OrderDirection'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'description'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'OrderDirection'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'id'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'OrderDirection'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'modifiedAt'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'OrderDirection'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'name'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'OrderDirection'),
@@ -25771,6 +29082,15 @@ const NewsItem = _i1.ObjectTypeDefinitionNode(
         isNonNull: false,
       ),
     ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+    ),
   ],
 );
 const NewsItemWhereUniqueInput = _i1.InputObjectTypeDefinitionNode(
@@ -25914,6 +29234,15 @@ const NewsItemWhereInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'NewsAttachmentManyRelationFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'BooleanFilter'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -26077,6 +29406,15 @@ const NewsItemOrderByInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const NewsItemUpdateInput = _i1.InputObjectTypeDefinitionNode(
@@ -26160,6 +29498,15 @@ const NewsItemUpdateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'NewsAttachmentRelateToManyForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -26469,6 +29816,15 @@ const NewsItemCreateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'NewsAttachmentRelateToManyForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -27673,6 +31029,86 @@ const Coupon = _i1.ObjectTypeDefinitionNode(
         isNonNull: false,
       ),
     ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'products'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'ProductWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'orderBy'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'ProductOrderByInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ListValueNode(values: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'take'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'skip'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.IntValueNode(value: '0'),
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'Product'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'productsCount'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'ProductWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'productsCondition'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
   ],
 );
 const CouponWhereUniqueInput = _i1.InputObjectTypeDefinitionNode(
@@ -27820,6 +31256,24 @@ const CouponWhereInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'products'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ProductManyRelationFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'productsCondition'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'StringNullableFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const VehicleManyRelationFilter = _i1.InputObjectTypeDefinitionNode(
@@ -27849,6 +31303,39 @@ const VehicleManyRelationFilter = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'VehicleWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const ProductManyRelationFilter = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'ProductManyRelationFilter'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'every'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ProductWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'some'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ProductWhereInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'none'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ProductWhereInput'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -27924,6 +31411,15 @@ const CouponOrderByInput = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'vehiclesCondition'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'productsCondition'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'OrderDirection'),
@@ -28018,6 +31514,24 @@ const CouponUpdateInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'products'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ProductRelateToManyForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'productsCondition'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const VehicleRelateToManyForUpdateInput = _i1.InputObjectTypeDefinitionNode(
@@ -28066,6 +31580,60 @@ const VehicleRelateToManyForUpdateInput = _i1.InputObjectTypeDefinitionNode(
       type: _i1.ListTypeNode(
         type: _i1.NamedTypeNode(
           name: _i1.NameNode(value: 'VehicleWhereUniqueInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const ProductRelateToManyForUpdateInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'ProductRelateToManyForUpdateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disconnect'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'ProductWhereUniqueInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'set'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'ProductWhereUniqueInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'create'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'ProductCreateInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'connect'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'ProductWhereUniqueInput'),
           isNonNull: true,
         ),
         isNonNull: false,
@@ -28183,6 +31751,24 @@ const CouponCreateInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'products'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ProductRelateToManyForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'productsCondition'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const VehicleRelateToManyForCreateInput = _i1.InputObjectTypeDefinitionNode(
@@ -28207,6 +31793,36 @@ const VehicleRelateToManyForCreateInput = _i1.InputObjectTypeDefinitionNode(
       type: _i1.ListTypeNode(
         type: _i1.NamedTypeNode(
           name: _i1.NameNode(value: 'VehicleWhereUniqueInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const ProductRelateToManyForCreateInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'ProductRelateToManyForCreateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'create'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'ProductCreateInput'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'connect'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'ProductWhereUniqueInput'),
           isNonNull: true,
         ),
         isNonNull: false,
@@ -28372,6 +31988,86 @@ const Offer = _i1.ObjectTypeDefinitionNode(
         isNonNull: false,
       ),
     ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'products'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'ProductWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'orderBy'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'ProductOrderByInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ListValueNode(values: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'take'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'skip'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.IntValueNode(value: '0'),
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'Product'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'productsCount'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'ProductWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'productsCondition'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
   ],
 );
 const OfferWhereUniqueInput = _i1.InputObjectTypeDefinitionNode(
@@ -28519,6 +32215,24 @@ const OfferWhereInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'products'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ProductManyRelationFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'productsCondition'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'StringNullableFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const OfferOrderByInput = _i1.InputObjectTypeDefinitionNode(
@@ -28590,6 +32304,15 @@ const OfferOrderByInput = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'vehiclesCondition'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'productsCondition'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'OrderDirection'),
@@ -28677,6 +32400,24 @@ const OfferUpdateInput = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'vehiclesCondition'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'products'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ProductRelateToManyForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'productsCondition'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
@@ -28788,6 +32529,24 @@ const OfferCreateInput = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'vehiclesCondition'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'products'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'ProductRelateToManyForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'productsCondition'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
@@ -31098,6 +34857,15 @@ const Product = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'longDescription'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'type'),
       directives: [],
       args: [],
@@ -31360,6 +35128,15 @@ const ProductWhereInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'longDescription'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'StringFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'type'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -31513,6 +35290,15 @@ const ProductOrderByInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'longDescription'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const ProductUpdateInput = _i1.InputObjectTypeDefinitionNode(
@@ -31548,6 +35334,15 @@ const ProductUpdateInput = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'description'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'longDescription'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
@@ -31794,6 +35589,15 @@ const ProductCreateInput = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'description'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'longDescription'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
@@ -33071,6 +36875,15 @@ const ProductVariant = _i1.ObjectTypeDefinitionNode(
         isNonNull: false,
       ),
     ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+    ),
   ],
 );
 const ProductVariantWhereUniqueInput = _i1.InputObjectTypeDefinitionNode(
@@ -33241,6 +37054,15 @@ const ProductVariantWhereInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'ProductReelManyRelationFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'BooleanFilter'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -33428,6 +37250,15 @@ const ProductVariantOrderByInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const ProductVariantUpdateInput = _i1.InputObjectTypeDefinitionNode(
@@ -33540,6 +37371,15 @@ const ProductVariantUpdateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'ProductReelRelateToManyForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -33899,6 +37739,15 @@ const ProductVariantCreateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'ProductReelRelateToManyForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -35098,6 +38947,15 @@ const ProductReel = _i1.ObjectTypeDefinitionNode(
         isNonNull: false,
       ),
     ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+    ),
   ],
 );
 const ProductReelWhereUniqueInput = _i1.InputObjectTypeDefinitionNode(
@@ -35218,6 +39076,15 @@ const ProductReelWhereInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'BooleanFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const ProductReelOrderByInput = _i1.InputObjectTypeDefinitionNode(
@@ -35271,6 +39138,15 @@ const ProductReelOrderByInput = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'index'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'OrderDirection'),
@@ -35334,6 +39210,15 @@ const ProductReelUpdateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -35422,6 +39307,15 @@ const ProductReelCreateInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'disabled'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const ProductDealer = _i1.ObjectTypeDefinitionNode(
@@ -35471,6 +39365,77 @@ const ProductDealer = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'ProductVariant'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'guarantees'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'orderBy'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'GuaranteeOrderByInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ListValueNode(values: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'take'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'skip'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.IntValueNode(value: '0'),
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'Guarantee'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'guaranteesCount'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
         isNonNull: false,
       ),
     ),
@@ -35666,6 +39631,15 @@ const ProductDealerWhereInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'guarantees'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeManyRelationFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'prices'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -35768,6 +39742,15 @@ const ProductDealerUpdateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'guarantees'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeRelateToManyForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'prices'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -35852,6 +39835,15 @@ const ProductDealerCreateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'guarantees'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeRelateToManyForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'prices'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -35918,6 +39910,77 @@ const ProductDealerStockRequest = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'ProductVariant'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'guarantees'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'orderBy'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'GuaranteeOrderByInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ListValueNode(values: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'take'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'skip'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.IntValueNode(value: '0'),
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'Guarantee'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'guaranteesCount'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
         isNonNull: false,
       ),
     ),
@@ -36061,6 +40124,15 @@ const ProductDealerStockRequestWhereInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'guarantees'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeManyRelationFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'stock'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -36190,6 +40262,15 @@ const ProductDealerStockRequestUpdateInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'guarantees'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeRelateToManyForUpdateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'stock'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -36278,6 +40359,15 @@ const ProductDealerStockRequestCreateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'ProductVariantRelateToOneForCreateInput'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'guarantees'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeRelateToManyForCreateInput'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -37762,6 +41852,147 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createVehicleSubType'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'VehicleSubTypeCreateInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleSubType'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createVehicleSubTypes'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'VehicleSubTypeCreateInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleSubType'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updateVehicleSubType'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'VehicleSubTypeWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'VehicleSubTypeUpdateInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleSubType'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updateVehicleSubTypes'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'VehicleSubTypeUpdateArgs'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleSubType'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'deleteVehicleSubType'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'VehicleSubTypeWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleSubType'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'deleteVehicleSubTypes'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'VehicleSubTypeWhereUniqueInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleSubType'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'createBrand'),
       directives: [],
       args: [
@@ -38885,6 +43116,288 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
       type: _i1.ListTypeNode(
         type: _i1.NamedTypeNode(
           name: _i1.NameNode(value: 'VehicleReel'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createGuarantee'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeCreateInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Guarantee'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createGuarantees'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'GuaranteeCreateInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'Guarantee'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updateGuarantee'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeUpdateInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Guarantee'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updateGuarantees'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'GuaranteeUpdateArgs'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'Guarantee'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'deleteGuarantee'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Guarantee'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'deleteGuarantees'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'GuaranteeWhereUniqueInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'Guarantee'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createGuaranteeFile'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeFileCreateInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeFile'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createGuaranteeFiles'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'GuaranteeFileCreateInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'GuaranteeFile'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updateGuaranteeFile'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeFileWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeFileUpdateInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeFile'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updateGuaranteeFiles'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'GuaranteeFileUpdateArgs'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'GuaranteeFile'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'deleteGuaranteeFile'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeFileWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeFile'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'deleteGuaranteeFiles'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'GuaranteeFileWhereUniqueInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'GuaranteeFile'),
           isNonNull: false,
         ),
         isNonNull: false,
@@ -41295,6 +45808,151 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createVehicleOrderAdditionalInfo'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoCreateInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleOrderAdditionalInfo'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createVehicleOrderAdditionalInfos'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name:
+                  _i1.NameNode(value: 'VehicleOrderAdditionalInfoCreateInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleOrderAdditionalInfo'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updateVehicleOrderAdditionalInfo'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(
+                value: 'VehicleOrderAdditionalInfoWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoUpdateInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleOrderAdditionalInfo'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updateVehicleOrderAdditionalInfos'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoUpdateArgs'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleOrderAdditionalInfo'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'deleteVehicleOrderAdditionalInfo'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(
+                value: 'VehicleOrderAdditionalInfoWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleOrderAdditionalInfo'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'deleteVehicleOrderAdditionalInfos'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(
+                  value: 'VehicleOrderAdditionalInfoWhereUniqueInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleOrderAdditionalInfo'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'createUserVehicleReview'),
       directives: [],
       args: [
@@ -41436,6 +46094,152 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createUserVehicleReviewAttachment'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'UserVehicleReviewAttachmentCreateInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserVehicleReviewAttachment'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createUserVehicleReviewAttachments'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name:
+                  _i1.NameNode(value: 'UserVehicleReviewAttachmentCreateInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserVehicleReviewAttachment'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updateUserVehicleReviewAttachment'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(
+                value: 'UserVehicleReviewAttachmentWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'UserVehicleReviewAttachmentUpdateInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserVehicleReviewAttachment'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updateUserVehicleReviewAttachments'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name:
+                  _i1.NameNode(value: 'UserVehicleReviewAttachmentUpdateArgs'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserVehicleReviewAttachment'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'deleteUserVehicleReviewAttachment'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(
+                value: 'UserVehicleReviewAttachmentWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserVehicleReviewAttachment'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'deleteUserVehicleReviewAttachments'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(
+                  value: 'UserVehicleReviewAttachmentWhereUniqueInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserVehicleReviewAttachment'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'createUserProductReview'),
       directives: [],
       args: [
@@ -41571,6 +46375,152 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
       type: _i1.ListTypeNode(
         type: _i1.NamedTypeNode(
           name: _i1.NameNode(value: 'UserProductReview'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createUserProductReviewAttachment'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'UserProductReviewAttachmentCreateInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserProductReviewAttachment'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'createUserProductReviewAttachments'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name:
+                  _i1.NameNode(value: 'UserProductReviewAttachmentCreateInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserProductReviewAttachment'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updateUserProductReviewAttachment'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(
+                value: 'UserProductReviewAttachmentWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'UserProductReviewAttachmentUpdateInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserProductReviewAttachment'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updateUserProductReviewAttachments'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'data'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name:
+                  _i1.NameNode(value: 'UserProductReviewAttachmentUpdateArgs'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserProductReviewAttachment'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'deleteUserProductReviewAttachment'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(
+                value: 'UserProductReviewAttachmentWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserProductReviewAttachment'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'deleteUserProductReviewAttachments'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(
+                  value: 'UserProductReviewAttachmentWhereUniqueInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserProductReviewAttachment'),
           isNonNull: false,
         ),
         isNonNull: false,
@@ -46448,7 +51398,7 @@ const PaymentItem = _i1.InputObjectTypeDefinitionNode(
       name: _i1.NameNode(value: 'amount'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'Int'),
+        name: _i1.NameNode(value: 'Float'),
         isNonNull: true,
       ),
       defaultValue: null,
@@ -47339,6 +52289,96 @@ const Query = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'vehicleSubTypes'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'VehicleSubTypeWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'orderBy'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'VehicleSubTypeOrderByInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ListValueNode(values: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'take'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'skip'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.IntValueNode(value: '0'),
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleSubType'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'vehicleSubType'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'VehicleSubTypeWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleSubType'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'vehicleSubTypesCount'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'VehicleSubTypeWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'brands'),
       directives: [],
       args: [
@@ -48048,6 +53088,186 @@ const Query = _i1.ObjectTypeDefinitionNode(
           directives: [],
           type: _i1.NamedTypeNode(
             name: _i1.NameNode(value: 'VehicleReelWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'guarantees'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'orderBy'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'GuaranteeOrderByInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ListValueNode(values: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'take'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'skip'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.IntValueNode(value: '0'),
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'Guarantee'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'guarantee'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Guarantee'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'guaranteesCount'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'guaranteeFiles'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeFileWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'orderBy'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'GuaranteeFileOrderByInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ListValueNode(values: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'take'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'skip'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.IntValueNode(value: '0'),
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'GuaranteeFile'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'guaranteeFile'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeFileWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'GuaranteeFile'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'guaranteeFilesCount'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'GuaranteeFileWhereInput'),
             isNonNull: true,
           ),
           defaultValue: _i1.ObjectValueNode(fields: []),
@@ -49592,6 +54812,98 @@ const Query = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'vehicleOrderAdditionalInfos'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'orderBy'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name:
+                  _i1.NameNode(value: 'VehicleOrderAdditionalInfoOrderByInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ListValueNode(values: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'take'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'skip'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.IntValueNode(value: '0'),
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'VehicleOrderAdditionalInfo'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'vehicleOrderAdditionalInfo'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(
+                value: 'VehicleOrderAdditionalInfoWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleOrderAdditionalInfo'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'vehicleOrderAdditionalInfosCount'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'VehicleOrderAdditionalInfoWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'userVehicleReviews'),
       directives: [],
       args: [
@@ -49682,6 +54994,98 @@ const Query = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'userVehicleReviewAttachments'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'UserVehicleReviewAttachmentWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'orderBy'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(
+                  value: 'UserVehicleReviewAttachmentOrderByInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ListValueNode(values: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'take'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'skip'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.IntValueNode(value: '0'),
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserVehicleReviewAttachment'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'userVehicleReviewAttachment'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(
+                value: 'UserVehicleReviewAttachmentWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserVehicleReviewAttachment'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'userVehicleReviewAttachmentsCount'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'UserVehicleReviewAttachmentWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'userProductReviews'),
       directives: [],
       args: [
@@ -49761,6 +55165,98 @@ const Query = _i1.ObjectTypeDefinitionNode(
           directives: [],
           type: _i1.NamedTypeNode(
             name: _i1.NameNode(value: 'UserProductReviewWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'userProductReviewAttachments'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'UserProductReviewAttachmentWhereInput'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ObjectValueNode(fields: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'orderBy'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(
+                  value: 'UserProductReviewAttachmentOrderByInput'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.ListValueNode(values: []),
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'take'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'skip'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: true,
+          ),
+          defaultValue: _i1.IntValueNode(value: '0'),
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'UserProductReviewAttachment'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'userProductReviewAttachment'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(
+                value: 'UserProductReviewAttachmentWhereUniqueInput'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'UserProductReviewAttachment'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'userProductReviewAttachmentsCount'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'UserProductReviewAttachmentWhereInput'),
             isNonNull: true,
           ),
           defaultValue: _i1.ObjectValueNode(fields: []),
@@ -50362,58 +55858,6 @@ const Query = _i1.ObjectTypeDefinitionNode(
       type: _i1.ListTypeNode(
         type: _i1.NamedTypeNode(
           name: _i1.NameNode(value: 'AppNotification'),
-          isNonNull: true,
-        ),
-        isNonNull: false,
-      ),
-    ),
-    _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'guarantees'),
-      directives: [],
-      args: [
-        _i1.InputValueDefinitionNode(
-          name: _i1.NameNode(value: 'where'),
-          directives: [],
-          type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'GuaranteeWhereInput'),
-            isNonNull: true,
-          ),
-          defaultValue: _i1.ObjectValueNode(fields: []),
-        ),
-        _i1.InputValueDefinitionNode(
-          name: _i1.NameNode(value: 'orderBy'),
-          directives: [],
-          type: _i1.ListTypeNode(
-            type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'GuaranteeOrderByInput'),
-              isNonNull: true,
-            ),
-            isNonNull: true,
-          ),
-          defaultValue: _i1.ListValueNode(values: []),
-        ),
-        _i1.InputValueDefinitionNode(
-          name: _i1.NameNode(value: 'take'),
-          directives: [],
-          type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'Int'),
-            isNonNull: false,
-          ),
-          defaultValue: null,
-        ),
-        _i1.InputValueDefinitionNode(
-          name: _i1.NameNode(value: 'skip'),
-          directives: [],
-          type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'Int'),
-            isNonNull: true,
-          ),
-          defaultValue: _i1.IntValueNode(value: '0'),
-        ),
-      ],
-      type: _i1.ListTypeNode(
-        type: _i1.NamedTypeNode(
-          name: _i1.NameNode(value: 'Guarantees'),
           isNonNull: true,
         ),
         isNonNull: false,
@@ -52896,6 +58340,63 @@ const Query = _i1.ObjectTypeDefinitionNode(
         isNonNull: false,
       ),
     ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'vehicleOrderInvoice'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'vehicleOrderId'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'ID'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'JSON'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'testDriveOrderInvoice'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'testDriveOrderId'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'ID'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'JSON'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'productOrderInvoice'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'productOrderId'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'ID'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'JSON'),
+        isNonNull: false,
+      ),
+    ),
   ],
 );
 const NearestDealer = _i1.ObjectTypeDefinitionNode(
@@ -52975,7 +58476,11 @@ const CouponItemType = _i1.EnumTypeDefinitionNode(
     _i1.EnumValueDefinitionNode(
       name: _i1.NameNode(value: 'vehicleDealer'),
       directives: [],
-    )
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'productDealer'),
+      directives: [],
+    ),
   ],
 );
 const AuthenticatedItem = _i1.UnionTypeDefinitionNode(
@@ -53663,6 +59168,15 @@ const document = _i1.DocumentNode(definitions: [
   VehicleTypeUpdateInput,
   VehicleTypeUpdateArgs,
   VehicleTypeCreateInput,
+  VehicleSubType,
+  VehicleSubTypeWhereUniqueInput,
+  VehicleSubTypeWhereInput,
+  VehicleSubTypeOrderByInput,
+  VehicleSubTypeUpdateInput,
+  VehicleTypeRelateToOneForUpdateInput,
+  VehicleSubTypeUpdateArgs,
+  VehicleSubTypeCreateInput,
+  VehicleTypeRelateToOneForCreateInput,
   Brand,
   BrandWhereUniqueInput,
   BrandWhereInput,
@@ -53695,19 +59209,20 @@ const document = _i1.DocumentNode(definitions: [
   Vehicle,
   VehicleWhereUniqueInput,
   VehicleWhereInput,
+  VehicleSubTypeManyRelationFilter,
   VehicleVariantManyRelationFilter,
   VehicleSpecificationManyRelationFilter,
   VehicleColorManyRelationFilter,
   VehicleOrderByInput,
   VehicleUpdateInput,
-  VehicleTypeRelateToOneForUpdateInput,
+  VehicleSubTypeRelateToManyForUpdateInput,
   BrandRelateToOneForUpdateInput,
   VehicleVariantRelateToManyForUpdateInput,
   VehicleSpecificationRelateToManyForUpdateInput,
   VehicleColorRelateToManyForUpdateInput,
   VehicleUpdateArgs,
   VehicleCreateInput,
-  VehicleTypeRelateToOneForCreateInput,
+  VehicleSubTypeRelateToManyForCreateInput,
   BrandRelateToOneForCreateInput,
   VehicleVariantRelateToManyForCreateInput,
   VehicleSpecificationRelateToManyForCreateInput,
@@ -53748,15 +59263,32 @@ const document = _i1.DocumentNode(definitions: [
   VehicleReelUpdateInput,
   VehicleReelUpdateArgs,
   VehicleReelCreateInput,
+  Guarantee,
+  GuaranteeWhereUniqueInput,
+  GuaranteeWhereInput,
+  GuaranteeOrderByInput,
+  GuaranteeUpdateInput,
+  GuaranteeUpdateArgs,
+  GuaranteeCreateInput,
+  GuaranteeFile,
+  GuaranteeFileWhereUniqueInput,
+  GuaranteeFileWhereInput,
+  GuaranteeFileOrderByInput,
+  GuaranteeFileUpdateInput,
+  GuaranteeFileUpdateArgs,
+  GuaranteeFileCreateInput,
   VehicleDealer,
   VehicleDealerWhereUniqueInput,
   VehicleDealerWhereInput,
+  GuaranteeManyRelationFilter,
   PriceManyRelationFilter,
   VehicleDealerOrderByInput,
   VehicleDealerUpdateInput,
+  GuaranteeRelateToManyForUpdateInput,
   PriceRelateToManyForUpdateInput,
   VehicleDealerUpdateArgs,
   VehicleDealerCreateInput,
+  GuaranteeRelateToManyForCreateInput,
   PriceRelateToManyForCreateInput,
   VehicleImage,
   VehicleImageWhereUniqueInput,
@@ -53868,10 +59400,12 @@ const document = _i1.DocumentNode(definitions: [
   VehicleOrderUpdateInput,
   VehicleDealerRelateToOneForUpdateInput,
   AddressRelateToOneForUpdateInput,
+  VehicleOrderAdditionalInfoRelateToOneForUpdateInput,
   VehicleOrderUpdateArgs,
   VehicleOrderCreateInput,
   VehicleDealerRelateToOneForCreateInput,
   AddressRelateToOneForCreateInput,
+  VehicleOrderAdditionalInfoRelateToOneForCreateInput,
   TestDriveOrder,
   TestDriveOrderWhereUniqueInput,
   TestDriveOrderWhereInput,
@@ -53904,22 +59438,53 @@ const document = _i1.DocumentNode(definitions: [
   OrderRejectionByDealerUpdateInput,
   OrderRejectionByDealerUpdateArgs,
   OrderRejectionByDealerCreateInput,
+  VehicleOrderAdditionalInfo,
+  VehicleOrderAdditionalInfoWhereUniqueInput,
+  VehicleOrderAdditionalInfoWhereInput,
+  VehicleOrderAdditionalInfoOrderByInput,
+  VehicleOrderAdditionalInfoUpdateInput,
+  VehicleOrderAdditionalInfoUpdateArgs,
+  VehicleOrderAdditionalInfoCreateInput,
   UserVehicleReview,
   UserVehicleReviewWhereUniqueInput,
   UserVehicleReviewWhereInput,
+  UserVehicleReviewAttachmentManyRelationFilter,
   UserVehicleReviewOrderByInput,
   UserVehicleReviewUpdateInput,
+  UserVehicleReviewAttachmentRelateToManyForUpdateInput,
   UserVehicleReviewUpdateArgs,
   UserVehicleReviewCreateInput,
+  UserVehicleReviewAttachmentRelateToManyForCreateInput,
+  UserVehicleReviewAttachment,
+  UserVehicleReviewAttachmentWhereUniqueInput,
+  UserVehicleReviewAttachmentWhereInput,
+  UserVehicleReviewAttachmentOrderByInput,
+  UserVehicleReviewAttachmentUpdateInput,
+  UserVehicleReviewRelateToOneForUpdateInput,
+  UserVehicleReviewAttachmentUpdateArgs,
+  UserVehicleReviewAttachmentCreateInput,
+  UserVehicleReviewRelateToOneForCreateInput,
   UserProductReview,
   UserProductReviewWhereUniqueInput,
   UserProductReviewWhereInput,
+  UserProductReviewAttachmentManyRelationFilter,
   UserProductReviewOrderByInput,
   UserProductReviewUpdateInput,
   ProductRelateToOneForUpdateInput,
+  UserProductReviewAttachmentRelateToManyForUpdateInput,
   UserProductReviewUpdateArgs,
   UserProductReviewCreateInput,
   ProductRelateToOneForCreateInput,
+  UserProductReviewAttachmentRelateToManyForCreateInput,
+  UserProductReviewAttachment,
+  UserProductReviewAttachmentWhereUniqueInput,
+  UserProductReviewAttachmentWhereInput,
+  UserProductReviewAttachmentOrderByInput,
+  UserProductReviewAttachmentUpdateInput,
+  UserProductReviewRelateToOneForUpdateInput,
+  UserProductReviewAttachmentUpdateArgs,
+  UserProductReviewAttachmentCreateInput,
+  UserProductReviewRelateToOneForCreateInput,
   ExpertReview,
   ExpertReviewWhereUniqueInput,
   ExpertReviewWhereInput,
@@ -53968,12 +59533,9 @@ const document = _i1.DocumentNode(definitions: [
   AppNotificationTemplateUpdateArgs,
   AppNotificationTemplateCreateInput,
   AppNotification,
-  Guarantees,
   AppNotificationWhereUniqueInput,
   AppNotificationWhereInput,
-  GuaranteeWhereInput,
   AppNotificationOrderByInput,
-  GuaranteeOrderByInput,
   AppNotificationUpdateInput,
   AppNotificationUpdateArgs,
   AppNotificationCreateInput,
@@ -54045,12 +59607,15 @@ const document = _i1.DocumentNode(definitions: [
   CouponWhereUniqueInput,
   CouponWhereInput,
   VehicleManyRelationFilter,
+  ProductManyRelationFilter,
   CouponOrderByInput,
   CouponUpdateInput,
   VehicleRelateToManyForUpdateInput,
+  ProductRelateToManyForUpdateInput,
   CouponUpdateArgs,
   CouponCreateInput,
   VehicleRelateToManyForCreateInput,
+  ProductRelateToManyForCreateInput,
   Offer,
   OfferWhereUniqueInput,
   OfferWhereInput,

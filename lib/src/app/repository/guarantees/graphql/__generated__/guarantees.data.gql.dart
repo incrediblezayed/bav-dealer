@@ -48,7 +48,7 @@ abstract class GGuaranteesData_guarantees
       _$GGuaranteesData_guarantees;
 
   static void _initializeBuilder(GGuaranteesData_guaranteesBuilder b) =>
-      b..G__typename = 'Guarantees';
+      b..G__typename = 'Guarantee';
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;

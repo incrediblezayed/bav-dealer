@@ -162,11 +162,15 @@ final BuiltSet<GPasswordResetRedemptionErrorCode>
 
 const GCouponItemType _$gCouponItemTypevehicleDealer =
     const GCouponItemType._('vehicleDealer');
+const GCouponItemType _$gCouponItemTypeproductDealer =
+    const GCouponItemType._('productDealer');
 
 GCouponItemType _$gCouponItemTypeValueOf(String name) {
   switch (name) {
     case 'vehicleDealer':
       return _$gCouponItemTypevehicleDealer;
+    case 'productDealer':
+      return _$gCouponItemTypeproductDealer;
     default:
       throw new ArgumentError(name);
   }
@@ -175,6 +179,7 @@ GCouponItemType _$gCouponItemTypeValueOf(String name) {
 final BuiltSet<GCouponItemType> _$gCouponItemTypeValues =
     new BuiltSet<GCouponItemType>(const <GCouponItemType>[
   _$gCouponItemTypevehicleDealer,
+  _$gCouponItemTypeproductDealer,
 ]);
 
 const GKeystoneAdminUIFieldMetaCreateViewFieldMode
@@ -501,6 +506,26 @@ Serializer<GVehicleTypeUpdateArgs> _$gVehicleTypeUpdateArgsSerializer =
     new _$GVehicleTypeUpdateArgsSerializer();
 Serializer<GVehicleTypeCreateInput> _$gVehicleTypeCreateInputSerializer =
     new _$GVehicleTypeCreateInputSerializer();
+Serializer<GVehicleSubTypeWhereUniqueInput>
+    _$gVehicleSubTypeWhereUniqueInputSerializer =
+    new _$GVehicleSubTypeWhereUniqueInputSerializer();
+Serializer<GVehicleSubTypeWhereInput> _$gVehicleSubTypeWhereInputSerializer =
+    new _$GVehicleSubTypeWhereInputSerializer();
+Serializer<GVehicleSubTypeOrderByInput>
+    _$gVehicleSubTypeOrderByInputSerializer =
+    new _$GVehicleSubTypeOrderByInputSerializer();
+Serializer<GVehicleSubTypeUpdateInput> _$gVehicleSubTypeUpdateInputSerializer =
+    new _$GVehicleSubTypeUpdateInputSerializer();
+Serializer<GVehicleTypeRelateToOneForUpdateInput>
+    _$gVehicleTypeRelateToOneForUpdateInputSerializer =
+    new _$GVehicleTypeRelateToOneForUpdateInputSerializer();
+Serializer<GVehicleSubTypeUpdateArgs> _$gVehicleSubTypeUpdateArgsSerializer =
+    new _$GVehicleSubTypeUpdateArgsSerializer();
+Serializer<GVehicleSubTypeCreateInput> _$gVehicleSubTypeCreateInputSerializer =
+    new _$GVehicleSubTypeCreateInputSerializer();
+Serializer<GVehicleTypeRelateToOneForCreateInput>
+    _$gVehicleTypeRelateToOneForCreateInputSerializer =
+    new _$GVehicleTypeRelateToOneForCreateInputSerializer();
 Serializer<GBrandWhereUniqueInput> _$gBrandWhereUniqueInputSerializer =
     new _$GBrandWhereUniqueInputSerializer();
 Serializer<GBrandWhereInput> _$gBrandWhereInputSerializer =
@@ -565,6 +590,9 @@ Serializer<GVehicleWhereUniqueInput> _$gVehicleWhereUniqueInputSerializer =
     new _$GVehicleWhereUniqueInputSerializer();
 Serializer<GVehicleWhereInput> _$gVehicleWhereInputSerializer =
     new _$GVehicleWhereInputSerializer();
+Serializer<GVehicleSubTypeManyRelationFilter>
+    _$gVehicleSubTypeManyRelationFilterSerializer =
+    new _$GVehicleSubTypeManyRelationFilterSerializer();
 Serializer<GVehicleVariantManyRelationFilter>
     _$gVehicleVariantManyRelationFilterSerializer =
     new _$GVehicleVariantManyRelationFilterSerializer();
@@ -578,9 +606,9 @@ Serializer<GVehicleOrderByInput> _$gVehicleOrderByInputSerializer =
     new _$GVehicleOrderByInputSerializer();
 Serializer<GVehicleUpdateInput> _$gVehicleUpdateInputSerializer =
     new _$GVehicleUpdateInputSerializer();
-Serializer<GVehicleTypeRelateToOneForUpdateInput>
-    _$gVehicleTypeRelateToOneForUpdateInputSerializer =
-    new _$GVehicleTypeRelateToOneForUpdateInputSerializer();
+Serializer<GVehicleSubTypeRelateToManyForUpdateInput>
+    _$gVehicleSubTypeRelateToManyForUpdateInputSerializer =
+    new _$GVehicleSubTypeRelateToManyForUpdateInputSerializer();
 Serializer<GBrandRelateToOneForUpdateInput>
     _$gBrandRelateToOneForUpdateInputSerializer =
     new _$GBrandRelateToOneForUpdateInputSerializer();
@@ -597,9 +625,9 @@ Serializer<GVehicleUpdateArgs> _$gVehicleUpdateArgsSerializer =
     new _$GVehicleUpdateArgsSerializer();
 Serializer<GVehicleCreateInput> _$gVehicleCreateInputSerializer =
     new _$GVehicleCreateInputSerializer();
-Serializer<GVehicleTypeRelateToOneForCreateInput>
-    _$gVehicleTypeRelateToOneForCreateInputSerializer =
-    new _$GVehicleTypeRelateToOneForCreateInputSerializer();
+Serializer<GVehicleSubTypeRelateToManyForCreateInput>
+    _$gVehicleSubTypeRelateToManyForCreateInputSerializer =
+    new _$GVehicleSubTypeRelateToManyForCreateInputSerializer();
 Serializer<GBrandRelateToOneForCreateInput>
     _$gBrandRelateToOneForCreateInputSerializer =
     new _$GBrandRelateToOneForCreateInputSerializer();
@@ -700,17 +728,48 @@ Serializer<GVehicleReelUpdateArgs> _$gVehicleReelUpdateArgsSerializer =
     new _$GVehicleReelUpdateArgsSerializer();
 Serializer<GVehicleReelCreateInput> _$gVehicleReelCreateInputSerializer =
     new _$GVehicleReelCreateInputSerializer();
+Serializer<GGuaranteeWhereUniqueInput> _$gGuaranteeWhereUniqueInputSerializer =
+    new _$GGuaranteeWhereUniqueInputSerializer();
+Serializer<GGuaranteeWhereInput> _$gGuaranteeWhereInputSerializer =
+    new _$GGuaranteeWhereInputSerializer();
+Serializer<GGuaranteeOrderByInput> _$gGuaranteeOrderByInputSerializer =
+    new _$GGuaranteeOrderByInputSerializer();
+Serializer<GGuaranteeUpdateInput> _$gGuaranteeUpdateInputSerializer =
+    new _$GGuaranteeUpdateInputSerializer();
+Serializer<GGuaranteeUpdateArgs> _$gGuaranteeUpdateArgsSerializer =
+    new _$GGuaranteeUpdateArgsSerializer();
+Serializer<GGuaranteeCreateInput> _$gGuaranteeCreateInputSerializer =
+    new _$GGuaranteeCreateInputSerializer();
+Serializer<GGuaranteeFileWhereUniqueInput>
+    _$gGuaranteeFileWhereUniqueInputSerializer =
+    new _$GGuaranteeFileWhereUniqueInputSerializer();
+Serializer<GGuaranteeFileWhereInput> _$gGuaranteeFileWhereInputSerializer =
+    new _$GGuaranteeFileWhereInputSerializer();
+Serializer<GGuaranteeFileOrderByInput> _$gGuaranteeFileOrderByInputSerializer =
+    new _$GGuaranteeFileOrderByInputSerializer();
+Serializer<GGuaranteeFileUpdateInput> _$gGuaranteeFileUpdateInputSerializer =
+    new _$GGuaranteeFileUpdateInputSerializer();
+Serializer<GGuaranteeFileUpdateArgs> _$gGuaranteeFileUpdateArgsSerializer =
+    new _$GGuaranteeFileUpdateArgsSerializer();
+Serializer<GGuaranteeFileCreateInput> _$gGuaranteeFileCreateInputSerializer =
+    new _$GGuaranteeFileCreateInputSerializer();
 Serializer<GVehicleDealerWhereUniqueInput>
     _$gVehicleDealerWhereUniqueInputSerializer =
     new _$GVehicleDealerWhereUniqueInputSerializer();
 Serializer<GVehicleDealerWhereInput> _$gVehicleDealerWhereInputSerializer =
     new _$GVehicleDealerWhereInputSerializer();
+Serializer<GGuaranteeManyRelationFilter>
+    _$gGuaranteeManyRelationFilterSerializer =
+    new _$GGuaranteeManyRelationFilterSerializer();
 Serializer<GPriceManyRelationFilter> _$gPriceManyRelationFilterSerializer =
     new _$GPriceManyRelationFilterSerializer();
 Serializer<GVehicleDealerOrderByInput> _$gVehicleDealerOrderByInputSerializer =
     new _$GVehicleDealerOrderByInputSerializer();
 Serializer<GVehicleDealerUpdateInput> _$gVehicleDealerUpdateInputSerializer =
     new _$GVehicleDealerUpdateInputSerializer();
+Serializer<GGuaranteeRelateToManyForUpdateInput>
+    _$gGuaranteeRelateToManyForUpdateInputSerializer =
+    new _$GGuaranteeRelateToManyForUpdateInputSerializer();
 Serializer<GPriceRelateToManyForUpdateInput>
     _$gPriceRelateToManyForUpdateInputSerializer =
     new _$GPriceRelateToManyForUpdateInputSerializer();
@@ -718,6 +777,9 @@ Serializer<GVehicleDealerUpdateArgs> _$gVehicleDealerUpdateArgsSerializer =
     new _$GVehicleDealerUpdateArgsSerializer();
 Serializer<GVehicleDealerCreateInput> _$gVehicleDealerCreateInputSerializer =
     new _$GVehicleDealerCreateInputSerializer();
+Serializer<GGuaranteeRelateToManyForCreateInput>
+    _$gGuaranteeRelateToManyForCreateInputSerializer =
+    new _$GGuaranteeRelateToManyForCreateInputSerializer();
 Serializer<GPriceRelateToManyForCreateInput>
     _$gPriceRelateToManyForCreateInputSerializer =
     new _$GPriceRelateToManyForCreateInputSerializer();
@@ -965,6 +1027,9 @@ Serializer<GVehicleDealerRelateToOneForUpdateInput>
 Serializer<GAddressRelateToOneForUpdateInput>
     _$gAddressRelateToOneForUpdateInputSerializer =
     new _$GAddressRelateToOneForUpdateInputSerializer();
+Serializer<GVehicleOrderAdditionalInfoRelateToOneForUpdateInput>
+    _$gVehicleOrderAdditionalInfoRelateToOneForUpdateInputSerializer =
+    new _$GVehicleOrderAdditionalInfoRelateToOneForUpdateInputSerializer();
 Serializer<GVehicleOrderUpdateArgs> _$gVehicleOrderUpdateArgsSerializer =
     new _$GVehicleOrderUpdateArgsSerializer();
 Serializer<GVehicleOrderCreateInput> _$gVehicleOrderCreateInputSerializer =
@@ -975,6 +1040,9 @@ Serializer<GVehicleDealerRelateToOneForCreateInput>
 Serializer<GAddressRelateToOneForCreateInput>
     _$gAddressRelateToOneForCreateInputSerializer =
     new _$GAddressRelateToOneForCreateInputSerializer();
+Serializer<GVehicleOrderAdditionalInfoRelateToOneForCreateInput>
+    _$gVehicleOrderAdditionalInfoRelateToOneForCreateInputSerializer =
+    new _$GVehicleOrderAdditionalInfoRelateToOneForCreateInputSerializer();
 Serializer<GTestDriveOrderWhereUniqueInput>
     _$gTestDriveOrderWhereUniqueInputSerializer =
     new _$GTestDriveOrderWhereUniqueInputSerializer();
@@ -1050,30 +1118,84 @@ Serializer<GOrderRejectionByDealerUpdateArgs>
 Serializer<GOrderRejectionByDealerCreateInput>
     _$gOrderRejectionByDealerCreateInputSerializer =
     new _$GOrderRejectionByDealerCreateInputSerializer();
+Serializer<GVehicleOrderAdditionalInfoWhereUniqueInput>
+    _$gVehicleOrderAdditionalInfoWhereUniqueInputSerializer =
+    new _$GVehicleOrderAdditionalInfoWhereUniqueInputSerializer();
+Serializer<GVehicleOrderAdditionalInfoWhereInput>
+    _$gVehicleOrderAdditionalInfoWhereInputSerializer =
+    new _$GVehicleOrderAdditionalInfoWhereInputSerializer();
+Serializer<GVehicleOrderAdditionalInfoOrderByInput>
+    _$gVehicleOrderAdditionalInfoOrderByInputSerializer =
+    new _$GVehicleOrderAdditionalInfoOrderByInputSerializer();
+Serializer<GVehicleOrderAdditionalInfoUpdateInput>
+    _$gVehicleOrderAdditionalInfoUpdateInputSerializer =
+    new _$GVehicleOrderAdditionalInfoUpdateInputSerializer();
+Serializer<GVehicleOrderAdditionalInfoUpdateArgs>
+    _$gVehicleOrderAdditionalInfoUpdateArgsSerializer =
+    new _$GVehicleOrderAdditionalInfoUpdateArgsSerializer();
+Serializer<GVehicleOrderAdditionalInfoCreateInput>
+    _$gVehicleOrderAdditionalInfoCreateInputSerializer =
+    new _$GVehicleOrderAdditionalInfoCreateInputSerializer();
 Serializer<GUserVehicleReviewWhereUniqueInput>
     _$gUserVehicleReviewWhereUniqueInputSerializer =
     new _$GUserVehicleReviewWhereUniqueInputSerializer();
 Serializer<GUserVehicleReviewWhereInput>
     _$gUserVehicleReviewWhereInputSerializer =
     new _$GUserVehicleReviewWhereInputSerializer();
+Serializer<GUserVehicleReviewAttachmentManyRelationFilter>
+    _$gUserVehicleReviewAttachmentManyRelationFilterSerializer =
+    new _$GUserVehicleReviewAttachmentManyRelationFilterSerializer();
 Serializer<GUserVehicleReviewOrderByInput>
     _$gUserVehicleReviewOrderByInputSerializer =
     new _$GUserVehicleReviewOrderByInputSerializer();
 Serializer<GUserVehicleReviewUpdateInput>
     _$gUserVehicleReviewUpdateInputSerializer =
     new _$GUserVehicleReviewUpdateInputSerializer();
+Serializer<GUserVehicleReviewAttachmentRelateToManyForUpdateInput>
+    _$gUserVehicleReviewAttachmentRelateToManyForUpdateInputSerializer =
+    new _$GUserVehicleReviewAttachmentRelateToManyForUpdateInputSerializer();
 Serializer<GUserVehicleReviewUpdateArgs>
     _$gUserVehicleReviewUpdateArgsSerializer =
     new _$GUserVehicleReviewUpdateArgsSerializer();
 Serializer<GUserVehicleReviewCreateInput>
     _$gUserVehicleReviewCreateInputSerializer =
     new _$GUserVehicleReviewCreateInputSerializer();
+Serializer<GUserVehicleReviewAttachmentRelateToManyForCreateInput>
+    _$gUserVehicleReviewAttachmentRelateToManyForCreateInputSerializer =
+    new _$GUserVehicleReviewAttachmentRelateToManyForCreateInputSerializer();
+Serializer<GUserVehicleReviewAttachmentWhereUniqueInput>
+    _$gUserVehicleReviewAttachmentWhereUniqueInputSerializer =
+    new _$GUserVehicleReviewAttachmentWhereUniqueInputSerializer();
+Serializer<GUserVehicleReviewAttachmentWhereInput>
+    _$gUserVehicleReviewAttachmentWhereInputSerializer =
+    new _$GUserVehicleReviewAttachmentWhereInputSerializer();
+Serializer<GUserVehicleReviewAttachmentOrderByInput>
+    _$gUserVehicleReviewAttachmentOrderByInputSerializer =
+    new _$GUserVehicleReviewAttachmentOrderByInputSerializer();
+Serializer<GUserVehicleReviewAttachmentUpdateInput>
+    _$gUserVehicleReviewAttachmentUpdateInputSerializer =
+    new _$GUserVehicleReviewAttachmentUpdateInputSerializer();
+Serializer<GUserVehicleReviewRelateToOneForUpdateInput>
+    _$gUserVehicleReviewRelateToOneForUpdateInputSerializer =
+    new _$GUserVehicleReviewRelateToOneForUpdateInputSerializer();
+Serializer<GUserVehicleReviewAttachmentUpdateArgs>
+    _$gUserVehicleReviewAttachmentUpdateArgsSerializer =
+    new _$GUserVehicleReviewAttachmentUpdateArgsSerializer();
+Serializer<GUserVehicleReviewAttachmentCreateInput>
+    _$gUserVehicleReviewAttachmentCreateInputSerializer =
+    new _$GUserVehicleReviewAttachmentCreateInputSerializer();
+Serializer<GUserVehicleReviewRelateToOneForCreateInput>
+    _$gUserVehicleReviewRelateToOneForCreateInputSerializer =
+    new _$GUserVehicleReviewRelateToOneForCreateInputSerializer();
 Serializer<GUserProductReviewWhereUniqueInput>
     _$gUserProductReviewWhereUniqueInputSerializer =
     new _$GUserProductReviewWhereUniqueInputSerializer();
 Serializer<GUserProductReviewWhereInput>
     _$gUserProductReviewWhereInputSerializer =
     new _$GUserProductReviewWhereInputSerializer();
+Serializer<GUserProductReviewAttachmentManyRelationFilter>
+    _$gUserProductReviewAttachmentManyRelationFilterSerializer =
+    new _$GUserProductReviewAttachmentManyRelationFilterSerializer();
 Serializer<GUserProductReviewOrderByInput>
     _$gUserProductReviewOrderByInputSerializer =
     new _$GUserProductReviewOrderByInputSerializer();
@@ -1083,6 +1205,9 @@ Serializer<GUserProductReviewUpdateInput>
 Serializer<GProductRelateToOneForUpdateInput>
     _$gProductRelateToOneForUpdateInputSerializer =
     new _$GProductRelateToOneForUpdateInputSerializer();
+Serializer<GUserProductReviewAttachmentRelateToManyForUpdateInput>
+    _$gUserProductReviewAttachmentRelateToManyForUpdateInputSerializer =
+    new _$GUserProductReviewAttachmentRelateToManyForUpdateInputSerializer();
 Serializer<GUserProductReviewUpdateArgs>
     _$gUserProductReviewUpdateArgsSerializer =
     new _$GUserProductReviewUpdateArgsSerializer();
@@ -1092,6 +1217,33 @@ Serializer<GUserProductReviewCreateInput>
 Serializer<GProductRelateToOneForCreateInput>
     _$gProductRelateToOneForCreateInputSerializer =
     new _$GProductRelateToOneForCreateInputSerializer();
+Serializer<GUserProductReviewAttachmentRelateToManyForCreateInput>
+    _$gUserProductReviewAttachmentRelateToManyForCreateInputSerializer =
+    new _$GUserProductReviewAttachmentRelateToManyForCreateInputSerializer();
+Serializer<GUserProductReviewAttachmentWhereUniqueInput>
+    _$gUserProductReviewAttachmentWhereUniqueInputSerializer =
+    new _$GUserProductReviewAttachmentWhereUniqueInputSerializer();
+Serializer<GUserProductReviewAttachmentWhereInput>
+    _$gUserProductReviewAttachmentWhereInputSerializer =
+    new _$GUserProductReviewAttachmentWhereInputSerializer();
+Serializer<GUserProductReviewAttachmentOrderByInput>
+    _$gUserProductReviewAttachmentOrderByInputSerializer =
+    new _$GUserProductReviewAttachmentOrderByInputSerializer();
+Serializer<GUserProductReviewAttachmentUpdateInput>
+    _$gUserProductReviewAttachmentUpdateInputSerializer =
+    new _$GUserProductReviewAttachmentUpdateInputSerializer();
+Serializer<GUserProductReviewRelateToOneForUpdateInput>
+    _$gUserProductReviewRelateToOneForUpdateInputSerializer =
+    new _$GUserProductReviewRelateToOneForUpdateInputSerializer();
+Serializer<GUserProductReviewAttachmentUpdateArgs>
+    _$gUserProductReviewAttachmentUpdateArgsSerializer =
+    new _$GUserProductReviewAttachmentUpdateArgsSerializer();
+Serializer<GUserProductReviewAttachmentCreateInput>
+    _$gUserProductReviewAttachmentCreateInputSerializer =
+    new _$GUserProductReviewAttachmentCreateInputSerializer();
+Serializer<GUserProductReviewRelateToOneForCreateInput>
+    _$gUserProductReviewRelateToOneForCreateInputSerializer =
+    new _$GUserProductReviewRelateToOneForCreateInputSerializer();
 Serializer<GExpertReviewWhereUniqueInput>
     _$gExpertReviewWhereUniqueInputSerializer =
     new _$GExpertReviewWhereUniqueInputSerializer();
@@ -1209,13 +1361,9 @@ Serializer<GAppNotificationWhereUniqueInput>
     new _$GAppNotificationWhereUniqueInputSerializer();
 Serializer<GAppNotificationWhereInput> _$gAppNotificationWhereInputSerializer =
     new _$GAppNotificationWhereInputSerializer();
-Serializer<GGuaranteeWhereInput> _$gGuaranteeWhereInputSerializer =
-    new _$GGuaranteeWhereInputSerializer();
 Serializer<GAppNotificationOrderByInput>
     _$gAppNotificationOrderByInputSerializer =
     new _$GAppNotificationOrderByInputSerializer();
-Serializer<GGuaranteeOrderByInput> _$gGuaranteeOrderByInputSerializer =
-    new _$GGuaranteeOrderByInputSerializer();
 Serializer<GAppNotificationUpdateInput>
     _$gAppNotificationUpdateInputSerializer =
     new _$GAppNotificationUpdateInputSerializer();
@@ -1362,6 +1510,8 @@ Serializer<GCouponWhereInput> _$gCouponWhereInputSerializer =
     new _$GCouponWhereInputSerializer();
 Serializer<GVehicleManyRelationFilter> _$gVehicleManyRelationFilterSerializer =
     new _$GVehicleManyRelationFilterSerializer();
+Serializer<GProductManyRelationFilter> _$gProductManyRelationFilterSerializer =
+    new _$GProductManyRelationFilterSerializer();
 Serializer<GCouponOrderByInput> _$gCouponOrderByInputSerializer =
     new _$GCouponOrderByInputSerializer();
 Serializer<GCouponUpdateInput> _$gCouponUpdateInputSerializer =
@@ -1369,6 +1519,9 @@ Serializer<GCouponUpdateInput> _$gCouponUpdateInputSerializer =
 Serializer<GVehicleRelateToManyForUpdateInput>
     _$gVehicleRelateToManyForUpdateInputSerializer =
     new _$GVehicleRelateToManyForUpdateInputSerializer();
+Serializer<GProductRelateToManyForUpdateInput>
+    _$gProductRelateToManyForUpdateInputSerializer =
+    new _$GProductRelateToManyForUpdateInputSerializer();
 Serializer<GCouponUpdateArgs> _$gCouponUpdateArgsSerializer =
     new _$GCouponUpdateArgsSerializer();
 Serializer<GCouponCreateInput> _$gCouponCreateInputSerializer =
@@ -1376,6 +1529,9 @@ Serializer<GCouponCreateInput> _$gCouponCreateInputSerializer =
 Serializer<GVehicleRelateToManyForCreateInput>
     _$gVehicleRelateToManyForCreateInputSerializer =
     new _$GVehicleRelateToManyForCreateInputSerializer();
+Serializer<GProductRelateToManyForCreateInput>
+    _$gProductRelateToManyForCreateInputSerializer =
+    new _$GProductRelateToManyForCreateInputSerializer();
 Serializer<GOfferWhereUniqueInput> _$gOfferWhereUniqueInputSerializer =
     new _$GOfferWhereUniqueInputSerializer();
 Serializer<GOfferWhereInput> _$gOfferWhereInputSerializer =
@@ -9813,6 +9969,685 @@ class _$GVehicleTypeCreateInputSerializer
   }
 }
 
+class _$GVehicleSubTypeWhereUniqueInputSerializer
+    implements StructuredSerializer<GVehicleSubTypeWhereUniqueInput> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleSubTypeWhereUniqueInput,
+    _$GVehicleSubTypeWhereUniqueInput
+  ];
+  @override
+  final String wireName = 'GVehicleSubTypeWhereUniqueInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleSubTypeWhereUniqueInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleSubTypeWhereUniqueInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleSubTypeWhereUniqueInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleSubTypeWhereInputSerializer
+    implements StructuredSerializer<GVehicleSubTypeWhereInput> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleSubTypeWhereInput,
+    _$GVehicleSubTypeWhereInput
+  ];
+  @override
+  final String wireName = 'GVehicleSubTypeWhereInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleSubTypeWhereInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.AND;
+    if (value != null) {
+      result
+        ..add('AND')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GVehicleSubTypeWhereInput)])));
+    }
+    value = object.OR;
+    if (value != null) {
+      result
+        ..add('OR')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GVehicleSubTypeWhereInput)])));
+    }
+    value = object.NOT;
+    if (value != null) {
+      result
+        ..add('NOT')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GVehicleSubTypeWhereInput)])));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GIDFilter)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.vehicleType;
+    if (value != null) {
+      result
+        ..add('vehicleType')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GVehicleTypeWhereInput)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleSubTypeWhereInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleSubTypeWhereInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'AND':
+          result.AND.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GVehicleSubTypeWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'OR':
+          result.OR.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GVehicleSubTypeWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'NOT':
+          result.NOT.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GVehicleSubTypeWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GIDFilter))! as GIDFilter);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'name':
+          result.name.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'description':
+          result.description.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'vehicleType':
+          result.vehicleType.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GVehicleTypeWhereInput))!
+              as GVehicleTypeWhereInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleSubTypeOrderByInputSerializer
+    implements StructuredSerializer<GVehicleSubTypeOrderByInput> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleSubTypeOrderByInput,
+    _$GVehicleSubTypeOrderByInput
+  ];
+  @override
+  final String wireName = 'GVehicleSubTypeOrderByInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleSubTypeOrderByInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleSubTypeOrderByInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleSubTypeOrderByInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'createdAt':
+          result.createdAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'modifiedAt':
+          result.modifiedAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleSubTypeUpdateInputSerializer
+    implements StructuredSerializer<GVehicleSubTypeUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleSubTypeUpdateInput,
+    _$GVehicleSubTypeUpdateInput
+  ];
+  @override
+  final String wireName = 'GVehicleSubTypeUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleSubTypeUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.vehicleType;
+    if (value != null) {
+      result
+        ..add('vehicleType')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GVehicleTypeRelateToOneForUpdateInput)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleSubTypeUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleSubTypeUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'vehicleType':
+          result.vehicleType.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleTypeRelateToOneForUpdateInput))!
+              as GVehicleTypeRelateToOneForUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleTypeRelateToOneForUpdateInputSerializer
+    implements StructuredSerializer<GVehicleTypeRelateToOneForUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleTypeRelateToOneForUpdateInput,
+    _$GVehicleTypeRelateToOneForUpdateInput
+  ];
+  @override
+  final String wireName = 'GVehicleTypeRelateToOneForUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleTypeRelateToOneForUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GVehicleTypeCreateInput)));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GVehicleTypeWhereUniqueInput)));
+    }
+    value = object.disconnect;
+    if (value != null) {
+      result
+        ..add('disconnect')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleTypeRelateToOneForUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleTypeRelateToOneForUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GVehicleTypeCreateInput))!
+              as GVehicleTypeCreateInput);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GVehicleTypeWhereUniqueInput))!
+              as GVehicleTypeWhereUniqueInput);
+          break;
+        case 'disconnect':
+          result.disconnect = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleSubTypeUpdateArgsSerializer
+    implements StructuredSerializer<GVehicleSubTypeUpdateArgs> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleSubTypeUpdateArgs,
+    _$GVehicleSubTypeUpdateArgs
+  ];
+  @override
+  final String wireName = 'GVehicleSubTypeUpdateArgs';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleSubTypeUpdateArgs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(GVehicleSubTypeWhereUniqueInput)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(GVehicleSubTypeUpdateInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GVehicleSubTypeUpdateArgs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleSubTypeUpdateArgsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleSubTypeWhereUniqueInput))!
+              as GVehicleSubTypeWhereUniqueInput);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GVehicleSubTypeUpdateInput))!
+              as GVehicleSubTypeUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleSubTypeCreateInputSerializer
+    implements StructuredSerializer<GVehicleSubTypeCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleSubTypeCreateInput,
+    _$GVehicleSubTypeCreateInput
+  ];
+  @override
+  final String wireName = 'GVehicleSubTypeCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleSubTypeCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.vehicleType;
+    if (value != null) {
+      result
+        ..add('vehicleType')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GVehicleTypeRelateToOneForCreateInput)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleSubTypeCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleSubTypeCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'vehicleType':
+          result.vehicleType.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleTypeRelateToOneForCreateInput))!
+              as GVehicleTypeRelateToOneForCreateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleTypeRelateToOneForCreateInputSerializer
+    implements StructuredSerializer<GVehicleTypeRelateToOneForCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleTypeRelateToOneForCreateInput,
+    _$GVehicleTypeRelateToOneForCreateInput
+  ];
+  @override
+  final String wireName = 'GVehicleTypeRelateToOneForCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleTypeRelateToOneForCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GVehicleTypeCreateInput)));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GVehicleTypeWhereUniqueInput)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleTypeRelateToOneForCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleTypeRelateToOneForCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GVehicleTypeCreateInput))!
+              as GVehicleTypeCreateInput);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GVehicleTypeWhereUniqueInput))!
+              as GVehicleTypeWhereUniqueInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$GBrandWhereUniqueInputSerializer
     implements StructuredSerializer<GBrandWhereUniqueInput> {
   @override
@@ -10100,6 +10935,14 @@ class _$GBrandUpdateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(String)])));
+    }
     value = object.logo;
     if (value != null) {
       result
@@ -10133,6 +10976,12 @@ class _$GBrandUpdateInputSerializer
         case 'name':
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
+          break;
+        case 'type':
+          result.type.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(String)]))!
+              as BuiltList<Object?>);
           break;
         case 'logo':
           result.logo.replace(serializers.deserialize(value,
@@ -10230,6 +11079,14 @@ class _$GBrandCreateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(String)])));
+    }
     value = object.logo;
     if (value != null) {
       result
@@ -10263,6 +11120,12 @@ class _$GBrandCreateInputSerializer
         case 'name':
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
+          break;
+        case 'type':
+          result.type.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(String)]))!
+              as BuiltList<Object?>);
           break;
         case 'logo':
           result.logo.replace(serializers.deserialize(value,
@@ -12240,12 +13103,26 @@ class _$GVehicleWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GStringFilter)));
     }
+    value = object.longDescription;
+    if (value != null) {
+      result
+        ..add('longDescription')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
     value = object.type;
     if (value != null) {
       result
         ..add('type')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GVehicleTypeWhereInput)));
+    }
+    value = object.subType;
+    if (value != null) {
+      result
+        ..add('subType')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GVehicleSubTypeManyRelationFilter)));
     }
     value = object.brand;
     if (value != null) {
@@ -12338,10 +13215,20 @@ class _$GVehicleWhereInputSerializer
           result.description.replace(serializers.deserialize(value,
               specifiedType: const FullType(GStringFilter))! as GStringFilter);
           break;
+        case 'longDescription':
+          result.longDescription.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
         case 'type':
           result.type.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GVehicleTypeWhereInput))!
               as GVehicleTypeWhereInput);
+          break;
+        case 'subType':
+          result.subType.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleSubTypeManyRelationFilter))!
+              as GVehicleSubTypeManyRelationFilter);
           break;
         case 'brand':
           result.brand.replace(serializers.deserialize(value,
@@ -12370,6 +13257,80 @@ class _$GVehicleWhereInputSerializer
           result.informative.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GBooleanFilter))!
               as GBooleanFilter);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleSubTypeManyRelationFilterSerializer
+    implements StructuredSerializer<GVehicleSubTypeManyRelationFilter> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleSubTypeManyRelationFilter,
+    _$GVehicleSubTypeManyRelationFilter
+  ];
+  @override
+  final String wireName = 'GVehicleSubTypeManyRelationFilter';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleSubTypeManyRelationFilter object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.every;
+    if (value != null) {
+      result
+        ..add('every')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GVehicleSubTypeWhereInput)));
+    }
+    value = object.some;
+    if (value != null) {
+      result
+        ..add('some')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GVehicleSubTypeWhereInput)));
+    }
+    value = object.none;
+    if (value != null) {
+      result
+        ..add('none')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GVehicleSubTypeWhereInput)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleSubTypeManyRelationFilter deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleSubTypeManyRelationFilterBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'every':
+          result.every.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GVehicleSubTypeWhereInput))!
+              as GVehicleSubTypeWhereInput);
+          break;
+        case 'some':
+          result.some.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GVehicleSubTypeWhereInput))!
+              as GVehicleSubTypeWhereInput);
+          break;
+        case 'none':
+          result.none.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GVehicleSubTypeWhereInput))!
+              as GVehicleSubTypeWhereInput);
           break;
       }
     }
@@ -12654,6 +13615,13 @@ class _$GVehicleOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.longDescription;
+    if (value != null) {
+      result
+        ..add('longDescription')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     value = object.informative;
     if (value != null) {
       result
@@ -12698,6 +13666,11 @@ class _$GVehicleOrderByInputSerializer
           break;
         case 'description':
           result.description = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'longDescription':
+          result.longDescription = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -12757,6 +13730,13 @@ class _$GVehicleUpdateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.longDescription;
+    if (value != null) {
+      result
+        ..add('longDescription')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.type;
     if (value != null) {
       result
@@ -12764,6 +13744,14 @@ class _$GVehicleUpdateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType:
                 const FullType(GVehicleTypeRelateToOneForUpdateInput)));
+    }
+    value = object.subType;
+    if (value != null) {
+      result
+        ..add('subType')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GVehicleSubTypeRelateToManyForUpdateInput)));
     }
     value = object.brand;
     if (value != null) {
@@ -12834,11 +13822,21 @@ class _$GVehicleUpdateInputSerializer
           result.description = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'longDescription':
+          result.longDescription = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
         case 'type':
           result.type.replace(serializers.deserialize(value,
                   specifiedType:
                       const FullType(GVehicleTypeRelateToOneForUpdateInput))!
               as GVehicleTypeRelateToOneForUpdateInput);
+          break;
+        case 'subType':
+          result.subType.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GVehicleSubTypeRelateToManyForUpdateInput))!
+              as GVehicleSubTypeRelateToManyForUpdateInput);
           break;
         case 'brand':
           result.brand.replace(serializers.deserialize(value,
@@ -12875,51 +13873,62 @@ class _$GVehicleUpdateInputSerializer
   }
 }
 
-class _$GVehicleTypeRelateToOneForUpdateInputSerializer
-    implements StructuredSerializer<GVehicleTypeRelateToOneForUpdateInput> {
+class _$GVehicleSubTypeRelateToManyForUpdateInputSerializer
+    implements StructuredSerializer<GVehicleSubTypeRelateToManyForUpdateInput> {
   @override
   final Iterable<Type> types = const [
-    GVehicleTypeRelateToOneForUpdateInput,
-    _$GVehicleTypeRelateToOneForUpdateInput
+    GVehicleSubTypeRelateToManyForUpdateInput,
+    _$GVehicleSubTypeRelateToManyForUpdateInput
   ];
   @override
-  final String wireName = 'GVehicleTypeRelateToOneForUpdateInput';
+  final String wireName = 'GVehicleSubTypeRelateToManyForUpdateInput';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GVehicleTypeRelateToOneForUpdateInput object,
+      Serializers serializers, GVehicleSubTypeRelateToManyForUpdateInput object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
+    value = object.disconnect;
+    if (value != null) {
+      result
+        ..add('disconnect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GVehicleSubTypeWhereUniqueInput)])));
+    }
+    value = object.set;
+    if (value != null) {
+      result
+        ..add('set')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GVehicleSubTypeWhereUniqueInput)])));
+    }
     value = object.create;
     if (value != null) {
       result
         ..add('create')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(GVehicleTypeCreateInput)));
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GVehicleSubTypeCreateInput)])));
     }
     value = object.connect;
     if (value != null) {
       result
         ..add('connect')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(GVehicleTypeWhereUniqueInput)));
-    }
-    value = object.disconnect;
-    if (value != null) {
-      result
-        ..add('disconnect')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(bool)));
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GVehicleSubTypeWhereUniqueInput)])));
     }
     return result;
   }
 
   @override
-  GVehicleTypeRelateToOneForUpdateInput deserialize(
+  GVehicleSubTypeRelateToManyForUpdateInput deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehicleTypeRelateToOneForUpdateInputBuilder();
+    final result = new GVehicleSubTypeRelateToManyForUpdateInputBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -12927,19 +13936,29 @@ class _$GVehicleTypeRelateToOneForUpdateInputSerializer
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
+        case 'disconnect':
+          result.disconnect.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GVehicleSubTypeWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'set':
+          result.set.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GVehicleSubTypeWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
+          break;
         case 'create':
           result.create.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GVehicleTypeCreateInput))!
-              as GVehicleTypeCreateInput);
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GVehicleSubTypeCreateInput)
+              ]))! as BuiltList<Object?>);
           break;
         case 'connect':
           result.connect.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GVehicleTypeWhereUniqueInput))!
-              as GVehicleTypeWhereUniqueInput);
-          break;
-        case 'disconnect':
-          result.disconnect = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool?;
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GVehicleSubTypeWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -13403,6 +14422,13 @@ class _$GVehicleCreateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.longDescription;
+    if (value != null) {
+      result
+        ..add('longDescription')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.type;
     if (value != null) {
       result
@@ -13410,6 +14436,14 @@ class _$GVehicleCreateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType:
                 const FullType(GVehicleTypeRelateToOneForCreateInput)));
+    }
+    value = object.subType;
+    if (value != null) {
+      result
+        ..add('subType')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GVehicleSubTypeRelateToManyForCreateInput)));
     }
     value = object.brand;
     if (value != null) {
@@ -13480,11 +14514,21 @@ class _$GVehicleCreateInputSerializer
           result.description = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'longDescription':
+          result.longDescription = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
         case 'type':
           result.type.replace(serializers.deserialize(value,
                   specifiedType:
                       const FullType(GVehicleTypeRelateToOneForCreateInput))!
               as GVehicleTypeRelateToOneForCreateInput);
+          break;
+        case 'subType':
+          result.subType.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GVehicleSubTypeRelateToManyForCreateInput))!
+              as GVehicleSubTypeRelateToManyForCreateInput);
           break;
         case 'brand':
           result.brand.replace(serializers.deserialize(value,
@@ -13521,19 +14565,19 @@ class _$GVehicleCreateInputSerializer
   }
 }
 
-class _$GVehicleTypeRelateToOneForCreateInputSerializer
-    implements StructuredSerializer<GVehicleTypeRelateToOneForCreateInput> {
+class _$GVehicleSubTypeRelateToManyForCreateInputSerializer
+    implements StructuredSerializer<GVehicleSubTypeRelateToManyForCreateInput> {
   @override
   final Iterable<Type> types = const [
-    GVehicleTypeRelateToOneForCreateInput,
-    _$GVehicleTypeRelateToOneForCreateInput
+    GVehicleSubTypeRelateToManyForCreateInput,
+    _$GVehicleSubTypeRelateToManyForCreateInput
   ];
   @override
-  final String wireName = 'GVehicleTypeRelateToOneForCreateInput';
+  final String wireName = 'GVehicleSubTypeRelateToManyForCreateInput';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GVehicleTypeRelateToOneForCreateInput object,
+      Serializers serializers, GVehicleSubTypeRelateToManyForCreateInput object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
@@ -13542,23 +14586,25 @@ class _$GVehicleTypeRelateToOneForCreateInputSerializer
       result
         ..add('create')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(GVehicleTypeCreateInput)));
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GVehicleSubTypeCreateInput)])));
     }
     value = object.connect;
     if (value != null) {
       result
         ..add('connect')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(GVehicleTypeWhereUniqueInput)));
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GVehicleSubTypeWhereUniqueInput)])));
     }
     return result;
   }
 
   @override
-  GVehicleTypeRelateToOneForCreateInput deserialize(
+  GVehicleSubTypeRelateToManyForCreateInput deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehicleTypeRelateToOneForCreateInputBuilder();
+    final result = new GVehicleSubTypeRelateToManyForCreateInputBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -13568,13 +14614,15 @@ class _$GVehicleTypeRelateToOneForCreateInputSerializer
       switch (key) {
         case 'create':
           result.create.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GVehicleTypeCreateInput))!
-              as GVehicleTypeCreateInput);
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GVehicleSubTypeCreateInput)
+              ]))! as BuiltList<Object?>);
           break;
         case 'connect':
           result.connect.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GVehicleTypeWhereUniqueInput))!
-              as GVehicleTypeWhereUniqueInput);
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GVehicleSubTypeWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -14012,6 +15060,13 @@ class _$GVehicleColorWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GVehicleReelManyRelationFilter)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GBooleanFilter)));
+    }
     return result;
   }
 
@@ -14101,6 +15156,11 @@ class _$GVehicleColorWhereInputSerializer
                   specifiedType:
                       const FullType(GVehicleReelManyRelationFilter))!
               as GVehicleReelManyRelationFilter);
+          break;
+        case 'disabled':
+          result.disabled.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GBooleanFilter))!
+              as GBooleanFilter);
           break;
       }
     }
@@ -14456,6 +15516,13 @@ class _$GVehicleColorOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     return result;
   }
 
@@ -14493,6 +15560,11 @@ class _$GVehicleColorOrderByInputSerializer
           break;
         case 'code':
           result.code = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -14594,6 +15666,13 @@ class _$GVehicleColorUpdateInputSerializer
             specifiedType:
                 const FullType(GVehicleReelRelateToManyForUpdateInput)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -14660,6 +15739,10 @@ class _$GVehicleColorUpdateInputSerializer
                   specifiedType:
                       const FullType(GVehicleReelRelateToManyForUpdateInput))!
               as GVehicleReelRelateToManyForUpdateInput);
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -15264,6 +16347,13 @@ class _$GVehicleColorCreateInputSerializer
             specifiedType:
                 const FullType(GVehicleReelRelateToManyForCreateInput)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -15330,6 +16420,10 @@ class _$GVehicleColorCreateInputSerializer
                   specifiedType:
                       const FullType(GVehicleReelRelateToManyForCreateInput))!
               as GVehicleReelRelateToManyForCreateInput);
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -16517,6 +17611,13 @@ class _$GVehicleReelWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GIntNullableFilter)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GBooleanFilter)));
+    }
     return result;
   }
 
@@ -16581,6 +17682,11 @@ class _$GVehicleReelWhereInputSerializer
           result.index.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GIntNullableFilter))!
               as GIntNullableFilter);
+          break;
+        case 'disabled':
+          result.disabled.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GBooleanFilter))!
+              as GBooleanFilter);
           break;
       }
     }
@@ -16647,6 +17753,13 @@ class _$GVehicleReelOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     return result;
   }
 
@@ -16689,6 +17802,11 @@ class _$GVehicleReelOrderByInputSerializer
           break;
         case 'index':
           result.index = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -16757,6 +17875,13 @@ class _$GVehicleReelUpdateInputSerializer
         ..add('index')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -16797,6 +17922,10 @@ class _$GVehicleReelUpdateInputSerializer
         case 'index':
           result.index = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -16918,6 +18047,13 @@ class _$GVehicleReelCreateInputSerializer
         ..add('index')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -16958,6 +18094,951 @@ class _$GVehicleReelCreateInputSerializer
         case 'index':
           result.index = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGuaranteeWhereUniqueInputSerializer
+    implements StructuredSerializer<GGuaranteeWhereUniqueInput> {
+  @override
+  final Iterable<Type> types = const [
+    GGuaranteeWhereUniqueInput,
+    _$GGuaranteeWhereUniqueInput
+  ];
+  @override
+  final String wireName = 'GGuaranteeWhereUniqueInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GGuaranteeWhereUniqueInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GGuaranteeWhereUniqueInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GGuaranteeWhereUniqueInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGuaranteeWhereInputSerializer
+    implements StructuredSerializer<GGuaranteeWhereInput> {
+  @override
+  final Iterable<Type> types = const [
+    GGuaranteeWhereInput,
+    _$GGuaranteeWhereInput
+  ];
+  @override
+  final String wireName = 'GGuaranteeWhereInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GGuaranteeWhereInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.AND;
+    if (value != null) {
+      result
+        ..add('AND')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GGuaranteeWhereInput)])));
+    }
+    value = object.OR;
+    if (value != null) {
+      result
+        ..add('OR')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GGuaranteeWhereInput)])));
+    }
+    value = object.NOT;
+    if (value != null) {
+      result
+        ..add('NOT')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GGuaranteeWhereInput)])));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GIDFilter)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    return result;
+  }
+
+  @override
+  GGuaranteeWhereInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GGuaranteeWhereInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'AND':
+          result.AND.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(GGuaranteeWhereInput)]))!
+              as BuiltList<Object?>);
+          break;
+        case 'OR':
+          result.OR.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(GGuaranteeWhereInput)]))!
+              as BuiltList<Object?>);
+          break;
+        case 'NOT':
+          result.NOT.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(GGuaranteeWhereInput)]))!
+              as BuiltList<Object?>);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GIDFilter))! as GIDFilter);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'name':
+          result.name.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'description':
+          result.description.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGuaranteeOrderByInputSerializer
+    implements StructuredSerializer<GGuaranteeOrderByInput> {
+  @override
+  final Iterable<Type> types = const [
+    GGuaranteeOrderByInput,
+    _$GGuaranteeOrderByInput
+  ];
+  @override
+  final String wireName = 'GGuaranteeOrderByInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GGuaranteeOrderByInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    return result;
+  }
+
+  @override
+  GGuaranteeOrderByInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GGuaranteeOrderByInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'createdAt':
+          result.createdAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'modifiedAt':
+          result.modifiedAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGuaranteeUpdateInputSerializer
+    implements StructuredSerializer<GGuaranteeUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GGuaranteeUpdateInput,
+    _$GGuaranteeUpdateInput
+  ];
+  @override
+  final String wireName = 'GGuaranteeUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GGuaranteeUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GGuaranteeUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GGuaranteeUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGuaranteeUpdateArgsSerializer
+    implements StructuredSerializer<GGuaranteeUpdateArgs> {
+  @override
+  final Iterable<Type> types = const [
+    GGuaranteeUpdateArgs,
+    _$GGuaranteeUpdateArgs
+  ];
+  @override
+  final String wireName = 'GGuaranteeUpdateArgs';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GGuaranteeUpdateArgs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(GGuaranteeWhereUniqueInput)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(GGuaranteeUpdateInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GGuaranteeUpdateArgs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GGuaranteeUpdateArgsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GGuaranteeWhereUniqueInput))!
+              as GGuaranteeWhereUniqueInput);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GGuaranteeUpdateInput))!
+              as GGuaranteeUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGuaranteeCreateInputSerializer
+    implements StructuredSerializer<GGuaranteeCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GGuaranteeCreateInput,
+    _$GGuaranteeCreateInput
+  ];
+  @override
+  final String wireName = 'GGuaranteeCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GGuaranteeCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GGuaranteeCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GGuaranteeCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGuaranteeFileWhereUniqueInputSerializer
+    implements StructuredSerializer<GGuaranteeFileWhereUniqueInput> {
+  @override
+  final Iterable<Type> types = const [
+    GGuaranteeFileWhereUniqueInput,
+    _$GGuaranteeFileWhereUniqueInput
+  ];
+  @override
+  final String wireName = 'GGuaranteeFileWhereUniqueInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GGuaranteeFileWhereUniqueInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GGuaranteeFileWhereUniqueInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GGuaranteeFileWhereUniqueInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGuaranteeFileWhereInputSerializer
+    implements StructuredSerializer<GGuaranteeFileWhereInput> {
+  @override
+  final Iterable<Type> types = const [
+    GGuaranteeFileWhereInput,
+    _$GGuaranteeFileWhereInput
+  ];
+  @override
+  final String wireName = 'GGuaranteeFileWhereInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GGuaranteeFileWhereInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.AND;
+    if (value != null) {
+      result
+        ..add('AND')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GGuaranteeFileWhereInput)])));
+    }
+    value = object.OR;
+    if (value != null) {
+      result
+        ..add('OR')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GGuaranteeFileWhereInput)])));
+    }
+    value = object.NOT;
+    if (value != null) {
+      result
+        ..add('NOT')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GGuaranteeFileWhereInput)])));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GIDFilter)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    return result;
+  }
+
+  @override
+  GGuaranteeFileWhereInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GGuaranteeFileWhereInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'AND':
+          result.AND.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GGuaranteeFileWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'OR':
+          result.OR.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GGuaranteeFileWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'NOT':
+          result.NOT.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GGuaranteeFileWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GIDFilter))! as GIDFilter);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGuaranteeFileOrderByInputSerializer
+    implements StructuredSerializer<GGuaranteeFileOrderByInput> {
+  @override
+  final Iterable<Type> types = const [
+    GGuaranteeFileOrderByInput,
+    _$GGuaranteeFileOrderByInput
+  ];
+  @override
+  final String wireName = 'GGuaranteeFileOrderByInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GGuaranteeFileOrderByInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    return result;
+  }
+
+  @override
+  GGuaranteeFileOrderByInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GGuaranteeFileOrderByInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'createdAt':
+          result.createdAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'modifiedAt':
+          result.modifiedAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGuaranteeFileUpdateInputSerializer
+    implements StructuredSerializer<GGuaranteeFileUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GGuaranteeFileUpdateInput,
+    _$GGuaranteeFileUpdateInput
+  ];
+  @override
+  final String wireName = 'GGuaranteeFileUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GGuaranteeFileUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.file;
+    if (value != null) {
+      result
+        ..add('file')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GFileFieldInput)));
+    }
+    return result;
+  }
+
+  @override
+  GGuaranteeFileUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GGuaranteeFileUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'file':
+          result.file.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GFileFieldInput))!
+              as GFileFieldInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGuaranteeFileUpdateArgsSerializer
+    implements StructuredSerializer<GGuaranteeFileUpdateArgs> {
+  @override
+  final Iterable<Type> types = const [
+    GGuaranteeFileUpdateArgs,
+    _$GGuaranteeFileUpdateArgs
+  ];
+  @override
+  final String wireName = 'GGuaranteeFileUpdateArgs';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GGuaranteeFileUpdateArgs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(GGuaranteeFileWhereUniqueInput)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(GGuaranteeFileUpdateInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GGuaranteeFileUpdateArgs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GGuaranteeFileUpdateArgsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GGuaranteeFileWhereUniqueInput))!
+              as GGuaranteeFileWhereUniqueInput);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GGuaranteeFileUpdateInput))!
+              as GGuaranteeFileUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGuaranteeFileCreateInputSerializer
+    implements StructuredSerializer<GGuaranteeFileCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GGuaranteeFileCreateInput,
+    _$GGuaranteeFileCreateInput
+  ];
+  @override
+  final String wireName = 'GGuaranteeFileCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GGuaranteeFileCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.file;
+    if (value != null) {
+      result
+        ..add('file')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GFileFieldInput)));
+    }
+    return result;
+  }
+
+  @override
+  GGuaranteeFileCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GGuaranteeFileCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'file':
+          result.file.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GFileFieldInput))!
+              as GFileFieldInput);
           break;
       }
     }
@@ -17090,6 +19171,13 @@ class _$GVehicleDealerWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GVehicleVariantWhereInput)));
     }
+    value = object.guarantees;
+    if (value != null) {
+      result
+        ..add('guarantees')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GGuaranteeManyRelationFilter)));
+    }
     value = object.vehicleColor;
     if (value != null) {
       result
@@ -17168,6 +19256,11 @@ class _$GVehicleDealerWhereInputSerializer
                   specifiedType: const FullType(GVehicleVariantWhereInput))!
               as GVehicleVariantWhereInput);
           break;
+        case 'guarantees':
+          result.guarantees.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GGuaranteeManyRelationFilter))!
+              as GGuaranteeManyRelationFilter);
+          break;
         case 'vehicleColor':
           result.vehicleColor.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GVehicleColorWhereInput))!
@@ -17182,6 +19275,80 @@ class _$GVehicleDealerWhereInputSerializer
           result.stock.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GIntNullableFilter))!
               as GIntNullableFilter);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGuaranteeManyRelationFilterSerializer
+    implements StructuredSerializer<GGuaranteeManyRelationFilter> {
+  @override
+  final Iterable<Type> types = const [
+    GGuaranteeManyRelationFilter,
+    _$GGuaranteeManyRelationFilter
+  ];
+  @override
+  final String wireName = 'GGuaranteeManyRelationFilter';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GGuaranteeManyRelationFilter object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.every;
+    if (value != null) {
+      result
+        ..add('every')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GGuaranteeWhereInput)));
+    }
+    value = object.some;
+    if (value != null) {
+      result
+        ..add('some')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GGuaranteeWhereInput)));
+    }
+    value = object.none;
+    if (value != null) {
+      result
+        ..add('none')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GGuaranteeWhereInput)));
+    }
+    return result;
+  }
+
+  @override
+  GGuaranteeManyRelationFilter deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GGuaranteeManyRelationFilterBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'every':
+          result.every.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GGuaranteeWhereInput))!
+              as GGuaranteeWhereInput);
+          break;
+        case 'some':
+          result.some.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GGuaranteeWhereInput))!
+              as GGuaranteeWhereInput);
+          break;
+        case 'none':
+          result.none.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GGuaranteeWhereInput))!
+              as GGuaranteeWhereInput);
           break;
       }
     }
@@ -17395,6 +19562,14 @@ class _$GVehicleDealerUpdateInputSerializer
             specifiedType:
                 const FullType(GVehicleVariantRelateToOneForUpdateInput)));
     }
+    value = object.guarantees;
+    if (value != null) {
+      result
+        ..add('guarantees')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GGuaranteeRelateToManyForUpdateInput)));
+    }
     value = object.vehicleColor;
     if (value != null) {
       result
@@ -17451,6 +19626,12 @@ class _$GVehicleDealerUpdateInputSerializer
                       const FullType(GVehicleVariantRelateToOneForUpdateInput))!
               as GVehicleVariantRelateToOneForUpdateInput);
           break;
+        case 'guarantees':
+          result.guarantees.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GGuaranteeRelateToManyForUpdateInput))!
+              as GGuaranteeRelateToManyForUpdateInput);
+          break;
         case 'vehicleColor':
           result.vehicleColor.replace(serializers.deserialize(value,
                   specifiedType:
@@ -17466,6 +19647,100 @@ class _$GVehicleDealerUpdateInputSerializer
         case 'stock':
           result.stock = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGuaranteeRelateToManyForUpdateInputSerializer
+    implements StructuredSerializer<GGuaranteeRelateToManyForUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GGuaranteeRelateToManyForUpdateInput,
+    _$GGuaranteeRelateToManyForUpdateInput
+  ];
+  @override
+  final String wireName = 'GGuaranteeRelateToManyForUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GGuaranteeRelateToManyForUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.disconnect;
+    if (value != null) {
+      result
+        ..add('disconnect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GGuaranteeWhereUniqueInput)])));
+    }
+    value = object.set;
+    if (value != null) {
+      result
+        ..add('set')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GGuaranteeWhereUniqueInput)])));
+    }
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GGuaranteeCreateInput)])));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GGuaranteeWhereUniqueInput)])));
+    }
+    return result;
+  }
+
+  @override
+  GGuaranteeRelateToManyForUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GGuaranteeRelateToManyForUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'disconnect':
+          result.disconnect.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GGuaranteeWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'set':
+          result.set.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GGuaranteeWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GGuaranteeCreateInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GGuaranteeWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -17669,6 +19944,14 @@ class _$GVehicleDealerCreateInputSerializer
             specifiedType:
                 const FullType(GVehicleVariantRelateToOneForCreateInput)));
     }
+    value = object.guarantees;
+    if (value != null) {
+      result
+        ..add('guarantees')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GGuaranteeRelateToManyForCreateInput)));
+    }
     value = object.vehicleColor;
     if (value != null) {
       result
@@ -17725,6 +20008,12 @@ class _$GVehicleDealerCreateInputSerializer
                       const FullType(GVehicleVariantRelateToOneForCreateInput))!
               as GVehicleVariantRelateToOneForCreateInput);
           break;
+        case 'guarantees':
+          result.guarantees.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GGuaranteeRelateToManyForCreateInput))!
+              as GGuaranteeRelateToManyForCreateInput);
+          break;
         case 'vehicleColor':
           result.vehicleColor.replace(serializers.deserialize(value,
                   specifiedType:
@@ -17740,6 +20029,72 @@ class _$GVehicleDealerCreateInputSerializer
         case 'stock':
           result.stock = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GGuaranteeRelateToManyForCreateInputSerializer
+    implements StructuredSerializer<GGuaranteeRelateToManyForCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GGuaranteeRelateToManyForCreateInput,
+    _$GGuaranteeRelateToManyForCreateInput
+  ];
+  @override
+  final String wireName = 'GGuaranteeRelateToManyForCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GGuaranteeRelateToManyForCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GGuaranteeCreateInput)])));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GGuaranteeWhereUniqueInput)])));
+    }
+    return result;
+  }
+
+  @override
+  GGuaranteeRelateToManyForCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GGuaranteeRelateToManyForCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GGuaranteeCreateInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GGuaranteeWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -19929,6 +22284,13 @@ class _$GVehicleVariantWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GPriceManyRelationFilter)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GBooleanFilter)));
+    }
     return result;
   }
 
@@ -20016,6 +22378,11 @@ class _$GVehicleVariantWhereInputSerializer
           result.prices.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GPriceManyRelationFilter))!
               as GPriceManyRelationFilter);
+          break;
+        case 'disabled':
+          result.disabled.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GBooleanFilter))!
+              as GBooleanFilter);
           break;
       }
     }
@@ -20156,6 +22523,13 @@ class _$GVehicleVariantOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     return result;
   }
 
@@ -20198,6 +22572,11 @@ class _$GVehicleVariantOrderByInputSerializer
           break;
         case 'informative':
           result.informative = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -20296,6 +22675,13 @@ class _$GVehicleVariantUpdateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GPriceRelateToManyForUpdateInput)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -20360,6 +22746,10 @@ class _$GVehicleVariantUpdateInputSerializer
                   specifiedType:
                       const FullType(GPriceRelateToManyForUpdateInput))!
               as GPriceRelateToManyForUpdateInput);
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -20606,6 +22996,13 @@ class _$GVehicleVariantCreateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GPriceRelateToManyForCreateInput)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -20670,6 +23067,10 @@ class _$GVehicleVariantCreateInputSerializer
                   specifiedType:
                       const FullType(GPriceRelateToManyForCreateInput))!
               as GPriceRelateToManyForCreateInput);
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -20869,6 +23270,13 @@ class _$GVehicleDealerStockRequestWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GVehicleVariantWhereInput)));
     }
+    value = object.guarantees;
+    if (value != null) {
+      result
+        ..add('guarantees')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GGuaranteeManyRelationFilter)));
+    }
     value = object.vehicleColor;
     if (value != null) {
       result
@@ -20953,6 +23361,11 @@ class _$GVehicleDealerStockRequestWhereInputSerializer
           result.vehicleVariant.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GVehicleVariantWhereInput))!
               as GVehicleVariantWhereInput);
+          break;
+        case 'guarantees':
+          result.guarantees.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GGuaranteeManyRelationFilter))!
+              as GGuaranteeManyRelationFilter);
           break;
         case 'vehicleColor':
           result.vehicleColor.replace(serializers.deserialize(value,
@@ -21479,6 +23892,14 @@ class _$GVehicleDealerStockRequestUpdateInputSerializer
             specifiedType:
                 const FullType(GVehicleVariantRelateToOneForUpdateInput)));
     }
+    value = object.guarantees;
+    if (value != null) {
+      result
+        ..add('guarantees')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GGuaranteeRelateToManyForUpdateInput)));
+    }
     value = object.vehicleColor;
     if (value != null) {
       result
@@ -21541,6 +23962,12 @@ class _$GVehicleDealerStockRequestUpdateInputSerializer
                   specifiedType:
                       const FullType(GVehicleVariantRelateToOneForUpdateInput))!
               as GVehicleVariantRelateToOneForUpdateInput);
+          break;
+        case 'guarantees':
+          result.guarantees.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GGuaranteeRelateToManyForUpdateInput))!
+              as GGuaranteeRelateToManyForUpdateInput);
           break;
         case 'vehicleColor':
           result.vehicleColor.replace(serializers.deserialize(value,
@@ -21670,6 +24097,14 @@ class _$GVehicleDealerStockRequestCreateInputSerializer
             specifiedType:
                 const FullType(GVehicleVariantRelateToOneForCreateInput)));
     }
+    value = object.guarantees;
+    if (value != null) {
+      result
+        ..add('guarantees')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GGuaranteeRelateToManyForCreateInput)));
+    }
     value = object.vehicleColor;
     if (value != null) {
       result
@@ -21732,6 +24167,12 @@ class _$GVehicleDealerStockRequestCreateInputSerializer
                   specifiedType:
                       const FullType(GVehicleVariantRelateToOneForCreateInput))!
               as GVehicleVariantRelateToOneForCreateInput);
+          break;
+        case 'guarantees':
+          result.guarantees.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GGuaranteeRelateToManyForCreateInput))!
+              as GGuaranteeRelateToManyForCreateInput);
           break;
         case 'vehicleColor':
           result.vehicleColor.replace(serializers.deserialize(value,
@@ -26917,6 +29358,14 @@ class _$GVehicleOrderWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GAddressWhereInput)));
     }
+    value = object.additionalInfo;
+    if (value != null) {
+      result
+        ..add('additionalInfo')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GVehicleOrderAdditionalInfoWhereInput)));
+    }
     return result;
   }
 
@@ -26988,6 +29437,12 @@ class _$GVehicleOrderWhereInputSerializer
           result.address.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GAddressWhereInput))!
               as GAddressWhereInput);
+          break;
+        case 'additionalInfo':
+          result.additionalInfo.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleOrderAdditionalInfoWhereInput))!
+              as GVehicleOrderAdditionalInfoWhereInput);
           break;
       }
     }
@@ -27145,6 +29600,13 @@ class _$GVehicleOrderUpdateInputSerializer
         ..add('price')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.priceInfo;
+    if (value != null) {
+      result
+        ..add('priceInfo')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i4.JsonObject)));
+    }
     value = object.status;
     if (value != null) {
       result
@@ -27158,6 +29620,14 @@ class _$GVehicleOrderUpdateInputSerializer
         ..add('address')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GAddressRelateToOneForUpdateInput)));
+    }
+    value = object.additionalInfo;
+    if (value != null) {
+      result
+        ..add('additionalInfo')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GVehicleOrderAdditionalInfoRelateToOneForUpdateInput)));
     }
     return result;
   }
@@ -27198,6 +29668,10 @@ class _$GVehicleOrderUpdateInputSerializer
           result.price = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
           break;
+        case 'priceInfo':
+          result.priceInfo = serializers.deserialize(value,
+              specifiedType: const FullType(_i4.JsonObject)) as _i4.JsonObject?;
+          break;
         case 'status':
           result.status = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
@@ -27207,6 +29681,12 @@ class _$GVehicleOrderUpdateInputSerializer
                   specifiedType:
                       const FullType(GAddressRelateToOneForUpdateInput))!
               as GAddressRelateToOneForUpdateInput);
+          break;
+        case 'additionalInfo':
+          result.additionalInfo.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GVehicleOrderAdditionalInfoRelateToOneForUpdateInput))!
+              as GVehicleOrderAdditionalInfoRelateToOneForUpdateInput);
           break;
       }
     }
@@ -27362,6 +29842,87 @@ class _$GAddressRelateToOneForUpdateInputSerializer
   }
 }
 
+class _$GVehicleOrderAdditionalInfoRelateToOneForUpdateInputSerializer
+    implements
+        StructuredSerializer<
+            GVehicleOrderAdditionalInfoRelateToOneForUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleOrderAdditionalInfoRelateToOneForUpdateInput,
+    _$GVehicleOrderAdditionalInfoRelateToOneForUpdateInput
+  ];
+  @override
+  final String wireName =
+      'GVehicleOrderAdditionalInfoRelateToOneForUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GVehicleOrderAdditionalInfoRelateToOneForUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GVehicleOrderAdditionalInfoCreateInput)));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GVehicleOrderAdditionalInfoWhereUniqueInput)));
+    }
+    value = object.disconnect;
+    if (value != null) {
+      result
+        ..add('disconnect')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleOrderAdditionalInfoRelateToOneForUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleOrderAdditionalInfoCreateInput))!
+              as GVehicleOrderAdditionalInfoCreateInput);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GVehicleOrderAdditionalInfoWhereUniqueInput))!
+              as GVehicleOrderAdditionalInfoWhereUniqueInput);
+          break;
+        case 'disconnect':
+          result.disconnect = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$GVehicleOrderUpdateArgsSerializer
     implements StructuredSerializer<GVehicleOrderUpdateArgs> {
   @override
@@ -27468,6 +30029,13 @@ class _$GVehicleOrderCreateInputSerializer
         ..add('price')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.priceInfo;
+    if (value != null) {
+      result
+        ..add('priceInfo')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i4.JsonObject)));
+    }
     value = object.status;
     if (value != null) {
       result
@@ -27481,6 +30049,14 @@ class _$GVehicleOrderCreateInputSerializer
         ..add('address')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GAddressRelateToOneForCreateInput)));
+    }
+    value = object.additionalInfo;
+    if (value != null) {
+      result
+        ..add('additionalInfo')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GVehicleOrderAdditionalInfoRelateToOneForCreateInput)));
     }
     return result;
   }
@@ -27521,6 +30097,10 @@ class _$GVehicleOrderCreateInputSerializer
           result.price = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
           break;
+        case 'priceInfo':
+          result.priceInfo = serializers.deserialize(value,
+              specifiedType: const FullType(_i4.JsonObject)) as _i4.JsonObject?;
+          break;
         case 'status':
           result.status = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
@@ -27530,6 +30110,12 @@ class _$GVehicleOrderCreateInputSerializer
                   specifiedType:
                       const FullType(GAddressRelateToOneForCreateInput))!
               as GAddressRelateToOneForCreateInput);
+          break;
+        case 'additionalInfo':
+          result.additionalInfo.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GVehicleOrderAdditionalInfoRelateToOneForCreateInput))!
+              as GVehicleOrderAdditionalInfoRelateToOneForCreateInput);
           break;
       }
     }
@@ -27655,6 +30241,76 @@ class _$GAddressRelateToOneForCreateInputSerializer
           result.connect.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GAddressWhereUniqueInput))!
               as GAddressWhereUniqueInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleOrderAdditionalInfoRelateToOneForCreateInputSerializer
+    implements
+        StructuredSerializer<
+            GVehicleOrderAdditionalInfoRelateToOneForCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleOrderAdditionalInfoRelateToOneForCreateInput,
+    _$GVehicleOrderAdditionalInfoRelateToOneForCreateInput
+  ];
+  @override
+  final String wireName =
+      'GVehicleOrderAdditionalInfoRelateToOneForCreateInput';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GVehicleOrderAdditionalInfoRelateToOneForCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GVehicleOrderAdditionalInfoCreateInput)));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GVehicleOrderAdditionalInfoWhereUniqueInput)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleOrderAdditionalInfoRelateToOneForCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleOrderAdditionalInfoCreateInput))!
+              as GVehicleOrderAdditionalInfoCreateInput);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GVehicleOrderAdditionalInfoWhereUniqueInput))!
+              as GVehicleOrderAdditionalInfoWhereUniqueInput);
           break;
       }
     }
@@ -28793,6 +31449,13 @@ class _$GProductOrderUpdateInputSerializer
         ..add('price')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.priceInfo;
+    if (value != null) {
+      result
+        ..add('priceInfo')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i4.JsonObject)));
+    }
     value = object.status;
     if (value != null) {
       result
@@ -28845,6 +31508,10 @@ class _$GProductOrderUpdateInputSerializer
         case 'price':
           result.price = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+        case 'priceInfo':
+          result.priceInfo = serializers.deserialize(value,
+              specifiedType: const FullType(_i4.JsonObject)) as _i4.JsonObject?;
           break;
         case 'status':
           result.status = serializers.deserialize(value,
@@ -29043,6 +31710,13 @@ class _$GProductOrderCreateInputSerializer
         ..add('price')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.priceInfo;
+    if (value != null) {
+      result
+        ..add('priceInfo')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i4.JsonObject)));
+    }
     value = object.status;
     if (value != null) {
       result
@@ -29095,6 +31769,10 @@ class _$GProductOrderCreateInputSerializer
         case 'price':
           result.price = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+        case 'priceInfo':
+          result.priceInfo = serializers.deserialize(value,
+              specifiedType: const FullType(_i4.JsonObject)) as _i4.JsonObject?;
           break;
         case 'status':
           result.status = serializers.deserialize(value,
@@ -30526,6 +33204,558 @@ class _$GOrderRejectionByDealerCreateInputSerializer
   }
 }
 
+class _$GVehicleOrderAdditionalInfoWhereUniqueInputSerializer
+    implements
+        StructuredSerializer<GVehicleOrderAdditionalInfoWhereUniqueInput> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleOrderAdditionalInfoWhereUniqueInput,
+    _$GVehicleOrderAdditionalInfoWhereUniqueInput
+  ];
+  @override
+  final String wireName = 'GVehicleOrderAdditionalInfoWhereUniqueInput';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GVehicleOrderAdditionalInfoWhereUniqueInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleOrderAdditionalInfoWhereUniqueInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleOrderAdditionalInfoWhereUniqueInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleOrderAdditionalInfoWhereInputSerializer
+    implements StructuredSerializer<GVehicleOrderAdditionalInfoWhereInput> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleOrderAdditionalInfoWhereInput,
+    _$GVehicleOrderAdditionalInfoWhereInput
+  ];
+  @override
+  final String wireName = 'GVehicleOrderAdditionalInfoWhereInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleOrderAdditionalInfoWhereInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.AND;
+    if (value != null) {
+      result
+        ..add('AND')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GVehicleOrderAdditionalInfoWhereInput)
+            ])));
+    }
+    value = object.OR;
+    if (value != null) {
+      result
+        ..add('OR')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GVehicleOrderAdditionalInfoWhereInput)
+            ])));
+    }
+    value = object.NOT;
+    if (value != null) {
+      result
+        ..add('NOT')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GVehicleOrderAdditionalInfoWhereInput)
+            ])));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GIDFilter)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.code;
+    if (value != null) {
+      result
+        ..add('code')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.hsnCode;
+    if (value != null) {
+      result
+        ..add('hsnCode')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.vehicleOrder;
+    if (value != null) {
+      result
+        ..add('vehicleOrder')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GVehicleOrderManyRelationFilter)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleOrderAdditionalInfoWhereInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleOrderAdditionalInfoWhereInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'AND':
+          result.AND.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GVehicleOrderAdditionalInfoWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'OR':
+          result.OR.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GVehicleOrderAdditionalInfoWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'NOT':
+          result.NOT.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GVehicleOrderAdditionalInfoWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GIDFilter))! as GIDFilter);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'code':
+          result.code.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'hsnCode':
+          result.hsnCode.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'vehicleOrder':
+          result.vehicleOrder.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleOrderManyRelationFilter))!
+              as GVehicleOrderManyRelationFilter);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleOrderAdditionalInfoOrderByInputSerializer
+    implements StructuredSerializer<GVehicleOrderAdditionalInfoOrderByInput> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleOrderAdditionalInfoOrderByInput,
+    _$GVehicleOrderAdditionalInfoOrderByInput
+  ];
+  @override
+  final String wireName = 'GVehicleOrderAdditionalInfoOrderByInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleOrderAdditionalInfoOrderByInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.code;
+    if (value != null) {
+      result
+        ..add('code')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.hsnCode;
+    if (value != null) {
+      result
+        ..add('hsnCode')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleOrderAdditionalInfoOrderByInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleOrderAdditionalInfoOrderByInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'createdAt':
+          result.createdAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'modifiedAt':
+          result.modifiedAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'code':
+          result.code = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'hsnCode':
+          result.hsnCode = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleOrderAdditionalInfoUpdateInputSerializer
+    implements StructuredSerializer<GVehicleOrderAdditionalInfoUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleOrderAdditionalInfoUpdateInput,
+    _$GVehicleOrderAdditionalInfoUpdateInput
+  ];
+  @override
+  final String wireName = 'GVehicleOrderAdditionalInfoUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleOrderAdditionalInfoUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.code;
+    if (value != null) {
+      result
+        ..add('code')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.hsnCode;
+    if (value != null) {
+      result
+        ..add('hsnCode')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.vehicleOrder;
+    if (value != null) {
+      result
+        ..add('vehicleOrder')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GVehicleOrderRelateToManyForUpdateInput)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleOrderAdditionalInfoUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleOrderAdditionalInfoUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'code':
+          result.code = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'hsnCode':
+          result.hsnCode = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'vehicleOrder':
+          result.vehicleOrder.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleOrderRelateToManyForUpdateInput))!
+              as GVehicleOrderRelateToManyForUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleOrderAdditionalInfoUpdateArgsSerializer
+    implements StructuredSerializer<GVehicleOrderAdditionalInfoUpdateArgs> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleOrderAdditionalInfoUpdateArgs,
+    _$GVehicleOrderAdditionalInfoUpdateArgs
+  ];
+  @override
+  final String wireName = 'GVehicleOrderAdditionalInfoUpdateArgs';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleOrderAdditionalInfoUpdateArgs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType:
+              const FullType(GVehicleOrderAdditionalInfoWhereUniqueInput)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType:
+              const FullType(GVehicleOrderAdditionalInfoUpdateInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GVehicleOrderAdditionalInfoUpdateArgs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleOrderAdditionalInfoUpdateArgsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GVehicleOrderAdditionalInfoWhereUniqueInput))!
+              as GVehicleOrderAdditionalInfoWhereUniqueInput);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleOrderAdditionalInfoUpdateInput))!
+              as GVehicleOrderAdditionalInfoUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleOrderAdditionalInfoCreateInputSerializer
+    implements StructuredSerializer<GVehicleOrderAdditionalInfoCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleOrderAdditionalInfoCreateInput,
+    _$GVehicleOrderAdditionalInfoCreateInput
+  ];
+  @override
+  final String wireName = 'GVehicleOrderAdditionalInfoCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleOrderAdditionalInfoCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.code;
+    if (value != null) {
+      result
+        ..add('code')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.hsnCode;
+    if (value != null) {
+      result
+        ..add('hsnCode')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.vehicleOrder;
+    if (value != null) {
+      result
+        ..add('vehicleOrder')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GVehicleOrderRelateToManyForCreateInput)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleOrderAdditionalInfoCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleOrderAdditionalInfoCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'code':
+          result.code = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'hsnCode':
+          result.hsnCode = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'vehicleOrder':
+          result.vehicleOrder.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleOrderRelateToManyForCreateInput))!
+              as GVehicleOrderRelateToManyForCreateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$GUserVehicleReviewWhereUniqueInputSerializer
     implements StructuredSerializer<GUserVehicleReviewWhereUniqueInput> {
   @override
@@ -30664,6 +33894,14 @@ class _$GUserVehicleReviewWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GIntFilter)));
     }
+    value = object.attachments;
+    if (value != null) {
+      result
+        ..add('attachments')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GUserVehicleReviewAttachmentManyRelationFilter)));
+    }
     return result;
   }
 
@@ -30728,6 +33966,93 @@ class _$GUserVehicleReviewWhereInputSerializer
         case 'rating':
           result.rating.replace(serializers.deserialize(value,
               specifiedType: const FullType(GIntFilter))! as GIntFilter);
+          break;
+        case 'attachments':
+          result.attachments.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GUserVehicleReviewAttachmentManyRelationFilter))!
+              as GUserVehicleReviewAttachmentManyRelationFilter);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserVehicleReviewAttachmentManyRelationFilterSerializer
+    implements
+        StructuredSerializer<GUserVehicleReviewAttachmentManyRelationFilter> {
+  @override
+  final Iterable<Type> types = const [
+    GUserVehicleReviewAttachmentManyRelationFilter,
+    _$GUserVehicleReviewAttachmentManyRelationFilter
+  ];
+  @override
+  final String wireName = 'GUserVehicleReviewAttachmentManyRelationFilter';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GUserVehicleReviewAttachmentManyRelationFilter object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.every;
+    if (value != null) {
+      result
+        ..add('every')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GUserVehicleReviewAttachmentWhereInput)));
+    }
+    value = object.some;
+    if (value != null) {
+      result
+        ..add('some')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GUserVehicleReviewAttachmentWhereInput)));
+    }
+    value = object.none;
+    if (value != null) {
+      result
+        ..add('none')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GUserVehicleReviewAttachmentWhereInput)));
+    }
+    return result;
+  }
+
+  @override
+  GUserVehicleReviewAttachmentManyRelationFilter deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserVehicleReviewAttachmentManyRelationFilterBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'every':
+          result.every.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserVehicleReviewAttachmentWhereInput))!
+              as GUserVehicleReviewAttachmentWhereInput);
+          break;
+        case 'some':
+          result.some.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserVehicleReviewAttachmentWhereInput))!
+              as GUserVehicleReviewAttachmentWhereInput);
+          break;
+        case 'none':
+          result.none.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserVehicleReviewAttachmentWhereInput))!
+              as GUserVehicleReviewAttachmentWhereInput);
           break;
       }
     }
@@ -30891,6 +34216,14 @@ class _$GUserVehicleReviewUpdateInputSerializer
         ..add('rating')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.attachments;
+    if (value != null) {
+      result
+        ..add('attachments')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GUserVehicleReviewAttachmentRelateToManyForUpdateInput)));
+    }
     return result;
   }
 
@@ -30933,6 +34266,114 @@ class _$GUserVehicleReviewUpdateInputSerializer
         case 'rating':
           result.rating = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+        case 'attachments':
+          result.attachments.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GUserVehicleReviewAttachmentRelateToManyForUpdateInput))!
+              as GUserVehicleReviewAttachmentRelateToManyForUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserVehicleReviewAttachmentRelateToManyForUpdateInputSerializer
+    implements
+        StructuredSerializer<
+            GUserVehicleReviewAttachmentRelateToManyForUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserVehicleReviewAttachmentRelateToManyForUpdateInput,
+    _$GUserVehicleReviewAttachmentRelateToManyForUpdateInput
+  ];
+  @override
+  final String wireName =
+      'GUserVehicleReviewAttachmentRelateToManyForUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GUserVehicleReviewAttachmentRelateToManyForUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.disconnect;
+    if (value != null) {
+      result
+        ..add('disconnect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserVehicleReviewAttachmentWhereUniqueInput)
+            ])));
+    }
+    value = object.set;
+    if (value != null) {
+      result
+        ..add('set')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserVehicleReviewAttachmentWhereUniqueInput)
+            ])));
+    }
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserVehicleReviewAttachmentCreateInput)
+            ])));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserVehicleReviewAttachmentWhereUniqueInput)
+            ])));
+    }
+    return result;
+  }
+
+  @override
+  GUserVehicleReviewAttachmentRelateToManyForUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'disconnect':
+          result.disconnect.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserVehicleReviewAttachmentWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'set':
+          result.set.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserVehicleReviewAttachmentWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserVehicleReviewAttachmentCreateInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserVehicleReviewAttachmentWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -31054,6 +34495,14 @@ class _$GUserVehicleReviewCreateInputSerializer
         ..add('rating')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.attachments;
+    if (value != null) {
+      result
+        ..add('attachments')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GUserVehicleReviewAttachmentRelateToManyForCreateInput)));
+    }
     return result;
   }
 
@@ -31096,6 +34545,708 @@ class _$GUserVehicleReviewCreateInputSerializer
         case 'rating':
           result.rating = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+        case 'attachments':
+          result.attachments.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GUserVehicleReviewAttachmentRelateToManyForCreateInput))!
+              as GUserVehicleReviewAttachmentRelateToManyForCreateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserVehicleReviewAttachmentRelateToManyForCreateInputSerializer
+    implements
+        StructuredSerializer<
+            GUserVehicleReviewAttachmentRelateToManyForCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserVehicleReviewAttachmentRelateToManyForCreateInput,
+    _$GUserVehicleReviewAttachmentRelateToManyForCreateInput
+  ];
+  @override
+  final String wireName =
+      'GUserVehicleReviewAttachmentRelateToManyForCreateInput';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GUserVehicleReviewAttachmentRelateToManyForCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserVehicleReviewAttachmentCreateInput)
+            ])));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserVehicleReviewAttachmentWhereUniqueInput)
+            ])));
+    }
+    return result;
+  }
+
+  @override
+  GUserVehicleReviewAttachmentRelateToManyForCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserVehicleReviewAttachmentCreateInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserVehicleReviewAttachmentWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserVehicleReviewAttachmentWhereUniqueInputSerializer
+    implements
+        StructuredSerializer<GUserVehicleReviewAttachmentWhereUniqueInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserVehicleReviewAttachmentWhereUniqueInput,
+    _$GUserVehicleReviewAttachmentWhereUniqueInput
+  ];
+  @override
+  final String wireName = 'GUserVehicleReviewAttachmentWhereUniqueInput';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GUserVehicleReviewAttachmentWhereUniqueInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GUserVehicleReviewAttachmentWhereUniqueInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserVehicleReviewAttachmentWhereUniqueInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserVehicleReviewAttachmentWhereInputSerializer
+    implements StructuredSerializer<GUserVehicleReviewAttachmentWhereInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserVehicleReviewAttachmentWhereInput,
+    _$GUserVehicleReviewAttachmentWhereInput
+  ];
+  @override
+  final String wireName = 'GUserVehicleReviewAttachmentWhereInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUserVehicleReviewAttachmentWhereInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.AND;
+    if (value != null) {
+      result
+        ..add('AND')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserVehicleReviewAttachmentWhereInput)
+            ])));
+    }
+    value = object.OR;
+    if (value != null) {
+      result
+        ..add('OR')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserVehicleReviewAttachmentWhereInput)
+            ])));
+    }
+    value = object.NOT;
+    if (value != null) {
+      result
+        ..add('NOT')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserVehicleReviewAttachmentWhereInput)
+            ])));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GIDFilter)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.review;
+    if (value != null) {
+      result
+        ..add('review')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserVehicleReviewWhereInput)));
+    }
+    return result;
+  }
+
+  @override
+  GUserVehicleReviewAttachmentWhereInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserVehicleReviewAttachmentWhereInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'AND':
+          result.AND.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserVehicleReviewAttachmentWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'OR':
+          result.OR.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserVehicleReviewAttachmentWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'NOT':
+          result.NOT.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserVehicleReviewAttachmentWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GIDFilter))! as GIDFilter);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'review':
+          result.review.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GUserVehicleReviewWhereInput))!
+              as GUserVehicleReviewWhereInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserVehicleReviewAttachmentOrderByInputSerializer
+    implements StructuredSerializer<GUserVehicleReviewAttachmentOrderByInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserVehicleReviewAttachmentOrderByInput,
+    _$GUserVehicleReviewAttachmentOrderByInput
+  ];
+  @override
+  final String wireName = 'GUserVehicleReviewAttachmentOrderByInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUserVehicleReviewAttachmentOrderByInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    return result;
+  }
+
+  @override
+  GUserVehicleReviewAttachmentOrderByInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserVehicleReviewAttachmentOrderByInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'createdAt':
+          result.createdAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'modifiedAt':
+          result.modifiedAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserVehicleReviewAttachmentUpdateInputSerializer
+    implements StructuredSerializer<GUserVehicleReviewAttachmentUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserVehicleReviewAttachmentUpdateInput,
+    _$GUserVehicleReviewAttachmentUpdateInput
+  ];
+  @override
+  final String wireName = 'GUserVehicleReviewAttachmentUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUserVehicleReviewAttachmentUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.file;
+    if (value != null) {
+      result
+        ..add('file')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GFileFieldInput)));
+    }
+    value = object.review;
+    if (value != null) {
+      result
+        ..add('review')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GUserVehicleReviewRelateToOneForUpdateInput)));
+    }
+    return result;
+  }
+
+  @override
+  GUserVehicleReviewAttachmentUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserVehicleReviewAttachmentUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'file':
+          result.file.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GFileFieldInput))!
+              as GFileFieldInput);
+          break;
+        case 'review':
+          result.review.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GUserVehicleReviewRelateToOneForUpdateInput))!
+              as GUserVehicleReviewRelateToOneForUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserVehicleReviewRelateToOneForUpdateInputSerializer
+    implements
+        StructuredSerializer<GUserVehicleReviewRelateToOneForUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserVehicleReviewRelateToOneForUpdateInput,
+    _$GUserVehicleReviewRelateToOneForUpdateInput
+  ];
+  @override
+  final String wireName = 'GUserVehicleReviewRelateToOneForUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GUserVehicleReviewRelateToOneForUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserVehicleReviewCreateInput)));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserVehicleReviewWhereUniqueInput)));
+    }
+    value = object.disconnect;
+    if (value != null) {
+      result
+        ..add('disconnect')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    return result;
+  }
+
+  @override
+  GUserVehicleReviewRelateToOneForUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserVehicleReviewRelateToOneForUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GUserVehicleReviewCreateInput))!
+              as GUserVehicleReviewCreateInput);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserVehicleReviewWhereUniqueInput))!
+              as GUserVehicleReviewWhereUniqueInput);
+          break;
+        case 'disconnect':
+          result.disconnect = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserVehicleReviewAttachmentUpdateArgsSerializer
+    implements StructuredSerializer<GUserVehicleReviewAttachmentUpdateArgs> {
+  @override
+  final Iterable<Type> types = const [
+    GUserVehicleReviewAttachmentUpdateArgs,
+    _$GUserVehicleReviewAttachmentUpdateArgs
+  ];
+  @override
+  final String wireName = 'GUserVehicleReviewAttachmentUpdateArgs';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUserVehicleReviewAttachmentUpdateArgs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType:
+              const FullType(GUserVehicleReviewAttachmentWhereUniqueInput)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType:
+              const FullType(GUserVehicleReviewAttachmentUpdateInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GUserVehicleReviewAttachmentUpdateArgs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserVehicleReviewAttachmentUpdateArgsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GUserVehicleReviewAttachmentWhereUniqueInput))!
+              as GUserVehicleReviewAttachmentWhereUniqueInput);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserVehicleReviewAttachmentUpdateInput))!
+              as GUserVehicleReviewAttachmentUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserVehicleReviewAttachmentCreateInputSerializer
+    implements StructuredSerializer<GUserVehicleReviewAttachmentCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserVehicleReviewAttachmentCreateInput,
+    _$GUserVehicleReviewAttachmentCreateInput
+  ];
+  @override
+  final String wireName = 'GUserVehicleReviewAttachmentCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUserVehicleReviewAttachmentCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.file;
+    if (value != null) {
+      result
+        ..add('file')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GFileFieldInput)));
+    }
+    value = object.review;
+    if (value != null) {
+      result
+        ..add('review')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GUserVehicleReviewRelateToOneForCreateInput)));
+    }
+    return result;
+  }
+
+  @override
+  GUserVehicleReviewAttachmentCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserVehicleReviewAttachmentCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'file':
+          result.file.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GFileFieldInput))!
+              as GFileFieldInput);
+          break;
+        case 'review':
+          result.review.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GUserVehicleReviewRelateToOneForCreateInput))!
+              as GUserVehicleReviewRelateToOneForCreateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserVehicleReviewRelateToOneForCreateInputSerializer
+    implements
+        StructuredSerializer<GUserVehicleReviewRelateToOneForCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserVehicleReviewRelateToOneForCreateInput,
+    _$GUserVehicleReviewRelateToOneForCreateInput
+  ];
+  @override
+  final String wireName = 'GUserVehicleReviewRelateToOneForCreateInput';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GUserVehicleReviewRelateToOneForCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserVehicleReviewCreateInput)));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserVehicleReviewWhereUniqueInput)));
+    }
+    return result;
+  }
+
+  @override
+  GUserVehicleReviewRelateToOneForCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserVehicleReviewRelateToOneForCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GUserVehicleReviewCreateInput))!
+              as GUserVehicleReviewCreateInput);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserVehicleReviewWhereUniqueInput))!
+              as GUserVehicleReviewWhereUniqueInput);
           break;
       }
     }
@@ -31242,6 +35393,14 @@ class _$GUserProductReviewWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GIntFilter)));
     }
+    value = object.attachments;
+    if (value != null) {
+      result
+        ..add('attachments')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GUserProductReviewAttachmentManyRelationFilter)));
+    }
     return result;
   }
 
@@ -31306,6 +35465,93 @@ class _$GUserProductReviewWhereInputSerializer
         case 'rating':
           result.rating.replace(serializers.deserialize(value,
               specifiedType: const FullType(GIntFilter))! as GIntFilter);
+          break;
+        case 'attachments':
+          result.attachments.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GUserProductReviewAttachmentManyRelationFilter))!
+              as GUserProductReviewAttachmentManyRelationFilter);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserProductReviewAttachmentManyRelationFilterSerializer
+    implements
+        StructuredSerializer<GUserProductReviewAttachmentManyRelationFilter> {
+  @override
+  final Iterable<Type> types = const [
+    GUserProductReviewAttachmentManyRelationFilter,
+    _$GUserProductReviewAttachmentManyRelationFilter
+  ];
+  @override
+  final String wireName = 'GUserProductReviewAttachmentManyRelationFilter';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GUserProductReviewAttachmentManyRelationFilter object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.every;
+    if (value != null) {
+      result
+        ..add('every')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GUserProductReviewAttachmentWhereInput)));
+    }
+    value = object.some;
+    if (value != null) {
+      result
+        ..add('some')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GUserProductReviewAttachmentWhereInput)));
+    }
+    value = object.none;
+    if (value != null) {
+      result
+        ..add('none')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GUserProductReviewAttachmentWhereInput)));
+    }
+    return result;
+  }
+
+  @override
+  GUserProductReviewAttachmentManyRelationFilter deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserProductReviewAttachmentManyRelationFilterBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'every':
+          result.every.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserProductReviewAttachmentWhereInput))!
+              as GUserProductReviewAttachmentWhereInput);
+          break;
+        case 'some':
+          result.some.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserProductReviewAttachmentWhereInput))!
+              as GUserProductReviewAttachmentWhereInput);
+          break;
+        case 'none':
+          result.none.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserProductReviewAttachmentWhereInput))!
+              as GUserProductReviewAttachmentWhereInput);
           break;
       }
     }
@@ -31469,6 +35715,14 @@ class _$GUserProductReviewUpdateInputSerializer
         ..add('rating')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.attachments;
+    if (value != null) {
+      result
+        ..add('attachments')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GUserProductReviewAttachmentRelateToManyForUpdateInput)));
+    }
     return result;
   }
 
@@ -31511,6 +35765,12 @@ class _$GUserProductReviewUpdateInputSerializer
         case 'rating':
           result.rating = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+        case 'attachments':
+          result.attachments.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GUserProductReviewAttachmentRelateToManyForUpdateInput))!
+              as GUserProductReviewAttachmentRelateToManyForUpdateInput);
           break;
       }
     }
@@ -31584,6 +35844,108 @@ class _$GProductRelateToOneForUpdateInputSerializer
         case 'disconnect':
           result.disconnect = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserProductReviewAttachmentRelateToManyForUpdateInputSerializer
+    implements
+        StructuredSerializer<
+            GUserProductReviewAttachmentRelateToManyForUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserProductReviewAttachmentRelateToManyForUpdateInput,
+    _$GUserProductReviewAttachmentRelateToManyForUpdateInput
+  ];
+  @override
+  final String wireName =
+      'GUserProductReviewAttachmentRelateToManyForUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GUserProductReviewAttachmentRelateToManyForUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.disconnect;
+    if (value != null) {
+      result
+        ..add('disconnect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserProductReviewAttachmentWhereUniqueInput)
+            ])));
+    }
+    value = object.set;
+    if (value != null) {
+      result
+        ..add('set')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserProductReviewAttachmentWhereUniqueInput)
+            ])));
+    }
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserProductReviewAttachmentCreateInput)
+            ])));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserProductReviewAttachmentWhereUniqueInput)
+            ])));
+    }
+    return result;
+  }
+
+  @override
+  GUserProductReviewAttachmentRelateToManyForUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'disconnect':
+          result.disconnect.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserProductReviewAttachmentWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'set':
+          result.set.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserProductReviewAttachmentWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserProductReviewAttachmentCreateInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserProductReviewAttachmentWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -31705,6 +36067,14 @@ class _$GUserProductReviewCreateInputSerializer
         ..add('rating')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.attachments;
+    if (value != null) {
+      result
+        ..add('attachments')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GUserProductReviewAttachmentRelateToManyForCreateInput)));
+    }
     return result;
   }
 
@@ -31747,6 +36117,12 @@ class _$GUserProductReviewCreateInputSerializer
         case 'rating':
           result.rating = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+        case 'attachments':
+          result.attachments.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GUserProductReviewAttachmentRelateToManyForCreateInput))!
+              as GUserProductReviewAttachmentRelateToManyForCreateInput);
           break;
       }
     }
@@ -31809,6 +36185,702 @@ class _$GProductRelateToOneForCreateInputSerializer
           result.connect.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GProductWhereUniqueInput))!
               as GProductWhereUniqueInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserProductReviewAttachmentRelateToManyForCreateInputSerializer
+    implements
+        StructuredSerializer<
+            GUserProductReviewAttachmentRelateToManyForCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserProductReviewAttachmentRelateToManyForCreateInput,
+    _$GUserProductReviewAttachmentRelateToManyForCreateInput
+  ];
+  @override
+  final String wireName =
+      'GUserProductReviewAttachmentRelateToManyForCreateInput';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GUserProductReviewAttachmentRelateToManyForCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserProductReviewAttachmentCreateInput)
+            ])));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserProductReviewAttachmentWhereUniqueInput)
+            ])));
+    }
+    return result;
+  }
+
+  @override
+  GUserProductReviewAttachmentRelateToManyForCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GUserProductReviewAttachmentRelateToManyForCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserProductReviewAttachmentCreateInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserProductReviewAttachmentWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserProductReviewAttachmentWhereUniqueInputSerializer
+    implements
+        StructuredSerializer<GUserProductReviewAttachmentWhereUniqueInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserProductReviewAttachmentWhereUniqueInput,
+    _$GUserProductReviewAttachmentWhereUniqueInput
+  ];
+  @override
+  final String wireName = 'GUserProductReviewAttachmentWhereUniqueInput';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GUserProductReviewAttachmentWhereUniqueInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GUserProductReviewAttachmentWhereUniqueInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserProductReviewAttachmentWhereUniqueInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserProductReviewAttachmentWhereInputSerializer
+    implements StructuredSerializer<GUserProductReviewAttachmentWhereInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserProductReviewAttachmentWhereInput,
+    _$GUserProductReviewAttachmentWhereInput
+  ];
+  @override
+  final String wireName = 'GUserProductReviewAttachmentWhereInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUserProductReviewAttachmentWhereInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.AND;
+    if (value != null) {
+      result
+        ..add('AND')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserProductReviewAttachmentWhereInput)
+            ])));
+    }
+    value = object.OR;
+    if (value != null) {
+      result
+        ..add('OR')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserProductReviewAttachmentWhereInput)
+            ])));
+    }
+    value = object.NOT;
+    if (value != null) {
+      result
+        ..add('NOT')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GUserProductReviewAttachmentWhereInput)
+            ])));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GIDFilter)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.review;
+    if (value != null) {
+      result
+        ..add('review')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserProductReviewWhereInput)));
+    }
+    return result;
+  }
+
+  @override
+  GUserProductReviewAttachmentWhereInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserProductReviewAttachmentWhereInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'AND':
+          result.AND.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserProductReviewAttachmentWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'OR':
+          result.OR.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserProductReviewAttachmentWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'NOT':
+          result.NOT.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GUserProductReviewAttachmentWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GIDFilter))! as GIDFilter);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'review':
+          result.review.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GUserProductReviewWhereInput))!
+              as GUserProductReviewWhereInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserProductReviewAttachmentOrderByInputSerializer
+    implements StructuredSerializer<GUserProductReviewAttachmentOrderByInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserProductReviewAttachmentOrderByInput,
+    _$GUserProductReviewAttachmentOrderByInput
+  ];
+  @override
+  final String wireName = 'GUserProductReviewAttachmentOrderByInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUserProductReviewAttachmentOrderByInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    return result;
+  }
+
+  @override
+  GUserProductReviewAttachmentOrderByInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserProductReviewAttachmentOrderByInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'createdAt':
+          result.createdAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'modifiedAt':
+          result.modifiedAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserProductReviewAttachmentUpdateInputSerializer
+    implements StructuredSerializer<GUserProductReviewAttachmentUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserProductReviewAttachmentUpdateInput,
+    _$GUserProductReviewAttachmentUpdateInput
+  ];
+  @override
+  final String wireName = 'GUserProductReviewAttachmentUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUserProductReviewAttachmentUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.file;
+    if (value != null) {
+      result
+        ..add('file')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GFileFieldInput)));
+    }
+    value = object.review;
+    if (value != null) {
+      result
+        ..add('review')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GUserProductReviewRelateToOneForUpdateInput)));
+    }
+    return result;
+  }
+
+  @override
+  GUserProductReviewAttachmentUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserProductReviewAttachmentUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'file':
+          result.file.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GFileFieldInput))!
+              as GFileFieldInput);
+          break;
+        case 'review':
+          result.review.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GUserProductReviewRelateToOneForUpdateInput))!
+              as GUserProductReviewRelateToOneForUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserProductReviewRelateToOneForUpdateInputSerializer
+    implements
+        StructuredSerializer<GUserProductReviewRelateToOneForUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserProductReviewRelateToOneForUpdateInput,
+    _$GUserProductReviewRelateToOneForUpdateInput
+  ];
+  @override
+  final String wireName = 'GUserProductReviewRelateToOneForUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GUserProductReviewRelateToOneForUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserProductReviewCreateInput)));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserProductReviewWhereUniqueInput)));
+    }
+    value = object.disconnect;
+    if (value != null) {
+      result
+        ..add('disconnect')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    return result;
+  }
+
+  @override
+  GUserProductReviewRelateToOneForUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserProductReviewRelateToOneForUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GUserProductReviewCreateInput))!
+              as GUserProductReviewCreateInput);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserProductReviewWhereUniqueInput))!
+              as GUserProductReviewWhereUniqueInput);
+          break;
+        case 'disconnect':
+          result.disconnect = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserProductReviewAttachmentUpdateArgsSerializer
+    implements StructuredSerializer<GUserProductReviewAttachmentUpdateArgs> {
+  @override
+  final Iterable<Type> types = const [
+    GUserProductReviewAttachmentUpdateArgs,
+    _$GUserProductReviewAttachmentUpdateArgs
+  ];
+  @override
+  final String wireName = 'GUserProductReviewAttachmentUpdateArgs';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUserProductReviewAttachmentUpdateArgs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType:
+              const FullType(GUserProductReviewAttachmentWhereUniqueInput)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType:
+              const FullType(GUserProductReviewAttachmentUpdateInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GUserProductReviewAttachmentUpdateArgs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserProductReviewAttachmentUpdateArgsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GUserProductReviewAttachmentWhereUniqueInput))!
+              as GUserProductReviewAttachmentWhereUniqueInput);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserProductReviewAttachmentUpdateInput))!
+              as GUserProductReviewAttachmentUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserProductReviewAttachmentCreateInputSerializer
+    implements StructuredSerializer<GUserProductReviewAttachmentCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserProductReviewAttachmentCreateInput,
+    _$GUserProductReviewAttachmentCreateInput
+  ];
+  @override
+  final String wireName = 'GUserProductReviewAttachmentCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUserProductReviewAttachmentCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.file;
+    if (value != null) {
+      result
+        ..add('file')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GFileFieldInput)));
+    }
+    value = object.review;
+    if (value != null) {
+      result
+        ..add('review')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GUserProductReviewRelateToOneForCreateInput)));
+    }
+    return result;
+  }
+
+  @override
+  GUserProductReviewAttachmentCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserProductReviewAttachmentCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'file':
+          result.file.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GFileFieldInput))!
+              as GFileFieldInput);
+          break;
+        case 'review':
+          result.review.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GUserProductReviewRelateToOneForCreateInput))!
+              as GUserProductReviewRelateToOneForCreateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserProductReviewRelateToOneForCreateInputSerializer
+    implements
+        StructuredSerializer<GUserProductReviewRelateToOneForCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GUserProductReviewRelateToOneForCreateInput,
+    _$GUserProductReviewRelateToOneForCreateInput
+  ];
+  @override
+  final String wireName = 'GUserProductReviewRelateToOneForCreateInput';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GUserProductReviewRelateToOneForCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserProductReviewCreateInput)));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserProductReviewWhereUniqueInput)));
+    }
+    return result;
+  }
+
+  @override
+  GUserProductReviewRelateToOneForCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserProductReviewRelateToOneForCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GUserProductReviewCreateInput))!
+              as GUserProductReviewCreateInput);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserProductReviewWhereUniqueInput))!
+              as GUserProductReviewWhereUniqueInput);
           break;
       }
     }
@@ -31955,6 +37027,13 @@ class _$GExpertReviewWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GIntNullableFilter)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GBooleanFilter)));
+    }
     return result;
   }
 
@@ -32019,6 +37098,11 @@ class _$GExpertReviewWhereInputSerializer
           result.likes.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GIntNullableFilter))!
               as GIntNullableFilter);
+          break;
+        case 'disabled':
+          result.disabled.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GBooleanFilter))!
+              as GBooleanFilter);
           break;
       }
     }
@@ -32085,6 +37169,13 @@ class _$GExpertReviewOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     return result;
   }
 
@@ -32127,6 +37218,11 @@ class _$GExpertReviewOrderByInputSerializer
           break;
         case 'likes':
           result.likes = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -32181,6 +37277,13 @@ class _$GExpertReviewUpdateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.banner;
+    if (value != null) {
+      result
+        ..add('banner')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GImageFieldInput)));
+    }
     value = object.user;
     if (value != null) {
       result
@@ -32193,6 +37296,13 @@ class _$GExpertReviewUpdateInputSerializer
       result
         ..add('likes')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
     }
     return result;
   }
@@ -32225,6 +37335,11 @@ class _$GExpertReviewUpdateInputSerializer
           result.description = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'banner':
+          result.banner.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GImageFieldInput))!
+              as GImageFieldInput);
+          break;
         case 'user':
           result.user.replace(serializers.deserialize(value,
                   specifiedType:
@@ -32234,6 +37349,10 @@ class _$GExpertReviewUpdateInputSerializer
         case 'likes':
           result.likes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -32341,6 +37460,13 @@ class _$GExpertReviewCreateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.banner;
+    if (value != null) {
+      result
+        ..add('banner')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GImageFieldInput)));
+    }
     value = object.user;
     if (value != null) {
       result
@@ -32353,6 +37479,13 @@ class _$GExpertReviewCreateInputSerializer
       result
         ..add('likes')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
     }
     return result;
   }
@@ -32385,6 +37518,11 @@ class _$GExpertReviewCreateInputSerializer
           result.description = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'banner':
+          result.banner.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GImageFieldInput))!
+              as GImageFieldInput);
+          break;
         case 'user':
           result.user.replace(serializers.deserialize(value,
                   specifiedType:
@@ -32394,6 +37532,10 @@ class _$GExpertReviewCreateInputSerializer
         case 'likes':
           result.likes = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -35778,143 +40920,6 @@ class _$GAppNotificationWhereInputSerializer
   }
 }
 
-class _$GGuaranteeWhereInputSerializer
-    implements StructuredSerializer<GGuaranteeWhereInput> {
-  @override
-  final Iterable<Type> types = const [
-    GGuaranteeWhereInput,
-    _$GGuaranteeWhereInput
-  ];
-  @override
-  final String wireName = 'GGuaranteeWhereInput';
-
-  @override
-  Iterable<Object?> serialize(
-      Serializers serializers, GGuaranteeWhereInput object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.AND;
-    if (value != null) {
-      result
-        ..add('AND')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(BuiltList,
-                const [const FullType(GAppNotificationWhereInput)])));
-    }
-    value = object.NOT;
-    if (value != null) {
-      result
-        ..add('NOT')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(BuiltList,
-                const [const FullType(GAppNotificationWhereInput)])));
-    }
-    value = object.OR;
-    if (value != null) {
-      result
-        ..add('OR')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(BuiltList,
-                const [const FullType(GAppNotificationWhereInput)])));
-    }
-    value = object.createdAt;
-    if (value != null) {
-      result
-        ..add('createdAt')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GDateTimeNullableFilter)));
-    }
-    value = object.description;
-    if (value != null) {
-      result
-        ..add('description')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GStringFilter)));
-    }
-    value = object.id;
-    if (value != null) {
-      result
-        ..add('id')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GIDFilter)));
-    }
-    value = object.modifiedAt;
-    if (value != null) {
-      result
-        ..add('modifiedAt')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GDateTimeNullableFilter)));
-    }
-    value = object.name;
-    if (value != null) {
-      result
-        ..add('name')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GStringFilter)));
-    }
-    return result;
-  }
-
-  @override
-  GGuaranteeWhereInput deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GGuaranteeWhereInputBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'AND':
-          result.AND.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [
-                const FullType(GAppNotificationWhereInput)
-              ]))! as BuiltList<Object?>);
-          break;
-        case 'NOT':
-          result.NOT.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [
-                const FullType(GAppNotificationWhereInput)
-              ]))! as BuiltList<Object?>);
-          break;
-        case 'OR':
-          result.OR.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [
-                const FullType(GAppNotificationWhereInput)
-              ]))! as BuiltList<Object?>);
-          break;
-        case 'createdAt':
-          result.createdAt.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GDateTimeNullableFilter))!
-              as GDateTimeNullableFilter);
-          break;
-        case 'description':
-          result.description.replace(serializers.deserialize(value,
-              specifiedType: const FullType(GStringFilter))! as GStringFilter);
-          break;
-        case 'id':
-          result.id.replace(serializers.deserialize(value,
-              specifiedType: const FullType(GIDFilter))! as GIDFilter);
-          break;
-        case 'modifiedAt':
-          result.modifiedAt.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GDateTimeNullableFilter))!
-              as GDateTimeNullableFilter);
-          break;
-        case 'name':
-          result.name.replace(serializers.deserialize(value,
-              specifiedType: const FullType(GStringFilter))! as GStringFilter);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
 class _$GAppNotificationOrderByInputSerializer
     implements StructuredSerializer<GAppNotificationOrderByInput> {
   @override
@@ -36003,104 +41008,6 @@ class _$GAppNotificationOrderByInputSerializer
           break;
         case 'body':
           result.body = serializers.deserialize(value,
-                  specifiedType: const FullType(GOrderDirection))
-              as GOrderDirection?;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GGuaranteeOrderByInputSerializer
-    implements StructuredSerializer<GGuaranteeOrderByInput> {
-  @override
-  final Iterable<Type> types = const [
-    GGuaranteeOrderByInput,
-    _$GGuaranteeOrderByInput
-  ];
-  @override
-  final String wireName = 'GGuaranteeOrderByInput';
-
-  @override
-  Iterable<Object?> serialize(
-      Serializers serializers, GGuaranteeOrderByInput object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.createdAt;
-    if (value != null) {
-      result
-        ..add('createdAt')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GOrderDirection)));
-    }
-    value = object.description;
-    if (value != null) {
-      result
-        ..add('description')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GOrderDirection)));
-    }
-    value = object.id;
-    if (value != null) {
-      result
-        ..add('id')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GOrderDirection)));
-    }
-    value = object.modifiedAt;
-    if (value != null) {
-      result
-        ..add('modifiedAt')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GOrderDirection)));
-    }
-    value = object.name;
-    if (value != null) {
-      result
-        ..add('name')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GOrderDirection)));
-    }
-    return result;
-  }
-
-  @override
-  GGuaranteeOrderByInput deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GGuaranteeOrderByInputBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'createdAt':
-          result.createdAt = serializers.deserialize(value,
-                  specifiedType: const FullType(GOrderDirection))
-              as GOrderDirection?;
-          break;
-        case 'description':
-          result.description = serializers.deserialize(value,
-                  specifiedType: const FullType(GOrderDirection))
-              as GOrderDirection?;
-          break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-                  specifiedType: const FullType(GOrderDirection))
-              as GOrderDirection?;
-          break;
-        case 'modifiedAt':
-          result.modifiedAt = serializers.deserialize(value,
-                  specifiedType: const FullType(GOrderDirection))
-              as GOrderDirection?;
-          break;
-        case 'name':
-          result.name = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -38308,6 +43215,13 @@ class _$GNewsItemWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GNewsAttachmentManyRelationFilter)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GBooleanFilter)));
+    }
     return result;
   }
 
@@ -38388,6 +43302,11 @@ class _$GNewsItemWhereInputSerializer
                   specifiedType:
                       const FullType(GNewsAttachmentManyRelationFilter))!
               as GNewsAttachmentManyRelationFilter);
+          break;
+        case 'disabled':
+          result.disabled.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GBooleanFilter))!
+              as GBooleanFilter);
           break;
       }
     }
@@ -38676,6 +43595,13 @@ class _$GNewsItemOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     return result;
   }
 
@@ -38718,6 +43644,11 @@ class _$GNewsItemOrderByInputSerializer
           break;
         case 'authorName':
           result.authorName = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -38810,6 +43741,13 @@ class _$GNewsItemUpdateInputSerializer
             specifiedType:
                 const FullType(GNewsAttachmentRelateToManyForUpdateInput)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -38868,6 +43806,10 @@ class _$GNewsItemUpdateInputSerializer
                   specifiedType: const FullType(
                       GNewsAttachmentRelateToManyForUpdateInput))!
               as GNewsAttachmentRelateToManyForUpdateInput);
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -39369,6 +44311,13 @@ class _$GNewsItemCreateInputSerializer
             specifiedType:
                 const FullType(GNewsAttachmentRelateToManyForCreateInput)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -39427,6 +44376,10 @@ class _$GNewsItemCreateInputSerializer
                   specifiedType: const FullType(
                       GNewsAttachmentRelateToManyForCreateInput))!
               as GNewsAttachmentRelateToManyForCreateInput);
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -41421,6 +46374,20 @@ class _$GCouponWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GStringNullableFilter)));
     }
+    value = object.products;
+    if (value != null) {
+      result
+        ..add('products')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GProductManyRelationFilter)));
+    }
+    value = object.productsCondition;
+    if (value != null) {
+      result
+        ..add('productsCondition')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringNullableFilter)));
+    }
     return result;
   }
 
@@ -41493,6 +46460,16 @@ class _$GCouponWhereInputSerializer
           break;
         case 'vehiclesCondition':
           result.vehiclesCondition.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GStringNullableFilter))!
+              as GStringNullableFilter);
+          break;
+        case 'products':
+          result.products.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GProductManyRelationFilter))!
+              as GProductManyRelationFilter);
+          break;
+        case 'productsCondition':
+          result.productsCondition.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GStringNullableFilter))!
               as GStringNullableFilter);
           break;
@@ -41577,6 +46554,80 @@ class _$GVehicleManyRelationFilterSerializer
   }
 }
 
+class _$GProductManyRelationFilterSerializer
+    implements StructuredSerializer<GProductManyRelationFilter> {
+  @override
+  final Iterable<Type> types = const [
+    GProductManyRelationFilter,
+    _$GProductManyRelationFilter
+  ];
+  @override
+  final String wireName = 'GProductManyRelationFilter';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductManyRelationFilter object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.every;
+    if (value != null) {
+      result
+        ..add('every')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GProductWhereInput)));
+    }
+    value = object.some;
+    if (value != null) {
+      result
+        ..add('some')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GProductWhereInput)));
+    }
+    value = object.none;
+    if (value != null) {
+      result
+        ..add('none')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GProductWhereInput)));
+    }
+    return result;
+  }
+
+  @override
+  GProductManyRelationFilter deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductManyRelationFilterBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'every':
+          result.every.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GProductWhereInput))!
+              as GProductWhereInput);
+          break;
+        case 'some':
+          result.some.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GProductWhereInput))!
+              as GProductWhereInput);
+          break;
+        case 'none':
+          result.none.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GProductWhereInput))!
+              as GProductWhereInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$GCouponOrderByInputSerializer
     implements StructuredSerializer<GCouponOrderByInput> {
   @override
@@ -41649,6 +46700,13 @@ class _$GCouponOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.productsCondition;
+    if (value != null) {
+      result
+        ..add('productsCondition')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     return result;
   }
 
@@ -41701,6 +46759,11 @@ class _$GCouponOrderByInputSerializer
           break;
         case 'vehiclesCondition':
           result.vehiclesCondition = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'productsCondition':
+          result.productsCondition = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -41787,6 +46850,20 @@ class _$GCouponUpdateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.products;
+    if (value != null) {
+      result
+        ..add('products')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GProductRelateToManyForUpdateInput)));
+    }
+    value = object.productsCondition;
+    if (value != null) {
+      result
+        ..add('productsCondition')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -41838,6 +46915,16 @@ class _$GCouponUpdateInputSerializer
           break;
         case 'vehiclesCondition':
           result.vehiclesCondition = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'products':
+          result.products.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GProductRelateToManyForUpdateInput))!
+              as GProductRelateToManyForUpdateInput);
+          break;
+        case 'productsCondition':
+          result.productsCondition = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
       }
@@ -41932,6 +47019,100 @@ class _$GVehicleRelateToManyForUpdateInputSerializer
           result.connect.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
                 const FullType(GVehicleWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductRelateToManyForUpdateInputSerializer
+    implements StructuredSerializer<GProductRelateToManyForUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GProductRelateToManyForUpdateInput,
+    _$GProductRelateToManyForUpdateInput
+  ];
+  @override
+  final String wireName = 'GProductRelateToManyForUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductRelateToManyForUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.disconnect;
+    if (value != null) {
+      result
+        ..add('disconnect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GProductWhereUniqueInput)])));
+    }
+    value = object.set;
+    if (value != null) {
+      result
+        ..add('set')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GProductWhereUniqueInput)])));
+    }
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GProductCreateInput)])));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GProductWhereUniqueInput)])));
+    }
+    return result;
+  }
+
+  @override
+  GProductRelateToManyForUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductRelateToManyForUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'disconnect':
+          result.disconnect.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GProductWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'set':
+          result.set.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GProductWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(GProductCreateInput)]))!
+              as BuiltList<Object?>);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GProductWhereUniqueInput)
               ]))! as BuiltList<Object?>);
           break;
       }
@@ -42068,6 +47249,20 @@ class _$GCouponCreateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.products;
+    if (value != null) {
+      result
+        ..add('products')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GProductRelateToManyForCreateInput)));
+    }
+    value = object.productsCondition;
+    if (value != null) {
+      result
+        ..add('productsCondition')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -42119,6 +47314,16 @@ class _$GCouponCreateInputSerializer
           break;
         case 'vehiclesCondition':
           result.vehiclesCondition = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'products':
+          result.products.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GProductRelateToManyForCreateInput))!
+              as GProductRelateToManyForCreateInput);
+          break;
+        case 'productsCondition':
+          result.productsCondition = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
       }
@@ -42185,6 +47390,72 @@ class _$GVehicleRelateToManyForCreateInputSerializer
           result.connect.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
                 const FullType(GVehicleWhereUniqueInput)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductRelateToManyForCreateInputSerializer
+    implements StructuredSerializer<GProductRelateToManyForCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GProductRelateToManyForCreateInput,
+    _$GProductRelateToManyForCreateInput
+  ];
+  @override
+  final String wireName = 'GProductRelateToManyForCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductRelateToManyForCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.create;
+    if (value != null) {
+      result
+        ..add('create')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GProductCreateInput)])));
+    }
+    value = object.connect;
+    if (value != null) {
+      result
+        ..add('connect')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GProductWhereUniqueInput)])));
+    }
+    return result;
+  }
+
+  @override
+  GProductRelateToManyForCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductRelateToManyForCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'create':
+          result.create.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(GProductCreateInput)]))!
+              as BuiltList<Object?>);
+          break;
+        case 'connect':
+          result.connect.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GProductWhereUniqueInput)
               ]))! as BuiltList<Object?>);
           break;
       }
@@ -42353,6 +47624,20 @@ class _$GOfferWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GStringNullableFilter)));
     }
+    value = object.products;
+    if (value != null) {
+      result
+        ..add('products')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GProductManyRelationFilter)));
+    }
+    value = object.productsCondition;
+    if (value != null) {
+      result
+        ..add('productsCondition')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringNullableFilter)));
+    }
     return result;
   }
 
@@ -42425,6 +47710,16 @@ class _$GOfferWhereInputSerializer
           break;
         case 'vehiclesCondition':
           result.vehiclesCondition.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GStringNullableFilter))!
+              as GStringNullableFilter);
+          break;
+        case 'products':
+          result.products.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GProductManyRelationFilter))!
+              as GProductManyRelationFilter);
+          break;
+        case 'productsCondition':
+          result.productsCondition.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GStringNullableFilter))!
               as GStringNullableFilter);
           break;
@@ -42504,6 +47799,13 @@ class _$GOfferOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.productsCondition;
+    if (value != null) {
+      result
+        ..add('productsCondition')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     return result;
   }
 
@@ -42556,6 +47858,11 @@ class _$GOfferOrderByInputSerializer
           break;
         case 'vehiclesCondition':
           result.vehiclesCondition = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'productsCondition':
+          result.productsCondition = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -42641,6 +47948,20 @@ class _$GOfferUpdateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.products;
+    if (value != null) {
+      result
+        ..add('products')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GProductRelateToManyForUpdateInput)));
+    }
+    value = object.productsCondition;
+    if (value != null) {
+      result
+        ..add('productsCondition')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -42692,6 +48013,16 @@ class _$GOfferUpdateInputSerializer
           break;
         case 'vehiclesCondition':
           result.vehiclesCondition = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'products':
+          result.products.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GProductRelateToManyForUpdateInput))!
+              as GProductRelateToManyForUpdateInput);
+          break;
+        case 'productsCondition':
+          result.productsCondition = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
       }
@@ -42827,6 +48158,20 @@ class _$GOfferCreateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.products;
+    if (value != null) {
+      result
+        ..add('products')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GProductRelateToManyForCreateInput)));
+    }
+    value = object.productsCondition;
+    if (value != null) {
+      result
+        ..add('productsCondition')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -42878,6 +48223,16 @@ class _$GOfferCreateInputSerializer
           break;
         case 'vehiclesCondition':
           result.vehiclesCondition = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'products':
+          result.products.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GProductRelateToManyForCreateInput))!
+              as GProductRelateToManyForCreateInput);
+          break;
+        case 'productsCondition':
+          result.productsCondition = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
       }
@@ -46480,6 +51835,13 @@ class _$GProductWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GStringFilter)));
     }
+    value = object.longDescription;
+    if (value != null) {
+      result
+        ..add('longDescription')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
     value = object.type;
     if (value != null) {
       result
@@ -46562,6 +51924,10 @@ class _$GProductWhereInputSerializer
           break;
         case 'description':
           result.description.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'longDescription':
+          result.longDescription.replace(serializers.deserialize(value,
               specifiedType: const FullType(GStringFilter))! as GStringFilter);
           break;
         case 'type':
@@ -46795,6 +52161,13 @@ class _$GProductOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.longDescription;
+    if (value != null) {
+      result
+        ..add('longDescription')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     return result;
   }
 
@@ -46832,6 +52205,11 @@ class _$GProductOrderByInputSerializer
           break;
         case 'description':
           result.description = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'longDescription':
+          result.longDescription = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -46883,6 +52261,13 @@ class _$GProductUpdateInputSerializer
     if (value != null) {
       result
         ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.longDescription;
+    if (value != null) {
+      result
+        ..add('longDescription')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -46946,6 +52331,10 @@ class _$GProductUpdateInputSerializer
           break;
         case 'description':
           result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'longDescription':
+          result.longDescription = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'type':
@@ -47340,6 +52729,13 @@ class _$GProductCreateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.longDescription;
+    if (value != null) {
+      result
+        ..add('longDescription')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.type;
     if (value != null) {
       result
@@ -47400,6 +52796,10 @@ class _$GProductCreateInputSerializer
           break;
         case 'description':
           result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'longDescription':
+          result.longDescription = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'type':
@@ -48525,6 +53925,13 @@ class _$GProductVariantWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GProductReelManyRelationFilter)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GBooleanFilter)));
+    }
     return result;
   }
 
@@ -48625,6 +54032,11 @@ class _$GProductVariantWhereInputSerializer
                   specifiedType:
                       const FullType(GProductReelManyRelationFilter))!
               as GProductReelManyRelationFilter);
+          break;
+        case 'disabled':
+          result.disabled.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GBooleanFilter))!
+              as GBooleanFilter);
           break;
       }
     }
@@ -48980,6 +54392,13 @@ class _$GProductVariantOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     return result;
   }
 
@@ -49017,6 +54436,11 @@ class _$GProductVariantOrderByInputSerializer
           break;
         case 'default':
           result.Gdefault = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -49132,6 +54556,13 @@ class _$GProductVariantUpdateInputSerializer
             specifiedType:
                 const FullType(GProductReelRelateToManyForUpdateInput)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -49210,6 +54641,10 @@ class _$GProductVariantUpdateInputSerializer
                   specifiedType:
                       const FullType(GProductReelRelateToManyForUpdateInput))!
               as GProductReelRelateToManyForUpdateInput);
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -49756,6 +55191,13 @@ class _$GProductVariantCreateInputSerializer
             specifiedType:
                 const FullType(GProductReelRelateToManyForCreateInput)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -49834,6 +55276,10 @@ class _$GProductVariantCreateInputSerializer
                   specifiedType:
                       const FullType(GProductReelRelateToManyForCreateInput))!
               as GProductReelRelateToManyForCreateInput);
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -51788,6 +57234,13 @@ class _$GProductReelWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GIntNullableFilter)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GBooleanFilter)));
+    }
     return result;
   }
 
@@ -51852,6 +57305,11 @@ class _$GProductReelWhereInputSerializer
           result.index.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GIntNullableFilter))!
               as GIntNullableFilter);
+          break;
+        case 'disabled':
+          result.disabled.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GBooleanFilter))!
+              as GBooleanFilter);
           break;
       }
     }
@@ -51918,6 +57376,13 @@ class _$GProductReelOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     return result;
   }
 
@@ -51960,6 +57425,11 @@ class _$GProductReelOrderByInputSerializer
           break;
         case 'index':
           result.index = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -52028,6 +57498,13 @@ class _$GProductReelUpdateInputSerializer
         ..add('index')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -52068,6 +57545,10 @@ class _$GProductReelUpdateInputSerializer
         case 'index':
           result.index = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -52189,6 +57670,13 @@ class _$GProductReelCreateInputSerializer
         ..add('index')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.disabled;
+    if (value != null) {
+      result
+        ..add('disabled')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -52229,6 +57717,10 @@ class _$GProductReelCreateInputSerializer
         case 'index':
           result.index = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+        case 'disabled':
+          result.disabled = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -52361,6 +57853,13 @@ class _$GProductDealerWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GProductVariantWhereInput)));
     }
+    value = object.guarantees;
+    if (value != null) {
+      result
+        ..add('guarantees')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GGuaranteeManyRelationFilter)));
+    }
     value = object.prices;
     if (value != null) {
       result
@@ -52431,6 +57930,11 @@ class _$GProductDealerWhereInputSerializer
           result.productVariant.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GProductVariantWhereInput))!
               as GProductVariantWhereInput);
+          break;
+        case 'guarantees':
+          result.guarantees.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GGuaranteeManyRelationFilter))!
+              as GGuaranteeManyRelationFilter);
           break;
         case 'prices':
           result.prices.replace(serializers.deserialize(value,
@@ -52580,6 +58084,14 @@ class _$GProductDealerUpdateInputSerializer
             specifiedType:
                 const FullType(GProductVariantRelateToOneForUpdateInput)));
     }
+    value = object.guarantees;
+    if (value != null) {
+      result
+        ..add('guarantees')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GGuaranteeRelateToManyForUpdateInput)));
+    }
     value = object.prices;
     if (value != null) {
       result
@@ -52627,6 +58139,12 @@ class _$GProductDealerUpdateInputSerializer
                   specifiedType:
                       const FullType(GProductVariantRelateToOneForUpdateInput))!
               as GProductVariantRelateToOneForUpdateInput);
+          break;
+        case 'guarantees':
+          result.guarantees.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GGuaranteeRelateToManyForUpdateInput))!
+              as GGuaranteeRelateToManyForUpdateInput);
           break;
         case 'prices':
           result.prices.replace(serializers.deserialize(value,
@@ -52746,6 +58264,14 @@ class _$GProductDealerCreateInputSerializer
             specifiedType:
                 const FullType(GProductVariantRelateToOneForCreateInput)));
     }
+    value = object.guarantees;
+    if (value != null) {
+      result
+        ..add('guarantees')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GGuaranteeRelateToManyForCreateInput)));
+    }
     value = object.prices;
     if (value != null) {
       result
@@ -52793,6 +58319,12 @@ class _$GProductDealerCreateInputSerializer
                   specifiedType:
                       const FullType(GProductVariantRelateToOneForCreateInput))!
               as GProductVariantRelateToOneForCreateInput);
+          break;
+        case 'guarantees':
+          result.guarantees.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GGuaranteeRelateToManyForCreateInput))!
+              as GGuaranteeRelateToManyForCreateInput);
           break;
         case 'prices':
           result.prices.replace(serializers.deserialize(value,
@@ -52936,6 +58468,13 @@ class _$GProductDealerStockRequestWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GProductVariantWhereInput)));
     }
+    value = object.guarantees;
+    if (value != null) {
+      result
+        ..add('guarantees')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GGuaranteeManyRelationFilter)));
+    }
     value = object.stock;
     if (value != null) {
       result
@@ -53013,6 +58552,11 @@ class _$GProductDealerStockRequestWhereInputSerializer
           result.productVariant.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GProductVariantWhereInput))!
               as GProductVariantWhereInput);
+          break;
+        case 'guarantees':
+          result.guarantees.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GGuaranteeManyRelationFilter))!
+              as GGuaranteeManyRelationFilter);
           break;
         case 'stock':
           result.stock.replace(serializers.deserialize(value,
@@ -53191,6 +58735,14 @@ class _$GProductDealerStockRequestUpdateInputSerializer
             specifiedType:
                 const FullType(GProductVariantRelateToOneForUpdateInput)));
     }
+    value = object.guarantees;
+    if (value != null) {
+      result
+        ..add('guarantees')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GGuaranteeRelateToManyForUpdateInput)));
+    }
     value = object.stock;
     if (value != null) {
       result
@@ -53245,6 +58797,12 @@ class _$GProductDealerStockRequestUpdateInputSerializer
                   specifiedType:
                       const FullType(GProductVariantRelateToOneForUpdateInput))!
               as GProductVariantRelateToOneForUpdateInput);
+          break;
+        case 'guarantees':
+          result.guarantees.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GGuaranteeRelateToManyForUpdateInput))!
+              as GGuaranteeRelateToManyForUpdateInput);
           break;
         case 'stock':
           result.stock = serializers.deserialize(value,
@@ -53368,6 +58926,14 @@ class _$GProductDealerStockRequestCreateInputSerializer
             specifiedType:
                 const FullType(GProductVariantRelateToOneForCreateInput)));
     }
+    value = object.guarantees;
+    if (value != null) {
+      result
+        ..add('guarantees')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GGuaranteeRelateToManyForCreateInput)));
+    }
     value = object.stock;
     if (value != null) {
       result
@@ -53422,6 +58988,12 @@ class _$GProductDealerStockRequestCreateInputSerializer
                   specifiedType:
                       const FullType(GProductVariantRelateToOneForCreateInput))!
               as GProductVariantRelateToOneForCreateInput);
+          break;
+        case 'guarantees':
+          result.guarantees.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GGuaranteeRelateToManyForCreateInput))!
+              as GGuaranteeRelateToManyForCreateInput);
           break;
         case 'stock':
           result.stock = serializers.deserialize(value,
@@ -54027,7 +59599,8 @@ class _$GPaymentItemSerializer implements StructuredSerializer<GPaymentItem> {
       serializers.serialize(object.type,
           specifiedType: const FullType(GPaymentItemType)),
       'amount',
-      serializers.serialize(object.amount, specifiedType: const FullType(int)),
+      serializers.serialize(object.amount,
+          specifiedType: const FullType(double)),
     ];
 
     return result;
@@ -54052,7 +59625,7 @@ class _$GPaymentItemSerializer implements StructuredSerializer<GPaymentItem> {
           break;
         case 'amount':
           result.amount = serializers.deserialize(value,
-              specifiedType: const FullType(int))! as int;
+              specifiedType: const FullType(double))! as double;
           break;
       }
     }
@@ -67116,6 +72689,1143 @@ class GVehicleTypeCreateInputBuilder
   }
 }
 
+class _$GVehicleSubTypeWhereUniqueInput
+    extends GVehicleSubTypeWhereUniqueInput {
+  @override
+  final String? id;
+
+  factory _$GVehicleSubTypeWhereUniqueInput(
+          [void Function(GVehicleSubTypeWhereUniqueInputBuilder)? updates]) =>
+      (new GVehicleSubTypeWhereUniqueInputBuilder()..update(updates))._build();
+
+  _$GVehicleSubTypeWhereUniqueInput._({this.id}) : super._();
+
+  @override
+  GVehicleSubTypeWhereUniqueInput rebuild(
+          void Function(GVehicleSubTypeWhereUniqueInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleSubTypeWhereUniqueInputBuilder toBuilder() =>
+      new GVehicleSubTypeWhereUniqueInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleSubTypeWhereUniqueInput && id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GVehicleSubTypeWhereUniqueInput')
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GVehicleSubTypeWhereUniqueInputBuilder
+    implements
+        Builder<GVehicleSubTypeWhereUniqueInput,
+            GVehicleSubTypeWhereUniqueInputBuilder> {
+  _$GVehicleSubTypeWhereUniqueInput? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GVehicleSubTypeWhereUniqueInputBuilder();
+
+  GVehicleSubTypeWhereUniqueInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleSubTypeWhereUniqueInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleSubTypeWhereUniqueInput;
+  }
+
+  @override
+  void update(void Function(GVehicleSubTypeWhereUniqueInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleSubTypeWhereUniqueInput build() => _build();
+
+  _$GVehicleSubTypeWhereUniqueInput _build() {
+    final _$result = _$v ?? new _$GVehicleSubTypeWhereUniqueInput._(id: id);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleSubTypeWhereInput extends GVehicleSubTypeWhereInput {
+  @override
+  final BuiltList<GVehicleSubTypeWhereInput>? AND;
+  @override
+  final BuiltList<GVehicleSubTypeWhereInput>? OR;
+  @override
+  final BuiltList<GVehicleSubTypeWhereInput>? NOT;
+  @override
+  final GIDFilter? id;
+  @override
+  final GDateTimeNullableFilter? createdAt;
+  @override
+  final GDateTimeNullableFilter? modifiedAt;
+  @override
+  final GStringFilter? name;
+  @override
+  final GStringFilter? description;
+  @override
+  final GVehicleTypeWhereInput? vehicleType;
+
+  factory _$GVehicleSubTypeWhereInput(
+          [void Function(GVehicleSubTypeWhereInputBuilder)? updates]) =>
+      (new GVehicleSubTypeWhereInputBuilder()..update(updates))._build();
+
+  _$GVehicleSubTypeWhereInput._(
+      {this.AND,
+      this.OR,
+      this.NOT,
+      this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.name,
+      this.description,
+      this.vehicleType})
+      : super._();
+
+  @override
+  GVehicleSubTypeWhereInput rebuild(
+          void Function(GVehicleSubTypeWhereInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleSubTypeWhereInputBuilder toBuilder() =>
+      new GVehicleSubTypeWhereInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleSubTypeWhereInput &&
+        AND == other.AND &&
+        OR == other.OR &&
+        NOT == other.NOT &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        name == other.name &&
+        description == other.description &&
+        vehicleType == other.vehicleType;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, AND.hashCode);
+    _$hash = $jc(_$hash, OR.hashCode);
+    _$hash = $jc(_$hash, NOT.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, vehicleType.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GVehicleSubTypeWhereInput')
+          ..add('AND', AND)
+          ..add('OR', OR)
+          ..add('NOT', NOT)
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('name', name)
+          ..add('description', description)
+          ..add('vehicleType', vehicleType))
+        .toString();
+  }
+}
+
+class GVehicleSubTypeWhereInputBuilder
+    implements
+        Builder<GVehicleSubTypeWhereInput, GVehicleSubTypeWhereInputBuilder> {
+  _$GVehicleSubTypeWhereInput? _$v;
+
+  ListBuilder<GVehicleSubTypeWhereInput>? _AND;
+  ListBuilder<GVehicleSubTypeWhereInput> get AND =>
+      _$this._AND ??= new ListBuilder<GVehicleSubTypeWhereInput>();
+  set AND(ListBuilder<GVehicleSubTypeWhereInput>? AND) => _$this._AND = AND;
+
+  ListBuilder<GVehicleSubTypeWhereInput>? _OR;
+  ListBuilder<GVehicleSubTypeWhereInput> get OR =>
+      _$this._OR ??= new ListBuilder<GVehicleSubTypeWhereInput>();
+  set OR(ListBuilder<GVehicleSubTypeWhereInput>? OR) => _$this._OR = OR;
+
+  ListBuilder<GVehicleSubTypeWhereInput>? _NOT;
+  ListBuilder<GVehicleSubTypeWhereInput> get NOT =>
+      _$this._NOT ??= new ListBuilder<GVehicleSubTypeWhereInput>();
+  set NOT(ListBuilder<GVehicleSubTypeWhereInput>? NOT) => _$this._NOT = NOT;
+
+  GIDFilterBuilder? _id;
+  GIDFilterBuilder get id => _$this._id ??= new GIDFilterBuilder();
+  set id(GIDFilterBuilder? id) => _$this._id = id;
+
+  GDateTimeNullableFilterBuilder? _createdAt;
+  GDateTimeNullableFilterBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeNullableFilterBuilder();
+  set createdAt(GDateTimeNullableFilterBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GDateTimeNullableFilterBuilder? _modifiedAt;
+  GDateTimeNullableFilterBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeNullableFilterBuilder();
+  set modifiedAt(GDateTimeNullableFilterBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GStringFilterBuilder? _name;
+  GStringFilterBuilder get name => _$this._name ??= new GStringFilterBuilder();
+  set name(GStringFilterBuilder? name) => _$this._name = name;
+
+  GStringFilterBuilder? _description;
+  GStringFilterBuilder get description =>
+      _$this._description ??= new GStringFilterBuilder();
+  set description(GStringFilterBuilder? description) =>
+      _$this._description = description;
+
+  GVehicleTypeWhereInputBuilder? _vehicleType;
+  GVehicleTypeWhereInputBuilder get vehicleType =>
+      _$this._vehicleType ??= new GVehicleTypeWhereInputBuilder();
+  set vehicleType(GVehicleTypeWhereInputBuilder? vehicleType) =>
+      _$this._vehicleType = vehicleType;
+
+  GVehicleSubTypeWhereInputBuilder();
+
+  GVehicleSubTypeWhereInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _AND = $v.AND?.toBuilder();
+      _OR = $v.OR?.toBuilder();
+      _NOT = $v.NOT?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _name = $v.name?.toBuilder();
+      _description = $v.description?.toBuilder();
+      _vehicleType = $v.vehicleType?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleSubTypeWhereInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleSubTypeWhereInput;
+  }
+
+  @override
+  void update(void Function(GVehicleSubTypeWhereInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleSubTypeWhereInput build() => _build();
+
+  _$GVehicleSubTypeWhereInput _build() {
+    _$GVehicleSubTypeWhereInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleSubTypeWhereInput._(
+              AND: _AND?.build(),
+              OR: _OR?.build(),
+              NOT: _NOT?.build(),
+              id: _id?.build(),
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              name: _name?.build(),
+              description: _description?.build(),
+              vehicleType: _vehicleType?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'AND';
+        _AND?.build();
+        _$failedField = 'OR';
+        _OR?.build();
+        _$failedField = 'NOT';
+        _NOT?.build();
+        _$failedField = 'id';
+        _id?.build();
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'name';
+        _name?.build();
+        _$failedField = 'description';
+        _description?.build();
+        _$failedField = 'vehicleType';
+        _vehicleType?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleSubTypeWhereInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleSubTypeOrderByInput extends GVehicleSubTypeOrderByInput {
+  @override
+  final GOrderDirection? id;
+  @override
+  final GOrderDirection? createdAt;
+  @override
+  final GOrderDirection? modifiedAt;
+  @override
+  final GOrderDirection? name;
+  @override
+  final GOrderDirection? description;
+
+  factory _$GVehicleSubTypeOrderByInput(
+          [void Function(GVehicleSubTypeOrderByInputBuilder)? updates]) =>
+      (new GVehicleSubTypeOrderByInputBuilder()..update(updates))._build();
+
+  _$GVehicleSubTypeOrderByInput._(
+      {this.id, this.createdAt, this.modifiedAt, this.name, this.description})
+      : super._();
+
+  @override
+  GVehicleSubTypeOrderByInput rebuild(
+          void Function(GVehicleSubTypeOrderByInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleSubTypeOrderByInputBuilder toBuilder() =>
+      new GVehicleSubTypeOrderByInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleSubTypeOrderByInput &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        name == other.name &&
+        description == other.description;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GVehicleSubTypeOrderByInput')
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('name', name)
+          ..add('description', description))
+        .toString();
+  }
+}
+
+class GVehicleSubTypeOrderByInputBuilder
+    implements
+        Builder<GVehicleSubTypeOrderByInput,
+            GVehicleSubTypeOrderByInputBuilder> {
+  _$GVehicleSubTypeOrderByInput? _$v;
+
+  GOrderDirection? _id;
+  GOrderDirection? get id => _$this._id;
+  set id(GOrderDirection? id) => _$this._id = id;
+
+  GOrderDirection? _createdAt;
+  GOrderDirection? get createdAt => _$this._createdAt;
+  set createdAt(GOrderDirection? createdAt) => _$this._createdAt = createdAt;
+
+  GOrderDirection? _modifiedAt;
+  GOrderDirection? get modifiedAt => _$this._modifiedAt;
+  set modifiedAt(GOrderDirection? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GOrderDirection? _name;
+  GOrderDirection? get name => _$this._name;
+  set name(GOrderDirection? name) => _$this._name = name;
+
+  GOrderDirection? _description;
+  GOrderDirection? get description => _$this._description;
+  set description(GOrderDirection? description) =>
+      _$this._description = description;
+
+  GVehicleSubTypeOrderByInputBuilder();
+
+  GVehicleSubTypeOrderByInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _createdAt = $v.createdAt;
+      _modifiedAt = $v.modifiedAt;
+      _name = $v.name;
+      _description = $v.description;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleSubTypeOrderByInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleSubTypeOrderByInput;
+  }
+
+  @override
+  void update(void Function(GVehicleSubTypeOrderByInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleSubTypeOrderByInput build() => _build();
+
+  _$GVehicleSubTypeOrderByInput _build() {
+    final _$result = _$v ??
+        new _$GVehicleSubTypeOrderByInput._(
+            id: id,
+            createdAt: createdAt,
+            modifiedAt: modifiedAt,
+            name: name,
+            description: description);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleSubTypeUpdateInput extends GVehicleSubTypeUpdateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final String? name;
+  @override
+  final String? description;
+  @override
+  final GVehicleTypeRelateToOneForUpdateInput? vehicleType;
+
+  factory _$GVehicleSubTypeUpdateInput(
+          [void Function(GVehicleSubTypeUpdateInputBuilder)? updates]) =>
+      (new GVehicleSubTypeUpdateInputBuilder()..update(updates))._build();
+
+  _$GVehicleSubTypeUpdateInput._(
+      {this.createdAt,
+      this.modifiedAt,
+      this.name,
+      this.description,
+      this.vehicleType})
+      : super._();
+
+  @override
+  GVehicleSubTypeUpdateInput rebuild(
+          void Function(GVehicleSubTypeUpdateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleSubTypeUpdateInputBuilder toBuilder() =>
+      new GVehicleSubTypeUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleSubTypeUpdateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        name == other.name &&
+        description == other.description &&
+        vehicleType == other.vehicleType;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, vehicleType.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GVehicleSubTypeUpdateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('name', name)
+          ..add('description', description)
+          ..add('vehicleType', vehicleType))
+        .toString();
+  }
+}
+
+class GVehicleSubTypeUpdateInputBuilder
+    implements
+        Builder<GVehicleSubTypeUpdateInput, GVehicleSubTypeUpdateInputBuilder> {
+  _$GVehicleSubTypeUpdateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  GVehicleTypeRelateToOneForUpdateInputBuilder? _vehicleType;
+  GVehicleTypeRelateToOneForUpdateInputBuilder get vehicleType =>
+      _$this._vehicleType ??=
+          new GVehicleTypeRelateToOneForUpdateInputBuilder();
+  set vehicleType(GVehicleTypeRelateToOneForUpdateInputBuilder? vehicleType) =>
+      _$this._vehicleType = vehicleType;
+
+  GVehicleSubTypeUpdateInputBuilder();
+
+  GVehicleSubTypeUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _name = $v.name;
+      _description = $v.description;
+      _vehicleType = $v.vehicleType?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleSubTypeUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleSubTypeUpdateInput;
+  }
+
+  @override
+  void update(void Function(GVehicleSubTypeUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleSubTypeUpdateInput build() => _build();
+
+  _$GVehicleSubTypeUpdateInput _build() {
+    _$GVehicleSubTypeUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleSubTypeUpdateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              name: name,
+              description: description,
+              vehicleType: _vehicleType?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+
+        _$failedField = 'vehicleType';
+        _vehicleType?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleSubTypeUpdateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleTypeRelateToOneForUpdateInput
+    extends GVehicleTypeRelateToOneForUpdateInput {
+  @override
+  final GVehicleTypeCreateInput? create;
+  @override
+  final GVehicleTypeWhereUniqueInput? connect;
+  @override
+  final bool? disconnect;
+
+  factory _$GVehicleTypeRelateToOneForUpdateInput(
+          [void Function(GVehicleTypeRelateToOneForUpdateInputBuilder)?
+              updates]) =>
+      (new GVehicleTypeRelateToOneForUpdateInputBuilder()..update(updates))
+          ._build();
+
+  _$GVehicleTypeRelateToOneForUpdateInput._(
+      {this.create, this.connect, this.disconnect})
+      : super._();
+
+  @override
+  GVehicleTypeRelateToOneForUpdateInput rebuild(
+          void Function(GVehicleTypeRelateToOneForUpdateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleTypeRelateToOneForUpdateInputBuilder toBuilder() =>
+      new GVehicleTypeRelateToOneForUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleTypeRelateToOneForUpdateInput &&
+        create == other.create &&
+        connect == other.connect &&
+        disconnect == other.disconnect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jc(_$hash, disconnect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GVehicleTypeRelateToOneForUpdateInput')
+          ..add('create', create)
+          ..add('connect', connect)
+          ..add('disconnect', disconnect))
+        .toString();
+  }
+}
+
+class GVehicleTypeRelateToOneForUpdateInputBuilder
+    implements
+        Builder<GVehicleTypeRelateToOneForUpdateInput,
+            GVehicleTypeRelateToOneForUpdateInputBuilder> {
+  _$GVehicleTypeRelateToOneForUpdateInput? _$v;
+
+  GVehicleTypeCreateInputBuilder? _create;
+  GVehicleTypeCreateInputBuilder get create =>
+      _$this._create ??= new GVehicleTypeCreateInputBuilder();
+  set create(GVehicleTypeCreateInputBuilder? create) => _$this._create = create;
+
+  GVehicleTypeWhereUniqueInputBuilder? _connect;
+  GVehicleTypeWhereUniqueInputBuilder get connect =>
+      _$this._connect ??= new GVehicleTypeWhereUniqueInputBuilder();
+  set connect(GVehicleTypeWhereUniqueInputBuilder? connect) =>
+      _$this._connect = connect;
+
+  bool? _disconnect;
+  bool? get disconnect => _$this._disconnect;
+  set disconnect(bool? disconnect) => _$this._disconnect = disconnect;
+
+  GVehicleTypeRelateToOneForUpdateInputBuilder();
+
+  GVehicleTypeRelateToOneForUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _disconnect = $v.disconnect;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleTypeRelateToOneForUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleTypeRelateToOneForUpdateInput;
+  }
+
+  @override
+  void update(
+      void Function(GVehicleTypeRelateToOneForUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleTypeRelateToOneForUpdateInput build() => _build();
+
+  _$GVehicleTypeRelateToOneForUpdateInput _build() {
+    _$GVehicleTypeRelateToOneForUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleTypeRelateToOneForUpdateInput._(
+              create: _create?.build(),
+              connect: _connect?.build(),
+              disconnect: disconnect);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleTypeRelateToOneForUpdateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleSubTypeUpdateArgs extends GVehicleSubTypeUpdateArgs {
+  @override
+  final GVehicleSubTypeWhereUniqueInput where;
+  @override
+  final GVehicleSubTypeUpdateInput data;
+
+  factory _$GVehicleSubTypeUpdateArgs(
+          [void Function(GVehicleSubTypeUpdateArgsBuilder)? updates]) =>
+      (new GVehicleSubTypeUpdateArgsBuilder()..update(updates))._build();
+
+  _$GVehicleSubTypeUpdateArgs._({required this.where, required this.data})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GVehicleSubTypeUpdateArgs', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        data, r'GVehicleSubTypeUpdateArgs', 'data');
+  }
+
+  @override
+  GVehicleSubTypeUpdateArgs rebuild(
+          void Function(GVehicleSubTypeUpdateArgsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleSubTypeUpdateArgsBuilder toBuilder() =>
+      new GVehicleSubTypeUpdateArgsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleSubTypeUpdateArgs &&
+        where == other.where &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GVehicleSubTypeUpdateArgs')
+          ..add('where', where)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GVehicleSubTypeUpdateArgsBuilder
+    implements
+        Builder<GVehicleSubTypeUpdateArgs, GVehicleSubTypeUpdateArgsBuilder> {
+  _$GVehicleSubTypeUpdateArgs? _$v;
+
+  GVehicleSubTypeWhereUniqueInputBuilder? _where;
+  GVehicleSubTypeWhereUniqueInputBuilder get where =>
+      _$this._where ??= new GVehicleSubTypeWhereUniqueInputBuilder();
+  set where(GVehicleSubTypeWhereUniqueInputBuilder? where) =>
+      _$this._where = where;
+
+  GVehicleSubTypeUpdateInputBuilder? _data;
+  GVehicleSubTypeUpdateInputBuilder get data =>
+      _$this._data ??= new GVehicleSubTypeUpdateInputBuilder();
+  set data(GVehicleSubTypeUpdateInputBuilder? data) => _$this._data = data;
+
+  GVehicleSubTypeUpdateArgsBuilder();
+
+  GVehicleSubTypeUpdateArgsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleSubTypeUpdateArgs other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleSubTypeUpdateArgs;
+  }
+
+  @override
+  void update(void Function(GVehicleSubTypeUpdateArgsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleSubTypeUpdateArgs build() => _build();
+
+  _$GVehicleSubTypeUpdateArgs _build() {
+    _$GVehicleSubTypeUpdateArgs _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleSubTypeUpdateArgs._(
+              where: where.build(), data: data.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleSubTypeUpdateArgs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleSubTypeCreateInput extends GVehicleSubTypeCreateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final String? name;
+  @override
+  final String? description;
+  @override
+  final GVehicleTypeRelateToOneForCreateInput? vehicleType;
+
+  factory _$GVehicleSubTypeCreateInput(
+          [void Function(GVehicleSubTypeCreateInputBuilder)? updates]) =>
+      (new GVehicleSubTypeCreateInputBuilder()..update(updates))._build();
+
+  _$GVehicleSubTypeCreateInput._(
+      {this.createdAt,
+      this.modifiedAt,
+      this.name,
+      this.description,
+      this.vehicleType})
+      : super._();
+
+  @override
+  GVehicleSubTypeCreateInput rebuild(
+          void Function(GVehicleSubTypeCreateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleSubTypeCreateInputBuilder toBuilder() =>
+      new GVehicleSubTypeCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleSubTypeCreateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        name == other.name &&
+        description == other.description &&
+        vehicleType == other.vehicleType;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, vehicleType.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GVehicleSubTypeCreateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('name', name)
+          ..add('description', description)
+          ..add('vehicleType', vehicleType))
+        .toString();
+  }
+}
+
+class GVehicleSubTypeCreateInputBuilder
+    implements
+        Builder<GVehicleSubTypeCreateInput, GVehicleSubTypeCreateInputBuilder> {
+  _$GVehicleSubTypeCreateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  GVehicleTypeRelateToOneForCreateInputBuilder? _vehicleType;
+  GVehicleTypeRelateToOneForCreateInputBuilder get vehicleType =>
+      _$this._vehicleType ??=
+          new GVehicleTypeRelateToOneForCreateInputBuilder();
+  set vehicleType(GVehicleTypeRelateToOneForCreateInputBuilder? vehicleType) =>
+      _$this._vehicleType = vehicleType;
+
+  GVehicleSubTypeCreateInputBuilder();
+
+  GVehicleSubTypeCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _name = $v.name;
+      _description = $v.description;
+      _vehicleType = $v.vehicleType?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleSubTypeCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleSubTypeCreateInput;
+  }
+
+  @override
+  void update(void Function(GVehicleSubTypeCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleSubTypeCreateInput build() => _build();
+
+  _$GVehicleSubTypeCreateInput _build() {
+    _$GVehicleSubTypeCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleSubTypeCreateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              name: name,
+              description: description,
+              vehicleType: _vehicleType?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+
+        _$failedField = 'vehicleType';
+        _vehicleType?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleSubTypeCreateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleTypeRelateToOneForCreateInput
+    extends GVehicleTypeRelateToOneForCreateInput {
+  @override
+  final GVehicleTypeCreateInput? create;
+  @override
+  final GVehicleTypeWhereUniqueInput? connect;
+
+  factory _$GVehicleTypeRelateToOneForCreateInput(
+          [void Function(GVehicleTypeRelateToOneForCreateInputBuilder)?
+              updates]) =>
+      (new GVehicleTypeRelateToOneForCreateInputBuilder()..update(updates))
+          ._build();
+
+  _$GVehicleTypeRelateToOneForCreateInput._({this.create, this.connect})
+      : super._();
+
+  @override
+  GVehicleTypeRelateToOneForCreateInput rebuild(
+          void Function(GVehicleTypeRelateToOneForCreateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleTypeRelateToOneForCreateInputBuilder toBuilder() =>
+      new GVehicleTypeRelateToOneForCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleTypeRelateToOneForCreateInput &&
+        create == other.create &&
+        connect == other.connect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GVehicleTypeRelateToOneForCreateInput')
+          ..add('create', create)
+          ..add('connect', connect))
+        .toString();
+  }
+}
+
+class GVehicleTypeRelateToOneForCreateInputBuilder
+    implements
+        Builder<GVehicleTypeRelateToOneForCreateInput,
+            GVehicleTypeRelateToOneForCreateInputBuilder> {
+  _$GVehicleTypeRelateToOneForCreateInput? _$v;
+
+  GVehicleTypeCreateInputBuilder? _create;
+  GVehicleTypeCreateInputBuilder get create =>
+      _$this._create ??= new GVehicleTypeCreateInputBuilder();
+  set create(GVehicleTypeCreateInputBuilder? create) => _$this._create = create;
+
+  GVehicleTypeWhereUniqueInputBuilder? _connect;
+  GVehicleTypeWhereUniqueInputBuilder get connect =>
+      _$this._connect ??= new GVehicleTypeWhereUniqueInputBuilder();
+  set connect(GVehicleTypeWhereUniqueInputBuilder? connect) =>
+      _$this._connect = connect;
+
+  GVehicleTypeRelateToOneForCreateInputBuilder();
+
+  GVehicleTypeRelateToOneForCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleTypeRelateToOneForCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleTypeRelateToOneForCreateInput;
+  }
+
+  @override
+  void update(
+      void Function(GVehicleTypeRelateToOneForCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleTypeRelateToOneForCreateInput build() => _build();
+
+  _$GVehicleTypeRelateToOneForCreateInput _build() {
+    _$GVehicleTypeRelateToOneForCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleTypeRelateToOneForCreateInput._(
+              create: _create?.build(), connect: _connect?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleTypeRelateToOneForCreateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$GBrandWhereUniqueInput extends GBrandWhereUniqueInput {
   @override
   final String? id;
@@ -67510,13 +74220,16 @@ class _$GBrandUpdateInput extends GBrandUpdateInput {
   @override
   final String? name;
   @override
+  final BuiltList<String>? type;
+  @override
   final GImageFieldInput? logo;
 
   factory _$GBrandUpdateInput(
           [void Function(GBrandUpdateInputBuilder)? updates]) =>
       (new GBrandUpdateInputBuilder()..update(updates))._build();
 
-  _$GBrandUpdateInput._({this.createdAt, this.modifiedAt, this.name, this.logo})
+  _$GBrandUpdateInput._(
+      {this.createdAt, this.modifiedAt, this.name, this.type, this.logo})
       : super._();
 
   @override
@@ -67534,6 +74247,7 @@ class _$GBrandUpdateInput extends GBrandUpdateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
+        type == other.type &&
         logo == other.logo;
   }
 
@@ -67543,6 +74257,7 @@ class _$GBrandUpdateInput extends GBrandUpdateInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, logo.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -67554,6 +74269,7 @@ class _$GBrandUpdateInput extends GBrandUpdateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
+          ..add('type', type)
           ..add('logo', logo))
         .toString();
   }
@@ -67578,6 +74294,10 @@ class GBrandUpdateInputBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  ListBuilder<String>? _type;
+  ListBuilder<String> get type => _$this._type ??= new ListBuilder<String>();
+  set type(ListBuilder<String>? type) => _$this._type = type;
+
   GImageFieldInputBuilder? _logo;
   GImageFieldInputBuilder get logo =>
       _$this._logo ??= new GImageFieldInputBuilder();
@@ -67591,6 +74311,7 @@ class GBrandUpdateInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _name = $v.name;
+      _type = $v.type?.toBuilder();
       _logo = $v.logo?.toBuilder();
       _$v = null;
     }
@@ -67619,6 +74340,7 @@ class GBrandUpdateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               name: name,
+              type: _type?.build(),
               logo: _logo?.build());
     } catch (_) {
       late String _$failedField;
@@ -67628,6 +74350,8 @@ class GBrandUpdateInputBuilder
         _$failedField = 'modifiedAt';
         _modifiedAt?.build();
 
+        _$failedField = 'type';
+        _type?.build();
         _$failedField = 'logo';
         _logo?.build();
       } catch (e) {
@@ -67761,13 +74485,16 @@ class _$GBrandCreateInput extends GBrandCreateInput {
   @override
   final String? name;
   @override
+  final BuiltList<String>? type;
+  @override
   final GImageFieldInput? logo;
 
   factory _$GBrandCreateInput(
           [void Function(GBrandCreateInputBuilder)? updates]) =>
       (new GBrandCreateInputBuilder()..update(updates))._build();
 
-  _$GBrandCreateInput._({this.createdAt, this.modifiedAt, this.name, this.logo})
+  _$GBrandCreateInput._(
+      {this.createdAt, this.modifiedAt, this.name, this.type, this.logo})
       : super._();
 
   @override
@@ -67785,6 +74512,7 @@ class _$GBrandCreateInput extends GBrandCreateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
+        type == other.type &&
         logo == other.logo;
   }
 
@@ -67794,6 +74522,7 @@ class _$GBrandCreateInput extends GBrandCreateInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, logo.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -67805,6 +74534,7 @@ class _$GBrandCreateInput extends GBrandCreateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
+          ..add('type', type)
           ..add('logo', logo))
         .toString();
   }
@@ -67829,6 +74559,10 @@ class GBrandCreateInputBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  ListBuilder<String>? _type;
+  ListBuilder<String> get type => _$this._type ??= new ListBuilder<String>();
+  set type(ListBuilder<String>? type) => _$this._type = type;
+
   GImageFieldInputBuilder? _logo;
   GImageFieldInputBuilder get logo =>
       _$this._logo ??= new GImageFieldInputBuilder();
@@ -67842,6 +74576,7 @@ class GBrandCreateInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _name = $v.name;
+      _type = $v.type?.toBuilder();
       _logo = $v.logo?.toBuilder();
       _$v = null;
     }
@@ -67870,6 +74605,7 @@ class GBrandCreateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               name: name,
+              type: _type?.build(),
               logo: _logo?.build());
     } catch (_) {
       late String _$failedField;
@@ -67879,6 +74615,8 @@ class GBrandCreateInputBuilder
         _$failedField = 'modifiedAt';
         _modifiedAt?.build();
 
+        _$failedField = 'type';
+        _type?.build();
         _$failedField = 'logo';
         _logo?.build();
       } catch (e) {
@@ -70931,7 +77669,11 @@ class _$GVehicleWhereInput extends GVehicleWhereInput {
   @override
   final GStringFilter? description;
   @override
+  final GStringFilter? longDescription;
+  @override
   final GVehicleTypeWhereInput? type;
+  @override
+  final GVehicleSubTypeManyRelationFilter? subType;
   @override
   final GBrandWhereInput? brand;
   @override
@@ -70956,7 +77698,9 @@ class _$GVehicleWhereInput extends GVehicleWhereInput {
       this.modifiedAt,
       this.name,
       this.description,
+      this.longDescription,
       this.type,
+      this.subType,
       this.brand,
       this.variants,
       this.specifications,
@@ -70985,7 +77729,9 @@ class _$GVehicleWhereInput extends GVehicleWhereInput {
         modifiedAt == other.modifiedAt &&
         name == other.name &&
         description == other.description &&
+        longDescription == other.longDescription &&
         type == other.type &&
+        subType == other.subType &&
         brand == other.brand &&
         variants == other.variants &&
         specifications == other.specifications &&
@@ -71004,7 +77750,9 @@ class _$GVehicleWhereInput extends GVehicleWhereInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, longDescription.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, subType.hashCode);
     _$hash = $jc(_$hash, brand.hashCode);
     _$hash = $jc(_$hash, variants.hashCode);
     _$hash = $jc(_$hash, specifications.hashCode);
@@ -71025,7 +77773,9 @@ class _$GVehicleWhereInput extends GVehicleWhereInput {
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
           ..add('description', description)
+          ..add('longDescription', longDescription)
           ..add('type', type)
+          ..add('subType', subType)
           ..add('brand', brand)
           ..add('variants', variants)
           ..add('specifications', specifications)
@@ -71080,10 +77830,22 @@ class GVehicleWhereInputBuilder
   set description(GStringFilterBuilder? description) =>
       _$this._description = description;
 
+  GStringFilterBuilder? _longDescription;
+  GStringFilterBuilder get longDescription =>
+      _$this._longDescription ??= new GStringFilterBuilder();
+  set longDescription(GStringFilterBuilder? longDescription) =>
+      _$this._longDescription = longDescription;
+
   GVehicleTypeWhereInputBuilder? _type;
   GVehicleTypeWhereInputBuilder get type =>
       _$this._type ??= new GVehicleTypeWhereInputBuilder();
   set type(GVehicleTypeWhereInputBuilder? type) => _$this._type = type;
+
+  GVehicleSubTypeManyRelationFilterBuilder? _subType;
+  GVehicleSubTypeManyRelationFilterBuilder get subType =>
+      _$this._subType ??= new GVehicleSubTypeManyRelationFilterBuilder();
+  set subType(GVehicleSubTypeManyRelationFilterBuilder? subType) =>
+      _$this._subType = subType;
 
   GBrandWhereInputBuilder? _brand;
   GBrandWhereInputBuilder get brand =>
@@ -71129,7 +77891,9 @@ class GVehicleWhereInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _name = $v.name?.toBuilder();
       _description = $v.description?.toBuilder();
+      _longDescription = $v.longDescription?.toBuilder();
       _type = $v.type?.toBuilder();
+      _subType = $v.subType?.toBuilder();
       _brand = $v.brand?.toBuilder();
       _variants = $v.variants?.toBuilder();
       _specifications = $v.specifications?.toBuilder();
@@ -71167,7 +77931,9 @@ class GVehicleWhereInputBuilder
               modifiedAt: _modifiedAt?.build(),
               name: _name?.build(),
               description: _description?.build(),
+              longDescription: _longDescription?.build(),
               type: _type?.build(),
+              subType: _subType?.build(),
               brand: _brand?.build(),
               variants: _variants?.build(),
               specifications: _specifications?.build(),
@@ -71192,8 +77958,12 @@ class GVehicleWhereInputBuilder
         _name?.build();
         _$failedField = 'description';
         _description?.build();
+        _$failedField = 'longDescription';
+        _longDescription?.build();
         _$failedField = 'type';
         _type?.build();
+        _$failedField = 'subType';
+        _subType?.build();
         _$failedField = 'brand';
         _brand?.build();
         _$failedField = 'variants';
@@ -71207,6 +77977,138 @@ class GVehicleWhereInputBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleWhereInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleSubTypeManyRelationFilter
+    extends GVehicleSubTypeManyRelationFilter {
+  @override
+  final GVehicleSubTypeWhereInput? every;
+  @override
+  final GVehicleSubTypeWhereInput? some;
+  @override
+  final GVehicleSubTypeWhereInput? none;
+
+  factory _$GVehicleSubTypeManyRelationFilter(
+          [void Function(GVehicleSubTypeManyRelationFilterBuilder)? updates]) =>
+      (new GVehicleSubTypeManyRelationFilterBuilder()..update(updates))
+          ._build();
+
+  _$GVehicleSubTypeManyRelationFilter._({this.every, this.some, this.none})
+      : super._();
+
+  @override
+  GVehicleSubTypeManyRelationFilter rebuild(
+          void Function(GVehicleSubTypeManyRelationFilterBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleSubTypeManyRelationFilterBuilder toBuilder() =>
+      new GVehicleSubTypeManyRelationFilterBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleSubTypeManyRelationFilter &&
+        every == other.every &&
+        some == other.some &&
+        none == other.none;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, every.hashCode);
+    _$hash = $jc(_$hash, some.hashCode);
+    _$hash = $jc(_$hash, none.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GVehicleSubTypeManyRelationFilter')
+          ..add('every', every)
+          ..add('some', some)
+          ..add('none', none))
+        .toString();
+  }
+}
+
+class GVehicleSubTypeManyRelationFilterBuilder
+    implements
+        Builder<GVehicleSubTypeManyRelationFilter,
+            GVehicleSubTypeManyRelationFilterBuilder> {
+  _$GVehicleSubTypeManyRelationFilter? _$v;
+
+  GVehicleSubTypeWhereInputBuilder? _every;
+  GVehicleSubTypeWhereInputBuilder get every =>
+      _$this._every ??= new GVehicleSubTypeWhereInputBuilder();
+  set every(GVehicleSubTypeWhereInputBuilder? every) => _$this._every = every;
+
+  GVehicleSubTypeWhereInputBuilder? _some;
+  GVehicleSubTypeWhereInputBuilder get some =>
+      _$this._some ??= new GVehicleSubTypeWhereInputBuilder();
+  set some(GVehicleSubTypeWhereInputBuilder? some) => _$this._some = some;
+
+  GVehicleSubTypeWhereInputBuilder? _none;
+  GVehicleSubTypeWhereInputBuilder get none =>
+      _$this._none ??= new GVehicleSubTypeWhereInputBuilder();
+  set none(GVehicleSubTypeWhereInputBuilder? none) => _$this._none = none;
+
+  GVehicleSubTypeManyRelationFilterBuilder();
+
+  GVehicleSubTypeManyRelationFilterBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _every = $v.every?.toBuilder();
+      _some = $v.some?.toBuilder();
+      _none = $v.none?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleSubTypeManyRelationFilter other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleSubTypeManyRelationFilter;
+  }
+
+  @override
+  void update(
+      void Function(GVehicleSubTypeManyRelationFilterBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleSubTypeManyRelationFilter build() => _build();
+
+  _$GVehicleSubTypeManyRelationFilter _build() {
+    _$GVehicleSubTypeManyRelationFilter _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleSubTypeManyRelationFilter._(
+              every: _every?.build(),
+              some: _some?.build(),
+              none: _none?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'every';
+        _every?.build();
+        _$failedField = 'some';
+        _some?.build();
+        _$failedField = 'none';
+        _none?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleSubTypeManyRelationFilter', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -71628,6 +78530,8 @@ class _$GVehicleOrderByInput extends GVehicleOrderByInput {
   @override
   final GOrderDirection? description;
   @override
+  final GOrderDirection? longDescription;
+  @override
   final GOrderDirection? informative;
 
   factory _$GVehicleOrderByInput(
@@ -71640,6 +78544,7 @@ class _$GVehicleOrderByInput extends GVehicleOrderByInput {
       this.modifiedAt,
       this.name,
       this.description,
+      this.longDescription,
       this.informative})
       : super._();
 
@@ -71661,6 +78566,7 @@ class _$GVehicleOrderByInput extends GVehicleOrderByInput {
         modifiedAt == other.modifiedAt &&
         name == other.name &&
         description == other.description &&
+        longDescription == other.longDescription &&
         informative == other.informative;
   }
 
@@ -71672,6 +78578,7 @@ class _$GVehicleOrderByInput extends GVehicleOrderByInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, longDescription.hashCode);
     _$hash = $jc(_$hash, informative.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -71685,6 +78592,7 @@ class _$GVehicleOrderByInput extends GVehicleOrderByInput {
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
           ..add('description', description)
+          ..add('longDescription', longDescription)
           ..add('informative', informative))
         .toString();
   }
@@ -71716,6 +78624,11 @@ class GVehicleOrderByInputBuilder
   set description(GOrderDirection? description) =>
       _$this._description = description;
 
+  GOrderDirection? _longDescription;
+  GOrderDirection? get longDescription => _$this._longDescription;
+  set longDescription(GOrderDirection? longDescription) =>
+      _$this._longDescription = longDescription;
+
   GOrderDirection? _informative;
   GOrderDirection? get informative => _$this._informative;
   set informative(GOrderDirection? informative) =>
@@ -71731,6 +78644,7 @@ class GVehicleOrderByInputBuilder
       _modifiedAt = $v.modifiedAt;
       _name = $v.name;
       _description = $v.description;
+      _longDescription = $v.longDescription;
       _informative = $v.informative;
       _$v = null;
     }
@@ -71759,6 +78673,7 @@ class GVehicleOrderByInputBuilder
             modifiedAt: modifiedAt,
             name: name,
             description: description,
+            longDescription: longDescription,
             informative: informative);
     replace(_$result);
     return _$result;
@@ -71775,7 +78690,11 @@ class _$GVehicleUpdateInput extends GVehicleUpdateInput {
   @override
   final String? description;
   @override
+  final String? longDescription;
+  @override
   final GVehicleTypeRelateToOneForUpdateInput? type;
+  @override
+  final GVehicleSubTypeRelateToManyForUpdateInput? subType;
   @override
   final GBrandRelateToOneForUpdateInput? brand;
   @override
@@ -71796,7 +78715,9 @@ class _$GVehicleUpdateInput extends GVehicleUpdateInput {
       this.modifiedAt,
       this.name,
       this.description,
+      this.longDescription,
       this.type,
+      this.subType,
       this.brand,
       this.variants,
       this.specifications,
@@ -71821,7 +78742,9 @@ class _$GVehicleUpdateInput extends GVehicleUpdateInput {
         modifiedAt == other.modifiedAt &&
         name == other.name &&
         description == other.description &&
+        longDescription == other.longDescription &&
         type == other.type &&
+        subType == other.subType &&
         brand == other.brand &&
         variants == other.variants &&
         specifications == other.specifications &&
@@ -71836,7 +78759,9 @@ class _$GVehicleUpdateInput extends GVehicleUpdateInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, longDescription.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, subType.hashCode);
     _$hash = $jc(_$hash, brand.hashCode);
     _$hash = $jc(_$hash, variants.hashCode);
     _$hash = $jc(_$hash, specifications.hashCode);
@@ -71853,7 +78778,9 @@ class _$GVehicleUpdateInput extends GVehicleUpdateInput {
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
           ..add('description', description)
+          ..add('longDescription', longDescription)
           ..add('type', type)
+          ..add('subType', subType)
           ..add('brand', brand)
           ..add('variants', variants)
           ..add('specifications', specifications)
@@ -71886,11 +78813,23 @@ class GVehicleUpdateInputBuilder
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
+  String? _longDescription;
+  String? get longDescription => _$this._longDescription;
+  set longDescription(String? longDescription) =>
+      _$this._longDescription = longDescription;
+
   GVehicleTypeRelateToOneForUpdateInputBuilder? _type;
   GVehicleTypeRelateToOneForUpdateInputBuilder get type =>
       _$this._type ??= new GVehicleTypeRelateToOneForUpdateInputBuilder();
   set type(GVehicleTypeRelateToOneForUpdateInputBuilder? type) =>
       _$this._type = type;
+
+  GVehicleSubTypeRelateToManyForUpdateInputBuilder? _subType;
+  GVehicleSubTypeRelateToManyForUpdateInputBuilder get subType =>
+      _$this._subType ??=
+          new GVehicleSubTypeRelateToManyForUpdateInputBuilder();
+  set subType(GVehicleSubTypeRelateToManyForUpdateInputBuilder? subType) =>
+      _$this._subType = subType;
 
   GBrandRelateToOneForUpdateInputBuilder? _brand;
   GBrandRelateToOneForUpdateInputBuilder get brand =>
@@ -71933,7 +78872,9 @@ class GVehicleUpdateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _name = $v.name;
       _description = $v.description;
+      _longDescription = $v.longDescription;
       _type = $v.type?.toBuilder();
+      _subType = $v.subType?.toBuilder();
       _brand = $v.brand?.toBuilder();
       _variants = $v.variants?.toBuilder();
       _specifications = $v.specifications?.toBuilder();
@@ -71967,7 +78908,9 @@ class GVehicleUpdateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               name: name,
               description: description,
+              longDescription: longDescription,
               type: _type?.build(),
+              subType: _subType?.build(),
               brand: _brand?.build(),
               variants: _variants?.build(),
               specifications: _specifications?.build(),
@@ -71983,6 +78926,8 @@ class GVehicleUpdateInputBuilder
 
         _$failedField = 'type';
         _type?.build();
+        _$failedField = 'subType';
+        _subType?.build();
         _$failedField = 'brand';
         _brand?.build();
         _$failedField = 'variants';
@@ -72002,50 +78947,54 @@ class GVehicleUpdateInputBuilder
   }
 }
 
-class _$GVehicleTypeRelateToOneForUpdateInput
-    extends GVehicleTypeRelateToOneForUpdateInput {
+class _$GVehicleSubTypeRelateToManyForUpdateInput
+    extends GVehicleSubTypeRelateToManyForUpdateInput {
   @override
-  final GVehicleTypeCreateInput? create;
+  final BuiltList<GVehicleSubTypeWhereUniqueInput>? disconnect;
   @override
-  final GVehicleTypeWhereUniqueInput? connect;
+  final BuiltList<GVehicleSubTypeWhereUniqueInput>? set;
   @override
-  final bool? disconnect;
+  final BuiltList<GVehicleSubTypeCreateInput>? create;
+  @override
+  final BuiltList<GVehicleSubTypeWhereUniqueInput>? connect;
 
-  factory _$GVehicleTypeRelateToOneForUpdateInput(
-          [void Function(GVehicleTypeRelateToOneForUpdateInputBuilder)?
+  factory _$GVehicleSubTypeRelateToManyForUpdateInput(
+          [void Function(GVehicleSubTypeRelateToManyForUpdateInputBuilder)?
               updates]) =>
-      (new GVehicleTypeRelateToOneForUpdateInputBuilder()..update(updates))
+      (new GVehicleSubTypeRelateToManyForUpdateInputBuilder()..update(updates))
           ._build();
 
-  _$GVehicleTypeRelateToOneForUpdateInput._(
-      {this.create, this.connect, this.disconnect})
+  _$GVehicleSubTypeRelateToManyForUpdateInput._(
+      {this.disconnect, this.set, this.create, this.connect})
       : super._();
 
   @override
-  GVehicleTypeRelateToOneForUpdateInput rebuild(
-          void Function(GVehicleTypeRelateToOneForUpdateInputBuilder)
+  GVehicleSubTypeRelateToManyForUpdateInput rebuild(
+          void Function(GVehicleSubTypeRelateToManyForUpdateInputBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GVehicleTypeRelateToOneForUpdateInputBuilder toBuilder() =>
-      new GVehicleTypeRelateToOneForUpdateInputBuilder()..replace(this);
+  GVehicleSubTypeRelateToManyForUpdateInputBuilder toBuilder() =>
+      new GVehicleSubTypeRelateToManyForUpdateInputBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GVehicleTypeRelateToOneForUpdateInput &&
+    return other is GVehicleSubTypeRelateToManyForUpdateInput &&
+        disconnect == other.disconnect &&
+        set == other.set &&
         create == other.create &&
-        connect == other.connect &&
-        disconnect == other.disconnect;
+        connect == other.connect;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, disconnect.hashCode);
+    _$hash = $jc(_$hash, set.hashCode);
     _$hash = $jc(_$hash, create.hashCode);
     _$hash = $jc(_$hash, connect.hashCode);
-    _$hash = $jc(_$hash, disconnect.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -72053,81 +79002,98 @@ class _$GVehicleTypeRelateToOneForUpdateInput
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'GVehicleTypeRelateToOneForUpdateInput')
+            r'GVehicleSubTypeRelateToManyForUpdateInput')
+          ..add('disconnect', disconnect)
+          ..add('set', set)
           ..add('create', create)
-          ..add('connect', connect)
-          ..add('disconnect', disconnect))
+          ..add('connect', connect))
         .toString();
   }
 }
 
-class GVehicleTypeRelateToOneForUpdateInputBuilder
+class GVehicleSubTypeRelateToManyForUpdateInputBuilder
     implements
-        Builder<GVehicleTypeRelateToOneForUpdateInput,
-            GVehicleTypeRelateToOneForUpdateInputBuilder> {
-  _$GVehicleTypeRelateToOneForUpdateInput? _$v;
+        Builder<GVehicleSubTypeRelateToManyForUpdateInput,
+            GVehicleSubTypeRelateToManyForUpdateInputBuilder> {
+  _$GVehicleSubTypeRelateToManyForUpdateInput? _$v;
 
-  GVehicleTypeCreateInputBuilder? _create;
-  GVehicleTypeCreateInputBuilder get create =>
-      _$this._create ??= new GVehicleTypeCreateInputBuilder();
-  set create(GVehicleTypeCreateInputBuilder? create) => _$this._create = create;
+  ListBuilder<GVehicleSubTypeWhereUniqueInput>? _disconnect;
+  ListBuilder<GVehicleSubTypeWhereUniqueInput> get disconnect =>
+      _$this._disconnect ??= new ListBuilder<GVehicleSubTypeWhereUniqueInput>();
+  set disconnect(ListBuilder<GVehicleSubTypeWhereUniqueInput>? disconnect) =>
+      _$this._disconnect = disconnect;
 
-  GVehicleTypeWhereUniqueInputBuilder? _connect;
-  GVehicleTypeWhereUniqueInputBuilder get connect =>
-      _$this._connect ??= new GVehicleTypeWhereUniqueInputBuilder();
-  set connect(GVehicleTypeWhereUniqueInputBuilder? connect) =>
+  ListBuilder<GVehicleSubTypeWhereUniqueInput>? _set;
+  ListBuilder<GVehicleSubTypeWhereUniqueInput> get set =>
+      _$this._set ??= new ListBuilder<GVehicleSubTypeWhereUniqueInput>();
+  set set(ListBuilder<GVehicleSubTypeWhereUniqueInput>? set) =>
+      _$this._set = set;
+
+  ListBuilder<GVehicleSubTypeCreateInput>? _create;
+  ListBuilder<GVehicleSubTypeCreateInput> get create =>
+      _$this._create ??= new ListBuilder<GVehicleSubTypeCreateInput>();
+  set create(ListBuilder<GVehicleSubTypeCreateInput>? create) =>
+      _$this._create = create;
+
+  ListBuilder<GVehicleSubTypeWhereUniqueInput>? _connect;
+  ListBuilder<GVehicleSubTypeWhereUniqueInput> get connect =>
+      _$this._connect ??= new ListBuilder<GVehicleSubTypeWhereUniqueInput>();
+  set connect(ListBuilder<GVehicleSubTypeWhereUniqueInput>? connect) =>
       _$this._connect = connect;
 
-  bool? _disconnect;
-  bool? get disconnect => _$this._disconnect;
-  set disconnect(bool? disconnect) => _$this._disconnect = disconnect;
+  GVehicleSubTypeRelateToManyForUpdateInputBuilder();
 
-  GVehicleTypeRelateToOneForUpdateInputBuilder();
-
-  GVehicleTypeRelateToOneForUpdateInputBuilder get _$this {
+  GVehicleSubTypeRelateToManyForUpdateInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _disconnect = $v.disconnect?.toBuilder();
+      _set = $v.set?.toBuilder();
       _create = $v.create?.toBuilder();
       _connect = $v.connect?.toBuilder();
-      _disconnect = $v.disconnect;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(GVehicleTypeRelateToOneForUpdateInput other) {
+  void replace(GVehicleSubTypeRelateToManyForUpdateInput other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GVehicleTypeRelateToOneForUpdateInput;
+    _$v = other as _$GVehicleSubTypeRelateToManyForUpdateInput;
   }
 
   @override
   void update(
-      void Function(GVehicleTypeRelateToOneForUpdateInputBuilder)? updates) {
+      void Function(GVehicleSubTypeRelateToManyForUpdateInputBuilder)?
+          updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GVehicleTypeRelateToOneForUpdateInput build() => _build();
+  GVehicleSubTypeRelateToManyForUpdateInput build() => _build();
 
-  _$GVehicleTypeRelateToOneForUpdateInput _build() {
-    _$GVehicleTypeRelateToOneForUpdateInput _$result;
+  _$GVehicleSubTypeRelateToManyForUpdateInput _build() {
+    _$GVehicleSubTypeRelateToManyForUpdateInput _$result;
     try {
       _$result = _$v ??
-          new _$GVehicleTypeRelateToOneForUpdateInput._(
+          new _$GVehicleSubTypeRelateToManyForUpdateInput._(
+              disconnect: _disconnect?.build(),
+              set: _set?.build(),
               create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+              connect: _connect?.build());
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'disconnect';
+        _disconnect?.build();
+        _$failedField = 'set';
+        _set?.build();
         _$failedField = 'create';
         _create?.build();
         _$failedField = 'connect';
         _connect?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GVehicleTypeRelateToOneForUpdateInput',
+            r'GVehicleSubTypeRelateToManyForUpdateInput',
             _$failedField,
             e.toString());
       }
@@ -72867,7 +79833,11 @@ class _$GVehicleCreateInput extends GVehicleCreateInput {
   @override
   final String? description;
   @override
+  final String? longDescription;
+  @override
   final GVehicleTypeRelateToOneForCreateInput? type;
+  @override
+  final GVehicleSubTypeRelateToManyForCreateInput? subType;
   @override
   final GBrandRelateToOneForCreateInput? brand;
   @override
@@ -72888,7 +79858,9 @@ class _$GVehicleCreateInput extends GVehicleCreateInput {
       this.modifiedAt,
       this.name,
       this.description,
+      this.longDescription,
       this.type,
+      this.subType,
       this.brand,
       this.variants,
       this.specifications,
@@ -72913,7 +79885,9 @@ class _$GVehicleCreateInput extends GVehicleCreateInput {
         modifiedAt == other.modifiedAt &&
         name == other.name &&
         description == other.description &&
+        longDescription == other.longDescription &&
         type == other.type &&
+        subType == other.subType &&
         brand == other.brand &&
         variants == other.variants &&
         specifications == other.specifications &&
@@ -72928,7 +79902,9 @@ class _$GVehicleCreateInput extends GVehicleCreateInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, longDescription.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, subType.hashCode);
     _$hash = $jc(_$hash, brand.hashCode);
     _$hash = $jc(_$hash, variants.hashCode);
     _$hash = $jc(_$hash, specifications.hashCode);
@@ -72945,7 +79921,9 @@ class _$GVehicleCreateInput extends GVehicleCreateInput {
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
           ..add('description', description)
+          ..add('longDescription', longDescription)
           ..add('type', type)
+          ..add('subType', subType)
           ..add('brand', brand)
           ..add('variants', variants)
           ..add('specifications', specifications)
@@ -72978,11 +79956,23 @@ class GVehicleCreateInputBuilder
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
+  String? _longDescription;
+  String? get longDescription => _$this._longDescription;
+  set longDescription(String? longDescription) =>
+      _$this._longDescription = longDescription;
+
   GVehicleTypeRelateToOneForCreateInputBuilder? _type;
   GVehicleTypeRelateToOneForCreateInputBuilder get type =>
       _$this._type ??= new GVehicleTypeRelateToOneForCreateInputBuilder();
   set type(GVehicleTypeRelateToOneForCreateInputBuilder? type) =>
       _$this._type = type;
+
+  GVehicleSubTypeRelateToManyForCreateInputBuilder? _subType;
+  GVehicleSubTypeRelateToManyForCreateInputBuilder get subType =>
+      _$this._subType ??=
+          new GVehicleSubTypeRelateToManyForCreateInputBuilder();
+  set subType(GVehicleSubTypeRelateToManyForCreateInputBuilder? subType) =>
+      _$this._subType = subType;
 
   GBrandRelateToOneForCreateInputBuilder? _brand;
   GBrandRelateToOneForCreateInputBuilder get brand =>
@@ -73025,7 +80015,9 @@ class GVehicleCreateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _name = $v.name;
       _description = $v.description;
+      _longDescription = $v.longDescription;
       _type = $v.type?.toBuilder();
+      _subType = $v.subType?.toBuilder();
       _brand = $v.brand?.toBuilder();
       _variants = $v.variants?.toBuilder();
       _specifications = $v.specifications?.toBuilder();
@@ -73059,7 +80051,9 @@ class GVehicleCreateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               name: name,
               description: description,
+              longDescription: longDescription,
               type: _type?.build(),
+              subType: _subType?.build(),
               brand: _brand?.build(),
               variants: _variants?.build(),
               specifications: _specifications?.build(),
@@ -73075,6 +80069,8 @@ class GVehicleCreateInputBuilder
 
         _$failedField = 'type';
         _type?.build();
+        _$failedField = 'subType';
+        _subType?.build();
         _$failedField = 'brand';
         _brand?.build();
         _$failedField = 'variants';
@@ -73094,36 +80090,36 @@ class GVehicleCreateInputBuilder
   }
 }
 
-class _$GVehicleTypeRelateToOneForCreateInput
-    extends GVehicleTypeRelateToOneForCreateInput {
+class _$GVehicleSubTypeRelateToManyForCreateInput
+    extends GVehicleSubTypeRelateToManyForCreateInput {
   @override
-  final GVehicleTypeCreateInput? create;
+  final BuiltList<GVehicleSubTypeCreateInput>? create;
   @override
-  final GVehicleTypeWhereUniqueInput? connect;
+  final BuiltList<GVehicleSubTypeWhereUniqueInput>? connect;
 
-  factory _$GVehicleTypeRelateToOneForCreateInput(
-          [void Function(GVehicleTypeRelateToOneForCreateInputBuilder)?
+  factory _$GVehicleSubTypeRelateToManyForCreateInput(
+          [void Function(GVehicleSubTypeRelateToManyForCreateInputBuilder)?
               updates]) =>
-      (new GVehicleTypeRelateToOneForCreateInputBuilder()..update(updates))
+      (new GVehicleSubTypeRelateToManyForCreateInputBuilder()..update(updates))
           ._build();
 
-  _$GVehicleTypeRelateToOneForCreateInput._({this.create, this.connect})
+  _$GVehicleSubTypeRelateToManyForCreateInput._({this.create, this.connect})
       : super._();
 
   @override
-  GVehicleTypeRelateToOneForCreateInput rebuild(
-          void Function(GVehicleTypeRelateToOneForCreateInputBuilder)
+  GVehicleSubTypeRelateToManyForCreateInput rebuild(
+          void Function(GVehicleSubTypeRelateToManyForCreateInputBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GVehicleTypeRelateToOneForCreateInputBuilder toBuilder() =>
-      new GVehicleTypeRelateToOneForCreateInputBuilder()..replace(this);
+  GVehicleSubTypeRelateToManyForCreateInputBuilder toBuilder() =>
+      new GVehicleSubTypeRelateToManyForCreateInputBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GVehicleTypeRelateToOneForCreateInput &&
+    return other is GVehicleSubTypeRelateToManyForCreateInput &&
         create == other.create &&
         connect == other.connect;
   }
@@ -73140,33 +80136,34 @@ class _$GVehicleTypeRelateToOneForCreateInput
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'GVehicleTypeRelateToOneForCreateInput')
+            r'GVehicleSubTypeRelateToManyForCreateInput')
           ..add('create', create)
           ..add('connect', connect))
         .toString();
   }
 }
 
-class GVehicleTypeRelateToOneForCreateInputBuilder
+class GVehicleSubTypeRelateToManyForCreateInputBuilder
     implements
-        Builder<GVehicleTypeRelateToOneForCreateInput,
-            GVehicleTypeRelateToOneForCreateInputBuilder> {
-  _$GVehicleTypeRelateToOneForCreateInput? _$v;
+        Builder<GVehicleSubTypeRelateToManyForCreateInput,
+            GVehicleSubTypeRelateToManyForCreateInputBuilder> {
+  _$GVehicleSubTypeRelateToManyForCreateInput? _$v;
 
-  GVehicleTypeCreateInputBuilder? _create;
-  GVehicleTypeCreateInputBuilder get create =>
-      _$this._create ??= new GVehicleTypeCreateInputBuilder();
-  set create(GVehicleTypeCreateInputBuilder? create) => _$this._create = create;
+  ListBuilder<GVehicleSubTypeCreateInput>? _create;
+  ListBuilder<GVehicleSubTypeCreateInput> get create =>
+      _$this._create ??= new ListBuilder<GVehicleSubTypeCreateInput>();
+  set create(ListBuilder<GVehicleSubTypeCreateInput>? create) =>
+      _$this._create = create;
 
-  GVehicleTypeWhereUniqueInputBuilder? _connect;
-  GVehicleTypeWhereUniqueInputBuilder get connect =>
-      _$this._connect ??= new GVehicleTypeWhereUniqueInputBuilder();
-  set connect(GVehicleTypeWhereUniqueInputBuilder? connect) =>
+  ListBuilder<GVehicleSubTypeWhereUniqueInput>? _connect;
+  ListBuilder<GVehicleSubTypeWhereUniqueInput> get connect =>
+      _$this._connect ??= new ListBuilder<GVehicleSubTypeWhereUniqueInput>();
+  set connect(ListBuilder<GVehicleSubTypeWhereUniqueInput>? connect) =>
       _$this._connect = connect;
 
-  GVehicleTypeRelateToOneForCreateInputBuilder();
+  GVehicleSubTypeRelateToManyForCreateInputBuilder();
 
-  GVehicleTypeRelateToOneForCreateInputBuilder get _$this {
+  GVehicleSubTypeRelateToManyForCreateInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _create = $v.create?.toBuilder();
@@ -73177,25 +80174,26 @@ class GVehicleTypeRelateToOneForCreateInputBuilder
   }
 
   @override
-  void replace(GVehicleTypeRelateToOneForCreateInput other) {
+  void replace(GVehicleSubTypeRelateToManyForCreateInput other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GVehicleTypeRelateToOneForCreateInput;
+    _$v = other as _$GVehicleSubTypeRelateToManyForCreateInput;
   }
 
   @override
   void update(
-      void Function(GVehicleTypeRelateToOneForCreateInputBuilder)? updates) {
+      void Function(GVehicleSubTypeRelateToManyForCreateInputBuilder)?
+          updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GVehicleTypeRelateToOneForCreateInput build() => _build();
+  GVehicleSubTypeRelateToManyForCreateInput build() => _build();
 
-  _$GVehicleTypeRelateToOneForCreateInput _build() {
-    _$GVehicleTypeRelateToOneForCreateInput _$result;
+  _$GVehicleSubTypeRelateToManyForCreateInput _build() {
+    _$GVehicleSubTypeRelateToManyForCreateInput _$result;
     try {
       _$result = _$v ??
-          new _$GVehicleTypeRelateToOneForCreateInput._(
+          new _$GVehicleSubTypeRelateToManyForCreateInput._(
               create: _create?.build(), connect: _connect?.build());
     } catch (_) {
       late String _$failedField;
@@ -73206,7 +80204,7 @@ class GVehicleTypeRelateToOneForCreateInputBuilder
         _connect?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GVehicleTypeRelateToOneForCreateInput',
+            r'GVehicleSubTypeRelateToManyForCreateInput',
             _$failedField,
             e.toString());
       }
@@ -73823,6 +80821,8 @@ class _$GVehicleColorWhereInput extends GVehicleColorWhereInput {
   final GVehicleGalleryItemManyRelationFilter? gallery;
   @override
   final GVehicleReelManyRelationFilter? reels;
+  @override
+  final GBooleanFilter? disabled;
 
   factory _$GVehicleColorWhereInput(
           [void Function(GVehicleColorWhereInputBuilder)? updates]) =>
@@ -73842,7 +80842,8 @@ class _$GVehicleColorWhereInput extends GVehicleColorWhereInput {
       this.images,
       this.videos,
       this.gallery,
-      this.reels})
+      this.reels,
+      this.disabled})
       : super._();
 
   @override
@@ -73871,7 +80872,8 @@ class _$GVehicleColorWhereInput extends GVehicleColorWhereInput {
         images == other.images &&
         videos == other.videos &&
         gallery == other.gallery &&
-        reels == other.reels;
+        reels == other.reels &&
+        disabled == other.disabled;
   }
 
   @override
@@ -73891,6 +80893,7 @@ class _$GVehicleColorWhereInput extends GVehicleColorWhereInput {
     _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jc(_$hash, reels.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -73911,7 +80914,8 @@ class _$GVehicleColorWhereInput extends GVehicleColorWhereInput {
           ..add('images', images)
           ..add('videos', videos)
           ..add('gallery', gallery)
-          ..add('reels', reels))
+          ..add('reels', reels)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -73996,6 +81000,11 @@ class GVehicleColorWhereInputBuilder
   set reels(GVehicleReelManyRelationFilterBuilder? reels) =>
       _$this._reels = reels;
 
+  GBooleanFilterBuilder? _disabled;
+  GBooleanFilterBuilder get disabled =>
+      _$this._disabled ??= new GBooleanFilterBuilder();
+  set disabled(GBooleanFilterBuilder? disabled) => _$this._disabled = disabled;
+
   GVehicleColorWhereInputBuilder();
 
   GVehicleColorWhereInputBuilder get _$this {
@@ -74015,6 +81024,7 @@ class GVehicleColorWhereInputBuilder
       _videos = $v.videos?.toBuilder();
       _gallery = $v.gallery?.toBuilder();
       _reels = $v.reels?.toBuilder();
+      _disabled = $v.disabled?.toBuilder();
       _$v = null;
     }
     return this;
@@ -74052,7 +81062,8 @@ class GVehicleColorWhereInputBuilder
               images: _images?.build(),
               videos: _videos?.build(),
               gallery: _gallery?.build(),
-              reels: _reels?.build());
+              reels: _reels?.build(),
+              disabled: _disabled?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -74084,6 +81095,8 @@ class GVehicleColorWhereInputBuilder
         _gallery?.build();
         _$failedField = 'reels';
         _reels?.build();
+        _$failedField = 'disabled';
+        _disabled?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleColorWhereInput', _$failedField, e.toString());
@@ -74633,13 +81646,20 @@ class _$GVehicleColorOrderByInput extends GVehicleColorOrderByInput {
   final GOrderDirection? name;
   @override
   final GOrderDirection? code;
+  @override
+  final GOrderDirection? disabled;
 
   factory _$GVehicleColorOrderByInput(
           [void Function(GVehicleColorOrderByInputBuilder)? updates]) =>
       (new GVehicleColorOrderByInputBuilder()..update(updates))._build();
 
   _$GVehicleColorOrderByInput._(
-      {this.id, this.createdAt, this.modifiedAt, this.name, this.code})
+      {this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.name,
+      this.code,
+      this.disabled})
       : super._();
 
   @override
@@ -74659,7 +81679,8 @@ class _$GVehicleColorOrderByInput extends GVehicleColorOrderByInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
-        code == other.code;
+        code == other.code &&
+        disabled == other.disabled;
   }
 
   @override
@@ -74670,6 +81691,7 @@ class _$GVehicleColorOrderByInput extends GVehicleColorOrderByInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, code.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -74681,7 +81703,8 @@ class _$GVehicleColorOrderByInput extends GVehicleColorOrderByInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
-          ..add('code', code))
+          ..add('code', code)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -74712,6 +81735,10 @@ class GVehicleColorOrderByInputBuilder
   GOrderDirection? get code => _$this._code;
   set code(GOrderDirection? code) => _$this._code = code;
 
+  GOrderDirection? _disabled;
+  GOrderDirection? get disabled => _$this._disabled;
+  set disabled(GOrderDirection? disabled) => _$this._disabled = disabled;
+
   GVehicleColorOrderByInputBuilder();
 
   GVehicleColorOrderByInputBuilder get _$this {
@@ -74722,6 +81749,7 @@ class GVehicleColorOrderByInputBuilder
       _modifiedAt = $v.modifiedAt;
       _name = $v.name;
       _code = $v.code;
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -74748,7 +81776,8 @@ class GVehicleColorOrderByInputBuilder
             createdAt: createdAt,
             modifiedAt: modifiedAt,
             name: name,
-            code: code);
+            code: code,
+            disabled: disabled);
     replace(_$result);
     return _$result;
   }
@@ -74775,6 +81804,8 @@ class _$GVehicleColorUpdateInput extends GVehicleColorUpdateInput {
   final GVehicleGalleryItemRelateToManyForUpdateInput? gallery;
   @override
   final GVehicleReelRelateToManyForUpdateInput? reels;
+  @override
+  final bool? disabled;
 
   factory _$GVehicleColorUpdateInput(
           [void Function(GVehicleColorUpdateInputBuilder)? updates]) =>
@@ -74790,7 +81821,8 @@ class _$GVehicleColorUpdateInput extends GVehicleColorUpdateInput {
       this.images,
       this.videos,
       this.gallery,
-      this.reels})
+      this.reels,
+      this.disabled})
       : super._();
 
   @override
@@ -74815,7 +81847,8 @@ class _$GVehicleColorUpdateInput extends GVehicleColorUpdateInput {
         images == other.images &&
         videos == other.videos &&
         gallery == other.gallery &&
-        reels == other.reels;
+        reels == other.reels &&
+        disabled == other.disabled;
   }
 
   @override
@@ -74831,6 +81864,7 @@ class _$GVehicleColorUpdateInput extends GVehicleColorUpdateInput {
     _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jc(_$hash, reels.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -74847,7 +81881,8 @@ class _$GVehicleColorUpdateInput extends GVehicleColorUpdateInput {
           ..add('images', images)
           ..add('videos', videos)
           ..add('gallery', gallery)
-          ..add('reels', reels))
+          ..add('reels', reels)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -74915,6 +81950,10 @@ class GVehicleColorUpdateInputBuilder
   set reels(GVehicleReelRelateToManyForUpdateInputBuilder? reels) =>
       _$this._reels = reels;
 
+  bool? _disabled;
+  bool? get disabled => _$this._disabled;
+  set disabled(bool? disabled) => _$this._disabled = disabled;
+
   GVehicleColorUpdateInputBuilder();
 
   GVehicleColorUpdateInputBuilder get _$this {
@@ -74930,6 +81969,7 @@ class GVehicleColorUpdateInputBuilder
       _videos = $v.videos?.toBuilder();
       _gallery = $v.gallery?.toBuilder();
       _reels = $v.reels?.toBuilder();
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -74963,7 +82003,8 @@ class GVehicleColorUpdateInputBuilder
               images: _images?.build(),
               videos: _videos?.build(),
               gallery: _gallery?.build(),
-              reels: _reels?.build());
+              reels: _reels?.build(),
+              disabled: disabled);
     } catch (_) {
       late String _$failedField;
       try {
@@ -75892,6 +82933,8 @@ class _$GVehicleColorCreateInput extends GVehicleColorCreateInput {
   final GVehicleGalleryItemRelateToManyForCreateInput? gallery;
   @override
   final GVehicleReelRelateToManyForCreateInput? reels;
+  @override
+  final bool? disabled;
 
   factory _$GVehicleColorCreateInput(
           [void Function(GVehicleColorCreateInputBuilder)? updates]) =>
@@ -75907,7 +82950,8 @@ class _$GVehicleColorCreateInput extends GVehicleColorCreateInput {
       this.images,
       this.videos,
       this.gallery,
-      this.reels})
+      this.reels,
+      this.disabled})
       : super._();
 
   @override
@@ -75932,7 +82976,8 @@ class _$GVehicleColorCreateInput extends GVehicleColorCreateInput {
         images == other.images &&
         videos == other.videos &&
         gallery == other.gallery &&
-        reels == other.reels;
+        reels == other.reels &&
+        disabled == other.disabled;
   }
 
   @override
@@ -75948,6 +82993,7 @@ class _$GVehicleColorCreateInput extends GVehicleColorCreateInput {
     _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jc(_$hash, reels.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -75964,7 +83010,8 @@ class _$GVehicleColorCreateInput extends GVehicleColorCreateInput {
           ..add('images', images)
           ..add('videos', videos)
           ..add('gallery', gallery)
-          ..add('reels', reels))
+          ..add('reels', reels)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -76032,6 +83079,10 @@ class GVehicleColorCreateInputBuilder
   set reels(GVehicleReelRelateToManyForCreateInputBuilder? reels) =>
       _$this._reels = reels;
 
+  bool? _disabled;
+  bool? get disabled => _$this._disabled;
+  set disabled(bool? disabled) => _$this._disabled = disabled;
+
   GVehicleColorCreateInputBuilder();
 
   GVehicleColorCreateInputBuilder get _$this {
@@ -76047,6 +83098,7 @@ class GVehicleColorCreateInputBuilder
       _videos = $v.videos?.toBuilder();
       _gallery = $v.gallery?.toBuilder();
       _reels = $v.reels?.toBuilder();
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -76080,7 +83132,8 @@ class GVehicleColorCreateInputBuilder
               images: _images?.build(),
               videos: _videos?.build(),
               gallery: _gallery?.build(),
-              reels: _reels?.build());
+              reels: _reels?.build(),
+              disabled: disabled);
     } catch (_) {
       late String _$failedField;
       try {
@@ -77958,6 +85011,8 @@ class _$GVehicleReelWhereInput extends GVehicleReelWhereInput {
   final GVehicleColorWhereInput? color;
   @override
   final GIntNullableFilter? index;
+  @override
+  final GBooleanFilter? disabled;
 
   factory _$GVehicleReelWhereInput(
           [void Function(GVehicleReelWhereInputBuilder)? updates]) =>
@@ -77973,7 +85028,8 @@ class _$GVehicleReelWhereInput extends GVehicleReelWhereInput {
       this.type,
       this.fileId,
       this.color,
-      this.index})
+      this.index,
+      this.disabled})
       : super._();
 
   @override
@@ -77998,7 +85054,8 @@ class _$GVehicleReelWhereInput extends GVehicleReelWhereInput {
         type == other.type &&
         fileId == other.fileId &&
         color == other.color &&
-        index == other.index;
+        index == other.index &&
+        disabled == other.disabled;
   }
 
   @override
@@ -78014,6 +85071,7 @@ class _$GVehicleReelWhereInput extends GVehicleReelWhereInput {
     _$hash = $jc(_$hash, fileId.hashCode);
     _$hash = $jc(_$hash, color.hashCode);
     _$hash = $jc(_$hash, index.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -78030,7 +85088,8 @@ class _$GVehicleReelWhereInput extends GVehicleReelWhereInput {
           ..add('type', type)
           ..add('fileId', fileId)
           ..add('color', color)
-          ..add('index', index))
+          ..add('index', index)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -78089,6 +85148,11 @@ class GVehicleReelWhereInputBuilder
       _$this._index ??= new GIntNullableFilterBuilder();
   set index(GIntNullableFilterBuilder? index) => _$this._index = index;
 
+  GBooleanFilterBuilder? _disabled;
+  GBooleanFilterBuilder get disabled =>
+      _$this._disabled ??= new GBooleanFilterBuilder();
+  set disabled(GBooleanFilterBuilder? disabled) => _$this._disabled = disabled;
+
   GVehicleReelWhereInputBuilder();
 
   GVehicleReelWhereInputBuilder get _$this {
@@ -78104,6 +85168,7 @@ class GVehicleReelWhereInputBuilder
       _fileId = $v.fileId?.toBuilder();
       _color = $v.color?.toBuilder();
       _index = $v.index?.toBuilder();
+      _disabled = $v.disabled?.toBuilder();
       _$v = null;
     }
     return this;
@@ -78137,7 +85202,8 @@ class GVehicleReelWhereInputBuilder
               type: _type?.build(),
               fileId: _fileId?.build(),
               color: _color?.build(),
-              index: _index?.build());
+              index: _index?.build(),
+              disabled: _disabled?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -78161,6 +85227,8 @@ class GVehicleReelWhereInputBuilder
         _color?.build();
         _$failedField = 'index';
         _index?.build();
+        _$failedField = 'disabled';
+        _disabled?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleReelWhereInput', _$failedField, e.toString());
@@ -78185,6 +85253,8 @@ class _$GVehicleReelOrderByInput extends GVehicleReelOrderByInput {
   final GOrderDirection? fileId;
   @override
   final GOrderDirection? index;
+  @override
+  final GOrderDirection? disabled;
 
   factory _$GVehicleReelOrderByInput(
           [void Function(GVehicleReelOrderByInputBuilder)? updates]) =>
@@ -78196,7 +85266,8 @@ class _$GVehicleReelOrderByInput extends GVehicleReelOrderByInput {
       this.modifiedAt,
       this.type,
       this.fileId,
-      this.index})
+      this.index,
+      this.disabled})
       : super._();
 
   @override
@@ -78217,7 +85288,8 @@ class _$GVehicleReelOrderByInput extends GVehicleReelOrderByInput {
         modifiedAt == other.modifiedAt &&
         type == other.type &&
         fileId == other.fileId &&
-        index == other.index;
+        index == other.index &&
+        disabled == other.disabled;
   }
 
   @override
@@ -78229,6 +85301,7 @@ class _$GVehicleReelOrderByInput extends GVehicleReelOrderByInput {
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, fileId.hashCode);
     _$hash = $jc(_$hash, index.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -78241,7 +85314,8 @@ class _$GVehicleReelOrderByInput extends GVehicleReelOrderByInput {
           ..add('modifiedAt', modifiedAt)
           ..add('type', type)
           ..add('fileId', fileId)
-          ..add('index', index))
+          ..add('index', index)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -78276,6 +85350,10 @@ class GVehicleReelOrderByInputBuilder
   GOrderDirection? get index => _$this._index;
   set index(GOrderDirection? index) => _$this._index = index;
 
+  GOrderDirection? _disabled;
+  GOrderDirection? get disabled => _$this._disabled;
+  set disabled(GOrderDirection? disabled) => _$this._disabled = disabled;
+
   GVehicleReelOrderByInputBuilder();
 
   GVehicleReelOrderByInputBuilder get _$this {
@@ -78287,6 +85365,7 @@ class GVehicleReelOrderByInputBuilder
       _type = $v.type;
       _fileId = $v.fileId;
       _index = $v.index;
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -78314,7 +85393,8 @@ class GVehicleReelOrderByInputBuilder
             modifiedAt: modifiedAt,
             type: type,
             fileId: fileId,
-            index: index);
+            index: index,
+            disabled: disabled);
     replace(_$result);
     return _$result;
   }
@@ -78333,6 +85413,8 @@ class _$GVehicleReelUpdateInput extends GVehicleReelUpdateInput {
   final GVehicleColorRelateToOneForUpdateInput? color;
   @override
   final int? index;
+  @override
+  final bool? disabled;
 
   factory _$GVehicleReelUpdateInput(
           [void Function(GVehicleReelUpdateInputBuilder)? updates]) =>
@@ -78344,7 +85426,8 @@ class _$GVehicleReelUpdateInput extends GVehicleReelUpdateInput {
       this.type,
       this.fileId,
       this.color,
-      this.index})
+      this.index,
+      this.disabled})
       : super._();
 
   @override
@@ -78365,7 +85448,8 @@ class _$GVehicleReelUpdateInput extends GVehicleReelUpdateInput {
         type == other.type &&
         fileId == other.fileId &&
         color == other.color &&
-        index == other.index;
+        index == other.index &&
+        disabled == other.disabled;
   }
 
   @override
@@ -78377,6 +85461,7 @@ class _$GVehicleReelUpdateInput extends GVehicleReelUpdateInput {
     _$hash = $jc(_$hash, fileId.hashCode);
     _$hash = $jc(_$hash, color.hashCode);
     _$hash = $jc(_$hash, index.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -78389,7 +85474,8 @@ class _$GVehicleReelUpdateInput extends GVehicleReelUpdateInput {
           ..add('type', type)
           ..add('fileId', fileId)
           ..add('color', color)
-          ..add('index', index))
+          ..add('index', index)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -78428,6 +85514,10 @@ class GVehicleReelUpdateInputBuilder
   int? get index => _$this._index;
   set index(int? index) => _$this._index = index;
 
+  bool? _disabled;
+  bool? get disabled => _$this._disabled;
+  set disabled(bool? disabled) => _$this._disabled = disabled;
+
   GVehicleReelUpdateInputBuilder();
 
   GVehicleReelUpdateInputBuilder get _$this {
@@ -78439,6 +85529,7 @@ class GVehicleReelUpdateInputBuilder
       _fileId = $v.fileId;
       _color = $v.color?.toBuilder();
       _index = $v.index;
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -78468,7 +85559,8 @@ class GVehicleReelUpdateInputBuilder
               type: type,
               fileId: fileId,
               color: _color?.build(),
-              index: index);
+              index: index,
+              disabled: disabled);
     } catch (_) {
       late String _$failedField;
       try {
@@ -78621,6 +85713,8 @@ class _$GVehicleReelCreateInput extends GVehicleReelCreateInput {
   final GVehicleColorRelateToOneForCreateInput? color;
   @override
   final int? index;
+  @override
+  final bool? disabled;
 
   factory _$GVehicleReelCreateInput(
           [void Function(GVehicleReelCreateInputBuilder)? updates]) =>
@@ -78632,7 +85726,8 @@ class _$GVehicleReelCreateInput extends GVehicleReelCreateInput {
       this.type,
       this.fileId,
       this.color,
-      this.index})
+      this.index,
+      this.disabled})
       : super._();
 
   @override
@@ -78653,7 +85748,8 @@ class _$GVehicleReelCreateInput extends GVehicleReelCreateInput {
         type == other.type &&
         fileId == other.fileId &&
         color == other.color &&
-        index == other.index;
+        index == other.index &&
+        disabled == other.disabled;
   }
 
   @override
@@ -78665,6 +85761,7 @@ class _$GVehicleReelCreateInput extends GVehicleReelCreateInput {
     _$hash = $jc(_$hash, fileId.hashCode);
     _$hash = $jc(_$hash, color.hashCode);
     _$hash = $jc(_$hash, index.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -78677,7 +85774,8 @@ class _$GVehicleReelCreateInput extends GVehicleReelCreateInput {
           ..add('type', type)
           ..add('fileId', fileId)
           ..add('color', color)
-          ..add('index', index))
+          ..add('index', index)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -78716,6 +85814,10 @@ class GVehicleReelCreateInputBuilder
   int? get index => _$this._index;
   set index(int? index) => _$this._index = index;
 
+  bool? _disabled;
+  bool? get disabled => _$this._disabled;
+  set disabled(bool? disabled) => _$this._disabled = disabled;
+
   GVehicleReelCreateInputBuilder();
 
   GVehicleReelCreateInputBuilder get _$this {
@@ -78727,6 +85829,7 @@ class GVehicleReelCreateInputBuilder
       _fileId = $v.fileId;
       _color = $v.color?.toBuilder();
       _index = $v.index;
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -78756,7 +85859,8 @@ class GVehicleReelCreateInputBuilder
               type: type,
               fileId: fileId,
               color: _color?.build(),
-              index: index);
+              index: index,
+              disabled: disabled);
     } catch (_) {
       late String _$failedField;
       try {
@@ -78770,6 +85874,1556 @@ class GVehicleReelCreateInputBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleReelCreateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGuaranteeWhereUniqueInput extends GGuaranteeWhereUniqueInput {
+  @override
+  final String? id;
+
+  factory _$GGuaranteeWhereUniqueInput(
+          [void Function(GGuaranteeWhereUniqueInputBuilder)? updates]) =>
+      (new GGuaranteeWhereUniqueInputBuilder()..update(updates))._build();
+
+  _$GGuaranteeWhereUniqueInput._({this.id}) : super._();
+
+  @override
+  GGuaranteeWhereUniqueInput rebuild(
+          void Function(GGuaranteeWhereUniqueInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGuaranteeWhereUniqueInputBuilder toBuilder() =>
+      new GGuaranteeWhereUniqueInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGuaranteeWhereUniqueInput && id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GGuaranteeWhereUniqueInput')
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GGuaranteeWhereUniqueInputBuilder
+    implements
+        Builder<GGuaranteeWhereUniqueInput, GGuaranteeWhereUniqueInputBuilder> {
+  _$GGuaranteeWhereUniqueInput? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GGuaranteeWhereUniqueInputBuilder();
+
+  GGuaranteeWhereUniqueInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGuaranteeWhereUniqueInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GGuaranteeWhereUniqueInput;
+  }
+
+  @override
+  void update(void Function(GGuaranteeWhereUniqueInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGuaranteeWhereUniqueInput build() => _build();
+
+  _$GGuaranteeWhereUniqueInput _build() {
+    final _$result = _$v ?? new _$GGuaranteeWhereUniqueInput._(id: id);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGuaranteeWhereInput extends GGuaranteeWhereInput {
+  @override
+  final BuiltList<GGuaranteeWhereInput>? AND;
+  @override
+  final BuiltList<GGuaranteeWhereInput>? OR;
+  @override
+  final BuiltList<GGuaranteeWhereInput>? NOT;
+  @override
+  final GIDFilter? id;
+  @override
+  final GDateTimeNullableFilter? createdAt;
+  @override
+  final GDateTimeNullableFilter? modifiedAt;
+  @override
+  final GStringFilter? name;
+  @override
+  final GStringFilter? description;
+
+  factory _$GGuaranteeWhereInput(
+          [void Function(GGuaranteeWhereInputBuilder)? updates]) =>
+      (new GGuaranteeWhereInputBuilder()..update(updates))._build();
+
+  _$GGuaranteeWhereInput._(
+      {this.AND,
+      this.OR,
+      this.NOT,
+      this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.name,
+      this.description})
+      : super._();
+
+  @override
+  GGuaranteeWhereInput rebuild(
+          void Function(GGuaranteeWhereInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGuaranteeWhereInputBuilder toBuilder() =>
+      new GGuaranteeWhereInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGuaranteeWhereInput &&
+        AND == other.AND &&
+        OR == other.OR &&
+        NOT == other.NOT &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        name == other.name &&
+        description == other.description;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, AND.hashCode);
+    _$hash = $jc(_$hash, OR.hashCode);
+    _$hash = $jc(_$hash, NOT.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GGuaranteeWhereInput')
+          ..add('AND', AND)
+          ..add('OR', OR)
+          ..add('NOT', NOT)
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('name', name)
+          ..add('description', description))
+        .toString();
+  }
+}
+
+class GGuaranteeWhereInputBuilder
+    implements Builder<GGuaranteeWhereInput, GGuaranteeWhereInputBuilder> {
+  _$GGuaranteeWhereInput? _$v;
+
+  ListBuilder<GGuaranteeWhereInput>? _AND;
+  ListBuilder<GGuaranteeWhereInput> get AND =>
+      _$this._AND ??= new ListBuilder<GGuaranteeWhereInput>();
+  set AND(ListBuilder<GGuaranteeWhereInput>? AND) => _$this._AND = AND;
+
+  ListBuilder<GGuaranteeWhereInput>? _OR;
+  ListBuilder<GGuaranteeWhereInput> get OR =>
+      _$this._OR ??= new ListBuilder<GGuaranteeWhereInput>();
+  set OR(ListBuilder<GGuaranteeWhereInput>? OR) => _$this._OR = OR;
+
+  ListBuilder<GGuaranteeWhereInput>? _NOT;
+  ListBuilder<GGuaranteeWhereInput> get NOT =>
+      _$this._NOT ??= new ListBuilder<GGuaranteeWhereInput>();
+  set NOT(ListBuilder<GGuaranteeWhereInput>? NOT) => _$this._NOT = NOT;
+
+  GIDFilterBuilder? _id;
+  GIDFilterBuilder get id => _$this._id ??= new GIDFilterBuilder();
+  set id(GIDFilterBuilder? id) => _$this._id = id;
+
+  GDateTimeNullableFilterBuilder? _createdAt;
+  GDateTimeNullableFilterBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeNullableFilterBuilder();
+  set createdAt(GDateTimeNullableFilterBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GDateTimeNullableFilterBuilder? _modifiedAt;
+  GDateTimeNullableFilterBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeNullableFilterBuilder();
+  set modifiedAt(GDateTimeNullableFilterBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GStringFilterBuilder? _name;
+  GStringFilterBuilder get name => _$this._name ??= new GStringFilterBuilder();
+  set name(GStringFilterBuilder? name) => _$this._name = name;
+
+  GStringFilterBuilder? _description;
+  GStringFilterBuilder get description =>
+      _$this._description ??= new GStringFilterBuilder();
+  set description(GStringFilterBuilder? description) =>
+      _$this._description = description;
+
+  GGuaranteeWhereInputBuilder();
+
+  GGuaranteeWhereInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _AND = $v.AND?.toBuilder();
+      _OR = $v.OR?.toBuilder();
+      _NOT = $v.NOT?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _name = $v.name?.toBuilder();
+      _description = $v.description?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGuaranteeWhereInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GGuaranteeWhereInput;
+  }
+
+  @override
+  void update(void Function(GGuaranteeWhereInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGuaranteeWhereInput build() => _build();
+
+  _$GGuaranteeWhereInput _build() {
+    _$GGuaranteeWhereInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GGuaranteeWhereInput._(
+              AND: _AND?.build(),
+              OR: _OR?.build(),
+              NOT: _NOT?.build(),
+              id: _id?.build(),
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              name: _name?.build(),
+              description: _description?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'AND';
+        _AND?.build();
+        _$failedField = 'OR';
+        _OR?.build();
+        _$failedField = 'NOT';
+        _NOT?.build();
+        _$failedField = 'id';
+        _id?.build();
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'name';
+        _name?.build();
+        _$failedField = 'description';
+        _description?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GGuaranteeWhereInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGuaranteeOrderByInput extends GGuaranteeOrderByInput {
+  @override
+  final GOrderDirection? id;
+  @override
+  final GOrderDirection? createdAt;
+  @override
+  final GOrderDirection? modifiedAt;
+  @override
+  final GOrderDirection? name;
+  @override
+  final GOrderDirection? description;
+
+  factory _$GGuaranteeOrderByInput(
+          [void Function(GGuaranteeOrderByInputBuilder)? updates]) =>
+      (new GGuaranteeOrderByInputBuilder()..update(updates))._build();
+
+  _$GGuaranteeOrderByInput._(
+      {this.id, this.createdAt, this.modifiedAt, this.name, this.description})
+      : super._();
+
+  @override
+  GGuaranteeOrderByInput rebuild(
+          void Function(GGuaranteeOrderByInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGuaranteeOrderByInputBuilder toBuilder() =>
+      new GGuaranteeOrderByInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGuaranteeOrderByInput &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        name == other.name &&
+        description == other.description;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GGuaranteeOrderByInput')
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('name', name)
+          ..add('description', description))
+        .toString();
+  }
+}
+
+class GGuaranteeOrderByInputBuilder
+    implements Builder<GGuaranteeOrderByInput, GGuaranteeOrderByInputBuilder> {
+  _$GGuaranteeOrderByInput? _$v;
+
+  GOrderDirection? _id;
+  GOrderDirection? get id => _$this._id;
+  set id(GOrderDirection? id) => _$this._id = id;
+
+  GOrderDirection? _createdAt;
+  GOrderDirection? get createdAt => _$this._createdAt;
+  set createdAt(GOrderDirection? createdAt) => _$this._createdAt = createdAt;
+
+  GOrderDirection? _modifiedAt;
+  GOrderDirection? get modifiedAt => _$this._modifiedAt;
+  set modifiedAt(GOrderDirection? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GOrderDirection? _name;
+  GOrderDirection? get name => _$this._name;
+  set name(GOrderDirection? name) => _$this._name = name;
+
+  GOrderDirection? _description;
+  GOrderDirection? get description => _$this._description;
+  set description(GOrderDirection? description) =>
+      _$this._description = description;
+
+  GGuaranteeOrderByInputBuilder();
+
+  GGuaranteeOrderByInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _createdAt = $v.createdAt;
+      _modifiedAt = $v.modifiedAt;
+      _name = $v.name;
+      _description = $v.description;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGuaranteeOrderByInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GGuaranteeOrderByInput;
+  }
+
+  @override
+  void update(void Function(GGuaranteeOrderByInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGuaranteeOrderByInput build() => _build();
+
+  _$GGuaranteeOrderByInput _build() {
+    final _$result = _$v ??
+        new _$GGuaranteeOrderByInput._(
+            id: id,
+            createdAt: createdAt,
+            modifiedAt: modifiedAt,
+            name: name,
+            description: description);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGuaranteeUpdateInput extends GGuaranteeUpdateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final String? name;
+  @override
+  final String? description;
+
+  factory _$GGuaranteeUpdateInput(
+          [void Function(GGuaranteeUpdateInputBuilder)? updates]) =>
+      (new GGuaranteeUpdateInputBuilder()..update(updates))._build();
+
+  _$GGuaranteeUpdateInput._(
+      {this.createdAt, this.modifiedAt, this.name, this.description})
+      : super._();
+
+  @override
+  GGuaranteeUpdateInput rebuild(
+          void Function(GGuaranteeUpdateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGuaranteeUpdateInputBuilder toBuilder() =>
+      new GGuaranteeUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGuaranteeUpdateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        name == other.name &&
+        description == other.description;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GGuaranteeUpdateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('name', name)
+          ..add('description', description))
+        .toString();
+  }
+}
+
+class GGuaranteeUpdateInputBuilder
+    implements Builder<GGuaranteeUpdateInput, GGuaranteeUpdateInputBuilder> {
+  _$GGuaranteeUpdateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  GGuaranteeUpdateInputBuilder();
+
+  GGuaranteeUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _name = $v.name;
+      _description = $v.description;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGuaranteeUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GGuaranteeUpdateInput;
+  }
+
+  @override
+  void update(void Function(GGuaranteeUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGuaranteeUpdateInput build() => _build();
+
+  _$GGuaranteeUpdateInput _build() {
+    _$GGuaranteeUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GGuaranteeUpdateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              name: name,
+              description: description);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GGuaranteeUpdateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGuaranteeUpdateArgs extends GGuaranteeUpdateArgs {
+  @override
+  final GGuaranteeWhereUniqueInput where;
+  @override
+  final GGuaranteeUpdateInput data;
+
+  factory _$GGuaranteeUpdateArgs(
+          [void Function(GGuaranteeUpdateArgsBuilder)? updates]) =>
+      (new GGuaranteeUpdateArgsBuilder()..update(updates))._build();
+
+  _$GGuaranteeUpdateArgs._({required this.where, required this.data})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GGuaranteeUpdateArgs', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        data, r'GGuaranteeUpdateArgs', 'data');
+  }
+
+  @override
+  GGuaranteeUpdateArgs rebuild(
+          void Function(GGuaranteeUpdateArgsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGuaranteeUpdateArgsBuilder toBuilder() =>
+      new GGuaranteeUpdateArgsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGuaranteeUpdateArgs &&
+        where == other.where &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GGuaranteeUpdateArgs')
+          ..add('where', where)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GGuaranteeUpdateArgsBuilder
+    implements Builder<GGuaranteeUpdateArgs, GGuaranteeUpdateArgsBuilder> {
+  _$GGuaranteeUpdateArgs? _$v;
+
+  GGuaranteeWhereUniqueInputBuilder? _where;
+  GGuaranteeWhereUniqueInputBuilder get where =>
+      _$this._where ??= new GGuaranteeWhereUniqueInputBuilder();
+  set where(GGuaranteeWhereUniqueInputBuilder? where) => _$this._where = where;
+
+  GGuaranteeUpdateInputBuilder? _data;
+  GGuaranteeUpdateInputBuilder get data =>
+      _$this._data ??= new GGuaranteeUpdateInputBuilder();
+  set data(GGuaranteeUpdateInputBuilder? data) => _$this._data = data;
+
+  GGuaranteeUpdateArgsBuilder();
+
+  GGuaranteeUpdateArgsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGuaranteeUpdateArgs other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GGuaranteeUpdateArgs;
+  }
+
+  @override
+  void update(void Function(GGuaranteeUpdateArgsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGuaranteeUpdateArgs build() => _build();
+
+  _$GGuaranteeUpdateArgs _build() {
+    _$GGuaranteeUpdateArgs _$result;
+    try {
+      _$result = _$v ??
+          new _$GGuaranteeUpdateArgs._(
+              where: where.build(), data: data.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GGuaranteeUpdateArgs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGuaranteeCreateInput extends GGuaranteeCreateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final String? name;
+  @override
+  final String? description;
+
+  factory _$GGuaranteeCreateInput(
+          [void Function(GGuaranteeCreateInputBuilder)? updates]) =>
+      (new GGuaranteeCreateInputBuilder()..update(updates))._build();
+
+  _$GGuaranteeCreateInput._(
+      {this.createdAt, this.modifiedAt, this.name, this.description})
+      : super._();
+
+  @override
+  GGuaranteeCreateInput rebuild(
+          void Function(GGuaranteeCreateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGuaranteeCreateInputBuilder toBuilder() =>
+      new GGuaranteeCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGuaranteeCreateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        name == other.name &&
+        description == other.description;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GGuaranteeCreateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('name', name)
+          ..add('description', description))
+        .toString();
+  }
+}
+
+class GGuaranteeCreateInputBuilder
+    implements Builder<GGuaranteeCreateInput, GGuaranteeCreateInputBuilder> {
+  _$GGuaranteeCreateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  GGuaranteeCreateInputBuilder();
+
+  GGuaranteeCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _name = $v.name;
+      _description = $v.description;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGuaranteeCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GGuaranteeCreateInput;
+  }
+
+  @override
+  void update(void Function(GGuaranteeCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGuaranteeCreateInput build() => _build();
+
+  _$GGuaranteeCreateInput _build() {
+    _$GGuaranteeCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GGuaranteeCreateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              name: name,
+              description: description);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GGuaranteeCreateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGuaranteeFileWhereUniqueInput extends GGuaranteeFileWhereUniqueInput {
+  @override
+  final String? id;
+
+  factory _$GGuaranteeFileWhereUniqueInput(
+          [void Function(GGuaranteeFileWhereUniqueInputBuilder)? updates]) =>
+      (new GGuaranteeFileWhereUniqueInputBuilder()..update(updates))._build();
+
+  _$GGuaranteeFileWhereUniqueInput._({this.id}) : super._();
+
+  @override
+  GGuaranteeFileWhereUniqueInput rebuild(
+          void Function(GGuaranteeFileWhereUniqueInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGuaranteeFileWhereUniqueInputBuilder toBuilder() =>
+      new GGuaranteeFileWhereUniqueInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGuaranteeFileWhereUniqueInput && id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GGuaranteeFileWhereUniqueInput')
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GGuaranteeFileWhereUniqueInputBuilder
+    implements
+        Builder<GGuaranteeFileWhereUniqueInput,
+            GGuaranteeFileWhereUniqueInputBuilder> {
+  _$GGuaranteeFileWhereUniqueInput? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GGuaranteeFileWhereUniqueInputBuilder();
+
+  GGuaranteeFileWhereUniqueInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGuaranteeFileWhereUniqueInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GGuaranteeFileWhereUniqueInput;
+  }
+
+  @override
+  void update(void Function(GGuaranteeFileWhereUniqueInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGuaranteeFileWhereUniqueInput build() => _build();
+
+  _$GGuaranteeFileWhereUniqueInput _build() {
+    final _$result = _$v ?? new _$GGuaranteeFileWhereUniqueInput._(id: id);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGuaranteeFileWhereInput extends GGuaranteeFileWhereInput {
+  @override
+  final BuiltList<GGuaranteeFileWhereInput>? AND;
+  @override
+  final BuiltList<GGuaranteeFileWhereInput>? OR;
+  @override
+  final BuiltList<GGuaranteeFileWhereInput>? NOT;
+  @override
+  final GIDFilter? id;
+  @override
+  final GDateTimeNullableFilter? createdAt;
+  @override
+  final GDateTimeNullableFilter? modifiedAt;
+
+  factory _$GGuaranteeFileWhereInput(
+          [void Function(GGuaranteeFileWhereInputBuilder)? updates]) =>
+      (new GGuaranteeFileWhereInputBuilder()..update(updates))._build();
+
+  _$GGuaranteeFileWhereInput._(
+      {this.AND, this.OR, this.NOT, this.id, this.createdAt, this.modifiedAt})
+      : super._();
+
+  @override
+  GGuaranteeFileWhereInput rebuild(
+          void Function(GGuaranteeFileWhereInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGuaranteeFileWhereInputBuilder toBuilder() =>
+      new GGuaranteeFileWhereInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGuaranteeFileWhereInput &&
+        AND == other.AND &&
+        OR == other.OR &&
+        NOT == other.NOT &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, AND.hashCode);
+    _$hash = $jc(_$hash, OR.hashCode);
+    _$hash = $jc(_$hash, NOT.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GGuaranteeFileWhereInput')
+          ..add('AND', AND)
+          ..add('OR', OR)
+          ..add('NOT', NOT)
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt))
+        .toString();
+  }
+}
+
+class GGuaranteeFileWhereInputBuilder
+    implements
+        Builder<GGuaranteeFileWhereInput, GGuaranteeFileWhereInputBuilder> {
+  _$GGuaranteeFileWhereInput? _$v;
+
+  ListBuilder<GGuaranteeFileWhereInput>? _AND;
+  ListBuilder<GGuaranteeFileWhereInput> get AND =>
+      _$this._AND ??= new ListBuilder<GGuaranteeFileWhereInput>();
+  set AND(ListBuilder<GGuaranteeFileWhereInput>? AND) => _$this._AND = AND;
+
+  ListBuilder<GGuaranteeFileWhereInput>? _OR;
+  ListBuilder<GGuaranteeFileWhereInput> get OR =>
+      _$this._OR ??= new ListBuilder<GGuaranteeFileWhereInput>();
+  set OR(ListBuilder<GGuaranteeFileWhereInput>? OR) => _$this._OR = OR;
+
+  ListBuilder<GGuaranteeFileWhereInput>? _NOT;
+  ListBuilder<GGuaranteeFileWhereInput> get NOT =>
+      _$this._NOT ??= new ListBuilder<GGuaranteeFileWhereInput>();
+  set NOT(ListBuilder<GGuaranteeFileWhereInput>? NOT) => _$this._NOT = NOT;
+
+  GIDFilterBuilder? _id;
+  GIDFilterBuilder get id => _$this._id ??= new GIDFilterBuilder();
+  set id(GIDFilterBuilder? id) => _$this._id = id;
+
+  GDateTimeNullableFilterBuilder? _createdAt;
+  GDateTimeNullableFilterBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeNullableFilterBuilder();
+  set createdAt(GDateTimeNullableFilterBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GDateTimeNullableFilterBuilder? _modifiedAt;
+  GDateTimeNullableFilterBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeNullableFilterBuilder();
+  set modifiedAt(GDateTimeNullableFilterBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GGuaranteeFileWhereInputBuilder();
+
+  GGuaranteeFileWhereInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _AND = $v.AND?.toBuilder();
+      _OR = $v.OR?.toBuilder();
+      _NOT = $v.NOT?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGuaranteeFileWhereInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GGuaranteeFileWhereInput;
+  }
+
+  @override
+  void update(void Function(GGuaranteeFileWhereInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGuaranteeFileWhereInput build() => _build();
+
+  _$GGuaranteeFileWhereInput _build() {
+    _$GGuaranteeFileWhereInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GGuaranteeFileWhereInput._(
+              AND: _AND?.build(),
+              OR: _OR?.build(),
+              NOT: _NOT?.build(),
+              id: _id?.build(),
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'AND';
+        _AND?.build();
+        _$failedField = 'OR';
+        _OR?.build();
+        _$failedField = 'NOT';
+        _NOT?.build();
+        _$failedField = 'id';
+        _id?.build();
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GGuaranteeFileWhereInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGuaranteeFileOrderByInput extends GGuaranteeFileOrderByInput {
+  @override
+  final GOrderDirection? id;
+  @override
+  final GOrderDirection? createdAt;
+  @override
+  final GOrderDirection? modifiedAt;
+
+  factory _$GGuaranteeFileOrderByInput(
+          [void Function(GGuaranteeFileOrderByInputBuilder)? updates]) =>
+      (new GGuaranteeFileOrderByInputBuilder()..update(updates))._build();
+
+  _$GGuaranteeFileOrderByInput._({this.id, this.createdAt, this.modifiedAt})
+      : super._();
+
+  @override
+  GGuaranteeFileOrderByInput rebuild(
+          void Function(GGuaranteeFileOrderByInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGuaranteeFileOrderByInputBuilder toBuilder() =>
+      new GGuaranteeFileOrderByInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGuaranteeFileOrderByInput &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GGuaranteeFileOrderByInput')
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt))
+        .toString();
+  }
+}
+
+class GGuaranteeFileOrderByInputBuilder
+    implements
+        Builder<GGuaranteeFileOrderByInput, GGuaranteeFileOrderByInputBuilder> {
+  _$GGuaranteeFileOrderByInput? _$v;
+
+  GOrderDirection? _id;
+  GOrderDirection? get id => _$this._id;
+  set id(GOrderDirection? id) => _$this._id = id;
+
+  GOrderDirection? _createdAt;
+  GOrderDirection? get createdAt => _$this._createdAt;
+  set createdAt(GOrderDirection? createdAt) => _$this._createdAt = createdAt;
+
+  GOrderDirection? _modifiedAt;
+  GOrderDirection? get modifiedAt => _$this._modifiedAt;
+  set modifiedAt(GOrderDirection? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GGuaranteeFileOrderByInputBuilder();
+
+  GGuaranteeFileOrderByInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _createdAt = $v.createdAt;
+      _modifiedAt = $v.modifiedAt;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGuaranteeFileOrderByInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GGuaranteeFileOrderByInput;
+  }
+
+  @override
+  void update(void Function(GGuaranteeFileOrderByInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGuaranteeFileOrderByInput build() => _build();
+
+  _$GGuaranteeFileOrderByInput _build() {
+    final _$result = _$v ??
+        new _$GGuaranteeFileOrderByInput._(
+            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGuaranteeFileUpdateInput extends GGuaranteeFileUpdateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final GFileFieldInput? file;
+
+  factory _$GGuaranteeFileUpdateInput(
+          [void Function(GGuaranteeFileUpdateInputBuilder)? updates]) =>
+      (new GGuaranteeFileUpdateInputBuilder()..update(updates))._build();
+
+  _$GGuaranteeFileUpdateInput._({this.createdAt, this.modifiedAt, this.file})
+      : super._();
+
+  @override
+  GGuaranteeFileUpdateInput rebuild(
+          void Function(GGuaranteeFileUpdateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGuaranteeFileUpdateInputBuilder toBuilder() =>
+      new GGuaranteeFileUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGuaranteeFileUpdateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        file == other.file;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, file.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GGuaranteeFileUpdateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('file', file))
+        .toString();
+  }
+}
+
+class GGuaranteeFileUpdateInputBuilder
+    implements
+        Builder<GGuaranteeFileUpdateInput, GGuaranteeFileUpdateInputBuilder> {
+  _$GGuaranteeFileUpdateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GFileFieldInputBuilder? _file;
+  GFileFieldInputBuilder get file =>
+      _$this._file ??= new GFileFieldInputBuilder();
+  set file(GFileFieldInputBuilder? file) => _$this._file = file;
+
+  GGuaranteeFileUpdateInputBuilder();
+
+  GGuaranteeFileUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _file = $v.file?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGuaranteeFileUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GGuaranteeFileUpdateInput;
+  }
+
+  @override
+  void update(void Function(GGuaranteeFileUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGuaranteeFileUpdateInput build() => _build();
+
+  _$GGuaranteeFileUpdateInput _build() {
+    _$GGuaranteeFileUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GGuaranteeFileUpdateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              file: _file?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'file';
+        _file?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GGuaranteeFileUpdateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGuaranteeFileUpdateArgs extends GGuaranteeFileUpdateArgs {
+  @override
+  final GGuaranteeFileWhereUniqueInput where;
+  @override
+  final GGuaranteeFileUpdateInput data;
+
+  factory _$GGuaranteeFileUpdateArgs(
+          [void Function(GGuaranteeFileUpdateArgsBuilder)? updates]) =>
+      (new GGuaranteeFileUpdateArgsBuilder()..update(updates))._build();
+
+  _$GGuaranteeFileUpdateArgs._({required this.where, required this.data})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GGuaranteeFileUpdateArgs', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        data, r'GGuaranteeFileUpdateArgs', 'data');
+  }
+
+  @override
+  GGuaranteeFileUpdateArgs rebuild(
+          void Function(GGuaranteeFileUpdateArgsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGuaranteeFileUpdateArgsBuilder toBuilder() =>
+      new GGuaranteeFileUpdateArgsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGuaranteeFileUpdateArgs &&
+        where == other.where &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GGuaranteeFileUpdateArgs')
+          ..add('where', where)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GGuaranteeFileUpdateArgsBuilder
+    implements
+        Builder<GGuaranteeFileUpdateArgs, GGuaranteeFileUpdateArgsBuilder> {
+  _$GGuaranteeFileUpdateArgs? _$v;
+
+  GGuaranteeFileWhereUniqueInputBuilder? _where;
+  GGuaranteeFileWhereUniqueInputBuilder get where =>
+      _$this._where ??= new GGuaranteeFileWhereUniqueInputBuilder();
+  set where(GGuaranteeFileWhereUniqueInputBuilder? where) =>
+      _$this._where = where;
+
+  GGuaranteeFileUpdateInputBuilder? _data;
+  GGuaranteeFileUpdateInputBuilder get data =>
+      _$this._data ??= new GGuaranteeFileUpdateInputBuilder();
+  set data(GGuaranteeFileUpdateInputBuilder? data) => _$this._data = data;
+
+  GGuaranteeFileUpdateArgsBuilder();
+
+  GGuaranteeFileUpdateArgsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGuaranteeFileUpdateArgs other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GGuaranteeFileUpdateArgs;
+  }
+
+  @override
+  void update(void Function(GGuaranteeFileUpdateArgsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGuaranteeFileUpdateArgs build() => _build();
+
+  _$GGuaranteeFileUpdateArgs _build() {
+    _$GGuaranteeFileUpdateArgs _$result;
+    try {
+      _$result = _$v ??
+          new _$GGuaranteeFileUpdateArgs._(
+              where: where.build(), data: data.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GGuaranteeFileUpdateArgs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGuaranteeFileCreateInput extends GGuaranteeFileCreateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final GFileFieldInput? file;
+
+  factory _$GGuaranteeFileCreateInput(
+          [void Function(GGuaranteeFileCreateInputBuilder)? updates]) =>
+      (new GGuaranteeFileCreateInputBuilder()..update(updates))._build();
+
+  _$GGuaranteeFileCreateInput._({this.createdAt, this.modifiedAt, this.file})
+      : super._();
+
+  @override
+  GGuaranteeFileCreateInput rebuild(
+          void Function(GGuaranteeFileCreateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGuaranteeFileCreateInputBuilder toBuilder() =>
+      new GGuaranteeFileCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGuaranteeFileCreateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        file == other.file;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, file.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GGuaranteeFileCreateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('file', file))
+        .toString();
+  }
+}
+
+class GGuaranteeFileCreateInputBuilder
+    implements
+        Builder<GGuaranteeFileCreateInput, GGuaranteeFileCreateInputBuilder> {
+  _$GGuaranteeFileCreateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GFileFieldInputBuilder? _file;
+  GFileFieldInputBuilder get file =>
+      _$this._file ??= new GFileFieldInputBuilder();
+  set file(GFileFieldInputBuilder? file) => _$this._file = file;
+
+  GGuaranteeFileCreateInputBuilder();
+
+  GGuaranteeFileCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _file = $v.file?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGuaranteeFileCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GGuaranteeFileCreateInput;
+  }
+
+  @override
+  void update(void Function(GGuaranteeFileCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGuaranteeFileCreateInput build() => _build();
+
+  _$GGuaranteeFileCreateInput _build() {
+    _$GGuaranteeFileCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GGuaranteeFileCreateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              file: _file?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'file';
+        _file?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GGuaranteeFileCreateInput', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -78879,6 +87533,8 @@ class _$GVehicleDealerWhereInput extends GVehicleDealerWhereInput {
   @override
   final GVehicleVariantWhereInput? vehicleVariant;
   @override
+  final GGuaranteeManyRelationFilter? guarantees;
+  @override
   final GVehicleColorWhereInput? vehicleColor;
   @override
   final GPriceManyRelationFilter? prices;
@@ -78898,6 +87554,7 @@ class _$GVehicleDealerWhereInput extends GVehicleDealerWhereInput {
       this.modifiedAt,
       this.dealer,
       this.vehicleVariant,
+      this.guarantees,
       this.vehicleColor,
       this.prices,
       this.stock})
@@ -78924,6 +87581,7 @@ class _$GVehicleDealerWhereInput extends GVehicleDealerWhereInput {
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         vehicleVariant == other.vehicleVariant &&
+        guarantees == other.guarantees &&
         vehicleColor == other.vehicleColor &&
         prices == other.prices &&
         stock == other.stock;
@@ -78940,6 +87598,7 @@ class _$GVehicleDealerWhereInput extends GVehicleDealerWhereInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, vehicleVariant.hashCode);
+    _$hash = $jc(_$hash, guarantees.hashCode);
     _$hash = $jc(_$hash, vehicleColor.hashCode);
     _$hash = $jc(_$hash, prices.hashCode);
     _$hash = $jc(_$hash, stock.hashCode);
@@ -78958,6 +87617,7 @@ class _$GVehicleDealerWhereInput extends GVehicleDealerWhereInput {
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('vehicleVariant', vehicleVariant)
+          ..add('guarantees', guarantees)
           ..add('vehicleColor', vehicleColor)
           ..add('prices', prices)
           ..add('stock', stock))
@@ -79012,6 +87672,12 @@ class GVehicleDealerWhereInputBuilder
   set vehicleVariant(GVehicleVariantWhereInputBuilder? vehicleVariant) =>
       _$this._vehicleVariant = vehicleVariant;
 
+  GGuaranteeManyRelationFilterBuilder? _guarantees;
+  GGuaranteeManyRelationFilterBuilder get guarantees =>
+      _$this._guarantees ??= new GGuaranteeManyRelationFilterBuilder();
+  set guarantees(GGuaranteeManyRelationFilterBuilder? guarantees) =>
+      _$this._guarantees = guarantees;
+
   GVehicleColorWhereInputBuilder? _vehicleColor;
   GVehicleColorWhereInputBuilder get vehicleColor =>
       _$this._vehicleColor ??= new GVehicleColorWhereInputBuilder();
@@ -79042,6 +87708,7 @@ class GVehicleDealerWhereInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _dealer = $v.dealer?.toBuilder();
       _vehicleVariant = $v.vehicleVariant?.toBuilder();
+      _guarantees = $v.guarantees?.toBuilder();
       _vehicleColor = $v.vehicleColor?.toBuilder();
       _prices = $v.prices?.toBuilder();
       _stock = $v.stock?.toBuilder();
@@ -79077,6 +87744,7 @@ class GVehicleDealerWhereInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               vehicleVariant: _vehicleVariant?.build(),
+              guarantees: _guarantees?.build(),
               vehicleColor: _vehicleColor?.build(),
               prices: _prices?.build(),
               stock: _stock?.build());
@@ -79099,6 +87767,8 @@ class GVehicleDealerWhereInputBuilder
         _dealer?.build();
         _$failedField = 'vehicleVariant';
         _vehicleVariant?.build();
+        _$failedField = 'guarantees';
+        _guarantees?.build();
         _$failedField = 'vehicleColor';
         _vehicleColor?.build();
         _$failedField = 'prices';
@@ -79108,6 +87778,135 @@ class GVehicleDealerWhereInputBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleDealerWhereInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGuaranteeManyRelationFilter extends GGuaranteeManyRelationFilter {
+  @override
+  final GGuaranteeWhereInput? every;
+  @override
+  final GGuaranteeWhereInput? some;
+  @override
+  final GGuaranteeWhereInput? none;
+
+  factory _$GGuaranteeManyRelationFilter(
+          [void Function(GGuaranteeManyRelationFilterBuilder)? updates]) =>
+      (new GGuaranteeManyRelationFilterBuilder()..update(updates))._build();
+
+  _$GGuaranteeManyRelationFilter._({this.every, this.some, this.none})
+      : super._();
+
+  @override
+  GGuaranteeManyRelationFilter rebuild(
+          void Function(GGuaranteeManyRelationFilterBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGuaranteeManyRelationFilterBuilder toBuilder() =>
+      new GGuaranteeManyRelationFilterBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGuaranteeManyRelationFilter &&
+        every == other.every &&
+        some == other.some &&
+        none == other.none;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, every.hashCode);
+    _$hash = $jc(_$hash, some.hashCode);
+    _$hash = $jc(_$hash, none.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GGuaranteeManyRelationFilter')
+          ..add('every', every)
+          ..add('some', some)
+          ..add('none', none))
+        .toString();
+  }
+}
+
+class GGuaranteeManyRelationFilterBuilder
+    implements
+        Builder<GGuaranteeManyRelationFilter,
+            GGuaranteeManyRelationFilterBuilder> {
+  _$GGuaranteeManyRelationFilter? _$v;
+
+  GGuaranteeWhereInputBuilder? _every;
+  GGuaranteeWhereInputBuilder get every =>
+      _$this._every ??= new GGuaranteeWhereInputBuilder();
+  set every(GGuaranteeWhereInputBuilder? every) => _$this._every = every;
+
+  GGuaranteeWhereInputBuilder? _some;
+  GGuaranteeWhereInputBuilder get some =>
+      _$this._some ??= new GGuaranteeWhereInputBuilder();
+  set some(GGuaranteeWhereInputBuilder? some) => _$this._some = some;
+
+  GGuaranteeWhereInputBuilder? _none;
+  GGuaranteeWhereInputBuilder get none =>
+      _$this._none ??= new GGuaranteeWhereInputBuilder();
+  set none(GGuaranteeWhereInputBuilder? none) => _$this._none = none;
+
+  GGuaranteeManyRelationFilterBuilder();
+
+  GGuaranteeManyRelationFilterBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _every = $v.every?.toBuilder();
+      _some = $v.some?.toBuilder();
+      _none = $v.none?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGuaranteeManyRelationFilter other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GGuaranteeManyRelationFilter;
+  }
+
+  @override
+  void update(void Function(GGuaranteeManyRelationFilterBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGuaranteeManyRelationFilter build() => _build();
+
+  _$GGuaranteeManyRelationFilter _build() {
+    _$GGuaranteeManyRelationFilter _$result;
+    try {
+      _$result = _$v ??
+          new _$GGuaranteeManyRelationFilter._(
+              every: _every?.build(),
+              some: _some?.build(),
+              none: _none?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'every';
+        _every?.build();
+        _$failedField = 'some';
+        _some?.build();
+        _$failedField = 'none';
+        _none?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GGuaranteeManyRelationFilter', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -79371,6 +88170,8 @@ class _$GVehicleDealerUpdateInput extends GVehicleDealerUpdateInput {
   @override
   final GVehicleVariantRelateToOneForUpdateInput? vehicleVariant;
   @override
+  final GGuaranteeRelateToManyForUpdateInput? guarantees;
+  @override
   final GVehicleColorRelateToOneForUpdateInput? vehicleColor;
   @override
   final GPriceRelateToManyForUpdateInput? prices;
@@ -79386,6 +88187,7 @@ class _$GVehicleDealerUpdateInput extends GVehicleDealerUpdateInput {
       this.modifiedAt,
       this.dealer,
       this.vehicleVariant,
+      this.guarantees,
       this.vehicleColor,
       this.prices,
       this.stock})
@@ -79408,6 +88210,7 @@ class _$GVehicleDealerUpdateInput extends GVehicleDealerUpdateInput {
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         vehicleVariant == other.vehicleVariant &&
+        guarantees == other.guarantees &&
         vehicleColor == other.vehicleColor &&
         prices == other.prices &&
         stock == other.stock;
@@ -79420,6 +88223,7 @@ class _$GVehicleDealerUpdateInput extends GVehicleDealerUpdateInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, vehicleVariant.hashCode);
+    _$hash = $jc(_$hash, guarantees.hashCode);
     _$hash = $jc(_$hash, vehicleColor.hashCode);
     _$hash = $jc(_$hash, prices.hashCode);
     _$hash = $jc(_$hash, stock.hashCode);
@@ -79434,6 +88238,7 @@ class _$GVehicleDealerUpdateInput extends GVehicleDealerUpdateInput {
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('vehicleVariant', vehicleVariant)
+          ..add('guarantees', guarantees)
           ..add('vehicleColor', vehicleColor)
           ..add('prices', prices)
           ..add('stock', stock))
@@ -79471,6 +88276,12 @@ class GVehicleDealerUpdateInputBuilder
           GVehicleVariantRelateToOneForUpdateInputBuilder? vehicleVariant) =>
       _$this._vehicleVariant = vehicleVariant;
 
+  GGuaranteeRelateToManyForUpdateInputBuilder? _guarantees;
+  GGuaranteeRelateToManyForUpdateInputBuilder get guarantees =>
+      _$this._guarantees ??= new GGuaranteeRelateToManyForUpdateInputBuilder();
+  set guarantees(GGuaranteeRelateToManyForUpdateInputBuilder? guarantees) =>
+      _$this._guarantees = guarantees;
+
   GVehicleColorRelateToOneForUpdateInputBuilder? _vehicleColor;
   GVehicleColorRelateToOneForUpdateInputBuilder get vehicleColor =>
       _$this._vehicleColor ??=
@@ -79498,6 +88309,7 @@ class GVehicleDealerUpdateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _dealer = $v.dealer?.toBuilder();
       _vehicleVariant = $v.vehicleVariant?.toBuilder();
+      _guarantees = $v.guarantees?.toBuilder();
       _vehicleColor = $v.vehicleColor?.toBuilder();
       _prices = $v.prices?.toBuilder();
       _stock = $v.stock;
@@ -79529,6 +88341,7 @@ class GVehicleDealerUpdateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               vehicleVariant: _vehicleVariant?.build(),
+              guarantees: _guarantees?.build(),
               vehicleColor: _vehicleColor?.build(),
               prices: _prices?.build(),
               stock: stock);
@@ -79543,6 +88356,8 @@ class GVehicleDealerUpdateInputBuilder
         _dealer?.build();
         _$failedField = 'vehicleVariant';
         _vehicleVariant?.build();
+        _$failedField = 'guarantees';
+        _guarantees?.build();
         _$failedField = 'vehicleColor';
         _vehicleColor?.build();
         _$failedField = 'prices';
@@ -79550,6 +88365,159 @@ class GVehicleDealerUpdateInputBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleDealerUpdateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGuaranteeRelateToManyForUpdateInput
+    extends GGuaranteeRelateToManyForUpdateInput {
+  @override
+  final BuiltList<GGuaranteeWhereUniqueInput>? disconnect;
+  @override
+  final BuiltList<GGuaranteeWhereUniqueInput>? set;
+  @override
+  final BuiltList<GGuaranteeCreateInput>? create;
+  @override
+  final BuiltList<GGuaranteeWhereUniqueInput>? connect;
+
+  factory _$GGuaranteeRelateToManyForUpdateInput(
+          [void Function(GGuaranteeRelateToManyForUpdateInputBuilder)?
+              updates]) =>
+      (new GGuaranteeRelateToManyForUpdateInputBuilder()..update(updates))
+          ._build();
+
+  _$GGuaranteeRelateToManyForUpdateInput._(
+      {this.disconnect, this.set, this.create, this.connect})
+      : super._();
+
+  @override
+  GGuaranteeRelateToManyForUpdateInput rebuild(
+          void Function(GGuaranteeRelateToManyForUpdateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGuaranteeRelateToManyForUpdateInputBuilder toBuilder() =>
+      new GGuaranteeRelateToManyForUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGuaranteeRelateToManyForUpdateInput &&
+        disconnect == other.disconnect &&
+        set == other.set &&
+        create == other.create &&
+        connect == other.connect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, disconnect.hashCode);
+    _$hash = $jc(_$hash, set.hashCode);
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GGuaranteeRelateToManyForUpdateInput')
+          ..add('disconnect', disconnect)
+          ..add('set', set)
+          ..add('create', create)
+          ..add('connect', connect))
+        .toString();
+  }
+}
+
+class GGuaranteeRelateToManyForUpdateInputBuilder
+    implements
+        Builder<GGuaranteeRelateToManyForUpdateInput,
+            GGuaranteeRelateToManyForUpdateInputBuilder> {
+  _$GGuaranteeRelateToManyForUpdateInput? _$v;
+
+  ListBuilder<GGuaranteeWhereUniqueInput>? _disconnect;
+  ListBuilder<GGuaranteeWhereUniqueInput> get disconnect =>
+      _$this._disconnect ??= new ListBuilder<GGuaranteeWhereUniqueInput>();
+  set disconnect(ListBuilder<GGuaranteeWhereUniqueInput>? disconnect) =>
+      _$this._disconnect = disconnect;
+
+  ListBuilder<GGuaranteeWhereUniqueInput>? _set;
+  ListBuilder<GGuaranteeWhereUniqueInput> get set =>
+      _$this._set ??= new ListBuilder<GGuaranteeWhereUniqueInput>();
+  set set(ListBuilder<GGuaranteeWhereUniqueInput>? set) => _$this._set = set;
+
+  ListBuilder<GGuaranteeCreateInput>? _create;
+  ListBuilder<GGuaranteeCreateInput> get create =>
+      _$this._create ??= new ListBuilder<GGuaranteeCreateInput>();
+  set create(ListBuilder<GGuaranteeCreateInput>? create) =>
+      _$this._create = create;
+
+  ListBuilder<GGuaranteeWhereUniqueInput>? _connect;
+  ListBuilder<GGuaranteeWhereUniqueInput> get connect =>
+      _$this._connect ??= new ListBuilder<GGuaranteeWhereUniqueInput>();
+  set connect(ListBuilder<GGuaranteeWhereUniqueInput>? connect) =>
+      _$this._connect = connect;
+
+  GGuaranteeRelateToManyForUpdateInputBuilder();
+
+  GGuaranteeRelateToManyForUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _disconnect = $v.disconnect?.toBuilder();
+      _set = $v.set?.toBuilder();
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGuaranteeRelateToManyForUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GGuaranteeRelateToManyForUpdateInput;
+  }
+
+  @override
+  void update(
+      void Function(GGuaranteeRelateToManyForUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGuaranteeRelateToManyForUpdateInput build() => _build();
+
+  _$GGuaranteeRelateToManyForUpdateInput _build() {
+    _$GGuaranteeRelateToManyForUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GGuaranteeRelateToManyForUpdateInput._(
+              disconnect: _disconnect?.build(),
+              set: _set?.build(),
+              create: _create?.build(),
+              connect: _connect?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'disconnect';
+        _disconnect?.build();
+        _$failedField = 'set';
+        _set?.build();
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GGuaranteeRelateToManyForUpdateInput',
+            _$failedField,
+            e.toString());
       }
       rethrow;
     }
@@ -79834,6 +88802,8 @@ class _$GVehicleDealerCreateInput extends GVehicleDealerCreateInput {
   @override
   final GVehicleVariantRelateToOneForCreateInput? vehicleVariant;
   @override
+  final GGuaranteeRelateToManyForCreateInput? guarantees;
+  @override
   final GVehicleColorRelateToOneForCreateInput? vehicleColor;
   @override
   final GPriceRelateToManyForCreateInput? prices;
@@ -79849,6 +88819,7 @@ class _$GVehicleDealerCreateInput extends GVehicleDealerCreateInput {
       this.modifiedAt,
       this.dealer,
       this.vehicleVariant,
+      this.guarantees,
       this.vehicleColor,
       this.prices,
       this.stock})
@@ -79871,6 +88842,7 @@ class _$GVehicleDealerCreateInput extends GVehicleDealerCreateInput {
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         vehicleVariant == other.vehicleVariant &&
+        guarantees == other.guarantees &&
         vehicleColor == other.vehicleColor &&
         prices == other.prices &&
         stock == other.stock;
@@ -79883,6 +88855,7 @@ class _$GVehicleDealerCreateInput extends GVehicleDealerCreateInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, vehicleVariant.hashCode);
+    _$hash = $jc(_$hash, guarantees.hashCode);
     _$hash = $jc(_$hash, vehicleColor.hashCode);
     _$hash = $jc(_$hash, prices.hashCode);
     _$hash = $jc(_$hash, stock.hashCode);
@@ -79897,6 +88870,7 @@ class _$GVehicleDealerCreateInput extends GVehicleDealerCreateInput {
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('vehicleVariant', vehicleVariant)
+          ..add('guarantees', guarantees)
           ..add('vehicleColor', vehicleColor)
           ..add('prices', prices)
           ..add('stock', stock))
@@ -79934,6 +88908,12 @@ class GVehicleDealerCreateInputBuilder
           GVehicleVariantRelateToOneForCreateInputBuilder? vehicleVariant) =>
       _$this._vehicleVariant = vehicleVariant;
 
+  GGuaranteeRelateToManyForCreateInputBuilder? _guarantees;
+  GGuaranteeRelateToManyForCreateInputBuilder get guarantees =>
+      _$this._guarantees ??= new GGuaranteeRelateToManyForCreateInputBuilder();
+  set guarantees(GGuaranteeRelateToManyForCreateInputBuilder? guarantees) =>
+      _$this._guarantees = guarantees;
+
   GVehicleColorRelateToOneForCreateInputBuilder? _vehicleColor;
   GVehicleColorRelateToOneForCreateInputBuilder get vehicleColor =>
       _$this._vehicleColor ??=
@@ -79961,6 +88941,7 @@ class GVehicleDealerCreateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _dealer = $v.dealer?.toBuilder();
       _vehicleVariant = $v.vehicleVariant?.toBuilder();
+      _guarantees = $v.guarantees?.toBuilder();
       _vehicleColor = $v.vehicleColor?.toBuilder();
       _prices = $v.prices?.toBuilder();
       _stock = $v.stock;
@@ -79992,6 +88973,7 @@ class GVehicleDealerCreateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               vehicleVariant: _vehicleVariant?.build(),
+              guarantees: _guarantees?.build(),
               vehicleColor: _vehicleColor?.build(),
               prices: _prices?.build(),
               stock: stock);
@@ -80006,6 +88988,8 @@ class GVehicleDealerCreateInputBuilder
         _dealer?.build();
         _$failedField = 'vehicleVariant';
         _vehicleVariant?.build();
+        _$failedField = 'guarantees';
+        _guarantees?.build();
         _$failedField = 'vehicleColor';
         _vehicleColor?.build();
         _$failedField = 'prices';
@@ -80013,6 +88997,128 @@ class GVehicleDealerCreateInputBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleDealerCreateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GGuaranteeRelateToManyForCreateInput
+    extends GGuaranteeRelateToManyForCreateInput {
+  @override
+  final BuiltList<GGuaranteeCreateInput>? create;
+  @override
+  final BuiltList<GGuaranteeWhereUniqueInput>? connect;
+
+  factory _$GGuaranteeRelateToManyForCreateInput(
+          [void Function(GGuaranteeRelateToManyForCreateInputBuilder)?
+              updates]) =>
+      (new GGuaranteeRelateToManyForCreateInputBuilder()..update(updates))
+          ._build();
+
+  _$GGuaranteeRelateToManyForCreateInput._({this.create, this.connect})
+      : super._();
+
+  @override
+  GGuaranteeRelateToManyForCreateInput rebuild(
+          void Function(GGuaranteeRelateToManyForCreateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GGuaranteeRelateToManyForCreateInputBuilder toBuilder() =>
+      new GGuaranteeRelateToManyForCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GGuaranteeRelateToManyForCreateInput &&
+        create == other.create &&
+        connect == other.connect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GGuaranteeRelateToManyForCreateInput')
+          ..add('create', create)
+          ..add('connect', connect))
+        .toString();
+  }
+}
+
+class GGuaranteeRelateToManyForCreateInputBuilder
+    implements
+        Builder<GGuaranteeRelateToManyForCreateInput,
+            GGuaranteeRelateToManyForCreateInputBuilder> {
+  _$GGuaranteeRelateToManyForCreateInput? _$v;
+
+  ListBuilder<GGuaranteeCreateInput>? _create;
+  ListBuilder<GGuaranteeCreateInput> get create =>
+      _$this._create ??= new ListBuilder<GGuaranteeCreateInput>();
+  set create(ListBuilder<GGuaranteeCreateInput>? create) =>
+      _$this._create = create;
+
+  ListBuilder<GGuaranteeWhereUniqueInput>? _connect;
+  ListBuilder<GGuaranteeWhereUniqueInput> get connect =>
+      _$this._connect ??= new ListBuilder<GGuaranteeWhereUniqueInput>();
+  set connect(ListBuilder<GGuaranteeWhereUniqueInput>? connect) =>
+      _$this._connect = connect;
+
+  GGuaranteeRelateToManyForCreateInputBuilder();
+
+  GGuaranteeRelateToManyForCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GGuaranteeRelateToManyForCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GGuaranteeRelateToManyForCreateInput;
+  }
+
+  @override
+  void update(
+      void Function(GGuaranteeRelateToManyForCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GGuaranteeRelateToManyForCreateInput build() => _build();
+
+  _$GGuaranteeRelateToManyForCreateInput _build() {
+    _$GGuaranteeRelateToManyForCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GGuaranteeRelateToManyForCreateInput._(
+              create: _create?.build(), connect: _connect?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GGuaranteeRelateToManyForCreateInput',
+            _$failedField,
+            e.toString());
       }
       rethrow;
     }
@@ -83470,6 +92576,8 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
   final GBooleanFilter? informative;
   @override
   final GPriceManyRelationFilter? prices;
+  @override
+  final GBooleanFilter? disabled;
 
   factory _$GVehicleVariantWhereInput(
           [void Function(GVehicleVariantWhereInputBuilder)? updates]) =>
@@ -83489,7 +92597,8 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
       this.colors,
       this.tags,
       this.informative,
-      this.prices})
+      this.prices,
+      this.disabled})
       : super._();
 
   @override
@@ -83518,7 +92627,8 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
         colors == other.colors &&
         tags == other.tags &&
         informative == other.informative &&
-        prices == other.prices;
+        prices == other.prices &&
+        disabled == other.disabled;
   }
 
   @override
@@ -83538,6 +92648,7 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
     _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, informative.hashCode);
     _$hash = $jc(_$hash, prices.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -83558,7 +92669,8 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
           ..add('colors', colors)
           ..add('tags', tags)
           ..add('informative', informative)
-          ..add('prices', prices))
+          ..add('prices', prices)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -83644,6 +92756,11 @@ class GVehicleVariantWhereInputBuilder
   set prices(GPriceManyRelationFilterBuilder? prices) =>
       _$this._prices = prices;
 
+  GBooleanFilterBuilder? _disabled;
+  GBooleanFilterBuilder get disabled =>
+      _$this._disabled ??= new GBooleanFilterBuilder();
+  set disabled(GBooleanFilterBuilder? disabled) => _$this._disabled = disabled;
+
   GVehicleVariantWhereInputBuilder();
 
   GVehicleVariantWhereInputBuilder get _$this {
@@ -83663,6 +92780,7 @@ class GVehicleVariantWhereInputBuilder
       _tags = $v.tags?.toBuilder();
       _informative = $v.informative?.toBuilder();
       _prices = $v.prices?.toBuilder();
+      _disabled = $v.disabled?.toBuilder();
       _$v = null;
     }
     return this;
@@ -83700,7 +92818,8 @@ class GVehicleVariantWhereInputBuilder
               colors: _colors?.build(),
               tags: _tags?.build(),
               informative: _informative?.build(),
-              prices: _prices?.build());
+              prices: _prices?.build(),
+              disabled: _disabled?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -83732,6 +92851,8 @@ class GVehicleVariantWhereInputBuilder
         _informative?.build();
         _$failedField = 'prices';
         _prices?.build();
+        _$failedField = 'disabled';
+        _disabled?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleVariantWhereInput', _$failedField, e.toString());
@@ -83882,6 +93003,8 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
   final GOrderDirection? Gdefault;
   @override
   final GOrderDirection? informative;
+  @override
+  final GOrderDirection? disabled;
 
   factory _$GVehicleVariantOrderByInput(
           [void Function(GVehicleVariantOrderByInputBuilder)? updates]) =>
@@ -83893,7 +93016,8 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
       this.modifiedAt,
       this.name,
       this.Gdefault,
-      this.informative})
+      this.informative,
+      this.disabled})
       : super._();
 
   @override
@@ -83914,7 +93038,8 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
         modifiedAt == other.modifiedAt &&
         name == other.name &&
         Gdefault == other.Gdefault &&
-        informative == other.informative;
+        informative == other.informative &&
+        disabled == other.disabled;
   }
 
   @override
@@ -83926,6 +93051,7 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, Gdefault.hashCode);
     _$hash = $jc(_$hash, informative.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -83938,7 +93064,8 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
           ..add('Gdefault', Gdefault)
-          ..add('informative', informative))
+          ..add('informative', informative)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -83975,6 +93102,10 @@ class GVehicleVariantOrderByInputBuilder
   set informative(GOrderDirection? informative) =>
       _$this._informative = informative;
 
+  GOrderDirection? _disabled;
+  GOrderDirection? get disabled => _$this._disabled;
+  set disabled(GOrderDirection? disabled) => _$this._disabled = disabled;
+
   GVehicleVariantOrderByInputBuilder();
 
   GVehicleVariantOrderByInputBuilder get _$this {
@@ -83986,6 +93117,7 @@ class GVehicleVariantOrderByInputBuilder
       _name = $v.name;
       _Gdefault = $v.Gdefault;
       _informative = $v.informative;
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -84013,7 +93145,8 @@ class GVehicleVariantOrderByInputBuilder
             modifiedAt: modifiedAt,
             name: name,
             Gdefault: Gdefault,
-            informative: informative);
+            informative: informative,
+            disabled: disabled);
     replace(_$result);
     return _$result;
   }
@@ -84040,6 +93173,8 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
   final bool? informative;
   @override
   final GPriceRelateToManyForUpdateInput? prices;
+  @override
+  final bool? disabled;
 
   factory _$GVehicleVariantUpdateInput(
           [void Function(GVehicleVariantUpdateInputBuilder)? updates]) =>
@@ -84055,7 +93190,8 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
       this.colors,
       this.tags,
       this.informative,
-      this.prices})
+      this.prices,
+      this.disabled})
       : super._();
 
   @override
@@ -84080,7 +93216,8 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
         colors == other.colors &&
         tags == other.tags &&
         informative == other.informative &&
-        prices == other.prices;
+        prices == other.prices &&
+        disabled == other.disabled;
   }
 
   @override
@@ -84096,6 +93233,7 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
     _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, informative.hashCode);
     _$hash = $jc(_$hash, prices.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -84112,7 +93250,8 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
           ..add('colors', colors)
           ..add('tags', tags)
           ..add('informative', informative)
-          ..add('prices', prices))
+          ..add('prices', prices)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -84177,6 +93316,10 @@ class GVehicleVariantUpdateInputBuilder
   set prices(GPriceRelateToManyForUpdateInputBuilder? prices) =>
       _$this._prices = prices;
 
+  bool? _disabled;
+  bool? get disabled => _$this._disabled;
+  set disabled(bool? disabled) => _$this._disabled = disabled;
+
   GVehicleVariantUpdateInputBuilder();
 
   GVehicleVariantUpdateInputBuilder get _$this {
@@ -84192,6 +93335,7 @@ class GVehicleVariantUpdateInputBuilder
       _tags = $v.tags?.toBuilder();
       _informative = $v.informative;
       _prices = $v.prices?.toBuilder();
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -84225,7 +93369,8 @@ class GVehicleVariantUpdateInputBuilder
               colors: _colors?.build(),
               tags: _tags?.build(),
               informative: informative,
-              prices: _prices?.build());
+              prices: _prices?.build(),
+              disabled: disabled);
     } catch (_) {
       late String _$failedField;
       try {
@@ -84543,6 +93688,8 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
   final bool? informative;
   @override
   final GPriceRelateToManyForCreateInput? prices;
+  @override
+  final bool? disabled;
 
   factory _$GVehicleVariantCreateInput(
           [void Function(GVehicleVariantCreateInputBuilder)? updates]) =>
@@ -84558,7 +93705,8 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
       this.colors,
       this.tags,
       this.informative,
-      this.prices})
+      this.prices,
+      this.disabled})
       : super._();
 
   @override
@@ -84583,7 +93731,8 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
         colors == other.colors &&
         tags == other.tags &&
         informative == other.informative &&
-        prices == other.prices;
+        prices == other.prices &&
+        disabled == other.disabled;
   }
 
   @override
@@ -84599,6 +93748,7 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
     _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, informative.hashCode);
     _$hash = $jc(_$hash, prices.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -84615,7 +93765,8 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
           ..add('colors', colors)
           ..add('tags', tags)
           ..add('informative', informative)
-          ..add('prices', prices))
+          ..add('prices', prices)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -84680,6 +93831,10 @@ class GVehicleVariantCreateInputBuilder
   set prices(GPriceRelateToManyForCreateInputBuilder? prices) =>
       _$this._prices = prices;
 
+  bool? _disabled;
+  bool? get disabled => _$this._disabled;
+  set disabled(bool? disabled) => _$this._disabled = disabled;
+
   GVehicleVariantCreateInputBuilder();
 
   GVehicleVariantCreateInputBuilder get _$this {
@@ -84695,6 +93850,7 @@ class GVehicleVariantCreateInputBuilder
       _tags = $v.tags?.toBuilder();
       _informative = $v.informative;
       _prices = $v.prices?.toBuilder();
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -84728,7 +93884,8 @@ class GVehicleVariantCreateInputBuilder
               colors: _colors?.build(),
               tags: _tags?.build(),
               informative: informative,
-              prices: _prices?.build());
+              prices: _prices?.build(),
+              disabled: disabled);
     } catch (_) {
       late String _$failedField;
       try {
@@ -84985,6 +94142,8 @@ class _$GVehicleDealerStockRequestWhereInput
   @override
   final GVehicleVariantWhereInput? vehicleVariant;
   @override
+  final GGuaranteeManyRelationFilter? guarantees;
+  @override
   final GVehicleColorWhereInput? vehicleColor;
   @override
   final GIntNullableFilter? stock;
@@ -85008,6 +94167,7 @@ class _$GVehicleDealerStockRequestWhereInput
       this.modifiedAt,
       this.dealer,
       this.vehicleVariant,
+      this.guarantees,
       this.vehicleColor,
       this.stock,
       this.accepted,
@@ -85035,6 +94195,7 @@ class _$GVehicleDealerStockRequestWhereInput
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         vehicleVariant == other.vehicleVariant &&
+        guarantees == other.guarantees &&
         vehicleColor == other.vehicleColor &&
         stock == other.stock &&
         accepted == other.accepted &&
@@ -85052,6 +94213,7 @@ class _$GVehicleDealerStockRequestWhereInput
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, vehicleVariant.hashCode);
+    _$hash = $jc(_$hash, guarantees.hashCode);
     _$hash = $jc(_$hash, vehicleColor.hashCode);
     _$hash = $jc(_$hash, stock.hashCode);
     _$hash = $jc(_$hash, accepted.hashCode);
@@ -85071,6 +94233,7 @@ class _$GVehicleDealerStockRequestWhereInput
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('vehicleVariant', vehicleVariant)
+          ..add('guarantees', guarantees)
           ..add('vehicleColor', vehicleColor)
           ..add('stock', stock)
           ..add('accepted', accepted)
@@ -85130,6 +94293,12 @@ class GVehicleDealerStockRequestWhereInputBuilder
   set vehicleVariant(GVehicleVariantWhereInputBuilder? vehicleVariant) =>
       _$this._vehicleVariant = vehicleVariant;
 
+  GGuaranteeManyRelationFilterBuilder? _guarantees;
+  GGuaranteeManyRelationFilterBuilder get guarantees =>
+      _$this._guarantees ??= new GGuaranteeManyRelationFilterBuilder();
+  set guarantees(GGuaranteeManyRelationFilterBuilder? guarantees) =>
+      _$this._guarantees = guarantees;
+
   GVehicleColorWhereInputBuilder? _vehicleColor;
   GVehicleColorWhereInputBuilder get vehicleColor =>
       _$this._vehicleColor ??= new GVehicleColorWhereInputBuilder();
@@ -85164,6 +94333,7 @@ class GVehicleDealerStockRequestWhereInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _dealer = $v.dealer?.toBuilder();
       _vehicleVariant = $v.vehicleVariant?.toBuilder();
+      _guarantees = $v.guarantees?.toBuilder();
       _vehicleColor = $v.vehicleColor?.toBuilder();
       _stock = $v.stock?.toBuilder();
       _accepted = $v.accepted?.toBuilder();
@@ -85201,6 +94371,7 @@ class GVehicleDealerStockRequestWhereInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               vehicleVariant: _vehicleVariant?.build(),
+              guarantees: _guarantees?.build(),
               vehicleColor: _vehicleColor?.build(),
               stock: _stock?.build(),
               accepted: _accepted?.build(),
@@ -85224,6 +94395,8 @@ class GVehicleDealerStockRequestWhereInputBuilder
         _dealer?.build();
         _$failedField = 'vehicleVariant';
         _vehicleVariant?.build();
+        _$failedField = 'guarantees';
+        _guarantees?.build();
         _$failedField = 'vehicleColor';
         _vehicleColor?.build();
         _$failedField = 'stock';
@@ -85875,6 +95048,8 @@ class _$GVehicleDealerStockRequestUpdateInput
   @override
   final GVehicleVariantRelateToOneForUpdateInput? vehicleVariant;
   @override
+  final GGuaranteeRelateToManyForUpdateInput? guarantees;
+  @override
   final GVehicleColorRelateToOneForUpdateInput? vehicleColor;
   @override
   final int? stock;
@@ -85894,6 +95069,7 @@ class _$GVehicleDealerStockRequestUpdateInput
       this.modifiedAt,
       this.dealer,
       this.vehicleVariant,
+      this.guarantees,
       this.vehicleColor,
       this.stock,
       this.accepted,
@@ -85918,6 +95094,7 @@ class _$GVehicleDealerStockRequestUpdateInput
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         vehicleVariant == other.vehicleVariant &&
+        guarantees == other.guarantees &&
         vehicleColor == other.vehicleColor &&
         stock == other.stock &&
         accepted == other.accepted &&
@@ -85931,6 +95108,7 @@ class _$GVehicleDealerStockRequestUpdateInput
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, vehicleVariant.hashCode);
+    _$hash = $jc(_$hash, guarantees.hashCode);
     _$hash = $jc(_$hash, vehicleColor.hashCode);
     _$hash = $jc(_$hash, stock.hashCode);
     _$hash = $jc(_$hash, accepted.hashCode);
@@ -85947,6 +95125,7 @@ class _$GVehicleDealerStockRequestUpdateInput
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('vehicleVariant', vehicleVariant)
+          ..add('guarantees', guarantees)
           ..add('vehicleColor', vehicleColor)
           ..add('stock', stock)
           ..add('accepted', accepted)
@@ -85986,6 +95165,12 @@ class GVehicleDealerStockRequestUpdateInputBuilder
           GVehicleVariantRelateToOneForUpdateInputBuilder? vehicleVariant) =>
       _$this._vehicleVariant = vehicleVariant;
 
+  GGuaranteeRelateToManyForUpdateInputBuilder? _guarantees;
+  GGuaranteeRelateToManyForUpdateInputBuilder get guarantees =>
+      _$this._guarantees ??= new GGuaranteeRelateToManyForUpdateInputBuilder();
+  set guarantees(GGuaranteeRelateToManyForUpdateInputBuilder? guarantees) =>
+      _$this._guarantees = guarantees;
+
   GVehicleColorRelateToOneForUpdateInputBuilder? _vehicleColor;
   GVehicleColorRelateToOneForUpdateInputBuilder get vehicleColor =>
       _$this._vehicleColor ??=
@@ -86015,6 +95200,7 @@ class GVehicleDealerStockRequestUpdateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _dealer = $v.dealer?.toBuilder();
       _vehicleVariant = $v.vehicleVariant?.toBuilder();
+      _guarantees = $v.guarantees?.toBuilder();
       _vehicleColor = $v.vehicleColor?.toBuilder();
       _stock = $v.stock;
       _accepted = $v.accepted;
@@ -86048,6 +95234,7 @@ class GVehicleDealerStockRequestUpdateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               vehicleVariant: _vehicleVariant?.build(),
+              guarantees: _guarantees?.build(),
               vehicleColor: _vehicleColor?.build(),
               stock: stock,
               accepted: accepted,
@@ -86063,6 +95250,8 @@ class GVehicleDealerStockRequestUpdateInputBuilder
         _dealer?.build();
         _$failedField = 'vehicleVariant';
         _vehicleVariant?.build();
+        _$failedField = 'guarantees';
+        _guarantees?.build();
         _$failedField = 'vehicleColor';
         _vehicleColor?.build();
       } catch (e) {
@@ -86217,6 +95406,8 @@ class _$GVehicleDealerStockRequestCreateInput
   @override
   final GVehicleVariantRelateToOneForCreateInput? vehicleVariant;
   @override
+  final GGuaranteeRelateToManyForCreateInput? guarantees;
+  @override
   final GVehicleColorRelateToOneForCreateInput? vehicleColor;
   @override
   final int? stock;
@@ -86236,6 +95427,7 @@ class _$GVehicleDealerStockRequestCreateInput
       this.modifiedAt,
       this.dealer,
       this.vehicleVariant,
+      this.guarantees,
       this.vehicleColor,
       this.stock,
       this.accepted,
@@ -86260,6 +95452,7 @@ class _$GVehicleDealerStockRequestCreateInput
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         vehicleVariant == other.vehicleVariant &&
+        guarantees == other.guarantees &&
         vehicleColor == other.vehicleColor &&
         stock == other.stock &&
         accepted == other.accepted &&
@@ -86273,6 +95466,7 @@ class _$GVehicleDealerStockRequestCreateInput
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, vehicleVariant.hashCode);
+    _$hash = $jc(_$hash, guarantees.hashCode);
     _$hash = $jc(_$hash, vehicleColor.hashCode);
     _$hash = $jc(_$hash, stock.hashCode);
     _$hash = $jc(_$hash, accepted.hashCode);
@@ -86289,6 +95483,7 @@ class _$GVehicleDealerStockRequestCreateInput
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('vehicleVariant', vehicleVariant)
+          ..add('guarantees', guarantees)
           ..add('vehicleColor', vehicleColor)
           ..add('stock', stock)
           ..add('accepted', accepted)
@@ -86328,6 +95523,12 @@ class GVehicleDealerStockRequestCreateInputBuilder
           GVehicleVariantRelateToOneForCreateInputBuilder? vehicleVariant) =>
       _$this._vehicleVariant = vehicleVariant;
 
+  GGuaranteeRelateToManyForCreateInputBuilder? _guarantees;
+  GGuaranteeRelateToManyForCreateInputBuilder get guarantees =>
+      _$this._guarantees ??= new GGuaranteeRelateToManyForCreateInputBuilder();
+  set guarantees(GGuaranteeRelateToManyForCreateInputBuilder? guarantees) =>
+      _$this._guarantees = guarantees;
+
   GVehicleColorRelateToOneForCreateInputBuilder? _vehicleColor;
   GVehicleColorRelateToOneForCreateInputBuilder get vehicleColor =>
       _$this._vehicleColor ??=
@@ -86357,6 +95558,7 @@ class GVehicleDealerStockRequestCreateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _dealer = $v.dealer?.toBuilder();
       _vehicleVariant = $v.vehicleVariant?.toBuilder();
+      _guarantees = $v.guarantees?.toBuilder();
       _vehicleColor = $v.vehicleColor?.toBuilder();
       _stock = $v.stock;
       _accepted = $v.accepted;
@@ -86390,6 +95592,7 @@ class GVehicleDealerStockRequestCreateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               vehicleVariant: _vehicleVariant?.build(),
+              guarantees: _guarantees?.build(),
               vehicleColor: _vehicleColor?.build(),
               stock: stock,
               accepted: accepted,
@@ -86405,6 +95608,8 @@ class GVehicleDealerStockRequestCreateInputBuilder
         _dealer?.build();
         _$failedField = 'vehicleVariant';
         _vehicleVariant?.build();
+        _$failedField = 'guarantees';
+        _guarantees?.build();
         _$failedField = 'vehicleColor';
         _vehicleColor?.build();
       } catch (e) {
@@ -94585,6 +103790,8 @@ class _$GVehicleOrderWhereInput extends GVehicleOrderWhereInput {
   final GStringNullableFilter? status;
   @override
   final GAddressWhereInput? address;
+  @override
+  final GVehicleOrderAdditionalInfoWhereInput? additionalInfo;
 
   factory _$GVehicleOrderWhereInput(
           [void Function(GVehicleOrderWhereInputBuilder)? updates]) =>
@@ -94601,7 +103808,8 @@ class _$GVehicleOrderWhereInput extends GVehicleOrderWhereInput {
       this.order,
       this.price,
       this.status,
-      this.address})
+      this.address,
+      this.additionalInfo})
       : super._();
 
   @override
@@ -94627,7 +103835,8 @@ class _$GVehicleOrderWhereInput extends GVehicleOrderWhereInput {
         order == other.order &&
         price == other.price &&
         status == other.status &&
-        address == other.address;
+        address == other.address &&
+        additionalInfo == other.additionalInfo;
   }
 
   @override
@@ -94644,6 +103853,7 @@ class _$GVehicleOrderWhereInput extends GVehicleOrderWhereInput {
     _$hash = $jc(_$hash, price.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, additionalInfo.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -94661,7 +103871,8 @@ class _$GVehicleOrderWhereInput extends GVehicleOrderWhereInput {
           ..add('order', order)
           ..add('price', price)
           ..add('status', status)
-          ..add('address', address))
+          ..add('address', address)
+          ..add('additionalInfo', additionalInfo))
         .toString();
   }
 }
@@ -94728,6 +103939,14 @@ class GVehicleOrderWhereInputBuilder
       _$this._address ??= new GAddressWhereInputBuilder();
   set address(GAddressWhereInputBuilder? address) => _$this._address = address;
 
+  GVehicleOrderAdditionalInfoWhereInputBuilder? _additionalInfo;
+  GVehicleOrderAdditionalInfoWhereInputBuilder get additionalInfo =>
+      _$this._additionalInfo ??=
+          new GVehicleOrderAdditionalInfoWhereInputBuilder();
+  set additionalInfo(
+          GVehicleOrderAdditionalInfoWhereInputBuilder? additionalInfo) =>
+      _$this._additionalInfo = additionalInfo;
+
   GVehicleOrderWhereInputBuilder();
 
   GVehicleOrderWhereInputBuilder get _$this {
@@ -94744,6 +103963,7 @@ class GVehicleOrderWhereInputBuilder
       _price = $v.price?.toBuilder();
       _status = $v.status?.toBuilder();
       _address = $v.address?.toBuilder();
+      _additionalInfo = $v.additionalInfo?.toBuilder();
       _$v = null;
     }
     return this;
@@ -94778,7 +103998,8 @@ class GVehicleOrderWhereInputBuilder
               order: _order?.build(),
               price: _price?.build(),
               status: _status?.build(),
-              address: _address?.build());
+              address: _address?.build(),
+              additionalInfo: _additionalInfo?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -94804,6 +104025,8 @@ class GVehicleOrderWhereInputBuilder
         _status?.build();
         _$failedField = 'address';
         _address?.build();
+        _$failedField = 'additionalInfo';
+        _additionalInfo?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleOrderWhereInput', _$failedField, e.toString());
@@ -94959,9 +104182,13 @@ class _$GVehicleOrderUpdateInput extends GVehicleOrderUpdateInput {
   @override
   final int? price;
   @override
+  final _i4.JsonObject? priceInfo;
+  @override
   final String? status;
   @override
   final GAddressRelateToOneForUpdateInput? address;
+  @override
+  final GVehicleOrderAdditionalInfoRelateToOneForUpdateInput? additionalInfo;
 
   factory _$GVehicleOrderUpdateInput(
           [void Function(GVehicleOrderUpdateInputBuilder)? updates]) =>
@@ -94973,8 +104200,10 @@ class _$GVehicleOrderUpdateInput extends GVehicleOrderUpdateInput {
       this.dealer,
       this.order,
       this.price,
+      this.priceInfo,
       this.status,
-      this.address})
+      this.address,
+      this.additionalInfo})
       : super._();
 
   @override
@@ -94995,8 +104224,10 @@ class _$GVehicleOrderUpdateInput extends GVehicleOrderUpdateInput {
         dealer == other.dealer &&
         order == other.order &&
         price == other.price &&
+        priceInfo == other.priceInfo &&
         status == other.status &&
-        address == other.address;
+        address == other.address &&
+        additionalInfo == other.additionalInfo;
   }
 
   @override
@@ -95007,8 +104238,10 @@ class _$GVehicleOrderUpdateInput extends GVehicleOrderUpdateInput {
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, order.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jc(_$hash, priceInfo.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, additionalInfo.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -95021,8 +104254,10 @@ class _$GVehicleOrderUpdateInput extends GVehicleOrderUpdateInput {
           ..add('dealer', dealer)
           ..add('order', order)
           ..add('price', price)
+          ..add('priceInfo', priceInfo)
           ..add('status', status)
-          ..add('address', address))
+          ..add('address', address)
+          ..add('additionalInfo', additionalInfo))
         .toString();
   }
 }
@@ -95059,6 +104294,10 @@ class GVehicleOrderUpdateInputBuilder
   int? get price => _$this._price;
   set price(int? price) => _$this._price = price;
 
+  _i4.JsonObject? _priceInfo;
+  _i4.JsonObject? get priceInfo => _$this._priceInfo;
+  set priceInfo(_i4.JsonObject? priceInfo) => _$this._priceInfo = priceInfo;
+
   String? _status;
   String? get status => _$this._status;
   set status(String? status) => _$this._status = status;
@@ -95068,6 +104307,15 @@ class GVehicleOrderUpdateInputBuilder
       _$this._address ??= new GAddressRelateToOneForUpdateInputBuilder();
   set address(GAddressRelateToOneForUpdateInputBuilder? address) =>
       _$this._address = address;
+
+  GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder? _additionalInfo;
+  GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder
+      get additionalInfo => _$this._additionalInfo ??=
+          new GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder();
+  set additionalInfo(
+          GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder?
+              additionalInfo) =>
+      _$this._additionalInfo = additionalInfo;
 
   GVehicleOrderUpdateInputBuilder();
 
@@ -95079,8 +104327,10 @@ class GVehicleOrderUpdateInputBuilder
       _dealer = $v.dealer?.toBuilder();
       _order = $v.order?.toBuilder();
       _price = $v.price;
+      _priceInfo = $v.priceInfo;
       _status = $v.status;
       _address = $v.address?.toBuilder();
+      _additionalInfo = $v.additionalInfo?.toBuilder();
       _$v = null;
     }
     return this;
@@ -95110,8 +104360,10 @@ class GVehicleOrderUpdateInputBuilder
               dealer: _dealer?.build(),
               order: _order?.build(),
               price: price,
+              priceInfo: priceInfo,
               status: status,
-              address: _address?.build());
+              address: _address?.build(),
+              additionalInfo: _additionalInfo?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -95126,6 +104378,8 @@ class GVehicleOrderUpdateInputBuilder
 
         _$failedField = 'address';
         _address?.build();
+        _$failedField = 'additionalInfo';
+        _additionalInfo?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleOrderUpdateInput', _$failedField, e.toString());
@@ -95405,6 +104659,150 @@ class GAddressRelateToOneForUpdateInputBuilder
   }
 }
 
+class _$GVehicleOrderAdditionalInfoRelateToOneForUpdateInput
+    extends GVehicleOrderAdditionalInfoRelateToOneForUpdateInput {
+  @override
+  final GVehicleOrderAdditionalInfoCreateInput? create;
+  @override
+  final GVehicleOrderAdditionalInfoWhereUniqueInput? connect;
+  @override
+  final bool? disconnect;
+
+  factory _$GVehicleOrderAdditionalInfoRelateToOneForUpdateInput(
+          [void Function(
+                  GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder)?
+              updates]) =>
+      (new GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GVehicleOrderAdditionalInfoRelateToOneForUpdateInput._(
+      {this.create, this.connect, this.disconnect})
+      : super._();
+
+  @override
+  GVehicleOrderAdditionalInfoRelateToOneForUpdateInput rebuild(
+          void Function(
+                  GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder toBuilder() =>
+      new GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleOrderAdditionalInfoRelateToOneForUpdateInput &&
+        create == other.create &&
+        connect == other.connect &&
+        disconnect == other.disconnect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jc(_$hash, disconnect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GVehicleOrderAdditionalInfoRelateToOneForUpdateInput')
+          ..add('create', create)
+          ..add('connect', connect)
+          ..add('disconnect', disconnect))
+        .toString();
+  }
+}
+
+class GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder
+    implements
+        Builder<GVehicleOrderAdditionalInfoRelateToOneForUpdateInput,
+            GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder> {
+  _$GVehicleOrderAdditionalInfoRelateToOneForUpdateInput? _$v;
+
+  GVehicleOrderAdditionalInfoCreateInputBuilder? _create;
+  GVehicleOrderAdditionalInfoCreateInputBuilder get create =>
+      _$this._create ??= new GVehicleOrderAdditionalInfoCreateInputBuilder();
+  set create(GVehicleOrderAdditionalInfoCreateInputBuilder? create) =>
+      _$this._create = create;
+
+  GVehicleOrderAdditionalInfoWhereUniqueInputBuilder? _connect;
+  GVehicleOrderAdditionalInfoWhereUniqueInputBuilder get connect =>
+      _$this._connect ??=
+          new GVehicleOrderAdditionalInfoWhereUniqueInputBuilder();
+  set connect(GVehicleOrderAdditionalInfoWhereUniqueInputBuilder? connect) =>
+      _$this._connect = connect;
+
+  bool? _disconnect;
+  bool? get disconnect => _$this._disconnect;
+  set disconnect(bool? disconnect) => _$this._disconnect = disconnect;
+
+  GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder();
+
+  GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _disconnect = $v.disconnect;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleOrderAdditionalInfoRelateToOneForUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleOrderAdditionalInfoRelateToOneForUpdateInput;
+  }
+
+  @override
+  void update(
+      void Function(
+              GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleOrderAdditionalInfoRelateToOneForUpdateInput build() => _build();
+
+  _$GVehicleOrderAdditionalInfoRelateToOneForUpdateInput _build() {
+    _$GVehicleOrderAdditionalInfoRelateToOneForUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleOrderAdditionalInfoRelateToOneForUpdateInput._(
+              create: _create?.build(),
+              connect: _connect?.build(),
+              disconnect: disconnect);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleOrderAdditionalInfoRelateToOneForUpdateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$GVehicleOrderUpdateArgs extends GVehicleOrderUpdateArgs {
   @override
   final GVehicleOrderWhereUniqueInput where;
@@ -95536,9 +104934,13 @@ class _$GVehicleOrderCreateInput extends GVehicleOrderCreateInput {
   @override
   final int? price;
   @override
+  final _i4.JsonObject? priceInfo;
+  @override
   final String? status;
   @override
   final GAddressRelateToOneForCreateInput? address;
+  @override
+  final GVehicleOrderAdditionalInfoRelateToOneForCreateInput? additionalInfo;
 
   factory _$GVehicleOrderCreateInput(
           [void Function(GVehicleOrderCreateInputBuilder)? updates]) =>
@@ -95550,8 +104952,10 @@ class _$GVehicleOrderCreateInput extends GVehicleOrderCreateInput {
       this.dealer,
       this.order,
       this.price,
+      this.priceInfo,
       this.status,
-      this.address})
+      this.address,
+      this.additionalInfo})
       : super._();
 
   @override
@@ -95572,8 +104976,10 @@ class _$GVehicleOrderCreateInput extends GVehicleOrderCreateInput {
         dealer == other.dealer &&
         order == other.order &&
         price == other.price &&
+        priceInfo == other.priceInfo &&
         status == other.status &&
-        address == other.address;
+        address == other.address &&
+        additionalInfo == other.additionalInfo;
   }
 
   @override
@@ -95584,8 +104990,10 @@ class _$GVehicleOrderCreateInput extends GVehicleOrderCreateInput {
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, order.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jc(_$hash, priceInfo.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, additionalInfo.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -95598,8 +105006,10 @@ class _$GVehicleOrderCreateInput extends GVehicleOrderCreateInput {
           ..add('dealer', dealer)
           ..add('order', order)
           ..add('price', price)
+          ..add('priceInfo', priceInfo)
           ..add('status', status)
-          ..add('address', address))
+          ..add('address', address)
+          ..add('additionalInfo', additionalInfo))
         .toString();
   }
 }
@@ -95636,6 +105046,10 @@ class GVehicleOrderCreateInputBuilder
   int? get price => _$this._price;
   set price(int? price) => _$this._price = price;
 
+  _i4.JsonObject? _priceInfo;
+  _i4.JsonObject? get priceInfo => _$this._priceInfo;
+  set priceInfo(_i4.JsonObject? priceInfo) => _$this._priceInfo = priceInfo;
+
   String? _status;
   String? get status => _$this._status;
   set status(String? status) => _$this._status = status;
@@ -95645,6 +105059,15 @@ class GVehicleOrderCreateInputBuilder
       _$this._address ??= new GAddressRelateToOneForCreateInputBuilder();
   set address(GAddressRelateToOneForCreateInputBuilder? address) =>
       _$this._address = address;
+
+  GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder? _additionalInfo;
+  GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder
+      get additionalInfo => _$this._additionalInfo ??=
+          new GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder();
+  set additionalInfo(
+          GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder?
+              additionalInfo) =>
+      _$this._additionalInfo = additionalInfo;
 
   GVehicleOrderCreateInputBuilder();
 
@@ -95656,8 +105079,10 @@ class GVehicleOrderCreateInputBuilder
       _dealer = $v.dealer?.toBuilder();
       _order = $v.order?.toBuilder();
       _price = $v.price;
+      _priceInfo = $v.priceInfo;
       _status = $v.status;
       _address = $v.address?.toBuilder();
+      _additionalInfo = $v.additionalInfo?.toBuilder();
       _$v = null;
     }
     return this;
@@ -95687,8 +105112,10 @@ class GVehicleOrderCreateInputBuilder
               dealer: _dealer?.build(),
               order: _order?.build(),
               price: price,
+              priceInfo: priceInfo,
               status: status,
-              address: _address?.build());
+              address: _address?.build(),
+              additionalInfo: _additionalInfo?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -95703,6 +105130,8 @@ class GVehicleOrderCreateInputBuilder
 
         _$failedField = 'address';
         _address?.build();
+        _$failedField = 'additionalInfo';
+        _additionalInfo?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleOrderCreateInput', _$failedField, e.toString());
@@ -95948,6 +105377,138 @@ class GAddressRelateToOneForCreateInputBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GAddressRelateToOneForCreateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleOrderAdditionalInfoRelateToOneForCreateInput
+    extends GVehicleOrderAdditionalInfoRelateToOneForCreateInput {
+  @override
+  final GVehicleOrderAdditionalInfoCreateInput? create;
+  @override
+  final GVehicleOrderAdditionalInfoWhereUniqueInput? connect;
+
+  factory _$GVehicleOrderAdditionalInfoRelateToOneForCreateInput(
+          [void Function(
+                  GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder)?
+              updates]) =>
+      (new GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GVehicleOrderAdditionalInfoRelateToOneForCreateInput._(
+      {this.create, this.connect})
+      : super._();
+
+  @override
+  GVehicleOrderAdditionalInfoRelateToOneForCreateInput rebuild(
+          void Function(
+                  GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder toBuilder() =>
+      new GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleOrderAdditionalInfoRelateToOneForCreateInput &&
+        create == other.create &&
+        connect == other.connect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GVehicleOrderAdditionalInfoRelateToOneForCreateInput')
+          ..add('create', create)
+          ..add('connect', connect))
+        .toString();
+  }
+}
+
+class GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder
+    implements
+        Builder<GVehicleOrderAdditionalInfoRelateToOneForCreateInput,
+            GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder> {
+  _$GVehicleOrderAdditionalInfoRelateToOneForCreateInput? _$v;
+
+  GVehicleOrderAdditionalInfoCreateInputBuilder? _create;
+  GVehicleOrderAdditionalInfoCreateInputBuilder get create =>
+      _$this._create ??= new GVehicleOrderAdditionalInfoCreateInputBuilder();
+  set create(GVehicleOrderAdditionalInfoCreateInputBuilder? create) =>
+      _$this._create = create;
+
+  GVehicleOrderAdditionalInfoWhereUniqueInputBuilder? _connect;
+  GVehicleOrderAdditionalInfoWhereUniqueInputBuilder get connect =>
+      _$this._connect ??=
+          new GVehicleOrderAdditionalInfoWhereUniqueInputBuilder();
+  set connect(GVehicleOrderAdditionalInfoWhereUniqueInputBuilder? connect) =>
+      _$this._connect = connect;
+
+  GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder();
+
+  GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleOrderAdditionalInfoRelateToOneForCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleOrderAdditionalInfoRelateToOneForCreateInput;
+  }
+
+  @override
+  void update(
+      void Function(
+              GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleOrderAdditionalInfoRelateToOneForCreateInput build() => _build();
+
+  _$GVehicleOrderAdditionalInfoRelateToOneForCreateInput _build() {
+    _$GVehicleOrderAdditionalInfoRelateToOneForCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleOrderAdditionalInfoRelateToOneForCreateInput._(
+              create: _create?.build(), connect: _connect?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleOrderAdditionalInfoRelateToOneForCreateInput',
+            _$failedField,
+            e.toString());
       }
       rethrow;
     }
@@ -97668,6 +107229,8 @@ class _$GProductOrderUpdateInput extends GProductOrderUpdateInput {
   @override
   final int? price;
   @override
+  final _i4.JsonObject? priceInfo;
+  @override
   final String? status;
   @override
   final GAddressRelateToOneForUpdateInput? address;
@@ -97682,6 +107245,7 @@ class _$GProductOrderUpdateInput extends GProductOrderUpdateInput {
       this.dealer,
       this.order,
       this.price,
+      this.priceInfo,
       this.status,
       this.address})
       : super._();
@@ -97704,6 +107268,7 @@ class _$GProductOrderUpdateInput extends GProductOrderUpdateInput {
         dealer == other.dealer &&
         order == other.order &&
         price == other.price &&
+        priceInfo == other.priceInfo &&
         status == other.status &&
         address == other.address;
   }
@@ -97716,6 +107281,7 @@ class _$GProductOrderUpdateInput extends GProductOrderUpdateInput {
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, order.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jc(_$hash, priceInfo.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, address.hashCode);
     _$hash = $jf(_$hash);
@@ -97730,6 +107296,7 @@ class _$GProductOrderUpdateInput extends GProductOrderUpdateInput {
           ..add('dealer', dealer)
           ..add('order', order)
           ..add('price', price)
+          ..add('priceInfo', priceInfo)
           ..add('status', status)
           ..add('address', address))
         .toString();
@@ -97768,6 +107335,10 @@ class GProductOrderUpdateInputBuilder
   int? get price => _$this._price;
   set price(int? price) => _$this._price = price;
 
+  _i4.JsonObject? _priceInfo;
+  _i4.JsonObject? get priceInfo => _$this._priceInfo;
+  set priceInfo(_i4.JsonObject? priceInfo) => _$this._priceInfo = priceInfo;
+
   String? _status;
   String? get status => _$this._status;
   set status(String? status) => _$this._status = status;
@@ -97788,6 +107359,7 @@ class GProductOrderUpdateInputBuilder
       _dealer = $v.dealer?.toBuilder();
       _order = $v.order?.toBuilder();
       _price = $v.price;
+      _priceInfo = $v.priceInfo;
       _status = $v.status;
       _address = $v.address?.toBuilder();
       _$v = null;
@@ -97819,6 +107391,7 @@ class GProductOrderUpdateInputBuilder
               dealer: _dealer?.build(),
               order: _order?.build(),
               price: price,
+              priceInfo: priceInfo,
               status: status,
               address: _address?.build());
     } catch (_) {
@@ -98114,6 +107687,8 @@ class _$GProductOrderCreateInput extends GProductOrderCreateInput {
   @override
   final int? price;
   @override
+  final _i4.JsonObject? priceInfo;
+  @override
   final String? status;
   @override
   final GAddressRelateToOneForCreateInput? address;
@@ -98128,6 +107703,7 @@ class _$GProductOrderCreateInput extends GProductOrderCreateInput {
       this.dealer,
       this.order,
       this.price,
+      this.priceInfo,
       this.status,
       this.address})
       : super._();
@@ -98150,6 +107726,7 @@ class _$GProductOrderCreateInput extends GProductOrderCreateInput {
         dealer == other.dealer &&
         order == other.order &&
         price == other.price &&
+        priceInfo == other.priceInfo &&
         status == other.status &&
         address == other.address;
   }
@@ -98162,6 +107739,7 @@ class _$GProductOrderCreateInput extends GProductOrderCreateInput {
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, order.hashCode);
     _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jc(_$hash, priceInfo.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, address.hashCode);
     _$hash = $jf(_$hash);
@@ -98176,6 +107754,7 @@ class _$GProductOrderCreateInput extends GProductOrderCreateInput {
           ..add('dealer', dealer)
           ..add('order', order)
           ..add('price', price)
+          ..add('priceInfo', priceInfo)
           ..add('status', status)
           ..add('address', address))
         .toString();
@@ -98214,6 +107793,10 @@ class GProductOrderCreateInputBuilder
   int? get price => _$this._price;
   set price(int? price) => _$this._price = price;
 
+  _i4.JsonObject? _priceInfo;
+  _i4.JsonObject? get priceInfo => _$this._priceInfo;
+  set priceInfo(_i4.JsonObject? priceInfo) => _$this._priceInfo = priceInfo;
+
   String? _status;
   String? get status => _$this._status;
   set status(String? status) => _$this._status = status;
@@ -98234,6 +107817,7 @@ class GProductOrderCreateInputBuilder
       _dealer = $v.dealer?.toBuilder();
       _order = $v.order?.toBuilder();
       _price = $v.price;
+      _priceInfo = $v.priceInfo;
       _status = $v.status;
       _address = $v.address?.toBuilder();
       _$v = null;
@@ -98265,6 +107849,7 @@ class GProductOrderCreateInputBuilder
               dealer: _dealer?.build(),
               order: _order?.build(),
               price: price,
+              priceInfo: priceInfo,
               status: status,
               address: _address?.build());
     } catch (_) {
@@ -100574,6 +110159,941 @@ class GOrderRejectionByDealerCreateInputBuilder
   }
 }
 
+class _$GVehicleOrderAdditionalInfoWhereUniqueInput
+    extends GVehicleOrderAdditionalInfoWhereUniqueInput {
+  @override
+  final String? id;
+
+  factory _$GVehicleOrderAdditionalInfoWhereUniqueInput(
+          [void Function(GVehicleOrderAdditionalInfoWhereUniqueInputBuilder)?
+              updates]) =>
+      (new GVehicleOrderAdditionalInfoWhereUniqueInputBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GVehicleOrderAdditionalInfoWhereUniqueInput._({this.id}) : super._();
+
+  @override
+  GVehicleOrderAdditionalInfoWhereUniqueInput rebuild(
+          void Function(GVehicleOrderAdditionalInfoWhereUniqueInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleOrderAdditionalInfoWhereUniqueInputBuilder toBuilder() =>
+      new GVehicleOrderAdditionalInfoWhereUniqueInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleOrderAdditionalInfoWhereUniqueInput &&
+        id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GVehicleOrderAdditionalInfoWhereUniqueInput')
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GVehicleOrderAdditionalInfoWhereUniqueInputBuilder
+    implements
+        Builder<GVehicleOrderAdditionalInfoWhereUniqueInput,
+            GVehicleOrderAdditionalInfoWhereUniqueInputBuilder> {
+  _$GVehicleOrderAdditionalInfoWhereUniqueInput? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GVehicleOrderAdditionalInfoWhereUniqueInputBuilder();
+
+  GVehicleOrderAdditionalInfoWhereUniqueInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleOrderAdditionalInfoWhereUniqueInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleOrderAdditionalInfoWhereUniqueInput;
+  }
+
+  @override
+  void update(
+      void Function(GVehicleOrderAdditionalInfoWhereUniqueInputBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleOrderAdditionalInfoWhereUniqueInput build() => _build();
+
+  _$GVehicleOrderAdditionalInfoWhereUniqueInput _build() {
+    final _$result =
+        _$v ?? new _$GVehicleOrderAdditionalInfoWhereUniqueInput._(id: id);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleOrderAdditionalInfoWhereInput
+    extends GVehicleOrderAdditionalInfoWhereInput {
+  @override
+  final BuiltList<GVehicleOrderAdditionalInfoWhereInput>? AND;
+  @override
+  final BuiltList<GVehicleOrderAdditionalInfoWhereInput>? OR;
+  @override
+  final BuiltList<GVehicleOrderAdditionalInfoWhereInput>? NOT;
+  @override
+  final GIDFilter? id;
+  @override
+  final GDateTimeNullableFilter? createdAt;
+  @override
+  final GDateTimeNullableFilter? modifiedAt;
+  @override
+  final GStringFilter? code;
+  @override
+  final GStringFilter? hsnCode;
+  @override
+  final GVehicleOrderManyRelationFilter? vehicleOrder;
+
+  factory _$GVehicleOrderAdditionalInfoWhereInput(
+          [void Function(GVehicleOrderAdditionalInfoWhereInputBuilder)?
+              updates]) =>
+      (new GVehicleOrderAdditionalInfoWhereInputBuilder()..update(updates))
+          ._build();
+
+  _$GVehicleOrderAdditionalInfoWhereInput._(
+      {this.AND,
+      this.OR,
+      this.NOT,
+      this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.code,
+      this.hsnCode,
+      this.vehicleOrder})
+      : super._();
+
+  @override
+  GVehicleOrderAdditionalInfoWhereInput rebuild(
+          void Function(GVehicleOrderAdditionalInfoWhereInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleOrderAdditionalInfoWhereInputBuilder toBuilder() =>
+      new GVehicleOrderAdditionalInfoWhereInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleOrderAdditionalInfoWhereInput &&
+        AND == other.AND &&
+        OR == other.OR &&
+        NOT == other.NOT &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        code == other.code &&
+        hsnCode == other.hsnCode &&
+        vehicleOrder == other.vehicleOrder;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, AND.hashCode);
+    _$hash = $jc(_$hash, OR.hashCode);
+    _$hash = $jc(_$hash, NOT.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
+    _$hash = $jc(_$hash, hsnCode.hashCode);
+    _$hash = $jc(_$hash, vehicleOrder.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GVehicleOrderAdditionalInfoWhereInput')
+          ..add('AND', AND)
+          ..add('OR', OR)
+          ..add('NOT', NOT)
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('code', code)
+          ..add('hsnCode', hsnCode)
+          ..add('vehicleOrder', vehicleOrder))
+        .toString();
+  }
+}
+
+class GVehicleOrderAdditionalInfoWhereInputBuilder
+    implements
+        Builder<GVehicleOrderAdditionalInfoWhereInput,
+            GVehicleOrderAdditionalInfoWhereInputBuilder> {
+  _$GVehicleOrderAdditionalInfoWhereInput? _$v;
+
+  ListBuilder<GVehicleOrderAdditionalInfoWhereInput>? _AND;
+  ListBuilder<GVehicleOrderAdditionalInfoWhereInput> get AND =>
+      _$this._AND ??= new ListBuilder<GVehicleOrderAdditionalInfoWhereInput>();
+  set AND(ListBuilder<GVehicleOrderAdditionalInfoWhereInput>? AND) =>
+      _$this._AND = AND;
+
+  ListBuilder<GVehicleOrderAdditionalInfoWhereInput>? _OR;
+  ListBuilder<GVehicleOrderAdditionalInfoWhereInput> get OR =>
+      _$this._OR ??= new ListBuilder<GVehicleOrderAdditionalInfoWhereInput>();
+  set OR(ListBuilder<GVehicleOrderAdditionalInfoWhereInput>? OR) =>
+      _$this._OR = OR;
+
+  ListBuilder<GVehicleOrderAdditionalInfoWhereInput>? _NOT;
+  ListBuilder<GVehicleOrderAdditionalInfoWhereInput> get NOT =>
+      _$this._NOT ??= new ListBuilder<GVehicleOrderAdditionalInfoWhereInput>();
+  set NOT(ListBuilder<GVehicleOrderAdditionalInfoWhereInput>? NOT) =>
+      _$this._NOT = NOT;
+
+  GIDFilterBuilder? _id;
+  GIDFilterBuilder get id => _$this._id ??= new GIDFilterBuilder();
+  set id(GIDFilterBuilder? id) => _$this._id = id;
+
+  GDateTimeNullableFilterBuilder? _createdAt;
+  GDateTimeNullableFilterBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeNullableFilterBuilder();
+  set createdAt(GDateTimeNullableFilterBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GDateTimeNullableFilterBuilder? _modifiedAt;
+  GDateTimeNullableFilterBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeNullableFilterBuilder();
+  set modifiedAt(GDateTimeNullableFilterBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GStringFilterBuilder? _code;
+  GStringFilterBuilder get code => _$this._code ??= new GStringFilterBuilder();
+  set code(GStringFilterBuilder? code) => _$this._code = code;
+
+  GStringFilterBuilder? _hsnCode;
+  GStringFilterBuilder get hsnCode =>
+      _$this._hsnCode ??= new GStringFilterBuilder();
+  set hsnCode(GStringFilterBuilder? hsnCode) => _$this._hsnCode = hsnCode;
+
+  GVehicleOrderManyRelationFilterBuilder? _vehicleOrder;
+  GVehicleOrderManyRelationFilterBuilder get vehicleOrder =>
+      _$this._vehicleOrder ??= new GVehicleOrderManyRelationFilterBuilder();
+  set vehicleOrder(GVehicleOrderManyRelationFilterBuilder? vehicleOrder) =>
+      _$this._vehicleOrder = vehicleOrder;
+
+  GVehicleOrderAdditionalInfoWhereInputBuilder();
+
+  GVehicleOrderAdditionalInfoWhereInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _AND = $v.AND?.toBuilder();
+      _OR = $v.OR?.toBuilder();
+      _NOT = $v.NOT?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _code = $v.code?.toBuilder();
+      _hsnCode = $v.hsnCode?.toBuilder();
+      _vehicleOrder = $v.vehicleOrder?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleOrderAdditionalInfoWhereInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleOrderAdditionalInfoWhereInput;
+  }
+
+  @override
+  void update(
+      void Function(GVehicleOrderAdditionalInfoWhereInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleOrderAdditionalInfoWhereInput build() => _build();
+
+  _$GVehicleOrderAdditionalInfoWhereInput _build() {
+    _$GVehicleOrderAdditionalInfoWhereInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleOrderAdditionalInfoWhereInput._(
+              AND: _AND?.build(),
+              OR: _OR?.build(),
+              NOT: _NOT?.build(),
+              id: _id?.build(),
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              code: _code?.build(),
+              hsnCode: _hsnCode?.build(),
+              vehicleOrder: _vehicleOrder?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'AND';
+        _AND?.build();
+        _$failedField = 'OR';
+        _OR?.build();
+        _$failedField = 'NOT';
+        _NOT?.build();
+        _$failedField = 'id';
+        _id?.build();
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'code';
+        _code?.build();
+        _$failedField = 'hsnCode';
+        _hsnCode?.build();
+        _$failedField = 'vehicleOrder';
+        _vehicleOrder?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleOrderAdditionalInfoWhereInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleOrderAdditionalInfoOrderByInput
+    extends GVehicleOrderAdditionalInfoOrderByInput {
+  @override
+  final GOrderDirection? id;
+  @override
+  final GOrderDirection? createdAt;
+  @override
+  final GOrderDirection? modifiedAt;
+  @override
+  final GOrderDirection? code;
+  @override
+  final GOrderDirection? hsnCode;
+
+  factory _$GVehicleOrderAdditionalInfoOrderByInput(
+          [void Function(GVehicleOrderAdditionalInfoOrderByInputBuilder)?
+              updates]) =>
+      (new GVehicleOrderAdditionalInfoOrderByInputBuilder()..update(updates))
+          ._build();
+
+  _$GVehicleOrderAdditionalInfoOrderByInput._(
+      {this.id, this.createdAt, this.modifiedAt, this.code, this.hsnCode})
+      : super._();
+
+  @override
+  GVehicleOrderAdditionalInfoOrderByInput rebuild(
+          void Function(GVehicleOrderAdditionalInfoOrderByInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleOrderAdditionalInfoOrderByInputBuilder toBuilder() =>
+      new GVehicleOrderAdditionalInfoOrderByInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleOrderAdditionalInfoOrderByInput &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        code == other.code &&
+        hsnCode == other.hsnCode;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
+    _$hash = $jc(_$hash, hsnCode.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GVehicleOrderAdditionalInfoOrderByInput')
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('code', code)
+          ..add('hsnCode', hsnCode))
+        .toString();
+  }
+}
+
+class GVehicleOrderAdditionalInfoOrderByInputBuilder
+    implements
+        Builder<GVehicleOrderAdditionalInfoOrderByInput,
+            GVehicleOrderAdditionalInfoOrderByInputBuilder> {
+  _$GVehicleOrderAdditionalInfoOrderByInput? _$v;
+
+  GOrderDirection? _id;
+  GOrderDirection? get id => _$this._id;
+  set id(GOrderDirection? id) => _$this._id = id;
+
+  GOrderDirection? _createdAt;
+  GOrderDirection? get createdAt => _$this._createdAt;
+  set createdAt(GOrderDirection? createdAt) => _$this._createdAt = createdAt;
+
+  GOrderDirection? _modifiedAt;
+  GOrderDirection? get modifiedAt => _$this._modifiedAt;
+  set modifiedAt(GOrderDirection? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GOrderDirection? _code;
+  GOrderDirection? get code => _$this._code;
+  set code(GOrderDirection? code) => _$this._code = code;
+
+  GOrderDirection? _hsnCode;
+  GOrderDirection? get hsnCode => _$this._hsnCode;
+  set hsnCode(GOrderDirection? hsnCode) => _$this._hsnCode = hsnCode;
+
+  GVehicleOrderAdditionalInfoOrderByInputBuilder();
+
+  GVehicleOrderAdditionalInfoOrderByInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _createdAt = $v.createdAt;
+      _modifiedAt = $v.modifiedAt;
+      _code = $v.code;
+      _hsnCode = $v.hsnCode;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleOrderAdditionalInfoOrderByInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleOrderAdditionalInfoOrderByInput;
+  }
+
+  @override
+  void update(
+      void Function(GVehicleOrderAdditionalInfoOrderByInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleOrderAdditionalInfoOrderByInput build() => _build();
+
+  _$GVehicleOrderAdditionalInfoOrderByInput _build() {
+    final _$result = _$v ??
+        new _$GVehicleOrderAdditionalInfoOrderByInput._(
+            id: id,
+            createdAt: createdAt,
+            modifiedAt: modifiedAt,
+            code: code,
+            hsnCode: hsnCode);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleOrderAdditionalInfoUpdateInput
+    extends GVehicleOrderAdditionalInfoUpdateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final String? code;
+  @override
+  final String? hsnCode;
+  @override
+  final GVehicleOrderRelateToManyForUpdateInput? vehicleOrder;
+
+  factory _$GVehicleOrderAdditionalInfoUpdateInput(
+          [void Function(GVehicleOrderAdditionalInfoUpdateInputBuilder)?
+              updates]) =>
+      (new GVehicleOrderAdditionalInfoUpdateInputBuilder()..update(updates))
+          ._build();
+
+  _$GVehicleOrderAdditionalInfoUpdateInput._(
+      {this.createdAt,
+      this.modifiedAt,
+      this.code,
+      this.hsnCode,
+      this.vehicleOrder})
+      : super._();
+
+  @override
+  GVehicleOrderAdditionalInfoUpdateInput rebuild(
+          void Function(GVehicleOrderAdditionalInfoUpdateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleOrderAdditionalInfoUpdateInputBuilder toBuilder() =>
+      new GVehicleOrderAdditionalInfoUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleOrderAdditionalInfoUpdateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        code == other.code &&
+        hsnCode == other.hsnCode &&
+        vehicleOrder == other.vehicleOrder;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
+    _$hash = $jc(_$hash, hsnCode.hashCode);
+    _$hash = $jc(_$hash, vehicleOrder.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GVehicleOrderAdditionalInfoUpdateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('code', code)
+          ..add('hsnCode', hsnCode)
+          ..add('vehicleOrder', vehicleOrder))
+        .toString();
+  }
+}
+
+class GVehicleOrderAdditionalInfoUpdateInputBuilder
+    implements
+        Builder<GVehicleOrderAdditionalInfoUpdateInput,
+            GVehicleOrderAdditionalInfoUpdateInputBuilder> {
+  _$GVehicleOrderAdditionalInfoUpdateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  String? _code;
+  String? get code => _$this._code;
+  set code(String? code) => _$this._code = code;
+
+  String? _hsnCode;
+  String? get hsnCode => _$this._hsnCode;
+  set hsnCode(String? hsnCode) => _$this._hsnCode = hsnCode;
+
+  GVehicleOrderRelateToManyForUpdateInputBuilder? _vehicleOrder;
+  GVehicleOrderRelateToManyForUpdateInputBuilder get vehicleOrder =>
+      _$this._vehicleOrder ??=
+          new GVehicleOrderRelateToManyForUpdateInputBuilder();
+  set vehicleOrder(
+          GVehicleOrderRelateToManyForUpdateInputBuilder? vehicleOrder) =>
+      _$this._vehicleOrder = vehicleOrder;
+
+  GVehicleOrderAdditionalInfoUpdateInputBuilder();
+
+  GVehicleOrderAdditionalInfoUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _code = $v.code;
+      _hsnCode = $v.hsnCode;
+      _vehicleOrder = $v.vehicleOrder?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleOrderAdditionalInfoUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleOrderAdditionalInfoUpdateInput;
+  }
+
+  @override
+  void update(
+      void Function(GVehicleOrderAdditionalInfoUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleOrderAdditionalInfoUpdateInput build() => _build();
+
+  _$GVehicleOrderAdditionalInfoUpdateInput _build() {
+    _$GVehicleOrderAdditionalInfoUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleOrderAdditionalInfoUpdateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              code: code,
+              hsnCode: hsnCode,
+              vehicleOrder: _vehicleOrder?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+
+        _$failedField = 'vehicleOrder';
+        _vehicleOrder?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleOrderAdditionalInfoUpdateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleOrderAdditionalInfoUpdateArgs
+    extends GVehicleOrderAdditionalInfoUpdateArgs {
+  @override
+  final GVehicleOrderAdditionalInfoWhereUniqueInput where;
+  @override
+  final GVehicleOrderAdditionalInfoUpdateInput data;
+
+  factory _$GVehicleOrderAdditionalInfoUpdateArgs(
+          [void Function(GVehicleOrderAdditionalInfoUpdateArgsBuilder)?
+              updates]) =>
+      (new GVehicleOrderAdditionalInfoUpdateArgsBuilder()..update(updates))
+          ._build();
+
+  _$GVehicleOrderAdditionalInfoUpdateArgs._(
+      {required this.where, required this.data})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GVehicleOrderAdditionalInfoUpdateArgs', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        data, r'GVehicleOrderAdditionalInfoUpdateArgs', 'data');
+  }
+
+  @override
+  GVehicleOrderAdditionalInfoUpdateArgs rebuild(
+          void Function(GVehicleOrderAdditionalInfoUpdateArgsBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleOrderAdditionalInfoUpdateArgsBuilder toBuilder() =>
+      new GVehicleOrderAdditionalInfoUpdateArgsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleOrderAdditionalInfoUpdateArgs &&
+        where == other.where &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GVehicleOrderAdditionalInfoUpdateArgs')
+          ..add('where', where)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GVehicleOrderAdditionalInfoUpdateArgsBuilder
+    implements
+        Builder<GVehicleOrderAdditionalInfoUpdateArgs,
+            GVehicleOrderAdditionalInfoUpdateArgsBuilder> {
+  _$GVehicleOrderAdditionalInfoUpdateArgs? _$v;
+
+  GVehicleOrderAdditionalInfoWhereUniqueInputBuilder? _where;
+  GVehicleOrderAdditionalInfoWhereUniqueInputBuilder get where =>
+      _$this._where ??=
+          new GVehicleOrderAdditionalInfoWhereUniqueInputBuilder();
+  set where(GVehicleOrderAdditionalInfoWhereUniqueInputBuilder? where) =>
+      _$this._where = where;
+
+  GVehicleOrderAdditionalInfoUpdateInputBuilder? _data;
+  GVehicleOrderAdditionalInfoUpdateInputBuilder get data =>
+      _$this._data ??= new GVehicleOrderAdditionalInfoUpdateInputBuilder();
+  set data(GVehicleOrderAdditionalInfoUpdateInputBuilder? data) =>
+      _$this._data = data;
+
+  GVehicleOrderAdditionalInfoUpdateArgsBuilder();
+
+  GVehicleOrderAdditionalInfoUpdateArgsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleOrderAdditionalInfoUpdateArgs other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleOrderAdditionalInfoUpdateArgs;
+  }
+
+  @override
+  void update(
+      void Function(GVehicleOrderAdditionalInfoUpdateArgsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleOrderAdditionalInfoUpdateArgs build() => _build();
+
+  _$GVehicleOrderAdditionalInfoUpdateArgs _build() {
+    _$GVehicleOrderAdditionalInfoUpdateArgs _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleOrderAdditionalInfoUpdateArgs._(
+              where: where.build(), data: data.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleOrderAdditionalInfoUpdateArgs',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleOrderAdditionalInfoCreateInput
+    extends GVehicleOrderAdditionalInfoCreateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final String? code;
+  @override
+  final String? hsnCode;
+  @override
+  final GVehicleOrderRelateToManyForCreateInput? vehicleOrder;
+
+  factory _$GVehicleOrderAdditionalInfoCreateInput(
+          [void Function(GVehicleOrderAdditionalInfoCreateInputBuilder)?
+              updates]) =>
+      (new GVehicleOrderAdditionalInfoCreateInputBuilder()..update(updates))
+          ._build();
+
+  _$GVehicleOrderAdditionalInfoCreateInput._(
+      {this.createdAt,
+      this.modifiedAt,
+      this.code,
+      this.hsnCode,
+      this.vehicleOrder})
+      : super._();
+
+  @override
+  GVehicleOrderAdditionalInfoCreateInput rebuild(
+          void Function(GVehicleOrderAdditionalInfoCreateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleOrderAdditionalInfoCreateInputBuilder toBuilder() =>
+      new GVehicleOrderAdditionalInfoCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleOrderAdditionalInfoCreateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        code == other.code &&
+        hsnCode == other.hsnCode &&
+        vehicleOrder == other.vehicleOrder;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
+    _$hash = $jc(_$hash, hsnCode.hashCode);
+    _$hash = $jc(_$hash, vehicleOrder.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GVehicleOrderAdditionalInfoCreateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('code', code)
+          ..add('hsnCode', hsnCode)
+          ..add('vehicleOrder', vehicleOrder))
+        .toString();
+  }
+}
+
+class GVehicleOrderAdditionalInfoCreateInputBuilder
+    implements
+        Builder<GVehicleOrderAdditionalInfoCreateInput,
+            GVehicleOrderAdditionalInfoCreateInputBuilder> {
+  _$GVehicleOrderAdditionalInfoCreateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  String? _code;
+  String? get code => _$this._code;
+  set code(String? code) => _$this._code = code;
+
+  String? _hsnCode;
+  String? get hsnCode => _$this._hsnCode;
+  set hsnCode(String? hsnCode) => _$this._hsnCode = hsnCode;
+
+  GVehicleOrderRelateToManyForCreateInputBuilder? _vehicleOrder;
+  GVehicleOrderRelateToManyForCreateInputBuilder get vehicleOrder =>
+      _$this._vehicleOrder ??=
+          new GVehicleOrderRelateToManyForCreateInputBuilder();
+  set vehicleOrder(
+          GVehicleOrderRelateToManyForCreateInputBuilder? vehicleOrder) =>
+      _$this._vehicleOrder = vehicleOrder;
+
+  GVehicleOrderAdditionalInfoCreateInputBuilder();
+
+  GVehicleOrderAdditionalInfoCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _code = $v.code;
+      _hsnCode = $v.hsnCode;
+      _vehicleOrder = $v.vehicleOrder?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleOrderAdditionalInfoCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleOrderAdditionalInfoCreateInput;
+  }
+
+  @override
+  void update(
+      void Function(GVehicleOrderAdditionalInfoCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleOrderAdditionalInfoCreateInput build() => _build();
+
+  _$GVehicleOrderAdditionalInfoCreateInput _build() {
+    _$GVehicleOrderAdditionalInfoCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleOrderAdditionalInfoCreateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              code: code,
+              hsnCode: hsnCode,
+              vehicleOrder: _vehicleOrder?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+
+        _$failedField = 'vehicleOrder';
+        _vehicleOrder?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleOrderAdditionalInfoCreateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$GUserVehicleReviewWhereUniqueInput
     extends GUserVehicleReviewWhereUniqueInput {
   @override
@@ -100682,6 +111202,8 @@ class _$GUserVehicleReviewWhereInput extends GUserVehicleReviewWhereInput {
   final GStringFilter? review;
   @override
   final GIntFilter? rating;
+  @override
+  final GUserVehicleReviewAttachmentManyRelationFilter? attachments;
 
   factory _$GUserVehicleReviewWhereInput(
           [void Function(GUserVehicleReviewWhereInputBuilder)? updates]) =>
@@ -100697,7 +111219,8 @@ class _$GUserVehicleReviewWhereInput extends GUserVehicleReviewWhereInput {
       this.user,
       this.vehicle,
       this.review,
-      this.rating})
+      this.rating,
+      this.attachments})
       : super._();
 
   @override
@@ -100722,7 +111245,8 @@ class _$GUserVehicleReviewWhereInput extends GUserVehicleReviewWhereInput {
         user == other.user &&
         vehicle == other.vehicle &&
         review == other.review &&
-        rating == other.rating;
+        rating == other.rating &&
+        attachments == other.attachments;
   }
 
   @override
@@ -100738,6 +111262,7 @@ class _$GUserVehicleReviewWhereInput extends GUserVehicleReviewWhereInput {
     _$hash = $jc(_$hash, vehicle.hashCode);
     _$hash = $jc(_$hash, review.hashCode);
     _$hash = $jc(_$hash, rating.hashCode);
+    _$hash = $jc(_$hash, attachments.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -100754,7 +111279,8 @@ class _$GUserVehicleReviewWhereInput extends GUserVehicleReviewWhereInput {
           ..add('user', user)
           ..add('vehicle', vehicle)
           ..add('review', review)
-          ..add('rating', rating))
+          ..add('rating', rating)
+          ..add('attachments', attachments))
         .toString();
   }
 }
@@ -100815,6 +111341,14 @@ class GUserVehicleReviewWhereInputBuilder
   GIntFilterBuilder get rating => _$this._rating ??= new GIntFilterBuilder();
   set rating(GIntFilterBuilder? rating) => _$this._rating = rating;
 
+  GUserVehicleReviewAttachmentManyRelationFilterBuilder? _attachments;
+  GUserVehicleReviewAttachmentManyRelationFilterBuilder get attachments =>
+      _$this._attachments ??=
+          new GUserVehicleReviewAttachmentManyRelationFilterBuilder();
+  set attachments(
+          GUserVehicleReviewAttachmentManyRelationFilterBuilder? attachments) =>
+      _$this._attachments = attachments;
+
   GUserVehicleReviewWhereInputBuilder();
 
   GUserVehicleReviewWhereInputBuilder get _$this {
@@ -100830,6 +111364,7 @@ class GUserVehicleReviewWhereInputBuilder
       _vehicle = $v.vehicle?.toBuilder();
       _review = $v.review?.toBuilder();
       _rating = $v.rating?.toBuilder();
+      _attachments = $v.attachments?.toBuilder();
       _$v = null;
     }
     return this;
@@ -100863,7 +111398,8 @@ class GUserVehicleReviewWhereInputBuilder
               user: _user?.build(),
               vehicle: _vehicle?.build(),
               review: _review?.build(),
-              rating: _rating?.build());
+              rating: _rating?.build(),
+              attachments: _attachments?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -100887,9 +111423,155 @@ class GUserVehicleReviewWhereInputBuilder
         _review?.build();
         _$failedField = 'rating';
         _rating?.build();
+        _$failedField = 'attachments';
+        _attachments?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GUserVehicleReviewWhereInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserVehicleReviewAttachmentManyRelationFilter
+    extends GUserVehicleReviewAttachmentManyRelationFilter {
+  @override
+  final GUserVehicleReviewAttachmentWhereInput? every;
+  @override
+  final GUserVehicleReviewAttachmentWhereInput? some;
+  @override
+  final GUserVehicleReviewAttachmentWhereInput? none;
+
+  factory _$GUserVehicleReviewAttachmentManyRelationFilter(
+          [void Function(GUserVehicleReviewAttachmentManyRelationFilterBuilder)?
+              updates]) =>
+      (new GUserVehicleReviewAttachmentManyRelationFilterBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GUserVehicleReviewAttachmentManyRelationFilter._(
+      {this.every, this.some, this.none})
+      : super._();
+
+  @override
+  GUserVehicleReviewAttachmentManyRelationFilter rebuild(
+          void Function(GUserVehicleReviewAttachmentManyRelationFilterBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserVehicleReviewAttachmentManyRelationFilterBuilder toBuilder() =>
+      new GUserVehicleReviewAttachmentManyRelationFilterBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserVehicleReviewAttachmentManyRelationFilter &&
+        every == other.every &&
+        some == other.some &&
+        none == other.none;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, every.hashCode);
+    _$hash = $jc(_$hash, some.hashCode);
+    _$hash = $jc(_$hash, none.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserVehicleReviewAttachmentManyRelationFilter')
+          ..add('every', every)
+          ..add('some', some)
+          ..add('none', none))
+        .toString();
+  }
+}
+
+class GUserVehicleReviewAttachmentManyRelationFilterBuilder
+    implements
+        Builder<GUserVehicleReviewAttachmentManyRelationFilter,
+            GUserVehicleReviewAttachmentManyRelationFilterBuilder> {
+  _$GUserVehicleReviewAttachmentManyRelationFilter? _$v;
+
+  GUserVehicleReviewAttachmentWhereInputBuilder? _every;
+  GUserVehicleReviewAttachmentWhereInputBuilder get every =>
+      _$this._every ??= new GUserVehicleReviewAttachmentWhereInputBuilder();
+  set every(GUserVehicleReviewAttachmentWhereInputBuilder? every) =>
+      _$this._every = every;
+
+  GUserVehicleReviewAttachmentWhereInputBuilder? _some;
+  GUserVehicleReviewAttachmentWhereInputBuilder get some =>
+      _$this._some ??= new GUserVehicleReviewAttachmentWhereInputBuilder();
+  set some(GUserVehicleReviewAttachmentWhereInputBuilder? some) =>
+      _$this._some = some;
+
+  GUserVehicleReviewAttachmentWhereInputBuilder? _none;
+  GUserVehicleReviewAttachmentWhereInputBuilder get none =>
+      _$this._none ??= new GUserVehicleReviewAttachmentWhereInputBuilder();
+  set none(GUserVehicleReviewAttachmentWhereInputBuilder? none) =>
+      _$this._none = none;
+
+  GUserVehicleReviewAttachmentManyRelationFilterBuilder();
+
+  GUserVehicleReviewAttachmentManyRelationFilterBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _every = $v.every?.toBuilder();
+      _some = $v.some?.toBuilder();
+      _none = $v.none?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserVehicleReviewAttachmentManyRelationFilter other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserVehicleReviewAttachmentManyRelationFilter;
+  }
+
+  @override
+  void update(
+      void Function(GUserVehicleReviewAttachmentManyRelationFilterBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserVehicleReviewAttachmentManyRelationFilter build() => _build();
+
+  _$GUserVehicleReviewAttachmentManyRelationFilter _build() {
+    _$GUserVehicleReviewAttachmentManyRelationFilter _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserVehicleReviewAttachmentManyRelationFilter._(
+              every: _every?.build(),
+              some: _some?.build(),
+              none: _none?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'every';
+        _every?.build();
+        _$failedField = 'some';
+        _some?.build();
+        _$failedField = 'none';
+        _none?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserVehicleReviewAttachmentManyRelationFilter',
+            _$failedField,
+            e.toString());
       }
       rethrow;
     }
@@ -101044,6 +111726,8 @@ class _$GUserVehicleReviewUpdateInput extends GUserVehicleReviewUpdateInput {
   final String? review;
   @override
   final int? rating;
+  @override
+  final GUserVehicleReviewAttachmentRelateToManyForUpdateInput? attachments;
 
   factory _$GUserVehicleReviewUpdateInput(
           [void Function(GUserVehicleReviewUpdateInputBuilder)? updates]) =>
@@ -101055,7 +111739,8 @@ class _$GUserVehicleReviewUpdateInput extends GUserVehicleReviewUpdateInput {
       this.user,
       this.vehicle,
       this.review,
-      this.rating})
+      this.rating,
+      this.attachments})
       : super._();
 
   @override
@@ -101076,7 +111761,8 @@ class _$GUserVehicleReviewUpdateInput extends GUserVehicleReviewUpdateInput {
         user == other.user &&
         vehicle == other.vehicle &&
         review == other.review &&
-        rating == other.rating;
+        rating == other.rating &&
+        attachments == other.attachments;
   }
 
   @override
@@ -101088,6 +111774,7 @@ class _$GUserVehicleReviewUpdateInput extends GUserVehicleReviewUpdateInput {
     _$hash = $jc(_$hash, vehicle.hashCode);
     _$hash = $jc(_$hash, review.hashCode);
     _$hash = $jc(_$hash, rating.hashCode);
+    _$hash = $jc(_$hash, attachments.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -101100,7 +111787,8 @@ class _$GUserVehicleReviewUpdateInput extends GUserVehicleReviewUpdateInput {
           ..add('user', user)
           ..add('vehicle', vehicle)
           ..add('review', review)
-          ..add('rating', rating))
+          ..add('rating', rating)
+          ..add('attachments', attachments))
         .toString();
   }
 }
@@ -101141,6 +111829,15 @@ class GUserVehicleReviewUpdateInputBuilder
   int? get rating => _$this._rating;
   set rating(int? rating) => _$this._rating = rating;
 
+  GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder? _attachments;
+  GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder
+      get attachments => _$this._attachments ??=
+          new GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder();
+  set attachments(
+          GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder?
+              attachments) =>
+      _$this._attachments = attachments;
+
   GUserVehicleReviewUpdateInputBuilder();
 
   GUserVehicleReviewUpdateInputBuilder get _$this {
@@ -101152,6 +111849,7 @@ class GUserVehicleReviewUpdateInputBuilder
       _vehicle = $v.vehicle?.toBuilder();
       _review = $v.review;
       _rating = $v.rating;
+      _attachments = $v.attachments?.toBuilder();
       _$v = null;
     }
     return this;
@@ -101181,7 +111879,8 @@ class GUserVehicleReviewUpdateInputBuilder
               user: _user?.build(),
               vehicle: _vehicle?.build(),
               review: review,
-              rating: rating);
+              rating: rating,
+              attachments: _attachments?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -101193,9 +111892,181 @@ class GUserVehicleReviewUpdateInputBuilder
         _user?.build();
         _$failedField = 'vehicle';
         _vehicle?.build();
+
+        _$failedField = 'attachments';
+        _attachments?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GUserVehicleReviewUpdateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserVehicleReviewAttachmentRelateToManyForUpdateInput
+    extends GUserVehicleReviewAttachmentRelateToManyForUpdateInput {
+  @override
+  final BuiltList<GUserVehicleReviewAttachmentWhereUniqueInput>? disconnect;
+  @override
+  final BuiltList<GUserVehicleReviewAttachmentWhereUniqueInput>? set;
+  @override
+  final BuiltList<GUserVehicleReviewAttachmentCreateInput>? create;
+  @override
+  final BuiltList<GUserVehicleReviewAttachmentWhereUniqueInput>? connect;
+
+  factory _$GUserVehicleReviewAttachmentRelateToManyForUpdateInput(
+          [void Function(
+                  GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder)?
+              updates]) =>
+      (new GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GUserVehicleReviewAttachmentRelateToManyForUpdateInput._(
+      {this.disconnect, this.set, this.create, this.connect})
+      : super._();
+
+  @override
+  GUserVehicleReviewAttachmentRelateToManyForUpdateInput rebuild(
+          void Function(
+                  GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder toBuilder() =>
+      new GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserVehicleReviewAttachmentRelateToManyForUpdateInput &&
+        disconnect == other.disconnect &&
+        set == other.set &&
+        create == other.create &&
+        connect == other.connect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, disconnect.hashCode);
+    _$hash = $jc(_$hash, set.hashCode);
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserVehicleReviewAttachmentRelateToManyForUpdateInput')
+          ..add('disconnect', disconnect)
+          ..add('set', set)
+          ..add('create', create)
+          ..add('connect', connect))
+        .toString();
+  }
+}
+
+class GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder
+    implements
+        Builder<GUserVehicleReviewAttachmentRelateToManyForUpdateInput,
+            GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder> {
+  _$GUserVehicleReviewAttachmentRelateToManyForUpdateInput? _$v;
+
+  ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput>? _disconnect;
+  ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput> get disconnect =>
+      _$this._disconnect ??=
+          new ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput>();
+  set disconnect(
+          ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput>?
+              disconnect) =>
+      _$this._disconnect = disconnect;
+
+  ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput>? _set;
+  ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput> get set =>
+      _$this._set ??=
+          new ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput>();
+  set set(ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput>? set) =>
+      _$this._set = set;
+
+  ListBuilder<GUserVehicleReviewAttachmentCreateInput>? _create;
+  ListBuilder<GUserVehicleReviewAttachmentCreateInput> get create =>
+      _$this._create ??=
+          new ListBuilder<GUserVehicleReviewAttachmentCreateInput>();
+  set create(ListBuilder<GUserVehicleReviewAttachmentCreateInput>? create) =>
+      _$this._create = create;
+
+  ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput>? _connect;
+  ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput> get connect =>
+      _$this._connect ??=
+          new ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput>();
+  set connect(
+          ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput>? connect) =>
+      _$this._connect = connect;
+
+  GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder();
+
+  GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _disconnect = $v.disconnect?.toBuilder();
+      _set = $v.set?.toBuilder();
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserVehicleReviewAttachmentRelateToManyForUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserVehicleReviewAttachmentRelateToManyForUpdateInput;
+  }
+
+  @override
+  void update(
+      void Function(
+              GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserVehicleReviewAttachmentRelateToManyForUpdateInput build() => _build();
+
+  _$GUserVehicleReviewAttachmentRelateToManyForUpdateInput _build() {
+    _$GUserVehicleReviewAttachmentRelateToManyForUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserVehicleReviewAttachmentRelateToManyForUpdateInput._(
+              disconnect: _disconnect?.build(),
+              set: _set?.build(),
+              create: _create?.build(),
+              connect: _connect?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'disconnect';
+        _disconnect?.build();
+        _$failedField = 'set';
+        _set?.build();
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserVehicleReviewAttachmentRelateToManyForUpdateInput',
+            _$failedField,
+            e.toString());
       }
       rethrow;
     }
@@ -101337,6 +112208,8 @@ class _$GUserVehicleReviewCreateInput extends GUserVehicleReviewCreateInput {
   final String? review;
   @override
   final int? rating;
+  @override
+  final GUserVehicleReviewAttachmentRelateToManyForCreateInput? attachments;
 
   factory _$GUserVehicleReviewCreateInput(
           [void Function(GUserVehicleReviewCreateInputBuilder)? updates]) =>
@@ -101348,7 +112221,8 @@ class _$GUserVehicleReviewCreateInput extends GUserVehicleReviewCreateInput {
       this.user,
       this.vehicle,
       this.review,
-      this.rating})
+      this.rating,
+      this.attachments})
       : super._();
 
   @override
@@ -101369,7 +112243,8 @@ class _$GUserVehicleReviewCreateInput extends GUserVehicleReviewCreateInput {
         user == other.user &&
         vehicle == other.vehicle &&
         review == other.review &&
-        rating == other.rating;
+        rating == other.rating &&
+        attachments == other.attachments;
   }
 
   @override
@@ -101381,6 +112256,7 @@ class _$GUserVehicleReviewCreateInput extends GUserVehicleReviewCreateInput {
     _$hash = $jc(_$hash, vehicle.hashCode);
     _$hash = $jc(_$hash, review.hashCode);
     _$hash = $jc(_$hash, rating.hashCode);
+    _$hash = $jc(_$hash, attachments.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -101393,7 +112269,8 @@ class _$GUserVehicleReviewCreateInput extends GUserVehicleReviewCreateInput {
           ..add('user', user)
           ..add('vehicle', vehicle)
           ..add('review', review)
-          ..add('rating', rating))
+          ..add('rating', rating)
+          ..add('attachments', attachments))
         .toString();
   }
 }
@@ -101434,6 +112311,15 @@ class GUserVehicleReviewCreateInputBuilder
   int? get rating => _$this._rating;
   set rating(int? rating) => _$this._rating = rating;
 
+  GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder? _attachments;
+  GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder
+      get attachments => _$this._attachments ??=
+          new GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder();
+  set attachments(
+          GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder?
+              attachments) =>
+      _$this._attachments = attachments;
+
   GUserVehicleReviewCreateInputBuilder();
 
   GUserVehicleReviewCreateInputBuilder get _$this {
@@ -101445,6 +112331,7 @@ class GUserVehicleReviewCreateInputBuilder
       _vehicle = $v.vehicle?.toBuilder();
       _review = $v.review;
       _rating = $v.rating;
+      _attachments = $v.attachments?.toBuilder();
       _$v = null;
     }
     return this;
@@ -101474,7 +112361,8 @@ class GUserVehicleReviewCreateInputBuilder
               user: _user?.build(),
               vehicle: _vehicle?.build(),
               review: review,
-              rating: rating);
+              rating: rating,
+              attachments: _attachments?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -101486,9 +112374,1265 @@ class GUserVehicleReviewCreateInputBuilder
         _user?.build();
         _$failedField = 'vehicle';
         _vehicle?.build();
+
+        _$failedField = 'attachments';
+        _attachments?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GUserVehicleReviewCreateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserVehicleReviewAttachmentRelateToManyForCreateInput
+    extends GUserVehicleReviewAttachmentRelateToManyForCreateInput {
+  @override
+  final BuiltList<GUserVehicleReviewAttachmentCreateInput>? create;
+  @override
+  final BuiltList<GUserVehicleReviewAttachmentWhereUniqueInput>? connect;
+
+  factory _$GUserVehicleReviewAttachmentRelateToManyForCreateInput(
+          [void Function(
+                  GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder)?
+              updates]) =>
+      (new GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GUserVehicleReviewAttachmentRelateToManyForCreateInput._(
+      {this.create, this.connect})
+      : super._();
+
+  @override
+  GUserVehicleReviewAttachmentRelateToManyForCreateInput rebuild(
+          void Function(
+                  GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder toBuilder() =>
+      new GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserVehicleReviewAttachmentRelateToManyForCreateInput &&
+        create == other.create &&
+        connect == other.connect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserVehicleReviewAttachmentRelateToManyForCreateInput')
+          ..add('create', create)
+          ..add('connect', connect))
+        .toString();
+  }
+}
+
+class GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder
+    implements
+        Builder<GUserVehicleReviewAttachmentRelateToManyForCreateInput,
+            GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder> {
+  _$GUserVehicleReviewAttachmentRelateToManyForCreateInput? _$v;
+
+  ListBuilder<GUserVehicleReviewAttachmentCreateInput>? _create;
+  ListBuilder<GUserVehicleReviewAttachmentCreateInput> get create =>
+      _$this._create ??=
+          new ListBuilder<GUserVehicleReviewAttachmentCreateInput>();
+  set create(ListBuilder<GUserVehicleReviewAttachmentCreateInput>? create) =>
+      _$this._create = create;
+
+  ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput>? _connect;
+  ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput> get connect =>
+      _$this._connect ??=
+          new ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput>();
+  set connect(
+          ListBuilder<GUserVehicleReviewAttachmentWhereUniqueInput>? connect) =>
+      _$this._connect = connect;
+
+  GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder();
+
+  GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserVehicleReviewAttachmentRelateToManyForCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserVehicleReviewAttachmentRelateToManyForCreateInput;
+  }
+
+  @override
+  void update(
+      void Function(
+              GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserVehicleReviewAttachmentRelateToManyForCreateInput build() => _build();
+
+  _$GUserVehicleReviewAttachmentRelateToManyForCreateInput _build() {
+    _$GUserVehicleReviewAttachmentRelateToManyForCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserVehicleReviewAttachmentRelateToManyForCreateInput._(
+              create: _create?.build(), connect: _connect?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserVehicleReviewAttachmentRelateToManyForCreateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserVehicleReviewAttachmentWhereUniqueInput
+    extends GUserVehicleReviewAttachmentWhereUniqueInput {
+  @override
+  final String? id;
+
+  factory _$GUserVehicleReviewAttachmentWhereUniqueInput(
+          [void Function(GUserVehicleReviewAttachmentWhereUniqueInputBuilder)?
+              updates]) =>
+      (new GUserVehicleReviewAttachmentWhereUniqueInputBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GUserVehicleReviewAttachmentWhereUniqueInput._({this.id}) : super._();
+
+  @override
+  GUserVehicleReviewAttachmentWhereUniqueInput rebuild(
+          void Function(GUserVehicleReviewAttachmentWhereUniqueInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserVehicleReviewAttachmentWhereUniqueInputBuilder toBuilder() =>
+      new GUserVehicleReviewAttachmentWhereUniqueInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserVehicleReviewAttachmentWhereUniqueInput &&
+        id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserVehicleReviewAttachmentWhereUniqueInput')
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GUserVehicleReviewAttachmentWhereUniqueInputBuilder
+    implements
+        Builder<GUserVehicleReviewAttachmentWhereUniqueInput,
+            GUserVehicleReviewAttachmentWhereUniqueInputBuilder> {
+  _$GUserVehicleReviewAttachmentWhereUniqueInput? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GUserVehicleReviewAttachmentWhereUniqueInputBuilder();
+
+  GUserVehicleReviewAttachmentWhereUniqueInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserVehicleReviewAttachmentWhereUniqueInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserVehicleReviewAttachmentWhereUniqueInput;
+  }
+
+  @override
+  void update(
+      void Function(GUserVehicleReviewAttachmentWhereUniqueInputBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserVehicleReviewAttachmentWhereUniqueInput build() => _build();
+
+  _$GUserVehicleReviewAttachmentWhereUniqueInput _build() {
+    final _$result =
+        _$v ?? new _$GUserVehicleReviewAttachmentWhereUniqueInput._(id: id);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserVehicleReviewAttachmentWhereInput
+    extends GUserVehicleReviewAttachmentWhereInput {
+  @override
+  final BuiltList<GUserVehicleReviewAttachmentWhereInput>? AND;
+  @override
+  final BuiltList<GUserVehicleReviewAttachmentWhereInput>? OR;
+  @override
+  final BuiltList<GUserVehicleReviewAttachmentWhereInput>? NOT;
+  @override
+  final GIDFilter? id;
+  @override
+  final GDateTimeNullableFilter? createdAt;
+  @override
+  final GDateTimeNullableFilter? modifiedAt;
+  @override
+  final GUserVehicleReviewWhereInput? review;
+
+  factory _$GUserVehicleReviewAttachmentWhereInput(
+          [void Function(GUserVehicleReviewAttachmentWhereInputBuilder)?
+              updates]) =>
+      (new GUserVehicleReviewAttachmentWhereInputBuilder()..update(updates))
+          ._build();
+
+  _$GUserVehicleReviewAttachmentWhereInput._(
+      {this.AND,
+      this.OR,
+      this.NOT,
+      this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.review})
+      : super._();
+
+  @override
+  GUserVehicleReviewAttachmentWhereInput rebuild(
+          void Function(GUserVehicleReviewAttachmentWhereInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserVehicleReviewAttachmentWhereInputBuilder toBuilder() =>
+      new GUserVehicleReviewAttachmentWhereInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserVehicleReviewAttachmentWhereInput &&
+        AND == other.AND &&
+        OR == other.OR &&
+        NOT == other.NOT &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        review == other.review;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, AND.hashCode);
+    _$hash = $jc(_$hash, OR.hashCode);
+    _$hash = $jc(_$hash, NOT.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, review.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserVehicleReviewAttachmentWhereInput')
+          ..add('AND', AND)
+          ..add('OR', OR)
+          ..add('NOT', NOT)
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('review', review))
+        .toString();
+  }
+}
+
+class GUserVehicleReviewAttachmentWhereInputBuilder
+    implements
+        Builder<GUserVehicleReviewAttachmentWhereInput,
+            GUserVehicleReviewAttachmentWhereInputBuilder> {
+  _$GUserVehicleReviewAttachmentWhereInput? _$v;
+
+  ListBuilder<GUserVehicleReviewAttachmentWhereInput>? _AND;
+  ListBuilder<GUserVehicleReviewAttachmentWhereInput> get AND =>
+      _$this._AND ??= new ListBuilder<GUserVehicleReviewAttachmentWhereInput>();
+  set AND(ListBuilder<GUserVehicleReviewAttachmentWhereInput>? AND) =>
+      _$this._AND = AND;
+
+  ListBuilder<GUserVehicleReviewAttachmentWhereInput>? _OR;
+  ListBuilder<GUserVehicleReviewAttachmentWhereInput> get OR =>
+      _$this._OR ??= new ListBuilder<GUserVehicleReviewAttachmentWhereInput>();
+  set OR(ListBuilder<GUserVehicleReviewAttachmentWhereInput>? OR) =>
+      _$this._OR = OR;
+
+  ListBuilder<GUserVehicleReviewAttachmentWhereInput>? _NOT;
+  ListBuilder<GUserVehicleReviewAttachmentWhereInput> get NOT =>
+      _$this._NOT ??= new ListBuilder<GUserVehicleReviewAttachmentWhereInput>();
+  set NOT(ListBuilder<GUserVehicleReviewAttachmentWhereInput>? NOT) =>
+      _$this._NOT = NOT;
+
+  GIDFilterBuilder? _id;
+  GIDFilterBuilder get id => _$this._id ??= new GIDFilterBuilder();
+  set id(GIDFilterBuilder? id) => _$this._id = id;
+
+  GDateTimeNullableFilterBuilder? _createdAt;
+  GDateTimeNullableFilterBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeNullableFilterBuilder();
+  set createdAt(GDateTimeNullableFilterBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GDateTimeNullableFilterBuilder? _modifiedAt;
+  GDateTimeNullableFilterBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeNullableFilterBuilder();
+  set modifiedAt(GDateTimeNullableFilterBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GUserVehicleReviewWhereInputBuilder? _review;
+  GUserVehicleReviewWhereInputBuilder get review =>
+      _$this._review ??= new GUserVehicleReviewWhereInputBuilder();
+  set review(GUserVehicleReviewWhereInputBuilder? review) =>
+      _$this._review = review;
+
+  GUserVehicleReviewAttachmentWhereInputBuilder();
+
+  GUserVehicleReviewAttachmentWhereInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _AND = $v.AND?.toBuilder();
+      _OR = $v.OR?.toBuilder();
+      _NOT = $v.NOT?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _review = $v.review?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserVehicleReviewAttachmentWhereInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserVehicleReviewAttachmentWhereInput;
+  }
+
+  @override
+  void update(
+      void Function(GUserVehicleReviewAttachmentWhereInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserVehicleReviewAttachmentWhereInput build() => _build();
+
+  _$GUserVehicleReviewAttachmentWhereInput _build() {
+    _$GUserVehicleReviewAttachmentWhereInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserVehicleReviewAttachmentWhereInput._(
+              AND: _AND?.build(),
+              OR: _OR?.build(),
+              NOT: _NOT?.build(),
+              id: _id?.build(),
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              review: _review?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'AND';
+        _AND?.build();
+        _$failedField = 'OR';
+        _OR?.build();
+        _$failedField = 'NOT';
+        _NOT?.build();
+        _$failedField = 'id';
+        _id?.build();
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'review';
+        _review?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserVehicleReviewAttachmentWhereInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserVehicleReviewAttachmentOrderByInput
+    extends GUserVehicleReviewAttachmentOrderByInput {
+  @override
+  final GOrderDirection? id;
+  @override
+  final GOrderDirection? createdAt;
+  @override
+  final GOrderDirection? modifiedAt;
+
+  factory _$GUserVehicleReviewAttachmentOrderByInput(
+          [void Function(GUserVehicleReviewAttachmentOrderByInputBuilder)?
+              updates]) =>
+      (new GUserVehicleReviewAttachmentOrderByInputBuilder()..update(updates))
+          ._build();
+
+  _$GUserVehicleReviewAttachmentOrderByInput._(
+      {this.id, this.createdAt, this.modifiedAt})
+      : super._();
+
+  @override
+  GUserVehicleReviewAttachmentOrderByInput rebuild(
+          void Function(GUserVehicleReviewAttachmentOrderByInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserVehicleReviewAttachmentOrderByInputBuilder toBuilder() =>
+      new GUserVehicleReviewAttachmentOrderByInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserVehicleReviewAttachmentOrderByInput &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserVehicleReviewAttachmentOrderByInput')
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt))
+        .toString();
+  }
+}
+
+class GUserVehicleReviewAttachmentOrderByInputBuilder
+    implements
+        Builder<GUserVehicleReviewAttachmentOrderByInput,
+            GUserVehicleReviewAttachmentOrderByInputBuilder> {
+  _$GUserVehicleReviewAttachmentOrderByInput? _$v;
+
+  GOrderDirection? _id;
+  GOrderDirection? get id => _$this._id;
+  set id(GOrderDirection? id) => _$this._id = id;
+
+  GOrderDirection? _createdAt;
+  GOrderDirection? get createdAt => _$this._createdAt;
+  set createdAt(GOrderDirection? createdAt) => _$this._createdAt = createdAt;
+
+  GOrderDirection? _modifiedAt;
+  GOrderDirection? get modifiedAt => _$this._modifiedAt;
+  set modifiedAt(GOrderDirection? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GUserVehicleReviewAttachmentOrderByInputBuilder();
+
+  GUserVehicleReviewAttachmentOrderByInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _createdAt = $v.createdAt;
+      _modifiedAt = $v.modifiedAt;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserVehicleReviewAttachmentOrderByInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserVehicleReviewAttachmentOrderByInput;
+  }
+
+  @override
+  void update(
+      void Function(GUserVehicleReviewAttachmentOrderByInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserVehicleReviewAttachmentOrderByInput build() => _build();
+
+  _$GUserVehicleReviewAttachmentOrderByInput _build() {
+    final _$result = _$v ??
+        new _$GUserVehicleReviewAttachmentOrderByInput._(
+            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserVehicleReviewAttachmentUpdateInput
+    extends GUserVehicleReviewAttachmentUpdateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final GFileFieldInput? file;
+  @override
+  final GUserVehicleReviewRelateToOneForUpdateInput? review;
+
+  factory _$GUserVehicleReviewAttachmentUpdateInput(
+          [void Function(GUserVehicleReviewAttachmentUpdateInputBuilder)?
+              updates]) =>
+      (new GUserVehicleReviewAttachmentUpdateInputBuilder()..update(updates))
+          ._build();
+
+  _$GUserVehicleReviewAttachmentUpdateInput._(
+      {this.createdAt, this.modifiedAt, this.file, this.review})
+      : super._();
+
+  @override
+  GUserVehicleReviewAttachmentUpdateInput rebuild(
+          void Function(GUserVehicleReviewAttachmentUpdateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserVehicleReviewAttachmentUpdateInputBuilder toBuilder() =>
+      new GUserVehicleReviewAttachmentUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserVehicleReviewAttachmentUpdateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        file == other.file &&
+        review == other.review;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, file.hashCode);
+    _$hash = $jc(_$hash, review.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserVehicleReviewAttachmentUpdateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('file', file)
+          ..add('review', review))
+        .toString();
+  }
+}
+
+class GUserVehicleReviewAttachmentUpdateInputBuilder
+    implements
+        Builder<GUserVehicleReviewAttachmentUpdateInput,
+            GUserVehicleReviewAttachmentUpdateInputBuilder> {
+  _$GUserVehicleReviewAttachmentUpdateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GFileFieldInputBuilder? _file;
+  GFileFieldInputBuilder get file =>
+      _$this._file ??= new GFileFieldInputBuilder();
+  set file(GFileFieldInputBuilder? file) => _$this._file = file;
+
+  GUserVehicleReviewRelateToOneForUpdateInputBuilder? _review;
+  GUserVehicleReviewRelateToOneForUpdateInputBuilder get review =>
+      _$this._review ??=
+          new GUserVehicleReviewRelateToOneForUpdateInputBuilder();
+  set review(GUserVehicleReviewRelateToOneForUpdateInputBuilder? review) =>
+      _$this._review = review;
+
+  GUserVehicleReviewAttachmentUpdateInputBuilder();
+
+  GUserVehicleReviewAttachmentUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _file = $v.file?.toBuilder();
+      _review = $v.review?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserVehicleReviewAttachmentUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserVehicleReviewAttachmentUpdateInput;
+  }
+
+  @override
+  void update(
+      void Function(GUserVehicleReviewAttachmentUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserVehicleReviewAttachmentUpdateInput build() => _build();
+
+  _$GUserVehicleReviewAttachmentUpdateInput _build() {
+    _$GUserVehicleReviewAttachmentUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserVehicleReviewAttachmentUpdateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              file: _file?.build(),
+              review: _review?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'file';
+        _file?.build();
+        _$failedField = 'review';
+        _review?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserVehicleReviewAttachmentUpdateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserVehicleReviewRelateToOneForUpdateInput
+    extends GUserVehicleReviewRelateToOneForUpdateInput {
+  @override
+  final GUserVehicleReviewCreateInput? create;
+  @override
+  final GUserVehicleReviewWhereUniqueInput? connect;
+  @override
+  final bool? disconnect;
+
+  factory _$GUserVehicleReviewRelateToOneForUpdateInput(
+          [void Function(GUserVehicleReviewRelateToOneForUpdateInputBuilder)?
+              updates]) =>
+      (new GUserVehicleReviewRelateToOneForUpdateInputBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GUserVehicleReviewRelateToOneForUpdateInput._(
+      {this.create, this.connect, this.disconnect})
+      : super._();
+
+  @override
+  GUserVehicleReviewRelateToOneForUpdateInput rebuild(
+          void Function(GUserVehicleReviewRelateToOneForUpdateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserVehicleReviewRelateToOneForUpdateInputBuilder toBuilder() =>
+      new GUserVehicleReviewRelateToOneForUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserVehicleReviewRelateToOneForUpdateInput &&
+        create == other.create &&
+        connect == other.connect &&
+        disconnect == other.disconnect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jc(_$hash, disconnect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserVehicleReviewRelateToOneForUpdateInput')
+          ..add('create', create)
+          ..add('connect', connect)
+          ..add('disconnect', disconnect))
+        .toString();
+  }
+}
+
+class GUserVehicleReviewRelateToOneForUpdateInputBuilder
+    implements
+        Builder<GUserVehicleReviewRelateToOneForUpdateInput,
+            GUserVehicleReviewRelateToOneForUpdateInputBuilder> {
+  _$GUserVehicleReviewRelateToOneForUpdateInput? _$v;
+
+  GUserVehicleReviewCreateInputBuilder? _create;
+  GUserVehicleReviewCreateInputBuilder get create =>
+      _$this._create ??= new GUserVehicleReviewCreateInputBuilder();
+  set create(GUserVehicleReviewCreateInputBuilder? create) =>
+      _$this._create = create;
+
+  GUserVehicleReviewWhereUniqueInputBuilder? _connect;
+  GUserVehicleReviewWhereUniqueInputBuilder get connect =>
+      _$this._connect ??= new GUserVehicleReviewWhereUniqueInputBuilder();
+  set connect(GUserVehicleReviewWhereUniqueInputBuilder? connect) =>
+      _$this._connect = connect;
+
+  bool? _disconnect;
+  bool? get disconnect => _$this._disconnect;
+  set disconnect(bool? disconnect) => _$this._disconnect = disconnect;
+
+  GUserVehicleReviewRelateToOneForUpdateInputBuilder();
+
+  GUserVehicleReviewRelateToOneForUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _disconnect = $v.disconnect;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserVehicleReviewRelateToOneForUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserVehicleReviewRelateToOneForUpdateInput;
+  }
+
+  @override
+  void update(
+      void Function(GUserVehicleReviewRelateToOneForUpdateInputBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserVehicleReviewRelateToOneForUpdateInput build() => _build();
+
+  _$GUserVehicleReviewRelateToOneForUpdateInput _build() {
+    _$GUserVehicleReviewRelateToOneForUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserVehicleReviewRelateToOneForUpdateInput._(
+              create: _create?.build(),
+              connect: _connect?.build(),
+              disconnect: disconnect);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserVehicleReviewRelateToOneForUpdateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserVehicleReviewAttachmentUpdateArgs
+    extends GUserVehicleReviewAttachmentUpdateArgs {
+  @override
+  final GUserVehicleReviewAttachmentWhereUniqueInput where;
+  @override
+  final GUserVehicleReviewAttachmentUpdateInput data;
+
+  factory _$GUserVehicleReviewAttachmentUpdateArgs(
+          [void Function(GUserVehicleReviewAttachmentUpdateArgsBuilder)?
+              updates]) =>
+      (new GUserVehicleReviewAttachmentUpdateArgsBuilder()..update(updates))
+          ._build();
+
+  _$GUserVehicleReviewAttachmentUpdateArgs._(
+      {required this.where, required this.data})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GUserVehicleReviewAttachmentUpdateArgs', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        data, r'GUserVehicleReviewAttachmentUpdateArgs', 'data');
+  }
+
+  @override
+  GUserVehicleReviewAttachmentUpdateArgs rebuild(
+          void Function(GUserVehicleReviewAttachmentUpdateArgsBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserVehicleReviewAttachmentUpdateArgsBuilder toBuilder() =>
+      new GUserVehicleReviewAttachmentUpdateArgsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserVehicleReviewAttachmentUpdateArgs &&
+        where == other.where &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserVehicleReviewAttachmentUpdateArgs')
+          ..add('where', where)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GUserVehicleReviewAttachmentUpdateArgsBuilder
+    implements
+        Builder<GUserVehicleReviewAttachmentUpdateArgs,
+            GUserVehicleReviewAttachmentUpdateArgsBuilder> {
+  _$GUserVehicleReviewAttachmentUpdateArgs? _$v;
+
+  GUserVehicleReviewAttachmentWhereUniqueInputBuilder? _where;
+  GUserVehicleReviewAttachmentWhereUniqueInputBuilder get where =>
+      _$this._where ??=
+          new GUserVehicleReviewAttachmentWhereUniqueInputBuilder();
+  set where(GUserVehicleReviewAttachmentWhereUniqueInputBuilder? where) =>
+      _$this._where = where;
+
+  GUserVehicleReviewAttachmentUpdateInputBuilder? _data;
+  GUserVehicleReviewAttachmentUpdateInputBuilder get data =>
+      _$this._data ??= new GUserVehicleReviewAttachmentUpdateInputBuilder();
+  set data(GUserVehicleReviewAttachmentUpdateInputBuilder? data) =>
+      _$this._data = data;
+
+  GUserVehicleReviewAttachmentUpdateArgsBuilder();
+
+  GUserVehicleReviewAttachmentUpdateArgsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserVehicleReviewAttachmentUpdateArgs other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserVehicleReviewAttachmentUpdateArgs;
+  }
+
+  @override
+  void update(
+      void Function(GUserVehicleReviewAttachmentUpdateArgsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserVehicleReviewAttachmentUpdateArgs build() => _build();
+
+  _$GUserVehicleReviewAttachmentUpdateArgs _build() {
+    _$GUserVehicleReviewAttachmentUpdateArgs _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserVehicleReviewAttachmentUpdateArgs._(
+              where: where.build(), data: data.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserVehicleReviewAttachmentUpdateArgs',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserVehicleReviewAttachmentCreateInput
+    extends GUserVehicleReviewAttachmentCreateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final GFileFieldInput? file;
+  @override
+  final GUserVehicleReviewRelateToOneForCreateInput? review;
+
+  factory _$GUserVehicleReviewAttachmentCreateInput(
+          [void Function(GUserVehicleReviewAttachmentCreateInputBuilder)?
+              updates]) =>
+      (new GUserVehicleReviewAttachmentCreateInputBuilder()..update(updates))
+          ._build();
+
+  _$GUserVehicleReviewAttachmentCreateInput._(
+      {this.createdAt, this.modifiedAt, this.file, this.review})
+      : super._();
+
+  @override
+  GUserVehicleReviewAttachmentCreateInput rebuild(
+          void Function(GUserVehicleReviewAttachmentCreateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserVehicleReviewAttachmentCreateInputBuilder toBuilder() =>
+      new GUserVehicleReviewAttachmentCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserVehicleReviewAttachmentCreateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        file == other.file &&
+        review == other.review;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, file.hashCode);
+    _$hash = $jc(_$hash, review.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserVehicleReviewAttachmentCreateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('file', file)
+          ..add('review', review))
+        .toString();
+  }
+}
+
+class GUserVehicleReviewAttachmentCreateInputBuilder
+    implements
+        Builder<GUserVehicleReviewAttachmentCreateInput,
+            GUserVehicleReviewAttachmentCreateInputBuilder> {
+  _$GUserVehicleReviewAttachmentCreateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GFileFieldInputBuilder? _file;
+  GFileFieldInputBuilder get file =>
+      _$this._file ??= new GFileFieldInputBuilder();
+  set file(GFileFieldInputBuilder? file) => _$this._file = file;
+
+  GUserVehicleReviewRelateToOneForCreateInputBuilder? _review;
+  GUserVehicleReviewRelateToOneForCreateInputBuilder get review =>
+      _$this._review ??=
+          new GUserVehicleReviewRelateToOneForCreateInputBuilder();
+  set review(GUserVehicleReviewRelateToOneForCreateInputBuilder? review) =>
+      _$this._review = review;
+
+  GUserVehicleReviewAttachmentCreateInputBuilder();
+
+  GUserVehicleReviewAttachmentCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _file = $v.file?.toBuilder();
+      _review = $v.review?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserVehicleReviewAttachmentCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserVehicleReviewAttachmentCreateInput;
+  }
+
+  @override
+  void update(
+      void Function(GUserVehicleReviewAttachmentCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserVehicleReviewAttachmentCreateInput build() => _build();
+
+  _$GUserVehicleReviewAttachmentCreateInput _build() {
+    _$GUserVehicleReviewAttachmentCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserVehicleReviewAttachmentCreateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              file: _file?.build(),
+              review: _review?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'file';
+        _file?.build();
+        _$failedField = 'review';
+        _review?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserVehicleReviewAttachmentCreateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserVehicleReviewRelateToOneForCreateInput
+    extends GUserVehicleReviewRelateToOneForCreateInput {
+  @override
+  final GUserVehicleReviewCreateInput? create;
+  @override
+  final GUserVehicleReviewWhereUniqueInput? connect;
+
+  factory _$GUserVehicleReviewRelateToOneForCreateInput(
+          [void Function(GUserVehicleReviewRelateToOneForCreateInputBuilder)?
+              updates]) =>
+      (new GUserVehicleReviewRelateToOneForCreateInputBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GUserVehicleReviewRelateToOneForCreateInput._({this.create, this.connect})
+      : super._();
+
+  @override
+  GUserVehicleReviewRelateToOneForCreateInput rebuild(
+          void Function(GUserVehicleReviewRelateToOneForCreateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserVehicleReviewRelateToOneForCreateInputBuilder toBuilder() =>
+      new GUserVehicleReviewRelateToOneForCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserVehicleReviewRelateToOneForCreateInput &&
+        create == other.create &&
+        connect == other.connect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserVehicleReviewRelateToOneForCreateInput')
+          ..add('create', create)
+          ..add('connect', connect))
+        .toString();
+  }
+}
+
+class GUserVehicleReviewRelateToOneForCreateInputBuilder
+    implements
+        Builder<GUserVehicleReviewRelateToOneForCreateInput,
+            GUserVehicleReviewRelateToOneForCreateInputBuilder> {
+  _$GUserVehicleReviewRelateToOneForCreateInput? _$v;
+
+  GUserVehicleReviewCreateInputBuilder? _create;
+  GUserVehicleReviewCreateInputBuilder get create =>
+      _$this._create ??= new GUserVehicleReviewCreateInputBuilder();
+  set create(GUserVehicleReviewCreateInputBuilder? create) =>
+      _$this._create = create;
+
+  GUserVehicleReviewWhereUniqueInputBuilder? _connect;
+  GUserVehicleReviewWhereUniqueInputBuilder get connect =>
+      _$this._connect ??= new GUserVehicleReviewWhereUniqueInputBuilder();
+  set connect(GUserVehicleReviewWhereUniqueInputBuilder? connect) =>
+      _$this._connect = connect;
+
+  GUserVehicleReviewRelateToOneForCreateInputBuilder();
+
+  GUserVehicleReviewRelateToOneForCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserVehicleReviewRelateToOneForCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserVehicleReviewRelateToOneForCreateInput;
+  }
+
+  @override
+  void update(
+      void Function(GUserVehicleReviewRelateToOneForCreateInputBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserVehicleReviewRelateToOneForCreateInput build() => _build();
+
+  _$GUserVehicleReviewRelateToOneForCreateInput _build() {
+    _$GUserVehicleReviewRelateToOneForCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserVehicleReviewRelateToOneForCreateInput._(
+              create: _create?.build(), connect: _connect?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserVehicleReviewRelateToOneForCreateInput',
+            _$failedField,
+            e.toString());
       }
       rethrow;
     }
@@ -101605,6 +113749,8 @@ class _$GUserProductReviewWhereInput extends GUserProductReviewWhereInput {
   final GStringFilter? review;
   @override
   final GIntFilter? rating;
+  @override
+  final GUserProductReviewAttachmentManyRelationFilter? attachments;
 
   factory _$GUserProductReviewWhereInput(
           [void Function(GUserProductReviewWhereInputBuilder)? updates]) =>
@@ -101620,7 +113766,8 @@ class _$GUserProductReviewWhereInput extends GUserProductReviewWhereInput {
       this.user,
       this.product,
       this.review,
-      this.rating})
+      this.rating,
+      this.attachments})
       : super._();
 
   @override
@@ -101645,7 +113792,8 @@ class _$GUserProductReviewWhereInput extends GUserProductReviewWhereInput {
         user == other.user &&
         product == other.product &&
         review == other.review &&
-        rating == other.rating;
+        rating == other.rating &&
+        attachments == other.attachments;
   }
 
   @override
@@ -101661,6 +113809,7 @@ class _$GUserProductReviewWhereInput extends GUserProductReviewWhereInput {
     _$hash = $jc(_$hash, product.hashCode);
     _$hash = $jc(_$hash, review.hashCode);
     _$hash = $jc(_$hash, rating.hashCode);
+    _$hash = $jc(_$hash, attachments.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -101677,7 +113826,8 @@ class _$GUserProductReviewWhereInput extends GUserProductReviewWhereInput {
           ..add('user', user)
           ..add('product', product)
           ..add('review', review)
-          ..add('rating', rating))
+          ..add('rating', rating)
+          ..add('attachments', attachments))
         .toString();
   }
 }
@@ -101738,6 +113888,14 @@ class GUserProductReviewWhereInputBuilder
   GIntFilterBuilder get rating => _$this._rating ??= new GIntFilterBuilder();
   set rating(GIntFilterBuilder? rating) => _$this._rating = rating;
 
+  GUserProductReviewAttachmentManyRelationFilterBuilder? _attachments;
+  GUserProductReviewAttachmentManyRelationFilterBuilder get attachments =>
+      _$this._attachments ??=
+          new GUserProductReviewAttachmentManyRelationFilterBuilder();
+  set attachments(
+          GUserProductReviewAttachmentManyRelationFilterBuilder? attachments) =>
+      _$this._attachments = attachments;
+
   GUserProductReviewWhereInputBuilder();
 
   GUserProductReviewWhereInputBuilder get _$this {
@@ -101753,6 +113911,7 @@ class GUserProductReviewWhereInputBuilder
       _product = $v.product?.toBuilder();
       _review = $v.review?.toBuilder();
       _rating = $v.rating?.toBuilder();
+      _attachments = $v.attachments?.toBuilder();
       _$v = null;
     }
     return this;
@@ -101786,7 +113945,8 @@ class GUserProductReviewWhereInputBuilder
               user: _user?.build(),
               product: _product?.build(),
               review: _review?.build(),
-              rating: _rating?.build());
+              rating: _rating?.build(),
+              attachments: _attachments?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -101810,9 +113970,155 @@ class GUserProductReviewWhereInputBuilder
         _review?.build();
         _$failedField = 'rating';
         _rating?.build();
+        _$failedField = 'attachments';
+        _attachments?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GUserProductReviewWhereInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserProductReviewAttachmentManyRelationFilter
+    extends GUserProductReviewAttachmentManyRelationFilter {
+  @override
+  final GUserProductReviewAttachmentWhereInput? every;
+  @override
+  final GUserProductReviewAttachmentWhereInput? some;
+  @override
+  final GUserProductReviewAttachmentWhereInput? none;
+
+  factory _$GUserProductReviewAttachmentManyRelationFilter(
+          [void Function(GUserProductReviewAttachmentManyRelationFilterBuilder)?
+              updates]) =>
+      (new GUserProductReviewAttachmentManyRelationFilterBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GUserProductReviewAttachmentManyRelationFilter._(
+      {this.every, this.some, this.none})
+      : super._();
+
+  @override
+  GUserProductReviewAttachmentManyRelationFilter rebuild(
+          void Function(GUserProductReviewAttachmentManyRelationFilterBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserProductReviewAttachmentManyRelationFilterBuilder toBuilder() =>
+      new GUserProductReviewAttachmentManyRelationFilterBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserProductReviewAttachmentManyRelationFilter &&
+        every == other.every &&
+        some == other.some &&
+        none == other.none;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, every.hashCode);
+    _$hash = $jc(_$hash, some.hashCode);
+    _$hash = $jc(_$hash, none.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserProductReviewAttachmentManyRelationFilter')
+          ..add('every', every)
+          ..add('some', some)
+          ..add('none', none))
+        .toString();
+  }
+}
+
+class GUserProductReviewAttachmentManyRelationFilterBuilder
+    implements
+        Builder<GUserProductReviewAttachmentManyRelationFilter,
+            GUserProductReviewAttachmentManyRelationFilterBuilder> {
+  _$GUserProductReviewAttachmentManyRelationFilter? _$v;
+
+  GUserProductReviewAttachmentWhereInputBuilder? _every;
+  GUserProductReviewAttachmentWhereInputBuilder get every =>
+      _$this._every ??= new GUserProductReviewAttachmentWhereInputBuilder();
+  set every(GUserProductReviewAttachmentWhereInputBuilder? every) =>
+      _$this._every = every;
+
+  GUserProductReviewAttachmentWhereInputBuilder? _some;
+  GUserProductReviewAttachmentWhereInputBuilder get some =>
+      _$this._some ??= new GUserProductReviewAttachmentWhereInputBuilder();
+  set some(GUserProductReviewAttachmentWhereInputBuilder? some) =>
+      _$this._some = some;
+
+  GUserProductReviewAttachmentWhereInputBuilder? _none;
+  GUserProductReviewAttachmentWhereInputBuilder get none =>
+      _$this._none ??= new GUserProductReviewAttachmentWhereInputBuilder();
+  set none(GUserProductReviewAttachmentWhereInputBuilder? none) =>
+      _$this._none = none;
+
+  GUserProductReviewAttachmentManyRelationFilterBuilder();
+
+  GUserProductReviewAttachmentManyRelationFilterBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _every = $v.every?.toBuilder();
+      _some = $v.some?.toBuilder();
+      _none = $v.none?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserProductReviewAttachmentManyRelationFilter other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserProductReviewAttachmentManyRelationFilter;
+  }
+
+  @override
+  void update(
+      void Function(GUserProductReviewAttachmentManyRelationFilterBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserProductReviewAttachmentManyRelationFilter build() => _build();
+
+  _$GUserProductReviewAttachmentManyRelationFilter _build() {
+    _$GUserProductReviewAttachmentManyRelationFilter _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserProductReviewAttachmentManyRelationFilter._(
+              every: _every?.build(),
+              some: _some?.build(),
+              none: _none?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'every';
+        _every?.build();
+        _$failedField = 'some';
+        _some?.build();
+        _$failedField = 'none';
+        _none?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserProductReviewAttachmentManyRelationFilter',
+            _$failedField,
+            e.toString());
       }
       rethrow;
     }
@@ -101967,6 +114273,8 @@ class _$GUserProductReviewUpdateInput extends GUserProductReviewUpdateInput {
   final String? review;
   @override
   final int? rating;
+  @override
+  final GUserProductReviewAttachmentRelateToManyForUpdateInput? attachments;
 
   factory _$GUserProductReviewUpdateInput(
           [void Function(GUserProductReviewUpdateInputBuilder)? updates]) =>
@@ -101978,7 +114286,8 @@ class _$GUserProductReviewUpdateInput extends GUserProductReviewUpdateInput {
       this.user,
       this.product,
       this.review,
-      this.rating})
+      this.rating,
+      this.attachments})
       : super._();
 
   @override
@@ -101999,7 +114308,8 @@ class _$GUserProductReviewUpdateInput extends GUserProductReviewUpdateInput {
         user == other.user &&
         product == other.product &&
         review == other.review &&
-        rating == other.rating;
+        rating == other.rating &&
+        attachments == other.attachments;
   }
 
   @override
@@ -102011,6 +114321,7 @@ class _$GUserProductReviewUpdateInput extends GUserProductReviewUpdateInput {
     _$hash = $jc(_$hash, product.hashCode);
     _$hash = $jc(_$hash, review.hashCode);
     _$hash = $jc(_$hash, rating.hashCode);
+    _$hash = $jc(_$hash, attachments.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -102023,7 +114334,8 @@ class _$GUserProductReviewUpdateInput extends GUserProductReviewUpdateInput {
           ..add('user', user)
           ..add('product', product)
           ..add('review', review)
-          ..add('rating', rating))
+          ..add('rating', rating)
+          ..add('attachments', attachments))
         .toString();
   }
 }
@@ -102064,6 +114376,15 @@ class GUserProductReviewUpdateInputBuilder
   int? get rating => _$this._rating;
   set rating(int? rating) => _$this._rating = rating;
 
+  GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder? _attachments;
+  GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder
+      get attachments => _$this._attachments ??=
+          new GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder();
+  set attachments(
+          GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder?
+              attachments) =>
+      _$this._attachments = attachments;
+
   GUserProductReviewUpdateInputBuilder();
 
   GUserProductReviewUpdateInputBuilder get _$this {
@@ -102075,6 +114396,7 @@ class GUserProductReviewUpdateInputBuilder
       _product = $v.product?.toBuilder();
       _review = $v.review;
       _rating = $v.rating;
+      _attachments = $v.attachments?.toBuilder();
       _$v = null;
     }
     return this;
@@ -102104,7 +114426,8 @@ class GUserProductReviewUpdateInputBuilder
               user: _user?.build(),
               product: _product?.build(),
               review: review,
-              rating: rating);
+              rating: rating,
+              attachments: _attachments?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -102116,6 +114439,9 @@ class GUserProductReviewUpdateInputBuilder
         _user?.build();
         _$failedField = 'product';
         _product?.build();
+
+        _$failedField = 'attachments';
+        _attachments?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GUserProductReviewUpdateInput', _$failedField, e.toString());
@@ -102258,6 +114584,175 @@ class GProductRelateToOneForUpdateInputBuilder
   }
 }
 
+class _$GUserProductReviewAttachmentRelateToManyForUpdateInput
+    extends GUserProductReviewAttachmentRelateToManyForUpdateInput {
+  @override
+  final BuiltList<GUserProductReviewAttachmentWhereUniqueInput>? disconnect;
+  @override
+  final BuiltList<GUserProductReviewAttachmentWhereUniqueInput>? set;
+  @override
+  final BuiltList<GUserProductReviewAttachmentCreateInput>? create;
+  @override
+  final BuiltList<GUserProductReviewAttachmentWhereUniqueInput>? connect;
+
+  factory _$GUserProductReviewAttachmentRelateToManyForUpdateInput(
+          [void Function(
+                  GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder)?
+              updates]) =>
+      (new GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GUserProductReviewAttachmentRelateToManyForUpdateInput._(
+      {this.disconnect, this.set, this.create, this.connect})
+      : super._();
+
+  @override
+  GUserProductReviewAttachmentRelateToManyForUpdateInput rebuild(
+          void Function(
+                  GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder toBuilder() =>
+      new GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserProductReviewAttachmentRelateToManyForUpdateInput &&
+        disconnect == other.disconnect &&
+        set == other.set &&
+        create == other.create &&
+        connect == other.connect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, disconnect.hashCode);
+    _$hash = $jc(_$hash, set.hashCode);
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserProductReviewAttachmentRelateToManyForUpdateInput')
+          ..add('disconnect', disconnect)
+          ..add('set', set)
+          ..add('create', create)
+          ..add('connect', connect))
+        .toString();
+  }
+}
+
+class GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder
+    implements
+        Builder<GUserProductReviewAttachmentRelateToManyForUpdateInput,
+            GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder> {
+  _$GUserProductReviewAttachmentRelateToManyForUpdateInput? _$v;
+
+  ListBuilder<GUserProductReviewAttachmentWhereUniqueInput>? _disconnect;
+  ListBuilder<GUserProductReviewAttachmentWhereUniqueInput> get disconnect =>
+      _$this._disconnect ??=
+          new ListBuilder<GUserProductReviewAttachmentWhereUniqueInput>();
+  set disconnect(
+          ListBuilder<GUserProductReviewAttachmentWhereUniqueInput>?
+              disconnect) =>
+      _$this._disconnect = disconnect;
+
+  ListBuilder<GUserProductReviewAttachmentWhereUniqueInput>? _set;
+  ListBuilder<GUserProductReviewAttachmentWhereUniqueInput> get set =>
+      _$this._set ??=
+          new ListBuilder<GUserProductReviewAttachmentWhereUniqueInput>();
+  set set(ListBuilder<GUserProductReviewAttachmentWhereUniqueInput>? set) =>
+      _$this._set = set;
+
+  ListBuilder<GUserProductReviewAttachmentCreateInput>? _create;
+  ListBuilder<GUserProductReviewAttachmentCreateInput> get create =>
+      _$this._create ??=
+          new ListBuilder<GUserProductReviewAttachmentCreateInput>();
+  set create(ListBuilder<GUserProductReviewAttachmentCreateInput>? create) =>
+      _$this._create = create;
+
+  ListBuilder<GUserProductReviewAttachmentWhereUniqueInput>? _connect;
+  ListBuilder<GUserProductReviewAttachmentWhereUniqueInput> get connect =>
+      _$this._connect ??=
+          new ListBuilder<GUserProductReviewAttachmentWhereUniqueInput>();
+  set connect(
+          ListBuilder<GUserProductReviewAttachmentWhereUniqueInput>? connect) =>
+      _$this._connect = connect;
+
+  GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder();
+
+  GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _disconnect = $v.disconnect?.toBuilder();
+      _set = $v.set?.toBuilder();
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserProductReviewAttachmentRelateToManyForUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserProductReviewAttachmentRelateToManyForUpdateInput;
+  }
+
+  @override
+  void update(
+      void Function(
+              GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserProductReviewAttachmentRelateToManyForUpdateInput build() => _build();
+
+  _$GUserProductReviewAttachmentRelateToManyForUpdateInput _build() {
+    _$GUserProductReviewAttachmentRelateToManyForUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserProductReviewAttachmentRelateToManyForUpdateInput._(
+              disconnect: _disconnect?.build(),
+              set: _set?.build(),
+              create: _create?.build(),
+              connect: _connect?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'disconnect';
+        _disconnect?.build();
+        _$failedField = 'set';
+        _set?.build();
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserProductReviewAttachmentRelateToManyForUpdateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$GUserProductReviewUpdateArgs extends GUserProductReviewUpdateArgs {
   @override
   final GUserProductReviewWhereUniqueInput where;
@@ -102391,6 +114886,8 @@ class _$GUserProductReviewCreateInput extends GUserProductReviewCreateInput {
   final String? review;
   @override
   final int? rating;
+  @override
+  final GUserProductReviewAttachmentRelateToManyForCreateInput? attachments;
 
   factory _$GUserProductReviewCreateInput(
           [void Function(GUserProductReviewCreateInputBuilder)? updates]) =>
@@ -102402,7 +114899,8 @@ class _$GUserProductReviewCreateInput extends GUserProductReviewCreateInput {
       this.user,
       this.product,
       this.review,
-      this.rating})
+      this.rating,
+      this.attachments})
       : super._();
 
   @override
@@ -102423,7 +114921,8 @@ class _$GUserProductReviewCreateInput extends GUserProductReviewCreateInput {
         user == other.user &&
         product == other.product &&
         review == other.review &&
-        rating == other.rating;
+        rating == other.rating &&
+        attachments == other.attachments;
   }
 
   @override
@@ -102435,6 +114934,7 @@ class _$GUserProductReviewCreateInput extends GUserProductReviewCreateInput {
     _$hash = $jc(_$hash, product.hashCode);
     _$hash = $jc(_$hash, review.hashCode);
     _$hash = $jc(_$hash, rating.hashCode);
+    _$hash = $jc(_$hash, attachments.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -102447,7 +114947,8 @@ class _$GUserProductReviewCreateInput extends GUserProductReviewCreateInput {
           ..add('user', user)
           ..add('product', product)
           ..add('review', review)
-          ..add('rating', rating))
+          ..add('rating', rating)
+          ..add('attachments', attachments))
         .toString();
   }
 }
@@ -102488,6 +114989,15 @@ class GUserProductReviewCreateInputBuilder
   int? get rating => _$this._rating;
   set rating(int? rating) => _$this._rating = rating;
 
+  GUserProductReviewAttachmentRelateToManyForCreateInputBuilder? _attachments;
+  GUserProductReviewAttachmentRelateToManyForCreateInputBuilder
+      get attachments => _$this._attachments ??=
+          new GUserProductReviewAttachmentRelateToManyForCreateInputBuilder();
+  set attachments(
+          GUserProductReviewAttachmentRelateToManyForCreateInputBuilder?
+              attachments) =>
+      _$this._attachments = attachments;
+
   GUserProductReviewCreateInputBuilder();
 
   GUserProductReviewCreateInputBuilder get _$this {
@@ -102499,6 +115009,7 @@ class GUserProductReviewCreateInputBuilder
       _product = $v.product?.toBuilder();
       _review = $v.review;
       _rating = $v.rating;
+      _attachments = $v.attachments?.toBuilder();
       _$v = null;
     }
     return this;
@@ -102528,7 +115039,8 @@ class GUserProductReviewCreateInputBuilder
               user: _user?.build(),
               product: _product?.build(),
               review: review,
-              rating: rating);
+              rating: rating,
+              attachments: _attachments?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -102540,6 +115052,9 @@ class GUserProductReviewCreateInputBuilder
         _user?.build();
         _$failedField = 'product';
         _product?.build();
+
+        _$failedField = 'attachments';
+        _attachments?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GUserProductReviewCreateInput', _$failedField, e.toString());
@@ -102669,6 +115184,1259 @@ class GProductRelateToOneForCreateInputBuilder
   }
 }
 
+class _$GUserProductReviewAttachmentRelateToManyForCreateInput
+    extends GUserProductReviewAttachmentRelateToManyForCreateInput {
+  @override
+  final BuiltList<GUserProductReviewAttachmentCreateInput>? create;
+  @override
+  final BuiltList<GUserProductReviewAttachmentWhereUniqueInput>? connect;
+
+  factory _$GUserProductReviewAttachmentRelateToManyForCreateInput(
+          [void Function(
+                  GUserProductReviewAttachmentRelateToManyForCreateInputBuilder)?
+              updates]) =>
+      (new GUserProductReviewAttachmentRelateToManyForCreateInputBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GUserProductReviewAttachmentRelateToManyForCreateInput._(
+      {this.create, this.connect})
+      : super._();
+
+  @override
+  GUserProductReviewAttachmentRelateToManyForCreateInput rebuild(
+          void Function(
+                  GUserProductReviewAttachmentRelateToManyForCreateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserProductReviewAttachmentRelateToManyForCreateInputBuilder toBuilder() =>
+      new GUserProductReviewAttachmentRelateToManyForCreateInputBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserProductReviewAttachmentRelateToManyForCreateInput &&
+        create == other.create &&
+        connect == other.connect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserProductReviewAttachmentRelateToManyForCreateInput')
+          ..add('create', create)
+          ..add('connect', connect))
+        .toString();
+  }
+}
+
+class GUserProductReviewAttachmentRelateToManyForCreateInputBuilder
+    implements
+        Builder<GUserProductReviewAttachmentRelateToManyForCreateInput,
+            GUserProductReviewAttachmentRelateToManyForCreateInputBuilder> {
+  _$GUserProductReviewAttachmentRelateToManyForCreateInput? _$v;
+
+  ListBuilder<GUserProductReviewAttachmentCreateInput>? _create;
+  ListBuilder<GUserProductReviewAttachmentCreateInput> get create =>
+      _$this._create ??=
+          new ListBuilder<GUserProductReviewAttachmentCreateInput>();
+  set create(ListBuilder<GUserProductReviewAttachmentCreateInput>? create) =>
+      _$this._create = create;
+
+  ListBuilder<GUserProductReviewAttachmentWhereUniqueInput>? _connect;
+  ListBuilder<GUserProductReviewAttachmentWhereUniqueInput> get connect =>
+      _$this._connect ??=
+          new ListBuilder<GUserProductReviewAttachmentWhereUniqueInput>();
+  set connect(
+          ListBuilder<GUserProductReviewAttachmentWhereUniqueInput>? connect) =>
+      _$this._connect = connect;
+
+  GUserProductReviewAttachmentRelateToManyForCreateInputBuilder();
+
+  GUserProductReviewAttachmentRelateToManyForCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserProductReviewAttachmentRelateToManyForCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserProductReviewAttachmentRelateToManyForCreateInput;
+  }
+
+  @override
+  void update(
+      void Function(
+              GUserProductReviewAttachmentRelateToManyForCreateInputBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserProductReviewAttachmentRelateToManyForCreateInput build() => _build();
+
+  _$GUserProductReviewAttachmentRelateToManyForCreateInput _build() {
+    _$GUserProductReviewAttachmentRelateToManyForCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserProductReviewAttachmentRelateToManyForCreateInput._(
+              create: _create?.build(), connect: _connect?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserProductReviewAttachmentRelateToManyForCreateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserProductReviewAttachmentWhereUniqueInput
+    extends GUserProductReviewAttachmentWhereUniqueInput {
+  @override
+  final String? id;
+
+  factory _$GUserProductReviewAttachmentWhereUniqueInput(
+          [void Function(GUserProductReviewAttachmentWhereUniqueInputBuilder)?
+              updates]) =>
+      (new GUserProductReviewAttachmentWhereUniqueInputBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GUserProductReviewAttachmentWhereUniqueInput._({this.id}) : super._();
+
+  @override
+  GUserProductReviewAttachmentWhereUniqueInput rebuild(
+          void Function(GUserProductReviewAttachmentWhereUniqueInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserProductReviewAttachmentWhereUniqueInputBuilder toBuilder() =>
+      new GUserProductReviewAttachmentWhereUniqueInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserProductReviewAttachmentWhereUniqueInput &&
+        id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserProductReviewAttachmentWhereUniqueInput')
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GUserProductReviewAttachmentWhereUniqueInputBuilder
+    implements
+        Builder<GUserProductReviewAttachmentWhereUniqueInput,
+            GUserProductReviewAttachmentWhereUniqueInputBuilder> {
+  _$GUserProductReviewAttachmentWhereUniqueInput? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GUserProductReviewAttachmentWhereUniqueInputBuilder();
+
+  GUserProductReviewAttachmentWhereUniqueInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserProductReviewAttachmentWhereUniqueInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserProductReviewAttachmentWhereUniqueInput;
+  }
+
+  @override
+  void update(
+      void Function(GUserProductReviewAttachmentWhereUniqueInputBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserProductReviewAttachmentWhereUniqueInput build() => _build();
+
+  _$GUserProductReviewAttachmentWhereUniqueInput _build() {
+    final _$result =
+        _$v ?? new _$GUserProductReviewAttachmentWhereUniqueInput._(id: id);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserProductReviewAttachmentWhereInput
+    extends GUserProductReviewAttachmentWhereInput {
+  @override
+  final BuiltList<GUserProductReviewAttachmentWhereInput>? AND;
+  @override
+  final BuiltList<GUserProductReviewAttachmentWhereInput>? OR;
+  @override
+  final BuiltList<GUserProductReviewAttachmentWhereInput>? NOT;
+  @override
+  final GIDFilter? id;
+  @override
+  final GDateTimeNullableFilter? createdAt;
+  @override
+  final GDateTimeNullableFilter? modifiedAt;
+  @override
+  final GUserProductReviewWhereInput? review;
+
+  factory _$GUserProductReviewAttachmentWhereInput(
+          [void Function(GUserProductReviewAttachmentWhereInputBuilder)?
+              updates]) =>
+      (new GUserProductReviewAttachmentWhereInputBuilder()..update(updates))
+          ._build();
+
+  _$GUserProductReviewAttachmentWhereInput._(
+      {this.AND,
+      this.OR,
+      this.NOT,
+      this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.review})
+      : super._();
+
+  @override
+  GUserProductReviewAttachmentWhereInput rebuild(
+          void Function(GUserProductReviewAttachmentWhereInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserProductReviewAttachmentWhereInputBuilder toBuilder() =>
+      new GUserProductReviewAttachmentWhereInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserProductReviewAttachmentWhereInput &&
+        AND == other.AND &&
+        OR == other.OR &&
+        NOT == other.NOT &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        review == other.review;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, AND.hashCode);
+    _$hash = $jc(_$hash, OR.hashCode);
+    _$hash = $jc(_$hash, NOT.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, review.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserProductReviewAttachmentWhereInput')
+          ..add('AND', AND)
+          ..add('OR', OR)
+          ..add('NOT', NOT)
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('review', review))
+        .toString();
+  }
+}
+
+class GUserProductReviewAttachmentWhereInputBuilder
+    implements
+        Builder<GUserProductReviewAttachmentWhereInput,
+            GUserProductReviewAttachmentWhereInputBuilder> {
+  _$GUserProductReviewAttachmentWhereInput? _$v;
+
+  ListBuilder<GUserProductReviewAttachmentWhereInput>? _AND;
+  ListBuilder<GUserProductReviewAttachmentWhereInput> get AND =>
+      _$this._AND ??= new ListBuilder<GUserProductReviewAttachmentWhereInput>();
+  set AND(ListBuilder<GUserProductReviewAttachmentWhereInput>? AND) =>
+      _$this._AND = AND;
+
+  ListBuilder<GUserProductReviewAttachmentWhereInput>? _OR;
+  ListBuilder<GUserProductReviewAttachmentWhereInput> get OR =>
+      _$this._OR ??= new ListBuilder<GUserProductReviewAttachmentWhereInput>();
+  set OR(ListBuilder<GUserProductReviewAttachmentWhereInput>? OR) =>
+      _$this._OR = OR;
+
+  ListBuilder<GUserProductReviewAttachmentWhereInput>? _NOT;
+  ListBuilder<GUserProductReviewAttachmentWhereInput> get NOT =>
+      _$this._NOT ??= new ListBuilder<GUserProductReviewAttachmentWhereInput>();
+  set NOT(ListBuilder<GUserProductReviewAttachmentWhereInput>? NOT) =>
+      _$this._NOT = NOT;
+
+  GIDFilterBuilder? _id;
+  GIDFilterBuilder get id => _$this._id ??= new GIDFilterBuilder();
+  set id(GIDFilterBuilder? id) => _$this._id = id;
+
+  GDateTimeNullableFilterBuilder? _createdAt;
+  GDateTimeNullableFilterBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeNullableFilterBuilder();
+  set createdAt(GDateTimeNullableFilterBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GDateTimeNullableFilterBuilder? _modifiedAt;
+  GDateTimeNullableFilterBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeNullableFilterBuilder();
+  set modifiedAt(GDateTimeNullableFilterBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GUserProductReviewWhereInputBuilder? _review;
+  GUserProductReviewWhereInputBuilder get review =>
+      _$this._review ??= new GUserProductReviewWhereInputBuilder();
+  set review(GUserProductReviewWhereInputBuilder? review) =>
+      _$this._review = review;
+
+  GUserProductReviewAttachmentWhereInputBuilder();
+
+  GUserProductReviewAttachmentWhereInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _AND = $v.AND?.toBuilder();
+      _OR = $v.OR?.toBuilder();
+      _NOT = $v.NOT?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _review = $v.review?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserProductReviewAttachmentWhereInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserProductReviewAttachmentWhereInput;
+  }
+
+  @override
+  void update(
+      void Function(GUserProductReviewAttachmentWhereInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserProductReviewAttachmentWhereInput build() => _build();
+
+  _$GUserProductReviewAttachmentWhereInput _build() {
+    _$GUserProductReviewAttachmentWhereInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserProductReviewAttachmentWhereInput._(
+              AND: _AND?.build(),
+              OR: _OR?.build(),
+              NOT: _NOT?.build(),
+              id: _id?.build(),
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              review: _review?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'AND';
+        _AND?.build();
+        _$failedField = 'OR';
+        _OR?.build();
+        _$failedField = 'NOT';
+        _NOT?.build();
+        _$failedField = 'id';
+        _id?.build();
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'review';
+        _review?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserProductReviewAttachmentWhereInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserProductReviewAttachmentOrderByInput
+    extends GUserProductReviewAttachmentOrderByInput {
+  @override
+  final GOrderDirection? id;
+  @override
+  final GOrderDirection? createdAt;
+  @override
+  final GOrderDirection? modifiedAt;
+
+  factory _$GUserProductReviewAttachmentOrderByInput(
+          [void Function(GUserProductReviewAttachmentOrderByInputBuilder)?
+              updates]) =>
+      (new GUserProductReviewAttachmentOrderByInputBuilder()..update(updates))
+          ._build();
+
+  _$GUserProductReviewAttachmentOrderByInput._(
+      {this.id, this.createdAt, this.modifiedAt})
+      : super._();
+
+  @override
+  GUserProductReviewAttachmentOrderByInput rebuild(
+          void Function(GUserProductReviewAttachmentOrderByInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserProductReviewAttachmentOrderByInputBuilder toBuilder() =>
+      new GUserProductReviewAttachmentOrderByInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserProductReviewAttachmentOrderByInput &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserProductReviewAttachmentOrderByInput')
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt))
+        .toString();
+  }
+}
+
+class GUserProductReviewAttachmentOrderByInputBuilder
+    implements
+        Builder<GUserProductReviewAttachmentOrderByInput,
+            GUserProductReviewAttachmentOrderByInputBuilder> {
+  _$GUserProductReviewAttachmentOrderByInput? _$v;
+
+  GOrderDirection? _id;
+  GOrderDirection? get id => _$this._id;
+  set id(GOrderDirection? id) => _$this._id = id;
+
+  GOrderDirection? _createdAt;
+  GOrderDirection? get createdAt => _$this._createdAt;
+  set createdAt(GOrderDirection? createdAt) => _$this._createdAt = createdAt;
+
+  GOrderDirection? _modifiedAt;
+  GOrderDirection? get modifiedAt => _$this._modifiedAt;
+  set modifiedAt(GOrderDirection? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GUserProductReviewAttachmentOrderByInputBuilder();
+
+  GUserProductReviewAttachmentOrderByInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _createdAt = $v.createdAt;
+      _modifiedAt = $v.modifiedAt;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserProductReviewAttachmentOrderByInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserProductReviewAttachmentOrderByInput;
+  }
+
+  @override
+  void update(
+      void Function(GUserProductReviewAttachmentOrderByInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserProductReviewAttachmentOrderByInput build() => _build();
+
+  _$GUserProductReviewAttachmentOrderByInput _build() {
+    final _$result = _$v ??
+        new _$GUserProductReviewAttachmentOrderByInput._(
+            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserProductReviewAttachmentUpdateInput
+    extends GUserProductReviewAttachmentUpdateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final GFileFieldInput? file;
+  @override
+  final GUserProductReviewRelateToOneForUpdateInput? review;
+
+  factory _$GUserProductReviewAttachmentUpdateInput(
+          [void Function(GUserProductReviewAttachmentUpdateInputBuilder)?
+              updates]) =>
+      (new GUserProductReviewAttachmentUpdateInputBuilder()..update(updates))
+          ._build();
+
+  _$GUserProductReviewAttachmentUpdateInput._(
+      {this.createdAt, this.modifiedAt, this.file, this.review})
+      : super._();
+
+  @override
+  GUserProductReviewAttachmentUpdateInput rebuild(
+          void Function(GUserProductReviewAttachmentUpdateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserProductReviewAttachmentUpdateInputBuilder toBuilder() =>
+      new GUserProductReviewAttachmentUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserProductReviewAttachmentUpdateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        file == other.file &&
+        review == other.review;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, file.hashCode);
+    _$hash = $jc(_$hash, review.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserProductReviewAttachmentUpdateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('file', file)
+          ..add('review', review))
+        .toString();
+  }
+}
+
+class GUserProductReviewAttachmentUpdateInputBuilder
+    implements
+        Builder<GUserProductReviewAttachmentUpdateInput,
+            GUserProductReviewAttachmentUpdateInputBuilder> {
+  _$GUserProductReviewAttachmentUpdateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GFileFieldInputBuilder? _file;
+  GFileFieldInputBuilder get file =>
+      _$this._file ??= new GFileFieldInputBuilder();
+  set file(GFileFieldInputBuilder? file) => _$this._file = file;
+
+  GUserProductReviewRelateToOneForUpdateInputBuilder? _review;
+  GUserProductReviewRelateToOneForUpdateInputBuilder get review =>
+      _$this._review ??=
+          new GUserProductReviewRelateToOneForUpdateInputBuilder();
+  set review(GUserProductReviewRelateToOneForUpdateInputBuilder? review) =>
+      _$this._review = review;
+
+  GUserProductReviewAttachmentUpdateInputBuilder();
+
+  GUserProductReviewAttachmentUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _file = $v.file?.toBuilder();
+      _review = $v.review?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserProductReviewAttachmentUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserProductReviewAttachmentUpdateInput;
+  }
+
+  @override
+  void update(
+      void Function(GUserProductReviewAttachmentUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserProductReviewAttachmentUpdateInput build() => _build();
+
+  _$GUserProductReviewAttachmentUpdateInput _build() {
+    _$GUserProductReviewAttachmentUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserProductReviewAttachmentUpdateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              file: _file?.build(),
+              review: _review?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'file';
+        _file?.build();
+        _$failedField = 'review';
+        _review?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserProductReviewAttachmentUpdateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserProductReviewRelateToOneForUpdateInput
+    extends GUserProductReviewRelateToOneForUpdateInput {
+  @override
+  final GUserProductReviewCreateInput? create;
+  @override
+  final GUserProductReviewWhereUniqueInput? connect;
+  @override
+  final bool? disconnect;
+
+  factory _$GUserProductReviewRelateToOneForUpdateInput(
+          [void Function(GUserProductReviewRelateToOneForUpdateInputBuilder)?
+              updates]) =>
+      (new GUserProductReviewRelateToOneForUpdateInputBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GUserProductReviewRelateToOneForUpdateInput._(
+      {this.create, this.connect, this.disconnect})
+      : super._();
+
+  @override
+  GUserProductReviewRelateToOneForUpdateInput rebuild(
+          void Function(GUserProductReviewRelateToOneForUpdateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserProductReviewRelateToOneForUpdateInputBuilder toBuilder() =>
+      new GUserProductReviewRelateToOneForUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserProductReviewRelateToOneForUpdateInput &&
+        create == other.create &&
+        connect == other.connect &&
+        disconnect == other.disconnect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jc(_$hash, disconnect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserProductReviewRelateToOneForUpdateInput')
+          ..add('create', create)
+          ..add('connect', connect)
+          ..add('disconnect', disconnect))
+        .toString();
+  }
+}
+
+class GUserProductReviewRelateToOneForUpdateInputBuilder
+    implements
+        Builder<GUserProductReviewRelateToOneForUpdateInput,
+            GUserProductReviewRelateToOneForUpdateInputBuilder> {
+  _$GUserProductReviewRelateToOneForUpdateInput? _$v;
+
+  GUserProductReviewCreateInputBuilder? _create;
+  GUserProductReviewCreateInputBuilder get create =>
+      _$this._create ??= new GUserProductReviewCreateInputBuilder();
+  set create(GUserProductReviewCreateInputBuilder? create) =>
+      _$this._create = create;
+
+  GUserProductReviewWhereUniqueInputBuilder? _connect;
+  GUserProductReviewWhereUniqueInputBuilder get connect =>
+      _$this._connect ??= new GUserProductReviewWhereUniqueInputBuilder();
+  set connect(GUserProductReviewWhereUniqueInputBuilder? connect) =>
+      _$this._connect = connect;
+
+  bool? _disconnect;
+  bool? get disconnect => _$this._disconnect;
+  set disconnect(bool? disconnect) => _$this._disconnect = disconnect;
+
+  GUserProductReviewRelateToOneForUpdateInputBuilder();
+
+  GUserProductReviewRelateToOneForUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _disconnect = $v.disconnect;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserProductReviewRelateToOneForUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserProductReviewRelateToOneForUpdateInput;
+  }
+
+  @override
+  void update(
+      void Function(GUserProductReviewRelateToOneForUpdateInputBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserProductReviewRelateToOneForUpdateInput build() => _build();
+
+  _$GUserProductReviewRelateToOneForUpdateInput _build() {
+    _$GUserProductReviewRelateToOneForUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserProductReviewRelateToOneForUpdateInput._(
+              create: _create?.build(),
+              connect: _connect?.build(),
+              disconnect: disconnect);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserProductReviewRelateToOneForUpdateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserProductReviewAttachmentUpdateArgs
+    extends GUserProductReviewAttachmentUpdateArgs {
+  @override
+  final GUserProductReviewAttachmentWhereUniqueInput where;
+  @override
+  final GUserProductReviewAttachmentUpdateInput data;
+
+  factory _$GUserProductReviewAttachmentUpdateArgs(
+          [void Function(GUserProductReviewAttachmentUpdateArgsBuilder)?
+              updates]) =>
+      (new GUserProductReviewAttachmentUpdateArgsBuilder()..update(updates))
+          ._build();
+
+  _$GUserProductReviewAttachmentUpdateArgs._(
+      {required this.where, required this.data})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GUserProductReviewAttachmentUpdateArgs', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        data, r'GUserProductReviewAttachmentUpdateArgs', 'data');
+  }
+
+  @override
+  GUserProductReviewAttachmentUpdateArgs rebuild(
+          void Function(GUserProductReviewAttachmentUpdateArgsBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserProductReviewAttachmentUpdateArgsBuilder toBuilder() =>
+      new GUserProductReviewAttachmentUpdateArgsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserProductReviewAttachmentUpdateArgs &&
+        where == other.where &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserProductReviewAttachmentUpdateArgs')
+          ..add('where', where)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GUserProductReviewAttachmentUpdateArgsBuilder
+    implements
+        Builder<GUserProductReviewAttachmentUpdateArgs,
+            GUserProductReviewAttachmentUpdateArgsBuilder> {
+  _$GUserProductReviewAttachmentUpdateArgs? _$v;
+
+  GUserProductReviewAttachmentWhereUniqueInputBuilder? _where;
+  GUserProductReviewAttachmentWhereUniqueInputBuilder get where =>
+      _$this._where ??=
+          new GUserProductReviewAttachmentWhereUniqueInputBuilder();
+  set where(GUserProductReviewAttachmentWhereUniqueInputBuilder? where) =>
+      _$this._where = where;
+
+  GUserProductReviewAttachmentUpdateInputBuilder? _data;
+  GUserProductReviewAttachmentUpdateInputBuilder get data =>
+      _$this._data ??= new GUserProductReviewAttachmentUpdateInputBuilder();
+  set data(GUserProductReviewAttachmentUpdateInputBuilder? data) =>
+      _$this._data = data;
+
+  GUserProductReviewAttachmentUpdateArgsBuilder();
+
+  GUserProductReviewAttachmentUpdateArgsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserProductReviewAttachmentUpdateArgs other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserProductReviewAttachmentUpdateArgs;
+  }
+
+  @override
+  void update(
+      void Function(GUserProductReviewAttachmentUpdateArgsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserProductReviewAttachmentUpdateArgs build() => _build();
+
+  _$GUserProductReviewAttachmentUpdateArgs _build() {
+    _$GUserProductReviewAttachmentUpdateArgs _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserProductReviewAttachmentUpdateArgs._(
+              where: where.build(), data: data.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserProductReviewAttachmentUpdateArgs',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserProductReviewAttachmentCreateInput
+    extends GUserProductReviewAttachmentCreateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final GFileFieldInput? file;
+  @override
+  final GUserProductReviewRelateToOneForCreateInput? review;
+
+  factory _$GUserProductReviewAttachmentCreateInput(
+          [void Function(GUserProductReviewAttachmentCreateInputBuilder)?
+              updates]) =>
+      (new GUserProductReviewAttachmentCreateInputBuilder()..update(updates))
+          ._build();
+
+  _$GUserProductReviewAttachmentCreateInput._(
+      {this.createdAt, this.modifiedAt, this.file, this.review})
+      : super._();
+
+  @override
+  GUserProductReviewAttachmentCreateInput rebuild(
+          void Function(GUserProductReviewAttachmentCreateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserProductReviewAttachmentCreateInputBuilder toBuilder() =>
+      new GUserProductReviewAttachmentCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserProductReviewAttachmentCreateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        file == other.file &&
+        review == other.review;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, file.hashCode);
+    _$hash = $jc(_$hash, review.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserProductReviewAttachmentCreateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('file', file)
+          ..add('review', review))
+        .toString();
+  }
+}
+
+class GUserProductReviewAttachmentCreateInputBuilder
+    implements
+        Builder<GUserProductReviewAttachmentCreateInput,
+            GUserProductReviewAttachmentCreateInputBuilder> {
+  _$GUserProductReviewAttachmentCreateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GFileFieldInputBuilder? _file;
+  GFileFieldInputBuilder get file =>
+      _$this._file ??= new GFileFieldInputBuilder();
+  set file(GFileFieldInputBuilder? file) => _$this._file = file;
+
+  GUserProductReviewRelateToOneForCreateInputBuilder? _review;
+  GUserProductReviewRelateToOneForCreateInputBuilder get review =>
+      _$this._review ??=
+          new GUserProductReviewRelateToOneForCreateInputBuilder();
+  set review(GUserProductReviewRelateToOneForCreateInputBuilder? review) =>
+      _$this._review = review;
+
+  GUserProductReviewAttachmentCreateInputBuilder();
+
+  GUserProductReviewAttachmentCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _file = $v.file?.toBuilder();
+      _review = $v.review?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserProductReviewAttachmentCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserProductReviewAttachmentCreateInput;
+  }
+
+  @override
+  void update(
+      void Function(GUserProductReviewAttachmentCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserProductReviewAttachmentCreateInput build() => _build();
+
+  _$GUserProductReviewAttachmentCreateInput _build() {
+    _$GUserProductReviewAttachmentCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserProductReviewAttachmentCreateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              file: _file?.build(),
+              review: _review?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'file';
+        _file?.build();
+        _$failedField = 'review';
+        _review?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserProductReviewAttachmentCreateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserProductReviewRelateToOneForCreateInput
+    extends GUserProductReviewRelateToOneForCreateInput {
+  @override
+  final GUserProductReviewCreateInput? create;
+  @override
+  final GUserProductReviewWhereUniqueInput? connect;
+
+  factory _$GUserProductReviewRelateToOneForCreateInput(
+          [void Function(GUserProductReviewRelateToOneForCreateInputBuilder)?
+              updates]) =>
+      (new GUserProductReviewRelateToOneForCreateInputBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GUserProductReviewRelateToOneForCreateInput._({this.create, this.connect})
+      : super._();
+
+  @override
+  GUserProductReviewRelateToOneForCreateInput rebuild(
+          void Function(GUserProductReviewRelateToOneForCreateInputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserProductReviewRelateToOneForCreateInputBuilder toBuilder() =>
+      new GUserProductReviewRelateToOneForCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserProductReviewRelateToOneForCreateInput &&
+        create == other.create &&
+        connect == other.connect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserProductReviewRelateToOneForCreateInput')
+          ..add('create', create)
+          ..add('connect', connect))
+        .toString();
+  }
+}
+
+class GUserProductReviewRelateToOneForCreateInputBuilder
+    implements
+        Builder<GUserProductReviewRelateToOneForCreateInput,
+            GUserProductReviewRelateToOneForCreateInputBuilder> {
+  _$GUserProductReviewRelateToOneForCreateInput? _$v;
+
+  GUserProductReviewCreateInputBuilder? _create;
+  GUserProductReviewCreateInputBuilder get create =>
+      _$this._create ??= new GUserProductReviewCreateInputBuilder();
+  set create(GUserProductReviewCreateInputBuilder? create) =>
+      _$this._create = create;
+
+  GUserProductReviewWhereUniqueInputBuilder? _connect;
+  GUserProductReviewWhereUniqueInputBuilder get connect =>
+      _$this._connect ??= new GUserProductReviewWhereUniqueInputBuilder();
+  set connect(GUserProductReviewWhereUniqueInputBuilder? connect) =>
+      _$this._connect = connect;
+
+  GUserProductReviewRelateToOneForCreateInputBuilder();
+
+  GUserProductReviewRelateToOneForCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserProductReviewRelateToOneForCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserProductReviewRelateToOneForCreateInput;
+  }
+
+  @override
+  void update(
+      void Function(GUserProductReviewRelateToOneForCreateInputBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserProductReviewRelateToOneForCreateInput build() => _build();
+
+  _$GUserProductReviewRelateToOneForCreateInput _build() {
+    _$GUserProductReviewRelateToOneForCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserProductReviewRelateToOneForCreateInput._(
+              create: _create?.build(), connect: _connect?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserProductReviewRelateToOneForCreateInput',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$GExpertReviewWhereUniqueInput extends GExpertReviewWhereUniqueInput {
   @override
   final String? id;
@@ -102773,6 +116541,8 @@ class _$GExpertReviewWhereInput extends GExpertReviewWhereInput {
   final GUserWhereInput? user;
   @override
   final GIntNullableFilter? likes;
+  @override
+  final GBooleanFilter? disabled;
 
   factory _$GExpertReviewWhereInput(
           [void Function(GExpertReviewWhereInputBuilder)? updates]) =>
@@ -102788,7 +116558,8 @@ class _$GExpertReviewWhereInput extends GExpertReviewWhereInput {
       this.title,
       this.description,
       this.user,
-      this.likes})
+      this.likes,
+      this.disabled})
       : super._();
 
   @override
@@ -102813,7 +116584,8 @@ class _$GExpertReviewWhereInput extends GExpertReviewWhereInput {
         title == other.title &&
         description == other.description &&
         user == other.user &&
-        likes == other.likes;
+        likes == other.likes &&
+        disabled == other.disabled;
   }
 
   @override
@@ -102829,6 +116601,7 @@ class _$GExpertReviewWhereInput extends GExpertReviewWhereInput {
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, likes.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -102845,7 +116618,8 @@ class _$GExpertReviewWhereInput extends GExpertReviewWhereInput {
           ..add('title', title)
           ..add('description', description)
           ..add('user', user)
-          ..add('likes', likes))
+          ..add('likes', likes)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -102907,6 +116681,11 @@ class GExpertReviewWhereInputBuilder
       _$this._likes ??= new GIntNullableFilterBuilder();
   set likes(GIntNullableFilterBuilder? likes) => _$this._likes = likes;
 
+  GBooleanFilterBuilder? _disabled;
+  GBooleanFilterBuilder get disabled =>
+      _$this._disabled ??= new GBooleanFilterBuilder();
+  set disabled(GBooleanFilterBuilder? disabled) => _$this._disabled = disabled;
+
   GExpertReviewWhereInputBuilder();
 
   GExpertReviewWhereInputBuilder get _$this {
@@ -102922,6 +116701,7 @@ class GExpertReviewWhereInputBuilder
       _description = $v.description?.toBuilder();
       _user = $v.user?.toBuilder();
       _likes = $v.likes?.toBuilder();
+      _disabled = $v.disabled?.toBuilder();
       _$v = null;
     }
     return this;
@@ -102955,7 +116735,8 @@ class GExpertReviewWhereInputBuilder
               title: _title?.build(),
               description: _description?.build(),
               user: _user?.build(),
-              likes: _likes?.build());
+              likes: _likes?.build(),
+              disabled: _disabled?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -102979,6 +116760,8 @@ class GExpertReviewWhereInputBuilder
         _user?.build();
         _$failedField = 'likes';
         _likes?.build();
+        _$failedField = 'disabled';
+        _disabled?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GExpertReviewWhereInput', _$failedField, e.toString());
@@ -103003,6 +116786,8 @@ class _$GExpertReviewOrderByInput extends GExpertReviewOrderByInput {
   final GOrderDirection? description;
   @override
   final GOrderDirection? likes;
+  @override
+  final GOrderDirection? disabled;
 
   factory _$GExpertReviewOrderByInput(
           [void Function(GExpertReviewOrderByInputBuilder)? updates]) =>
@@ -103014,7 +116799,8 @@ class _$GExpertReviewOrderByInput extends GExpertReviewOrderByInput {
       this.modifiedAt,
       this.title,
       this.description,
-      this.likes})
+      this.likes,
+      this.disabled})
       : super._();
 
   @override
@@ -103035,7 +116821,8 @@ class _$GExpertReviewOrderByInput extends GExpertReviewOrderByInput {
         modifiedAt == other.modifiedAt &&
         title == other.title &&
         description == other.description &&
-        likes == other.likes;
+        likes == other.likes &&
+        disabled == other.disabled;
   }
 
   @override
@@ -103047,6 +116834,7 @@ class _$GExpertReviewOrderByInput extends GExpertReviewOrderByInput {
     _$hash = $jc(_$hash, title.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, likes.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -103059,7 +116847,8 @@ class _$GExpertReviewOrderByInput extends GExpertReviewOrderByInput {
           ..add('modifiedAt', modifiedAt)
           ..add('title', title)
           ..add('description', description)
-          ..add('likes', likes))
+          ..add('likes', likes)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -103095,6 +116884,10 @@ class GExpertReviewOrderByInputBuilder
   GOrderDirection? get likes => _$this._likes;
   set likes(GOrderDirection? likes) => _$this._likes = likes;
 
+  GOrderDirection? _disabled;
+  GOrderDirection? get disabled => _$this._disabled;
+  set disabled(GOrderDirection? disabled) => _$this._disabled = disabled;
+
   GExpertReviewOrderByInputBuilder();
 
   GExpertReviewOrderByInputBuilder get _$this {
@@ -103106,6 +116899,7 @@ class GExpertReviewOrderByInputBuilder
       _title = $v.title;
       _description = $v.description;
       _likes = $v.likes;
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -103133,7 +116927,8 @@ class GExpertReviewOrderByInputBuilder
             modifiedAt: modifiedAt,
             title: title,
             description: description,
-            likes: likes);
+            likes: likes,
+            disabled: disabled);
     replace(_$result);
     return _$result;
   }
@@ -103149,9 +116944,13 @@ class _$GExpertReviewUpdateInput extends GExpertReviewUpdateInput {
   @override
   final String? description;
   @override
+  final GImageFieldInput? banner;
+  @override
   final GUserRelateToOneForUpdateInput? user;
   @override
   final int? likes;
+  @override
+  final bool? disabled;
 
   factory _$GExpertReviewUpdateInput(
           [void Function(GExpertReviewUpdateInputBuilder)? updates]) =>
@@ -103162,8 +116961,10 @@ class _$GExpertReviewUpdateInput extends GExpertReviewUpdateInput {
       this.modifiedAt,
       this.title,
       this.description,
+      this.banner,
       this.user,
-      this.likes})
+      this.likes,
+      this.disabled})
       : super._();
 
   @override
@@ -103183,8 +116984,10 @@ class _$GExpertReviewUpdateInput extends GExpertReviewUpdateInput {
         modifiedAt == other.modifiedAt &&
         title == other.title &&
         description == other.description &&
+        banner == other.banner &&
         user == other.user &&
-        likes == other.likes;
+        likes == other.likes &&
+        disabled == other.disabled;
   }
 
   @override
@@ -103194,8 +116997,10 @@ class _$GExpertReviewUpdateInput extends GExpertReviewUpdateInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, banner.hashCode);
     _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, likes.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -103207,8 +117012,10 @@ class _$GExpertReviewUpdateInput extends GExpertReviewUpdateInput {
           ..add('modifiedAt', modifiedAt)
           ..add('title', title)
           ..add('description', description)
+          ..add('banner', banner)
           ..add('user', user)
-          ..add('likes', likes))
+          ..add('likes', likes)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -103237,6 +117044,11 @@ class GExpertReviewUpdateInputBuilder
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
+  GImageFieldInputBuilder? _banner;
+  GImageFieldInputBuilder get banner =>
+      _$this._banner ??= new GImageFieldInputBuilder();
+  set banner(GImageFieldInputBuilder? banner) => _$this._banner = banner;
+
   GUserRelateToOneForUpdateInputBuilder? _user;
   GUserRelateToOneForUpdateInputBuilder get user =>
       _$this._user ??= new GUserRelateToOneForUpdateInputBuilder();
@@ -103245,6 +117057,10 @@ class GExpertReviewUpdateInputBuilder
   int? _likes;
   int? get likes => _$this._likes;
   set likes(int? likes) => _$this._likes = likes;
+
+  bool? _disabled;
+  bool? get disabled => _$this._disabled;
+  set disabled(bool? disabled) => _$this._disabled = disabled;
 
   GExpertReviewUpdateInputBuilder();
 
@@ -103255,8 +117071,10 @@ class GExpertReviewUpdateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _title = $v.title;
       _description = $v.description;
+      _banner = $v.banner?.toBuilder();
       _user = $v.user?.toBuilder();
       _likes = $v.likes;
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -103285,8 +117103,10 @@ class GExpertReviewUpdateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               title: title,
               description: description,
+              banner: _banner?.build(),
               user: _user?.build(),
-              likes: likes);
+              likes: likes,
+              disabled: disabled);
     } catch (_) {
       late String _$failedField;
       try {
@@ -103295,6 +117115,8 @@ class GExpertReviewUpdateInputBuilder
         _$failedField = 'modifiedAt';
         _modifiedAt?.build();
 
+        _$failedField = 'banner';
+        _banner?.build();
         _$failedField = 'user';
         _user?.build();
       } catch (e) {
@@ -103437,9 +117259,13 @@ class _$GExpertReviewCreateInput extends GExpertReviewCreateInput {
   @override
   final String? description;
   @override
+  final GImageFieldInput? banner;
+  @override
   final GUserRelateToOneForCreateInput? user;
   @override
   final int? likes;
+  @override
+  final bool? disabled;
 
   factory _$GExpertReviewCreateInput(
           [void Function(GExpertReviewCreateInputBuilder)? updates]) =>
@@ -103450,8 +117276,10 @@ class _$GExpertReviewCreateInput extends GExpertReviewCreateInput {
       this.modifiedAt,
       this.title,
       this.description,
+      this.banner,
       this.user,
-      this.likes})
+      this.likes,
+      this.disabled})
       : super._();
 
   @override
@@ -103471,8 +117299,10 @@ class _$GExpertReviewCreateInput extends GExpertReviewCreateInput {
         modifiedAt == other.modifiedAt &&
         title == other.title &&
         description == other.description &&
+        banner == other.banner &&
         user == other.user &&
-        likes == other.likes;
+        likes == other.likes &&
+        disabled == other.disabled;
   }
 
   @override
@@ -103482,8 +117312,10 @@ class _$GExpertReviewCreateInput extends GExpertReviewCreateInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, banner.hashCode);
     _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, likes.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -103495,8 +117327,10 @@ class _$GExpertReviewCreateInput extends GExpertReviewCreateInput {
           ..add('modifiedAt', modifiedAt)
           ..add('title', title)
           ..add('description', description)
+          ..add('banner', banner)
           ..add('user', user)
-          ..add('likes', likes))
+          ..add('likes', likes)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -103525,6 +117359,11 @@ class GExpertReviewCreateInputBuilder
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
+  GImageFieldInputBuilder? _banner;
+  GImageFieldInputBuilder get banner =>
+      _$this._banner ??= new GImageFieldInputBuilder();
+  set banner(GImageFieldInputBuilder? banner) => _$this._banner = banner;
+
   GUserRelateToOneForCreateInputBuilder? _user;
   GUserRelateToOneForCreateInputBuilder get user =>
       _$this._user ??= new GUserRelateToOneForCreateInputBuilder();
@@ -103533,6 +117372,10 @@ class GExpertReviewCreateInputBuilder
   int? _likes;
   int? get likes => _$this._likes;
   set likes(int? likes) => _$this._likes = likes;
+
+  bool? _disabled;
+  bool? get disabled => _$this._disabled;
+  set disabled(bool? disabled) => _$this._disabled = disabled;
 
   GExpertReviewCreateInputBuilder();
 
@@ -103543,8 +117386,10 @@ class GExpertReviewCreateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _title = $v.title;
       _description = $v.description;
+      _banner = $v.banner?.toBuilder();
       _user = $v.user?.toBuilder();
       _likes = $v.likes;
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -103573,8 +117418,10 @@ class GExpertReviewCreateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               title: title,
               description: description,
+              banner: _banner?.build(),
               user: _user?.build(),
-              likes: likes);
+              likes: likes,
+              disabled: disabled);
     } catch (_) {
       late String _$failedField;
       try {
@@ -103583,6 +117430,8 @@ class GExpertReviewCreateInputBuilder
         _$failedField = 'modifiedAt';
         _modifiedAt?.build();
 
+        _$failedField = 'banner';
+        _banner?.build();
         _$failedField = 'user';
         _user?.build();
       } catch (e) {
@@ -109178,212 +123027,6 @@ class GAppNotificationWhereInputBuilder
   }
 }
 
-class _$GGuaranteeWhereInput extends GGuaranteeWhereInput {
-  @override
-  final BuiltList<GAppNotificationWhereInput>? AND;
-  @override
-  final BuiltList<GAppNotificationWhereInput>? NOT;
-  @override
-  final BuiltList<GAppNotificationWhereInput>? OR;
-  @override
-  final GDateTimeNullableFilter? createdAt;
-  @override
-  final GStringFilter? description;
-  @override
-  final GIDFilter? id;
-  @override
-  final GDateTimeNullableFilter? modifiedAt;
-  @override
-  final GStringFilter? name;
-
-  factory _$GGuaranteeWhereInput(
-          [void Function(GGuaranteeWhereInputBuilder)? updates]) =>
-      (new GGuaranteeWhereInputBuilder()..update(updates))._build();
-
-  _$GGuaranteeWhereInput._(
-      {this.AND,
-      this.NOT,
-      this.OR,
-      this.createdAt,
-      this.description,
-      this.id,
-      this.modifiedAt,
-      this.name})
-      : super._();
-
-  @override
-  GGuaranteeWhereInput rebuild(
-          void Function(GGuaranteeWhereInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GGuaranteeWhereInputBuilder toBuilder() =>
-      new GGuaranteeWhereInputBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GGuaranteeWhereInput &&
-        AND == other.AND &&
-        NOT == other.NOT &&
-        OR == other.OR &&
-        createdAt == other.createdAt &&
-        description == other.description &&
-        id == other.id &&
-        modifiedAt == other.modifiedAt &&
-        name == other.name;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, AND.hashCode);
-    _$hash = $jc(_$hash, NOT.hashCode);
-    _$hash = $jc(_$hash, OR.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, modifiedAt.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'GGuaranteeWhereInput')
-          ..add('AND', AND)
-          ..add('NOT', NOT)
-          ..add('OR', OR)
-          ..add('createdAt', createdAt)
-          ..add('description', description)
-          ..add('id', id)
-          ..add('modifiedAt', modifiedAt)
-          ..add('name', name))
-        .toString();
-  }
-}
-
-class GGuaranteeWhereInputBuilder
-    implements Builder<GGuaranteeWhereInput, GGuaranteeWhereInputBuilder> {
-  _$GGuaranteeWhereInput? _$v;
-
-  ListBuilder<GAppNotificationWhereInput>? _AND;
-  ListBuilder<GAppNotificationWhereInput> get AND =>
-      _$this._AND ??= new ListBuilder<GAppNotificationWhereInput>();
-  set AND(ListBuilder<GAppNotificationWhereInput>? AND) => _$this._AND = AND;
-
-  ListBuilder<GAppNotificationWhereInput>? _NOT;
-  ListBuilder<GAppNotificationWhereInput> get NOT =>
-      _$this._NOT ??= new ListBuilder<GAppNotificationWhereInput>();
-  set NOT(ListBuilder<GAppNotificationWhereInput>? NOT) => _$this._NOT = NOT;
-
-  ListBuilder<GAppNotificationWhereInput>? _OR;
-  ListBuilder<GAppNotificationWhereInput> get OR =>
-      _$this._OR ??= new ListBuilder<GAppNotificationWhereInput>();
-  set OR(ListBuilder<GAppNotificationWhereInput>? OR) => _$this._OR = OR;
-
-  GDateTimeNullableFilterBuilder? _createdAt;
-  GDateTimeNullableFilterBuilder get createdAt =>
-      _$this._createdAt ??= new GDateTimeNullableFilterBuilder();
-  set createdAt(GDateTimeNullableFilterBuilder? createdAt) =>
-      _$this._createdAt = createdAt;
-
-  GStringFilterBuilder? _description;
-  GStringFilterBuilder get description =>
-      _$this._description ??= new GStringFilterBuilder();
-  set description(GStringFilterBuilder? description) =>
-      _$this._description = description;
-
-  GIDFilterBuilder? _id;
-  GIDFilterBuilder get id => _$this._id ??= new GIDFilterBuilder();
-  set id(GIDFilterBuilder? id) => _$this._id = id;
-
-  GDateTimeNullableFilterBuilder? _modifiedAt;
-  GDateTimeNullableFilterBuilder get modifiedAt =>
-      _$this._modifiedAt ??= new GDateTimeNullableFilterBuilder();
-  set modifiedAt(GDateTimeNullableFilterBuilder? modifiedAt) =>
-      _$this._modifiedAt = modifiedAt;
-
-  GStringFilterBuilder? _name;
-  GStringFilterBuilder get name => _$this._name ??= new GStringFilterBuilder();
-  set name(GStringFilterBuilder? name) => _$this._name = name;
-
-  GGuaranteeWhereInputBuilder();
-
-  GGuaranteeWhereInputBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _AND = $v.AND?.toBuilder();
-      _NOT = $v.NOT?.toBuilder();
-      _OR = $v.OR?.toBuilder();
-      _createdAt = $v.createdAt?.toBuilder();
-      _description = $v.description?.toBuilder();
-      _id = $v.id?.toBuilder();
-      _modifiedAt = $v.modifiedAt?.toBuilder();
-      _name = $v.name?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(GGuaranteeWhereInput other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GGuaranteeWhereInput;
-  }
-
-  @override
-  void update(void Function(GGuaranteeWhereInputBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GGuaranteeWhereInput build() => _build();
-
-  _$GGuaranteeWhereInput _build() {
-    _$GGuaranteeWhereInput _$result;
-    try {
-      _$result = _$v ??
-          new _$GGuaranteeWhereInput._(
-              AND: _AND?.build(),
-              NOT: _NOT?.build(),
-              OR: _OR?.build(),
-              createdAt: _createdAt?.build(),
-              description: _description?.build(),
-              id: _id?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'AND';
-        _AND?.build();
-        _$failedField = 'NOT';
-        _NOT?.build();
-        _$failedField = 'OR';
-        _OR?.build();
-        _$failedField = 'createdAt';
-        _createdAt?.build();
-        _$failedField = 'description';
-        _description?.build();
-        _$failedField = 'id';
-        _id?.build();
-        _$failedField = 'modifiedAt';
-        _modifiedAt?.build();
-        _$failedField = 'name';
-        _name?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GGuaranteeWhereInput', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
 class _$GAppNotificationOrderByInput extends GAppNotificationOrderByInput {
   @override
   final GOrderDirection? id;
@@ -109512,138 +123155,6 @@ class GAppNotificationOrderByInputBuilder
             modifiedAt: modifiedAt,
             title: title,
             body: body);
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GGuaranteeOrderByInput extends GGuaranteeOrderByInput {
-  @override
-  final GOrderDirection? createdAt;
-  @override
-  final GOrderDirection? description;
-  @override
-  final GOrderDirection? id;
-  @override
-  final GOrderDirection? modifiedAt;
-  @override
-  final GOrderDirection? name;
-
-  factory _$GGuaranteeOrderByInput(
-          [void Function(GGuaranteeOrderByInputBuilder)? updates]) =>
-      (new GGuaranteeOrderByInputBuilder()..update(updates))._build();
-
-  _$GGuaranteeOrderByInput._(
-      {this.createdAt, this.description, this.id, this.modifiedAt, this.name})
-      : super._();
-
-  @override
-  GGuaranteeOrderByInput rebuild(
-          void Function(GGuaranteeOrderByInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GGuaranteeOrderByInputBuilder toBuilder() =>
-      new GGuaranteeOrderByInputBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GGuaranteeOrderByInput &&
-        createdAt == other.createdAt &&
-        description == other.description &&
-        id == other.id &&
-        modifiedAt == other.modifiedAt &&
-        name == other.name;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, description.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, modifiedAt.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'GGuaranteeOrderByInput')
-          ..add('createdAt', createdAt)
-          ..add('description', description)
-          ..add('id', id)
-          ..add('modifiedAt', modifiedAt)
-          ..add('name', name))
-        .toString();
-  }
-}
-
-class GGuaranteeOrderByInputBuilder
-    implements Builder<GGuaranteeOrderByInput, GGuaranteeOrderByInputBuilder> {
-  _$GGuaranteeOrderByInput? _$v;
-
-  GOrderDirection? _createdAt;
-  GOrderDirection? get createdAt => _$this._createdAt;
-  set createdAt(GOrderDirection? createdAt) => _$this._createdAt = createdAt;
-
-  GOrderDirection? _description;
-  GOrderDirection? get description => _$this._description;
-  set description(GOrderDirection? description) =>
-      _$this._description = description;
-
-  GOrderDirection? _id;
-  GOrderDirection? get id => _$this._id;
-  set id(GOrderDirection? id) => _$this._id = id;
-
-  GOrderDirection? _modifiedAt;
-  GOrderDirection? get modifiedAt => _$this._modifiedAt;
-  set modifiedAt(GOrderDirection? modifiedAt) =>
-      _$this._modifiedAt = modifiedAt;
-
-  GOrderDirection? _name;
-  GOrderDirection? get name => _$this._name;
-  set name(GOrderDirection? name) => _$this._name = name;
-
-  GGuaranteeOrderByInputBuilder();
-
-  GGuaranteeOrderByInputBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _createdAt = $v.createdAt;
-      _description = $v.description;
-      _id = $v.id;
-      _modifiedAt = $v.modifiedAt;
-      _name = $v.name;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(GGuaranteeOrderByInput other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GGuaranteeOrderByInput;
-  }
-
-  @override
-  void update(void Function(GGuaranteeOrderByInputBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GGuaranteeOrderByInput build() => _build();
-
-  _$GGuaranteeOrderByInput _build() {
-    final _$result = _$v ??
-        new _$GGuaranteeOrderByInput._(
-            createdAt: createdAt,
-            description: description,
-            id: id,
-            modifiedAt: modifiedAt,
-            name: name);
     replace(_$result);
     return _$result;
   }
@@ -113105,6 +126616,8 @@ class _$GNewsItemWhereInput extends GNewsItemWhereInput {
   final GNewsAttachmentWhereInput? banner;
   @override
   final GNewsAttachmentManyRelationFilter? newsAttachments;
+  @override
+  final GBooleanFilter? disabled;
 
   factory _$GNewsItemWhereInput(
           [void Function(GNewsItemWhereInputBuilder)? updates]) =>
@@ -113123,7 +126636,8 @@ class _$GNewsItemWhereInput extends GNewsItemWhereInput {
       this.categories,
       this.keywords,
       this.banner,
-      this.newsAttachments})
+      this.newsAttachments,
+      this.disabled})
       : super._();
 
   @override
@@ -113151,7 +126665,8 @@ class _$GNewsItemWhereInput extends GNewsItemWhereInput {
         categories == other.categories &&
         keywords == other.keywords &&
         banner == other.banner &&
-        newsAttachments == other.newsAttachments;
+        newsAttachments == other.newsAttachments &&
+        disabled == other.disabled;
   }
 
   @override
@@ -113170,6 +126685,7 @@ class _$GNewsItemWhereInput extends GNewsItemWhereInput {
     _$hash = $jc(_$hash, keywords.hashCode);
     _$hash = $jc(_$hash, banner.hashCode);
     _$hash = $jc(_$hash, newsAttachments.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -113189,7 +126705,8 @@ class _$GNewsItemWhereInput extends GNewsItemWhereInput {
           ..add('categories', categories)
           ..add('keywords', keywords)
           ..add('banner', banner)
-          ..add('newsAttachments', newsAttachments))
+          ..add('newsAttachments', newsAttachments)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -113272,6 +126789,11 @@ class GNewsItemWhereInputBuilder
           GNewsAttachmentManyRelationFilterBuilder? newsAttachments) =>
       _$this._newsAttachments = newsAttachments;
 
+  GBooleanFilterBuilder? _disabled;
+  GBooleanFilterBuilder get disabled =>
+      _$this._disabled ??= new GBooleanFilterBuilder();
+  set disabled(GBooleanFilterBuilder? disabled) => _$this._disabled = disabled;
+
   GNewsItemWhereInputBuilder();
 
   GNewsItemWhereInputBuilder get _$this {
@@ -113290,6 +126812,7 @@ class GNewsItemWhereInputBuilder
       _keywords = $v.keywords?.toBuilder();
       _banner = $v.banner?.toBuilder();
       _newsAttachments = $v.newsAttachments?.toBuilder();
+      _disabled = $v.disabled?.toBuilder();
       _$v = null;
     }
     return this;
@@ -113326,7 +126849,8 @@ class GNewsItemWhereInputBuilder
               categories: _categories?.build(),
               keywords: _keywords?.build(),
               banner: _banner?.build(),
-              newsAttachments: _newsAttachments?.build());
+              newsAttachments: _newsAttachments?.build(),
+              disabled: _disabled?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -113356,6 +126880,8 @@ class GNewsItemWhereInputBuilder
         _banner?.build();
         _$failedField = 'newsAttachments';
         _newsAttachments?.build();
+        _$failedField = 'disabled';
+        _disabled?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GNewsItemWhereInput', _$failedField, e.toString());
@@ -113770,6 +127296,8 @@ class _$GNewsItemOrderByInput extends GNewsItemOrderByInput {
   final GOrderDirection? description;
   @override
   final GOrderDirection? authorName;
+  @override
+  final GOrderDirection? disabled;
 
   factory _$GNewsItemOrderByInput(
           [void Function(GNewsItemOrderByInputBuilder)? updates]) =>
@@ -113781,7 +127309,8 @@ class _$GNewsItemOrderByInput extends GNewsItemOrderByInput {
       this.modifiedAt,
       this.title,
       this.description,
-      this.authorName})
+      this.authorName,
+      this.disabled})
       : super._();
 
   @override
@@ -113802,7 +127331,8 @@ class _$GNewsItemOrderByInput extends GNewsItemOrderByInput {
         modifiedAt == other.modifiedAt &&
         title == other.title &&
         description == other.description &&
-        authorName == other.authorName;
+        authorName == other.authorName &&
+        disabled == other.disabled;
   }
 
   @override
@@ -113814,6 +127344,7 @@ class _$GNewsItemOrderByInput extends GNewsItemOrderByInput {
     _$hash = $jc(_$hash, title.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, authorName.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -113826,7 +127357,8 @@ class _$GNewsItemOrderByInput extends GNewsItemOrderByInput {
           ..add('modifiedAt', modifiedAt)
           ..add('title', title)
           ..add('description', description)
-          ..add('authorName', authorName))
+          ..add('authorName', authorName)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -113862,6 +127394,10 @@ class GNewsItemOrderByInputBuilder
   set authorName(GOrderDirection? authorName) =>
       _$this._authorName = authorName;
 
+  GOrderDirection? _disabled;
+  GOrderDirection? get disabled => _$this._disabled;
+  set disabled(GOrderDirection? disabled) => _$this._disabled = disabled;
+
   GNewsItemOrderByInputBuilder();
 
   GNewsItemOrderByInputBuilder get _$this {
@@ -113873,6 +127409,7 @@ class GNewsItemOrderByInputBuilder
       _title = $v.title;
       _description = $v.description;
       _authorName = $v.authorName;
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -113900,7 +127437,8 @@ class GNewsItemOrderByInputBuilder
             modifiedAt: modifiedAt,
             title: title,
             description: description,
-            authorName: authorName);
+            authorName: authorName,
+            disabled: disabled);
     replace(_$result);
     return _$result;
   }
@@ -113925,6 +127463,8 @@ class _$GNewsItemUpdateInput extends GNewsItemUpdateInput {
   final GNewsAttachmentRelateToOneForUpdateInput? banner;
   @override
   final GNewsAttachmentRelateToManyForUpdateInput? newsAttachments;
+  @override
+  final bool? disabled;
 
   factory _$GNewsItemUpdateInput(
           [void Function(GNewsItemUpdateInputBuilder)? updates]) =>
@@ -113939,7 +127479,8 @@ class _$GNewsItemUpdateInput extends GNewsItemUpdateInput {
       this.categories,
       this.keywords,
       this.banner,
-      this.newsAttachments})
+      this.newsAttachments,
+      this.disabled})
       : super._();
 
   @override
@@ -113963,7 +127504,8 @@ class _$GNewsItemUpdateInput extends GNewsItemUpdateInput {
         categories == other.categories &&
         keywords == other.keywords &&
         banner == other.banner &&
-        newsAttachments == other.newsAttachments;
+        newsAttachments == other.newsAttachments &&
+        disabled == other.disabled;
   }
 
   @override
@@ -113978,6 +127520,7 @@ class _$GNewsItemUpdateInput extends GNewsItemUpdateInput {
     _$hash = $jc(_$hash, keywords.hashCode);
     _$hash = $jc(_$hash, banner.hashCode);
     _$hash = $jc(_$hash, newsAttachments.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -113993,7 +127536,8 @@ class _$GNewsItemUpdateInput extends GNewsItemUpdateInput {
           ..add('categories', categories)
           ..add('keywords', keywords)
           ..add('banner', banner)
-          ..add('newsAttachments', newsAttachments))
+          ..add('newsAttachments', newsAttachments)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -114052,6 +127596,10 @@ class GNewsItemUpdateInputBuilder
           GNewsAttachmentRelateToManyForUpdateInputBuilder? newsAttachments) =>
       _$this._newsAttachments = newsAttachments;
 
+  bool? _disabled;
+  bool? get disabled => _$this._disabled;
+  set disabled(bool? disabled) => _$this._disabled = disabled;
+
   GNewsItemUpdateInputBuilder();
 
   GNewsItemUpdateInputBuilder get _$this {
@@ -114066,6 +127614,7 @@ class GNewsItemUpdateInputBuilder
       _keywords = $v.keywords?.toBuilder();
       _banner = $v.banner?.toBuilder();
       _newsAttachments = $v.newsAttachments?.toBuilder();
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -114098,7 +127647,8 @@ class GNewsItemUpdateInputBuilder
               categories: _categories?.build(),
               keywords: _keywords?.build(),
               banner: _banner?.build(),
-              newsAttachments: _newsAttachments?.build());
+              newsAttachments: _newsAttachments?.build(),
+              disabled: disabled);
     } catch (_) {
       late String _$failedField;
       try {
@@ -114860,6 +128410,8 @@ class _$GNewsItemCreateInput extends GNewsItemCreateInput {
   final GNewsAttachmentRelateToOneForCreateInput? banner;
   @override
   final GNewsAttachmentRelateToManyForCreateInput? newsAttachments;
+  @override
+  final bool? disabled;
 
   factory _$GNewsItemCreateInput(
           [void Function(GNewsItemCreateInputBuilder)? updates]) =>
@@ -114874,7 +128426,8 @@ class _$GNewsItemCreateInput extends GNewsItemCreateInput {
       this.categories,
       this.keywords,
       this.banner,
-      this.newsAttachments})
+      this.newsAttachments,
+      this.disabled})
       : super._();
 
   @override
@@ -114898,7 +128451,8 @@ class _$GNewsItemCreateInput extends GNewsItemCreateInput {
         categories == other.categories &&
         keywords == other.keywords &&
         banner == other.banner &&
-        newsAttachments == other.newsAttachments;
+        newsAttachments == other.newsAttachments &&
+        disabled == other.disabled;
   }
 
   @override
@@ -114913,6 +128467,7 @@ class _$GNewsItemCreateInput extends GNewsItemCreateInput {
     _$hash = $jc(_$hash, keywords.hashCode);
     _$hash = $jc(_$hash, banner.hashCode);
     _$hash = $jc(_$hash, newsAttachments.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -114928,7 +128483,8 @@ class _$GNewsItemCreateInput extends GNewsItemCreateInput {
           ..add('categories', categories)
           ..add('keywords', keywords)
           ..add('banner', banner)
-          ..add('newsAttachments', newsAttachments))
+          ..add('newsAttachments', newsAttachments)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -114987,6 +128543,10 @@ class GNewsItemCreateInputBuilder
           GNewsAttachmentRelateToManyForCreateInputBuilder? newsAttachments) =>
       _$this._newsAttachments = newsAttachments;
 
+  bool? _disabled;
+  bool? get disabled => _$this._disabled;
+  set disabled(bool? disabled) => _$this._disabled = disabled;
+
   GNewsItemCreateInputBuilder();
 
   GNewsItemCreateInputBuilder get _$this {
@@ -115001,6 +128561,7 @@ class GNewsItemCreateInputBuilder
       _keywords = $v.keywords?.toBuilder();
       _banner = $v.banner?.toBuilder();
       _newsAttachments = $v.newsAttachments?.toBuilder();
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -115033,7 +128594,8 @@ class GNewsItemCreateInputBuilder
               categories: _categories?.build(),
               keywords: _keywords?.build(),
               banner: _banner?.build(),
-              newsAttachments: _newsAttachments?.build());
+              newsAttachments: _newsAttachments?.build(),
+              disabled: disabled);
     } catch (_) {
       late String _$failedField;
       try {
@@ -118289,6 +131851,10 @@ class _$GCouponWhereInput extends GCouponWhereInput {
   final GVehicleManyRelationFilter? vehicles;
   @override
   final GStringNullableFilter? vehiclesCondition;
+  @override
+  final GProductManyRelationFilter? products;
+  @override
+  final GStringNullableFilter? productsCondition;
 
   factory _$GCouponWhereInput(
           [void Function(GCouponWhereInputBuilder)? updates]) =>
@@ -118306,7 +131872,9 @@ class _$GCouponWhereInput extends GCouponWhereInput {
       this.startFrom,
       this.expireBy,
       this.vehicles,
-      this.vehiclesCondition})
+      this.vehiclesCondition,
+      this.products,
+      this.productsCondition})
       : super._();
 
   @override
@@ -118332,7 +131900,9 @@ class _$GCouponWhereInput extends GCouponWhereInput {
         startFrom == other.startFrom &&
         expireBy == other.expireBy &&
         vehicles == other.vehicles &&
-        vehiclesCondition == other.vehiclesCondition;
+        vehiclesCondition == other.vehiclesCondition &&
+        products == other.products &&
+        productsCondition == other.productsCondition;
   }
 
   @override
@@ -118350,6 +131920,8 @@ class _$GCouponWhereInput extends GCouponWhereInput {
     _$hash = $jc(_$hash, expireBy.hashCode);
     _$hash = $jc(_$hash, vehicles.hashCode);
     _$hash = $jc(_$hash, vehiclesCondition.hashCode);
+    _$hash = $jc(_$hash, products.hashCode);
+    _$hash = $jc(_$hash, productsCondition.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -118368,7 +131940,9 @@ class _$GCouponWhereInput extends GCouponWhereInput {
           ..add('startFrom', startFrom)
           ..add('expireBy', expireBy)
           ..add('vehicles', vehicles)
-          ..add('vehiclesCondition', vehiclesCondition))
+          ..add('vehiclesCondition', vehiclesCondition)
+          ..add('products', products)
+          ..add('productsCondition', productsCondition))
         .toString();
   }
 }
@@ -118442,6 +132016,18 @@ class GCouponWhereInputBuilder
   set vehiclesCondition(GStringNullableFilterBuilder? vehiclesCondition) =>
       _$this._vehiclesCondition = vehiclesCondition;
 
+  GProductManyRelationFilterBuilder? _products;
+  GProductManyRelationFilterBuilder get products =>
+      _$this._products ??= new GProductManyRelationFilterBuilder();
+  set products(GProductManyRelationFilterBuilder? products) =>
+      _$this._products = products;
+
+  GStringNullableFilterBuilder? _productsCondition;
+  GStringNullableFilterBuilder get productsCondition =>
+      _$this._productsCondition ??= new GStringNullableFilterBuilder();
+  set productsCondition(GStringNullableFilterBuilder? productsCondition) =>
+      _$this._productsCondition = productsCondition;
+
   GCouponWhereInputBuilder();
 
   GCouponWhereInputBuilder get _$this {
@@ -118459,6 +132045,8 @@ class GCouponWhereInputBuilder
       _expireBy = $v.expireBy?.toBuilder();
       _vehicles = $v.vehicles?.toBuilder();
       _vehiclesCondition = $v.vehiclesCondition?.toBuilder();
+      _products = $v.products?.toBuilder();
+      _productsCondition = $v.productsCondition?.toBuilder();
       _$v = null;
     }
     return this;
@@ -118494,7 +132082,9 @@ class GCouponWhereInputBuilder
               startFrom: _startFrom?.build(),
               expireBy: _expireBy?.build(),
               vehicles: _vehicles?.build(),
-              vehiclesCondition: _vehiclesCondition?.build());
+              vehiclesCondition: _vehiclesCondition?.build(),
+              products: _products?.build(),
+              productsCondition: _productsCondition?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -118522,6 +132112,10 @@ class GCouponWhereInputBuilder
         _vehicles?.build();
         _$failedField = 'vehiclesCondition';
         _vehiclesCondition?.build();
+        _$failedField = 'products';
+        _products?.build();
+        _$failedField = 'productsCondition';
+        _productsCondition?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GCouponWhereInput', _$failedField, e.toString());
@@ -118661,6 +132255,134 @@ class GVehicleManyRelationFilterBuilder
   }
 }
 
+class _$GProductManyRelationFilter extends GProductManyRelationFilter {
+  @override
+  final GProductWhereInput? every;
+  @override
+  final GProductWhereInput? some;
+  @override
+  final GProductWhereInput? none;
+
+  factory _$GProductManyRelationFilter(
+          [void Function(GProductManyRelationFilterBuilder)? updates]) =>
+      (new GProductManyRelationFilterBuilder()..update(updates))._build();
+
+  _$GProductManyRelationFilter._({this.every, this.some, this.none})
+      : super._();
+
+  @override
+  GProductManyRelationFilter rebuild(
+          void Function(GProductManyRelationFilterBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductManyRelationFilterBuilder toBuilder() =>
+      new GProductManyRelationFilterBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductManyRelationFilter &&
+        every == other.every &&
+        some == other.some &&
+        none == other.none;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, every.hashCode);
+    _$hash = $jc(_$hash, some.hashCode);
+    _$hash = $jc(_$hash, none.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GProductManyRelationFilter')
+          ..add('every', every)
+          ..add('some', some)
+          ..add('none', none))
+        .toString();
+  }
+}
+
+class GProductManyRelationFilterBuilder
+    implements
+        Builder<GProductManyRelationFilter, GProductManyRelationFilterBuilder> {
+  _$GProductManyRelationFilter? _$v;
+
+  GProductWhereInputBuilder? _every;
+  GProductWhereInputBuilder get every =>
+      _$this._every ??= new GProductWhereInputBuilder();
+  set every(GProductWhereInputBuilder? every) => _$this._every = every;
+
+  GProductWhereInputBuilder? _some;
+  GProductWhereInputBuilder get some =>
+      _$this._some ??= new GProductWhereInputBuilder();
+  set some(GProductWhereInputBuilder? some) => _$this._some = some;
+
+  GProductWhereInputBuilder? _none;
+  GProductWhereInputBuilder get none =>
+      _$this._none ??= new GProductWhereInputBuilder();
+  set none(GProductWhereInputBuilder? none) => _$this._none = none;
+
+  GProductManyRelationFilterBuilder();
+
+  GProductManyRelationFilterBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _every = $v.every?.toBuilder();
+      _some = $v.some?.toBuilder();
+      _none = $v.none?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductManyRelationFilter other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductManyRelationFilter;
+  }
+
+  @override
+  void update(void Function(GProductManyRelationFilterBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductManyRelationFilter build() => _build();
+
+  _$GProductManyRelationFilter _build() {
+    _$GProductManyRelationFilter _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductManyRelationFilter._(
+              every: _every?.build(),
+              some: _some?.build(),
+              none: _none?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'every';
+        _every?.build();
+        _$failedField = 'some';
+        _some?.build();
+        _$failedField = 'none';
+        _none?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductManyRelationFilter', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$GCouponOrderByInput extends GCouponOrderByInput {
   @override
   final GOrderDirection? id;
@@ -118678,6 +132400,8 @@ class _$GCouponOrderByInput extends GCouponOrderByInput {
   final GOrderDirection? expireBy;
   @override
   final GOrderDirection? vehiclesCondition;
+  @override
+  final GOrderDirection? productsCondition;
 
   factory _$GCouponOrderByInput(
           [void Function(GCouponOrderByInputBuilder)? updates]) =>
@@ -118691,7 +132415,8 @@ class _$GCouponOrderByInput extends GCouponOrderByInput {
       this.description,
       this.startFrom,
       this.expireBy,
-      this.vehiclesCondition})
+      this.vehiclesCondition,
+      this.productsCondition})
       : super._();
 
   @override
@@ -118714,7 +132439,8 @@ class _$GCouponOrderByInput extends GCouponOrderByInput {
         description == other.description &&
         startFrom == other.startFrom &&
         expireBy == other.expireBy &&
-        vehiclesCondition == other.vehiclesCondition;
+        vehiclesCondition == other.vehiclesCondition &&
+        productsCondition == other.productsCondition;
   }
 
   @override
@@ -118728,6 +132454,7 @@ class _$GCouponOrderByInput extends GCouponOrderByInput {
     _$hash = $jc(_$hash, startFrom.hashCode);
     _$hash = $jc(_$hash, expireBy.hashCode);
     _$hash = $jc(_$hash, vehiclesCondition.hashCode);
+    _$hash = $jc(_$hash, productsCondition.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -118742,7 +132469,8 @@ class _$GCouponOrderByInput extends GCouponOrderByInput {
           ..add('description', description)
           ..add('startFrom', startFrom)
           ..add('expireBy', expireBy)
-          ..add('vehiclesCondition', vehiclesCondition))
+          ..add('vehiclesCondition', vehiclesCondition)
+          ..add('productsCondition', productsCondition))
         .toString();
   }
 }
@@ -118786,6 +132514,11 @@ class GCouponOrderByInputBuilder
   set vehiclesCondition(GOrderDirection? vehiclesCondition) =>
       _$this._vehiclesCondition = vehiclesCondition;
 
+  GOrderDirection? _productsCondition;
+  GOrderDirection? get productsCondition => _$this._productsCondition;
+  set productsCondition(GOrderDirection? productsCondition) =>
+      _$this._productsCondition = productsCondition;
+
   GCouponOrderByInputBuilder();
 
   GCouponOrderByInputBuilder get _$this {
@@ -118799,6 +132532,7 @@ class GCouponOrderByInputBuilder
       _startFrom = $v.startFrom;
       _expireBy = $v.expireBy;
       _vehiclesCondition = $v.vehiclesCondition;
+      _productsCondition = $v.productsCondition;
       _$v = null;
     }
     return this;
@@ -118828,7 +132562,8 @@ class GCouponOrderByInputBuilder
             description: description,
             startFrom: startFrom,
             expireBy: expireBy,
-            vehiclesCondition: vehiclesCondition);
+            vehiclesCondition: vehiclesCondition,
+            productsCondition: productsCondition);
     replace(_$result);
     return _$result;
   }
@@ -118853,6 +132588,10 @@ class _$GCouponUpdateInput extends GCouponUpdateInput {
   final GVehicleRelateToManyForUpdateInput? vehicles;
   @override
   final String? vehiclesCondition;
+  @override
+  final GProductRelateToManyForUpdateInput? products;
+  @override
+  final String? productsCondition;
 
   factory _$GCouponUpdateInput(
           [void Function(GCouponUpdateInputBuilder)? updates]) =>
@@ -118867,7 +132606,9 @@ class _$GCouponUpdateInput extends GCouponUpdateInput {
       this.startFrom,
       this.expireBy,
       this.vehicles,
-      this.vehiclesCondition})
+      this.vehiclesCondition,
+      this.products,
+      this.productsCondition})
       : super._();
 
   @override
@@ -118891,7 +132632,9 @@ class _$GCouponUpdateInput extends GCouponUpdateInput {
         startFrom == other.startFrom &&
         expireBy == other.expireBy &&
         vehicles == other.vehicles &&
-        vehiclesCondition == other.vehiclesCondition;
+        vehiclesCondition == other.vehiclesCondition &&
+        products == other.products &&
+        productsCondition == other.productsCondition;
   }
 
   @override
@@ -118906,6 +132649,8 @@ class _$GCouponUpdateInput extends GCouponUpdateInput {
     _$hash = $jc(_$hash, expireBy.hashCode);
     _$hash = $jc(_$hash, vehicles.hashCode);
     _$hash = $jc(_$hash, vehiclesCondition.hashCode);
+    _$hash = $jc(_$hash, products.hashCode);
+    _$hash = $jc(_$hash, productsCondition.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -118921,7 +132666,9 @@ class _$GCouponUpdateInput extends GCouponUpdateInput {
           ..add('startFrom', startFrom)
           ..add('expireBy', expireBy)
           ..add('vehicles', vehicles)
-          ..add('vehiclesCondition', vehiclesCondition))
+          ..add('vehiclesCondition', vehiclesCondition)
+          ..add('products', products)
+          ..add('productsCondition', productsCondition))
         .toString();
   }
 }
@@ -118973,6 +132720,17 @@ class GCouponUpdateInputBuilder
   set vehiclesCondition(String? vehiclesCondition) =>
       _$this._vehiclesCondition = vehiclesCondition;
 
+  GProductRelateToManyForUpdateInputBuilder? _products;
+  GProductRelateToManyForUpdateInputBuilder get products =>
+      _$this._products ??= new GProductRelateToManyForUpdateInputBuilder();
+  set products(GProductRelateToManyForUpdateInputBuilder? products) =>
+      _$this._products = products;
+
+  String? _productsCondition;
+  String? get productsCondition => _$this._productsCondition;
+  set productsCondition(String? productsCondition) =>
+      _$this._productsCondition = productsCondition;
+
   GCouponUpdateInputBuilder();
 
   GCouponUpdateInputBuilder get _$this {
@@ -118987,6 +132745,8 @@ class GCouponUpdateInputBuilder
       _expireBy = $v.expireBy?.toBuilder();
       _vehicles = $v.vehicles?.toBuilder();
       _vehiclesCondition = $v.vehiclesCondition;
+      _products = $v.products?.toBuilder();
+      _productsCondition = $v.productsCondition;
       _$v = null;
     }
     return this;
@@ -119019,7 +132779,9 @@ class GCouponUpdateInputBuilder
               startFrom: _startFrom?.build(),
               expireBy: _expireBy?.build(),
               vehicles: _vehicles?.build(),
-              vehiclesCondition: vehiclesCondition);
+              vehiclesCondition: vehiclesCondition,
+              products: _products?.build(),
+              productsCondition: productsCondition);
     } catch (_) {
       late String _$failedField;
       try {
@@ -119034,6 +132796,9 @@ class GCouponUpdateInputBuilder
         _expireBy?.build();
         _$failedField = 'vehicles';
         _vehicles?.build();
+
+        _$failedField = 'products';
+        _products?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GCouponUpdateInput', _$failedField, e.toString());
@@ -119196,6 +132961,157 @@ class GVehicleRelateToManyForUpdateInputBuilder
   }
 }
 
+class _$GProductRelateToManyForUpdateInput
+    extends GProductRelateToManyForUpdateInput {
+  @override
+  final BuiltList<GProductWhereUniqueInput>? disconnect;
+  @override
+  final BuiltList<GProductWhereUniqueInput>? set;
+  @override
+  final BuiltList<GProductCreateInput>? create;
+  @override
+  final BuiltList<GProductWhereUniqueInput>? connect;
+
+  factory _$GProductRelateToManyForUpdateInput(
+          [void Function(GProductRelateToManyForUpdateInputBuilder)?
+              updates]) =>
+      (new GProductRelateToManyForUpdateInputBuilder()..update(updates))
+          ._build();
+
+  _$GProductRelateToManyForUpdateInput._(
+      {this.disconnect, this.set, this.create, this.connect})
+      : super._();
+
+  @override
+  GProductRelateToManyForUpdateInput rebuild(
+          void Function(GProductRelateToManyForUpdateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductRelateToManyForUpdateInputBuilder toBuilder() =>
+      new GProductRelateToManyForUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductRelateToManyForUpdateInput &&
+        disconnect == other.disconnect &&
+        set == other.set &&
+        create == other.create &&
+        connect == other.connect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, disconnect.hashCode);
+    _$hash = $jc(_$hash, set.hashCode);
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GProductRelateToManyForUpdateInput')
+          ..add('disconnect', disconnect)
+          ..add('set', set)
+          ..add('create', create)
+          ..add('connect', connect))
+        .toString();
+  }
+}
+
+class GProductRelateToManyForUpdateInputBuilder
+    implements
+        Builder<GProductRelateToManyForUpdateInput,
+            GProductRelateToManyForUpdateInputBuilder> {
+  _$GProductRelateToManyForUpdateInput? _$v;
+
+  ListBuilder<GProductWhereUniqueInput>? _disconnect;
+  ListBuilder<GProductWhereUniqueInput> get disconnect =>
+      _$this._disconnect ??= new ListBuilder<GProductWhereUniqueInput>();
+  set disconnect(ListBuilder<GProductWhereUniqueInput>? disconnect) =>
+      _$this._disconnect = disconnect;
+
+  ListBuilder<GProductWhereUniqueInput>? _set;
+  ListBuilder<GProductWhereUniqueInput> get set =>
+      _$this._set ??= new ListBuilder<GProductWhereUniqueInput>();
+  set set(ListBuilder<GProductWhereUniqueInput>? set) => _$this._set = set;
+
+  ListBuilder<GProductCreateInput>? _create;
+  ListBuilder<GProductCreateInput> get create =>
+      _$this._create ??= new ListBuilder<GProductCreateInput>();
+  set create(ListBuilder<GProductCreateInput>? create) =>
+      _$this._create = create;
+
+  ListBuilder<GProductWhereUniqueInput>? _connect;
+  ListBuilder<GProductWhereUniqueInput> get connect =>
+      _$this._connect ??= new ListBuilder<GProductWhereUniqueInput>();
+  set connect(ListBuilder<GProductWhereUniqueInput>? connect) =>
+      _$this._connect = connect;
+
+  GProductRelateToManyForUpdateInputBuilder();
+
+  GProductRelateToManyForUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _disconnect = $v.disconnect?.toBuilder();
+      _set = $v.set?.toBuilder();
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductRelateToManyForUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductRelateToManyForUpdateInput;
+  }
+
+  @override
+  void update(
+      void Function(GProductRelateToManyForUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductRelateToManyForUpdateInput build() => _build();
+
+  _$GProductRelateToManyForUpdateInput _build() {
+    _$GProductRelateToManyForUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductRelateToManyForUpdateInput._(
+              disconnect: _disconnect?.build(),
+              set: _set?.build(),
+              create: _create?.build(),
+              connect: _connect?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'disconnect';
+        _disconnect?.build();
+        _$failedField = 'set';
+        _set?.build();
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductRelateToManyForUpdateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$GCouponUpdateArgs extends GCouponUpdateArgs {
   @override
   final GCouponWhereUniqueInput where;
@@ -119327,6 +133243,10 @@ class _$GCouponCreateInput extends GCouponCreateInput {
   final GVehicleRelateToManyForCreateInput? vehicles;
   @override
   final String? vehiclesCondition;
+  @override
+  final GProductRelateToManyForCreateInput? products;
+  @override
+  final String? productsCondition;
 
   factory _$GCouponCreateInput(
           [void Function(GCouponCreateInputBuilder)? updates]) =>
@@ -119341,7 +133261,9 @@ class _$GCouponCreateInput extends GCouponCreateInput {
       this.startFrom,
       this.expireBy,
       this.vehicles,
-      this.vehiclesCondition})
+      this.vehiclesCondition,
+      this.products,
+      this.productsCondition})
       : super._();
 
   @override
@@ -119365,7 +133287,9 @@ class _$GCouponCreateInput extends GCouponCreateInput {
         startFrom == other.startFrom &&
         expireBy == other.expireBy &&
         vehicles == other.vehicles &&
-        vehiclesCondition == other.vehiclesCondition;
+        vehiclesCondition == other.vehiclesCondition &&
+        products == other.products &&
+        productsCondition == other.productsCondition;
   }
 
   @override
@@ -119380,6 +133304,8 @@ class _$GCouponCreateInput extends GCouponCreateInput {
     _$hash = $jc(_$hash, expireBy.hashCode);
     _$hash = $jc(_$hash, vehicles.hashCode);
     _$hash = $jc(_$hash, vehiclesCondition.hashCode);
+    _$hash = $jc(_$hash, products.hashCode);
+    _$hash = $jc(_$hash, productsCondition.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -119395,7 +133321,9 @@ class _$GCouponCreateInput extends GCouponCreateInput {
           ..add('startFrom', startFrom)
           ..add('expireBy', expireBy)
           ..add('vehicles', vehicles)
-          ..add('vehiclesCondition', vehiclesCondition))
+          ..add('vehiclesCondition', vehiclesCondition)
+          ..add('products', products)
+          ..add('productsCondition', productsCondition))
         .toString();
   }
 }
@@ -119447,6 +133375,17 @@ class GCouponCreateInputBuilder
   set vehiclesCondition(String? vehiclesCondition) =>
       _$this._vehiclesCondition = vehiclesCondition;
 
+  GProductRelateToManyForCreateInputBuilder? _products;
+  GProductRelateToManyForCreateInputBuilder get products =>
+      _$this._products ??= new GProductRelateToManyForCreateInputBuilder();
+  set products(GProductRelateToManyForCreateInputBuilder? products) =>
+      _$this._products = products;
+
+  String? _productsCondition;
+  String? get productsCondition => _$this._productsCondition;
+  set productsCondition(String? productsCondition) =>
+      _$this._productsCondition = productsCondition;
+
   GCouponCreateInputBuilder();
 
   GCouponCreateInputBuilder get _$this {
@@ -119461,6 +133400,8 @@ class GCouponCreateInputBuilder
       _expireBy = $v.expireBy?.toBuilder();
       _vehicles = $v.vehicles?.toBuilder();
       _vehiclesCondition = $v.vehiclesCondition;
+      _products = $v.products?.toBuilder();
+      _productsCondition = $v.productsCondition;
       _$v = null;
     }
     return this;
@@ -119493,7 +133434,9 @@ class GCouponCreateInputBuilder
               startFrom: _startFrom?.build(),
               expireBy: _expireBy?.build(),
               vehicles: _vehicles?.build(),
-              vehiclesCondition: vehiclesCondition);
+              vehiclesCondition: vehiclesCondition,
+              products: _products?.build(),
+              productsCondition: productsCondition);
     } catch (_) {
       late String _$failedField;
       try {
@@ -119508,6 +133451,9 @@ class GCouponCreateInputBuilder
         _expireBy?.build();
         _$failedField = 'vehicles';
         _vehicles?.build();
+
+        _$failedField = 'products';
+        _products?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GCouponCreateInput', _$failedField, e.toString());
@@ -119639,6 +133585,126 @@ class GVehicleRelateToManyForCreateInputBuilder
   }
 }
 
+class _$GProductRelateToManyForCreateInput
+    extends GProductRelateToManyForCreateInput {
+  @override
+  final BuiltList<GProductCreateInput>? create;
+  @override
+  final BuiltList<GProductWhereUniqueInput>? connect;
+
+  factory _$GProductRelateToManyForCreateInput(
+          [void Function(GProductRelateToManyForCreateInputBuilder)?
+              updates]) =>
+      (new GProductRelateToManyForCreateInputBuilder()..update(updates))
+          ._build();
+
+  _$GProductRelateToManyForCreateInput._({this.create, this.connect})
+      : super._();
+
+  @override
+  GProductRelateToManyForCreateInput rebuild(
+          void Function(GProductRelateToManyForCreateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductRelateToManyForCreateInputBuilder toBuilder() =>
+      new GProductRelateToManyForCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductRelateToManyForCreateInput &&
+        create == other.create &&
+        connect == other.connect;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, create.hashCode);
+    _$hash = $jc(_$hash, connect.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GProductRelateToManyForCreateInput')
+          ..add('create', create)
+          ..add('connect', connect))
+        .toString();
+  }
+}
+
+class GProductRelateToManyForCreateInputBuilder
+    implements
+        Builder<GProductRelateToManyForCreateInput,
+            GProductRelateToManyForCreateInputBuilder> {
+  _$GProductRelateToManyForCreateInput? _$v;
+
+  ListBuilder<GProductCreateInput>? _create;
+  ListBuilder<GProductCreateInput> get create =>
+      _$this._create ??= new ListBuilder<GProductCreateInput>();
+  set create(ListBuilder<GProductCreateInput>? create) =>
+      _$this._create = create;
+
+  ListBuilder<GProductWhereUniqueInput>? _connect;
+  ListBuilder<GProductWhereUniqueInput> get connect =>
+      _$this._connect ??= new ListBuilder<GProductWhereUniqueInput>();
+  set connect(ListBuilder<GProductWhereUniqueInput>? connect) =>
+      _$this._connect = connect;
+
+  GProductRelateToManyForCreateInputBuilder();
+
+  GProductRelateToManyForCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _create = $v.create?.toBuilder();
+      _connect = $v.connect?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductRelateToManyForCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductRelateToManyForCreateInput;
+  }
+
+  @override
+  void update(
+      void Function(GProductRelateToManyForCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductRelateToManyForCreateInput build() => _build();
+
+  _$GProductRelateToManyForCreateInput _build() {
+    _$GProductRelateToManyForCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductRelateToManyForCreateInput._(
+              create: _create?.build(), connect: _connect?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'create';
+        _create?.build();
+        _$failedField = 'connect';
+        _connect?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductRelateToManyForCreateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$GOfferWhereUniqueInput extends GOfferWhereUniqueInput {
   @override
   final String? id;
@@ -119756,6 +133822,10 @@ class _$GOfferWhereInput extends GOfferWhereInput {
   final GVehicleManyRelationFilter? vehicles;
   @override
   final GStringNullableFilter? vehiclesCondition;
+  @override
+  final GProductManyRelationFilter? products;
+  @override
+  final GStringNullableFilter? productsCondition;
 
   factory _$GOfferWhereInput(
           [void Function(GOfferWhereInputBuilder)? updates]) =>
@@ -119773,7 +133843,9 @@ class _$GOfferWhereInput extends GOfferWhereInput {
       this.startFrom,
       this.expireBy,
       this.vehicles,
-      this.vehiclesCondition})
+      this.vehiclesCondition,
+      this.products,
+      this.productsCondition})
       : super._();
 
   @override
@@ -119799,7 +133871,9 @@ class _$GOfferWhereInput extends GOfferWhereInput {
         startFrom == other.startFrom &&
         expireBy == other.expireBy &&
         vehicles == other.vehicles &&
-        vehiclesCondition == other.vehiclesCondition;
+        vehiclesCondition == other.vehiclesCondition &&
+        products == other.products &&
+        productsCondition == other.productsCondition;
   }
 
   @override
@@ -119817,6 +133891,8 @@ class _$GOfferWhereInput extends GOfferWhereInput {
     _$hash = $jc(_$hash, expireBy.hashCode);
     _$hash = $jc(_$hash, vehicles.hashCode);
     _$hash = $jc(_$hash, vehiclesCondition.hashCode);
+    _$hash = $jc(_$hash, products.hashCode);
+    _$hash = $jc(_$hash, productsCondition.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -119835,7 +133911,9 @@ class _$GOfferWhereInput extends GOfferWhereInput {
           ..add('startFrom', startFrom)
           ..add('expireBy', expireBy)
           ..add('vehicles', vehicles)
-          ..add('vehiclesCondition', vehiclesCondition))
+          ..add('vehiclesCondition', vehiclesCondition)
+          ..add('products', products)
+          ..add('productsCondition', productsCondition))
         .toString();
   }
 }
@@ -119909,6 +133987,18 @@ class GOfferWhereInputBuilder
   set vehiclesCondition(GStringNullableFilterBuilder? vehiclesCondition) =>
       _$this._vehiclesCondition = vehiclesCondition;
 
+  GProductManyRelationFilterBuilder? _products;
+  GProductManyRelationFilterBuilder get products =>
+      _$this._products ??= new GProductManyRelationFilterBuilder();
+  set products(GProductManyRelationFilterBuilder? products) =>
+      _$this._products = products;
+
+  GStringNullableFilterBuilder? _productsCondition;
+  GStringNullableFilterBuilder get productsCondition =>
+      _$this._productsCondition ??= new GStringNullableFilterBuilder();
+  set productsCondition(GStringNullableFilterBuilder? productsCondition) =>
+      _$this._productsCondition = productsCondition;
+
   GOfferWhereInputBuilder();
 
   GOfferWhereInputBuilder get _$this {
@@ -119926,6 +134016,8 @@ class GOfferWhereInputBuilder
       _expireBy = $v.expireBy?.toBuilder();
       _vehicles = $v.vehicles?.toBuilder();
       _vehiclesCondition = $v.vehiclesCondition?.toBuilder();
+      _products = $v.products?.toBuilder();
+      _productsCondition = $v.productsCondition?.toBuilder();
       _$v = null;
     }
     return this;
@@ -119961,7 +134053,9 @@ class GOfferWhereInputBuilder
               startFrom: _startFrom?.build(),
               expireBy: _expireBy?.build(),
               vehicles: _vehicles?.build(),
-              vehiclesCondition: _vehiclesCondition?.build());
+              vehiclesCondition: _vehiclesCondition?.build(),
+              products: _products?.build(),
+              productsCondition: _productsCondition?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -119989,6 +134083,10 @@ class GOfferWhereInputBuilder
         _vehicles?.build();
         _$failedField = 'vehiclesCondition';
         _vehiclesCondition?.build();
+        _$failedField = 'products';
+        _products?.build();
+        _$failedField = 'productsCondition';
+        _productsCondition?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GOfferWhereInput', _$failedField, e.toString());
@@ -120017,6 +134115,8 @@ class _$GOfferOrderByInput extends GOfferOrderByInput {
   final GOrderDirection? expireBy;
   @override
   final GOrderDirection? vehiclesCondition;
+  @override
+  final GOrderDirection? productsCondition;
 
   factory _$GOfferOrderByInput(
           [void Function(GOfferOrderByInputBuilder)? updates]) =>
@@ -120030,7 +134130,8 @@ class _$GOfferOrderByInput extends GOfferOrderByInput {
       this.description,
       this.startFrom,
       this.expireBy,
-      this.vehiclesCondition})
+      this.vehiclesCondition,
+      this.productsCondition})
       : super._();
 
   @override
@@ -120053,7 +134154,8 @@ class _$GOfferOrderByInput extends GOfferOrderByInput {
         description == other.description &&
         startFrom == other.startFrom &&
         expireBy == other.expireBy &&
-        vehiclesCondition == other.vehiclesCondition;
+        vehiclesCondition == other.vehiclesCondition &&
+        productsCondition == other.productsCondition;
   }
 
   @override
@@ -120067,6 +134169,7 @@ class _$GOfferOrderByInput extends GOfferOrderByInput {
     _$hash = $jc(_$hash, startFrom.hashCode);
     _$hash = $jc(_$hash, expireBy.hashCode);
     _$hash = $jc(_$hash, vehiclesCondition.hashCode);
+    _$hash = $jc(_$hash, productsCondition.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -120081,7 +134184,8 @@ class _$GOfferOrderByInput extends GOfferOrderByInput {
           ..add('description', description)
           ..add('startFrom', startFrom)
           ..add('expireBy', expireBy)
-          ..add('vehiclesCondition', vehiclesCondition))
+          ..add('vehiclesCondition', vehiclesCondition)
+          ..add('productsCondition', productsCondition))
         .toString();
   }
 }
@@ -120125,6 +134229,11 @@ class GOfferOrderByInputBuilder
   set vehiclesCondition(GOrderDirection? vehiclesCondition) =>
       _$this._vehiclesCondition = vehiclesCondition;
 
+  GOrderDirection? _productsCondition;
+  GOrderDirection? get productsCondition => _$this._productsCondition;
+  set productsCondition(GOrderDirection? productsCondition) =>
+      _$this._productsCondition = productsCondition;
+
   GOfferOrderByInputBuilder();
 
   GOfferOrderByInputBuilder get _$this {
@@ -120138,6 +134247,7 @@ class GOfferOrderByInputBuilder
       _startFrom = $v.startFrom;
       _expireBy = $v.expireBy;
       _vehiclesCondition = $v.vehiclesCondition;
+      _productsCondition = $v.productsCondition;
       _$v = null;
     }
     return this;
@@ -120167,7 +134277,8 @@ class GOfferOrderByInputBuilder
             description: description,
             startFrom: startFrom,
             expireBy: expireBy,
-            vehiclesCondition: vehiclesCondition);
+            vehiclesCondition: vehiclesCondition,
+            productsCondition: productsCondition);
     replace(_$result);
     return _$result;
   }
@@ -120192,6 +134303,10 @@ class _$GOfferUpdateInput extends GOfferUpdateInput {
   final GVehicleRelateToManyForUpdateInput? vehicles;
   @override
   final String? vehiclesCondition;
+  @override
+  final GProductRelateToManyForUpdateInput? products;
+  @override
+  final String? productsCondition;
 
   factory _$GOfferUpdateInput(
           [void Function(GOfferUpdateInputBuilder)? updates]) =>
@@ -120206,7 +134321,9 @@ class _$GOfferUpdateInput extends GOfferUpdateInput {
       this.startFrom,
       this.expireBy,
       this.vehicles,
-      this.vehiclesCondition})
+      this.vehiclesCondition,
+      this.products,
+      this.productsCondition})
       : super._();
 
   @override
@@ -120229,7 +134346,9 @@ class _$GOfferUpdateInput extends GOfferUpdateInput {
         startFrom == other.startFrom &&
         expireBy == other.expireBy &&
         vehicles == other.vehicles &&
-        vehiclesCondition == other.vehiclesCondition;
+        vehiclesCondition == other.vehiclesCondition &&
+        products == other.products &&
+        productsCondition == other.productsCondition;
   }
 
   @override
@@ -120244,6 +134363,8 @@ class _$GOfferUpdateInput extends GOfferUpdateInput {
     _$hash = $jc(_$hash, expireBy.hashCode);
     _$hash = $jc(_$hash, vehicles.hashCode);
     _$hash = $jc(_$hash, vehiclesCondition.hashCode);
+    _$hash = $jc(_$hash, products.hashCode);
+    _$hash = $jc(_$hash, productsCondition.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -120259,7 +134380,9 @@ class _$GOfferUpdateInput extends GOfferUpdateInput {
           ..add('startFrom', startFrom)
           ..add('expireBy', expireBy)
           ..add('vehicles', vehicles)
-          ..add('vehiclesCondition', vehiclesCondition))
+          ..add('vehiclesCondition', vehiclesCondition)
+          ..add('products', products)
+          ..add('productsCondition', productsCondition))
         .toString();
   }
 }
@@ -120311,6 +134434,17 @@ class GOfferUpdateInputBuilder
   set vehiclesCondition(String? vehiclesCondition) =>
       _$this._vehiclesCondition = vehiclesCondition;
 
+  GProductRelateToManyForUpdateInputBuilder? _products;
+  GProductRelateToManyForUpdateInputBuilder get products =>
+      _$this._products ??= new GProductRelateToManyForUpdateInputBuilder();
+  set products(GProductRelateToManyForUpdateInputBuilder? products) =>
+      _$this._products = products;
+
+  String? _productsCondition;
+  String? get productsCondition => _$this._productsCondition;
+  set productsCondition(String? productsCondition) =>
+      _$this._productsCondition = productsCondition;
+
   GOfferUpdateInputBuilder();
 
   GOfferUpdateInputBuilder get _$this {
@@ -120325,6 +134459,8 @@ class GOfferUpdateInputBuilder
       _expireBy = $v.expireBy?.toBuilder();
       _vehicles = $v.vehicles?.toBuilder();
       _vehiclesCondition = $v.vehiclesCondition;
+      _products = $v.products?.toBuilder();
+      _productsCondition = $v.productsCondition;
       _$v = null;
     }
     return this;
@@ -120357,7 +134493,9 @@ class GOfferUpdateInputBuilder
               startFrom: _startFrom?.build(),
               expireBy: _expireBy?.build(),
               vehicles: _vehicles?.build(),
-              vehiclesCondition: vehiclesCondition);
+              vehiclesCondition: vehiclesCondition,
+              products: _products?.build(),
+              productsCondition: productsCondition);
     } catch (_) {
       late String _$failedField;
       try {
@@ -120372,6 +134510,9 @@ class GOfferUpdateInputBuilder
         _expireBy?.build();
         _$failedField = 'vehicles';
         _vehicles?.build();
+
+        _$failedField = 'products';
+        _products?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GOfferUpdateInput', _$failedField, e.toString());
@@ -120514,6 +134655,10 @@ class _$GOfferCreateInput extends GOfferCreateInput {
   final GVehicleRelateToManyForCreateInput? vehicles;
   @override
   final String? vehiclesCondition;
+  @override
+  final GProductRelateToManyForCreateInput? products;
+  @override
+  final String? productsCondition;
 
   factory _$GOfferCreateInput(
           [void Function(GOfferCreateInputBuilder)? updates]) =>
@@ -120528,7 +134673,9 @@ class _$GOfferCreateInput extends GOfferCreateInput {
       this.startFrom,
       this.expireBy,
       this.vehicles,
-      this.vehiclesCondition})
+      this.vehiclesCondition,
+      this.products,
+      this.productsCondition})
       : super._();
 
   @override
@@ -120551,7 +134698,9 @@ class _$GOfferCreateInput extends GOfferCreateInput {
         startFrom == other.startFrom &&
         expireBy == other.expireBy &&
         vehicles == other.vehicles &&
-        vehiclesCondition == other.vehiclesCondition;
+        vehiclesCondition == other.vehiclesCondition &&
+        products == other.products &&
+        productsCondition == other.productsCondition;
   }
 
   @override
@@ -120566,6 +134715,8 @@ class _$GOfferCreateInput extends GOfferCreateInput {
     _$hash = $jc(_$hash, expireBy.hashCode);
     _$hash = $jc(_$hash, vehicles.hashCode);
     _$hash = $jc(_$hash, vehiclesCondition.hashCode);
+    _$hash = $jc(_$hash, products.hashCode);
+    _$hash = $jc(_$hash, productsCondition.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -120581,7 +134732,9 @@ class _$GOfferCreateInput extends GOfferCreateInput {
           ..add('startFrom', startFrom)
           ..add('expireBy', expireBy)
           ..add('vehicles', vehicles)
-          ..add('vehiclesCondition', vehiclesCondition))
+          ..add('vehiclesCondition', vehiclesCondition)
+          ..add('products', products)
+          ..add('productsCondition', productsCondition))
         .toString();
   }
 }
@@ -120633,6 +134786,17 @@ class GOfferCreateInputBuilder
   set vehiclesCondition(String? vehiclesCondition) =>
       _$this._vehiclesCondition = vehiclesCondition;
 
+  GProductRelateToManyForCreateInputBuilder? _products;
+  GProductRelateToManyForCreateInputBuilder get products =>
+      _$this._products ??= new GProductRelateToManyForCreateInputBuilder();
+  set products(GProductRelateToManyForCreateInputBuilder? products) =>
+      _$this._products = products;
+
+  String? _productsCondition;
+  String? get productsCondition => _$this._productsCondition;
+  set productsCondition(String? productsCondition) =>
+      _$this._productsCondition = productsCondition;
+
   GOfferCreateInputBuilder();
 
   GOfferCreateInputBuilder get _$this {
@@ -120647,6 +134811,8 @@ class GOfferCreateInputBuilder
       _expireBy = $v.expireBy?.toBuilder();
       _vehicles = $v.vehicles?.toBuilder();
       _vehiclesCondition = $v.vehiclesCondition;
+      _products = $v.products?.toBuilder();
+      _productsCondition = $v.productsCondition;
       _$v = null;
     }
     return this;
@@ -120679,7 +134845,9 @@ class GOfferCreateInputBuilder
               startFrom: _startFrom?.build(),
               expireBy: _expireBy?.build(),
               vehicles: _vehicles?.build(),
-              vehiclesCondition: vehiclesCondition);
+              vehiclesCondition: vehiclesCondition,
+              products: _products?.build(),
+              productsCondition: productsCondition);
     } catch (_) {
       late String _$failedField;
       try {
@@ -120694,6 +134862,9 @@ class GOfferCreateInputBuilder
         _expireBy?.build();
         _$failedField = 'vehicles';
         _vehicles?.build();
+
+        _$failedField = 'products';
+        _products?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GOfferCreateInput', _$failedField, e.toString());
@@ -126544,6 +140715,8 @@ class _$GProductWhereInput extends GProductWhereInput {
   @override
   final GStringFilter? description;
   @override
+  final GStringFilter? longDescription;
+  @override
   final GProductTypeWhereInput? type;
   @override
   final GBrandWhereInput? brand;
@@ -126565,6 +140738,7 @@ class _$GProductWhereInput extends GProductWhereInput {
       this.modifiedAt,
       this.name,
       this.description,
+      this.longDescription,
       this.type,
       this.brand,
       this.variants,
@@ -126592,6 +140766,7 @@ class _$GProductWhereInput extends GProductWhereInput {
         modifiedAt == other.modifiedAt &&
         name == other.name &&
         description == other.description &&
+        longDescription == other.longDescription &&
         type == other.type &&
         brand == other.brand &&
         variants == other.variants &&
@@ -126609,6 +140784,7 @@ class _$GProductWhereInput extends GProductWhereInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, longDescription.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, brand.hashCode);
     _$hash = $jc(_$hash, variants.hashCode);
@@ -126628,6 +140804,7 @@ class _$GProductWhereInput extends GProductWhereInput {
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
           ..add('description', description)
+          ..add('longDescription', longDescription)
           ..add('type', type)
           ..add('brand', brand)
           ..add('variants', variants)
@@ -126681,6 +140858,12 @@ class GProductWhereInputBuilder
   set description(GStringFilterBuilder? description) =>
       _$this._description = description;
 
+  GStringFilterBuilder? _longDescription;
+  GStringFilterBuilder get longDescription =>
+      _$this._longDescription ??= new GStringFilterBuilder();
+  set longDescription(GStringFilterBuilder? longDescription) =>
+      _$this._longDescription = longDescription;
+
   GProductTypeWhereInputBuilder? _type;
   GProductTypeWhereInputBuilder get type =>
       _$this._type ??= new GProductTypeWhereInputBuilder();
@@ -126718,6 +140901,7 @@ class GProductWhereInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _name = $v.name?.toBuilder();
       _description = $v.description?.toBuilder();
+      _longDescription = $v.longDescription?.toBuilder();
       _type = $v.type?.toBuilder();
       _brand = $v.brand?.toBuilder();
       _variants = $v.variants?.toBuilder();
@@ -126754,6 +140938,7 @@ class GProductWhereInputBuilder
               modifiedAt: _modifiedAt?.build(),
               name: _name?.build(),
               description: _description?.build(),
+              longDescription: _longDescription?.build(),
               type: _type?.build(),
               brand: _brand?.build(),
               variants: _variants?.build(),
@@ -126777,6 +140962,8 @@ class GProductWhereInputBuilder
         _name?.build();
         _$failedField = 'description';
         _description?.build();
+        _$failedField = 'longDescription';
+        _longDescription?.build();
         _$failedField = 'type';
         _type?.build();
         _$failedField = 'brand';
@@ -127078,13 +141265,20 @@ class _$GProductOrderByInput extends GProductOrderByInput {
   final GOrderDirection? name;
   @override
   final GOrderDirection? description;
+  @override
+  final GOrderDirection? longDescription;
 
   factory _$GProductOrderByInput(
           [void Function(GProductOrderByInputBuilder)? updates]) =>
       (new GProductOrderByInputBuilder()..update(updates))._build();
 
   _$GProductOrderByInput._(
-      {this.id, this.createdAt, this.modifiedAt, this.name, this.description})
+      {this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.name,
+      this.description,
+      this.longDescription})
       : super._();
 
   @override
@@ -127104,7 +141298,8 @@ class _$GProductOrderByInput extends GProductOrderByInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
-        description == other.description;
+        description == other.description &&
+        longDescription == other.longDescription;
   }
 
   @override
@@ -127115,6 +141310,7 @@ class _$GProductOrderByInput extends GProductOrderByInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, longDescription.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -127126,7 +141322,8 @@ class _$GProductOrderByInput extends GProductOrderByInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
-          ..add('description', description))
+          ..add('description', description)
+          ..add('longDescription', longDescription))
         .toString();
   }
 }
@@ -127157,6 +141354,11 @@ class GProductOrderByInputBuilder
   set description(GOrderDirection? description) =>
       _$this._description = description;
 
+  GOrderDirection? _longDescription;
+  GOrderDirection? get longDescription => _$this._longDescription;
+  set longDescription(GOrderDirection? longDescription) =>
+      _$this._longDescription = longDescription;
+
   GProductOrderByInputBuilder();
 
   GProductOrderByInputBuilder get _$this {
@@ -127167,6 +141369,7 @@ class GProductOrderByInputBuilder
       _modifiedAt = $v.modifiedAt;
       _name = $v.name;
       _description = $v.description;
+      _longDescription = $v.longDescription;
       _$v = null;
     }
     return this;
@@ -127193,7 +141396,8 @@ class GProductOrderByInputBuilder
             createdAt: createdAt,
             modifiedAt: modifiedAt,
             name: name,
-            description: description);
+            description: description,
+            longDescription: longDescription);
     replace(_$result);
     return _$result;
   }
@@ -127208,6 +141412,8 @@ class _$GProductUpdateInput extends GProductUpdateInput {
   final String? name;
   @override
   final String? description;
+  @override
+  final String? longDescription;
   @override
   final GProductTypeRelateToOneForUpdateInput? type;
   @override
@@ -127226,6 +141432,7 @@ class _$GProductUpdateInput extends GProductUpdateInput {
       this.modifiedAt,
       this.name,
       this.description,
+      this.longDescription,
       this.type,
       this.brand,
       this.variants,
@@ -127249,6 +141456,7 @@ class _$GProductUpdateInput extends GProductUpdateInput {
         modifiedAt == other.modifiedAt &&
         name == other.name &&
         description == other.description &&
+        longDescription == other.longDescription &&
         type == other.type &&
         brand == other.brand &&
         variants == other.variants &&
@@ -127262,6 +141470,7 @@ class _$GProductUpdateInput extends GProductUpdateInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, longDescription.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, brand.hashCode);
     _$hash = $jc(_$hash, variants.hashCode);
@@ -127277,6 +141486,7 @@ class _$GProductUpdateInput extends GProductUpdateInput {
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
           ..add('description', description)
+          ..add('longDescription', longDescription)
           ..add('type', type)
           ..add('brand', brand)
           ..add('variants', variants)
@@ -127307,6 +141517,11 @@ class GProductUpdateInputBuilder
   String? _description;
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
+
+  String? _longDescription;
+  String? get longDescription => _$this._longDescription;
+  set longDescription(String? longDescription) =>
+      _$this._longDescription = longDescription;
 
   GProductTypeRelateToOneForUpdateInputBuilder? _type;
   GProductTypeRelateToOneForUpdateInputBuilder get type =>
@@ -127345,6 +141560,7 @@ class GProductUpdateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _name = $v.name;
       _description = $v.description;
+      _longDescription = $v.longDescription;
       _type = $v.type?.toBuilder();
       _brand = $v.brand?.toBuilder();
       _variants = $v.variants?.toBuilder();
@@ -127377,6 +141593,7 @@ class GProductUpdateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               name: name,
               description: description,
+              longDescription: longDescription,
               type: _type?.build(),
               brand: _brand?.build(),
               variants: _variants?.build(),
@@ -127989,6 +142206,8 @@ class _$GProductCreateInput extends GProductCreateInput {
   @override
   final String? description;
   @override
+  final String? longDescription;
+  @override
   final GProductTypeRelateToOneForCreateInput? type;
   @override
   final GBrandRelateToOneForCreateInput? brand;
@@ -128006,6 +142225,7 @@ class _$GProductCreateInput extends GProductCreateInput {
       this.modifiedAt,
       this.name,
       this.description,
+      this.longDescription,
       this.type,
       this.brand,
       this.variants,
@@ -128029,6 +142249,7 @@ class _$GProductCreateInput extends GProductCreateInput {
         modifiedAt == other.modifiedAt &&
         name == other.name &&
         description == other.description &&
+        longDescription == other.longDescription &&
         type == other.type &&
         brand == other.brand &&
         variants == other.variants &&
@@ -128042,6 +142263,7 @@ class _$GProductCreateInput extends GProductCreateInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, longDescription.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, brand.hashCode);
     _$hash = $jc(_$hash, variants.hashCode);
@@ -128057,6 +142279,7 @@ class _$GProductCreateInput extends GProductCreateInput {
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
           ..add('description', description)
+          ..add('longDescription', longDescription)
           ..add('type', type)
           ..add('brand', brand)
           ..add('variants', variants)
@@ -128087,6 +142310,11 @@ class GProductCreateInputBuilder
   String? _description;
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
+
+  String? _longDescription;
+  String? get longDescription => _$this._longDescription;
+  set longDescription(String? longDescription) =>
+      _$this._longDescription = longDescription;
 
   GProductTypeRelateToOneForCreateInputBuilder? _type;
   GProductTypeRelateToOneForCreateInputBuilder get type =>
@@ -128125,6 +142353,7 @@ class GProductCreateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _name = $v.name;
       _description = $v.description;
+      _longDescription = $v.longDescription;
       _type = $v.type?.toBuilder();
       _brand = $v.brand?.toBuilder();
       _variants = $v.variants?.toBuilder();
@@ -128157,6 +142386,7 @@ class GProductCreateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               name: name,
               description: description,
+              longDescription: longDescription,
               type: _type?.build(),
               brand: _brand?.build(),
               variants: _variants?.build(),
@@ -129791,6 +144021,8 @@ class _$GProductVariantWhereInput extends GProductVariantWhereInput {
   final GProductGalleryItemManyRelationFilter? gallery;
   @override
   final GProductReelManyRelationFilter? reels;
+  @override
+  final GBooleanFilter? disabled;
 
   factory _$GProductVariantWhereInput(
           [void Function(GProductVariantWhereInputBuilder)? updates]) =>
@@ -129812,7 +144044,8 @@ class _$GProductVariantWhereInput extends GProductVariantWhereInput {
       this.images,
       this.videos,
       this.gallery,
-      this.reels})
+      this.reels,
+      this.disabled})
       : super._();
 
   @override
@@ -129843,7 +144076,8 @@ class _$GProductVariantWhereInput extends GProductVariantWhereInput {
         images == other.images &&
         videos == other.videos &&
         gallery == other.gallery &&
-        reels == other.reels;
+        reels == other.reels &&
+        disabled == other.disabled;
   }
 
   @override
@@ -129865,6 +144099,7 @@ class _$GProductVariantWhereInput extends GProductVariantWhereInput {
     _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jc(_$hash, reels.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -129887,7 +144122,8 @@ class _$GProductVariantWhereInput extends GProductVariantWhereInput {
           ..add('images', images)
           ..add('videos', videos)
           ..add('gallery', gallery)
-          ..add('reels', reels))
+          ..add('reels', reels)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -129985,6 +144221,11 @@ class GProductVariantWhereInputBuilder
   set reels(GProductReelManyRelationFilterBuilder? reels) =>
       _$this._reels = reels;
 
+  GBooleanFilterBuilder? _disabled;
+  GBooleanFilterBuilder get disabled =>
+      _$this._disabled ??= new GBooleanFilterBuilder();
+  set disabled(GBooleanFilterBuilder? disabled) => _$this._disabled = disabled;
+
   GProductVariantWhereInputBuilder();
 
   GProductVariantWhereInputBuilder get _$this {
@@ -130006,6 +144247,7 @@ class GProductVariantWhereInputBuilder
       _videos = $v.videos?.toBuilder();
       _gallery = $v.gallery?.toBuilder();
       _reels = $v.reels?.toBuilder();
+      _disabled = $v.disabled?.toBuilder();
       _$v = null;
     }
     return this;
@@ -130045,7 +144287,8 @@ class GProductVariantWhereInputBuilder
               images: _images?.build(),
               videos: _videos?.build(),
               gallery: _gallery?.build(),
-              reels: _reels?.build());
+              reels: _reels?.build(),
+              disabled: _disabled?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -130081,6 +144324,8 @@ class GProductVariantWhereInputBuilder
         _gallery?.build();
         _$failedField = 'reels';
         _reels?.build();
+        _$failedField = 'disabled';
+        _disabled?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GProductVariantWhereInput', _$failedField, e.toString());
@@ -130630,13 +144875,20 @@ class _$GProductVariantOrderByInput extends GProductVariantOrderByInput {
   final GOrderDirection? name;
   @override
   final GOrderDirection? Gdefault;
+  @override
+  final GOrderDirection? disabled;
 
   factory _$GProductVariantOrderByInput(
           [void Function(GProductVariantOrderByInputBuilder)? updates]) =>
       (new GProductVariantOrderByInputBuilder()..update(updates))._build();
 
   _$GProductVariantOrderByInput._(
-      {this.id, this.createdAt, this.modifiedAt, this.name, this.Gdefault})
+      {this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.name,
+      this.Gdefault,
+      this.disabled})
       : super._();
 
   @override
@@ -130656,7 +144908,8 @@ class _$GProductVariantOrderByInput extends GProductVariantOrderByInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
-        Gdefault == other.Gdefault;
+        Gdefault == other.Gdefault &&
+        disabled == other.disabled;
   }
 
   @override
@@ -130667,6 +144920,7 @@ class _$GProductVariantOrderByInput extends GProductVariantOrderByInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, Gdefault.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -130678,7 +144932,8 @@ class _$GProductVariantOrderByInput extends GProductVariantOrderByInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
-          ..add('Gdefault', Gdefault))
+          ..add('Gdefault', Gdefault)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -130710,6 +144965,10 @@ class GProductVariantOrderByInputBuilder
   GOrderDirection? get Gdefault => _$this._Gdefault;
   set Gdefault(GOrderDirection? Gdefault) => _$this._Gdefault = Gdefault;
 
+  GOrderDirection? _disabled;
+  GOrderDirection? get disabled => _$this._disabled;
+  set disabled(GOrderDirection? disabled) => _$this._disabled = disabled;
+
   GProductVariantOrderByInputBuilder();
 
   GProductVariantOrderByInputBuilder get _$this {
@@ -130720,6 +144979,7 @@ class GProductVariantOrderByInputBuilder
       _modifiedAt = $v.modifiedAt;
       _name = $v.name;
       _Gdefault = $v.Gdefault;
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -130746,7 +145006,8 @@ class GProductVariantOrderByInputBuilder
             createdAt: createdAt,
             modifiedAt: modifiedAt,
             name: name,
-            Gdefault: Gdefault);
+            Gdefault: Gdefault,
+            disabled: disabled);
     replace(_$result);
     return _$result;
   }
@@ -130777,6 +145038,8 @@ class _$GProductVariantUpdateInput extends GProductVariantUpdateInput {
   final GProductGalleryItemRelateToManyForUpdateInput? gallery;
   @override
   final GProductReelRelateToManyForUpdateInput? reels;
+  @override
+  final bool? disabled;
 
   factory _$GProductVariantUpdateInput(
           [void Function(GProductVariantUpdateInputBuilder)? updates]) =>
@@ -130794,7 +145057,8 @@ class _$GProductVariantUpdateInput extends GProductVariantUpdateInput {
       this.images,
       this.videos,
       this.gallery,
-      this.reels})
+      this.reels,
+      this.disabled})
       : super._();
 
   @override
@@ -130821,7 +145085,8 @@ class _$GProductVariantUpdateInput extends GProductVariantUpdateInput {
         images == other.images &&
         videos == other.videos &&
         gallery == other.gallery &&
-        reels == other.reels;
+        reels == other.reels &&
+        disabled == other.disabled;
   }
 
   @override
@@ -130839,6 +145104,7 @@ class _$GProductVariantUpdateInput extends GProductVariantUpdateInput {
     _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jc(_$hash, reels.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -130857,7 +145123,8 @@ class _$GProductVariantUpdateInput extends GProductVariantUpdateInput {
           ..add('images', images)
           ..add('videos', videos)
           ..add('gallery', gallery)
-          ..add('reels', reels))
+          ..add('reels', reels)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -130937,6 +145204,10 @@ class GProductVariantUpdateInputBuilder
   set reels(GProductReelRelateToManyForUpdateInputBuilder? reels) =>
       _$this._reels = reels;
 
+  bool? _disabled;
+  bool? get disabled => _$this._disabled;
+  set disabled(bool? disabled) => _$this._disabled = disabled;
+
   GProductVariantUpdateInputBuilder();
 
   GProductVariantUpdateInputBuilder get _$this {
@@ -130954,6 +145225,7 @@ class GProductVariantUpdateInputBuilder
       _videos = $v.videos?.toBuilder();
       _gallery = $v.gallery?.toBuilder();
       _reels = $v.reels?.toBuilder();
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -130989,7 +145261,8 @@ class GProductVariantUpdateInputBuilder
               images: _images?.build(),
               videos: _videos?.build(),
               gallery: _gallery?.build(),
-              reels: _reels?.build());
+              reels: _reels?.build(),
+              disabled: disabled);
     } catch (_) {
       late String _$failedField;
       try {
@@ -131796,6 +146069,8 @@ class _$GProductVariantCreateInput extends GProductVariantCreateInput {
   final GProductGalleryItemRelateToManyForCreateInput? gallery;
   @override
   final GProductReelRelateToManyForCreateInput? reels;
+  @override
+  final bool? disabled;
 
   factory _$GProductVariantCreateInput(
           [void Function(GProductVariantCreateInputBuilder)? updates]) =>
@@ -131813,7 +146088,8 @@ class _$GProductVariantCreateInput extends GProductVariantCreateInput {
       this.images,
       this.videos,
       this.gallery,
-      this.reels})
+      this.reels,
+      this.disabled})
       : super._();
 
   @override
@@ -131840,7 +146116,8 @@ class _$GProductVariantCreateInput extends GProductVariantCreateInput {
         images == other.images &&
         videos == other.videos &&
         gallery == other.gallery &&
-        reels == other.reels;
+        reels == other.reels &&
+        disabled == other.disabled;
   }
 
   @override
@@ -131858,6 +146135,7 @@ class _$GProductVariantCreateInput extends GProductVariantCreateInput {
     _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jc(_$hash, reels.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -131876,7 +146154,8 @@ class _$GProductVariantCreateInput extends GProductVariantCreateInput {
           ..add('images', images)
           ..add('videos', videos)
           ..add('gallery', gallery)
-          ..add('reels', reels))
+          ..add('reels', reels)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -131956,6 +146235,10 @@ class GProductVariantCreateInputBuilder
   set reels(GProductReelRelateToManyForCreateInputBuilder? reels) =>
       _$this._reels = reels;
 
+  bool? _disabled;
+  bool? get disabled => _$this._disabled;
+  set disabled(bool? disabled) => _$this._disabled = disabled;
+
   GProductVariantCreateInputBuilder();
 
   GProductVariantCreateInputBuilder get _$this {
@@ -131973,6 +146256,7 @@ class GProductVariantCreateInputBuilder
       _videos = $v.videos?.toBuilder();
       _gallery = $v.gallery?.toBuilder();
       _reels = $v.reels?.toBuilder();
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -132008,7 +146292,8 @@ class GProductVariantCreateInputBuilder
               images: _images?.build(),
               videos: _videos?.build(),
               gallery: _gallery?.build(),
-              reels: _reels?.build());
+              reels: _reels?.build(),
+              disabled: disabled);
     } catch (_) {
       late String _$failedField;
       try {
@@ -135169,6 +149454,8 @@ class _$GProductReelWhereInput extends GProductReelWhereInput {
   final GProductVariantWhereInput? variant;
   @override
   final GIntNullableFilter? index;
+  @override
+  final GBooleanFilter? disabled;
 
   factory _$GProductReelWhereInput(
           [void Function(GProductReelWhereInputBuilder)? updates]) =>
@@ -135184,7 +149471,8 @@ class _$GProductReelWhereInput extends GProductReelWhereInput {
       this.type,
       this.fileId,
       this.variant,
-      this.index})
+      this.index,
+      this.disabled})
       : super._();
 
   @override
@@ -135209,7 +149497,8 @@ class _$GProductReelWhereInput extends GProductReelWhereInput {
         type == other.type &&
         fileId == other.fileId &&
         variant == other.variant &&
-        index == other.index;
+        index == other.index &&
+        disabled == other.disabled;
   }
 
   @override
@@ -135225,6 +149514,7 @@ class _$GProductReelWhereInput extends GProductReelWhereInput {
     _$hash = $jc(_$hash, fileId.hashCode);
     _$hash = $jc(_$hash, variant.hashCode);
     _$hash = $jc(_$hash, index.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -135241,7 +149531,8 @@ class _$GProductReelWhereInput extends GProductReelWhereInput {
           ..add('type', type)
           ..add('fileId', fileId)
           ..add('variant', variant)
-          ..add('index', index))
+          ..add('index', index)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -135301,6 +149592,11 @@ class GProductReelWhereInputBuilder
       _$this._index ??= new GIntNullableFilterBuilder();
   set index(GIntNullableFilterBuilder? index) => _$this._index = index;
 
+  GBooleanFilterBuilder? _disabled;
+  GBooleanFilterBuilder get disabled =>
+      _$this._disabled ??= new GBooleanFilterBuilder();
+  set disabled(GBooleanFilterBuilder? disabled) => _$this._disabled = disabled;
+
   GProductReelWhereInputBuilder();
 
   GProductReelWhereInputBuilder get _$this {
@@ -135316,6 +149612,7 @@ class GProductReelWhereInputBuilder
       _fileId = $v.fileId?.toBuilder();
       _variant = $v.variant?.toBuilder();
       _index = $v.index?.toBuilder();
+      _disabled = $v.disabled?.toBuilder();
       _$v = null;
     }
     return this;
@@ -135349,7 +149646,8 @@ class GProductReelWhereInputBuilder
               type: _type?.build(),
               fileId: _fileId?.build(),
               variant: _variant?.build(),
-              index: _index?.build());
+              index: _index?.build(),
+              disabled: _disabled?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -135373,6 +149671,8 @@ class GProductReelWhereInputBuilder
         _variant?.build();
         _$failedField = 'index';
         _index?.build();
+        _$failedField = 'disabled';
+        _disabled?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GProductReelWhereInput', _$failedField, e.toString());
@@ -135397,6 +149697,8 @@ class _$GProductReelOrderByInput extends GProductReelOrderByInput {
   final GOrderDirection? fileId;
   @override
   final GOrderDirection? index;
+  @override
+  final GOrderDirection? disabled;
 
   factory _$GProductReelOrderByInput(
           [void Function(GProductReelOrderByInputBuilder)? updates]) =>
@@ -135408,7 +149710,8 @@ class _$GProductReelOrderByInput extends GProductReelOrderByInput {
       this.modifiedAt,
       this.type,
       this.fileId,
-      this.index})
+      this.index,
+      this.disabled})
       : super._();
 
   @override
@@ -135429,7 +149732,8 @@ class _$GProductReelOrderByInput extends GProductReelOrderByInput {
         modifiedAt == other.modifiedAt &&
         type == other.type &&
         fileId == other.fileId &&
-        index == other.index;
+        index == other.index &&
+        disabled == other.disabled;
   }
 
   @override
@@ -135441,6 +149745,7 @@ class _$GProductReelOrderByInput extends GProductReelOrderByInput {
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, fileId.hashCode);
     _$hash = $jc(_$hash, index.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -135453,7 +149758,8 @@ class _$GProductReelOrderByInput extends GProductReelOrderByInput {
           ..add('modifiedAt', modifiedAt)
           ..add('type', type)
           ..add('fileId', fileId)
-          ..add('index', index))
+          ..add('index', index)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -135488,6 +149794,10 @@ class GProductReelOrderByInputBuilder
   GOrderDirection? get index => _$this._index;
   set index(GOrderDirection? index) => _$this._index = index;
 
+  GOrderDirection? _disabled;
+  GOrderDirection? get disabled => _$this._disabled;
+  set disabled(GOrderDirection? disabled) => _$this._disabled = disabled;
+
   GProductReelOrderByInputBuilder();
 
   GProductReelOrderByInputBuilder get _$this {
@@ -135499,6 +149809,7 @@ class GProductReelOrderByInputBuilder
       _type = $v.type;
       _fileId = $v.fileId;
       _index = $v.index;
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -135526,7 +149837,8 @@ class GProductReelOrderByInputBuilder
             modifiedAt: modifiedAt,
             type: type,
             fileId: fileId,
-            index: index);
+            index: index,
+            disabled: disabled);
     replace(_$result);
     return _$result;
   }
@@ -135545,6 +149857,8 @@ class _$GProductReelUpdateInput extends GProductReelUpdateInput {
   final GProductVariantRelateToOneForUpdateInput? variant;
   @override
   final int? index;
+  @override
+  final bool? disabled;
 
   factory _$GProductReelUpdateInput(
           [void Function(GProductReelUpdateInputBuilder)? updates]) =>
@@ -135556,7 +149870,8 @@ class _$GProductReelUpdateInput extends GProductReelUpdateInput {
       this.type,
       this.fileId,
       this.variant,
-      this.index})
+      this.index,
+      this.disabled})
       : super._();
 
   @override
@@ -135577,7 +149892,8 @@ class _$GProductReelUpdateInput extends GProductReelUpdateInput {
         type == other.type &&
         fileId == other.fileId &&
         variant == other.variant &&
-        index == other.index;
+        index == other.index &&
+        disabled == other.disabled;
   }
 
   @override
@@ -135589,6 +149905,7 @@ class _$GProductReelUpdateInput extends GProductReelUpdateInput {
     _$hash = $jc(_$hash, fileId.hashCode);
     _$hash = $jc(_$hash, variant.hashCode);
     _$hash = $jc(_$hash, index.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -135601,7 +149918,8 @@ class _$GProductReelUpdateInput extends GProductReelUpdateInput {
           ..add('type', type)
           ..add('fileId', fileId)
           ..add('variant', variant)
-          ..add('index', index))
+          ..add('index', index)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -135640,6 +149958,10 @@ class GProductReelUpdateInputBuilder
   int? get index => _$this._index;
   set index(int? index) => _$this._index = index;
 
+  bool? _disabled;
+  bool? get disabled => _$this._disabled;
+  set disabled(bool? disabled) => _$this._disabled = disabled;
+
   GProductReelUpdateInputBuilder();
 
   GProductReelUpdateInputBuilder get _$this {
@@ -135651,6 +149973,7 @@ class GProductReelUpdateInputBuilder
       _fileId = $v.fileId;
       _variant = $v.variant?.toBuilder();
       _index = $v.index;
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -135680,7 +150003,8 @@ class GProductReelUpdateInputBuilder
               type: type,
               fileId: fileId,
               variant: _variant?.build(),
-              index: index);
+              index: index,
+              disabled: disabled);
     } catch (_) {
       late String _$failedField;
       try {
@@ -135833,6 +150157,8 @@ class _$GProductReelCreateInput extends GProductReelCreateInput {
   final GProductVariantRelateToOneForCreateInput? variant;
   @override
   final int? index;
+  @override
+  final bool? disabled;
 
   factory _$GProductReelCreateInput(
           [void Function(GProductReelCreateInputBuilder)? updates]) =>
@@ -135844,7 +150170,8 @@ class _$GProductReelCreateInput extends GProductReelCreateInput {
       this.type,
       this.fileId,
       this.variant,
-      this.index})
+      this.index,
+      this.disabled})
       : super._();
 
   @override
@@ -135865,7 +150192,8 @@ class _$GProductReelCreateInput extends GProductReelCreateInput {
         type == other.type &&
         fileId == other.fileId &&
         variant == other.variant &&
-        index == other.index;
+        index == other.index &&
+        disabled == other.disabled;
   }
 
   @override
@@ -135877,6 +150205,7 @@ class _$GProductReelCreateInput extends GProductReelCreateInput {
     _$hash = $jc(_$hash, fileId.hashCode);
     _$hash = $jc(_$hash, variant.hashCode);
     _$hash = $jc(_$hash, index.hashCode);
+    _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -135889,7 +150218,8 @@ class _$GProductReelCreateInput extends GProductReelCreateInput {
           ..add('type', type)
           ..add('fileId', fileId)
           ..add('variant', variant)
-          ..add('index', index))
+          ..add('index', index)
+          ..add('disabled', disabled))
         .toString();
   }
 }
@@ -135928,6 +150258,10 @@ class GProductReelCreateInputBuilder
   int? get index => _$this._index;
   set index(int? index) => _$this._index = index;
 
+  bool? _disabled;
+  bool? get disabled => _$this._disabled;
+  set disabled(bool? disabled) => _$this._disabled = disabled;
+
   GProductReelCreateInputBuilder();
 
   GProductReelCreateInputBuilder get _$this {
@@ -135939,6 +150273,7 @@ class GProductReelCreateInputBuilder
       _fileId = $v.fileId;
       _variant = $v.variant?.toBuilder();
       _index = $v.index;
+      _disabled = $v.disabled;
       _$v = null;
     }
     return this;
@@ -135968,7 +150303,8 @@ class GProductReelCreateInputBuilder
               type: type,
               fileId: fileId,
               variant: _variant?.build(),
-              index: index);
+              index: index,
+              disabled: disabled);
     } catch (_) {
       late String _$failedField;
       try {
@@ -136091,6 +150427,8 @@ class _$GProductDealerWhereInput extends GProductDealerWhereInput {
   @override
   final GProductVariantWhereInput? productVariant;
   @override
+  final GGuaranteeManyRelationFilter? guarantees;
+  @override
   final GPriceManyRelationFilter? prices;
   @override
   final GIntNullableFilter? stock;
@@ -136108,6 +150446,7 @@ class _$GProductDealerWhereInput extends GProductDealerWhereInput {
       this.modifiedAt,
       this.dealer,
       this.productVariant,
+      this.guarantees,
       this.prices,
       this.stock})
       : super._();
@@ -136133,6 +150472,7 @@ class _$GProductDealerWhereInput extends GProductDealerWhereInput {
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         productVariant == other.productVariant &&
+        guarantees == other.guarantees &&
         prices == other.prices &&
         stock == other.stock;
   }
@@ -136148,6 +150488,7 @@ class _$GProductDealerWhereInput extends GProductDealerWhereInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, productVariant.hashCode);
+    _$hash = $jc(_$hash, guarantees.hashCode);
     _$hash = $jc(_$hash, prices.hashCode);
     _$hash = $jc(_$hash, stock.hashCode);
     _$hash = $jf(_$hash);
@@ -136165,6 +150506,7 @@ class _$GProductDealerWhereInput extends GProductDealerWhereInput {
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('productVariant', productVariant)
+          ..add('guarantees', guarantees)
           ..add('prices', prices)
           ..add('stock', stock))
         .toString();
@@ -136218,6 +150560,12 @@ class GProductDealerWhereInputBuilder
   set productVariant(GProductVariantWhereInputBuilder? productVariant) =>
       _$this._productVariant = productVariant;
 
+  GGuaranteeManyRelationFilterBuilder? _guarantees;
+  GGuaranteeManyRelationFilterBuilder get guarantees =>
+      _$this._guarantees ??= new GGuaranteeManyRelationFilterBuilder();
+  set guarantees(GGuaranteeManyRelationFilterBuilder? guarantees) =>
+      _$this._guarantees = guarantees;
+
   GPriceManyRelationFilterBuilder? _prices;
   GPriceManyRelationFilterBuilder get prices =>
       _$this._prices ??= new GPriceManyRelationFilterBuilder();
@@ -136242,6 +150590,7 @@ class GProductDealerWhereInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _dealer = $v.dealer?.toBuilder();
       _productVariant = $v.productVariant?.toBuilder();
+      _guarantees = $v.guarantees?.toBuilder();
       _prices = $v.prices?.toBuilder();
       _stock = $v.stock?.toBuilder();
       _$v = null;
@@ -136276,6 +150625,7 @@ class GProductDealerWhereInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               productVariant: _productVariant?.build(),
+              guarantees: _guarantees?.build(),
               prices: _prices?.build(),
               stock: _stock?.build());
     } catch (_) {
@@ -136297,6 +150647,8 @@ class GProductDealerWhereInputBuilder
         _dealer?.build();
         _$failedField = 'productVariant';
         _productVariant?.build();
+        _$failedField = 'guarantees';
+        _guarantees?.build();
         _$failedField = 'prices';
         _prices?.build();
         _$failedField = 'stock';
@@ -136440,6 +150792,8 @@ class _$GProductDealerUpdateInput extends GProductDealerUpdateInput {
   @override
   final GProductVariantRelateToOneForUpdateInput? productVariant;
   @override
+  final GGuaranteeRelateToManyForUpdateInput? guarantees;
+  @override
   final GPriceRelateToManyForUpdateInput? prices;
   @override
   final int? stock;
@@ -136453,6 +150807,7 @@ class _$GProductDealerUpdateInput extends GProductDealerUpdateInput {
       this.modifiedAt,
       this.dealer,
       this.productVariant,
+      this.guarantees,
       this.prices,
       this.stock})
       : super._();
@@ -136474,6 +150829,7 @@ class _$GProductDealerUpdateInput extends GProductDealerUpdateInput {
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         productVariant == other.productVariant &&
+        guarantees == other.guarantees &&
         prices == other.prices &&
         stock == other.stock;
   }
@@ -136485,6 +150841,7 @@ class _$GProductDealerUpdateInput extends GProductDealerUpdateInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, productVariant.hashCode);
+    _$hash = $jc(_$hash, guarantees.hashCode);
     _$hash = $jc(_$hash, prices.hashCode);
     _$hash = $jc(_$hash, stock.hashCode);
     _$hash = $jf(_$hash);
@@ -136498,6 +150855,7 @@ class _$GProductDealerUpdateInput extends GProductDealerUpdateInput {
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('productVariant', productVariant)
+          ..add('guarantees', guarantees)
           ..add('prices', prices)
           ..add('stock', stock))
         .toString();
@@ -136534,6 +150892,12 @@ class GProductDealerUpdateInputBuilder
           GProductVariantRelateToOneForUpdateInputBuilder? productVariant) =>
       _$this._productVariant = productVariant;
 
+  GGuaranteeRelateToManyForUpdateInputBuilder? _guarantees;
+  GGuaranteeRelateToManyForUpdateInputBuilder get guarantees =>
+      _$this._guarantees ??= new GGuaranteeRelateToManyForUpdateInputBuilder();
+  set guarantees(GGuaranteeRelateToManyForUpdateInputBuilder? guarantees) =>
+      _$this._guarantees = guarantees;
+
   GPriceRelateToManyForUpdateInputBuilder? _prices;
   GPriceRelateToManyForUpdateInputBuilder get prices =>
       _$this._prices ??= new GPriceRelateToManyForUpdateInputBuilder();
@@ -136553,6 +150917,7 @@ class GProductDealerUpdateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _dealer = $v.dealer?.toBuilder();
       _productVariant = $v.productVariant?.toBuilder();
+      _guarantees = $v.guarantees?.toBuilder();
       _prices = $v.prices?.toBuilder();
       _stock = $v.stock;
       _$v = null;
@@ -136583,6 +150948,7 @@ class GProductDealerUpdateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               productVariant: _productVariant?.build(),
+              guarantees: _guarantees?.build(),
               prices: _prices?.build(),
               stock: stock);
     } catch (_) {
@@ -136596,6 +150962,8 @@ class GProductDealerUpdateInputBuilder
         _dealer?.build();
         _$failedField = 'productVariant';
         _productVariant?.build();
+        _$failedField = 'guarantees';
+        _guarantees?.build();
         _$failedField = 'prices';
         _prices?.build();
       } catch (e) {
@@ -136738,6 +151106,8 @@ class _$GProductDealerCreateInput extends GProductDealerCreateInput {
   @override
   final GProductVariantRelateToOneForCreateInput? productVariant;
   @override
+  final GGuaranteeRelateToManyForCreateInput? guarantees;
+  @override
   final GPriceRelateToManyForCreateInput? prices;
   @override
   final int? stock;
@@ -136751,6 +151121,7 @@ class _$GProductDealerCreateInput extends GProductDealerCreateInput {
       this.modifiedAt,
       this.dealer,
       this.productVariant,
+      this.guarantees,
       this.prices,
       this.stock})
       : super._();
@@ -136772,6 +151143,7 @@ class _$GProductDealerCreateInput extends GProductDealerCreateInput {
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         productVariant == other.productVariant &&
+        guarantees == other.guarantees &&
         prices == other.prices &&
         stock == other.stock;
   }
@@ -136783,6 +151155,7 @@ class _$GProductDealerCreateInput extends GProductDealerCreateInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, productVariant.hashCode);
+    _$hash = $jc(_$hash, guarantees.hashCode);
     _$hash = $jc(_$hash, prices.hashCode);
     _$hash = $jc(_$hash, stock.hashCode);
     _$hash = $jf(_$hash);
@@ -136796,6 +151169,7 @@ class _$GProductDealerCreateInput extends GProductDealerCreateInput {
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('productVariant', productVariant)
+          ..add('guarantees', guarantees)
           ..add('prices', prices)
           ..add('stock', stock))
         .toString();
@@ -136832,6 +151206,12 @@ class GProductDealerCreateInputBuilder
           GProductVariantRelateToOneForCreateInputBuilder? productVariant) =>
       _$this._productVariant = productVariant;
 
+  GGuaranteeRelateToManyForCreateInputBuilder? _guarantees;
+  GGuaranteeRelateToManyForCreateInputBuilder get guarantees =>
+      _$this._guarantees ??= new GGuaranteeRelateToManyForCreateInputBuilder();
+  set guarantees(GGuaranteeRelateToManyForCreateInputBuilder? guarantees) =>
+      _$this._guarantees = guarantees;
+
   GPriceRelateToManyForCreateInputBuilder? _prices;
   GPriceRelateToManyForCreateInputBuilder get prices =>
       _$this._prices ??= new GPriceRelateToManyForCreateInputBuilder();
@@ -136851,6 +151231,7 @@ class GProductDealerCreateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _dealer = $v.dealer?.toBuilder();
       _productVariant = $v.productVariant?.toBuilder();
+      _guarantees = $v.guarantees?.toBuilder();
       _prices = $v.prices?.toBuilder();
       _stock = $v.stock;
       _$v = null;
@@ -136881,6 +151262,7 @@ class GProductDealerCreateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               productVariant: _productVariant?.build(),
+              guarantees: _guarantees?.build(),
               prices: _prices?.build(),
               stock: stock);
     } catch (_) {
@@ -136894,6 +151276,8 @@ class GProductDealerCreateInputBuilder
         _dealer?.build();
         _$failedField = 'productVariant';
         _productVariant?.build();
+        _$failedField = 'guarantees';
+        _guarantees?.build();
         _$failedField = 'prices';
         _prices?.build();
       } catch (e) {
@@ -137018,6 +151402,8 @@ class _$GProductDealerStockRequestWhereInput
   @override
   final GProductVariantWhereInput? productVariant;
   @override
+  final GGuaranteeManyRelationFilter? guarantees;
+  @override
   final GIntNullableFilter? stock;
   @override
   final GBooleanFilter? accepted;
@@ -137039,6 +151425,7 @@ class _$GProductDealerStockRequestWhereInput
       this.modifiedAt,
       this.dealer,
       this.productVariant,
+      this.guarantees,
       this.stock,
       this.accepted,
       this.type})
@@ -137065,6 +151452,7 @@ class _$GProductDealerStockRequestWhereInput
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         productVariant == other.productVariant &&
+        guarantees == other.guarantees &&
         stock == other.stock &&
         accepted == other.accepted &&
         type == other.type;
@@ -137081,6 +151469,7 @@ class _$GProductDealerStockRequestWhereInput
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, productVariant.hashCode);
+    _$hash = $jc(_$hash, guarantees.hashCode);
     _$hash = $jc(_$hash, stock.hashCode);
     _$hash = $jc(_$hash, accepted.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
@@ -137099,6 +151488,7 @@ class _$GProductDealerStockRequestWhereInput
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('productVariant', productVariant)
+          ..add('guarantees', guarantees)
           ..add('stock', stock)
           ..add('accepted', accepted)
           ..add('type', type))
@@ -137157,6 +151547,12 @@ class GProductDealerStockRequestWhereInputBuilder
   set productVariant(GProductVariantWhereInputBuilder? productVariant) =>
       _$this._productVariant = productVariant;
 
+  GGuaranteeManyRelationFilterBuilder? _guarantees;
+  GGuaranteeManyRelationFilterBuilder get guarantees =>
+      _$this._guarantees ??= new GGuaranteeManyRelationFilterBuilder();
+  set guarantees(GGuaranteeManyRelationFilterBuilder? guarantees) =>
+      _$this._guarantees = guarantees;
+
   GIntNullableFilterBuilder? _stock;
   GIntNullableFilterBuilder get stock =>
       _$this._stock ??= new GIntNullableFilterBuilder();
@@ -137185,6 +151581,7 @@ class GProductDealerStockRequestWhereInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _dealer = $v.dealer?.toBuilder();
       _productVariant = $v.productVariant?.toBuilder();
+      _guarantees = $v.guarantees?.toBuilder();
       _stock = $v.stock?.toBuilder();
       _accepted = $v.accepted?.toBuilder();
       _type = $v.type?.toBuilder();
@@ -137221,6 +151618,7 @@ class GProductDealerStockRequestWhereInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               productVariant: _productVariant?.build(),
+              guarantees: _guarantees?.build(),
               stock: _stock?.build(),
               accepted: _accepted?.build(),
               type: _type?.build());
@@ -137243,6 +151641,8 @@ class GProductDealerStockRequestWhereInputBuilder
         _dealer?.build();
         _$failedField = 'productVariant';
         _productVariant?.build();
+        _$failedField = 'guarantees';
+        _guarantees?.build();
         _$failedField = 'stock';
         _stock?.build();
         _$failedField = 'accepted';
@@ -137428,6 +151828,8 @@ class _$GProductDealerStockRequestUpdateInput
   @override
   final GProductVariantRelateToOneForUpdateInput? productVariant;
   @override
+  final GGuaranteeRelateToManyForUpdateInput? guarantees;
+  @override
   final int? stock;
   @override
   final bool? accepted;
@@ -137445,6 +151847,7 @@ class _$GProductDealerStockRequestUpdateInput
       this.modifiedAt,
       this.dealer,
       this.productVariant,
+      this.guarantees,
       this.stock,
       this.accepted,
       this.type})
@@ -137468,6 +151871,7 @@ class _$GProductDealerStockRequestUpdateInput
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         productVariant == other.productVariant &&
+        guarantees == other.guarantees &&
         stock == other.stock &&
         accepted == other.accepted &&
         type == other.type;
@@ -137480,6 +151884,7 @@ class _$GProductDealerStockRequestUpdateInput
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, productVariant.hashCode);
+    _$hash = $jc(_$hash, guarantees.hashCode);
     _$hash = $jc(_$hash, stock.hashCode);
     _$hash = $jc(_$hash, accepted.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
@@ -137495,6 +151900,7 @@ class _$GProductDealerStockRequestUpdateInput
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('productVariant', productVariant)
+          ..add('guarantees', guarantees)
           ..add('stock', stock)
           ..add('accepted', accepted)
           ..add('type', type))
@@ -137533,6 +151939,12 @@ class GProductDealerStockRequestUpdateInputBuilder
           GProductVariantRelateToOneForUpdateInputBuilder? productVariant) =>
       _$this._productVariant = productVariant;
 
+  GGuaranteeRelateToManyForUpdateInputBuilder? _guarantees;
+  GGuaranteeRelateToManyForUpdateInputBuilder get guarantees =>
+      _$this._guarantees ??= new GGuaranteeRelateToManyForUpdateInputBuilder();
+  set guarantees(GGuaranteeRelateToManyForUpdateInputBuilder? guarantees) =>
+      _$this._guarantees = guarantees;
+
   int? _stock;
   int? get stock => _$this._stock;
   set stock(int? stock) => _$this._stock = stock;
@@ -137554,6 +151966,7 @@ class GProductDealerStockRequestUpdateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _dealer = $v.dealer?.toBuilder();
       _productVariant = $v.productVariant?.toBuilder();
+      _guarantees = $v.guarantees?.toBuilder();
       _stock = $v.stock;
       _accepted = $v.accepted;
       _type = $v.type;
@@ -137586,6 +151999,7 @@ class GProductDealerStockRequestUpdateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               productVariant: _productVariant?.build(),
+              guarantees: _guarantees?.build(),
               stock: stock,
               accepted: accepted,
               type: type);
@@ -137600,6 +152014,8 @@ class GProductDealerStockRequestUpdateInputBuilder
         _dealer?.build();
         _$failedField = 'productVariant';
         _productVariant?.build();
+        _$failedField = 'guarantees';
+        _guarantees?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GProductDealerStockRequestUpdateInput',
@@ -137752,6 +152168,8 @@ class _$GProductDealerStockRequestCreateInput
   @override
   final GProductVariantRelateToOneForCreateInput? productVariant;
   @override
+  final GGuaranteeRelateToManyForCreateInput? guarantees;
+  @override
   final int? stock;
   @override
   final bool? accepted;
@@ -137769,6 +152187,7 @@ class _$GProductDealerStockRequestCreateInput
       this.modifiedAt,
       this.dealer,
       this.productVariant,
+      this.guarantees,
       this.stock,
       this.accepted,
       this.type})
@@ -137792,6 +152211,7 @@ class _$GProductDealerStockRequestCreateInput
         modifiedAt == other.modifiedAt &&
         dealer == other.dealer &&
         productVariant == other.productVariant &&
+        guarantees == other.guarantees &&
         stock == other.stock &&
         accepted == other.accepted &&
         type == other.type;
@@ -137804,6 +152224,7 @@ class _$GProductDealerStockRequestCreateInput
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, dealer.hashCode);
     _$hash = $jc(_$hash, productVariant.hashCode);
+    _$hash = $jc(_$hash, guarantees.hashCode);
     _$hash = $jc(_$hash, stock.hashCode);
     _$hash = $jc(_$hash, accepted.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
@@ -137819,6 +152240,7 @@ class _$GProductDealerStockRequestCreateInput
           ..add('modifiedAt', modifiedAt)
           ..add('dealer', dealer)
           ..add('productVariant', productVariant)
+          ..add('guarantees', guarantees)
           ..add('stock', stock)
           ..add('accepted', accepted)
           ..add('type', type))
@@ -137857,6 +152279,12 @@ class GProductDealerStockRequestCreateInputBuilder
           GProductVariantRelateToOneForCreateInputBuilder? productVariant) =>
       _$this._productVariant = productVariant;
 
+  GGuaranteeRelateToManyForCreateInputBuilder? _guarantees;
+  GGuaranteeRelateToManyForCreateInputBuilder get guarantees =>
+      _$this._guarantees ??= new GGuaranteeRelateToManyForCreateInputBuilder();
+  set guarantees(GGuaranteeRelateToManyForCreateInputBuilder? guarantees) =>
+      _$this._guarantees = guarantees;
+
   int? _stock;
   int? get stock => _$this._stock;
   set stock(int? stock) => _$this._stock = stock;
@@ -137878,6 +152306,7 @@ class GProductDealerStockRequestCreateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _dealer = $v.dealer?.toBuilder();
       _productVariant = $v.productVariant?.toBuilder();
+      _guarantees = $v.guarantees?.toBuilder();
       _stock = $v.stock;
       _accepted = $v.accepted;
       _type = $v.type;
@@ -137910,6 +152339,7 @@ class GProductDealerStockRequestCreateInputBuilder
               modifiedAt: _modifiedAt?.build(),
               dealer: _dealer?.build(),
               productVariant: _productVariant?.build(),
+              guarantees: _guarantees?.build(),
               stock: stock,
               accepted: accepted,
               type: type);
@@ -137924,6 +152354,8 @@ class GProductDealerStockRequestCreateInputBuilder
         _dealer?.build();
         _$failedField = 'productVariant';
         _productVariant?.build();
+        _$failedField = 'guarantees';
+        _guarantees?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GProductDealerStockRequestCreateInput',
@@ -138856,7 +153288,7 @@ class _$GPaymentItem extends GPaymentItem {
   @override
   final GPaymentItemType type;
   @override
-  final int amount;
+  final double amount;
 
   factory _$GPaymentItem([void Function(GPaymentItemBuilder)? updates]) =>
       (new GPaymentItemBuilder()..update(updates))._build();
@@ -138907,9 +153339,9 @@ class GPaymentItemBuilder
   GPaymentItemType? get type => _$this._type;
   set type(GPaymentItemType? type) => _$this._type = type;
 
-  int? _amount;
-  int? get amount => _$this._amount;
-  set amount(int? amount) => _$this._amount = amount;
+  double? _amount;
+  double? get amount => _$this._amount;
+  set amount(double? amount) => _$this._amount = amount;
 
   GPaymentItemBuilder();
 

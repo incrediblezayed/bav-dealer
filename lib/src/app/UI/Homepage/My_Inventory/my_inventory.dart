@@ -1,11 +1,9 @@
 import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/list_of_vehicles.dart';
 import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/my_stock.dart';
-import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
+import 'package:dealerapp/src/widgets/empty_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:iconsax/iconsax.dart';
-
-import '../../../../widgets/empty_widget.dart';
 
 class MyInventory extends ConsumerStatefulWidget {
   const MyInventory({super.key});
@@ -17,9 +15,11 @@ class MyInventory extends ConsumerStatefulWidget {
 class _MyInventoryState extends ConsumerState<MyInventory>
     with TickerProviderStateMixin {
   late final _tabController = TabController(length: 3, vsync: this);
+
+  bool showSearch = false;
+
   @override
   Widget build(BuildContext context) {
-    print(cacheProvider.getDealerId());
     final theme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
@@ -38,6 +38,16 @@ class _MyInventoryState extends ConsumerState<MyInventory>
           'Inventory',
           style: theme.headlineLarge,
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              setState(() {
+                showSearch = !showSearch;
+              });
+            },
+            icon: Icon(showSearch ? Icons.close : Icons.search),
+          ),
+        ],
         bottom: TabBar(
           indicatorColor: AppTheme.primaryColor,
           labelColor: AppTheme.primaryColor,
@@ -58,10 +68,14 @@ class _MyInventoryState extends ConsumerState<MyInventory>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: const [
-          ListOfVehicles(),
-          MyStockPage(),
-          EmptyWidget(title: 'Uh oh! You have no products.'),
+        children: [
+          ListOfVehicles(
+            showSearch: showSearch,
+          ),
+          MyStockPage(
+            showSearch: showSearch,
+          ),
+          const EmptyWidget(title: 'Uh oh! You have no products.'),
         ],
       ),
     );
