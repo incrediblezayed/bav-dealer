@@ -997,3 +997,497 @@ abstract class GPriceCategoriesData_priceCategories
         json,
       );
 }
+
+abstract class GUpdateVehicleDealerData
+    implements
+        Built<GUpdateVehicleDealerData, GUpdateVehicleDealerDataBuilder> {
+  GUpdateVehicleDealerData._();
+
+  factory GUpdateVehicleDealerData(
+          [Function(GUpdateVehicleDealerDataBuilder b) updates]) =
+      _$GUpdateVehicleDealerData;
+
+  static void _initializeBuilder(GUpdateVehicleDealerDataBuilder b) =>
+      b..G__typename = 'Mutation';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GUpdateVehicleDealerData_updateVehicleDealer? get updateVehicleDealer;
+  static Serializer<GUpdateVehicleDealerData> get serializer =>
+      _$gUpdateVehicleDealerDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateVehicleDealerData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateVehicleDealerData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateVehicleDealerData.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateVehicleDealerData_updateVehicleDealer
+    implements
+        Built<GUpdateVehicleDealerData_updateVehicleDealer,
+            GUpdateVehicleDealerData_updateVehicleDealerBuilder> {
+  GUpdateVehicleDealerData_updateVehicleDealer._();
+
+  factory GUpdateVehicleDealerData_updateVehicleDealer(
+      [Function(GUpdateVehicleDealerData_updateVehicleDealerBuilder b)
+          updates]) = _$GUpdateVehicleDealerData_updateVehicleDealer;
+
+  static void _initializeBuilder(
+          GUpdateVehicleDealerData_updateVehicleDealerBuilder b) =>
+      b..G__typename = 'VehicleDealer';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor? get vehicleColor;
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant?
+      get vehicleVariant;
+  String get id;
+  int? get stock;
+  BuiltList<GUpdateVehicleDealerData_updateVehicleDealer_prices>? get prices;
+  int? get totalPrice;
+  BuiltList<GUpdateVehicleDealerData_updateVehicleDealer_guarantees>?
+      get guarantees;
+  static Serializer<GUpdateVehicleDealerData_updateVehicleDealer>
+      get serializer => _$gUpdateVehicleDealerDataUpdateVehicleDealerSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateVehicleDealerData_updateVehicleDealer.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateVehicleDealerData_updateVehicleDealer? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateVehicleDealerData_updateVehicleDealer.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor
+    implements
+        Built<GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor,
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColorBuilder> {
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor._();
+
+  factory GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor(
+      [Function(
+              GUpdateVehicleDealerData_updateVehicleDealer_vehicleColorBuilder
+                  b)
+          updates]) = _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor;
+
+  static void _initializeBuilder(
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColorBuilder b) =>
+      b..G__typename = 'VehicleColor';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  String? get code;
+  BuiltList<GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images>?
+      get images;
+  static Serializer<GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor>
+      get serializer =>
+          _$gUpdateVehicleDealerDataUpdateVehicleDealerVehicleColorSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images
+    implements
+        Built<GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images,
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder> {
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images._();
+
+  factory GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images(
+          [Function(
+                  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder
+                      b)
+              updates]) =
+      _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images;
+
+  static void _initializeBuilder(
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder
+              b) =>
+      b..G__typename = 'VehicleImage';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image?
+      get image;
+  static Serializer<
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images>
+      get serializer =>
+          _$gUpdateVehicleDealerDataUpdateVehicleDealerVehicleColorImagesSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images
+                .serializer,
+            json,
+          );
+}
+
+abstract class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image
+    implements
+        Built<
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image,
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder> {
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image._();
+
+  factory GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image(
+          [Function(
+                  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder
+                      b)
+              updates]) =
+      _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image;
+
+  static void _initializeBuilder(
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder
+              b) =>
+      b..G__typename = 'ImageFieldOutput';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get url;
+  static Serializer<
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image>
+      get serializer =>
+          _$gUpdateVehicleDealerDataUpdateVehicleDealerVehicleColorImagesImageSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image
+                .serializer,
+            json,
+          );
+}
+
+abstract class GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant
+    implements
+        Built<GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant,
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariantBuilder> {
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant._();
+
+  factory GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant(
+      [Function(
+              GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariantBuilder
+                  b)
+          updates]) = _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant;
+
+  static void _initializeBuilder(
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariantBuilder
+              b) =>
+      b..G__typename = 'VehicleVariant';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  _i2.GDateTime? get modifiedAt;
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle?
+      get vehicle;
+  static Serializer<GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant>
+      get serializer =>
+          _$gUpdateVehicleDealerDataUpdateVehicleDealerVehicleVariantSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle
+    implements
+        Built<
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle,
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicleBuilder> {
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle._();
+
+  factory GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle(
+          [Function(
+                  GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicleBuilder
+                      b)
+              updates]) =
+      _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle;
+
+  static void _initializeBuilder(
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicleBuilder
+              b) =>
+      b..G__typename = 'Vehicle';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand?
+      get brand;
+  String? get name;
+  String get id;
+  String? get description;
+  static Serializer<
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle>
+      get serializer =>
+          _$gUpdateVehicleDealerDataUpdateVehicleDealerVehicleVariantVehicleSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle
+                .serializer,
+            json,
+          );
+}
+
+abstract class GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand
+    implements
+        Built<
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand,
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brandBuilder> {
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand._();
+
+  factory GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand(
+          [Function(
+                  GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brandBuilder
+                      b)
+              updates]) =
+      _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand;
+
+  static void _initializeBuilder(
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brandBuilder
+              b) =>
+      b..G__typename = 'Brand';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  static Serializer<
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand>
+      get serializer =>
+          _$gUpdateVehicleDealerDataUpdateVehicleDealerVehicleVariantVehicleBrandSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand
+                .serializer,
+            json,
+          );
+}
+
+abstract class GUpdateVehicleDealerData_updateVehicleDealer_prices
+    implements
+        Built<GUpdateVehicleDealerData_updateVehicleDealer_prices,
+            GUpdateVehicleDealerData_updateVehicleDealer_pricesBuilder> {
+  GUpdateVehicleDealerData_updateVehicleDealer_prices._();
+
+  factory GUpdateVehicleDealerData_updateVehicleDealer_prices(
+      [Function(GUpdateVehicleDealerData_updateVehicleDealer_pricesBuilder b)
+          updates]) = _$GUpdateVehicleDealerData_updateVehicleDealer_prices;
+
+  static void _initializeBuilder(
+          GUpdateVehicleDealerData_updateVehicleDealer_pricesBuilder b) =>
+      b..G__typename = 'Price';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  int? get amount;
+  GUpdateVehicleDealerData_updateVehicleDealer_prices_category? get category;
+  static Serializer<GUpdateVehicleDealerData_updateVehicleDealer_prices>
+      get serializer =>
+          _$gUpdateVehicleDealerDataUpdateVehicleDealerPricesSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateVehicleDealerData_updateVehicleDealer_prices.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateVehicleDealerData_updateVehicleDealer_prices? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateVehicleDealerData_updateVehicleDealer_prices.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateVehicleDealerData_updateVehicleDealer_prices_category
+    implements
+        Built<GUpdateVehicleDealerData_updateVehicleDealer_prices_category,
+            GUpdateVehicleDealerData_updateVehicleDealer_prices_categoryBuilder> {
+  GUpdateVehicleDealerData_updateVehicleDealer_prices_category._();
+
+  factory GUpdateVehicleDealerData_updateVehicleDealer_prices_category(
+          [Function(
+                  GUpdateVehicleDealerData_updateVehicleDealer_prices_categoryBuilder
+                      b)
+              updates]) =
+      _$GUpdateVehicleDealerData_updateVehicleDealer_prices_category;
+
+  static void _initializeBuilder(
+          GUpdateVehicleDealerData_updateVehicleDealer_prices_categoryBuilder
+              b) =>
+      b..G__typename = 'PriceCategory';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  static Serializer<
+          GUpdateVehicleDealerData_updateVehicleDealer_prices_category>
+      get serializer =>
+          _$gUpdateVehicleDealerDataUpdateVehicleDealerPricesCategorySerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateVehicleDealerData_updateVehicleDealer_prices_category.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateVehicleDealerData_updateVehicleDealer_prices_category? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateVehicleDealerData_updateVehicleDealer_prices_category.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateVehicleDealerData_updateVehicleDealer_guarantees
+    implements
+        Built<GUpdateVehicleDealerData_updateVehicleDealer_guarantees,
+            GUpdateVehicleDealerData_updateVehicleDealer_guaranteesBuilder> {
+  GUpdateVehicleDealerData_updateVehicleDealer_guarantees._();
+
+  factory GUpdateVehicleDealerData_updateVehicleDealer_guarantees(
+      [Function(
+              GUpdateVehicleDealerData_updateVehicleDealer_guaranteesBuilder b)
+          updates]) = _$GUpdateVehicleDealerData_updateVehicleDealer_guarantees;
+
+  static void _initializeBuilder(
+          GUpdateVehicleDealerData_updateVehicleDealer_guaranteesBuilder b) =>
+      b..G__typename = 'Guarantee';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String? get name;
+  String get id;
+  String? get description;
+  static Serializer<GUpdateVehicleDealerData_updateVehicleDealer_guarantees>
+      get serializer =>
+          _$gUpdateVehicleDealerDataUpdateVehicleDealerGuaranteesSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateVehicleDealerData_updateVehicleDealer_guarantees.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateVehicleDealerData_updateVehicleDealer_guarantees? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateVehicleDealerData_updateVehicleDealer_guarantees.serializer,
+        json,
+      );
+}
+
+abstract class GUpdatePricesData
+    implements Built<GUpdatePricesData, GUpdatePricesDataBuilder> {
+  GUpdatePricesData._();
+
+  factory GUpdatePricesData([Function(GUpdatePricesDataBuilder b) updates]) =
+      _$GUpdatePricesData;
+
+  static void _initializeBuilder(GUpdatePricesDataBuilder b) =>
+      b..G__typename = 'Mutation';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  BuiltList<GUpdatePricesData_updatePrices?>? get updatePrices;
+  static Serializer<GUpdatePricesData> get serializer =>
+      _$gUpdatePricesDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdatePricesData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdatePricesData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdatePricesData.serializer,
+        json,
+      );
+}
+
+abstract class GUpdatePricesData_updatePrices
+    implements
+        Built<GUpdatePricesData_updatePrices,
+            GUpdatePricesData_updatePricesBuilder> {
+  GUpdatePricesData_updatePrices._();
+
+  factory GUpdatePricesData_updatePrices(
+          [Function(GUpdatePricesData_updatePricesBuilder b) updates]) =
+      _$GUpdatePricesData_updatePrices;
+
+  static void _initializeBuilder(GUpdatePricesData_updatePricesBuilder b) =>
+      b..G__typename = 'Price';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  static Serializer<GUpdatePricesData_updatePrices> get serializer =>
+      _$gUpdatePricesDataUpdatePricesSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdatePricesData_updatePrices.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdatePricesData_updatePrices? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdatePricesData_updatePrices.serializer,
+        json,
+      );
+}

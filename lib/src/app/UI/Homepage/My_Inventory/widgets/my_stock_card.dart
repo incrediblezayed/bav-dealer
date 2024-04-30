@@ -4,11 +4,17 @@ import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_bottom_bar_button.dart';
 import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
+import 'package:dealerapp/src/widgets/k_inventory_bike_quantity.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MyStockCard extends ConsumerStatefulWidget {
-  const MyStockCard({required this.vehicleDealers, super.key});
+  const MyStockCard({
+    required this.vehicleDealers,
+    required this.index,
+    super.key,
+  });
   final GVehicleDealersData_vehicleDealers vehicleDealers;
+  final int index;
 
   @override
   ConsumerState<MyStockCard> createState() => _MyStockCardState();
@@ -203,14 +209,62 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
           ],
           SizedBox(height: 20.h),
           if (!isEdit)
-            KBottomBarButton(
-              // text: 'Quantity: ${widget.vehicleDealers.stock}',
-              text: 'Edit',
-              onTap: () {
-                setState(() {
-                  isEdit = true;
-                });
-              },
+            Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppTheme.primaryColor,
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                    ),
+                    label: const Text('Quantity'),
+                    icon: const Icon(Icons.edit),
+                    onPressed: () {
+                      setState(() {
+                        isEdit = true;
+                      });
+                    },
+                  ),
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => QuantityScreen(
+                            isUpdate: true,
+                            index: widget.index,
+                            vehicleDealerId: widget.vehicleDealers.id,
+                            variantId: widget.vehicleDealers.vehicleVariant!.id,
+                            colorId: widget.vehicleDealers.vehicleColor!.id,
+                            guarantees:
+                                widget.vehicleDealers.guarantees?.toList() ??
+                                    [],
+                            prices:
+                                widget.vehicleDealers.prices?.toList() ?? [],
+                          ),
+                        ),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppTheme.primaryColor,
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                    ),
+                    label: const Text('Prices'),
+                    icon: const Icon(Icons.edit),
+                  ),
+                ),
+              ],
             ),
           if (isEdit) ...[
             Row(
@@ -222,10 +276,11 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                     secondaryColor: Colors.white,
                     onTap: () {
                       inventoryPro.updateStockRequest(
-                          colorId: widget.vehicleDealers.vehicleColor!.id,
-                          variantId: widget.vehicleDealers.vehicleVariant!.id,
-                          quantity: selectedQuantity,
-                          type: 'remove',);
+                        colorId: widget.vehicleDealers.vehicleColor!.id,
+                        variantId: widget.vehicleDealers.vehicleVariant!.id,
+                        quantity: selectedQuantity,
+                        type: 'remove',
+                      );
                     },
                   ),
                 ),
@@ -237,10 +292,11 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                     text: 'Add',
                     onTap: () {
                       inventoryPro.updateStockRequest(
-                          colorId: widget.vehicleDealers.vehicleColor!.id,
-                          variantId: widget.vehicleDealers.vehicleVariant!.id,
-                          quantity: selectedQuantity,
-                          type: 'add',);
+                        colorId: widget.vehicleDealers.vehicleColor!.id,
+                        variantId: widget.vehicleDealers.vehicleVariant!.id,
+                        quantity: selectedQuantity,
+                        type: 'add',
+                      );
                     },
                   ),
                 ),
@@ -248,14 +304,15 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
             ),
             SizedBox(height: 20.h),
             KBottomBarButton(
-                secondaryColor: Colors.red,
-                color: Colors.white,
-                text: 'Cancel',
-                onTap: () {
-                  setState(() {
-                    isEdit = false;
-                  });
-                },),
+              secondaryColor: Colors.red,
+              color: Colors.white,
+              text: 'Cancel',
+              onTap: () {
+                setState(() {
+                  isEdit = false;
+                });
+              },
+            ),
           ],
         ],
       ),

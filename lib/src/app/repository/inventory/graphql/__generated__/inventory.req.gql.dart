@@ -476,3 +476,154 @@ abstract class GPriceCategoriesReq
         json,
       );
 }
+
+abstract class GUpdateVehicleDealerReq
+    implements
+        Built<GUpdateVehicleDealerReq, GUpdateVehicleDealerReqBuilder>,
+        _i1.OperationRequest<_i2.GUpdateVehicleDealerData,
+            _i3.GUpdateVehicleDealerVars> {
+  GUpdateVehicleDealerReq._();
+
+  factory GUpdateVehicleDealerReq(
+          [Function(GUpdateVehicleDealerReqBuilder b) updates]) =
+      _$GUpdateVehicleDealerReq;
+
+  static void _initializeBuilder(GUpdateVehicleDealerReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'UpdateVehicleDealer',
+    )
+    ..executeOnListen = true;
+
+  @override
+  _i3.GUpdateVehicleDealerVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GUpdateVehicleDealerData? Function(
+    _i2.GUpdateVehicleDealerData?,
+    _i2.GUpdateVehicleDealerData?,
+  )? get updateResult;
+  @override
+  _i2.GUpdateVehicleDealerData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GUpdateVehicleDealerData? parseData(Map<String, dynamic> json) =>
+      _i2.GUpdateVehicleDealerData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GUpdateVehicleDealerData,
+      _i3.GUpdateVehicleDealerVars> transformOperation(
+          _i4.Operation Function(_i4.Operation) transform) =>
+      this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GUpdateVehicleDealerReq> get serializer =>
+      _$gUpdateVehicleDealerReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GUpdateVehicleDealerReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateVehicleDealerReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GUpdateVehicleDealerReq.serializer,
+        json,
+      );
+}
+
+abstract class GUpdatePricesReq
+    implements
+        Built<GUpdatePricesReq, GUpdatePricesReqBuilder>,
+        _i1.OperationRequest<_i2.GUpdatePricesData, _i3.GUpdatePricesVars> {
+  GUpdatePricesReq._();
+
+  factory GUpdatePricesReq([Function(GUpdatePricesReqBuilder b) updates]) =
+      _$GUpdatePricesReq;
+
+  static void _initializeBuilder(GUpdatePricesReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'UpdatePrices',
+    )
+    ..executeOnListen = true;
+
+  @override
+  _i3.GUpdatePricesVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GUpdatePricesData? Function(
+    _i2.GUpdatePricesData?,
+    _i2.GUpdatePricesData?,
+  )? get updateResult;
+  @override
+  _i2.GUpdatePricesData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GUpdatePricesData? parseData(Map<String, dynamic> json) =>
+      _i2.GUpdatePricesData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GUpdatePricesData, _i3.GUpdatePricesVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GUpdatePricesReq> get serializer =>
+      _$gUpdatePricesReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GUpdatePricesReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdatePricesReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GUpdatePricesReq.serializer,
+        json,
+      );
+}

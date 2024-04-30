@@ -120,3 +120,56 @@ query PriceCategories {
     modifiedAt
   }
 }
+
+
+mutation UpdateVehicleDealer($where: VehicleDealerWhereUniqueInput!, $data: VehicleDealerUpdateInput!) {
+  updateVehicleDealer(where: $where, data: $data) {
+    vehicleColor {
+      id
+      name
+      code
+      images {
+        id
+        image {
+          url
+        }
+      }
+    }
+    vehicleVariant {
+      id
+      name
+      modifiedAt
+      vehicle {
+        brand {
+          id
+          name
+        }
+        name
+        id
+        description
+      }
+    }
+    id
+    stock
+    prices {
+      id
+      amount
+      category {
+        id
+        name
+      }
+    }
+    totalPrice
+    guarantees {
+      name
+      id
+      description
+    }
+  }
+}
+
+mutation UpdatePrices($data: [PriceUpdateArgs!]!) {
+  updatePrices(data: $data) {
+    id
+  }
+}

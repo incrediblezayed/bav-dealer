@@ -36,11 +36,14 @@ class MyStockPage extends ConsumerWidget {
               },
               child: inventoryPro.vehicleDealers.isEmpty
                   ? const EmptyWidget(title: 'Uh oh! You have no orders.')
-                  : ListView(
-                      shrinkWrap: true,
-                      children: inventoryPro.vehicleDealers
-                          .map((e) => MyStockCard(vehicleDealers: e))
-                          .toList(),
+                  : ListView.builder(
+                      itemCount: inventoryPro.vehicleDealers.length,
+                      itemBuilder: (context, index) {
+                        return MyStockCard(
+                          vehicleDealers: inventoryPro.vehicleDealers[index],
+                          index: index,
+                        );
+                      },
                     ),
             ),
           ),

@@ -232,6 +232,79 @@ class InventoryRepository {
       return false;
     }
   }
+
+  Future<GVehicleDealersData_vehicleDealers> updateVehicleDealer({
+    required String dealerId,
+    required List<String> guarantees,
+    List<PriceModel>? prices,
+  }) async {
+    try {
+      if (prices != null &&
+          prices.where((element) => element.priceId.isNotEmpty).isNotEmpty) {
+        final results = await _client.request(
+          GUpdatePricesReq(
+            (b) {
+              b.vars.data = ListBuilder<GPriceUpdateArgs>(
+                prices
+                    .map(
+                      (e) => GPriceUpdateArgs(
+                        (b) => b..where.id = e.type,
+                      ),
+                    )
+                    .toList(),
+              );
+            },
+          ),
+        ).first;
+      }
+
+      final result = await _client.request(
+        GUpdateVehicleDealerReq(
+          (b) {
+            b.vars.where.id = dealerId;
+            if (guarantees.isNotEmpty) {
+              b.vars.data.guarantees.connect =
+                  ListBuilder<GGuaranteeWhereUniqueInput>(
+                guarantees.map(
+                  (e) => GGuaranteeWhereUniqueInput(
+                    (b) => b..id = e,
+                  ),
+                ),
+              );
+            }
+            if (prices != null &&
+                prices.where((element) => element.priceId.isEmpty).isNotEmpty) {
+              b.vars.data.prices.create = ListBuilder<GPriceCreateInput>(
+                prices.map<GPriceCreateInput>(
+                  (e) => GPriceCreateInput(
+                    (b) => b
+                      ..amount = e.price
+                      ..category.connect.id = e.type,
+                  ),
+                ),
+              );
+            }
+          },
+        ),
+      ).first;
+      if (result.linkException != null) {
+        throw result.linkException!;
+      }
+      if (result.graphqlErrors?.isNotEmpty ?? false) {
+        throw result.graphqlErrors!.first;
+      }
+      if (result.data?.updateVehicleDealer != null) {
+        return GVehicleDealersData_vehicleDealers.fromJson(
+          result.data!.updateVehicleDealer!.toJson(),
+        )!;
+      } else {
+        throw Exception('Failed to update stock');
+      }
+    } catch (e) {
+      e.log();
+      rethrow;
+    }
+  }
 }
 
 class PriceModel {
@@ -239,8 +312,10 @@ class PriceModel {
     required this.price,
     required this.type,
     required this.name,
+    required this.priceId,
   });
   int price;
   final String type;
   final String name;
+  final String priceId;
 }

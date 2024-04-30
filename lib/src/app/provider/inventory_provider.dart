@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:dealerapp/src/app/model/variant_details.model.dart';
-import 'package:dealerapp/src/app/repository/guarantees/graphql/__generated__/guarantees.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
@@ -113,7 +112,14 @@ class InventoryProvider extends ChangeNotifier {
     try {
       final result = await _inventoryRepository.getPriceCategories();
       prices = result
-          .map((e) => PriceModel(price: 0, type: e.id, name: e.name!))
+          .map(
+            (e) => PriceModel(
+              price: 0,
+              type: e.id,
+              name: e.name!,
+              priceId: '',
+            ),
+          )
           .toList();
       priceCategories = result;
     } catch (e) {
@@ -125,7 +131,7 @@ class InventoryProvider extends ChangeNotifier {
     required String colorId,
     required String variantId,
     required List<PriceModel> prices,
-    required List<GGuaranteesData_guarantees> guarantees,
+    required List<String> guarantees,
   }) async {
     unawaited(AppRoutes.showLoadingDialog());
     try {
@@ -133,7 +139,7 @@ class InventoryProvider extends ChangeNotifier {
         variantId: variantId,
         colorId: colorId,
         prices: prices,
-        guarantees: guarantees.map((e) => e.id).toList(),
+        guarantees: guarantees,
       );
       await getStocks();
       await getVehicles();
@@ -204,6 +210,28 @@ class InventoryProvider extends ChangeNotifier {
       await AppRoutes.showErrorSnackbar(
         message: 'Error while fetching list of vehicles',
       );
+    }
+  }
+
+  Future<void> updateVehicleDealer({
+    required int index,
+    required String id,
+    required List<String> guarantees,
+    List<PriceModel>? prices,
+  }) async {
+    try {
+      final result = await _inventoryRepository.updateVehicleDealer(
+        dealerId: id,
+        guarantees: guarantees,
+        prices: prices,
+      );
+      vehicleDealers[index] = result;
+      notifyListeners();
+      await AppRoutes.showSuccessSnackbar(
+        message: 'Request Updated Successfully',
+      );
+    } catch (e) {
+      e.log();
     }
   }
 }

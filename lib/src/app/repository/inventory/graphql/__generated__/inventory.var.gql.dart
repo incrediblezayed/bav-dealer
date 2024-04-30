@@ -161,3 +161,52 @@ abstract class GPriceCategoriesVars
         json,
       );
 }
+
+abstract class GUpdateVehicleDealerVars
+    implements
+        Built<GUpdateVehicleDealerVars, GUpdateVehicleDealerVarsBuilder> {
+  GUpdateVehicleDealerVars._();
+
+  factory GUpdateVehicleDealerVars(
+          [Function(GUpdateVehicleDealerVarsBuilder b) updates]) =
+      _$GUpdateVehicleDealerVars;
+
+  _i1.GVehicleDealerWhereUniqueInput get where;
+  _i1.GVehicleDealerUpdateInput get data;
+  static Serializer<GUpdateVehicleDealerVars> get serializer =>
+      _$gUpdateVehicleDealerVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GUpdateVehicleDealerVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateVehicleDealerVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GUpdateVehicleDealerVars.serializer,
+        json,
+      );
+}
+
+abstract class GUpdatePricesVars
+    implements Built<GUpdatePricesVars, GUpdatePricesVarsBuilder> {
+  GUpdatePricesVars._();
+
+  factory GUpdatePricesVars([Function(GUpdatePricesVarsBuilder b) updates]) =
+      _$GUpdatePricesVars;
+
+  BuiltList<_i1.GPriceUpdateArgs> get data;
+  static Serializer<GUpdatePricesVars> get serializer =>
+      _$gUpdatePricesVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GUpdatePricesVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdatePricesVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GUpdatePricesVars.serializer,
+        json,
+      );
+}

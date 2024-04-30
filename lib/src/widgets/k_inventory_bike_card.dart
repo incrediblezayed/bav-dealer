@@ -251,38 +251,33 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                 height: 10.h,
               ),
               KButton(
-                onPressed: () {
-                  Navigator.push(
+                onPressed: () async {
+                  if (selectedColor == null) {
+                    return;
+                  }
+                  await Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => QuantityScreen(
-                        variant: widget.variant,
-                        vehicleColor: selectedColor,
+                        variantId: widget.variant.id,
+                        colorId: selectedColor!.id,
+                        guarantees: const [],
+                        prices: const [],
+                        
                       ),
                     ),
                   );
-                  // inventoryPro
-                  //     .createStockRequest(
-                  //   variantId: variants.id,
-                  //   colorId: selectedColor!.id,
-                  //   prices: prices,
-                  // )
-                  //     .then((value) {
-                  //   for (var i = 0; i < controller.length; i++) {
-                  //     controller[i].clear();
-                  //   }
-                  //   setState(() {
-                  //     selectedColor = variants.colors
-                  //         .where(
-                  //           (p0) => !ref
-                  //               .read(inventoryProvider)
-                  //               .vehicleDealers
-                  //               .map((e) => e.vehicleColor!.id)
-                  //               .contains(p0.id),
-                  //         )
-                  //         .firstOrNull;
-                  //   });
-                  // });
+                  setState(() {
+                    selectedColor = variants.colors
+                        .where(
+                          (p0) => !ref
+                              .read(inventoryProvider)
+                              .vehicleDealers
+                              .map((e) => e.vehicleColor!.id)
+                              .contains(p0.id),
+                        )
+                        .firstOrNull;
+                  });
                 },
                 text: 'Add (or) Update',
               ),

@@ -554,6 +554,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           GTestDriveOrdersData_testDriveOrders_order_user_addresses.serializer)
       ..add(GTestDriveOrdersReq.serializer)
       ..add(GTestDriveOrdersVars.serializer)
+      ..add(GUpdatePricesData.serializer)
+      ..add(GUpdatePricesData_updatePrices.serializer)
+      ..add(GUpdatePricesReq.serializer)
+      ..add(GUpdatePricesVars.serializer)
       ..add(GUpdateTestDriveOrderData.serializer)
       ..add(GUpdateTestDriveOrderData_updateTestDriveOrder.serializer)
       ..add(GUpdateTestDriveOrderReq.serializer)
@@ -562,6 +566,28 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GUpdateUserData_updateUser.serializer)
       ..add(GUpdateUserReq.serializer)
       ..add(GUpdateUserVars.serializer)
+      ..add(GUpdateVehicleDealerData.serializer)
+      ..add(GUpdateVehicleDealerData_updateVehicleDealer.serializer)
+      ..add(GUpdateVehicleDealerData_updateVehicleDealer_guarantees.serializer)
+      ..add(GUpdateVehicleDealerData_updateVehicleDealer_prices.serializer)
+      ..add(GUpdateVehicleDealerData_updateVehicleDealer_prices_category
+          .serializer)
+      ..add(
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor.serializer)
+      ..add(GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images
+          .serializer)
+      ..add(
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image
+              .serializer)
+      ..add(GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant
+          .serializer)
+      ..add(GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle
+          .serializer)
+      ..add(
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand
+              .serializer)
+      ..add(GUpdateVehicleDealerReq.serializer)
+      ..add(GUpdateVehicleDealerVars.serializer)
       ..add(GUpdateVehicleOrderData.serializer)
       ..add(GUpdateVehicleOrderData_updateVehicleOrder.serializer)
       ..add(GUpdateVehicleOrderReq.serializer)
@@ -1419,6 +1445,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(GPriceWhereUniqueInput)]),
           () => new ListBuilder<GPriceWhereUniqueInput>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(GPriceUpdateArgs)]),
+          () => new ListBuilder<GPriceUpdateArgs>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GPriceWhereInput)]),
           () => new ListBuilder<GPriceWhereInput>())
       ..addBuilderFactory(
@@ -1969,6 +1998,26 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<
               GTestDriveOrdersData_testDriveOrders_order_user_addresses>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GUpdateVehicleDealerData_updateVehicleDealer_prices)
+          ]),
+          () => new ListBuilder<
+              GUpdateVehicleDealerData_updateVehicleDealer_prices>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GUpdateVehicleDealerData_updateVehicleDealer_guarantees)
+          ]),
+          () => new ListBuilder<
+              GUpdateVehicleDealerData_updateVehicleDealer_guarantees>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images)
+          ]),
+          () => new ListBuilder<
+              GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GUserData_user_addresses)]),
@@ -2655,7 +2704,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<int>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(int)]),
-          () => new ListBuilder<int>()))
+          () => new ListBuilder<int>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType.nullable(GUpdatePricesData_updatePrices)]),
+          () => new ListBuilder<GUpdatePricesData_updatePrices?>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint
