@@ -167,6 +167,7 @@ class AuthProvider extends ChangeNotifier {
         }
       }
       final sessionToken = data['sessionToken'] as String;
+      print('Bearer1 ${cacheProvider.setSessionToken(sessionToken.toString())}');
       await cacheProvider.setSessionToken(sessionToken);
       final newUser = await _authRepository.getUser(userId: user.id!);
       await cacheProvider.setUserId(user.id!);
@@ -248,6 +249,7 @@ class AuthProvider extends ChangeNotifier {
           await cacheProvider.setDealerId(dealer.id);
           clear();
           await AppRoutes.pushAndRemoveUntil(page: const HomePage());
+
         } else {
           await AppRoutes.showErrorSnackbar(
             message:

@@ -6,6 +6,9 @@ import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 
+import '../model/product_details_model.dart';
+import 'dart:developer';
+
 class InventoryProvider extends ChangeNotifier {
   List<GPriceCategoriesData_priceCategories> _priceCategories = [];
   List<GPriceCategoriesData_priceCategories> get priceCategories =>
@@ -16,10 +19,15 @@ class InventoryProvider extends ChangeNotifier {
   }
 
   List<PriceModel> prices = [];
-
+  List<ProductDetailsModel> _products = [];
+  List<ProductDetailsModel> get products => _products;
   List<VariantDetailsModel> _vehicles = [];
   List<VariantDetailsModel> get vehicles => _vehicles;
 
+  set products(List<ProductDetailsModel> data) {
+    _products = data;
+    notifyListeners();
+  }
   set vehicles(List<VariantDetailsModel> data) {
     _vehicles = data;
     notifyListeners();
@@ -39,8 +47,16 @@ class InventoryProvider extends ChangeNotifier {
     await getStocks();
     await getPriceCategories();
     await getVehicles();
+    await getProducts();
   }
-
+  Timer? _productDebounce;
+  late TextEditingController productSearchController = TextEditingController()
+    ..addListener(() {
+      _productDebounce?.cancel();
+      _productDebounce = Timer(const Duration(milliseconds: 500), () {
+        getProducts();
+      });
+    });
   Timer? _inventoryDebounce;
 
   late TextEditingController inventorySearchController = TextEditingController()
@@ -60,6 +76,37 @@ class InventoryProvider extends ChangeNotifier {
         getStocks();
       });
     });
+  Future<void> getProducts() async {
+    try {
+      final getProduct = await _inventoryRepository.getProducts(
+        search: productSearchController.text,
+        skip: 0,
+        take: 15,
+      );
+      _handleProductsResponse(getProduct as Future<(int, List<Map<String, dynamic>>?)>);
+    } catch (e) {
+      _handleError(e, 'Error while fetching list of products');
+    }
+  }
+
+  Future<void> getPaginatedProducts() async {
+    try {
+      if (isCallInProgress) {
+        return;
+      }
+      isCallInProgress = true;
+      final response = await _inventoryRepository.getProducts(
+        take: 15,
+        skip: prices.length,
+        search: productSearchController.text,
+      );
+      _handleProductsResponse(response as Future<(int, List<Map<String, dynamic>>?)>);
+    } catch (e) {
+      _handleError(e, 'Error while fetching list of products');
+    } finally {
+      isCallInProgress = false;
+    }
+  }
 
   Future<void> getVehicles() async {
     try {
@@ -114,12 +161,12 @@ class InventoryProvider extends ChangeNotifier {
       prices = result
           .map(
             (e) => PriceModel(
-              price: 0,
-              type: e.id,
-              name: e.name!,
-              priceId: '',
-            ),
-          )
+          price: 0,
+          type: e.id,
+          name: e.name!,
+          priceId: '',
+        ),
+      )
           .toList();
       priceCategories = result;
     } catch (e) {
@@ -187,7 +234,28 @@ class InventoryProvider extends ChangeNotifier {
       e.log();
     }
   }
+  void _handleProductsResponse(Future<(int, List<Map<String, dynamic>>?)> response) async {
+    final tuple = await response;
+    if (tuple.$2 != null) {
+      count = tuple.$1;
+      products = tuple.$2!.map((productJson) => _mapToProductModel(productJson)).toList();
+    } else {
+      await AppRoutes.showErrorSnackbar(
+        message: 'Error while fetching list of products',
+      );
+    }
+  }
+  void _handleError(dynamic e, String message) async {
+    e.log();
+    await AppRoutes.showErrorSnackbar(
+      message: message,
+    );
+  }
 
+  ProductDetailsModel _mapToProductModel(Map<String, dynamic> productJson) {
+    // Logic to map JSON to ProductDetailsModel
+    return ProductDetailsModel.fromJson(productJson);
+  }
   Future<int> getInventoryCount() async {
     try {
       final result = await _inventoryRepository.getStockCount();

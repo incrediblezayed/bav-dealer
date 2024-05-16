@@ -5,6 +5,8 @@ import 'package:dealerapp/src/widgets/empty_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:iconsax/iconsax.dart';
 
+import 'my_product.dart';
+
 class MyInventory extends ConsumerStatefulWidget {
   const MyInventory({super.key});
 
@@ -75,7 +77,10 @@ class _MyInventoryState extends ConsumerState<MyInventory>
           MyStockPage(
             showSearch: showSearch,
           ),
-          const EmptyWidget(title: 'Uh oh! You have no products.'),
+          MyProduct(
+            showSearch: showSearch,
+          ),
+          //const EmptyWidget(title: 'Uh oh! You have no products.'),
         ],
       ),
     );

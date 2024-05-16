@@ -67,6 +67,7 @@ class CacheProvider {
     _boolBox = await _initBox<bool>(_boolBoxName);
     _graphqlBox = await _initBox<dynamic>(_graphqlBoxName);
     await _graphqlBox.clear();
+    print(_stringBox.toString());
   }
 
   ///Initialize the Box
@@ -161,6 +162,7 @@ class CacheProvider {
   ///
   ///For getting the session token with the key [_sessionToken]
   String? getSessionToken() {
+
     return _stringBox.get(_sessionToken);
   }
 

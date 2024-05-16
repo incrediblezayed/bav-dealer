@@ -6,6 +6,137 @@ part of 'inventory.data.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+Serializer<GProductVariantsData> _$gProductVariantsDataSerializer =
+    new _$GProductVariantsDataSerializer();
+Serializer<GProductVariantsData_productVariants>
+    _$gProductVariantsDataProductVariantsSerializer =
+    new _$GProductVariantsData_productVariantsSerializer();
+Serializer<GProductVariantsData_productVariants_prices>
+    _$gProductVariantsDataProductVariantsPricesSerializer =
+    new _$GProductVariantsData_productVariants_pricesSerializer();
+Serializer<GProductVariantsData_productVariants_prices_category>
+    _$gProductVariantsDataProductVariantsPricesCategorySerializer =
+    new _$GProductVariantsData_productVariants_prices_categorySerializer();
+Serializer<GProductVariantsData_productVariants_specifications>
+    _$gProductVariantsDataProductVariantsSpecificationsSerializer =
+    new _$GProductVariantsData_productVariants_specificationsSerializer();
+Serializer<GProductVariantsData_productVariants_specifications_specification>
+    _$gProductVariantsDataProductVariantsSpecificationsSpecificationSerializer =
+    new _$GProductVariantsData_productVariants_specifications_specificationSerializer();
+Serializer<
+        GProductVariantsData_productVariants_specifications_specification_image>
+    _$gProductVariantsDataProductVariantsSpecificationsSpecificationImageSerializer =
+    new _$GProductVariantsData_productVariants_specifications_specification_imageSerializer();
+Serializer<GProductVariantsData_productVariants_specifications_category>
+    _$gProductVariantsDataProductVariantsSpecificationsCategorySerializer =
+    new _$GProductVariantsData_productVariants_specifications_categorySerializer();
+Serializer<GProductVariantsData_productVariants_gallery>
+    _$gProductVariantsDataProductVariantsGallerySerializer =
+    new _$GProductVariantsData_productVariants_gallerySerializer();
+Serializer<GProductVariantsData_productVariants_product>
+    _$gProductVariantsDataProductVariantsProductSerializer =
+    new _$GProductVariantsData_productVariants_productSerializer();
+Serializer<GProductVariantsData_productVariants_product_brand>
+    _$gProductVariantsDataProductVariantsProductBrandSerializer =
+    new _$GProductVariantsData_productVariants_product_brandSerializer();
+Serializer<GProductVariantsData_productVariants_product_brand_logo>
+    _$gProductVariantsDataProductVariantsProductBrandLogoSerializer =
+    new _$GProductVariantsData_productVariants_product_brand_logoSerializer();
+Serializer<GProductVariantsData_productVariants_product_type>
+    _$gProductVariantsDataProductVariantsProductTypeSerializer =
+    new _$GProductVariantsData_productVariants_product_typeSerializer();
+Serializer<GProductVariantsData_productVariants_product_specifications>
+    _$gProductVariantsDataProductVariantsProductSpecificationsSerializer =
+    new _$GProductVariantsData_productVariants_product_specificationsSerializer();
+Serializer<
+        GProductVariantsData_productVariants_product_specifications_specification>
+    _$gProductVariantsDataProductVariantsProductSpecificationsSpecificationSerializer =
+    new _$GProductVariantsData_productVariants_product_specifications_specificationSerializer();
+Serializer<
+        GProductVariantsData_productVariants_product_specifications_specification_image>
+    _$gProductVariantsDataProductVariantsProductSpecificationsSpecificationImageSerializer =
+    new _$GProductVariantsData_productVariants_product_specifications_specification_imageSerializer();
+Serializer<GProductVariantsData_productVariants_product_specifications_category>
+    _$gProductVariantsDataProductVariantsProductSpecificationsCategorySerializer =
+    new _$GProductVariantsData_productVariants_product_specifications_categorySerializer();
+Serializer<GProductVariantsData_productVariants_tags>
+    _$gProductVariantsDataProductVariantsTagsSerializer =
+    new _$GProductVariantsData_productVariants_tagsSerializer();
+Serializer<GProductVariantsData_productVariants_images>
+    _$gProductVariantsDataProductVariantsImagesSerializer =
+    new _$GProductVariantsData_productVariants_imagesSerializer();
+Serializer<GProductVariantsData_productVariants_images_image>
+    _$gProductVariantsDataProductVariantsImagesImageSerializer =
+    new _$GProductVariantsData_productVariants_images_imageSerializer();
+Serializer<GProductVariantsCountData> _$gProductVariantsCountDataSerializer =
+    new _$GProductVariantsCountDataSerializer();
+Serializer<GProductVariantData> _$gProductVariantDataSerializer =
+    new _$GProductVariantDataSerializer();
+Serializer<GProductVariantData_productVariant>
+    _$gProductVariantDataProductVariantSerializer =
+    new _$GProductVariantData_productVariantSerializer();
+Serializer<GProductVariantData_productVariant_prices>
+    _$gProductVariantDataProductVariantPricesSerializer =
+    new _$GProductVariantData_productVariant_pricesSerializer();
+Serializer<GProductVariantData_productVariant_prices_category>
+    _$gProductVariantDataProductVariantPricesCategorySerializer =
+    new _$GProductVariantData_productVariant_prices_categorySerializer();
+Serializer<GProductVariantData_productVariant_specifications>
+    _$gProductVariantDataProductVariantSpecificationsSerializer =
+    new _$GProductVariantData_productVariant_specificationsSerializer();
+Serializer<GProductVariantData_productVariant_specifications_specification>
+    _$gProductVariantDataProductVariantSpecificationsSpecificationSerializer =
+    new _$GProductVariantData_productVariant_specifications_specificationSerializer();
+Serializer<
+        GProductVariantData_productVariant_specifications_specification_image>
+    _$gProductVariantDataProductVariantSpecificationsSpecificationImageSerializer =
+    new _$GProductVariantData_productVariant_specifications_specification_imageSerializer();
+Serializer<GProductVariantData_productVariant_specifications_category>
+    _$gProductVariantDataProductVariantSpecificationsCategorySerializer =
+    new _$GProductVariantData_productVariant_specifications_categorySerializer();
+Serializer<GProductVariantData_productVariant_gallery>
+    _$gProductVariantDataProductVariantGallerySerializer =
+    new _$GProductVariantData_productVariant_gallerySerializer();
+Serializer<GProductVariantData_productVariant_product>
+    _$gProductVariantDataProductVariantProductSerializer =
+    new _$GProductVariantData_productVariant_productSerializer();
+Serializer<GProductVariantData_productVariant_product_brand>
+    _$gProductVariantDataProductVariantProductBrandSerializer =
+    new _$GProductVariantData_productVariant_product_brandSerializer();
+Serializer<GProductVariantData_productVariant_product_brand_logo>
+    _$gProductVariantDataProductVariantProductBrandLogoSerializer =
+    new _$GProductVariantData_productVariant_product_brand_logoSerializer();
+Serializer<GProductVariantData_productVariant_product_type>
+    _$gProductVariantDataProductVariantProductTypeSerializer =
+    new _$GProductVariantData_productVariant_product_typeSerializer();
+Serializer<GProductVariantData_productVariant_product_specifications>
+    _$gProductVariantDataProductVariantProductSpecificationsSerializer =
+    new _$GProductVariantData_productVariant_product_specificationsSerializer();
+Serializer<
+        GProductVariantData_productVariant_product_specifications_specification>
+    _$gProductVariantDataProductVariantProductSpecificationsSpecificationSerializer =
+    new _$GProductVariantData_productVariant_product_specifications_specificationSerializer();
+Serializer<
+        GProductVariantData_productVariant_product_specifications_specification_image>
+    _$gProductVariantDataProductVariantProductSpecificationsSpecificationImageSerializer =
+    new _$GProductVariantData_productVariant_product_specifications_specification_imageSerializer();
+Serializer<GProductVariantData_productVariant_product_specifications_category>
+    _$gProductVariantDataProductVariantProductSpecificationsCategorySerializer =
+    new _$GProductVariantData_productVariant_product_specifications_categorySerializer();
+Serializer<GProductVariantData_productVariant_tags>
+    _$gProductVariantDataProductVariantTagsSerializer =
+    new _$GProductVariantData_productVariant_tagsSerializer();
+Serializer<GProductVariantData_productVariant_images>
+    _$gProductVariantDataProductVariantImagesSerializer =
+    new _$GProductVariantData_productVariant_imagesSerializer();
+Serializer<GProductVariantData_productVariant_images_image>
+    _$gProductVariantDataProductVariantImagesImageSerializer =
+    new _$GProductVariantData_productVariant_images_imageSerializer();
+Serializer<GProductTypesData> _$gProductTypesDataSerializer =
+    new _$GProductTypesDataSerializer();
+Serializer<GProductTypesData_productTypes>
+    _$gProductTypesDataProductTypesSerializer =
+    new _$GProductTypesData_productTypesSerializer();
 Serializer<GVehicleVariantsData> _$gVehicleVariantsDataSerializer =
     new _$GVehicleVariantsDataSerializer();
 Serializer<GVehicleVariantsData_vehicleVariants>
@@ -124,6 +255,3727 @@ Serializer<GUpdatePricesData> _$gUpdatePricesDataSerializer =
 Serializer<GUpdatePricesData_updatePrices>
     _$gUpdatePricesDataUpdatePricesSerializer =
     new _$GUpdatePricesData_updatePricesSerializer();
+
+class _$GProductVariantsDataSerializer
+    implements StructuredSerializer<GProductVariantsData> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData,
+    _$GProductVariantsData
+  ];
+  @override
+  final String wireName = 'GProductVariantsData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductVariantsData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.productVariants;
+    if (value != null) {
+      result
+        ..add('productVariants')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GProductVariantsData_productVariants)])));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantsDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'productVariants':
+          result.productVariants.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GProductVariantsData_productVariants)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariantsSerializer
+    implements StructuredSerializer<GProductVariantsData_productVariants> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants,
+    _$GProductVariantsData_productVariants
+  ];
+  @override
+  final String wireName = 'GProductVariantsData_productVariants';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductVariantsData_productVariants object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.availableProductDealer;
+    if (value != null) {
+      result
+        ..add('availableProductDealer')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.JsonObject)));
+    }
+    value = object.prices;
+    if (value != null) {
+      result
+        ..add('prices')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GProductVariantsData_productVariants_prices)
+            ])));
+    }
+    value = object.specifications;
+    if (value != null) {
+      result
+        ..add('specifications')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(
+                  GProductVariantsData_productVariants_specifications)
+            ])));
+    }
+    value = object.totalPrice;
+    if (value != null) {
+      result
+        ..add('totalPrice')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.gallery;
+    if (value != null) {
+      result
+        ..add('gallery')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GProductVariantsData_productVariants_gallery)
+            ])));
+    }
+    value = object.product;
+    if (value != null) {
+      result
+        ..add('product')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GProductVariantsData_productVariants_product)));
+    }
+    value = object.tags;
+    if (value != null) {
+      result
+        ..add('tags')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GProductVariantsData_productVariants_tags)
+            ])));
+    }
+    value = object.images;
+    if (value != null) {
+      result
+        ..add('images')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GProductVariantsData_productVariants_images)
+            ])));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantsData_productVariantsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'availableProductDealer':
+          result.availableProductDealer = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
+          break;
+        case 'prices':
+          result.prices.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GProductVariantsData_productVariants_prices)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'specifications':
+          result.specifications.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(
+                    GProductVariantsData_productVariants_specifications)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'totalPrice':
+          result.totalPrice = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'gallery':
+          result.gallery.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GProductVariantsData_productVariants_gallery)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'product':
+          result.product.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantsData_productVariants_product))!
+              as GProductVariantsData_productVariants_product);
+          break;
+        case 'tags':
+          result.tags.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GProductVariantsData_productVariants_tags)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'images':
+          result.images.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GProductVariantsData_productVariants_images)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_pricesSerializer
+    implements
+        StructuredSerializer<GProductVariantsData_productVariants_prices> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_prices,
+    _$GProductVariantsData_productVariants_prices
+  ];
+  @override
+  final String wireName = 'GProductVariantsData_productVariants_prices';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantsData_productVariants_prices object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.amount;
+    if (value != null) {
+      result
+        ..add('amount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.category;
+    if (value != null) {
+      result
+        ..add('category')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantsData_productVariants_prices_category)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_prices deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantsData_productVariants_pricesBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'amount':
+          result.amount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'category':
+          result.category.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantsData_productVariants_prices_category))!
+              as GProductVariantsData_productVariants_prices_category);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_prices_categorySerializer
+    implements
+        StructuredSerializer<
+            GProductVariantsData_productVariants_prices_category> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_prices_category,
+    _$GProductVariantsData_productVariants_prices_category
+  ];
+  @override
+  final String wireName =
+      'GProductVariantsData_productVariants_prices_category';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantsData_productVariants_prices_category object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_prices_category deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantsData_productVariants_prices_categoryBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_specificationsSerializer
+    implements
+        StructuredSerializer<
+            GProductVariantsData_productVariants_specifications> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_specifications,
+    _$GProductVariantsData_productVariants_specifications
+  ];
+  @override
+  final String wireName = 'GProductVariantsData_productVariants_specifications';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantsData_productVariants_specifications object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.isKeyFeature;
+    if (value != null) {
+      result
+        ..add('isKeyFeature')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.specification;
+    if (value != null) {
+      result
+        ..add('specification')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantsData_productVariants_specifications_specification)));
+    }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.intValue;
+    if (value != null) {
+      result
+        ..add('intValue')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.stringValue;
+    if (value != null) {
+      result
+        ..add('stringValue')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.category;
+    if (value != null) {
+      result
+        ..add('category')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantsData_productVariants_specifications_category)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_specifications deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantsData_productVariants_specificationsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'isKeyFeature':
+          result.isKeyFeature = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'specification':
+          result.specification.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantsData_productVariants_specifications_specification))!
+              as GProductVariantsData_productVariants_specifications_specification);
+          break;
+        case 'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'intValue':
+          result.intValue = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'stringValue':
+          result.stringValue = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'category':
+          result.category.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantsData_productVariants_specifications_category))!
+              as GProductVariantsData_productVariants_specifications_category);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_specifications_specificationSerializer
+    implements
+        StructuredSerializer<
+            GProductVariantsData_productVariants_specifications_specification> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_specifications_specification,
+    _$GProductVariantsData_productVariants_specifications_specification
+  ];
+  @override
+  final String wireName =
+      'GProductVariantsData_productVariants_specifications_specification';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantsData_productVariants_specifications_specification object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.image;
+    if (value != null) {
+      result
+        ..add('image')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantsData_productVariants_specifications_specification_image)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.unit;
+    if (value != null) {
+      result
+        ..add('unit')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_specifications_specification deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantsData_productVariants_specifications_specificationBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'image':
+          result.image.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantsData_productVariants_specifications_specification_image))!
+              as GProductVariantsData_productVariants_specifications_specification_image);
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'unit':
+          result.unit = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_specifications_specification_imageSerializer
+    implements
+        StructuredSerializer<
+            GProductVariantsData_productVariants_specifications_specification_image> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_specifications_specification_image,
+    _$GProductVariantsData_productVariants_specifications_specification_image
+  ];
+  @override
+  final String wireName =
+      'GProductVariantsData_productVariants_specifications_specification_image';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GProductVariantsData_productVariants_specifications_specification_image
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'url',
+      serializers.serialize(object.url, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_specifications_specification_image
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantsData_productVariants_specifications_specification_imageBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'url':
+          result.url = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_specifications_categorySerializer
+    implements
+        StructuredSerializer<
+            GProductVariantsData_productVariants_specifications_category> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_specifications_category,
+    _$GProductVariantsData_productVariants_specifications_category
+  ];
+  @override
+  final String wireName =
+      'GProductVariantsData_productVariants_specifications_category';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantsData_productVariants_specifications_category object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_specifications_category deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantsData_productVariants_specifications_categoryBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_gallerySerializer
+    implements
+        StructuredSerializer<GProductVariantsData_productVariants_gallery> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_gallery,
+    _$GProductVariantsData_productVariants_gallery
+  ];
+  @override
+  final String wireName = 'GProductVariantsData_productVariants_gallery';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantsData_productVariants_gallery object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.file;
+    if (value != null) {
+      result
+        ..add('file')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.JsonObject)));
+    }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.index;
+    if (value != null) {
+      result
+        ..add('index')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_gallery deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantsData_productVariants_galleryBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'file':
+          result.file = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
+          break;
+        case 'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'index':
+          result.index = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_productSerializer
+    implements
+        StructuredSerializer<GProductVariantsData_productVariants_product> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_product,
+    _$GProductVariantsData_productVariants_product
+  ];
+  @override
+  final String wireName = 'GProductVariantsData_productVariants_product';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantsData_productVariants_product object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.brand;
+    if (value != null) {
+      result
+        ..add('brand')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantsData_productVariants_product_brand)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.longDescription;
+    if (value != null) {
+      result
+        ..add('longDescription')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantsData_productVariants_product_type)));
+    }
+    value = object.specifications;
+    if (value != null) {
+      result
+        ..add('specifications')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(
+                  GProductVariantsData_productVariants_product_specifications)
+            ])));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_product deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantsData_productVariants_productBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'brand':
+          result.brand.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantsData_productVariants_product_brand))!
+              as GProductVariantsData_productVariants_product_brand);
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'longDescription':
+          result.longDescription = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'type':
+          result.type.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantsData_productVariants_product_type))!
+              as GProductVariantsData_productVariants_product_type);
+          break;
+        case 'specifications':
+          result.specifications.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(
+                    GProductVariantsData_productVariants_product_specifications)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_product_brandSerializer
+    implements
+        StructuredSerializer<
+            GProductVariantsData_productVariants_product_brand> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_product_brand,
+    _$GProductVariantsData_productVariants_product_brand
+  ];
+  @override
+  final String wireName = 'GProductVariantsData_productVariants_product_brand';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantsData_productVariants_product_brand object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.logo;
+    if (value != null) {
+      result
+        ..add('logo')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantsData_productVariants_product_brand_logo)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_brand deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantsData_productVariants_product_brandBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'logo':
+          result.logo.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantsData_productVariants_product_brand_logo))!
+              as GProductVariantsData_productVariants_product_brand_logo);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_product_brand_logoSerializer
+    implements
+        StructuredSerializer<
+            GProductVariantsData_productVariants_product_brand_logo> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_product_brand_logo,
+    _$GProductVariantsData_productVariants_product_brand_logo
+  ];
+  @override
+  final String wireName =
+      'GProductVariantsData_productVariants_product_brand_logo';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantsData_productVariants_product_brand_logo object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+      'extension',
+      serializers.serialize(object.extension,
+          specifiedType: const FullType(_i3.GImageExtension)),
+      'url',
+      serializers.serialize(object.url, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_brand_logo deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantsData_productVariants_product_brand_logoBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'extension':
+          result.extension = serializers.deserialize(value,
+                  specifiedType: const FullType(_i3.GImageExtension))!
+              as _i3.GImageExtension;
+          break;
+        case 'url':
+          result.url = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_product_typeSerializer
+    implements
+        StructuredSerializer<
+            GProductVariantsData_productVariants_product_type> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_product_type,
+    _$GProductVariantsData_productVariants_product_type
+  ];
+  @override
+  final String wireName = 'GProductVariantsData_productVariants_product_type';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantsData_productVariants_product_type object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_type deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantsData_productVariants_product_typeBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_product_specificationsSerializer
+    implements
+        StructuredSerializer<
+            GProductVariantsData_productVariants_product_specifications> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_product_specifications,
+    _$GProductVariantsData_productVariants_product_specifications
+  ];
+  @override
+  final String wireName =
+      'GProductVariantsData_productVariants_product_specifications';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantsData_productVariants_product_specifications object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.isKeyFeature;
+    if (value != null) {
+      result
+        ..add('isKeyFeature')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.specification;
+    if (value != null) {
+      result
+        ..add('specification')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantsData_productVariants_product_specifications_specification)));
+    }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.intValue;
+    if (value != null) {
+      result
+        ..add('intValue')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.stringValue;
+    if (value != null) {
+      result
+        ..add('stringValue')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.category;
+    if (value != null) {
+      result
+        ..add('category')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantsData_productVariants_product_specifications_category)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_specifications deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantsData_productVariants_product_specificationsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'isKeyFeature':
+          result.isKeyFeature = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'specification':
+          result.specification.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantsData_productVariants_product_specifications_specification))!
+              as GProductVariantsData_productVariants_product_specifications_specification);
+          break;
+        case 'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'intValue':
+          result.intValue = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'stringValue':
+          result.stringValue = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'category':
+          result.category.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantsData_productVariants_product_specifications_category))!
+              as GProductVariantsData_productVariants_product_specifications_category);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_product_specifications_specificationSerializer
+    implements
+        StructuredSerializer<
+            GProductVariantsData_productVariants_product_specifications_specification> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_product_specifications_specification,
+    _$GProductVariantsData_productVariants_product_specifications_specification
+  ];
+  @override
+  final String wireName =
+      'GProductVariantsData_productVariants_product_specifications_specification';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GProductVariantsData_productVariants_product_specifications_specification
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.image;
+    if (value != null) {
+      result
+        ..add('image')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantsData_productVariants_product_specifications_specification_image)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.unit;
+    if (value != null) {
+      result
+        ..add('unit')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_specifications_specification
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantsData_productVariants_product_specifications_specificationBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'image':
+          result.image.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantsData_productVariants_product_specifications_specification_image))!
+              as GProductVariantsData_productVariants_product_specifications_specification_image);
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'unit':
+          result.unit = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_product_specifications_specification_imageSerializer
+    implements
+        StructuredSerializer<
+            GProductVariantsData_productVariants_product_specifications_specification_image> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_product_specifications_specification_image,
+    _$GProductVariantsData_productVariants_product_specifications_specification_image
+  ];
+  @override
+  final String wireName =
+      'GProductVariantsData_productVariants_product_specifications_specification_image';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GProductVariantsData_productVariants_product_specifications_specification_image
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'url',
+      serializers.serialize(object.url, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_specifications_specification_image
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantsData_productVariants_product_specifications_specification_imageBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'url':
+          result.url = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_product_specifications_categorySerializer
+    implements
+        StructuredSerializer<
+            GProductVariantsData_productVariants_product_specifications_category> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_product_specifications_category,
+    _$GProductVariantsData_productVariants_product_specifications_category
+  ];
+  @override
+  final String wireName =
+      'GProductVariantsData_productVariants_product_specifications_category';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GProductVariantsData_productVariants_product_specifications_category
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_specifications_category
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantsData_productVariants_product_specifications_categoryBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_tagsSerializer
+    implements StructuredSerializer<GProductVariantsData_productVariants_tags> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_tags,
+    _$GProductVariantsData_productVariants_tags
+  ];
+  @override
+  final String wireName = 'GProductVariantsData_productVariants_tags';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductVariantsData_productVariants_tags object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.title;
+    if (value != null) {
+      result
+        ..add('title')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_tags deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantsData_productVariants_tagsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'title':
+          result.title = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_imagesSerializer
+    implements
+        StructuredSerializer<GProductVariantsData_productVariants_images> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_images,
+    _$GProductVariantsData_productVariants_images
+  ];
+  @override
+  final String wireName = 'GProductVariantsData_productVariants_images';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantsData_productVariants_images object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.image;
+    if (value != null) {
+      result
+        ..add('image')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantsData_productVariants_images_image)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_images deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantsData_productVariants_imagesBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'image':
+          result.image.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantsData_productVariants_images_image))!
+              as GProductVariantsData_productVariants_images_image);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsData_productVariants_images_imageSerializer
+    implements
+        StructuredSerializer<
+            GProductVariantsData_productVariants_images_image> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsData_productVariants_images_image,
+    _$GProductVariantsData_productVariants_images_image
+  ];
+  @override
+  final String wireName = 'GProductVariantsData_productVariants_images_image';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantsData_productVariants_images_image object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'url',
+      serializers.serialize(object.url, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GProductVariantsData_productVariants_images_image deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantsData_productVariants_images_imageBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'url':
+          result.url = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsCountDataSerializer
+    implements StructuredSerializer<GProductVariantsCountData> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsCountData,
+    _$GProductVariantsCountData
+  ];
+  @override
+  final String wireName = 'GProductVariantsCountData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductVariantsCountData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.productVariantsCount;
+    if (value != null) {
+      result
+        ..add('productVariantsCount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsCountData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantsCountDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'productVariantsCount':
+          result.productVariantsCount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantDataSerializer
+    implements StructuredSerializer<GProductVariantData> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData,
+    _$GProductVariantData
+  ];
+  @override
+  final String wireName = 'GProductVariantData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductVariantData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.productVariant;
+    if (value != null) {
+      result
+        ..add('productVariant')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GProductVariantData_productVariant)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'productVariant':
+          result.productVariant.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GProductVariantData_productVariant))!
+              as GProductVariantData_productVariant);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariantSerializer
+    implements StructuredSerializer<GProductVariantData_productVariant> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant,
+    _$GProductVariantData_productVariant
+  ];
+  @override
+  final String wireName = 'GProductVariantData_productVariant';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductVariantData_productVariant object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.availableProductDealer;
+    if (value != null) {
+      result
+        ..add('availableProductDealer')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.JsonObject)));
+    }
+    value = object.prices;
+    if (value != null) {
+      result
+        ..add('prices')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GProductVariantData_productVariant_prices)
+            ])));
+    }
+    value = object.specifications;
+    if (value != null) {
+      result
+        ..add('specifications')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GProductVariantData_productVariant_specifications)
+            ])));
+    }
+    value = object.totalPrice;
+    if (value != null) {
+      result
+        ..add('totalPrice')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.gallery;
+    if (value != null) {
+      result
+        ..add('gallery')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GProductVariantData_productVariant_gallery)
+            ])));
+    }
+    value = object.product;
+    if (value != null) {
+      result
+        ..add('product')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GProductVariantData_productVariant_product)));
+    }
+    value = object.tags;
+    if (value != null) {
+      result
+        ..add('tags')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GProductVariantData_productVariant_tags)
+            ])));
+    }
+    value = object.images;
+    if (value != null) {
+      result
+        ..add('images')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GProductVariantData_productVariant_images)
+            ])));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantData_productVariantBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'availableProductDealer':
+          result.availableProductDealer = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
+          break;
+        case 'prices':
+          result.prices.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GProductVariantData_productVariant_prices)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'specifications':
+          result.specifications.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(
+                    GProductVariantData_productVariant_specifications)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'totalPrice':
+          result.totalPrice = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'gallery':
+          result.gallery.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GProductVariantData_productVariant_gallery)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'product':
+          result.product.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantData_productVariant_product))!
+              as GProductVariantData_productVariant_product);
+          break;
+        case 'tags':
+          result.tags.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GProductVariantData_productVariant_tags)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'images':
+          result.images.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GProductVariantData_productVariant_images)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_pricesSerializer
+    implements StructuredSerializer<GProductVariantData_productVariant_prices> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_prices,
+    _$GProductVariantData_productVariant_prices
+  ];
+  @override
+  final String wireName = 'GProductVariantData_productVariant_prices';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductVariantData_productVariant_prices object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.amount;
+    if (value != null) {
+      result
+        ..add('amount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.category;
+    if (value != null) {
+      result
+        ..add('category')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantData_productVariant_prices_category)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_prices deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantData_productVariant_pricesBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'amount':
+          result.amount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'category':
+          result.category.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantData_productVariant_prices_category))!
+              as GProductVariantData_productVariant_prices_category);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_prices_categorySerializer
+    implements
+        StructuredSerializer<
+            GProductVariantData_productVariant_prices_category> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_prices_category,
+    _$GProductVariantData_productVariant_prices_category
+  ];
+  @override
+  final String wireName = 'GProductVariantData_productVariant_prices_category';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantData_productVariant_prices_category object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_prices_category deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantData_productVariant_prices_categoryBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_specificationsSerializer
+    implements
+        StructuredSerializer<
+            GProductVariantData_productVariant_specifications> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_specifications,
+    _$GProductVariantData_productVariant_specifications
+  ];
+  @override
+  final String wireName = 'GProductVariantData_productVariant_specifications';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantData_productVariant_specifications object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.isKeyFeature;
+    if (value != null) {
+      result
+        ..add('isKeyFeature')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.specification;
+    if (value != null) {
+      result
+        ..add('specification')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantData_productVariant_specifications_specification)));
+    }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.intValue;
+    if (value != null) {
+      result
+        ..add('intValue')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.stringValue;
+    if (value != null) {
+      result
+        ..add('stringValue')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.category;
+    if (value != null) {
+      result
+        ..add('category')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantData_productVariant_specifications_category)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_specifications deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantData_productVariant_specificationsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'isKeyFeature':
+          result.isKeyFeature = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'specification':
+          result.specification.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantData_productVariant_specifications_specification))!
+              as GProductVariantData_productVariant_specifications_specification);
+          break;
+        case 'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'intValue':
+          result.intValue = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'stringValue':
+          result.stringValue = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'category':
+          result.category.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantData_productVariant_specifications_category))!
+              as GProductVariantData_productVariant_specifications_category);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_specifications_specificationSerializer
+    implements
+        StructuredSerializer<
+            GProductVariantData_productVariant_specifications_specification> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_specifications_specification,
+    _$GProductVariantData_productVariant_specifications_specification
+  ];
+  @override
+  final String wireName =
+      'GProductVariantData_productVariant_specifications_specification';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantData_productVariant_specifications_specification object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.image;
+    if (value != null) {
+      result
+        ..add('image')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantData_productVariant_specifications_specification_image)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.unit;
+    if (value != null) {
+      result
+        ..add('unit')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_specifications_specification deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantData_productVariant_specifications_specificationBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'image':
+          result.image.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantData_productVariant_specifications_specification_image))!
+              as GProductVariantData_productVariant_specifications_specification_image);
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'unit':
+          result.unit = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_specifications_specification_imageSerializer
+    implements
+        StructuredSerializer<
+            GProductVariantData_productVariant_specifications_specification_image> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_specifications_specification_image,
+    _$GProductVariantData_productVariant_specifications_specification_image
+  ];
+  @override
+  final String wireName =
+      'GProductVariantData_productVariant_specifications_specification_image';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GProductVariantData_productVariant_specifications_specification_image
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'url',
+      serializers.serialize(object.url, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_specifications_specification_image
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantData_productVariant_specifications_specification_imageBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'url':
+          result.url = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_specifications_categorySerializer
+    implements
+        StructuredSerializer<
+            GProductVariantData_productVariant_specifications_category> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_specifications_category,
+    _$GProductVariantData_productVariant_specifications_category
+  ];
+  @override
+  final String wireName =
+      'GProductVariantData_productVariant_specifications_category';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantData_productVariant_specifications_category object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_specifications_category deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantData_productVariant_specifications_categoryBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_gallerySerializer
+    implements
+        StructuredSerializer<GProductVariantData_productVariant_gallery> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_gallery,
+    _$GProductVariantData_productVariant_gallery
+  ];
+  @override
+  final String wireName = 'GProductVariantData_productVariant_gallery';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantData_productVariant_gallery object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.file;
+    if (value != null) {
+      result
+        ..add('file')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.JsonObject)));
+    }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.index;
+    if (value != null) {
+      result
+        ..add('index')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_gallery deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantData_productVariant_galleryBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'file':
+          result.file = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
+          break;
+        case 'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'index':
+          result.index = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_productSerializer
+    implements
+        StructuredSerializer<GProductVariantData_productVariant_product> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_product,
+    _$GProductVariantData_productVariant_product
+  ];
+  @override
+  final String wireName = 'GProductVariantData_productVariant_product';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantData_productVariant_product object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.brand;
+    if (value != null) {
+      result
+        ..add('brand')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantData_productVariant_product_brand)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.longDescription;
+    if (value != null) {
+      result
+        ..add('longDescription')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantData_productVariant_product_type)));
+    }
+    value = object.specifications;
+    if (value != null) {
+      result
+        ..add('specifications')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(
+                  GProductVariantData_productVariant_product_specifications)
+            ])));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_product deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantData_productVariant_productBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'brand':
+          result.brand.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantData_productVariant_product_brand))!
+              as GProductVariantData_productVariant_product_brand);
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'longDescription':
+          result.longDescription = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'type':
+          result.type.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantData_productVariant_product_type))!
+              as GProductVariantData_productVariant_product_type);
+          break;
+        case 'specifications':
+          result.specifications.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(
+                    GProductVariantData_productVariant_product_specifications)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_product_brandSerializer
+    implements
+        StructuredSerializer<GProductVariantData_productVariant_product_brand> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_product_brand,
+    _$GProductVariantData_productVariant_product_brand
+  ];
+  @override
+  final String wireName = 'GProductVariantData_productVariant_product_brand';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantData_productVariant_product_brand object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.logo;
+    if (value != null) {
+      result
+        ..add('logo')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantData_productVariant_product_brand_logo)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_product_brand deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantData_productVariant_product_brandBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'logo':
+          result.logo.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantData_productVariant_product_brand_logo))!
+              as GProductVariantData_productVariant_product_brand_logo);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_product_brand_logoSerializer
+    implements
+        StructuredSerializer<
+            GProductVariantData_productVariant_product_brand_logo> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_product_brand_logo,
+    _$GProductVariantData_productVariant_product_brand_logo
+  ];
+  @override
+  final String wireName =
+      'GProductVariantData_productVariant_product_brand_logo';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantData_productVariant_product_brand_logo object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+      'extension',
+      serializers.serialize(object.extension,
+          specifiedType: const FullType(_i3.GImageExtension)),
+      'url',
+      serializers.serialize(object.url, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_product_brand_logo deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantData_productVariant_product_brand_logoBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'extension':
+          result.extension = serializers.deserialize(value,
+                  specifiedType: const FullType(_i3.GImageExtension))!
+              as _i3.GImageExtension;
+          break;
+        case 'url':
+          result.url = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_product_typeSerializer
+    implements
+        StructuredSerializer<GProductVariantData_productVariant_product_type> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_product_type,
+    _$GProductVariantData_productVariant_product_type
+  ];
+  @override
+  final String wireName = 'GProductVariantData_productVariant_product_type';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantData_productVariant_product_type object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_product_type deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantData_productVariant_product_typeBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_product_specificationsSerializer
+    implements
+        StructuredSerializer<
+            GProductVariantData_productVariant_product_specifications> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_product_specifications,
+    _$GProductVariantData_productVariant_product_specifications
+  ];
+  @override
+  final String wireName =
+      'GProductVariantData_productVariant_product_specifications';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantData_productVariant_product_specifications object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.isKeyFeature;
+    if (value != null) {
+      result
+        ..add('isKeyFeature')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.specification;
+    if (value != null) {
+      result
+        ..add('specification')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantData_productVariant_product_specifications_specification)));
+    }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.intValue;
+    if (value != null) {
+      result
+        ..add('intValue')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.stringValue;
+    if (value != null) {
+      result
+        ..add('stringValue')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.category;
+    if (value != null) {
+      result
+        ..add('category')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantData_productVariant_product_specifications_category)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_product_specifications deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantData_productVariant_product_specificationsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'isKeyFeature':
+          result.isKeyFeature = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'specification':
+          result.specification.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantData_productVariant_product_specifications_specification))!
+              as GProductVariantData_productVariant_product_specifications_specification);
+          break;
+        case 'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'intValue':
+          result.intValue = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'stringValue':
+          result.stringValue = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'category':
+          result.category.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantData_productVariant_product_specifications_category))!
+              as GProductVariantData_productVariant_product_specifications_category);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_product_specifications_specificationSerializer
+    implements
+        StructuredSerializer<
+            GProductVariantData_productVariant_product_specifications_specification> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_product_specifications_specification,
+    _$GProductVariantData_productVariant_product_specifications_specification
+  ];
+  @override
+  final String wireName =
+      'GProductVariantData_productVariant_product_specifications_specification';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GProductVariantData_productVariant_product_specifications_specification
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.image;
+    if (value != null) {
+      result
+        ..add('image')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantData_productVariant_product_specifications_specification_image)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.unit;
+    if (value != null) {
+      result
+        ..add('unit')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_product_specifications_specification
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantData_productVariant_product_specifications_specificationBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'image':
+          result.image.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantData_productVariant_product_specifications_specification_image))!
+              as GProductVariantData_productVariant_product_specifications_specification_image);
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'unit':
+          result.unit = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_product_specifications_specification_imageSerializer
+    implements
+        StructuredSerializer<
+            GProductVariantData_productVariant_product_specifications_specification_image> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_product_specifications_specification_image,
+    _$GProductVariantData_productVariant_product_specifications_specification_image
+  ];
+  @override
+  final String wireName =
+      'GProductVariantData_productVariant_product_specifications_specification_image';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GProductVariantData_productVariant_product_specifications_specification_image
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'url',
+      serializers.serialize(object.url, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_product_specifications_specification_image
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantData_productVariant_product_specifications_specification_imageBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'url':
+          result.url = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_product_specifications_categorySerializer
+    implements
+        StructuredSerializer<
+            GProductVariantData_productVariant_product_specifications_category> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_product_specifications_category,
+    _$GProductVariantData_productVariant_product_specifications_category
+  ];
+  @override
+  final String wireName =
+      'GProductVariantData_productVariant_product_specifications_category';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantData_productVariant_product_specifications_category object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_product_specifications_category
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductVariantData_productVariant_product_specifications_categoryBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_tagsSerializer
+    implements StructuredSerializer<GProductVariantData_productVariant_tags> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_tags,
+    _$GProductVariantData_productVariant_tags
+  ];
+  @override
+  final String wireName = 'GProductVariantData_productVariant_tags';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductVariantData_productVariant_tags object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.title;
+    if (value != null) {
+      result
+        ..add('title')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_tags deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantData_productVariant_tagsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'title':
+          result.title = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_imagesSerializer
+    implements StructuredSerializer<GProductVariantData_productVariant_images> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_images,
+    _$GProductVariantData_productVariant_images
+  ];
+  @override
+  final String wireName = 'GProductVariantData_productVariant_images';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductVariantData_productVariant_images object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.image;
+    if (value != null) {
+      result
+        ..add('image')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductVariantData_productVariant_images_image)));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_images deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantData_productVariant_imagesBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'image':
+          result.image.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductVariantData_productVariant_images_image))!
+              as GProductVariantData_productVariant_images_image);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantData_productVariant_images_imageSerializer
+    implements
+        StructuredSerializer<GProductVariantData_productVariant_images_image> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantData_productVariant_images_image,
+    _$GProductVariantData_productVariant_images_image
+  ];
+  @override
+  final String wireName = 'GProductVariantData_productVariant_images_image';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductVariantData_productVariant_images_image object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'url',
+      serializers.serialize(object.url, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GProductVariantData_productVariant_images_image deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantData_productVariant_images_imageBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'url':
+          result.url = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductTypesDataSerializer
+    implements StructuredSerializer<GProductTypesData> {
+  @override
+  final Iterable<Type> types = const [GProductTypesData, _$GProductTypesData];
+  @override
+  final String wireName = 'GProductTypesData';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, GProductTypesData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.productTypes;
+    if (value != null) {
+      result
+        ..add('productTypes')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GProductTypesData_productTypes)])));
+    }
+    return result;
+  }
+
+  @override
+  GProductTypesData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductTypesDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'productTypes':
+          result.productTypes.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GProductTypesData_productTypes)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductTypesData_productTypesSerializer
+    implements StructuredSerializer<GProductTypesData_productTypes> {
+  @override
+  final Iterable<Type> types = const [
+    GProductTypesData_productTypes,
+    _$GProductTypesData_productTypes
+  ];
+  @override
+  final String wireName = 'GProductTypesData_productTypes';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductTypesData_productTypes object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductTypesData_productTypes deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductTypesData_productTypesBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
 
 class _$GVehicleVariantsDataSerializer
     implements StructuredSerializer<GVehicleVariantsData> {
@@ -1551,7 +5403,7 @@ class _$GVehicleDealersData_vehicleDealers_vehicleVariantSerializer
       result
         ..add('modifiedAt')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i2.GDateTime)));
+            specifiedType: const FullType(_i3.GDateTime)));
     }
     value = object.vehicle;
     if (value != null) {
@@ -1591,7 +5443,7 @@ class _$GVehicleDealersData_vehicleDealers_vehicleVariantSerializer
           break;
         case 'modifiedAt':
           result.modifiedAt.replace(serializers.deserialize(value,
-              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
+              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
           break;
         case 'vehicle':
           result.vehicle.replace(serializers.deserialize(value,
@@ -2196,14 +6048,14 @@ class _$GPriceCategoriesData_priceCategoriesSerializer
       result
         ..add('createdAt')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i2.GDateTime)));
+            specifiedType: const FullType(_i3.GDateTime)));
     }
     value = object.modifiedAt;
     if (value != null) {
       result
         ..add('modifiedAt')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i2.GDateTime)));
+            specifiedType: const FullType(_i3.GDateTime)));
     }
     return result;
   }
@@ -2238,11 +6090,11 @@ class _$GPriceCategoriesData_priceCategoriesSerializer
           break;
         case 'createdAt':
           result.createdAt.replace(serializers.deserialize(value,
-              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
+              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
           break;
         case 'modifiedAt':
           result.modifiedAt.replace(serializers.deserialize(value,
-              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
+              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
           break;
       }
     }
@@ -2706,7 +6558,7 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariantSerializer
       result
         ..add('modifiedAt')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i2.GDateTime)));
+            specifiedType: const FullType(_i3.GDateTime)));
     }
     value = object.vehicle;
     if (value != null) {
@@ -2746,7 +6598,7 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariantSerializer
           break;
         case 'modifiedAt':
           result.modifiedAt.replace(serializers.deserialize(value,
-              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
+              specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
           break;
         case 'vehicle':
           result.vehicle.replace(serializers.deserialize(value,
@@ -3254,6 +7106,7181 @@ class _$GUpdatePricesData_updatePricesSerializer
     }
 
     return result.build();
+  }
+}
+
+class _$GProductVariantsData extends GProductVariantsData {
+  @override
+  final String G__typename;
+  @override
+  final BuiltList<GProductVariantsData_productVariants>? productVariants;
+
+  factory _$GProductVariantsData(
+          [void Function(GProductVariantsDataBuilder)? updates]) =>
+      (new GProductVariantsDataBuilder()..update(updates))._build();
+
+  _$GProductVariantsData._({required this.G__typename, this.productVariants})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GProductVariantsData', 'G__typename');
+  }
+
+  @override
+  GProductVariantsData rebuild(
+          void Function(GProductVariantsDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsDataBuilder toBuilder() =>
+      new GProductVariantsDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantsData &&
+        G__typename == other.G__typename &&
+        productVariants == other.productVariants;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, productVariants.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GProductVariantsData')
+          ..add('G__typename', G__typename)
+          ..add('productVariants', productVariants))
+        .toString();
+  }
+}
+
+class GProductVariantsDataBuilder
+    implements Builder<GProductVariantsData, GProductVariantsDataBuilder> {
+  _$GProductVariantsData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  ListBuilder<GProductVariantsData_productVariants>? _productVariants;
+  ListBuilder<GProductVariantsData_productVariants> get productVariants =>
+      _$this._productVariants ??=
+          new ListBuilder<GProductVariantsData_productVariants>();
+  set productVariants(
+          ListBuilder<GProductVariantsData_productVariants>? productVariants) =>
+      _$this._productVariants = productVariants;
+
+  GProductVariantsDataBuilder() {
+    GProductVariantsData._initializeBuilder(this);
+  }
+
+  GProductVariantsDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _productVariants = $v.productVariants?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantsData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantsData;
+  }
+
+  @override
+  void update(void Function(GProductVariantsDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData build() => _build();
+
+  _$GProductVariantsData _build() {
+    _$GProductVariantsData _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantsData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GProductVariantsData', 'G__typename'),
+              productVariants: _productVariants?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'productVariants';
+        _productVariants?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantsData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants
+    extends GProductVariantsData_productVariants {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? name;
+  @override
+  final _i2.JsonObject? availableProductDealer;
+  @override
+  final BuiltList<GProductVariantsData_productVariants_prices>? prices;
+  @override
+  final BuiltList<GProductVariantsData_productVariants_specifications>?
+      specifications;
+  @override
+  final int? totalPrice;
+  @override
+  final BuiltList<GProductVariantsData_productVariants_gallery>? gallery;
+  @override
+  final GProductVariantsData_productVariants_product? product;
+  @override
+  final BuiltList<GProductVariantsData_productVariants_tags>? tags;
+  @override
+  final BuiltList<GProductVariantsData_productVariants_images>? images;
+
+  factory _$GProductVariantsData_productVariants(
+          [void Function(GProductVariantsData_productVariantsBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariantsBuilder()..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants._(
+      {required this.G__typename,
+      required this.id,
+      this.name,
+      this.availableProductDealer,
+      this.prices,
+      this.specifications,
+      this.totalPrice,
+      this.gallery,
+      this.product,
+      this.tags,
+      this.images})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GProductVariantsData_productVariants', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductVariantsData_productVariants', 'id');
+  }
+
+  @override
+  GProductVariantsData_productVariants rebuild(
+          void Function(GProductVariantsData_productVariantsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariantsBuilder toBuilder() =>
+      new GProductVariantsData_productVariantsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantsData_productVariants &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        name == other.name &&
+        availableProductDealer == other.availableProductDealer &&
+        prices == other.prices &&
+        specifications == other.specifications &&
+        totalPrice == other.totalPrice &&
+        gallery == other.gallery &&
+        product == other.product &&
+        tags == other.tags &&
+        images == other.images;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, availableProductDealer.hashCode);
+    _$hash = $jc(_$hash, prices.hashCode);
+    _$hash = $jc(_$hash, specifications.hashCode);
+    _$hash = $jc(_$hash, totalPrice.hashCode);
+    _$hash = $jc(_$hash, gallery.hashCode);
+    _$hash = $jc(_$hash, product.hashCode);
+    _$hash = $jc(_$hash, tags.hashCode);
+    _$hash = $jc(_$hash, images.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GProductVariantsData_productVariants')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('availableProductDealer', availableProductDealer)
+          ..add('prices', prices)
+          ..add('specifications', specifications)
+          ..add('totalPrice', totalPrice)
+          ..add('gallery', gallery)
+          ..add('product', product)
+          ..add('tags', tags)
+          ..add('images', images))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariantsBuilder
+    implements
+        Builder<GProductVariantsData_productVariants,
+            GProductVariantsData_productVariantsBuilder> {
+  _$GProductVariantsData_productVariants? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  _i2.JsonObject? _availableProductDealer;
+  _i2.JsonObject? get availableProductDealer => _$this._availableProductDealer;
+  set availableProductDealer(_i2.JsonObject? availableProductDealer) =>
+      _$this._availableProductDealer = availableProductDealer;
+
+  ListBuilder<GProductVariantsData_productVariants_prices>? _prices;
+  ListBuilder<GProductVariantsData_productVariants_prices> get prices =>
+      _$this._prices ??=
+          new ListBuilder<GProductVariantsData_productVariants_prices>();
+  set prices(
+          ListBuilder<GProductVariantsData_productVariants_prices>? prices) =>
+      _$this._prices = prices;
+
+  ListBuilder<GProductVariantsData_productVariants_specifications>?
+      _specifications;
+  ListBuilder<GProductVariantsData_productVariants_specifications>
+      get specifications => _$this._specifications ??= new ListBuilder<
+          GProductVariantsData_productVariants_specifications>();
+  set specifications(
+          ListBuilder<GProductVariantsData_productVariants_specifications>?
+              specifications) =>
+      _$this._specifications = specifications;
+
+  int? _totalPrice;
+  int? get totalPrice => _$this._totalPrice;
+  set totalPrice(int? totalPrice) => _$this._totalPrice = totalPrice;
+
+  ListBuilder<GProductVariantsData_productVariants_gallery>? _gallery;
+  ListBuilder<GProductVariantsData_productVariants_gallery> get gallery =>
+      _$this._gallery ??=
+          new ListBuilder<GProductVariantsData_productVariants_gallery>();
+  set gallery(
+          ListBuilder<GProductVariantsData_productVariants_gallery>? gallery) =>
+      _$this._gallery = gallery;
+
+  GProductVariantsData_productVariants_productBuilder? _product;
+  GProductVariantsData_productVariants_productBuilder get product =>
+      _$this._product ??=
+          new GProductVariantsData_productVariants_productBuilder();
+  set product(GProductVariantsData_productVariants_productBuilder? product) =>
+      _$this._product = product;
+
+  ListBuilder<GProductVariantsData_productVariants_tags>? _tags;
+  ListBuilder<GProductVariantsData_productVariants_tags> get tags =>
+      _$this._tags ??=
+          new ListBuilder<GProductVariantsData_productVariants_tags>();
+  set tags(ListBuilder<GProductVariantsData_productVariants_tags>? tags) =>
+      _$this._tags = tags;
+
+  ListBuilder<GProductVariantsData_productVariants_images>? _images;
+  ListBuilder<GProductVariantsData_productVariants_images> get images =>
+      _$this._images ??=
+          new ListBuilder<GProductVariantsData_productVariants_images>();
+  set images(
+          ListBuilder<GProductVariantsData_productVariants_images>? images) =>
+      _$this._images = images;
+
+  GProductVariantsData_productVariantsBuilder() {
+    GProductVariantsData_productVariants._initializeBuilder(this);
+  }
+
+  GProductVariantsData_productVariantsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _name = $v.name;
+      _availableProductDealer = $v.availableProductDealer;
+      _prices = $v.prices?.toBuilder();
+      _specifications = $v.specifications?.toBuilder();
+      _totalPrice = $v.totalPrice;
+      _gallery = $v.gallery?.toBuilder();
+      _product = $v.product?.toBuilder();
+      _tags = $v.tags?.toBuilder();
+      _images = $v.images?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantsData_productVariants other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantsData_productVariants;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantsData_productVariantsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants build() => _build();
+
+  _$GProductVariantsData_productVariants _build() {
+    _$GProductVariantsData_productVariants _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantsData_productVariants._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                  r'GProductVariantsData_productVariants', 'G__typename'),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'GProductVariantsData_productVariants', 'id'),
+              name: name,
+              availableProductDealer: availableProductDealer,
+              prices: _prices?.build(),
+              specifications: _specifications?.build(),
+              totalPrice: totalPrice,
+              gallery: _gallery?.build(),
+              product: _product?.build(),
+              tags: _tags?.build(),
+              images: _images?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'prices';
+        _prices?.build();
+        _$failedField = 'specifications';
+        _specifications?.build();
+
+        _$failedField = 'gallery';
+        _gallery?.build();
+        _$failedField = 'product';
+        _product?.build();
+        _$failedField = 'tags';
+        _tags?.build();
+        _$failedField = 'images';
+        _images?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantsData_productVariants',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_prices
+    extends GProductVariantsData_productVariants_prices {
+  @override
+  final String G__typename;
+  @override
+  final int? amount;
+  @override
+  final GProductVariantsData_productVariants_prices_category? category;
+
+  factory _$GProductVariantsData_productVariants_prices(
+          [void Function(GProductVariantsData_productVariants_pricesBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_pricesBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_prices._(
+      {required this.G__typename, this.amount, this.category})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantsData_productVariants_prices', 'G__typename');
+  }
+
+  @override
+  GProductVariantsData_productVariants_prices rebuild(
+          void Function(GProductVariantsData_productVariants_pricesBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_pricesBuilder toBuilder() =>
+      new GProductVariantsData_productVariants_pricesBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantsData_productVariants_prices &&
+        G__typename == other.G__typename &&
+        amount == other.amount &&
+        category == other.category;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, category.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_prices')
+          ..add('G__typename', G__typename)
+          ..add('amount', amount)
+          ..add('category', category))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_pricesBuilder
+    implements
+        Builder<GProductVariantsData_productVariants_prices,
+            GProductVariantsData_productVariants_pricesBuilder> {
+  _$GProductVariantsData_productVariants_prices? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _amount;
+  int? get amount => _$this._amount;
+  set amount(int? amount) => _$this._amount = amount;
+
+  GProductVariantsData_productVariants_prices_categoryBuilder? _category;
+  GProductVariantsData_productVariants_prices_categoryBuilder get category =>
+      _$this._category ??=
+          new GProductVariantsData_productVariants_prices_categoryBuilder();
+  set category(
+          GProductVariantsData_productVariants_prices_categoryBuilder?
+              category) =>
+      _$this._category = category;
+
+  GProductVariantsData_productVariants_pricesBuilder() {
+    GProductVariantsData_productVariants_prices._initializeBuilder(this);
+  }
+
+  GProductVariantsData_productVariants_pricesBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _amount = $v.amount;
+      _category = $v.category?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantsData_productVariants_prices other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantsData_productVariants_prices;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantsData_productVariants_pricesBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_prices build() => _build();
+
+  _$GProductVariantsData_productVariants_prices _build() {
+    _$GProductVariantsData_productVariants_prices _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantsData_productVariants_prices._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductVariantsData_productVariants_prices',
+                  'G__typename'),
+              amount: amount,
+              category: _category?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'category';
+        _category?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantsData_productVariants_prices',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_prices_category
+    extends GProductVariantsData_productVariants_prices_category {
+  @override
+  final String G__typename;
+  @override
+  final String? name;
+  @override
+  final String? description;
+
+  factory _$GProductVariantsData_productVariants_prices_category(
+          [void Function(
+                  GProductVariantsData_productVariants_prices_categoryBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_prices_categoryBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_prices_category._(
+      {required this.G__typename, this.name, this.description})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantsData_productVariants_prices_category', 'G__typename');
+  }
+
+  @override
+  GProductVariantsData_productVariants_prices_category rebuild(
+          void Function(
+                  GProductVariantsData_productVariants_prices_categoryBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_prices_categoryBuilder toBuilder() =>
+      new GProductVariantsData_productVariants_prices_categoryBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantsData_productVariants_prices_category &&
+        G__typename == other.G__typename &&
+        name == other.name &&
+        description == other.description;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_prices_category')
+          ..add('G__typename', G__typename)
+          ..add('name', name)
+          ..add('description', description))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_prices_categoryBuilder
+    implements
+        Builder<GProductVariantsData_productVariants_prices_category,
+            GProductVariantsData_productVariants_prices_categoryBuilder> {
+  _$GProductVariantsData_productVariants_prices_category? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  GProductVariantsData_productVariants_prices_categoryBuilder() {
+    GProductVariantsData_productVariants_prices_category._initializeBuilder(
+        this);
+  }
+
+  GProductVariantsData_productVariants_prices_categoryBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _name = $v.name;
+      _description = $v.description;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantsData_productVariants_prices_category other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantsData_productVariants_prices_category;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductVariantsData_productVariants_prices_categoryBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_prices_category build() => _build();
+
+  _$GProductVariantsData_productVariants_prices_category _build() {
+    final _$result = _$v ??
+        new _$GProductVariantsData_productVariants_prices_category._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantsData_productVariants_prices_category',
+                'G__typename'),
+            name: name,
+            description: description);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_specifications
+    extends GProductVariantsData_productVariants_specifications {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final bool? isKeyFeature;
+  @override
+  final String? name;
+  @override
+  final GProductVariantsData_productVariants_specifications_specification?
+      specification;
+  @override
+  final String? type;
+  @override
+  final int? intValue;
+  @override
+  final String? stringValue;
+  @override
+  final GProductVariantsData_productVariants_specifications_category? category;
+
+  factory _$GProductVariantsData_productVariants_specifications(
+          [void Function(
+                  GProductVariantsData_productVariants_specificationsBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_specificationsBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_specifications._(
+      {required this.G__typename,
+      required this.id,
+      this.isKeyFeature,
+      this.name,
+      this.specification,
+      this.type,
+      this.intValue,
+      this.stringValue,
+      this.category})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantsData_productVariants_specifications', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductVariantsData_productVariants_specifications', 'id');
+  }
+
+  @override
+  GProductVariantsData_productVariants_specifications rebuild(
+          void Function(
+                  GProductVariantsData_productVariants_specificationsBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_specificationsBuilder toBuilder() =>
+      new GProductVariantsData_productVariants_specificationsBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantsData_productVariants_specifications &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        isKeyFeature == other.isKeyFeature &&
+        name == other.name &&
+        specification == other.specification &&
+        type == other.type &&
+        intValue == other.intValue &&
+        stringValue == other.stringValue &&
+        category == other.category;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, isKeyFeature.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, specification.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, intValue.hashCode);
+    _$hash = $jc(_$hash, stringValue.hashCode);
+    _$hash = $jc(_$hash, category.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_specifications')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('isKeyFeature', isKeyFeature)
+          ..add('name', name)
+          ..add('specification', specification)
+          ..add('type', type)
+          ..add('intValue', intValue)
+          ..add('stringValue', stringValue)
+          ..add('category', category))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_specificationsBuilder
+    implements
+        Builder<GProductVariantsData_productVariants_specifications,
+            GProductVariantsData_productVariants_specificationsBuilder> {
+  _$GProductVariantsData_productVariants_specifications? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  bool? _isKeyFeature;
+  bool? get isKeyFeature => _$this._isKeyFeature;
+  set isKeyFeature(bool? isKeyFeature) => _$this._isKeyFeature = isKeyFeature;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  GProductVariantsData_productVariants_specifications_specificationBuilder?
+      _specification;
+  GProductVariantsData_productVariants_specifications_specificationBuilder
+      get specification => _$this._specification ??=
+          new GProductVariantsData_productVariants_specifications_specificationBuilder();
+  set specification(
+          GProductVariantsData_productVariants_specifications_specificationBuilder?
+              specification) =>
+      _$this._specification = specification;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
+
+  int? _intValue;
+  int? get intValue => _$this._intValue;
+  set intValue(int? intValue) => _$this._intValue = intValue;
+
+  String? _stringValue;
+  String? get stringValue => _$this._stringValue;
+  set stringValue(String? stringValue) => _$this._stringValue = stringValue;
+
+  GProductVariantsData_productVariants_specifications_categoryBuilder?
+      _category;
+  GProductVariantsData_productVariants_specifications_categoryBuilder
+      get category => _$this._category ??=
+          new GProductVariantsData_productVariants_specifications_categoryBuilder();
+  set category(
+          GProductVariantsData_productVariants_specifications_categoryBuilder?
+              category) =>
+      _$this._category = category;
+
+  GProductVariantsData_productVariants_specificationsBuilder() {
+    GProductVariantsData_productVariants_specifications._initializeBuilder(
+        this);
+  }
+
+  GProductVariantsData_productVariants_specificationsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _isKeyFeature = $v.isKeyFeature;
+      _name = $v.name;
+      _specification = $v.specification?.toBuilder();
+      _type = $v.type;
+      _intValue = $v.intValue;
+      _stringValue = $v.stringValue;
+      _category = $v.category?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantsData_productVariants_specifications other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantsData_productVariants_specifications;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantsData_productVariants_specificationsBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_specifications build() => _build();
+
+  _$GProductVariantsData_productVariants_specifications _build() {
+    _$GProductVariantsData_productVariants_specifications _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantsData_productVariants_specifications._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductVariantsData_productVariants_specifications',
+                  'G__typename'),
+              id: BuiltValueNullFieldError.checkNotNull(id,
+                  r'GProductVariantsData_productVariants_specifications', 'id'),
+              isKeyFeature: isKeyFeature,
+              name: name,
+              specification: _specification?.build(),
+              type: type,
+              intValue: intValue,
+              stringValue: stringValue,
+              category: _category?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'specification';
+        _specification?.build();
+
+        _$failedField = 'category';
+        _category?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantsData_productVariants_specifications',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_specifications_specification
+    extends GProductVariantsData_productVariants_specifications_specification {
+  @override
+  final String G__typename;
+  @override
+  final GProductVariantsData_productVariants_specifications_specification_image?
+      image;
+  @override
+  final String id;
+  @override
+  final String? name;
+  @override
+  final String? description;
+  @override
+  final String? unit;
+
+  factory _$GProductVariantsData_productVariants_specifications_specification(
+          [void Function(
+                  GProductVariantsData_productVariants_specifications_specificationBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_specifications_specificationBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_specifications_specification._(
+      {required this.G__typename,
+      this.image,
+      required this.id,
+      this.name,
+      this.description,
+      this.unit})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductVariantsData_productVariants_specifications_specification',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id,
+        r'GProductVariantsData_productVariants_specifications_specification',
+        'id');
+  }
+
+  @override
+  GProductVariantsData_productVariants_specifications_specification rebuild(
+          void Function(
+                  GProductVariantsData_productVariants_specifications_specificationBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_specifications_specificationBuilder
+      toBuilder() =>
+          new GProductVariantsData_productVariants_specifications_specificationBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductVariantsData_productVariants_specifications_specification &&
+        G__typename == other.G__typename &&
+        image == other.image &&
+        id == other.id &&
+        name == other.name &&
+        description == other.description &&
+        unit == other.unit;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, unit.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_specifications_specification')
+          ..add('G__typename', G__typename)
+          ..add('image', image)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('description', description)
+          ..add('unit', unit))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_specifications_specificationBuilder
+    implements
+        Builder<
+            GProductVariantsData_productVariants_specifications_specification,
+            GProductVariantsData_productVariants_specifications_specificationBuilder> {
+  _$GProductVariantsData_productVariants_specifications_specification? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GProductVariantsData_productVariants_specifications_specification_imageBuilder?
+      _image;
+  GProductVariantsData_productVariants_specifications_specification_imageBuilder
+      get image => _$this._image ??=
+          new GProductVariantsData_productVariants_specifications_specification_imageBuilder();
+  set image(
+          GProductVariantsData_productVariants_specifications_specification_imageBuilder?
+              image) =>
+      _$this._image = image;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  String? _unit;
+  String? get unit => _$this._unit;
+  set unit(String? unit) => _$this._unit = unit;
+
+  GProductVariantsData_productVariants_specifications_specificationBuilder() {
+    GProductVariantsData_productVariants_specifications_specification
+        ._initializeBuilder(this);
+  }
+
+  GProductVariantsData_productVariants_specifications_specificationBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _image = $v.image?.toBuilder();
+      _id = $v.id;
+      _name = $v.name;
+      _description = $v.description;
+      _unit = $v.unit;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductVariantsData_productVariants_specifications_specification other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GProductVariantsData_productVariants_specifications_specification;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductVariantsData_productVariants_specifications_specificationBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_specifications_specification build() =>
+      _build();
+
+  _$GProductVariantsData_productVariants_specifications_specification _build() {
+    _$GProductVariantsData_productVariants_specifications_specification
+        _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantsData_productVariants_specifications_specification
+              ._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductVariantsData_productVariants_specifications_specification',
+                  'G__typename'),
+              image: _image?.build(),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id,
+                  r'GProductVariantsData_productVariants_specifications_specification',
+                  'id'),
+              name: name,
+              description: description,
+              unit: unit);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'image';
+        _image?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantsData_productVariants_specifications_specification',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_specifications_specification_image
+    extends GProductVariantsData_productVariants_specifications_specification_image {
+  @override
+  final String G__typename;
+  @override
+  final String url;
+
+  factory _$GProductVariantsData_productVariants_specifications_specification_image(
+          [void Function(
+                  GProductVariantsData_productVariants_specifications_specification_imageBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_specifications_specification_imageBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_specifications_specification_image._(
+      {required this.G__typename, required this.url})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductVariantsData_productVariants_specifications_specification_image',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        url,
+        r'GProductVariantsData_productVariants_specifications_specification_image',
+        'url');
+  }
+
+  @override
+  GProductVariantsData_productVariants_specifications_specification_image rebuild(
+          void Function(
+                  GProductVariantsData_productVariants_specifications_specification_imageBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_specifications_specification_imageBuilder
+      toBuilder() =>
+          new GProductVariantsData_productVariants_specifications_specification_imageBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductVariantsData_productVariants_specifications_specification_image &&
+        G__typename == other.G__typename &&
+        url == other.url;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_specifications_specification_image')
+          ..add('G__typename', G__typename)
+          ..add('url', url))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_specifications_specification_imageBuilder
+    implements
+        Builder<
+            GProductVariantsData_productVariants_specifications_specification_image,
+            GProductVariantsData_productVariants_specifications_specification_imageBuilder> {
+  _$GProductVariantsData_productVariants_specifications_specification_image?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
+
+  GProductVariantsData_productVariants_specifications_specification_imageBuilder() {
+    GProductVariantsData_productVariants_specifications_specification_image
+        ._initializeBuilder(this);
+  }
+
+  GProductVariantsData_productVariants_specifications_specification_imageBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _url = $v.url;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductVariantsData_productVariants_specifications_specification_image
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GProductVariantsData_productVariants_specifications_specification_image;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductVariantsData_productVariants_specifications_specification_imageBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_specifications_specification_image
+      build() => _build();
+
+  _$GProductVariantsData_productVariants_specifications_specification_image
+      _build() {
+    final _$result = _$v ??
+        new _$GProductVariantsData_productVariants_specifications_specification_image
+            ._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantsData_productVariants_specifications_specification_image',
+                'G__typename'),
+            url: BuiltValueNullFieldError.checkNotNull(
+                url,
+                r'GProductVariantsData_productVariants_specifications_specification_image',
+                'url'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_specifications_category
+    extends GProductVariantsData_productVariants_specifications_category {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? name;
+  @override
+  final String? description;
+
+  factory _$GProductVariantsData_productVariants_specifications_category(
+          [void Function(
+                  GProductVariantsData_productVariants_specifications_categoryBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_specifications_categoryBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_specifications_category._(
+      {required this.G__typename,
+      required this.id,
+      this.name,
+      this.description})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductVariantsData_productVariants_specifications_category',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(id,
+        r'GProductVariantsData_productVariants_specifications_category', 'id');
+  }
+
+  @override
+  GProductVariantsData_productVariants_specifications_category rebuild(
+          void Function(
+                  GProductVariantsData_productVariants_specifications_categoryBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_specifications_categoryBuilder
+      toBuilder() =>
+          new GProductVariantsData_productVariants_specifications_categoryBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductVariantsData_productVariants_specifications_category &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        name == other.name &&
+        description == other.description;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_specifications_category')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('description', description))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_specifications_categoryBuilder
+    implements
+        Builder<GProductVariantsData_productVariants_specifications_category,
+            GProductVariantsData_productVariants_specifications_categoryBuilder> {
+  _$GProductVariantsData_productVariants_specifications_category? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  GProductVariantsData_productVariants_specifications_categoryBuilder() {
+    GProductVariantsData_productVariants_specifications_category
+        ._initializeBuilder(this);
+  }
+
+  GProductVariantsData_productVariants_specifications_categoryBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _name = $v.name;
+      _description = $v.description;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductVariantsData_productVariants_specifications_category other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v =
+        other as _$GProductVariantsData_productVariants_specifications_category;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductVariantsData_productVariants_specifications_categoryBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_specifications_category build() =>
+      _build();
+
+  _$GProductVariantsData_productVariants_specifications_category _build() {
+    final _$result = _$v ??
+        new _$GProductVariantsData_productVariants_specifications_category._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantsData_productVariants_specifications_category',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GProductVariantsData_productVariants_specifications_category',
+                'id'),
+            name: name,
+            description: description);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_gallery
+    extends GProductVariantsData_productVariants_gallery {
+  @override
+  final String G__typename;
+  @override
+  final _i2.JsonObject? file;
+  @override
+  final String? type;
+  @override
+  final int? index;
+
+  factory _$GProductVariantsData_productVariants_gallery(
+          [void Function(GProductVariantsData_productVariants_galleryBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_galleryBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_gallery._(
+      {required this.G__typename, this.file, this.type, this.index})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantsData_productVariants_gallery', 'G__typename');
+  }
+
+  @override
+  GProductVariantsData_productVariants_gallery rebuild(
+          void Function(GProductVariantsData_productVariants_galleryBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_galleryBuilder toBuilder() =>
+      new GProductVariantsData_productVariants_galleryBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantsData_productVariants_gallery &&
+        G__typename == other.G__typename &&
+        file == other.file &&
+        type == other.type &&
+        index == other.index;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, file.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, index.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_gallery')
+          ..add('G__typename', G__typename)
+          ..add('file', file)
+          ..add('type', type)
+          ..add('index', index))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_galleryBuilder
+    implements
+        Builder<GProductVariantsData_productVariants_gallery,
+            GProductVariantsData_productVariants_galleryBuilder> {
+  _$GProductVariantsData_productVariants_gallery? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  _i2.JsonObject? _file;
+  _i2.JsonObject? get file => _$this._file;
+  set file(_i2.JsonObject? file) => _$this._file = file;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
+
+  int? _index;
+  int? get index => _$this._index;
+  set index(int? index) => _$this._index = index;
+
+  GProductVariantsData_productVariants_galleryBuilder() {
+    GProductVariantsData_productVariants_gallery._initializeBuilder(this);
+  }
+
+  GProductVariantsData_productVariants_galleryBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _file = $v.file;
+      _type = $v.type;
+      _index = $v.index;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantsData_productVariants_gallery other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantsData_productVariants_gallery;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantsData_productVariants_galleryBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_gallery build() => _build();
+
+  _$GProductVariantsData_productVariants_gallery _build() {
+    final _$result = _$v ??
+        new _$GProductVariantsData_productVariants_gallery._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GProductVariantsData_productVariants_gallery', 'G__typename'),
+            file: file,
+            type: type,
+            index: index);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_product
+    extends GProductVariantsData_productVariants_product {
+  @override
+  final String G__typename;
+  @override
+  final GProductVariantsData_productVariants_product_brand? brand;
+  @override
+  final String? name;
+  @override
+  final String? description;
+  @override
+  final String? longDescription;
+  @override
+  final String id;
+  @override
+  final GProductVariantsData_productVariants_product_type? type;
+  @override
+  final BuiltList<GProductVariantsData_productVariants_product_specifications>?
+      specifications;
+
+  factory _$GProductVariantsData_productVariants_product(
+          [void Function(GProductVariantsData_productVariants_productBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_productBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_product._(
+      {required this.G__typename,
+      this.brand,
+      this.name,
+      this.description,
+      this.longDescription,
+      required this.id,
+      this.type,
+      this.specifications})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantsData_productVariants_product', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductVariantsData_productVariants_product', 'id');
+  }
+
+  @override
+  GProductVariantsData_productVariants_product rebuild(
+          void Function(GProductVariantsData_productVariants_productBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_productBuilder toBuilder() =>
+      new GProductVariantsData_productVariants_productBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantsData_productVariants_product &&
+        G__typename == other.G__typename &&
+        brand == other.brand &&
+        name == other.name &&
+        description == other.description &&
+        longDescription == other.longDescription &&
+        id == other.id &&
+        type == other.type &&
+        specifications == other.specifications;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, brand.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, longDescription.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, specifications.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_product')
+          ..add('G__typename', G__typename)
+          ..add('brand', brand)
+          ..add('name', name)
+          ..add('description', description)
+          ..add('longDescription', longDescription)
+          ..add('id', id)
+          ..add('type', type)
+          ..add('specifications', specifications))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_productBuilder
+    implements
+        Builder<GProductVariantsData_productVariants_product,
+            GProductVariantsData_productVariants_productBuilder> {
+  _$GProductVariantsData_productVariants_product? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GProductVariantsData_productVariants_product_brandBuilder? _brand;
+  GProductVariantsData_productVariants_product_brandBuilder get brand =>
+      _$this._brand ??=
+          new GProductVariantsData_productVariants_product_brandBuilder();
+  set brand(GProductVariantsData_productVariants_product_brandBuilder? brand) =>
+      _$this._brand = brand;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  String? _longDescription;
+  String? get longDescription => _$this._longDescription;
+  set longDescription(String? longDescription) =>
+      _$this._longDescription = longDescription;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GProductVariantsData_productVariants_product_typeBuilder? _type;
+  GProductVariantsData_productVariants_product_typeBuilder get type =>
+      _$this._type ??=
+          new GProductVariantsData_productVariants_product_typeBuilder();
+  set type(GProductVariantsData_productVariants_product_typeBuilder? type) =>
+      _$this._type = type;
+
+  ListBuilder<GProductVariantsData_productVariants_product_specifications>?
+      _specifications;
+  ListBuilder<GProductVariantsData_productVariants_product_specifications>
+      get specifications => _$this._specifications ??= new ListBuilder<
+          GProductVariantsData_productVariants_product_specifications>();
+  set specifications(
+          ListBuilder<
+                  GProductVariantsData_productVariants_product_specifications>?
+              specifications) =>
+      _$this._specifications = specifications;
+
+  GProductVariantsData_productVariants_productBuilder() {
+    GProductVariantsData_productVariants_product._initializeBuilder(this);
+  }
+
+  GProductVariantsData_productVariants_productBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _brand = $v.brand?.toBuilder();
+      _name = $v.name;
+      _description = $v.description;
+      _longDescription = $v.longDescription;
+      _id = $v.id;
+      _type = $v.type?.toBuilder();
+      _specifications = $v.specifications?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantsData_productVariants_product other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantsData_productVariants_product;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantsData_productVariants_productBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_product build() => _build();
+
+  _$GProductVariantsData_productVariants_product _build() {
+    _$GProductVariantsData_productVariants_product _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantsData_productVariants_product._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductVariantsData_productVariants_product',
+                  'G__typename'),
+              brand: _brand?.build(),
+              name: name,
+              description: description,
+              longDescription: longDescription,
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'GProductVariantsData_productVariants_product', 'id'),
+              type: _type?.build(),
+              specifications: _specifications?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'brand';
+        _brand?.build();
+
+        _$failedField = 'type';
+        _type?.build();
+        _$failedField = 'specifications';
+        _specifications?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantsData_productVariants_product',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_product_brand
+    extends GProductVariantsData_productVariants_product_brand {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? name;
+  @override
+  final GProductVariantsData_productVariants_product_brand_logo? logo;
+
+  factory _$GProductVariantsData_productVariants_product_brand(
+          [void Function(
+                  GProductVariantsData_productVariants_product_brandBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_product_brandBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_product_brand._(
+      {required this.G__typename, required this.id, this.name, this.logo})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantsData_productVariants_product_brand', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductVariantsData_productVariants_product_brand', 'id');
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_brand rebuild(
+          void Function(
+                  GProductVariantsData_productVariants_product_brandBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_product_brandBuilder toBuilder() =>
+      new GProductVariantsData_productVariants_product_brandBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantsData_productVariants_product_brand &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        name == other.name &&
+        logo == other.logo;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, logo.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_product_brand')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('logo', logo))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_product_brandBuilder
+    implements
+        Builder<GProductVariantsData_productVariants_product_brand,
+            GProductVariantsData_productVariants_product_brandBuilder> {
+  _$GProductVariantsData_productVariants_product_brand? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  GProductVariantsData_productVariants_product_brand_logoBuilder? _logo;
+  GProductVariantsData_productVariants_product_brand_logoBuilder get logo =>
+      _$this._logo ??=
+          new GProductVariantsData_productVariants_product_brand_logoBuilder();
+  set logo(
+          GProductVariantsData_productVariants_product_brand_logoBuilder?
+              logo) =>
+      _$this._logo = logo;
+
+  GProductVariantsData_productVariants_product_brandBuilder() {
+    GProductVariantsData_productVariants_product_brand._initializeBuilder(this);
+  }
+
+  GProductVariantsData_productVariants_product_brandBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _name = $v.name;
+      _logo = $v.logo?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantsData_productVariants_product_brand other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantsData_productVariants_product_brand;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantsData_productVariants_product_brandBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_brand build() => _build();
+
+  _$GProductVariantsData_productVariants_product_brand _build() {
+    _$GProductVariantsData_productVariants_product_brand _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantsData_productVariants_product_brand._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductVariantsData_productVariants_product_brand',
+                  'G__typename'),
+              id: BuiltValueNullFieldError.checkNotNull(id,
+                  r'GProductVariantsData_productVariants_product_brand', 'id'),
+              name: name,
+              logo: _logo?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'logo';
+        _logo?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantsData_productVariants_product_brand',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_product_brand_logo
+    extends GProductVariantsData_productVariants_product_brand_logo {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final _i3.GImageExtension extension;
+  @override
+  final String url;
+
+  factory _$GProductVariantsData_productVariants_product_brand_logo(
+          [void Function(
+                  GProductVariantsData_productVariants_product_brand_logoBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_product_brand_logoBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_product_brand_logo._(
+      {required this.G__typename,
+      required this.id,
+      required this.extension,
+      required this.url})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductVariantsData_productVariants_product_brand_logo',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductVariantsData_productVariants_product_brand_logo', 'id');
+    BuiltValueNullFieldError.checkNotNull(
+        extension,
+        r'GProductVariantsData_productVariants_product_brand_logo',
+        'extension');
+    BuiltValueNullFieldError.checkNotNull(
+        url, r'GProductVariantsData_productVariants_product_brand_logo', 'url');
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_brand_logo rebuild(
+          void Function(
+                  GProductVariantsData_productVariants_product_brand_logoBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_product_brand_logoBuilder toBuilder() =>
+      new GProductVariantsData_productVariants_product_brand_logoBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantsData_productVariants_product_brand_logo &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        extension == other.extension &&
+        url == other.url;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, extension.hashCode);
+    _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_product_brand_logo')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('extension', extension)
+          ..add('url', url))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_product_brand_logoBuilder
+    implements
+        Builder<GProductVariantsData_productVariants_product_brand_logo,
+            GProductVariantsData_productVariants_product_brand_logoBuilder> {
+  _$GProductVariantsData_productVariants_product_brand_logo? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  _i3.GImageExtension? _extension;
+  _i3.GImageExtension? get extension => _$this._extension;
+  set extension(_i3.GImageExtension? extension) =>
+      _$this._extension = extension;
+
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
+
+  GProductVariantsData_productVariants_product_brand_logoBuilder() {
+    GProductVariantsData_productVariants_product_brand_logo._initializeBuilder(
+        this);
+  }
+
+  GProductVariantsData_productVariants_product_brand_logoBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _extension = $v.extension;
+      _url = $v.url;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantsData_productVariants_product_brand_logo other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantsData_productVariants_product_brand_logo;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductVariantsData_productVariants_product_brand_logoBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_brand_logo build() => _build();
+
+  _$GProductVariantsData_productVariants_product_brand_logo _build() {
+    final _$result = _$v ??
+        new _$GProductVariantsData_productVariants_product_brand_logo._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantsData_productVariants_product_brand_logo',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GProductVariantsData_productVariants_product_brand_logo',
+                'id'),
+            extension: BuiltValueNullFieldError.checkNotNull(
+                extension,
+                r'GProductVariantsData_productVariants_product_brand_logo',
+                'extension'),
+            url: BuiltValueNullFieldError.checkNotNull(
+                url,
+                r'GProductVariantsData_productVariants_product_brand_logo',
+                'url'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_product_type
+    extends GProductVariantsData_productVariants_product_type {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? name;
+  @override
+  final String? description;
+
+  factory _$GProductVariantsData_productVariants_product_type(
+          [void Function(
+                  GProductVariantsData_productVariants_product_typeBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_product_typeBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_product_type._(
+      {required this.G__typename,
+      required this.id,
+      this.name,
+      this.description})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantsData_productVariants_product_type', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductVariantsData_productVariants_product_type', 'id');
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_type rebuild(
+          void Function(
+                  GProductVariantsData_productVariants_product_typeBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_product_typeBuilder toBuilder() =>
+      new GProductVariantsData_productVariants_product_typeBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantsData_productVariants_product_type &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        name == other.name &&
+        description == other.description;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_product_type')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('description', description))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_product_typeBuilder
+    implements
+        Builder<GProductVariantsData_productVariants_product_type,
+            GProductVariantsData_productVariants_product_typeBuilder> {
+  _$GProductVariantsData_productVariants_product_type? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  GProductVariantsData_productVariants_product_typeBuilder() {
+    GProductVariantsData_productVariants_product_type._initializeBuilder(this);
+  }
+
+  GProductVariantsData_productVariants_product_typeBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _name = $v.name;
+      _description = $v.description;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantsData_productVariants_product_type other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantsData_productVariants_product_type;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantsData_productVariants_product_typeBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_type build() => _build();
+
+  _$GProductVariantsData_productVariants_product_type _build() {
+    final _$result = _$v ??
+        new _$GProductVariantsData_productVariants_product_type._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantsData_productVariants_product_type',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductVariantsData_productVariants_product_type', 'id'),
+            name: name,
+            description: description);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_product_specifications
+    extends GProductVariantsData_productVariants_product_specifications {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final bool? isKeyFeature;
+  @override
+  final String? name;
+  @override
+  final GProductVariantsData_productVariants_product_specifications_specification?
+      specification;
+  @override
+  final String? type;
+  @override
+  final int? intValue;
+  @override
+  final String? stringValue;
+  @override
+  final GProductVariantsData_productVariants_product_specifications_category?
+      category;
+
+  factory _$GProductVariantsData_productVariants_product_specifications(
+          [void Function(
+                  GProductVariantsData_productVariants_product_specificationsBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_product_specificationsBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_product_specifications._(
+      {required this.G__typename,
+      required this.id,
+      this.isKeyFeature,
+      this.name,
+      this.specification,
+      this.type,
+      this.intValue,
+      this.stringValue,
+      this.category})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductVariantsData_productVariants_product_specifications',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(id,
+        r'GProductVariantsData_productVariants_product_specifications', 'id');
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_specifications rebuild(
+          void Function(
+                  GProductVariantsData_productVariants_product_specificationsBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_product_specificationsBuilder
+      toBuilder() =>
+          new GProductVariantsData_productVariants_product_specificationsBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductVariantsData_productVariants_product_specifications &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        isKeyFeature == other.isKeyFeature &&
+        name == other.name &&
+        specification == other.specification &&
+        type == other.type &&
+        intValue == other.intValue &&
+        stringValue == other.stringValue &&
+        category == other.category;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, isKeyFeature.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, specification.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, intValue.hashCode);
+    _$hash = $jc(_$hash, stringValue.hashCode);
+    _$hash = $jc(_$hash, category.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_product_specifications')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('isKeyFeature', isKeyFeature)
+          ..add('name', name)
+          ..add('specification', specification)
+          ..add('type', type)
+          ..add('intValue', intValue)
+          ..add('stringValue', stringValue)
+          ..add('category', category))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_product_specificationsBuilder
+    implements
+        Builder<GProductVariantsData_productVariants_product_specifications,
+            GProductVariantsData_productVariants_product_specificationsBuilder> {
+  _$GProductVariantsData_productVariants_product_specifications? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  bool? _isKeyFeature;
+  bool? get isKeyFeature => _$this._isKeyFeature;
+  set isKeyFeature(bool? isKeyFeature) => _$this._isKeyFeature = isKeyFeature;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  GProductVariantsData_productVariants_product_specifications_specificationBuilder?
+      _specification;
+  GProductVariantsData_productVariants_product_specifications_specificationBuilder
+      get specification => _$this._specification ??=
+          new GProductVariantsData_productVariants_product_specifications_specificationBuilder();
+  set specification(
+          GProductVariantsData_productVariants_product_specifications_specificationBuilder?
+              specification) =>
+      _$this._specification = specification;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
+
+  int? _intValue;
+  int? get intValue => _$this._intValue;
+  set intValue(int? intValue) => _$this._intValue = intValue;
+
+  String? _stringValue;
+  String? get stringValue => _$this._stringValue;
+  set stringValue(String? stringValue) => _$this._stringValue = stringValue;
+
+  GProductVariantsData_productVariants_product_specifications_categoryBuilder?
+      _category;
+  GProductVariantsData_productVariants_product_specifications_categoryBuilder
+      get category => _$this._category ??=
+          new GProductVariantsData_productVariants_product_specifications_categoryBuilder();
+  set category(
+          GProductVariantsData_productVariants_product_specifications_categoryBuilder?
+              category) =>
+      _$this._category = category;
+
+  GProductVariantsData_productVariants_product_specificationsBuilder() {
+    GProductVariantsData_productVariants_product_specifications
+        ._initializeBuilder(this);
+  }
+
+  GProductVariantsData_productVariants_product_specificationsBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _isKeyFeature = $v.isKeyFeature;
+      _name = $v.name;
+      _specification = $v.specification?.toBuilder();
+      _type = $v.type;
+      _intValue = $v.intValue;
+      _stringValue = $v.stringValue;
+      _category = $v.category?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductVariantsData_productVariants_product_specifications other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v =
+        other as _$GProductVariantsData_productVariants_product_specifications;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductVariantsData_productVariants_product_specificationsBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_specifications build() =>
+      _build();
+
+  _$GProductVariantsData_productVariants_product_specifications _build() {
+    _$GProductVariantsData_productVariants_product_specifications _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantsData_productVariants_product_specifications._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductVariantsData_productVariants_product_specifications',
+                  'G__typename'),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id,
+                  r'GProductVariantsData_productVariants_product_specifications',
+                  'id'),
+              isKeyFeature: isKeyFeature,
+              name: name,
+              specification: _specification?.build(),
+              type: type,
+              intValue: intValue,
+              stringValue: stringValue,
+              category: _category?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'specification';
+        _specification?.build();
+
+        _$failedField = 'category';
+        _category?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantsData_productVariants_product_specifications',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_product_specifications_specification
+    extends GProductVariantsData_productVariants_product_specifications_specification {
+  @override
+  final String G__typename;
+  @override
+  final GProductVariantsData_productVariants_product_specifications_specification_image?
+      image;
+  @override
+  final String id;
+  @override
+  final String? name;
+  @override
+  final String? description;
+  @override
+  final String? unit;
+
+  factory _$GProductVariantsData_productVariants_product_specifications_specification(
+          [void Function(
+                  GProductVariantsData_productVariants_product_specifications_specificationBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_product_specifications_specificationBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_product_specifications_specification._(
+      {required this.G__typename,
+      this.image,
+      required this.id,
+      this.name,
+      this.description,
+      this.unit})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductVariantsData_productVariants_product_specifications_specification',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id,
+        r'GProductVariantsData_productVariants_product_specifications_specification',
+        'id');
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_specifications_specification rebuild(
+          void Function(
+                  GProductVariantsData_productVariants_product_specifications_specificationBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_product_specifications_specificationBuilder
+      toBuilder() =>
+          new GProductVariantsData_productVariants_product_specifications_specificationBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductVariantsData_productVariants_product_specifications_specification &&
+        G__typename == other.G__typename &&
+        image == other.image &&
+        id == other.id &&
+        name == other.name &&
+        description == other.description &&
+        unit == other.unit;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, unit.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_product_specifications_specification')
+          ..add('G__typename', G__typename)
+          ..add('image', image)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('description', description)
+          ..add('unit', unit))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_product_specifications_specificationBuilder
+    implements
+        Builder<
+            GProductVariantsData_productVariants_product_specifications_specification,
+            GProductVariantsData_productVariants_product_specifications_specificationBuilder> {
+  _$GProductVariantsData_productVariants_product_specifications_specification?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GProductVariantsData_productVariants_product_specifications_specification_imageBuilder?
+      _image;
+  GProductVariantsData_productVariants_product_specifications_specification_imageBuilder
+      get image => _$this._image ??=
+          new GProductVariantsData_productVariants_product_specifications_specification_imageBuilder();
+  set image(
+          GProductVariantsData_productVariants_product_specifications_specification_imageBuilder?
+              image) =>
+      _$this._image = image;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  String? _unit;
+  String? get unit => _$this._unit;
+  set unit(String? unit) => _$this._unit = unit;
+
+  GProductVariantsData_productVariants_product_specifications_specificationBuilder() {
+    GProductVariantsData_productVariants_product_specifications_specification
+        ._initializeBuilder(this);
+  }
+
+  GProductVariantsData_productVariants_product_specifications_specificationBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _image = $v.image?.toBuilder();
+      _id = $v.id;
+      _name = $v.name;
+      _description = $v.description;
+      _unit = $v.unit;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductVariantsData_productVariants_product_specifications_specification
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GProductVariantsData_productVariants_product_specifications_specification;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductVariantsData_productVariants_product_specifications_specificationBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_specifications_specification
+      build() => _build();
+
+  _$GProductVariantsData_productVariants_product_specifications_specification
+      _build() {
+    _$GProductVariantsData_productVariants_product_specifications_specification
+        _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantsData_productVariants_product_specifications_specification
+              ._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductVariantsData_productVariants_product_specifications_specification',
+                  'G__typename'),
+              image: _image?.build(),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id,
+                  r'GProductVariantsData_productVariants_product_specifications_specification',
+                  'id'),
+              name: name,
+              description: description,
+              unit: unit);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'image';
+        _image?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantsData_productVariants_product_specifications_specification',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_product_specifications_specification_image
+    extends GProductVariantsData_productVariants_product_specifications_specification_image {
+  @override
+  final String G__typename;
+  @override
+  final String url;
+
+  factory _$GProductVariantsData_productVariants_product_specifications_specification_image(
+          [void Function(
+                  GProductVariantsData_productVariants_product_specifications_specification_imageBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_product_specifications_specification_imageBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_product_specifications_specification_image._(
+      {required this.G__typename, required this.url})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductVariantsData_productVariants_product_specifications_specification_image',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        url,
+        r'GProductVariantsData_productVariants_product_specifications_specification_image',
+        'url');
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_specifications_specification_image
+      rebuild(
+              void Function(
+                      GProductVariantsData_productVariants_product_specifications_specification_imageBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_product_specifications_specification_imageBuilder
+      toBuilder() =>
+          new GProductVariantsData_productVariants_product_specifications_specification_imageBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductVariantsData_productVariants_product_specifications_specification_image &&
+        G__typename == other.G__typename &&
+        url == other.url;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_product_specifications_specification_image')
+          ..add('G__typename', G__typename)
+          ..add('url', url))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_product_specifications_specification_imageBuilder
+    implements
+        Builder<
+            GProductVariantsData_productVariants_product_specifications_specification_image,
+            GProductVariantsData_productVariants_product_specifications_specification_imageBuilder> {
+  _$GProductVariantsData_productVariants_product_specifications_specification_image?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
+
+  GProductVariantsData_productVariants_product_specifications_specification_imageBuilder() {
+    GProductVariantsData_productVariants_product_specifications_specification_image
+        ._initializeBuilder(this);
+  }
+
+  GProductVariantsData_productVariants_product_specifications_specification_imageBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _url = $v.url;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductVariantsData_productVariants_product_specifications_specification_image
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GProductVariantsData_productVariants_product_specifications_specification_image;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductVariantsData_productVariants_product_specifications_specification_imageBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_specifications_specification_image
+      build() => _build();
+
+  _$GProductVariantsData_productVariants_product_specifications_specification_image
+      _build() {
+    final _$result = _$v ??
+        new _$GProductVariantsData_productVariants_product_specifications_specification_image
+            ._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantsData_productVariants_product_specifications_specification_image',
+                'G__typename'),
+            url: BuiltValueNullFieldError.checkNotNull(
+                url,
+                r'GProductVariantsData_productVariants_product_specifications_specification_image',
+                'url'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_product_specifications_category
+    extends GProductVariantsData_productVariants_product_specifications_category {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? name;
+  @override
+  final String? description;
+
+  factory _$GProductVariantsData_productVariants_product_specifications_category(
+          [void Function(
+                  GProductVariantsData_productVariants_product_specifications_categoryBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_product_specifications_categoryBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_product_specifications_category._(
+      {required this.G__typename,
+      required this.id,
+      this.name,
+      this.description})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductVariantsData_productVariants_product_specifications_category',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id,
+        r'GProductVariantsData_productVariants_product_specifications_category',
+        'id');
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_specifications_category rebuild(
+          void Function(
+                  GProductVariantsData_productVariants_product_specifications_categoryBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_product_specifications_categoryBuilder
+      toBuilder() =>
+          new GProductVariantsData_productVariants_product_specifications_categoryBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductVariantsData_productVariants_product_specifications_category &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        name == other.name &&
+        description == other.description;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_product_specifications_category')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('description', description))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_product_specifications_categoryBuilder
+    implements
+        Builder<
+            GProductVariantsData_productVariants_product_specifications_category,
+            GProductVariantsData_productVariants_product_specifications_categoryBuilder> {
+  _$GProductVariantsData_productVariants_product_specifications_category? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  GProductVariantsData_productVariants_product_specifications_categoryBuilder() {
+    GProductVariantsData_productVariants_product_specifications_category
+        ._initializeBuilder(this);
+  }
+
+  GProductVariantsData_productVariants_product_specifications_categoryBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _name = $v.name;
+      _description = $v.description;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductVariantsData_productVariants_product_specifications_category
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GProductVariantsData_productVariants_product_specifications_category;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductVariantsData_productVariants_product_specifications_categoryBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_product_specifications_category
+      build() => _build();
+
+  _$GProductVariantsData_productVariants_product_specifications_category
+      _build() {
+    final _$result = _$v ??
+        new _$GProductVariantsData_productVariants_product_specifications_category
+            ._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantsData_productVariants_product_specifications_category',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GProductVariantsData_productVariants_product_specifications_category',
+                'id'),
+            name: name,
+            description: description);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_tags
+    extends GProductVariantsData_productVariants_tags {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? title;
+  @override
+  final String? description;
+
+  factory _$GProductVariantsData_productVariants_tags(
+          [void Function(GProductVariantsData_productVariants_tagsBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_tagsBuilder()..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_tags._(
+      {required this.G__typename,
+      required this.id,
+      this.title,
+      this.description})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantsData_productVariants_tags', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductVariantsData_productVariants_tags', 'id');
+  }
+
+  @override
+  GProductVariantsData_productVariants_tags rebuild(
+          void Function(GProductVariantsData_productVariants_tagsBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_tagsBuilder toBuilder() =>
+      new GProductVariantsData_productVariants_tagsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantsData_productVariants_tags &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        title == other.title &&
+        description == other.description;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_tags')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('title', title)
+          ..add('description', description))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_tagsBuilder
+    implements
+        Builder<GProductVariantsData_productVariants_tags,
+            GProductVariantsData_productVariants_tagsBuilder> {
+  _$GProductVariantsData_productVariants_tags? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _title;
+  String? get title => _$this._title;
+  set title(String? title) => _$this._title = title;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  GProductVariantsData_productVariants_tagsBuilder() {
+    GProductVariantsData_productVariants_tags._initializeBuilder(this);
+  }
+
+  GProductVariantsData_productVariants_tagsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _title = $v.title;
+      _description = $v.description;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantsData_productVariants_tags other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantsData_productVariants_tags;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantsData_productVariants_tagsBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_tags build() => _build();
+
+  _$GProductVariantsData_productVariants_tags _build() {
+    final _$result = _$v ??
+        new _$GProductVariantsData_productVariants_tags._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GProductVariantsData_productVariants_tags', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductVariantsData_productVariants_tags', 'id'),
+            title: title,
+            description: description);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_images
+    extends GProductVariantsData_productVariants_images {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? name;
+  @override
+  final GProductVariantsData_productVariants_images_image? image;
+
+  factory _$GProductVariantsData_productVariants_images(
+          [void Function(GProductVariantsData_productVariants_imagesBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_imagesBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_images._(
+      {required this.G__typename, required this.id, this.name, this.image})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantsData_productVariants_images', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductVariantsData_productVariants_images', 'id');
+  }
+
+  @override
+  GProductVariantsData_productVariants_images rebuild(
+          void Function(GProductVariantsData_productVariants_imagesBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_imagesBuilder toBuilder() =>
+      new GProductVariantsData_productVariants_imagesBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantsData_productVariants_images &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        name == other.name &&
+        image == other.image;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_images')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('image', image))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_imagesBuilder
+    implements
+        Builder<GProductVariantsData_productVariants_images,
+            GProductVariantsData_productVariants_imagesBuilder> {
+  _$GProductVariantsData_productVariants_images? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  GProductVariantsData_productVariants_images_imageBuilder? _image;
+  GProductVariantsData_productVariants_images_imageBuilder get image =>
+      _$this._image ??=
+          new GProductVariantsData_productVariants_images_imageBuilder();
+  set image(GProductVariantsData_productVariants_images_imageBuilder? image) =>
+      _$this._image = image;
+
+  GProductVariantsData_productVariants_imagesBuilder() {
+    GProductVariantsData_productVariants_images._initializeBuilder(this);
+  }
+
+  GProductVariantsData_productVariants_imagesBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _name = $v.name;
+      _image = $v.image?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantsData_productVariants_images other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantsData_productVariants_images;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantsData_productVariants_imagesBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_images build() => _build();
+
+  _$GProductVariantsData_productVariants_images _build() {
+    _$GProductVariantsData_productVariants_images _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantsData_productVariants_images._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductVariantsData_productVariants_images',
+                  'G__typename'),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'GProductVariantsData_productVariants_images', 'id'),
+              name: name,
+              image: _image?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'image';
+        _image?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantsData_productVariants_images',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsData_productVariants_images_image
+    extends GProductVariantsData_productVariants_images_image {
+  @override
+  final String G__typename;
+  @override
+  final String url;
+
+  factory _$GProductVariantsData_productVariants_images_image(
+          [void Function(
+                  GProductVariantsData_productVariants_images_imageBuilder)?
+              updates]) =>
+      (new GProductVariantsData_productVariants_images_imageBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantsData_productVariants_images_image._(
+      {required this.G__typename, required this.url})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantsData_productVariants_images_image', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        url, r'GProductVariantsData_productVariants_images_image', 'url');
+  }
+
+  @override
+  GProductVariantsData_productVariants_images_image rebuild(
+          void Function(
+                  GProductVariantsData_productVariants_images_imageBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsData_productVariants_images_imageBuilder toBuilder() =>
+      new GProductVariantsData_productVariants_images_imageBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantsData_productVariants_images_image &&
+        G__typename == other.G__typename &&
+        url == other.url;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantsData_productVariants_images_image')
+          ..add('G__typename', G__typename)
+          ..add('url', url))
+        .toString();
+  }
+}
+
+class GProductVariantsData_productVariants_images_imageBuilder
+    implements
+        Builder<GProductVariantsData_productVariants_images_image,
+            GProductVariantsData_productVariants_images_imageBuilder> {
+  _$GProductVariantsData_productVariants_images_image? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
+
+  GProductVariantsData_productVariants_images_imageBuilder() {
+    GProductVariantsData_productVariants_images_image._initializeBuilder(this);
+  }
+
+  GProductVariantsData_productVariants_images_imageBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _url = $v.url;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantsData_productVariants_images_image other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantsData_productVariants_images_image;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantsData_productVariants_images_imageBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsData_productVariants_images_image build() => _build();
+
+  _$GProductVariantsData_productVariants_images_image _build() {
+    final _$result = _$v ??
+        new _$GProductVariantsData_productVariants_images_image._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantsData_productVariants_images_image',
+                'G__typename'),
+            url: BuiltValueNullFieldError.checkNotNull(url,
+                r'GProductVariantsData_productVariants_images_image', 'url'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsCountData extends GProductVariantsCountData {
+  @override
+  final String G__typename;
+  @override
+  final int? productVariantsCount;
+
+  factory _$GProductVariantsCountData(
+          [void Function(GProductVariantsCountDataBuilder)? updates]) =>
+      (new GProductVariantsCountDataBuilder()..update(updates))._build();
+
+  _$GProductVariantsCountData._(
+      {required this.G__typename, this.productVariantsCount})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GProductVariantsCountData', 'G__typename');
+  }
+
+  @override
+  GProductVariantsCountData rebuild(
+          void Function(GProductVariantsCountDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsCountDataBuilder toBuilder() =>
+      new GProductVariantsCountDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantsCountData &&
+        G__typename == other.G__typename &&
+        productVariantsCount == other.productVariantsCount;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, productVariantsCount.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GProductVariantsCountData')
+          ..add('G__typename', G__typename)
+          ..add('productVariantsCount', productVariantsCount))
+        .toString();
+  }
+}
+
+class GProductVariantsCountDataBuilder
+    implements
+        Builder<GProductVariantsCountData, GProductVariantsCountDataBuilder> {
+  _$GProductVariantsCountData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _productVariantsCount;
+  int? get productVariantsCount => _$this._productVariantsCount;
+  set productVariantsCount(int? productVariantsCount) =>
+      _$this._productVariantsCount = productVariantsCount;
+
+  GProductVariantsCountDataBuilder() {
+    GProductVariantsCountData._initializeBuilder(this);
+  }
+
+  GProductVariantsCountDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _productVariantsCount = $v.productVariantsCount;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantsCountData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantsCountData;
+  }
+
+  @override
+  void update(void Function(GProductVariantsCountDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsCountData build() => _build();
+
+  _$GProductVariantsCountData _build() {
+    final _$result = _$v ??
+        new _$GProductVariantsCountData._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GProductVariantsCountData', 'G__typename'),
+            productVariantsCount: productVariantsCount);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData extends GProductVariantData {
+  @override
+  final String G__typename;
+  @override
+  final GProductVariantData_productVariant? productVariant;
+
+  factory _$GProductVariantData(
+          [void Function(GProductVariantDataBuilder)? updates]) =>
+      (new GProductVariantDataBuilder()..update(updates))._build();
+
+  _$GProductVariantData._({required this.G__typename, this.productVariant})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GProductVariantData', 'G__typename');
+  }
+
+  @override
+  GProductVariantData rebuild(
+          void Function(GProductVariantDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantDataBuilder toBuilder() =>
+      new GProductVariantDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantData &&
+        G__typename == other.G__typename &&
+        productVariant == other.productVariant;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, productVariant.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GProductVariantData')
+          ..add('G__typename', G__typename)
+          ..add('productVariant', productVariant))
+        .toString();
+  }
+}
+
+class GProductVariantDataBuilder
+    implements Builder<GProductVariantData, GProductVariantDataBuilder> {
+  _$GProductVariantData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GProductVariantData_productVariantBuilder? _productVariant;
+  GProductVariantData_productVariantBuilder get productVariant =>
+      _$this._productVariant ??=
+          new GProductVariantData_productVariantBuilder();
+  set productVariant(
+          GProductVariantData_productVariantBuilder? productVariant) =>
+      _$this._productVariant = productVariant;
+
+  GProductVariantDataBuilder() {
+    GProductVariantData._initializeBuilder(this);
+  }
+
+  GProductVariantDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _productVariant = $v.productVariant?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantData;
+  }
+
+  @override
+  void update(void Function(GProductVariantDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData build() => _build();
+
+  _$GProductVariantData _build() {
+    _$GProductVariantData _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GProductVariantData', 'G__typename'),
+              productVariant: _productVariant?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'productVariant';
+        _productVariant?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant
+    extends GProductVariantData_productVariant {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? name;
+  @override
+  final _i2.JsonObject? availableProductDealer;
+  @override
+  final BuiltList<GProductVariantData_productVariant_prices>? prices;
+  @override
+  final BuiltList<GProductVariantData_productVariant_specifications>?
+      specifications;
+  @override
+  final int? totalPrice;
+  @override
+  final BuiltList<GProductVariantData_productVariant_gallery>? gallery;
+  @override
+  final GProductVariantData_productVariant_product? product;
+  @override
+  final BuiltList<GProductVariantData_productVariant_tags>? tags;
+  @override
+  final BuiltList<GProductVariantData_productVariant_images>? images;
+
+  factory _$GProductVariantData_productVariant(
+          [void Function(GProductVariantData_productVariantBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariantBuilder()..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant._(
+      {required this.G__typename,
+      required this.id,
+      this.name,
+      this.availableProductDealer,
+      this.prices,
+      this.specifications,
+      this.totalPrice,
+      this.gallery,
+      this.product,
+      this.tags,
+      this.images})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GProductVariantData_productVariant', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductVariantData_productVariant', 'id');
+  }
+
+  @override
+  GProductVariantData_productVariant rebuild(
+          void Function(GProductVariantData_productVariantBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariantBuilder toBuilder() =>
+      new GProductVariantData_productVariantBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantData_productVariant &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        name == other.name &&
+        availableProductDealer == other.availableProductDealer &&
+        prices == other.prices &&
+        specifications == other.specifications &&
+        totalPrice == other.totalPrice &&
+        gallery == other.gallery &&
+        product == other.product &&
+        tags == other.tags &&
+        images == other.images;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, availableProductDealer.hashCode);
+    _$hash = $jc(_$hash, prices.hashCode);
+    _$hash = $jc(_$hash, specifications.hashCode);
+    _$hash = $jc(_$hash, totalPrice.hashCode);
+    _$hash = $jc(_$hash, gallery.hashCode);
+    _$hash = $jc(_$hash, product.hashCode);
+    _$hash = $jc(_$hash, tags.hashCode);
+    _$hash = $jc(_$hash, images.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GProductVariantData_productVariant')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('availableProductDealer', availableProductDealer)
+          ..add('prices', prices)
+          ..add('specifications', specifications)
+          ..add('totalPrice', totalPrice)
+          ..add('gallery', gallery)
+          ..add('product', product)
+          ..add('tags', tags)
+          ..add('images', images))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariantBuilder
+    implements
+        Builder<GProductVariantData_productVariant,
+            GProductVariantData_productVariantBuilder> {
+  _$GProductVariantData_productVariant? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  _i2.JsonObject? _availableProductDealer;
+  _i2.JsonObject? get availableProductDealer => _$this._availableProductDealer;
+  set availableProductDealer(_i2.JsonObject? availableProductDealer) =>
+      _$this._availableProductDealer = availableProductDealer;
+
+  ListBuilder<GProductVariantData_productVariant_prices>? _prices;
+  ListBuilder<GProductVariantData_productVariant_prices> get prices =>
+      _$this._prices ??=
+          new ListBuilder<GProductVariantData_productVariant_prices>();
+  set prices(ListBuilder<GProductVariantData_productVariant_prices>? prices) =>
+      _$this._prices = prices;
+
+  ListBuilder<GProductVariantData_productVariant_specifications>?
+      _specifications;
+  ListBuilder<GProductVariantData_productVariant_specifications>
+      get specifications => _$this._specifications ??=
+          new ListBuilder<GProductVariantData_productVariant_specifications>();
+  set specifications(
+          ListBuilder<GProductVariantData_productVariant_specifications>?
+              specifications) =>
+      _$this._specifications = specifications;
+
+  int? _totalPrice;
+  int? get totalPrice => _$this._totalPrice;
+  set totalPrice(int? totalPrice) => _$this._totalPrice = totalPrice;
+
+  ListBuilder<GProductVariantData_productVariant_gallery>? _gallery;
+  ListBuilder<GProductVariantData_productVariant_gallery> get gallery =>
+      _$this._gallery ??=
+          new ListBuilder<GProductVariantData_productVariant_gallery>();
+  set gallery(
+          ListBuilder<GProductVariantData_productVariant_gallery>? gallery) =>
+      _$this._gallery = gallery;
+
+  GProductVariantData_productVariant_productBuilder? _product;
+  GProductVariantData_productVariant_productBuilder get product =>
+      _$this._product ??=
+          new GProductVariantData_productVariant_productBuilder();
+  set product(GProductVariantData_productVariant_productBuilder? product) =>
+      _$this._product = product;
+
+  ListBuilder<GProductVariantData_productVariant_tags>? _tags;
+  ListBuilder<GProductVariantData_productVariant_tags> get tags =>
+      _$this._tags ??=
+          new ListBuilder<GProductVariantData_productVariant_tags>();
+  set tags(ListBuilder<GProductVariantData_productVariant_tags>? tags) =>
+      _$this._tags = tags;
+
+  ListBuilder<GProductVariantData_productVariant_images>? _images;
+  ListBuilder<GProductVariantData_productVariant_images> get images =>
+      _$this._images ??=
+          new ListBuilder<GProductVariantData_productVariant_images>();
+  set images(ListBuilder<GProductVariantData_productVariant_images>? images) =>
+      _$this._images = images;
+
+  GProductVariantData_productVariantBuilder() {
+    GProductVariantData_productVariant._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariantBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _name = $v.name;
+      _availableProductDealer = $v.availableProductDealer;
+      _prices = $v.prices?.toBuilder();
+      _specifications = $v.specifications?.toBuilder();
+      _totalPrice = $v.totalPrice;
+      _gallery = $v.gallery?.toBuilder();
+      _product = $v.product?.toBuilder();
+      _tags = $v.tags?.toBuilder();
+      _images = $v.images?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantData_productVariant other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantData_productVariant;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantData_productVariantBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant build() => _build();
+
+  _$GProductVariantData_productVariant _build() {
+    _$GProductVariantData_productVariant _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantData_productVariant._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                  r'GProductVariantData_productVariant', 'G__typename'),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'GProductVariantData_productVariant', 'id'),
+              name: name,
+              availableProductDealer: availableProductDealer,
+              prices: _prices?.build(),
+              specifications: _specifications?.build(),
+              totalPrice: totalPrice,
+              gallery: _gallery?.build(),
+              product: _product?.build(),
+              tags: _tags?.build(),
+              images: _images?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'prices';
+        _prices?.build();
+        _$failedField = 'specifications';
+        _specifications?.build();
+
+        _$failedField = 'gallery';
+        _gallery?.build();
+        _$failedField = 'product';
+        _product?.build();
+        _$failedField = 'tags';
+        _tags?.build();
+        _$failedField = 'images';
+        _images?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantData_productVariant', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_prices
+    extends GProductVariantData_productVariant_prices {
+  @override
+  final String G__typename;
+  @override
+  final int? amount;
+  @override
+  final GProductVariantData_productVariant_prices_category? category;
+
+  factory _$GProductVariantData_productVariant_prices(
+          [void Function(GProductVariantData_productVariant_pricesBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_pricesBuilder()..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_prices._(
+      {required this.G__typename, this.amount, this.category})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantData_productVariant_prices', 'G__typename');
+  }
+
+  @override
+  GProductVariantData_productVariant_prices rebuild(
+          void Function(GProductVariantData_productVariant_pricesBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_pricesBuilder toBuilder() =>
+      new GProductVariantData_productVariant_pricesBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantData_productVariant_prices &&
+        G__typename == other.G__typename &&
+        amount == other.amount &&
+        category == other.category;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, category.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_prices')
+          ..add('G__typename', G__typename)
+          ..add('amount', amount)
+          ..add('category', category))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_pricesBuilder
+    implements
+        Builder<GProductVariantData_productVariant_prices,
+            GProductVariantData_productVariant_pricesBuilder> {
+  _$GProductVariantData_productVariant_prices? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _amount;
+  int? get amount => _$this._amount;
+  set amount(int? amount) => _$this._amount = amount;
+
+  GProductVariantData_productVariant_prices_categoryBuilder? _category;
+  GProductVariantData_productVariant_prices_categoryBuilder get category =>
+      _$this._category ??=
+          new GProductVariantData_productVariant_prices_categoryBuilder();
+  set category(
+          GProductVariantData_productVariant_prices_categoryBuilder?
+              category) =>
+      _$this._category = category;
+
+  GProductVariantData_productVariant_pricesBuilder() {
+    GProductVariantData_productVariant_prices._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariant_pricesBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _amount = $v.amount;
+      _category = $v.category?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantData_productVariant_prices other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantData_productVariant_prices;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantData_productVariant_pricesBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_prices build() => _build();
+
+  _$GProductVariantData_productVariant_prices _build() {
+    _$GProductVariantData_productVariant_prices _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantData_productVariant_prices._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                  r'GProductVariantData_productVariant_prices', 'G__typename'),
+              amount: amount,
+              category: _category?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'category';
+        _category?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantData_productVariant_prices',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_prices_category
+    extends GProductVariantData_productVariant_prices_category {
+  @override
+  final String G__typename;
+  @override
+  final String? name;
+  @override
+  final String? description;
+
+  factory _$GProductVariantData_productVariant_prices_category(
+          [void Function(
+                  GProductVariantData_productVariant_prices_categoryBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_prices_categoryBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_prices_category._(
+      {required this.G__typename, this.name, this.description})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantData_productVariant_prices_category', 'G__typename');
+  }
+
+  @override
+  GProductVariantData_productVariant_prices_category rebuild(
+          void Function(
+                  GProductVariantData_productVariant_prices_categoryBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_prices_categoryBuilder toBuilder() =>
+      new GProductVariantData_productVariant_prices_categoryBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantData_productVariant_prices_category &&
+        G__typename == other.G__typename &&
+        name == other.name &&
+        description == other.description;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_prices_category')
+          ..add('G__typename', G__typename)
+          ..add('name', name)
+          ..add('description', description))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_prices_categoryBuilder
+    implements
+        Builder<GProductVariantData_productVariant_prices_category,
+            GProductVariantData_productVariant_prices_categoryBuilder> {
+  _$GProductVariantData_productVariant_prices_category? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  GProductVariantData_productVariant_prices_categoryBuilder() {
+    GProductVariantData_productVariant_prices_category._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariant_prices_categoryBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _name = $v.name;
+      _description = $v.description;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantData_productVariant_prices_category other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantData_productVariant_prices_category;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantData_productVariant_prices_categoryBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_prices_category build() => _build();
+
+  _$GProductVariantData_productVariant_prices_category _build() {
+    final _$result = _$v ??
+        new _$GProductVariantData_productVariant_prices_category._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantData_productVariant_prices_category',
+                'G__typename'),
+            name: name,
+            description: description);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_specifications
+    extends GProductVariantData_productVariant_specifications {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final bool? isKeyFeature;
+  @override
+  final String? name;
+  @override
+  final GProductVariantData_productVariant_specifications_specification?
+      specification;
+  @override
+  final String? type;
+  @override
+  final int? intValue;
+  @override
+  final String? stringValue;
+  @override
+  final GProductVariantData_productVariant_specifications_category? category;
+
+  factory _$GProductVariantData_productVariant_specifications(
+          [void Function(
+                  GProductVariantData_productVariant_specificationsBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_specificationsBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_specifications._(
+      {required this.G__typename,
+      required this.id,
+      this.isKeyFeature,
+      this.name,
+      this.specification,
+      this.type,
+      this.intValue,
+      this.stringValue,
+      this.category})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantData_productVariant_specifications', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductVariantData_productVariant_specifications', 'id');
+  }
+
+  @override
+  GProductVariantData_productVariant_specifications rebuild(
+          void Function(
+                  GProductVariantData_productVariant_specificationsBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_specificationsBuilder toBuilder() =>
+      new GProductVariantData_productVariant_specificationsBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantData_productVariant_specifications &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        isKeyFeature == other.isKeyFeature &&
+        name == other.name &&
+        specification == other.specification &&
+        type == other.type &&
+        intValue == other.intValue &&
+        stringValue == other.stringValue &&
+        category == other.category;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, isKeyFeature.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, specification.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, intValue.hashCode);
+    _$hash = $jc(_$hash, stringValue.hashCode);
+    _$hash = $jc(_$hash, category.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_specifications')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('isKeyFeature', isKeyFeature)
+          ..add('name', name)
+          ..add('specification', specification)
+          ..add('type', type)
+          ..add('intValue', intValue)
+          ..add('stringValue', stringValue)
+          ..add('category', category))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_specificationsBuilder
+    implements
+        Builder<GProductVariantData_productVariant_specifications,
+            GProductVariantData_productVariant_specificationsBuilder> {
+  _$GProductVariantData_productVariant_specifications? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  bool? _isKeyFeature;
+  bool? get isKeyFeature => _$this._isKeyFeature;
+  set isKeyFeature(bool? isKeyFeature) => _$this._isKeyFeature = isKeyFeature;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  GProductVariantData_productVariant_specifications_specificationBuilder?
+      _specification;
+  GProductVariantData_productVariant_specifications_specificationBuilder
+      get specification => _$this._specification ??=
+          new GProductVariantData_productVariant_specifications_specificationBuilder();
+  set specification(
+          GProductVariantData_productVariant_specifications_specificationBuilder?
+              specification) =>
+      _$this._specification = specification;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
+
+  int? _intValue;
+  int? get intValue => _$this._intValue;
+  set intValue(int? intValue) => _$this._intValue = intValue;
+
+  String? _stringValue;
+  String? get stringValue => _$this._stringValue;
+  set stringValue(String? stringValue) => _$this._stringValue = stringValue;
+
+  GProductVariantData_productVariant_specifications_categoryBuilder? _category;
+  GProductVariantData_productVariant_specifications_categoryBuilder
+      get category => _$this._category ??=
+          new GProductVariantData_productVariant_specifications_categoryBuilder();
+  set category(
+          GProductVariantData_productVariant_specifications_categoryBuilder?
+              category) =>
+      _$this._category = category;
+
+  GProductVariantData_productVariant_specificationsBuilder() {
+    GProductVariantData_productVariant_specifications._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariant_specificationsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _isKeyFeature = $v.isKeyFeature;
+      _name = $v.name;
+      _specification = $v.specification?.toBuilder();
+      _type = $v.type;
+      _intValue = $v.intValue;
+      _stringValue = $v.stringValue;
+      _category = $v.category?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantData_productVariant_specifications other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantData_productVariant_specifications;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantData_productVariant_specificationsBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_specifications build() => _build();
+
+  _$GProductVariantData_productVariant_specifications _build() {
+    _$GProductVariantData_productVariant_specifications _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantData_productVariant_specifications._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductVariantData_productVariant_specifications',
+                  'G__typename'),
+              id: BuiltValueNullFieldError.checkNotNull(id,
+                  r'GProductVariantData_productVariant_specifications', 'id'),
+              isKeyFeature: isKeyFeature,
+              name: name,
+              specification: _specification?.build(),
+              type: type,
+              intValue: intValue,
+              stringValue: stringValue,
+              category: _category?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'specification';
+        _specification?.build();
+
+        _$failedField = 'category';
+        _category?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantData_productVariant_specifications',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_specifications_specification
+    extends GProductVariantData_productVariant_specifications_specification {
+  @override
+  final String G__typename;
+  @override
+  final GProductVariantData_productVariant_specifications_specification_image?
+      image;
+  @override
+  final String id;
+  @override
+  final String? name;
+  @override
+  final String? description;
+  @override
+  final String? unit;
+
+  factory _$GProductVariantData_productVariant_specifications_specification(
+          [void Function(
+                  GProductVariantData_productVariant_specifications_specificationBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_specifications_specificationBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_specifications_specification._(
+      {required this.G__typename,
+      this.image,
+      required this.id,
+      this.name,
+      this.description,
+      this.unit})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductVariantData_productVariant_specifications_specification',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id,
+        r'GProductVariantData_productVariant_specifications_specification',
+        'id');
+  }
+
+  @override
+  GProductVariantData_productVariant_specifications_specification rebuild(
+          void Function(
+                  GProductVariantData_productVariant_specifications_specificationBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_specifications_specificationBuilder
+      toBuilder() =>
+          new GProductVariantData_productVariant_specifications_specificationBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductVariantData_productVariant_specifications_specification &&
+        G__typename == other.G__typename &&
+        image == other.image &&
+        id == other.id &&
+        name == other.name &&
+        description == other.description &&
+        unit == other.unit;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, unit.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_specifications_specification')
+          ..add('G__typename', G__typename)
+          ..add('image', image)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('description', description)
+          ..add('unit', unit))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_specifications_specificationBuilder
+    implements
+        Builder<GProductVariantData_productVariant_specifications_specification,
+            GProductVariantData_productVariant_specifications_specificationBuilder> {
+  _$GProductVariantData_productVariant_specifications_specification? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GProductVariantData_productVariant_specifications_specification_imageBuilder?
+      _image;
+  GProductVariantData_productVariant_specifications_specification_imageBuilder
+      get image => _$this._image ??=
+          new GProductVariantData_productVariant_specifications_specification_imageBuilder();
+  set image(
+          GProductVariantData_productVariant_specifications_specification_imageBuilder?
+              image) =>
+      _$this._image = image;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  String? _unit;
+  String? get unit => _$this._unit;
+  set unit(String? unit) => _$this._unit = unit;
+
+  GProductVariantData_productVariant_specifications_specificationBuilder() {
+    GProductVariantData_productVariant_specifications_specification
+        ._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariant_specifications_specificationBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _image = $v.image?.toBuilder();
+      _id = $v.id;
+      _name = $v.name;
+      _description = $v.description;
+      _unit = $v.unit;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductVariantData_productVariant_specifications_specification other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GProductVariantData_productVariant_specifications_specification;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductVariantData_productVariant_specifications_specificationBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_specifications_specification build() =>
+      _build();
+
+  _$GProductVariantData_productVariant_specifications_specification _build() {
+    _$GProductVariantData_productVariant_specifications_specification _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantData_productVariant_specifications_specification
+              ._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductVariantData_productVariant_specifications_specification',
+                  'G__typename'),
+              image: _image?.build(),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id,
+                  r'GProductVariantData_productVariant_specifications_specification',
+                  'id'),
+              name: name,
+              description: description,
+              unit: unit);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'image';
+        _image?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantData_productVariant_specifications_specification',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_specifications_specification_image
+    extends GProductVariantData_productVariant_specifications_specification_image {
+  @override
+  final String G__typename;
+  @override
+  final String url;
+
+  factory _$GProductVariantData_productVariant_specifications_specification_image(
+          [void Function(
+                  GProductVariantData_productVariant_specifications_specification_imageBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_specifications_specification_imageBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_specifications_specification_image._(
+      {required this.G__typename, required this.url})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductVariantData_productVariant_specifications_specification_image',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        url,
+        r'GProductVariantData_productVariant_specifications_specification_image',
+        'url');
+  }
+
+  @override
+  GProductVariantData_productVariant_specifications_specification_image rebuild(
+          void Function(
+                  GProductVariantData_productVariant_specifications_specification_imageBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_specifications_specification_imageBuilder
+      toBuilder() =>
+          new GProductVariantData_productVariant_specifications_specification_imageBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductVariantData_productVariant_specifications_specification_image &&
+        G__typename == other.G__typename &&
+        url == other.url;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_specifications_specification_image')
+          ..add('G__typename', G__typename)
+          ..add('url', url))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_specifications_specification_imageBuilder
+    implements
+        Builder<
+            GProductVariantData_productVariant_specifications_specification_image,
+            GProductVariantData_productVariant_specifications_specification_imageBuilder> {
+  _$GProductVariantData_productVariant_specifications_specification_image? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
+
+  GProductVariantData_productVariant_specifications_specification_imageBuilder() {
+    GProductVariantData_productVariant_specifications_specification_image
+        ._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariant_specifications_specification_imageBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _url = $v.url;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductVariantData_productVariant_specifications_specification_image
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GProductVariantData_productVariant_specifications_specification_image;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductVariantData_productVariant_specifications_specification_imageBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_specifications_specification_image
+      build() => _build();
+
+  _$GProductVariantData_productVariant_specifications_specification_image
+      _build() {
+    final _$result = _$v ??
+        new _$GProductVariantData_productVariant_specifications_specification_image
+            ._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantData_productVariant_specifications_specification_image',
+                'G__typename'),
+            url: BuiltValueNullFieldError.checkNotNull(
+                url,
+                r'GProductVariantData_productVariant_specifications_specification_image',
+                'url'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_specifications_category
+    extends GProductVariantData_productVariant_specifications_category {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? name;
+  @override
+  final String? description;
+
+  factory _$GProductVariantData_productVariant_specifications_category(
+          [void Function(
+                  GProductVariantData_productVariant_specifications_categoryBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_specifications_categoryBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_specifications_category._(
+      {required this.G__typename,
+      required this.id,
+      this.name,
+      this.description})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductVariantData_productVariant_specifications_category',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(id,
+        r'GProductVariantData_productVariant_specifications_category', 'id');
+  }
+
+  @override
+  GProductVariantData_productVariant_specifications_category rebuild(
+          void Function(
+                  GProductVariantData_productVariant_specifications_categoryBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_specifications_categoryBuilder
+      toBuilder() =>
+          new GProductVariantData_productVariant_specifications_categoryBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductVariantData_productVariant_specifications_category &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        name == other.name &&
+        description == other.description;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_specifications_category')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('description', description))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_specifications_categoryBuilder
+    implements
+        Builder<GProductVariantData_productVariant_specifications_category,
+            GProductVariantData_productVariant_specifications_categoryBuilder> {
+  _$GProductVariantData_productVariant_specifications_category? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  GProductVariantData_productVariant_specifications_categoryBuilder() {
+    GProductVariantData_productVariant_specifications_category
+        ._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariant_specifications_categoryBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _name = $v.name;
+      _description = $v.description;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductVariantData_productVariant_specifications_category other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantData_productVariant_specifications_category;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductVariantData_productVariant_specifications_categoryBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_specifications_category build() =>
+      _build();
+
+  _$GProductVariantData_productVariant_specifications_category _build() {
+    final _$result = _$v ??
+        new _$GProductVariantData_productVariant_specifications_category._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantData_productVariant_specifications_category',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GProductVariantData_productVariant_specifications_category',
+                'id'),
+            name: name,
+            description: description);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_gallery
+    extends GProductVariantData_productVariant_gallery {
+  @override
+  final String G__typename;
+  @override
+  final _i2.JsonObject? file;
+  @override
+  final String? type;
+  @override
+  final int? index;
+
+  factory _$GProductVariantData_productVariant_gallery(
+          [void Function(GProductVariantData_productVariant_galleryBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_galleryBuilder()..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_gallery._(
+      {required this.G__typename, this.file, this.type, this.index})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantData_productVariant_gallery', 'G__typename');
+  }
+
+  @override
+  GProductVariantData_productVariant_gallery rebuild(
+          void Function(GProductVariantData_productVariant_galleryBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_galleryBuilder toBuilder() =>
+      new GProductVariantData_productVariant_galleryBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantData_productVariant_gallery &&
+        G__typename == other.G__typename &&
+        file == other.file &&
+        type == other.type &&
+        index == other.index;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, file.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, index.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_gallery')
+          ..add('G__typename', G__typename)
+          ..add('file', file)
+          ..add('type', type)
+          ..add('index', index))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_galleryBuilder
+    implements
+        Builder<GProductVariantData_productVariant_gallery,
+            GProductVariantData_productVariant_galleryBuilder> {
+  _$GProductVariantData_productVariant_gallery? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  _i2.JsonObject? _file;
+  _i2.JsonObject? get file => _$this._file;
+  set file(_i2.JsonObject? file) => _$this._file = file;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
+
+  int? _index;
+  int? get index => _$this._index;
+  set index(int? index) => _$this._index = index;
+
+  GProductVariantData_productVariant_galleryBuilder() {
+    GProductVariantData_productVariant_gallery._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariant_galleryBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _file = $v.file;
+      _type = $v.type;
+      _index = $v.index;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantData_productVariant_gallery other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantData_productVariant_gallery;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantData_productVariant_galleryBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_gallery build() => _build();
+
+  _$GProductVariantData_productVariant_gallery _build() {
+    final _$result = _$v ??
+        new _$GProductVariantData_productVariant_gallery._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GProductVariantData_productVariant_gallery', 'G__typename'),
+            file: file,
+            type: type,
+            index: index);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_product
+    extends GProductVariantData_productVariant_product {
+  @override
+  final String G__typename;
+  @override
+  final GProductVariantData_productVariant_product_brand? brand;
+  @override
+  final String? name;
+  @override
+  final String? description;
+  @override
+  final String? longDescription;
+  @override
+  final String id;
+  @override
+  final GProductVariantData_productVariant_product_type? type;
+  @override
+  final BuiltList<GProductVariantData_productVariant_product_specifications>?
+      specifications;
+
+  factory _$GProductVariantData_productVariant_product(
+          [void Function(GProductVariantData_productVariant_productBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_productBuilder()..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_product._(
+      {required this.G__typename,
+      this.brand,
+      this.name,
+      this.description,
+      this.longDescription,
+      required this.id,
+      this.type,
+      this.specifications})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantData_productVariant_product', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductVariantData_productVariant_product', 'id');
+  }
+
+  @override
+  GProductVariantData_productVariant_product rebuild(
+          void Function(GProductVariantData_productVariant_productBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_productBuilder toBuilder() =>
+      new GProductVariantData_productVariant_productBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantData_productVariant_product &&
+        G__typename == other.G__typename &&
+        brand == other.brand &&
+        name == other.name &&
+        description == other.description &&
+        longDescription == other.longDescription &&
+        id == other.id &&
+        type == other.type &&
+        specifications == other.specifications;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, brand.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, longDescription.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, specifications.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_product')
+          ..add('G__typename', G__typename)
+          ..add('brand', brand)
+          ..add('name', name)
+          ..add('description', description)
+          ..add('longDescription', longDescription)
+          ..add('id', id)
+          ..add('type', type)
+          ..add('specifications', specifications))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_productBuilder
+    implements
+        Builder<GProductVariantData_productVariant_product,
+            GProductVariantData_productVariant_productBuilder> {
+  _$GProductVariantData_productVariant_product? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GProductVariantData_productVariant_product_brandBuilder? _brand;
+  GProductVariantData_productVariant_product_brandBuilder get brand =>
+      _$this._brand ??=
+          new GProductVariantData_productVariant_product_brandBuilder();
+  set brand(GProductVariantData_productVariant_product_brandBuilder? brand) =>
+      _$this._brand = brand;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  String? _longDescription;
+  String? get longDescription => _$this._longDescription;
+  set longDescription(String? longDescription) =>
+      _$this._longDescription = longDescription;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GProductVariantData_productVariant_product_typeBuilder? _type;
+  GProductVariantData_productVariant_product_typeBuilder get type =>
+      _$this._type ??=
+          new GProductVariantData_productVariant_product_typeBuilder();
+  set type(GProductVariantData_productVariant_product_typeBuilder? type) =>
+      _$this._type = type;
+
+  ListBuilder<GProductVariantData_productVariant_product_specifications>?
+      _specifications;
+  ListBuilder<GProductVariantData_productVariant_product_specifications>
+      get specifications => _$this._specifications ??= new ListBuilder<
+          GProductVariantData_productVariant_product_specifications>();
+  set specifications(
+          ListBuilder<
+                  GProductVariantData_productVariant_product_specifications>?
+              specifications) =>
+      _$this._specifications = specifications;
+
+  GProductVariantData_productVariant_productBuilder() {
+    GProductVariantData_productVariant_product._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariant_productBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _brand = $v.brand?.toBuilder();
+      _name = $v.name;
+      _description = $v.description;
+      _longDescription = $v.longDescription;
+      _id = $v.id;
+      _type = $v.type?.toBuilder();
+      _specifications = $v.specifications?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantData_productVariant_product other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantData_productVariant_product;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantData_productVariant_productBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_product build() => _build();
+
+  _$GProductVariantData_productVariant_product _build() {
+    _$GProductVariantData_productVariant_product _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantData_productVariant_product._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                  r'GProductVariantData_productVariant_product', 'G__typename'),
+              brand: _brand?.build(),
+              name: name,
+              description: description,
+              longDescription: longDescription,
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'GProductVariantData_productVariant_product', 'id'),
+              type: _type?.build(),
+              specifications: _specifications?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'brand';
+        _brand?.build();
+
+        _$failedField = 'type';
+        _type?.build();
+        _$failedField = 'specifications';
+        _specifications?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantData_productVariant_product',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_product_brand
+    extends GProductVariantData_productVariant_product_brand {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? name;
+  @override
+  final GProductVariantData_productVariant_product_brand_logo? logo;
+
+  factory _$GProductVariantData_productVariant_product_brand(
+          [void Function(
+                  GProductVariantData_productVariant_product_brandBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_product_brandBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_product_brand._(
+      {required this.G__typename, required this.id, this.name, this.logo})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantData_productVariant_product_brand', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductVariantData_productVariant_product_brand', 'id');
+  }
+
+  @override
+  GProductVariantData_productVariant_product_brand rebuild(
+          void Function(GProductVariantData_productVariant_product_brandBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_product_brandBuilder toBuilder() =>
+      new GProductVariantData_productVariant_product_brandBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantData_productVariant_product_brand &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        name == other.name &&
+        logo == other.logo;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, logo.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_product_brand')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('logo', logo))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_product_brandBuilder
+    implements
+        Builder<GProductVariantData_productVariant_product_brand,
+            GProductVariantData_productVariant_product_brandBuilder> {
+  _$GProductVariantData_productVariant_product_brand? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  GProductVariantData_productVariant_product_brand_logoBuilder? _logo;
+  GProductVariantData_productVariant_product_brand_logoBuilder get logo =>
+      _$this._logo ??=
+          new GProductVariantData_productVariant_product_brand_logoBuilder();
+  set logo(
+          GProductVariantData_productVariant_product_brand_logoBuilder? logo) =>
+      _$this._logo = logo;
+
+  GProductVariantData_productVariant_product_brandBuilder() {
+    GProductVariantData_productVariant_product_brand._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariant_product_brandBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _name = $v.name;
+      _logo = $v.logo?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantData_productVariant_product_brand other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantData_productVariant_product_brand;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantData_productVariant_product_brandBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_product_brand build() => _build();
+
+  _$GProductVariantData_productVariant_product_brand _build() {
+    _$GProductVariantData_productVariant_product_brand _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantData_productVariant_product_brand._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductVariantData_productVariant_product_brand',
+                  'G__typename'),
+              id: BuiltValueNullFieldError.checkNotNull(id,
+                  r'GProductVariantData_productVariant_product_brand', 'id'),
+              name: name,
+              logo: _logo?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'logo';
+        _logo?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantData_productVariant_product_brand',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_product_brand_logo
+    extends GProductVariantData_productVariant_product_brand_logo {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final _i3.GImageExtension extension;
+  @override
+  final String url;
+
+  factory _$GProductVariantData_productVariant_product_brand_logo(
+          [void Function(
+                  GProductVariantData_productVariant_product_brand_logoBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_product_brand_logoBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_product_brand_logo._(
+      {required this.G__typename,
+      required this.id,
+      required this.extension,
+      required this.url})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductVariantData_productVariant_product_brand_logo',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductVariantData_productVariant_product_brand_logo', 'id');
+    BuiltValueNullFieldError.checkNotNull(extension,
+        r'GProductVariantData_productVariant_product_brand_logo', 'extension');
+    BuiltValueNullFieldError.checkNotNull(
+        url, r'GProductVariantData_productVariant_product_brand_logo', 'url');
+  }
+
+  @override
+  GProductVariantData_productVariant_product_brand_logo rebuild(
+          void Function(
+                  GProductVariantData_productVariant_product_brand_logoBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_product_brand_logoBuilder toBuilder() =>
+      new GProductVariantData_productVariant_product_brand_logoBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantData_productVariant_product_brand_logo &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        extension == other.extension &&
+        url == other.url;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, extension.hashCode);
+    _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_product_brand_logo')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('extension', extension)
+          ..add('url', url))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_product_brand_logoBuilder
+    implements
+        Builder<GProductVariantData_productVariant_product_brand_logo,
+            GProductVariantData_productVariant_product_brand_logoBuilder> {
+  _$GProductVariantData_productVariant_product_brand_logo? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  _i3.GImageExtension? _extension;
+  _i3.GImageExtension? get extension => _$this._extension;
+  set extension(_i3.GImageExtension? extension) =>
+      _$this._extension = extension;
+
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
+
+  GProductVariantData_productVariant_product_brand_logoBuilder() {
+    GProductVariantData_productVariant_product_brand_logo._initializeBuilder(
+        this);
+  }
+
+  GProductVariantData_productVariant_product_brand_logoBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _extension = $v.extension;
+      _url = $v.url;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantData_productVariant_product_brand_logo other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantData_productVariant_product_brand_logo;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductVariantData_productVariant_product_brand_logoBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_product_brand_logo build() => _build();
+
+  _$GProductVariantData_productVariant_product_brand_logo _build() {
+    final _$result = _$v ??
+        new _$GProductVariantData_productVariant_product_brand_logo._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantData_productVariant_product_brand_logo',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(id,
+                r'GProductVariantData_productVariant_product_brand_logo', 'id'),
+            extension: BuiltValueNullFieldError.checkNotNull(
+                extension,
+                r'GProductVariantData_productVariant_product_brand_logo',
+                'extension'),
+            url: BuiltValueNullFieldError.checkNotNull(
+                url,
+                r'GProductVariantData_productVariant_product_brand_logo',
+                'url'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_product_type
+    extends GProductVariantData_productVariant_product_type {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? name;
+  @override
+  final String? description;
+
+  factory _$GProductVariantData_productVariant_product_type(
+          [void Function(
+                  GProductVariantData_productVariant_product_typeBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_product_typeBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_product_type._(
+      {required this.G__typename,
+      required this.id,
+      this.name,
+      this.description})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantData_productVariant_product_type', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductVariantData_productVariant_product_type', 'id');
+  }
+
+  @override
+  GProductVariantData_productVariant_product_type rebuild(
+          void Function(GProductVariantData_productVariant_product_typeBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_product_typeBuilder toBuilder() =>
+      new GProductVariantData_productVariant_product_typeBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantData_productVariant_product_type &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        name == other.name &&
+        description == other.description;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_product_type')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('description', description))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_product_typeBuilder
+    implements
+        Builder<GProductVariantData_productVariant_product_type,
+            GProductVariantData_productVariant_product_typeBuilder> {
+  _$GProductVariantData_productVariant_product_type? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  GProductVariantData_productVariant_product_typeBuilder() {
+    GProductVariantData_productVariant_product_type._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariant_product_typeBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _name = $v.name;
+      _description = $v.description;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantData_productVariant_product_type other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantData_productVariant_product_type;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantData_productVariant_product_typeBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_product_type build() => _build();
+
+  _$GProductVariantData_productVariant_product_type _build() {
+    final _$result = _$v ??
+        new _$GProductVariantData_productVariant_product_type._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantData_productVariant_product_type',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductVariantData_productVariant_product_type', 'id'),
+            name: name,
+            description: description);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_product_specifications
+    extends GProductVariantData_productVariant_product_specifications {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final bool? isKeyFeature;
+  @override
+  final String? name;
+  @override
+  final GProductVariantData_productVariant_product_specifications_specification?
+      specification;
+  @override
+  final String? type;
+  @override
+  final int? intValue;
+  @override
+  final String? stringValue;
+  @override
+  final GProductVariantData_productVariant_product_specifications_category?
+      category;
+
+  factory _$GProductVariantData_productVariant_product_specifications(
+          [void Function(
+                  GProductVariantData_productVariant_product_specificationsBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_product_specificationsBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_product_specifications._(
+      {required this.G__typename,
+      required this.id,
+      this.isKeyFeature,
+      this.name,
+      this.specification,
+      this.type,
+      this.intValue,
+      this.stringValue,
+      this.category})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductVariantData_productVariant_product_specifications',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductVariantData_productVariant_product_specifications', 'id');
+  }
+
+  @override
+  GProductVariantData_productVariant_product_specifications rebuild(
+          void Function(
+                  GProductVariantData_productVariant_product_specificationsBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_product_specificationsBuilder
+      toBuilder() =>
+          new GProductVariantData_productVariant_product_specificationsBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantData_productVariant_product_specifications &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        isKeyFeature == other.isKeyFeature &&
+        name == other.name &&
+        specification == other.specification &&
+        type == other.type &&
+        intValue == other.intValue &&
+        stringValue == other.stringValue &&
+        category == other.category;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, isKeyFeature.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, specification.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, intValue.hashCode);
+    _$hash = $jc(_$hash, stringValue.hashCode);
+    _$hash = $jc(_$hash, category.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_product_specifications')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('isKeyFeature', isKeyFeature)
+          ..add('name', name)
+          ..add('specification', specification)
+          ..add('type', type)
+          ..add('intValue', intValue)
+          ..add('stringValue', stringValue)
+          ..add('category', category))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_product_specificationsBuilder
+    implements
+        Builder<GProductVariantData_productVariant_product_specifications,
+            GProductVariantData_productVariant_product_specificationsBuilder> {
+  _$GProductVariantData_productVariant_product_specifications? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  bool? _isKeyFeature;
+  bool? get isKeyFeature => _$this._isKeyFeature;
+  set isKeyFeature(bool? isKeyFeature) => _$this._isKeyFeature = isKeyFeature;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  GProductVariantData_productVariant_product_specifications_specificationBuilder?
+      _specification;
+  GProductVariantData_productVariant_product_specifications_specificationBuilder
+      get specification => _$this._specification ??=
+          new GProductVariantData_productVariant_product_specifications_specificationBuilder();
+  set specification(
+          GProductVariantData_productVariant_product_specifications_specificationBuilder?
+              specification) =>
+      _$this._specification = specification;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
+
+  int? _intValue;
+  int? get intValue => _$this._intValue;
+  set intValue(int? intValue) => _$this._intValue = intValue;
+
+  String? _stringValue;
+  String? get stringValue => _$this._stringValue;
+  set stringValue(String? stringValue) => _$this._stringValue = stringValue;
+
+  GProductVariantData_productVariant_product_specifications_categoryBuilder?
+      _category;
+  GProductVariantData_productVariant_product_specifications_categoryBuilder
+      get category => _$this._category ??=
+          new GProductVariantData_productVariant_product_specifications_categoryBuilder();
+  set category(
+          GProductVariantData_productVariant_product_specifications_categoryBuilder?
+              category) =>
+      _$this._category = category;
+
+  GProductVariantData_productVariant_product_specificationsBuilder() {
+    GProductVariantData_productVariant_product_specifications
+        ._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariant_product_specificationsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _isKeyFeature = $v.isKeyFeature;
+      _name = $v.name;
+      _specification = $v.specification?.toBuilder();
+      _type = $v.type;
+      _intValue = $v.intValue;
+      _stringValue = $v.stringValue;
+      _category = $v.category?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductVariantData_productVariant_product_specifications other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantData_productVariant_product_specifications;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductVariantData_productVariant_product_specificationsBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_product_specifications build() => _build();
+
+  _$GProductVariantData_productVariant_product_specifications _build() {
+    _$GProductVariantData_productVariant_product_specifications _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantData_productVariant_product_specifications._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductVariantData_productVariant_product_specifications',
+                  'G__typename'),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id,
+                  r'GProductVariantData_productVariant_product_specifications',
+                  'id'),
+              isKeyFeature: isKeyFeature,
+              name: name,
+              specification: _specification?.build(),
+              type: type,
+              intValue: intValue,
+              stringValue: stringValue,
+              category: _category?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'specification';
+        _specification?.build();
+
+        _$failedField = 'category';
+        _category?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantData_productVariant_product_specifications',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_product_specifications_specification
+    extends GProductVariantData_productVariant_product_specifications_specification {
+  @override
+  final String G__typename;
+  @override
+  final GProductVariantData_productVariant_product_specifications_specification_image?
+      image;
+  @override
+  final String id;
+  @override
+  final String? name;
+  @override
+  final String? description;
+  @override
+  final String? unit;
+
+  factory _$GProductVariantData_productVariant_product_specifications_specification(
+          [void Function(
+                  GProductVariantData_productVariant_product_specifications_specificationBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_product_specifications_specificationBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_product_specifications_specification._(
+      {required this.G__typename,
+      this.image,
+      required this.id,
+      this.name,
+      this.description,
+      this.unit})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductVariantData_productVariant_product_specifications_specification',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id,
+        r'GProductVariantData_productVariant_product_specifications_specification',
+        'id');
+  }
+
+  @override
+  GProductVariantData_productVariant_product_specifications_specification rebuild(
+          void Function(
+                  GProductVariantData_productVariant_product_specifications_specificationBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_product_specifications_specificationBuilder
+      toBuilder() =>
+          new GProductVariantData_productVariant_product_specifications_specificationBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductVariantData_productVariant_product_specifications_specification &&
+        G__typename == other.G__typename &&
+        image == other.image &&
+        id == other.id &&
+        name == other.name &&
+        description == other.description &&
+        unit == other.unit;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, unit.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_product_specifications_specification')
+          ..add('G__typename', G__typename)
+          ..add('image', image)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('description', description)
+          ..add('unit', unit))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_product_specifications_specificationBuilder
+    implements
+        Builder<
+            GProductVariantData_productVariant_product_specifications_specification,
+            GProductVariantData_productVariant_product_specifications_specificationBuilder> {
+  _$GProductVariantData_productVariant_product_specifications_specification?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GProductVariantData_productVariant_product_specifications_specification_imageBuilder?
+      _image;
+  GProductVariantData_productVariant_product_specifications_specification_imageBuilder
+      get image => _$this._image ??=
+          new GProductVariantData_productVariant_product_specifications_specification_imageBuilder();
+  set image(
+          GProductVariantData_productVariant_product_specifications_specification_imageBuilder?
+              image) =>
+      _$this._image = image;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  String? _unit;
+  String? get unit => _$this._unit;
+  set unit(String? unit) => _$this._unit = unit;
+
+  GProductVariantData_productVariant_product_specifications_specificationBuilder() {
+    GProductVariantData_productVariant_product_specifications_specification
+        ._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariant_product_specifications_specificationBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _image = $v.image?.toBuilder();
+      _id = $v.id;
+      _name = $v.name;
+      _description = $v.description;
+      _unit = $v.unit;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductVariantData_productVariant_product_specifications_specification
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GProductVariantData_productVariant_product_specifications_specification;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductVariantData_productVariant_product_specifications_specificationBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_product_specifications_specification
+      build() => _build();
+
+  _$GProductVariantData_productVariant_product_specifications_specification
+      _build() {
+    _$GProductVariantData_productVariant_product_specifications_specification
+        _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantData_productVariant_product_specifications_specification
+              ._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductVariantData_productVariant_product_specifications_specification',
+                  'G__typename'),
+              image: _image?.build(),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id,
+                  r'GProductVariantData_productVariant_product_specifications_specification',
+                  'id'),
+              name: name,
+              description: description,
+              unit: unit);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'image';
+        _image?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantData_productVariant_product_specifications_specification',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_product_specifications_specification_image
+    extends GProductVariantData_productVariant_product_specifications_specification_image {
+  @override
+  final String G__typename;
+  @override
+  final String url;
+
+  factory _$GProductVariantData_productVariant_product_specifications_specification_image(
+          [void Function(
+                  GProductVariantData_productVariant_product_specifications_specification_imageBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_product_specifications_specification_imageBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_product_specifications_specification_image._(
+      {required this.G__typename, required this.url})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductVariantData_productVariant_product_specifications_specification_image',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        url,
+        r'GProductVariantData_productVariant_product_specifications_specification_image',
+        'url');
+  }
+
+  @override
+  GProductVariantData_productVariant_product_specifications_specification_image
+      rebuild(
+              void Function(
+                      GProductVariantData_productVariant_product_specifications_specification_imageBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_product_specifications_specification_imageBuilder
+      toBuilder() =>
+          new GProductVariantData_productVariant_product_specifications_specification_imageBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductVariantData_productVariant_product_specifications_specification_image &&
+        G__typename == other.G__typename &&
+        url == other.url;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_product_specifications_specification_image')
+          ..add('G__typename', G__typename)
+          ..add('url', url))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_product_specifications_specification_imageBuilder
+    implements
+        Builder<
+            GProductVariantData_productVariant_product_specifications_specification_image,
+            GProductVariantData_productVariant_product_specifications_specification_imageBuilder> {
+  _$GProductVariantData_productVariant_product_specifications_specification_image?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
+
+  GProductVariantData_productVariant_product_specifications_specification_imageBuilder() {
+    GProductVariantData_productVariant_product_specifications_specification_image
+        ._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariant_product_specifications_specification_imageBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _url = $v.url;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductVariantData_productVariant_product_specifications_specification_image
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GProductVariantData_productVariant_product_specifications_specification_image;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductVariantData_productVariant_product_specifications_specification_imageBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_product_specifications_specification_image
+      build() => _build();
+
+  _$GProductVariantData_productVariant_product_specifications_specification_image
+      _build() {
+    final _$result = _$v ??
+        new _$GProductVariantData_productVariant_product_specifications_specification_image
+            ._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantData_productVariant_product_specifications_specification_image',
+                'G__typename'),
+            url: BuiltValueNullFieldError.checkNotNull(
+                url,
+                r'GProductVariantData_productVariant_product_specifications_specification_image',
+                'url'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_product_specifications_category
+    extends GProductVariantData_productVariant_product_specifications_category {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? name;
+  @override
+  final String? description;
+
+  factory _$GProductVariantData_productVariant_product_specifications_category(
+          [void Function(
+                  GProductVariantData_productVariant_product_specifications_categoryBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_product_specifications_categoryBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_product_specifications_category._(
+      {required this.G__typename,
+      required this.id,
+      this.name,
+      this.description})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductVariantData_productVariant_product_specifications_category',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id,
+        r'GProductVariantData_productVariant_product_specifications_category',
+        'id');
+  }
+
+  @override
+  GProductVariantData_productVariant_product_specifications_category rebuild(
+          void Function(
+                  GProductVariantData_productVariant_product_specifications_categoryBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_product_specifications_categoryBuilder
+      toBuilder() =>
+          new GProductVariantData_productVariant_product_specifications_categoryBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductVariantData_productVariant_product_specifications_category &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        name == other.name &&
+        description == other.description;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_product_specifications_category')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('description', description))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_product_specifications_categoryBuilder
+    implements
+        Builder<
+            GProductVariantData_productVariant_product_specifications_category,
+            GProductVariantData_productVariant_product_specifications_categoryBuilder> {
+  _$GProductVariantData_productVariant_product_specifications_category? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  GProductVariantData_productVariant_product_specifications_categoryBuilder() {
+    GProductVariantData_productVariant_product_specifications_category
+        ._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariant_product_specifications_categoryBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _name = $v.name;
+      _description = $v.description;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductVariantData_productVariant_product_specifications_category
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GProductVariantData_productVariant_product_specifications_category;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductVariantData_productVariant_product_specifications_categoryBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_product_specifications_category build() =>
+      _build();
+
+  _$GProductVariantData_productVariant_product_specifications_category
+      _build() {
+    final _$result = _$v ??
+        new _$GProductVariantData_productVariant_product_specifications_category
+            ._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantData_productVariant_product_specifications_category',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GProductVariantData_productVariant_product_specifications_category',
+                'id'),
+            name: name,
+            description: description);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_tags
+    extends GProductVariantData_productVariant_tags {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? title;
+  @override
+  final String? description;
+
+  factory _$GProductVariantData_productVariant_tags(
+          [void Function(GProductVariantData_productVariant_tagsBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_tagsBuilder()..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_tags._(
+      {required this.G__typename,
+      required this.id,
+      this.title,
+      this.description})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GProductVariantData_productVariant_tags', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductVariantData_productVariant_tags', 'id');
+  }
+
+  @override
+  GProductVariantData_productVariant_tags rebuild(
+          void Function(GProductVariantData_productVariant_tagsBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_tagsBuilder toBuilder() =>
+      new GProductVariantData_productVariant_tagsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantData_productVariant_tags &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        title == other.title &&
+        description == other.description;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_tags')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('title', title)
+          ..add('description', description))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_tagsBuilder
+    implements
+        Builder<GProductVariantData_productVariant_tags,
+            GProductVariantData_productVariant_tagsBuilder> {
+  _$GProductVariantData_productVariant_tags? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _title;
+  String? get title => _$this._title;
+  set title(String? title) => _$this._title = title;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  GProductVariantData_productVariant_tagsBuilder() {
+    GProductVariantData_productVariant_tags._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariant_tagsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _title = $v.title;
+      _description = $v.description;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantData_productVariant_tags other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantData_productVariant_tags;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantData_productVariant_tagsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_tags build() => _build();
+
+  _$GProductVariantData_productVariant_tags _build() {
+    final _$result = _$v ??
+        new _$GProductVariantData_productVariant_tags._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GProductVariantData_productVariant_tags', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductVariantData_productVariant_tags', 'id'),
+            title: title,
+            description: description);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_images
+    extends GProductVariantData_productVariant_images {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? name;
+  @override
+  final GProductVariantData_productVariant_images_image? image;
+
+  factory _$GProductVariantData_productVariant_images(
+          [void Function(GProductVariantData_productVariant_imagesBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_imagesBuilder()..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_images._(
+      {required this.G__typename, required this.id, this.name, this.image})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantData_productVariant_images', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductVariantData_productVariant_images', 'id');
+  }
+
+  @override
+  GProductVariantData_productVariant_images rebuild(
+          void Function(GProductVariantData_productVariant_imagesBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_imagesBuilder toBuilder() =>
+      new GProductVariantData_productVariant_imagesBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantData_productVariant_images &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        name == other.name &&
+        image == other.image;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_images')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('image', image))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_imagesBuilder
+    implements
+        Builder<GProductVariantData_productVariant_images,
+            GProductVariantData_productVariant_imagesBuilder> {
+  _$GProductVariantData_productVariant_images? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  GProductVariantData_productVariant_images_imageBuilder? _image;
+  GProductVariantData_productVariant_images_imageBuilder get image =>
+      _$this._image ??=
+          new GProductVariantData_productVariant_images_imageBuilder();
+  set image(GProductVariantData_productVariant_images_imageBuilder? image) =>
+      _$this._image = image;
+
+  GProductVariantData_productVariant_imagesBuilder() {
+    GProductVariantData_productVariant_images._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariant_imagesBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _name = $v.name;
+      _image = $v.image?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantData_productVariant_images other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantData_productVariant_images;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantData_productVariant_imagesBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_images build() => _build();
+
+  _$GProductVariantData_productVariant_images _build() {
+    _$GProductVariantData_productVariant_images _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantData_productVariant_images._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                  r'GProductVariantData_productVariant_images', 'G__typename'),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'GProductVariantData_productVariant_images', 'id'),
+              name: name,
+              image: _image?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'image';
+        _image?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantData_productVariant_images',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantData_productVariant_images_image
+    extends GProductVariantData_productVariant_images_image {
+  @override
+  final String G__typename;
+  @override
+  final String url;
+
+  factory _$GProductVariantData_productVariant_images_image(
+          [void Function(
+                  GProductVariantData_productVariant_images_imageBuilder)?
+              updates]) =>
+      (new GProductVariantData_productVariant_images_imageBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductVariantData_productVariant_images_image._(
+      {required this.G__typename, required this.url})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductVariantData_productVariant_images_image', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        url, r'GProductVariantData_productVariant_images_image', 'url');
+  }
+
+  @override
+  GProductVariantData_productVariant_images_image rebuild(
+          void Function(GProductVariantData_productVariant_images_imageBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantData_productVariant_images_imageBuilder toBuilder() =>
+      new GProductVariantData_productVariant_images_imageBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantData_productVariant_images_image &&
+        G__typename == other.G__typename &&
+        url == other.url;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductVariantData_productVariant_images_image')
+          ..add('G__typename', G__typename)
+          ..add('url', url))
+        .toString();
+  }
+}
+
+class GProductVariantData_productVariant_images_imageBuilder
+    implements
+        Builder<GProductVariantData_productVariant_images_image,
+            GProductVariantData_productVariant_images_imageBuilder> {
+  _$GProductVariantData_productVariant_images_image? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
+
+  GProductVariantData_productVariant_images_imageBuilder() {
+    GProductVariantData_productVariant_images_image._initializeBuilder(this);
+  }
+
+  GProductVariantData_productVariant_images_imageBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _url = $v.url;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantData_productVariant_images_image other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantData_productVariant_images_image;
+  }
+
+  @override
+  void update(
+      void Function(GProductVariantData_productVariant_images_imageBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantData_productVariant_images_image build() => _build();
+
+  _$GProductVariantData_productVariant_images_image _build() {
+    final _$result = _$v ??
+        new _$GProductVariantData_productVariant_images_image._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantData_productVariant_images_image',
+                'G__typename'),
+            url: BuiltValueNullFieldError.checkNotNull(url,
+                r'GProductVariantData_productVariant_images_image', 'url'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductTypesData extends GProductTypesData {
+  @override
+  final String G__typename;
+  @override
+  final BuiltList<GProductTypesData_productTypes>? productTypes;
+
+  factory _$GProductTypesData(
+          [void Function(GProductTypesDataBuilder)? updates]) =>
+      (new GProductTypesDataBuilder()..update(updates))._build();
+
+  _$GProductTypesData._({required this.G__typename, this.productTypes})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GProductTypesData', 'G__typename');
+  }
+
+  @override
+  GProductTypesData rebuild(void Function(GProductTypesDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductTypesDataBuilder toBuilder() =>
+      new GProductTypesDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductTypesData &&
+        G__typename == other.G__typename &&
+        productTypes == other.productTypes;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, productTypes.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GProductTypesData')
+          ..add('G__typename', G__typename)
+          ..add('productTypes', productTypes))
+        .toString();
+  }
+}
+
+class GProductTypesDataBuilder
+    implements Builder<GProductTypesData, GProductTypesDataBuilder> {
+  _$GProductTypesData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  ListBuilder<GProductTypesData_productTypes>? _productTypes;
+  ListBuilder<GProductTypesData_productTypes> get productTypes =>
+      _$this._productTypes ??=
+          new ListBuilder<GProductTypesData_productTypes>();
+  set productTypes(ListBuilder<GProductTypesData_productTypes>? productTypes) =>
+      _$this._productTypes = productTypes;
+
+  GProductTypesDataBuilder() {
+    GProductTypesData._initializeBuilder(this);
+  }
+
+  GProductTypesDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _productTypes = $v.productTypes?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductTypesData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductTypesData;
+  }
+
+  @override
+  void update(void Function(GProductTypesDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductTypesData build() => _build();
+
+  _$GProductTypesData _build() {
+    _$GProductTypesData _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductTypesData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GProductTypesData', 'G__typename'),
+              productTypes: _productTypes?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'productTypes';
+        _productTypes?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductTypesData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductTypesData_productTypes extends GProductTypesData_productTypes {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? name;
+
+  factory _$GProductTypesData_productTypes(
+          [void Function(GProductTypesData_productTypesBuilder)? updates]) =>
+      (new GProductTypesData_productTypesBuilder()..update(updates))._build();
+
+  _$GProductTypesData_productTypes._(
+      {required this.G__typename, required this.id, this.name})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GProductTypesData_productTypes', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductTypesData_productTypes', 'id');
+  }
+
+  @override
+  GProductTypesData_productTypes rebuild(
+          void Function(GProductTypesData_productTypesBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductTypesData_productTypesBuilder toBuilder() =>
+      new GProductTypesData_productTypesBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductTypesData_productTypes &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        name == other.name;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GProductTypesData_productTypes')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('name', name))
+        .toString();
+  }
+}
+
+class GProductTypesData_productTypesBuilder
+    implements
+        Builder<GProductTypesData_productTypes,
+            GProductTypesData_productTypesBuilder> {
+  _$GProductTypesData_productTypes? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  GProductTypesData_productTypesBuilder() {
+    GProductTypesData_productTypes._initializeBuilder(this);
+  }
+
+  GProductTypesData_productTypesBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _name = $v.name;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductTypesData_productTypes other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductTypesData_productTypes;
+  }
+
+  @override
+  void update(void Function(GProductTypesData_productTypesBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductTypesData_productTypes build() => _build();
+
+  _$GProductTypesData_productTypes _build() {
+    final _$result = _$v ??
+        new _$GProductTypesData_productTypes._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GProductTypesData_productTypes', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductTypesData_productTypes', 'id'),
+            name: name);
+    replace(_$result);
+    return _$result;
   }
 }
 
@@ -6000,7 +17027,7 @@ class _$GVehicleDealersData_vehicleDealers_vehicleVariant
   @override
   final String? name;
   @override
-  final _i2.GDateTime? modifiedAt;
+  final _i3.GDateTime? modifiedAt;
   @override
   final GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle? vehicle;
 
@@ -6091,10 +17118,10 @@ class GVehicleDealersData_vehicleDealers_vehicleVariantBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  _i2.GDateTimeBuilder? _modifiedAt;
-  _i2.GDateTimeBuilder get modifiedAt =>
-      _$this._modifiedAt ??= new _i2.GDateTimeBuilder();
-  set modifiedAt(_i2.GDateTimeBuilder? modifiedAt) =>
+  _i3.GDateTimeBuilder? _modifiedAt;
+  _i3.GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new _i3.GDateTimeBuilder();
+  set modifiedAt(_i3.GDateTimeBuilder? modifiedAt) =>
       _$this._modifiedAt = modifiedAt;
 
   GVehicleDealersData_vehicleDealers_vehicleVariant_vehicleBuilder? _vehicle;
@@ -7306,9 +18333,9 @@ class _$GPriceCategoriesData_priceCategories
   @override
   final String? description;
   @override
-  final _i2.GDateTime? createdAt;
+  final _i3.GDateTime? createdAt;
   @override
-  final _i2.GDateTime? modifiedAt;
+  final _i3.GDateTime? modifiedAt;
 
   factory _$GPriceCategoriesData_priceCategories(
           [void Function(GPriceCategoriesData_priceCategoriesBuilder)?
@@ -7399,16 +18426,16 @@ class GPriceCategoriesData_priceCategoriesBuilder
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
-  _i2.GDateTimeBuilder? _createdAt;
-  _i2.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i2.GDateTimeBuilder();
-  set createdAt(_i2.GDateTimeBuilder? createdAt) =>
+  _i3.GDateTimeBuilder? _createdAt;
+  _i3.GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new _i3.GDateTimeBuilder();
+  set createdAt(_i3.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
-  _i2.GDateTimeBuilder? _modifiedAt;
-  _i2.GDateTimeBuilder get modifiedAt =>
-      _$this._modifiedAt ??= new _i2.GDateTimeBuilder();
-  set modifiedAt(_i2.GDateTimeBuilder? modifiedAt) =>
+  _i3.GDateTimeBuilder? _modifiedAt;
+  _i3.GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new _i3.GDateTimeBuilder();
+  set modifiedAt(_i3.GDateTimeBuilder? modifiedAt) =>
       _$this._modifiedAt = modifiedAt;
 
   GPriceCategoriesData_priceCategoriesBuilder() {
@@ -8346,7 +19373,7 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant
   @override
   final String? name;
   @override
-  final _i2.GDateTime? modifiedAt;
+  final _i3.GDateTime? modifiedAt;
   @override
   final GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle?
       vehicle;
@@ -8442,10 +19469,10 @@ class GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariantBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  _i2.GDateTimeBuilder? _modifiedAt;
-  _i2.GDateTimeBuilder get modifiedAt =>
-      _$this._modifiedAt ??= new _i2.GDateTimeBuilder();
-  set modifiedAt(_i2.GDateTimeBuilder? modifiedAt) =>
+  _i3.GDateTimeBuilder? _modifiedAt;
+  _i3.GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new _i3.GDateTimeBuilder();
+  set modifiedAt(_i3.GDateTimeBuilder? modifiedAt) =>
       _$this._modifiedAt = modifiedAt;
 
   GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicleBuilder?

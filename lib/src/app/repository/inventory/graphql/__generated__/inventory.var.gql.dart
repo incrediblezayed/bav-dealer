@@ -12,6 +12,105 @@ import 'package:dealerapp/src/app/repository/graphql/__generated__/serializers.g
 
 part 'inventory.var.gql.g.dart';
 
+abstract class GProductVariantsVars
+    implements Built<GProductVariantsVars, GProductVariantsVarsBuilder> {
+  GProductVariantsVars._();
+
+  factory GProductVariantsVars(
+          [Function(GProductVariantsVarsBuilder b) updates]) =
+      _$GProductVariantsVars;
+
+  int get skip;
+  int? get take;
+  _i1.GProductVariantWhereInput get where;
+  BuiltList<double>? get location;
+  BuiltList<_i1.GProductVariantOrderByInput> get orderBy;
+  static Serializer<GProductVariantsVars> get serializer =>
+      _$gProductVariantsVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVariantsVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantsVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVariantsVars.serializer,
+        json,
+      );
+}
+
+abstract class GProductVariantsCountVars
+    implements
+        Built<GProductVariantsCountVars, GProductVariantsCountVarsBuilder> {
+  GProductVariantsCountVars._();
+
+  factory GProductVariantsCountVars(
+          [Function(GProductVariantsCountVarsBuilder b) updates]) =
+      _$GProductVariantsCountVars;
+
+  _i1.GProductVariantWhereInput get where;
+  static Serializer<GProductVariantsCountVars> get serializer =>
+      _$gProductVariantsCountVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVariantsCountVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantsCountVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVariantsCountVars.serializer,
+        json,
+      );
+}
+
+abstract class GProductVariantVars
+    implements Built<GProductVariantVars, GProductVariantVarsBuilder> {
+  GProductVariantVars._();
+
+  factory GProductVariantVars(
+      [Function(GProductVariantVarsBuilder b) updates]) = _$GProductVariantVars;
+
+  _i1.GProductVariantWhereUniqueInput get where;
+  BuiltList<double>? get location;
+  static Serializer<GProductVariantVars> get serializer =>
+      _$gProductVariantVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductVariantVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductVariantVars.serializer,
+        json,
+      );
+}
+
+abstract class GProductTypesVars
+    implements Built<GProductTypesVars, GProductTypesVarsBuilder> {
+  GProductTypesVars._();
+
+  factory GProductTypesVars([Function(GProductTypesVarsBuilder b) updates]) =
+      _$GProductTypesVars;
+
+  static Serializer<GProductTypesVars> get serializer =>
+      _$gProductTypesVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductTypesVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductTypesVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductTypesVars.serializer,
+        json,
+      );
+}
+
 abstract class GVehicleVariantsVars
     implements Built<GVehicleVariantsVars, GVehicleVariantsVarsBuilder> {
   GVehicleVariantsVars._();

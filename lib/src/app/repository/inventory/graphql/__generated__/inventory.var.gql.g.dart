@@ -6,6 +6,14 @@ part of 'inventory.var.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+Serializer<GProductVariantsVars> _$gProductVariantsVarsSerializer =
+    new _$GProductVariantsVarsSerializer();
+Serializer<GProductVariantsCountVars> _$gProductVariantsCountVarsSerializer =
+    new _$GProductVariantsCountVarsSerializer();
+Serializer<GProductVariantVars> _$gProductVariantVarsSerializer =
+    new _$GProductVariantVarsSerializer();
+Serializer<GProductTypesVars> _$gProductTypesVarsSerializer =
+    new _$GProductTypesVarsSerializer();
 Serializer<GVehicleVariantsVars> _$gVehicleVariantsVarsSerializer =
     new _$GVehicleVariantsVarsSerializer();
 Serializer<GVehicleVariantsCountVars> _$gVehicleVariantsCountVarsSerializer =
@@ -23,6 +31,223 @@ Serializer<GUpdateVehicleDealerVars> _$gUpdateVehicleDealerVarsSerializer =
     new _$GUpdateVehicleDealerVarsSerializer();
 Serializer<GUpdatePricesVars> _$gUpdatePricesVarsSerializer =
     new _$GUpdatePricesVarsSerializer();
+
+class _$GProductVariantsVarsSerializer
+    implements StructuredSerializer<GProductVariantsVars> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsVars,
+    _$GProductVariantsVars
+  ];
+  @override
+  final String wireName = 'GProductVariantsVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductVariantsVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'skip',
+      serializers.serialize(object.skip, specifiedType: const FullType(int)),
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(_i1.GProductVariantWhereInput)),
+      'orderBy',
+      serializers.serialize(object.orderBy,
+          specifiedType: const FullType(BuiltList,
+              const [const FullType(_i1.GProductVariantOrderByInput)])),
+    ];
+    Object? value;
+    value = object.take;
+    if (value != null) {
+      result
+        ..add('take')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.location;
+    if (value != null) {
+      result
+        ..add('location')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(double)])));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantsVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantsVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'skip':
+          result.skip = serializers.deserialize(value,
+              specifiedType: const FullType(int))! as int;
+          break;
+        case 'take':
+          result.take = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i1.GProductVariantWhereInput))!
+              as _i1.GProductVariantWhereInput);
+          break;
+        case 'location':
+          result.location.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(double)]))!
+              as BuiltList<Object?>);
+          break;
+        case 'orderBy':
+          result.orderBy.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(_i1.GProductVariantOrderByInput)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantsCountVarsSerializer
+    implements StructuredSerializer<GProductVariantsCountVars> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantsCountVars,
+    _$GProductVariantsCountVars
+  ];
+  @override
+  final String wireName = 'GProductVariantsCountVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductVariantsCountVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(_i1.GProductVariantWhereInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GProductVariantsCountVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantsCountVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i1.GProductVariantWhereInput))!
+              as _i1.GProductVariantWhereInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductVariantVarsSerializer
+    implements StructuredSerializer<GProductVariantVars> {
+  @override
+  final Iterable<Type> types = const [
+    GProductVariantVars,
+    _$GProductVariantVars
+  ];
+  @override
+  final String wireName = 'GProductVariantVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductVariantVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(_i1.GProductVariantWhereUniqueInput)),
+    ];
+    Object? value;
+    value = object.location;
+    if (value != null) {
+      result
+        ..add('location')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(double)])));
+    }
+    return result;
+  }
+
+  @override
+  GProductVariantVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductVariantVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(_i1.GProductVariantWhereUniqueInput))!
+              as _i1.GProductVariantWhereUniqueInput);
+          break;
+        case 'location':
+          result.location.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(double)]))!
+              as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductTypesVarsSerializer
+    implements StructuredSerializer<GProductTypesVars> {
+  @override
+  final Iterable<Type> types = const [GProductTypesVars, _$GProductTypesVars];
+  @override
+  final String wireName = 'GProductTypesVars';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, GProductTypesVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    return <Object?>[];
+  }
+
+  @override
+  GProductTypesVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    return new GProductTypesVarsBuilder().build();
+  }
+}
 
 class _$GVehicleVariantsVarsSerializer
     implements StructuredSerializer<GVehicleVariantsVars> {
@@ -410,6 +635,444 @@ class _$GUpdatePricesVarsSerializer
     }
 
     return result.build();
+  }
+}
+
+class _$GProductVariantsVars extends GProductVariantsVars {
+  @override
+  final int skip;
+  @override
+  final int? take;
+  @override
+  final _i1.GProductVariantWhereInput where;
+  @override
+  final BuiltList<double>? location;
+  @override
+  final BuiltList<_i1.GProductVariantOrderByInput> orderBy;
+
+  factory _$GProductVariantsVars(
+          [void Function(GProductVariantsVarsBuilder)? updates]) =>
+      (new GProductVariantsVarsBuilder()..update(updates))._build();
+
+  _$GProductVariantsVars._(
+      {required this.skip,
+      this.take,
+      required this.where,
+      this.location,
+      required this.orderBy})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        skip, r'GProductVariantsVars', 'skip');
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GProductVariantsVars', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        orderBy, r'GProductVariantsVars', 'orderBy');
+  }
+
+  @override
+  GProductVariantsVars rebuild(
+          void Function(GProductVariantsVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsVarsBuilder toBuilder() =>
+      new GProductVariantsVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantsVars &&
+        skip == other.skip &&
+        take == other.take &&
+        where == other.where &&
+        location == other.location &&
+        orderBy == other.orderBy;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, skip.hashCode);
+    _$hash = $jc(_$hash, take.hashCode);
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, location.hashCode);
+    _$hash = $jc(_$hash, orderBy.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GProductVariantsVars')
+          ..add('skip', skip)
+          ..add('take', take)
+          ..add('where', where)
+          ..add('location', location)
+          ..add('orderBy', orderBy))
+        .toString();
+  }
+}
+
+class GProductVariantsVarsBuilder
+    implements Builder<GProductVariantsVars, GProductVariantsVarsBuilder> {
+  _$GProductVariantsVars? _$v;
+
+  int? _skip;
+  int? get skip => _$this._skip;
+  set skip(int? skip) => _$this._skip = skip;
+
+  int? _take;
+  int? get take => _$this._take;
+  set take(int? take) => _$this._take = take;
+
+  _i1.GProductVariantWhereInputBuilder? _where;
+  _i1.GProductVariantWhereInputBuilder get where =>
+      _$this._where ??= new _i1.GProductVariantWhereInputBuilder();
+  set where(_i1.GProductVariantWhereInputBuilder? where) =>
+      _$this._where = where;
+
+  ListBuilder<double>? _location;
+  ListBuilder<double> get location =>
+      _$this._location ??= new ListBuilder<double>();
+  set location(ListBuilder<double>? location) => _$this._location = location;
+
+  ListBuilder<_i1.GProductVariantOrderByInput>? _orderBy;
+  ListBuilder<_i1.GProductVariantOrderByInput> get orderBy =>
+      _$this._orderBy ??= new ListBuilder<_i1.GProductVariantOrderByInput>();
+  set orderBy(ListBuilder<_i1.GProductVariantOrderByInput>? orderBy) =>
+      _$this._orderBy = orderBy;
+
+  GProductVariantsVarsBuilder();
+
+  GProductVariantsVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _skip = $v.skip;
+      _take = $v.take;
+      _where = $v.where.toBuilder();
+      _location = $v.location?.toBuilder();
+      _orderBy = $v.orderBy.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantsVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantsVars;
+  }
+
+  @override
+  void update(void Function(GProductVariantsVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsVars build() => _build();
+
+  _$GProductVariantsVars _build() {
+    _$GProductVariantsVars _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantsVars._(
+              skip: BuiltValueNullFieldError.checkNotNull(
+                  skip, r'GProductVariantsVars', 'skip'),
+              take: take,
+              where: where.build(),
+              location: _location?.build(),
+              orderBy: orderBy.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'location';
+        _location?.build();
+        _$failedField = 'orderBy';
+        orderBy.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantsVars', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantsCountVars extends GProductVariantsCountVars {
+  @override
+  final _i1.GProductVariantWhereInput where;
+
+  factory _$GProductVariantsCountVars(
+          [void Function(GProductVariantsCountVarsBuilder)? updates]) =>
+      (new GProductVariantsCountVarsBuilder()..update(updates))._build();
+
+  _$GProductVariantsCountVars._({required this.where}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GProductVariantsCountVars', 'where');
+  }
+
+  @override
+  GProductVariantsCountVars rebuild(
+          void Function(GProductVariantsCountVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantsCountVarsBuilder toBuilder() =>
+      new GProductVariantsCountVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantsCountVars && where == other.where;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GProductVariantsCountVars')
+          ..add('where', where))
+        .toString();
+  }
+}
+
+class GProductVariantsCountVarsBuilder
+    implements
+        Builder<GProductVariantsCountVars, GProductVariantsCountVarsBuilder> {
+  _$GProductVariantsCountVars? _$v;
+
+  _i1.GProductVariantWhereInputBuilder? _where;
+  _i1.GProductVariantWhereInputBuilder get where =>
+      _$this._where ??= new _i1.GProductVariantWhereInputBuilder();
+  set where(_i1.GProductVariantWhereInputBuilder? where) =>
+      _$this._where = where;
+
+  GProductVariantsCountVarsBuilder();
+
+  GProductVariantsCountVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantsCountVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantsCountVars;
+  }
+
+  @override
+  void update(void Function(GProductVariantsCountVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantsCountVars build() => _build();
+
+  _$GProductVariantsCountVars _build() {
+    _$GProductVariantsCountVars _$result;
+    try {
+      _$result = _$v ?? new _$GProductVariantsCountVars._(where: where.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantsCountVars', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductVariantVars extends GProductVariantVars {
+  @override
+  final _i1.GProductVariantWhereUniqueInput where;
+  @override
+  final BuiltList<double>? location;
+
+  factory _$GProductVariantVars(
+          [void Function(GProductVariantVarsBuilder)? updates]) =>
+      (new GProductVariantVarsBuilder()..update(updates))._build();
+
+  _$GProductVariantVars._({required this.where, this.location}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GProductVariantVars', 'where');
+  }
+
+  @override
+  GProductVariantVars rebuild(
+          void Function(GProductVariantVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductVariantVarsBuilder toBuilder() =>
+      new GProductVariantVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductVariantVars &&
+        where == other.where &&
+        location == other.location;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, location.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GProductVariantVars')
+          ..add('where', where)
+          ..add('location', location))
+        .toString();
+  }
+}
+
+class GProductVariantVarsBuilder
+    implements Builder<GProductVariantVars, GProductVariantVarsBuilder> {
+  _$GProductVariantVars? _$v;
+
+  _i1.GProductVariantWhereUniqueInputBuilder? _where;
+  _i1.GProductVariantWhereUniqueInputBuilder get where =>
+      _$this._where ??= new _i1.GProductVariantWhereUniqueInputBuilder();
+  set where(_i1.GProductVariantWhereUniqueInputBuilder? where) =>
+      _$this._where = where;
+
+  ListBuilder<double>? _location;
+  ListBuilder<double> get location =>
+      _$this._location ??= new ListBuilder<double>();
+  set location(ListBuilder<double>? location) => _$this._location = location;
+
+  GProductVariantVarsBuilder();
+
+  GProductVariantVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _location = $v.location?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductVariantVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductVariantVars;
+  }
+
+  @override
+  void update(void Function(GProductVariantVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductVariantVars build() => _build();
+
+  _$GProductVariantVars _build() {
+    _$GProductVariantVars _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductVariantVars._(
+              where: where.build(), location: _location?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'location';
+        _location?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductVariantVars', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductTypesVars extends GProductTypesVars {
+  factory _$GProductTypesVars(
+          [void Function(GProductTypesVarsBuilder)? updates]) =>
+      (new GProductTypesVarsBuilder()..update(updates))._build();
+
+  _$GProductTypesVars._() : super._();
+
+  @override
+  GProductTypesVars rebuild(void Function(GProductTypesVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductTypesVarsBuilder toBuilder() =>
+      new GProductTypesVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductTypesVars;
+  }
+
+  @override
+  int get hashCode {
+    return 549862809;
+  }
+
+  @override
+  String toString() {
+    return newBuiltValueToStringHelper(r'GProductTypesVars').toString();
+  }
+}
+
+class GProductTypesVarsBuilder
+    implements Builder<GProductTypesVars, GProductTypesVarsBuilder> {
+  _$GProductTypesVars? _$v;
+
+  GProductTypesVarsBuilder();
+
+  @override
+  void replace(GProductTypesVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductTypesVars;
+  }
+
+  @override
+  void update(void Function(GProductTypesVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductTypesVars build() => _build();
+
+  _$GProductTypesVars _build() {
+    final _$result = _$v ?? new _$GProductTypesVars._();
+    replace(_$result);
+    return _$result;
   }
 }
 

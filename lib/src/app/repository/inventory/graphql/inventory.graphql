@@ -1,3 +1,220 @@
+query ProductVariants(
+  $skip: Int!
+  $take: Int
+  $where: ProductVariantWhereInput!
+  $location: [Float!]
+  $orderBy: [ProductVariantOrderByInput!]!
+) {
+  productVariants(skip: $skip, take: $take, where: $where, orderBy: $orderBy) {
+    id
+    name
+    availableProductDealer(location: $location)
+    prices {
+      amount
+      category {
+        name
+        description
+      }
+    }
+    specifications {
+      id
+      isKeyFeature
+      name
+      specification {
+        image {
+          url
+        }
+        id
+        name
+        description
+        unit
+      }
+      type
+      intValue
+      stringValue
+      category {
+        id
+        name
+        description
+      }
+    }
+    totalPrice
+    gallery {
+      file
+      type
+      index
+    }
+    product {
+      brand {
+        id
+        name
+        logo {
+          id
+          extension
+          url
+        }
+      }
+      name
+      description
+      longDescription
+      id
+      type {
+        id
+        name
+        description
+      }
+      specifications {
+        id
+        isKeyFeature
+        name
+        specification {
+          image {
+            url
+          }
+          id
+          name
+          description
+          unit
+        }
+        type
+        intValue
+        stringValue
+        category {
+          id
+          name
+          description
+        }
+      }
+    }
+    tags {
+      id
+      title
+      description
+    }
+    images {
+      id
+      name
+      image {
+        url
+      }
+    }
+  }
+}
+
+query ProductVariantsCount($where: ProductVariantWhereInput!) {
+  productVariantsCount(where: $where)
+}
+
+query ProductVariant(
+  $where: ProductVariantWhereUniqueInput!
+  $location: [Float!]
+) {
+  productVariant(where: $where) {
+    id
+    name
+    availableProductDealer(location: $location)
+    prices {
+      amount
+      category {
+        name
+        description
+      }
+    }
+    specifications {
+      id
+      isKeyFeature
+      name
+      specification {
+        image {
+          url
+        }
+        id
+        name
+        description
+        unit
+      }
+      type
+      intValue
+      stringValue
+      category {
+        id
+        name
+        description
+      }
+    }
+    totalPrice
+    gallery {
+      file
+      type
+      index
+    }
+    product {
+      brand {
+        id
+        name
+        logo {
+          id
+          extension
+          url
+        }
+      }
+      name
+      description
+      longDescription
+      id
+      type {
+        id
+        name
+        description
+      }
+      specifications {
+        id
+        isKeyFeature
+        name
+        specification {
+          image {
+            url
+          }
+          id
+          name
+          description
+          unit
+        }
+        type
+        intValue
+        stringValue
+        category {
+          id
+          name
+          description
+        }
+      }
+    }
+    tags {
+      id
+      title
+      description
+    }
+    images {
+      id
+      name
+      image {
+        url
+      }
+    }
+  }
+}
+
+
+query ProductTypes {
+  productTypes {
+    id
+    name
+  }
+}
+
+
+
 query VehicleVariants(
   $where: VehicleVariantWhereInput!
   $orderBy: [VehicleVariantOrderByInput!]!

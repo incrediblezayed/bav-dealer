@@ -1,4 +1,5 @@
 import 'package:built_collection/built_collection.dart';
+import 'package:dealerapp/src/app/model/product_details_model.dart';
 import 'package:dealerapp/src/app/model/variant_details.model.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema.gql.dart';
@@ -8,11 +9,104 @@ import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inv
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/get_it.dart';
 import 'package:ferry/ferry.dart';
+import 'dart:developer';
 
 ///Inventory Repository Class
 class InventoryRepository {
   final GraphqlClient _graphqlClient = getIt<GraphqlClient>();
   Client get _client => _graphqlClient.client;
+
+  Future<(int, String?)> getProducts({
+    required int take,
+    required int skip,
+    List<String>? ids,
+    String search = '',
+  }) async {
+    try {
+      final response = await _client.request(
+        GProductVariantsReq(
+              (b) {
+            b
+              ..vars.skip = skip
+              ..vars.take = take
+              ..vars.where.name.mode = GQueryMode.insensitive;
+            if (ids == null) {
+              return b;
+            } else {
+              return b..vars.where.id.notIn = ListBuilder<String>(ids);
+            }
+          },
+        ),
+      ).first;
+      if (response.linkException != null ||
+          (response.graphqlErrors?.isNotEmpty ?? false)) {
+        throw Exception('Something went wrong while getting list of products');
+      } else {
+        if (response.data?.productVariants == null) {
+          return (0, null);
+        } else {
+          final countQuery = await _client.request(
+            GProductVariantsCountReq(
+                  (b) => b
+                ..vars.where =
+                response.operationRequest.vars.where.toBuilder(),
+            ),
+          ).first;
+          final count = countQuery.data?.productVariantsCount ?? 0;
+          log('jsdokfjm');
+          print('jhjiosdkzfopslkf');
+
+          final List<Map<String, dynamic>> productList = response.data!.productVariants!
+              .map((p0) => p0.toJson())
+              .toList();
+          return (count, productList.toString());
+        }
+      }
+    } catch (e) {
+      e.log();
+    }
+    return (0, null);
+  }
+  /*Future<(int, List<dynamic>?)> getProduct({
+    required int take,
+    required int skip,
+    List<String>? ids,
+    String search = '',
+  }) async {
+    try {
+      final response = await _client
+          .request(
+        GProductVariantsReq(
+              (b) {
+            b
+              ..vars.skip = skip
+              ..vars.take = take
+              ..vars.where.name.contains = search
+              ..vars.where.name.mode = GQueryMode.insensitive;
+            if (ids == null) {
+
+              return b;
+            } else {
+              return b..vars.where.id.notIn = ListBuilder<String>(ids);
+            }
+          },
+        ),
+      )
+          .first;
+      if (response.linkException != null ||
+          (response.graphqlErrors?.isNotEmpty ?? false)) {
+        print(response.data?.productVariants);
+        throw Exception('Something went wrong while getting list of products');
+      } else {
+        if (response.data?.productVariants == null) {
+          return (0, null);
+        }
+      }
+    } catch (e) {
+      e.log();
+    }
+    return (0, null);
+  }*/
 
   Future<(int, List<VariantDetailsModel>?)> getVehicles({
     required int take,
@@ -23,7 +117,7 @@ class InventoryRepository {
     try {
       final response = await _client.request(
         GVehicleVariantsReq(
-          (b) {
+              (b) {
             b
               ..vars.skip = skip
               ..vars.take = take
@@ -47,19 +141,19 @@ class InventoryRepository {
         } else {
           final countQuery = await _client
               .request(
-                GVehicleVariantsCountReq(
+            GVehicleVariantsCountReq(
                   (b) => b
-                    ..vars.where =
-                        response.operationRequest.vars.where.toBuilder(),
-                ),
-              )
+                ..vars.where =
+                response.operationRequest.vars.where.toBuilder(),
+            ),
+          )
               .first;
           final count = countQuery.data?.vehicleVariantsCount ?? 0;
           return (
-            count,
-            response.data!.vehicleVariants!
-                .map((p0) => VariantDetailsModel.fromJson(p0.toJson()))
-                .toList()
+          count,
+          response.data!.vehicleVariants!
+              .map((p0) => VariantDetailsModel.fromJson(p0.toJson()))
+              .toList()
           );
         }
       }
@@ -80,15 +174,15 @@ class InventoryRepository {
       final dealerId = cacheProvider.getDealerId();
       final response = await _client
           .request(
-            GCreateVehicleDealerStockRequestReq(
+        GCreateVehicleDealerStockRequestReq(
               (b) => b.vars
-                ..data.vehicleColor.connect.id = colorId
-                ..data.vehicleVariant.connect.id = variantId
-                ..data.stock = stock
-                ..data.dealer.connect.id = dealerId
-                ..data.type = type,
-            ),
-          )
+            ..data.vehicleColor.connect.id = colorId
+            ..data.vehicleVariant.connect.id = variantId
+            ..data.stock = stock
+            ..data.dealer.connect.id = dealerId
+            ..data.type = type,
+        ),
+      )
           .first;
 
       if (response.linkException != null ||
@@ -108,11 +202,11 @@ class InventoryRepository {
     try {
       final result = await _client
           .request(
-            GVehicleDealersReq(
+        GVehicleDealersReq(
               (b) =>
-                  b..vars.where.dealer.id.equals = cacheProvider.getDealerId(),
-            ),
-          )
+          b..vars.where.dealer.id.equals = cacheProvider.getDealerId(),
+        ),
+      )
           .first;
       if (result.linkException != null) {
         throw result.linkException!;
@@ -137,13 +231,13 @@ class InventoryRepository {
     try {
       final result = await _client
           .request(
-            GVehicleDealersReq(
+        GVehicleDealersReq(
               (b) => b
-                ..vars.where.dealer.id.equals = cacheProvider.getDealerId()
-                ..vars.where.vehicleVariant.name.contains = text
-                ..vars.where.vehicleVariant.name.mode = GQueryMode.insensitive,
-            ),
-          )
+            ..vars.where.dealer.id.equals = cacheProvider.getDealerId()
+            ..vars.where.vehicleVariant.name.contains = text
+            ..vars.where.vehicleVariant.name.mode = GQueryMode.insensitive,
+        ),
+      )
           .first;
       if (result.linkException != null) {
         throw result.linkException!;
@@ -163,7 +257,7 @@ class InventoryRepository {
   }
 
   Future<List<GPriceCategoriesData_priceCategories>>
-      getPriceCategories() async {
+  getPriceCategories() async {
     try {
       final result = await _client.request(GPriceCategoriesReq()).first;
       if (result.linkException != null) {
@@ -190,31 +284,31 @@ class InventoryRepository {
     try {
       final request = await _client
           .request(
-            GCreateVehicleDealerReq(
+        GCreateVehicleDealerReq(
               (b) => b
-                ..vars.data.dealer.connect.id = cacheProvider.getDealerId()
-                ..vars.data.stock = 0
-                ..vars.data.guarantees.connect =
-                    ListBuilder<GGuaranteeWhereUniqueInput>(
-                  guarantees.map<GGuaranteeWhereUniqueInput>(
+            ..vars.data.dealer.connect.id = cacheProvider.getDealerId()
+            ..vars.data.stock = 0
+            ..vars.data.guarantees.connect =
+            ListBuilder<GGuaranteeWhereUniqueInput>(
+              guarantees.map<GGuaranteeWhereUniqueInput>(
                     (e) => GGuaranteeWhereUniqueInput(
                       (b) => b..id = e,
-                    ),
-                  ),
-                )
-                ..vars.data.vehicleColor.connect.id = colorId
-                ..vars.data.vehicleVariant.connect.id = variantId
-                ..vars.data.prices.create = ListBuilder<GPriceCreateInput>(
-                  prices.map<GPriceCreateInput>(
+                ),
+              ),
+            )
+            ..vars.data.vehicleColor.connect.id = colorId
+            ..vars.data.vehicleVariant.connect.id = variantId
+            ..vars.data.prices.create = ListBuilder<GPriceCreateInput>(
+              prices.map<GPriceCreateInput>(
                     (e) => GPriceCreateInput(
                       (b) => b
-                        ..amount = e.price
-                        ..category.connect.id = e.type,
-                    ),
-                  ),
+                    ..amount = e.price
+                    ..category.connect.id = e.type,
                 ),
+              ),
             ),
-          )
+        ),
+      )
           .first;
       if (request.linkException != null) {
         throw request.linkException!;
@@ -243,14 +337,14 @@ class InventoryRepository {
           prices.where((element) => element.priceId.isNotEmpty).isNotEmpty) {
         final results = await _client.request(
           GUpdatePricesReq(
-            (b) {
+                (b) {
               b.vars.data = ListBuilder<GPriceUpdateArgs>(
                 prices
                     .map(
                       (e) => GPriceUpdateArgs(
                         (b) => b..where.id = e.type,
-                      ),
-                    )
+                  ),
+                )
                     .toList(),
               );
             },
@@ -260,24 +354,24 @@ class InventoryRepository {
 
       final result = await _client.request(
         GUpdateVehicleDealerReq(
-          (b) {
+              (b) {
             b.vars.where.id = dealerId;
             if (guarantees.isNotEmpty) {
               b.vars.data.guarantees.connect =
                   ListBuilder<GGuaranteeWhereUniqueInput>(
-                guarantees.map(
-                  (e) => GGuaranteeWhereUniqueInput(
-                    (b) => b..id = e,
-                  ),
-                ),
-              );
+                    guarantees.map(
+                          (e) => GGuaranteeWhereUniqueInput(
+                            (b) => b..id = e,
+                      ),
+                    ),
+                  );
             }
             if (prices != null &&
                 prices.where((element) => element.priceId.isEmpty).isNotEmpty) {
               b.vars.data.prices.create = ListBuilder<GPriceCreateInput>(
                 prices.map<GPriceCreateInput>(
-                  (e) => GPriceCreateInput(
-                    (b) => b
+                      (e) => GPriceCreateInput(
+                        (b) => b
                       ..amount = e.price
                       ..category.connect.id = e.type,
                   ),

@@ -4,12 +4,15 @@ import 'package:dealerapp/src/app/UI/splash_screen/splash_screen.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
+import 'package:dealerapp/src/utils/get_it.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../provider/cache_provider.dart';
 
 class LoginPage extends ConsumerStatefulWidget {
   const LoginPage({super.key});

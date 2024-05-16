@@ -420,19 +420,90 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GProductTypeUpdateInput.serializer)
       ..add(GProductTypeWhereInput.serializer)
       ..add(GProductTypeWhereUniqueInput.serializer)
+      ..add(GProductTypesData.serializer)
+      ..add(GProductTypesData_productTypes.serializer)
+      ..add(GProductTypesReq.serializer)
+      ..add(GProductTypesVars.serializer)
       ..add(GProductUpdateArgs.serializer)
       ..add(GProductUpdateInput.serializer)
       ..add(GProductVariantCreateInput.serializer)
+      ..add(GProductVariantData.serializer)
+      ..add(GProductVariantData_productVariant.serializer)
+      ..add(GProductVariantData_productVariant_gallery.serializer)
+      ..add(GProductVariantData_productVariant_images.serializer)
+      ..add(GProductVariantData_productVariant_images_image.serializer)
+      ..add(GProductVariantData_productVariant_prices.serializer)
+      ..add(GProductVariantData_productVariant_prices_category.serializer)
+      ..add(GProductVariantData_productVariant_product.serializer)
+      ..add(GProductVariantData_productVariant_product_brand.serializer)
+      ..add(GProductVariantData_productVariant_product_brand_logo.serializer)
+      ..add(
+          GProductVariantData_productVariant_product_specifications.serializer)
+      ..add(GProductVariantData_productVariant_product_specifications_category
+          .serializer)
+      ..add(
+          GProductVariantData_productVariant_product_specifications_specification
+              .serializer)
+      ..add(
+          GProductVariantData_productVariant_product_specifications_specification_image
+              .serializer)
+      ..add(GProductVariantData_productVariant_product_type.serializer)
+      ..add(GProductVariantData_productVariant_specifications.serializer)
+      ..add(
+          GProductVariantData_productVariant_specifications_category.serializer)
+      ..add(GProductVariantData_productVariant_specifications_specification
+          .serializer)
+      ..add(
+          GProductVariantData_productVariant_specifications_specification_image
+              .serializer)
+      ..add(GProductVariantData_productVariant_tags.serializer)
       ..add(GProductVariantManyRelationFilter.serializer)
       ..add(GProductVariantOrderByInput.serializer)
       ..add(GProductVariantRelateToManyForCreateInput.serializer)
       ..add(GProductVariantRelateToManyForUpdateInput.serializer)
       ..add(GProductVariantRelateToOneForCreateInput.serializer)
       ..add(GProductVariantRelateToOneForUpdateInput.serializer)
+      ..add(GProductVariantReq.serializer)
       ..add(GProductVariantUpdateArgs.serializer)
       ..add(GProductVariantUpdateInput.serializer)
+      ..add(GProductVariantVars.serializer)
       ..add(GProductVariantWhereInput.serializer)
       ..add(GProductVariantWhereUniqueInput.serializer)
+      ..add(GProductVariantsCountData.serializer)
+      ..add(GProductVariantsCountReq.serializer)
+      ..add(GProductVariantsCountVars.serializer)
+      ..add(GProductVariantsData.serializer)
+      ..add(GProductVariantsData_productVariants.serializer)
+      ..add(GProductVariantsData_productVariants_gallery.serializer)
+      ..add(GProductVariantsData_productVariants_images.serializer)
+      ..add(GProductVariantsData_productVariants_images_image.serializer)
+      ..add(GProductVariantsData_productVariants_prices.serializer)
+      ..add(GProductVariantsData_productVariants_prices_category.serializer)
+      ..add(GProductVariantsData_productVariants_product.serializer)
+      ..add(GProductVariantsData_productVariants_product_brand.serializer)
+      ..add(GProductVariantsData_productVariants_product_brand_logo.serializer)
+      ..add(GProductVariantsData_productVariants_product_specifications
+          .serializer)
+      ..add(GProductVariantsData_productVariants_product_specifications_category
+          .serializer)
+      ..add(
+          GProductVariantsData_productVariants_product_specifications_specification
+              .serializer)
+      ..add(
+          GProductVariantsData_productVariants_product_specifications_specification_image
+              .serializer)
+      ..add(GProductVariantsData_productVariants_product_type.serializer)
+      ..add(GProductVariantsData_productVariants_specifications.serializer)
+      ..add(GProductVariantsData_productVariants_specifications_category
+          .serializer)
+      ..add(GProductVariantsData_productVariants_specifications_specification
+          .serializer)
+      ..add(
+          GProductVariantsData_productVariants_specifications_specification_image
+              .serializer)
+      ..add(GProductVariantsData_productVariants_tags.serializer)
+      ..add(GProductVariantsReq.serializer)
+      ..add(GProductVariantsVars.serializer)
       ..add(GProductVideoCreateInput.serializer)
       ..add(GProductVideoManyRelationFilter.serializer)
       ..add(GProductVideoOrderByInput.serializer)
@@ -1696,6 +1767,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(GProductTypeWhereInput)]),
           () => new ListBuilder<GProductTypeWhereInput>())
       ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductTypesData_productTypes)]),
+          () => new ListBuilder<GProductTypesData_productTypes>())
+      ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GProductVariantCreateInput)]),
           () => new ListBuilder<GProductVariantCreateInput>())
@@ -1704,6 +1779,38 @@ Serializers _$serializers = (new Serializers().toBuilder()
               const [const FullType(GProductVariantWhereUniqueInput)]),
           () => new ListBuilder<GProductVariantWhereUniqueInput>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GProductVariantData_productVariant_prices)
+          ]),
+          () => new ListBuilder<GProductVariantData_productVariant_prices>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GProductVariantData_productVariant_specifications)
+          ]),
+          () => new ListBuilder<
+              GProductVariantData_productVariant_specifications>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GProductVariantData_productVariant_gallery)
+          ]),
+          () => new ListBuilder<GProductVariantData_productVariant_gallery>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductVariantData_productVariant_tags)]),
+          () => new ListBuilder<GProductVariantData_productVariant_tags>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GProductVariantData_productVariant_images)
+          ]),
+          () => new ListBuilder<GProductVariantData_productVariant_images>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GProductVariantData_productVariant_product_specifications)
+          ]),
+          () => new ListBuilder<
+              GProductVariantData_productVariant_product_specifications>())
+      ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GProductVariantWhereInput)]),
           () => new ListBuilder<GProductVariantWhereInput>())
@@ -1731,6 +1838,43 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(GProductVariantWhereUniqueInput)]),
           () => new ListBuilder<GProductVariantWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductVariantsData_productVariants)]),
+          () => new ListBuilder<GProductVariantsData_productVariants>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GProductVariantsData_productVariants_prices)
+          ]),
+          () => new ListBuilder<GProductVariantsData_productVariants_prices>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GProductVariantsData_productVariants_specifications)
+          ]),
+          () => new ListBuilder<
+              GProductVariantsData_productVariants_specifications>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GProductVariantsData_productVariants_gallery)
+          ]),
+          () => new ListBuilder<GProductVariantsData_productVariants_gallery>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GProductVariantsData_productVariants_tags)
+          ]),
+          () => new ListBuilder<GProductVariantsData_productVariants_tags>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GProductVariantsData_productVariants_images)
+          ]),
+          () => new ListBuilder<GProductVariantsData_productVariants_images>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GProductVariantsData_productVariants_product_specifications)
+          ]),
+          () => new ListBuilder<
+              GProductVariantsData_productVariants_product_specifications>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GProductVideoCreateInput)]),
@@ -2681,6 +2825,16 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(double)]),
+          () => new ListBuilder<double>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(double)]),
+          () => new ListBuilder<double>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductVariantOrderByInput)]),
+          () => new ListBuilder<GProductVariantOrderByInput>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(double)]),
           () => new ListBuilder<double>())

@@ -68,7 +68,7 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(6.r),
                   child: KCachedNWImage(
-                    widget.vehicleDealers.vehicleColor!.images?.firstOrNull
+                    widget.vehicleDealers.vehicleColor?.images?.firstOrNull
                             ?.image?.url ??
                         '',
                     fit: BoxFit.cover,
