@@ -1,13 +1,11 @@
 import 'dart:async';
 
+import 'package:dealerapp/src/app/model/product_details_model.dart';
 import 'package:dealerapp/src/app/model/variant_details.model.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
-
-import '../model/product_details_model.dart';
-import 'dart:developer';
 
 class InventoryProvider extends ChangeNotifier {
   List<GPriceCategoriesData_priceCategories> _priceCategories = [];
@@ -19,15 +17,16 @@ class InventoryProvider extends ChangeNotifier {
   }
 
   List<PriceModel> prices = [];
-  List<ProductDetailsModel> _products = [];
-  List<ProductDetailsModel> get products => _products;
+  List<ProductVariantModel> _products = [];
+  List<ProductVariantModel> get products => _products;
   List<VariantDetailsModel> _vehicles = [];
   List<VariantDetailsModel> get vehicles => _vehicles;
 
-  set products(List<ProductDetailsModel> data) {
+  set products(List<ProductVariantModel> data) {
     _products = data;
     notifyListeners();
   }
+
   set vehicles(List<VariantDetailsModel> data) {
     _vehicles = data;
     notifyListeners();
@@ -49,6 +48,7 @@ class InventoryProvider extends ChangeNotifier {
     await getVehicles();
     await getProducts();
   }
+
   Timer? _productDebounce;
   late TextEditingController productSearchController = TextEditingController()
     ..addListener(() {
@@ -83,7 +83,7 @@ class InventoryProvider extends ChangeNotifier {
         skip: 0,
         take: 15,
       );
-      _handleProductsResponse(getProduct as Future<(int, List<Map<String, dynamic>>?)>);
+      _handleProductsResponse(getProduct);
     } catch (e) {
       _handleError(e, 'Error while fetching list of products');
     }
@@ -100,7 +100,7 @@ class InventoryProvider extends ChangeNotifier {
         skip: prices.length,
         search: productSearchController.text,
       );
-      _handleProductsResponse(response as Future<(int, List<Map<String, dynamic>>?)>);
+      _handleProductsResponse(response);
     } catch (e) {
       _handleError(e, 'Error while fetching list of products');
     } finally {
@@ -161,12 +161,12 @@ class InventoryProvider extends ChangeNotifier {
       prices = result
           .map(
             (e) => PriceModel(
-          price: 0,
-          type: e.id,
-          name: e.name!,
-          priceId: '',
-        ),
-      )
+              price: 0,
+              type: e.id,
+              name: e.name!,
+              priceId: '',
+            ),
+          )
           .toList();
       priceCategories = result;
     } catch (e) {
@@ -234,28 +234,33 @@ class InventoryProvider extends ChangeNotifier {
       e.log();
     }
   }
-  void _handleProductsResponse(Future<(int, List<Map<String, dynamic>>?)> response) async {
-    final tuple = await response;
+
+  Future<void> _handleProductsResponse(
+    (int, List<ProductVariantModel>?) response,
+  ) async {
+    final tuple = response;
     if (tuple.$2 != null) {
       count = tuple.$1;
-      products = tuple.$2!.map((productJson) => _mapToProductModel(productJson)).toList();
+      products = tuple.$2!;
     } else {
       await AppRoutes.showErrorSnackbar(
         message: 'Error while fetching list of products',
       );
     }
   }
-  void _handleError(dynamic e, String message) async {
+
+  Future<void> _handleError(dynamic e, String message) async {
     e.log();
     await AppRoutes.showErrorSnackbar(
       message: message,
     );
   }
 
-  ProductDetailsModel _mapToProductModel(Map<String, dynamic> productJson) {
+  ProductVariantModel _mapToProductModel(Map<String, dynamic> productJson) {
     // Logic to map JSON to ProductDetailsModel
-    return ProductDetailsModel.fromJson(productJson);
+    return ProductVariantModel.productFromJson(productJson);
   }
+
   Future<int> getInventoryCount() async {
     try {
       final result = await _inventoryRepository.getStockCount();

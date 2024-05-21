@@ -2,27 +2,18 @@ import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/log_colors.dart';
-import 'package:dealerapp/src/widgets/k_inventory_bike_card.dart';
+import 'package:dealerapp/src/widgets/k_inventory_product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'dart:developer';
-import '../../../../widgets/k_inventory_product_card.dart';
 
 class MyProduct extends ConsumerWidget {
   const MyProduct({required this.showSearch, super.key});
   final bool showSearch;
 
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final inventoryPro = ref.watch(inventoryProvider);
-    final data = inventoryPro.products.where(
-          (element) => element.prices
-          .where(
-            (p0) => !inventoryPro.count.toString().contains(p0.toString()),
-      )
-          .isNotEmpty,
-    );
+    final data = inventoryPro.products;
     return ColoredBox(
       color: AppTheme.textFieldFill,
       child: Column(
@@ -46,10 +37,8 @@ class MyProduct extends ConsumerWidget {
               },
               child: ListView.builder(
                 shrinkWrap: true,
-
                 itemCount: data.length,
                 itemBuilder: (context, index) {
-
                   index.log(
                     color: LogColors.green,
                     name: 'Index',
@@ -65,10 +54,10 @@ class MyProduct extends ConsumerWidget {
                     );
                   }
                   final product = data.elementAt(index);
-                  return  KInvetoryProductCard(
+                  return KInvetoryProductCard(
                     variant: product,
                   );
-                    /*ListTile(
+                  /*ListTile(
                     title: Text(product.name.toString()),
                     subtitle: Text(product.vehicle.toString()),
                     // Add more UI elements as needed
@@ -94,9 +83,9 @@ class MyProduct extends ConsumerWidget {
                   return KInvetoryProductCard( variant: item,
 
                   );
-                  *//*KInventoryBikeCard(
+                  */ /*KInventoryBikeCard(
                     variant: item,
-                  );*//*
+                  );*/ /*
                 },*/
               ),
             ),
