@@ -213,7 +213,7 @@ class _MakeNewPurchaseState extends ConsumerState<MakeNewPurchase> {
                       padding: EdgeInsets.only(right: 60.w),
                       child: Row(
                         children: [
-                          ...purchaseOrderPro.selectedVariants!.colors!.map(
+                          ...purchaseOrderPro.selectedVariants!.colors.map(
                             (e) => GestureDetector(
                               onTap: () => updateColor(e),
                               child: Padding(
@@ -253,8 +253,8 @@ class _MakeNewPurchaseState extends ConsumerState<MakeNewPurchase> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(6.r),
                             child: KCachedNWImage(
-                              purchaseOrderPro.selectedColor?.images?.first
-                                      .image?.url ??
+                              purchaseOrderPro
+                                      .selectedColor?.images.first.image?.url ??
                                   '',
                               fit: BoxFit.cover,
                             ),

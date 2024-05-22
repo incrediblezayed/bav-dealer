@@ -283,16 +283,18 @@ class AppDrawer extends ConsumerWidget {
                         );
                       },
                     ),
-                    /*   _drawerTile(
+                    _drawerTile(
                       title: 'Make new purchase order',
                       icon: AppImages.make,
                       height: 30,
                       width: 30,
                       isSvg: false,
                       onTap: () {
-                        AppRoutes.push(page: const ComingSoon());
+                        /* AppRoutes.push(
+                          page: const MakeNewPurchaseDetailsPage(),
+                        ); */
                       },
-                    ), */
+                    ),
 
                     ///Order History Expansion Tile
                     const KExpansionTile(),

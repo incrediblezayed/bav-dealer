@@ -1,4 +1,4 @@
-import 'package:dealerapp/src/app/UI/make_new_purchase/purchase_successful_page.dart';
+/* import 'package:dealerapp/src/app/UI/make_new_purchase/purchase_successful_page.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
@@ -168,3 +168,4 @@ class _MakeNewPurchaseDetailsPageState
     );
   }
 }
+ */

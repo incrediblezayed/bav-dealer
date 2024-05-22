@@ -70,7 +70,7 @@ class _KInvetoryProductCardState extends ConsumerState<KInvetoryProductCard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                variants.parentProduct.brand!.name,
+                variants.parentProduct.brand?.name ?? '',
                 style: theme.headlineLarge!
                     .copyWith(fontSize: 24.sp, fontWeight: FontWeight.w500),
               ),
