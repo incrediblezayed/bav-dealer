@@ -17,6 +17,80 @@ import 'package:gql_exec/gql_exec.dart' as _i4;
 
 part 'orders.req.gql.g.dart';
 
+abstract class GProductOrdersReq
+    implements
+        Built<GProductOrdersReq, GProductOrdersReqBuilder>,
+        _i1.OperationRequest<_i2.GProductOrdersData, _i3.GProductOrdersVars> {
+  GProductOrdersReq._();
+
+  factory GProductOrdersReq([Function(GProductOrdersReqBuilder b) updates]) =
+      _$GProductOrdersReq;
+
+  static void _initializeBuilder(GProductOrdersReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'ProductOrders',
+    )
+    ..executeOnListen = true;
+
+  @override
+  _i3.GProductOrdersVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GProductOrdersData? Function(
+    _i2.GProductOrdersData?,
+    _i2.GProductOrdersData?,
+  )? get updateResult;
+  @override
+  _i2.GProductOrdersData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GProductOrdersData? parseData(Map<String, dynamic> json) =>
+      _i2.GProductOrdersData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GProductOrdersData, _i3.GProductOrdersVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GProductOrdersReq> get serializer =>
+      _$gProductOrdersReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GProductOrdersReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrdersReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GProductOrdersReq.serializer,
+        json,
+      );
+}
+
 abstract class GVehicleOrdersReq
     implements
         Built<GVehicleOrdersReq, GVehicleOrdersReqBuilder>,
@@ -162,6 +236,82 @@ abstract class GTestDriveOrdersReq
   static GTestDriveOrdersReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
         GTestDriveOrdersReq.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateProductOrderReq
+    implements
+        Built<GUpdateProductOrderReq, GUpdateProductOrderReqBuilder>,
+        _i1.OperationRequest<_i2.GUpdateProductOrderData,
+            _i3.GUpdateProductOrderVars> {
+  GUpdateProductOrderReq._();
+
+  factory GUpdateProductOrderReq(
+          [Function(GUpdateProductOrderReqBuilder b) updates]) =
+      _$GUpdateProductOrderReq;
+
+  static void _initializeBuilder(GUpdateProductOrderReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'UpdateProductOrder',
+    )
+    ..executeOnListen = true;
+
+  @override
+  _i3.GUpdateProductOrderVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GUpdateProductOrderData? Function(
+    _i2.GUpdateProductOrderData?,
+    _i2.GUpdateProductOrderData?,
+  )? get updateResult;
+  @override
+  _i2.GUpdateProductOrderData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GUpdateProductOrderData? parseData(Map<String, dynamic> json) =>
+      _i2.GUpdateProductOrderData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GUpdateProductOrderData, _i3.GUpdateProductOrderVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GUpdateProductOrderReq> get serializer =>
+      _$gUpdateProductOrderReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GUpdateProductOrderReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateProductOrderReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GUpdateProductOrderReq.serializer,
         json,
       );
 }

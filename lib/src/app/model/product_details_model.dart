@@ -25,6 +25,7 @@ class ProductVariantModel {
     required this.gallery,
     required this.product,
     required this.itemType,
+    required this.images,
   });
 
   factory ProductVariantModel.vehicleFromJson(Map<String, dynamic> json) {
@@ -58,6 +59,7 @@ class ProductVariantModel {
                 json['gallery'].map((x) => Gallery.fromJson(x)),
               ),
         product: null,
+        images: (json['images'] as List).map((e) => ImageItem.fromJson(e)).toList(),
         itemType: ItemType.vehicle,
       );
     } catch (e) {
@@ -94,6 +96,7 @@ class ProductVariantModel {
                 json['gallery'].map((x) => Gallery.fromJson(x)),
               ),
         product: ProductModel.fromJson(json['product']),
+        images: (json['images'] as List).map((e) => ImageItem.fromJson(e)).toList(),
         itemType: ItemType.product,
       );
     } catch (e) {
@@ -117,6 +120,7 @@ class ProductVariantModel {
   final int? totalPrice;
   final ProductModel? vehicle;
   final List<Tag> tags;
+  final List<ImageItem> images;
 
   final ProductModel? product;
   final List<Gallery> gallery;
@@ -521,5 +525,44 @@ String _getImageUrl(dynamic url) {
     } else {
       return GraphqlClient.baseUrl + myUrl;
     }
+  }
+
+}
+class ImageItem {
+  final String id;
+  final String name;
+  final ImageDetail image;
+
+  ImageItem({
+    required this.id,
+    required this.name,
+    required this.image,
+  });
+
+  factory ImageItem.fromJson(Map<String, dynamic> json) {
+    return ImageItem(
+      id: json['id'],
+      name: json['name'],
+      image: ImageDetail.fromJson(json['image']),
+    );
+  }
+}
+class ImageDetail {
+  final String url;
+  final String? extension;
+  final int? filesize;
+
+  ImageDetail({
+    required this.url,
+    this.extension,
+    this.filesize,
+  });
+
+  factory ImageDetail.fromJson(Map<String, dynamic> json) {
+    return ImageDetail(
+      url: json['url'],
+      extension: json['extension'],
+      filesize: json['filesize'],
+    );
   }
 }

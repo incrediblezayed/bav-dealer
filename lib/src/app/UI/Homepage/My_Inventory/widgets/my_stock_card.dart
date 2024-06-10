@@ -121,7 +121,7 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                         SizedBox(width: 10.w),
                         Flexible(
                           child: Text(
-                            widget.vehicleDealers.vehicleColor!.name!,
+                            widget.vehicleDealers.vehicleColor?.name??'',
                             style: theme.labelMedium!.copyWith(
                               color: Colors.black.withOpacity(.5),
                               fontWeight: FontWeight.w500,

@@ -37,7 +37,7 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
         (p0) => !ref
             .read(inventoryProvider)
             .vehicleDealers
-            .map((e) => e.vehicleColor!.id)
+            .map((e) => e.vehicleColor?.id)
             .contains(p0.id),
       )
       .firstOrNull;
@@ -199,7 +199,7 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                                 ...variants.colors
                                     .where(
                                       (p0) => !inventoryPro.vehicleDealers
-                                          .map((e) => e.vehicleColor!.id)
+                                          .map((e) => e.vehicleColor?.id)
                                           .contains(p0.id),
                                     )
                                     .map(

@@ -6,6 +6,38 @@ part of 'orders.data.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+Serializer<GProductOrdersData> _$gProductOrdersDataSerializer =
+    new _$GProductOrdersDataSerializer();
+Serializer<GProductOrdersData_productOrders>
+    _$gProductOrdersDataProductOrdersSerializer =
+    new _$GProductOrdersData_productOrdersSerializer();
+Serializer<GProductOrdersData_productOrders_dealer>
+    _$gProductOrdersDataProductOrdersDealerSerializer =
+    new _$GProductOrdersData_productOrders_dealerSerializer();
+Serializer<GProductOrdersData_productOrders_dealer_productVariant>
+    _$gProductOrdersDataProductOrdersDealerProductVariantSerializer =
+    new _$GProductOrdersData_productOrders_dealer_productVariantSerializer();
+Serializer<GProductOrdersData_productOrders_dealer_productVariant_product>
+    _$gProductOrdersDataProductOrdersDealerProductVariantProductSerializer =
+    new _$GProductOrdersData_productOrders_dealer_productVariant_productSerializer();
+Serializer<GProductOrdersData_productOrders_dealer_dealer>
+    _$gProductOrdersDataProductOrdersDealerDealerSerializer =
+    new _$GProductOrdersData_productOrders_dealer_dealerSerializer();
+Serializer<GProductOrdersData_productOrders_dealer_prices>
+    _$gProductOrdersDataProductOrdersDealerPricesSerializer =
+    new _$GProductOrdersData_productOrders_dealer_pricesSerializer();
+Serializer<GProductOrdersData_productOrders_dealer_prices_category>
+    _$gProductOrdersDataProductOrdersDealerPricesCategorySerializer =
+    new _$GProductOrdersData_productOrders_dealer_prices_categorySerializer();
+Serializer<GProductOrdersData_productOrders_order>
+    _$gProductOrdersDataProductOrdersOrderSerializer =
+    new _$GProductOrdersData_productOrders_orderSerializer();
+Serializer<GProductOrdersData_productOrders_order_user>
+    _$gProductOrdersDataProductOrdersOrderUserSerializer =
+    new _$GProductOrdersData_productOrders_order_userSerializer();
+Serializer<GProductOrdersData_productOrders_order_user_addresses>
+    _$gProductOrdersDataProductOrdersOrderUserAddressesSerializer =
+    new _$GProductOrdersData_productOrders_order_user_addressesSerializer();
 Serializer<GVehicleOrdersData> _$gVehicleOrdersDataSerializer =
     new _$GVehicleOrdersDataSerializer();
 Serializer<GVehicleOrdersData_vehicleOrders>
@@ -83,6 +115,11 @@ Serializer<GTestDriveOrdersData_testDriveOrders_order_user>
 Serializer<GTestDriveOrdersData_testDriveOrders_order_user_addresses>
     _$gTestDriveOrdersDataTestDriveOrdersOrderUserAddressesSerializer =
     new _$GTestDriveOrdersData_testDriveOrders_order_user_addressesSerializer();
+Serializer<GUpdateProductOrderData> _$gUpdateProductOrderDataSerializer =
+    new _$GUpdateProductOrderDataSerializer();
+Serializer<GUpdateProductOrderData_updateProductOrder>
+    _$gUpdateProductOrderDataUpdateProductOrderSerializer =
+    new _$GUpdateProductOrderData_updateProductOrderSerializer();
 Serializer<GUpdateVehicleOrderData> _$gUpdateVehicleOrderDataSerializer =
     new _$GUpdateVehicleOrderDataSerializer();
 Serializer<GUpdateVehicleOrderData_updateVehicleOrder>
@@ -99,6 +136,910 @@ Serializer<GCreateOrderRejectionByDealerData>
 Serializer<GCreateOrderRejectionByDealerData_createOrderRejectionByDealer>
     _$gCreateOrderRejectionByDealerDataCreateOrderRejectionByDealerSerializer =
     new _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealerSerializer();
+
+class _$GProductOrdersDataSerializer
+    implements StructuredSerializer<GProductOrdersData> {
+  @override
+  final Iterable<Type> types = const [GProductOrdersData, _$GProductOrdersData];
+  @override
+  final String wireName = 'GProductOrdersData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductOrdersData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.productOrders;
+    if (value != null) {
+      result
+        ..add('productOrders')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GProductOrdersData_productOrders)])));
+    }
+    return result;
+  }
+
+  @override
+  GProductOrdersData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductOrdersDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'productOrders':
+          result.productOrders.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GProductOrdersData_productOrders)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductOrdersData_productOrdersSerializer
+    implements StructuredSerializer<GProductOrdersData_productOrders> {
+  @override
+  final Iterable<Type> types = const [
+    GProductOrdersData_productOrders,
+    _$GProductOrdersData_productOrders
+  ];
+  @override
+  final String wireName = 'GProductOrdersData_productOrders';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductOrdersData_productOrders object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.price;
+    if (value != null) {
+      result
+        ..add('price')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.dealer;
+    if (value != null) {
+      result
+        ..add('dealer')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GProductOrdersData_productOrders_dealer)));
+    }
+    value = object.status;
+    if (value != null) {
+      result
+        ..add('status')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.order;
+    if (value != null) {
+      result
+        ..add('order')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GProductOrdersData_productOrders_order)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.GDateTime)));
+    }
+    return result;
+  }
+
+  @override
+  GProductOrdersData_productOrders deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductOrdersData_productOrdersBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'price':
+          result.price = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'dealer':
+          result.dealer.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GProductOrdersData_productOrders_dealer))!
+              as GProductOrdersData_productOrders_dealer);
+          break;
+        case 'status':
+          result.status = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'order':
+          result.order.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GProductOrdersData_productOrders_order))!
+              as GProductOrdersData_productOrders_order);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductOrdersData_productOrders_dealerSerializer
+    implements StructuredSerializer<GProductOrdersData_productOrders_dealer> {
+  @override
+  final Iterable<Type> types = const [
+    GProductOrdersData_productOrders_dealer,
+    _$GProductOrdersData_productOrders_dealer
+  ];
+  @override
+  final String wireName = 'GProductOrdersData_productOrders_dealer';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductOrdersData_productOrders_dealer object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.productVariant;
+    if (value != null) {
+      result
+        ..add('productVariant')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductOrdersData_productOrders_dealer_productVariant)));
+    }
+    value = object.dealer;
+    if (value != null) {
+      result
+        ..add('dealer')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductOrdersData_productOrders_dealer_dealer)));
+    }
+    value = object.prices;
+    if (value != null) {
+      result
+        ..add('prices')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(GProductOrdersData_productOrders_dealer_prices)
+            ])));
+    }
+    return result;
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductOrdersData_productOrders_dealerBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'productVariant':
+          result.productVariant.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductOrdersData_productOrders_dealer_productVariant))!
+              as GProductOrdersData_productOrders_dealer_productVariant);
+          break;
+        case 'dealer':
+          result.dealer.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductOrdersData_productOrders_dealer_dealer))!
+              as GProductOrdersData_productOrders_dealer_dealer);
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'prices':
+          result.prices.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GProductOrdersData_productOrders_dealer_prices)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductOrdersData_productOrders_dealer_productVariantSerializer
+    implements
+        StructuredSerializer<
+            GProductOrdersData_productOrders_dealer_productVariant> {
+  @override
+  final Iterable<Type> types = const [
+    GProductOrdersData_productOrders_dealer_productVariant,
+    _$GProductOrdersData_productOrders_dealer_productVariant
+  ];
+  @override
+  final String wireName =
+      'GProductOrdersData_productOrders_dealer_productVariant';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductOrdersData_productOrders_dealer_productVariant object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.product;
+    if (value != null) {
+      result
+        ..add('product')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductOrdersData_productOrders_dealer_productVariant_product)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_productVariant deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductOrdersData_productOrders_dealer_productVariantBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'product':
+          result.product.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductOrdersData_productOrders_dealer_productVariant_product))!
+              as GProductOrdersData_productOrders_dealer_productVariant_product);
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductOrdersData_productOrders_dealer_productVariant_productSerializer
+    implements
+        StructuredSerializer<
+            GProductOrdersData_productOrders_dealer_productVariant_product> {
+  @override
+  final Iterable<Type> types = const [
+    GProductOrdersData_productOrders_dealer_productVariant_product,
+    _$GProductOrdersData_productOrders_dealer_productVariant_product
+  ];
+  @override
+  final String wireName =
+      'GProductOrdersData_productOrders_dealer_productVariant_product';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductOrdersData_productOrders_dealer_productVariant_product object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_productVariant_product deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductOrdersData_productOrders_dealer_productVariant_productBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductOrdersData_productOrders_dealer_dealerSerializer
+    implements
+        StructuredSerializer<GProductOrdersData_productOrders_dealer_dealer> {
+  @override
+  final Iterable<Type> types = const [
+    GProductOrdersData_productOrders_dealer_dealer,
+    _$GProductOrdersData_productOrders_dealer_dealer
+  ];
+  @override
+  final String wireName = 'GProductOrdersData_productOrders_dealer_dealer';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductOrdersData_productOrders_dealer_dealer object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_dealer deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductOrdersData_productOrders_dealer_dealerBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductOrdersData_productOrders_dealer_pricesSerializer
+    implements
+        StructuredSerializer<GProductOrdersData_productOrders_dealer_prices> {
+  @override
+  final Iterable<Type> types = const [
+    GProductOrdersData_productOrders_dealer_prices,
+    _$GProductOrdersData_productOrders_dealer_prices
+  ];
+  @override
+  final String wireName = 'GProductOrdersData_productOrders_dealer_prices';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductOrdersData_productOrders_dealer_prices object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.amount;
+    if (value != null) {
+      result
+        ..add('amount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.category;
+    if (value != null) {
+      result
+        ..add('category')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductOrdersData_productOrders_dealer_prices_category)));
+    }
+    return result;
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_prices deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductOrdersData_productOrders_dealer_pricesBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'amount':
+          result.amount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'category':
+          result.category.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductOrdersData_productOrders_dealer_prices_category))!
+              as GProductOrdersData_productOrders_dealer_prices_category);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductOrdersData_productOrders_dealer_prices_categorySerializer
+    implements
+        StructuredSerializer<
+            GProductOrdersData_productOrders_dealer_prices_category> {
+  @override
+  final Iterable<Type> types = const [
+    GProductOrdersData_productOrders_dealer_prices_category,
+    _$GProductOrdersData_productOrders_dealer_prices_category
+  ];
+  @override
+  final String wireName =
+      'GProductOrdersData_productOrders_dealer_prices_category';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductOrdersData_productOrders_dealer_prices_category object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_prices_category deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductOrdersData_productOrders_dealer_prices_categoryBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductOrdersData_productOrders_orderSerializer
+    implements StructuredSerializer<GProductOrdersData_productOrders_order> {
+  @override
+  final Iterable<Type> types = const [
+    GProductOrdersData_productOrders_order,
+    _$GProductOrdersData_productOrders_order
+  ];
+  @override
+  final String wireName = 'GProductOrdersData_productOrders_order';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductOrdersData_productOrders_order object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.user;
+    if (value != null) {
+      result
+        ..add('user')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GProductOrdersData_productOrders_order_user)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.GDateTime)));
+    }
+    return result;
+  }
+
+  @override
+  GProductOrdersData_productOrders_order deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductOrdersData_productOrders_orderBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'user':
+          result.user.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductOrdersData_productOrders_order_user))!
+              as GProductOrdersData_productOrders_order_user);
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductOrdersData_productOrders_order_userSerializer
+    implements
+        StructuredSerializer<GProductOrdersData_productOrders_order_user> {
+  @override
+  final Iterable<Type> types = const [
+    GProductOrdersData_productOrders_order_user,
+    _$GProductOrdersData_productOrders_order_user
+  ];
+  @override
+  final String wireName = 'GProductOrdersData_productOrders_order_user';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductOrdersData_productOrders_order_user object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.email;
+    if (value != null) {
+      result
+        ..add('email')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.phoneNumber;
+    if (value != null) {
+      result
+        ..add('phoneNumber')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.addresses;
+    if (value != null) {
+      result
+        ..add('addresses')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(
+                  GProductOrdersData_productOrders_order_user_addresses)
+            ])));
+    }
+    return result;
+  }
+
+  @override
+  GProductOrdersData_productOrders_order_user deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductOrdersData_productOrders_order_userBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'email':
+          result.email = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'phoneNumber':
+          result.phoneNumber = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'addresses':
+          result.addresses.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(
+                    GProductOrdersData_productOrders_order_user_addresses)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductOrdersData_productOrders_order_user_addressesSerializer
+    implements
+        StructuredSerializer<
+            GProductOrdersData_productOrders_order_user_addresses> {
+  @override
+  final Iterable<Type> types = const [
+    GProductOrdersData_productOrders_order_user_addresses,
+    _$GProductOrdersData_productOrders_order_user_addresses
+  ];
+  @override
+  final String wireName =
+      'GProductOrdersData_productOrders_order_user_addresses';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductOrdersData_productOrders_order_user_addresses object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.phoneNumber;
+    if (value != null) {
+      result
+        ..add('phoneNumber')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.pinCode;
+    if (value != null) {
+      result
+        ..add('pinCode')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.state;
+    if (value != null) {
+      result
+        ..add('state')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.town;
+    if (value != null) {
+      result
+        ..add('town')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.address;
+    if (value != null) {
+      result
+        ..add('address')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.district;
+    if (value != null) {
+      result
+        ..add('district')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductOrdersData_productOrders_order_user_addresses deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductOrdersData_productOrders_order_user_addressesBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'phoneNumber':
+          result.phoneNumber = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'pinCode':
+          result.pinCode = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'state':
+          result.state = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'town':
+          result.town = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'address':
+          result.address = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'district':
+          result.district = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
 
 class _$GVehicleOrdersDataSerializer
     implements StructuredSerializer<GVehicleOrdersData> {
@@ -2261,6 +3202,119 @@ class _$GTestDriveOrdersData_testDriveOrders_order_user_addressesSerializer
   }
 }
 
+class _$GUpdateProductOrderDataSerializer
+    implements StructuredSerializer<GUpdateProductOrderData> {
+  @override
+  final Iterable<Type> types = const [
+    GUpdateProductOrderData,
+    _$GUpdateProductOrderData
+  ];
+  @override
+  final String wireName = 'GUpdateProductOrderData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUpdateProductOrderData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.updateProductOrder;
+    if (value != null) {
+      result
+        ..add('updateProductOrder')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GUpdateProductOrderData_updateProductOrder)));
+    }
+    return result;
+  }
+
+  @override
+  GUpdateProductOrderData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUpdateProductOrderDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'updateProductOrder':
+          result.updateProductOrder.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GUpdateProductOrderData_updateProductOrder))!
+              as GUpdateProductOrderData_updateProductOrder);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUpdateProductOrderData_updateProductOrderSerializer
+    implements
+        StructuredSerializer<GUpdateProductOrderData_updateProductOrder> {
+  @override
+  final Iterable<Type> types = const [
+    GUpdateProductOrderData_updateProductOrder,
+    _$GUpdateProductOrderData_updateProductOrder
+  ];
+  @override
+  final String wireName = 'GUpdateProductOrderData_updateProductOrder';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GUpdateProductOrderData_updateProductOrder object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GUpdateProductOrderData_updateProductOrder deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUpdateProductOrderData_updateProductOrderBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$GUpdateVehicleOrderDataSerializer
     implements StructuredSerializer<GUpdateVehicleOrderData> {
   @override
@@ -2601,6 +3655,1747 @@ class _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealerSerializer
     }
 
     return result.build();
+  }
+}
+
+class _$GProductOrdersData extends GProductOrdersData {
+  @override
+  final String G__typename;
+  @override
+  final BuiltList<GProductOrdersData_productOrders>? productOrders;
+
+  factory _$GProductOrdersData(
+          [void Function(GProductOrdersDataBuilder)? updates]) =>
+      (new GProductOrdersDataBuilder()..update(updates))._build();
+
+  _$GProductOrdersData._({required this.G__typename, this.productOrders})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GProductOrdersData', 'G__typename');
+  }
+
+  @override
+  GProductOrdersData rebuild(
+          void Function(GProductOrdersDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductOrdersDataBuilder toBuilder() =>
+      new GProductOrdersDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductOrdersData &&
+        G__typename == other.G__typename &&
+        productOrders == other.productOrders;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, productOrders.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GProductOrdersData')
+          ..add('G__typename', G__typename)
+          ..add('productOrders', productOrders))
+        .toString();
+  }
+}
+
+class GProductOrdersDataBuilder
+    implements Builder<GProductOrdersData, GProductOrdersDataBuilder> {
+  _$GProductOrdersData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  ListBuilder<GProductOrdersData_productOrders>? _productOrders;
+  ListBuilder<GProductOrdersData_productOrders> get productOrders =>
+      _$this._productOrders ??=
+          new ListBuilder<GProductOrdersData_productOrders>();
+  set productOrders(
+          ListBuilder<GProductOrdersData_productOrders>? productOrders) =>
+      _$this._productOrders = productOrders;
+
+  GProductOrdersDataBuilder() {
+    GProductOrdersData._initializeBuilder(this);
+  }
+
+  GProductOrdersDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _productOrders = $v.productOrders?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductOrdersData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductOrdersData;
+  }
+
+  @override
+  void update(void Function(GProductOrdersDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductOrdersData build() => _build();
+
+  _$GProductOrdersData _build() {
+    _$GProductOrdersData _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductOrdersData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GProductOrdersData', 'G__typename'),
+              productOrders: _productOrders?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'productOrders';
+        _productOrders?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductOrdersData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductOrdersData_productOrders
+    extends GProductOrdersData_productOrders {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final int? price;
+  @override
+  final GProductOrdersData_productOrders_dealer? dealer;
+  @override
+  final String? status;
+  @override
+  final GProductOrdersData_productOrders_order? order;
+  @override
+  final _i2.GDateTime? createdAt;
+
+  factory _$GProductOrdersData_productOrders(
+          [void Function(GProductOrdersData_productOrdersBuilder)? updates]) =>
+      (new GProductOrdersData_productOrdersBuilder()..update(updates))._build();
+
+  _$GProductOrdersData_productOrders._(
+      {required this.G__typename,
+      required this.id,
+      this.price,
+      this.dealer,
+      this.status,
+      this.order,
+      this.createdAt})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GProductOrdersData_productOrders', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductOrdersData_productOrders', 'id');
+  }
+
+  @override
+  GProductOrdersData_productOrders rebuild(
+          void Function(GProductOrdersData_productOrdersBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductOrdersData_productOrdersBuilder toBuilder() =>
+      new GProductOrdersData_productOrdersBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductOrdersData_productOrders &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        price == other.price &&
+        dealer == other.dealer &&
+        status == other.status &&
+        order == other.order &&
+        createdAt == other.createdAt;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, price.hashCode);
+    _$hash = $jc(_$hash, dealer.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, order.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GProductOrdersData_productOrders')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('price', price)
+          ..add('dealer', dealer)
+          ..add('status', status)
+          ..add('order', order)
+          ..add('createdAt', createdAt))
+        .toString();
+  }
+}
+
+class GProductOrdersData_productOrdersBuilder
+    implements
+        Builder<GProductOrdersData_productOrders,
+            GProductOrdersData_productOrdersBuilder> {
+  _$GProductOrdersData_productOrders? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  int? _price;
+  int? get price => _$this._price;
+  set price(int? price) => _$this._price = price;
+
+  GProductOrdersData_productOrders_dealerBuilder? _dealer;
+  GProductOrdersData_productOrders_dealerBuilder get dealer =>
+      _$this._dealer ??= new GProductOrdersData_productOrders_dealerBuilder();
+  set dealer(GProductOrdersData_productOrders_dealerBuilder? dealer) =>
+      _$this._dealer = dealer;
+
+  String? _status;
+  String? get status => _$this._status;
+  set status(String? status) => _$this._status = status;
+
+  GProductOrdersData_productOrders_orderBuilder? _order;
+  GProductOrdersData_productOrders_orderBuilder get order =>
+      _$this._order ??= new GProductOrdersData_productOrders_orderBuilder();
+  set order(GProductOrdersData_productOrders_orderBuilder? order) =>
+      _$this._order = order;
+
+  _i2.GDateTimeBuilder? _createdAt;
+  _i2.GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+  set createdAt(_i2.GDateTimeBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GProductOrdersData_productOrdersBuilder() {
+    GProductOrdersData_productOrders._initializeBuilder(this);
+  }
+
+  GProductOrdersData_productOrdersBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _price = $v.price;
+      _dealer = $v.dealer?.toBuilder();
+      _status = $v.status;
+      _order = $v.order?.toBuilder();
+      _createdAt = $v.createdAt?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductOrdersData_productOrders other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductOrdersData_productOrders;
+  }
+
+  @override
+  void update(void Function(GProductOrdersData_productOrdersBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductOrdersData_productOrders build() => _build();
+
+  _$GProductOrdersData_productOrders _build() {
+    _$GProductOrdersData_productOrders _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductOrdersData_productOrders._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                  r'GProductOrdersData_productOrders', 'G__typename'),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'GProductOrdersData_productOrders', 'id'),
+              price: price,
+              dealer: _dealer?.build(),
+              status: status,
+              order: _order?.build(),
+              createdAt: _createdAt?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'dealer';
+        _dealer?.build();
+
+        _$failedField = 'order';
+        _order?.build();
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductOrdersData_productOrders', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductOrdersData_productOrders_dealer
+    extends GProductOrdersData_productOrders_dealer {
+  @override
+  final String G__typename;
+  @override
+  final GProductOrdersData_productOrders_dealer_productVariant? productVariant;
+  @override
+  final GProductOrdersData_productOrders_dealer_dealer? dealer;
+  @override
+  final String id;
+  @override
+  final BuiltList<GProductOrdersData_productOrders_dealer_prices>? prices;
+
+  factory _$GProductOrdersData_productOrders_dealer(
+          [void Function(GProductOrdersData_productOrders_dealerBuilder)?
+              updates]) =>
+      (new GProductOrdersData_productOrders_dealerBuilder()..update(updates))
+          ._build();
+
+  _$GProductOrdersData_productOrders_dealer._(
+      {required this.G__typename,
+      this.productVariant,
+      this.dealer,
+      required this.id,
+      this.prices})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GProductOrdersData_productOrders_dealer', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductOrdersData_productOrders_dealer', 'id');
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer rebuild(
+          void Function(GProductOrdersData_productOrders_dealerBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductOrdersData_productOrders_dealerBuilder toBuilder() =>
+      new GProductOrdersData_productOrders_dealerBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductOrdersData_productOrders_dealer &&
+        G__typename == other.G__typename &&
+        productVariant == other.productVariant &&
+        dealer == other.dealer &&
+        id == other.id &&
+        prices == other.prices;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, productVariant.hashCode);
+    _$hash = $jc(_$hash, dealer.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, prices.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductOrdersData_productOrders_dealer')
+          ..add('G__typename', G__typename)
+          ..add('productVariant', productVariant)
+          ..add('dealer', dealer)
+          ..add('id', id)
+          ..add('prices', prices))
+        .toString();
+  }
+}
+
+class GProductOrdersData_productOrders_dealerBuilder
+    implements
+        Builder<GProductOrdersData_productOrders_dealer,
+            GProductOrdersData_productOrders_dealerBuilder> {
+  _$GProductOrdersData_productOrders_dealer? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GProductOrdersData_productOrders_dealer_productVariantBuilder?
+      _productVariant;
+  GProductOrdersData_productOrders_dealer_productVariantBuilder
+      get productVariant => _$this._productVariant ??=
+          new GProductOrdersData_productOrders_dealer_productVariantBuilder();
+  set productVariant(
+          GProductOrdersData_productOrders_dealer_productVariantBuilder?
+              productVariant) =>
+      _$this._productVariant = productVariant;
+
+  GProductOrdersData_productOrders_dealer_dealerBuilder? _dealer;
+  GProductOrdersData_productOrders_dealer_dealerBuilder get dealer =>
+      _$this._dealer ??=
+          new GProductOrdersData_productOrders_dealer_dealerBuilder();
+  set dealer(GProductOrdersData_productOrders_dealer_dealerBuilder? dealer) =>
+      _$this._dealer = dealer;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  ListBuilder<GProductOrdersData_productOrders_dealer_prices>? _prices;
+  ListBuilder<GProductOrdersData_productOrders_dealer_prices> get prices =>
+      _$this._prices ??=
+          new ListBuilder<GProductOrdersData_productOrders_dealer_prices>();
+  set prices(
+          ListBuilder<GProductOrdersData_productOrders_dealer_prices>?
+              prices) =>
+      _$this._prices = prices;
+
+  GProductOrdersData_productOrders_dealerBuilder() {
+    GProductOrdersData_productOrders_dealer._initializeBuilder(this);
+  }
+
+  GProductOrdersData_productOrders_dealerBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _productVariant = $v.productVariant?.toBuilder();
+      _dealer = $v.dealer?.toBuilder();
+      _id = $v.id;
+      _prices = $v.prices?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductOrdersData_productOrders_dealer other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductOrdersData_productOrders_dealer;
+  }
+
+  @override
+  void update(
+      void Function(GProductOrdersData_productOrders_dealerBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer build() => _build();
+
+  _$GProductOrdersData_productOrders_dealer _build() {
+    _$GProductOrdersData_productOrders_dealer _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductOrdersData_productOrders_dealer._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                  r'GProductOrdersData_productOrders_dealer', 'G__typename'),
+              productVariant: _productVariant?.build(),
+              dealer: _dealer?.build(),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'GProductOrdersData_productOrders_dealer', 'id'),
+              prices: _prices?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'productVariant';
+        _productVariant?.build();
+        _$failedField = 'dealer';
+        _dealer?.build();
+
+        _$failedField = 'prices';
+        _prices?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductOrdersData_productOrders_dealer',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductOrdersData_productOrders_dealer_productVariant
+    extends GProductOrdersData_productOrders_dealer_productVariant {
+  @override
+  final String G__typename;
+  @override
+  final GProductOrdersData_productOrders_dealer_productVariant_product? product;
+  @override
+  final String? name;
+
+  factory _$GProductOrdersData_productOrders_dealer_productVariant(
+          [void Function(
+                  GProductOrdersData_productOrders_dealer_productVariantBuilder)?
+              updates]) =>
+      (new GProductOrdersData_productOrders_dealer_productVariantBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductOrdersData_productOrders_dealer_productVariant._(
+      {required this.G__typename, this.product, this.name})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductOrdersData_productOrders_dealer_productVariant',
+        'G__typename');
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_productVariant rebuild(
+          void Function(
+                  GProductOrdersData_productOrders_dealer_productVariantBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductOrdersData_productOrders_dealer_productVariantBuilder toBuilder() =>
+      new GProductOrdersData_productOrders_dealer_productVariantBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductOrdersData_productOrders_dealer_productVariant &&
+        G__typename == other.G__typename &&
+        product == other.product &&
+        name == other.name;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, product.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductOrdersData_productOrders_dealer_productVariant')
+          ..add('G__typename', G__typename)
+          ..add('product', product)
+          ..add('name', name))
+        .toString();
+  }
+}
+
+class GProductOrdersData_productOrders_dealer_productVariantBuilder
+    implements
+        Builder<GProductOrdersData_productOrders_dealer_productVariant,
+            GProductOrdersData_productOrders_dealer_productVariantBuilder> {
+  _$GProductOrdersData_productOrders_dealer_productVariant? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GProductOrdersData_productOrders_dealer_productVariant_productBuilder?
+      _product;
+  GProductOrdersData_productOrders_dealer_productVariant_productBuilder
+      get product => _$this._product ??=
+          new GProductOrdersData_productOrders_dealer_productVariant_productBuilder();
+  set product(
+          GProductOrdersData_productOrders_dealer_productVariant_productBuilder?
+              product) =>
+      _$this._product = product;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  GProductOrdersData_productOrders_dealer_productVariantBuilder() {
+    GProductOrdersData_productOrders_dealer_productVariant._initializeBuilder(
+        this);
+  }
+
+  GProductOrdersData_productOrders_dealer_productVariantBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _product = $v.product?.toBuilder();
+      _name = $v.name;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductOrdersData_productOrders_dealer_productVariant other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductOrdersData_productOrders_dealer_productVariant;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductOrdersData_productOrders_dealer_productVariantBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_productVariant build() => _build();
+
+  _$GProductOrdersData_productOrders_dealer_productVariant _build() {
+    _$GProductOrdersData_productOrders_dealer_productVariant _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductOrdersData_productOrders_dealer_productVariant._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductOrdersData_productOrders_dealer_productVariant',
+                  'G__typename'),
+              product: _product?.build(),
+              name: name);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'product';
+        _product?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductOrdersData_productOrders_dealer_productVariant',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductOrdersData_productOrders_dealer_productVariant_product
+    extends GProductOrdersData_productOrders_dealer_productVariant_product {
+  @override
+  final String G__typename;
+  @override
+  final String? name;
+
+  factory _$GProductOrdersData_productOrders_dealer_productVariant_product(
+          [void Function(
+                  GProductOrdersData_productOrders_dealer_productVariant_productBuilder)?
+              updates]) =>
+      (new GProductOrdersData_productOrders_dealer_productVariant_productBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductOrdersData_productOrders_dealer_productVariant_product._(
+      {required this.G__typename, this.name})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductOrdersData_productOrders_dealer_productVariant_product',
+        'G__typename');
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_productVariant_product rebuild(
+          void Function(
+                  GProductOrdersData_productOrders_dealer_productVariant_productBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductOrdersData_productOrders_dealer_productVariant_productBuilder
+      toBuilder() =>
+          new GProductOrdersData_productOrders_dealer_productVariant_productBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductOrdersData_productOrders_dealer_productVariant_product &&
+        G__typename == other.G__typename &&
+        name == other.name;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductOrdersData_productOrders_dealer_productVariant_product')
+          ..add('G__typename', G__typename)
+          ..add('name', name))
+        .toString();
+  }
+}
+
+class GProductOrdersData_productOrders_dealer_productVariant_productBuilder
+    implements
+        Builder<GProductOrdersData_productOrders_dealer_productVariant_product,
+            GProductOrdersData_productOrders_dealer_productVariant_productBuilder> {
+  _$GProductOrdersData_productOrders_dealer_productVariant_product? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  GProductOrdersData_productOrders_dealer_productVariant_productBuilder() {
+    GProductOrdersData_productOrders_dealer_productVariant_product
+        ._initializeBuilder(this);
+  }
+
+  GProductOrdersData_productOrders_dealer_productVariant_productBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _name = $v.name;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductOrdersData_productOrders_dealer_productVariant_product other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GProductOrdersData_productOrders_dealer_productVariant_product;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductOrdersData_productOrders_dealer_productVariant_productBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_productVariant_product build() =>
+      _build();
+
+  _$GProductOrdersData_productOrders_dealer_productVariant_product _build() {
+    final _$result = _$v ??
+        new _$GProductOrdersData_productOrders_dealer_productVariant_product._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductOrdersData_productOrders_dealer_productVariant_product',
+                'G__typename'),
+            name: name);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductOrdersData_productOrders_dealer_dealer
+    extends GProductOrdersData_productOrders_dealer_dealer {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+
+  factory _$GProductOrdersData_productOrders_dealer_dealer(
+          [void Function(GProductOrdersData_productOrders_dealer_dealerBuilder)?
+              updates]) =>
+      (new GProductOrdersData_productOrders_dealer_dealerBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductOrdersData_productOrders_dealer_dealer._(
+      {required this.G__typename, required this.id})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductOrdersData_productOrders_dealer_dealer', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductOrdersData_productOrders_dealer_dealer', 'id');
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_dealer rebuild(
+          void Function(GProductOrdersData_productOrders_dealer_dealerBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductOrdersData_productOrders_dealer_dealerBuilder toBuilder() =>
+      new GProductOrdersData_productOrders_dealer_dealerBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductOrdersData_productOrders_dealer_dealer &&
+        G__typename == other.G__typename &&
+        id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductOrdersData_productOrders_dealer_dealer')
+          ..add('G__typename', G__typename)
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GProductOrdersData_productOrders_dealer_dealerBuilder
+    implements
+        Builder<GProductOrdersData_productOrders_dealer_dealer,
+            GProductOrdersData_productOrders_dealer_dealerBuilder> {
+  _$GProductOrdersData_productOrders_dealer_dealer? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GProductOrdersData_productOrders_dealer_dealerBuilder() {
+    GProductOrdersData_productOrders_dealer_dealer._initializeBuilder(this);
+  }
+
+  GProductOrdersData_productOrders_dealer_dealerBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductOrdersData_productOrders_dealer_dealer other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductOrdersData_productOrders_dealer_dealer;
+  }
+
+  @override
+  void update(
+      void Function(GProductOrdersData_productOrders_dealer_dealerBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_dealer build() => _build();
+
+  _$GProductOrdersData_productOrders_dealer_dealer _build() {
+    final _$result = _$v ??
+        new _$GProductOrdersData_productOrders_dealer_dealer._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductOrdersData_productOrders_dealer_dealer',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductOrdersData_productOrders_dealer_dealer', 'id'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductOrdersData_productOrders_dealer_prices
+    extends GProductOrdersData_productOrders_dealer_prices {
+  @override
+  final String G__typename;
+  @override
+  final int? amount;
+  @override
+  final GProductOrdersData_productOrders_dealer_prices_category? category;
+
+  factory _$GProductOrdersData_productOrders_dealer_prices(
+          [void Function(GProductOrdersData_productOrders_dealer_pricesBuilder)?
+              updates]) =>
+      (new GProductOrdersData_productOrders_dealer_pricesBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductOrdersData_productOrders_dealer_prices._(
+      {required this.G__typename, this.amount, this.category})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductOrdersData_productOrders_dealer_prices', 'G__typename');
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_prices rebuild(
+          void Function(GProductOrdersData_productOrders_dealer_pricesBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductOrdersData_productOrders_dealer_pricesBuilder toBuilder() =>
+      new GProductOrdersData_productOrders_dealer_pricesBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductOrdersData_productOrders_dealer_prices &&
+        G__typename == other.G__typename &&
+        amount == other.amount &&
+        category == other.category;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, category.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductOrdersData_productOrders_dealer_prices')
+          ..add('G__typename', G__typename)
+          ..add('amount', amount)
+          ..add('category', category))
+        .toString();
+  }
+}
+
+class GProductOrdersData_productOrders_dealer_pricesBuilder
+    implements
+        Builder<GProductOrdersData_productOrders_dealer_prices,
+            GProductOrdersData_productOrders_dealer_pricesBuilder> {
+  _$GProductOrdersData_productOrders_dealer_prices? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _amount;
+  int? get amount => _$this._amount;
+  set amount(int? amount) => _$this._amount = amount;
+
+  GProductOrdersData_productOrders_dealer_prices_categoryBuilder? _category;
+  GProductOrdersData_productOrders_dealer_prices_categoryBuilder get category =>
+      _$this._category ??=
+          new GProductOrdersData_productOrders_dealer_prices_categoryBuilder();
+  set category(
+          GProductOrdersData_productOrders_dealer_prices_categoryBuilder?
+              category) =>
+      _$this._category = category;
+
+  GProductOrdersData_productOrders_dealer_pricesBuilder() {
+    GProductOrdersData_productOrders_dealer_prices._initializeBuilder(this);
+  }
+
+  GProductOrdersData_productOrders_dealer_pricesBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _amount = $v.amount;
+      _category = $v.category?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductOrdersData_productOrders_dealer_prices other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductOrdersData_productOrders_dealer_prices;
+  }
+
+  @override
+  void update(
+      void Function(GProductOrdersData_productOrders_dealer_pricesBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_prices build() => _build();
+
+  _$GProductOrdersData_productOrders_dealer_prices _build() {
+    _$GProductOrdersData_productOrders_dealer_prices _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductOrdersData_productOrders_dealer_prices._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductOrdersData_productOrders_dealer_prices',
+                  'G__typename'),
+              amount: amount,
+              category: _category?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'category';
+        _category?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductOrdersData_productOrders_dealer_prices',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductOrdersData_productOrders_dealer_prices_category
+    extends GProductOrdersData_productOrders_dealer_prices_category {
+  @override
+  final String G__typename;
+  @override
+  final String? name;
+  @override
+  final String id;
+
+  factory _$GProductOrdersData_productOrders_dealer_prices_category(
+          [void Function(
+                  GProductOrdersData_productOrders_dealer_prices_categoryBuilder)?
+              updates]) =>
+      (new GProductOrdersData_productOrders_dealer_prices_categoryBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductOrdersData_productOrders_dealer_prices_category._(
+      {required this.G__typename, this.name, required this.id})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductOrdersData_productOrders_dealer_prices_category',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductOrdersData_productOrders_dealer_prices_category', 'id');
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_prices_category rebuild(
+          void Function(
+                  GProductOrdersData_productOrders_dealer_prices_categoryBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductOrdersData_productOrders_dealer_prices_categoryBuilder toBuilder() =>
+      new GProductOrdersData_productOrders_dealer_prices_categoryBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductOrdersData_productOrders_dealer_prices_category &&
+        G__typename == other.G__typename &&
+        name == other.name &&
+        id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductOrdersData_productOrders_dealer_prices_category')
+          ..add('G__typename', G__typename)
+          ..add('name', name)
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GProductOrdersData_productOrders_dealer_prices_categoryBuilder
+    implements
+        Builder<GProductOrdersData_productOrders_dealer_prices_category,
+            GProductOrdersData_productOrders_dealer_prices_categoryBuilder> {
+  _$GProductOrdersData_productOrders_dealer_prices_category? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GProductOrdersData_productOrders_dealer_prices_categoryBuilder() {
+    GProductOrdersData_productOrders_dealer_prices_category._initializeBuilder(
+        this);
+  }
+
+  GProductOrdersData_productOrders_dealer_prices_categoryBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _name = $v.name;
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductOrdersData_productOrders_dealer_prices_category other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductOrdersData_productOrders_dealer_prices_category;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductOrdersData_productOrders_dealer_prices_categoryBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_prices_category build() => _build();
+
+  _$GProductOrdersData_productOrders_dealer_prices_category _build() {
+    final _$result = _$v ??
+        new _$GProductOrdersData_productOrders_dealer_prices_category._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductOrdersData_productOrders_dealer_prices_category',
+                'G__typename'),
+            name: name,
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GProductOrdersData_productOrders_dealer_prices_category',
+                'id'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductOrdersData_productOrders_order
+    extends GProductOrdersData_productOrders_order {
+  @override
+  final String G__typename;
+  @override
+  final GProductOrdersData_productOrders_order_user? user;
+  @override
+  final String id;
+  @override
+  final _i2.GDateTime? createdAt;
+
+  factory _$GProductOrdersData_productOrders_order(
+          [void Function(GProductOrdersData_productOrders_orderBuilder)?
+              updates]) =>
+      (new GProductOrdersData_productOrders_orderBuilder()..update(updates))
+          ._build();
+
+  _$GProductOrdersData_productOrders_order._(
+      {required this.G__typename, this.user, required this.id, this.createdAt})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GProductOrdersData_productOrders_order', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductOrdersData_productOrders_order', 'id');
+  }
+
+  @override
+  GProductOrdersData_productOrders_order rebuild(
+          void Function(GProductOrdersData_productOrders_orderBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductOrdersData_productOrders_orderBuilder toBuilder() =>
+      new GProductOrdersData_productOrders_orderBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductOrdersData_productOrders_order &&
+        G__typename == other.G__typename &&
+        user == other.user &&
+        id == other.id &&
+        createdAt == other.createdAt;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, user.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductOrdersData_productOrders_order')
+          ..add('G__typename', G__typename)
+          ..add('user', user)
+          ..add('id', id)
+          ..add('createdAt', createdAt))
+        .toString();
+  }
+}
+
+class GProductOrdersData_productOrders_orderBuilder
+    implements
+        Builder<GProductOrdersData_productOrders_order,
+            GProductOrdersData_productOrders_orderBuilder> {
+  _$GProductOrdersData_productOrders_order? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GProductOrdersData_productOrders_order_userBuilder? _user;
+  GProductOrdersData_productOrders_order_userBuilder get user =>
+      _$this._user ??= new GProductOrdersData_productOrders_order_userBuilder();
+  set user(GProductOrdersData_productOrders_order_userBuilder? user) =>
+      _$this._user = user;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  _i2.GDateTimeBuilder? _createdAt;
+  _i2.GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+  set createdAt(_i2.GDateTimeBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GProductOrdersData_productOrders_orderBuilder() {
+    GProductOrdersData_productOrders_order._initializeBuilder(this);
+  }
+
+  GProductOrdersData_productOrders_orderBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _user = $v.user?.toBuilder();
+      _id = $v.id;
+      _createdAt = $v.createdAt?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductOrdersData_productOrders_order other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductOrdersData_productOrders_order;
+  }
+
+  @override
+  void update(
+      void Function(GProductOrdersData_productOrders_orderBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductOrdersData_productOrders_order build() => _build();
+
+  _$GProductOrdersData_productOrders_order _build() {
+    _$GProductOrdersData_productOrders_order _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductOrdersData_productOrders_order._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                  r'GProductOrdersData_productOrders_order', 'G__typename'),
+              user: _user?.build(),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'GProductOrdersData_productOrders_order', 'id'),
+              createdAt: _createdAt?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'user';
+        _user?.build();
+
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductOrdersData_productOrders_order',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductOrdersData_productOrders_order_user
+    extends GProductOrdersData_productOrders_order_user {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? email;
+  @override
+  final String? name;
+  @override
+  final String? phoneNumber;
+  @override
+  final BuiltList<GProductOrdersData_productOrders_order_user_addresses>?
+      addresses;
+
+  factory _$GProductOrdersData_productOrders_order_user(
+          [void Function(GProductOrdersData_productOrders_order_userBuilder)?
+              updates]) =>
+      (new GProductOrdersData_productOrders_order_userBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductOrdersData_productOrders_order_user._(
+      {required this.G__typename,
+      required this.id,
+      this.email,
+      this.name,
+      this.phoneNumber,
+      this.addresses})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GProductOrdersData_productOrders_order_user', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductOrdersData_productOrders_order_user', 'id');
+  }
+
+  @override
+  GProductOrdersData_productOrders_order_user rebuild(
+          void Function(GProductOrdersData_productOrders_order_userBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductOrdersData_productOrders_order_userBuilder toBuilder() =>
+      new GProductOrdersData_productOrders_order_userBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductOrdersData_productOrders_order_user &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        email == other.email &&
+        name == other.name &&
+        phoneNumber == other.phoneNumber &&
+        addresses == other.addresses;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, phoneNumber.hashCode);
+    _$hash = $jc(_$hash, addresses.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductOrdersData_productOrders_order_user')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('email', email)
+          ..add('name', name)
+          ..add('phoneNumber', phoneNumber)
+          ..add('addresses', addresses))
+        .toString();
+  }
+}
+
+class GProductOrdersData_productOrders_order_userBuilder
+    implements
+        Builder<GProductOrdersData_productOrders_order_user,
+            GProductOrdersData_productOrders_order_userBuilder> {
+  _$GProductOrdersData_productOrders_order_user? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _phoneNumber;
+  String? get phoneNumber => _$this._phoneNumber;
+  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
+
+  ListBuilder<GProductOrdersData_productOrders_order_user_addresses>?
+      _addresses;
+  ListBuilder<GProductOrdersData_productOrders_order_user_addresses>
+      get addresses => _$this._addresses ??= new ListBuilder<
+          GProductOrdersData_productOrders_order_user_addresses>();
+  set addresses(
+          ListBuilder<GProductOrdersData_productOrders_order_user_addresses>?
+              addresses) =>
+      _$this._addresses = addresses;
+
+  GProductOrdersData_productOrders_order_userBuilder() {
+    GProductOrdersData_productOrders_order_user._initializeBuilder(this);
+  }
+
+  GProductOrdersData_productOrders_order_userBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _email = $v.email;
+      _name = $v.name;
+      _phoneNumber = $v.phoneNumber;
+      _addresses = $v.addresses?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductOrdersData_productOrders_order_user other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductOrdersData_productOrders_order_user;
+  }
+
+  @override
+  void update(
+      void Function(GProductOrdersData_productOrders_order_userBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductOrdersData_productOrders_order_user build() => _build();
+
+  _$GProductOrdersData_productOrders_order_user _build() {
+    _$GProductOrdersData_productOrders_order_user _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductOrdersData_productOrders_order_user._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductOrdersData_productOrders_order_user',
+                  'G__typename'),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'GProductOrdersData_productOrders_order_user', 'id'),
+              email: email,
+              name: name,
+              phoneNumber: phoneNumber,
+              addresses: _addresses?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'addresses';
+        _addresses?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductOrdersData_productOrders_order_user',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductOrdersData_productOrders_order_user_addresses
+    extends GProductOrdersData_productOrders_order_user_addresses {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? phoneNumber;
+  @override
+  final String? pinCode;
+  @override
+  final String? state;
+  @override
+  final String? town;
+  @override
+  final String? address;
+  @override
+  final String? district;
+  @override
+  final String? name;
+
+  factory _$GProductOrdersData_productOrders_order_user_addresses(
+          [void Function(
+                  GProductOrdersData_productOrders_order_user_addressesBuilder)?
+              updates]) =>
+      (new GProductOrdersData_productOrders_order_user_addressesBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductOrdersData_productOrders_order_user_addresses._(
+      {required this.G__typename,
+      required this.id,
+      this.phoneNumber,
+      this.pinCode,
+      this.state,
+      this.town,
+      this.address,
+      this.district,
+      this.name})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductOrdersData_productOrders_order_user_addresses',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GProductOrdersData_productOrders_order_user_addresses', 'id');
+  }
+
+  @override
+  GProductOrdersData_productOrders_order_user_addresses rebuild(
+          void Function(
+                  GProductOrdersData_productOrders_order_user_addressesBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductOrdersData_productOrders_order_user_addressesBuilder toBuilder() =>
+      new GProductOrdersData_productOrders_order_user_addressesBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductOrdersData_productOrders_order_user_addresses &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        phoneNumber == other.phoneNumber &&
+        pinCode == other.pinCode &&
+        state == other.state &&
+        town == other.town &&
+        address == other.address &&
+        district == other.district &&
+        name == other.name;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, phoneNumber.hashCode);
+    _$hash = $jc(_$hash, pinCode.hashCode);
+    _$hash = $jc(_$hash, state.hashCode);
+    _$hash = $jc(_$hash, town.hashCode);
+    _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, district.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductOrdersData_productOrders_order_user_addresses')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('phoneNumber', phoneNumber)
+          ..add('pinCode', pinCode)
+          ..add('state', state)
+          ..add('town', town)
+          ..add('address', address)
+          ..add('district', district)
+          ..add('name', name))
+        .toString();
+  }
+}
+
+class GProductOrdersData_productOrders_order_user_addressesBuilder
+    implements
+        Builder<GProductOrdersData_productOrders_order_user_addresses,
+            GProductOrdersData_productOrders_order_user_addressesBuilder> {
+  _$GProductOrdersData_productOrders_order_user_addresses? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _phoneNumber;
+  String? get phoneNumber => _$this._phoneNumber;
+  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
+
+  String? _pinCode;
+  String? get pinCode => _$this._pinCode;
+  set pinCode(String? pinCode) => _$this._pinCode = pinCode;
+
+  String? _state;
+  String? get state => _$this._state;
+  set state(String? state) => _$this._state = state;
+
+  String? _town;
+  String? get town => _$this._town;
+  set town(String? town) => _$this._town = town;
+
+  String? _address;
+  String? get address => _$this._address;
+  set address(String? address) => _$this._address = address;
+
+  String? _district;
+  String? get district => _$this._district;
+  set district(String? district) => _$this._district = district;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  GProductOrdersData_productOrders_order_user_addressesBuilder() {
+    GProductOrdersData_productOrders_order_user_addresses._initializeBuilder(
+        this);
+  }
+
+  GProductOrdersData_productOrders_order_user_addressesBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _phoneNumber = $v.phoneNumber;
+      _pinCode = $v.pinCode;
+      _state = $v.state;
+      _town = $v.town;
+      _address = $v.address;
+      _district = $v.district;
+      _name = $v.name;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductOrdersData_productOrders_order_user_addresses other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductOrdersData_productOrders_order_user_addresses;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductOrdersData_productOrders_order_user_addressesBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductOrdersData_productOrders_order_user_addresses build() => _build();
+
+  _$GProductOrdersData_productOrders_order_user_addresses _build() {
+    final _$result = _$v ??
+        new _$GProductOrdersData_productOrders_order_user_addresses._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductOrdersData_productOrders_order_user_addresses',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(id,
+                r'GProductOrdersData_productOrders_order_user_addresses', 'id'),
+            phoneNumber: phoneNumber,
+            pinCode: pinCode,
+            state: state,
+            town: town,
+            address: address,
+            district: district,
+            name: name);
+    replace(_$result);
+    return _$result;
   }
 }
 
@@ -6872,6 +9667,243 @@ class GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder
             address: address,
             district: district,
             name: name);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUpdateProductOrderData extends GUpdateProductOrderData {
+  @override
+  final String G__typename;
+  @override
+  final GUpdateProductOrderData_updateProductOrder? updateProductOrder;
+
+  factory _$GUpdateProductOrderData(
+          [void Function(GUpdateProductOrderDataBuilder)? updates]) =>
+      (new GUpdateProductOrderDataBuilder()..update(updates))._build();
+
+  _$GUpdateProductOrderData._(
+      {required this.G__typename, this.updateProductOrder})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GUpdateProductOrderData', 'G__typename');
+  }
+
+  @override
+  GUpdateProductOrderData rebuild(
+          void Function(GUpdateProductOrderDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUpdateProductOrderDataBuilder toBuilder() =>
+      new GUpdateProductOrderDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUpdateProductOrderData &&
+        G__typename == other.G__typename &&
+        updateProductOrder == other.updateProductOrder;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, updateProductOrder.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GUpdateProductOrderData')
+          ..add('G__typename', G__typename)
+          ..add('updateProductOrder', updateProductOrder))
+        .toString();
+  }
+}
+
+class GUpdateProductOrderDataBuilder
+    implements
+        Builder<GUpdateProductOrderData, GUpdateProductOrderDataBuilder> {
+  _$GUpdateProductOrderData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GUpdateProductOrderData_updateProductOrderBuilder? _updateProductOrder;
+  GUpdateProductOrderData_updateProductOrderBuilder get updateProductOrder =>
+      _$this._updateProductOrder ??=
+          new GUpdateProductOrderData_updateProductOrderBuilder();
+  set updateProductOrder(
+          GUpdateProductOrderData_updateProductOrderBuilder?
+              updateProductOrder) =>
+      _$this._updateProductOrder = updateProductOrder;
+
+  GUpdateProductOrderDataBuilder() {
+    GUpdateProductOrderData._initializeBuilder(this);
+  }
+
+  GUpdateProductOrderDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _updateProductOrder = $v.updateProductOrder?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUpdateProductOrderData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUpdateProductOrderData;
+  }
+
+  @override
+  void update(void Function(GUpdateProductOrderDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUpdateProductOrderData build() => _build();
+
+  _$GUpdateProductOrderData _build() {
+    _$GUpdateProductOrderData _$result;
+    try {
+      _$result = _$v ??
+          new _$GUpdateProductOrderData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GUpdateProductOrderData', 'G__typename'),
+              updateProductOrder: _updateProductOrder?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'updateProductOrder';
+        _updateProductOrder?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUpdateProductOrderData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUpdateProductOrderData_updateProductOrder
+    extends GUpdateProductOrderData_updateProductOrder {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+
+  factory _$GUpdateProductOrderData_updateProductOrder(
+          [void Function(GUpdateProductOrderData_updateProductOrderBuilder)?
+              updates]) =>
+      (new GUpdateProductOrderData_updateProductOrderBuilder()..update(updates))
+          ._build();
+
+  _$GUpdateProductOrderData_updateProductOrder._(
+      {required this.G__typename, required this.id})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GUpdateProductOrderData_updateProductOrder', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GUpdateProductOrderData_updateProductOrder', 'id');
+  }
+
+  @override
+  GUpdateProductOrderData_updateProductOrder rebuild(
+          void Function(GUpdateProductOrderData_updateProductOrderBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUpdateProductOrderData_updateProductOrderBuilder toBuilder() =>
+      new GUpdateProductOrderData_updateProductOrderBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUpdateProductOrderData_updateProductOrder &&
+        G__typename == other.G__typename &&
+        id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUpdateProductOrderData_updateProductOrder')
+          ..add('G__typename', G__typename)
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GUpdateProductOrderData_updateProductOrderBuilder
+    implements
+        Builder<GUpdateProductOrderData_updateProductOrder,
+            GUpdateProductOrderData_updateProductOrderBuilder> {
+  _$GUpdateProductOrderData_updateProductOrder? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GUpdateProductOrderData_updateProductOrderBuilder() {
+    GUpdateProductOrderData_updateProductOrder._initializeBuilder(this);
+  }
+
+  GUpdateProductOrderData_updateProductOrderBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUpdateProductOrderData_updateProductOrder other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUpdateProductOrderData_updateProductOrder;
+  }
+
+  @override
+  void update(
+      void Function(GUpdateProductOrderData_updateProductOrderBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUpdateProductOrderData_updateProductOrder build() => _build();
+
+  _$GUpdateProductOrderData_updateProductOrder _build() {
+    final _$result = _$v ??
+        new _$GUpdateProductOrderData_updateProductOrder._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GUpdateProductOrderData_updateProductOrder', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GUpdateProductOrderData_updateProductOrder', 'id'));
     replace(_$result);
     return _$result;
   }

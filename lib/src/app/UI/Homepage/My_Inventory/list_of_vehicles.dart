@@ -17,7 +17,7 @@ class ListOfVehicles extends ConsumerWidget {
       (element) => element.colors
           .where(
             (p0) => !inventoryPro.vehicleDealers
-                .map((e) => e.vehicleColor!.id)
+                .map((e) => e.vehicleColor?.id)
                 .contains(p0.id),
           )
           .isNotEmpty,

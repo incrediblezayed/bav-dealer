@@ -12,6 +12,30 @@ import 'package:dealerapp/src/app/repository/graphql/__generated__/serializers.g
 
 part 'orders.var.gql.g.dart';
 
+abstract class GProductOrdersVars
+    implements Built<GProductOrdersVars, GProductOrdersVarsBuilder> {
+  GProductOrdersVars._();
+
+  factory GProductOrdersVars([Function(GProductOrdersVarsBuilder b) updates]) =
+      _$GProductOrdersVars;
+
+  _i1.GProductOrderWhereInput get where;
+  BuiltList<_i1.GProductOrderOrderByInput> get orderBy;
+  static Serializer<GProductOrdersVars> get serializer =>
+      _$gProductOrdersVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductOrdersVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrdersVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductOrdersVars.serializer,
+        json,
+      );
+}
+
 abstract class GVehicleOrdersVars
     implements Built<GVehicleOrdersVars, GVehicleOrdersVarsBuilder> {
   GVehicleOrdersVars._();
@@ -57,6 +81,31 @@ abstract class GTestDriveOrdersVars
   static GTestDriveOrdersVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveOrdersVars.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateProductOrderVars
+    implements Built<GUpdateProductOrderVars, GUpdateProductOrderVarsBuilder> {
+  GUpdateProductOrderVars._();
+
+  factory GUpdateProductOrderVars(
+          [Function(GUpdateProductOrderVarsBuilder b) updates]) =
+      _$GUpdateProductOrderVars;
+
+  _i1.GProductOrderWhereUniqueInput get where;
+  _i1.GProductOrderUpdateInput get data;
+  static Serializer<GUpdateProductOrderVars> get serializer =>
+      _$gUpdateProductOrderVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GUpdateProductOrderVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateProductOrderVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GUpdateProductOrderVars.serializer,
         json,
       );
 }

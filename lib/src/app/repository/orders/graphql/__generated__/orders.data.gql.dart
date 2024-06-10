@@ -12,6 +12,399 @@ import 'package:dealerapp/src/app/repository/graphql/__generated__/serializers.g
 
 part 'orders.data.gql.g.dart';
 
+abstract class GProductOrdersData
+    implements Built<GProductOrdersData, GProductOrdersDataBuilder> {
+  GProductOrdersData._();
+
+  factory GProductOrdersData([Function(GProductOrdersDataBuilder b) updates]) =
+      _$GProductOrdersData;
+
+  static void _initializeBuilder(GProductOrdersDataBuilder b) =>
+      b..G__typename = 'Query';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  BuiltList<GProductOrdersData_productOrders>? get productOrders;
+  static Serializer<GProductOrdersData> get serializer =>
+      _$gProductOrdersDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductOrdersData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrdersData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductOrdersData.serializer,
+        json,
+      );
+}
+
+abstract class GProductOrdersData_productOrders
+    implements
+        Built<GProductOrdersData_productOrders,
+            GProductOrdersData_productOrdersBuilder> {
+  GProductOrdersData_productOrders._();
+
+  factory GProductOrdersData_productOrders(
+          [Function(GProductOrdersData_productOrdersBuilder b) updates]) =
+      _$GProductOrdersData_productOrders;
+
+  static void _initializeBuilder(GProductOrdersData_productOrdersBuilder b) =>
+      b..G__typename = 'ProductOrder';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  int? get price;
+  GProductOrdersData_productOrders_dealer? get dealer;
+  String? get status;
+  GProductOrdersData_productOrders_order? get order;
+  _i2.GDateTime? get createdAt;
+  static Serializer<GProductOrdersData_productOrders> get serializer =>
+      _$gProductOrdersDataProductOrdersSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductOrdersData_productOrders.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrdersData_productOrders? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductOrdersData_productOrders.serializer,
+        json,
+      );
+}
+
+abstract class GProductOrdersData_productOrders_dealer
+    implements
+        Built<GProductOrdersData_productOrders_dealer,
+            GProductOrdersData_productOrders_dealerBuilder> {
+  GProductOrdersData_productOrders_dealer._();
+
+  factory GProductOrdersData_productOrders_dealer(
+      [Function(GProductOrdersData_productOrders_dealerBuilder b)
+          updates]) = _$GProductOrdersData_productOrders_dealer;
+
+  static void _initializeBuilder(
+          GProductOrdersData_productOrders_dealerBuilder b) =>
+      b..G__typename = 'ProductDealer';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GProductOrdersData_productOrders_dealer_productVariant? get productVariant;
+  GProductOrdersData_productOrders_dealer_dealer? get dealer;
+  String get id;
+  BuiltList<GProductOrdersData_productOrders_dealer_prices>? get prices;
+  static Serializer<GProductOrdersData_productOrders_dealer> get serializer =>
+      _$gProductOrdersDataProductOrdersDealerSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductOrdersData_productOrders_dealer.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrdersData_productOrders_dealer? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductOrdersData_productOrders_dealer.serializer,
+        json,
+      );
+}
+
+abstract class GProductOrdersData_productOrders_dealer_productVariant
+    implements
+        Built<GProductOrdersData_productOrders_dealer_productVariant,
+            GProductOrdersData_productOrders_dealer_productVariantBuilder> {
+  GProductOrdersData_productOrders_dealer_productVariant._();
+
+  factory GProductOrdersData_productOrders_dealer_productVariant(
+      [Function(GProductOrdersData_productOrders_dealer_productVariantBuilder b)
+          updates]) = _$GProductOrdersData_productOrders_dealer_productVariant;
+
+  static void _initializeBuilder(
+          GProductOrdersData_productOrders_dealer_productVariantBuilder b) =>
+      b..G__typename = 'ProductVariant';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GProductOrdersData_productOrders_dealer_productVariant_product? get product;
+  String? get name;
+  static Serializer<GProductOrdersData_productOrders_dealer_productVariant>
+      get serializer =>
+          _$gProductOrdersDataProductOrdersDealerProductVariantSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductOrdersData_productOrders_dealer_productVariant.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrdersData_productOrders_dealer_productVariant? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductOrdersData_productOrders_dealer_productVariant.serializer,
+        json,
+      );
+}
+
+abstract class GProductOrdersData_productOrders_dealer_productVariant_product
+    implements
+        Built<GProductOrdersData_productOrders_dealer_productVariant_product,
+            GProductOrdersData_productOrders_dealer_productVariant_productBuilder> {
+  GProductOrdersData_productOrders_dealer_productVariant_product._();
+
+  factory GProductOrdersData_productOrders_dealer_productVariant_product(
+          [Function(
+                  GProductOrdersData_productOrders_dealer_productVariant_productBuilder
+                      b)
+              updates]) =
+      _$GProductOrdersData_productOrders_dealer_productVariant_product;
+
+  static void _initializeBuilder(
+          GProductOrdersData_productOrders_dealer_productVariant_productBuilder
+              b) =>
+      b..G__typename = 'Product';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String? get name;
+  static Serializer<
+          GProductOrdersData_productOrders_dealer_productVariant_product>
+      get serializer =>
+          _$gProductOrdersDataProductOrdersDealerProductVariantProductSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductOrdersData_productOrders_dealer_productVariant_product
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrdersData_productOrders_dealer_productVariant_product?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GProductOrdersData_productOrders_dealer_productVariant_product
+                .serializer,
+            json,
+          );
+}
+
+abstract class GProductOrdersData_productOrders_dealer_dealer
+    implements
+        Built<GProductOrdersData_productOrders_dealer_dealer,
+            GProductOrdersData_productOrders_dealer_dealerBuilder> {
+  GProductOrdersData_productOrders_dealer_dealer._();
+
+  factory GProductOrdersData_productOrders_dealer_dealer(
+      [Function(GProductOrdersData_productOrders_dealer_dealerBuilder b)
+          updates]) = _$GProductOrdersData_productOrders_dealer_dealer;
+
+  static void _initializeBuilder(
+          GProductOrdersData_productOrders_dealer_dealerBuilder b) =>
+      b..G__typename = 'Dealer';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  static Serializer<GProductOrdersData_productOrders_dealer_dealer>
+      get serializer => _$gProductOrdersDataProductOrdersDealerDealerSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductOrdersData_productOrders_dealer_dealer.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrdersData_productOrders_dealer_dealer? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductOrdersData_productOrders_dealer_dealer.serializer,
+        json,
+      );
+}
+
+abstract class GProductOrdersData_productOrders_dealer_prices
+    implements
+        Built<GProductOrdersData_productOrders_dealer_prices,
+            GProductOrdersData_productOrders_dealer_pricesBuilder> {
+  GProductOrdersData_productOrders_dealer_prices._();
+
+  factory GProductOrdersData_productOrders_dealer_prices(
+      [Function(GProductOrdersData_productOrders_dealer_pricesBuilder b)
+          updates]) = _$GProductOrdersData_productOrders_dealer_prices;
+
+  static void _initializeBuilder(
+          GProductOrdersData_productOrders_dealer_pricesBuilder b) =>
+      b..G__typename = 'Price';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int? get amount;
+  GProductOrdersData_productOrders_dealer_prices_category? get category;
+  static Serializer<GProductOrdersData_productOrders_dealer_prices>
+      get serializer => _$gProductOrdersDataProductOrdersDealerPricesSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductOrdersData_productOrders_dealer_prices.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrdersData_productOrders_dealer_prices? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductOrdersData_productOrders_dealer_prices.serializer,
+        json,
+      );
+}
+
+abstract class GProductOrdersData_productOrders_dealer_prices_category
+    implements
+        Built<GProductOrdersData_productOrders_dealer_prices_category,
+            GProductOrdersData_productOrders_dealer_prices_categoryBuilder> {
+  GProductOrdersData_productOrders_dealer_prices_category._();
+
+  factory GProductOrdersData_productOrders_dealer_prices_category(
+      [Function(
+              GProductOrdersData_productOrders_dealer_prices_categoryBuilder b)
+          updates]) = _$GProductOrdersData_productOrders_dealer_prices_category;
+
+  static void _initializeBuilder(
+          GProductOrdersData_productOrders_dealer_prices_categoryBuilder b) =>
+      b..G__typename = 'PriceCategory';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String? get name;
+  String get id;
+  static Serializer<GProductOrdersData_productOrders_dealer_prices_category>
+      get serializer =>
+          _$gProductOrdersDataProductOrdersDealerPricesCategorySerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductOrdersData_productOrders_dealer_prices_category.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrdersData_productOrders_dealer_prices_category? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductOrdersData_productOrders_dealer_prices_category.serializer,
+        json,
+      );
+}
+
+abstract class GProductOrdersData_productOrders_order
+    implements
+        Built<GProductOrdersData_productOrders_order,
+            GProductOrdersData_productOrders_orderBuilder> {
+  GProductOrdersData_productOrders_order._();
+
+  factory GProductOrdersData_productOrders_order(
+          [Function(GProductOrdersData_productOrders_orderBuilder b) updates]) =
+      _$GProductOrdersData_productOrders_order;
+
+  static void _initializeBuilder(
+          GProductOrdersData_productOrders_orderBuilder b) =>
+      b..G__typename = 'Order';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GProductOrdersData_productOrders_order_user? get user;
+  String get id;
+  _i2.GDateTime? get createdAt;
+  static Serializer<GProductOrdersData_productOrders_order> get serializer =>
+      _$gProductOrdersDataProductOrdersOrderSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductOrdersData_productOrders_order.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrdersData_productOrders_order? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductOrdersData_productOrders_order.serializer,
+        json,
+      );
+}
+
+abstract class GProductOrdersData_productOrders_order_user
+    implements
+        Built<GProductOrdersData_productOrders_order_user,
+            GProductOrdersData_productOrders_order_userBuilder> {
+  GProductOrdersData_productOrders_order_user._();
+
+  factory GProductOrdersData_productOrders_order_user(
+      [Function(GProductOrdersData_productOrders_order_userBuilder b)
+          updates]) = _$GProductOrdersData_productOrders_order_user;
+
+  static void _initializeBuilder(
+          GProductOrdersData_productOrders_order_userBuilder b) =>
+      b..G__typename = 'User';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get email;
+  String? get name;
+  String? get phoneNumber;
+  BuiltList<GProductOrdersData_productOrders_order_user_addresses>?
+      get addresses;
+  static Serializer<GProductOrdersData_productOrders_order_user>
+      get serializer => _$gProductOrdersDataProductOrdersOrderUserSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductOrdersData_productOrders_order_user.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrdersData_productOrders_order_user? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductOrdersData_productOrders_order_user.serializer,
+        json,
+      );
+}
+
+abstract class GProductOrdersData_productOrders_order_user_addresses
+    implements
+        Built<GProductOrdersData_productOrders_order_user_addresses,
+            GProductOrdersData_productOrders_order_user_addressesBuilder> {
+  GProductOrdersData_productOrders_order_user_addresses._();
+
+  factory GProductOrdersData_productOrders_order_user_addresses(
+      [Function(GProductOrdersData_productOrders_order_user_addressesBuilder b)
+          updates]) = _$GProductOrdersData_productOrders_order_user_addresses;
+
+  static void _initializeBuilder(
+          GProductOrdersData_productOrders_order_user_addressesBuilder b) =>
+      b..G__typename = 'Address';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get phoneNumber;
+  String? get pinCode;
+  String? get state;
+  String? get town;
+  String? get address;
+  String? get district;
+  String? get name;
+  static Serializer<GProductOrdersData_productOrders_order_user_addresses>
+      get serializer =>
+          _$gProductOrdersDataProductOrdersOrderUserAddressesSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductOrdersData_productOrders_order_user_addresses.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrdersData_productOrders_order_user_addresses? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductOrdersData_productOrders_order_user_addresses.serializer,
+        json,
+      );
+}
+
 abstract class GVehicleOrdersData
     implements Built<GVehicleOrdersData, GVehicleOrdersDataBuilder> {
   GVehicleOrdersData._();
@@ -978,6 +1371,68 @@ abstract class GTestDriveOrdersData_testDriveOrders_order_user_addresses
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GTestDriveOrdersData_testDriveOrders_order_user_addresses.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateProductOrderData
+    implements Built<GUpdateProductOrderData, GUpdateProductOrderDataBuilder> {
+  GUpdateProductOrderData._();
+
+  factory GUpdateProductOrderData(
+          [Function(GUpdateProductOrderDataBuilder b) updates]) =
+      _$GUpdateProductOrderData;
+
+  static void _initializeBuilder(GUpdateProductOrderDataBuilder b) =>
+      b..G__typename = 'Mutation';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GUpdateProductOrderData_updateProductOrder? get updateProductOrder;
+  static Serializer<GUpdateProductOrderData> get serializer =>
+      _$gUpdateProductOrderDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateProductOrderData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateProductOrderData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateProductOrderData.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateProductOrderData_updateProductOrder
+    implements
+        Built<GUpdateProductOrderData_updateProductOrder,
+            GUpdateProductOrderData_updateProductOrderBuilder> {
+  GUpdateProductOrderData_updateProductOrder._();
+
+  factory GUpdateProductOrderData_updateProductOrder(
+      [Function(GUpdateProductOrderData_updateProductOrderBuilder b)
+          updates]) = _$GUpdateProductOrderData_updateProductOrder;
+
+  static void _initializeBuilder(
+          GUpdateProductOrderData_updateProductOrderBuilder b) =>
+      b..G__typename = 'ProductOrder';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  static Serializer<GUpdateProductOrderData_updateProductOrder>
+      get serializer => _$gUpdateProductOrderDataUpdateProductOrderSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateProductOrderData_updateProductOrder.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateProductOrderData_updateProductOrder? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateProductOrderData_updateProductOrder.serializer,
         json,
       );
 }
