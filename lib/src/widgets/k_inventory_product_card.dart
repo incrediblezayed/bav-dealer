@@ -6,6 +6,8 @@ import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'k_cached_network_image.dart';
+
 class KInvetoryProductCard extends ConsumerStatefulWidget {
   const KInvetoryProductCard({
     required this.variant,
@@ -70,13 +72,13 @@ class _KInvetoryProductCardState extends ConsumerState<KInvetoryProductCard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                variants.parentProduct.brand?.name ?? '',
+                variants.name ?? '',
                 style: theme.headlineLarge!
                     .copyWith(fontSize: 24.sp, fontWeight: FontWeight.w500),
               ),
               SizedBox(height: 10.h),
               Text(
-                variants.parentProduct.brand!.name,
+                variants.product?.brand?.name ??'',
                 style: theme.labelMedium!.copyWith(
                   color: Colors.black.withOpacity(.5),
                   fontWeight: FontWeight.w500,
@@ -97,10 +99,10 @@ class _KInvetoryProductCardState extends ConsumerState<KInvetoryProductCard> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(6.r),
                           // Placeholder for the product image
-                          /* child: Image.network(
-                            variants.imageUrl, // Use the URL of the product image
+                           child: KCachedNWImage(
+                            variants.images?.firstOrNull?.image.url ?? '', // Use the URL of the product image
                             fit: BoxFit.cover,
-                          ),*/
+                          ),
                         ),
                       ),
                       SizedBox(width: 20.w),
@@ -119,7 +121,7 @@ class _KInvetoryProductCardState extends ConsumerState<KInvetoryProductCard> {
                                 SizedBox(width: 10.w),
                                 Flexible(
                                   child: Text(
-                                    variants.id,
+                                    variants.name ?? '',
                                     style: theme.labelMedium!.copyWith(
                                       color: Colors.black.withOpacity(.5),
                                       fontWeight: FontWeight.w500,
@@ -129,7 +131,7 @@ class _KInvetoryProductCardState extends ConsumerState<KInvetoryProductCard> {
                               ],
                             ),
                             SizedBox(height: 6.h),
-                            Row(
+                            /*Row(
                               children: [
                                 Text(
                                   'Color',
@@ -140,16 +142,16 @@ class _KInvetoryProductCardState extends ConsumerState<KInvetoryProductCard> {
                                 ),
                                 SizedBox(width: 10.w),
                                 // Display the color name here
-                                /* Text(
-                                  variants.color.toString(),
+                                 Text(
+                                  variants.colors.toString(),
                                   style: theme.labelMedium!.copyWith(
                                     color: Colors.black.withOpacity(.5),
                                     fontWeight: FontWeight.w500,
                                   ),
-                                ),*/
+                                ),
                               ],
                             ),
-                            SizedBox(height: 6.h),
+                            SizedBox(height: 6.h),*/
                             Row(
                               children: [
                                 Text(
@@ -161,8 +163,8 @@ class _KInvetoryProductCardState extends ConsumerState<KInvetoryProductCard> {
                                 ),
                                 SizedBox(width: 10.w),
                                 Text(
-                                  variants.prices
-                                      .toString(), // Display the price here
+                                  variants.totalPrice
+                                      .toString()??'', // Display the price here
                                   style: theme.labelLarge!.copyWith(
                                     fontWeight: FontWeight.w600,
                                     color: AppTheme.primaryColor,
@@ -180,10 +182,35 @@ class _KInvetoryProductCardState extends ConsumerState<KInvetoryProductCard> {
               ),
               SizedBox(height: 10.h),
               KButton(
-                onPressed: () {
-                  // Handle test ride button action
+                onPressed: () async {
+                  /*await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => QuantityScreen(
+                        variantId: widget.variant.id,
+                        colorId: selectedColor!.id,
+                        guarantees: const [],
+                        prices: const [],
+
+                      ),
+                    ),
+                  );
+                  setState(() {
+                    *//*selectedColor = variants.colors
+                        .where(
+                          (p0) => !ref
+                          .read(inventoryProvider)
+                          .vehicleDealers
+                          .map((e) => e.vehicleColor!.id)
+                          .contains(p0.id),
+                    )
+                        .firstOrNull;*//*
+                  });*/
                 },
-                text: 'Test Ride',
+                text: 'Add (or) Update',
+              ),
+              SizedBox(
+                height: 10.h,
               ),
             ],
           ),

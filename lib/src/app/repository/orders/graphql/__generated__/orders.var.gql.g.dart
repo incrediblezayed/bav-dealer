@@ -6,10 +6,14 @@ part of 'orders.var.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+Serializer<GProductOrdersVars> _$gProductOrdersVarsSerializer =
+    new _$GProductOrdersVarsSerializer();
 Serializer<GVehicleOrdersVars> _$gVehicleOrdersVarsSerializer =
     new _$GVehicleOrdersVarsSerializer();
 Serializer<GTestDriveOrdersVars> _$gTestDriveOrdersVarsSerializer =
     new _$GTestDriveOrdersVarsSerializer();
+Serializer<GUpdateProductOrderVars> _$gUpdateProductOrderVarsSerializer =
+    new _$GUpdateProductOrderVarsSerializer();
 Serializer<GUpdateVehicleOrderVars> _$gUpdateVehicleOrderVarsSerializer =
     new _$GUpdateVehicleOrderVarsSerializer();
 Serializer<GUpdateTestDriveOrderVars> _$gUpdateTestDriveOrderVarsSerializer =
@@ -17,6 +21,60 @@ Serializer<GUpdateTestDriveOrderVars> _$gUpdateTestDriveOrderVarsSerializer =
 Serializer<GCreateOrderRejectionByDealerVars>
     _$gCreateOrderRejectionByDealerVarsSerializer =
     new _$GCreateOrderRejectionByDealerVarsSerializer();
+
+class _$GProductOrdersVarsSerializer
+    implements StructuredSerializer<GProductOrdersVars> {
+  @override
+  final Iterable<Type> types = const [GProductOrdersVars, _$GProductOrdersVars];
+  @override
+  final String wireName = 'GProductOrdersVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductOrdersVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(_i1.GProductOrderWhereInput)),
+      'orderBy',
+      serializers.serialize(object.orderBy,
+          specifiedType: const FullType(BuiltList,
+              const [const FullType(_i1.GProductOrderOrderByInput)])),
+    ];
+
+    return result;
+  }
+
+  @override
+  GProductOrdersVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductOrdersVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i1.GProductOrderWhereInput))!
+              as _i1.GProductOrderWhereInput);
+          break;
+        case 'orderBy':
+          result.orderBy.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(_i1.GProductOrderOrderByInput)
+              ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
 
 class _$GVehicleOrdersVarsSerializer
     implements StructuredSerializer<GVehicleOrdersVars> {
@@ -121,6 +179,62 @@ class _$GTestDriveOrdersVarsSerializer
               specifiedType: const FullType(BuiltList, const [
                 const FullType(_i1.GTestDriveOrderOrderByInput)
               ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUpdateProductOrderVarsSerializer
+    implements StructuredSerializer<GUpdateProductOrderVars> {
+  @override
+  final Iterable<Type> types = const [
+    GUpdateProductOrderVars,
+    _$GUpdateProductOrderVars
+  ];
+  @override
+  final String wireName = 'GUpdateProductOrderVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUpdateProductOrderVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(_i1.GProductOrderWhereUniqueInput)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(_i1.GProductOrderUpdateInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GUpdateProductOrderVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUpdateProductOrderVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(_i1.GProductOrderWhereUniqueInput))!
+              as _i1.GProductOrderWhereUniqueInput);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i1.GProductOrderUpdateInput))!
+              as _i1.GProductOrderUpdateInput);
           break;
       }
     }
@@ -288,6 +402,124 @@ class _$GCreateOrderRejectionByDealerVarsSerializer
     }
 
     return result.build();
+  }
+}
+
+class _$GProductOrdersVars extends GProductOrdersVars {
+  @override
+  final _i1.GProductOrderWhereInput where;
+  @override
+  final BuiltList<_i1.GProductOrderOrderByInput> orderBy;
+
+  factory _$GProductOrdersVars(
+          [void Function(GProductOrdersVarsBuilder)? updates]) =>
+      (new GProductOrdersVarsBuilder()..update(updates))._build();
+
+  _$GProductOrdersVars._({required this.where, required this.orderBy})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GProductOrdersVars', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        orderBy, r'GProductOrdersVars', 'orderBy');
+  }
+
+  @override
+  GProductOrdersVars rebuild(
+          void Function(GProductOrdersVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductOrdersVarsBuilder toBuilder() =>
+      new GProductOrdersVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductOrdersVars &&
+        where == other.where &&
+        orderBy == other.orderBy;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, orderBy.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GProductOrdersVars')
+          ..add('where', where)
+          ..add('orderBy', orderBy))
+        .toString();
+  }
+}
+
+class GProductOrdersVarsBuilder
+    implements Builder<GProductOrdersVars, GProductOrdersVarsBuilder> {
+  _$GProductOrdersVars? _$v;
+
+  _i1.GProductOrderWhereInputBuilder? _where;
+  _i1.GProductOrderWhereInputBuilder get where =>
+      _$this._where ??= new _i1.GProductOrderWhereInputBuilder();
+  set where(_i1.GProductOrderWhereInputBuilder? where) => _$this._where = where;
+
+  ListBuilder<_i1.GProductOrderOrderByInput>? _orderBy;
+  ListBuilder<_i1.GProductOrderOrderByInput> get orderBy =>
+      _$this._orderBy ??= new ListBuilder<_i1.GProductOrderOrderByInput>();
+  set orderBy(ListBuilder<_i1.GProductOrderOrderByInput>? orderBy) =>
+      _$this._orderBy = orderBy;
+
+  GProductOrdersVarsBuilder();
+
+  GProductOrdersVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _orderBy = $v.orderBy.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductOrdersVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductOrdersVars;
+  }
+
+  @override
+  void update(void Function(GProductOrdersVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductOrdersVars build() => _build();
+
+  _$GProductOrdersVars _build() {
+    _$GProductOrdersVars _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductOrdersVars._(
+              where: where.build(), orderBy: orderBy.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'orderBy';
+        orderBy.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductOrdersVars', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
   }
 }
 
@@ -520,6 +752,125 @@ class GTestDriveOrdersVarsBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GTestDriveOrdersVars', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUpdateProductOrderVars extends GUpdateProductOrderVars {
+  @override
+  final _i1.GProductOrderWhereUniqueInput where;
+  @override
+  final _i1.GProductOrderUpdateInput data;
+
+  factory _$GUpdateProductOrderVars(
+          [void Function(GUpdateProductOrderVarsBuilder)? updates]) =>
+      (new GUpdateProductOrderVarsBuilder()..update(updates))._build();
+
+  _$GUpdateProductOrderVars._({required this.where, required this.data})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GUpdateProductOrderVars', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        data, r'GUpdateProductOrderVars', 'data');
+  }
+
+  @override
+  GUpdateProductOrderVars rebuild(
+          void Function(GUpdateProductOrderVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUpdateProductOrderVarsBuilder toBuilder() =>
+      new GUpdateProductOrderVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUpdateProductOrderVars &&
+        where == other.where &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GUpdateProductOrderVars')
+          ..add('where', where)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GUpdateProductOrderVarsBuilder
+    implements
+        Builder<GUpdateProductOrderVars, GUpdateProductOrderVarsBuilder> {
+  _$GUpdateProductOrderVars? _$v;
+
+  _i1.GProductOrderWhereUniqueInputBuilder? _where;
+  _i1.GProductOrderWhereUniqueInputBuilder get where =>
+      _$this._where ??= new _i1.GProductOrderWhereUniqueInputBuilder();
+  set where(_i1.GProductOrderWhereUniqueInputBuilder? where) =>
+      _$this._where = where;
+
+  _i1.GProductOrderUpdateInputBuilder? _data;
+  _i1.GProductOrderUpdateInputBuilder get data =>
+      _$this._data ??= new _i1.GProductOrderUpdateInputBuilder();
+  set data(_i1.GProductOrderUpdateInputBuilder? data) => _$this._data = data;
+
+  GUpdateProductOrderVarsBuilder();
+
+  GUpdateProductOrderVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUpdateProductOrderVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUpdateProductOrderVars;
+  }
+
+  @override
+  void update(void Function(GUpdateProductOrderVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUpdateProductOrderVars build() => _build();
+
+  _$GUpdateProductOrderVars _build() {
+    _$GUpdateProductOrderVars _$result;
+    try {
+      _$result = _$v ??
+          new _$GUpdateProductOrderVars._(
+              where: where.build(), data: data.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUpdateProductOrderVars', _$failedField, e.toString());
       }
       rethrow;
     }

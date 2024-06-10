@@ -6,28 +6,28 @@ import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class KOrderBikeCard extends ConsumerStatefulWidget {
+class KOrderProductCard extends ConsumerStatefulWidget {
   ///
-  const KOrderBikeCard({
-    required this.vehiclePurchaseOrders,
+  const KOrderProductCard({
+    required this.productPurchaseOrders,
     super.key,
   });
-  final GVehicleOrdersData_vehicleOrders vehiclePurchaseOrders;
+  final GProductOrdersData_productOrders productPurchaseOrders;
 
   @override
-  ConsumerState<KOrderBikeCard> createState() => _KPurchaseOrderBikeCardState();
+  ConsumerState<KOrderProductCard> createState() => _KPurchaseOrderProductCardState();
 }
 
-class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
-  GVehicleOrdersData_vehicleOrders get vehiclePurchaseOrders =>
-      widget.vehiclePurchaseOrders;
+class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
+  GProductOrdersData_productOrders get productPurchaseOrders =>
+      widget.productPurchaseOrders;
 
   String rejectionReason = '';
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
-    final ordersPro = ref.read(orderProvider(OrderFamily.purchaseOrders));
+    final ordersPro = ref.read(orderProvider(OrderFamily.productOrders));
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
       child: DecoratedBox(
@@ -60,7 +60,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'ORDER ID #${widget.vehiclePurchaseOrders.id}',
+                        'ORDER ID #${widget.productPurchaseOrders.id}',
                         style: theme.labelLarge!.copyWith(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w700,
@@ -69,7 +69,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                       ),
                       SizedBox(height: 6.h),
                       Text(
-                        widget.vehiclePurchaseOrders.createdAt.toDateTime!
+                        widget.productPurchaseOrders.createdAt.toDateTime!
                             .toLocal()
                             .formatTohhmmaddMMyy,
                       ),
@@ -96,7 +96,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
               ),
               child: Row(
                 children: [
-                  Container(
+                  /*Container(
                     height: 100.h,
                     width: 100.w,
                     decoration: BoxDecoration(
@@ -105,13 +105,13 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(6.r),
                       child: KCachedNWImage(
-                        widget.vehiclePurchaseOrders.dealer!.vehicleColor!
-                                .images?.firstOrNull?.image?.url ??
+                        widget.productPurchaseOrders.dealer!.vehicleColor!
+                            .images?.firstOrNull?.image?.url ??
                             '',
                         fit: BoxFit.cover,
                       ),
                     ),
-                  ),
+                  ),*/
                   SizedBox(width: 20.w),
                   Expanded(
                     child: Column(
@@ -119,8 +119,8 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          widget.vehiclePurchaseOrders.dealer?.vehicleVariant
-                              ?.name??'',
+                          widget.productPurchaseOrders.dealer!.productVariant!
+                              .name!,
                           style: theme.headlineMedium,
                         ),
                         SizedBox(height: 10.h),
@@ -160,8 +160,8 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    widget.vehiclePurchaseOrders.dealer
-                                        ?.vehicleVariant?.name??'',
+                                    widget.productPurchaseOrders.dealer!
+                                        .productVariant!.name!,
                                     style: theme.labelMedium!.copyWith(
                                       color: Colors.black.withOpacity(.5),
                                       fontWeight: FontWeight.w500,
@@ -170,8 +170,8 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                                   SizedBox(height: 6.h),
                                   Text(
                                     // widget.bikeOrderModel.color,
-                                    widget.vehiclePurchaseOrders.dealer
-                                            ?.vehicleColor?.name ??
+                                    widget.productPurchaseOrders.dealer
+                                        ?.productVariant?.name ??
                                         '',
                                     style: theme.labelMedium!.copyWith(
                                       color: Colors.black.withOpacity(.5),
@@ -318,7 +318,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  if (vehiclePurchaseOrders.status == 'created')
+                  if (productPurchaseOrders.status == 'created')
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20.w),
                       child: Row(
@@ -346,7 +346,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              ordersPro.acceptOrder(vehiclePurchaseOrders.id);
+                              ordersPro.acceptOrder(productPurchaseOrders.id);
                             },
                             child: Container(
                               height: 50.h,
@@ -367,7 +367,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                         ],
                       ),
                     ),
-                  if (vehiclePurchaseOrders.status == 'accepted')
+                  if (productPurchaseOrders.status == 'accepted')
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20.w),
                       child: Row(
@@ -381,7 +381,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                           ),
                           SizedBox(width: 100.w),
                           Text(
-                            'Accepted',
+                            'accepted',
                             style: theme.labelMedium!.copyWith(
                               color: AppTheme.primaryColor,
                               fontWeight: FontWeight.w700,
@@ -390,7 +390,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                         ],
                       ),
                     ),
-                  if (vehiclePurchaseOrders.status == 'rejected')
+                  if (productPurchaseOrders.status == 'rejected')
                     Column(
                       children: [
                         Padding(
@@ -577,15 +577,15 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                         ref
                             .read(orderProvider(OrderFamily.purchaseOrders))
                             .rejectOrder(
-                              id: vehiclePurchaseOrders.id,
-                              reason: selectedReason,
-                              isPurchaseOrder: true,
-                            );
+                          id: productPurchaseOrders.id,
+                          reason: selectedReason,
+                          isPurchaseOrder: true,
+                        );
                       },
                       child: Text(
                         'Submit',
                         style:
-                            theme.headlineSmall!.copyWith(color: Colors.white),
+                        theme.headlineSmall!.copyWith(color: Colors.white),
                       ),
                     ),
                   ),

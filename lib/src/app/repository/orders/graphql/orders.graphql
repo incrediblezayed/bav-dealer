@@ -1,3 +1,51 @@
+query ProductOrders($where: ProductOrderWhereInput!, $orderBy: [ProductOrderOrderByInput!]!) {
+  productOrders(where: $where, orderBy: $orderBy) {
+    id
+    price
+    dealer {
+      productVariant {
+        product {
+          name
+        }
+        name
+      }
+      dealer {
+        id
+      }
+      id
+      prices {
+        amount
+        category {
+          name
+          id
+        }
+      }
+    }
+    status
+    order {
+      user {
+        id
+        email
+        name
+        phoneNumber
+        addresses {
+          id
+          phoneNumber
+          pinCode
+          state
+          town
+          address
+          district
+          name
+        }
+      }
+      id
+      createdAt
+    }
+    createdAt
+  }
+}
+
 query VehicleOrders(
   $orderBy: [VehicleOrderOrderByInput!]!
   $where: VehicleOrderWhereInput!
@@ -115,6 +163,14 @@ query TestDriveOrders(
       createdAt
     }
     createdAt
+  }
+}
+
+mutation UpdateProductOrder(
+  $where: ProductOrderWhereUniqueInput!,
+  $data: ProductOrderUpdateInput!) {
+  updateProductOrder(where: $where, data: $data) {
+    id
   }
 }
 

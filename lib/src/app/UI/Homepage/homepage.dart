@@ -14,6 +14,8 @@ import 'package:dealerapp/src/widgets/user_profile_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'Product_Orders/products_orders.dart';
+
 ///HomePage
 class HomePage extends ConsumerWidget {
   ///Constructor
@@ -244,13 +246,11 @@ class HomePage extends ConsumerWidget {
                               containerBgColor: const Color(0xffffec8a),
                               iconBgColor: const Color(0xffffdc53),
                               image: AppImages.s3,
-                              title: 'Add Feedback',
+                              title: 'Products orders',
                               titleColor: const Color(0xfffdb35f),
                               onTap: () {
                                 AppRoutes.push(
-                                  page: const ReportPage(
-                                    isFeedback: true,
-                                  ),
+                                  page: const ProductOrders(),
                                 );
                               },
                             ),

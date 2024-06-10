@@ -7,7 +7,7 @@ import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
-enum OrderFamily { purchaseOrders, testDriveOrders }
+enum OrderFamily { purchaseOrders, testDriveOrders, productOrders }
 
 enum OrderStatus {
   pending('created'),
@@ -69,6 +69,13 @@ class OrdersProvider extends ChangeNotifier {
     notifyListeners();
   } */
 
+  List<GProductOrdersData_productOrders> _productpendingOrders = [];
+  List<GProductOrdersData_productOrders> get productpendingOrders => _productpendingOrders;
+  set productpendingOrders(List<GProductOrdersData_productOrders> data) {
+    _productpendingOrders = data;
+    notifyListeners();
+  }
+
   List<GVehicleOrdersData_vehicleOrders> _pendingOrders = [];
   List<GVehicleOrdersData_vehicleOrders> get pendingOrders => _pendingOrders;
   set pendingOrders(List<GVehicleOrdersData_vehicleOrders> data) {
@@ -81,6 +88,13 @@ class OrdersProvider extends ChangeNotifier {
       _testDrivePendingOrders;
   set testDrivePendingOrders(List<GTestDriveOrdersData_testDriveOrders> data) {
     _testDrivePendingOrders = data;
+    notifyListeners();
+  }
+
+  List<GProductOrdersData_productOrders> _productacceptedOrders = [];
+  List<GProductOrdersData_productOrders> get productacceptedOrders => _productacceptedOrders;
+  set productacceptedOrders(List<GProductOrdersData_productOrders> data) {
+    _productacceptedOrders = data;
     notifyListeners();
   }
 
@@ -99,6 +113,13 @@ class OrdersProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  List<GProductOrdersData_productOrders> _productrejectedOrders = [];
+  List<GProductOrdersData_productOrders> get productrejectedOrders => _productrejectedOrders;
+  set productrejectedOrders(List<GProductOrdersData_productOrders> data) {
+    _productrejectedOrders = data;
+    notifyListeners();
+  }
+
   List<GVehicleOrdersData_vehicleOrders> _rejectedOrders = [];
   List<GVehicleOrdersData_vehicleOrders> get rejectedOrders => _rejectedOrders;
   set rejectedOrders(List<GVehicleOrdersData_vehicleOrders> data) {
@@ -111,6 +132,14 @@ class OrdersProvider extends ChangeNotifier {
       _testDriveRejectedOrders;
   set testDriveRejectedOrders(List<GTestDriveOrdersData_testDriveOrders> data) {
     _testDriveRejectedOrders = data;
+    notifyListeners();
+  }
+
+  List<GProductOrdersData_productOrders> _productdeliveredOrders = [];
+  List<GProductOrdersData_productOrders> get productdeliveredOrders =>
+      _productdeliveredOrders;
+  set productdeliveredOrders(List<GProductOrdersData_productOrders> data) {
+    _productdeliveredOrders = data;
     notifyListeners();
   }
 
@@ -140,12 +169,38 @@ class OrdersProvider extends ChangeNotifier {
       await getAcceptedOrders();
       await getRejectedOrders();
       await getDeliveredOrders();
-    } else {
+    } else if (orderFamily == OrderFamily.testDriveOrders) {
       await getTestDrivePendingOrders();
       await getTestDriveAcceptedOrders();
       await getTestDriveRejectedOrders();
       await getTestDriveDeliveredOrders();
+    } else if (orderFamily == OrderFamily.productOrders){
+      await getProductPendingOrders();
+      await getProductAcceptedOrders();
+      await getProductRejectedOrders();
+      await getProductDeliveredOrders();
     }
+  }
+
+  Future<List<Object>> getProductPendingOrders() async {
+    try {
+      final getProductOrders =
+      await _orderRepository.getProductOrders('created');
+
+      if (getProductOrders != null) {
+        productpendingOrders = getProductOrders;
+        return getProductOrders;
+      } else {
+        await AppRoutes.showErrorSnackbar(
+          message: 'Error while fetching list of vehicles',
+        );
+      }
+    } catch (e) {
+      e.log();
+    } finally {
+      loading = false;
+    }
+    return [];
   }
 
   Future<List<GVehicleOrdersData_vehicleOrders>> getPendingOrders() async {
@@ -180,6 +235,27 @@ class OrdersProvider extends ChangeNotifier {
       } else {
         await AppRoutes.showErrorSnackbar(
           message: 'Error while fetching list of test order vehicles',
+        );
+      }
+    } catch (e) {
+      e.log();
+    } finally {
+      loading = false;
+    }
+    return [];
+  }
+
+  Future<List<Object>> getProductAcceptedOrders() async {
+    try {
+      final getProductOrders =
+      await _orderRepository.getProductOrders('accepted');
+
+      if (getProductOrders != null) {
+        productacceptedOrders = getProductOrders;
+        return getProductOrders;
+      } else {
+        await AppRoutes.showErrorSnackbar(
+          message: 'Error while fetching list of products',
         );
       }
     } catch (e) {
@@ -227,7 +303,26 @@ class OrdersProvider extends ChangeNotifier {
       loading = false;
     }
   }
+  Future<List<Object>> getProductRejectedOrders() async {
+    try {
+      final getProductOrders =
+      await _orderRepository.getProductOrders('rejected');
 
+      if (getProductOrders != null) {
+        productrejectedOrders = getProductOrders;
+        return getProductOrders;
+      } else {
+        await AppRoutes.showErrorSnackbar(
+          message: 'Error while fetching list of products',
+        );
+      }
+    } catch (e) {
+      e.log();
+    } finally {
+      loading = false;
+    }
+    return [];
+  }
   Future<void> getRejectedOrders() async {
     try {
       final getVehicleOrders =
@@ -262,6 +357,27 @@ class OrdersProvider extends ChangeNotifier {
     } catch (e) {
       e.log();
     }
+  }
+
+  Future<List<Object>> getProductDeliveredOrders() async {
+    try {
+      final getProductOrders =
+      await _orderRepository.getProductOrders('delivered');
+
+      if (getProductOrders != null) {
+        productdeliveredOrders = getProductOrders;
+        return getProductOrders;
+      } else {
+        await AppRoutes.showErrorSnackbar(
+          message: 'Error while fetching list of products',
+        );
+      }
+    } catch (e) {
+      e.log();
+    } finally {
+      loading = false;
+    }
+    return [];
   }
 
   Future<void> getDeliveredOrders() async {

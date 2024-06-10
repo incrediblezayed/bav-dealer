@@ -72,25 +72,27 @@ class StagerredContainer extends StatelessWidget {
                 ],
               ),
               Expanded(
-                  child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    count,
-                    style: theme.headlineLarge!.copyWith(
-                      fontSize: MediaQuery.sizeOf(context).height * 0.04,
-                      fontWeight: FontWeight.w600,
-                      color: countColor,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      count,
+                      style: theme.headlineLarge!.copyWith(
+                        fontSize: MediaQuery.sizeOf(context).height * 0.04,
+                        fontWeight: FontWeight.w600,
+                        color: countColor,
+                      ),
                     ),
-                  ),
-                  Text(
-                    title,
-                    style: theme.headlineSmall!.copyWith(
+                    Text(
+                      title,
+                      style: theme.headlineSmall!.copyWith(
                         color: titleColor,
-                        fontSize: MediaQuery.sizeOf(context).height * 0.02,),
-                  ),
-                ],
-              ),),
+                        fontSize: MediaQuery.sizeOf(context).height * 0.02,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

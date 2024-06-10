@@ -10,6 +10,39 @@ import 'package:dealerapp/src/utils/index.dart';
 class OrderRepository {
   final _client = getIt<GraphqlClient>().client;
 
+  Future<List<GProductOrdersData_productOrders>?> getProductOrders(
+    String OrderStatus,
+  ) async {
+    try {
+      final dealerId = cacheProvider.getDealerId();
+      final response = await _client
+          .request(
+            GProductOrdersReq(
+              (b) => b.vars
+                ..where.dealer.dealer.id.equals = dealerId
+                ..where.status.equals = OrderStatus
+                ..orderBy = ListBuilder([
+                  GProductOrderOrderByInput(
+                    (b) => b.createdAt = GOrderDirection.desc,
+                  ),
+                ]),
+            ),
+          )
+          .first;
+      if (response.linkException != null ||
+          (response.graphqlErrors?.isNotEmpty ?? false)) {
+        throw Exception(
+          'Something went wrong while getting purchase order lists',
+        );
+      } else {
+        return response.data?.productOrders?.toList();
+      }
+  } catch (e) {
+      e.log();
+    }
+    return null;
+  }
+
   Future<List<GVehicleOrdersData_vehicleOrders>?> getVehicleOrders(
     String orderStatus,
   ) async {

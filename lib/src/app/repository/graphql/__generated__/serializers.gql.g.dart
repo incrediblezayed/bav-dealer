@@ -390,6 +390,20 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GProductOrderUpdateInput.serializer)
       ..add(GProductOrderWhereInput.serializer)
       ..add(GProductOrderWhereUniqueInput.serializer)
+      ..add(GProductOrdersData.serializer)
+      ..add(GProductOrdersData_productOrders.serializer)
+      ..add(GProductOrdersData_productOrders_dealer.serializer)
+      ..add(GProductOrdersData_productOrders_dealer_dealer.serializer)
+      ..add(GProductOrdersData_productOrders_dealer_prices.serializer)
+      ..add(GProductOrdersData_productOrders_dealer_prices_category.serializer)
+      ..add(GProductOrdersData_productOrders_dealer_productVariant.serializer)
+      ..add(GProductOrdersData_productOrders_dealer_productVariant_product
+          .serializer)
+      ..add(GProductOrdersData_productOrders_order.serializer)
+      ..add(GProductOrdersData_productOrders_order_user.serializer)
+      ..add(GProductOrdersData_productOrders_order_user_addresses.serializer)
+      ..add(GProductOrdersReq.serializer)
+      ..add(GProductOrdersVars.serializer)
       ..add(GProductReelCreateInput.serializer)
       ..add(GProductReelManyRelationFilter.serializer)
       ..add(GProductReelOrderByInput.serializer)
@@ -629,6 +643,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GUpdatePricesData_updatePrices.serializer)
       ..add(GUpdatePricesReq.serializer)
       ..add(GUpdatePricesVars.serializer)
+      ..add(GUpdateProductOrderData.serializer)
+      ..add(GUpdateProductOrderData_updateProductOrder.serializer)
+      ..add(GUpdateProductOrderReq.serializer)
+      ..add(GUpdateProductOrderVars.serializer)
       ..add(GUpdateTestDriveOrderData.serializer)
       ..add(GUpdateTestDriveOrderData_updateTestDriveOrder.serializer)
       ..add(GUpdateTestDriveOrderReq.serializer)
@@ -1656,6 +1674,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<GProductOrderWhereUniqueInput>())
       ..addBuilderFactory(
           const FullType(
+              BuiltList, const [const FullType(GProductOrderOrderByInput)]),
+          () => new ListBuilder<GProductOrderOrderByInput>())
+      ..addBuilderFactory(
+          const FullType(
               BuiltList, const [const FullType(GProductOrderWhereInput)]),
           () => new ListBuilder<GProductOrderWhereInput>())
       ..addBuilderFactory(
@@ -1682,6 +1704,23 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GProductOrderWhereUniqueInput)]),
           () => new ListBuilder<GProductOrderWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductOrdersData_productOrders)]),
+          () => new ListBuilder<GProductOrdersData_productOrders>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GProductOrdersData_productOrders_dealer_prices)
+          ]),
+          () =>
+              new ListBuilder<GProductOrdersData_productOrders_dealer_prices>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GProductOrdersData_productOrders_order_user_addresses)
+          ]),
+          () => new ListBuilder<
+              GProductOrdersData_productOrders_order_user_addresses>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GProductReelCreateInput)]),
