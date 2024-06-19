@@ -1,0 +1,46 @@
+query ProductDealerStockRequests {
+    productDealerStockRequests {
+        id
+        productVariant {
+            name
+            id
+        }
+        stock
+        totalPrice
+        type
+        dealer {
+            id
+            user {
+                id
+                name
+            }
+        }
+        accepted
+        createdAt
+        modifiedAt
+    }
+}
+
+query VehicleDealerStockRequests {
+    vehicleDealerStockRequests {
+        accepted
+        createdAt
+        dealer {
+            name
+            id
+        }
+        id
+        modifiedAt
+        stock
+        type
+        totalPrice
+        vehicleColor {
+            id
+            name
+        }
+        vehicleVariant {
+            id
+            name
+        }
+    }
+}

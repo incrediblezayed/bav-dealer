@@ -357,6 +357,19 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GProductDealerStockRequestUpdateInput.serializer)
       ..add(GProductDealerStockRequestWhereInput.serializer)
       ..add(GProductDealerStockRequestWhereUniqueInput.serializer)
+      ..add(GProductDealerStockRequestsData.serializer)
+      ..add(
+          GProductDealerStockRequestsData_productDealerStockRequests.serializer)
+      ..add(GProductDealerStockRequestsData_productDealerStockRequests_dealer
+          .serializer)
+      ..add(
+          GProductDealerStockRequestsData_productDealerStockRequests_dealer_user
+              .serializer)
+      ..add(
+          GProductDealerStockRequestsData_productDealerStockRequests_productVariant
+              .serializer)
+      ..add(GProductDealerStockRequestsReq.serializer)
+      ..add(GProductDealerStockRequestsVars.serializer)
       ..add(GProductDealerUpdateArgs.serializer)
       ..add(GProductDealerUpdateInput.serializer)
       ..add(GProductDealerWhereInput.serializer)
@@ -764,6 +777,19 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleDealerStockRequestUpdateInput.serializer)
       ..add(GVehicleDealerStockRequestWhereInput.serializer)
       ..add(GVehicleDealerStockRequestWhereUniqueInput.serializer)
+      ..add(GVehicleDealerStockRequestsData.serializer)
+      ..add(
+          GVehicleDealerStockRequestsData_vehicleDealerStockRequests.serializer)
+      ..add(GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealer
+          .serializer)
+      ..add(
+          GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor
+              .serializer)
+      ..add(
+          GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant
+              .serializer)
+      ..add(GVehicleDealerStockRequestsReq.serializer)
+      ..add(GVehicleDealerStockRequestsVars.serializer)
       ..add(GVehicleDealerUpdateArgs.serializer)
       ..add(GVehicleDealerUpdateInput.serializer)
       ..add(GVehicleDealerWhereInput.serializer)
@@ -1581,6 +1607,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
               const [const FullType(GProductDealerStockRequestWhereInput)]),
           () => new ListBuilder<GProductDealerStockRequestWhereInput>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GProductDealerStockRequestsData_productDealerStockRequests)
+          ]),
+          () => new ListBuilder<
+              GProductDealerStockRequestsData_productDealerStockRequests>())
+      ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GProductDealerWhereInput)]),
           () => new ListBuilder<GProductDealerWhereInput>())
@@ -2378,6 +2411,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(GVehicleDealerStockRequestWhereInput)]),
           () => new ListBuilder<GVehicleDealerStockRequestWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GVehicleDealerStockRequestsData_vehicleDealerStockRequests)
+          ]),
+          () => new ListBuilder<
+              GVehicleDealerStockRequestsData_vehicleDealerStockRequests>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GVehicleDealerWhereInput)]),

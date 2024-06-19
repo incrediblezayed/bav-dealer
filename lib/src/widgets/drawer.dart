@@ -19,6 +19,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../app/UI/drawer/stockrequests/List_of_stocks.dart';
+
 ///App drawer
 class AppDrawer extends ConsumerWidget {
   ///Constructor for app drawer
@@ -295,7 +297,16 @@ class AppDrawer extends ConsumerWidget {
                         ); */
                       },
                     ),
-
+                    _drawerTile(
+                      title: 'Stock Requests',
+                      icon: AppImages.stockRequests,
+                      onTap: () {
+                        AppRoutes.push(
+                          page: const StockRequests(
+                          ),
+                        );
+                      },
+                    ),
                     ///Order History Expansion Tile
                     const KExpansionTile(),
                     /* _drawerTile(

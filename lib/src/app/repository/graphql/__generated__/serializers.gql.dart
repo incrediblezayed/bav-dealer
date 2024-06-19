@@ -898,6 +898,22 @@ import 'package:dealerapp/src/app/repository/report/graphql/__generated__/report
     show GCategoriesReq, GCreateFeedbackReq, GCreateReportReq;
 import 'package:dealerapp/src/app/repository/report/graphql/__generated__/report.var.gql.dart'
     show GCategoriesVars, GCreateFeedbackVars, GCreateReportVars;
+import 'package:dealerapp/src/app/repository/stockRequest/graphql/__generated__/stock.data.gql.dart'
+    show
+        GProductDealerStockRequestsData,
+        GProductDealerStockRequestsData_productDealerStockRequests,
+        GProductDealerStockRequestsData_productDealerStockRequests_dealer,
+        GProductDealerStockRequestsData_productDealerStockRequests_dealer_user,
+        GProductDealerStockRequestsData_productDealerStockRequests_productVariant,
+        GVehicleDealerStockRequestsData,
+        GVehicleDealerStockRequestsData_vehicleDealerStockRequests,
+        GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealer,
+        GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor,
+        GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant;
+import 'package:dealerapp/src/app/repository/stockRequest/graphql/__generated__/stock.req.gql.dart'
+    show GProductDealerStockRequestsReq, GVehicleDealerStockRequestsReq;
+import 'package:dealerapp/src/app/repository/stockRequest/graphql/__generated__/stock.var.gql.dart'
+    show GProductDealerStockRequestsVars, GVehicleDealerStockRequestsVars;
 import 'package:dealerapp/src/custom_serializers/upload_serializer.dart'
     show UploadSerializer;
 import 'package:ferry_exec/ferry_exec.dart';
@@ -1248,6 +1264,13 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GProductDealerStockRequestUpdateInput,
   GProductDealerStockRequestWhereInput,
   GProductDealerStockRequestWhereUniqueInput,
+  GProductDealerStockRequestsData,
+  GProductDealerStockRequestsData_productDealerStockRequests,
+  GProductDealerStockRequestsData_productDealerStockRequests_dealer,
+  GProductDealerStockRequestsData_productDealerStockRequests_dealer_user,
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant,
+  GProductDealerStockRequestsReq,
+  GProductDealerStockRequestsVars,
   GProductDealerUpdateArgs,
   GProductDealerUpdateInput,
   GProductDealerWhereInput,
@@ -1617,6 +1640,13 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GVehicleDealerStockRequestUpdateInput,
   GVehicleDealerStockRequestWhereInput,
   GVehicleDealerStockRequestWhereUniqueInput,
+  GVehicleDealerStockRequestsData,
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests,
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealer,
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor,
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant,
+  GVehicleDealerStockRequestsReq,
+  GVehicleDealerStockRequestsVars,
   GVehicleDealerUpdateArgs,
   GVehicleDealerUpdateInput,
   GVehicleDealerWhereInput,
