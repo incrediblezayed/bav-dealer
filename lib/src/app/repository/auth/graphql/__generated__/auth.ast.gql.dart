@@ -1067,6 +1067,78 @@ const Dealer = _i1.OperationDefinitionNode(
     )
   ]),
 );
+const UpdateDealer = _i1.OperationDefinitionNode(
+  type: _i1.OperationType.mutation,
+  name: _i1.NameNode(value: 'UpdateDealer'),
+  variableDefinitions: [
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DealerWhereUniqueInput'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'data')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'DealerUpdateInput'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
+  ],
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'updateDealer'),
+      alias: null,
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'where'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'data'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'data')),
+        ),
+      ],
+      directives: [],
+      selectionSet: _i1.SelectionSetNode(selections: [
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'id'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'lLat'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'lLng'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'location'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+      ]),
+    )
+  ]),
+);
 const document = _i1.DocumentNode(definitions: [
   CreateUser,
   CurrentUserOTP,
@@ -1079,4 +1151,5 @@ const document = _i1.DocumentNode(definitions: [
   User,
   UpdateUser,
   Dealer,
+  UpdateDealer,
 ]);

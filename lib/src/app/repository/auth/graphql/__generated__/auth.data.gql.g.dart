@@ -90,6 +90,11 @@ Serializer<GUpdateUserData_updateUser> _$gUpdateUserDataUpdateUserSerializer =
 Serializer<GDealerData> _$gDealerDataSerializer = new _$GDealerDataSerializer();
 Serializer<GDealerData_dealers> _$gDealerDataDealersSerializer =
     new _$GDealerData_dealersSerializer();
+Serializer<GUpdateDealerData> _$gUpdateDealerDataSerializer =
+    new _$GUpdateDealerDataSerializer();
+Serializer<GUpdateDealerData_updateDealer>
+    _$gUpdateDealerDataUpdateDealerSerializer =
+    new _$GUpdateDealerData_updateDealerSerializer();
 
 class _$GCreateUserDataSerializer
     implements StructuredSerializer<GCreateUserData> {
@@ -2554,6 +2559,149 @@ class _$GDealerData_dealersSerializer
         case 'approved':
           result.approved = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUpdateDealerDataSerializer
+    implements StructuredSerializer<GUpdateDealerData> {
+  @override
+  final Iterable<Type> types = const [GUpdateDealerData, _$GUpdateDealerData];
+  @override
+  final String wireName = 'GUpdateDealerData';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, GUpdateDealerData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.updateDealer;
+    if (value != null) {
+      result
+        ..add('updateDealer')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUpdateDealerData_updateDealer)));
+    }
+    return result;
+  }
+
+  @override
+  GUpdateDealerData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUpdateDealerDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'updateDealer':
+          result.updateDealer.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUpdateDealerData_updateDealer))!
+              as GUpdateDealerData_updateDealer);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUpdateDealerData_updateDealerSerializer
+    implements StructuredSerializer<GUpdateDealerData_updateDealer> {
+  @override
+  final Iterable<Type> types = const [
+    GUpdateDealerData_updateDealer,
+    _$GUpdateDealerData_updateDealer
+  ];
+  @override
+  final String wireName = 'GUpdateDealerData_updateDealer';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUpdateDealerData_updateDealer object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.lLat;
+    if (value != null) {
+      result
+        ..add('lLat')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(double)));
+    }
+    value = object.lLng;
+    if (value != null) {
+      result
+        ..add('lLng')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(double)));
+    }
+    value = object.location;
+    if (value != null) {
+      result
+        ..add('location')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType.nullable(double)])));
+    }
+    return result;
+  }
+
+  @override
+  GUpdateDealerData_updateDealer deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUpdateDealerData_updateDealerBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'lLat':
+          result.lLat = serializers.deserialize(value,
+              specifiedType: const FullType(double)) as double?;
+          break;
+        case 'lLng':
+          result.lLng = serializers.deserialize(value,
+              specifiedType: const FullType(double)) as double?;
+          break;
+        case 'location':
+          result.location.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType.nullable(double)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -7441,6 +7589,281 @@ class GDealerData_dealersBuilder
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'GDealerData_dealers', 'id'),
             approved: approved);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUpdateDealerData extends GUpdateDealerData {
+  @override
+  final String G__typename;
+  @override
+  final GUpdateDealerData_updateDealer? updateDealer;
+
+  factory _$GUpdateDealerData(
+          [void Function(GUpdateDealerDataBuilder)? updates]) =>
+      (new GUpdateDealerDataBuilder()..update(updates))._build();
+
+  _$GUpdateDealerData._({required this.G__typename, this.updateDealer})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GUpdateDealerData', 'G__typename');
+  }
+
+  @override
+  GUpdateDealerData rebuild(void Function(GUpdateDealerDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUpdateDealerDataBuilder toBuilder() =>
+      new GUpdateDealerDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUpdateDealerData &&
+        G__typename == other.G__typename &&
+        updateDealer == other.updateDealer;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, updateDealer.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GUpdateDealerData')
+          ..add('G__typename', G__typename)
+          ..add('updateDealer', updateDealer))
+        .toString();
+  }
+}
+
+class GUpdateDealerDataBuilder
+    implements Builder<GUpdateDealerData, GUpdateDealerDataBuilder> {
+  _$GUpdateDealerData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GUpdateDealerData_updateDealerBuilder? _updateDealer;
+  GUpdateDealerData_updateDealerBuilder get updateDealer =>
+      _$this._updateDealer ??= new GUpdateDealerData_updateDealerBuilder();
+  set updateDealer(GUpdateDealerData_updateDealerBuilder? updateDealer) =>
+      _$this._updateDealer = updateDealer;
+
+  GUpdateDealerDataBuilder() {
+    GUpdateDealerData._initializeBuilder(this);
+  }
+
+  GUpdateDealerDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _updateDealer = $v.updateDealer?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUpdateDealerData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUpdateDealerData;
+  }
+
+  @override
+  void update(void Function(GUpdateDealerDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUpdateDealerData build() => _build();
+
+  _$GUpdateDealerData _build() {
+    _$GUpdateDealerData _$result;
+    try {
+      _$result = _$v ??
+          new _$GUpdateDealerData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GUpdateDealerData', 'G__typename'),
+              updateDealer: _updateDealer?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'updateDealer';
+        _updateDealer?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUpdateDealerData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUpdateDealerData_updateDealer extends GUpdateDealerData_updateDealer {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final double? lLat;
+  @override
+  final double? lLng;
+  @override
+  final BuiltList<double?>? location;
+
+  factory _$GUpdateDealerData_updateDealer(
+          [void Function(GUpdateDealerData_updateDealerBuilder)? updates]) =>
+      (new GUpdateDealerData_updateDealerBuilder()..update(updates))._build();
+
+  _$GUpdateDealerData_updateDealer._(
+      {required this.G__typename,
+      required this.id,
+      this.lLat,
+      this.lLng,
+      this.location})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GUpdateDealerData_updateDealer', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GUpdateDealerData_updateDealer', 'id');
+  }
+
+  @override
+  GUpdateDealerData_updateDealer rebuild(
+          void Function(GUpdateDealerData_updateDealerBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUpdateDealerData_updateDealerBuilder toBuilder() =>
+      new GUpdateDealerData_updateDealerBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUpdateDealerData_updateDealer &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        lLat == other.lLat &&
+        lLng == other.lLng &&
+        location == other.location;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, lLat.hashCode);
+    _$hash = $jc(_$hash, lLng.hashCode);
+    _$hash = $jc(_$hash, location.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GUpdateDealerData_updateDealer')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('lLat', lLat)
+          ..add('lLng', lLng)
+          ..add('location', location))
+        .toString();
+  }
+}
+
+class GUpdateDealerData_updateDealerBuilder
+    implements
+        Builder<GUpdateDealerData_updateDealer,
+            GUpdateDealerData_updateDealerBuilder> {
+  _$GUpdateDealerData_updateDealer? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  double? _lLat;
+  double? get lLat => _$this._lLat;
+  set lLat(double? lLat) => _$this._lLat = lLat;
+
+  double? _lLng;
+  double? get lLng => _$this._lLng;
+  set lLng(double? lLng) => _$this._lLng = lLng;
+
+  ListBuilder<double?>? _location;
+  ListBuilder<double?> get location =>
+      _$this._location ??= new ListBuilder<double?>();
+  set location(ListBuilder<double?>? location) => _$this._location = location;
+
+  GUpdateDealerData_updateDealerBuilder() {
+    GUpdateDealerData_updateDealer._initializeBuilder(this);
+  }
+
+  GUpdateDealerData_updateDealerBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _lLat = $v.lLat;
+      _lLng = $v.lLng;
+      _location = $v.location?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUpdateDealerData_updateDealer other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUpdateDealerData_updateDealer;
+  }
+
+  @override
+  void update(void Function(GUpdateDealerData_updateDealerBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUpdateDealerData_updateDealer build() => _build();
+
+  _$GUpdateDealerData_updateDealer _build() {
+    _$GUpdateDealerData_updateDealer _$result;
+    try {
+      _$result = _$v ??
+          new _$GUpdateDealerData_updateDealer._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                  r'GUpdateDealerData_updateDealer', 'G__typename'),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'GUpdateDealerData_updateDealer', 'id'),
+              lLat: lLat,
+              lLng: lLng,
+              location: _location?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'location';
+        _location?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUpdateDealerData_updateDealer', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

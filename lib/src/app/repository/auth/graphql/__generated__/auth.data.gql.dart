@@ -1181,3 +1181,66 @@ abstract class GDealerData_dealers
         json,
       );
 }
+
+abstract class GUpdateDealerData
+    implements Built<GUpdateDealerData, GUpdateDealerDataBuilder> {
+  GUpdateDealerData._();
+
+  factory GUpdateDealerData(
+          [void Function(GUpdateDealerDataBuilder b) updates]) =
+      _$GUpdateDealerData;
+
+  static void _initializeBuilder(GUpdateDealerDataBuilder b) =>
+      b..G__typename = 'Mutation';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GUpdateDealerData_updateDealer? get updateDealer;
+  static Serializer<GUpdateDealerData> get serializer =>
+      _$gUpdateDealerDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateDealerData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateDealerData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateDealerData.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateDealerData_updateDealer
+    implements
+        Built<GUpdateDealerData_updateDealer,
+            GUpdateDealerData_updateDealerBuilder> {
+  GUpdateDealerData_updateDealer._();
+
+  factory GUpdateDealerData_updateDealer(
+          [void Function(GUpdateDealerData_updateDealerBuilder b) updates]) =
+      _$GUpdateDealerData_updateDealer;
+
+  static void _initializeBuilder(GUpdateDealerData_updateDealerBuilder b) =>
+      b..G__typename = 'Dealer';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  double? get lLat;
+  double? get lLng;
+  BuiltList<double?>? get location;
+  static Serializer<GUpdateDealerData_updateDealer> get serializer =>
+      _$gUpdateDealerDataUpdateDealerSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateDealerData_updateDealer.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateDealerData_updateDealer? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateDealerData_updateDealer.serializer,
+        json,
+      );
+}

@@ -15,6 +15,7 @@ import 'package:dealerapp/src/utils/app_routes.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
 
 ///Auth Provider Instance
@@ -28,6 +29,7 @@ class AuthProvider extends ChangeNotifier {
   ///
   ///
   bool _agree = false;
+
   bool get agree => _agree;
 
   XFile? _image;
@@ -36,6 +38,7 @@ class AuthProvider extends ChangeNotifier {
 
   ///Getter for image
   XFile? get image => _image;
+
   set image(XFile? value) {
     _image = value;
     notifyListeners();
@@ -167,7 +170,8 @@ class AuthProvider extends ChangeNotifier {
         }
       }
       final sessionToken = data['sessionToken'] as String;
-      print('Bearer1 ${cacheProvider.setSessionToken(sessionToken.toString())}');
+      print(
+          'Bearer1 ${cacheProvider.setSessionToken(sessionToken.toString())}');
       await cacheProvider.setSessionToken(sessionToken);
       final newUser = await _authRepository.getUser(userId: user.id!);
       await cacheProvider.setUserId(user.id!);
@@ -249,7 +253,6 @@ class AuthProvider extends ChangeNotifier {
           await cacheProvider.setDealerId(dealer.id);
           clear();
           await AppRoutes.pushAndRemoveUntil(page: const HomePage());
-
         } else {
           await AppRoutes.showErrorSnackbar(
             message:
@@ -325,9 +328,20 @@ class AuthProvider extends ChangeNotifier {
 
   ///index
   int _currentPageIndex = 0;
+
   int get currentPageIndex => _currentPageIndex;
+
   set currentPageIndex(int i) {
     _currentPageIndex = i;
+    notifyListeners();
+  }
+
+  Position? _position;
+
+  Position? get position => _position;
+
+  set position(Position? value) {
+    _position = value;
     notifyListeners();
   }
 
@@ -513,5 +527,92 @@ class AuthProvider extends ChangeNotifier {
     } else {
       await AppRoutes.showErrorSnackbar(message: 'Something went wrong');
     }
+  }
+
+  Future<void> updatePosition() async {
+    var pos = await _determinePosition();
+    position = pos;
+  }
+
+  Future<Position?> _determinePosition() async {
+    bool serviceEnabled;
+    LocationPermission permission;
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        // Permissions are denied, next time you could try
+        // requesting permissions again (this is also where
+        // Android's shouldShowRequestPermissionRationale
+        // returned true. According to Android guidelines
+        // your App should show an explanatory UI now.
+        return Future.error('Location permissions are denied');
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      // Permissions are denied forever, handle appropriately.
+      return Future.error(
+          'Location permissions are permanently denied, we cannot request permissions.');
+    }
+
+    // Test if location services are enabled.
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      await AppRoutes.showInfoDialog(
+        title: 'Enable Location',
+        message: 'Please enable location for a smooth service',
+        action: [
+          TextButton(
+            onPressed: () {
+              AppRoutes.pop();
+            },
+            child: Text('No'),
+          ),
+          TextButton(
+            onPressed: () async {
+              AppRoutes.pop();
+              await Geolocator.openLocationSettings();
+            },
+            child: Text('Yes'),
+          ),
+        ],
+      );
+
+      serviceEnabled = await Geolocator.isLocationServiceEnabled();
+
+      if (!serviceEnabled) {
+        Position? position = await Geolocator.getLastKnownPosition();
+        if (position != null) {
+          return position;
+        } else {
+          return null;
+        }
+      }
+    }
+
+    return await Geolocator.getCurrentPosition();
+  }
+
+  Future<void> updateDealer() async {
+    try {
+      final response = await _authRepository.updateDealer(
+          lat: position?.latitude ?? 0.0, long: position?.longitude ?? 0.0);
+      if (response == null) {
+        await AppRoutes.showErrorSnackbar(
+          message: response ?? 'Something went wrong',
+        );
+      }
+    } catch (e) {
+      await AppRoutes.showErrorSnackbar(
+        message: (e as dynamic)?.message != null
+            ? (e as dynamic).message.toString()
+            : 'Something went wrong',
+      );
+    }
+    // finally {
+    //   notifyListeners();
+    // }
   }
 }
