@@ -1316,3 +1316,255 @@ abstract class GProductDealersReq
         json,
       );
 }
+
+abstract class GCreateProductDealerReq
+    implements
+        Built<GCreateProductDealerReq, GCreateProductDealerReqBuilder>,
+        _i1.OperationRequest<_i2.GCreateProductDealerData,
+            _i3.GCreateProductDealerVars> {
+  GCreateProductDealerReq._();
+
+  factory GCreateProductDealerReq(
+          [void Function(GCreateProductDealerReqBuilder b) updates]) =
+      _$GCreateProductDealerReq;
+
+  static void _initializeBuilder(GCreateProductDealerReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'CreateProductDealer',
+    )
+    ..executeOnListen = true;
+
+  @override
+  _i3.GCreateProductDealerVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GCreateProductDealerData? Function(
+    _i2.GCreateProductDealerData?,
+    _i2.GCreateProductDealerData?,
+  )? get updateResult;
+  @override
+  _i2.GCreateProductDealerData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
+  _i2.GCreateProductDealerData? parseData(Map<String, dynamic> json) =>
+      _i2.GCreateProductDealerData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(_i2.GCreateProductDealerData data) =>
+      data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GCreateProductDealerData,
+      _i3.GCreateProductDealerVars> transformOperation(
+          _i4.Operation Function(_i4.Operation) transform) =>
+      this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GCreateProductDealerReq> get serializer =>
+      _$gCreateProductDealerReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GCreateProductDealerReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GCreateProductDealerReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GCreateProductDealerReq.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateProductDealerReq
+    implements
+        Built<GUpdateProductDealerReq, GUpdateProductDealerReqBuilder>,
+        _i1.OperationRequest<_i2.GUpdateProductDealerData,
+            _i3.GUpdateProductDealerVars> {
+  GUpdateProductDealerReq._();
+
+  factory GUpdateProductDealerReq(
+          [void Function(GUpdateProductDealerReqBuilder b) updates]) =
+      _$GUpdateProductDealerReq;
+
+  static void _initializeBuilder(GUpdateProductDealerReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'UpdateProductDealer',
+    )
+    ..executeOnListen = true;
+
+  @override
+  _i3.GUpdateProductDealerVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GUpdateProductDealerData? Function(
+    _i2.GUpdateProductDealerData?,
+    _i2.GUpdateProductDealerData?,
+  )? get updateResult;
+  @override
+  _i2.GUpdateProductDealerData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
+  _i2.GUpdateProductDealerData? parseData(Map<String, dynamic> json) =>
+      _i2.GUpdateProductDealerData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(_i2.GUpdateProductDealerData data) =>
+      data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GUpdateProductDealerData,
+      _i3.GUpdateProductDealerVars> transformOperation(
+          _i4.Operation Function(_i4.Operation) transform) =>
+      this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GUpdateProductDealerReq> get serializer =>
+      _$gUpdateProductDealerReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GUpdateProductDealerReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateProductDealerReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GUpdateProductDealerReq.serializer,
+        json,
+      );
+}
+
+abstract class GCreateProductDealerStockRequestReq
+    implements
+        Built<GCreateProductDealerStockRequestReq,
+            GCreateProductDealerStockRequestReqBuilder>,
+        _i1.OperationRequest<_i2.GCreateProductDealerStockRequestData,
+            _i3.GCreateProductDealerStockRequestVars> {
+  GCreateProductDealerStockRequestReq._();
+
+  factory GCreateProductDealerStockRequestReq(
+      [void Function(GCreateProductDealerStockRequestReqBuilder b)
+          updates]) = _$GCreateProductDealerStockRequestReq;
+
+  static void _initializeBuilder(
+          GCreateProductDealerStockRequestReqBuilder b) =>
+      b
+        ..operation = _i4.Operation(
+          document: _i5.document,
+          operationName: 'CreateProductDealerStockRequest',
+        )
+        ..executeOnListen = true;
+
+  @override
+  _i3.GCreateProductDealerStockRequestVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GCreateProductDealerStockRequestData? Function(
+    _i2.GCreateProductDealerStockRequestData?,
+    _i2.GCreateProductDealerStockRequestData?,
+  )? get updateResult;
+  @override
+  _i2.GCreateProductDealerStockRequestData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
+  _i2.GCreateProductDealerStockRequestData? parseData(
+          Map<String, dynamic> json) =>
+      _i2.GCreateProductDealerStockRequestData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(
+          _i2.GCreateProductDealerStockRequestData data) =>
+      data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GCreateProductDealerStockRequestData,
+      _i3.GCreateProductDealerStockRequestVars> transformOperation(
+          _i4.Operation Function(_i4.Operation) transform) =>
+      this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GCreateProductDealerStockRequestReq> get serializer =>
+      _$gCreateProductDealerStockRequestReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GCreateProductDealerStockRequestReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GCreateProductDealerStockRequestReq? fromJson(
+          Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GCreateProductDealerStockRequestReq.serializer,
+        json,
+      );
+}

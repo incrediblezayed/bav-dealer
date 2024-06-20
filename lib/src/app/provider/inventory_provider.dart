@@ -10,8 +10,10 @@ import 'package:dealerapp/src/utils/global_exports.dart';
 
 class InventoryProvider extends ChangeNotifier {
   List<GPriceCategoriesData_priceCategories> _priceCategories = [];
+
   List<GPriceCategoriesData_priceCategories> get priceCategories =>
       _priceCategories;
+
   set priceCategories(List<GPriceCategoriesData_priceCategories> data) {
     _priceCategories = data;
     notifyListeners();
@@ -19,8 +21,10 @@ class InventoryProvider extends ChangeNotifier {
 
   List<PriceModel> prices = [];
   List<ProductVariantModel> _products = [];
+
   List<ProductVariantModel> get products => _products;
   List<VariantDetailsModel> _vehicles = [];
+
   List<VariantDetailsModel> get vehicles => _vehicles;
 
   set products(List<ProductVariantModel> data) {
@@ -36,16 +40,29 @@ class InventoryProvider extends ChangeNotifier {
   final InventoryRepository _inventoryRepository = InventoryRepository();
 
   List<DealerStockModel> _vehicleDealers = [];
+
   List<DealerStockModel> get vehicleDealers => _vehicleDealers;
+
   set vehicleDealers(List<DealerStockModel> data) {
     _vehicleDealers = data;
     notifyListeners();
   }
 
   List<DealerStockModel>? _testDriveStock;
+
   List<DealerStockModel>? get testDriveStock => _testDriveStock;
+
   set testDriveStock(List<DealerStockModel>? value) {
     _testDriveStock = value;
+    notifyListeners();
+  }
+
+  List<DealerStockModel> _productDealers = [];
+
+  List<DealerStockModel> get productDealers => _productDealers;
+
+  set productDealers(List<DealerStockModel> data) {
+    _productDealers = data;
     notifyListeners();
   }
 
@@ -56,6 +73,7 @@ class InventoryProvider extends ChangeNotifier {
       getVehicles(),
       getProducts(),
       getTestDriveStock(),
+      getProductStocks(),
     ]);
   }
 
@@ -86,6 +104,7 @@ class InventoryProvider extends ChangeNotifier {
         getStocks();
       });
     });
+
   Future<void> getProducts() async {
     try {
       final getProduct = await _inventoryRepository.getProducts(
@@ -221,17 +240,32 @@ class InventoryProvider extends ChangeNotifier {
     required String variantId,
     required int quantity,
     required String type,
+    bool product = false,
   }) async {
     try {
-      final result = await _inventoryRepository.updateStockRequest(
-        colorId: colorId,
-        variantId: variantId,
-        stock: quantity,
-        type: type,
-      );
+      bool result;
+
+      if(product) {
+        result = await _inventoryRepository.createProductDealerStockRequest(
+          variantId: variantId,
+          stock: quantity,
+          type: type,
+        );
+      } else {
+        result = await _inventoryRepository.updateStockRequest(
+          colorId: colorId,
+          variantId: variantId,
+          stock: quantity,
+          type: type,
+        );
+      }
 
       if (result) {
-        await getVehicles();
+        if(product) {
+          await getVehicles();
+        } else {
+          await getProductStocks();
+        }
         await AppRoutes.showSuccessSnackbar(
           message: 'Request Created Successfully',
         );
@@ -296,6 +330,21 @@ class InventoryProvider extends ChangeNotifier {
     }
   }
 
+  Future<void> getProductStocks() async {
+    try {
+      final result = await _inventoryRepository.currentProductStock(
+        text: myStockSearchController.text,
+      );
+
+      productDealers = result;
+    } catch (e) {
+      e.log();
+      await AppRoutes.showErrorSnackbar(
+        message: 'Error while fetching list of vehicles',
+      );
+    }
+  }
+
   Future<void> updateVehicleDealer({
     required int index,
     required String id,
@@ -318,6 +367,58 @@ class InventoryProvider extends ChangeNotifier {
     }
   }
 
+  Future<void> createProductStockRequest({
+    required String variantId,
+    required List<PriceModel> prices,
+    required List<String> guarantees,
+  }) async {
+    unawaited(AppRoutes.showLoadingDialog());
+    try {
+      final result = await _inventoryRepository.createProductStockRequest(
+        variantId: variantId,
+        prices: prices,
+        guarantees: guarantees,
+      );
+      await getProductStocks();
+      await getProducts();
+      if (result) {
+        await AppRoutes.showSuccessSnackbar(
+          message: 'Request added successfully',
+        );
+      } else {
+        await AppRoutes.showErrorSnackbar(
+          message: 'Failed to add vehicle request',
+        );
+      }
+    } catch (e) {
+      e.log();
+      await AppRoutes.showErrorSnackbar(message: 'Failed to add vehicle');
+    }
+    AppRoutes.pop();
+  }
+
+  Future<void> updateProductDealer({
+    required int index,
+    required String id,
+    required List<String> guarantees,
+    List<PriceModel>? prices,
+  }) async {
+    try {
+      final result = await _inventoryRepository.updateProductDealer(
+        dealerId: id,
+        guarantees: guarantees,
+        prices: prices,
+      );
+      productDealers[index] = result;
+      notifyListeners();
+      await AppRoutes.showSuccessSnackbar(
+        message: 'Request Updated Successfully',
+      );
+    } catch (e) {
+      e.log();
+    }
+  }
+
   int totalTestDriveCount = 0;
 
   Future<void> getTestDriveStock() async {
@@ -327,14 +428,16 @@ class InventoryProvider extends ChangeNotifier {
     testDriveStock = stocks.$2;
   }
 
-  Future<void> addTestDriveDealerStock({
-    required String variantId,
-    required String colorId,
-    required String amount,
-    String? testDriveDealerId
-  }) async {
+  Future<void> addTestDriveDealerStock(
+      {required String variantId,
+      required String colorId,
+      required String amount,
+      String? testDriveDealerId}) async {
     final result = await _inventoryRepository.addToTestDriveStock(
-        colorId: colorId, variantId: variantId, amount: amount, testDriveDealerId: testDriveDealerId);
+        colorId: colorId,
+        variantId: variantId,
+        amount: amount,
+        testDriveDealerId: testDriveDealerId);
     if (result) {
       AppRoutes.showSuccessSnackbar(message: 'Stock Added successfully');
     } else {

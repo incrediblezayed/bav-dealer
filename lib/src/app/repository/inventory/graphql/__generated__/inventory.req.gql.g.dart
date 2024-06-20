@@ -39,6 +39,13 @@ Serializer<GCreateTestDriveDealerReq> _$gCreateTestDriveDealerReqSerializer =
     new _$GCreateTestDriveDealerReqSerializer();
 Serializer<GProductDealersReq> _$gProductDealersReqSerializer =
     new _$GProductDealersReqSerializer();
+Serializer<GCreateProductDealerReq> _$gCreateProductDealerReqSerializer =
+    new _$GCreateProductDealerReqSerializer();
+Serializer<GUpdateProductDealerReq> _$gUpdateProductDealerReqSerializer =
+    new _$GUpdateProductDealerReqSerializer();
+Serializer<GCreateProductDealerStockRequestReq>
+    _$gCreateProductDealerStockRequestReqSerializer =
+    new _$GCreateProductDealerStockRequestReqSerializer();
 
 class _$GProductVariantsReqSerializer
     implements StructuredSerializer<GProductVariantsReq> {
@@ -1955,6 +1962,376 @@ class _$GProductDealersReqSerializer
           result.optimisticResponse.replace(serializers.deserialize(value,
                   specifiedType: const FullType(_i2.GProductDealersData))!
               as _i2.GProductDealersData);
+          break;
+        case 'updateCacheHandlerKey':
+          result.updateCacheHandlerKey = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'updateCacheHandlerContext':
+          result.updateCacheHandlerContext = serializers.deserialize(value,
+              specifiedType: const FullType(Map, const [
+                const FullType(String),
+                const FullType(dynamic)
+              ])) as Map<String, dynamic>?;
+          break;
+        case 'fetchPolicy':
+          result.fetchPolicy = serializers.deserialize(value,
+                  specifiedType: const FullType(_i1.FetchPolicy))
+              as _i1.FetchPolicy?;
+          break;
+        case 'executeOnListen':
+          result.executeOnListen = serializers.deserialize(value,
+              specifiedType: const FullType(bool))! as bool;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GCreateProductDealerReqSerializer
+    implements StructuredSerializer<GCreateProductDealerReq> {
+  @override
+  final Iterable<Type> types = const [
+    GCreateProductDealerReq,
+    _$GCreateProductDealerReq
+  ];
+  @override
+  final String wireName = 'GCreateProductDealerReq';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GCreateProductDealerReq object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'vars',
+      serializers.serialize(object.vars,
+          specifiedType: const FullType(_i3.GCreateProductDealerVars)),
+      'operation',
+      serializers.serialize(object.operation,
+          specifiedType: const FullType(_i4.Operation)),
+      'executeOnListen',
+      serializers.serialize(object.executeOnListen,
+          specifiedType: const FullType(bool)),
+    ];
+    Object? value;
+    value = object.requestId;
+    if (value != null) {
+      result
+        ..add('requestId')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.optimisticResponse;
+    if (value != null) {
+      result
+        ..add('optimisticResponse')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.GCreateProductDealerData)));
+    }
+    value = object.updateCacheHandlerKey;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerKey')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.updateCacheHandlerContext;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerContext')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                Map, const [const FullType(String), const FullType(dynamic)])));
+    }
+    value = object.fetchPolicy;
+    if (value != null) {
+      result
+        ..add('fetchPolicy')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i1.FetchPolicy)));
+    }
+    return result;
+  }
+
+  @override
+  GCreateProductDealerReq deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GCreateProductDealerReqBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'vars':
+          result.vars.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i3.GCreateProductDealerVars))!
+              as _i3.GCreateProductDealerVars);
+          break;
+        case 'operation':
+          result.operation = serializers.deserialize(value,
+              specifiedType: const FullType(_i4.Operation))! as _i4.Operation;
+          break;
+        case 'requestId':
+          result.requestId = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'optimisticResponse':
+          result.optimisticResponse.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.GCreateProductDealerData))!
+              as _i2.GCreateProductDealerData);
+          break;
+        case 'updateCacheHandlerKey':
+          result.updateCacheHandlerKey = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'updateCacheHandlerContext':
+          result.updateCacheHandlerContext = serializers.deserialize(value,
+              specifiedType: const FullType(Map, const [
+                const FullType(String),
+                const FullType(dynamic)
+              ])) as Map<String, dynamic>?;
+          break;
+        case 'fetchPolicy':
+          result.fetchPolicy = serializers.deserialize(value,
+                  specifiedType: const FullType(_i1.FetchPolicy))
+              as _i1.FetchPolicy?;
+          break;
+        case 'executeOnListen':
+          result.executeOnListen = serializers.deserialize(value,
+              specifiedType: const FullType(bool))! as bool;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUpdateProductDealerReqSerializer
+    implements StructuredSerializer<GUpdateProductDealerReq> {
+  @override
+  final Iterable<Type> types = const [
+    GUpdateProductDealerReq,
+    _$GUpdateProductDealerReq
+  ];
+  @override
+  final String wireName = 'GUpdateProductDealerReq';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUpdateProductDealerReq object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'vars',
+      serializers.serialize(object.vars,
+          specifiedType: const FullType(_i3.GUpdateProductDealerVars)),
+      'operation',
+      serializers.serialize(object.operation,
+          specifiedType: const FullType(_i4.Operation)),
+      'executeOnListen',
+      serializers.serialize(object.executeOnListen,
+          specifiedType: const FullType(bool)),
+    ];
+    Object? value;
+    value = object.requestId;
+    if (value != null) {
+      result
+        ..add('requestId')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.optimisticResponse;
+    if (value != null) {
+      result
+        ..add('optimisticResponse')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.GUpdateProductDealerData)));
+    }
+    value = object.updateCacheHandlerKey;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerKey')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.updateCacheHandlerContext;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerContext')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                Map, const [const FullType(String), const FullType(dynamic)])));
+    }
+    value = object.fetchPolicy;
+    if (value != null) {
+      result
+        ..add('fetchPolicy')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i1.FetchPolicy)));
+    }
+    return result;
+  }
+
+  @override
+  GUpdateProductDealerReq deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUpdateProductDealerReqBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'vars':
+          result.vars.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i3.GUpdateProductDealerVars))!
+              as _i3.GUpdateProductDealerVars);
+          break;
+        case 'operation':
+          result.operation = serializers.deserialize(value,
+              specifiedType: const FullType(_i4.Operation))! as _i4.Operation;
+          break;
+        case 'requestId':
+          result.requestId = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'optimisticResponse':
+          result.optimisticResponse.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.GUpdateProductDealerData))!
+              as _i2.GUpdateProductDealerData);
+          break;
+        case 'updateCacheHandlerKey':
+          result.updateCacheHandlerKey = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'updateCacheHandlerContext':
+          result.updateCacheHandlerContext = serializers.deserialize(value,
+              specifiedType: const FullType(Map, const [
+                const FullType(String),
+                const FullType(dynamic)
+              ])) as Map<String, dynamic>?;
+          break;
+        case 'fetchPolicy':
+          result.fetchPolicy = serializers.deserialize(value,
+                  specifiedType: const FullType(_i1.FetchPolicy))
+              as _i1.FetchPolicy?;
+          break;
+        case 'executeOnListen':
+          result.executeOnListen = serializers.deserialize(value,
+              specifiedType: const FullType(bool))! as bool;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GCreateProductDealerStockRequestReqSerializer
+    implements StructuredSerializer<GCreateProductDealerStockRequestReq> {
+  @override
+  final Iterable<Type> types = const [
+    GCreateProductDealerStockRequestReq,
+    _$GCreateProductDealerStockRequestReq
+  ];
+  @override
+  final String wireName = 'GCreateProductDealerStockRequestReq';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GCreateProductDealerStockRequestReq object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'vars',
+      serializers.serialize(object.vars,
+          specifiedType:
+              const FullType(_i3.GCreateProductDealerStockRequestVars)),
+      'operation',
+      serializers.serialize(object.operation,
+          specifiedType: const FullType(_i4.Operation)),
+      'executeOnListen',
+      serializers.serialize(object.executeOnListen,
+          specifiedType: const FullType(bool)),
+    ];
+    Object? value;
+    value = object.requestId;
+    if (value != null) {
+      result
+        ..add('requestId')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.optimisticResponse;
+    if (value != null) {
+      result
+        ..add('optimisticResponse')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(_i2.GCreateProductDealerStockRequestData)));
+    }
+    value = object.updateCacheHandlerKey;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerKey')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.updateCacheHandlerContext;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerContext')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                Map, const [const FullType(String), const FullType(dynamic)])));
+    }
+    value = object.fetchPolicy;
+    if (value != null) {
+      result
+        ..add('fetchPolicy')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i1.FetchPolicy)));
+    }
+    return result;
+  }
+
+  @override
+  GCreateProductDealerStockRequestReq deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GCreateProductDealerStockRequestReqBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'vars':
+          result.vars.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(_i3.GCreateProductDealerStockRequestVars))!
+              as _i3.GCreateProductDealerStockRequestVars);
+          break;
+        case 'operation':
+          result.operation = serializers.deserialize(value,
+              specifiedType: const FullType(_i4.Operation))! as _i4.Operation;
+          break;
+        case 'requestId':
+          result.requestId = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'optimisticResponse':
+          result.optimisticResponse.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(_i2.GCreateProductDealerStockRequestData))!
+              as _i2.GCreateProductDealerStockRequestData);
           break;
         case 'updateCacheHandlerKey':
           result.updateCacheHandlerKey = serializers.deserialize(value,
@@ -5850,6 +6227,753 @@ class GProductDealersReqBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GProductDealersReq', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GCreateProductDealerReq extends GCreateProductDealerReq {
+  @override
+  final _i3.GCreateProductDealerVars vars;
+  @override
+  final _i4.Operation operation;
+  @override
+  final String? requestId;
+  @override
+  final _i2.GCreateProductDealerData? Function(
+          _i2.GCreateProductDealerData?, _i2.GCreateProductDealerData?)?
+      updateResult;
+  @override
+  final _i2.GCreateProductDealerData? optimisticResponse;
+  @override
+  final String? updateCacheHandlerKey;
+  @override
+  final Map<String, dynamic>? updateCacheHandlerContext;
+  @override
+  final _i1.FetchPolicy? fetchPolicy;
+  @override
+  final bool executeOnListen;
+  @override
+  final _i4.Context? context;
+
+  factory _$GCreateProductDealerReq(
+          [void Function(GCreateProductDealerReqBuilder)? updates]) =>
+      (new GCreateProductDealerReqBuilder()..update(updates))._build();
+
+  _$GCreateProductDealerReq._(
+      {required this.vars,
+      required this.operation,
+      this.requestId,
+      this.updateResult,
+      this.optimisticResponse,
+      this.updateCacheHandlerKey,
+      this.updateCacheHandlerContext,
+      this.fetchPolicy,
+      required this.executeOnListen,
+      this.context})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        vars, r'GCreateProductDealerReq', 'vars');
+    BuiltValueNullFieldError.checkNotNull(
+        operation, r'GCreateProductDealerReq', 'operation');
+    BuiltValueNullFieldError.checkNotNull(
+        executeOnListen, r'GCreateProductDealerReq', 'executeOnListen');
+  }
+
+  @override
+  GCreateProductDealerReq rebuild(
+          void Function(GCreateProductDealerReqBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GCreateProductDealerReqBuilder toBuilder() =>
+      new GCreateProductDealerReqBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    final dynamic _$dynamicOther = other;
+    return other is GCreateProductDealerReq &&
+        vars == other.vars &&
+        operation == other.operation &&
+        requestId == other.requestId &&
+        updateResult == _$dynamicOther.updateResult &&
+        optimisticResponse == other.optimisticResponse &&
+        updateCacheHandlerKey == other.updateCacheHandlerKey &&
+        updateCacheHandlerContext == other.updateCacheHandlerContext &&
+        fetchPolicy == other.fetchPolicy &&
+        executeOnListen == other.executeOnListen &&
+        context == other.context;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, vars.hashCode);
+    _$hash = $jc(_$hash, operation.hashCode);
+    _$hash = $jc(_$hash, requestId.hashCode);
+    _$hash = $jc(_$hash, updateResult.hashCode);
+    _$hash = $jc(_$hash, optimisticResponse.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerKey.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
+    _$hash = $jc(_$hash, fetchPolicy.hashCode);
+    _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jc(_$hash, context.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GCreateProductDealerReq')
+          ..add('vars', vars)
+          ..add('operation', operation)
+          ..add('requestId', requestId)
+          ..add('updateResult', updateResult)
+          ..add('optimisticResponse', optimisticResponse)
+          ..add('updateCacheHandlerKey', updateCacheHandlerKey)
+          ..add('updateCacheHandlerContext', updateCacheHandlerContext)
+          ..add('fetchPolicy', fetchPolicy)
+          ..add('executeOnListen', executeOnListen)
+          ..add('context', context))
+        .toString();
+  }
+}
+
+class GCreateProductDealerReqBuilder
+    implements
+        Builder<GCreateProductDealerReq, GCreateProductDealerReqBuilder> {
+  _$GCreateProductDealerReq? _$v;
+
+  _i3.GCreateProductDealerVarsBuilder? _vars;
+  _i3.GCreateProductDealerVarsBuilder get vars =>
+      _$this._vars ??= new _i3.GCreateProductDealerVarsBuilder();
+  set vars(_i3.GCreateProductDealerVarsBuilder? vars) => _$this._vars = vars;
+
+  _i4.Operation? _operation;
+  _i4.Operation? get operation => _$this._operation;
+  set operation(_i4.Operation? operation) => _$this._operation = operation;
+
+  String? _requestId;
+  String? get requestId => _$this._requestId;
+  set requestId(String? requestId) => _$this._requestId = requestId;
+
+  _i2.GCreateProductDealerData? Function(
+          _i2.GCreateProductDealerData?, _i2.GCreateProductDealerData?)?
+      _updateResult;
+  _i2.GCreateProductDealerData? Function(
+          _i2.GCreateProductDealerData?, _i2.GCreateProductDealerData?)?
+      get updateResult => _$this._updateResult;
+  set updateResult(
+          _i2.GCreateProductDealerData? Function(
+                  _i2.GCreateProductDealerData?, _i2.GCreateProductDealerData?)?
+              updateResult) =>
+      _$this._updateResult = updateResult;
+
+  _i2.GCreateProductDealerDataBuilder? _optimisticResponse;
+  _i2.GCreateProductDealerDataBuilder get optimisticResponse =>
+      _$this._optimisticResponse ??= new _i2.GCreateProductDealerDataBuilder();
+  set optimisticResponse(
+          _i2.GCreateProductDealerDataBuilder? optimisticResponse) =>
+      _$this._optimisticResponse = optimisticResponse;
+
+  String? _updateCacheHandlerKey;
+  String? get updateCacheHandlerKey => _$this._updateCacheHandlerKey;
+  set updateCacheHandlerKey(String? updateCacheHandlerKey) =>
+      _$this._updateCacheHandlerKey = updateCacheHandlerKey;
+
+  Map<String, dynamic>? _updateCacheHandlerContext;
+  Map<String, dynamic>? get updateCacheHandlerContext =>
+      _$this._updateCacheHandlerContext;
+  set updateCacheHandlerContext(
+          Map<String, dynamic>? updateCacheHandlerContext) =>
+      _$this._updateCacheHandlerContext = updateCacheHandlerContext;
+
+  _i1.FetchPolicy? _fetchPolicy;
+  _i1.FetchPolicy? get fetchPolicy => _$this._fetchPolicy;
+  set fetchPolicy(_i1.FetchPolicy? fetchPolicy) =>
+      _$this._fetchPolicy = fetchPolicy;
+
+  bool? _executeOnListen;
+  bool? get executeOnListen => _$this._executeOnListen;
+  set executeOnListen(bool? executeOnListen) =>
+      _$this._executeOnListen = executeOnListen;
+
+  _i4.Context? _context;
+  _i4.Context? get context => _$this._context;
+  set context(_i4.Context? context) => _$this._context = context;
+
+  GCreateProductDealerReqBuilder() {
+    GCreateProductDealerReq._initializeBuilder(this);
+  }
+
+  GCreateProductDealerReqBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _vars = $v.vars.toBuilder();
+      _operation = $v.operation;
+      _requestId = $v.requestId;
+      _updateResult = $v.updateResult;
+      _optimisticResponse = $v.optimisticResponse?.toBuilder();
+      _updateCacheHandlerKey = $v.updateCacheHandlerKey;
+      _updateCacheHandlerContext = $v.updateCacheHandlerContext;
+      _fetchPolicy = $v.fetchPolicy;
+      _executeOnListen = $v.executeOnListen;
+      _context = $v.context;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GCreateProductDealerReq other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GCreateProductDealerReq;
+  }
+
+  @override
+  void update(void Function(GCreateProductDealerReqBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GCreateProductDealerReq build() => _build();
+
+  _$GCreateProductDealerReq _build() {
+    _$GCreateProductDealerReq _$result;
+    try {
+      _$result = _$v ??
+          new _$GCreateProductDealerReq._(
+              vars: vars.build(),
+              operation: BuiltValueNullFieldError.checkNotNull(
+                  operation, r'GCreateProductDealerReq', 'operation'),
+              requestId: requestId,
+              updateResult: updateResult,
+              optimisticResponse: _optimisticResponse?.build(),
+              updateCacheHandlerKey: updateCacheHandlerKey,
+              updateCacheHandlerContext: updateCacheHandlerContext,
+              fetchPolicy: fetchPolicy,
+              executeOnListen: BuiltValueNullFieldError.checkNotNull(
+                  executeOnListen,
+                  r'GCreateProductDealerReq',
+                  'executeOnListen'),
+              context: context);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'vars';
+        vars.build();
+
+        _$failedField = 'optimisticResponse';
+        _optimisticResponse?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GCreateProductDealerReq', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUpdateProductDealerReq extends GUpdateProductDealerReq {
+  @override
+  final _i3.GUpdateProductDealerVars vars;
+  @override
+  final _i4.Operation operation;
+  @override
+  final String? requestId;
+  @override
+  final _i2.GUpdateProductDealerData? Function(
+          _i2.GUpdateProductDealerData?, _i2.GUpdateProductDealerData?)?
+      updateResult;
+  @override
+  final _i2.GUpdateProductDealerData? optimisticResponse;
+  @override
+  final String? updateCacheHandlerKey;
+  @override
+  final Map<String, dynamic>? updateCacheHandlerContext;
+  @override
+  final _i1.FetchPolicy? fetchPolicy;
+  @override
+  final bool executeOnListen;
+  @override
+  final _i4.Context? context;
+
+  factory _$GUpdateProductDealerReq(
+          [void Function(GUpdateProductDealerReqBuilder)? updates]) =>
+      (new GUpdateProductDealerReqBuilder()..update(updates))._build();
+
+  _$GUpdateProductDealerReq._(
+      {required this.vars,
+      required this.operation,
+      this.requestId,
+      this.updateResult,
+      this.optimisticResponse,
+      this.updateCacheHandlerKey,
+      this.updateCacheHandlerContext,
+      this.fetchPolicy,
+      required this.executeOnListen,
+      this.context})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        vars, r'GUpdateProductDealerReq', 'vars');
+    BuiltValueNullFieldError.checkNotNull(
+        operation, r'GUpdateProductDealerReq', 'operation');
+    BuiltValueNullFieldError.checkNotNull(
+        executeOnListen, r'GUpdateProductDealerReq', 'executeOnListen');
+  }
+
+  @override
+  GUpdateProductDealerReq rebuild(
+          void Function(GUpdateProductDealerReqBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUpdateProductDealerReqBuilder toBuilder() =>
+      new GUpdateProductDealerReqBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    final dynamic _$dynamicOther = other;
+    return other is GUpdateProductDealerReq &&
+        vars == other.vars &&
+        operation == other.operation &&
+        requestId == other.requestId &&
+        updateResult == _$dynamicOther.updateResult &&
+        optimisticResponse == other.optimisticResponse &&
+        updateCacheHandlerKey == other.updateCacheHandlerKey &&
+        updateCacheHandlerContext == other.updateCacheHandlerContext &&
+        fetchPolicy == other.fetchPolicy &&
+        executeOnListen == other.executeOnListen &&
+        context == other.context;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, vars.hashCode);
+    _$hash = $jc(_$hash, operation.hashCode);
+    _$hash = $jc(_$hash, requestId.hashCode);
+    _$hash = $jc(_$hash, updateResult.hashCode);
+    _$hash = $jc(_$hash, optimisticResponse.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerKey.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
+    _$hash = $jc(_$hash, fetchPolicy.hashCode);
+    _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jc(_$hash, context.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GUpdateProductDealerReq')
+          ..add('vars', vars)
+          ..add('operation', operation)
+          ..add('requestId', requestId)
+          ..add('updateResult', updateResult)
+          ..add('optimisticResponse', optimisticResponse)
+          ..add('updateCacheHandlerKey', updateCacheHandlerKey)
+          ..add('updateCacheHandlerContext', updateCacheHandlerContext)
+          ..add('fetchPolicy', fetchPolicy)
+          ..add('executeOnListen', executeOnListen)
+          ..add('context', context))
+        .toString();
+  }
+}
+
+class GUpdateProductDealerReqBuilder
+    implements
+        Builder<GUpdateProductDealerReq, GUpdateProductDealerReqBuilder> {
+  _$GUpdateProductDealerReq? _$v;
+
+  _i3.GUpdateProductDealerVarsBuilder? _vars;
+  _i3.GUpdateProductDealerVarsBuilder get vars =>
+      _$this._vars ??= new _i3.GUpdateProductDealerVarsBuilder();
+  set vars(_i3.GUpdateProductDealerVarsBuilder? vars) => _$this._vars = vars;
+
+  _i4.Operation? _operation;
+  _i4.Operation? get operation => _$this._operation;
+  set operation(_i4.Operation? operation) => _$this._operation = operation;
+
+  String? _requestId;
+  String? get requestId => _$this._requestId;
+  set requestId(String? requestId) => _$this._requestId = requestId;
+
+  _i2.GUpdateProductDealerData? Function(
+          _i2.GUpdateProductDealerData?, _i2.GUpdateProductDealerData?)?
+      _updateResult;
+  _i2.GUpdateProductDealerData? Function(
+          _i2.GUpdateProductDealerData?, _i2.GUpdateProductDealerData?)?
+      get updateResult => _$this._updateResult;
+  set updateResult(
+          _i2.GUpdateProductDealerData? Function(
+                  _i2.GUpdateProductDealerData?, _i2.GUpdateProductDealerData?)?
+              updateResult) =>
+      _$this._updateResult = updateResult;
+
+  _i2.GUpdateProductDealerDataBuilder? _optimisticResponse;
+  _i2.GUpdateProductDealerDataBuilder get optimisticResponse =>
+      _$this._optimisticResponse ??= new _i2.GUpdateProductDealerDataBuilder();
+  set optimisticResponse(
+          _i2.GUpdateProductDealerDataBuilder? optimisticResponse) =>
+      _$this._optimisticResponse = optimisticResponse;
+
+  String? _updateCacheHandlerKey;
+  String? get updateCacheHandlerKey => _$this._updateCacheHandlerKey;
+  set updateCacheHandlerKey(String? updateCacheHandlerKey) =>
+      _$this._updateCacheHandlerKey = updateCacheHandlerKey;
+
+  Map<String, dynamic>? _updateCacheHandlerContext;
+  Map<String, dynamic>? get updateCacheHandlerContext =>
+      _$this._updateCacheHandlerContext;
+  set updateCacheHandlerContext(
+          Map<String, dynamic>? updateCacheHandlerContext) =>
+      _$this._updateCacheHandlerContext = updateCacheHandlerContext;
+
+  _i1.FetchPolicy? _fetchPolicy;
+  _i1.FetchPolicy? get fetchPolicy => _$this._fetchPolicy;
+  set fetchPolicy(_i1.FetchPolicy? fetchPolicy) =>
+      _$this._fetchPolicy = fetchPolicy;
+
+  bool? _executeOnListen;
+  bool? get executeOnListen => _$this._executeOnListen;
+  set executeOnListen(bool? executeOnListen) =>
+      _$this._executeOnListen = executeOnListen;
+
+  _i4.Context? _context;
+  _i4.Context? get context => _$this._context;
+  set context(_i4.Context? context) => _$this._context = context;
+
+  GUpdateProductDealerReqBuilder() {
+    GUpdateProductDealerReq._initializeBuilder(this);
+  }
+
+  GUpdateProductDealerReqBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _vars = $v.vars.toBuilder();
+      _operation = $v.operation;
+      _requestId = $v.requestId;
+      _updateResult = $v.updateResult;
+      _optimisticResponse = $v.optimisticResponse?.toBuilder();
+      _updateCacheHandlerKey = $v.updateCacheHandlerKey;
+      _updateCacheHandlerContext = $v.updateCacheHandlerContext;
+      _fetchPolicy = $v.fetchPolicy;
+      _executeOnListen = $v.executeOnListen;
+      _context = $v.context;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUpdateProductDealerReq other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUpdateProductDealerReq;
+  }
+
+  @override
+  void update(void Function(GUpdateProductDealerReqBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUpdateProductDealerReq build() => _build();
+
+  _$GUpdateProductDealerReq _build() {
+    _$GUpdateProductDealerReq _$result;
+    try {
+      _$result = _$v ??
+          new _$GUpdateProductDealerReq._(
+              vars: vars.build(),
+              operation: BuiltValueNullFieldError.checkNotNull(
+                  operation, r'GUpdateProductDealerReq', 'operation'),
+              requestId: requestId,
+              updateResult: updateResult,
+              optimisticResponse: _optimisticResponse?.build(),
+              updateCacheHandlerKey: updateCacheHandlerKey,
+              updateCacheHandlerContext: updateCacheHandlerContext,
+              fetchPolicy: fetchPolicy,
+              executeOnListen: BuiltValueNullFieldError.checkNotNull(
+                  executeOnListen,
+                  r'GUpdateProductDealerReq',
+                  'executeOnListen'),
+              context: context);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'vars';
+        vars.build();
+
+        _$failedField = 'optimisticResponse';
+        _optimisticResponse?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUpdateProductDealerReq', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GCreateProductDealerStockRequestReq
+    extends GCreateProductDealerStockRequestReq {
+  @override
+  final _i3.GCreateProductDealerStockRequestVars vars;
+  @override
+  final _i4.Operation operation;
+  @override
+  final String? requestId;
+  @override
+  final _i2.GCreateProductDealerStockRequestData? Function(
+      _i2.GCreateProductDealerStockRequestData?,
+      _i2.GCreateProductDealerStockRequestData?)? updateResult;
+  @override
+  final _i2.GCreateProductDealerStockRequestData? optimisticResponse;
+  @override
+  final String? updateCacheHandlerKey;
+  @override
+  final Map<String, dynamic>? updateCacheHandlerContext;
+  @override
+  final _i1.FetchPolicy? fetchPolicy;
+  @override
+  final bool executeOnListen;
+  @override
+  final _i4.Context? context;
+
+  factory _$GCreateProductDealerStockRequestReq(
+          [void Function(GCreateProductDealerStockRequestReqBuilder)?
+              updates]) =>
+      (new GCreateProductDealerStockRequestReqBuilder()..update(updates))
+          ._build();
+
+  _$GCreateProductDealerStockRequestReq._(
+      {required this.vars,
+      required this.operation,
+      this.requestId,
+      this.updateResult,
+      this.optimisticResponse,
+      this.updateCacheHandlerKey,
+      this.updateCacheHandlerContext,
+      this.fetchPolicy,
+      required this.executeOnListen,
+      this.context})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        vars, r'GCreateProductDealerStockRequestReq', 'vars');
+    BuiltValueNullFieldError.checkNotNull(
+        operation, r'GCreateProductDealerStockRequestReq', 'operation');
+    BuiltValueNullFieldError.checkNotNull(executeOnListen,
+        r'GCreateProductDealerStockRequestReq', 'executeOnListen');
+  }
+
+  @override
+  GCreateProductDealerStockRequestReq rebuild(
+          void Function(GCreateProductDealerStockRequestReqBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GCreateProductDealerStockRequestReqBuilder toBuilder() =>
+      new GCreateProductDealerStockRequestReqBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    final dynamic _$dynamicOther = other;
+    return other is GCreateProductDealerStockRequestReq &&
+        vars == other.vars &&
+        operation == other.operation &&
+        requestId == other.requestId &&
+        updateResult == _$dynamicOther.updateResult &&
+        optimisticResponse == other.optimisticResponse &&
+        updateCacheHandlerKey == other.updateCacheHandlerKey &&
+        updateCacheHandlerContext == other.updateCacheHandlerContext &&
+        fetchPolicy == other.fetchPolicy &&
+        executeOnListen == other.executeOnListen &&
+        context == other.context;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, vars.hashCode);
+    _$hash = $jc(_$hash, operation.hashCode);
+    _$hash = $jc(_$hash, requestId.hashCode);
+    _$hash = $jc(_$hash, updateResult.hashCode);
+    _$hash = $jc(_$hash, optimisticResponse.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerKey.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
+    _$hash = $jc(_$hash, fetchPolicy.hashCode);
+    _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jc(_$hash, context.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GCreateProductDealerStockRequestReq')
+          ..add('vars', vars)
+          ..add('operation', operation)
+          ..add('requestId', requestId)
+          ..add('updateResult', updateResult)
+          ..add('optimisticResponse', optimisticResponse)
+          ..add('updateCacheHandlerKey', updateCacheHandlerKey)
+          ..add('updateCacheHandlerContext', updateCacheHandlerContext)
+          ..add('fetchPolicy', fetchPolicy)
+          ..add('executeOnListen', executeOnListen)
+          ..add('context', context))
+        .toString();
+  }
+}
+
+class GCreateProductDealerStockRequestReqBuilder
+    implements
+        Builder<GCreateProductDealerStockRequestReq,
+            GCreateProductDealerStockRequestReqBuilder> {
+  _$GCreateProductDealerStockRequestReq? _$v;
+
+  _i3.GCreateProductDealerStockRequestVarsBuilder? _vars;
+  _i3.GCreateProductDealerStockRequestVarsBuilder get vars =>
+      _$this._vars ??= new _i3.GCreateProductDealerStockRequestVarsBuilder();
+  set vars(_i3.GCreateProductDealerStockRequestVarsBuilder? vars) =>
+      _$this._vars = vars;
+
+  _i4.Operation? _operation;
+  _i4.Operation? get operation => _$this._operation;
+  set operation(_i4.Operation? operation) => _$this._operation = operation;
+
+  String? _requestId;
+  String? get requestId => _$this._requestId;
+  set requestId(String? requestId) => _$this._requestId = requestId;
+
+  _i2.GCreateProductDealerStockRequestData? Function(
+      _i2.GCreateProductDealerStockRequestData?,
+      _i2.GCreateProductDealerStockRequestData?)? _updateResult;
+  _i2.GCreateProductDealerStockRequestData? Function(
+          _i2.GCreateProductDealerStockRequestData?,
+          _i2.GCreateProductDealerStockRequestData?)?
+      get updateResult => _$this._updateResult;
+  set updateResult(
+          _i2.GCreateProductDealerStockRequestData? Function(
+                  _i2.GCreateProductDealerStockRequestData?,
+                  _i2.GCreateProductDealerStockRequestData?)?
+              updateResult) =>
+      _$this._updateResult = updateResult;
+
+  _i2.GCreateProductDealerStockRequestDataBuilder? _optimisticResponse;
+  _i2.GCreateProductDealerStockRequestDataBuilder get optimisticResponse =>
+      _$this._optimisticResponse ??=
+          new _i2.GCreateProductDealerStockRequestDataBuilder();
+  set optimisticResponse(
+          _i2.GCreateProductDealerStockRequestDataBuilder?
+              optimisticResponse) =>
+      _$this._optimisticResponse = optimisticResponse;
+
+  String? _updateCacheHandlerKey;
+  String? get updateCacheHandlerKey => _$this._updateCacheHandlerKey;
+  set updateCacheHandlerKey(String? updateCacheHandlerKey) =>
+      _$this._updateCacheHandlerKey = updateCacheHandlerKey;
+
+  Map<String, dynamic>? _updateCacheHandlerContext;
+  Map<String, dynamic>? get updateCacheHandlerContext =>
+      _$this._updateCacheHandlerContext;
+  set updateCacheHandlerContext(
+          Map<String, dynamic>? updateCacheHandlerContext) =>
+      _$this._updateCacheHandlerContext = updateCacheHandlerContext;
+
+  _i1.FetchPolicy? _fetchPolicy;
+  _i1.FetchPolicy? get fetchPolicy => _$this._fetchPolicy;
+  set fetchPolicy(_i1.FetchPolicy? fetchPolicy) =>
+      _$this._fetchPolicy = fetchPolicy;
+
+  bool? _executeOnListen;
+  bool? get executeOnListen => _$this._executeOnListen;
+  set executeOnListen(bool? executeOnListen) =>
+      _$this._executeOnListen = executeOnListen;
+
+  _i4.Context? _context;
+  _i4.Context? get context => _$this._context;
+  set context(_i4.Context? context) => _$this._context = context;
+
+  GCreateProductDealerStockRequestReqBuilder() {
+    GCreateProductDealerStockRequestReq._initializeBuilder(this);
+  }
+
+  GCreateProductDealerStockRequestReqBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _vars = $v.vars.toBuilder();
+      _operation = $v.operation;
+      _requestId = $v.requestId;
+      _updateResult = $v.updateResult;
+      _optimisticResponse = $v.optimisticResponse?.toBuilder();
+      _updateCacheHandlerKey = $v.updateCacheHandlerKey;
+      _updateCacheHandlerContext = $v.updateCacheHandlerContext;
+      _fetchPolicy = $v.fetchPolicy;
+      _executeOnListen = $v.executeOnListen;
+      _context = $v.context;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GCreateProductDealerStockRequestReq other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GCreateProductDealerStockRequestReq;
+  }
+
+  @override
+  void update(
+      void Function(GCreateProductDealerStockRequestReqBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GCreateProductDealerStockRequestReq build() => _build();
+
+  _$GCreateProductDealerStockRequestReq _build() {
+    _$GCreateProductDealerStockRequestReq _$result;
+    try {
+      _$result = _$v ??
+          new _$GCreateProductDealerStockRequestReq._(
+              vars: vars.build(),
+              operation: BuiltValueNullFieldError.checkNotNull(operation,
+                  r'GCreateProductDealerStockRequestReq', 'operation'),
+              requestId: requestId,
+              updateResult: updateResult,
+              optimisticResponse: _optimisticResponse?.build(),
+              updateCacheHandlerKey: updateCacheHandlerKey,
+              updateCacheHandlerContext: updateCacheHandlerContext,
+              fetchPolicy: fetchPolicy,
+              executeOnListen: BuiltValueNullFieldError.checkNotNull(
+                  executeOnListen,
+                  r'GCreateProductDealerStockRequestReq',
+                  'executeOnListen'),
+              context: context);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'vars';
+        vars.build();
+
+        _$failedField = 'optimisticResponse';
+        _optimisticResponse?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GCreateProductDealerStockRequestReq',
+            _$failedField,
+            e.toString());
       }
       rethrow;
     }

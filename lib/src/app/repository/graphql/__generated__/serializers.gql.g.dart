@@ -110,6 +110,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
           .serializer)
       ..add(GCreateOrderRejectionByDealerReq.serializer)
       ..add(GCreateOrderRejectionByDealerVars.serializer)
+      ..add(GCreateProductDealerData.serializer)
+      ..add(GCreateProductDealerData_createProductDealer.serializer)
+      ..add(GCreateProductDealerReq.serializer)
+      ..add(GCreateProductDealerStockRequestData.serializer)
+      ..add(GCreateProductDealerStockRequestData_createProductDealerStockRequest
+          .serializer)
+      ..add(GCreateProductDealerStockRequestReq.serializer)
+      ..add(GCreateProductDealerStockRequestVars.serializer)
+      ..add(GCreateProductDealerVars.serializer)
       ..add(GCreateReportData.serializer)
       ..add(GCreateReportData_createReport.serializer)
       ..add(GCreateReportReq.serializer)
@@ -677,6 +686,21 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GUpdatePricesData_updatePrices.serializer)
       ..add(GUpdatePricesReq.serializer)
       ..add(GUpdatePricesVars.serializer)
+      ..add(GUpdateProductDealerData.serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer.serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer_guarantees.serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer_prices.serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer_prices_category
+          .serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer_productVariant
+          .serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer_productVariant_product
+          .serializer)
+      ..add(
+          GUpdateProductDealerData_updateProductDealer_productVariant_product_brand
+              .serializer)
+      ..add(GUpdateProductDealerReq.serializer)
+      ..add(GUpdateProductDealerVars.serializer)
       ..add(GUpdateProductOrderData.serializer)
       ..add(GUpdateProductOrderData_updateProductOrder.serializer)
       ..add(GUpdateProductOrderReq.serializer)
@@ -2245,6 +2269,19 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<
               GTestDriveOrdersData_testDriveOrders_order_user_addresses>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GUpdateProductDealerData_updateProductDealer_prices)
+          ]),
+          () => new ListBuilder<
+              GUpdateProductDealerData_updateProductDealer_prices>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GUpdateProductDealerData_updateProductDealer_guarantees)
+          ]),
+          () => new ListBuilder<
+              GUpdateProductDealerData_updateProductDealer_guarantees>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(GUpdateVehicleDealerData_updateVehicleDealer_prices)

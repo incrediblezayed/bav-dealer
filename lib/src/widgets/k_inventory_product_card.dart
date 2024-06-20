@@ -7,6 +7,7 @@ import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'k_cached_network_image.dart';
+import 'k_inventory_bike_quantity.dart';
 
 class KInvetoryProductCard extends ConsumerStatefulWidget {
   const KInvetoryProductCard({
@@ -206,6 +207,20 @@ class _KInvetoryProductCardState extends ConsumerState<KInvetoryProductCard> {
                     )
                         .firstOrNull;*//*
                   });*/
+
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => QuantityScreen(
+                        variantId: widget.variant.id,
+                        colorId: '',
+                        guarantees: const [],
+                        prices: const [],
+                        product: true,
+                      ),
+                    ),
+                  );
+
                 },
                 text: 'Add (or) Update',
               ),

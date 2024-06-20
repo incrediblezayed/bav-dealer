@@ -2,7 +2,6 @@ import 'package:collection/collection.dart';
 import 'package:dealerapp/src/app/model/dealer_stock_model.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/guarantees/graphql/__generated__/guarantees.data.gql.dart';
-import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
@@ -19,6 +18,7 @@ class QuantityScreen extends ConsumerStatefulWidget {
     required this.guarantees,
     this.index,
     this.isUpdate = false,
+    this.product = false,
     this.vehicleDealerId,
     super.key,
   }) : assert(
@@ -32,6 +32,7 @@ class QuantityScreen extends ConsumerStatefulWidget {
   final List<Guarantee> guarantees;
   final int? index;
   final String? vehicleDealerId;
+  final bool product;
 
   @override
   ConsumerState<QuantityScreen> createState() => _QuantityScreenState();
@@ -41,7 +42,9 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
   List<PriceModel> prices = [];
   List<TextEditingController> controller = [];
   late List<ValueItem<String>> selectedGuarantees = [];
+
   String get variantId => widget.variantId;
+
   String get colorId => widget.colorId;
   final List<GGuaranteesData_guarantees> _guaranteeDetails = [];
   List<ValueItem<String>> guarantees = [];
@@ -183,35 +186,68 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                       child: KButton(
                         onPressed: () {
                           if (widget.isUpdate) {
-                            inventoryPro
-                                .updateVehicleDealer(
-                              index: widget.index!,
-                              id: widget.vehicleDealerId!,
-                              guarantees: selectedGuarantees
-                                  .map((e) => e.value!)
-                                  .toList(),
-                              prices: prices,
-                            )
-                                .then((value) {
-                              for (var i = 0; i < controller.length; i++) {
-                                controller[i].clear();
-                              }
-                            });
+                            if (widget.product) {
+                              inventoryPro
+                                  .updateProductDealer(
+                                index: widget.index!,
+                                id: widget.vehicleDealerId!,
+                                guarantees: selectedGuarantees
+                                    .map((e) => e.value!)
+                                    .toList(),
+                                prices: prices,
+                              )
+                                  .then((value) {
+                                for (var i = 0; i < controller.length; i++) {
+                                  controller[i].clear();
+                                }
+                              });
+                            } else {
+                              inventoryPro
+                                  .updateVehicleDealer(
+                                index: widget.index!,
+                                id: widget.vehicleDealerId!,
+                                guarantees: selectedGuarantees
+                                    .map((e) => e.value!)
+                                    .toList(),
+                                prices: prices,
+                              )
+                                  .then((value) {
+                                for (var i = 0; i < controller.length; i++) {
+                                  controller[i].clear();
+                                }
+                              });
+                            }
                           } else {
-                            inventoryPro
-                                .createStockRequest(
-                              guarantees: selectedGuarantees
-                                  .map((e) => e.value!)
-                                  .toList(),
-                              variantId: variantId,
-                              colorId: colorId,
-                              prices: prices,
-                            )
-                                .then((value) {
-                              for (var i = 0; i < controller.length; i++) {
-                                controller[i].clear();
-                              }
-                            });
+                            if (widget.product) {
+                              inventoryPro
+                                  .createProductStockRequest(
+                                guarantees: selectedGuarantees
+                                    .map((e) => e.value!)
+                                    .toList(),
+                                variantId: variantId,
+                                prices: prices,
+                              )
+                                  .then((value) {
+                                for (var i = 0; i < controller.length; i++) {
+                                  controller[i].clear();
+                                }
+                              });
+                            } else {
+                              inventoryPro
+                                  .createStockRequest(
+                                guarantees: selectedGuarantees
+                                    .map((e) => e.value!)
+                                    .toList(),
+                                variantId: variantId,
+                                colorId: colorId,
+                                prices: prices,
+                              )
+                                  .then((value) {
+                                for (var i = 0; i < controller.length; i++) {
+                                  controller[i].clear();
+                                }
+                              });
+                            }
                           }
                           Navigator.pop(context);
                         },

@@ -35,6 +35,7 @@ class _MyInventoryState extends ConsumerState<MyInventory>
         1: inventoryPro.getStocks(),
         2: inventoryPro.getTestDriveStock(),
         3: inventoryPro.getProducts(),
+        4: inventoryPro.getProductStocks(),
       };
       if (tabFunctions.containsKey(_tabController.index)) {
         await tabFunctions[_tabController.index];
@@ -110,7 +111,10 @@ class _MyInventoryState extends ConsumerState<MyInventory>
           MyProduct(
             showSearch: showSearch,
           ),
-          Container(),
+          MyStockPage(
+            showSearch: showSearch,
+            product: true,
+          ),
           //const EmptyWidget(title: 'Uh oh! You have no products.'),
         ],
       ),
