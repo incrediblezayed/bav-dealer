@@ -669,6 +669,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           GTestDriveOrdersData_testDriveOrders_order_user_addresses.serializer)
       ..add(GTestDriveOrdersReq.serializer)
       ..add(GTestDriveOrdersVars.serializer)
+      ..add(GUpdateDealerData.serializer)
+      ..add(GUpdateDealerData_updateDealer.serializer)
+      ..add(GUpdateDealerReq.serializer)
+      ..add(GUpdateDealerVars.serializer)
       ..add(GUpdatePricesData.serializer)
       ..add(GUpdatePricesData_updatePrices.serializer)
       ..add(GUpdatePricesReq.serializer)
@@ -2961,7 +2965,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType.nullable(GUpdatePricesData_updatePrices)]),
-          () => new ListBuilder<GUpdatePricesData_updatePrices?>()))
+          () => new ListBuilder<GUpdatePricesData_updatePrices?>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType.nullable(double)]),
+          () => new ListBuilder<double?>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

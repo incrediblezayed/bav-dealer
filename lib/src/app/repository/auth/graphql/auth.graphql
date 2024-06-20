@@ -161,3 +161,12 @@ query Dealer($where: DealerWhereInput!) {
     approved
   }
 }
+
+mutation UpdateDealer($where: DealerWhereUniqueInput!, $data: DealerUpdateInput!) {
+  updateDealer(where: $where, data: $data) {
+    id
+    lLat
+    lLng
+    location
+  }
+}

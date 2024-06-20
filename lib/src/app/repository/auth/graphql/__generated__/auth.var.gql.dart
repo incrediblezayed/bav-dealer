@@ -282,3 +282,28 @@ abstract class GDealerVars implements Built<GDealerVars, GDealerVarsBuilder> {
         json,
       );
 }
+
+abstract class GUpdateDealerVars
+    implements Built<GUpdateDealerVars, GUpdateDealerVarsBuilder> {
+  GUpdateDealerVars._();
+
+  factory GUpdateDealerVars(
+          [void Function(GUpdateDealerVarsBuilder b) updates]) =
+      _$GUpdateDealerVars;
+
+  _i1.GDealerWhereUniqueInput get where;
+  _i1.GDealerUpdateInput get data;
+  static Serializer<GUpdateDealerVars> get serializer =>
+      _$gUpdateDealerVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GUpdateDealerVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateDealerVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GUpdateDealerVars.serializer,
+        json,
+      );
+}
