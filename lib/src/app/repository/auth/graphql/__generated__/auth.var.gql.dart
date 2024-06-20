@@ -15,7 +15,7 @@ abstract class GCreateUserVars
     implements Built<GCreateUserVars, GCreateUserVarsBuilder> {
   GCreateUserVars._();
 
-  factory GCreateUserVars([Function(GCreateUserVarsBuilder b) updates]) =
+  factory GCreateUserVars([void Function(GCreateUserVarsBuilder b) updates]) =
       _$GCreateUserVars;
 
   _i1.GUserCreateInput get data;
@@ -39,7 +39,8 @@ abstract class GCurrentUserOTPVars
   GCurrentUserOTPVars._();
 
   factory GCurrentUserOTPVars(
-      [Function(GCurrentUserOTPVarsBuilder b) updates]) = _$GCurrentUserOTPVars;
+          [void Function(GCurrentUserOTPVarsBuilder b) updates]) =
+      _$GCurrentUserOTPVars;
 
   String get key;
   static Serializer<GCurrentUserOTPVars> get serializer =>
@@ -62,7 +63,7 @@ abstract class GValidateUserOTPVars
   GValidateUserOTPVars._();
 
   factory GValidateUserOTPVars(
-          [Function(GValidateUserOTPVarsBuilder b) updates]) =
+          [void Function(GValidateUserOTPVarsBuilder b) updates]) =
       _$GValidateUserOTPVars;
 
   String get key;
@@ -89,7 +90,7 @@ abstract class GSendUserPasswordResetLinkVars
   GSendUserPasswordResetLinkVars._();
 
   factory GSendUserPasswordResetLinkVars(
-          [Function(GSendUserPasswordResetLinkVarsBuilder b) updates]) =
+          [void Function(GSendUserPasswordResetLinkVarsBuilder b) updates]) =
       _$GSendUserPasswordResetLinkVars;
 
   String get phoneNumber;
@@ -115,7 +116,7 @@ abstract class GRedeemUserPasswordResetTokenVars
   GRedeemUserPasswordResetTokenVars._();
 
   factory GRedeemUserPasswordResetTokenVars(
-          [Function(GRedeemUserPasswordResetTokenVarsBuilder b) updates]) =
+          [void Function(GRedeemUserPasswordResetTokenVarsBuilder b) updates]) =
       _$GRedeemUserPasswordResetTokenVars;
 
   String get phoneNumber;
@@ -144,8 +145,8 @@ abstract class GValidateUserPasswordResetTokenVars
   GValidateUserPasswordResetTokenVars._();
 
   factory GValidateUserPasswordResetTokenVars(
-          [Function(GValidateUserPasswordResetTokenVarsBuilder b) updates]) =
-      _$GValidateUserPasswordResetTokenVars;
+      [void Function(GValidateUserPasswordResetTokenVarsBuilder b)
+          updates]) = _$GValidateUserPasswordResetTokenVars;
 
   String get token;
   String get phoneNumber;
@@ -169,7 +170,8 @@ abstract class GCreateDealerVars
     implements Built<GCreateDealerVars, GCreateDealerVarsBuilder> {
   GCreateDealerVars._();
 
-  factory GCreateDealerVars([Function(GCreateDealerVarsBuilder b) updates]) =
+  factory GCreateDealerVars(
+          [void Function(GCreateDealerVarsBuilder b) updates]) =
       _$GCreateDealerVars;
 
   _i1.GDealerCreateInput get data;
@@ -195,7 +197,7 @@ abstract class GAuthenticateUserWithPasswordVars
   GAuthenticateUserWithPasswordVars._();
 
   factory GAuthenticateUserWithPasswordVars(
-          [Function(GAuthenticateUserWithPasswordVarsBuilder b) updates]) =
+          [void Function(GAuthenticateUserWithPasswordVarsBuilder b) updates]) =
       _$GAuthenticateUserWithPasswordVars;
 
   String get phoneNumber;
@@ -219,7 +221,7 @@ abstract class GAuthenticateUserWithPasswordVars
 abstract class GUserVars implements Built<GUserVars, GUserVarsBuilder> {
   GUserVars._();
 
-  factory GUserVars([Function(GUserVarsBuilder b) updates]) = _$GUserVars;
+  factory GUserVars([void Function(GUserVarsBuilder b) updates]) = _$GUserVars;
 
   _i1.GUserWhereUniqueInput get where;
   static Serializer<GUserVars> get serializer => _$gUserVarsSerializer;
@@ -240,7 +242,7 @@ abstract class GUpdateUserVars
     implements Built<GUpdateUserVars, GUpdateUserVarsBuilder> {
   GUpdateUserVars._();
 
-  factory GUpdateUserVars([Function(GUpdateUserVarsBuilder b) updates]) =
+  factory GUpdateUserVars([void Function(GUpdateUserVarsBuilder b) updates]) =
       _$GUpdateUserVars;
 
   _i1.GUserUpdateInput get data;
@@ -263,7 +265,8 @@ abstract class GUpdateUserVars
 abstract class GDealerVars implements Built<GDealerVars, GDealerVarsBuilder> {
   GDealerVars._();
 
-  factory GDealerVars([Function(GDealerVarsBuilder b) updates]) = _$GDealerVars;
+  factory GDealerVars([void Function(GDealerVarsBuilder b) updates]) =
+      _$GDealerVars;
 
   _i1.GDealerWhereInput get where;
   static Serializer<GDealerVars> get serializer => _$gDealerVarsSerializer;

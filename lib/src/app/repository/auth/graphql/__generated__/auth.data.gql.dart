@@ -18,7 +18,7 @@ abstract class GCreateUserData
     implements Built<GCreateUserData, GCreateUserDataBuilder> {
   GCreateUserData._();
 
-  factory GCreateUserData([Function(GCreateUserDataBuilder b) updates]) =
+  factory GCreateUserData([void Function(GCreateUserDataBuilder b) updates]) =
       _$GCreateUserData;
 
   static void _initializeBuilder(GCreateUserDataBuilder b) =>
@@ -48,7 +48,7 @@ abstract class GCreateUserData_createUser
   GCreateUserData_createUser._();
 
   factory GCreateUserData_createUser(
-          [Function(GCreateUserData_createUserBuilder b) updates]) =
+          [void Function(GCreateUserData_createUserBuilder b) updates]) =
       _$GCreateUserData_createUser;
 
   static void _initializeBuilder(GCreateUserData_createUserBuilder b) =>
@@ -77,7 +77,8 @@ abstract class GCurrentUserOTPData
   GCurrentUserOTPData._();
 
   factory GCurrentUserOTPData(
-      [Function(GCurrentUserOTPDataBuilder b) updates]) = _$GCurrentUserOTPData;
+          [void Function(GCurrentUserOTPDataBuilder b) updates]) =
+      _$GCurrentUserOTPData;
 
   static void _initializeBuilder(GCurrentUserOTPDataBuilder b) =>
       b..G__typename = 'Query';
@@ -105,7 +106,7 @@ abstract class GValidateUserOTPData
   GValidateUserOTPData._();
 
   factory GValidateUserOTPData(
-          [Function(GValidateUserOTPDataBuilder b) updates]) =
+          [void Function(GValidateUserOTPDataBuilder b) updates]) =
       _$GValidateUserOTPData;
 
   static void _initializeBuilder(GValidateUserOTPDataBuilder b) =>
@@ -136,7 +137,7 @@ abstract class GSendUserPasswordResetLinkData
   GSendUserPasswordResetLinkData._();
 
   factory GSendUserPasswordResetLinkData(
-          [Function(GSendUserPasswordResetLinkDataBuilder b) updates]) =
+          [void Function(GSendUserPasswordResetLinkDataBuilder b) updates]) =
       _$GSendUserPasswordResetLinkData;
 
   static void _initializeBuilder(GSendUserPasswordResetLinkDataBuilder b) =>
@@ -167,7 +168,7 @@ abstract class GRedeemUserPasswordResetTokenData
   GRedeemUserPasswordResetTokenData._();
 
   factory GRedeemUserPasswordResetTokenData(
-          [Function(GRedeemUserPasswordResetTokenDataBuilder b) updates]) =
+          [void Function(GRedeemUserPasswordResetTokenDataBuilder b) updates]) =
       _$GRedeemUserPasswordResetTokenData;
 
   static void _initializeBuilder(GRedeemUserPasswordResetTokenDataBuilder b) =>
@@ -200,7 +201,7 @@ abstract class GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken
   GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken._();
 
   factory GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken(
-          [Function(
+          [void Function(
                   GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder
                       b)
               updates]) =
@@ -241,8 +242,8 @@ abstract class GValidateUserPasswordResetTokenData
   GValidateUserPasswordResetTokenData._();
 
   factory GValidateUserPasswordResetTokenData(
-          [Function(GValidateUserPasswordResetTokenDataBuilder b) updates]) =
-      _$GValidateUserPasswordResetTokenData;
+      [void Function(GValidateUserPasswordResetTokenDataBuilder b)
+          updates]) = _$GValidateUserPasswordResetTokenData;
 
   static void _initializeBuilder(
           GValidateUserPasswordResetTokenDataBuilder b) =>
@@ -276,7 +277,7 @@ abstract class GValidateUserPasswordResetTokenData_validateUserPasswordResetToke
   GValidateUserPasswordResetTokenData_validateUserPasswordResetToken._();
 
   factory GValidateUserPasswordResetTokenData_validateUserPasswordResetToken(
-          [Function(
+          [void Function(
                   GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder
                       b)
               updates]) =
@@ -314,7 +315,8 @@ abstract class GCreateDealerData
     implements Built<GCreateDealerData, GCreateDealerDataBuilder> {
   GCreateDealerData._();
 
-  factory GCreateDealerData([Function(GCreateDealerDataBuilder b) updates]) =
+  factory GCreateDealerData(
+          [void Function(GCreateDealerDataBuilder b) updates]) =
       _$GCreateDealerData;
 
   static void _initializeBuilder(GCreateDealerDataBuilder b) =>
@@ -345,7 +347,7 @@ abstract class GCreateDealerData_createDealer
   GCreateDealerData_createDealer._();
 
   factory GCreateDealerData_createDealer(
-          [Function(GCreateDealerData_createDealerBuilder b) updates]) =
+          [void Function(GCreateDealerData_createDealerBuilder b) updates]) =
       _$GCreateDealerData_createDealer;
 
   static void _initializeBuilder(GCreateDealerData_createDealerBuilder b) =>
@@ -376,7 +378,7 @@ abstract class GAuthenticateUserWithPasswordData
   GAuthenticateUserWithPasswordData._();
 
   factory GAuthenticateUserWithPasswordData(
-          [Function(GAuthenticateUserWithPasswordDataBuilder b) updates]) =
+          [void Function(GAuthenticateUserWithPasswordDataBuilder b) updates]) =
       _$GAuthenticateUserWithPasswordData;
 
   static void _initializeBuilder(GAuthenticateUserWithPasswordDataBuilder b) =>
@@ -442,7 +444,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__b
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base._();
 
   factory GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base(
-          [Function(
+          [void Function(
                   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__baseBuilder
                       b)
               updates]) =
@@ -485,7 +487,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess._();
 
   factory GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess(
-          [Function(
+          [void Function(
                   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccessBuilder
                       b)
               updates]) =
@@ -530,7 +532,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item._();
 
   factory GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item(
-          [Function(
+          [void Function(
                   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_itemBuilder
                       b)
               updates]) =
@@ -586,7 +588,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image._();
 
   factory GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image(
-          [Function(
+          [void Function(
                   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_imageBuilder
                       b)
               updates]) =
@@ -632,7 +634,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses._();
 
   factory GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses(
-          [Function(
+          [void Function(
                   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addressesBuilder
                       b)
               updates]) =
@@ -684,7 +686,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode._();
 
   factory GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode(
-          [Function(
+          [void Function(
                   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCodeBuilder
                       b)
               updates]) =
@@ -729,7 +731,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure._();
 
   factory GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure(
-          [Function(
+          [void Function(
                   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailureBuilder
                       b)
               updates]) =
@@ -767,7 +769,7 @@ abstract class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__a
 abstract class GUserData implements Built<GUserData, GUserDataBuilder> {
   GUserData._();
 
-  factory GUserData([Function(GUserDataBuilder b) updates]) = _$GUserData;
+  factory GUserData([void Function(GUserDataBuilder b) updates]) = _$GUserData;
 
   static void _initializeBuilder(GUserDataBuilder b) =>
       b..G__typename = 'Query';
@@ -793,7 +795,7 @@ abstract class GUserData_user
     implements Built<GUserData_user, GUserData_userBuilder> {
   GUserData_user._();
 
-  factory GUserData_user([Function(GUserData_userBuilder b) updates]) =
+  factory GUserData_user([void Function(GUserData_userBuilder b) updates]) =
       _$GUserData_user;
 
   static void _initializeBuilder(GUserData_userBuilder b) =>
@@ -837,7 +839,7 @@ abstract class GUserData_user_profile_image
   GUserData_user_profile_image._();
 
   factory GUserData_user_profile_image(
-          [Function(GUserData_user_profile_imageBuilder b) updates]) =
+          [void Function(GUserData_user_profile_imageBuilder b) updates]) =
       _$GUserData_user_profile_image;
 
   static void _initializeBuilder(GUserData_user_profile_imageBuilder b) =>
@@ -872,7 +874,7 @@ abstract class GUserData_user_addresses
   GUserData_user_addresses._();
 
   factory GUserData_user_addresses(
-          [Function(GUserData_user_addressesBuilder b) updates]) =
+          [void Function(GUserData_user_addressesBuilder b) updates]) =
       _$GUserData_user_addresses;
 
   static void _initializeBuilder(GUserData_user_addressesBuilder b) =>
@@ -913,7 +915,7 @@ abstract class GUserData_user_referralCode
   GUserData_user_referralCode._();
 
   factory GUserData_user_referralCode(
-          [Function(GUserData_user_referralCodeBuilder b) updates]) =
+          [void Function(GUserData_user_referralCodeBuilder b) updates]) =
       _$GUserData_user_referralCode;
 
   static void _initializeBuilder(GUserData_user_referralCodeBuilder b) =>
@@ -946,7 +948,7 @@ abstract class GUserData_user_favorites
   GUserData_user_favorites._();
 
   factory GUserData_user_favorites(
-          [Function(GUserData_user_favoritesBuilder b) updates]) =
+          [void Function(GUserData_user_favoritesBuilder b) updates]) =
       _$GUserData_user_favorites;
 
   static void _initializeBuilder(GUserData_user_favoritesBuilder b) =>
@@ -978,7 +980,7 @@ abstract class GUserData_user_favorites_vehicleVariant
   GUserData_user_favorites_vehicleVariant._();
 
   factory GUserData_user_favorites_vehicleVariant(
-      [Function(GUserData_user_favorites_vehicleVariantBuilder b)
+      [void Function(GUserData_user_favorites_vehicleVariantBuilder b)
           updates]) = _$GUserData_user_favorites_vehicleVariant;
 
   static void _initializeBuilder(
@@ -1009,7 +1011,7 @@ abstract class GUserData_user_aadhaar
   GUserData_user_aadhaar._();
 
   factory GUserData_user_aadhaar(
-          [Function(GUserData_user_aadhaarBuilder b) updates]) =
+          [void Function(GUserData_user_aadhaarBuilder b) updates]) =
       _$GUserData_user_aadhaar;
 
   static void _initializeBuilder(GUserData_user_aadhaarBuilder b) =>
@@ -1041,7 +1043,7 @@ abstract class GUserData_user_driving_license
   GUserData_user_driving_license._();
 
   factory GUserData_user_driving_license(
-          [Function(GUserData_user_driving_licenseBuilder b) updates]) =
+          [void Function(GUserData_user_driving_licenseBuilder b) updates]) =
       _$GUserData_user_driving_license;
 
   static void _initializeBuilder(GUserData_user_driving_licenseBuilder b) =>
@@ -1070,7 +1072,7 @@ abstract class GUpdateUserData
     implements Built<GUpdateUserData, GUpdateUserDataBuilder> {
   GUpdateUserData._();
 
-  factory GUpdateUserData([Function(GUpdateUserDataBuilder b) updates]) =
+  factory GUpdateUserData([void Function(GUpdateUserDataBuilder b) updates]) =
       _$GUpdateUserData;
 
   static void _initializeBuilder(GUpdateUserDataBuilder b) =>
@@ -1100,7 +1102,7 @@ abstract class GUpdateUserData_updateUser
   GUpdateUserData_updateUser._();
 
   factory GUpdateUserData_updateUser(
-          [Function(GUpdateUserData_updateUserBuilder b) updates]) =
+          [void Function(GUpdateUserData_updateUserBuilder b) updates]) =
       _$GUpdateUserData_updateUser;
 
   static void _initializeBuilder(GUpdateUserData_updateUserBuilder b) =>
@@ -1127,7 +1129,8 @@ abstract class GUpdateUserData_updateUser
 abstract class GDealerData implements Built<GDealerData, GDealerDataBuilder> {
   GDealerData._();
 
-  factory GDealerData([Function(GDealerDataBuilder b) updates]) = _$GDealerData;
+  factory GDealerData([void Function(GDealerDataBuilder b) updates]) =
+      _$GDealerData;
 
   static void _initializeBuilder(GDealerDataBuilder b) =>
       b..G__typename = 'Query';
@@ -1154,7 +1157,8 @@ abstract class GDealerData_dealers
   GDealerData_dealers._();
 
   factory GDealerData_dealers(
-      [Function(GDealerData_dealersBuilder b) updates]) = _$GDealerData_dealers;
+          [void Function(GDealerData_dealersBuilder b) updates]) =
+      _$GDealerData_dealers;
 
   static void _initializeBuilder(GDealerData_dealersBuilder b) =>
       b..G__typename = 'Dealer';

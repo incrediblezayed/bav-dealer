@@ -192,7 +192,7 @@ class AuthRepository {
             if (imageFile != null) b.vars.data.profile_image.upload = imageFile;
             b.fetchPolicy = FetchPolicy.NoCache;
 
-            return b;
+            b;
           }),
         ).first;
         if (response.linkException != null) {
@@ -223,8 +223,7 @@ class AuthRepository {
             b.vars.where.id = id;
             b.vars.data.phoneNumber = phoneNumber;
             b.fetchPolicy = FetchPolicy.NoCache;
-
-            return b;
+            b;
           }),
         ).first;
         if (response.linkException != null) {

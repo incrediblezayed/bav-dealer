@@ -114,6 +114,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GCreateReportData_createReport.serializer)
       ..add(GCreateReportReq.serializer)
       ..add(GCreateReportVars.serializer)
+      ..add(GCreateTestDriveDealerData.serializer)
+      ..add(GCreateTestDriveDealerData_createTestDriveDealer.serializer)
+      ..add(GCreateTestDriveDealerReq.serializer)
+      ..add(GCreateTestDriveDealerVars.serializer)
       ..add(GCreateUserData.serializer)
       ..add(GCreateUserData_createUser.serializer)
       ..add(GCreateUserReq.serializer)
@@ -361,6 +365,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GProductDealerUpdateInput.serializer)
       ..add(GProductDealerWhereInput.serializer)
       ..add(GProductDealerWhereUniqueInput.serializer)
+      ..add(GProductDealersData.serializer)
+      ..add(GProductDealersData_productDealers.serializer)
+      ..add(GProductDealersData_productDealers_guarantees.serializer)
+      ..add(GProductDealersData_productDealers_prices.serializer)
+      ..add(GProductDealersData_productDealers_prices_category.serializer)
+      ..add(GProductDealersData_productDealers_productVariant.serializer)
+      ..add(
+          GProductDealersData_productDealers_productVariant_product.serializer)
+      ..add(GProductDealersData_productDealers_productVariant_product_brand
+          .serializer)
+      ..add(GProductDealersReq.serializer)
+      ..add(GProductDealersVars.serializer)
       ..add(GProductGalleryItemCreateInput.serializer)
       ..add(GProductGalleryItemManyRelationFilter.serializer)
       ..add(GProductGalleryItemOrderByInput.serializer)
@@ -610,6 +626,20 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GTestDriveDealerUpdateInput.serializer)
       ..add(GTestDriveDealerWhereInput.serializer)
       ..add(GTestDriveDealerWhereUniqueInput.serializer)
+      ..add(GTestDriveDealersData.serializer)
+      ..add(GTestDriveDealersData_testDriveDealers.serializer)
+      ..add(GTestDriveDealersData_testDriveDealers_vehicleColor.serializer)
+      ..add(
+          GTestDriveDealersData_testDriveDealers_vehicleColor_images.serializer)
+      ..add(GTestDriveDealersData_testDriveDealers_vehicleColor_images_image
+          .serializer)
+      ..add(GTestDriveDealersData_testDriveDealers_vehicleVariant.serializer)
+      ..add(GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle
+          .serializer)
+      ..add(GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brand
+          .serializer)
+      ..add(GTestDriveDealersReq.serializer)
+      ..add(GTestDriveDealersVars.serializer)
       ..add(GTestDriveOrderCreateInput.serializer)
       ..add(GTestDriveOrderManyRelationFilter.serializer)
       ..add(GTestDriveOrderOrderByInput.serializer)
@@ -647,6 +677,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GUpdateProductOrderData_updateProductOrder.serializer)
       ..add(GUpdateProductOrderReq.serializer)
       ..add(GUpdateProductOrderVars.serializer)
+      ..add(GUpdateTestDriveDealerData.serializer)
+      ..add(GUpdateTestDriveDealerData_updateTestDriveDealer.serializer)
+      ..add(GUpdateTestDriveDealerReq.serializer)
+      ..add(GUpdateTestDriveDealerVars.serializer)
       ..add(GUpdateTestDriveOrderData.serializer)
       ..add(GUpdateTestDriveOrderData_updateTestDriveOrder.serializer)
       ..add(GUpdateTestDriveOrderReq.serializer)
@@ -1594,6 +1628,21 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<GProductDealerWhereInput>())
       ..addBuilderFactory(
           const FullType(BuiltList,
+              const [const FullType(GProductDealersData_productDealers)]),
+          () => new ListBuilder<GProductDealersData_productDealers>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GProductDealersData_productDealers_prices)
+          ]),
+          () => new ListBuilder<GProductDealersData_productDealers_prices>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GProductDealersData_productDealers_guarantees)
+          ]),
+          () =>
+              new ListBuilder<GProductDealersData_productDealers_guarantees>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
               const [const FullType(GProductGalleryItemCreateInput)]),
           () => new ListBuilder<GProductGalleryItemCreateInput>())
       ..addBuilderFactory(
@@ -2123,6 +2172,17 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GTestDriveDealerWhereInput)]),
           () => new ListBuilder<GTestDriveDealerWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GTestDriveDealersData_testDriveDealers)]),
+          () => new ListBuilder<GTestDriveDealersData_testDriveDealers>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GTestDriveDealersData_testDriveDealers_vehicleColor_images)
+          ]),
+          () => new ListBuilder<
+              GTestDriveDealersData_testDriveDealers_vehicleColor_images>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GTestDriveOrderCreateInput)]),

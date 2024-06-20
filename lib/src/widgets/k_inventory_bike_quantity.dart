@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:dealerapp/src/app/model/dealer_stock_model.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/guarantees/graphql/__generated__/guarantees.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
@@ -27,8 +28,8 @@ class QuantityScreen extends ConsumerStatefulWidget {
   final bool isUpdate;
   final String variantId;
   final String colorId;
-  final List<GVehicleDealersData_vehicleDealers_prices> prices;
-  final List<GVehicleDealersData_vehicleDealers_guarantees> guarantees;
+  final List<Price> prices;
+  final List<Guarantee> guarantees;
   final int? index;
   final String? vehicleDealerId;
 

@@ -1,10 +1,13 @@
+import 'package:dealerapp/src/app/model/dealer_stock_model.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
-import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_bottom_bar_button.dart';
+import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
 import 'package:dealerapp/src/widgets/k_inventory_bike_quantity.dart';
+import 'package:dealerapp/src/widgets/k_textfiled.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MyStockCard extends ConsumerStatefulWidget {
@@ -13,7 +16,7 @@ class MyStockCard extends ConsumerStatefulWidget {
     required this.index,
     super.key,
   });
-  final GVehicleDealersData_vehicleDealers vehicleDealers;
+  final DealerStockModel vehicleDealers;
   final int index;
 
   @override
@@ -44,13 +47,13 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            widget.vehicleDealers.vehicleVariant!.vehicle!.name!,
+            widget.vehicleDealers.vehicleVariant!.vehicle!.name,
             style: theme.headlineLarge!
                 .copyWith(fontSize: 24.sp, fontWeight: FontWeight.w500),
           ),
           SizedBox(height: 10.h),
           Text(
-            widget.vehicleDealers.vehicleVariant!.vehicle!.brand!.name!,
+            widget.vehicleDealers.vehicleVariant!.vehicle!.brand!.name,
             style: theme.labelMedium!.copyWith(
               color: Colors.black.withOpacity(.5),
               fontWeight: FontWeight.w500,
@@ -68,8 +71,8 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(6.r),
                   child: KCachedNWImage(
-                    widget.vehicleDealers.vehicleColor?.images?.firstOrNull
-                            ?.image?.url ??
+                    widget.vehicleDealers.vehicleColor?.images.firstOrNull
+                            ?.image.url ??
                         '',
                     fit: BoxFit.cover,
                   )
@@ -99,7 +102,7 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                         SizedBox(width: 10.w),
                         Flexible(
                           child: Text(
-                            widget.vehicleDealers.vehicleVariant!.name!,
+                            widget.vehicleDealers.vehicleVariant!.name,
                             style: theme.labelMedium!.copyWith(
                               color: Colors.black.withOpacity(.5),
                               fontWeight: FontWeight.w500,
@@ -121,7 +124,7 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                         SizedBox(width: 10.w),
                         Flexible(
                           child: Text(
-                            widget.vehicleDealers.vehicleColor?.name??'',
+                            widget.vehicleDealers.vehicleColor?.name ?? '',
                             style: theme.labelMedium!.copyWith(
                               color: Colors.black.withOpacity(.5),
                               fontWeight: FontWeight.w500,
@@ -151,25 +154,27 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                       ],
                     ),
                     SizedBox(height: 6.h),
-                    Row(
-                      children: [
-                        Text(
-                          'Quantity',
-                          style: theme.labelMedium!.copyWith(
-                            color: Colors.black.withOpacity(.5),
-                            fontWeight: FontWeight.w500,
+                    if (widget.vehicleDealers.dealerType !=
+                        DealerType.testDrive)
+                      Row(
+                        children: [
+                          Text(
+                            'Quantity',
+                            style: theme.labelMedium!.copyWith(
+                              color: Colors.black.withOpacity(.5),
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
-                        ),
-                        SizedBox(width: 10.w),
-                        Text(
-                          '${widget.vehicleDealers.stock}',
-                          style: theme.labelLarge!.copyWith(
-                            fontWeight: FontWeight.w600,
-                            color: AppTheme.primaryColor,
+                          SizedBox(width: 10.w),
+                          Text(
+                            '${widget.vehicleDealers.stock}',
+                            style: theme.labelLarge!.copyWith(
+                              fontWeight: FontWeight.w600,
+                              color: AppTheme.primaryColor,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
+                        ],
+                      ),
                   ],
                 ),
               ),
@@ -211,47 +216,145 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
           if (!isEdit)
             Row(
               children: [
-                Expanded(
-                  child: ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppTheme.primaryColor,
-                      foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                    ),
-                    label: const Text('Quantity'),
-                    icon: const Icon(Icons.edit),
-                    onPressed: () {
-                      setState(() {
-                        isEdit = true;
-                      });
-                    },
-                  ),
-                ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Expanded(
-                  child: ElevatedButton.icon(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => QuantityScreen(
-                            isUpdate: true,
-                            index: widget.index,
-                            vehicleDealerId: widget.vehicleDealers.id,
-                            variantId: widget.vehicleDealers.vehicleVariant!.id,
-                            colorId: widget.vehicleDealers.vehicleColor!.id,
-                            guarantees:
-                                widget.vehicleDealers.guarantees?.toList() ??
-                                    [],
-                            prices:
-                                widget.vehicleDealers.prices?.toList() ?? [],
-                          ),
+                if (widget.vehicleDealers.dealerType != DealerType.testDrive)
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppTheme.primaryColor,
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5),
                         ),
-                      );
+                      ),
+                      label: const Text('Quantity'),
+                      icon: const Icon(Icons.edit),
+                      onPressed: () {
+                        setState(() {
+                          isEdit = true;
+                        });
+                      },
+                    ),
+                  ),
+                if (widget.vehicleDealers.dealerType != DealerType.testDrive)
+                  const SizedBox(
+                    width: 20,
+                  ),
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      if (widget.vehicleDealers.dealerType ==
+                          DealerType.testDrive) {
+                        final controller = TextEditingController();
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return StatefulBuilder(
+                              builder: (context, setState) {
+                                return AlertDialog(
+                                  title: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      const Text('Test Ride Details'),
+                                      IconButton(
+                                        icon: const Icon(Icons.close),
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                      ),
+                                    ],
+                                  ),
+                                  content: KTextField(
+                                    controller: controller,
+                                    label: 'Test Ride Amount',
+                                    hintText: 'Enter amount',
+                                    onChanged: (value) {},
+                                    inputType: TextInputType.number,
+                                    inputFormatters: [
+                                      FilteringTextInputFormatter.digitsOnly,
+                                    ],
+                                  ),
+                                  actions: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        SizedBox(
+                                          height: 50,
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.3,
+                                          child: KButton(
+                                            onPressed: () {
+                                              AppRoutes.pop();
+                                            },
+                                            text: 'Cancel',
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          width: 10,
+                                        ),
+                                        SizedBox(
+                                          height: 50,
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.3,
+                                          child: KButton(
+                                            onPressed: () async {
+                                              if (controller.text.isEmpty) {
+                                                AppRoutes.showErrorSnackbar(
+                                                    message:
+                                                        'Please enter an amount');
+                                              } else {
+                                                inventoryPro
+                                                    .addTestDriveDealerStock(
+                                                        variantId: widget
+                                                            .vehicleDealers
+                                                            .variant
+                                                            .id,
+                                                        colorId: widget
+                                                            .vehicleDealers
+                                                            .vehicleColor!
+                                                            .id,
+                                                        amount: controller.text)
+                                                    .then(
+                                                  (value) {
+                                                    AppRoutes.pop();
+                                                  },
+                                                );
+                                              }
+                                            },
+                                            text: 'Submit',
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          },
+                        );
+                      } else {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => QuantityScreen(
+                              isUpdate: true,
+                              index: widget.index,
+                              vehicleDealerId: widget.vehicleDealers.id,
+                              variantId:
+                                  widget.vehicleDealers.vehicleVariant!.id,
+                              colorId: widget.vehicleDealers.vehicleColor!.id,
+                              guarantees:
+                                  widget.vehicleDealers.guarantees?.toList() ??
+                                      [],
+                              prices:
+                                  widget.vehicleDealers.prices?.toList() ?? [],
+                            ),
+                          ),
+                        );
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppTheme.primaryColor,

@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:built_collection/built_collection.dart';
+import 'package:dealerapp/src/app/model/dealer_stock_model.dart';
 import 'package:dealerapp/src/app/model/product_details_model.dart';
 import 'package:dealerapp/src/app/model/variant_details.model.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
@@ -31,10 +32,8 @@ class InventoryRepository {
               ..vars.skip = skip
               ..vars.take = take
               ..vars.where.name.mode = GQueryMode.insensitive;
-            if (ids == null) {
-              return b;
-            } else {
-              return b..vars.where.id.notIn = ListBuilder<String>(ids);
+            if (ids != null) {
+              b..vars.where.id.notIn = ListBuilder<String>(ids);
             }
           },
         ),
@@ -129,9 +128,9 @@ class InventoryRepository {
               ..vars.where.name.contains = search
               ..vars.where.name.mode = GQueryMode.insensitive;
             if (ids == null) {
-              return b;
+              b;
             } else {
-              return b..vars.where.id.notIn = ListBuilder<String>(ids);
+              b..vars.where.id.notIn = ListBuilder<String>(ids);
             }
           },
         ),
@@ -221,7 +220,7 @@ class InventoryRepository {
       }
       if (result.data != null) {
         return result.data!.vehicleDealers!
-            .map((p0) => p0.stock!)
+            .map((p0) => p0.stock ?? 0)
             .reduce((value, element) => value + element);
       }
     } catch (e) {
@@ -230,7 +229,7 @@ class InventoryRepository {
     return 0;
   }
 
-  Future<List<GVehicleDealersData_vehicleDealers>> currentStock({
+  Future<List<DealerStockModel>> currentStock({
     String text = '',
   }) async {
     try {
@@ -251,9 +250,14 @@ class InventoryRepository {
         throw result.graphqlErrors!.first;
       }
       if (result.data != null) {
-        return result.data!.vehicleDealers!
+        final dealers = result.data!.vehicleDealers!
             .where((p0) => p0.vehicleVariant != null)
+            .toList()
+            .map(
+              (e) => DealerStockModel.fromJson(e.toJson(), DealerType.vehicle),
+            )
             .toList();
+        return dealers;
       }
     } catch (e) {
       e.log();
@@ -332,7 +336,7 @@ class InventoryRepository {
     }
   }
 
-  Future<GVehicleDealersData_vehicleDealers> updateVehicleDealer({
+  Future<DealerStockModel> updateVehicleDealer({
     required String dealerId,
     required List<String> guarantees,
     List<PriceModel>? prices,
@@ -340,14 +344,16 @@ class InventoryRepository {
     try {
       if (prices != null &&
           prices.where((element) => element.priceId.isNotEmpty).isNotEmpty) {
-        final results = await _client.request(
+        await _client.request(
           GUpdatePricesReq(
             (b) {
               b.vars.data = ListBuilder<GPriceUpdateArgs>(
                 prices
                     .map(
                       (e) => GPriceUpdateArgs(
-                        (b) => b..where.id = e.type,
+                        (b) => b
+                          ..where.id = e.type
+                          ..data.amount = e.price,
                       ),
                     )
                     .toList(),
@@ -393,11 +399,110 @@ class InventoryRepository {
         throw result.graphqlErrors!.first;
       }
       if (result.data?.updateVehicleDealer != null) {
-        return GVehicleDealersData_vehicleDealers.fromJson(
-          result.data!.updateVehicleDealer!.toJson(),
-        )!;
+        return DealerStockModel.fromJson(
+            result.data!.updateVehicleDealer!.toJson(), DealerType.vehicle);
       } else {
         throw Exception('Failed to update stock');
+      }
+    } catch (e) {
+      e.log();
+      rethrow;
+    }
+  }
+
+  Future<(int, List<DealerStockModel>)> getTestDriveStock(
+      {required int skip, required int take}) async {
+    final dealerId = cacheProvider.getDealerId();
+    try {
+      dealerId.log();
+
+      final response = await _client
+          .request(
+            GTestDriveDealersReq(
+              (b) => b
+                ..vars.where.dealer.id.equals = dealerId
+                ..vars.where.available.equals = true
+                ..vars.skip = skip
+                ..vars.take = take,
+            ),
+          )
+          .first;
+      if (response.linkException != null) {
+        throw response.linkException!;
+      }
+      if (response.graphqlErrors?.isNotEmpty ?? false) {
+        throw response.graphqlErrors!.first;
+      }
+      if (response.data?.testDriveDealers != null) {
+        return (
+          response.data?.testDriveDealersCount ?? 0,
+          (response.data?.testDriveDealers?.toList() ?? [])
+              .map(
+                (e) =>
+                    DealerStockModel.fromJson(e.toJson(), DealerType.testDrive),
+              )
+              .toList()
+        );
+      } else {
+        throw Exception(
+            'Something went wrong while fetching the test drive stocks');
+      }
+    } catch (e) {
+      e.log();
+      rethrow;
+    }
+  }
+
+  Future<bool> addToTestDriveStock(
+      {required String colorId,
+      required String variantId,
+      String? testDriveDealerId,
+      required String amount}) async {
+    try {
+      final dealerId = cacheProvider.getDealerId();
+      String testDriveId = '';
+      if (testDriveDealerId == null || testDriveDealerId.isEmpty) {
+        final testDriveDealer = await _client.request(GTestDriveDealersReq(
+          (b) {
+            b.vars.skip = 0;
+            b.vars.take = 1;
+            b.vars.where
+              ..vehicleColor.id.equals = colorId
+              ..vehicleVariant.id.equals = variantId
+              ..dealer.id.equals = dealerId;
+          },
+        )).first;
+
+        if (testDriveDealer.data == null) {
+          final newTestDriveDealer = await _client
+              .request(GCreateTestDriveDealerReq(
+                (b) => b.vars.data
+                  ..dealer.connect.id = dealerId
+                  ..vehicleVariant.connect.id = variantId
+                  ..vehicleColor.connect.id = colorId,
+              ))
+              .first;
+          if (newTestDriveDealer.data?.createTestDriveDealer?.id == null) {
+            throw Exception('Failed to get test drive details');
+          } else {
+            testDriveId = newTestDriveDealer.data!.createTestDriveDealer!.id;
+          }
+        } else {
+          testDriveId = testDriveDealer.data!.testDriveDealers!.first.id;
+        }
+      } else {
+        testDriveId = testDriveDealerId;
+      }
+      final result = await _client
+          .request(GUpdateTestDriveDealerReq((b) => b.vars
+            ..data.available = true
+            ..data.price = int.parse(amount)
+            ..where.id = testDriveId))
+          .first;
+      if (result.data?.updateTestDriveDealer?.id != null) {
+        return true;
+      } else {
+        return false;
       }
     } catch (e) {
       e.log();

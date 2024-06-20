@@ -13,7 +13,7 @@ abstract class GGuaranteesVars
     implements Built<GGuaranteesVars, GGuaranteesVarsBuilder> {
   GGuaranteesVars._();
 
-  factory GGuaranteesVars([Function(GGuaranteesVarsBuilder b) updates]) =
+  factory GGuaranteesVars([void Function(GGuaranteesVarsBuilder b) updates]) =
       _$GGuaranteesVars;
 
   static Serializer<GGuaranteesVars> get serializer =>

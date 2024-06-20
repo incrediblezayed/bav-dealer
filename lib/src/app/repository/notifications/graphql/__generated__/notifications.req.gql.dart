@@ -25,7 +25,7 @@ abstract class GAppNotificationsReq
   GAppNotificationsReq._();
 
   factory GAppNotificationsReq(
-          [Function(GAppNotificationsReqBuilder b) updates]) =
+          [void Function(GAppNotificationsReqBuilder b) updates]) =
       _$GAppNotificationsReq;
 
   static void _initializeBuilder(GAppNotificationsReqBuilder b) => b
@@ -43,6 +43,7 @@ abstract class GAppNotificationsReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -64,6 +65,9 @@ abstract class GAppNotificationsReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GAppNotificationsData? parseData(Map<String, dynamic> json) =>
       _i2.GAppNotificationsData.fromJson(json);
 
@@ -71,7 +75,8 @@ abstract class GAppNotificationsReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GAppNotificationsData data) =>
+      data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GAppNotificationsData, _i3.GAppNotificationsVars>

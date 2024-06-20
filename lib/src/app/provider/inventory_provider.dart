@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:dealerapp/src/app/model/dealer_stock_model.dart';
 import 'package:dealerapp/src/app/model/product_details_model.dart';
 import 'package:dealerapp/src/app/model/variant_details.model.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
@@ -34,19 +35,28 @@ class InventoryProvider extends ChangeNotifier {
 
   final InventoryRepository _inventoryRepository = InventoryRepository();
 
-  List<GVehicleDealersData_vehicleDealers> _vehicleDealers = [];
-  List<GVehicleDealersData_vehicleDealers> get vehicleDealers =>
-      _vehicleDealers;
-  set vehicleDealers(List<GVehicleDealersData_vehicleDealers> data) {
+  List<DealerStockModel> _vehicleDealers = [];
+  List<DealerStockModel> get vehicleDealers => _vehicleDealers;
+  set vehicleDealers(List<DealerStockModel> data) {
     _vehicleDealers = data;
     notifyListeners();
   }
 
+  List<DealerStockModel>? _testDriveStock;
+  List<DealerStockModel>? get testDriveStock => _testDriveStock;
+  set testDriveStock(List<DealerStockModel>? value) {
+    _testDriveStock = value;
+    notifyListeners();
+  }
+
   Future<void> init() async {
-    await getStocks();
-    await getPriceCategories();
-    await getVehicles();
-    await getProducts();
+    await Future.wait([
+      getStocks(),
+      getPriceCategories(),
+      getVehicles(),
+      getProducts(),
+      getTestDriveStock(),
+    ]);
   }
 
   Timer? _productDebounce;
@@ -305,6 +315,30 @@ class InventoryProvider extends ChangeNotifier {
       );
     } catch (e) {
       e.log();
+    }
+  }
+
+  int totalTestDriveCount = 0;
+
+  Future<void> getTestDriveStock() async {
+    final stocks =
+        await _inventoryRepository.getTestDriveStock(skip: 0, take: 20);
+    totalTestDriveCount = stocks.$1;
+    testDriveStock = stocks.$2;
+  }
+
+  Future<void> addTestDriveDealerStock({
+    required String variantId,
+    required String colorId,
+    required String amount,
+    String? testDriveDealerId
+  }) async {
+    final result = await _inventoryRepository.addToTestDriveStock(
+        colorId: colorId, variantId: variantId, amount: amount, testDriveDealerId: testDriveDealerId);
+    if (result) {
+      AppRoutes.showSuccessSnackbar(message: 'Stock Added successfully');
+    } else {
+      AppRoutes.showErrorSnackbar(message: 'Failed to add stock');
     }
   }
 }

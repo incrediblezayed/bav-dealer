@@ -51,7 +51,7 @@ abstract class GUserWhereUniqueInput
   GUserWhereUniqueInput._();
 
   factory GUserWhereUniqueInput(
-          [Function(GUserWhereUniqueInputBuilder b) updates]) =
+          [void Function(GUserWhereUniqueInputBuilder b) updates]) =
       _$GUserWhereUniqueInput;
 
   String? get id;
@@ -76,7 +76,7 @@ abstract class GUserWhereInput
     implements Built<GUserWhereInput, GUserWhereInputBuilder> {
   GUserWhereInput._();
 
-  factory GUserWhereInput([Function(GUserWhereInputBuilder b) updates]) =
+  factory GUserWhereInput([void Function(GUserWhereInputBuilder b) updates]) =
       _$GUserWhereInput;
 
   BuiltList<GUserWhereInput>? get AND;
@@ -119,7 +119,7 @@ abstract class GUserWhereInput
 abstract class GIDFilter implements Built<GIDFilter, GIDFilterBuilder> {
   GIDFilter._();
 
-  factory GIDFilter([Function(GIDFilterBuilder b) updates]) = _$GIDFilter;
+  factory GIDFilter([void Function(GIDFilterBuilder b) updates]) = _$GIDFilter;
 
   String? get equals;
   @BuiltValueField(wireName: 'in')
@@ -149,7 +149,7 @@ abstract class GDateTimeNullableFilter
   GDateTimeNullableFilter._();
 
   factory GDateTimeNullableFilter(
-          [Function(GDateTimeNullableFilterBuilder b) updates]) =
+          [void Function(GDateTimeNullableFilterBuilder b) updates]) =
       _$GDateTimeNullableFilter;
 
   GDateTime? get equals;
@@ -180,7 +180,7 @@ abstract class GStringFilter
     implements Built<GStringFilter, GStringFilterBuilder> {
   GStringFilter._();
 
-  factory GStringFilter([Function(GStringFilterBuilder b) updates]) =
+  factory GStringFilter([void Function(GStringFilterBuilder b) updates]) =
       _$GStringFilter;
 
   String? get equals;
@@ -230,7 +230,8 @@ abstract class GNestedStringFilter
   GNestedStringFilter._();
 
   factory GNestedStringFilter(
-      [Function(GNestedStringFilterBuilder b) updates]) = _$GNestedStringFilter;
+          [void Function(GNestedStringFilterBuilder b) updates]) =
+      _$GNestedStringFilter;
 
   String? get equals;
   @BuiltValueField(wireName: 'in')
@@ -263,7 +264,7 @@ abstract class GBooleanFilter
     implements Built<GBooleanFilter, GBooleanFilterBuilder> {
   GBooleanFilter._();
 
-  factory GBooleanFilter([Function(GBooleanFilterBuilder b) updates]) =
+  factory GBooleanFilter([void Function(GBooleanFilterBuilder b) updates]) =
       _$GBooleanFilter;
 
   bool? get equals;
@@ -289,7 +290,7 @@ abstract class GAddressManyRelationFilter
   GAddressManyRelationFilter._();
 
   factory GAddressManyRelationFilter(
-          [Function(GAddressManyRelationFilterBuilder b) updates]) =
+          [void Function(GAddressManyRelationFilterBuilder b) updates]) =
       _$GAddressManyRelationFilter;
 
   GAddressWhereInput? get every;
@@ -316,7 +317,7 @@ abstract class GFavoriteManyRelationFilter
   GFavoriteManyRelationFilter._();
 
   factory GFavoriteManyRelationFilter(
-          [Function(GFavoriteManyRelationFilterBuilder b) updates]) =
+          [void Function(GFavoriteManyRelationFilterBuilder b) updates]) =
       _$GFavoriteManyRelationFilter;
 
   GFavoriteWhereInput? get every;
@@ -343,7 +344,7 @@ abstract class GCartItemManyRelationFilter
   GCartItemManyRelationFilter._();
 
   factory GCartItemManyRelationFilter(
-          [Function(GCartItemManyRelationFilterBuilder b) updates]) =
+          [void Function(GCartItemManyRelationFilterBuilder b) updates]) =
       _$GCartItemManyRelationFilter;
 
   GCartItemWhereInput? get every;
@@ -368,7 +369,7 @@ abstract class GPasswordFilter
     implements Built<GPasswordFilter, GPasswordFilterBuilder> {
   GPasswordFilter._();
 
-  factory GPasswordFilter([Function(GPasswordFilterBuilder b) updates]) =
+  factory GPasswordFilter([void Function(GPasswordFilterBuilder b) updates]) =
       _$GPasswordFilter;
 
   bool get isSet;
@@ -391,7 +392,8 @@ abstract class GUserOrderByInput
     implements Built<GUserOrderByInput, GUserOrderByInputBuilder> {
   GUserOrderByInput._();
 
-  factory GUserOrderByInput([Function(GUserOrderByInputBuilder b) updates]) =
+  factory GUserOrderByInput(
+          [void Function(GUserOrderByInputBuilder b) updates]) =
       _$GUserOrderByInput;
 
   GOrderDirection? get id;
@@ -441,7 +443,7 @@ abstract class GUserUpdateInput
     implements Built<GUserUpdateInput, GUserUpdateInputBuilder> {
   GUserUpdateInput._();
 
-  factory GUserUpdateInput([Function(GUserUpdateInputBuilder b) updates]) =
+  factory GUserUpdateInput([void Function(GUserUpdateInputBuilder b) updates]) =
       _$GUserUpdateInput;
 
   GDateTime? get createdAt;
@@ -485,7 +487,7 @@ abstract class GImageFieldInput
     implements Built<GImageFieldInput, GImageFieldInputBuilder> {
   GImageFieldInput._();
 
-  factory GImageFieldInput([Function(GImageFieldInputBuilder b) updates]) =
+  factory GImageFieldInput([void Function(GImageFieldInputBuilder b) updates]) =
       _$GImageFieldInput;
 
   _i3.MultipartFile get upload;
@@ -508,7 +510,7 @@ abstract class GFileFieldInput
     implements Built<GFileFieldInput, GFileFieldInputBuilder> {
   GFileFieldInput._();
 
-  factory GFileFieldInput([Function(GFileFieldInputBuilder b) updates]) =
+  factory GFileFieldInput([void Function(GFileFieldInputBuilder b) updates]) =
       _$GFileFieldInput;
 
   _i3.MultipartFile get upload;
@@ -534,8 +536,8 @@ abstract class GAddressRelateToManyForUpdateInput
   GAddressRelateToManyForUpdateInput._();
 
   factory GAddressRelateToManyForUpdateInput(
-          [Function(GAddressRelateToManyForUpdateInputBuilder b) updates]) =
-      _$GAddressRelateToManyForUpdateInput;
+      [void Function(GAddressRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GAddressRelateToManyForUpdateInput;
 
   BuiltList<GAddressWhereUniqueInput>? get disconnect;
   BuiltList<GAddressWhereUniqueInput>? get set;
@@ -564,8 +566,8 @@ abstract class GFavoriteRelateToManyForUpdateInput
   GFavoriteRelateToManyForUpdateInput._();
 
   factory GFavoriteRelateToManyForUpdateInput(
-          [Function(GFavoriteRelateToManyForUpdateInputBuilder b) updates]) =
-      _$GFavoriteRelateToManyForUpdateInput;
+      [void Function(GFavoriteRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GFavoriteRelateToManyForUpdateInput;
 
   BuiltList<GFavoriteWhereUniqueInput>? get disconnect;
   BuiltList<GFavoriteWhereUniqueInput>? get set;
@@ -594,8 +596,8 @@ abstract class GCartItemRelateToManyForUpdateInput
   GCartItemRelateToManyForUpdateInput._();
 
   factory GCartItemRelateToManyForUpdateInput(
-          [Function(GCartItemRelateToManyForUpdateInputBuilder b) updates]) =
-      _$GCartItemRelateToManyForUpdateInput;
+      [void Function(GCartItemRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GCartItemRelateToManyForUpdateInput;
 
   BuiltList<GCartItemWhereUniqueInput>? get disconnect;
   BuiltList<GCartItemWhereUniqueInput>? get set;
@@ -624,7 +626,7 @@ abstract class GWalletRelateToOneForUpdateInput
   GWalletRelateToOneForUpdateInput._();
 
   factory GWalletRelateToOneForUpdateInput(
-          [Function(GWalletRelateToOneForUpdateInputBuilder b) updates]) =
+          [void Function(GWalletRelateToOneForUpdateInputBuilder b) updates]) =
       _$GWalletRelateToOneForUpdateInput;
 
   GWalletCreateInput? get create;
@@ -653,8 +655,8 @@ abstract class GReferralCodeRelateToOneForUpdateInput
   GReferralCodeRelateToOneForUpdateInput._();
 
   factory GReferralCodeRelateToOneForUpdateInput(
-          [Function(GReferralCodeRelateToOneForUpdateInputBuilder b) updates]) =
-      _$GReferralCodeRelateToOneForUpdateInput;
+      [void Function(GReferralCodeRelateToOneForUpdateInputBuilder b)
+          updates]) = _$GReferralCodeRelateToOneForUpdateInput;
 
   GReferralCodeCreateInput? get create;
   GReferralCodeWhereUniqueInput? get connect;
@@ -679,7 +681,7 @@ abstract class GUserUpdateArgs
     implements Built<GUserUpdateArgs, GUserUpdateArgsBuilder> {
   GUserUpdateArgs._();
 
-  factory GUserUpdateArgs([Function(GUserUpdateArgsBuilder b) updates]) =
+  factory GUserUpdateArgs([void Function(GUserUpdateArgsBuilder b) updates]) =
       _$GUserUpdateArgs;
 
   GUserWhereUniqueInput get where;
@@ -703,7 +705,7 @@ abstract class GUserCreateInput
     implements Built<GUserCreateInput, GUserCreateInputBuilder> {
   GUserCreateInput._();
 
-  factory GUserCreateInput([Function(GUserCreateInputBuilder b) updates]) =
+  factory GUserCreateInput([void Function(GUserCreateInputBuilder b) updates]) =
       _$GUserCreateInput;
 
   GDateTime? get createdAt;
@@ -750,8 +752,8 @@ abstract class GAddressRelateToManyForCreateInput
   GAddressRelateToManyForCreateInput._();
 
   factory GAddressRelateToManyForCreateInput(
-          [Function(GAddressRelateToManyForCreateInputBuilder b) updates]) =
-      _$GAddressRelateToManyForCreateInput;
+      [void Function(GAddressRelateToManyForCreateInputBuilder b)
+          updates]) = _$GAddressRelateToManyForCreateInput;
 
   BuiltList<GAddressCreateInput>? get create;
   BuiltList<GAddressWhereUniqueInput>? get connect;
@@ -778,8 +780,8 @@ abstract class GFavoriteRelateToManyForCreateInput
   GFavoriteRelateToManyForCreateInput._();
 
   factory GFavoriteRelateToManyForCreateInput(
-          [Function(GFavoriteRelateToManyForCreateInputBuilder b) updates]) =
-      _$GFavoriteRelateToManyForCreateInput;
+      [void Function(GFavoriteRelateToManyForCreateInputBuilder b)
+          updates]) = _$GFavoriteRelateToManyForCreateInput;
 
   BuiltList<GFavoriteCreateInput>? get create;
   BuiltList<GFavoriteWhereUniqueInput>? get connect;
@@ -806,8 +808,8 @@ abstract class GCartItemRelateToManyForCreateInput
   GCartItemRelateToManyForCreateInput._();
 
   factory GCartItemRelateToManyForCreateInput(
-          [Function(GCartItemRelateToManyForCreateInputBuilder b) updates]) =
-      _$GCartItemRelateToManyForCreateInput;
+      [void Function(GCartItemRelateToManyForCreateInputBuilder b)
+          updates]) = _$GCartItemRelateToManyForCreateInput;
 
   BuiltList<GCartItemCreateInput>? get create;
   BuiltList<GCartItemWhereUniqueInput>? get connect;
@@ -834,7 +836,7 @@ abstract class GWalletRelateToOneForCreateInput
   GWalletRelateToOneForCreateInput._();
 
   factory GWalletRelateToOneForCreateInput(
-          [Function(GWalletRelateToOneForCreateInputBuilder b) updates]) =
+          [void Function(GWalletRelateToOneForCreateInputBuilder b) updates]) =
       _$GWalletRelateToOneForCreateInput;
 
   GWalletCreateInput? get create;
@@ -862,8 +864,8 @@ abstract class GReferralCodeRelateToOneForCreateInput
   GReferralCodeRelateToOneForCreateInput._();
 
   factory GReferralCodeRelateToOneForCreateInput(
-          [Function(GReferralCodeRelateToOneForCreateInputBuilder b) updates]) =
-      _$GReferralCodeRelateToOneForCreateInput;
+      [void Function(GReferralCodeRelateToOneForCreateInputBuilder b)
+          updates]) = _$GReferralCodeRelateToOneForCreateInput;
 
   GReferralCodeCreateInput? get create;
   GReferralCodeWhereUniqueInput? get connect;
@@ -890,7 +892,7 @@ abstract class GReferralCodeWhereUniqueInput
   GReferralCodeWhereUniqueInput._();
 
   factory GReferralCodeWhereUniqueInput(
-          [Function(GReferralCodeWhereUniqueInputBuilder b) updates]) =
+          [void Function(GReferralCodeWhereUniqueInputBuilder b) updates]) =
       _$GReferralCodeWhereUniqueInput;
 
   String? get id;
@@ -915,7 +917,7 @@ abstract class GReferralCodeWhereInput
   GReferralCodeWhereInput._();
 
   factory GReferralCodeWhereInput(
-          [Function(GReferralCodeWhereInputBuilder b) updates]) =
+          [void Function(GReferralCodeWhereInputBuilder b) updates]) =
       _$GReferralCodeWhereInput;
 
   BuiltList<GReferralCodeWhereInput>? get AND;
@@ -947,7 +949,7 @@ abstract class GReferralCodeOrderByInput
   GReferralCodeOrderByInput._();
 
   factory GReferralCodeOrderByInput(
-          [Function(GReferralCodeOrderByInputBuilder b) updates]) =
+          [void Function(GReferralCodeOrderByInputBuilder b) updates]) =
       _$GReferralCodeOrderByInput;
 
   GOrderDirection? get id;
@@ -975,7 +977,7 @@ abstract class GReferralCodeUpdateInput
   GReferralCodeUpdateInput._();
 
   factory GReferralCodeUpdateInput(
-          [Function(GReferralCodeUpdateInputBuilder b) updates]) =
+          [void Function(GReferralCodeUpdateInputBuilder b) updates]) =
       _$GReferralCodeUpdateInput;
 
   GDateTime? get createdAt;
@@ -1004,7 +1006,7 @@ abstract class GUserRelateToOneForUpdateInput
   GUserRelateToOneForUpdateInput._();
 
   factory GUserRelateToOneForUpdateInput(
-          [Function(GUserRelateToOneForUpdateInputBuilder b) updates]) =
+          [void Function(GUserRelateToOneForUpdateInputBuilder b) updates]) =
       _$GUserRelateToOneForUpdateInput;
 
   GUserCreateInput? get create;
@@ -1030,7 +1032,7 @@ abstract class GReferralCodeUpdateArgs
   GReferralCodeUpdateArgs._();
 
   factory GReferralCodeUpdateArgs(
-          [Function(GReferralCodeUpdateArgsBuilder b) updates]) =
+          [void Function(GReferralCodeUpdateArgsBuilder b) updates]) =
       _$GReferralCodeUpdateArgs;
 
   GReferralCodeWhereUniqueInput get where;
@@ -1056,7 +1058,7 @@ abstract class GReferralCodeCreateInput
   GReferralCodeCreateInput._();
 
   factory GReferralCodeCreateInput(
-          [Function(GReferralCodeCreateInputBuilder b) updates]) =
+          [void Function(GReferralCodeCreateInputBuilder b) updates]) =
       _$GReferralCodeCreateInput;
 
   GDateTime? get createdAt;
@@ -1085,7 +1087,7 @@ abstract class GUserRelateToOneForCreateInput
   GUserRelateToOneForCreateInput._();
 
   factory GUserRelateToOneForCreateInput(
-          [Function(GUserRelateToOneForCreateInputBuilder b) updates]) =
+          [void Function(GUserRelateToOneForCreateInputBuilder b) updates]) =
       _$GUserRelateToOneForCreateInput;
 
   GUserCreateInput? get create;
@@ -1112,7 +1114,7 @@ abstract class GReferralUserWhereUniqueInput
   GReferralUserWhereUniqueInput._();
 
   factory GReferralUserWhereUniqueInput(
-          [Function(GReferralUserWhereUniqueInputBuilder b) updates]) =
+          [void Function(GReferralUserWhereUniqueInputBuilder b) updates]) =
       _$GReferralUserWhereUniqueInput;
 
   String? get id;
@@ -1136,7 +1138,7 @@ abstract class GReferralUserWhereInput
   GReferralUserWhereInput._();
 
   factory GReferralUserWhereInput(
-          [Function(GReferralUserWhereInputBuilder b) updates]) =
+          [void Function(GReferralUserWhereInputBuilder b) updates]) =
       _$GReferralUserWhereInput;
 
   BuiltList<GReferralUserWhereInput>? get AND;
@@ -1168,7 +1170,7 @@ abstract class GReferralUserOrderByInput
   GReferralUserOrderByInput._();
 
   factory GReferralUserOrderByInput(
-          [Function(GReferralUserOrderByInputBuilder b) updates]) =
+          [void Function(GReferralUserOrderByInputBuilder b) updates]) =
       _$GReferralUserOrderByInput;
 
   GOrderDirection? get id;
@@ -1195,7 +1197,7 @@ abstract class GReferralUserUpdateInput
   GReferralUserUpdateInput._();
 
   factory GReferralUserUpdateInput(
-          [Function(GReferralUserUpdateInputBuilder b) updates]) =
+          [void Function(GReferralUserUpdateInputBuilder b) updates]) =
       _$GReferralUserUpdateInput;
 
   GDateTime? get createdAt;
@@ -1222,7 +1224,7 @@ abstract class GReferralUserUpdateArgs
   GReferralUserUpdateArgs._();
 
   factory GReferralUserUpdateArgs(
-          [Function(GReferralUserUpdateArgsBuilder b) updates]) =
+          [void Function(GReferralUserUpdateArgsBuilder b) updates]) =
       _$GReferralUserUpdateArgs;
 
   GReferralUserWhereUniqueInput get where;
@@ -1248,7 +1250,7 @@ abstract class GReferralUserCreateInput
   GReferralUserCreateInput._();
 
   factory GReferralUserCreateInput(
-          [Function(GReferralUserCreateInputBuilder b) updates]) =
+          [void Function(GReferralUserCreateInputBuilder b) updates]) =
       _$GReferralUserCreateInput;
 
   GDateTime? get createdAt;
@@ -1276,7 +1278,7 @@ abstract class GAddressWhereUniqueInput
   GAddressWhereUniqueInput._();
 
   factory GAddressWhereUniqueInput(
-          [Function(GAddressWhereUniqueInputBuilder b) updates]) =
+          [void Function(GAddressWhereUniqueInputBuilder b) updates]) =
       _$GAddressWhereUniqueInput;
 
   String? get id;
@@ -1299,7 +1301,8 @@ abstract class GAddressWhereInput
     implements Built<GAddressWhereInput, GAddressWhereInputBuilder> {
   GAddressWhereInput._();
 
-  factory GAddressWhereInput([Function(GAddressWhereInputBuilder b) updates]) =
+  factory GAddressWhereInput(
+          [void Function(GAddressWhereInputBuilder b) updates]) =
       _$GAddressWhereInput;
 
   BuiltList<GAddressWhereInput>? get AND;
@@ -1340,7 +1343,7 @@ abstract class GFloatNullableFilter
   GFloatNullableFilter._();
 
   factory GFloatNullableFilter(
-          [Function(GFloatNullableFilterBuilder b) updates]) =
+          [void Function(GFloatNullableFilterBuilder b) updates]) =
       _$GFloatNullableFilter;
 
   double? get equals;
@@ -1372,7 +1375,7 @@ abstract class GAddressOrderByInput
   GAddressOrderByInput._();
 
   factory GAddressOrderByInput(
-          [Function(GAddressOrderByInputBuilder b) updates]) =
+          [void Function(GAddressOrderByInputBuilder b) updates]) =
       _$GAddressOrderByInput;
 
   GOrderDirection? get id;
@@ -1409,7 +1412,8 @@ abstract class GAddressUpdateInput
   GAddressUpdateInput._();
 
   factory GAddressUpdateInput(
-      [Function(GAddressUpdateInputBuilder b) updates]) = _$GAddressUpdateInput;
+          [void Function(GAddressUpdateInputBuilder b) updates]) =
+      _$GAddressUpdateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -1444,7 +1448,8 @@ abstract class GAddressUpdateArgs
     implements Built<GAddressUpdateArgs, GAddressUpdateArgsBuilder> {
   GAddressUpdateArgs._();
 
-  factory GAddressUpdateArgs([Function(GAddressUpdateArgsBuilder b) updates]) =
+  factory GAddressUpdateArgs(
+          [void Function(GAddressUpdateArgsBuilder b) updates]) =
       _$GAddressUpdateArgs;
 
   GAddressWhereUniqueInput get where;
@@ -1469,7 +1474,8 @@ abstract class GAddressCreateInput
   GAddressCreateInput._();
 
   factory GAddressCreateInput(
-      [Function(GAddressCreateInputBuilder b) updates]) = _$GAddressCreateInput;
+          [void Function(GAddressCreateInputBuilder b) updates]) =
+      _$GAddressCreateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -1507,7 +1513,7 @@ abstract class GDealerAddressWhereUniqueInput
   GDealerAddressWhereUniqueInput._();
 
   factory GDealerAddressWhereUniqueInput(
-          [Function(GDealerAddressWhereUniqueInputBuilder b) updates]) =
+          [void Function(GDealerAddressWhereUniqueInputBuilder b) updates]) =
       _$GDealerAddressWhereUniqueInput;
 
   String? get id;
@@ -1532,7 +1538,7 @@ abstract class GDealerAddressWhereInput
   GDealerAddressWhereInput._();
 
   factory GDealerAddressWhereInput(
-          [Function(GDealerAddressWhereInputBuilder b) updates]) =
+          [void Function(GDealerAddressWhereInputBuilder b) updates]) =
       _$GDealerAddressWhereInput;
 
   BuiltList<GDealerAddressWhereInput>? get AND;
@@ -1570,7 +1576,7 @@ abstract class GDealerAddressOrderByInput
   GDealerAddressOrderByInput._();
 
   factory GDealerAddressOrderByInput(
-          [Function(GDealerAddressOrderByInputBuilder b) updates]) =
+          [void Function(GDealerAddressOrderByInputBuilder b) updates]) =
       _$GDealerAddressOrderByInput;
 
   GOrderDirection? get id;
@@ -1604,7 +1610,7 @@ abstract class GDealerAddressUpdateInput
   GDealerAddressUpdateInput._();
 
   factory GDealerAddressUpdateInput(
-          [Function(GDealerAddressUpdateInputBuilder b) updates]) =
+          [void Function(GDealerAddressUpdateInputBuilder b) updates]) =
       _$GDealerAddressUpdateInput;
 
   GDateTime? get createdAt;
@@ -1639,7 +1645,7 @@ abstract class GDealerRelateToOneForUpdateInput
   GDealerRelateToOneForUpdateInput._();
 
   factory GDealerRelateToOneForUpdateInput(
-          [Function(GDealerRelateToOneForUpdateInputBuilder b) updates]) =
+          [void Function(GDealerRelateToOneForUpdateInputBuilder b) updates]) =
       _$GDealerRelateToOneForUpdateInput;
 
   GDealerCreateInput? get create;
@@ -1667,7 +1673,7 @@ abstract class GDealerAddressUpdateArgs
   GDealerAddressUpdateArgs._();
 
   factory GDealerAddressUpdateArgs(
-          [Function(GDealerAddressUpdateArgsBuilder b) updates]) =
+          [void Function(GDealerAddressUpdateArgsBuilder b) updates]) =
       _$GDealerAddressUpdateArgs;
 
   GDealerAddressWhereUniqueInput get where;
@@ -1693,7 +1699,7 @@ abstract class GDealerAddressCreateInput
   GDealerAddressCreateInput._();
 
   factory GDealerAddressCreateInput(
-          [Function(GDealerAddressCreateInputBuilder b) updates]) =
+          [void Function(GDealerAddressCreateInputBuilder b) updates]) =
       _$GDealerAddressCreateInput;
 
   GDateTime? get createdAt;
@@ -1728,7 +1734,7 @@ abstract class GDealerRelateToOneForCreateInput
   GDealerRelateToOneForCreateInput._();
 
   factory GDealerRelateToOneForCreateInput(
-          [Function(GDealerRelateToOneForCreateInputBuilder b) updates]) =
+          [void Function(GDealerRelateToOneForCreateInputBuilder b) updates]) =
       _$GDealerRelateToOneForCreateInput;
 
   GDealerCreateInput? get create;
@@ -1755,7 +1761,7 @@ abstract class GFavoriteWhereUniqueInput
   GFavoriteWhereUniqueInput._();
 
   factory GFavoriteWhereUniqueInput(
-          [Function(GFavoriteWhereUniqueInputBuilder b) updates]) =
+          [void Function(GFavoriteWhereUniqueInputBuilder b) updates]) =
       _$GFavoriteWhereUniqueInput;
 
   String? get id;
@@ -1779,7 +1785,8 @@ abstract class GFavoriteWhereInput
   GFavoriteWhereInput._();
 
   factory GFavoriteWhereInput(
-      [Function(GFavoriteWhereInputBuilder b) updates]) = _$GFavoriteWhereInput;
+          [void Function(GFavoriteWhereInputBuilder b) updates]) =
+      _$GFavoriteWhereInput;
 
   BuiltList<GFavoriteWhereInput>? get AND;
   BuiltList<GFavoriteWhereInput>? get OR;
@@ -1810,7 +1817,7 @@ abstract class GFavoriteOrderByInput
   GFavoriteOrderByInput._();
 
   factory GFavoriteOrderByInput(
-          [Function(GFavoriteOrderByInputBuilder b) updates]) =
+          [void Function(GFavoriteOrderByInputBuilder b) updates]) =
       _$GFavoriteOrderByInput;
 
   GOrderDirection? get id;
@@ -1836,7 +1843,7 @@ abstract class GFavoriteUpdateInput
   GFavoriteUpdateInput._();
 
   factory GFavoriteUpdateInput(
-          [Function(GFavoriteUpdateInputBuilder b) updates]) =
+          [void Function(GFavoriteUpdateInputBuilder b) updates]) =
       _$GFavoriteUpdateInput;
 
   GDateTime? get createdAt;
@@ -1866,7 +1873,7 @@ abstract class GVehicleVariantRelateToOneForUpdateInput
   GVehicleVariantRelateToOneForUpdateInput._();
 
   factory GVehicleVariantRelateToOneForUpdateInput(
-      [Function(GVehicleVariantRelateToOneForUpdateInputBuilder b)
+      [void Function(GVehicleVariantRelateToOneForUpdateInputBuilder b)
           updates]) = _$GVehicleVariantRelateToOneForUpdateInput;
 
   GVehicleVariantCreateInput? get create;
@@ -1895,7 +1902,7 @@ abstract class GProductVariantRelateToOneForUpdateInput
   GProductVariantRelateToOneForUpdateInput._();
 
   factory GProductVariantRelateToOneForUpdateInput(
-      [Function(GProductVariantRelateToOneForUpdateInputBuilder b)
+      [void Function(GProductVariantRelateToOneForUpdateInputBuilder b)
           updates]) = _$GProductVariantRelateToOneForUpdateInput;
 
   GProductVariantCreateInput? get create;
@@ -1922,7 +1929,8 @@ abstract class GFavoriteUpdateArgs
   GFavoriteUpdateArgs._();
 
   factory GFavoriteUpdateArgs(
-      [Function(GFavoriteUpdateArgsBuilder b) updates]) = _$GFavoriteUpdateArgs;
+          [void Function(GFavoriteUpdateArgsBuilder b) updates]) =
+      _$GFavoriteUpdateArgs;
 
   GFavoriteWhereUniqueInput get where;
   GFavoriteUpdateInput get data;
@@ -1946,7 +1954,7 @@ abstract class GFavoriteCreateInput
   GFavoriteCreateInput._();
 
   factory GFavoriteCreateInput(
-          [Function(GFavoriteCreateInputBuilder b) updates]) =
+          [void Function(GFavoriteCreateInputBuilder b) updates]) =
       _$GFavoriteCreateInput;
 
   GDateTime? get createdAt;
@@ -1976,7 +1984,7 @@ abstract class GVehicleVariantRelateToOneForCreateInput
   GVehicleVariantRelateToOneForCreateInput._();
 
   factory GVehicleVariantRelateToOneForCreateInput(
-      [Function(GVehicleVariantRelateToOneForCreateInputBuilder b)
+      [void Function(GVehicleVariantRelateToOneForCreateInputBuilder b)
           updates]) = _$GVehicleVariantRelateToOneForCreateInput;
 
   GVehicleVariantCreateInput? get create;
@@ -2004,7 +2012,7 @@ abstract class GProductVariantRelateToOneForCreateInput
   GProductVariantRelateToOneForCreateInput._();
 
   factory GProductVariantRelateToOneForCreateInput(
-      [Function(GProductVariantRelateToOneForCreateInputBuilder b)
+      [void Function(GProductVariantRelateToOneForCreateInputBuilder b)
           updates]) = _$GProductVariantRelateToOneForCreateInput;
 
   GProductVariantCreateInput? get create;
@@ -2031,7 +2039,7 @@ abstract class GCartItemWhereUniqueInput
   GCartItemWhereUniqueInput._();
 
   factory GCartItemWhereUniqueInput(
-          [Function(GCartItemWhereUniqueInputBuilder b) updates]) =
+          [void Function(GCartItemWhereUniqueInputBuilder b) updates]) =
       _$GCartItemWhereUniqueInput;
 
   String? get id;
@@ -2055,7 +2063,8 @@ abstract class GCartItemWhereInput
   GCartItemWhereInput._();
 
   factory GCartItemWhereInput(
-      [Function(GCartItemWhereInputBuilder b) updates]) = _$GCartItemWhereInput;
+          [void Function(GCartItemWhereInputBuilder b) updates]) =
+      _$GCartItemWhereInput;
 
   BuiltList<GCartItemWhereInput>? get AND;
   BuiltList<GCartItemWhereInput>? get OR;
@@ -2087,7 +2096,7 @@ abstract class GCartItemOrderByInput
   GCartItemOrderByInput._();
 
   factory GCartItemOrderByInput(
-          [Function(GCartItemOrderByInputBuilder b) updates]) =
+          [void Function(GCartItemOrderByInputBuilder b) updates]) =
       _$GCartItemOrderByInput;
 
   GOrderDirection? get id;
@@ -2113,7 +2122,7 @@ abstract class GCartItemUpdateInput
   GCartItemUpdateInput._();
 
   factory GCartItemUpdateInput(
-          [Function(GCartItemUpdateInputBuilder b) updates]) =
+          [void Function(GCartItemUpdateInputBuilder b) updates]) =
       _$GCartItemUpdateInput;
 
   GDateTime? get createdAt;
@@ -2144,8 +2153,8 @@ abstract class GVehicleColorRelateToOneForUpdateInput
   GVehicleColorRelateToOneForUpdateInput._();
 
   factory GVehicleColorRelateToOneForUpdateInput(
-          [Function(GVehicleColorRelateToOneForUpdateInputBuilder b) updates]) =
-      _$GVehicleColorRelateToOneForUpdateInput;
+      [void Function(GVehicleColorRelateToOneForUpdateInputBuilder b)
+          updates]) = _$GVehicleColorRelateToOneForUpdateInput;
 
   GVehicleColorCreateInput? get create;
   GVehicleColorWhereUniqueInput? get connect;
@@ -2171,7 +2180,8 @@ abstract class GCartItemUpdateArgs
   GCartItemUpdateArgs._();
 
   factory GCartItemUpdateArgs(
-      [Function(GCartItemUpdateArgsBuilder b) updates]) = _$GCartItemUpdateArgs;
+          [void Function(GCartItemUpdateArgsBuilder b) updates]) =
+      _$GCartItemUpdateArgs;
 
   GCartItemWhereUniqueInput get where;
   GCartItemUpdateInput get data;
@@ -2195,7 +2205,7 @@ abstract class GCartItemCreateInput
   GCartItemCreateInput._();
 
   factory GCartItemCreateInput(
-          [Function(GCartItemCreateInputBuilder b) updates]) =
+          [void Function(GCartItemCreateInputBuilder b) updates]) =
       _$GCartItemCreateInput;
 
   GDateTime? get createdAt;
@@ -2226,8 +2236,8 @@ abstract class GVehicleColorRelateToOneForCreateInput
   GVehicleColorRelateToOneForCreateInput._();
 
   factory GVehicleColorRelateToOneForCreateInput(
-          [Function(GVehicleColorRelateToOneForCreateInputBuilder b) updates]) =
-      _$GVehicleColorRelateToOneForCreateInput;
+      [void Function(GVehicleColorRelateToOneForCreateInputBuilder b)
+          updates]) = _$GVehicleColorRelateToOneForCreateInput;
 
   GVehicleColorCreateInput? get create;
   GVehicleColorWhereUniqueInput? get connect;
@@ -2254,7 +2264,7 @@ abstract class GVehicleTypeWhereUniqueInput
   GVehicleTypeWhereUniqueInput._();
 
   factory GVehicleTypeWhereUniqueInput(
-          [Function(GVehicleTypeWhereUniqueInputBuilder b) updates]) =
+          [void Function(GVehicleTypeWhereUniqueInputBuilder b) updates]) =
       _$GVehicleTypeWhereUniqueInput;
 
   String? get id;
@@ -2278,7 +2288,7 @@ abstract class GVehicleTypeWhereInput
   GVehicleTypeWhereInput._();
 
   factory GVehicleTypeWhereInput(
-          [Function(GVehicleTypeWhereInputBuilder b) updates]) =
+          [void Function(GVehicleTypeWhereInputBuilder b) updates]) =
       _$GVehicleTypeWhereInput;
 
   BuiltList<GVehicleTypeWhereInput>? get AND;
@@ -2310,7 +2320,7 @@ abstract class GVehicleTypeOrderByInput
   GVehicleTypeOrderByInput._();
 
   factory GVehicleTypeOrderByInput(
-          [Function(GVehicleTypeOrderByInputBuilder b) updates]) =
+          [void Function(GVehicleTypeOrderByInputBuilder b) updates]) =
       _$GVehicleTypeOrderByInput;
 
   GOrderDirection? get id;
@@ -2338,7 +2348,7 @@ abstract class GVehicleTypeUpdateInput
   GVehicleTypeUpdateInput._();
 
   factory GVehicleTypeUpdateInput(
-          [Function(GVehicleTypeUpdateInputBuilder b) updates]) =
+          [void Function(GVehicleTypeUpdateInputBuilder b) updates]) =
       _$GVehicleTypeUpdateInput;
 
   GDateTime? get createdAt;
@@ -2365,7 +2375,7 @@ abstract class GVehicleTypeUpdateArgs
   GVehicleTypeUpdateArgs._();
 
   factory GVehicleTypeUpdateArgs(
-          [Function(GVehicleTypeUpdateArgsBuilder b) updates]) =
+          [void Function(GVehicleTypeUpdateArgsBuilder b) updates]) =
       _$GVehicleTypeUpdateArgs;
 
   GVehicleTypeWhereUniqueInput get where;
@@ -2390,7 +2400,7 @@ abstract class GVehicleTypeCreateInput
   GVehicleTypeCreateInput._();
 
   factory GVehicleTypeCreateInput(
-          [Function(GVehicleTypeCreateInputBuilder b) updates]) =
+          [void Function(GVehicleTypeCreateInputBuilder b) updates]) =
       _$GVehicleTypeCreateInput;
 
   GDateTime? get createdAt;
@@ -2419,7 +2429,7 @@ abstract class GVehicleSubTypeWhereUniqueInput
   GVehicleSubTypeWhereUniqueInput._();
 
   factory GVehicleSubTypeWhereUniqueInput(
-          [Function(GVehicleSubTypeWhereUniqueInputBuilder b) updates]) =
+          [void Function(GVehicleSubTypeWhereUniqueInputBuilder b) updates]) =
       _$GVehicleSubTypeWhereUniqueInput;
 
   String? get id;
@@ -2444,7 +2454,7 @@ abstract class GVehicleSubTypeWhereInput
   GVehicleSubTypeWhereInput._();
 
   factory GVehicleSubTypeWhereInput(
-          [Function(GVehicleSubTypeWhereInputBuilder b) updates]) =
+          [void Function(GVehicleSubTypeWhereInputBuilder b) updates]) =
       _$GVehicleSubTypeWhereInput;
 
   BuiltList<GVehicleSubTypeWhereInput>? get AND;
@@ -2477,7 +2487,7 @@ abstract class GVehicleSubTypeOrderByInput
   GVehicleSubTypeOrderByInput._();
 
   factory GVehicleSubTypeOrderByInput(
-          [Function(GVehicleSubTypeOrderByInputBuilder b) updates]) =
+          [void Function(GVehicleSubTypeOrderByInputBuilder b) updates]) =
       _$GVehicleSubTypeOrderByInput;
 
   GOrderDirection? get id;
@@ -2506,7 +2516,7 @@ abstract class GVehicleSubTypeUpdateInput
   GVehicleSubTypeUpdateInput._();
 
   factory GVehicleSubTypeUpdateInput(
-          [Function(GVehicleSubTypeUpdateInputBuilder b) updates]) =
+          [void Function(GVehicleSubTypeUpdateInputBuilder b) updates]) =
       _$GVehicleSubTypeUpdateInput;
 
   GDateTime? get createdAt;
@@ -2536,8 +2546,8 @@ abstract class GVehicleTypeRelateToOneForUpdateInput
   GVehicleTypeRelateToOneForUpdateInput._();
 
   factory GVehicleTypeRelateToOneForUpdateInput(
-          [Function(GVehicleTypeRelateToOneForUpdateInputBuilder b) updates]) =
-      _$GVehicleTypeRelateToOneForUpdateInput;
+      [void Function(GVehicleTypeRelateToOneForUpdateInputBuilder b)
+          updates]) = _$GVehicleTypeRelateToOneForUpdateInput;
 
   GVehicleTypeCreateInput? get create;
   GVehicleTypeWhereUniqueInput? get connect;
@@ -2564,7 +2574,7 @@ abstract class GVehicleSubTypeUpdateArgs
   GVehicleSubTypeUpdateArgs._();
 
   factory GVehicleSubTypeUpdateArgs(
-          [Function(GVehicleSubTypeUpdateArgsBuilder b) updates]) =
+          [void Function(GVehicleSubTypeUpdateArgsBuilder b) updates]) =
       _$GVehicleSubTypeUpdateArgs;
 
   GVehicleSubTypeWhereUniqueInput get where;
@@ -2590,7 +2600,7 @@ abstract class GVehicleSubTypeCreateInput
   GVehicleSubTypeCreateInput._();
 
   factory GVehicleSubTypeCreateInput(
-          [Function(GVehicleSubTypeCreateInputBuilder b) updates]) =
+          [void Function(GVehicleSubTypeCreateInputBuilder b) updates]) =
       _$GVehicleSubTypeCreateInput;
 
   GDateTime? get createdAt;
@@ -2620,8 +2630,8 @@ abstract class GVehicleTypeRelateToOneForCreateInput
   GVehicleTypeRelateToOneForCreateInput._();
 
   factory GVehicleTypeRelateToOneForCreateInput(
-          [Function(GVehicleTypeRelateToOneForCreateInputBuilder b) updates]) =
-      _$GVehicleTypeRelateToOneForCreateInput;
+      [void Function(GVehicleTypeRelateToOneForCreateInputBuilder b)
+          updates]) = _$GVehicleTypeRelateToOneForCreateInput;
 
   GVehicleTypeCreateInput? get create;
   GVehicleTypeWhereUniqueInput? get connect;
@@ -2646,7 +2656,7 @@ abstract class GBrandWhereUniqueInput
   GBrandWhereUniqueInput._();
 
   factory GBrandWhereUniqueInput(
-          [Function(GBrandWhereUniqueInputBuilder b) updates]) =
+          [void Function(GBrandWhereUniqueInputBuilder b) updates]) =
       _$GBrandWhereUniqueInput;
 
   String? get id;
@@ -2669,7 +2679,7 @@ abstract class GBrandWhereInput
     implements Built<GBrandWhereInput, GBrandWhereInputBuilder> {
   GBrandWhereInput._();
 
-  factory GBrandWhereInput([Function(GBrandWhereInputBuilder b) updates]) =
+  factory GBrandWhereInput([void Function(GBrandWhereInputBuilder b) updates]) =
       _$GBrandWhereInput;
 
   BuiltList<GBrandWhereInput>? get AND;
@@ -2698,7 +2708,8 @@ abstract class GBrandOrderByInput
     implements Built<GBrandOrderByInput, GBrandOrderByInputBuilder> {
   GBrandOrderByInput._();
 
-  factory GBrandOrderByInput([Function(GBrandOrderByInputBuilder b) updates]) =
+  factory GBrandOrderByInput(
+          [void Function(GBrandOrderByInputBuilder b) updates]) =
       _$GBrandOrderByInput;
 
   GOrderDirection? get id;
@@ -2724,7 +2735,8 @@ abstract class GBrandUpdateInput
     implements Built<GBrandUpdateInput, GBrandUpdateInputBuilder> {
   GBrandUpdateInput._();
 
-  factory GBrandUpdateInput([Function(GBrandUpdateInputBuilder b) updates]) =
+  factory GBrandUpdateInput(
+          [void Function(GBrandUpdateInputBuilder b) updates]) =
       _$GBrandUpdateInput;
 
   GDateTime? get createdAt;
@@ -2751,7 +2763,7 @@ abstract class GBrandUpdateArgs
     implements Built<GBrandUpdateArgs, GBrandUpdateArgsBuilder> {
   GBrandUpdateArgs._();
 
-  factory GBrandUpdateArgs([Function(GBrandUpdateArgsBuilder b) updates]) =
+  factory GBrandUpdateArgs([void Function(GBrandUpdateArgsBuilder b) updates]) =
       _$GBrandUpdateArgs;
 
   GBrandWhereUniqueInput get where;
@@ -2775,7 +2787,8 @@ abstract class GBrandCreateInput
     implements Built<GBrandCreateInput, GBrandCreateInputBuilder> {
   GBrandCreateInput._();
 
-  factory GBrandCreateInput([Function(GBrandCreateInputBuilder b) updates]) =
+  factory GBrandCreateInput(
+          [void Function(GBrandCreateInputBuilder b) updates]) =
       _$GBrandCreateInput;
 
   GDateTime? get createdAt;
@@ -2805,7 +2818,7 @@ abstract class GSpecificationWhereUniqueInput
   GSpecificationWhereUniqueInput._();
 
   factory GSpecificationWhereUniqueInput(
-          [Function(GSpecificationWhereUniqueInputBuilder b) updates]) =
+          [void Function(GSpecificationWhereUniqueInputBuilder b) updates]) =
       _$GSpecificationWhereUniqueInput;
 
   String? get id;
@@ -2831,7 +2844,7 @@ abstract class GSpecificationWhereInput
   GSpecificationWhereInput._();
 
   factory GSpecificationWhereInput(
-          [Function(GSpecificationWhereInputBuilder b) updates]) =
+          [void Function(GSpecificationWhereInputBuilder b) updates]) =
       _$GSpecificationWhereInput;
 
   BuiltList<GSpecificationWhereInput>? get AND;
@@ -2864,7 +2877,7 @@ abstract class GSpecificationOrderByInput
   GSpecificationOrderByInput._();
 
   factory GSpecificationOrderByInput(
-          [Function(GSpecificationOrderByInputBuilder b) updates]) =
+          [void Function(GSpecificationOrderByInputBuilder b) updates]) =
       _$GSpecificationOrderByInput;
 
   GOrderDirection? get id;
@@ -2894,7 +2907,7 @@ abstract class GSpecificationUpdateInput
   GSpecificationUpdateInput._();
 
   factory GSpecificationUpdateInput(
-          [Function(GSpecificationUpdateInputBuilder b) updates]) =
+          [void Function(GSpecificationUpdateInputBuilder b) updates]) =
       _$GSpecificationUpdateInput;
 
   GDateTime? get createdAt;
@@ -2924,7 +2937,7 @@ abstract class GSpecificationUpdateArgs
   GSpecificationUpdateArgs._();
 
   factory GSpecificationUpdateArgs(
-          [Function(GSpecificationUpdateArgsBuilder b) updates]) =
+          [void Function(GSpecificationUpdateArgsBuilder b) updates]) =
       _$GSpecificationUpdateArgs;
 
   GSpecificationWhereUniqueInput get where;
@@ -2950,7 +2963,7 @@ abstract class GSpecificationCreateInput
   GSpecificationCreateInput._();
 
   factory GSpecificationCreateInput(
-          [Function(GSpecificationCreateInputBuilder b) updates]) =
+          [void Function(GSpecificationCreateInputBuilder b) updates]) =
       _$GSpecificationCreateInput;
 
   GDateTime? get createdAt;
@@ -2981,8 +2994,8 @@ abstract class GSpecificationCategoryWhereUniqueInput
   GSpecificationCategoryWhereUniqueInput._();
 
   factory GSpecificationCategoryWhereUniqueInput(
-          [Function(GSpecificationCategoryWhereUniqueInputBuilder b) updates]) =
-      _$GSpecificationCategoryWhereUniqueInput;
+      [void Function(GSpecificationCategoryWhereUniqueInputBuilder b)
+          updates]) = _$GSpecificationCategoryWhereUniqueInput;
 
   String? get id;
   String? get name;
@@ -3009,7 +3022,7 @@ abstract class GSpecificationCategoryWhereInput
   GSpecificationCategoryWhereInput._();
 
   factory GSpecificationCategoryWhereInput(
-          [Function(GSpecificationCategoryWhereInputBuilder b) updates]) =
+          [void Function(GSpecificationCategoryWhereInputBuilder b) updates]) =
       _$GSpecificationCategoryWhereInput;
 
   BuiltList<GSpecificationCategoryWhereInput>? get AND;
@@ -3043,8 +3056,8 @@ abstract class GSpecificationCategoryOrderByInput
   GSpecificationCategoryOrderByInput._();
 
   factory GSpecificationCategoryOrderByInput(
-          [Function(GSpecificationCategoryOrderByInputBuilder b) updates]) =
-      _$GSpecificationCategoryOrderByInput;
+      [void Function(GSpecificationCategoryOrderByInputBuilder b)
+          updates]) = _$GSpecificationCategoryOrderByInput;
 
   GOrderDirection? get id;
   GOrderDirection? get createdAt;
@@ -3074,7 +3087,7 @@ abstract class GSpecificationCategoryUpdateInput
   GSpecificationCategoryUpdateInput._();
 
   factory GSpecificationCategoryUpdateInput(
-          [Function(GSpecificationCategoryUpdateInputBuilder b) updates]) =
+          [void Function(GSpecificationCategoryUpdateInputBuilder b) updates]) =
       _$GSpecificationCategoryUpdateInput;
 
   GDateTime? get createdAt;
@@ -3104,7 +3117,7 @@ abstract class GSpecificationCategoryUpdateArgs
   GSpecificationCategoryUpdateArgs._();
 
   factory GSpecificationCategoryUpdateArgs(
-          [Function(GSpecificationCategoryUpdateArgsBuilder b) updates]) =
+          [void Function(GSpecificationCategoryUpdateArgsBuilder b) updates]) =
       _$GSpecificationCategoryUpdateArgs;
 
   GSpecificationCategoryWhereUniqueInput get where;
@@ -3132,7 +3145,7 @@ abstract class GSpecificationCategoryCreateInput
   GSpecificationCategoryCreateInput._();
 
   factory GSpecificationCategoryCreateInput(
-          [Function(GSpecificationCategoryCreateInputBuilder b) updates]) =
+          [void Function(GSpecificationCategoryCreateInputBuilder b) updates]) =
       _$GSpecificationCategoryCreateInput;
 
   GDateTime? get createdAt;
@@ -3162,7 +3175,7 @@ abstract class GTestDriveDealerWhereUniqueInput
   GTestDriveDealerWhereUniqueInput._();
 
   factory GTestDriveDealerWhereUniqueInput(
-          [Function(GTestDriveDealerWhereUniqueInputBuilder b) updates]) =
+          [void Function(GTestDriveDealerWhereUniqueInputBuilder b) updates]) =
       _$GTestDriveDealerWhereUniqueInput;
 
   String? get id;
@@ -3188,7 +3201,7 @@ abstract class GTestDriveDealerWhereInput
   GTestDriveDealerWhereInput._();
 
   factory GTestDriveDealerWhereInput(
-          [Function(GTestDriveDealerWhereInputBuilder b) updates]) =
+          [void Function(GTestDriveDealerWhereInputBuilder b) updates]) =
       _$GTestDriveDealerWhereInput;
 
   BuiltList<GTestDriveDealerWhereInput>? get AND;
@@ -3220,7 +3233,8 @@ abstract class GTestDriveDealerWhereInput
 abstract class GIntFilter implements Built<GIntFilter, GIntFilterBuilder> {
   GIntFilter._();
 
-  factory GIntFilter([Function(GIntFilterBuilder b) updates]) = _$GIntFilter;
+  factory GIntFilter([void Function(GIntFilterBuilder b) updates]) =
+      _$GIntFilter;
 
   int? get equals;
   @BuiltValueField(wireName: 'in')
@@ -3252,7 +3266,7 @@ abstract class GTestDriveDealerOrderByInput
   GTestDriveDealerOrderByInput._();
 
   factory GTestDriveDealerOrderByInput(
-          [Function(GTestDriveDealerOrderByInputBuilder b) updates]) =
+          [void Function(GTestDriveDealerOrderByInputBuilder b) updates]) =
       _$GTestDriveDealerOrderByInput;
 
   GOrderDirection? get id;
@@ -3281,7 +3295,7 @@ abstract class GTestDriveDealerUpdateInput
   GTestDriveDealerUpdateInput._();
 
   factory GTestDriveDealerUpdateInput(
-          [Function(GTestDriveDealerUpdateInputBuilder b) updates]) =
+          [void Function(GTestDriveDealerUpdateInputBuilder b) updates]) =
       _$GTestDriveDealerUpdateInput;
 
   GDateTime? get createdAt;
@@ -3312,7 +3326,7 @@ abstract class GTestDriveDealerUpdateArgs
   GTestDriveDealerUpdateArgs._();
 
   factory GTestDriveDealerUpdateArgs(
-          [Function(GTestDriveDealerUpdateArgsBuilder b) updates]) =
+          [void Function(GTestDriveDealerUpdateArgsBuilder b) updates]) =
       _$GTestDriveDealerUpdateArgs;
 
   GTestDriveDealerWhereUniqueInput get where;
@@ -3338,7 +3352,7 @@ abstract class GTestDriveDealerCreateInput
   GTestDriveDealerCreateInput._();
 
   factory GTestDriveDealerCreateInput(
-          [Function(GTestDriveDealerCreateInputBuilder b) updates]) =
+          [void Function(GTestDriveDealerCreateInputBuilder b) updates]) =
       _$GTestDriveDealerCreateInput;
 
   GDateTime? get createdAt;
@@ -3369,7 +3383,7 @@ abstract class GVehicleWhereUniqueInput
   GVehicleWhereUniqueInput._();
 
   factory GVehicleWhereUniqueInput(
-          [Function(GVehicleWhereUniqueInputBuilder b) updates]) =
+          [void Function(GVehicleWhereUniqueInputBuilder b) updates]) =
       _$GVehicleWhereUniqueInput;
 
   String? get id;
@@ -3392,7 +3406,8 @@ abstract class GVehicleWhereInput
     implements Built<GVehicleWhereInput, GVehicleWhereInputBuilder> {
   GVehicleWhereInput._();
 
-  factory GVehicleWhereInput([Function(GVehicleWhereInputBuilder b) updates]) =
+  factory GVehicleWhereInput(
+          [void Function(GVehicleWhereInputBuilder b) updates]) =
       _$GVehicleWhereInput;
 
   BuiltList<GVehicleWhereInput>? get AND;
@@ -3433,7 +3448,7 @@ abstract class GVehicleSubTypeManyRelationFilter
   GVehicleSubTypeManyRelationFilter._();
 
   factory GVehicleSubTypeManyRelationFilter(
-          [Function(GVehicleSubTypeManyRelationFilterBuilder b) updates]) =
+          [void Function(GVehicleSubTypeManyRelationFilterBuilder b) updates]) =
       _$GVehicleSubTypeManyRelationFilter;
 
   GVehicleSubTypeWhereInput? get every;
@@ -3462,7 +3477,7 @@ abstract class GVehicleVariantManyRelationFilter
   GVehicleVariantManyRelationFilter._();
 
   factory GVehicleVariantManyRelationFilter(
-          [Function(GVehicleVariantManyRelationFilterBuilder b) updates]) =
+          [void Function(GVehicleVariantManyRelationFilterBuilder b) updates]) =
       _$GVehicleVariantManyRelationFilter;
 
   GVehicleVariantWhereInput? get every;
@@ -3491,7 +3506,7 @@ abstract class GVehicleSpecificationManyRelationFilter
   GVehicleSpecificationManyRelationFilter._();
 
   factory GVehicleSpecificationManyRelationFilter(
-      [Function(GVehicleSpecificationManyRelationFilterBuilder b)
+      [void Function(GVehicleSpecificationManyRelationFilterBuilder b)
           updates]) = _$GVehicleSpecificationManyRelationFilter;
 
   GVehicleSpecificationWhereInput? get every;
@@ -3520,7 +3535,7 @@ abstract class GVehicleColorManyRelationFilter
   GVehicleColorManyRelationFilter._();
 
   factory GVehicleColorManyRelationFilter(
-          [Function(GVehicleColorManyRelationFilterBuilder b) updates]) =
+          [void Function(GVehicleColorManyRelationFilterBuilder b) updates]) =
       _$GVehicleColorManyRelationFilter;
 
   GVehicleColorWhereInput? get every;
@@ -3546,7 +3561,7 @@ abstract class GVehicleOrderByInput
   GVehicleOrderByInput._();
 
   factory GVehicleOrderByInput(
-          [Function(GVehicleOrderByInputBuilder b) updates]) =
+          [void Function(GVehicleOrderByInputBuilder b) updates]) =
       _$GVehicleOrderByInput;
 
   GOrderDirection? get id;
@@ -3576,7 +3591,8 @@ abstract class GVehicleUpdateInput
   GVehicleUpdateInput._();
 
   factory GVehicleUpdateInput(
-      [Function(GVehicleUpdateInputBuilder b) updates]) = _$GVehicleUpdateInput;
+          [void Function(GVehicleUpdateInputBuilder b) updates]) =
+      _$GVehicleUpdateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -3612,7 +3628,7 @@ abstract class GVehicleSubTypeRelateToManyForUpdateInput
   GVehicleSubTypeRelateToManyForUpdateInput._();
 
   factory GVehicleSubTypeRelateToManyForUpdateInput(
-      [Function(GVehicleSubTypeRelateToManyForUpdateInputBuilder b)
+      [void Function(GVehicleSubTypeRelateToManyForUpdateInputBuilder b)
           updates]) = _$GVehicleSubTypeRelateToManyForUpdateInput;
 
   BuiltList<GVehicleSubTypeWhereUniqueInput>? get disconnect;
@@ -3642,7 +3658,7 @@ abstract class GBrandRelateToOneForUpdateInput
   GBrandRelateToOneForUpdateInput._();
 
   factory GBrandRelateToOneForUpdateInput(
-          [Function(GBrandRelateToOneForUpdateInputBuilder b) updates]) =
+          [void Function(GBrandRelateToOneForUpdateInputBuilder b) updates]) =
       _$GBrandRelateToOneForUpdateInput;
 
   GBrandCreateInput? get create;
@@ -3670,7 +3686,7 @@ abstract class GVehicleVariantRelateToManyForUpdateInput
   GVehicleVariantRelateToManyForUpdateInput._();
 
   factory GVehicleVariantRelateToManyForUpdateInput(
-      [Function(GVehicleVariantRelateToManyForUpdateInputBuilder b)
+      [void Function(GVehicleVariantRelateToManyForUpdateInputBuilder b)
           updates]) = _$GVehicleVariantRelateToManyForUpdateInput;
 
   BuiltList<GVehicleVariantWhereUniqueInput>? get disconnect;
@@ -3700,7 +3716,7 @@ abstract class GVehicleSpecificationRelateToManyForUpdateInput
   GVehicleSpecificationRelateToManyForUpdateInput._();
 
   factory GVehicleSpecificationRelateToManyForUpdateInput(
-      [Function(GVehicleSpecificationRelateToManyForUpdateInputBuilder b)
+      [void Function(GVehicleSpecificationRelateToManyForUpdateInputBuilder b)
           updates]) = _$GVehicleSpecificationRelateToManyForUpdateInput;
 
   BuiltList<GVehicleSpecificationWhereUniqueInput>? get disconnect;
@@ -3731,7 +3747,7 @@ abstract class GVehicleColorRelateToManyForUpdateInput
   GVehicleColorRelateToManyForUpdateInput._();
 
   factory GVehicleColorRelateToManyForUpdateInput(
-      [Function(GVehicleColorRelateToManyForUpdateInputBuilder b)
+      [void Function(GVehicleColorRelateToManyForUpdateInputBuilder b)
           updates]) = _$GVehicleColorRelateToManyForUpdateInput;
 
   BuiltList<GVehicleColorWhereUniqueInput>? get disconnect;
@@ -3758,7 +3774,8 @@ abstract class GVehicleUpdateArgs
     implements Built<GVehicleUpdateArgs, GVehicleUpdateArgsBuilder> {
   GVehicleUpdateArgs._();
 
-  factory GVehicleUpdateArgs([Function(GVehicleUpdateArgsBuilder b) updates]) =
+  factory GVehicleUpdateArgs(
+          [void Function(GVehicleUpdateArgsBuilder b) updates]) =
       _$GVehicleUpdateArgs;
 
   GVehicleWhereUniqueInput get where;
@@ -3783,7 +3800,8 @@ abstract class GVehicleCreateInput
   GVehicleCreateInput._();
 
   factory GVehicleCreateInput(
-      [Function(GVehicleCreateInputBuilder b) updates]) = _$GVehicleCreateInput;
+          [void Function(GVehicleCreateInputBuilder b) updates]) =
+      _$GVehicleCreateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -3819,7 +3837,7 @@ abstract class GVehicleSubTypeRelateToManyForCreateInput
   GVehicleSubTypeRelateToManyForCreateInput._();
 
   factory GVehicleSubTypeRelateToManyForCreateInput(
-      [Function(GVehicleSubTypeRelateToManyForCreateInputBuilder b)
+      [void Function(GVehicleSubTypeRelateToManyForCreateInputBuilder b)
           updates]) = _$GVehicleSubTypeRelateToManyForCreateInput;
 
   BuiltList<GVehicleSubTypeCreateInput>? get create;
@@ -3847,7 +3865,7 @@ abstract class GBrandRelateToOneForCreateInput
   GBrandRelateToOneForCreateInput._();
 
   factory GBrandRelateToOneForCreateInput(
-          [Function(GBrandRelateToOneForCreateInputBuilder b) updates]) =
+          [void Function(GBrandRelateToOneForCreateInputBuilder b) updates]) =
       _$GBrandRelateToOneForCreateInput;
 
   GBrandCreateInput? get create;
@@ -3874,7 +3892,7 @@ abstract class GVehicleVariantRelateToManyForCreateInput
   GVehicleVariantRelateToManyForCreateInput._();
 
   factory GVehicleVariantRelateToManyForCreateInput(
-      [Function(GVehicleVariantRelateToManyForCreateInputBuilder b)
+      [void Function(GVehicleVariantRelateToManyForCreateInputBuilder b)
           updates]) = _$GVehicleVariantRelateToManyForCreateInput;
 
   BuiltList<GVehicleVariantCreateInput>? get create;
@@ -3902,7 +3920,7 @@ abstract class GVehicleSpecificationRelateToManyForCreateInput
   GVehicleSpecificationRelateToManyForCreateInput._();
 
   factory GVehicleSpecificationRelateToManyForCreateInput(
-      [Function(GVehicleSpecificationRelateToManyForCreateInputBuilder b)
+      [void Function(GVehicleSpecificationRelateToManyForCreateInputBuilder b)
           updates]) = _$GVehicleSpecificationRelateToManyForCreateInput;
 
   BuiltList<GVehicleSpecificationCreateInput>? get create;
@@ -3931,7 +3949,7 @@ abstract class GVehicleColorRelateToManyForCreateInput
   GVehicleColorRelateToManyForCreateInput._();
 
   factory GVehicleColorRelateToManyForCreateInput(
-      [Function(GVehicleColorRelateToManyForCreateInputBuilder b)
+      [void Function(GVehicleColorRelateToManyForCreateInputBuilder b)
           updates]) = _$GVehicleColorRelateToManyForCreateInput;
 
   BuiltList<GVehicleColorCreateInput>? get create;
@@ -3959,7 +3977,7 @@ abstract class GVehicleColorWhereUniqueInput
   GVehicleColorWhereUniqueInput._();
 
   factory GVehicleColorWhereUniqueInput(
-          [Function(GVehicleColorWhereUniqueInputBuilder b) updates]) =
+          [void Function(GVehicleColorWhereUniqueInputBuilder b) updates]) =
       _$GVehicleColorWhereUniqueInput;
 
   String? get id;
@@ -3983,7 +4001,7 @@ abstract class GVehicleColorWhereInput
   GVehicleColorWhereInput._();
 
   factory GVehicleColorWhereInput(
-          [Function(GVehicleColorWhereInputBuilder b) updates]) =
+          [void Function(GVehicleColorWhereInputBuilder b) updates]) =
       _$GVehicleColorWhereInput;
 
   BuiltList<GVehicleColorWhereInput>? get AND;
@@ -4023,7 +4041,7 @@ abstract class GVehicleImageManyRelationFilter
   GVehicleImageManyRelationFilter._();
 
   factory GVehicleImageManyRelationFilter(
-          [Function(GVehicleImageManyRelationFilterBuilder b) updates]) =
+          [void Function(GVehicleImageManyRelationFilterBuilder b) updates]) =
       _$GVehicleImageManyRelationFilter;
 
   GVehicleImageWhereInput? get every;
@@ -4051,7 +4069,7 @@ abstract class GVehicleVideoManyRelationFilter
   GVehicleVideoManyRelationFilter._();
 
   factory GVehicleVideoManyRelationFilter(
-          [Function(GVehicleVideoManyRelationFilterBuilder b) updates]) =
+          [void Function(GVehicleVideoManyRelationFilterBuilder b) updates]) =
       _$GVehicleVideoManyRelationFilter;
 
   GVehicleVideoWhereInput? get every;
@@ -4079,8 +4097,8 @@ abstract class GVehicleGalleryItemManyRelationFilter
   GVehicleGalleryItemManyRelationFilter._();
 
   factory GVehicleGalleryItemManyRelationFilter(
-          [Function(GVehicleGalleryItemManyRelationFilterBuilder b) updates]) =
-      _$GVehicleGalleryItemManyRelationFilter;
+      [void Function(GVehicleGalleryItemManyRelationFilterBuilder b)
+          updates]) = _$GVehicleGalleryItemManyRelationFilter;
 
   GVehicleGalleryItemWhereInput? get every;
   GVehicleGalleryItemWhereInput? get some;
@@ -4108,7 +4126,7 @@ abstract class GVehicleReelManyRelationFilter
   GVehicleReelManyRelationFilter._();
 
   factory GVehicleReelManyRelationFilter(
-          [Function(GVehicleReelManyRelationFilterBuilder b) updates]) =
+          [void Function(GVehicleReelManyRelationFilterBuilder b) updates]) =
       _$GVehicleReelManyRelationFilter;
 
   GVehicleReelWhereInput? get every;
@@ -4135,7 +4153,7 @@ abstract class GVehicleColorOrderByInput
   GVehicleColorOrderByInput._();
 
   factory GVehicleColorOrderByInput(
-          [Function(GVehicleColorOrderByInputBuilder b) updates]) =
+          [void Function(GVehicleColorOrderByInputBuilder b) updates]) =
       _$GVehicleColorOrderByInput;
 
   GOrderDirection? get id;
@@ -4165,7 +4183,7 @@ abstract class GVehicleColorUpdateInput
   GVehicleColorUpdateInput._();
 
   factory GVehicleColorUpdateInput(
-          [Function(GVehicleColorUpdateInputBuilder b) updates]) =
+          [void Function(GVehicleColorUpdateInputBuilder b) updates]) =
       _$GVehicleColorUpdateInput;
 
   GDateTime? get createdAt;
@@ -4201,7 +4219,7 @@ abstract class GVehicleRelateToOneForUpdateInput
   GVehicleRelateToOneForUpdateInput._();
 
   factory GVehicleRelateToOneForUpdateInput(
-          [Function(GVehicleRelateToOneForUpdateInputBuilder b) updates]) =
+          [void Function(GVehicleRelateToOneForUpdateInputBuilder b) updates]) =
       _$GVehicleRelateToOneForUpdateInput;
 
   GVehicleCreateInput? get create;
@@ -4230,7 +4248,7 @@ abstract class GVehicleImageRelateToManyForUpdateInput
   GVehicleImageRelateToManyForUpdateInput._();
 
   factory GVehicleImageRelateToManyForUpdateInput(
-      [Function(GVehicleImageRelateToManyForUpdateInputBuilder b)
+      [void Function(GVehicleImageRelateToManyForUpdateInputBuilder b)
           updates]) = _$GVehicleImageRelateToManyForUpdateInput;
 
   BuiltList<GVehicleImageWhereUniqueInput>? get disconnect;
@@ -4260,7 +4278,7 @@ abstract class GVehicleVideoRelateToManyForUpdateInput
   GVehicleVideoRelateToManyForUpdateInput._();
 
   factory GVehicleVideoRelateToManyForUpdateInput(
-      [Function(GVehicleVideoRelateToManyForUpdateInputBuilder b)
+      [void Function(GVehicleVideoRelateToManyForUpdateInputBuilder b)
           updates]) = _$GVehicleVideoRelateToManyForUpdateInput;
 
   BuiltList<GVehicleVideoWhereUniqueInput>? get disconnect;
@@ -4290,7 +4308,7 @@ abstract class GVehicleGalleryItemRelateToManyForUpdateInput
   GVehicleGalleryItemRelateToManyForUpdateInput._();
 
   factory GVehicleGalleryItemRelateToManyForUpdateInput(
-      [Function(GVehicleGalleryItemRelateToManyForUpdateInputBuilder b)
+      [void Function(GVehicleGalleryItemRelateToManyForUpdateInputBuilder b)
           updates]) = _$GVehicleGalleryItemRelateToManyForUpdateInput;
 
   BuiltList<GVehicleGalleryItemWhereUniqueInput>? get disconnect;
@@ -4321,8 +4339,8 @@ abstract class GVehicleReelRelateToManyForUpdateInput
   GVehicleReelRelateToManyForUpdateInput._();
 
   factory GVehicleReelRelateToManyForUpdateInput(
-          [Function(GVehicleReelRelateToManyForUpdateInputBuilder b) updates]) =
-      _$GVehicleReelRelateToManyForUpdateInput;
+      [void Function(GVehicleReelRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GVehicleReelRelateToManyForUpdateInput;
 
   BuiltList<GVehicleReelWhereUniqueInput>? get disconnect;
   BuiltList<GVehicleReelWhereUniqueInput>? get set;
@@ -4349,7 +4367,7 @@ abstract class GVehicleColorUpdateArgs
   GVehicleColorUpdateArgs._();
 
   factory GVehicleColorUpdateArgs(
-          [Function(GVehicleColorUpdateArgsBuilder b) updates]) =
+          [void Function(GVehicleColorUpdateArgsBuilder b) updates]) =
       _$GVehicleColorUpdateArgs;
 
   GVehicleColorWhereUniqueInput get where;
@@ -4375,7 +4393,7 @@ abstract class GVehicleColorCreateInput
   GVehicleColorCreateInput._();
 
   factory GVehicleColorCreateInput(
-          [Function(GVehicleColorCreateInputBuilder b) updates]) =
+          [void Function(GVehicleColorCreateInputBuilder b) updates]) =
       _$GVehicleColorCreateInput;
 
   GDateTime? get createdAt;
@@ -4411,7 +4429,7 @@ abstract class GVehicleRelateToOneForCreateInput
   GVehicleRelateToOneForCreateInput._();
 
   factory GVehicleRelateToOneForCreateInput(
-          [Function(GVehicleRelateToOneForCreateInputBuilder b) updates]) =
+          [void Function(GVehicleRelateToOneForCreateInputBuilder b) updates]) =
       _$GVehicleRelateToOneForCreateInput;
 
   GVehicleCreateInput? get create;
@@ -4439,7 +4457,7 @@ abstract class GVehicleImageRelateToManyForCreateInput
   GVehicleImageRelateToManyForCreateInput._();
 
   factory GVehicleImageRelateToManyForCreateInput(
-      [Function(GVehicleImageRelateToManyForCreateInputBuilder b)
+      [void Function(GVehicleImageRelateToManyForCreateInputBuilder b)
           updates]) = _$GVehicleImageRelateToManyForCreateInput;
 
   BuiltList<GVehicleImageCreateInput>? get create;
@@ -4467,7 +4485,7 @@ abstract class GVehicleVideoRelateToManyForCreateInput
   GVehicleVideoRelateToManyForCreateInput._();
 
   factory GVehicleVideoRelateToManyForCreateInput(
-      [Function(GVehicleVideoRelateToManyForCreateInputBuilder b)
+      [void Function(GVehicleVideoRelateToManyForCreateInputBuilder b)
           updates]) = _$GVehicleVideoRelateToManyForCreateInput;
 
   BuiltList<GVehicleVideoCreateInput>? get create;
@@ -4495,7 +4513,7 @@ abstract class GVehicleGalleryItemRelateToManyForCreateInput
   GVehicleGalleryItemRelateToManyForCreateInput._();
 
   factory GVehicleGalleryItemRelateToManyForCreateInput(
-      [Function(GVehicleGalleryItemRelateToManyForCreateInputBuilder b)
+      [void Function(GVehicleGalleryItemRelateToManyForCreateInputBuilder b)
           updates]) = _$GVehicleGalleryItemRelateToManyForCreateInput;
 
   BuiltList<GVehicleGalleryItemCreateInput>? get create;
@@ -4524,8 +4542,8 @@ abstract class GVehicleReelRelateToManyForCreateInput
   GVehicleReelRelateToManyForCreateInput._();
 
   factory GVehicleReelRelateToManyForCreateInput(
-          [Function(GVehicleReelRelateToManyForCreateInputBuilder b) updates]) =
-      _$GVehicleReelRelateToManyForCreateInput;
+      [void Function(GVehicleReelRelateToManyForCreateInputBuilder b)
+          updates]) = _$GVehicleReelRelateToManyForCreateInput;
 
   BuiltList<GVehicleReelCreateInput>? get create;
   BuiltList<GVehicleReelWhereUniqueInput>? get connect;
@@ -4552,8 +4570,8 @@ abstract class GVehicleGalleryItemWhereUniqueInput
   GVehicleGalleryItemWhereUniqueInput._();
 
   factory GVehicleGalleryItemWhereUniqueInput(
-          [Function(GVehicleGalleryItemWhereUniqueInputBuilder b) updates]) =
-      _$GVehicleGalleryItemWhereUniqueInput;
+      [void Function(GVehicleGalleryItemWhereUniqueInputBuilder b)
+          updates]) = _$GVehicleGalleryItemWhereUniqueInput;
 
   String? get id;
   static Serializer<GVehicleGalleryItemWhereUniqueInput> get serializer =>
@@ -4579,7 +4597,7 @@ abstract class GVehicleGalleryItemWhereInput
   GVehicleGalleryItemWhereInput._();
 
   factory GVehicleGalleryItemWhereInput(
-          [Function(GVehicleGalleryItemWhereInputBuilder b) updates]) =
+          [void Function(GVehicleGalleryItemWhereInputBuilder b) updates]) =
       _$GVehicleGalleryItemWhereInput;
 
   BuiltList<GVehicleGalleryItemWhereInput>? get AND;
@@ -4611,7 +4629,8 @@ abstract class GIntNullableFilter
     implements Built<GIntNullableFilter, GIntNullableFilterBuilder> {
   GIntNullableFilter._();
 
-  factory GIntNullableFilter([Function(GIntNullableFilterBuilder b) updates]) =
+  factory GIntNullableFilter(
+          [void Function(GIntNullableFilterBuilder b) updates]) =
       _$GIntNullableFilter;
 
   int? get equals;
@@ -4645,7 +4664,7 @@ abstract class GVehicleGalleryItemOrderByInput
   GVehicleGalleryItemOrderByInput._();
 
   factory GVehicleGalleryItemOrderByInput(
-          [Function(GVehicleGalleryItemOrderByInputBuilder b) updates]) =
+          [void Function(GVehicleGalleryItemOrderByInputBuilder b) updates]) =
       _$GVehicleGalleryItemOrderByInput;
 
   GOrderDirection? get id;
@@ -4676,7 +4695,7 @@ abstract class GVehicleGalleryItemUpdateInput
   GVehicleGalleryItemUpdateInput._();
 
   factory GVehicleGalleryItemUpdateInput(
-          [Function(GVehicleGalleryItemUpdateInputBuilder b) updates]) =
+          [void Function(GVehicleGalleryItemUpdateInputBuilder b) updates]) =
       _$GVehicleGalleryItemUpdateInput;
 
   GDateTime? get createdAt;
@@ -4707,7 +4726,7 @@ abstract class GVehicleGalleryItemUpdateArgs
   GVehicleGalleryItemUpdateArgs._();
 
   factory GVehicleGalleryItemUpdateArgs(
-          [Function(GVehicleGalleryItemUpdateArgsBuilder b) updates]) =
+          [void Function(GVehicleGalleryItemUpdateArgsBuilder b) updates]) =
       _$GVehicleGalleryItemUpdateArgs;
 
   GVehicleGalleryItemWhereUniqueInput get where;
@@ -4734,7 +4753,7 @@ abstract class GVehicleGalleryItemCreateInput
   GVehicleGalleryItemCreateInput._();
 
   factory GVehicleGalleryItemCreateInput(
-          [Function(GVehicleGalleryItemCreateInputBuilder b) updates]) =
+          [void Function(GVehicleGalleryItemCreateInputBuilder b) updates]) =
       _$GVehicleGalleryItemCreateInput;
 
   GDateTime? get createdAt;
@@ -4765,7 +4784,7 @@ abstract class GVehicleReelWhereUniqueInput
   GVehicleReelWhereUniqueInput._();
 
   factory GVehicleReelWhereUniqueInput(
-          [Function(GVehicleReelWhereUniqueInputBuilder b) updates]) =
+          [void Function(GVehicleReelWhereUniqueInputBuilder b) updates]) =
       _$GVehicleReelWhereUniqueInput;
 
   String? get id;
@@ -4789,7 +4808,7 @@ abstract class GVehicleReelWhereInput
   GVehicleReelWhereInput._();
 
   factory GVehicleReelWhereInput(
-          [Function(GVehicleReelWhereInputBuilder b) updates]) =
+          [void Function(GVehicleReelWhereInputBuilder b) updates]) =
       _$GVehicleReelWhereInput;
 
   BuiltList<GVehicleReelWhereInput>? get AND;
@@ -4824,7 +4843,7 @@ abstract class GVehicleReelOrderByInput
   GVehicleReelOrderByInput._();
 
   factory GVehicleReelOrderByInput(
-          [Function(GVehicleReelOrderByInputBuilder b) updates]) =
+          [void Function(GVehicleReelOrderByInputBuilder b) updates]) =
       _$GVehicleReelOrderByInput;
 
   GOrderDirection? get id;
@@ -4854,7 +4873,7 @@ abstract class GVehicleReelUpdateInput
   GVehicleReelUpdateInput._();
 
   factory GVehicleReelUpdateInput(
-          [Function(GVehicleReelUpdateInputBuilder b) updates]) =
+          [void Function(GVehicleReelUpdateInputBuilder b) updates]) =
       _$GVehicleReelUpdateInput;
 
   GDateTime? get createdAt;
@@ -4884,7 +4903,7 @@ abstract class GVehicleReelUpdateArgs
   GVehicleReelUpdateArgs._();
 
   factory GVehicleReelUpdateArgs(
-          [Function(GVehicleReelUpdateArgsBuilder b) updates]) =
+          [void Function(GVehicleReelUpdateArgsBuilder b) updates]) =
       _$GVehicleReelUpdateArgs;
 
   GVehicleReelWhereUniqueInput get where;
@@ -4909,7 +4928,7 @@ abstract class GVehicleReelCreateInput
   GVehicleReelCreateInput._();
 
   factory GVehicleReelCreateInput(
-          [Function(GVehicleReelCreateInputBuilder b) updates]) =
+          [void Function(GVehicleReelCreateInputBuilder b) updates]) =
       _$GVehicleReelCreateInput;
 
   GDateTime? get createdAt;
@@ -4940,7 +4959,7 @@ abstract class GGuaranteeWhereUniqueInput
   GGuaranteeWhereUniqueInput._();
 
   factory GGuaranteeWhereUniqueInput(
-          [Function(GGuaranteeWhereUniqueInputBuilder b) updates]) =
+          [void Function(GGuaranteeWhereUniqueInputBuilder b) updates]) =
       _$GGuaranteeWhereUniqueInput;
 
   String? get id;
@@ -4964,7 +4983,7 @@ abstract class GGuaranteeWhereInput
   GGuaranteeWhereInput._();
 
   factory GGuaranteeWhereInput(
-          [Function(GGuaranteeWhereInputBuilder b) updates]) =
+          [void Function(GGuaranteeWhereInputBuilder b) updates]) =
       _$GGuaranteeWhereInput;
 
   BuiltList<GGuaranteeWhereInput>? get AND;
@@ -4995,7 +5014,7 @@ abstract class GGuaranteeOrderByInput
   GGuaranteeOrderByInput._();
 
   factory GGuaranteeOrderByInput(
-          [Function(GGuaranteeOrderByInputBuilder b) updates]) =
+          [void Function(GGuaranteeOrderByInputBuilder b) updates]) =
       _$GGuaranteeOrderByInput;
 
   GOrderDirection? get id;
@@ -5023,7 +5042,7 @@ abstract class GGuaranteeUpdateInput
   GGuaranteeUpdateInput._();
 
   factory GGuaranteeUpdateInput(
-          [Function(GGuaranteeUpdateInputBuilder b) updates]) =
+          [void Function(GGuaranteeUpdateInputBuilder b) updates]) =
       _$GGuaranteeUpdateInput;
 
   GDateTime? get createdAt;
@@ -5050,7 +5069,7 @@ abstract class GGuaranteeUpdateArgs
   GGuaranteeUpdateArgs._();
 
   factory GGuaranteeUpdateArgs(
-          [Function(GGuaranteeUpdateArgsBuilder b) updates]) =
+          [void Function(GGuaranteeUpdateArgsBuilder b) updates]) =
       _$GGuaranteeUpdateArgs;
 
   GGuaranteeWhereUniqueInput get where;
@@ -5075,7 +5094,7 @@ abstract class GGuaranteeCreateInput
   GGuaranteeCreateInput._();
 
   factory GGuaranteeCreateInput(
-          [Function(GGuaranteeCreateInputBuilder b) updates]) =
+          [void Function(GGuaranteeCreateInputBuilder b) updates]) =
       _$GGuaranteeCreateInput;
 
   GDateTime? get createdAt;
@@ -5104,7 +5123,7 @@ abstract class GGuaranteeFileWhereUniqueInput
   GGuaranteeFileWhereUniqueInput._();
 
   factory GGuaranteeFileWhereUniqueInput(
-          [Function(GGuaranteeFileWhereUniqueInputBuilder b) updates]) =
+          [void Function(GGuaranteeFileWhereUniqueInputBuilder b) updates]) =
       _$GGuaranteeFileWhereUniqueInput;
 
   String? get id;
@@ -5129,7 +5148,7 @@ abstract class GGuaranteeFileWhereInput
   GGuaranteeFileWhereInput._();
 
   factory GGuaranteeFileWhereInput(
-          [Function(GGuaranteeFileWhereInputBuilder b) updates]) =
+          [void Function(GGuaranteeFileWhereInputBuilder b) updates]) =
       _$GGuaranteeFileWhereInput;
 
   BuiltList<GGuaranteeFileWhereInput>? get AND;
@@ -5159,7 +5178,7 @@ abstract class GGuaranteeFileOrderByInput
   GGuaranteeFileOrderByInput._();
 
   factory GGuaranteeFileOrderByInput(
-          [Function(GGuaranteeFileOrderByInputBuilder b) updates]) =
+          [void Function(GGuaranteeFileOrderByInputBuilder b) updates]) =
       _$GGuaranteeFileOrderByInput;
 
   GOrderDirection? get id;
@@ -5186,7 +5205,7 @@ abstract class GGuaranteeFileUpdateInput
   GGuaranteeFileUpdateInput._();
 
   factory GGuaranteeFileUpdateInput(
-          [Function(GGuaranteeFileUpdateInputBuilder b) updates]) =
+          [void Function(GGuaranteeFileUpdateInputBuilder b) updates]) =
       _$GGuaranteeFileUpdateInput;
 
   GDateTime? get createdAt;
@@ -5213,7 +5232,7 @@ abstract class GGuaranteeFileUpdateArgs
   GGuaranteeFileUpdateArgs._();
 
   factory GGuaranteeFileUpdateArgs(
-          [Function(GGuaranteeFileUpdateArgsBuilder b) updates]) =
+          [void Function(GGuaranteeFileUpdateArgsBuilder b) updates]) =
       _$GGuaranteeFileUpdateArgs;
 
   GGuaranteeFileWhereUniqueInput get where;
@@ -5239,7 +5258,7 @@ abstract class GGuaranteeFileCreateInput
   GGuaranteeFileCreateInput._();
 
   factory GGuaranteeFileCreateInput(
-          [Function(GGuaranteeFileCreateInputBuilder b) updates]) =
+          [void Function(GGuaranteeFileCreateInputBuilder b) updates]) =
       _$GGuaranteeFileCreateInput;
 
   GDateTime? get createdAt;
@@ -5267,7 +5286,7 @@ abstract class GVehicleDealerWhereUniqueInput
   GVehicleDealerWhereUniqueInput._();
 
   factory GVehicleDealerWhereUniqueInput(
-          [Function(GVehicleDealerWhereUniqueInputBuilder b) updates]) =
+          [void Function(GVehicleDealerWhereUniqueInputBuilder b) updates]) =
       _$GVehicleDealerWhereUniqueInput;
 
   String? get id;
@@ -5292,7 +5311,7 @@ abstract class GVehicleDealerWhereInput
   GVehicleDealerWhereInput._();
 
   factory GVehicleDealerWhereInput(
-          [Function(GVehicleDealerWhereInputBuilder b) updates]) =
+          [void Function(GVehicleDealerWhereInputBuilder b) updates]) =
       _$GVehicleDealerWhereInput;
 
   BuiltList<GVehicleDealerWhereInput>? get AND;
@@ -5329,7 +5348,7 @@ abstract class GGuaranteeManyRelationFilter
   GGuaranteeManyRelationFilter._();
 
   factory GGuaranteeManyRelationFilter(
-          [Function(GGuaranteeManyRelationFilterBuilder b) updates]) =
+          [void Function(GGuaranteeManyRelationFilterBuilder b) updates]) =
       _$GGuaranteeManyRelationFilter;
 
   GGuaranteeWhereInput? get every;
@@ -5356,7 +5375,7 @@ abstract class GPriceManyRelationFilter
   GPriceManyRelationFilter._();
 
   factory GPriceManyRelationFilter(
-          [Function(GPriceManyRelationFilterBuilder b) updates]) =
+          [void Function(GPriceManyRelationFilterBuilder b) updates]) =
       _$GPriceManyRelationFilter;
 
   GPriceWhereInput? get every;
@@ -5383,7 +5402,7 @@ abstract class GVehicleDealerOrderByInput
   GVehicleDealerOrderByInput._();
 
   factory GVehicleDealerOrderByInput(
-          [Function(GVehicleDealerOrderByInputBuilder b) updates]) =
+          [void Function(GVehicleDealerOrderByInputBuilder b) updates]) =
       _$GVehicleDealerOrderByInput;
 
   GOrderDirection? get id;
@@ -5411,7 +5430,7 @@ abstract class GVehicleDealerUpdateInput
   GVehicleDealerUpdateInput._();
 
   factory GVehicleDealerUpdateInput(
-          [Function(GVehicleDealerUpdateInputBuilder b) updates]) =
+          [void Function(GVehicleDealerUpdateInputBuilder b) updates]) =
       _$GVehicleDealerUpdateInput;
 
   GDateTime? get createdAt;
@@ -5444,8 +5463,8 @@ abstract class GGuaranteeRelateToManyForUpdateInput
   GGuaranteeRelateToManyForUpdateInput._();
 
   factory GGuaranteeRelateToManyForUpdateInput(
-          [Function(GGuaranteeRelateToManyForUpdateInputBuilder b) updates]) =
-      _$GGuaranteeRelateToManyForUpdateInput;
+      [void Function(GGuaranteeRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GGuaranteeRelateToManyForUpdateInput;
 
   BuiltList<GGuaranteeWhereUniqueInput>? get disconnect;
   BuiltList<GGuaranteeWhereUniqueInput>? get set;
@@ -5474,7 +5493,7 @@ abstract class GPriceRelateToManyForUpdateInput
   GPriceRelateToManyForUpdateInput._();
 
   factory GPriceRelateToManyForUpdateInput(
-          [Function(GPriceRelateToManyForUpdateInputBuilder b) updates]) =
+          [void Function(GPriceRelateToManyForUpdateInputBuilder b) updates]) =
       _$GPriceRelateToManyForUpdateInput;
 
   BuiltList<GPriceWhereUniqueInput>? get disconnect;
@@ -5503,7 +5522,7 @@ abstract class GVehicleDealerUpdateArgs
   GVehicleDealerUpdateArgs._();
 
   factory GVehicleDealerUpdateArgs(
-          [Function(GVehicleDealerUpdateArgsBuilder b) updates]) =
+          [void Function(GVehicleDealerUpdateArgsBuilder b) updates]) =
       _$GVehicleDealerUpdateArgs;
 
   GVehicleDealerWhereUniqueInput get where;
@@ -5529,7 +5548,7 @@ abstract class GVehicleDealerCreateInput
   GVehicleDealerCreateInput._();
 
   factory GVehicleDealerCreateInput(
-          [Function(GVehicleDealerCreateInputBuilder b) updates]) =
+          [void Function(GVehicleDealerCreateInputBuilder b) updates]) =
       _$GVehicleDealerCreateInput;
 
   GDateTime? get createdAt;
@@ -5562,8 +5581,8 @@ abstract class GGuaranteeRelateToManyForCreateInput
   GGuaranteeRelateToManyForCreateInput._();
 
   factory GGuaranteeRelateToManyForCreateInput(
-          [Function(GGuaranteeRelateToManyForCreateInputBuilder b) updates]) =
-      _$GGuaranteeRelateToManyForCreateInput;
+      [void Function(GGuaranteeRelateToManyForCreateInputBuilder b)
+          updates]) = _$GGuaranteeRelateToManyForCreateInput;
 
   BuiltList<GGuaranteeCreateInput>? get create;
   BuiltList<GGuaranteeWhereUniqueInput>? get connect;
@@ -5590,7 +5609,7 @@ abstract class GPriceRelateToManyForCreateInput
   GPriceRelateToManyForCreateInput._();
 
   factory GPriceRelateToManyForCreateInput(
-          [Function(GPriceRelateToManyForCreateInputBuilder b) updates]) =
+          [void Function(GPriceRelateToManyForCreateInputBuilder b) updates]) =
       _$GPriceRelateToManyForCreateInput;
 
   BuiltList<GPriceCreateInput>? get create;
@@ -5618,7 +5637,7 @@ abstract class GVehicleImageWhereUniqueInput
   GVehicleImageWhereUniqueInput._();
 
   factory GVehicleImageWhereUniqueInput(
-          [Function(GVehicleImageWhereUniqueInputBuilder b) updates]) =
+          [void Function(GVehicleImageWhereUniqueInputBuilder b) updates]) =
       _$GVehicleImageWhereUniqueInput;
 
   String? get id;
@@ -5642,7 +5661,7 @@ abstract class GVehicleImageWhereInput
   GVehicleImageWhereInput._();
 
   factory GVehicleImageWhereInput(
-          [Function(GVehicleImageWhereInputBuilder b) updates]) =
+          [void Function(GVehicleImageWhereInputBuilder b) updates]) =
       _$GVehicleImageWhereInput;
 
   BuiltList<GVehicleImageWhereInput>? get AND;
@@ -5673,7 +5692,7 @@ abstract class GVehicleImageOrderByInput
   GVehicleImageOrderByInput._();
 
   factory GVehicleImageOrderByInput(
-          [Function(GVehicleImageOrderByInputBuilder b) updates]) =
+          [void Function(GVehicleImageOrderByInputBuilder b) updates]) =
       _$GVehicleImageOrderByInput;
 
   GOrderDirection? get id;
@@ -5700,7 +5719,7 @@ abstract class GVehicleImageUpdateInput
   GVehicleImageUpdateInput._();
 
   factory GVehicleImageUpdateInput(
-          [Function(GVehicleImageUpdateInputBuilder b) updates]) =
+          [void Function(GVehicleImageUpdateInputBuilder b) updates]) =
       _$GVehicleImageUpdateInput;
 
   GDateTime? get createdAt;
@@ -5727,7 +5746,7 @@ abstract class GVehicleImageUpdateArgs
   GVehicleImageUpdateArgs._();
 
   factory GVehicleImageUpdateArgs(
-          [Function(GVehicleImageUpdateArgsBuilder b) updates]) =
+          [void Function(GVehicleImageUpdateArgsBuilder b) updates]) =
       _$GVehicleImageUpdateArgs;
 
   GVehicleImageWhereUniqueInput get where;
@@ -5753,7 +5772,7 @@ abstract class GVehicleImageCreateInput
   GVehicleImageCreateInput._();
 
   factory GVehicleImageCreateInput(
-          [Function(GVehicleImageCreateInputBuilder b) updates]) =
+          [void Function(GVehicleImageCreateInputBuilder b) updates]) =
       _$GVehicleImageCreateInput;
 
   GDateTime? get createdAt;
@@ -5782,7 +5801,7 @@ abstract class GVehicleVideoWhereUniqueInput
   GVehicleVideoWhereUniqueInput._();
 
   factory GVehicleVideoWhereUniqueInput(
-          [Function(GVehicleVideoWhereUniqueInputBuilder b) updates]) =
+          [void Function(GVehicleVideoWhereUniqueInputBuilder b) updates]) =
       _$GVehicleVideoWhereUniqueInput;
 
   String? get id;
@@ -5806,7 +5825,7 @@ abstract class GVehicleVideoWhereInput
   GVehicleVideoWhereInput._();
 
   factory GVehicleVideoWhereInput(
-          [Function(GVehicleVideoWhereInputBuilder b) updates]) =
+          [void Function(GVehicleVideoWhereInputBuilder b) updates]) =
       _$GVehicleVideoWhereInput;
 
   BuiltList<GVehicleVideoWhereInput>? get AND;
@@ -5837,7 +5856,7 @@ abstract class GVehicleVideoOrderByInput
   GVehicleVideoOrderByInput._();
 
   factory GVehicleVideoOrderByInput(
-          [Function(GVehicleVideoOrderByInputBuilder b) updates]) =
+          [void Function(GVehicleVideoOrderByInputBuilder b) updates]) =
       _$GVehicleVideoOrderByInput;
 
   GOrderDirection? get id;
@@ -5864,7 +5883,7 @@ abstract class GVehicleVideoUpdateInput
   GVehicleVideoUpdateInput._();
 
   factory GVehicleVideoUpdateInput(
-          [Function(GVehicleVideoUpdateInputBuilder b) updates]) =
+          [void Function(GVehicleVideoUpdateInputBuilder b) updates]) =
       _$GVehicleVideoUpdateInput;
 
   GDateTime? get createdAt;
@@ -5891,7 +5910,7 @@ abstract class GVehicleVideoUpdateArgs
   GVehicleVideoUpdateArgs._();
 
   factory GVehicleVideoUpdateArgs(
-          [Function(GVehicleVideoUpdateArgsBuilder b) updates]) =
+          [void Function(GVehicleVideoUpdateArgsBuilder b) updates]) =
       _$GVehicleVideoUpdateArgs;
 
   GVehicleVideoWhereUniqueInput get where;
@@ -5917,7 +5936,7 @@ abstract class GVehicleVideoCreateInput
   GVehicleVideoCreateInput._();
 
   factory GVehicleVideoCreateInput(
-          [Function(GVehicleVideoCreateInputBuilder b) updates]) =
+          [void Function(GVehicleVideoCreateInputBuilder b) updates]) =
       _$GVehicleVideoCreateInput;
 
   GDateTime? get createdAt;
@@ -5946,8 +5965,8 @@ abstract class GVehicleSpecificationWhereUniqueInput
   GVehicleSpecificationWhereUniqueInput._();
 
   factory GVehicleSpecificationWhereUniqueInput(
-          [Function(GVehicleSpecificationWhereUniqueInputBuilder b) updates]) =
-      _$GVehicleSpecificationWhereUniqueInput;
+      [void Function(GVehicleSpecificationWhereUniqueInputBuilder b)
+          updates]) = _$GVehicleSpecificationWhereUniqueInput;
 
   String? get id;
   static Serializer<GVehicleSpecificationWhereUniqueInput> get serializer =>
@@ -5973,7 +5992,7 @@ abstract class GVehicleSpecificationWhereInput
   GVehicleSpecificationWhereInput._();
 
   factory GVehicleSpecificationWhereInput(
-          [Function(GVehicleSpecificationWhereInputBuilder b) updates]) =
+          [void Function(GVehicleSpecificationWhereInputBuilder b) updates]) =
       _$GVehicleSpecificationWhereInput;
 
   BuiltList<GVehicleSpecificationWhereInput>? get AND;
@@ -6011,7 +6030,7 @@ abstract class GVehicleSpecificationOrderByInput
   GVehicleSpecificationOrderByInput._();
 
   factory GVehicleSpecificationOrderByInput(
-          [Function(GVehicleSpecificationOrderByInputBuilder b) updates]) =
+          [void Function(GVehicleSpecificationOrderByInputBuilder b) updates]) =
       _$GVehicleSpecificationOrderByInput;
 
   GOrderDirection? get id;
@@ -6044,7 +6063,7 @@ abstract class GVehicleSpecificationUpdateInput
   GVehicleSpecificationUpdateInput._();
 
   factory GVehicleSpecificationUpdateInput(
-          [Function(GVehicleSpecificationUpdateInputBuilder b) updates]) =
+          [void Function(GVehicleSpecificationUpdateInputBuilder b) updates]) =
       _$GVehicleSpecificationUpdateInput;
 
   GDateTime? get createdAt;
@@ -6079,7 +6098,7 @@ abstract class GSpecificationRelateToOneForUpdateInput
   GSpecificationRelateToOneForUpdateInput._();
 
   factory GSpecificationRelateToOneForUpdateInput(
-      [Function(GSpecificationRelateToOneForUpdateInputBuilder b)
+      [void Function(GSpecificationRelateToOneForUpdateInputBuilder b)
           updates]) = _$GSpecificationRelateToOneForUpdateInput;
 
   GSpecificationCreateInput? get create;
@@ -6108,7 +6127,7 @@ abstract class GSpecificationCategoryRelateToOneForUpdateInput
   GSpecificationCategoryRelateToOneForUpdateInput._();
 
   factory GSpecificationCategoryRelateToOneForUpdateInput(
-      [Function(GSpecificationCategoryRelateToOneForUpdateInputBuilder b)
+      [void Function(GSpecificationCategoryRelateToOneForUpdateInputBuilder b)
           updates]) = _$GSpecificationCategoryRelateToOneForUpdateInput;
 
   GSpecificationCategoryCreateInput? get create;
@@ -6138,7 +6157,7 @@ abstract class GVehicleSpecificationUpdateArgs
   GVehicleSpecificationUpdateArgs._();
 
   factory GVehicleSpecificationUpdateArgs(
-          [Function(GVehicleSpecificationUpdateArgsBuilder b) updates]) =
+          [void Function(GVehicleSpecificationUpdateArgsBuilder b) updates]) =
       _$GVehicleSpecificationUpdateArgs;
 
   GVehicleSpecificationWhereUniqueInput get where;
@@ -6165,7 +6184,7 @@ abstract class GVehicleSpecificationCreateInput
   GVehicleSpecificationCreateInput._();
 
   factory GVehicleSpecificationCreateInput(
-          [Function(GVehicleSpecificationCreateInputBuilder b) updates]) =
+          [void Function(GVehicleSpecificationCreateInputBuilder b) updates]) =
       _$GVehicleSpecificationCreateInput;
 
   GDateTime? get createdAt;
@@ -6200,7 +6219,7 @@ abstract class GSpecificationRelateToOneForCreateInput
   GSpecificationRelateToOneForCreateInput._();
 
   factory GSpecificationRelateToOneForCreateInput(
-      [Function(GSpecificationRelateToOneForCreateInputBuilder b)
+      [void Function(GSpecificationRelateToOneForCreateInputBuilder b)
           updates]) = _$GSpecificationRelateToOneForCreateInput;
 
   GSpecificationCreateInput? get create;
@@ -6228,7 +6247,7 @@ abstract class GSpecificationCategoryRelateToOneForCreateInput
   GSpecificationCategoryRelateToOneForCreateInput._();
 
   factory GSpecificationCategoryRelateToOneForCreateInput(
-      [Function(GSpecificationCategoryRelateToOneForCreateInputBuilder b)
+      [void Function(GSpecificationCategoryRelateToOneForCreateInputBuilder b)
           updates]) = _$GSpecificationCategoryRelateToOneForCreateInput;
 
   GSpecificationCategoryCreateInput? get create;
@@ -6257,7 +6276,7 @@ abstract class GVehicleVariantWhereUniqueInput
   GVehicleVariantWhereUniqueInput._();
 
   factory GVehicleVariantWhereUniqueInput(
-          [Function(GVehicleVariantWhereUniqueInputBuilder b) updates]) =
+          [void Function(GVehicleVariantWhereUniqueInputBuilder b) updates]) =
       _$GVehicleVariantWhereUniqueInput;
 
   String? get id;
@@ -6282,7 +6301,7 @@ abstract class GVehicleVariantWhereInput
   GVehicleVariantWhereInput._();
 
   factory GVehicleVariantWhereInput(
-          [Function(GVehicleVariantWhereInputBuilder b) updates]) =
+          [void Function(GVehicleVariantWhereInputBuilder b) updates]) =
       _$GVehicleVariantWhereInput;
 
   BuiltList<GVehicleVariantWhereInput>? get AND;
@@ -6321,7 +6340,7 @@ abstract class GTagManyRelationFilter
   GTagManyRelationFilter._();
 
   factory GTagManyRelationFilter(
-          [Function(GTagManyRelationFilterBuilder b) updates]) =
+          [void Function(GTagManyRelationFilterBuilder b) updates]) =
       _$GTagManyRelationFilter;
 
   GTagWhereInput? get every;
@@ -6348,7 +6367,7 @@ abstract class GVehicleVariantOrderByInput
   GVehicleVariantOrderByInput._();
 
   factory GVehicleVariantOrderByInput(
-          [Function(GVehicleVariantOrderByInputBuilder b) updates]) =
+          [void Function(GVehicleVariantOrderByInputBuilder b) updates]) =
       _$GVehicleVariantOrderByInput;
 
   GOrderDirection? get id;
@@ -6380,7 +6399,7 @@ abstract class GVehicleVariantUpdateInput
   GVehicleVariantUpdateInput._();
 
   factory GVehicleVariantUpdateInput(
-          [Function(GVehicleVariantUpdateInputBuilder b) updates]) =
+          [void Function(GVehicleVariantUpdateInputBuilder b) updates]) =
       _$GVehicleVariantUpdateInput;
 
   GDateTime? get createdAt;
@@ -6417,7 +6436,7 @@ abstract class GTagRelateToManyForUpdateInput
   GTagRelateToManyForUpdateInput._();
 
   factory GTagRelateToManyForUpdateInput(
-          [Function(GTagRelateToManyForUpdateInputBuilder b) updates]) =
+          [void Function(GTagRelateToManyForUpdateInputBuilder b) updates]) =
       _$GTagRelateToManyForUpdateInput;
 
   BuiltList<GTagWhereUniqueInput>? get disconnect;
@@ -6445,7 +6464,7 @@ abstract class GVehicleVariantUpdateArgs
   GVehicleVariantUpdateArgs._();
 
   factory GVehicleVariantUpdateArgs(
-          [Function(GVehicleVariantUpdateArgsBuilder b) updates]) =
+          [void Function(GVehicleVariantUpdateArgsBuilder b) updates]) =
       _$GVehicleVariantUpdateArgs;
 
   GVehicleVariantWhereUniqueInput get where;
@@ -6471,7 +6490,7 @@ abstract class GVehicleVariantCreateInput
   GVehicleVariantCreateInput._();
 
   factory GVehicleVariantCreateInput(
-          [Function(GVehicleVariantCreateInputBuilder b) updates]) =
+          [void Function(GVehicleVariantCreateInputBuilder b) updates]) =
       _$GVehicleVariantCreateInput;
 
   GDateTime? get createdAt;
@@ -6508,7 +6527,7 @@ abstract class GTagRelateToManyForCreateInput
   GTagRelateToManyForCreateInput._();
 
   factory GTagRelateToManyForCreateInput(
-          [Function(GTagRelateToManyForCreateInputBuilder b) updates]) =
+          [void Function(GTagRelateToManyForCreateInputBuilder b) updates]) =
       _$GTagRelateToManyForCreateInput;
 
   BuiltList<GTagCreateInput>? get create;
@@ -6535,7 +6554,7 @@ abstract class GVehicleDealerStockRequestWhereUniqueInput
   GVehicleDealerStockRequestWhereUniqueInput._();
 
   factory GVehicleDealerStockRequestWhereUniqueInput(
-      [Function(GVehicleDealerStockRequestWhereUniqueInputBuilder b)
+      [void Function(GVehicleDealerStockRequestWhereUniqueInputBuilder b)
           updates]) = _$GVehicleDealerStockRequestWhereUniqueInput;
 
   String? get id;
@@ -6562,8 +6581,8 @@ abstract class GVehicleDealerStockRequestWhereInput
   GVehicleDealerStockRequestWhereInput._();
 
   factory GVehicleDealerStockRequestWhereInput(
-          [Function(GVehicleDealerStockRequestWhereInputBuilder b) updates]) =
-      _$GVehicleDealerStockRequestWhereInput;
+      [void Function(GVehicleDealerStockRequestWhereInputBuilder b)
+          updates]) = _$GVehicleDealerStockRequestWhereInput;
 
   BuiltList<GVehicleDealerStockRequestWhereInput>? get AND;
   BuiltList<GVehicleDealerStockRequestWhereInput>? get OR;
@@ -6599,7 +6618,7 @@ abstract class GStringNullableFilter
   GStringNullableFilter._();
 
   factory GStringNullableFilter(
-          [Function(GStringNullableFilterBuilder b) updates]) =
+          [void Function(GStringNullableFilterBuilder b) updates]) =
       _$GStringNullableFilter;
 
   String? get equals;
@@ -6636,7 +6655,7 @@ abstract class GNestedStringNullableFilter
   GNestedStringNullableFilter._();
 
   factory GNestedStringNullableFilter(
-          [Function(GNestedStringNullableFilterBuilder b) updates]) =
+          [void Function(GNestedStringNullableFilterBuilder b) updates]) =
       _$GNestedStringNullableFilter;
 
   String? get equals;
@@ -6673,8 +6692,8 @@ abstract class GVehicleDealerStockRequestOrderByInput
   GVehicleDealerStockRequestOrderByInput._();
 
   factory GVehicleDealerStockRequestOrderByInput(
-          [Function(GVehicleDealerStockRequestOrderByInputBuilder b) updates]) =
-      _$GVehicleDealerStockRequestOrderByInput;
+      [void Function(GVehicleDealerStockRequestOrderByInputBuilder b)
+          updates]) = _$GVehicleDealerStockRequestOrderByInput;
 
   GOrderDirection? get id;
   GOrderDirection? get createdAt;
@@ -6705,8 +6724,8 @@ abstract class GVehicleDealerStockRequestUpdateInput
   GVehicleDealerStockRequestUpdateInput._();
 
   factory GVehicleDealerStockRequestUpdateInput(
-          [Function(GVehicleDealerStockRequestUpdateInputBuilder b) updates]) =
-      _$GVehicleDealerStockRequestUpdateInput;
+      [void Function(GVehicleDealerStockRequestUpdateInputBuilder b)
+          updates]) = _$GVehicleDealerStockRequestUpdateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -6740,8 +6759,8 @@ abstract class GVehicleDealerStockRequestUpdateArgs
   GVehicleDealerStockRequestUpdateArgs._();
 
   factory GVehicleDealerStockRequestUpdateArgs(
-          [Function(GVehicleDealerStockRequestUpdateArgsBuilder b) updates]) =
-      _$GVehicleDealerStockRequestUpdateArgs;
+      [void Function(GVehicleDealerStockRequestUpdateArgsBuilder b)
+          updates]) = _$GVehicleDealerStockRequestUpdateArgs;
 
   GVehicleDealerStockRequestWhereUniqueInput get where;
   GVehicleDealerStockRequestUpdateInput get data;
@@ -6768,8 +6787,8 @@ abstract class GVehicleDealerStockRequestCreateInput
   GVehicleDealerStockRequestCreateInput._();
 
   factory GVehicleDealerStockRequestCreateInput(
-          [Function(GVehicleDealerStockRequestCreateInputBuilder b) updates]) =
-      _$GVehicleDealerStockRequestCreateInput;
+      [void Function(GVehicleDealerStockRequestCreateInputBuilder b)
+          updates]) = _$GVehicleDealerStockRequestCreateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -6803,7 +6822,7 @@ abstract class GPriceCategoryWhereUniqueInput
   GPriceCategoryWhereUniqueInput._();
 
   factory GPriceCategoryWhereUniqueInput(
-          [Function(GPriceCategoryWhereUniqueInputBuilder b) updates]) =
+          [void Function(GPriceCategoryWhereUniqueInputBuilder b) updates]) =
       _$GPriceCategoryWhereUniqueInput;
 
   String? get id;
@@ -6828,7 +6847,7 @@ abstract class GPriceCategoryWhereInput
   GPriceCategoryWhereInput._();
 
   factory GPriceCategoryWhereInput(
-          [Function(GPriceCategoryWhereInputBuilder b) updates]) =
+          [void Function(GPriceCategoryWhereInputBuilder b) updates]) =
       _$GPriceCategoryWhereInput;
 
   BuiltList<GPriceCategoryWhereInput>? get AND;
@@ -6860,7 +6879,7 @@ abstract class GPriceCategoryOrderByInput
   GPriceCategoryOrderByInput._();
 
   factory GPriceCategoryOrderByInput(
-          [Function(GPriceCategoryOrderByInputBuilder b) updates]) =
+          [void Function(GPriceCategoryOrderByInputBuilder b) updates]) =
       _$GPriceCategoryOrderByInput;
 
   GOrderDirection? get id;
@@ -6889,7 +6908,7 @@ abstract class GPriceCategoryUpdateInput
   GPriceCategoryUpdateInput._();
 
   factory GPriceCategoryUpdateInput(
-          [Function(GPriceCategoryUpdateInputBuilder b) updates]) =
+          [void Function(GPriceCategoryUpdateInputBuilder b) updates]) =
       _$GPriceCategoryUpdateInput;
 
   GDateTime? get createdAt;
@@ -6917,7 +6936,7 @@ abstract class GPriceCategoryUpdateArgs
   GPriceCategoryUpdateArgs._();
 
   factory GPriceCategoryUpdateArgs(
-          [Function(GPriceCategoryUpdateArgsBuilder b) updates]) =
+          [void Function(GPriceCategoryUpdateArgsBuilder b) updates]) =
       _$GPriceCategoryUpdateArgs;
 
   GPriceCategoryWhereUniqueInput get where;
@@ -6943,7 +6962,7 @@ abstract class GPriceCategoryCreateInput
   GPriceCategoryCreateInput._();
 
   factory GPriceCategoryCreateInput(
-          [Function(GPriceCategoryCreateInputBuilder b) updates]) =
+          [void Function(GPriceCategoryCreateInputBuilder b) updates]) =
       _$GPriceCategoryCreateInput;
 
   GDateTime? get createdAt;
@@ -6970,7 +6989,7 @@ abstract class GPriceWhereUniqueInput
   GPriceWhereUniqueInput._();
 
   factory GPriceWhereUniqueInput(
-          [Function(GPriceWhereUniqueInputBuilder b) updates]) =
+          [void Function(GPriceWhereUniqueInputBuilder b) updates]) =
       _$GPriceWhereUniqueInput;
 
   String? get id;
@@ -6993,7 +7012,7 @@ abstract class GPriceWhereInput
     implements Built<GPriceWhereInput, GPriceWhereInputBuilder> {
   GPriceWhereInput._();
 
-  factory GPriceWhereInput([Function(GPriceWhereInputBuilder b) updates]) =
+  factory GPriceWhereInput([void Function(GPriceWhereInputBuilder b) updates]) =
       _$GPriceWhereInput;
 
   BuiltList<GPriceWhereInput>? get AND;
@@ -7023,7 +7042,8 @@ abstract class GPriceOrderByInput
     implements Built<GPriceOrderByInput, GPriceOrderByInputBuilder> {
   GPriceOrderByInput._();
 
-  factory GPriceOrderByInput([Function(GPriceOrderByInputBuilder b) updates]) =
+  factory GPriceOrderByInput(
+          [void Function(GPriceOrderByInputBuilder b) updates]) =
       _$GPriceOrderByInput;
 
   GOrderDirection? get id;
@@ -7049,7 +7069,8 @@ abstract class GPriceUpdateInput
     implements Built<GPriceUpdateInput, GPriceUpdateInputBuilder> {
   GPriceUpdateInput._();
 
-  factory GPriceUpdateInput([Function(GPriceUpdateInputBuilder b) updates]) =
+  factory GPriceUpdateInput(
+          [void Function(GPriceUpdateInputBuilder b) updates]) =
       _$GPriceUpdateInput;
 
   GDateTime? get createdAt;
@@ -7078,7 +7099,7 @@ abstract class GPriceCategoryRelateToOneForUpdateInput
   GPriceCategoryRelateToOneForUpdateInput._();
 
   factory GPriceCategoryRelateToOneForUpdateInput(
-      [Function(GPriceCategoryRelateToOneForUpdateInputBuilder b)
+      [void Function(GPriceCategoryRelateToOneForUpdateInputBuilder b)
           updates]) = _$GPriceCategoryRelateToOneForUpdateInput;
 
   GPriceCategoryCreateInput? get create;
@@ -7104,7 +7125,7 @@ abstract class GPriceUpdateArgs
     implements Built<GPriceUpdateArgs, GPriceUpdateArgsBuilder> {
   GPriceUpdateArgs._();
 
-  factory GPriceUpdateArgs([Function(GPriceUpdateArgsBuilder b) updates]) =
+  factory GPriceUpdateArgs([void Function(GPriceUpdateArgsBuilder b) updates]) =
       _$GPriceUpdateArgs;
 
   GPriceWhereUniqueInput get where;
@@ -7128,7 +7149,8 @@ abstract class GPriceCreateInput
     implements Built<GPriceCreateInput, GPriceCreateInputBuilder> {
   GPriceCreateInput._();
 
-  factory GPriceCreateInput([Function(GPriceCreateInputBuilder b) updates]) =
+  factory GPriceCreateInput(
+          [void Function(GPriceCreateInputBuilder b) updates]) =
       _$GPriceCreateInput;
 
   GDateTime? get createdAt;
@@ -7157,7 +7179,7 @@ abstract class GPriceCategoryRelateToOneForCreateInput
   GPriceCategoryRelateToOneForCreateInput._();
 
   factory GPriceCategoryRelateToOneForCreateInput(
-      [Function(GPriceCategoryRelateToOneForCreateInputBuilder b)
+      [void Function(GPriceCategoryRelateToOneForCreateInputBuilder b)
           updates]) = _$GPriceCategoryRelateToOneForCreateInput;
 
   GPriceCategoryCreateInput? get create;
@@ -7183,7 +7205,7 @@ abstract class GWalletWhereUniqueInput
   GWalletWhereUniqueInput._();
 
   factory GWalletWhereUniqueInput(
-          [Function(GWalletWhereUniqueInputBuilder b) updates]) =
+          [void Function(GWalletWhereUniqueInputBuilder b) updates]) =
       _$GWalletWhereUniqueInput;
 
   String? get id;
@@ -7206,7 +7228,8 @@ abstract class GWalletWhereInput
     implements Built<GWalletWhereInput, GWalletWhereInputBuilder> {
   GWalletWhereInput._();
 
-  factory GWalletWhereInput([Function(GWalletWhereInputBuilder b) updates]) =
+  factory GWalletWhereInput(
+          [void Function(GWalletWhereInputBuilder b) updates]) =
       _$GWalletWhereInput;
 
   BuiltList<GWalletWhereInput>? get AND;
@@ -7237,7 +7260,8 @@ abstract class GWalletOrderByInput
   GWalletOrderByInput._();
 
   factory GWalletOrderByInput(
-      [Function(GWalletOrderByInputBuilder b) updates]) = _$GWalletOrderByInput;
+          [void Function(GWalletOrderByInputBuilder b) updates]) =
+      _$GWalletOrderByInput;
 
   GOrderDirection? get id;
   GOrderDirection? get createdAt;
@@ -7262,7 +7286,8 @@ abstract class GWalletUpdateInput
     implements Built<GWalletUpdateInput, GWalletUpdateInputBuilder> {
   GWalletUpdateInput._();
 
-  factory GWalletUpdateInput([Function(GWalletUpdateInputBuilder b) updates]) =
+  factory GWalletUpdateInput(
+          [void Function(GWalletUpdateInputBuilder b) updates]) =
       _$GWalletUpdateInput;
 
   GDateTime? get createdAt;
@@ -7288,7 +7313,8 @@ abstract class GWalletUpdateArgs
     implements Built<GWalletUpdateArgs, GWalletUpdateArgsBuilder> {
   GWalletUpdateArgs._();
 
-  factory GWalletUpdateArgs([Function(GWalletUpdateArgsBuilder b) updates]) =
+  factory GWalletUpdateArgs(
+          [void Function(GWalletUpdateArgsBuilder b) updates]) =
       _$GWalletUpdateArgs;
 
   GWalletWhereUniqueInput get where;
@@ -7312,7 +7338,8 @@ abstract class GWalletCreateInput
     implements Built<GWalletCreateInput, GWalletCreateInputBuilder> {
   GWalletCreateInput._();
 
-  factory GWalletCreateInput([Function(GWalletCreateInputBuilder b) updates]) =
+  factory GWalletCreateInput(
+          [void Function(GWalletCreateInputBuilder b) updates]) =
       _$GWalletCreateInput;
 
   GDateTime? get createdAt;
@@ -7341,8 +7368,8 @@ abstract class GWalletTransactionWhereUniqueInput
   GWalletTransactionWhereUniqueInput._();
 
   factory GWalletTransactionWhereUniqueInput(
-          [Function(GWalletTransactionWhereUniqueInputBuilder b) updates]) =
-      _$GWalletTransactionWhereUniqueInput;
+      [void Function(GWalletTransactionWhereUniqueInputBuilder b)
+          updates]) = _$GWalletTransactionWhereUniqueInput;
 
   String? get id;
   static Serializer<GWalletTransactionWhereUniqueInput> get serializer =>
@@ -7368,7 +7395,7 @@ abstract class GWalletTransactionWhereInput
   GWalletTransactionWhereInput._();
 
   factory GWalletTransactionWhereInput(
-          [Function(GWalletTransactionWhereInputBuilder b) updates]) =
+          [void Function(GWalletTransactionWhereInputBuilder b) updates]) =
       _$GWalletTransactionWhereInput;
 
   BuiltList<GWalletTransactionWhereInput>? get AND;
@@ -7409,7 +7436,7 @@ abstract class GWalletTransactionOrderByInput
   GWalletTransactionOrderByInput._();
 
   factory GWalletTransactionOrderByInput(
-          [Function(GWalletTransactionOrderByInputBuilder b) updates]) =
+          [void Function(GWalletTransactionOrderByInputBuilder b) updates]) =
       _$GWalletTransactionOrderByInput;
 
   GOrderDirection? get id;
@@ -7446,7 +7473,7 @@ abstract class GWalletTransactionUpdateInput
   GWalletTransactionUpdateInput._();
 
   factory GWalletTransactionUpdateInput(
-          [Function(GWalletTransactionUpdateInputBuilder b) updates]) =
+          [void Function(GWalletTransactionUpdateInputBuilder b) updates]) =
       _$GWalletTransactionUpdateInput;
 
   GDateTime? get createdAt;
@@ -7483,7 +7510,7 @@ abstract class GWalletTransactionUpdateArgs
   GWalletTransactionUpdateArgs._();
 
   factory GWalletTransactionUpdateArgs(
-          [Function(GWalletTransactionUpdateArgsBuilder b) updates]) =
+          [void Function(GWalletTransactionUpdateArgsBuilder b) updates]) =
       _$GWalletTransactionUpdateArgs;
 
   GWalletTransactionWhereUniqueInput get where;
@@ -7510,7 +7537,7 @@ abstract class GWalletTransactionCreateInput
   GWalletTransactionCreateInput._();
 
   factory GWalletTransactionCreateInput(
-          [Function(GWalletTransactionCreateInputBuilder b) updates]) =
+          [void Function(GWalletTransactionCreateInputBuilder b) updates]) =
       _$GWalletTransactionCreateInput;
 
   GDateTime? get createdAt;
@@ -7545,7 +7572,7 @@ abstract class GOrderWhereUniqueInput
   GOrderWhereUniqueInput._();
 
   factory GOrderWhereUniqueInput(
-          [Function(GOrderWhereUniqueInputBuilder b) updates]) =
+          [void Function(GOrderWhereUniqueInputBuilder b) updates]) =
       _$GOrderWhereUniqueInput;
 
   String? get id;
@@ -7568,7 +7595,7 @@ abstract class GOrderWhereInput
     implements Built<GOrderWhereInput, GOrderWhereInputBuilder> {
   GOrderWhereInput._();
 
-  factory GOrderWhereInput([Function(GOrderWhereInputBuilder b) updates]) =
+  factory GOrderWhereInput([void Function(GOrderWhereInputBuilder b) updates]) =
       _$GOrderWhereInput;
 
   BuiltList<GOrderWhereInput>? get AND;
@@ -7604,7 +7631,7 @@ abstract class GVehicleOrderManyRelationFilter
   GVehicleOrderManyRelationFilter._();
 
   factory GVehicleOrderManyRelationFilter(
-          [Function(GVehicleOrderManyRelationFilterBuilder b) updates]) =
+          [void Function(GVehicleOrderManyRelationFilterBuilder b) updates]) =
       _$GVehicleOrderManyRelationFilter;
 
   GVehicleOrderWhereInput? get every;
@@ -7632,7 +7659,7 @@ abstract class GTestDriveOrderManyRelationFilter
   GTestDriveOrderManyRelationFilter._();
 
   factory GTestDriveOrderManyRelationFilter(
-          [Function(GTestDriveOrderManyRelationFilterBuilder b) updates]) =
+          [void Function(GTestDriveOrderManyRelationFilterBuilder b) updates]) =
       _$GTestDriveOrderManyRelationFilter;
 
   GTestDriveOrderWhereInput? get every;
@@ -7661,7 +7688,7 @@ abstract class GProductOrderManyRelationFilter
   GProductOrderManyRelationFilter._();
 
   factory GProductOrderManyRelationFilter(
-          [Function(GProductOrderManyRelationFilterBuilder b) updates]) =
+          [void Function(GProductOrderManyRelationFilterBuilder b) updates]) =
       _$GProductOrderManyRelationFilter;
 
   GProductOrderWhereInput? get every;
@@ -7688,7 +7715,7 @@ abstract class GPaymentManyRelationFilter
   GPaymentManyRelationFilter._();
 
   factory GPaymentManyRelationFilter(
-          [Function(GPaymentManyRelationFilterBuilder b) updates]) =
+          [void Function(GPaymentManyRelationFilterBuilder b) updates]) =
       _$GPaymentManyRelationFilter;
 
   GPaymentWhereInput? get every;
@@ -7713,7 +7740,8 @@ abstract class GOrderOrderByInput
     implements Built<GOrderOrderByInput, GOrderOrderByInputBuilder> {
   GOrderOrderByInput._();
 
-  factory GOrderOrderByInput([Function(GOrderOrderByInputBuilder b) updates]) =
+  factory GOrderOrderByInput(
+          [void Function(GOrderOrderByInputBuilder b) updates]) =
       _$GOrderOrderByInput;
 
   GOrderDirection? get id;
@@ -7738,7 +7766,8 @@ abstract class GOrderUpdateInput
     implements Built<GOrderUpdateInput, GOrderUpdateInputBuilder> {
   GOrderUpdateInput._();
 
-  factory GOrderUpdateInput([Function(GOrderUpdateInputBuilder b) updates]) =
+  factory GOrderUpdateInput(
+          [void Function(GOrderUpdateInputBuilder b) updates]) =
       _$GOrderUpdateInput;
 
   GDateTime? get createdAt;
@@ -7770,7 +7799,7 @@ abstract class GVehicleOrderRelateToManyForUpdateInput
   GVehicleOrderRelateToManyForUpdateInput._();
 
   factory GVehicleOrderRelateToManyForUpdateInput(
-      [Function(GVehicleOrderRelateToManyForUpdateInputBuilder b)
+      [void Function(GVehicleOrderRelateToManyForUpdateInputBuilder b)
           updates]) = _$GVehicleOrderRelateToManyForUpdateInput;
 
   BuiltList<GVehicleOrderWhereUniqueInput>? get disconnect;
@@ -7800,7 +7829,7 @@ abstract class GTestDriveOrderRelateToManyForUpdateInput
   GTestDriveOrderRelateToManyForUpdateInput._();
 
   factory GTestDriveOrderRelateToManyForUpdateInput(
-      [Function(GTestDriveOrderRelateToManyForUpdateInputBuilder b)
+      [void Function(GTestDriveOrderRelateToManyForUpdateInputBuilder b)
           updates]) = _$GTestDriveOrderRelateToManyForUpdateInput;
 
   BuiltList<GTestDriveOrderWhereUniqueInput>? get disconnect;
@@ -7830,7 +7859,7 @@ abstract class GProductOrderRelateToManyForUpdateInput
   GProductOrderRelateToManyForUpdateInput._();
 
   factory GProductOrderRelateToManyForUpdateInput(
-      [Function(GProductOrderRelateToManyForUpdateInputBuilder b)
+      [void Function(GProductOrderRelateToManyForUpdateInputBuilder b)
           updates]) = _$GProductOrderRelateToManyForUpdateInput;
 
   BuiltList<GProductOrderWhereUniqueInput>? get disconnect;
@@ -7860,8 +7889,8 @@ abstract class GPaymentRelateToManyForUpdateInput
   GPaymentRelateToManyForUpdateInput._();
 
   factory GPaymentRelateToManyForUpdateInput(
-          [Function(GPaymentRelateToManyForUpdateInputBuilder b) updates]) =
-      _$GPaymentRelateToManyForUpdateInput;
+      [void Function(GPaymentRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GPaymentRelateToManyForUpdateInput;
 
   BuiltList<GPaymentWhereUniqueInput>? get disconnect;
   BuiltList<GPaymentWhereUniqueInput>? get set;
@@ -7887,7 +7916,7 @@ abstract class GOrderUpdateArgs
     implements Built<GOrderUpdateArgs, GOrderUpdateArgsBuilder> {
   GOrderUpdateArgs._();
 
-  factory GOrderUpdateArgs([Function(GOrderUpdateArgsBuilder b) updates]) =
+  factory GOrderUpdateArgs([void Function(GOrderUpdateArgsBuilder b) updates]) =
       _$GOrderUpdateArgs;
 
   GOrderWhereUniqueInput get where;
@@ -7911,7 +7940,8 @@ abstract class GOrderCreateInput
     implements Built<GOrderCreateInput, GOrderCreateInputBuilder> {
   GOrderCreateInput._();
 
-  factory GOrderCreateInput([Function(GOrderCreateInputBuilder b) updates]) =
+  factory GOrderCreateInput(
+          [void Function(GOrderCreateInputBuilder b) updates]) =
       _$GOrderCreateInput;
 
   GDateTime? get createdAt;
@@ -7943,7 +7973,7 @@ abstract class GVehicleOrderRelateToManyForCreateInput
   GVehicleOrderRelateToManyForCreateInput._();
 
   factory GVehicleOrderRelateToManyForCreateInput(
-      [Function(GVehicleOrderRelateToManyForCreateInputBuilder b)
+      [void Function(GVehicleOrderRelateToManyForCreateInputBuilder b)
           updates]) = _$GVehicleOrderRelateToManyForCreateInput;
 
   BuiltList<GVehicleOrderCreateInput>? get create;
@@ -7971,7 +8001,7 @@ abstract class GTestDriveOrderRelateToManyForCreateInput
   GTestDriveOrderRelateToManyForCreateInput._();
 
   factory GTestDriveOrderRelateToManyForCreateInput(
-      [Function(GTestDriveOrderRelateToManyForCreateInputBuilder b)
+      [void Function(GTestDriveOrderRelateToManyForCreateInputBuilder b)
           updates]) = _$GTestDriveOrderRelateToManyForCreateInput;
 
   BuiltList<GTestDriveOrderCreateInput>? get create;
@@ -7999,7 +8029,7 @@ abstract class GProductOrderRelateToManyForCreateInput
   GProductOrderRelateToManyForCreateInput._();
 
   factory GProductOrderRelateToManyForCreateInput(
-      [Function(GProductOrderRelateToManyForCreateInputBuilder b)
+      [void Function(GProductOrderRelateToManyForCreateInputBuilder b)
           updates]) = _$GProductOrderRelateToManyForCreateInput;
 
   BuiltList<GProductOrderCreateInput>? get create;
@@ -8027,8 +8057,8 @@ abstract class GPaymentRelateToManyForCreateInput
   GPaymentRelateToManyForCreateInput._();
 
   factory GPaymentRelateToManyForCreateInput(
-          [Function(GPaymentRelateToManyForCreateInputBuilder b) updates]) =
-      _$GPaymentRelateToManyForCreateInput;
+      [void Function(GPaymentRelateToManyForCreateInputBuilder b)
+          updates]) = _$GPaymentRelateToManyForCreateInput;
 
   BuiltList<GPaymentCreateInput>? get create;
   BuiltList<GPaymentWhereUniqueInput>? get connect;
@@ -8054,7 +8084,7 @@ abstract class GPaymentWhereUniqueInput
   GPaymentWhereUniqueInput._();
 
   factory GPaymentWhereUniqueInput(
-          [Function(GPaymentWhereUniqueInputBuilder b) updates]) =
+          [void Function(GPaymentWhereUniqueInputBuilder b) updates]) =
       _$GPaymentWhereUniqueInput;
 
   String? get id;
@@ -8077,7 +8107,8 @@ abstract class GPaymentWhereInput
     implements Built<GPaymentWhereInput, GPaymentWhereInputBuilder> {
   GPaymentWhereInput._();
 
-  factory GPaymentWhereInput([Function(GPaymentWhereInputBuilder b) updates]) =
+  factory GPaymentWhereInput(
+          [void Function(GPaymentWhereInputBuilder b) updates]) =
       _$GPaymentWhereInput;
 
   BuiltList<GPaymentWhereInput>? get AND;
@@ -8113,7 +8144,7 @@ abstract class GFloatFilter
     implements Built<GFloatFilter, GFloatFilterBuilder> {
   GFloatFilter._();
 
-  factory GFloatFilter([Function(GFloatFilterBuilder b) updates]) =
+  factory GFloatFilter([void Function(GFloatFilterBuilder b) updates]) =
       _$GFloatFilter;
 
   double? get equals;
@@ -8144,7 +8175,7 @@ abstract class GPaymentOrderByInput
   GPaymentOrderByInput._();
 
   factory GPaymentOrderByInput(
-          [Function(GPaymentOrderByInputBuilder b) updates]) =
+          [void Function(GPaymentOrderByInputBuilder b) updates]) =
       _$GPaymentOrderByInput;
 
   GOrderDirection? get id;
@@ -8177,7 +8208,8 @@ abstract class GPaymentUpdateInput
   GPaymentUpdateInput._();
 
   factory GPaymentUpdateInput(
-      [Function(GPaymentUpdateInputBuilder b) updates]) = _$GPaymentUpdateInput;
+          [void Function(GPaymentUpdateInputBuilder b) updates]) =
+      _$GPaymentUpdateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -8211,7 +8243,7 @@ abstract class GOrderRelateToOneForUpdateInput
   GOrderRelateToOneForUpdateInput._();
 
   factory GOrderRelateToOneForUpdateInput(
-          [Function(GOrderRelateToOneForUpdateInputBuilder b) updates]) =
+          [void Function(GOrderRelateToOneForUpdateInputBuilder b) updates]) =
       _$GOrderRelateToOneForUpdateInput;
 
   GOrderCreateInput? get create;
@@ -8236,7 +8268,8 @@ abstract class GPaymentUpdateArgs
     implements Built<GPaymentUpdateArgs, GPaymentUpdateArgsBuilder> {
   GPaymentUpdateArgs._();
 
-  factory GPaymentUpdateArgs([Function(GPaymentUpdateArgsBuilder b) updates]) =
+  factory GPaymentUpdateArgs(
+          [void Function(GPaymentUpdateArgsBuilder b) updates]) =
       _$GPaymentUpdateArgs;
 
   GPaymentWhereUniqueInput get where;
@@ -8261,7 +8294,8 @@ abstract class GPaymentCreateInput
   GPaymentCreateInput._();
 
   factory GPaymentCreateInput(
-      [Function(GPaymentCreateInputBuilder b) updates]) = _$GPaymentCreateInput;
+          [void Function(GPaymentCreateInputBuilder b) updates]) =
+      _$GPaymentCreateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -8295,7 +8329,7 @@ abstract class GOrderRelateToOneForCreateInput
   GOrderRelateToOneForCreateInput._();
 
   factory GOrderRelateToOneForCreateInput(
-          [Function(GOrderRelateToOneForCreateInputBuilder b) updates]) =
+          [void Function(GOrderRelateToOneForCreateInputBuilder b) updates]) =
       _$GOrderRelateToOneForCreateInput;
 
   GOrderCreateInput? get create;
@@ -8322,7 +8356,7 @@ abstract class GVehicleOrderWhereUniqueInput
   GVehicleOrderWhereUniqueInput._();
 
   factory GVehicleOrderWhereUniqueInput(
-          [Function(GVehicleOrderWhereUniqueInputBuilder b) updates]) =
+          [void Function(GVehicleOrderWhereUniqueInputBuilder b) updates]) =
       _$GVehicleOrderWhereUniqueInput;
 
   String? get id;
@@ -8346,7 +8380,7 @@ abstract class GVehicleOrderWhereInput
   GVehicleOrderWhereInput._();
 
   factory GVehicleOrderWhereInput(
-          [Function(GVehicleOrderWhereInputBuilder b) updates]) =
+          [void Function(GVehicleOrderWhereInputBuilder b) updates]) =
       _$GVehicleOrderWhereInput;
 
   BuiltList<GVehicleOrderWhereInput>? get AND;
@@ -8382,7 +8416,7 @@ abstract class GVehicleOrderOrderByInput
   GVehicleOrderOrderByInput._();
 
   factory GVehicleOrderOrderByInput(
-          [Function(GVehicleOrderOrderByInputBuilder b) updates]) =
+          [void Function(GVehicleOrderOrderByInputBuilder b) updates]) =
       _$GVehicleOrderOrderByInput;
 
   GOrderDirection? get id;
@@ -8411,7 +8445,7 @@ abstract class GVehicleOrderUpdateInput
   GVehicleOrderUpdateInput._();
 
   factory GVehicleOrderUpdateInput(
-          [Function(GVehicleOrderUpdateInputBuilder b) updates]) =
+          [void Function(GVehicleOrderUpdateInputBuilder b) updates]) =
       _$GVehicleOrderUpdateInput;
 
   GDateTime? get createdAt;
@@ -8445,7 +8479,7 @@ abstract class GVehicleDealerRelateToOneForUpdateInput
   GVehicleDealerRelateToOneForUpdateInput._();
 
   factory GVehicleDealerRelateToOneForUpdateInput(
-      [Function(GVehicleDealerRelateToOneForUpdateInputBuilder b)
+      [void Function(GVehicleDealerRelateToOneForUpdateInputBuilder b)
           updates]) = _$GVehicleDealerRelateToOneForUpdateInput;
 
   GVehicleDealerCreateInput? get create;
@@ -8474,7 +8508,7 @@ abstract class GAddressRelateToOneForUpdateInput
   GAddressRelateToOneForUpdateInput._();
 
   factory GAddressRelateToOneForUpdateInput(
-          [Function(GAddressRelateToOneForUpdateInputBuilder b) updates]) =
+          [void Function(GAddressRelateToOneForUpdateInputBuilder b) updates]) =
       _$GAddressRelateToOneForUpdateInput;
 
   GAddressCreateInput? get create;
@@ -8503,7 +8537,8 @@ abstract class GVehicleOrderAdditionalInfoRelateToOneForUpdateInput
   GVehicleOrderAdditionalInfoRelateToOneForUpdateInput._();
 
   factory GVehicleOrderAdditionalInfoRelateToOneForUpdateInput(
-      [Function(GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder b)
+      [void Function(
+              GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder b)
           updates]) = _$GVehicleOrderAdditionalInfoRelateToOneForUpdateInput;
 
   GVehicleOrderAdditionalInfoCreateInput? get create;
@@ -8531,7 +8566,7 @@ abstract class GVehicleOrderUpdateArgs
   GVehicleOrderUpdateArgs._();
 
   factory GVehicleOrderUpdateArgs(
-          [Function(GVehicleOrderUpdateArgsBuilder b) updates]) =
+          [void Function(GVehicleOrderUpdateArgsBuilder b) updates]) =
       _$GVehicleOrderUpdateArgs;
 
   GVehicleOrderWhereUniqueInput get where;
@@ -8557,7 +8592,7 @@ abstract class GVehicleOrderCreateInput
   GVehicleOrderCreateInput._();
 
   factory GVehicleOrderCreateInput(
-          [Function(GVehicleOrderCreateInputBuilder b) updates]) =
+          [void Function(GVehicleOrderCreateInputBuilder b) updates]) =
       _$GVehicleOrderCreateInput;
 
   GDateTime? get createdAt;
@@ -8591,7 +8626,7 @@ abstract class GVehicleDealerRelateToOneForCreateInput
   GVehicleDealerRelateToOneForCreateInput._();
 
   factory GVehicleDealerRelateToOneForCreateInput(
-      [Function(GVehicleDealerRelateToOneForCreateInputBuilder b)
+      [void Function(GVehicleDealerRelateToOneForCreateInputBuilder b)
           updates]) = _$GVehicleDealerRelateToOneForCreateInput;
 
   GVehicleDealerCreateInput? get create;
@@ -8619,7 +8654,7 @@ abstract class GAddressRelateToOneForCreateInput
   GAddressRelateToOneForCreateInput._();
 
   factory GAddressRelateToOneForCreateInput(
-          [Function(GAddressRelateToOneForCreateInputBuilder b) updates]) =
+          [void Function(GAddressRelateToOneForCreateInputBuilder b) updates]) =
       _$GAddressRelateToOneForCreateInput;
 
   GAddressCreateInput? get create;
@@ -8647,7 +8682,8 @@ abstract class GVehicleOrderAdditionalInfoRelateToOneForCreateInput
   GVehicleOrderAdditionalInfoRelateToOneForCreateInput._();
 
   factory GVehicleOrderAdditionalInfoRelateToOneForCreateInput(
-      [Function(GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder b)
+      [void Function(
+              GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder b)
           updates]) = _$GVehicleOrderAdditionalInfoRelateToOneForCreateInput;
 
   GVehicleOrderAdditionalInfoCreateInput? get create;
@@ -8676,7 +8712,7 @@ abstract class GTestDriveOrderWhereUniqueInput
   GTestDriveOrderWhereUniqueInput._();
 
   factory GTestDriveOrderWhereUniqueInput(
-          [Function(GTestDriveOrderWhereUniqueInputBuilder b) updates]) =
+          [void Function(GTestDriveOrderWhereUniqueInputBuilder b) updates]) =
       _$GTestDriveOrderWhereUniqueInput;
 
   String? get id;
@@ -8701,7 +8737,7 @@ abstract class GTestDriveOrderWhereInput
   GTestDriveOrderWhereInput._();
 
   factory GTestDriveOrderWhereInput(
-          [Function(GTestDriveOrderWhereInputBuilder b) updates]) =
+          [void Function(GTestDriveOrderWhereInputBuilder b) updates]) =
       _$GTestDriveOrderWhereInput;
 
   BuiltList<GTestDriveOrderWhereInput>? get AND;
@@ -8736,7 +8772,7 @@ abstract class GTestDriveOrderOrderByInput
   GTestDriveOrderOrderByInput._();
 
   factory GTestDriveOrderOrderByInput(
-          [Function(GTestDriveOrderOrderByInputBuilder b) updates]) =
+          [void Function(GTestDriveOrderOrderByInputBuilder b) updates]) =
       _$GTestDriveOrderOrderByInput;
 
   GOrderDirection? get id;
@@ -8765,7 +8801,7 @@ abstract class GTestDriveOrderUpdateInput
   GTestDriveOrderUpdateInput._();
 
   factory GTestDriveOrderUpdateInput(
-          [Function(GTestDriveOrderUpdateInputBuilder b) updates]) =
+          [void Function(GTestDriveOrderUpdateInputBuilder b) updates]) =
       _$GTestDriveOrderUpdateInput;
 
   GDateTime? get createdAt;
@@ -8797,7 +8833,7 @@ abstract class GTestDriveDealerRelateToOneForUpdateInput
   GTestDriveDealerRelateToOneForUpdateInput._();
 
   factory GTestDriveDealerRelateToOneForUpdateInput(
-      [Function(GTestDriveDealerRelateToOneForUpdateInputBuilder b)
+      [void Function(GTestDriveDealerRelateToOneForUpdateInputBuilder b)
           updates]) = _$GTestDriveDealerRelateToOneForUpdateInput;
 
   GTestDriveDealerCreateInput? get create;
@@ -8825,7 +8861,7 @@ abstract class GTestDriveOrderUpdateArgs
   GTestDriveOrderUpdateArgs._();
 
   factory GTestDriveOrderUpdateArgs(
-          [Function(GTestDriveOrderUpdateArgsBuilder b) updates]) =
+          [void Function(GTestDriveOrderUpdateArgsBuilder b) updates]) =
       _$GTestDriveOrderUpdateArgs;
 
   GTestDriveOrderWhereUniqueInput get where;
@@ -8851,7 +8887,7 @@ abstract class GTestDriveOrderCreateInput
   GTestDriveOrderCreateInput._();
 
   factory GTestDriveOrderCreateInput(
-          [Function(GTestDriveOrderCreateInputBuilder b) updates]) =
+          [void Function(GTestDriveOrderCreateInputBuilder b) updates]) =
       _$GTestDriveOrderCreateInput;
 
   GDateTime? get createdAt;
@@ -8883,7 +8919,7 @@ abstract class GTestDriveDealerRelateToOneForCreateInput
   GTestDriveDealerRelateToOneForCreateInput._();
 
   factory GTestDriveDealerRelateToOneForCreateInput(
-      [Function(GTestDriveDealerRelateToOneForCreateInputBuilder b)
+      [void Function(GTestDriveDealerRelateToOneForCreateInputBuilder b)
           updates]) = _$GTestDriveDealerRelateToOneForCreateInput;
 
   GTestDriveDealerCreateInput? get create;
@@ -8911,7 +8947,7 @@ abstract class GProductOrderWhereUniqueInput
   GProductOrderWhereUniqueInput._();
 
   factory GProductOrderWhereUniqueInput(
-          [Function(GProductOrderWhereUniqueInputBuilder b) updates]) =
+          [void Function(GProductOrderWhereUniqueInputBuilder b) updates]) =
       _$GProductOrderWhereUniqueInput;
 
   String? get id;
@@ -8935,7 +8971,7 @@ abstract class GProductOrderWhereInput
   GProductOrderWhereInput._();
 
   factory GProductOrderWhereInput(
-          [Function(GProductOrderWhereInputBuilder b) updates]) =
+          [void Function(GProductOrderWhereInputBuilder b) updates]) =
       _$GProductOrderWhereInput;
 
   BuiltList<GProductOrderWhereInput>? get AND;
@@ -8970,7 +9006,7 @@ abstract class GProductOrderOrderByInput
   GProductOrderOrderByInput._();
 
   factory GProductOrderOrderByInput(
-          [Function(GProductOrderOrderByInputBuilder b) updates]) =
+          [void Function(GProductOrderOrderByInputBuilder b) updates]) =
       _$GProductOrderOrderByInput;
 
   GOrderDirection? get id;
@@ -8999,7 +9035,7 @@ abstract class GProductOrderUpdateInput
   GProductOrderUpdateInput._();
 
   factory GProductOrderUpdateInput(
-          [Function(GProductOrderUpdateInputBuilder b) updates]) =
+          [void Function(GProductOrderUpdateInputBuilder b) updates]) =
       _$GProductOrderUpdateInput;
 
   GDateTime? get createdAt;
@@ -9032,7 +9068,7 @@ abstract class GProductDealerRelateToOneForUpdateInput
   GProductDealerRelateToOneForUpdateInput._();
 
   factory GProductDealerRelateToOneForUpdateInput(
-      [Function(GProductDealerRelateToOneForUpdateInputBuilder b)
+      [void Function(GProductDealerRelateToOneForUpdateInputBuilder b)
           updates]) = _$GProductDealerRelateToOneForUpdateInput;
 
   GProductDealerCreateInput? get create;
@@ -9059,7 +9095,7 @@ abstract class GProductOrderUpdateArgs
   GProductOrderUpdateArgs._();
 
   factory GProductOrderUpdateArgs(
-          [Function(GProductOrderUpdateArgsBuilder b) updates]) =
+          [void Function(GProductOrderUpdateArgsBuilder b) updates]) =
       _$GProductOrderUpdateArgs;
 
   GProductOrderWhereUniqueInput get where;
@@ -9085,7 +9121,7 @@ abstract class GProductOrderCreateInput
   GProductOrderCreateInput._();
 
   factory GProductOrderCreateInput(
-          [Function(GProductOrderCreateInputBuilder b) updates]) =
+          [void Function(GProductOrderCreateInputBuilder b) updates]) =
       _$GProductOrderCreateInput;
 
   GDateTime? get createdAt;
@@ -9118,7 +9154,7 @@ abstract class GProductDealerRelateToOneForCreateInput
   GProductDealerRelateToOneForCreateInput._();
 
   factory GProductDealerRelateToOneForCreateInput(
-      [Function(GProductDealerRelateToOneForCreateInputBuilder b)
+      [void Function(GProductDealerRelateToOneForCreateInputBuilder b)
           updates]) = _$GProductDealerRelateToOneForCreateInput;
 
   GProductDealerCreateInput? get create;
@@ -9146,7 +9182,7 @@ abstract class GOrderCancellationRequestWhereUniqueInput
   GOrderCancellationRequestWhereUniqueInput._();
 
   factory GOrderCancellationRequestWhereUniqueInput(
-      [Function(GOrderCancellationRequestWhereUniqueInputBuilder b)
+      [void Function(GOrderCancellationRequestWhereUniqueInputBuilder b)
           updates]) = _$GOrderCancellationRequestWhereUniqueInput;
 
   String? get id;
@@ -9173,8 +9209,8 @@ abstract class GOrderCancellationRequestWhereInput
   GOrderCancellationRequestWhereInput._();
 
   factory GOrderCancellationRequestWhereInput(
-          [Function(GOrderCancellationRequestWhereInputBuilder b) updates]) =
-      _$GOrderCancellationRequestWhereInput;
+      [void Function(GOrderCancellationRequestWhereInputBuilder b)
+          updates]) = _$GOrderCancellationRequestWhereInput;
 
   BuiltList<GOrderCancellationRequestWhereInput>? get AND;
   BuiltList<GOrderCancellationRequestWhereInput>? get OR;
@@ -9211,8 +9247,8 @@ abstract class GOrderCancellationRequestOrderByInput
   GOrderCancellationRequestOrderByInput._();
 
   factory GOrderCancellationRequestOrderByInput(
-          [Function(GOrderCancellationRequestOrderByInputBuilder b) updates]) =
-      _$GOrderCancellationRequestOrderByInput;
+      [void Function(GOrderCancellationRequestOrderByInputBuilder b)
+          updates]) = _$GOrderCancellationRequestOrderByInput;
 
   GOrderDirection? get id;
   GOrderDirection? get createdAt;
@@ -9243,8 +9279,8 @@ abstract class GOrderCancellationRequestUpdateInput
   GOrderCancellationRequestUpdateInput._();
 
   factory GOrderCancellationRequestUpdateInput(
-          [Function(GOrderCancellationRequestUpdateInputBuilder b) updates]) =
-      _$GOrderCancellationRequestUpdateInput;
+      [void Function(GOrderCancellationRequestUpdateInputBuilder b)
+          updates]) = _$GOrderCancellationRequestUpdateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -9277,8 +9313,8 @@ abstract class GOrderCancellationRequestUpdateArgs
   GOrderCancellationRequestUpdateArgs._();
 
   factory GOrderCancellationRequestUpdateArgs(
-          [Function(GOrderCancellationRequestUpdateArgsBuilder b) updates]) =
-      _$GOrderCancellationRequestUpdateArgs;
+      [void Function(GOrderCancellationRequestUpdateArgsBuilder b)
+          updates]) = _$GOrderCancellationRequestUpdateArgs;
 
   GOrderCancellationRequestWhereUniqueInput get where;
   GOrderCancellationRequestUpdateInput get data;
@@ -9305,8 +9341,8 @@ abstract class GOrderCancellationRequestCreateInput
   GOrderCancellationRequestCreateInput._();
 
   factory GOrderCancellationRequestCreateInput(
-          [Function(GOrderCancellationRequestCreateInputBuilder b) updates]) =
-      _$GOrderCancellationRequestCreateInput;
+      [void Function(GOrderCancellationRequestCreateInputBuilder b)
+          updates]) = _$GOrderCancellationRequestCreateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -9339,7 +9375,7 @@ abstract class GOrderRejectionByDealerWhereUniqueInput
   GOrderRejectionByDealerWhereUniqueInput._();
 
   factory GOrderRejectionByDealerWhereUniqueInput(
-      [Function(GOrderRejectionByDealerWhereUniqueInputBuilder b)
+      [void Function(GOrderRejectionByDealerWhereUniqueInputBuilder b)
           updates]) = _$GOrderRejectionByDealerWhereUniqueInput;
 
   String? get id;
@@ -9366,7 +9402,7 @@ abstract class GOrderRejectionByDealerWhereInput
   GOrderRejectionByDealerWhereInput._();
 
   factory GOrderRejectionByDealerWhereInput(
-          [Function(GOrderRejectionByDealerWhereInputBuilder b) updates]) =
+          [void Function(GOrderRejectionByDealerWhereInputBuilder b) updates]) =
       _$GOrderRejectionByDealerWhereInput;
 
   BuiltList<GOrderRejectionByDealerWhereInput>? get AND;
@@ -9404,8 +9440,8 @@ abstract class GOrderRejectionByDealerOrderByInput
   GOrderRejectionByDealerOrderByInput._();
 
   factory GOrderRejectionByDealerOrderByInput(
-          [Function(GOrderRejectionByDealerOrderByInputBuilder b) updates]) =
-      _$GOrderRejectionByDealerOrderByInput;
+      [void Function(GOrderRejectionByDealerOrderByInputBuilder b)
+          updates]) = _$GOrderRejectionByDealerOrderByInput;
 
   GOrderDirection? get id;
   GOrderDirection? get createdAt;
@@ -9436,8 +9472,8 @@ abstract class GOrderRejectionByDealerUpdateInput
   GOrderRejectionByDealerUpdateInput._();
 
   factory GOrderRejectionByDealerUpdateInput(
-          [Function(GOrderRejectionByDealerUpdateInputBuilder b) updates]) =
-      _$GOrderRejectionByDealerUpdateInput;
+      [void Function(GOrderRejectionByDealerUpdateInputBuilder b)
+          updates]) = _$GOrderRejectionByDealerUpdateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -9470,7 +9506,7 @@ abstract class GOrderRejectionByDealerUpdateArgs
   GOrderRejectionByDealerUpdateArgs._();
 
   factory GOrderRejectionByDealerUpdateArgs(
-          [Function(GOrderRejectionByDealerUpdateArgsBuilder b) updates]) =
+          [void Function(GOrderRejectionByDealerUpdateArgsBuilder b) updates]) =
       _$GOrderRejectionByDealerUpdateArgs;
 
   GOrderRejectionByDealerWhereUniqueInput get where;
@@ -9498,8 +9534,8 @@ abstract class GOrderRejectionByDealerCreateInput
   GOrderRejectionByDealerCreateInput._();
 
   factory GOrderRejectionByDealerCreateInput(
-          [Function(GOrderRejectionByDealerCreateInputBuilder b) updates]) =
-      _$GOrderRejectionByDealerCreateInput;
+      [void Function(GOrderRejectionByDealerCreateInputBuilder b)
+          updates]) = _$GOrderRejectionByDealerCreateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -9532,7 +9568,7 @@ abstract class GVehicleOrderAdditionalInfoWhereUniqueInput
   GVehicleOrderAdditionalInfoWhereUniqueInput._();
 
   factory GVehicleOrderAdditionalInfoWhereUniqueInput(
-      [Function(GVehicleOrderAdditionalInfoWhereUniqueInputBuilder b)
+      [void Function(GVehicleOrderAdditionalInfoWhereUniqueInputBuilder b)
           updates]) = _$GVehicleOrderAdditionalInfoWhereUniqueInput;
 
   String? get id;
@@ -9559,8 +9595,8 @@ abstract class GVehicleOrderAdditionalInfoWhereInput
   GVehicleOrderAdditionalInfoWhereInput._();
 
   factory GVehicleOrderAdditionalInfoWhereInput(
-          [Function(GVehicleOrderAdditionalInfoWhereInputBuilder b) updates]) =
-      _$GVehicleOrderAdditionalInfoWhereInput;
+      [void Function(GVehicleOrderAdditionalInfoWhereInputBuilder b)
+          updates]) = _$GVehicleOrderAdditionalInfoWhereInput;
 
   BuiltList<GVehicleOrderAdditionalInfoWhereInput>? get AND;
   BuiltList<GVehicleOrderAdditionalInfoWhereInput>? get OR;
@@ -9594,7 +9630,7 @@ abstract class GVehicleOrderAdditionalInfoOrderByInput
   GVehicleOrderAdditionalInfoOrderByInput._();
 
   factory GVehicleOrderAdditionalInfoOrderByInput(
-      [Function(GVehicleOrderAdditionalInfoOrderByInputBuilder b)
+      [void Function(GVehicleOrderAdditionalInfoOrderByInputBuilder b)
           updates]) = _$GVehicleOrderAdditionalInfoOrderByInput;
 
   GOrderDirection? get id;
@@ -9625,8 +9661,8 @@ abstract class GVehicleOrderAdditionalInfoUpdateInput
   GVehicleOrderAdditionalInfoUpdateInput._();
 
   factory GVehicleOrderAdditionalInfoUpdateInput(
-          [Function(GVehicleOrderAdditionalInfoUpdateInputBuilder b) updates]) =
-      _$GVehicleOrderAdditionalInfoUpdateInput;
+      [void Function(GVehicleOrderAdditionalInfoUpdateInputBuilder b)
+          updates]) = _$GVehicleOrderAdditionalInfoUpdateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -9656,8 +9692,8 @@ abstract class GVehicleOrderAdditionalInfoUpdateArgs
   GVehicleOrderAdditionalInfoUpdateArgs._();
 
   factory GVehicleOrderAdditionalInfoUpdateArgs(
-          [Function(GVehicleOrderAdditionalInfoUpdateArgsBuilder b) updates]) =
-      _$GVehicleOrderAdditionalInfoUpdateArgs;
+      [void Function(GVehicleOrderAdditionalInfoUpdateArgsBuilder b)
+          updates]) = _$GVehicleOrderAdditionalInfoUpdateArgs;
 
   GVehicleOrderAdditionalInfoWhereUniqueInput get where;
   GVehicleOrderAdditionalInfoUpdateInput get data;
@@ -9684,8 +9720,8 @@ abstract class GVehicleOrderAdditionalInfoCreateInput
   GVehicleOrderAdditionalInfoCreateInput._();
 
   factory GVehicleOrderAdditionalInfoCreateInput(
-          [Function(GVehicleOrderAdditionalInfoCreateInputBuilder b) updates]) =
-      _$GVehicleOrderAdditionalInfoCreateInput;
+      [void Function(GVehicleOrderAdditionalInfoCreateInputBuilder b)
+          updates]) = _$GVehicleOrderAdditionalInfoCreateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -9715,8 +9751,8 @@ abstract class GUserVehicleReviewWhereUniqueInput
   GUserVehicleReviewWhereUniqueInput._();
 
   factory GUserVehicleReviewWhereUniqueInput(
-          [Function(GUserVehicleReviewWhereUniqueInputBuilder b) updates]) =
-      _$GUserVehicleReviewWhereUniqueInput;
+      [void Function(GUserVehicleReviewWhereUniqueInputBuilder b)
+          updates]) = _$GUserVehicleReviewWhereUniqueInput;
 
   String? get id;
   static Serializer<GUserVehicleReviewWhereUniqueInput> get serializer =>
@@ -9742,7 +9778,7 @@ abstract class GUserVehicleReviewWhereInput
   GUserVehicleReviewWhereInput._();
 
   factory GUserVehicleReviewWhereInput(
-          [Function(GUserVehicleReviewWhereInputBuilder b) updates]) =
+          [void Function(GUserVehicleReviewWhereInputBuilder b) updates]) =
       _$GUserVehicleReviewWhereInput;
 
   BuiltList<GUserVehicleReviewWhereInput>? get AND;
@@ -9778,7 +9814,7 @@ abstract class GUserVehicleReviewAttachmentManyRelationFilter
   GUserVehicleReviewAttachmentManyRelationFilter._();
 
   factory GUserVehicleReviewAttachmentManyRelationFilter(
-      [Function(GUserVehicleReviewAttachmentManyRelationFilterBuilder b)
+      [void Function(GUserVehicleReviewAttachmentManyRelationFilterBuilder b)
           updates]) = _$GUserVehicleReviewAttachmentManyRelationFilter;
 
   GUserVehicleReviewAttachmentWhereInput? get every;
@@ -9808,7 +9844,7 @@ abstract class GUserVehicleReviewOrderByInput
   GUserVehicleReviewOrderByInput._();
 
   factory GUserVehicleReviewOrderByInput(
-          [Function(GUserVehicleReviewOrderByInputBuilder b) updates]) =
+          [void Function(GUserVehicleReviewOrderByInputBuilder b) updates]) =
       _$GUserVehicleReviewOrderByInput;
 
   GOrderDirection? get id;
@@ -9838,7 +9874,7 @@ abstract class GUserVehicleReviewUpdateInput
   GUserVehicleReviewUpdateInput._();
 
   factory GUserVehicleReviewUpdateInput(
-          [Function(GUserVehicleReviewUpdateInputBuilder b) updates]) =
+          [void Function(GUserVehicleReviewUpdateInputBuilder b) updates]) =
       _$GUserVehicleReviewUpdateInput;
 
   GDateTime? get createdAt;
@@ -9870,7 +9906,8 @@ abstract class GUserVehicleReviewAttachmentRelateToManyForUpdateInput
   GUserVehicleReviewAttachmentRelateToManyForUpdateInput._();
 
   factory GUserVehicleReviewAttachmentRelateToManyForUpdateInput(
-      [Function(GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder b)
+      [void Function(
+              GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder b)
           updates]) = _$GUserVehicleReviewAttachmentRelateToManyForUpdateInput;
 
   BuiltList<GUserVehicleReviewAttachmentWhereUniqueInput>? get disconnect;
@@ -9901,7 +9938,7 @@ abstract class GUserVehicleReviewUpdateArgs
   GUserVehicleReviewUpdateArgs._();
 
   factory GUserVehicleReviewUpdateArgs(
-          [Function(GUserVehicleReviewUpdateArgsBuilder b) updates]) =
+          [void Function(GUserVehicleReviewUpdateArgsBuilder b) updates]) =
       _$GUserVehicleReviewUpdateArgs;
 
   GUserVehicleReviewWhereUniqueInput get where;
@@ -9928,7 +9965,7 @@ abstract class GUserVehicleReviewCreateInput
   GUserVehicleReviewCreateInput._();
 
   factory GUserVehicleReviewCreateInput(
-          [Function(GUserVehicleReviewCreateInputBuilder b) updates]) =
+          [void Function(GUserVehicleReviewCreateInputBuilder b) updates]) =
       _$GUserVehicleReviewCreateInput;
 
   GDateTime? get createdAt;
@@ -9960,7 +9997,8 @@ abstract class GUserVehicleReviewAttachmentRelateToManyForCreateInput
   GUserVehicleReviewAttachmentRelateToManyForCreateInput._();
 
   factory GUserVehicleReviewAttachmentRelateToManyForCreateInput(
-      [Function(GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder b)
+      [void Function(
+              GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder b)
           updates]) = _$GUserVehicleReviewAttachmentRelateToManyForCreateInput;
 
   BuiltList<GUserVehicleReviewAttachmentCreateInput>? get create;
@@ -9989,7 +10027,7 @@ abstract class GUserVehicleReviewAttachmentWhereUniqueInput
   GUserVehicleReviewAttachmentWhereUniqueInput._();
 
   factory GUserVehicleReviewAttachmentWhereUniqueInput(
-      [Function(GUserVehicleReviewAttachmentWhereUniqueInputBuilder b)
+      [void Function(GUserVehicleReviewAttachmentWhereUniqueInputBuilder b)
           updates]) = _$GUserVehicleReviewAttachmentWhereUniqueInput;
 
   String? get id;
@@ -10017,8 +10055,8 @@ abstract class GUserVehicleReviewAttachmentWhereInput
   GUserVehicleReviewAttachmentWhereInput._();
 
   factory GUserVehicleReviewAttachmentWhereInput(
-          [Function(GUserVehicleReviewAttachmentWhereInputBuilder b) updates]) =
-      _$GUserVehicleReviewAttachmentWhereInput;
+      [void Function(GUserVehicleReviewAttachmentWhereInputBuilder b)
+          updates]) = _$GUserVehicleReviewAttachmentWhereInput;
 
   BuiltList<GUserVehicleReviewAttachmentWhereInput>? get AND;
   BuiltList<GUserVehicleReviewAttachmentWhereInput>? get OR;
@@ -10050,7 +10088,7 @@ abstract class GUserVehicleReviewAttachmentOrderByInput
   GUserVehicleReviewAttachmentOrderByInput._();
 
   factory GUserVehicleReviewAttachmentOrderByInput(
-      [Function(GUserVehicleReviewAttachmentOrderByInputBuilder b)
+      [void Function(GUserVehicleReviewAttachmentOrderByInputBuilder b)
           updates]) = _$GUserVehicleReviewAttachmentOrderByInput;
 
   GOrderDirection? get id;
@@ -10079,7 +10117,7 @@ abstract class GUserVehicleReviewAttachmentUpdateInput
   GUserVehicleReviewAttachmentUpdateInput._();
 
   factory GUserVehicleReviewAttachmentUpdateInput(
-      [Function(GUserVehicleReviewAttachmentUpdateInputBuilder b)
+      [void Function(GUserVehicleReviewAttachmentUpdateInputBuilder b)
           updates]) = _$GUserVehicleReviewAttachmentUpdateInput;
 
   GDateTime? get createdAt;
@@ -10109,7 +10147,7 @@ abstract class GUserVehicleReviewRelateToOneForUpdateInput
   GUserVehicleReviewRelateToOneForUpdateInput._();
 
   factory GUserVehicleReviewRelateToOneForUpdateInput(
-      [Function(GUserVehicleReviewRelateToOneForUpdateInputBuilder b)
+      [void Function(GUserVehicleReviewRelateToOneForUpdateInputBuilder b)
           updates]) = _$GUserVehicleReviewRelateToOneForUpdateInput;
 
   GUserVehicleReviewCreateInput? get create;
@@ -10138,8 +10176,8 @@ abstract class GUserVehicleReviewAttachmentUpdateArgs
   GUserVehicleReviewAttachmentUpdateArgs._();
 
   factory GUserVehicleReviewAttachmentUpdateArgs(
-          [Function(GUserVehicleReviewAttachmentUpdateArgsBuilder b) updates]) =
-      _$GUserVehicleReviewAttachmentUpdateArgs;
+      [void Function(GUserVehicleReviewAttachmentUpdateArgsBuilder b)
+          updates]) = _$GUserVehicleReviewAttachmentUpdateArgs;
 
   GUserVehicleReviewAttachmentWhereUniqueInput get where;
   GUserVehicleReviewAttachmentUpdateInput get data;
@@ -10166,7 +10204,7 @@ abstract class GUserVehicleReviewAttachmentCreateInput
   GUserVehicleReviewAttachmentCreateInput._();
 
   factory GUserVehicleReviewAttachmentCreateInput(
-      [Function(GUserVehicleReviewAttachmentCreateInputBuilder b)
+      [void Function(GUserVehicleReviewAttachmentCreateInputBuilder b)
           updates]) = _$GUserVehicleReviewAttachmentCreateInput;
 
   GDateTime? get createdAt;
@@ -10196,7 +10234,7 @@ abstract class GUserVehicleReviewRelateToOneForCreateInput
   GUserVehicleReviewRelateToOneForCreateInput._();
 
   factory GUserVehicleReviewRelateToOneForCreateInput(
-      [Function(GUserVehicleReviewRelateToOneForCreateInputBuilder b)
+      [void Function(GUserVehicleReviewRelateToOneForCreateInputBuilder b)
           updates]) = _$GUserVehicleReviewRelateToOneForCreateInput;
 
   GUserVehicleReviewCreateInput? get create;
@@ -10224,8 +10262,8 @@ abstract class GUserProductReviewWhereUniqueInput
   GUserProductReviewWhereUniqueInput._();
 
   factory GUserProductReviewWhereUniqueInput(
-          [Function(GUserProductReviewWhereUniqueInputBuilder b) updates]) =
-      _$GUserProductReviewWhereUniqueInput;
+      [void Function(GUserProductReviewWhereUniqueInputBuilder b)
+          updates]) = _$GUserProductReviewWhereUniqueInput;
 
   String? get id;
   static Serializer<GUserProductReviewWhereUniqueInput> get serializer =>
@@ -10251,7 +10289,7 @@ abstract class GUserProductReviewWhereInput
   GUserProductReviewWhereInput._();
 
   factory GUserProductReviewWhereInput(
-          [Function(GUserProductReviewWhereInputBuilder b) updates]) =
+          [void Function(GUserProductReviewWhereInputBuilder b) updates]) =
       _$GUserProductReviewWhereInput;
 
   BuiltList<GUserProductReviewWhereInput>? get AND;
@@ -10287,7 +10325,7 @@ abstract class GUserProductReviewAttachmentManyRelationFilter
   GUserProductReviewAttachmentManyRelationFilter._();
 
   factory GUserProductReviewAttachmentManyRelationFilter(
-      [Function(GUserProductReviewAttachmentManyRelationFilterBuilder b)
+      [void Function(GUserProductReviewAttachmentManyRelationFilterBuilder b)
           updates]) = _$GUserProductReviewAttachmentManyRelationFilter;
 
   GUserProductReviewAttachmentWhereInput? get every;
@@ -10317,7 +10355,7 @@ abstract class GUserProductReviewOrderByInput
   GUserProductReviewOrderByInput._();
 
   factory GUserProductReviewOrderByInput(
-          [Function(GUserProductReviewOrderByInputBuilder b) updates]) =
+          [void Function(GUserProductReviewOrderByInputBuilder b) updates]) =
       _$GUserProductReviewOrderByInput;
 
   GOrderDirection? get id;
@@ -10347,7 +10385,7 @@ abstract class GUserProductReviewUpdateInput
   GUserProductReviewUpdateInput._();
 
   factory GUserProductReviewUpdateInput(
-          [Function(GUserProductReviewUpdateInputBuilder b) updates]) =
+          [void Function(GUserProductReviewUpdateInputBuilder b) updates]) =
       _$GUserProductReviewUpdateInput;
 
   GDateTime? get createdAt;
@@ -10379,7 +10417,7 @@ abstract class GProductRelateToOneForUpdateInput
   GProductRelateToOneForUpdateInput._();
 
   factory GProductRelateToOneForUpdateInput(
-          [Function(GProductRelateToOneForUpdateInputBuilder b) updates]) =
+          [void Function(GProductRelateToOneForUpdateInputBuilder b) updates]) =
       _$GProductRelateToOneForUpdateInput;
 
   GProductCreateInput? get create;
@@ -10408,7 +10446,8 @@ abstract class GUserProductReviewAttachmentRelateToManyForUpdateInput
   GUserProductReviewAttachmentRelateToManyForUpdateInput._();
 
   factory GUserProductReviewAttachmentRelateToManyForUpdateInput(
-      [Function(GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder b)
+      [void Function(
+              GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder b)
           updates]) = _$GUserProductReviewAttachmentRelateToManyForUpdateInput;
 
   BuiltList<GUserProductReviewAttachmentWhereUniqueInput>? get disconnect;
@@ -10439,7 +10478,7 @@ abstract class GUserProductReviewUpdateArgs
   GUserProductReviewUpdateArgs._();
 
   factory GUserProductReviewUpdateArgs(
-          [Function(GUserProductReviewUpdateArgsBuilder b) updates]) =
+          [void Function(GUserProductReviewUpdateArgsBuilder b) updates]) =
       _$GUserProductReviewUpdateArgs;
 
   GUserProductReviewWhereUniqueInput get where;
@@ -10466,7 +10505,7 @@ abstract class GUserProductReviewCreateInput
   GUserProductReviewCreateInput._();
 
   factory GUserProductReviewCreateInput(
-          [Function(GUserProductReviewCreateInputBuilder b) updates]) =
+          [void Function(GUserProductReviewCreateInputBuilder b) updates]) =
       _$GUserProductReviewCreateInput;
 
   GDateTime? get createdAt;
@@ -10498,7 +10537,7 @@ abstract class GProductRelateToOneForCreateInput
   GProductRelateToOneForCreateInput._();
 
   factory GProductRelateToOneForCreateInput(
-          [Function(GProductRelateToOneForCreateInputBuilder b) updates]) =
+          [void Function(GProductRelateToOneForCreateInputBuilder b) updates]) =
       _$GProductRelateToOneForCreateInput;
 
   GProductCreateInput? get create;
@@ -10526,7 +10565,8 @@ abstract class GUserProductReviewAttachmentRelateToManyForCreateInput
   GUserProductReviewAttachmentRelateToManyForCreateInput._();
 
   factory GUserProductReviewAttachmentRelateToManyForCreateInput(
-      [Function(GUserProductReviewAttachmentRelateToManyForCreateInputBuilder b)
+      [void Function(
+              GUserProductReviewAttachmentRelateToManyForCreateInputBuilder b)
           updates]) = _$GUserProductReviewAttachmentRelateToManyForCreateInput;
 
   BuiltList<GUserProductReviewAttachmentCreateInput>? get create;
@@ -10555,7 +10595,7 @@ abstract class GUserProductReviewAttachmentWhereUniqueInput
   GUserProductReviewAttachmentWhereUniqueInput._();
 
   factory GUserProductReviewAttachmentWhereUniqueInput(
-      [Function(GUserProductReviewAttachmentWhereUniqueInputBuilder b)
+      [void Function(GUserProductReviewAttachmentWhereUniqueInputBuilder b)
           updates]) = _$GUserProductReviewAttachmentWhereUniqueInput;
 
   String? get id;
@@ -10583,8 +10623,8 @@ abstract class GUserProductReviewAttachmentWhereInput
   GUserProductReviewAttachmentWhereInput._();
 
   factory GUserProductReviewAttachmentWhereInput(
-          [Function(GUserProductReviewAttachmentWhereInputBuilder b) updates]) =
-      _$GUserProductReviewAttachmentWhereInput;
+      [void Function(GUserProductReviewAttachmentWhereInputBuilder b)
+          updates]) = _$GUserProductReviewAttachmentWhereInput;
 
   BuiltList<GUserProductReviewAttachmentWhereInput>? get AND;
   BuiltList<GUserProductReviewAttachmentWhereInput>? get OR;
@@ -10616,7 +10656,7 @@ abstract class GUserProductReviewAttachmentOrderByInput
   GUserProductReviewAttachmentOrderByInput._();
 
   factory GUserProductReviewAttachmentOrderByInput(
-      [Function(GUserProductReviewAttachmentOrderByInputBuilder b)
+      [void Function(GUserProductReviewAttachmentOrderByInputBuilder b)
           updates]) = _$GUserProductReviewAttachmentOrderByInput;
 
   GOrderDirection? get id;
@@ -10645,7 +10685,7 @@ abstract class GUserProductReviewAttachmentUpdateInput
   GUserProductReviewAttachmentUpdateInput._();
 
   factory GUserProductReviewAttachmentUpdateInput(
-      [Function(GUserProductReviewAttachmentUpdateInputBuilder b)
+      [void Function(GUserProductReviewAttachmentUpdateInputBuilder b)
           updates]) = _$GUserProductReviewAttachmentUpdateInput;
 
   GDateTime? get createdAt;
@@ -10675,7 +10715,7 @@ abstract class GUserProductReviewRelateToOneForUpdateInput
   GUserProductReviewRelateToOneForUpdateInput._();
 
   factory GUserProductReviewRelateToOneForUpdateInput(
-      [Function(GUserProductReviewRelateToOneForUpdateInputBuilder b)
+      [void Function(GUserProductReviewRelateToOneForUpdateInputBuilder b)
           updates]) = _$GUserProductReviewRelateToOneForUpdateInput;
 
   GUserProductReviewCreateInput? get create;
@@ -10704,8 +10744,8 @@ abstract class GUserProductReviewAttachmentUpdateArgs
   GUserProductReviewAttachmentUpdateArgs._();
 
   factory GUserProductReviewAttachmentUpdateArgs(
-          [Function(GUserProductReviewAttachmentUpdateArgsBuilder b) updates]) =
-      _$GUserProductReviewAttachmentUpdateArgs;
+      [void Function(GUserProductReviewAttachmentUpdateArgsBuilder b)
+          updates]) = _$GUserProductReviewAttachmentUpdateArgs;
 
   GUserProductReviewAttachmentWhereUniqueInput get where;
   GUserProductReviewAttachmentUpdateInput get data;
@@ -10732,7 +10772,7 @@ abstract class GUserProductReviewAttachmentCreateInput
   GUserProductReviewAttachmentCreateInput._();
 
   factory GUserProductReviewAttachmentCreateInput(
-      [Function(GUserProductReviewAttachmentCreateInputBuilder b)
+      [void Function(GUserProductReviewAttachmentCreateInputBuilder b)
           updates]) = _$GUserProductReviewAttachmentCreateInput;
 
   GDateTime? get createdAt;
@@ -10762,7 +10802,7 @@ abstract class GUserProductReviewRelateToOneForCreateInput
   GUserProductReviewRelateToOneForCreateInput._();
 
   factory GUserProductReviewRelateToOneForCreateInput(
-      [Function(GUserProductReviewRelateToOneForCreateInputBuilder b)
+      [void Function(GUserProductReviewRelateToOneForCreateInputBuilder b)
           updates]) = _$GUserProductReviewRelateToOneForCreateInput;
 
   GUserProductReviewCreateInput? get create;
@@ -10790,7 +10830,7 @@ abstract class GExpertReviewWhereUniqueInput
   GExpertReviewWhereUniqueInput._();
 
   factory GExpertReviewWhereUniqueInput(
-          [Function(GExpertReviewWhereUniqueInputBuilder b) updates]) =
+          [void Function(GExpertReviewWhereUniqueInputBuilder b) updates]) =
       _$GExpertReviewWhereUniqueInput;
 
   String? get id;
@@ -10814,7 +10854,7 @@ abstract class GExpertReviewWhereInput
   GExpertReviewWhereInput._();
 
   factory GExpertReviewWhereInput(
-          [Function(GExpertReviewWhereInputBuilder b) updates]) =
+          [void Function(GExpertReviewWhereInputBuilder b) updates]) =
       _$GExpertReviewWhereInput;
 
   BuiltList<GExpertReviewWhereInput>? get AND;
@@ -10849,7 +10889,7 @@ abstract class GExpertReviewOrderByInput
   GExpertReviewOrderByInput._();
 
   factory GExpertReviewOrderByInput(
-          [Function(GExpertReviewOrderByInputBuilder b) updates]) =
+          [void Function(GExpertReviewOrderByInputBuilder b) updates]) =
       _$GExpertReviewOrderByInput;
 
   GOrderDirection? get id;
@@ -10880,7 +10920,7 @@ abstract class GExpertReviewUpdateInput
   GExpertReviewUpdateInput._();
 
   factory GExpertReviewUpdateInput(
-          [Function(GExpertReviewUpdateInputBuilder b) updates]) =
+          [void Function(GExpertReviewUpdateInputBuilder b) updates]) =
       _$GExpertReviewUpdateInput;
 
   GDateTime? get createdAt;
@@ -10911,7 +10951,7 @@ abstract class GExpertReviewUpdateArgs
   GExpertReviewUpdateArgs._();
 
   factory GExpertReviewUpdateArgs(
-          [Function(GExpertReviewUpdateArgsBuilder b) updates]) =
+          [void Function(GExpertReviewUpdateArgsBuilder b) updates]) =
       _$GExpertReviewUpdateArgs;
 
   GExpertReviewWhereUniqueInput get where;
@@ -10937,7 +10977,7 @@ abstract class GExpertReviewCreateInput
   GExpertReviewCreateInput._();
 
   factory GExpertReviewCreateInput(
-          [Function(GExpertReviewCreateInputBuilder b) updates]) =
+          [void Function(GExpertReviewCreateInputBuilder b) updates]) =
       _$GExpertReviewCreateInput;
 
   GDateTime? get createdAt;
@@ -10968,7 +11008,7 @@ abstract class GDealerWhereUniqueInput
   GDealerWhereUniqueInput._();
 
   factory GDealerWhereUniqueInput(
-          [Function(GDealerWhereUniqueInputBuilder b) updates]) =
+          [void Function(GDealerWhereUniqueInputBuilder b) updates]) =
       _$GDealerWhereUniqueInput;
 
   String? get id;
@@ -10991,7 +11031,8 @@ abstract class GDealerWhereInput
     implements Built<GDealerWhereInput, GDealerWhereInputBuilder> {
   GDealerWhereInput._();
 
-  factory GDealerWhereInput([Function(GDealerWhereInputBuilder b) updates]) =
+  factory GDealerWhereInput(
+          [void Function(GDealerWhereInputBuilder b) updates]) =
       _$GDealerWhereInput;
 
   BuiltList<GDealerWhereInput>? get AND;
@@ -11027,7 +11068,7 @@ abstract class GDealerAddressManyRelationFilter
   GDealerAddressManyRelationFilter._();
 
   factory GDealerAddressManyRelationFilter(
-          [Function(GDealerAddressManyRelationFilterBuilder b) updates]) =
+          [void Function(GDealerAddressManyRelationFilterBuilder b) updates]) =
       _$GDealerAddressManyRelationFilter;
 
   GDealerAddressWhereInput? get every;
@@ -11054,7 +11095,8 @@ abstract class GDealerOrderByInput
   GDealerOrderByInput._();
 
   factory GDealerOrderByInput(
-      [Function(GDealerOrderByInputBuilder b) updates]) = _$GDealerOrderByInput;
+          [void Function(GDealerOrderByInputBuilder b) updates]) =
+      _$GDealerOrderByInput;
 
   GOrderDirection? get id;
   GOrderDirection? get createdAt;
@@ -11081,7 +11123,8 @@ abstract class GDealerUpdateInput
     implements Built<GDealerUpdateInput, GDealerUpdateInputBuilder> {
   GDealerUpdateInput._();
 
-  factory GDealerUpdateInput([Function(GDealerUpdateInputBuilder b) updates]) =
+  factory GDealerUpdateInput(
+          [void Function(GDealerUpdateInputBuilder b) updates]) =
       _$GDealerUpdateInput;
 
   GDateTime? get createdAt;
@@ -11113,7 +11156,7 @@ abstract class GDealerAddressRelateToManyForUpdateInput
   GDealerAddressRelateToManyForUpdateInput._();
 
   factory GDealerAddressRelateToManyForUpdateInput(
-      [Function(GDealerAddressRelateToManyForUpdateInputBuilder b)
+      [void Function(GDealerAddressRelateToManyForUpdateInputBuilder b)
           updates]) = _$GDealerAddressRelateToManyForUpdateInput;
 
   BuiltList<GDealerAddressWhereUniqueInput>? get disconnect;
@@ -11140,7 +11183,8 @@ abstract class GDealerUpdateArgs
     implements Built<GDealerUpdateArgs, GDealerUpdateArgsBuilder> {
   GDealerUpdateArgs._();
 
-  factory GDealerUpdateArgs([Function(GDealerUpdateArgsBuilder b) updates]) =
+  factory GDealerUpdateArgs(
+          [void Function(GDealerUpdateArgsBuilder b) updates]) =
       _$GDealerUpdateArgs;
 
   GDealerWhereUniqueInput get where;
@@ -11164,7 +11208,8 @@ abstract class GDealerCreateInput
     implements Built<GDealerCreateInput, GDealerCreateInputBuilder> {
   GDealerCreateInput._();
 
-  factory GDealerCreateInput([Function(GDealerCreateInputBuilder b) updates]) =
+  factory GDealerCreateInput(
+          [void Function(GDealerCreateInputBuilder b) updates]) =
       _$GDealerCreateInput;
 
   GDateTime? get createdAt;
@@ -11196,7 +11241,7 @@ abstract class GDealerAddressRelateToManyForCreateInput
   GDealerAddressRelateToManyForCreateInput._();
 
   factory GDealerAddressRelateToManyForCreateInput(
-      [Function(GDealerAddressRelateToManyForCreateInputBuilder b)
+      [void Function(GDealerAddressRelateToManyForCreateInputBuilder b)
           updates]) = _$GDealerAddressRelateToManyForCreateInput;
 
   BuiltList<GDealerAddressCreateInput>? get create;
@@ -11224,7 +11269,7 @@ abstract class GNotificationTypeWhereUniqueInput
   GNotificationTypeWhereUniqueInput._();
 
   factory GNotificationTypeWhereUniqueInput(
-          [Function(GNotificationTypeWhereUniqueInputBuilder b) updates]) =
+          [void Function(GNotificationTypeWhereUniqueInputBuilder b) updates]) =
       _$GNotificationTypeWhereUniqueInput;
 
   String? get id;
@@ -11251,7 +11296,7 @@ abstract class GNotificationTypeWhereInput
   GNotificationTypeWhereInput._();
 
   factory GNotificationTypeWhereInput(
-          [Function(GNotificationTypeWhereInputBuilder b) updates]) =
+          [void Function(GNotificationTypeWhereInputBuilder b) updates]) =
       _$GNotificationTypeWhereInput;
 
   BuiltList<GNotificationTypeWhereInput>? get AND;
@@ -11283,7 +11328,7 @@ abstract class GNotificationTypeOrderByInput
   GNotificationTypeOrderByInput._();
 
   factory GNotificationTypeOrderByInput(
-          [Function(GNotificationTypeOrderByInputBuilder b) updates]) =
+          [void Function(GNotificationTypeOrderByInputBuilder b) updates]) =
       _$GNotificationTypeOrderByInput;
 
   GOrderDirection? get id;
@@ -11312,7 +11357,7 @@ abstract class GNotificationTypeUpdateInput
   GNotificationTypeUpdateInput._();
 
   factory GNotificationTypeUpdateInput(
-          [Function(GNotificationTypeUpdateInputBuilder b) updates]) =
+          [void Function(GNotificationTypeUpdateInputBuilder b) updates]) =
       _$GNotificationTypeUpdateInput;
 
   GDateTime? get createdAt;
@@ -11339,7 +11384,7 @@ abstract class GNotificationTypeUpdateArgs
   GNotificationTypeUpdateArgs._();
 
   factory GNotificationTypeUpdateArgs(
-          [Function(GNotificationTypeUpdateArgsBuilder b) updates]) =
+          [void Function(GNotificationTypeUpdateArgsBuilder b) updates]) =
       _$GNotificationTypeUpdateArgs;
 
   GNotificationTypeWhereUniqueInput get where;
@@ -11366,7 +11411,7 @@ abstract class GNotificationTypeCreateInput
   GNotificationTypeCreateInput._();
 
   factory GNotificationTypeCreateInput(
-          [Function(GNotificationTypeCreateInputBuilder b) updates]) =
+          [void Function(GNotificationTypeCreateInputBuilder b) updates]) =
       _$GNotificationTypeCreateInput;
 
   GDateTime? get createdAt;
@@ -11394,7 +11439,7 @@ abstract class GEmailNotificationTemplateWhereUniqueInput
   GEmailNotificationTemplateWhereUniqueInput._();
 
   factory GEmailNotificationTemplateWhereUniqueInput(
-      [Function(GEmailNotificationTemplateWhereUniqueInputBuilder b)
+      [void Function(GEmailNotificationTemplateWhereUniqueInputBuilder b)
           updates]) = _$GEmailNotificationTemplateWhereUniqueInput;
 
   String? get id;
@@ -11421,8 +11466,8 @@ abstract class GEmailNotificationTemplateWhereInput
   GEmailNotificationTemplateWhereInput._();
 
   factory GEmailNotificationTemplateWhereInput(
-          [Function(GEmailNotificationTemplateWhereInputBuilder b) updates]) =
-      _$GEmailNotificationTemplateWhereInput;
+      [void Function(GEmailNotificationTemplateWhereInputBuilder b)
+          updates]) = _$GEmailNotificationTemplateWhereInput;
 
   BuiltList<GEmailNotificationTemplateWhereInput>? get AND;
   BuiltList<GEmailNotificationTemplateWhereInput>? get OR;
@@ -11456,8 +11501,8 @@ abstract class GEmailNotificationTemplateOrderByInput
   GEmailNotificationTemplateOrderByInput._();
 
   factory GEmailNotificationTemplateOrderByInput(
-          [Function(GEmailNotificationTemplateOrderByInputBuilder b) updates]) =
-      _$GEmailNotificationTemplateOrderByInput;
+      [void Function(GEmailNotificationTemplateOrderByInputBuilder b)
+          updates]) = _$GEmailNotificationTemplateOrderByInput;
 
   GOrderDirection? get id;
   GOrderDirection? get createdAt;
@@ -11487,8 +11532,8 @@ abstract class GEmailNotificationTemplateUpdateInput
   GEmailNotificationTemplateUpdateInput._();
 
   factory GEmailNotificationTemplateUpdateInput(
-          [Function(GEmailNotificationTemplateUpdateInputBuilder b) updates]) =
-      _$GEmailNotificationTemplateUpdateInput;
+      [void Function(GEmailNotificationTemplateUpdateInputBuilder b)
+          updates]) = _$GEmailNotificationTemplateUpdateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -11518,7 +11563,7 @@ abstract class GNotificationTypeRelateToOneForUpdateInput
   GNotificationTypeRelateToOneForUpdateInput._();
 
   factory GNotificationTypeRelateToOneForUpdateInput(
-      [Function(GNotificationTypeRelateToOneForUpdateInputBuilder b)
+      [void Function(GNotificationTypeRelateToOneForUpdateInputBuilder b)
           updates]) = _$GNotificationTypeRelateToOneForUpdateInput;
 
   GNotificationTypeCreateInput? get create;
@@ -11547,8 +11592,8 @@ abstract class GEmailNotificationTemplateUpdateArgs
   GEmailNotificationTemplateUpdateArgs._();
 
   factory GEmailNotificationTemplateUpdateArgs(
-          [Function(GEmailNotificationTemplateUpdateArgsBuilder b) updates]) =
-      _$GEmailNotificationTemplateUpdateArgs;
+      [void Function(GEmailNotificationTemplateUpdateArgsBuilder b)
+          updates]) = _$GEmailNotificationTemplateUpdateArgs;
 
   GEmailNotificationTemplateWhereUniqueInput get where;
   GEmailNotificationTemplateUpdateInput get data;
@@ -11575,8 +11620,8 @@ abstract class GEmailNotificationTemplateCreateInput
   GEmailNotificationTemplateCreateInput._();
 
   factory GEmailNotificationTemplateCreateInput(
-          [Function(GEmailNotificationTemplateCreateInputBuilder b) updates]) =
-      _$GEmailNotificationTemplateCreateInput;
+      [void Function(GEmailNotificationTemplateCreateInputBuilder b)
+          updates]) = _$GEmailNotificationTemplateCreateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -11606,7 +11651,7 @@ abstract class GNotificationTypeRelateToOneForCreateInput
   GNotificationTypeRelateToOneForCreateInput._();
 
   factory GNotificationTypeRelateToOneForCreateInput(
-      [Function(GNotificationTypeRelateToOneForCreateInputBuilder b)
+      [void Function(GNotificationTypeRelateToOneForCreateInputBuilder b)
           updates]) = _$GNotificationTypeRelateToOneForCreateInput;
 
   GNotificationTypeCreateInput? get create;
@@ -11634,7 +11679,7 @@ abstract class GSMSNotificationTemplateWhereUniqueInput
   GSMSNotificationTemplateWhereUniqueInput._();
 
   factory GSMSNotificationTemplateWhereUniqueInput(
-      [Function(GSMSNotificationTemplateWhereUniqueInputBuilder b)
+      [void Function(GSMSNotificationTemplateWhereUniqueInputBuilder b)
           updates]) = _$GSMSNotificationTemplateWhereUniqueInput;
 
   String? get id;
@@ -11661,8 +11706,8 @@ abstract class GSMSNotificationTemplateWhereInput
   GSMSNotificationTemplateWhereInput._();
 
   factory GSMSNotificationTemplateWhereInput(
-          [Function(GSMSNotificationTemplateWhereInputBuilder b) updates]) =
-      _$GSMSNotificationTemplateWhereInput;
+      [void Function(GSMSNotificationTemplateWhereInputBuilder b)
+          updates]) = _$GSMSNotificationTemplateWhereInput;
 
   BuiltList<GSMSNotificationTemplateWhereInput>? get AND;
   BuiltList<GSMSNotificationTemplateWhereInput>? get OR;
@@ -11697,8 +11742,8 @@ abstract class GSMSNotificationTemplateOrderByInput
   GSMSNotificationTemplateOrderByInput._();
 
   factory GSMSNotificationTemplateOrderByInput(
-          [Function(GSMSNotificationTemplateOrderByInputBuilder b) updates]) =
-      _$GSMSNotificationTemplateOrderByInput;
+      [void Function(GSMSNotificationTemplateOrderByInputBuilder b)
+          updates]) = _$GSMSNotificationTemplateOrderByInput;
 
   GOrderDirection? get id;
   GOrderDirection? get createdAt;
@@ -11729,8 +11774,8 @@ abstract class GSMSNotificationTemplateUpdateInput
   GSMSNotificationTemplateUpdateInput._();
 
   factory GSMSNotificationTemplateUpdateInput(
-          [Function(GSMSNotificationTemplateUpdateInputBuilder b) updates]) =
-      _$GSMSNotificationTemplateUpdateInput;
+      [void Function(GSMSNotificationTemplateUpdateInputBuilder b)
+          updates]) = _$GSMSNotificationTemplateUpdateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -11762,8 +11807,8 @@ abstract class GSMSNotificationTemplateUpdateArgs
   GSMSNotificationTemplateUpdateArgs._();
 
   factory GSMSNotificationTemplateUpdateArgs(
-          [Function(GSMSNotificationTemplateUpdateArgsBuilder b) updates]) =
-      _$GSMSNotificationTemplateUpdateArgs;
+      [void Function(GSMSNotificationTemplateUpdateArgsBuilder b)
+          updates]) = _$GSMSNotificationTemplateUpdateArgs;
 
   GSMSNotificationTemplateWhereUniqueInput get where;
   GSMSNotificationTemplateUpdateInput get data;
@@ -11790,8 +11835,8 @@ abstract class GSMSNotificationTemplateCreateInput
   GSMSNotificationTemplateCreateInput._();
 
   factory GSMSNotificationTemplateCreateInput(
-          [Function(GSMSNotificationTemplateCreateInputBuilder b) updates]) =
-      _$GSMSNotificationTemplateCreateInput;
+      [void Function(GSMSNotificationTemplateCreateInputBuilder b)
+          updates]) = _$GSMSNotificationTemplateCreateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -11823,7 +11868,7 @@ abstract class GAppNotificationTemplateWhereUniqueInput
   GAppNotificationTemplateWhereUniqueInput._();
 
   factory GAppNotificationTemplateWhereUniqueInput(
-      [Function(GAppNotificationTemplateWhereUniqueInputBuilder b)
+      [void Function(GAppNotificationTemplateWhereUniqueInputBuilder b)
           updates]) = _$GAppNotificationTemplateWhereUniqueInput;
 
   String? get id;
@@ -11850,8 +11895,8 @@ abstract class GAppNotificationTemplateWhereInput
   GAppNotificationTemplateWhereInput._();
 
   factory GAppNotificationTemplateWhereInput(
-          [Function(GAppNotificationTemplateWhereInputBuilder b) updates]) =
-      _$GAppNotificationTemplateWhereInput;
+      [void Function(GAppNotificationTemplateWhereInputBuilder b)
+          updates]) = _$GAppNotificationTemplateWhereInput;
 
   BuiltList<GAppNotificationTemplateWhereInput>? get AND;
   BuiltList<GAppNotificationTemplateWhereInput>? get OR;
@@ -11885,8 +11930,8 @@ abstract class GAppNotificationTemplateOrderByInput
   GAppNotificationTemplateOrderByInput._();
 
   factory GAppNotificationTemplateOrderByInput(
-          [Function(GAppNotificationTemplateOrderByInputBuilder b) updates]) =
-      _$GAppNotificationTemplateOrderByInput;
+      [void Function(GAppNotificationTemplateOrderByInputBuilder b)
+          updates]) = _$GAppNotificationTemplateOrderByInput;
 
   GOrderDirection? get id;
   GOrderDirection? get createdAt;
@@ -11916,8 +11961,8 @@ abstract class GAppNotificationTemplateUpdateInput
   GAppNotificationTemplateUpdateInput._();
 
   factory GAppNotificationTemplateUpdateInput(
-          [Function(GAppNotificationTemplateUpdateInputBuilder b) updates]) =
-      _$GAppNotificationTemplateUpdateInput;
+      [void Function(GAppNotificationTemplateUpdateInputBuilder b)
+          updates]) = _$GAppNotificationTemplateUpdateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -11947,8 +11992,8 @@ abstract class GAppNotificationTemplateUpdateArgs
   GAppNotificationTemplateUpdateArgs._();
 
   factory GAppNotificationTemplateUpdateArgs(
-          [Function(GAppNotificationTemplateUpdateArgsBuilder b) updates]) =
-      _$GAppNotificationTemplateUpdateArgs;
+      [void Function(GAppNotificationTemplateUpdateArgsBuilder b)
+          updates]) = _$GAppNotificationTemplateUpdateArgs;
 
   GAppNotificationTemplateWhereUniqueInput get where;
   GAppNotificationTemplateUpdateInput get data;
@@ -11975,8 +12020,8 @@ abstract class GAppNotificationTemplateCreateInput
   GAppNotificationTemplateCreateInput._();
 
   factory GAppNotificationTemplateCreateInput(
-          [Function(GAppNotificationTemplateCreateInputBuilder b) updates]) =
-      _$GAppNotificationTemplateCreateInput;
+      [void Function(GAppNotificationTemplateCreateInputBuilder b)
+          updates]) = _$GAppNotificationTemplateCreateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -12006,7 +12051,7 @@ abstract class GAppNotificationWhereUniqueInput
   GAppNotificationWhereUniqueInput._();
 
   factory GAppNotificationWhereUniqueInput(
-          [Function(GAppNotificationWhereUniqueInputBuilder b) updates]) =
+          [void Function(GAppNotificationWhereUniqueInputBuilder b) updates]) =
       _$GAppNotificationWhereUniqueInput;
 
   String? get id;
@@ -12032,7 +12077,7 @@ abstract class GAppNotificationWhereInput
   GAppNotificationWhereInput._();
 
   factory GAppNotificationWhereInput(
-          [Function(GAppNotificationWhereInputBuilder b) updates]) =
+          [void Function(GAppNotificationWhereInputBuilder b) updates]) =
       _$GAppNotificationWhereInput;
 
   BuiltList<GAppNotificationWhereInput>? get AND;
@@ -12067,7 +12112,7 @@ abstract class GAppNotificationOrderByInput
   GAppNotificationOrderByInput._();
 
   factory GAppNotificationOrderByInput(
-          [Function(GAppNotificationOrderByInputBuilder b) updates]) =
+          [void Function(GAppNotificationOrderByInputBuilder b) updates]) =
       _$GAppNotificationOrderByInput;
 
   GOrderDirection? get id;
@@ -12096,7 +12141,7 @@ abstract class GAppNotificationUpdateInput
   GAppNotificationUpdateInput._();
 
   factory GAppNotificationUpdateInput(
-          [Function(GAppNotificationUpdateInputBuilder b) updates]) =
+          [void Function(GAppNotificationUpdateInputBuilder b) updates]) =
       _$GAppNotificationUpdateInput;
 
   GDateTime? get createdAt;
@@ -12126,7 +12171,7 @@ abstract class GAppNotificationUpdateArgs
   GAppNotificationUpdateArgs._();
 
   factory GAppNotificationUpdateArgs(
-          [Function(GAppNotificationUpdateArgsBuilder b) updates]) =
+          [void Function(GAppNotificationUpdateArgsBuilder b) updates]) =
       _$GAppNotificationUpdateArgs;
 
   GAppNotificationWhereUniqueInput get where;
@@ -12152,7 +12197,7 @@ abstract class GAppNotificationCreateInput
   GAppNotificationCreateInput._();
 
   factory GAppNotificationCreateInput(
-          [Function(GAppNotificationCreateInputBuilder b) updates]) =
+          [void Function(GAppNotificationCreateInputBuilder b) updates]) =
       _$GAppNotificationCreateInput;
 
   GDateTime? get createdAt;
@@ -12181,7 +12226,7 @@ abstract class GFAQWhereUniqueInput
   GFAQWhereUniqueInput._();
 
   factory GFAQWhereUniqueInput(
-          [Function(GFAQWhereUniqueInputBuilder b) updates]) =
+          [void Function(GFAQWhereUniqueInputBuilder b) updates]) =
       _$GFAQWhereUniqueInput;
 
   String? get id;
@@ -12204,7 +12249,7 @@ abstract class GFAQWhereInput
     implements Built<GFAQWhereInput, GFAQWhereInputBuilder> {
   GFAQWhereInput._();
 
-  factory GFAQWhereInput([Function(GFAQWhereInputBuilder b) updates]) =
+  factory GFAQWhereInput([void Function(GFAQWhereInputBuilder b) updates]) =
       _$GFAQWhereInput;
 
   BuiltList<GFAQWhereInput>? get AND;
@@ -12235,7 +12280,7 @@ abstract class GFAQOrderByInput
     implements Built<GFAQOrderByInput, GFAQOrderByInputBuilder> {
   GFAQOrderByInput._();
 
-  factory GFAQOrderByInput([Function(GFAQOrderByInputBuilder b) updates]) =
+  factory GFAQOrderByInput([void Function(GFAQOrderByInputBuilder b) updates]) =
       _$GFAQOrderByInput;
 
   GOrderDirection? get id;
@@ -12262,7 +12307,7 @@ abstract class GFAQUpdateInput
     implements Built<GFAQUpdateInput, GFAQUpdateInputBuilder> {
   GFAQUpdateInput._();
 
-  factory GFAQUpdateInput([Function(GFAQUpdateInputBuilder b) updates]) =
+  factory GFAQUpdateInput([void Function(GFAQUpdateInputBuilder b) updates]) =
       _$GFAQUpdateInput;
 
   GDateTime? get createdAt;
@@ -12292,8 +12337,8 @@ abstract class GCategoryRelateToOneForUpdateInput
   GCategoryRelateToOneForUpdateInput._();
 
   factory GCategoryRelateToOneForUpdateInput(
-          [Function(GCategoryRelateToOneForUpdateInputBuilder b) updates]) =
-      _$GCategoryRelateToOneForUpdateInput;
+      [void Function(GCategoryRelateToOneForUpdateInputBuilder b)
+          updates]) = _$GCategoryRelateToOneForUpdateInput;
 
   GCategoryCreateInput? get create;
   GCategoryWhereUniqueInput? get connect;
@@ -12318,7 +12363,7 @@ abstract class GFAQUpdateArgs
     implements Built<GFAQUpdateArgs, GFAQUpdateArgsBuilder> {
   GFAQUpdateArgs._();
 
-  factory GFAQUpdateArgs([Function(GFAQUpdateArgsBuilder b) updates]) =
+  factory GFAQUpdateArgs([void Function(GFAQUpdateArgsBuilder b) updates]) =
       _$GFAQUpdateArgs;
 
   GFAQWhereUniqueInput get where;
@@ -12342,7 +12387,7 @@ abstract class GFAQCreateInput
     implements Built<GFAQCreateInput, GFAQCreateInputBuilder> {
   GFAQCreateInput._();
 
-  factory GFAQCreateInput([Function(GFAQCreateInputBuilder b) updates]) =
+  factory GFAQCreateInput([void Function(GFAQCreateInputBuilder b) updates]) =
       _$GFAQCreateInput;
 
   GDateTime? get createdAt;
@@ -12372,8 +12417,8 @@ abstract class GCategoryRelateToOneForCreateInput
   GCategoryRelateToOneForCreateInput._();
 
   factory GCategoryRelateToOneForCreateInput(
-          [Function(GCategoryRelateToOneForCreateInputBuilder b) updates]) =
-      _$GCategoryRelateToOneForCreateInput;
+      [void Function(GCategoryRelateToOneForCreateInputBuilder b)
+          updates]) = _$GCategoryRelateToOneForCreateInput;
 
   GCategoryCreateInput? get create;
   GCategoryWhereUniqueInput? get connect;
@@ -12400,7 +12445,7 @@ abstract class GHelpSupportWhereUniqueInput
   GHelpSupportWhereUniqueInput._();
 
   factory GHelpSupportWhereUniqueInput(
-          [Function(GHelpSupportWhereUniqueInputBuilder b) updates]) =
+          [void Function(GHelpSupportWhereUniqueInputBuilder b) updates]) =
       _$GHelpSupportWhereUniqueInput;
 
   String? get id;
@@ -12424,7 +12469,7 @@ abstract class GHelpSupportWhereInput
   GHelpSupportWhereInput._();
 
   factory GHelpSupportWhereInput(
-          [Function(GHelpSupportWhereInputBuilder b) updates]) =
+          [void Function(GHelpSupportWhereInputBuilder b) updates]) =
       _$GHelpSupportWhereInput;
 
   BuiltList<GHelpSupportWhereInput>? get AND;
@@ -12459,7 +12504,7 @@ abstract class GHelpSupportOrderByInput
   GHelpSupportOrderByInput._();
 
   factory GHelpSupportOrderByInput(
-          [Function(GHelpSupportOrderByInputBuilder b) updates]) =
+          [void Function(GHelpSupportOrderByInputBuilder b) updates]) =
       _$GHelpSupportOrderByInput;
 
   GOrderDirection? get id;
@@ -12488,7 +12533,7 @@ abstract class GHelpSupportUpdateInput
   GHelpSupportUpdateInput._();
 
   factory GHelpSupportUpdateInput(
-          [Function(GHelpSupportUpdateInputBuilder b) updates]) =
+          [void Function(GHelpSupportUpdateInputBuilder b) updates]) =
       _$GHelpSupportUpdateInput;
 
   GDateTime? get createdAt;
@@ -12518,7 +12563,7 @@ abstract class GHelpSupportUpdateArgs
   GHelpSupportUpdateArgs._();
 
   factory GHelpSupportUpdateArgs(
-          [Function(GHelpSupportUpdateArgsBuilder b) updates]) =
+          [void Function(GHelpSupportUpdateArgsBuilder b) updates]) =
       _$GHelpSupportUpdateArgs;
 
   GHelpSupportWhereUniqueInput get where;
@@ -12543,7 +12588,7 @@ abstract class GHelpSupportCreateInput
   GHelpSupportCreateInput._();
 
   factory GHelpSupportCreateInput(
-          [Function(GHelpSupportCreateInputBuilder b) updates]) =
+          [void Function(GHelpSupportCreateInputBuilder b) updates]) =
       _$GHelpSupportCreateInput;
 
   GDateTime? get createdAt;
@@ -12573,7 +12618,7 @@ abstract class GTagWhereUniqueInput
   GTagWhereUniqueInput._();
 
   factory GTagWhereUniqueInput(
-          [Function(GTagWhereUniqueInputBuilder b) updates]) =
+          [void Function(GTagWhereUniqueInputBuilder b) updates]) =
       _$GTagWhereUniqueInput;
 
   String? get id;
@@ -12596,7 +12641,7 @@ abstract class GTagWhereInput
     implements Built<GTagWhereInput, GTagWhereInputBuilder> {
   GTagWhereInput._();
 
-  factory GTagWhereInput([Function(GTagWhereInputBuilder b) updates]) =
+  factory GTagWhereInput([void Function(GTagWhereInputBuilder b) updates]) =
       _$GTagWhereInput;
 
   BuiltList<GTagWhereInput>? get AND;
@@ -12626,7 +12671,7 @@ abstract class GTagOrderByInput
     implements Built<GTagOrderByInput, GTagOrderByInputBuilder> {
   GTagOrderByInput._();
 
-  factory GTagOrderByInput([Function(GTagOrderByInputBuilder b) updates]) =
+  factory GTagOrderByInput([void Function(GTagOrderByInputBuilder b) updates]) =
       _$GTagOrderByInput;
 
   GOrderDirection? get id;
@@ -12653,7 +12698,7 @@ abstract class GTagUpdateInput
     implements Built<GTagUpdateInput, GTagUpdateInputBuilder> {
   GTagUpdateInput._();
 
-  factory GTagUpdateInput([Function(GTagUpdateInputBuilder b) updates]) =
+  factory GTagUpdateInput([void Function(GTagUpdateInputBuilder b) updates]) =
       _$GTagUpdateInput;
 
   GDateTime? get createdAt;
@@ -12679,7 +12724,7 @@ abstract class GTagUpdateArgs
     implements Built<GTagUpdateArgs, GTagUpdateArgsBuilder> {
   GTagUpdateArgs._();
 
-  factory GTagUpdateArgs([Function(GTagUpdateArgsBuilder b) updates]) =
+  factory GTagUpdateArgs([void Function(GTagUpdateArgsBuilder b) updates]) =
       _$GTagUpdateArgs;
 
   GTagWhereUniqueInput get where;
@@ -12703,7 +12748,7 @@ abstract class GTagCreateInput
     implements Built<GTagCreateInput, GTagCreateInputBuilder> {
   GTagCreateInput._();
 
-  factory GTagCreateInput([Function(GTagCreateInputBuilder b) updates]) =
+  factory GTagCreateInput([void Function(GTagCreateInputBuilder b) updates]) =
       _$GTagCreateInput;
 
   GDateTime? get createdAt;
@@ -12731,7 +12776,7 @@ abstract class GNewsItemWhereUniqueInput
   GNewsItemWhereUniqueInput._();
 
   factory GNewsItemWhereUniqueInput(
-          [Function(GNewsItemWhereUniqueInputBuilder b) updates]) =
+          [void Function(GNewsItemWhereUniqueInputBuilder b) updates]) =
       _$GNewsItemWhereUniqueInput;
 
   String? get id;
@@ -12755,7 +12800,8 @@ abstract class GNewsItemWhereInput
   GNewsItemWhereInput._();
 
   factory GNewsItemWhereInput(
-      [Function(GNewsItemWhereInputBuilder b) updates]) = _$GNewsItemWhereInput;
+          [void Function(GNewsItemWhereInputBuilder b) updates]) =
+      _$GNewsItemWhereInput;
 
   BuiltList<GNewsItemWhereInput>? get AND;
   BuiltList<GNewsItemWhereInput>? get OR;
@@ -12793,7 +12839,7 @@ abstract class GNewsCategoryManyRelationFilter
   GNewsCategoryManyRelationFilter._();
 
   factory GNewsCategoryManyRelationFilter(
-          [Function(GNewsCategoryManyRelationFilterBuilder b) updates]) =
+          [void Function(GNewsCategoryManyRelationFilterBuilder b) updates]) =
       _$GNewsCategoryManyRelationFilter;
 
   GNewsCategoryWhereInput? get every;
@@ -12820,7 +12866,7 @@ abstract class GKeywordManyRelationFilter
   GKeywordManyRelationFilter._();
 
   factory GKeywordManyRelationFilter(
-          [Function(GKeywordManyRelationFilterBuilder b) updates]) =
+          [void Function(GKeywordManyRelationFilterBuilder b) updates]) =
       _$GKeywordManyRelationFilter;
 
   GKeywordWhereInput? get every;
@@ -12848,7 +12894,7 @@ abstract class GNewsAttachmentManyRelationFilter
   GNewsAttachmentManyRelationFilter._();
 
   factory GNewsAttachmentManyRelationFilter(
-          [Function(GNewsAttachmentManyRelationFilterBuilder b) updates]) =
+          [void Function(GNewsAttachmentManyRelationFilterBuilder b) updates]) =
       _$GNewsAttachmentManyRelationFilter;
 
   GNewsAttachmentWhereInput? get every;
@@ -12875,7 +12921,7 @@ abstract class GNewsItemOrderByInput
   GNewsItemOrderByInput._();
 
   factory GNewsItemOrderByInput(
-          [Function(GNewsItemOrderByInputBuilder b) updates]) =
+          [void Function(GNewsItemOrderByInputBuilder b) updates]) =
       _$GNewsItemOrderByInput;
 
   GOrderDirection? get id;
@@ -12905,7 +12951,7 @@ abstract class GNewsItemUpdateInput
   GNewsItemUpdateInput._();
 
   factory GNewsItemUpdateInput(
-          [Function(GNewsItemUpdateInputBuilder b) updates]) =
+          [void Function(GNewsItemUpdateInputBuilder b) updates]) =
       _$GNewsItemUpdateInput;
 
   GDateTime? get createdAt;
@@ -12940,7 +12986,7 @@ abstract class GNewsCategoryRelateToManyForUpdateInput
   GNewsCategoryRelateToManyForUpdateInput._();
 
   factory GNewsCategoryRelateToManyForUpdateInput(
-      [Function(GNewsCategoryRelateToManyForUpdateInputBuilder b)
+      [void Function(GNewsCategoryRelateToManyForUpdateInputBuilder b)
           updates]) = _$GNewsCategoryRelateToManyForUpdateInput;
 
   BuiltList<GNewsCategoryWhereUniqueInput>? get disconnect;
@@ -12970,8 +13016,8 @@ abstract class GKeywordRelateToManyForUpdateInput
   GKeywordRelateToManyForUpdateInput._();
 
   factory GKeywordRelateToManyForUpdateInput(
-          [Function(GKeywordRelateToManyForUpdateInputBuilder b) updates]) =
-      _$GKeywordRelateToManyForUpdateInput;
+      [void Function(GKeywordRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GKeywordRelateToManyForUpdateInput;
 
   BuiltList<GKeywordWhereUniqueInput>? get disconnect;
   BuiltList<GKeywordWhereUniqueInput>? get set;
@@ -13000,7 +13046,7 @@ abstract class GNewsAttachmentRelateToOneForUpdateInput
   GNewsAttachmentRelateToOneForUpdateInput._();
 
   factory GNewsAttachmentRelateToOneForUpdateInput(
-      [Function(GNewsAttachmentRelateToOneForUpdateInputBuilder b)
+      [void Function(GNewsAttachmentRelateToOneForUpdateInputBuilder b)
           updates]) = _$GNewsAttachmentRelateToOneForUpdateInput;
 
   GNewsAttachmentCreateInput? get create;
@@ -13029,7 +13075,7 @@ abstract class GNewsAttachmentRelateToManyForUpdateInput
   GNewsAttachmentRelateToManyForUpdateInput._();
 
   factory GNewsAttachmentRelateToManyForUpdateInput(
-      [Function(GNewsAttachmentRelateToManyForUpdateInputBuilder b)
+      [void Function(GNewsAttachmentRelateToManyForUpdateInputBuilder b)
           updates]) = _$GNewsAttachmentRelateToManyForUpdateInput;
 
   BuiltList<GNewsAttachmentWhereUniqueInput>? get disconnect;
@@ -13057,7 +13103,8 @@ abstract class GNewsItemUpdateArgs
   GNewsItemUpdateArgs._();
 
   factory GNewsItemUpdateArgs(
-      [Function(GNewsItemUpdateArgsBuilder b) updates]) = _$GNewsItemUpdateArgs;
+          [void Function(GNewsItemUpdateArgsBuilder b) updates]) =
+      _$GNewsItemUpdateArgs;
 
   GNewsItemWhereUniqueInput get where;
   GNewsItemUpdateInput get data;
@@ -13081,7 +13128,7 @@ abstract class GNewsItemCreateInput
   GNewsItemCreateInput._();
 
   factory GNewsItemCreateInput(
-          [Function(GNewsItemCreateInputBuilder b) updates]) =
+          [void Function(GNewsItemCreateInputBuilder b) updates]) =
       _$GNewsItemCreateInput;
 
   GDateTime? get createdAt;
@@ -13116,7 +13163,7 @@ abstract class GNewsCategoryRelateToManyForCreateInput
   GNewsCategoryRelateToManyForCreateInput._();
 
   factory GNewsCategoryRelateToManyForCreateInput(
-      [Function(GNewsCategoryRelateToManyForCreateInputBuilder b)
+      [void Function(GNewsCategoryRelateToManyForCreateInputBuilder b)
           updates]) = _$GNewsCategoryRelateToManyForCreateInput;
 
   BuiltList<GNewsCategoryCreateInput>? get create;
@@ -13144,8 +13191,8 @@ abstract class GKeywordRelateToManyForCreateInput
   GKeywordRelateToManyForCreateInput._();
 
   factory GKeywordRelateToManyForCreateInput(
-          [Function(GKeywordRelateToManyForCreateInputBuilder b) updates]) =
-      _$GKeywordRelateToManyForCreateInput;
+      [void Function(GKeywordRelateToManyForCreateInputBuilder b)
+          updates]) = _$GKeywordRelateToManyForCreateInput;
 
   BuiltList<GKeywordCreateInput>? get create;
   BuiltList<GKeywordWhereUniqueInput>? get connect;
@@ -13172,7 +13219,7 @@ abstract class GNewsAttachmentRelateToOneForCreateInput
   GNewsAttachmentRelateToOneForCreateInput._();
 
   factory GNewsAttachmentRelateToOneForCreateInput(
-      [Function(GNewsAttachmentRelateToOneForCreateInputBuilder b)
+      [void Function(GNewsAttachmentRelateToOneForCreateInputBuilder b)
           updates]) = _$GNewsAttachmentRelateToOneForCreateInput;
 
   GNewsAttachmentCreateInput? get create;
@@ -13200,7 +13247,7 @@ abstract class GNewsAttachmentRelateToManyForCreateInput
   GNewsAttachmentRelateToManyForCreateInput._();
 
   factory GNewsAttachmentRelateToManyForCreateInput(
-      [Function(GNewsAttachmentRelateToManyForCreateInputBuilder b)
+      [void Function(GNewsAttachmentRelateToManyForCreateInputBuilder b)
           updates]) = _$GNewsAttachmentRelateToManyForCreateInput;
 
   BuiltList<GNewsAttachmentCreateInput>? get create;
@@ -13228,7 +13275,7 @@ abstract class GNewsCategoryWhereUniqueInput
   GNewsCategoryWhereUniqueInput._();
 
   factory GNewsCategoryWhereUniqueInput(
-          [Function(GNewsCategoryWhereUniqueInputBuilder b) updates]) =
+          [void Function(GNewsCategoryWhereUniqueInputBuilder b) updates]) =
       _$GNewsCategoryWhereUniqueInput;
 
   String? get id;
@@ -13252,7 +13299,7 @@ abstract class GNewsCategoryWhereInput
   GNewsCategoryWhereInput._();
 
   factory GNewsCategoryWhereInput(
-          [Function(GNewsCategoryWhereInputBuilder b) updates]) =
+          [void Function(GNewsCategoryWhereInputBuilder b) updates]) =
       _$GNewsCategoryWhereInput;
 
   BuiltList<GNewsCategoryWhereInput>? get AND;
@@ -13284,7 +13331,7 @@ abstract class GNewsCategoryOrderByInput
   GNewsCategoryOrderByInput._();
 
   factory GNewsCategoryOrderByInput(
-          [Function(GNewsCategoryOrderByInputBuilder b) updates]) =
+          [void Function(GNewsCategoryOrderByInputBuilder b) updates]) =
       _$GNewsCategoryOrderByInput;
 
   GOrderDirection? get id;
@@ -13313,7 +13360,7 @@ abstract class GNewsCategoryUpdateInput
   GNewsCategoryUpdateInput._();
 
   factory GNewsCategoryUpdateInput(
-          [Function(GNewsCategoryUpdateInputBuilder b) updates]) =
+          [void Function(GNewsCategoryUpdateInputBuilder b) updates]) =
       _$GNewsCategoryUpdateInput;
 
   GDateTime? get createdAt;
@@ -13340,7 +13387,7 @@ abstract class GNewsCategoryUpdateArgs
   GNewsCategoryUpdateArgs._();
 
   factory GNewsCategoryUpdateArgs(
-          [Function(GNewsCategoryUpdateArgsBuilder b) updates]) =
+          [void Function(GNewsCategoryUpdateArgsBuilder b) updates]) =
       _$GNewsCategoryUpdateArgs;
 
   GNewsCategoryWhereUniqueInput get where;
@@ -13366,7 +13413,7 @@ abstract class GNewsCategoryCreateInput
   GNewsCategoryCreateInput._();
 
   factory GNewsCategoryCreateInput(
-          [Function(GNewsCategoryCreateInputBuilder b) updates]) =
+          [void Function(GNewsCategoryCreateInputBuilder b) updates]) =
       _$GNewsCategoryCreateInput;
 
   GDateTime? get createdAt;
@@ -13395,7 +13442,7 @@ abstract class GNewsAttachmentWhereUniqueInput
   GNewsAttachmentWhereUniqueInput._();
 
   factory GNewsAttachmentWhereUniqueInput(
-          [Function(GNewsAttachmentWhereUniqueInputBuilder b) updates]) =
+          [void Function(GNewsAttachmentWhereUniqueInputBuilder b) updates]) =
       _$GNewsAttachmentWhereUniqueInput;
 
   String? get id;
@@ -13420,7 +13467,7 @@ abstract class GNewsAttachmentWhereInput
   GNewsAttachmentWhereInput._();
 
   factory GNewsAttachmentWhereInput(
-          [Function(GNewsAttachmentWhereInputBuilder b) updates]) =
+          [void Function(GNewsAttachmentWhereInputBuilder b) updates]) =
       _$GNewsAttachmentWhereInput;
 
   BuiltList<GNewsAttachmentWhereInput>? get AND;
@@ -13451,7 +13498,7 @@ abstract class GNewsAttachmentOrderByInput
   GNewsAttachmentOrderByInput._();
 
   factory GNewsAttachmentOrderByInput(
-          [Function(GNewsAttachmentOrderByInputBuilder b) updates]) =
+          [void Function(GNewsAttachmentOrderByInputBuilder b) updates]) =
       _$GNewsAttachmentOrderByInput;
 
   GOrderDirection? get id;
@@ -13478,7 +13525,7 @@ abstract class GNewsAttachmentUpdateInput
   GNewsAttachmentUpdateInput._();
 
   factory GNewsAttachmentUpdateInput(
-          [Function(GNewsAttachmentUpdateInputBuilder b) updates]) =
+          [void Function(GNewsAttachmentUpdateInputBuilder b) updates]) =
       _$GNewsAttachmentUpdateInput;
 
   GDateTime? get createdAt;
@@ -13507,8 +13554,8 @@ abstract class GNewsItemRelateToOneForUpdateInput
   GNewsItemRelateToOneForUpdateInput._();
 
   factory GNewsItemRelateToOneForUpdateInput(
-          [Function(GNewsItemRelateToOneForUpdateInputBuilder b) updates]) =
-      _$GNewsItemRelateToOneForUpdateInput;
+      [void Function(GNewsItemRelateToOneForUpdateInputBuilder b)
+          updates]) = _$GNewsItemRelateToOneForUpdateInput;
 
   GNewsItemCreateInput? get create;
   GNewsItemWhereUniqueInput? get connect;
@@ -13535,7 +13582,7 @@ abstract class GNewsAttachmentUpdateArgs
   GNewsAttachmentUpdateArgs._();
 
   factory GNewsAttachmentUpdateArgs(
-          [Function(GNewsAttachmentUpdateArgsBuilder b) updates]) =
+          [void Function(GNewsAttachmentUpdateArgsBuilder b) updates]) =
       _$GNewsAttachmentUpdateArgs;
 
   GNewsAttachmentWhereUniqueInput get where;
@@ -13561,7 +13608,7 @@ abstract class GNewsAttachmentCreateInput
   GNewsAttachmentCreateInput._();
 
   factory GNewsAttachmentCreateInput(
-          [Function(GNewsAttachmentCreateInputBuilder b) updates]) =
+          [void Function(GNewsAttachmentCreateInputBuilder b) updates]) =
       _$GNewsAttachmentCreateInput;
 
   GDateTime? get createdAt;
@@ -13590,8 +13637,8 @@ abstract class GNewsItemRelateToOneForCreateInput
   GNewsItemRelateToOneForCreateInput._();
 
   factory GNewsItemRelateToOneForCreateInput(
-          [Function(GNewsItemRelateToOneForCreateInputBuilder b) updates]) =
-      _$GNewsItemRelateToOneForCreateInput;
+      [void Function(GNewsItemRelateToOneForCreateInputBuilder b)
+          updates]) = _$GNewsItemRelateToOneForCreateInput;
 
   GNewsItemCreateInput? get create;
   GNewsItemWhereUniqueInput? get connect;
@@ -13617,7 +13664,7 @@ abstract class GKeywordWhereUniqueInput
   GKeywordWhereUniqueInput._();
 
   factory GKeywordWhereUniqueInput(
-          [Function(GKeywordWhereUniqueInputBuilder b) updates]) =
+          [void Function(GKeywordWhereUniqueInputBuilder b) updates]) =
       _$GKeywordWhereUniqueInput;
 
   String? get id;
@@ -13640,7 +13687,8 @@ abstract class GKeywordWhereInput
     implements Built<GKeywordWhereInput, GKeywordWhereInputBuilder> {
   GKeywordWhereInput._();
 
-  factory GKeywordWhereInput([Function(GKeywordWhereInputBuilder b) updates]) =
+  factory GKeywordWhereInput(
+          [void Function(GKeywordWhereInputBuilder b) updates]) =
       _$GKeywordWhereInput;
 
   BuiltList<GKeywordWhereInput>? get AND;
@@ -13670,7 +13718,7 @@ abstract class GKeywordOrderByInput
   GKeywordOrderByInput._();
 
   factory GKeywordOrderByInput(
-          [Function(GKeywordOrderByInputBuilder b) updates]) =
+          [void Function(GKeywordOrderByInputBuilder b) updates]) =
       _$GKeywordOrderByInput;
 
   GOrderDirection? get id;
@@ -13697,7 +13745,8 @@ abstract class GKeywordUpdateInput
   GKeywordUpdateInput._();
 
   factory GKeywordUpdateInput(
-      [Function(GKeywordUpdateInputBuilder b) updates]) = _$GKeywordUpdateInput;
+          [void Function(GKeywordUpdateInputBuilder b) updates]) =
+      _$GKeywordUpdateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -13721,7 +13770,8 @@ abstract class GKeywordUpdateArgs
     implements Built<GKeywordUpdateArgs, GKeywordUpdateArgsBuilder> {
   GKeywordUpdateArgs._();
 
-  factory GKeywordUpdateArgs([Function(GKeywordUpdateArgsBuilder b) updates]) =
+  factory GKeywordUpdateArgs(
+          [void Function(GKeywordUpdateArgsBuilder b) updates]) =
       _$GKeywordUpdateArgs;
 
   GKeywordWhereUniqueInput get where;
@@ -13746,7 +13796,8 @@ abstract class GKeywordCreateInput
   GKeywordCreateInput._();
 
   factory GKeywordCreateInput(
-      [Function(GKeywordCreateInputBuilder b) updates]) = _$GKeywordCreateInput;
+          [void Function(GKeywordCreateInputBuilder b) updates]) =
+      _$GKeywordCreateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -13771,7 +13822,7 @@ abstract class GCouponWhereUniqueInput
   GCouponWhereUniqueInput._();
 
   factory GCouponWhereUniqueInput(
-          [Function(GCouponWhereUniqueInputBuilder b) updates]) =
+          [void Function(GCouponWhereUniqueInputBuilder b) updates]) =
       _$GCouponWhereUniqueInput;
 
   String? get id;
@@ -13795,7 +13846,8 @@ abstract class GCouponWhereInput
     implements Built<GCouponWhereInput, GCouponWhereInputBuilder> {
   GCouponWhereInput._();
 
-  factory GCouponWhereInput([Function(GCouponWhereInputBuilder b) updates]) =
+  factory GCouponWhereInput(
+          [void Function(GCouponWhereInputBuilder b) updates]) =
       _$GCouponWhereInput;
 
   BuiltList<GCouponWhereInput>? get AND;
@@ -13833,7 +13885,7 @@ abstract class GVehicleManyRelationFilter
   GVehicleManyRelationFilter._();
 
   factory GVehicleManyRelationFilter(
-          [Function(GVehicleManyRelationFilterBuilder b) updates]) =
+          [void Function(GVehicleManyRelationFilterBuilder b) updates]) =
       _$GVehicleManyRelationFilter;
 
   GVehicleWhereInput? get every;
@@ -13860,7 +13912,7 @@ abstract class GProductManyRelationFilter
   GProductManyRelationFilter._();
 
   factory GProductManyRelationFilter(
-          [Function(GProductManyRelationFilterBuilder b) updates]) =
+          [void Function(GProductManyRelationFilterBuilder b) updates]) =
       _$GProductManyRelationFilter;
 
   GProductWhereInput? get every;
@@ -13886,7 +13938,8 @@ abstract class GCouponOrderByInput
   GCouponOrderByInput._();
 
   factory GCouponOrderByInput(
-      [Function(GCouponOrderByInputBuilder b) updates]) = _$GCouponOrderByInput;
+          [void Function(GCouponOrderByInputBuilder b) updates]) =
+      _$GCouponOrderByInput;
 
   GOrderDirection? get id;
   GOrderDirection? get createdAt;
@@ -13916,7 +13969,8 @@ abstract class GCouponUpdateInput
     implements Built<GCouponUpdateInput, GCouponUpdateInputBuilder> {
   GCouponUpdateInput._();
 
-  factory GCouponUpdateInput([Function(GCouponUpdateInputBuilder b) updates]) =
+  factory GCouponUpdateInput(
+          [void Function(GCouponUpdateInputBuilder b) updates]) =
       _$GCouponUpdateInput;
 
   GDateTime? get createdAt;
@@ -13952,8 +14006,8 @@ abstract class GVehicleRelateToManyForUpdateInput
   GVehicleRelateToManyForUpdateInput._();
 
   factory GVehicleRelateToManyForUpdateInput(
-          [Function(GVehicleRelateToManyForUpdateInputBuilder b) updates]) =
-      _$GVehicleRelateToManyForUpdateInput;
+      [void Function(GVehicleRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GVehicleRelateToManyForUpdateInput;
 
   BuiltList<GVehicleWhereUniqueInput>? get disconnect;
   BuiltList<GVehicleWhereUniqueInput>? get set;
@@ -13982,8 +14036,8 @@ abstract class GProductRelateToManyForUpdateInput
   GProductRelateToManyForUpdateInput._();
 
   factory GProductRelateToManyForUpdateInput(
-          [Function(GProductRelateToManyForUpdateInputBuilder b) updates]) =
-      _$GProductRelateToManyForUpdateInput;
+      [void Function(GProductRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GProductRelateToManyForUpdateInput;
 
   BuiltList<GProductWhereUniqueInput>? get disconnect;
   BuiltList<GProductWhereUniqueInput>? get set;
@@ -14009,7 +14063,8 @@ abstract class GCouponUpdateArgs
     implements Built<GCouponUpdateArgs, GCouponUpdateArgsBuilder> {
   GCouponUpdateArgs._();
 
-  factory GCouponUpdateArgs([Function(GCouponUpdateArgsBuilder b) updates]) =
+  factory GCouponUpdateArgs(
+          [void Function(GCouponUpdateArgsBuilder b) updates]) =
       _$GCouponUpdateArgs;
 
   GCouponWhereUniqueInput get where;
@@ -14033,7 +14088,8 @@ abstract class GCouponCreateInput
     implements Built<GCouponCreateInput, GCouponCreateInputBuilder> {
   GCouponCreateInput._();
 
-  factory GCouponCreateInput([Function(GCouponCreateInputBuilder b) updates]) =
+  factory GCouponCreateInput(
+          [void Function(GCouponCreateInputBuilder b) updates]) =
       _$GCouponCreateInput;
 
   GDateTime? get createdAt;
@@ -14069,8 +14125,8 @@ abstract class GVehicleRelateToManyForCreateInput
   GVehicleRelateToManyForCreateInput._();
 
   factory GVehicleRelateToManyForCreateInput(
-          [Function(GVehicleRelateToManyForCreateInputBuilder b) updates]) =
-      _$GVehicleRelateToManyForCreateInput;
+      [void Function(GVehicleRelateToManyForCreateInputBuilder b)
+          updates]) = _$GVehicleRelateToManyForCreateInput;
 
   BuiltList<GVehicleCreateInput>? get create;
   BuiltList<GVehicleWhereUniqueInput>? get connect;
@@ -14097,8 +14153,8 @@ abstract class GProductRelateToManyForCreateInput
   GProductRelateToManyForCreateInput._();
 
   factory GProductRelateToManyForCreateInput(
-          [Function(GProductRelateToManyForCreateInputBuilder b) updates]) =
-      _$GProductRelateToManyForCreateInput;
+      [void Function(GProductRelateToManyForCreateInputBuilder b)
+          updates]) = _$GProductRelateToManyForCreateInput;
 
   BuiltList<GProductCreateInput>? get create;
   BuiltList<GProductWhereUniqueInput>? get connect;
@@ -14123,7 +14179,7 @@ abstract class GOfferWhereUniqueInput
   GOfferWhereUniqueInput._();
 
   factory GOfferWhereUniqueInput(
-          [Function(GOfferWhereUniqueInputBuilder b) updates]) =
+          [void Function(GOfferWhereUniqueInputBuilder b) updates]) =
       _$GOfferWhereUniqueInput;
 
   String? get id;
@@ -14147,7 +14203,7 @@ abstract class GOfferWhereInput
     implements Built<GOfferWhereInput, GOfferWhereInputBuilder> {
   GOfferWhereInput._();
 
-  factory GOfferWhereInput([Function(GOfferWhereInputBuilder b) updates]) =
+  factory GOfferWhereInput([void Function(GOfferWhereInputBuilder b) updates]) =
       _$GOfferWhereInput;
 
   BuiltList<GOfferWhereInput>? get AND;
@@ -14183,7 +14239,8 @@ abstract class GOfferOrderByInput
     implements Built<GOfferOrderByInput, GOfferOrderByInputBuilder> {
   GOfferOrderByInput._();
 
-  factory GOfferOrderByInput([Function(GOfferOrderByInputBuilder b) updates]) =
+  factory GOfferOrderByInput(
+          [void Function(GOfferOrderByInputBuilder b) updates]) =
       _$GOfferOrderByInput;
 
   GOrderDirection? get id;
@@ -14214,7 +14271,8 @@ abstract class GOfferUpdateInput
     implements Built<GOfferUpdateInput, GOfferUpdateInputBuilder> {
   GOfferUpdateInput._();
 
-  factory GOfferUpdateInput([Function(GOfferUpdateInputBuilder b) updates]) =
+  factory GOfferUpdateInput(
+          [void Function(GOfferUpdateInputBuilder b) updates]) =
       _$GOfferUpdateInput;
 
   GDateTime? get createdAt;
@@ -14247,7 +14305,7 @@ abstract class GOfferUpdateArgs
     implements Built<GOfferUpdateArgs, GOfferUpdateArgsBuilder> {
   GOfferUpdateArgs._();
 
-  factory GOfferUpdateArgs([Function(GOfferUpdateArgsBuilder b) updates]) =
+  factory GOfferUpdateArgs([void Function(GOfferUpdateArgsBuilder b) updates]) =
       _$GOfferUpdateArgs;
 
   GOfferWhereUniqueInput get where;
@@ -14271,7 +14329,8 @@ abstract class GOfferCreateInput
     implements Built<GOfferCreateInput, GOfferCreateInputBuilder> {
   GOfferCreateInput._();
 
-  factory GOfferCreateInput([Function(GOfferCreateInputBuilder b) updates]) =
+  factory GOfferCreateInput(
+          [void Function(GOfferCreateInputBuilder b) updates]) =
       _$GOfferCreateInput;
 
   GDateTime? get createdAt;
@@ -14306,7 +14365,7 @@ abstract class GFeedbackWhereUniqueInput
   GFeedbackWhereUniqueInput._();
 
   factory GFeedbackWhereUniqueInput(
-          [Function(GFeedbackWhereUniqueInputBuilder b) updates]) =
+          [void Function(GFeedbackWhereUniqueInputBuilder b) updates]) =
       _$GFeedbackWhereUniqueInput;
 
   String? get id;
@@ -14330,7 +14389,8 @@ abstract class GFeedbackWhereInput
   GFeedbackWhereInput._();
 
   factory GFeedbackWhereInput(
-      [Function(GFeedbackWhereInputBuilder b) updates]) = _$GFeedbackWhereInput;
+          [void Function(GFeedbackWhereInputBuilder b) updates]) =
+      _$GFeedbackWhereInput;
 
   BuiltList<GFeedbackWhereInput>? get AND;
   BuiltList<GFeedbackWhereInput>? get OR;
@@ -14365,8 +14425,8 @@ abstract class GFeedbackAttachmentManyRelationFilter
   GFeedbackAttachmentManyRelationFilter._();
 
   factory GFeedbackAttachmentManyRelationFilter(
-          [Function(GFeedbackAttachmentManyRelationFilterBuilder b) updates]) =
-      _$GFeedbackAttachmentManyRelationFilter;
+      [void Function(GFeedbackAttachmentManyRelationFilterBuilder b)
+          updates]) = _$GFeedbackAttachmentManyRelationFilter;
 
   GFeedbackAttachmentWhereInput? get every;
   GFeedbackAttachmentWhereInput? get some;
@@ -14392,7 +14452,7 @@ abstract class GFeedbackOrderByInput
   GFeedbackOrderByInput._();
 
   factory GFeedbackOrderByInput(
-          [Function(GFeedbackOrderByInputBuilder b) updates]) =
+          [void Function(GFeedbackOrderByInputBuilder b) updates]) =
       _$GFeedbackOrderByInput;
 
   GOrderDirection? get id;
@@ -14420,7 +14480,7 @@ abstract class GFeedbackUpdateInput
   GFeedbackUpdateInput._();
 
   factory GFeedbackUpdateInput(
-          [Function(GFeedbackUpdateInputBuilder b) updates]) =
+          [void Function(GFeedbackUpdateInputBuilder b) updates]) =
       _$GFeedbackUpdateInput;
 
   GDateTime? get createdAt;
@@ -14452,7 +14512,7 @@ abstract class GFeedbackAttachmentRelateToManyForUpdateInput
   GFeedbackAttachmentRelateToManyForUpdateInput._();
 
   factory GFeedbackAttachmentRelateToManyForUpdateInput(
-      [Function(GFeedbackAttachmentRelateToManyForUpdateInputBuilder b)
+      [void Function(GFeedbackAttachmentRelateToManyForUpdateInputBuilder b)
           updates]) = _$GFeedbackAttachmentRelateToManyForUpdateInput;
 
   BuiltList<GFeedbackAttachmentWhereUniqueInput>? get disconnect;
@@ -14481,7 +14541,8 @@ abstract class GFeedbackUpdateArgs
   GFeedbackUpdateArgs._();
 
   factory GFeedbackUpdateArgs(
-      [Function(GFeedbackUpdateArgsBuilder b) updates]) = _$GFeedbackUpdateArgs;
+          [void Function(GFeedbackUpdateArgsBuilder b) updates]) =
+      _$GFeedbackUpdateArgs;
 
   GFeedbackWhereUniqueInput get where;
   GFeedbackUpdateInput get data;
@@ -14505,7 +14566,7 @@ abstract class GFeedbackCreateInput
   GFeedbackCreateInput._();
 
   factory GFeedbackCreateInput(
-          [Function(GFeedbackCreateInputBuilder b) updates]) =
+          [void Function(GFeedbackCreateInputBuilder b) updates]) =
       _$GFeedbackCreateInput;
 
   GDateTime? get createdAt;
@@ -14537,7 +14598,7 @@ abstract class GFeedbackAttachmentRelateToManyForCreateInput
   GFeedbackAttachmentRelateToManyForCreateInput._();
 
   factory GFeedbackAttachmentRelateToManyForCreateInput(
-      [Function(GFeedbackAttachmentRelateToManyForCreateInputBuilder b)
+      [void Function(GFeedbackAttachmentRelateToManyForCreateInputBuilder b)
           updates]) = _$GFeedbackAttachmentRelateToManyForCreateInput;
 
   BuiltList<GFeedbackAttachmentCreateInput>? get create;
@@ -14566,8 +14627,8 @@ abstract class GFeedbackAttachmentWhereUniqueInput
   GFeedbackAttachmentWhereUniqueInput._();
 
   factory GFeedbackAttachmentWhereUniqueInput(
-          [Function(GFeedbackAttachmentWhereUniqueInputBuilder b) updates]) =
-      _$GFeedbackAttachmentWhereUniqueInput;
+      [void Function(GFeedbackAttachmentWhereUniqueInputBuilder b)
+          updates]) = _$GFeedbackAttachmentWhereUniqueInput;
 
   String? get id;
   static Serializer<GFeedbackAttachmentWhereUniqueInput> get serializer =>
@@ -14593,7 +14654,7 @@ abstract class GFeedbackAttachmentWhereInput
   GFeedbackAttachmentWhereInput._();
 
   factory GFeedbackAttachmentWhereInput(
-          [Function(GFeedbackAttachmentWhereInputBuilder b) updates]) =
+          [void Function(GFeedbackAttachmentWhereInputBuilder b) updates]) =
       _$GFeedbackAttachmentWhereInput;
 
   BuiltList<GFeedbackAttachmentWhereInput>? get AND;
@@ -14625,7 +14686,7 @@ abstract class GFeedbackAttachmentOrderByInput
   GFeedbackAttachmentOrderByInput._();
 
   factory GFeedbackAttachmentOrderByInput(
-          [Function(GFeedbackAttachmentOrderByInputBuilder b) updates]) =
+          [void Function(GFeedbackAttachmentOrderByInputBuilder b) updates]) =
       _$GFeedbackAttachmentOrderByInput;
 
   GOrderDirection? get id;
@@ -14653,7 +14714,7 @@ abstract class GFeedbackAttachmentUpdateInput
   GFeedbackAttachmentUpdateInput._();
 
   factory GFeedbackAttachmentUpdateInput(
-          [Function(GFeedbackAttachmentUpdateInputBuilder b) updates]) =
+          [void Function(GFeedbackAttachmentUpdateInputBuilder b) updates]) =
       _$GFeedbackAttachmentUpdateInput;
 
   GDateTime? get createdAt;
@@ -14682,8 +14743,8 @@ abstract class GFeedbackRelateToOneForUpdateInput
   GFeedbackRelateToOneForUpdateInput._();
 
   factory GFeedbackRelateToOneForUpdateInput(
-          [Function(GFeedbackRelateToOneForUpdateInputBuilder b) updates]) =
-      _$GFeedbackRelateToOneForUpdateInput;
+      [void Function(GFeedbackRelateToOneForUpdateInputBuilder b)
+          updates]) = _$GFeedbackRelateToOneForUpdateInput;
 
   GFeedbackCreateInput? get create;
   GFeedbackWhereUniqueInput? get connect;
@@ -14711,7 +14772,7 @@ abstract class GFeedbackAttachmentUpdateArgs
   GFeedbackAttachmentUpdateArgs._();
 
   factory GFeedbackAttachmentUpdateArgs(
-          [Function(GFeedbackAttachmentUpdateArgsBuilder b) updates]) =
+          [void Function(GFeedbackAttachmentUpdateArgsBuilder b) updates]) =
       _$GFeedbackAttachmentUpdateArgs;
 
   GFeedbackAttachmentWhereUniqueInput get where;
@@ -14738,7 +14799,7 @@ abstract class GFeedbackAttachmentCreateInput
   GFeedbackAttachmentCreateInput._();
 
   factory GFeedbackAttachmentCreateInput(
-          [Function(GFeedbackAttachmentCreateInputBuilder b) updates]) =
+          [void Function(GFeedbackAttachmentCreateInputBuilder b) updates]) =
       _$GFeedbackAttachmentCreateInput;
 
   GDateTime? get createdAt;
@@ -14767,8 +14828,8 @@ abstract class GFeedbackRelateToOneForCreateInput
   GFeedbackRelateToOneForCreateInput._();
 
   factory GFeedbackRelateToOneForCreateInput(
-          [Function(GFeedbackRelateToOneForCreateInputBuilder b) updates]) =
-      _$GFeedbackRelateToOneForCreateInput;
+      [void Function(GFeedbackRelateToOneForCreateInputBuilder b)
+          updates]) = _$GFeedbackRelateToOneForCreateInput;
 
   GFeedbackCreateInput? get create;
   GFeedbackWhereUniqueInput? get connect;
@@ -14793,7 +14854,7 @@ abstract class GReportWhereUniqueInput
   GReportWhereUniqueInput._();
 
   factory GReportWhereUniqueInput(
-          [Function(GReportWhereUniqueInputBuilder b) updates]) =
+          [void Function(GReportWhereUniqueInputBuilder b) updates]) =
       _$GReportWhereUniqueInput;
 
   String? get id;
@@ -14816,7 +14877,8 @@ abstract class GReportWhereInput
     implements Built<GReportWhereInput, GReportWhereInputBuilder> {
   GReportWhereInput._();
 
-  factory GReportWhereInput([Function(GReportWhereInputBuilder b) updates]) =
+  factory GReportWhereInput(
+          [void Function(GReportWhereInputBuilder b) updates]) =
       _$GReportWhereInput;
 
   BuiltList<GReportWhereInput>? get AND;
@@ -14853,8 +14915,8 @@ abstract class GReportAttachmentManyRelationFilter
   GReportAttachmentManyRelationFilter._();
 
   factory GReportAttachmentManyRelationFilter(
-          [Function(GReportAttachmentManyRelationFilterBuilder b) updates]) =
-      _$GReportAttachmentManyRelationFilter;
+      [void Function(GReportAttachmentManyRelationFilterBuilder b)
+          updates]) = _$GReportAttachmentManyRelationFilter;
 
   GReportAttachmentWhereInput? get every;
   GReportAttachmentWhereInput? get some;
@@ -14880,7 +14942,8 @@ abstract class GReportOrderByInput
   GReportOrderByInput._();
 
   factory GReportOrderByInput(
-      [Function(GReportOrderByInputBuilder b) updates]) = _$GReportOrderByInput;
+          [void Function(GReportOrderByInputBuilder b) updates]) =
+      _$GReportOrderByInput;
 
   GOrderDirection? get id;
   GOrderDirection? get createdAt;
@@ -14907,7 +14970,8 @@ abstract class GReportUpdateInput
     implements Built<GReportUpdateInput, GReportUpdateInputBuilder> {
   GReportUpdateInput._();
 
-  factory GReportUpdateInput([Function(GReportUpdateInputBuilder b) updates]) =
+  factory GReportUpdateInput(
+          [void Function(GReportUpdateInputBuilder b) updates]) =
       _$GReportUpdateInput;
 
   GDateTime? get createdAt;
@@ -14940,7 +15004,7 @@ abstract class GReportAttachmentRelateToManyForUpdateInput
   GReportAttachmentRelateToManyForUpdateInput._();
 
   factory GReportAttachmentRelateToManyForUpdateInput(
-      [Function(GReportAttachmentRelateToManyForUpdateInputBuilder b)
+      [void Function(GReportAttachmentRelateToManyForUpdateInputBuilder b)
           updates]) = _$GReportAttachmentRelateToManyForUpdateInput;
 
   BuiltList<GReportAttachmentWhereUniqueInput>? get disconnect;
@@ -14967,7 +15031,8 @@ abstract class GReportUpdateArgs
     implements Built<GReportUpdateArgs, GReportUpdateArgsBuilder> {
   GReportUpdateArgs._();
 
-  factory GReportUpdateArgs([Function(GReportUpdateArgsBuilder b) updates]) =
+  factory GReportUpdateArgs(
+          [void Function(GReportUpdateArgsBuilder b) updates]) =
       _$GReportUpdateArgs;
 
   GReportWhereUniqueInput get where;
@@ -14991,7 +15056,8 @@ abstract class GReportCreateInput
     implements Built<GReportCreateInput, GReportCreateInputBuilder> {
   GReportCreateInput._();
 
-  factory GReportCreateInput([Function(GReportCreateInputBuilder b) updates]) =
+  factory GReportCreateInput(
+          [void Function(GReportCreateInputBuilder b) updates]) =
       _$GReportCreateInput;
 
   GDateTime? get createdAt;
@@ -15024,7 +15090,7 @@ abstract class GReportAttachmentRelateToManyForCreateInput
   GReportAttachmentRelateToManyForCreateInput._();
 
   factory GReportAttachmentRelateToManyForCreateInput(
-      [Function(GReportAttachmentRelateToManyForCreateInputBuilder b)
+      [void Function(GReportAttachmentRelateToManyForCreateInputBuilder b)
           updates]) = _$GReportAttachmentRelateToManyForCreateInput;
 
   BuiltList<GReportAttachmentCreateInput>? get create;
@@ -15052,7 +15118,7 @@ abstract class GReportAttachmentWhereUniqueInput
   GReportAttachmentWhereUniqueInput._();
 
   factory GReportAttachmentWhereUniqueInput(
-          [Function(GReportAttachmentWhereUniqueInputBuilder b) updates]) =
+          [void Function(GReportAttachmentWhereUniqueInputBuilder b) updates]) =
       _$GReportAttachmentWhereUniqueInput;
 
   String? get id;
@@ -15078,7 +15144,7 @@ abstract class GReportAttachmentWhereInput
   GReportAttachmentWhereInput._();
 
   factory GReportAttachmentWhereInput(
-          [Function(GReportAttachmentWhereInputBuilder b) updates]) =
+          [void Function(GReportAttachmentWhereInputBuilder b) updates]) =
       _$GReportAttachmentWhereInput;
 
   BuiltList<GReportAttachmentWhereInput>? get AND;
@@ -15110,7 +15176,7 @@ abstract class GReportAttachmentOrderByInput
   GReportAttachmentOrderByInput._();
 
   factory GReportAttachmentOrderByInput(
-          [Function(GReportAttachmentOrderByInputBuilder b) updates]) =
+          [void Function(GReportAttachmentOrderByInputBuilder b) updates]) =
       _$GReportAttachmentOrderByInput;
 
   GOrderDirection? get id;
@@ -15138,7 +15204,7 @@ abstract class GReportAttachmentUpdateInput
   GReportAttachmentUpdateInput._();
 
   factory GReportAttachmentUpdateInput(
-          [Function(GReportAttachmentUpdateInputBuilder b) updates]) =
+          [void Function(GReportAttachmentUpdateInputBuilder b) updates]) =
       _$GReportAttachmentUpdateInput;
 
   GDateTime? get createdAt;
@@ -15167,7 +15233,7 @@ abstract class GReportRelateToOneForUpdateInput
   GReportRelateToOneForUpdateInput._();
 
   factory GReportRelateToOneForUpdateInput(
-          [Function(GReportRelateToOneForUpdateInputBuilder b) updates]) =
+          [void Function(GReportRelateToOneForUpdateInputBuilder b) updates]) =
       _$GReportRelateToOneForUpdateInput;
 
   GReportCreateInput? get create;
@@ -15195,7 +15261,7 @@ abstract class GReportAttachmentUpdateArgs
   GReportAttachmentUpdateArgs._();
 
   factory GReportAttachmentUpdateArgs(
-          [Function(GReportAttachmentUpdateArgsBuilder b) updates]) =
+          [void Function(GReportAttachmentUpdateArgsBuilder b) updates]) =
       _$GReportAttachmentUpdateArgs;
 
   GReportAttachmentWhereUniqueInput get where;
@@ -15222,7 +15288,7 @@ abstract class GReportAttachmentCreateInput
   GReportAttachmentCreateInput._();
 
   factory GReportAttachmentCreateInput(
-          [Function(GReportAttachmentCreateInputBuilder b) updates]) =
+          [void Function(GReportAttachmentCreateInputBuilder b) updates]) =
       _$GReportAttachmentCreateInput;
 
   GDateTime? get createdAt;
@@ -15251,7 +15317,7 @@ abstract class GReportRelateToOneForCreateInput
   GReportRelateToOneForCreateInput._();
 
   factory GReportRelateToOneForCreateInput(
-          [Function(GReportRelateToOneForCreateInputBuilder b) updates]) =
+          [void Function(GReportRelateToOneForCreateInputBuilder b) updates]) =
       _$GReportRelateToOneForCreateInput;
 
   GReportCreateInput? get create;
@@ -15279,7 +15345,7 @@ abstract class GProductTypeWhereUniqueInput
   GProductTypeWhereUniqueInput._();
 
   factory GProductTypeWhereUniqueInput(
-          [Function(GProductTypeWhereUniqueInputBuilder b) updates]) =
+          [void Function(GProductTypeWhereUniqueInputBuilder b) updates]) =
       _$GProductTypeWhereUniqueInput;
 
   String? get id;
@@ -15303,7 +15369,7 @@ abstract class GProductTypeWhereInput
   GProductTypeWhereInput._();
 
   factory GProductTypeWhereInput(
-          [Function(GProductTypeWhereInputBuilder b) updates]) =
+          [void Function(GProductTypeWhereInputBuilder b) updates]) =
       _$GProductTypeWhereInput;
 
   BuiltList<GProductTypeWhereInput>? get AND;
@@ -15335,7 +15401,7 @@ abstract class GProductTypeOrderByInput
   GProductTypeOrderByInput._();
 
   factory GProductTypeOrderByInput(
-          [Function(GProductTypeOrderByInputBuilder b) updates]) =
+          [void Function(GProductTypeOrderByInputBuilder b) updates]) =
       _$GProductTypeOrderByInput;
 
   GOrderDirection? get id;
@@ -15363,7 +15429,7 @@ abstract class GProductTypeUpdateInput
   GProductTypeUpdateInput._();
 
   factory GProductTypeUpdateInput(
-          [Function(GProductTypeUpdateInputBuilder b) updates]) =
+          [void Function(GProductTypeUpdateInputBuilder b) updates]) =
       _$GProductTypeUpdateInput;
 
   GDateTime? get createdAt;
@@ -15390,7 +15456,7 @@ abstract class GProductTypeUpdateArgs
   GProductTypeUpdateArgs._();
 
   factory GProductTypeUpdateArgs(
-          [Function(GProductTypeUpdateArgsBuilder b) updates]) =
+          [void Function(GProductTypeUpdateArgsBuilder b) updates]) =
       _$GProductTypeUpdateArgs;
 
   GProductTypeWhereUniqueInput get where;
@@ -15415,7 +15481,7 @@ abstract class GProductTypeCreateInput
   GProductTypeCreateInput._();
 
   factory GProductTypeCreateInput(
-          [Function(GProductTypeCreateInputBuilder b) updates]) =
+          [void Function(GProductTypeCreateInputBuilder b) updates]) =
       _$GProductTypeCreateInput;
 
   GDateTime? get createdAt;
@@ -15443,7 +15509,7 @@ abstract class GProductWhereUniqueInput
   GProductWhereUniqueInput._();
 
   factory GProductWhereUniqueInput(
-          [Function(GProductWhereUniqueInputBuilder b) updates]) =
+          [void Function(GProductWhereUniqueInputBuilder b) updates]) =
       _$GProductWhereUniqueInput;
 
   String? get id;
@@ -15466,7 +15532,8 @@ abstract class GProductWhereInput
     implements Built<GProductWhereInput, GProductWhereInputBuilder> {
   GProductWhereInput._();
 
-  factory GProductWhereInput([Function(GProductWhereInputBuilder b) updates]) =
+  factory GProductWhereInput(
+          [void Function(GProductWhereInputBuilder b) updates]) =
       _$GProductWhereInput;
 
   BuiltList<GProductWhereInput>? get AND;
@@ -15504,7 +15571,7 @@ abstract class GProductVariantManyRelationFilter
   GProductVariantManyRelationFilter._();
 
   factory GProductVariantManyRelationFilter(
-          [Function(GProductVariantManyRelationFilterBuilder b) updates]) =
+          [void Function(GProductVariantManyRelationFilterBuilder b) updates]) =
       _$GProductVariantManyRelationFilter;
 
   GProductVariantWhereInput? get every;
@@ -15533,7 +15600,7 @@ abstract class GProductSpecificationManyRelationFilter
   GProductSpecificationManyRelationFilter._();
 
   factory GProductSpecificationManyRelationFilter(
-      [Function(GProductSpecificationManyRelationFilterBuilder b)
+      [void Function(GProductSpecificationManyRelationFilterBuilder b)
           updates]) = _$GProductSpecificationManyRelationFilter;
 
   GProductSpecificationWhereInput? get every;
@@ -15560,7 +15627,7 @@ abstract class GProductOrderByInput
   GProductOrderByInput._();
 
   factory GProductOrderByInput(
-          [Function(GProductOrderByInputBuilder b) updates]) =
+          [void Function(GProductOrderByInputBuilder b) updates]) =
       _$GProductOrderByInput;
 
   GOrderDirection? get id;
@@ -15589,7 +15656,8 @@ abstract class GProductUpdateInput
   GProductUpdateInput._();
 
   factory GProductUpdateInput(
-      [Function(GProductUpdateInputBuilder b) updates]) = _$GProductUpdateInput;
+          [void Function(GProductUpdateInputBuilder b) updates]) =
+      _$GProductUpdateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -15622,8 +15690,8 @@ abstract class GProductTypeRelateToOneForUpdateInput
   GProductTypeRelateToOneForUpdateInput._();
 
   factory GProductTypeRelateToOneForUpdateInput(
-          [Function(GProductTypeRelateToOneForUpdateInputBuilder b) updates]) =
-      _$GProductTypeRelateToOneForUpdateInput;
+      [void Function(GProductTypeRelateToOneForUpdateInputBuilder b)
+          updates]) = _$GProductTypeRelateToOneForUpdateInput;
 
   GProductTypeCreateInput? get create;
   GProductTypeWhereUniqueInput? get connect;
@@ -15651,7 +15719,7 @@ abstract class GProductVariantRelateToManyForUpdateInput
   GProductVariantRelateToManyForUpdateInput._();
 
   factory GProductVariantRelateToManyForUpdateInput(
-      [Function(GProductVariantRelateToManyForUpdateInputBuilder b)
+      [void Function(GProductVariantRelateToManyForUpdateInputBuilder b)
           updates]) = _$GProductVariantRelateToManyForUpdateInput;
 
   BuiltList<GProductVariantWhereUniqueInput>? get disconnect;
@@ -15681,7 +15749,7 @@ abstract class GProductSpecificationRelateToManyForUpdateInput
   GProductSpecificationRelateToManyForUpdateInput._();
 
   factory GProductSpecificationRelateToManyForUpdateInput(
-      [Function(GProductSpecificationRelateToManyForUpdateInputBuilder b)
+      [void Function(GProductSpecificationRelateToManyForUpdateInputBuilder b)
           updates]) = _$GProductSpecificationRelateToManyForUpdateInput;
 
   BuiltList<GProductSpecificationWhereUniqueInput>? get disconnect;
@@ -15709,7 +15777,8 @@ abstract class GProductUpdateArgs
     implements Built<GProductUpdateArgs, GProductUpdateArgsBuilder> {
   GProductUpdateArgs._();
 
-  factory GProductUpdateArgs([Function(GProductUpdateArgsBuilder b) updates]) =
+  factory GProductUpdateArgs(
+          [void Function(GProductUpdateArgsBuilder b) updates]) =
       _$GProductUpdateArgs;
 
   GProductWhereUniqueInput get where;
@@ -15734,7 +15803,8 @@ abstract class GProductCreateInput
   GProductCreateInput._();
 
   factory GProductCreateInput(
-      [Function(GProductCreateInputBuilder b) updates]) = _$GProductCreateInput;
+          [void Function(GProductCreateInputBuilder b) updates]) =
+      _$GProductCreateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -15767,8 +15837,8 @@ abstract class GProductTypeRelateToOneForCreateInput
   GProductTypeRelateToOneForCreateInput._();
 
   factory GProductTypeRelateToOneForCreateInput(
-          [Function(GProductTypeRelateToOneForCreateInputBuilder b) updates]) =
-      _$GProductTypeRelateToOneForCreateInput;
+      [void Function(GProductTypeRelateToOneForCreateInputBuilder b)
+          updates]) = _$GProductTypeRelateToOneForCreateInput;
 
   GProductTypeCreateInput? get create;
   GProductTypeWhereUniqueInput? get connect;
@@ -15795,7 +15865,7 @@ abstract class GProductVariantRelateToManyForCreateInput
   GProductVariantRelateToManyForCreateInput._();
 
   factory GProductVariantRelateToManyForCreateInput(
-      [Function(GProductVariantRelateToManyForCreateInputBuilder b)
+      [void Function(GProductVariantRelateToManyForCreateInputBuilder b)
           updates]) = _$GProductVariantRelateToManyForCreateInput;
 
   BuiltList<GProductVariantCreateInput>? get create;
@@ -15823,7 +15893,7 @@ abstract class GProductSpecificationRelateToManyForCreateInput
   GProductSpecificationRelateToManyForCreateInput._();
 
   factory GProductSpecificationRelateToManyForCreateInput(
-      [Function(GProductSpecificationRelateToManyForCreateInputBuilder b)
+      [void Function(GProductSpecificationRelateToManyForCreateInputBuilder b)
           updates]) = _$GProductSpecificationRelateToManyForCreateInput;
 
   BuiltList<GProductSpecificationCreateInput>? get create;
@@ -15852,8 +15922,8 @@ abstract class GProductSpecificationWhereUniqueInput
   GProductSpecificationWhereUniqueInput._();
 
   factory GProductSpecificationWhereUniqueInput(
-          [Function(GProductSpecificationWhereUniqueInputBuilder b) updates]) =
-      _$GProductSpecificationWhereUniqueInput;
+      [void Function(GProductSpecificationWhereUniqueInputBuilder b)
+          updates]) = _$GProductSpecificationWhereUniqueInput;
 
   String? get id;
   static Serializer<GProductSpecificationWhereUniqueInput> get serializer =>
@@ -15879,7 +15949,7 @@ abstract class GProductSpecificationWhereInput
   GProductSpecificationWhereInput._();
 
   factory GProductSpecificationWhereInput(
-          [Function(GProductSpecificationWhereInputBuilder b) updates]) =
+          [void Function(GProductSpecificationWhereInputBuilder b) updates]) =
       _$GProductSpecificationWhereInput;
 
   BuiltList<GProductSpecificationWhereInput>? get AND;
@@ -15917,7 +15987,7 @@ abstract class GProductSpecificationOrderByInput
   GProductSpecificationOrderByInput._();
 
   factory GProductSpecificationOrderByInput(
-          [Function(GProductSpecificationOrderByInputBuilder b) updates]) =
+          [void Function(GProductSpecificationOrderByInputBuilder b) updates]) =
       _$GProductSpecificationOrderByInput;
 
   GOrderDirection? get id;
@@ -15950,7 +16020,7 @@ abstract class GProductSpecificationUpdateInput
   GProductSpecificationUpdateInput._();
 
   factory GProductSpecificationUpdateInput(
-          [Function(GProductSpecificationUpdateInputBuilder b) updates]) =
+          [void Function(GProductSpecificationUpdateInputBuilder b) updates]) =
       _$GProductSpecificationUpdateInput;
 
   GDateTime? get createdAt;
@@ -15985,7 +16055,7 @@ abstract class GProductSpecificationUpdateArgs
   GProductSpecificationUpdateArgs._();
 
   factory GProductSpecificationUpdateArgs(
-          [Function(GProductSpecificationUpdateArgsBuilder b) updates]) =
+          [void Function(GProductSpecificationUpdateArgsBuilder b) updates]) =
       _$GProductSpecificationUpdateArgs;
 
   GProductSpecificationWhereUniqueInput get where;
@@ -16012,7 +16082,7 @@ abstract class GProductSpecificationCreateInput
   GProductSpecificationCreateInput._();
 
   factory GProductSpecificationCreateInput(
-          [Function(GProductSpecificationCreateInputBuilder b) updates]) =
+          [void Function(GProductSpecificationCreateInputBuilder b) updates]) =
       _$GProductSpecificationCreateInput;
 
   GDateTime? get createdAt;
@@ -16047,7 +16117,7 @@ abstract class GProductVariantWhereUniqueInput
   GProductVariantWhereUniqueInput._();
 
   factory GProductVariantWhereUniqueInput(
-          [Function(GProductVariantWhereUniqueInputBuilder b) updates]) =
+          [void Function(GProductVariantWhereUniqueInputBuilder b) updates]) =
       _$GProductVariantWhereUniqueInput;
 
   String? get id;
@@ -16072,7 +16142,7 @@ abstract class GProductVariantWhereInput
   GProductVariantWhereInput._();
 
   factory GProductVariantWhereInput(
-          [Function(GProductVariantWhereInputBuilder b) updates]) =
+          [void Function(GProductVariantWhereInputBuilder b) updates]) =
       _$GProductVariantWhereInput;
 
   BuiltList<GProductVariantWhereInput>? get AND;
@@ -16115,7 +16185,7 @@ abstract class GProductImageManyRelationFilter
   GProductImageManyRelationFilter._();
 
   factory GProductImageManyRelationFilter(
-          [Function(GProductImageManyRelationFilterBuilder b) updates]) =
+          [void Function(GProductImageManyRelationFilterBuilder b) updates]) =
       _$GProductImageManyRelationFilter;
 
   GProductImageWhereInput? get every;
@@ -16143,7 +16213,7 @@ abstract class GProductVideoManyRelationFilter
   GProductVideoManyRelationFilter._();
 
   factory GProductVideoManyRelationFilter(
-          [Function(GProductVideoManyRelationFilterBuilder b) updates]) =
+          [void Function(GProductVideoManyRelationFilterBuilder b) updates]) =
       _$GProductVideoManyRelationFilter;
 
   GProductVideoWhereInput? get every;
@@ -16171,8 +16241,8 @@ abstract class GProductGalleryItemManyRelationFilter
   GProductGalleryItemManyRelationFilter._();
 
   factory GProductGalleryItemManyRelationFilter(
-          [Function(GProductGalleryItemManyRelationFilterBuilder b) updates]) =
-      _$GProductGalleryItemManyRelationFilter;
+      [void Function(GProductGalleryItemManyRelationFilterBuilder b)
+          updates]) = _$GProductGalleryItemManyRelationFilter;
 
   GProductGalleryItemWhereInput? get every;
   GProductGalleryItemWhereInput? get some;
@@ -16200,7 +16270,7 @@ abstract class GProductReelManyRelationFilter
   GProductReelManyRelationFilter._();
 
   factory GProductReelManyRelationFilter(
-          [Function(GProductReelManyRelationFilterBuilder b) updates]) =
+          [void Function(GProductReelManyRelationFilterBuilder b) updates]) =
       _$GProductReelManyRelationFilter;
 
   GProductReelWhereInput? get every;
@@ -16227,7 +16297,7 @@ abstract class GProductVariantOrderByInput
   GProductVariantOrderByInput._();
 
   factory GProductVariantOrderByInput(
-          [Function(GProductVariantOrderByInputBuilder b) updates]) =
+          [void Function(GProductVariantOrderByInputBuilder b) updates]) =
       _$GProductVariantOrderByInput;
 
   GOrderDirection? get id;
@@ -16258,7 +16328,7 @@ abstract class GProductVariantUpdateInput
   GProductVariantUpdateInput._();
 
   factory GProductVariantUpdateInput(
-          [Function(GProductVariantUpdateInputBuilder b) updates]) =
+          [void Function(GProductVariantUpdateInputBuilder b) updates]) =
       _$GProductVariantUpdateInput;
 
   GDateTime? get createdAt;
@@ -16297,7 +16367,7 @@ abstract class GProductImageRelateToManyForUpdateInput
   GProductImageRelateToManyForUpdateInput._();
 
   factory GProductImageRelateToManyForUpdateInput(
-      [Function(GProductImageRelateToManyForUpdateInputBuilder b)
+      [void Function(GProductImageRelateToManyForUpdateInputBuilder b)
           updates]) = _$GProductImageRelateToManyForUpdateInput;
 
   BuiltList<GProductImageWhereUniqueInput>? get disconnect;
@@ -16327,7 +16397,7 @@ abstract class GProductVideoRelateToManyForUpdateInput
   GProductVideoRelateToManyForUpdateInput._();
 
   factory GProductVideoRelateToManyForUpdateInput(
-      [Function(GProductVideoRelateToManyForUpdateInputBuilder b)
+      [void Function(GProductVideoRelateToManyForUpdateInputBuilder b)
           updates]) = _$GProductVideoRelateToManyForUpdateInput;
 
   BuiltList<GProductVideoWhereUniqueInput>? get disconnect;
@@ -16357,7 +16427,7 @@ abstract class GProductGalleryItemRelateToManyForUpdateInput
   GProductGalleryItemRelateToManyForUpdateInput._();
 
   factory GProductGalleryItemRelateToManyForUpdateInput(
-      [Function(GProductGalleryItemRelateToManyForUpdateInputBuilder b)
+      [void Function(GProductGalleryItemRelateToManyForUpdateInputBuilder b)
           updates]) = _$GProductGalleryItemRelateToManyForUpdateInput;
 
   BuiltList<GProductGalleryItemWhereUniqueInput>? get disconnect;
@@ -16388,8 +16458,8 @@ abstract class GProductReelRelateToManyForUpdateInput
   GProductReelRelateToManyForUpdateInput._();
 
   factory GProductReelRelateToManyForUpdateInput(
-          [Function(GProductReelRelateToManyForUpdateInputBuilder b) updates]) =
-      _$GProductReelRelateToManyForUpdateInput;
+      [void Function(GProductReelRelateToManyForUpdateInputBuilder b)
+          updates]) = _$GProductReelRelateToManyForUpdateInput;
 
   BuiltList<GProductReelWhereUniqueInput>? get disconnect;
   BuiltList<GProductReelWhereUniqueInput>? get set;
@@ -16417,7 +16487,7 @@ abstract class GProductVariantUpdateArgs
   GProductVariantUpdateArgs._();
 
   factory GProductVariantUpdateArgs(
-          [Function(GProductVariantUpdateArgsBuilder b) updates]) =
+          [void Function(GProductVariantUpdateArgsBuilder b) updates]) =
       _$GProductVariantUpdateArgs;
 
   GProductVariantWhereUniqueInput get where;
@@ -16443,7 +16513,7 @@ abstract class GProductVariantCreateInput
   GProductVariantCreateInput._();
 
   factory GProductVariantCreateInput(
-          [Function(GProductVariantCreateInputBuilder b) updates]) =
+          [void Function(GProductVariantCreateInputBuilder b) updates]) =
       _$GProductVariantCreateInput;
 
   GDateTime? get createdAt;
@@ -16482,7 +16552,7 @@ abstract class GProductImageRelateToManyForCreateInput
   GProductImageRelateToManyForCreateInput._();
 
   factory GProductImageRelateToManyForCreateInput(
-      [Function(GProductImageRelateToManyForCreateInputBuilder b)
+      [void Function(GProductImageRelateToManyForCreateInputBuilder b)
           updates]) = _$GProductImageRelateToManyForCreateInput;
 
   BuiltList<GProductImageCreateInput>? get create;
@@ -16510,7 +16580,7 @@ abstract class GProductVideoRelateToManyForCreateInput
   GProductVideoRelateToManyForCreateInput._();
 
   factory GProductVideoRelateToManyForCreateInput(
-      [Function(GProductVideoRelateToManyForCreateInputBuilder b)
+      [void Function(GProductVideoRelateToManyForCreateInputBuilder b)
           updates]) = _$GProductVideoRelateToManyForCreateInput;
 
   BuiltList<GProductVideoCreateInput>? get create;
@@ -16538,7 +16608,7 @@ abstract class GProductGalleryItemRelateToManyForCreateInput
   GProductGalleryItemRelateToManyForCreateInput._();
 
   factory GProductGalleryItemRelateToManyForCreateInput(
-      [Function(GProductGalleryItemRelateToManyForCreateInputBuilder b)
+      [void Function(GProductGalleryItemRelateToManyForCreateInputBuilder b)
           updates]) = _$GProductGalleryItemRelateToManyForCreateInput;
 
   BuiltList<GProductGalleryItemCreateInput>? get create;
@@ -16567,8 +16637,8 @@ abstract class GProductReelRelateToManyForCreateInput
   GProductReelRelateToManyForCreateInput._();
 
   factory GProductReelRelateToManyForCreateInput(
-          [Function(GProductReelRelateToManyForCreateInputBuilder b) updates]) =
-      _$GProductReelRelateToManyForCreateInput;
+      [void Function(GProductReelRelateToManyForCreateInputBuilder b)
+          updates]) = _$GProductReelRelateToManyForCreateInput;
 
   BuiltList<GProductReelCreateInput>? get create;
   BuiltList<GProductReelWhereUniqueInput>? get connect;
@@ -16595,7 +16665,7 @@ abstract class GProductImageWhereUniqueInput
   GProductImageWhereUniqueInput._();
 
   factory GProductImageWhereUniqueInput(
-          [Function(GProductImageWhereUniqueInputBuilder b) updates]) =
+          [void Function(GProductImageWhereUniqueInputBuilder b) updates]) =
       _$GProductImageWhereUniqueInput;
 
   String? get id;
@@ -16619,7 +16689,7 @@ abstract class GProductImageWhereInput
   GProductImageWhereInput._();
 
   factory GProductImageWhereInput(
-          [Function(GProductImageWhereInputBuilder b) updates]) =
+          [void Function(GProductImageWhereInputBuilder b) updates]) =
       _$GProductImageWhereInput;
 
   BuiltList<GProductImageWhereInput>? get AND;
@@ -16650,7 +16720,7 @@ abstract class GProductImageOrderByInput
   GProductImageOrderByInput._();
 
   factory GProductImageOrderByInput(
-          [Function(GProductImageOrderByInputBuilder b) updates]) =
+          [void Function(GProductImageOrderByInputBuilder b) updates]) =
       _$GProductImageOrderByInput;
 
   GOrderDirection? get id;
@@ -16677,7 +16747,7 @@ abstract class GProductImageUpdateInput
   GProductImageUpdateInput._();
 
   factory GProductImageUpdateInput(
-          [Function(GProductImageUpdateInputBuilder b) updates]) =
+          [void Function(GProductImageUpdateInputBuilder b) updates]) =
       _$GProductImageUpdateInput;
 
   GDateTime? get createdAt;
@@ -16704,7 +16774,7 @@ abstract class GProductImageUpdateArgs
   GProductImageUpdateArgs._();
 
   factory GProductImageUpdateArgs(
-          [Function(GProductImageUpdateArgsBuilder b) updates]) =
+          [void Function(GProductImageUpdateArgsBuilder b) updates]) =
       _$GProductImageUpdateArgs;
 
   GProductImageWhereUniqueInput get where;
@@ -16730,7 +16800,7 @@ abstract class GProductImageCreateInput
   GProductImageCreateInput._();
 
   factory GProductImageCreateInput(
-          [Function(GProductImageCreateInputBuilder b) updates]) =
+          [void Function(GProductImageCreateInputBuilder b) updates]) =
       _$GProductImageCreateInput;
 
   GDateTime? get createdAt;
@@ -16759,7 +16829,7 @@ abstract class GProductVideoWhereUniqueInput
   GProductVideoWhereUniqueInput._();
 
   factory GProductVideoWhereUniqueInput(
-          [Function(GProductVideoWhereUniqueInputBuilder b) updates]) =
+          [void Function(GProductVideoWhereUniqueInputBuilder b) updates]) =
       _$GProductVideoWhereUniqueInput;
 
   String? get id;
@@ -16783,7 +16853,7 @@ abstract class GProductVideoWhereInput
   GProductVideoWhereInput._();
 
   factory GProductVideoWhereInput(
-          [Function(GProductVideoWhereInputBuilder b) updates]) =
+          [void Function(GProductVideoWhereInputBuilder b) updates]) =
       _$GProductVideoWhereInput;
 
   BuiltList<GProductVideoWhereInput>? get AND;
@@ -16814,7 +16884,7 @@ abstract class GProductVideoOrderByInput
   GProductVideoOrderByInput._();
 
   factory GProductVideoOrderByInput(
-          [Function(GProductVideoOrderByInputBuilder b) updates]) =
+          [void Function(GProductVideoOrderByInputBuilder b) updates]) =
       _$GProductVideoOrderByInput;
 
   GOrderDirection? get id;
@@ -16841,7 +16911,7 @@ abstract class GProductVideoUpdateInput
   GProductVideoUpdateInput._();
 
   factory GProductVideoUpdateInput(
-          [Function(GProductVideoUpdateInputBuilder b) updates]) =
+          [void Function(GProductVideoUpdateInputBuilder b) updates]) =
       _$GProductVideoUpdateInput;
 
   GDateTime? get createdAt;
@@ -16868,7 +16938,7 @@ abstract class GProductVideoUpdateArgs
   GProductVideoUpdateArgs._();
 
   factory GProductVideoUpdateArgs(
-          [Function(GProductVideoUpdateArgsBuilder b) updates]) =
+          [void Function(GProductVideoUpdateArgsBuilder b) updates]) =
       _$GProductVideoUpdateArgs;
 
   GProductVideoWhereUniqueInput get where;
@@ -16894,7 +16964,7 @@ abstract class GProductVideoCreateInput
   GProductVideoCreateInput._();
 
   factory GProductVideoCreateInput(
-          [Function(GProductVideoCreateInputBuilder b) updates]) =
+          [void Function(GProductVideoCreateInputBuilder b) updates]) =
       _$GProductVideoCreateInput;
 
   GDateTime? get createdAt;
@@ -16923,8 +16993,8 @@ abstract class GProductGalleryItemWhereUniqueInput
   GProductGalleryItemWhereUniqueInput._();
 
   factory GProductGalleryItemWhereUniqueInput(
-          [Function(GProductGalleryItemWhereUniqueInputBuilder b) updates]) =
-      _$GProductGalleryItemWhereUniqueInput;
+      [void Function(GProductGalleryItemWhereUniqueInputBuilder b)
+          updates]) = _$GProductGalleryItemWhereUniqueInput;
 
   String? get id;
   static Serializer<GProductGalleryItemWhereUniqueInput> get serializer =>
@@ -16950,7 +17020,7 @@ abstract class GProductGalleryItemWhereInput
   GProductGalleryItemWhereInput._();
 
   factory GProductGalleryItemWhereInput(
-          [Function(GProductGalleryItemWhereInputBuilder b) updates]) =
+          [void Function(GProductGalleryItemWhereInputBuilder b) updates]) =
       _$GProductGalleryItemWhereInput;
 
   BuiltList<GProductGalleryItemWhereInput>? get AND;
@@ -16985,7 +17055,7 @@ abstract class GProductGalleryItemOrderByInput
   GProductGalleryItemOrderByInput._();
 
   factory GProductGalleryItemOrderByInput(
-          [Function(GProductGalleryItemOrderByInputBuilder b) updates]) =
+          [void Function(GProductGalleryItemOrderByInputBuilder b) updates]) =
       _$GProductGalleryItemOrderByInput;
 
   GOrderDirection? get id;
@@ -17016,7 +17086,7 @@ abstract class GProductGalleryItemUpdateInput
   GProductGalleryItemUpdateInput._();
 
   factory GProductGalleryItemUpdateInput(
-          [Function(GProductGalleryItemUpdateInputBuilder b) updates]) =
+          [void Function(GProductGalleryItemUpdateInputBuilder b) updates]) =
       _$GProductGalleryItemUpdateInput;
 
   GDateTime? get createdAt;
@@ -17047,7 +17117,7 @@ abstract class GProductGalleryItemUpdateArgs
   GProductGalleryItemUpdateArgs._();
 
   factory GProductGalleryItemUpdateArgs(
-          [Function(GProductGalleryItemUpdateArgsBuilder b) updates]) =
+          [void Function(GProductGalleryItemUpdateArgsBuilder b) updates]) =
       _$GProductGalleryItemUpdateArgs;
 
   GProductGalleryItemWhereUniqueInput get where;
@@ -17074,7 +17144,7 @@ abstract class GProductGalleryItemCreateInput
   GProductGalleryItemCreateInput._();
 
   factory GProductGalleryItemCreateInput(
-          [Function(GProductGalleryItemCreateInputBuilder b) updates]) =
+          [void Function(GProductGalleryItemCreateInputBuilder b) updates]) =
       _$GProductGalleryItemCreateInput;
 
   GDateTime? get createdAt;
@@ -17105,7 +17175,7 @@ abstract class GProductReelWhereUniqueInput
   GProductReelWhereUniqueInput._();
 
   factory GProductReelWhereUniqueInput(
-          [Function(GProductReelWhereUniqueInputBuilder b) updates]) =
+          [void Function(GProductReelWhereUniqueInputBuilder b) updates]) =
       _$GProductReelWhereUniqueInput;
 
   String? get id;
@@ -17129,7 +17199,7 @@ abstract class GProductReelWhereInput
   GProductReelWhereInput._();
 
   factory GProductReelWhereInput(
-          [Function(GProductReelWhereInputBuilder b) updates]) =
+          [void Function(GProductReelWhereInputBuilder b) updates]) =
       _$GProductReelWhereInput;
 
   BuiltList<GProductReelWhereInput>? get AND;
@@ -17164,7 +17234,7 @@ abstract class GProductReelOrderByInput
   GProductReelOrderByInput._();
 
   factory GProductReelOrderByInput(
-          [Function(GProductReelOrderByInputBuilder b) updates]) =
+          [void Function(GProductReelOrderByInputBuilder b) updates]) =
       _$GProductReelOrderByInput;
 
   GOrderDirection? get id;
@@ -17194,7 +17264,7 @@ abstract class GProductReelUpdateInput
   GProductReelUpdateInput._();
 
   factory GProductReelUpdateInput(
-          [Function(GProductReelUpdateInputBuilder b) updates]) =
+          [void Function(GProductReelUpdateInputBuilder b) updates]) =
       _$GProductReelUpdateInput;
 
   GDateTime? get createdAt;
@@ -17224,7 +17294,7 @@ abstract class GProductReelUpdateArgs
   GProductReelUpdateArgs._();
 
   factory GProductReelUpdateArgs(
-          [Function(GProductReelUpdateArgsBuilder b) updates]) =
+          [void Function(GProductReelUpdateArgsBuilder b) updates]) =
       _$GProductReelUpdateArgs;
 
   GProductReelWhereUniqueInput get where;
@@ -17249,7 +17319,7 @@ abstract class GProductReelCreateInput
   GProductReelCreateInput._();
 
   factory GProductReelCreateInput(
-          [Function(GProductReelCreateInputBuilder b) updates]) =
+          [void Function(GProductReelCreateInputBuilder b) updates]) =
       _$GProductReelCreateInput;
 
   GDateTime? get createdAt;
@@ -17281,7 +17351,7 @@ abstract class GProductDealerWhereUniqueInput
   GProductDealerWhereUniqueInput._();
 
   factory GProductDealerWhereUniqueInput(
-          [Function(GProductDealerWhereUniqueInputBuilder b) updates]) =
+          [void Function(GProductDealerWhereUniqueInputBuilder b) updates]) =
       _$GProductDealerWhereUniqueInput;
 
   String? get id;
@@ -17306,7 +17376,7 @@ abstract class GProductDealerWhereInput
   GProductDealerWhereInput._();
 
   factory GProductDealerWhereInput(
-          [Function(GProductDealerWhereInputBuilder b) updates]) =
+          [void Function(GProductDealerWhereInputBuilder b) updates]) =
       _$GProductDealerWhereInput;
 
   BuiltList<GProductDealerWhereInput>? get AND;
@@ -17341,7 +17411,7 @@ abstract class GProductDealerOrderByInput
   GProductDealerOrderByInput._();
 
   factory GProductDealerOrderByInput(
-          [Function(GProductDealerOrderByInputBuilder b) updates]) =
+          [void Function(GProductDealerOrderByInputBuilder b) updates]) =
       _$GProductDealerOrderByInput;
 
   GOrderDirection? get id;
@@ -17369,7 +17439,7 @@ abstract class GProductDealerUpdateInput
   GProductDealerUpdateInput._();
 
   factory GProductDealerUpdateInput(
-          [Function(GProductDealerUpdateInputBuilder b) updates]) =
+          [void Function(GProductDealerUpdateInputBuilder b) updates]) =
       _$GProductDealerUpdateInput;
 
   GDateTime? get createdAt;
@@ -17400,7 +17470,7 @@ abstract class GProductDealerUpdateArgs
   GProductDealerUpdateArgs._();
 
   factory GProductDealerUpdateArgs(
-          [Function(GProductDealerUpdateArgsBuilder b) updates]) =
+          [void Function(GProductDealerUpdateArgsBuilder b) updates]) =
       _$GProductDealerUpdateArgs;
 
   GProductDealerWhereUniqueInput get where;
@@ -17426,7 +17496,7 @@ abstract class GProductDealerCreateInput
   GProductDealerCreateInput._();
 
   factory GProductDealerCreateInput(
-          [Function(GProductDealerCreateInputBuilder b) updates]) =
+          [void Function(GProductDealerCreateInputBuilder b) updates]) =
       _$GProductDealerCreateInput;
 
   GDateTime? get createdAt;
@@ -17458,7 +17528,7 @@ abstract class GProductDealerStockRequestWhereUniqueInput
   GProductDealerStockRequestWhereUniqueInput._();
 
   factory GProductDealerStockRequestWhereUniqueInput(
-      [Function(GProductDealerStockRequestWhereUniqueInputBuilder b)
+      [void Function(GProductDealerStockRequestWhereUniqueInputBuilder b)
           updates]) = _$GProductDealerStockRequestWhereUniqueInput;
 
   String? get id;
@@ -17485,8 +17555,8 @@ abstract class GProductDealerStockRequestWhereInput
   GProductDealerStockRequestWhereInput._();
 
   factory GProductDealerStockRequestWhereInput(
-          [Function(GProductDealerStockRequestWhereInputBuilder b) updates]) =
-      _$GProductDealerStockRequestWhereInput;
+      [void Function(GProductDealerStockRequestWhereInputBuilder b)
+          updates]) = _$GProductDealerStockRequestWhereInput;
 
   BuiltList<GProductDealerStockRequestWhereInput>? get AND;
   BuiltList<GProductDealerStockRequestWhereInput>? get OR;
@@ -17523,8 +17593,8 @@ abstract class GProductDealerStockRequestOrderByInput
   GProductDealerStockRequestOrderByInput._();
 
   factory GProductDealerStockRequestOrderByInput(
-          [Function(GProductDealerStockRequestOrderByInputBuilder b) updates]) =
-      _$GProductDealerStockRequestOrderByInput;
+      [void Function(GProductDealerStockRequestOrderByInputBuilder b)
+          updates]) = _$GProductDealerStockRequestOrderByInput;
 
   GOrderDirection? get id;
   GOrderDirection? get createdAt;
@@ -17555,8 +17625,8 @@ abstract class GProductDealerStockRequestUpdateInput
   GProductDealerStockRequestUpdateInput._();
 
   factory GProductDealerStockRequestUpdateInput(
-          [Function(GProductDealerStockRequestUpdateInputBuilder b) updates]) =
-      _$GProductDealerStockRequestUpdateInput;
+      [void Function(GProductDealerStockRequestUpdateInputBuilder b)
+          updates]) = _$GProductDealerStockRequestUpdateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -17589,8 +17659,8 @@ abstract class GProductDealerStockRequestUpdateArgs
   GProductDealerStockRequestUpdateArgs._();
 
   factory GProductDealerStockRequestUpdateArgs(
-          [Function(GProductDealerStockRequestUpdateArgsBuilder b) updates]) =
-      _$GProductDealerStockRequestUpdateArgs;
+      [void Function(GProductDealerStockRequestUpdateArgsBuilder b)
+          updates]) = _$GProductDealerStockRequestUpdateArgs;
 
   GProductDealerStockRequestWhereUniqueInput get where;
   GProductDealerStockRequestUpdateInput get data;
@@ -17617,8 +17687,8 @@ abstract class GProductDealerStockRequestCreateInput
   GProductDealerStockRequestCreateInput._();
 
   factory GProductDealerStockRequestCreateInput(
-          [Function(GProductDealerStockRequestCreateInputBuilder b) updates]) =
-      _$GProductDealerStockRequestCreateInput;
+      [void Function(GProductDealerStockRequestCreateInputBuilder b)
+          updates]) = _$GProductDealerStockRequestCreateInput;
 
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
@@ -17650,7 +17720,7 @@ abstract class GCategoryWhereUniqueInput
   GCategoryWhereUniqueInput._();
 
   factory GCategoryWhereUniqueInput(
-          [Function(GCategoryWhereUniqueInputBuilder b) updates]) =
+          [void Function(GCategoryWhereUniqueInputBuilder b) updates]) =
       _$GCategoryWhereUniqueInput;
 
   String? get id;
@@ -17674,7 +17744,8 @@ abstract class GCategoryWhereInput
   GCategoryWhereInput._();
 
   factory GCategoryWhereInput(
-      [Function(GCategoryWhereInputBuilder b) updates]) = _$GCategoryWhereInput;
+          [void Function(GCategoryWhereInputBuilder b) updates]) =
+      _$GCategoryWhereInput;
 
   BuiltList<GCategoryWhereInput>? get AND;
   BuiltList<GCategoryWhereInput>? get OR;
@@ -17704,7 +17775,7 @@ abstract class GCategoryOrderByInput
   GCategoryOrderByInput._();
 
   factory GCategoryOrderByInput(
-          [Function(GCategoryOrderByInputBuilder b) updates]) =
+          [void Function(GCategoryOrderByInputBuilder b) updates]) =
       _$GCategoryOrderByInput;
 
   GOrderDirection? get id;
@@ -17732,7 +17803,7 @@ abstract class GCategoryUpdateInput
   GCategoryUpdateInput._();
 
   factory GCategoryUpdateInput(
-          [Function(GCategoryUpdateInputBuilder b) updates]) =
+          [void Function(GCategoryUpdateInputBuilder b) updates]) =
       _$GCategoryUpdateInput;
 
   GDateTime? get createdAt;
@@ -17759,7 +17830,8 @@ abstract class GCategoryUpdateArgs
   GCategoryUpdateArgs._();
 
   factory GCategoryUpdateArgs(
-      [Function(GCategoryUpdateArgsBuilder b) updates]) = _$GCategoryUpdateArgs;
+          [void Function(GCategoryUpdateArgsBuilder b) updates]) =
+      _$GCategoryUpdateArgs;
 
   GCategoryWhereUniqueInput get where;
   GCategoryUpdateInput get data;
@@ -17783,7 +17855,7 @@ abstract class GCategoryCreateInput
   GCategoryCreateInput._();
 
   factory GCategoryCreateInput(
-          [Function(GCategoryCreateInputBuilder b) updates]) =
+          [void Function(GCategoryCreateInputBuilder b) updates]) =
       _$GCategoryCreateInput;
 
   GDateTime? get createdAt;
@@ -17808,7 +17880,8 @@ abstract class GCategoryCreateInput
 abstract class GOrderItem implements Built<GOrderItem, GOrderItemBuilder> {
   GOrderItem._();
 
-  factory GOrderItem([Function(GOrderItemBuilder b) updates]) = _$GOrderItem;
+  factory GOrderItem([void Function(GOrderItemBuilder b) updates]) =
+      _$GOrderItem;
 
   GOrderItemType get type;
   BuiltList<String> get ids;
@@ -17847,7 +17920,7 @@ abstract class GPaymentItem
     implements Built<GPaymentItem, GPaymentItemBuilder> {
   GPaymentItem._();
 
-  factory GPaymentItem([Function(GPaymentItemBuilder b) updates]) =
+  factory GPaymentItem([void Function(GPaymentItemBuilder b) updates]) =
       _$GPaymentItem;
 
   GPaymentItemType get type;
@@ -17889,7 +17962,7 @@ abstract class GCreateInitialUserInput
   GCreateInitialUserInput._();
 
   factory GCreateInitialUserInput(
-          [Function(GCreateInitialUserInputBuilder b) updates]) =
+          [void Function(GCreateInitialUserInputBuilder b) updates]) =
       _$GCreateInitialUserInput;
 
   String? get name;
@@ -17936,7 +18009,7 @@ class GPasswordResetRedemptionErrorCode extends EnumClass {
 abstract class GItem implements Built<GItem, GItemBuilder> {
   GItem._();
 
-  factory GItem([Function(GItemBuilder b) updates]) = _$GItem;
+  factory GItem([void Function(GItemBuilder b) updates]) = _$GItem;
 
   GCouponItemType get type;
   BuiltList<String> get ids;

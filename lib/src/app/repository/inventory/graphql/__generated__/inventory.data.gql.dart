@@ -18,7 +18,7 @@ abstract class GProductVariantsData
   GProductVariantsData._();
 
   factory GProductVariantsData(
-          [Function(GProductVariantsDataBuilder b) updates]) =
+          [void Function(GProductVariantsDataBuilder b) updates]) =
       _$GProductVariantsData;
 
   static void _initializeBuilder(GProductVariantsDataBuilder b) =>
@@ -49,8 +49,8 @@ abstract class GProductVariantsData_productVariants
   GProductVariantsData_productVariants._();
 
   factory GProductVariantsData_productVariants(
-          [Function(GProductVariantsData_productVariantsBuilder b) updates]) =
-      _$GProductVariantsData_productVariants;
+      [void Function(GProductVariantsData_productVariantsBuilder b)
+          updates]) = _$GProductVariantsData_productVariants;
 
   static void _initializeBuilder(
           GProductVariantsData_productVariantsBuilder b) =>
@@ -92,7 +92,7 @@ abstract class GProductVariantsData_productVariants_prices
   GProductVariantsData_productVariants_prices._();
 
   factory GProductVariantsData_productVariants_prices(
-      [Function(GProductVariantsData_productVariants_pricesBuilder b)
+      [void Function(GProductVariantsData_productVariants_pricesBuilder b)
           updates]) = _$GProductVariantsData_productVariants_prices;
 
   static void _initializeBuilder(
@@ -126,7 +126,8 @@ abstract class GProductVariantsData_productVariants_prices_category
   GProductVariantsData_productVariants_prices_category._();
 
   factory GProductVariantsData_productVariants_prices_category(
-      [Function(GProductVariantsData_productVariants_prices_categoryBuilder b)
+      [void Function(
+              GProductVariantsData_productVariants_prices_categoryBuilder b)
           updates]) = _$GProductVariantsData_productVariants_prices_category;
 
   static void _initializeBuilder(
@@ -161,7 +162,8 @@ abstract class GProductVariantsData_productVariants_specifications
   GProductVariantsData_productVariants_specifications._();
 
   factory GProductVariantsData_productVariants_specifications(
-      [Function(GProductVariantsData_productVariants_specificationsBuilder b)
+      [void Function(
+              GProductVariantsData_productVariants_specificationsBuilder b)
           updates]) = _$GProductVariantsData_productVariants_specifications;
 
   static void _initializeBuilder(
@@ -203,7 +205,7 @@ abstract class GProductVariantsData_productVariants_specifications_specification
   GProductVariantsData_productVariants_specifications_specification._();
 
   factory GProductVariantsData_productVariants_specifications_specification(
-          [Function(
+          [void Function(
                   GProductVariantsData_productVariants_specifications_specificationBuilder
                       b)
               updates]) =
@@ -249,7 +251,7 @@ abstract class GProductVariantsData_productVariants_specifications_specification
   GProductVariantsData_productVariants_specifications_specification_image._();
 
   factory GProductVariantsData_productVariants_specifications_specification_image(
-          [Function(
+          [void Function(
                   GProductVariantsData_productVariants_specifications_specification_imageBuilder
                       b)
               updates]) =
@@ -289,7 +291,7 @@ abstract class GProductVariantsData_productVariants_specifications_category
   GProductVariantsData_productVariants_specifications_category._();
 
   factory GProductVariantsData_productVariants_specifications_category(
-          [Function(
+          [void Function(
                   GProductVariantsData_productVariants_specifications_categoryBuilder
                       b)
               updates]) =
@@ -330,7 +332,7 @@ abstract class GProductVariantsData_productVariants_gallery
   GProductVariantsData_productVariants_gallery._();
 
   factory GProductVariantsData_productVariants_gallery(
-      [Function(GProductVariantsData_productVariants_galleryBuilder b)
+      [void Function(GProductVariantsData_productVariants_galleryBuilder b)
           updates]) = _$GProductVariantsData_productVariants_gallery;
 
   static void _initializeBuilder(
@@ -365,7 +367,7 @@ abstract class GProductVariantsData_productVariants_product
   GProductVariantsData_productVariants_product._();
 
   factory GProductVariantsData_productVariants_product(
-      [Function(GProductVariantsData_productVariants_productBuilder b)
+      [void Function(GProductVariantsData_productVariants_productBuilder b)
           updates]) = _$GProductVariantsData_productVariants_product;
 
   static void _initializeBuilder(
@@ -405,7 +407,8 @@ abstract class GProductVariantsData_productVariants_product_brand
   GProductVariantsData_productVariants_product_brand._();
 
   factory GProductVariantsData_productVariants_product_brand(
-      [Function(GProductVariantsData_productVariants_product_brandBuilder b)
+      [void Function(
+              GProductVariantsData_productVariants_product_brandBuilder b)
           updates]) = _$GProductVariantsData_productVariants_product_brand;
 
   static void _initializeBuilder(
@@ -441,7 +444,7 @@ abstract class GProductVariantsData_productVariants_product_brand_logo
   GProductVariantsData_productVariants_product_brand_logo._();
 
   factory GProductVariantsData_productVariants_product_brand_logo(
-      [Function(
+      [void Function(
               GProductVariantsData_productVariants_product_brand_logoBuilder b)
           updates]) = _$GProductVariantsData_productVariants_product_brand_logo;
 
@@ -478,7 +481,7 @@ abstract class GProductVariantsData_productVariants_product_type
   GProductVariantsData_productVariants_product_type._();
 
   factory GProductVariantsData_productVariants_product_type(
-      [Function(GProductVariantsData_productVariants_product_typeBuilder b)
+      [void Function(GProductVariantsData_productVariants_product_typeBuilder b)
           updates]) = _$GProductVariantsData_productVariants_product_type;
 
   static void _initializeBuilder(
@@ -514,7 +517,7 @@ abstract class GProductVariantsData_productVariants_product_specifications
   GProductVariantsData_productVariants_product_specifications._();
 
   factory GProductVariantsData_productVariants_product_specifications(
-      [Function(
+      [void Function(
               GProductVariantsData_productVariants_product_specificationsBuilder
                   b)
           updates]) = _$GProductVariantsData_productVariants_product_specifications;
@@ -561,7 +564,7 @@ abstract class GProductVariantsData_productVariants_product_specifications_speci
   GProductVariantsData_productVariants_product_specifications_specification._();
 
   factory GProductVariantsData_productVariants_product_specifications_specification(
-          [Function(
+          [void Function(
                   GProductVariantsData_productVariants_product_specifications_specificationBuilder
                       b)
               updates]) =
@@ -607,7 +610,7 @@ abstract class GProductVariantsData_productVariants_product_specifications_speci
   GProductVariantsData_productVariants_product_specifications_specification_image._();
 
   factory GProductVariantsData_productVariants_product_specifications_specification_image(
-          [Function(
+          [void Function(
                   GProductVariantsData_productVariants_product_specifications_specification_imageBuilder
                       b)
               updates]) =
@@ -648,7 +651,7 @@ abstract class GProductVariantsData_productVariants_product_specifications_categ
   GProductVariantsData_productVariants_product_specifications_category._();
 
   factory GProductVariantsData_productVariants_product_specifications_category(
-          [Function(
+          [void Function(
                   GProductVariantsData_productVariants_product_specifications_categoryBuilder
                       b)
               updates]) =
@@ -690,7 +693,7 @@ abstract class GProductVariantsData_productVariants_tags
   GProductVariantsData_productVariants_tags._();
 
   factory GProductVariantsData_productVariants_tags(
-      [Function(GProductVariantsData_productVariants_tagsBuilder b)
+      [void Function(GProductVariantsData_productVariants_tagsBuilder b)
           updates]) = _$GProductVariantsData_productVariants_tags;
 
   static void _initializeBuilder(
@@ -725,7 +728,7 @@ abstract class GProductVariantsData_productVariants_images
   GProductVariantsData_productVariants_images._();
 
   factory GProductVariantsData_productVariants_images(
-      [Function(GProductVariantsData_productVariants_imagesBuilder b)
+      [void Function(GProductVariantsData_productVariants_imagesBuilder b)
           updates]) = _$GProductVariantsData_productVariants_images;
 
   static void _initializeBuilder(
@@ -760,7 +763,7 @@ abstract class GProductVariantsData_productVariants_images_image
   GProductVariantsData_productVariants_images_image._();
 
   factory GProductVariantsData_productVariants_images_image(
-      [Function(GProductVariantsData_productVariants_images_imageBuilder b)
+      [void Function(GProductVariantsData_productVariants_images_imageBuilder b)
           updates]) = _$GProductVariantsData_productVariants_images_image;
 
   static void _initializeBuilder(
@@ -793,7 +796,7 @@ abstract class GProductVariantsCountData
   GProductVariantsCountData._();
 
   factory GProductVariantsCountData(
-          [Function(GProductVariantsCountDataBuilder b) updates]) =
+          [void Function(GProductVariantsCountDataBuilder b) updates]) =
       _$GProductVariantsCountData;
 
   static void _initializeBuilder(GProductVariantsCountDataBuilder b) =>
@@ -822,7 +825,8 @@ abstract class GProductVariantData
   GProductVariantData._();
 
   factory GProductVariantData(
-      [Function(GProductVariantDataBuilder b) updates]) = _$GProductVariantData;
+          [void Function(GProductVariantDataBuilder b) updates]) =
+      _$GProductVariantData;
 
   static void _initializeBuilder(GProductVariantDataBuilder b) =>
       b..G__typename = 'Query';
@@ -852,8 +856,8 @@ abstract class GProductVariantData_productVariant
   GProductVariantData_productVariant._();
 
   factory GProductVariantData_productVariant(
-          [Function(GProductVariantData_productVariantBuilder b) updates]) =
-      _$GProductVariantData_productVariant;
+      [void Function(GProductVariantData_productVariantBuilder b)
+          updates]) = _$GProductVariantData_productVariant;
 
   static void _initializeBuilder(GProductVariantData_productVariantBuilder b) =>
       b..G__typename = 'ProductVariant';
@@ -894,7 +898,7 @@ abstract class GProductVariantData_productVariant_prices
   GProductVariantData_productVariant_prices._();
 
   factory GProductVariantData_productVariant_prices(
-      [Function(GProductVariantData_productVariant_pricesBuilder b)
+      [void Function(GProductVariantData_productVariant_pricesBuilder b)
           updates]) = _$GProductVariantData_productVariant_prices;
 
   static void _initializeBuilder(
@@ -928,7 +932,8 @@ abstract class GProductVariantData_productVariant_prices_category
   GProductVariantData_productVariant_prices_category._();
 
   factory GProductVariantData_productVariant_prices_category(
-      [Function(GProductVariantData_productVariant_prices_categoryBuilder b)
+      [void Function(
+              GProductVariantData_productVariant_prices_categoryBuilder b)
           updates]) = _$GProductVariantData_productVariant_prices_category;
 
   static void _initializeBuilder(
@@ -963,7 +968,7 @@ abstract class GProductVariantData_productVariant_specifications
   GProductVariantData_productVariant_specifications._();
 
   factory GProductVariantData_productVariant_specifications(
-      [Function(GProductVariantData_productVariant_specificationsBuilder b)
+      [void Function(GProductVariantData_productVariant_specificationsBuilder b)
           updates]) = _$GProductVariantData_productVariant_specifications;
 
   static void _initializeBuilder(
@@ -1005,7 +1010,7 @@ abstract class GProductVariantData_productVariant_specifications_specification
   GProductVariantData_productVariant_specifications_specification._();
 
   factory GProductVariantData_productVariant_specifications_specification(
-          [Function(
+          [void Function(
                   GProductVariantData_productVariant_specifications_specificationBuilder
                       b)
               updates]) =
@@ -1051,7 +1056,7 @@ abstract class GProductVariantData_productVariant_specifications_specification_i
   GProductVariantData_productVariant_specifications_specification_image._();
 
   factory GProductVariantData_productVariant_specifications_specification_image(
-          [Function(
+          [void Function(
                   GProductVariantData_productVariant_specifications_specification_imageBuilder
                       b)
               updates]) =
@@ -1091,7 +1096,7 @@ abstract class GProductVariantData_productVariant_specifications_category
   GProductVariantData_productVariant_specifications_category._();
 
   factory GProductVariantData_productVariant_specifications_category(
-      [Function(
+      [void Function(
               GProductVariantData_productVariant_specifications_categoryBuilder
                   b)
           updates]) = _$GProductVariantData_productVariant_specifications_category;
@@ -1130,7 +1135,7 @@ abstract class GProductVariantData_productVariant_gallery
   GProductVariantData_productVariant_gallery._();
 
   factory GProductVariantData_productVariant_gallery(
-      [Function(GProductVariantData_productVariant_galleryBuilder b)
+      [void Function(GProductVariantData_productVariant_galleryBuilder b)
           updates]) = _$GProductVariantData_productVariant_gallery;
 
   static void _initializeBuilder(
@@ -1165,7 +1170,7 @@ abstract class GProductVariantData_productVariant_product
   GProductVariantData_productVariant_product._();
 
   factory GProductVariantData_productVariant_product(
-      [Function(GProductVariantData_productVariant_productBuilder b)
+      [void Function(GProductVariantData_productVariant_productBuilder b)
           updates]) = _$GProductVariantData_productVariant_product;
 
   static void _initializeBuilder(
@@ -1205,7 +1210,7 @@ abstract class GProductVariantData_productVariant_product_brand
   GProductVariantData_productVariant_product_brand._();
 
   factory GProductVariantData_productVariant_product_brand(
-      [Function(GProductVariantData_productVariant_product_brandBuilder b)
+      [void Function(GProductVariantData_productVariant_product_brandBuilder b)
           updates]) = _$GProductVariantData_productVariant_product_brand;
 
   static void _initializeBuilder(
@@ -1241,7 +1246,8 @@ abstract class GProductVariantData_productVariant_product_brand_logo
   GProductVariantData_productVariant_product_brand_logo._();
 
   factory GProductVariantData_productVariant_product_brand_logo(
-      [Function(GProductVariantData_productVariant_product_brand_logoBuilder b)
+      [void Function(
+              GProductVariantData_productVariant_product_brand_logoBuilder b)
           updates]) = _$GProductVariantData_productVariant_product_brand_logo;
 
   static void _initializeBuilder(
@@ -1277,7 +1283,7 @@ abstract class GProductVariantData_productVariant_product_type
   GProductVariantData_productVariant_product_type._();
 
   factory GProductVariantData_productVariant_product_type(
-      [Function(GProductVariantData_productVariant_product_typeBuilder b)
+      [void Function(GProductVariantData_productVariant_product_typeBuilder b)
           updates]) = _$GProductVariantData_productVariant_product_type;
 
   static void _initializeBuilder(
@@ -1313,7 +1319,7 @@ abstract class GProductVariantData_productVariant_product_specifications
   GProductVariantData_productVariant_product_specifications._();
 
   factory GProductVariantData_productVariant_product_specifications(
-      [Function(
+      [void Function(
               GProductVariantData_productVariant_product_specificationsBuilder
                   b)
           updates]) = _$GProductVariantData_productVariant_product_specifications;
@@ -1359,7 +1365,7 @@ abstract class GProductVariantData_productVariant_product_specifications_specifi
   GProductVariantData_productVariant_product_specifications_specification._();
 
   factory GProductVariantData_productVariant_product_specifications_specification(
-          [Function(
+          [void Function(
                   GProductVariantData_productVariant_product_specifications_specificationBuilder
                       b)
               updates]) =
@@ -1405,7 +1411,7 @@ abstract class GProductVariantData_productVariant_product_specifications_specifi
   GProductVariantData_productVariant_product_specifications_specification_image._();
 
   factory GProductVariantData_productVariant_product_specifications_specification_image(
-          [Function(
+          [void Function(
                   GProductVariantData_productVariant_product_specifications_specification_imageBuilder
                       b)
               updates]) =
@@ -1446,7 +1452,7 @@ abstract class GProductVariantData_productVariant_product_specifications_categor
   GProductVariantData_productVariant_product_specifications_category._();
 
   factory GProductVariantData_productVariant_product_specifications_category(
-          [Function(
+          [void Function(
                   GProductVariantData_productVariant_product_specifications_categoryBuilder
                       b)
               updates]) =
@@ -1488,7 +1494,7 @@ abstract class GProductVariantData_productVariant_tags
   GProductVariantData_productVariant_tags._();
 
   factory GProductVariantData_productVariant_tags(
-      [Function(GProductVariantData_productVariant_tagsBuilder b)
+      [void Function(GProductVariantData_productVariant_tagsBuilder b)
           updates]) = _$GProductVariantData_productVariant_tags;
 
   static void _initializeBuilder(
@@ -1523,7 +1529,7 @@ abstract class GProductVariantData_productVariant_images
   GProductVariantData_productVariant_images._();
 
   factory GProductVariantData_productVariant_images(
-      [Function(GProductVariantData_productVariant_imagesBuilder b)
+      [void Function(GProductVariantData_productVariant_imagesBuilder b)
           updates]) = _$GProductVariantData_productVariant_images;
 
   static void _initializeBuilder(
@@ -1558,7 +1564,7 @@ abstract class GProductVariantData_productVariant_images_image
   GProductVariantData_productVariant_images_image._();
 
   factory GProductVariantData_productVariant_images_image(
-      [Function(GProductVariantData_productVariant_images_imageBuilder b)
+      [void Function(GProductVariantData_productVariant_images_imageBuilder b)
           updates]) = _$GProductVariantData_productVariant_images_image;
 
   static void _initializeBuilder(
@@ -1589,7 +1595,8 @@ abstract class GProductTypesData
     implements Built<GProductTypesData, GProductTypesDataBuilder> {
   GProductTypesData._();
 
-  factory GProductTypesData([Function(GProductTypesDataBuilder b) updates]) =
+  factory GProductTypesData(
+          [void Function(GProductTypesDataBuilder b) updates]) =
       _$GProductTypesData;
 
   static void _initializeBuilder(GProductTypesDataBuilder b) =>
@@ -1620,7 +1627,7 @@ abstract class GProductTypesData_productTypes
   GProductTypesData_productTypes._();
 
   factory GProductTypesData_productTypes(
-          [Function(GProductTypesData_productTypesBuilder b) updates]) =
+          [void Function(GProductTypesData_productTypesBuilder b) updates]) =
       _$GProductTypesData_productTypes;
 
   static void _initializeBuilder(GProductTypesData_productTypesBuilder b) =>
@@ -1650,7 +1657,7 @@ abstract class GVehicleVariantsData
   GVehicleVariantsData._();
 
   factory GVehicleVariantsData(
-          [Function(GVehicleVariantsDataBuilder b) updates]) =
+          [void Function(GVehicleVariantsDataBuilder b) updates]) =
       _$GVehicleVariantsData;
 
   static void _initializeBuilder(GVehicleVariantsDataBuilder b) =>
@@ -1681,8 +1688,8 @@ abstract class GVehicleVariantsData_vehicleVariants
   GVehicleVariantsData_vehicleVariants._();
 
   factory GVehicleVariantsData_vehicleVariants(
-          [Function(GVehicleVariantsData_vehicleVariantsBuilder b) updates]) =
-      _$GVehicleVariantsData_vehicleVariants;
+      [void Function(GVehicleVariantsData_vehicleVariantsBuilder b)
+          updates]) = _$GVehicleVariantsData_vehicleVariants;
 
   static void _initializeBuilder(
           GVehicleVariantsData_vehicleVariantsBuilder b) =>
@@ -1721,7 +1728,7 @@ abstract class GVehicleVariantsData_vehicleVariants_prices
   GVehicleVariantsData_vehicleVariants_prices._();
 
   factory GVehicleVariantsData_vehicleVariants_prices(
-      [Function(GVehicleVariantsData_vehicleVariants_pricesBuilder b)
+      [void Function(GVehicleVariantsData_vehicleVariants_pricesBuilder b)
           updates]) = _$GVehicleVariantsData_vehicleVariants_prices;
 
   static void _initializeBuilder(
@@ -1755,7 +1762,8 @@ abstract class GVehicleVariantsData_vehicleVariants_prices_category
   GVehicleVariantsData_vehicleVariants_prices_category._();
 
   factory GVehicleVariantsData_vehicleVariants_prices_category(
-      [Function(GVehicleVariantsData_vehicleVariants_prices_categoryBuilder b)
+      [void Function(
+              GVehicleVariantsData_vehicleVariants_prices_categoryBuilder b)
           updates]) = _$GVehicleVariantsData_vehicleVariants_prices_category;
 
   static void _initializeBuilder(
@@ -1790,7 +1798,7 @@ abstract class GVehicleVariantsData_vehicleVariants_colors
   GVehicleVariantsData_vehicleVariants_colors._();
 
   factory GVehicleVariantsData_vehicleVariants_colors(
-      [Function(GVehicleVariantsData_vehicleVariants_colorsBuilder b)
+      [void Function(GVehicleVariantsData_vehicleVariants_colorsBuilder b)
           updates]) = _$GVehicleVariantsData_vehicleVariants_colors;
 
   static void _initializeBuilder(
@@ -1826,7 +1834,8 @@ abstract class GVehicleVariantsData_vehicleVariants_colors_images
   GVehicleVariantsData_vehicleVariants_colors_images._();
 
   factory GVehicleVariantsData_vehicleVariants_colors_images(
-      [Function(GVehicleVariantsData_vehicleVariants_colors_imagesBuilder b)
+      [void Function(
+              GVehicleVariantsData_vehicleVariants_colors_imagesBuilder b)
           updates]) = _$GVehicleVariantsData_vehicleVariants_colors_images;
 
   static void _initializeBuilder(
@@ -1861,7 +1870,7 @@ abstract class GVehicleVariantsData_vehicleVariants_colors_images_image
   GVehicleVariantsData_vehicleVariants_colors_images_image._();
 
   factory GVehicleVariantsData_vehicleVariants_colors_images_image(
-      [Function(
+      [void Function(
               GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder b)
           updates]) = _$GVehicleVariantsData_vehicleVariants_colors_images_image;
 
@@ -1898,7 +1907,7 @@ abstract class GVehicleVariantsData_vehicleVariants_vehicle
   GVehicleVariantsData_vehicleVariants_vehicle._();
 
   factory GVehicleVariantsData_vehicleVariants_vehicle(
-      [Function(GVehicleVariantsData_vehicleVariants_vehicleBuilder b)
+      [void Function(GVehicleVariantsData_vehicleVariants_vehicleBuilder b)
           updates]) = _$GVehicleVariantsData_vehicleVariants_vehicle;
 
   static void _initializeBuilder(
@@ -1934,7 +1943,8 @@ abstract class GVehicleVariantsData_vehicleVariants_vehicle_brand
   GVehicleVariantsData_vehicleVariants_vehicle_brand._();
 
   factory GVehicleVariantsData_vehicleVariants_vehicle_brand(
-      [Function(GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder b)
+      [void Function(
+              GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder b)
           updates]) = _$GVehicleVariantsData_vehicleVariants_vehicle_brand;
 
   static void _initializeBuilder(
@@ -1969,7 +1979,7 @@ abstract class GVehicleVariantsData_vehicleVariants_vehicle_type
   GVehicleVariantsData_vehicleVariants_vehicle_type._();
 
   factory GVehicleVariantsData_vehicleVariants_vehicle_type(
-      [Function(GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder b)
+      [void Function(GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder b)
           updates]) = _$GVehicleVariantsData_vehicleVariants_vehicle_type;
 
   static void _initializeBuilder(
@@ -2002,7 +2012,7 @@ abstract class GVehicleVariantsCountData
   GVehicleVariantsCountData._();
 
   factory GVehicleVariantsCountData(
-          [Function(GVehicleVariantsCountDataBuilder b) updates]) =
+          [void Function(GVehicleVariantsCountDataBuilder b) updates]) =
       _$GVehicleVariantsCountData;
 
   static void _initializeBuilder(GVehicleVariantsCountDataBuilder b) =>
@@ -2033,8 +2043,8 @@ abstract class GCreateVehicleDealerStockRequestData
   GCreateVehicleDealerStockRequestData._();
 
   factory GCreateVehicleDealerStockRequestData(
-          [Function(GCreateVehicleDealerStockRequestDataBuilder b) updates]) =
-      _$GCreateVehicleDealerStockRequestData;
+      [void Function(GCreateVehicleDealerStockRequestDataBuilder b)
+          updates]) = _$GCreateVehicleDealerStockRequestData;
 
   static void _initializeBuilder(
           GCreateVehicleDealerStockRequestDataBuilder b) =>
@@ -2068,7 +2078,7 @@ abstract class GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequ
   GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest._();
 
   factory GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest(
-          [Function(
+          [void Function(
                   GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequestBuilder
                       b)
               updates]) =
@@ -2108,7 +2118,8 @@ abstract class GVehicleDealersData
   GVehicleDealersData._();
 
   factory GVehicleDealersData(
-      [Function(GVehicleDealersDataBuilder b) updates]) = _$GVehicleDealersData;
+          [void Function(GVehicleDealersDataBuilder b) updates]) =
+      _$GVehicleDealersData;
 
   static void _initializeBuilder(GVehicleDealersDataBuilder b) =>
       b..G__typename = 'Query';
@@ -2138,8 +2149,8 @@ abstract class GVehicleDealersData_vehicleDealers
   GVehicleDealersData_vehicleDealers._();
 
   factory GVehicleDealersData_vehicleDealers(
-          [Function(GVehicleDealersData_vehicleDealersBuilder b) updates]) =
-      _$GVehicleDealersData_vehicleDealers;
+      [void Function(GVehicleDealersData_vehicleDealersBuilder b)
+          updates]) = _$GVehicleDealersData_vehicleDealers;
 
   static void _initializeBuilder(GVehicleDealersData_vehicleDealersBuilder b) =>
       b..G__typename = 'VehicleDealer';
@@ -2176,7 +2187,7 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleColor
   GVehicleDealersData_vehicleDealers_vehicleColor._();
 
   factory GVehicleDealersData_vehicleDealers_vehicleColor(
-      [Function(GVehicleDealersData_vehicleDealers_vehicleColorBuilder b)
+      [void Function(GVehicleDealersData_vehicleDealers_vehicleColorBuilder b)
           updates]) = _$GVehicleDealersData_vehicleDealers_vehicleColor;
 
   static void _initializeBuilder(
@@ -2213,7 +2224,8 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleColor_images
   GVehicleDealersData_vehicleDealers_vehicleColor_images._();
 
   factory GVehicleDealersData_vehicleDealers_vehicleColor_images(
-      [Function(GVehicleDealersData_vehicleDealers_vehicleColor_imagesBuilder b)
+      [void Function(
+              GVehicleDealersData_vehicleDealers_vehicleColor_imagesBuilder b)
           updates]) = _$GVehicleDealersData_vehicleDealers_vehicleColor_images;
 
   static void _initializeBuilder(
@@ -2248,7 +2260,7 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleColor_images_image
   GVehicleDealersData_vehicleDealers_vehicleColor_images_image._();
 
   factory GVehicleDealersData_vehicleDealers_vehicleColor_images_image(
-          [Function(
+          [void Function(
                   GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder
                       b)
               updates]) =
@@ -2287,7 +2299,7 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleVariant
   GVehicleDealersData_vehicleDealers_vehicleVariant._();
 
   factory GVehicleDealersData_vehicleDealers_vehicleVariant(
-      [Function(GVehicleDealersData_vehicleDealers_vehicleVariantBuilder b)
+      [void Function(GVehicleDealersData_vehicleDealers_vehicleVariantBuilder b)
           updates]) = _$GVehicleDealersData_vehicleDealers_vehicleVariant;
 
   static void _initializeBuilder(
@@ -2324,7 +2336,7 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle
   GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle._();
 
   factory GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle(
-      [Function(
+      [void Function(
               GVehicleDealersData_vehicleDealers_vehicleVariant_vehicleBuilder
                   b)
           updates]) = _$GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle;
@@ -2363,7 +2375,7 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand
   GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand._();
 
   factory GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand(
-          [Function(
+          [void Function(
                   GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brandBuilder
                       b)
               updates]) =
@@ -2404,7 +2416,7 @@ abstract class GVehicleDealersData_vehicleDealers_prices
   GVehicleDealersData_vehicleDealers_prices._();
 
   factory GVehicleDealersData_vehicleDealers_prices(
-      [Function(GVehicleDealersData_vehicleDealers_pricesBuilder b)
+      [void Function(GVehicleDealersData_vehicleDealers_pricesBuilder b)
           updates]) = _$GVehicleDealersData_vehicleDealers_prices;
 
   static void _initializeBuilder(
@@ -2439,7 +2451,8 @@ abstract class GVehicleDealersData_vehicleDealers_prices_category
   GVehicleDealersData_vehicleDealers_prices_category._();
 
   factory GVehicleDealersData_vehicleDealers_prices_category(
-      [Function(GVehicleDealersData_vehicleDealers_prices_categoryBuilder b)
+      [void Function(
+              GVehicleDealersData_vehicleDealers_prices_categoryBuilder b)
           updates]) = _$GVehicleDealersData_vehicleDealers_prices_category;
 
   static void _initializeBuilder(
@@ -2474,7 +2487,7 @@ abstract class GVehicleDealersData_vehicleDealers_guarantees
   GVehicleDealersData_vehicleDealers_guarantees._();
 
   factory GVehicleDealersData_vehicleDealers_guarantees(
-      [Function(GVehicleDealersData_vehicleDealers_guaranteesBuilder b)
+      [void Function(GVehicleDealersData_vehicleDealers_guaranteesBuilder b)
           updates]) = _$GVehicleDealersData_vehicleDealers_guarantees;
 
   static void _initializeBuilder(
@@ -2508,7 +2521,7 @@ abstract class GCreateVehicleDealerData
   GCreateVehicleDealerData._();
 
   factory GCreateVehicleDealerData(
-          [Function(GCreateVehicleDealerDataBuilder b) updates]) =
+          [void Function(GCreateVehicleDealerDataBuilder b) updates]) =
       _$GCreateVehicleDealerData;
 
   static void _initializeBuilder(GCreateVehicleDealerDataBuilder b) =>
@@ -2539,7 +2552,7 @@ abstract class GCreateVehicleDealerData_createVehicleDealer
   GCreateVehicleDealerData_createVehicleDealer._();
 
   factory GCreateVehicleDealerData_createVehicleDealer(
-      [Function(GCreateVehicleDealerData_createVehicleDealerBuilder b)
+      [void Function(GCreateVehicleDealerData_createVehicleDealerBuilder b)
           updates]) = _$GCreateVehicleDealerData_createVehicleDealer;
 
   static void _initializeBuilder(
@@ -2570,7 +2583,7 @@ abstract class GPriceCategoriesData
   GPriceCategoriesData._();
 
   factory GPriceCategoriesData(
-          [Function(GPriceCategoriesDataBuilder b) updates]) =
+          [void Function(GPriceCategoriesDataBuilder b) updates]) =
       _$GPriceCategoriesData;
 
   static void _initializeBuilder(GPriceCategoriesDataBuilder b) =>
@@ -2601,8 +2614,8 @@ abstract class GPriceCategoriesData_priceCategories
   GPriceCategoriesData_priceCategories._();
 
   factory GPriceCategoriesData_priceCategories(
-          [Function(GPriceCategoriesData_priceCategoriesBuilder b) updates]) =
-      _$GPriceCategoriesData_priceCategories;
+      [void Function(GPriceCategoriesData_priceCategoriesBuilder b)
+          updates]) = _$GPriceCategoriesData_priceCategories;
 
   static void _initializeBuilder(
           GPriceCategoriesData_priceCategoriesBuilder b) =>
@@ -2637,7 +2650,7 @@ abstract class GUpdateVehicleDealerData
   GUpdateVehicleDealerData._();
 
   factory GUpdateVehicleDealerData(
-          [Function(GUpdateVehicleDealerDataBuilder b) updates]) =
+          [void Function(GUpdateVehicleDealerDataBuilder b) updates]) =
       _$GUpdateVehicleDealerData;
 
   static void _initializeBuilder(GUpdateVehicleDealerDataBuilder b) =>
@@ -2668,7 +2681,7 @@ abstract class GUpdateVehicleDealerData_updateVehicleDealer
   GUpdateVehicleDealerData_updateVehicleDealer._();
 
   factory GUpdateVehicleDealerData_updateVehicleDealer(
-      [Function(GUpdateVehicleDealerData_updateVehicleDealerBuilder b)
+      [void Function(GUpdateVehicleDealerData_updateVehicleDealerBuilder b)
           updates]) = _$GUpdateVehicleDealerData_updateVehicleDealer;
 
   static void _initializeBuilder(
@@ -2709,7 +2722,7 @@ abstract class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor
   GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor._();
 
   factory GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor(
-      [Function(
+      [void Function(
               GUpdateVehicleDealerData_updateVehicleDealer_vehicleColorBuilder
                   b)
           updates]) = _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor;
@@ -2749,7 +2762,7 @@ abstract class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images
   GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images._();
 
   factory GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images(
-          [Function(
+          [void Function(
                   GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder
                       b)
               updates]) =
@@ -2792,7 +2805,7 @@ abstract class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_
   GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image._();
 
   factory GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image(
-          [Function(
+          [void Function(
                   GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder
                       b)
               updates]) =
@@ -2832,7 +2845,7 @@ abstract class GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant
   GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant._();
 
   factory GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant(
-      [Function(
+      [void Function(
               GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariantBuilder
                   b)
           updates]) = _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant;
@@ -2874,7 +2887,7 @@ abstract class GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehic
   GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle._();
 
   factory GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle(
-          [Function(
+          [void Function(
                   GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicleBuilder
                       b)
               updates]) =
@@ -2919,7 +2932,7 @@ abstract class GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehic
   GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand._();
 
   factory GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand(
-          [Function(
+          [void Function(
                   GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brandBuilder
                       b)
               updates]) =
@@ -2960,7 +2973,8 @@ abstract class GUpdateVehicleDealerData_updateVehicleDealer_prices
   GUpdateVehicleDealerData_updateVehicleDealer_prices._();
 
   factory GUpdateVehicleDealerData_updateVehicleDealer_prices(
-      [Function(GUpdateVehicleDealerData_updateVehicleDealer_pricesBuilder b)
+      [void Function(
+              GUpdateVehicleDealerData_updateVehicleDealer_pricesBuilder b)
           updates]) = _$GUpdateVehicleDealerData_updateVehicleDealer_prices;
 
   static void _initializeBuilder(
@@ -2996,7 +3010,7 @@ abstract class GUpdateVehicleDealerData_updateVehicleDealer_prices_category
   GUpdateVehicleDealerData_updateVehicleDealer_prices_category._();
 
   factory GUpdateVehicleDealerData_updateVehicleDealer_prices_category(
-          [Function(
+          [void Function(
                   GUpdateVehicleDealerData_updateVehicleDealer_prices_categoryBuilder
                       b)
               updates]) =
@@ -3036,7 +3050,7 @@ abstract class GUpdateVehicleDealerData_updateVehicleDealer_guarantees
   GUpdateVehicleDealerData_updateVehicleDealer_guarantees._();
 
   factory GUpdateVehicleDealerData_updateVehicleDealer_guarantees(
-      [Function(
+      [void Function(
               GUpdateVehicleDealerData_updateVehicleDealer_guaranteesBuilder b)
           updates]) = _$GUpdateVehicleDealerData_updateVehicleDealer_guarantees;
 
@@ -3070,7 +3084,8 @@ abstract class GUpdatePricesData
     implements Built<GUpdatePricesData, GUpdatePricesDataBuilder> {
   GUpdatePricesData._();
 
-  factory GUpdatePricesData([Function(GUpdatePricesDataBuilder b) updates]) =
+  factory GUpdatePricesData(
+          [void Function(GUpdatePricesDataBuilder b) updates]) =
       _$GUpdatePricesData;
 
   static void _initializeBuilder(GUpdatePricesDataBuilder b) =>
@@ -3101,7 +3116,7 @@ abstract class GUpdatePricesData_updatePrices
   GUpdatePricesData_updatePrices._();
 
   factory GUpdatePricesData_updatePrices(
-          [Function(GUpdatePricesData_updatePricesBuilder b) updates]) =
+          [void Function(GUpdatePricesData_updatePricesBuilder b) updates]) =
       _$GUpdatePricesData_updatePrices;
 
   static void _initializeBuilder(GUpdatePricesData_updatePricesBuilder b) =>
@@ -3121,6 +3136,730 @@ abstract class GUpdatePricesData_updatePrices
   static GUpdatePricesData_updatePrices? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GUpdatePricesData_updatePrices.serializer,
+        json,
+      );
+}
+
+abstract class GTestDriveDealersData
+    implements Built<GTestDriveDealersData, GTestDriveDealersDataBuilder> {
+  GTestDriveDealersData._();
+
+  factory GTestDriveDealersData(
+          [void Function(GTestDriveDealersDataBuilder b) updates]) =
+      _$GTestDriveDealersData;
+
+  static void _initializeBuilder(GTestDriveDealersDataBuilder b) =>
+      b..G__typename = 'Query';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  BuiltList<GTestDriveDealersData_testDriveDealers>? get testDriveDealers;
+  int? get testDriveDealersCount;
+  static Serializer<GTestDriveDealersData> get serializer =>
+      _$gTestDriveDealersDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveDealersData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GTestDriveDealersData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GTestDriveDealersData.serializer,
+        json,
+      );
+}
+
+abstract class GTestDriveDealersData_testDriveDealers
+    implements
+        Built<GTestDriveDealersData_testDriveDealers,
+            GTestDriveDealersData_testDriveDealersBuilder> {
+  GTestDriveDealersData_testDriveDealers._();
+
+  factory GTestDriveDealersData_testDriveDealers(
+      [void Function(GTestDriveDealersData_testDriveDealersBuilder b)
+          updates]) = _$GTestDriveDealersData_testDriveDealers;
+
+  static void _initializeBuilder(
+          GTestDriveDealersData_testDriveDealersBuilder b) =>
+      b..G__typename = 'TestDriveDealer';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GTestDriveDealersData_testDriveDealers_vehicleColor? get vehicleColor;
+  GTestDriveDealersData_testDriveDealers_vehicleVariant? get vehicleVariant;
+  int? get price;
+  String get id;
+  static Serializer<GTestDriveDealersData_testDriveDealers> get serializer =>
+      _$gTestDriveDealersDataTestDriveDealersSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveDealersData_testDriveDealers.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GTestDriveDealersData_testDriveDealers? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GTestDriveDealersData_testDriveDealers.serializer,
+        json,
+      );
+}
+
+abstract class GTestDriveDealersData_testDriveDealers_vehicleColor
+    implements
+        Built<GTestDriveDealersData_testDriveDealers_vehicleColor,
+            GTestDriveDealersData_testDriveDealers_vehicleColorBuilder> {
+  GTestDriveDealersData_testDriveDealers_vehicleColor._();
+
+  factory GTestDriveDealersData_testDriveDealers_vehicleColor(
+      [void Function(
+              GTestDriveDealersData_testDriveDealers_vehicleColorBuilder b)
+          updates]) = _$GTestDriveDealersData_testDriveDealers_vehicleColor;
+
+  static void _initializeBuilder(
+          GTestDriveDealersData_testDriveDealers_vehicleColorBuilder b) =>
+      b..G__typename = 'VehicleColor';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  String? get code;
+  BuiltList<GTestDriveDealersData_testDriveDealers_vehicleColor_images>?
+      get images;
+  static Serializer<GTestDriveDealersData_testDriveDealers_vehicleColor>
+      get serializer =>
+          _$gTestDriveDealersDataTestDriveDealersVehicleColorSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveDealersData_testDriveDealers_vehicleColor.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GTestDriveDealersData_testDriveDealers_vehicleColor? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GTestDriveDealersData_testDriveDealers_vehicleColor.serializer,
+        json,
+      );
+}
+
+abstract class GTestDriveDealersData_testDriveDealers_vehicleColor_images
+    implements
+        Built<GTestDriveDealersData_testDriveDealers_vehicleColor_images,
+            GTestDriveDealersData_testDriveDealers_vehicleColor_imagesBuilder> {
+  GTestDriveDealersData_testDriveDealers_vehicleColor_images._();
+
+  factory GTestDriveDealersData_testDriveDealers_vehicleColor_images(
+      [void Function(
+              GTestDriveDealersData_testDriveDealers_vehicleColor_imagesBuilder
+                  b)
+          updates]) = _$GTestDriveDealersData_testDriveDealers_vehicleColor_images;
+
+  static void _initializeBuilder(
+          GTestDriveDealersData_testDriveDealers_vehicleColor_imagesBuilder
+              b) =>
+      b..G__typename = 'VehicleImage';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  GTestDriveDealersData_testDriveDealers_vehicleColor_images_image? get image;
+  static Serializer<GTestDriveDealersData_testDriveDealers_vehicleColor_images>
+      get serializer =>
+          _$gTestDriveDealersDataTestDriveDealersVehicleColorImagesSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveDealersData_testDriveDealers_vehicleColor_images.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GTestDriveDealersData_testDriveDealers_vehicleColor_images? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GTestDriveDealersData_testDriveDealers_vehicleColor_images.serializer,
+        json,
+      );
+}
+
+abstract class GTestDriveDealersData_testDriveDealers_vehicleColor_images_image
+    implements
+        Built<GTestDriveDealersData_testDriveDealers_vehicleColor_images_image,
+            GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder> {
+  GTestDriveDealersData_testDriveDealers_vehicleColor_images_image._();
+
+  factory GTestDriveDealersData_testDriveDealers_vehicleColor_images_image(
+          [void Function(
+                  GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder
+                      b)
+              updates]) =
+      _$GTestDriveDealersData_testDriveDealers_vehicleColor_images_image;
+
+  static void _initializeBuilder(
+          GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder
+              b) =>
+      b..G__typename = 'ImageFieldOutput';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get url;
+  static Serializer<
+          GTestDriveDealersData_testDriveDealers_vehicleColor_images_image>
+      get serializer =>
+          _$gTestDriveDealersDataTestDriveDealersVehicleColorImagesImageSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveDealersData_testDriveDealers_vehicleColor_images_image
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GTestDriveDealersData_testDriveDealers_vehicleColor_images_image?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GTestDriveDealersData_testDriveDealers_vehicleColor_images_image
+                .serializer,
+            json,
+          );
+}
+
+abstract class GTestDriveDealersData_testDriveDealers_vehicleVariant
+    implements
+        Built<GTestDriveDealersData_testDriveDealers_vehicleVariant,
+            GTestDriveDealersData_testDriveDealers_vehicleVariantBuilder> {
+  GTestDriveDealersData_testDriveDealers_vehicleVariant._();
+
+  factory GTestDriveDealersData_testDriveDealers_vehicleVariant(
+      [void Function(
+              GTestDriveDealersData_testDriveDealers_vehicleVariantBuilder b)
+          updates]) = _$GTestDriveDealersData_testDriveDealers_vehicleVariant;
+
+  static void _initializeBuilder(
+          GTestDriveDealersData_testDriveDealers_vehicleVariantBuilder b) =>
+      b..G__typename = 'VehicleVariant';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  _i3.GDateTime? get modifiedAt;
+  GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle? get vehicle;
+  static Serializer<GTestDriveDealersData_testDriveDealers_vehicleVariant>
+      get serializer =>
+          _$gTestDriveDealersDataTestDriveDealersVehicleVariantSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveDealersData_testDriveDealers_vehicleVariant.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GTestDriveDealersData_testDriveDealers_vehicleVariant? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GTestDriveDealersData_testDriveDealers_vehicleVariant.serializer,
+        json,
+      );
+}
+
+abstract class GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle
+    implements
+        Built<GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle,
+            GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicleBuilder> {
+  GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle._();
+
+  factory GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle(
+          [void Function(
+                  GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicleBuilder
+                      b)
+              updates]) =
+      _$GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle;
+
+  static void _initializeBuilder(
+          GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicleBuilder
+              b) =>
+      b..G__typename = 'Vehicle';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brand?
+      get brand;
+  String? get name;
+  String get id;
+  String? get description;
+  static Serializer<
+          GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle>
+      get serializer =>
+          _$gTestDriveDealersDataTestDriveDealersVehicleVariantVehicleSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle
+                .serializer,
+            json,
+          );
+}
+
+abstract class GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brand
+    implements
+        Built<
+            GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brand,
+            GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brandBuilder> {
+  GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brand._();
+
+  factory GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brand(
+          [void Function(
+                  GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brandBuilder
+                      b)
+              updates]) =
+      _$GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brand;
+
+  static void _initializeBuilder(
+          GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brandBuilder
+              b) =>
+      b..G__typename = 'Brand';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  static Serializer<
+          GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brand>
+      get serializer =>
+          _$gTestDriveDealersDataTestDriveDealersVehicleVariantVehicleBrandSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brand
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brand?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brand
+                .serializer,
+            json,
+          );
+}
+
+abstract class GUpdateTestDriveDealerData
+    implements
+        Built<GUpdateTestDriveDealerData, GUpdateTestDriveDealerDataBuilder> {
+  GUpdateTestDriveDealerData._();
+
+  factory GUpdateTestDriveDealerData(
+          [void Function(GUpdateTestDriveDealerDataBuilder b) updates]) =
+      _$GUpdateTestDriveDealerData;
+
+  static void _initializeBuilder(GUpdateTestDriveDealerDataBuilder b) =>
+      b..G__typename = 'Mutation';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GUpdateTestDriveDealerData_updateTestDriveDealer? get updateTestDriveDealer;
+  static Serializer<GUpdateTestDriveDealerData> get serializer =>
+      _$gUpdateTestDriveDealerDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateTestDriveDealerData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateTestDriveDealerData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateTestDriveDealerData.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateTestDriveDealerData_updateTestDriveDealer
+    implements
+        Built<GUpdateTestDriveDealerData_updateTestDriveDealer,
+            GUpdateTestDriveDealerData_updateTestDriveDealerBuilder> {
+  GUpdateTestDriveDealerData_updateTestDriveDealer._();
+
+  factory GUpdateTestDriveDealerData_updateTestDriveDealer(
+      [void Function(GUpdateTestDriveDealerData_updateTestDriveDealerBuilder b)
+          updates]) = _$GUpdateTestDriveDealerData_updateTestDriveDealer;
+
+  static void _initializeBuilder(
+          GUpdateTestDriveDealerData_updateTestDriveDealerBuilder b) =>
+      b..G__typename = 'TestDriveDealer';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  static Serializer<GUpdateTestDriveDealerData_updateTestDriveDealer>
+      get serializer =>
+          _$gUpdateTestDriveDealerDataUpdateTestDriveDealerSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateTestDriveDealerData_updateTestDriveDealer.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateTestDriveDealerData_updateTestDriveDealer? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateTestDriveDealerData_updateTestDriveDealer.serializer,
+        json,
+      );
+}
+
+abstract class GCreateTestDriveDealerData
+    implements
+        Built<GCreateTestDriveDealerData, GCreateTestDriveDealerDataBuilder> {
+  GCreateTestDriveDealerData._();
+
+  factory GCreateTestDriveDealerData(
+          [void Function(GCreateTestDriveDealerDataBuilder b) updates]) =
+      _$GCreateTestDriveDealerData;
+
+  static void _initializeBuilder(GCreateTestDriveDealerDataBuilder b) =>
+      b..G__typename = 'Mutation';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GCreateTestDriveDealerData_createTestDriveDealer? get createTestDriveDealer;
+  static Serializer<GCreateTestDriveDealerData> get serializer =>
+      _$gCreateTestDriveDealerDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GCreateTestDriveDealerData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GCreateTestDriveDealerData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GCreateTestDriveDealerData.serializer,
+        json,
+      );
+}
+
+abstract class GCreateTestDriveDealerData_createTestDriveDealer
+    implements
+        Built<GCreateTestDriveDealerData_createTestDriveDealer,
+            GCreateTestDriveDealerData_createTestDriveDealerBuilder> {
+  GCreateTestDriveDealerData_createTestDriveDealer._();
+
+  factory GCreateTestDriveDealerData_createTestDriveDealer(
+      [void Function(GCreateTestDriveDealerData_createTestDriveDealerBuilder b)
+          updates]) = _$GCreateTestDriveDealerData_createTestDriveDealer;
+
+  static void _initializeBuilder(
+          GCreateTestDriveDealerData_createTestDriveDealerBuilder b) =>
+      b..G__typename = 'TestDriveDealer';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  static Serializer<GCreateTestDriveDealerData_createTestDriveDealer>
+      get serializer =>
+          _$gCreateTestDriveDealerDataCreateTestDriveDealerSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GCreateTestDriveDealerData_createTestDriveDealer.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GCreateTestDriveDealerData_createTestDriveDealer? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GCreateTestDriveDealerData_createTestDriveDealer.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealersData
+    implements Built<GProductDealersData, GProductDealersDataBuilder> {
+  GProductDealersData._();
+
+  factory GProductDealersData(
+          [void Function(GProductDealersDataBuilder b) updates]) =
+      _$GProductDealersData;
+
+  static void _initializeBuilder(GProductDealersDataBuilder b) =>
+      b..G__typename = 'Query';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  BuiltList<GProductDealersData_productDealers>? get productDealers;
+  static Serializer<GProductDealersData> get serializer =>
+      _$gProductDealersDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductDealersData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealersData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductDealersData.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealersData_productDealers
+    implements
+        Built<GProductDealersData_productDealers,
+            GProductDealersData_productDealersBuilder> {
+  GProductDealersData_productDealers._();
+
+  factory GProductDealersData_productDealers(
+      [void Function(GProductDealersData_productDealersBuilder b)
+          updates]) = _$GProductDealersData_productDealers;
+
+  static void _initializeBuilder(GProductDealersData_productDealersBuilder b) =>
+      b..G__typename = 'ProductDealer';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GProductDealersData_productDealers_productVariant? get productVariant;
+  String get id;
+  int? get stock;
+  BuiltList<GProductDealersData_productDealers_prices>? get prices;
+  int? get totalPrice;
+  BuiltList<GProductDealersData_productDealers_guarantees>? get guarantees;
+  static Serializer<GProductDealersData_productDealers> get serializer =>
+      _$gProductDealersDataProductDealersSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductDealersData_productDealers.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealersData_productDealers? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductDealersData_productDealers.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealersData_productDealers_productVariant
+    implements
+        Built<GProductDealersData_productDealers_productVariant,
+            GProductDealersData_productDealers_productVariantBuilder> {
+  GProductDealersData_productDealers_productVariant._();
+
+  factory GProductDealersData_productDealers_productVariant(
+      [void Function(GProductDealersData_productDealers_productVariantBuilder b)
+          updates]) = _$GProductDealersData_productDealers_productVariant;
+
+  static void _initializeBuilder(
+          GProductDealersData_productDealers_productVariantBuilder b) =>
+      b..G__typename = 'ProductVariant';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  _i3.GDateTime? get modifiedAt;
+  GProductDealersData_productDealers_productVariant_product? get product;
+  static Serializer<GProductDealersData_productDealers_productVariant>
+      get serializer =>
+          _$gProductDealersDataProductDealersProductVariantSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductDealersData_productDealers_productVariant.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealersData_productDealers_productVariant? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductDealersData_productDealers_productVariant.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealersData_productDealers_productVariant_product
+    implements
+        Built<GProductDealersData_productDealers_productVariant_product,
+            GProductDealersData_productDealers_productVariant_productBuilder> {
+  GProductDealersData_productDealers_productVariant_product._();
+
+  factory GProductDealersData_productDealers_productVariant_product(
+      [void Function(
+              GProductDealersData_productDealers_productVariant_productBuilder
+                  b)
+          updates]) = _$GProductDealersData_productDealers_productVariant_product;
+
+  static void _initializeBuilder(
+          GProductDealersData_productDealers_productVariant_productBuilder b) =>
+      b..G__typename = 'Product';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GProductDealersData_productDealers_productVariant_product_brand? get brand;
+  String? get name;
+  String get id;
+  String? get description;
+  static Serializer<GProductDealersData_productDealers_productVariant_product>
+      get serializer =>
+          _$gProductDealersDataProductDealersProductVariantProductSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductDealersData_productDealers_productVariant_product.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealersData_productDealers_productVariant_product? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductDealersData_productDealers_productVariant_product.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealersData_productDealers_productVariant_product_brand
+    implements
+        Built<GProductDealersData_productDealers_productVariant_product_brand,
+            GProductDealersData_productDealers_productVariant_product_brandBuilder> {
+  GProductDealersData_productDealers_productVariant_product_brand._();
+
+  factory GProductDealersData_productDealers_productVariant_product_brand(
+          [void Function(
+                  GProductDealersData_productDealers_productVariant_product_brandBuilder
+                      b)
+              updates]) =
+      _$GProductDealersData_productDealers_productVariant_product_brand;
+
+  static void _initializeBuilder(
+          GProductDealersData_productDealers_productVariant_product_brandBuilder
+              b) =>
+      b..G__typename = 'Brand';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  static Serializer<
+          GProductDealersData_productDealers_productVariant_product_brand>
+      get serializer =>
+          _$gProductDealersDataProductDealersProductVariantProductBrandSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductDealersData_productDealers_productVariant_product_brand
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealersData_productDealers_productVariant_product_brand?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GProductDealersData_productDealers_productVariant_product_brand
+                .serializer,
+            json,
+          );
+}
+
+abstract class GProductDealersData_productDealers_prices
+    implements
+        Built<GProductDealersData_productDealers_prices,
+            GProductDealersData_productDealers_pricesBuilder> {
+  GProductDealersData_productDealers_prices._();
+
+  factory GProductDealersData_productDealers_prices(
+      [void Function(GProductDealersData_productDealers_pricesBuilder b)
+          updates]) = _$GProductDealersData_productDealers_prices;
+
+  static void _initializeBuilder(
+          GProductDealersData_productDealers_pricesBuilder b) =>
+      b..G__typename = 'Price';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  int? get amount;
+  GProductDealersData_productDealers_prices_category? get category;
+  static Serializer<GProductDealersData_productDealers_prices> get serializer =>
+      _$gProductDealersDataProductDealersPricesSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductDealersData_productDealers_prices.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealersData_productDealers_prices? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductDealersData_productDealers_prices.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealersData_productDealers_prices_category
+    implements
+        Built<GProductDealersData_productDealers_prices_category,
+            GProductDealersData_productDealers_prices_categoryBuilder> {
+  GProductDealersData_productDealers_prices_category._();
+
+  factory GProductDealersData_productDealers_prices_category(
+      [void Function(
+              GProductDealersData_productDealers_prices_categoryBuilder b)
+          updates]) = _$GProductDealersData_productDealers_prices_category;
+
+  static void _initializeBuilder(
+          GProductDealersData_productDealers_prices_categoryBuilder b) =>
+      b..G__typename = 'PriceCategory';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  static Serializer<GProductDealersData_productDealers_prices_category>
+      get serializer =>
+          _$gProductDealersDataProductDealersPricesCategorySerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductDealersData_productDealers_prices_category.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealersData_productDealers_prices_category? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductDealersData_productDealers_prices_category.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealersData_productDealers_guarantees
+    implements
+        Built<GProductDealersData_productDealers_guarantees,
+            GProductDealersData_productDealers_guaranteesBuilder> {
+  GProductDealersData_productDealers_guarantees._();
+
+  factory GProductDealersData_productDealers_guarantees(
+      [void Function(GProductDealersData_productDealers_guaranteesBuilder b)
+          updates]) = _$GProductDealersData_productDealers_guarantees;
+
+  static void _initializeBuilder(
+          GProductDealersData_productDealers_guaranteesBuilder b) =>
+      b..G__typename = 'Guarantee';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String? get name;
+  String get id;
+  String? get description;
+  static Serializer<GProductDealersData_productDealers_guarantees>
+      get serializer => _$gProductDealersDataProductDealersGuaranteesSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductDealersData_productDealers_guarantees.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealersData_productDealers_guarantees? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductDealersData_productDealers_guarantees.serializer,
         json,
       );
 }

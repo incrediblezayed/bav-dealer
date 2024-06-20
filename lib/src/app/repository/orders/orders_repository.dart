@@ -37,7 +37,7 @@ class OrderRepository {
       } else {
         return response.data?.productOrders?.toList();
       }
-  } catch (e) {
+    } catch (e) {
       e.log();
     }
     return null;
@@ -187,7 +187,7 @@ class OrderRepository {
                 ),
               ]);
             }
-            return b;
+            b;
           },
         ),
       ).first;

@@ -11,11 +11,11 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.6
-  get_it: ^7.6.4
+  get_it: ^7.7.0
   dio: ^5.4.0
   flutter_svg: ^2.0.9
   intl: ^0.19.0
-  ferry: ^0.15.0+1
+  ferry: ^0.16.0+1
   flutter_screenutil: ^5.9.0
   ferry_hive_store: ^0.5.2
   after_layout: ^1.2.0
@@ -39,12 +39,10 @@ dependencies:
   multi_dropdown: ^2.1.4
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^3.0.1
-  build_runner: ^2.4.7
-  ferry_generator: ^0.8.2
-  very_good_analysis: ^5.1.0
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.11
+  ferry_generator: ^0.10.0
+
 
 flutter:
   uses-material-design: true

@@ -23,7 +23,7 @@ abstract class GGuaranteesReq
         _i1.OperationRequest<_i2.GGuaranteesData, _i3.GGuaranteesVars> {
   GGuaranteesReq._();
 
-  factory GGuaranteesReq([Function(GGuaranteesReqBuilder b) updates]) =
+  factory GGuaranteesReq([void Function(GGuaranteesReqBuilder b) updates]) =
       _$GGuaranteesReq;
 
   static void _initializeBuilder(GGuaranteesReqBuilder b) => b
@@ -41,6 +41,7 @@ abstract class GGuaranteesReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -62,6 +63,9 @@ abstract class GGuaranteesReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GGuaranteesData? parseData(Map<String, dynamic> json) =>
       _i2.GGuaranteesData.fromJson(json);
 
@@ -69,7 +73,7 @@ abstract class GGuaranteesReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GGuaranteesData data) => data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GGuaranteesData, _i3.GGuaranteesVars>
