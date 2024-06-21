@@ -3863,3 +3863,455 @@ abstract class GProductDealersData_productDealers_guarantees
         json,
       );
 }
+
+abstract class GCreateProductDealerData
+    implements
+        Built<GCreateProductDealerData, GCreateProductDealerDataBuilder> {
+  GCreateProductDealerData._();
+
+  factory GCreateProductDealerData(
+          [void Function(GCreateProductDealerDataBuilder b) updates]) =
+      _$GCreateProductDealerData;
+
+  static void _initializeBuilder(GCreateProductDealerDataBuilder b) =>
+      b..G__typename = 'Mutation';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GCreateProductDealerData_createProductDealer? get createProductDealer;
+  static Serializer<GCreateProductDealerData> get serializer =>
+      _$gCreateProductDealerDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GCreateProductDealerData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GCreateProductDealerData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GCreateProductDealerData.serializer,
+        json,
+      );
+}
+
+abstract class GCreateProductDealerData_createProductDealer
+    implements
+        Built<GCreateProductDealerData_createProductDealer,
+            GCreateProductDealerData_createProductDealerBuilder> {
+  GCreateProductDealerData_createProductDealer._();
+
+  factory GCreateProductDealerData_createProductDealer(
+      [void Function(GCreateProductDealerData_createProductDealerBuilder b)
+          updates]) = _$GCreateProductDealerData_createProductDealer;
+
+  static void _initializeBuilder(
+          GCreateProductDealerData_createProductDealerBuilder b) =>
+      b..G__typename = 'ProductDealer';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  static Serializer<GCreateProductDealerData_createProductDealer>
+      get serializer => _$gCreateProductDealerDataCreateProductDealerSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GCreateProductDealerData_createProductDealer.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GCreateProductDealerData_createProductDealer? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GCreateProductDealerData_createProductDealer.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateProductDealerData
+    implements
+        Built<GUpdateProductDealerData, GUpdateProductDealerDataBuilder> {
+  GUpdateProductDealerData._();
+
+  factory GUpdateProductDealerData(
+          [void Function(GUpdateProductDealerDataBuilder b) updates]) =
+      _$GUpdateProductDealerData;
+
+  static void _initializeBuilder(GUpdateProductDealerDataBuilder b) =>
+      b..G__typename = 'Mutation';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GUpdateProductDealerData_updateProductDealer? get updateProductDealer;
+  static Serializer<GUpdateProductDealerData> get serializer =>
+      _$gUpdateProductDealerDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateProductDealerData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateProductDealerData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateProductDealerData.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateProductDealerData_updateProductDealer
+    implements
+        Built<GUpdateProductDealerData_updateProductDealer,
+            GUpdateProductDealerData_updateProductDealerBuilder> {
+  GUpdateProductDealerData_updateProductDealer._();
+
+  factory GUpdateProductDealerData_updateProductDealer(
+      [void Function(GUpdateProductDealerData_updateProductDealerBuilder b)
+          updates]) = _$GUpdateProductDealerData_updateProductDealer;
+
+  static void _initializeBuilder(
+          GUpdateProductDealerData_updateProductDealerBuilder b) =>
+      b..G__typename = 'ProductDealer';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GUpdateProductDealerData_updateProductDealer_productVariant?
+      get productVariant;
+  String get id;
+  int? get stock;
+  int? get totalPrice;
+  BuiltList<GUpdateProductDealerData_updateProductDealer_prices>? get prices;
+  BuiltList<GUpdateProductDealerData_updateProductDealer_guarantees>?
+      get guarantees;
+  static Serializer<GUpdateProductDealerData_updateProductDealer>
+      get serializer => _$gUpdateProductDealerDataUpdateProductDealerSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateProductDealerData_updateProductDealer.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateProductDealerData_updateProductDealer? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateProductDealerData_updateProductDealer.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateProductDealerData_updateProductDealer_productVariant
+    implements
+        Built<GUpdateProductDealerData_updateProductDealer_productVariant,
+            GUpdateProductDealerData_updateProductDealer_productVariantBuilder> {
+  GUpdateProductDealerData_updateProductDealer_productVariant._();
+
+  factory GUpdateProductDealerData_updateProductDealer_productVariant(
+      [void Function(
+              GUpdateProductDealerData_updateProductDealer_productVariantBuilder
+                  b)
+          updates]) = _$GUpdateProductDealerData_updateProductDealer_productVariant;
+
+  static void _initializeBuilder(
+          GUpdateProductDealerData_updateProductDealer_productVariantBuilder
+              b) =>
+      b..G__typename = 'ProductVariant';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GUpdateProductDealerData_updateProductDealer_productVariant_product?
+      get product;
+  _i3.GDateTime? get modifiedAt;
+  String get id;
+  String? get name;
+  static Serializer<GUpdateProductDealerData_updateProductDealer_productVariant>
+      get serializer =>
+          _$gUpdateProductDealerDataUpdateProductDealerProductVariantSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateProductDealerData_updateProductDealer_productVariant.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateProductDealerData_updateProductDealer_productVariant? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateProductDealerData_updateProductDealer_productVariant.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateProductDealerData_updateProductDealer_productVariant_product
+    implements
+        Built<
+            GUpdateProductDealerData_updateProductDealer_productVariant_product,
+            GUpdateProductDealerData_updateProductDealer_productVariant_productBuilder> {
+  GUpdateProductDealerData_updateProductDealer_productVariant_product._();
+
+  factory GUpdateProductDealerData_updateProductDealer_productVariant_product(
+          [void Function(
+                  GUpdateProductDealerData_updateProductDealer_productVariant_productBuilder
+                      b)
+              updates]) =
+      _$GUpdateProductDealerData_updateProductDealer_productVariant_product;
+
+  static void _initializeBuilder(
+          GUpdateProductDealerData_updateProductDealer_productVariant_productBuilder
+              b) =>
+      b..G__typename = 'Product';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GUpdateProductDealerData_updateProductDealer_productVariant_product_brand?
+      get brand;
+  String get id;
+  String? get name;
+  String? get description;
+  static Serializer<
+          GUpdateProductDealerData_updateProductDealer_productVariant_product>
+      get serializer =>
+          _$gUpdateProductDealerDataUpdateProductDealerProductVariantProductSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateProductDealerData_updateProductDealer_productVariant_product
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateProductDealerData_updateProductDealer_productVariant_product?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GUpdateProductDealerData_updateProductDealer_productVariant_product
+                .serializer,
+            json,
+          );
+}
+
+abstract class GUpdateProductDealerData_updateProductDealer_productVariant_product_brand
+    implements
+        Built<
+            GUpdateProductDealerData_updateProductDealer_productVariant_product_brand,
+            GUpdateProductDealerData_updateProductDealer_productVariant_product_brandBuilder> {
+  GUpdateProductDealerData_updateProductDealer_productVariant_product_brand._();
+
+  factory GUpdateProductDealerData_updateProductDealer_productVariant_product_brand(
+          [void Function(
+                  GUpdateProductDealerData_updateProductDealer_productVariant_product_brandBuilder
+                      b)
+              updates]) =
+      _$GUpdateProductDealerData_updateProductDealer_productVariant_product_brand;
+
+  static void _initializeBuilder(
+          GUpdateProductDealerData_updateProductDealer_productVariant_product_brandBuilder
+              b) =>
+      b..G__typename = 'Brand';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  static Serializer<
+          GUpdateProductDealerData_updateProductDealer_productVariant_product_brand>
+      get serializer =>
+          _$gUpdateProductDealerDataUpdateProductDealerProductVariantProductBrandSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateProductDealerData_updateProductDealer_productVariant_product_brand
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateProductDealerData_updateProductDealer_productVariant_product_brand?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GUpdateProductDealerData_updateProductDealer_productVariant_product_brand
+                .serializer,
+            json,
+          );
+}
+
+abstract class GUpdateProductDealerData_updateProductDealer_prices
+    implements
+        Built<GUpdateProductDealerData_updateProductDealer_prices,
+            GUpdateProductDealerData_updateProductDealer_pricesBuilder> {
+  GUpdateProductDealerData_updateProductDealer_prices._();
+
+  factory GUpdateProductDealerData_updateProductDealer_prices(
+      [void Function(
+              GUpdateProductDealerData_updateProductDealer_pricesBuilder b)
+          updates]) = _$GUpdateProductDealerData_updateProductDealer_prices;
+
+  static void _initializeBuilder(
+          GUpdateProductDealerData_updateProductDealer_pricesBuilder b) =>
+      b..G__typename = 'Price';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int? get amount;
+  String get id;
+  GUpdateProductDealerData_updateProductDealer_prices_category? get category;
+  static Serializer<GUpdateProductDealerData_updateProductDealer_prices>
+      get serializer =>
+          _$gUpdateProductDealerDataUpdateProductDealerPricesSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateProductDealerData_updateProductDealer_prices.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateProductDealerData_updateProductDealer_prices? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateProductDealerData_updateProductDealer_prices.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateProductDealerData_updateProductDealer_prices_category
+    implements
+        Built<GUpdateProductDealerData_updateProductDealer_prices_category,
+            GUpdateProductDealerData_updateProductDealer_prices_categoryBuilder> {
+  GUpdateProductDealerData_updateProductDealer_prices_category._();
+
+  factory GUpdateProductDealerData_updateProductDealer_prices_category(
+          [void Function(
+                  GUpdateProductDealerData_updateProductDealer_prices_categoryBuilder
+                      b)
+              updates]) =
+      _$GUpdateProductDealerData_updateProductDealer_prices_category;
+
+  static void _initializeBuilder(
+          GUpdateProductDealerData_updateProductDealer_prices_categoryBuilder
+              b) =>
+      b..G__typename = 'PriceCategory';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  static Serializer<
+          GUpdateProductDealerData_updateProductDealer_prices_category>
+      get serializer =>
+          _$gUpdateProductDealerDataUpdateProductDealerPricesCategorySerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateProductDealerData_updateProductDealer_prices_category.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateProductDealerData_updateProductDealer_prices_category? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateProductDealerData_updateProductDealer_prices_category.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateProductDealerData_updateProductDealer_guarantees
+    implements
+        Built<GUpdateProductDealerData_updateProductDealer_guarantees,
+            GUpdateProductDealerData_updateProductDealer_guaranteesBuilder> {
+  GUpdateProductDealerData_updateProductDealer_guarantees._();
+
+  factory GUpdateProductDealerData_updateProductDealer_guarantees(
+      [void Function(
+              GUpdateProductDealerData_updateProductDealer_guaranteesBuilder b)
+          updates]) = _$GUpdateProductDealerData_updateProductDealer_guarantees;
+
+  static void _initializeBuilder(
+          GUpdateProductDealerData_updateProductDealer_guaranteesBuilder b) =>
+      b..G__typename = 'Guarantee';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get description;
+  String? get name;
+  static Serializer<GUpdateProductDealerData_updateProductDealer_guarantees>
+      get serializer =>
+          _$gUpdateProductDealerDataUpdateProductDealerGuaranteesSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUpdateProductDealerData_updateProductDealer_guarantees.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateProductDealerData_updateProductDealer_guarantees? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUpdateProductDealerData_updateProductDealer_guarantees.serializer,
+        json,
+      );
+}
+
+abstract class GCreateProductDealerStockRequestData
+    implements
+        Built<GCreateProductDealerStockRequestData,
+            GCreateProductDealerStockRequestDataBuilder> {
+  GCreateProductDealerStockRequestData._();
+
+  factory GCreateProductDealerStockRequestData(
+      [void Function(GCreateProductDealerStockRequestDataBuilder b)
+          updates]) = _$GCreateProductDealerStockRequestData;
+
+  static void _initializeBuilder(
+          GCreateProductDealerStockRequestDataBuilder b) =>
+      b..G__typename = 'Mutation';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GCreateProductDealerStockRequestData_createProductDealerStockRequest?
+      get createProductDealerStockRequest;
+  static Serializer<GCreateProductDealerStockRequestData> get serializer =>
+      _$gCreateProductDealerStockRequestDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GCreateProductDealerStockRequestData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GCreateProductDealerStockRequestData? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GCreateProductDealerStockRequestData.serializer,
+        json,
+      );
+}
+
+abstract class GCreateProductDealerStockRequestData_createProductDealerStockRequest
+    implements
+        Built<
+            GCreateProductDealerStockRequestData_createProductDealerStockRequest,
+            GCreateProductDealerStockRequestData_createProductDealerStockRequestBuilder> {
+  GCreateProductDealerStockRequestData_createProductDealerStockRequest._();
+
+  factory GCreateProductDealerStockRequestData_createProductDealerStockRequest(
+          [void Function(
+                  GCreateProductDealerStockRequestData_createProductDealerStockRequestBuilder
+                      b)
+              updates]) =
+      _$GCreateProductDealerStockRequestData_createProductDealerStockRequest;
+
+  static void _initializeBuilder(
+          GCreateProductDealerStockRequestData_createProductDealerStockRequestBuilder
+              b) =>
+      b..G__typename = 'ProductDealerStockRequest';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String? get type;
+  int? get stock;
+  int? get totalPrice;
+  static Serializer<
+          GCreateProductDealerStockRequestData_createProductDealerStockRequest>
+      get serializer =>
+          _$gCreateProductDealerStockRequestDataCreateProductDealerStockRequestSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GCreateProductDealerStockRequestData_createProductDealerStockRequest
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GCreateProductDealerStockRequestData_createProductDealerStockRequest?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GCreateProductDealerStockRequestData_createProductDealerStockRequest
+                .serializer,
+            json,
+          );
+}

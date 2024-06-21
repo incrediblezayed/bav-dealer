@@ -5,8 +5,10 @@ import 'package:dealerapp/src/widgets/empty_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MyStockPage extends ConsumerWidget {
-  const MyStockPage({required this.showSearch, super.key});
-  final bool showSearch;
+  const MyStockPage(
+      {required this.showSearch, this.product = false, super.key});
+
+  final bool showSearch, product;
   static const String routeName = 'MyStockPage';
 
   @override
@@ -32,16 +34,29 @@ class MyStockPage extends ConsumerWidget {
           Expanded(
             child: RefreshIndicator(
               onRefresh: () async {
-                await inventoryPro.getStocks();
+                if (product) {
+                  await inventoryPro.getProductStocks();
+                } else {
+                  await inventoryPro.getStocks();
+                }
               },
-              child: inventoryPro.vehicleDealers.isEmpty
+              child: (product
+                          ? inventoryPro.productDealers
+                          : inventoryPro.vehicleDealers)
+                      .isEmpty
                   ? const EmptyWidget(title: 'Uh oh! You have no orders.')
                   : ListView.builder(
-                      itemCount: inventoryPro.vehicleDealers.length,
+                      itemCount: (product
+                              ? inventoryPro.productDealers
+                              : inventoryPro.vehicleDealers)
+                          .length,
                       itemBuilder: (context, index) {
                         return MyStockCard(
-                          vehicleDealers: inventoryPro.vehicleDealers[index],
+                          vehicleDealers: (product
+                              ? inventoryPro.productDealers
+                              : inventoryPro.vehicleDealers)[index],
                           index: index,
+                          product: product,
                         );
                       },
                     ),

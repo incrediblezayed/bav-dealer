@@ -110,6 +110,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
           .serializer)
       ..add(GCreateOrderRejectionByDealerReq.serializer)
       ..add(GCreateOrderRejectionByDealerVars.serializer)
+      ..add(GCreateProductDealerData.serializer)
+      ..add(GCreateProductDealerData_createProductDealer.serializer)
+      ..add(GCreateProductDealerReq.serializer)
+      ..add(GCreateProductDealerStockRequestData.serializer)
+      ..add(GCreateProductDealerStockRequestData_createProductDealerStockRequest
+          .serializer)
+      ..add(GCreateProductDealerStockRequestReq.serializer)
+      ..add(GCreateProductDealerStockRequestVars.serializer)
+      ..add(GCreateProductDealerVars.serializer)
       ..add(GCreateReportData.serializer)
       ..add(GCreateReportData_createReport.serializer)
       ..add(GCreateReportReq.serializer)
@@ -669,10 +678,29 @@ Serializers _$serializers = (new Serializers().toBuilder()
           GTestDriveOrdersData_testDriveOrders_order_user_addresses.serializer)
       ..add(GTestDriveOrdersReq.serializer)
       ..add(GTestDriveOrdersVars.serializer)
+      ..add(GUpdateDealerData.serializer)
+      ..add(GUpdateDealerData_updateDealer.serializer)
+      ..add(GUpdateDealerReq.serializer)
+      ..add(GUpdateDealerVars.serializer)
       ..add(GUpdatePricesData.serializer)
       ..add(GUpdatePricesData_updatePrices.serializer)
       ..add(GUpdatePricesReq.serializer)
       ..add(GUpdatePricesVars.serializer)
+      ..add(GUpdateProductDealerData.serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer.serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer_guarantees.serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer_prices.serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer_prices_category
+          .serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer_productVariant
+          .serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer_productVariant_product
+          .serializer)
+      ..add(
+          GUpdateProductDealerData_updateProductDealer_productVariant_product_brand
+              .serializer)
+      ..add(GUpdateProductDealerReq.serializer)
+      ..add(GUpdateProductDealerVars.serializer)
       ..add(GUpdateProductOrderData.serializer)
       ..add(GUpdateProductOrderData_updateProductOrder.serializer)
       ..add(GUpdateProductOrderReq.serializer)
@@ -2243,6 +2271,19 @@ Serializers _$serializers = (new Serializers().toBuilder()
               GTestDriveOrdersData_testDriveOrders_order_user_addresses>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
+            const FullType(GUpdateProductDealerData_updateProductDealer_prices)
+          ]),
+          () => new ListBuilder<
+              GUpdateProductDealerData_updateProductDealer_prices>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GUpdateProductDealerData_updateProductDealer_guarantees)
+          ]),
+          () => new ListBuilder<
+              GUpdateProductDealerData_updateProductDealer_guarantees>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
             const FullType(GUpdateVehicleDealerData_updateVehicleDealer_prices)
           ]),
           () => new ListBuilder<
@@ -2961,7 +3002,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType.nullable(GUpdatePricesData_updatePrices)]),
-          () => new ListBuilder<GUpdatePricesData_updatePrices?>()))
+          () => new ListBuilder<GUpdatePricesData_updatePrices?>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType.nullable(double)]),
+          () => new ListBuilder<double?>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

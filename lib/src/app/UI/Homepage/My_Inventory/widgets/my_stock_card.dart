@@ -14,10 +14,13 @@ class MyStockCard extends ConsumerStatefulWidget {
   const MyStockCard({
     required this.vehicleDealers,
     required this.index,
+    this.product = false,
     super.key,
   });
+
   final DealerStockModel vehicleDealers;
   final int index;
+  final bool product;
 
   @override
   ConsumerState<MyStockCard> createState() => _MyStockCardState();
@@ -26,6 +29,7 @@ class MyStockCard extends ConsumerStatefulWidget {
 class _MyStockCardState extends ConsumerState<MyStockCard> {
   bool isEdit = false;
   int selectedQuantity = 1;
+
   void updateQuantity(int? quantity) {
     setState(() {
       selectedQuantity = quantity ?? 1;
@@ -47,13 +51,24 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            widget.vehicleDealers.vehicleVariant!.vehicle!.name,
+            (widget.product
+                        ? widget.vehicleDealers.productVariant
+                        : widget.vehicleDealers.vehicleVariant)
+                    ?.vehicle
+                    ?.name ??
+                '',
             style: theme.headlineLarge!
                 .copyWith(fontSize: 24.sp, fontWeight: FontWeight.w500),
           ),
           SizedBox(height: 10.h),
           Text(
-            widget.vehicleDealers.vehicleVariant!.vehicle!.brand!.name,
+            (widget.product
+                        ? widget.vehicleDealers.productVariant
+                        : widget.vehicleDealers.vehicleVariant)
+                    ?.vehicle
+                    ?.brand
+                    ?.name ??
+                '',
             style: theme.labelMedium!.copyWith(
               color: Colors.black.withOpacity(.5),
               fontWeight: FontWeight.w500,
@@ -102,7 +117,11 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                         SizedBox(width: 10.w),
                         Flexible(
                           child: Text(
-                            widget.vehicleDealers.vehicleVariant!.name,
+                            (widget.product
+                                        ? widget.vehicleDealers.productVariant
+                                        : widget.vehicleDealers.vehicleVariant)
+                                    ?.name ??
+                                '',
                             style: theme.labelMedium!.copyWith(
                               color: Colors.black.withOpacity(.5),
                               fontWeight: FontWeight.w500,
@@ -343,9 +362,11 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                               isUpdate: true,
                               index: widget.index,
                               vehicleDealerId: widget.vehicleDealers.id,
-                              variantId:
-                                  widget.vehicleDealers.vehicleVariant!.id,
-                              colorId: widget.vehicleDealers.vehicleColor!.id,
+                              variantId: (widget.product
+                                      ? widget.vehicleDealers.productVariant
+                                      : widget.vehicleDealers.vehicleVariant)!
+                                  .id,
+                              colorId: widget.vehicleDealers.vehicleColor?.id ?? '',
                               guarantees:
                                   widget.vehicleDealers.guarantees?.toList() ??
                                       [],
@@ -380,7 +401,11 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                     onTap: () {
                       inventoryPro.updateStockRequest(
                         colorId: widget.vehicleDealers.vehicleColor!.id,
-                        variantId: widget.vehicleDealers.vehicleVariant!.id,
+                        product: widget.product,
+                        variantId: (widget.product
+                                ? widget.vehicleDealers.productVariant
+                                : widget.vehicleDealers.vehicleVariant)!
+                            .id,
                         quantity: selectedQuantity,
                         type: 'remove',
                       );
@@ -395,8 +420,12 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                     text: 'Add',
                     onTap: () {
                       inventoryPro.updateStockRequest(
-                        colorId: widget.vehicleDealers.vehicleColor!.id,
-                        variantId: widget.vehicleDealers.vehicleVariant!.id,
+                        colorId: widget.vehicleDealers.vehicleColor?.id ?? '',
+                        product: widget.product,
+                        variantId: (widget.product
+                                ? widget.vehicleDealers.productVariant
+                                : widget.vehicleDealers.vehicleVariant)!
+                            .id,
                         quantity: selectedQuantity,
                         type: 'add',
                       );

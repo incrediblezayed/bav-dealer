@@ -414,3 +414,81 @@ abstract class GProductDealersVars
         json,
       );
 }
+
+abstract class GCreateProductDealerVars
+    implements
+        Built<GCreateProductDealerVars, GCreateProductDealerVarsBuilder> {
+  GCreateProductDealerVars._();
+
+  factory GCreateProductDealerVars(
+          [void Function(GCreateProductDealerVarsBuilder b) updates]) =
+      _$GCreateProductDealerVars;
+
+  _i1.GProductDealerCreateInput get data;
+  static Serializer<GCreateProductDealerVars> get serializer =>
+      _$gCreateProductDealerVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GCreateProductDealerVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GCreateProductDealerVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GCreateProductDealerVars.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateProductDealerVars
+    implements
+        Built<GUpdateProductDealerVars, GUpdateProductDealerVarsBuilder> {
+  GUpdateProductDealerVars._();
+
+  factory GUpdateProductDealerVars(
+          [void Function(GUpdateProductDealerVarsBuilder b) updates]) =
+      _$GUpdateProductDealerVars;
+
+  _i1.GProductDealerWhereUniqueInput get where;
+  _i1.GProductDealerUpdateInput get data;
+  static Serializer<GUpdateProductDealerVars> get serializer =>
+      _$gUpdateProductDealerVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GUpdateProductDealerVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateProductDealerVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GUpdateProductDealerVars.serializer,
+        json,
+      );
+}
+
+abstract class GCreateProductDealerStockRequestVars
+    implements
+        Built<GCreateProductDealerStockRequestVars,
+            GCreateProductDealerStockRequestVarsBuilder> {
+  GCreateProductDealerStockRequestVars._();
+
+  factory GCreateProductDealerStockRequestVars(
+      [void Function(GCreateProductDealerStockRequestVarsBuilder b)
+          updates]) = _$GCreateProductDealerStockRequestVars;
+
+  _i1.GProductDealerStockRequestCreateInput get data;
+  static Serializer<GCreateProductDealerStockRequestVars> get serializer =>
+      _$gCreateProductDealerStockRequestVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GCreateProductDealerStockRequestVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GCreateProductDealerStockRequestVars? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GCreateProductDealerStockRequestVars.serializer,
+        json,
+      );
+}

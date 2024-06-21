@@ -470,3 +470,52 @@ query ProductDealers($where: ProductDealerWhereInput!) {
     }
   }
 }
+
+mutation CreateProductDealer($data: ProductDealerCreateInput!) {
+  createProductDealer(data: $data) {
+    id
+  }
+}
+
+mutation UpdateProductDealer($where: ProductDealerWhereUniqueInput!, $data: ProductDealerUpdateInput!) {
+  updateProductDealer(where: $where, data: $data) {
+    productVariant {
+      product {
+        brand {
+          id
+          name
+        }
+        id
+        name
+        description
+      }
+      modifiedAt
+      id
+      name
+    }
+    id
+    stock
+    totalPrice
+    prices {
+      amount
+      id
+      category {
+        id
+        name
+      }
+    }
+    guarantees {
+      id
+      description
+      name
+    }
+  }
+}
+
+mutation CreateProductDealerStockRequest($data: ProductDealerStockRequestCreateInput!) {
+  createProductDealerStockRequest(data: $data) {
+    type
+    stock
+    totalPrice
+  }
+}
