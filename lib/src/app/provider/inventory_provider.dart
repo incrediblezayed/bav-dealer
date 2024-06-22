@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:dealerapp/src/app/model/dealer_stock_model.dart';
 import 'package:dealerapp/src/app/model/product_details_model.dart';
@@ -77,14 +78,6 @@ class InventoryProvider extends ChangeNotifier {
     ]);
   }
 
-  Timer? _productDebounce;
-  late TextEditingController productSearchController = TextEditingController()
-    ..addListener(() {
-      _productDebounce?.cancel();
-      _productDebounce = Timer(const Duration(milliseconds: 500), () {
-        getProducts();
-      });
-    });
   Timer? _inventoryDebounce;
 
   late TextEditingController inventorySearchController = TextEditingController()
@@ -108,7 +101,7 @@ class InventoryProvider extends ChangeNotifier {
   Future<void> getProducts() async {
     try {
       final getProduct = await _inventoryRepository.getProducts(
-        search: productSearchController.text,
+        search: inventorySearchController.text,
         skip: 0,
         take: 15,
       );
@@ -127,7 +120,7 @@ class InventoryProvider extends ChangeNotifier {
       final response = await _inventoryRepository.getProducts(
         take: 15,
         skip: prices.length,
-        search: productSearchController.text,
+        search: inventorySearchController.text,
       );
       _handleProductsResponse(response);
     } catch (e) {
@@ -245,7 +238,7 @@ class InventoryProvider extends ChangeNotifier {
     try {
       bool result;
 
-      if(product) {
+      if (product) {
         result = await _inventoryRepository.createProductDealerStockRequest(
           variantId: variantId,
           stock: quantity,
@@ -261,7 +254,7 @@ class InventoryProvider extends ChangeNotifier {
       }
 
       if (result) {
-        if(product) {
+        if (product) {
           await getVehicles();
         } else {
           await getProductStocks();
@@ -422,26 +415,55 @@ class InventoryProvider extends ChangeNotifier {
   int totalTestDriveCount = 0;
 
   Future<void> getTestDriveStock() async {
-    final stocks =
-        await _inventoryRepository.getTestDriveStock(skip: 0, take: 20);
+    final stocks = await _inventoryRepository.getTestDriveStock(
+        skip: 0, take: 15, query: inventorySearchController.text);
     totalTestDriveCount = stocks.$1;
     testDriveStock = stocks.$2;
   }
 
+  Future<void> getMoreTestDriveStock() async {
+    if (isCallInProgress) {
+      return;
+    }
+    isCallInProgress = true;
+    final stocks = await _inventoryRepository.getTestDriveStock(
+        skip: testDriveStock?.length ?? 0,
+        take: 15,
+        query: inventorySearchController.text);
+    if (testDriveStock != null) {
+      testDriveStock!.addAll(stocks.$2);
+      notifyListeners();
+    } else {
+      testDriveStock = stocks.$2;
+    }
+    isCallInProgress = false;
+  }
+
   Future<void> addTestDriveDealerStock(
       {required String variantId,
-      required String colorId,
+      required String? colorId,
       required String amount,
-      String? testDriveDealerId}) async {
-    final result = await _inventoryRepository.addToTestDriveStock(
-        colorId: colorId,
-        variantId: variantId,
-        amount: amount,
-        testDriveDealerId: testDriveDealerId);
-    if (result) {
-      AppRoutes.showSuccessSnackbar(message: 'Stock Added successfully');
-    } else {
-      AppRoutes.showErrorSnackbar(message: 'Failed to add stock');
+      String? testDriveDealerId,
+      int? index}) async {
+    try {
+      final result = await _inventoryRepository.addToTestDriveStock(
+          colorId: colorId,
+          variantId: variantId,
+          amount: amount,
+          testDriveDealerId: testDriveDealerId);
+      if (result != null) {
+        if (index != null && testDriveStock != null) {
+          testDriveStock![index] = result;
+          notifyListeners();
+        } else {
+          getTestDriveStock();
+        }
+        AppRoutes.showSuccessSnackbar(message: 'Stock Added successfully');
+      } else {
+        AppRoutes.showErrorSnackbar(message: 'Failed to add stock');
+      }
+    } catch (e) {
+      e.log();
     }
   }
 }

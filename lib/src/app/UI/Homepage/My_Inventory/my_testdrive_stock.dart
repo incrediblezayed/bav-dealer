@@ -30,26 +30,49 @@ class MyTestDriveStockPage extends ConsumerWidget {
               ),
             ),
           Expanded(
-            child: RefreshIndicator(
-              onRefresh: () async {
-                await inventoryPro.getTestDriveStock();
+            child: NotificationListener<ScrollNotification>(
+              onNotification: (notification) {
+                if (notification is ScrollEndNotification) {
+                  if (notification.metrics.pixels >
+                      (notification.metrics.maxScrollExtent * 0.8)) {
+                    if ((inventoryPro.testDriveStock?.length ?? 0) <
+                        inventoryPro.totalTestDriveCount) {
+                      inventoryPro.getMoreTestDriveStock();
+                    }
+                  }
+                }
+                return true;
               },
-              child: inventoryPro.testDriveStock == null
-                  ? Center(
-                      child: CircularProgressIndicator(),
-                    )
-                  : inventoryPro.vehicleDealers.isEmpty
-                      ? const EmptyWidget(title: 'Uh oh! You have no orders.')
-                      : ListView.builder(
-                          itemCount: inventoryPro.testDriveStock!.length,
-                          itemBuilder: (context, index) {
-                            return MyStockCard(
-                              vehicleDealers:
-                                  inventoryPro.testDriveStock![index],
-                              index: index,
-                            );
-                          },
-                        ),
+              child: RefreshIndicator(
+                onRefresh: () async {
+                  await inventoryPro.getTestDriveStock();
+                },
+                child: inventoryPro.testDriveStock == null
+                    ? Center(
+                        child: CircularProgressIndicator(),
+                      )
+                    : inventoryPro.vehicleDealers.isEmpty
+                        ? const EmptyWidget(title: 'Uh oh! You have no orders.')
+                        : ListView.builder(
+                            itemCount: inventoryPro.testDriveStock!.length +
+                                (inventoryPro.totalTestDriveCount >
+                                        inventoryPro.testDriveStock!.length
+                                    ? 1
+                                    : 0),
+                            itemBuilder: (context, index) {
+                              if (index >=
+                                  inventoryPro.testDriveStock!.length) {
+                                return Center(
+                                    child: CircularProgressIndicator());
+                              }
+                              return MyStockCard(
+                                dealerStock:
+                                    inventoryPro.testDriveStock![index],
+                                index: index,
+                              );
+                            },
+                          ),
+              ),
             ),
           ),
         ],

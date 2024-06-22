@@ -19,6 +19,10 @@ class DealerStockModel {
         DealerType.vehicle => vehicleVariant!
       };
 
+  List<ImageElement> get images => dealerType == DealerType.product
+      ? variant.images
+      : (vehicleColor?.images ?? []);
+
   DealerStockModel({
     this.productVariant,
     required this.id,
@@ -52,8 +56,6 @@ class DealerStockModel {
           vehicleVariant: vehicleVariant ?? this.vehicleVariant,
           dealerType: dealerType ?? this.dealerType);
 
-  String toRawJson() => json.encode(toJson());
-
   factory DealerStockModel.fromJson(
       Map<String, dynamic> json, DealerType dealerType) {
     return DealerStockModel(
@@ -78,21 +80,6 @@ class DealerStockModel {
             : Variant.fromJson(json['vehicleVariant']),
         dealerType: dealerType);
   }
-
-  Map<String, dynamic> toJson() => {
-        'productVariant': productVariant?.toJson(),
-        'id': id,
-        'stock': stock,
-        'prices': prices == null
-            ? []
-            : List<dynamic>.from(prices!.map((x) => x.toJson())),
-        'totalPrice': totalPrice,
-        'guarantees': guarantees == null
-            ? []
-            : List<dynamic>.from(guarantees!.map((x) => x.toJson())),
-        'vehicleColor': vehicleColor?.toJson(),
-        'vehicleVariant': vehicleVariant?.toJson(),
-      };
 }
 
 class Guarantee {
@@ -220,55 +207,45 @@ class Variant {
   final String id;
   final String name;
   final DateTime modifiedAt;
-  final Guarantee? product;
-  final Guarantee? vehicle;
+  final Guarantee? parentProduct;
 
-  Variant({
-    required this.id,
-    required this.name,
-    required this.modifiedAt,
-    this.product,
-    this.vehicle,
-  });
+  final List<ImageElement> images;
 
-  Variant copyWith({
-    String? id,
-    String? name,
-    DateTime? modifiedAt,
-    Guarantee? product,
-    Guarantee? vehicle,
-  }) =>
+  Variant(
+      {required this.id,
+      required this.name,
+      required this.modifiedAt,
+      this.parentProduct,
+      this.images = const []});
+
+  Variant copyWith(
+          {String? id,
+          String? name,
+          DateTime? modifiedAt,
+          Guarantee? parentProduct,
+          List<ImageElement>? images}) =>
       Variant(
-        id: id ?? this.id,
-        name: name ?? this.name,
-        modifiedAt: modifiedAt ?? this.modifiedAt,
-        product: product ?? this.product,
-        vehicle: vehicle ?? this.vehicle,
-      );
+          id: id ?? this.id,
+          name: name ?? this.name,
+          modifiedAt: modifiedAt ?? this.modifiedAt,
+          parentProduct: parentProduct ?? this.parentProduct,
+          images: images ?? this.images);
 
   factory Variant.fromRawJson(String str) => Variant.fromJson(json.decode(str));
 
-  String toRawJson() => json.encode(toJson());
-
   factory Variant.fromJson(Map<String, dynamic> json) => Variant(
-        id: json['id'],
-        name: json['name'],
-        modifiedAt: DateTime.parse(json['modifiedAt']),
-        product: json['product'] == null
-            ? null
-            : Guarantee.fromJson(json['product']),
-        vehicle: json['vehicle'] == null
-            ? null
-            : Guarantee.fromJson(json['vehicle']),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'modifiedAt': modifiedAt.toIso8601String(),
-        'product': product?.toJson(),
-        'vehicle': vehicle?.toJson(),
-      };
+      id: json['id'],
+      name: json['name'],
+      modifiedAt: DateTime.parse(json['modifiedAt']),
+      parentProduct: json['vehicle'] == null
+          ? json['product'] == null
+              ? null
+              : Guarantee.fromJson(json['product'])
+          : Guarantee.fromJson(json['vehicle']),
+      images: json['images'] == null
+          ? []
+          : List<ImageElement>.from(
+              json['images'].map((x) => ImageElement.fromJson(x))));
 }
 
 class VehicleColor {

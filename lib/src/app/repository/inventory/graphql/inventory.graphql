@@ -271,6 +271,10 @@ mutation CreateVehicleDealerStockRequest(
   }
 }
 
+query VehicleDealersCount($where: VehicleDealerWhereInput!) {
+  vehicleDealersCount(where: $where)
+}
+
 query VehicleDealers($where: VehicleDealerWhereInput!) {
   vehicleDealers(where: $where) {
     vehicleColor {
@@ -389,7 +393,11 @@ mutation UpdatePrices($data: [PriceUpdateArgs!]!) {
   }
 }
 
-query TestDriveDealers($where: TestDriveDealerWhereInput!, $take: Int, $skip: Int!) {
+query TestDriveDealers(
+  $where: TestDriveDealerWhereInput!
+  $take: Int
+  $skip: Int!
+) {
   testDriveDealers(where: $where, take: $take, skip: $skip) {
     vehicleColor {
       id
@@ -422,9 +430,37 @@ query TestDriveDealers($where: TestDriveDealerWhereInput!, $take: Int, $skip: In
   testDriveDealersCount(where: $where)
 }
 
-
-mutation UpdateTestDriveDealer($where: TestDriveDealerWhereUniqueInput!, $data: TestDriveDealerUpdateInput!) {
+mutation UpdateTestDriveDealer(
+  $where: TestDriveDealerWhereUniqueInput!
+  $data: TestDriveDealerUpdateInput!
+) {
   updateTestDriveDealer(where: $where, data: $data) {
+    vehicleColor {
+      id
+      name
+      code
+      images {
+        id
+        image {
+          url
+        }
+      }
+    }
+    vehicleVariant {
+      id
+      name
+      modifiedAt
+      vehicle {
+        brand {
+          id
+          name
+        }
+        name
+        id
+        description
+      }
+    }
+    price
     id
   }
 }
@@ -441,6 +477,12 @@ query ProductDealers($where: ProductDealerWhereInput!) {
       id
       name
       modifiedAt
+      images {
+        id
+        image {
+          url
+        }
+      }
       product {
         brand {
           id
@@ -477,7 +519,10 @@ mutation CreateProductDealer($data: ProductDealerCreateInput!) {
   }
 }
 
-mutation UpdateProductDealer($where: ProductDealerWhereUniqueInput!, $data: ProductDealerUpdateInput!) {
+mutation UpdateProductDealer(
+  $where: ProductDealerWhereUniqueInput!
+  $data: ProductDealerUpdateInput!
+) {
   updateProductDealer(where: $where, data: $data) {
     productVariant {
       product {
@@ -512,7 +557,9 @@ mutation UpdateProductDealer($where: ProductDealerWhereUniqueInput!, $data: Prod
   }
 }
 
-mutation CreateProductDealerStockRequest($data: ProductDealerStockRequestCreateInput!) {
+mutation CreateProductDealerStockRequest(
+  $data: ProductDealerStockRequestCreateInput!
+) {
   createProductDealerStockRequest(data: $data) {
     type
     stock

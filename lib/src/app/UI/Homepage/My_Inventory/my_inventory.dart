@@ -79,6 +79,8 @@ class _MyInventoryState extends ConsumerState<MyInventory>
           unselectedLabelColor: Colors.grey,
           controller: _tabController,
           isScrollable: true,
+          automaticIndicatorColorAdjustment: true,
+          tabAlignment: TabAlignment.start,
           tabs: const [
             Tab(
               text: 'List Of Vehicle',

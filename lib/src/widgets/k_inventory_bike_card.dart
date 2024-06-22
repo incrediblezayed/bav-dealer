@@ -382,16 +382,14 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                                               message:
                                                   'Please enter an amount');
                                         } else {
-                                          inventoryPro
+                                          AppRoutes.pop();
+                                          AppRoutes.showLoadingDialog();
+                                          await inventoryPro
                                               .addTestDriveDealerStock(
                                                   variantId: variants.id,
                                                   colorId: testRideColor!.id,
-                                                  amount: controller.text)
-                                              .then(
-                                            (value) {
-                                              AppRoutes.pop();
-                                            },
-                                          );
+                                                  amount: controller.text);
+                                          AppRoutes.pop();
                                         }
                                       },
                                       text: 'Submit',

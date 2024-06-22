@@ -192,6 +192,31 @@ abstract class GCreateVehicleDealerStockRequestVars
       );
 }
 
+abstract class GVehicleDealersCountVars
+    implements
+        Built<GVehicleDealersCountVars, GVehicleDealersCountVarsBuilder> {
+  GVehicleDealersCountVars._();
+
+  factory GVehicleDealersCountVars(
+          [void Function(GVehicleDealersCountVarsBuilder b) updates]) =
+      _$GVehicleDealersCountVars;
+
+  _i1.GVehicleDealerWhereInput get where;
+  static Serializer<GVehicleDealersCountVars> get serializer =>
+      _$gVehicleDealersCountVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleDealersCountVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleDealersCountVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleDealersCountVars.serializer,
+        json,
+      );
+}
+
 abstract class GVehicleDealersVars
     implements Built<GVehicleDealersVars, GVehicleDealersVarsBuilder> {
   GVehicleDealersVars._();

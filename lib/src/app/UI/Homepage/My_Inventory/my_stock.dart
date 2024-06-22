@@ -52,7 +52,7 @@ class MyStockPage extends ConsumerWidget {
                           .length,
                       itemBuilder: (context, index) {
                         return MyStockCard(
-                          vehicleDealers: (product
+                          dealerStock: (product
                               ? inventoryPro.productDealers
                               : inventoryPro.vehicleDealers)[index],
                           index: index,

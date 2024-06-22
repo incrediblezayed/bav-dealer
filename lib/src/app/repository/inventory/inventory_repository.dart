@@ -240,9 +240,10 @@ class InventoryRepository {
     try {
       final result = await _client
           .request(
-            GVehicleDealersReq(
-              (b) =>
-                  b..vars.where.dealer.id.equals = cacheProvider.getDealerId(),
+            GVehicleDealersCountReq(
+              (b) => b
+                ..vars.where.dealer.id.equals = cacheProvider.getDealerId()
+                ..vars.where.stock.gte = 0,
             ),
           )
           .first;
@@ -252,10 +253,8 @@ class InventoryRepository {
       if (result.graphqlErrors?.isNotEmpty ?? false) {
         throw result.graphqlErrors!.first;
       }
-      if (result.data != null) {
-        return result.data!.vehicleDealers!
-            .map((p0) => p0.stock ?? 0)
-            .reduce((value, element) => value + element);
+      if (result.data?.vehicleDealersCount != null) {
+        return result.data!.vehicleDealersCount!;
       }
     } catch (e) {
       e.log();
@@ -324,7 +323,7 @@ class InventoryRepository {
             .where((p0) => p0.productVariant != null)
             .toList()
             .map(
-              (e) => DealerStockModel.fromJson(e.toJson(), DealerType.vehicle),
+              (e) => DealerStockModel.fromJson(e.toJson(), DealerType.product),
             )
             .toList();
         return dealers;
@@ -422,7 +421,7 @@ class InventoryRepository {
                     .map(
                       (e) => GPriceUpdateArgs(
                         (b) => b
-                          ..where.id = e.type
+                          ..where.id = e.priceId
                           ..data.amount = e.price,
                       ),
                     )
@@ -546,7 +545,7 @@ class InventoryRepository {
                     .map(
                       (e) => GPriceUpdateArgs(
                         (b) => b
-                          ..where.id = e.type
+                          ..where.id = e.priceId
                           ..data.amount = e.price,
                       ),
                     )
@@ -594,7 +593,7 @@ class InventoryRepository {
       }
       if (result.data?.updateProductDealer != null) {
         return DealerStockModel.fromJson(
-            result.data!.updateProductDealer!.toJson(), DealerType.vehicle);
+            result.data!.updateProductDealer!.toJson(), DealerType.product);
       } else {
         throw Exception('Failed to update stock');
       }
@@ -605,7 +604,7 @@ class InventoryRepository {
   }
 
   Future<(int, List<DealerStockModel>)> getTestDriveStock(
-      {required int skip, required int take}) async {
+      {required int skip, required int take, required String query}) async {
     final dealerId = cacheProvider.getDealerId();
     try {
       dealerId.log();
@@ -616,6 +615,8 @@ class InventoryRepository {
               (b) => b
                 ..vars.where.dealer.id.equals = dealerId
                 ..vars.where.available.equals = true
+                ..vars.where.vehicleVariant.name.contains = query
+                ..vars.where.vehicleVariant.name.mode = GQueryMode.insensitive
                 ..vars.skip = skip
                 ..vars.take = take,
             ),
@@ -647,8 +648,8 @@ class InventoryRepository {
     }
   }
 
-  Future<bool> addToTestDriveStock(
-      {required String colorId,
+  Future<DealerStockModel?> addToTestDriveStock(
+      {required String? colorId,
       required String variantId,
       String? testDriveDealerId,
       required String amount}) async {
@@ -667,13 +668,14 @@ class InventoryRepository {
           },
         )).first;
 
-        if (testDriveDealer.data == null) {
+        if (testDriveDealer.data?.testDriveDealers?.firstOrNull?.id == null) {
           final newTestDriveDealer = await _client
               .request(GCreateTestDriveDealerReq(
                 (b) => b.vars.data
                   ..dealer.connect.id = dealerId
                   ..vehicleVariant.connect.id = variantId
-                  ..vehicleColor.connect.id = colorId,
+                  ..vehicleColor.connect.id = colorId
+                  ..price = int.parse(amount),
               ))
               .first;
           if (newTestDriveDealer.data?.createTestDriveDealer?.id == null) {
@@ -688,15 +690,18 @@ class InventoryRepository {
         testDriveId = testDriveDealerId;
       }
       final result = await _client
-          .request(GUpdateTestDriveDealerReq((b) => b.vars
-            ..data.available = true
-            ..data.price = int.parse(amount)
-            ..where.id = testDriveId))
+          .request(
+            GUpdateTestDriveDealerReq((b) => b.vars
+              ..data.available = true
+              ..data.price = int.parse(amount)
+              ..where.id = testDriveId),
+          )
           .first;
       if (result.data?.updateTestDriveDealer?.id != null) {
-        return true;
+        return DealerStockModel.fromJson(
+            result.data!.updateTestDriveDealer!.toJson(), DealerType.testDrive);
       } else {
-        return false;
+        return null;
       }
     } catch (e) {
       e.log();

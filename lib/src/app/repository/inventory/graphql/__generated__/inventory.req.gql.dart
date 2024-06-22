@@ -589,6 +589,88 @@ abstract class GCreateVehicleDealerStockRequestReq
       );
 }
 
+abstract class GVehicleDealersCountReq
+    implements
+        Built<GVehicleDealersCountReq, GVehicleDealersCountReqBuilder>,
+        _i1.OperationRequest<_i2.GVehicleDealersCountData,
+            _i3.GVehicleDealersCountVars> {
+  GVehicleDealersCountReq._();
+
+  factory GVehicleDealersCountReq(
+          [void Function(GVehicleDealersCountReqBuilder b) updates]) =
+      _$GVehicleDealersCountReq;
+
+  static void _initializeBuilder(GVehicleDealersCountReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'VehicleDealersCount',
+    )
+    ..executeOnListen = true;
+
+  @override
+  _i3.GVehicleDealersCountVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GVehicleDealersCountData? Function(
+    _i2.GVehicleDealersCountData?,
+    _i2.GVehicleDealersCountData?,
+  )? get updateResult;
+  @override
+  _i2.GVehicleDealersCountData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
+  _i2.GVehicleDealersCountData? parseData(Map<String, dynamic> json) =>
+      _i2.GVehicleDealersCountData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(_i2.GVehicleDealersCountData data) =>
+      data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GVehicleDealersCountData,
+      _i3.GVehicleDealersCountVars> transformOperation(
+          _i4.Operation Function(_i4.Operation) transform) =>
+      this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GVehicleDealersCountReq> get serializer =>
+      _$gVehicleDealersCountReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GVehicleDealersCountReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleDealersCountReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GVehicleDealersCountReq.serializer,
+        json,
+      );
+}
+
 abstract class GVehicleDealersReq
     implements
         Built<GVehicleDealersReq, GVehicleDealersReqBuilder>,

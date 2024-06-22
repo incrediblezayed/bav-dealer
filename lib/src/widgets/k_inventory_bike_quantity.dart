@@ -3,6 +3,7 @@ import 'package:dealerapp/src/app/model/dealer_stock_model.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/guarantees/graphql/__generated__/guarantees.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
+import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
@@ -52,26 +53,28 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      prices = List<PriceModel>.from(ref.read(inventoryProvider).prices)
-          .map(
-            (e) => PriceModel(
-              price: widget.prices
-                      .firstWhereOrNull(
-                        (element) => element.category?.name == e.name,
-                      )
-                      ?.amount ??
-                  0,
-              type: e.type,
-              name: e.name,
-              priceId: widget.prices
-                      .firstWhereOrNull(
-                        (element) => element.category?.name == e.name,
-                      )
-                      ?.id ??
-                  '',
-            ),
-          )
-          .toList();
+      prices = List<PriceModel>.from(ref.read(inventoryProvider).prices).map(
+        (e) {
+          final priceId = widget.prices
+                  .firstWhereOrNull(
+                    (element) => element.category?.name == e.name,
+                  )
+                  ?.id ??
+              '';
+          priceId.log();
+          return PriceModel(
+            price: widget.prices
+                    .firstWhereOrNull(
+                      (element) => element.category?.name == e.name,
+                    )
+                    ?.amount ??
+                0,
+            type: e.type,
+            name: e.name,
+            priceId: priceId,
+          );
+        },
+      ).toList();
       controller = prices
           .map(
             (e) => TextEditingController(
@@ -80,7 +83,7 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                         (element) => element.category?.name == e.name,
                       )
                       ?.amount
-                      ?.toString() ??
+                      .toString() ??
                   '',
             ),
           )
