@@ -2,7 +2,7 @@ import 'dart:convert';
 
 class ProductDealerModel {
   final String id;
-  final ProductVariant productVariant;
+  final ProductStockVariant productVariant;
   final int stock;
   final double totalPrice;
   final String type;
@@ -26,7 +26,7 @@ class ProductDealerModel {
   factory ProductDealerModel.fromJson(Map<String, dynamic> json) {
     return ProductDealerModel(
       id: json['id'],
-      productVariant: ProductVariant.fromJson(json['productVariant']),
+      productVariant: ProductStockVariant.fromJson(json['productVariant']),
       stock: json['stock'],
       totalPrice: json['totalPrice'].toDouble(),
       type: json['type'],
@@ -52,17 +52,17 @@ class ProductDealerModel {
   }
 }
 
-class ProductVariant {
+class ProductStockVariant {
   final String id;
   final String name;
 
-  ProductVariant({
+  ProductStockVariant({
     required this.id,
     required this.name,
   });
 
-  factory ProductVariant.fromJson(Map<String, dynamic> json) {
-    return ProductVariant(
+  factory ProductStockVariant.fromJson(Map<String, dynamic> json) {
+    return ProductStockVariant(
       id: json['id'],
       name: json['name'],
     );

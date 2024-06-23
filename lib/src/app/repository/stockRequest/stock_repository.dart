@@ -9,7 +9,7 @@ class stockRepository {
   final GraphqlClient _graphqlClient = getIt<GraphqlClient>();
   Client get _client => _graphqlClient.client;
 
-  Future<List> getProductStock() async {
+  Future<List> getProductStock({required String searchText}) async {
     try {
       final response = await _client.request(
         GProductDealerStockRequestsReq(),
@@ -24,7 +24,7 @@ class stockRepository {
     }
   }
 
-  Future<List> getVehicleStock() async {
+  Future<List> getVehicleStock({required String searchText}) async {
     try {
       final response = await _client.request(
         GVehicleDealerStockRequestsReq(),

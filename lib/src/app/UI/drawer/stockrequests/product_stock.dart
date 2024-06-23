@@ -6,14 +6,17 @@ import 'package:dealerapp/src/widgets/k_inventory_product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../widgets/k_stock_product_card.dart';
+
+
 class ProductStock extends ConsumerWidget {
   const ProductStock({required this.showSearch, super.key});
   final bool showSearch;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final inventoryPro = ref.watch(inventoryProvider);
-    final data = inventoryPro.products;
+    final stockPro = ref.watch(stockProvider);
+    final data = stockPro.productStock;
     return ColoredBox(
       color: AppTheme.textFieldFill,
       child: Column(
@@ -22,7 +25,7 @@ class ProductStock extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(8),
               child: TextField(
-                controller: inventoryPro.productSearchController,
+                controller: stockPro.productSearchController,
                 decoration: const InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
@@ -33,7 +36,7 @@ class ProductStock extends ConsumerWidget {
           Expanded(
             child: RefreshIndicator(
               onRefresh: () async {
-                await inventoryPro.getProducts();
+                await stockPro.getProductStock();
               },
               child: ListView.builder(
                 shrinkWrap: true,
@@ -43,18 +46,15 @@ class ProductStock extends ConsumerWidget {
                     color: LogColors.green,
                     name: 'Index',
                   );
-                  inventoryPro.count.log(
-                    name: 'Total Product Count',
-                  );
 
                   if (index >= data.length) {
-                    inventoryPro.getPaginatedProducts();
+                    stockPro.getPaginatedProducts();
                     return const Center(
                       child: CircularProgressIndicator.adaptive(),
                     );
                   }
                   final product = data.elementAt(index);
-                  return KInvetoryProductCard(
+                  return KStockProductCard(
                     variant: product,
                   );
                   /*ListTile(
@@ -95,3 +95,4 @@ class ProductStock extends ConsumerWidget {
     );
   }
 }
+
