@@ -11,9 +11,9 @@ import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 
 class StockProvider extends ChangeNotifier {
-  List<GProductDealerStockRequestsData_productDealerStockRequests> _productStock = [];
-  List<GProductDealerStockRequestsData_productDealerStockRequests> get productStock => _productStock;
-  set productStock(List<GProductDealerStockRequestsData_productDealerStockRequests> data) {
+  List<GProductVariantsData_productVariants> _productStock = [];
+  List<GProductVariantsData_productVariants> get productStock => _productStock;
+  set productStock(List<GProductVariantsData_productVariants> data) {
     _productStock = data;
     notifyListeners();
   }
@@ -38,7 +38,7 @@ class StockProvider extends ChangeNotifier {
   Timer? _productDebounce;
   Timer? _vehicleDebounce;
 
-  StockProvider() {
+  stockProvider() {
     // Initialize controllers with listeners
     productSearchController.addListener(_onProductSearchChanged);
     vehicleSearchController.addListener(_onVehicleSearchChanged);
@@ -93,7 +93,7 @@ class StockProvider extends ChangeNotifier {
       );
 
       if (response.isNotEmpty) {
-        _productStock.addAll(response as Iterable<GProductDealerStockRequestsData_productDealerStockRequests>);
+        _productStock.addAll(response as Iterable<GProductVariantsData_productVariants>);
         _productSkip += _productTake;
         notifyListeners();
       }

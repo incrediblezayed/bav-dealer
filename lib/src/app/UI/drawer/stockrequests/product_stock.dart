@@ -54,8 +54,8 @@ class ProductStock extends ConsumerWidget {
                     );
                   }
                   final product = data.elementAt(index);
-                  return KStockProductCard(
-                    variant: product,
+                  return KStockProductCard(variant: product,
+
                   );
                   /*ListTile(
                     title: Text(product.name.toString()),

@@ -6,6 +6,7 @@ import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../app/model/stocks/product_dealer_model.dart';
 import 'k_cached_network_image.dart';
 
 class KStockProductCard extends ConsumerStatefulWidget {
@@ -14,7 +15,7 @@ class KStockProductCard extends ConsumerStatefulWidget {
     super.key,
   });
 
-  final ProductVariantModel variant;
+  final ProductDealerModel variant;
 
   @override
   ConsumerState<KStockProductCard> createState() =>
@@ -22,7 +23,7 @@ class KStockProductCard extends ConsumerStatefulWidget {
 }
 
 class _KStockProductCardState extends ConsumerState<KStockProductCard> {
-  ProductVariantModel get variants => widget.variant;
+  ProductDealerModel get variants => widget.variant;
   bool isEdit = false;
   int selectedQuantity = 1;
   void updateQuantity(int? quantity) {
@@ -72,13 +73,13 @@ class _KStockProductCardState extends ConsumerState<KStockProductCard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                variants.name ?? '',
+                variants.productVariant.name ?? '',
                 style: theme.headlineLarge!
                     .copyWith(fontSize: 24.sp, fontWeight: FontWeight.w500),
               ),
               SizedBox(height: 10.h),
               Text(
-                variants.product?.brand?.name ??'',
+                variants.productVariant?.name ??'',
                 style: theme.labelMedium!.copyWith(
                   color: Colors.black.withOpacity(.5),
                   fontWeight: FontWeight.w500,
@@ -96,14 +97,14 @@ class _KStockProductCardState extends ConsumerState<KStockProductCard> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(6.r),
                         ),
-                        child: ClipRRect(
+                        /*child: ClipRRect(
                           borderRadius: BorderRadius.circular(6.r),
                           // Placeholder for the product image
                           child: KCachedNWImage(
                             variants.images?.firstOrNull?.image.url ?? '', // Use the URL of the product image
                             fit: BoxFit.cover,
                           ),
-                        ),
+                        ),*/
                       ),
                       SizedBox(width: 20.w),
                       Expanded(
@@ -121,7 +122,7 @@ class _KStockProductCardState extends ConsumerState<KStockProductCard> {
                                 SizedBox(width: 10.w),
                                 Flexible(
                                   child: Text(
-                                    variants.name ?? '',
+                                    variants.productVariant.name ?? '',
                                     style: theme.labelMedium!.copyWith(
                                       color: Colors.black.withOpacity(.5),
                                       fontWeight: FontWeight.w500,
