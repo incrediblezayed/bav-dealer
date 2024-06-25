@@ -1,46 +1,45 @@
 query ProductDealerStockRequests {
-    productDealerStockRequests {
+  productDealerStockRequests {
+    id
+    accepted
+    type
+    totalPrice
+    stock
+    modifiedAt
+    productVariant {
+      name
+      id
+      gallery {
         id
-        productVariant {
-            name
-            id
-        }
-        stock
-        totalPrice
-        type
-        dealer {
-            id
-            user {
-                id
-                name
-            }
-        }
-        accepted
-        createdAt
-        modifiedAt
+        file
+      }
     }
+  }
 }
 
-query VehicleDealerStockRequests {
-    vehicleDealerStockRequests {
-        accepted
-        createdAt
-        dealer {
-            name
-            id
-        }
+query VehicleDealerStockRequests($where: VehicleDealerStockRequestWhereInput!, $orderBy: [VehicleDealerStockRequestOrderByInput!]!, $take: Int, $skip: Int!) {
+
+  vehicleDealerStockRequests(where: $where, orderBy: $orderBy, take: $take, skip: $skip) {
+    id
+    accepted
+    type
+    totalPrice
+    stock
+    vehicleColor {
+      id
+      name
+      gallery {
         id
-        modifiedAt
-        stock
-        type
-        totalPrice
-        vehicleColor {
-            id
-            name
-        }
-        vehicleVariant {
-            id
-            name
-        }
+        file
+      }
     }
+    vehicleVariant {
+      id
+      name
+    }
+  }
+}
+
+query Query($where: VehicleDealerStockRequestWhereInput!) {
+  vehicleDealerStockRequestsCount(where: $where)
 }

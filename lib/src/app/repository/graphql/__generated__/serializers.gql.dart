@@ -902,18 +902,24 @@ import 'package:dealerapp/src/app/repository/stockRequest/graphql/__generated__/
     show
         GProductDealerStockRequestsData,
         GProductDealerStockRequestsData_productDealerStockRequests,
-        GProductDealerStockRequestsData_productDealerStockRequests_dealer,
-        GProductDealerStockRequestsData_productDealerStockRequests_dealer_user,
         GProductDealerStockRequestsData_productDealerStockRequests_productVariant,
+        GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery,
+        GQueryData,
         GVehicleDealerStockRequestsData,
         GVehicleDealerStockRequestsData_vehicleDealerStockRequests,
-        GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealer,
         GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor,
+        GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery,
         GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant;
 import 'package:dealerapp/src/app/repository/stockRequest/graphql/__generated__/stock.req.gql.dart'
-    show GProductDealerStockRequestsReq, GVehicleDealerStockRequestsReq;
+    show
+        GProductDealerStockRequestsReq,
+        GQueryReq,
+        GVehicleDealerStockRequestsReq;
 import 'package:dealerapp/src/app/repository/stockRequest/graphql/__generated__/stock.var.gql.dart'
-    show GProductDealerStockRequestsVars, GVehicleDealerStockRequestsVars;
+    show
+        GProductDealerStockRequestsVars,
+        GQueryVars,
+        GVehicleDealerStockRequestsVars;
 import 'package:dealerapp/src/custom_serializers/upload_serializer.dart'
     show UploadSerializer;
 import 'package:ferry_exec/ferry_exec.dart';
@@ -1266,9 +1272,8 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GProductDealerStockRequestWhereUniqueInput,
   GProductDealerStockRequestsData,
   GProductDealerStockRequestsData_productDealerStockRequests,
-  GProductDealerStockRequestsData_productDealerStockRequests_dealer,
-  GProductDealerStockRequestsData_productDealerStockRequests_dealer_user,
   GProductDealerStockRequestsData_productDealerStockRequests_productVariant,
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery,
   GProductDealerStockRequestsReq,
   GProductDealerStockRequestsVars,
   GProductDealerUpdateArgs,
@@ -1422,7 +1427,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GProductVideoWhereUniqueInput,
   GProductWhereInput,
   GProductWhereUniqueInput,
+  GQueryData,
   GQueryMode,
+  GQueryReq,
+  GQueryVars,
   GRedeemUserPasswordResetTokenData,
   GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken,
   GRedeemUserPasswordResetTokenReq,
@@ -1642,8 +1650,8 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GVehicleDealerStockRequestWhereUniqueInput,
   GVehicleDealerStockRequestsData,
   GVehicleDealerStockRequestsData_vehicleDealerStockRequests,
-  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealer,
   GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor,
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery,
   GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant,
   GVehicleDealerStockRequestsReq,
   GVehicleDealerStockRequestsVars,

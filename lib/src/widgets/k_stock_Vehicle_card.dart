@@ -4,13 +4,13 @@ import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class KStockProductCard extends StatelessWidget {
-  const KStockProductCard({
-    required this.product,
+class KStockVehicleCard extends StatelessWidget {
+  const KStockVehicleCard({
+    required this.variant,
     Key? key,
   }) : super(key: key);
 
-  final Map<String, dynamic> product;
+  final Map<String, dynamic> variant;
 
   @override
   Widget build(BuildContext context) {
@@ -29,17 +29,14 @@ class KStockProductCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                product['id'] ?? '', // Display the ID
-                style: theme.headlineLarge!.copyWith(
-                  fontSize: 24.sp,
-                  fontWeight: FontWeight.w500,
-                ),
+                variant['id'] ?? '',
+                style: theme.headlineLarge!
+                    .copyWith(fontSize: 24.sp, fontWeight: FontWeight.w500),
               ),
               SizedBox(height: 10.h),
-
               Text(
-                product['productVariant']['name'] ?? '', // Display the product variant name
-                style: theme.headlineMedium!.copyWith(
+                variant['vehicleVariant']['name'] ?? '',
+                style: theme.labelMedium!.copyWith(
                   color: Colors.black.withOpacity(.5),
                   fontWeight: FontWeight.w500,
                 ),
@@ -55,43 +52,54 @@ class KStockProductCard extends StatelessWidget {
                         width: 135.w,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(6.r),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(6.r),
                           // Placeholder for the product image
-                          color: Colors.grey[300],
+                          child: Container(
+                            color: Colors.grey[300],
+                          ),
                         ),
                       ),
                       SizedBox(width: 20.w),
                       Expanded(
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              'Model',
-                              style: theme.headlineMedium!.copyWith(
-                                color: Colors.black.withOpacity(.5),
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            SizedBox(height: 6.h),
-                            Text(
-                              product['productVariant']['name'] ?? '', // Display the product variant name again if needed
-                              style: theme.headlineMedium!.copyWith(
-                                color: Colors.black.withOpacity(.5),
-                              ),
+                            Row(
+                              children: [
+                                Text(
+                                  'Model',
+                                  style: theme.labelMedium!.copyWith(
+                                    color: Colors.black.withOpacity(.5),
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(width: 10.w),
+                                Flexible(
+                                  child: Text(
+                                    variant['vehicleVariant']['name'] ?? '',
+                                    style: theme.labelMedium!.copyWith(
+                                      color: Colors.black.withOpacity(.5),
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                             SizedBox(height: 6.h),
                             Row(
                               children: [
                                 Text(
                                   'Price',
-                                  style: theme.headlineMedium!.copyWith(
+                                  style: theme.labelMedium!.copyWith(
                                     color: Colors.black.withOpacity(.5),
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
                                 SizedBox(width: 10.w),
                                 Text(
-                                  product['totalPrice'].toString(), // Display the price
-                                  style: theme.headlineMedium!.copyWith(
+                                  variant['totalPrice'].toString() ?? '',
+                                  style: theme.labelLarge!.copyWith(
                                     fontWeight: FontWeight.w600,
                                     color: Colors.blue, // Change the color to match your theme
                                   ),
@@ -113,7 +121,9 @@ class KStockProductCard extends StatelessWidget {
                 },
                 text: 'Add (or) Update',
               ),
-              SizedBox(height: 10.h),
+              SizedBox(
+                height: 10.h,
+              ),
             ],
           ),
         ),

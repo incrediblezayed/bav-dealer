@@ -1,22 +1,22 @@
-import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:dealerapp/src/app/provider/app_provider.dart'; // Assuming this imports your stockProvider and related classes
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/log_colors.dart';
-import 'package:dealerapp/src/widgets/k_inventory_product_card.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import '../../../../widgets/k_stock_product_card.dart';
-
+import 'package:dealerapp/src/widgets/k_stock_product_card.dart';
 
 class ProductStock extends ConsumerWidget {
-  const ProductStock({required this.showSearch, super.key});
+  const ProductStock({required this.showSearch, Key? key}) : super(key: key);
   final bool showSearch;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final stockPro = ref.watch(stockProvider);
-    final data = stockPro.productStock;
+    final stockPro = ref.watch(stockProvider); // Access the StockProvider instance
+
+    // Retrieve products data from StockProvider
+    final data = stockPro.products;
+
     return ColoredBox(
       color: AppTheme.textFieldFill,
       child: Column(
@@ -25,7 +25,6 @@ class ProductStock extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(8),
               child: TextField(
-                controller: stockPro.productSearchController,
                 decoration: const InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
@@ -36,7 +35,7 @@ class ProductStock extends ConsumerWidget {
           Expanded(
             child: RefreshIndicator(
               onRefresh: () async {
-                await stockPro.getProductStock();
+                await stockPro.getProductStock(); // Refresh products data
               },
               child: ListView.builder(
                 shrinkWrap: true,
@@ -48,45 +47,17 @@ class ProductStock extends ConsumerWidget {
                   );
 
                   if (index >= data.length) {
-                    stockPro.getPaginatedProducts();
                     return const Center(
                       child: CircularProgressIndicator.adaptive(),
                     );
                   }
-                  final product = data.elementAt(index);
-                  return KStockProductCard(variant: product,
 
+                  final product = data.elementAt(index); // Retrieve individual product
+
+                  return KStockProductCard(
+                    product: product, // Pass individual product to card widget
                   );
-                  /*ListTile(
-                    title: Text(product.name.toString()),
-                    subtitle: Text(product.vehicle.toString()),
-                    // Add more UI elements as needed
-                  );*/
                 },
-                /*itemBuilder: (context, index) {
-                  index.log(
-                    color: LogColors.green,
-                    name: 'Index',
-                  );
-                  inventoryPro.count.log(
-                    name: 'Total Product Count',
-                  );
-
-                  if (index >= inventoryPro.products.length) {
-                    inventoryPro.getPaginatedProducts();
-                    return const Center(
-                      child: CircularProgressIndicator.adaptive(),
-                    );
-                  }
-                 log('${data.elementAt(index)}');
-                  final item = data.elementAt(index);
-                  return KInvetoryProductCard( variant: item,
-
-                  );
-                  */ /*KInventoryBikeCard(
-                    variant: item,
-                  );*/ /*
-                },*/
               ),
             ),
           ),
@@ -95,4 +66,3 @@ class ProductStock extends ConsumerWidget {
     );
   }
 }
-

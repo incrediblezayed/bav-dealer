@@ -4,6 +4,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
+import 'package:built_value/json_object.dart' as _i3;
 import 'package:built_value/serializer.dart';
 import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema.gql.dart'
     as _i2;
@@ -64,15 +65,13 @@ abstract class GProductDealerStockRequestsData_productDealerStockRequests
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
+  bool? get accepted;
+  String? get type;
+  int? get totalPrice;
+  int? get stock;
+  _i2.GDateTime? get modifiedAt;
   GProductDealerStockRequestsData_productDealerStockRequests_productVariant?
       get productVariant;
-  int? get stock;
-  int? get totalPrice;
-  String? get type;
-  GProductDealerStockRequestsData_productDealerStockRequests_dealer? get dealer;
-  bool? get accepted;
-  _i2.GDateTime? get createdAt;
-  _i2.GDateTime? get modifiedAt;
   static Serializer<GProductDealerStockRequestsData_productDealerStockRequests>
       get serializer =>
           _$gProductDealerStockRequestsDataProductDealerStockRequestsSerializer;
@@ -113,6 +112,9 @@ abstract class GProductDealerStockRequestsData_productDealerStockRequests_produc
   String get G__typename;
   String? get name;
   String get id;
+  BuiltList<
+          GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery>?
+      get gallery;
   static Serializer<
           GProductDealerStockRequestsData_productDealerStockRequests_productVariant>
       get serializer =>
@@ -132,85 +134,43 @@ abstract class GProductDealerStockRequestsData_productDealerStockRequests_produc
           );
 }
 
-abstract class GProductDealerStockRequestsData_productDealerStockRequests_dealer
-    implements
-        Built<GProductDealerStockRequestsData_productDealerStockRequests_dealer,
-            GProductDealerStockRequestsData_productDealerStockRequests_dealerBuilder> {
-  GProductDealerStockRequestsData_productDealerStockRequests_dealer._();
-
-  factory GProductDealerStockRequestsData_productDealerStockRequests_dealer(
-          [Function(
-                  GProductDealerStockRequestsData_productDealerStockRequests_dealerBuilder
-                      b)
-              updates]) =
-      _$GProductDealerStockRequestsData_productDealerStockRequests_dealer;
-
-  static void _initializeBuilder(
-          GProductDealerStockRequestsData_productDealerStockRequests_dealerBuilder
-              b) =>
-      b..G__typename = 'Dealer';
-
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  String get id;
-  GProductDealerStockRequestsData_productDealerStockRequests_dealer_user?
-      get user;
-  static Serializer<
-          GProductDealerStockRequestsData_productDealerStockRequests_dealer>
-      get serializer =>
-          _$gProductDealerStockRequestsDataProductDealerStockRequestsDealerSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GProductDealerStockRequestsData_productDealerStockRequests_dealer
-            .serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GProductDealerStockRequestsData_productDealerStockRequests_dealer?
-      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
-            GProductDealerStockRequestsData_productDealerStockRequests_dealer
-                .serializer,
-            json,
-          );
-}
-
-abstract class GProductDealerStockRequestsData_productDealerStockRequests_dealer_user
+abstract class GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery
     implements
         Built<
-            GProductDealerStockRequestsData_productDealerStockRequests_dealer_user,
-            GProductDealerStockRequestsData_productDealerStockRequests_dealer_userBuilder> {
-  GProductDealerStockRequestsData_productDealerStockRequests_dealer_user._();
+            GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery,
+            GProductDealerStockRequestsData_productDealerStockRequests_productVariant_galleryBuilder> {
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery._();
 
-  factory GProductDealerStockRequestsData_productDealerStockRequests_dealer_user(
+  factory GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery(
           [Function(
-                  GProductDealerStockRequestsData_productDealerStockRequests_dealer_userBuilder
+                  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_galleryBuilder
                       b)
               updates]) =
-      _$GProductDealerStockRequestsData_productDealerStockRequests_dealer_user;
+      _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery;
 
   static void _initializeBuilder(
-          GProductDealerStockRequestsData_productDealerStockRequests_dealer_userBuilder
+          GProductDealerStockRequestsData_productDealerStockRequests_productVariant_galleryBuilder
               b) =>
-      b..G__typename = 'User';
+      b..G__typename = 'ProductGalleryItem';
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
-  String? get name;
+  _i3.JsonObject? get file;
   static Serializer<
-          GProductDealerStockRequestsData_productDealerStockRequests_dealer_user>
+          GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery>
       get serializer =>
-          _$gProductDealerStockRequestsDataProductDealerStockRequestsDealerUserSerializer;
+          _$gProductDealerStockRequestsDataProductDealerStockRequestsProductVariantGallerySerializer;
 
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GProductDealerStockRequestsData_productDealerStockRequests_dealer_user
+        GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery
             .serializer,
         this,
       ) as Map<String, dynamic>);
 
-  static GProductDealerStockRequestsData_productDealerStockRequests_dealer_user?
+  static GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
-            GProductDealerStockRequestsData_productDealerStockRequests_dealer_user
+            GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery
                 .serializer,
             json,
           );
@@ -267,14 +227,11 @@ abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  bool? get accepted;
-  _i2.GDateTime? get createdAt;
-  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealer? get dealer;
   String get id;
-  _i2.GDateTime? get modifiedAt;
-  int? get stock;
+  bool? get accepted;
   String? get type;
   int? get totalPrice;
+  int? get stock;
   GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor?
       get vehicleColor;
   GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant?
@@ -294,47 +251,6 @@ abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests
         GVehicleDealerStockRequestsData_vehicleDealerStockRequests.serializer,
         json,
       );
-}
-
-abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealer
-    implements
-        Built<GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealer,
-            GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealerBuilder> {
-  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealer._();
-
-  factory GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealer(
-          [Function(
-                  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealerBuilder
-                      b)
-              updates]) =
-      _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealer;
-
-  static void _initializeBuilder(
-          GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealerBuilder
-              b) =>
-      b..G__typename = 'Dealer';
-
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  String? get name;
-  String get id;
-  static Serializer<
-          GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealer>
-      get serializer =>
-          _$gVehicleDealerStockRequestsDataVehicleDealerStockRequestsDealerSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealer
-            .serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealer?
-      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
-            GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealer
-                .serializer,
-            json,
-          );
 }
 
 abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor
@@ -360,6 +276,9 @@ abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicl
   String get G__typename;
   String get id;
   String? get name;
+  BuiltList<
+          GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery>?
+      get gallery;
   static Serializer<
           GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor>
       get serializer =>
@@ -374,6 +293,48 @@ abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicl
   static GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
             GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor
+                .serializer,
+            json,
+          );
+}
+
+abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery
+    implements
+        Built<
+            GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery,
+            GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_galleryBuilder> {
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery._();
+
+  factory GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery(
+          [Function(
+                  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_galleryBuilder
+                      b)
+              updates]) =
+      _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery;
+
+  static void _initializeBuilder(
+          GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_galleryBuilder
+              b) =>
+      b..G__typename = 'VehicleGalleryItem';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  _i3.JsonObject? get file;
+  static Serializer<
+          GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery>
+      get serializer =>
+          _$gVehicleDealerStockRequestsDataVehicleDealerStockRequestsVehicleColorGallerySerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery
                 .serializer,
             json,
           );
@@ -419,4 +380,29 @@ abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicl
                 .serializer,
             json,
           );
+}
+
+abstract class GQueryData implements Built<GQueryData, GQueryDataBuilder> {
+  GQueryData._();
+
+  factory GQueryData([Function(GQueryDataBuilder b) updates]) = _$GQueryData;
+
+  static void _initializeBuilder(GQueryDataBuilder b) =>
+      b..G__typename = 'Query';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int? get vehicleDealerStockRequestsCount;
+  static Serializer<GQueryData> get serializer => _$gQueryDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GQueryData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GQueryData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GQueryData.serializer,
+        json,
+      );
 }

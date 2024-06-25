@@ -1,19 +1,24 @@
-import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:dealerapp/src/app/provider/app_provider.dart'; // Assuming this imports your stockProvider and related classes
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/log_colors.dart';
-import 'package:dealerapp/src/widgets/k_inventory_product_card.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:dealerapp/src/widgets/k_stock_Vehicle_card.dart';
 
 class VehicleStock extends ConsumerWidget {
-  const VehicleStock({required this.showSearch, super.key});
+  const VehicleStock({
+    required this.showSearch,
+    Key? key,
+  }) : super(key: key);
+
   final bool showSearch;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final inventoryPro = ref.watch(inventoryProvider);
-    final data = inventoryPro.products;
+    final stockPro = ref.watch(stockProvider);
+    final data = stockPro.vehicles;
+
     return ColoredBox(
       color: AppTheme.textFieldFill,
       child: Column(
@@ -22,7 +27,6 @@ class VehicleStock extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(8),
               child: TextField(
-                controller: inventoryPro.productSearchController,
                 decoration: const InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
@@ -33,7 +37,7 @@ class VehicleStock extends ConsumerWidget {
           Expanded(
             child: RefreshIndicator(
               onRefresh: () async {
-                await inventoryPro.getProducts();
+                await stockPro.getVehicleStock();
               },
               child: ListView.builder(
                 shrinkWrap: true,
@@ -43,50 +47,19 @@ class VehicleStock extends ConsumerWidget {
                     color: LogColors.green,
                     name: 'Index',
                   );
-                  inventoryPro.count.log(
-                    name: 'Total Product Count',
-                  );
 
                   if (index >= data.length) {
-                    inventoryPro.getPaginatedProducts();
                     return const Center(
                       child: CircularProgressIndicator.adaptive(),
                     );
                   }
-                  final product = data.elementAt(index);
-                  return KInvetoryProductCard(
-                    variant: product,
+
+                  final vehicle = data.elementAt(index);
+
+                  return KStockVehicleCard(
+                    variant: vehicle, // Ensure KStockVehicleCard expects VehicleDealerModel
                   );
-                  /*ListTile(
-                    title: Text(product.name.toString()),
-                    subtitle: Text(product.vehicle.toString()),
-                    // Add more UI elements as needed
-                  );*/
                 },
-                /*itemBuilder: (context, index) {
-                  index.log(
-                    color: LogColors.green,
-                    name: 'Index',
-                  );
-                  inventoryPro.count.log(
-                    name: 'Total Product Count',
-                  );
-
-                  if (index >= inventoryPro.products.length) {
-                    inventoryPro.getPaginatedProducts();
-                    return const Center(
-                      child: CircularProgressIndicator.adaptive(),
-                    );
-                  }
-                 log('${data.elementAt(index)}');
-                  final item = data.elementAt(index);
-                  return KInvetoryProductCard( variant: item,
-
-                  );
-                  */ /*KInventoryBikeCard(
-                    variant: item,
-                  );*/ /*
-                },*/
               ),
             ),
           ),

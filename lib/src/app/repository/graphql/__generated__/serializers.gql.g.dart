@@ -360,13 +360,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GProductDealerStockRequestsData.serializer)
       ..add(
           GProductDealerStockRequestsData_productDealerStockRequests.serializer)
-      ..add(GProductDealerStockRequestsData_productDealerStockRequests_dealer
-          .serializer)
-      ..add(
-          GProductDealerStockRequestsData_productDealerStockRequests_dealer_user
-              .serializer)
       ..add(
           GProductDealerStockRequestsData_productDealerStockRequests_productVariant
+              .serializer)
+      ..add(
+          GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery
               .serializer)
       ..add(GProductDealerStockRequestsReq.serializer)
       ..add(GProductDealerStockRequestsVars.serializer)
@@ -542,7 +540,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GProductVideoWhereUniqueInput.serializer)
       ..add(GProductWhereInput.serializer)
       ..add(GProductWhereUniqueInput.serializer)
+      ..add(GQueryData.serializer)
       ..add(GQueryMode.serializer)
+      ..add(GQueryReq.serializer)
+      ..add(GQueryVars.serializer)
       ..add(GRedeemUserPasswordResetTokenData.serializer)
       ..add(GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken
           .serializer)
@@ -780,10 +781,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleDealerStockRequestsData.serializer)
       ..add(
           GVehicleDealerStockRequestsData_vehicleDealerStockRequests.serializer)
-      ..add(GVehicleDealerStockRequestsData_vehicleDealerStockRequests_dealer
-          .serializer)
       ..add(
           GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor
+              .serializer)
+      ..add(
+          GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery
               .serializer)
       ..add(
           GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant
@@ -1614,6 +1616,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<
               GProductDealerStockRequestsData_productDealerStockRequests>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery)
+          ]),
+          () => new ListBuilder<
+              GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery>())
+      ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GProductDealerWhereInput)]),
           () => new ListBuilder<GProductDealerWhereInput>())
@@ -2401,6 +2410,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<GVehicleWhereUniqueInput>())
       ..addBuilderFactory(
           const FullType(BuiltList,
+              const [const FullType(GVehicleDealerStockRequestOrderByInput)]),
+          () => new ListBuilder<GVehicleDealerStockRequestOrderByInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
               const [const FullType(GVehicleDealerStockRequestWhereInput)]),
           () => new ListBuilder<GVehicleDealerStockRequestWhereInput>())
       ..addBuilderFactory(
@@ -2418,6 +2431,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<
               GVehicleDealerStockRequestsData_vehicleDealerStockRequests>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery)
+          ]),
+          () => new ListBuilder<
+              GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GVehicleDealerWhereInput)]),
