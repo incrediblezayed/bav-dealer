@@ -13,7 +13,11 @@ class MyProduct extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final inventoryPro = ref.watch(inventoryProvider);
-    final data = inventoryPro.products;
+    final data = inventoryPro.products.where(
+      (e) => !inventoryPro.productDealers.any(
+        (element) => element.variant.id == e.id,
+      ),
+    );
     return ColoredBox(
       color: AppTheme.textFieldFill,
       child: Column(
@@ -22,7 +26,7 @@ class MyProduct extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(8),
               child: TextField(
-                controller: inventoryPro.productSearchController,
+                controller: inventoryPro.inventorySearchController,
                 decoration: const InputDecoration(
                   filled: true,
                   fillColor: Colors.white,

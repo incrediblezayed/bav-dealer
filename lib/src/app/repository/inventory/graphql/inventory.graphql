@@ -205,15 +205,12 @@ query ProductVariant(
   }
 }
 
-
 query ProductTypes {
   productTypes {
     id
     name
   }
 }
-
-
 
 query VehicleVariants(
   $where: VehicleVariantWhereInput!
@@ -272,7 +269,10 @@ mutation CreateVehicleDealerStockRequest(
     stock
     totalPrice
   }
-  
+}
+
+query VehicleDealersCount($where: VehicleDealerWhereInput!) {
+  vehicleDealersCount(where: $where)
 }
 
 query VehicleDealers($where: VehicleDealerWhereInput!) {
@@ -338,8 +338,10 @@ query PriceCategories {
   }
 }
 
-
-mutation UpdateVehicleDealer($where: VehicleDealerWhereUniqueInput!, $data: VehicleDealerUpdateInput!) {
+mutation UpdateVehicleDealer(
+  $where: VehicleDealerWhereUniqueInput!
+  $data: VehicleDealerUpdateInput!
+) {
   updateVehicleDealer(where: $where, data: $data) {
     vehicleColor {
       id
@@ -388,5 +390,179 @@ mutation UpdateVehicleDealer($where: VehicleDealerWhereUniqueInput!, $data: Vehi
 mutation UpdatePrices($data: [PriceUpdateArgs!]!) {
   updatePrices(data: $data) {
     id
+  }
+}
+
+query TestDriveDealers(
+  $where: TestDriveDealerWhereInput!
+  $take: Int
+  $skip: Int!
+) {
+  testDriveDealers(where: $where, take: $take, skip: $skip) {
+    vehicleColor {
+      id
+      name
+      code
+      images {
+        id
+        image {
+          url
+        }
+      }
+    }
+    vehicleVariant {
+      id
+      name
+      modifiedAt
+      vehicle {
+        brand {
+          id
+          name
+        }
+        name
+        id
+        description
+      }
+    }
+    price
+    id
+  }
+  testDriveDealersCount(where: $where)
+}
+
+mutation UpdateTestDriveDealer(
+  $where: TestDriveDealerWhereUniqueInput!
+  $data: TestDriveDealerUpdateInput!
+) {
+  updateTestDriveDealer(where: $where, data: $data) {
+    vehicleColor {
+      id
+      name
+      code
+      images {
+        id
+        image {
+          url
+        }
+      }
+    }
+    vehicleVariant {
+      id
+      name
+      modifiedAt
+      vehicle {
+        brand {
+          id
+          name
+        }
+        name
+        id
+        description
+      }
+    }
+    price
+    id
+  }
+}
+
+mutation CreateTestDriveDealer($data: TestDriveDealerCreateInput!) {
+  createTestDriveDealer(data: $data) {
+    id
+  }
+}
+
+query ProductDealers($where: ProductDealerWhereInput!) {
+  productDealers(where: $where) {
+    productVariant {
+      id
+      name
+      modifiedAt
+      images {
+        id
+        image {
+          url
+        }
+      }
+      product {
+        brand {
+          id
+          name
+        }
+        name
+        id
+        description
+      }
+    }
+
+    id
+    stock
+    prices {
+      id
+      amount
+      category {
+        id
+        name
+      }
+    }
+    totalPrice
+    guarantees {
+      name
+      id
+      description
+    }
+  }
+}
+
+mutation CreateProductDealer($data: ProductDealerCreateInput!) {
+  createProductDealer(data: $data) {
+    id
+  }
+}
+
+mutation UpdateProductDealer(
+  $where: ProductDealerWhereUniqueInput!
+  $data: ProductDealerUpdateInput!
+) {
+  updateProductDealer(where: $where, data: $data) {
+    productVariant {
+      product {
+        brand {
+          id
+          name
+        }
+        id
+        name
+        description
+      }
+      modifiedAt
+      id
+      name
+    }
+    id
+    stock
+    totalPrice
+    prices {
+      amount
+      id
+      category {
+        id
+        name
+      }
+    }
+    guarantees {
+      id
+      description
+      name
+    }
+  }
+}
+
+mutation CreateProductDealerStockRequest(
+  $data: ProductDealerStockRequestCreateInput!
+) {
+  createProductDealerStockRequest(data: $data) {
+    type
+    stock
+    totalPrice
   }
 }

@@ -14,7 +14,7 @@ abstract class GGuaranteesData
     implements Built<GGuaranteesData, GGuaranteesDataBuilder> {
   GGuaranteesData._();
 
-  factory GGuaranteesData([Function(GGuaranteesDataBuilder b) updates]) =
+  factory GGuaranteesData([void Function(GGuaranteesDataBuilder b) updates]) =
       _$GGuaranteesData;
 
   static void _initializeBuilder(GGuaranteesDataBuilder b) =>
@@ -44,7 +44,7 @@ abstract class GGuaranteesData_guarantees
   GGuaranteesData_guarantees._();
 
   factory GGuaranteesData_guarantees(
-          [Function(GGuaranteesData_guaranteesBuilder b) updates]) =
+          [void Function(GGuaranteesData_guaranteesBuilder b) updates]) =
       _$GGuaranteesData_guarantees;
 
   static void _initializeBuilder(GGuaranteesData_guaranteesBuilder b) =>

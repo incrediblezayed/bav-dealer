@@ -7,6 +7,7 @@ import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'k_cached_network_image.dart';
+import 'k_inventory_bike_quantity.dart';
 
 class KInvetoryProductCard extends ConsumerStatefulWidget {
   const KInvetoryProductCard({
@@ -78,7 +79,7 @@ class _KInvetoryProductCardState extends ConsumerState<KInvetoryProductCard> {
               ),
               SizedBox(height: 10.h),
               Text(
-                variants.product?.brand?.name ??'',
+                variants.product?.brand?.name ?? '',
                 style: theme.labelMedium!.copyWith(
                   color: Colors.black.withOpacity(.5),
                   fontWeight: FontWeight.w500,
@@ -99,8 +100,9 @@ class _KInvetoryProductCardState extends ConsumerState<KInvetoryProductCard> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(6.r),
                           // Placeholder for the product image
-                           child: KCachedNWImage(
-                            variants.images?.firstOrNull?.image.url ?? '', // Use the URL of the product image
+                          child: KCachedNWImage(
+                            variants.images.firstOrNull?.image.url ??
+                                '', // Use the URL of the product image
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -163,8 +165,8 @@ class _KInvetoryProductCardState extends ConsumerState<KInvetoryProductCard> {
                                 ),
                                 SizedBox(width: 10.w),
                                 Text(
-                                  variants.totalPrice
-                                      .toString()??'', // Display the price here
+                                  variants.totalPrice.toString() ??
+                                      '', // Display the price here
                                   style: theme.labelLarge!.copyWith(
                                     fontWeight: FontWeight.w600,
                                     color: AppTheme.primaryColor,
@@ -196,7 +198,7 @@ class _KInvetoryProductCardState extends ConsumerState<KInvetoryProductCard> {
                     ),
                   );
                   setState(() {
-                    *//*selectedColor = variants.colors
+                    */ /*selectedColor = variants.colors
                         .where(
                           (p0) => !ref
                           .read(inventoryProvider)
@@ -204,8 +206,18 @@ class _KInvetoryProductCardState extends ConsumerState<KInvetoryProductCard> {
                           .map((e) => e.vehicleColor!.id)
                           .contains(p0.id),
                     )
-                        .firstOrNull;*//*
+                        .firstOrNull;*/ /*
                   });*/
+
+                  await AppRoutes.push(
+                    page: QuantityScreen(
+                      variantId: widget.variant.id,
+                      colorId: '',
+                      guarantees: const [],
+                      prices: const [],
+                      product: true,
+                    ),
+                  );
                 },
                 text: 'Add (or) Update',
               ),

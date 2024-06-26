@@ -23,7 +23,7 @@ abstract class GCreateReportReq
         _i1.OperationRequest<_i2.GCreateReportData, _i3.GCreateReportVars> {
   GCreateReportReq._();
 
-  factory GCreateReportReq([Function(GCreateReportReqBuilder b) updates]) =
+  factory GCreateReportReq([void Function(GCreateReportReqBuilder b) updates]) =
       _$GCreateReportReq;
 
   static void _initializeBuilder(GCreateReportReqBuilder b) => b
@@ -41,6 +41,7 @@ abstract class GCreateReportReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -62,6 +63,9 @@ abstract class GCreateReportReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GCreateReportData? parseData(Map<String, dynamic> json) =>
       _i2.GCreateReportData.fromJson(json);
 
@@ -69,7 +73,7 @@ abstract class GCreateReportReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GCreateReportData data) => data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GCreateReportData, _i3.GCreateReportVars>
@@ -97,7 +101,8 @@ abstract class GCreateFeedbackReq
         _i1.OperationRequest<_i2.GCreateFeedbackData, _i3.GCreateFeedbackVars> {
   GCreateFeedbackReq._();
 
-  factory GCreateFeedbackReq([Function(GCreateFeedbackReqBuilder b) updates]) =
+  factory GCreateFeedbackReq(
+          [void Function(GCreateFeedbackReqBuilder b) updates]) =
       _$GCreateFeedbackReq;
 
   static void _initializeBuilder(GCreateFeedbackReqBuilder b) => b
@@ -115,6 +120,7 @@ abstract class GCreateFeedbackReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -136,6 +142,9 @@ abstract class GCreateFeedbackReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GCreateFeedbackData? parseData(Map<String, dynamic> json) =>
       _i2.GCreateFeedbackData.fromJson(json);
 
@@ -143,7 +152,8 @@ abstract class GCreateFeedbackReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GCreateFeedbackData data) =>
+      data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GCreateFeedbackData, _i3.GCreateFeedbackVars>
@@ -171,7 +181,7 @@ abstract class GCategoriesReq
         _i1.OperationRequest<_i2.GCategoriesData, _i3.GCategoriesVars> {
   GCategoriesReq._();
 
-  factory GCategoriesReq([Function(GCategoriesReqBuilder b) updates]) =
+  factory GCategoriesReq([void Function(GCategoriesReqBuilder b) updates]) =
       _$GCategoriesReq;
 
   static void _initializeBuilder(GCategoriesReqBuilder b) => b
@@ -189,6 +199,7 @@ abstract class GCategoriesReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -210,6 +221,9 @@ abstract class GCategoriesReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GCategoriesData? parseData(Map<String, dynamic> json) =>
       _i2.GCategoriesData.fromJson(json);
 
@@ -217,7 +231,7 @@ abstract class GCategoriesReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GCategoriesData data) => data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GCategoriesData, _i3.GCategoriesVars>

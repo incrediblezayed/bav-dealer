@@ -16,7 +16,8 @@ abstract class GProductOrdersVars
     implements Built<GProductOrdersVars, GProductOrdersVarsBuilder> {
   GProductOrdersVars._();
 
-  factory GProductOrdersVars([Function(GProductOrdersVarsBuilder b) updates]) =
+  factory GProductOrdersVars(
+          [void Function(GProductOrdersVarsBuilder b) updates]) =
       _$GProductOrdersVars;
 
   _i1.GProductOrderWhereInput get where;
@@ -40,7 +41,8 @@ abstract class GVehicleOrdersVars
     implements Built<GVehicleOrdersVars, GVehicleOrdersVarsBuilder> {
   GVehicleOrdersVars._();
 
-  factory GVehicleOrdersVars([Function(GVehicleOrdersVarsBuilder b) updates]) =
+  factory GVehicleOrdersVars(
+          [void Function(GVehicleOrdersVarsBuilder b) updates]) =
       _$GVehicleOrdersVars;
 
   BuiltList<_i1.GVehicleOrderOrderByInput> get orderBy;
@@ -65,7 +67,7 @@ abstract class GTestDriveOrdersVars
   GTestDriveOrdersVars._();
 
   factory GTestDriveOrdersVars(
-          [Function(GTestDriveOrdersVarsBuilder b) updates]) =
+          [void Function(GTestDriveOrdersVarsBuilder b) updates]) =
       _$GTestDriveOrdersVars;
 
   _i1.GTestDriveOrderWhereInput get where;
@@ -90,7 +92,7 @@ abstract class GUpdateProductOrderVars
   GUpdateProductOrderVars._();
 
   factory GUpdateProductOrderVars(
-          [Function(GUpdateProductOrderVarsBuilder b) updates]) =
+          [void Function(GUpdateProductOrderVarsBuilder b) updates]) =
       _$GUpdateProductOrderVars;
 
   _i1.GProductOrderWhereUniqueInput get where;
@@ -115,7 +117,7 @@ abstract class GUpdateVehicleOrderVars
   GUpdateVehicleOrderVars._();
 
   factory GUpdateVehicleOrderVars(
-          [Function(GUpdateVehicleOrderVarsBuilder b) updates]) =
+          [void Function(GUpdateVehicleOrderVarsBuilder b) updates]) =
       _$GUpdateVehicleOrderVars;
 
   _i1.GVehicleOrderWhereUniqueInput get where;
@@ -141,7 +143,7 @@ abstract class GUpdateTestDriveOrderVars
   GUpdateTestDriveOrderVars._();
 
   factory GUpdateTestDriveOrderVars(
-          [Function(GUpdateTestDriveOrderVarsBuilder b) updates]) =
+          [void Function(GUpdateTestDriveOrderVarsBuilder b) updates]) =
       _$GUpdateTestDriveOrderVars;
 
   _i1.GTestDriveOrderWhereUniqueInput get where;
@@ -168,7 +170,7 @@ abstract class GCreateOrderRejectionByDealerVars
   GCreateOrderRejectionByDealerVars._();
 
   factory GCreateOrderRejectionByDealerVars(
-          [Function(GCreateOrderRejectionByDealerVarsBuilder b) updates]) =
+          [void Function(GCreateOrderRejectionByDealerVarsBuilder b) updates]) =
       _$GCreateOrderRejectionByDealerVars;
 
   _i1.GOrderRejectionByDealerCreateInput get data;

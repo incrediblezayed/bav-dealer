@@ -17,7 +17,7 @@ abstract class GProductVariantsVars
   GProductVariantsVars._();
 
   factory GProductVariantsVars(
-          [Function(GProductVariantsVarsBuilder b) updates]) =
+          [void Function(GProductVariantsVarsBuilder b) updates]) =
       _$GProductVariantsVars;
 
   int get skip;
@@ -46,7 +46,7 @@ abstract class GProductVariantsCountVars
   GProductVariantsCountVars._();
 
   factory GProductVariantsCountVars(
-          [Function(GProductVariantsCountVarsBuilder b) updates]) =
+          [void Function(GProductVariantsCountVarsBuilder b) updates]) =
       _$GProductVariantsCountVars;
 
   _i1.GProductVariantWhereInput get where;
@@ -70,7 +70,8 @@ abstract class GProductVariantVars
   GProductVariantVars._();
 
   factory GProductVariantVars(
-      [Function(GProductVariantVarsBuilder b) updates]) = _$GProductVariantVars;
+          [void Function(GProductVariantVarsBuilder b) updates]) =
+      _$GProductVariantVars;
 
   _i1.GProductVariantWhereUniqueInput get where;
   BuiltList<double>? get location;
@@ -93,7 +94,8 @@ abstract class GProductTypesVars
     implements Built<GProductTypesVars, GProductTypesVarsBuilder> {
   GProductTypesVars._();
 
-  factory GProductTypesVars([Function(GProductTypesVarsBuilder b) updates]) =
+  factory GProductTypesVars(
+          [void Function(GProductTypesVarsBuilder b) updates]) =
       _$GProductTypesVars;
 
   static Serializer<GProductTypesVars> get serializer =>
@@ -116,7 +118,7 @@ abstract class GVehicleVariantsVars
   GVehicleVariantsVars._();
 
   factory GVehicleVariantsVars(
-          [Function(GVehicleVariantsVarsBuilder b) updates]) =
+          [void Function(GVehicleVariantsVarsBuilder b) updates]) =
       _$GVehicleVariantsVars;
 
   _i1.GVehicleVariantWhereInput get where;
@@ -144,7 +146,7 @@ abstract class GVehicleVariantsCountVars
   GVehicleVariantsCountVars._();
 
   factory GVehicleVariantsCountVars(
-          [Function(GVehicleVariantsCountVarsBuilder b) updates]) =
+          [void Function(GVehicleVariantsCountVarsBuilder b) updates]) =
       _$GVehicleVariantsCountVars;
 
   _i1.GVehicleVariantWhereInput get where;
@@ -170,8 +172,8 @@ abstract class GCreateVehicleDealerStockRequestVars
   GCreateVehicleDealerStockRequestVars._();
 
   factory GCreateVehicleDealerStockRequestVars(
-          [Function(GCreateVehicleDealerStockRequestVarsBuilder b) updates]) =
-      _$GCreateVehicleDealerStockRequestVars;
+      [void Function(GCreateVehicleDealerStockRequestVarsBuilder b)
+          updates]) = _$GCreateVehicleDealerStockRequestVars;
 
   _i1.GVehicleDealerStockRequestCreateInput get data;
   static Serializer<GCreateVehicleDealerStockRequestVars> get serializer =>
@@ -190,12 +192,38 @@ abstract class GCreateVehicleDealerStockRequestVars
       );
 }
 
+abstract class GVehicleDealersCountVars
+    implements
+        Built<GVehicleDealersCountVars, GVehicleDealersCountVarsBuilder> {
+  GVehicleDealersCountVars._();
+
+  factory GVehicleDealersCountVars(
+          [void Function(GVehicleDealersCountVarsBuilder b) updates]) =
+      _$GVehicleDealersCountVars;
+
+  _i1.GVehicleDealerWhereInput get where;
+  static Serializer<GVehicleDealersCountVars> get serializer =>
+      _$gVehicleDealersCountVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleDealersCountVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleDealersCountVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleDealersCountVars.serializer,
+        json,
+      );
+}
+
 abstract class GVehicleDealersVars
     implements Built<GVehicleDealersVars, GVehicleDealersVarsBuilder> {
   GVehicleDealersVars._();
 
   factory GVehicleDealersVars(
-      [Function(GVehicleDealersVarsBuilder b) updates]) = _$GVehicleDealersVars;
+          [void Function(GVehicleDealersVarsBuilder b) updates]) =
+      _$GVehicleDealersVars;
 
   _i1.GVehicleDealerWhereInput get where;
   static Serializer<GVehicleDealersVars> get serializer =>
@@ -219,7 +247,7 @@ abstract class GCreateVehicleDealerVars
   GCreateVehicleDealerVars._();
 
   factory GCreateVehicleDealerVars(
-          [Function(GCreateVehicleDealerVarsBuilder b) updates]) =
+          [void Function(GCreateVehicleDealerVarsBuilder b) updates]) =
       _$GCreateVehicleDealerVars;
 
   _i1.GVehicleDealerCreateInput get data;
@@ -243,7 +271,7 @@ abstract class GPriceCategoriesVars
   GPriceCategoriesVars._();
 
   factory GPriceCategoriesVars(
-          [Function(GPriceCategoriesVarsBuilder b) updates]) =
+          [void Function(GPriceCategoriesVarsBuilder b) updates]) =
       _$GPriceCategoriesVars;
 
   static Serializer<GPriceCategoriesVars> get serializer =>
@@ -267,7 +295,7 @@ abstract class GUpdateVehicleDealerVars
   GUpdateVehicleDealerVars._();
 
   factory GUpdateVehicleDealerVars(
-          [Function(GUpdateVehicleDealerVarsBuilder b) updates]) =
+          [void Function(GUpdateVehicleDealerVarsBuilder b) updates]) =
       _$GUpdateVehicleDealerVars;
 
   _i1.GVehicleDealerWhereUniqueInput get where;
@@ -291,7 +319,8 @@ abstract class GUpdatePricesVars
     implements Built<GUpdatePricesVars, GUpdatePricesVarsBuilder> {
   GUpdatePricesVars._();
 
-  factory GUpdatePricesVars([Function(GUpdatePricesVarsBuilder b) updates]) =
+  factory GUpdatePricesVars(
+          [void Function(GUpdatePricesVarsBuilder b) updates]) =
       _$GUpdatePricesVars;
 
   BuiltList<_i1.GPriceUpdateArgs> get data;
@@ -306,6 +335,185 @@ abstract class GUpdatePricesVars
   static GUpdatePricesVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GUpdatePricesVars.serializer,
+        json,
+      );
+}
+
+abstract class GTestDriveDealersVars
+    implements Built<GTestDriveDealersVars, GTestDriveDealersVarsBuilder> {
+  GTestDriveDealersVars._();
+
+  factory GTestDriveDealersVars(
+          [void Function(GTestDriveDealersVarsBuilder b) updates]) =
+      _$GTestDriveDealersVars;
+
+  _i1.GTestDriveDealerWhereInput get where;
+  int? get take;
+  int get skip;
+  static Serializer<GTestDriveDealersVars> get serializer =>
+      _$gTestDriveDealersVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GTestDriveDealersVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GTestDriveDealersVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GTestDriveDealersVars.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateTestDriveDealerVars
+    implements
+        Built<GUpdateTestDriveDealerVars, GUpdateTestDriveDealerVarsBuilder> {
+  GUpdateTestDriveDealerVars._();
+
+  factory GUpdateTestDriveDealerVars(
+          [void Function(GUpdateTestDriveDealerVarsBuilder b) updates]) =
+      _$GUpdateTestDriveDealerVars;
+
+  _i1.GTestDriveDealerWhereUniqueInput get where;
+  _i1.GTestDriveDealerUpdateInput get data;
+  static Serializer<GUpdateTestDriveDealerVars> get serializer =>
+      _$gUpdateTestDriveDealerVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GUpdateTestDriveDealerVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateTestDriveDealerVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GUpdateTestDriveDealerVars.serializer,
+        json,
+      );
+}
+
+abstract class GCreateTestDriveDealerVars
+    implements
+        Built<GCreateTestDriveDealerVars, GCreateTestDriveDealerVarsBuilder> {
+  GCreateTestDriveDealerVars._();
+
+  factory GCreateTestDriveDealerVars(
+          [void Function(GCreateTestDriveDealerVarsBuilder b) updates]) =
+      _$GCreateTestDriveDealerVars;
+
+  _i1.GTestDriveDealerCreateInput get data;
+  static Serializer<GCreateTestDriveDealerVars> get serializer =>
+      _$gCreateTestDriveDealerVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GCreateTestDriveDealerVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GCreateTestDriveDealerVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GCreateTestDriveDealerVars.serializer,
+        json,
+      );
+}
+
+abstract class GProductDealersVars
+    implements Built<GProductDealersVars, GProductDealersVarsBuilder> {
+  GProductDealersVars._();
+
+  factory GProductDealersVars(
+          [void Function(GProductDealersVarsBuilder b) updates]) =
+      _$GProductDealersVars;
+
+  _i1.GProductDealerWhereInput get where;
+  static Serializer<GProductDealersVars> get serializer =>
+      _$gProductDealersVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductDealersVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealersVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductDealersVars.serializer,
+        json,
+      );
+}
+
+abstract class GCreateProductDealerVars
+    implements
+        Built<GCreateProductDealerVars, GCreateProductDealerVarsBuilder> {
+  GCreateProductDealerVars._();
+
+  factory GCreateProductDealerVars(
+          [void Function(GCreateProductDealerVarsBuilder b) updates]) =
+      _$GCreateProductDealerVars;
+
+  _i1.GProductDealerCreateInput get data;
+  static Serializer<GCreateProductDealerVars> get serializer =>
+      _$gCreateProductDealerVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GCreateProductDealerVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GCreateProductDealerVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GCreateProductDealerVars.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateProductDealerVars
+    implements
+        Built<GUpdateProductDealerVars, GUpdateProductDealerVarsBuilder> {
+  GUpdateProductDealerVars._();
+
+  factory GUpdateProductDealerVars(
+          [void Function(GUpdateProductDealerVarsBuilder b) updates]) =
+      _$GUpdateProductDealerVars;
+
+  _i1.GProductDealerWhereUniqueInput get where;
+  _i1.GProductDealerUpdateInput get data;
+  static Serializer<GUpdateProductDealerVars> get serializer =>
+      _$gUpdateProductDealerVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GUpdateProductDealerVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateProductDealerVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GUpdateProductDealerVars.serializer,
+        json,
+      );
+}
+
+abstract class GCreateProductDealerStockRequestVars
+    implements
+        Built<GCreateProductDealerStockRequestVars,
+            GCreateProductDealerStockRequestVarsBuilder> {
+  GCreateProductDealerStockRequestVars._();
+
+  factory GCreateProductDealerStockRequestVars(
+      [void Function(GCreateProductDealerStockRequestVarsBuilder b)
+          updates]) = _$GCreateProductDealerStockRequestVars;
+
+  _i1.GProductDealerStockRequestCreateInput get data;
+  static Serializer<GCreateProductDealerStockRequestVars> get serializer =>
+      _$gCreateProductDealerStockRequestVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GCreateProductDealerStockRequestVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GCreateProductDealerStockRequestVars? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GCreateProductDealerStockRequestVars.serializer,
         json,
       );
 }

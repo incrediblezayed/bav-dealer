@@ -87,6 +87,7 @@ class AppRoutes {
       barrierDismissible: false,
       builder: (context) {
         return AlertDialog(
+          surfaceTintColor: Colors.white,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           content: Builder(

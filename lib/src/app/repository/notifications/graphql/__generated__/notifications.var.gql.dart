@@ -14,7 +14,7 @@ abstract class GAppNotificationsVars
   GAppNotificationsVars._();
 
   factory GAppNotificationsVars(
-          [Function(GAppNotificationsVarsBuilder b) updates]) =
+          [void Function(GAppNotificationsVarsBuilder b) updates]) =
       _$GAppNotificationsVars;
 
   static Serializer<GAppNotificationsVars> get serializer =>

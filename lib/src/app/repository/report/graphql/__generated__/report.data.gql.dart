@@ -16,7 +16,8 @@ abstract class GCreateReportData
     implements Built<GCreateReportData, GCreateReportDataBuilder> {
   GCreateReportData._();
 
-  factory GCreateReportData([Function(GCreateReportDataBuilder b) updates]) =
+  factory GCreateReportData(
+          [void Function(GCreateReportDataBuilder b) updates]) =
       _$GCreateReportData;
 
   static void _initializeBuilder(GCreateReportDataBuilder b) =>
@@ -47,7 +48,7 @@ abstract class GCreateReportData_createReport
   GCreateReportData_createReport._();
 
   factory GCreateReportData_createReport(
-          [Function(GCreateReportData_createReportBuilder b) updates]) =
+          [void Function(GCreateReportData_createReportBuilder b) updates]) =
       _$GCreateReportData_createReport;
 
   static void _initializeBuilder(GCreateReportData_createReportBuilder b) =>
@@ -76,7 +77,8 @@ abstract class GCreateFeedbackData
   GCreateFeedbackData._();
 
   factory GCreateFeedbackData(
-      [Function(GCreateFeedbackDataBuilder b) updates]) = _$GCreateFeedbackData;
+          [void Function(GCreateFeedbackDataBuilder b) updates]) =
+      _$GCreateFeedbackData;
 
   static void _initializeBuilder(GCreateFeedbackDataBuilder b) =>
       b..G__typename = 'Mutation';
@@ -106,8 +108,8 @@ abstract class GCreateFeedbackData_createFeedback
   GCreateFeedbackData_createFeedback._();
 
   factory GCreateFeedbackData_createFeedback(
-          [Function(GCreateFeedbackData_createFeedbackBuilder b) updates]) =
-      _$GCreateFeedbackData_createFeedback;
+      [void Function(GCreateFeedbackData_createFeedbackBuilder b)
+          updates]) = _$GCreateFeedbackData_createFeedback;
 
   static void _initializeBuilder(GCreateFeedbackData_createFeedbackBuilder b) =>
       b..G__typename = 'Feedback';
@@ -135,7 +137,7 @@ abstract class GCategoriesData
     implements Built<GCategoriesData, GCategoriesDataBuilder> {
   GCategoriesData._();
 
-  factory GCategoriesData([Function(GCategoriesDataBuilder b) updates]) =
+  factory GCategoriesData([void Function(GCategoriesDataBuilder b) updates]) =
       _$GCategoriesData;
 
   static void _initializeBuilder(GCategoriesDataBuilder b) =>
@@ -165,7 +167,7 @@ abstract class GCategoriesData_categories
   GCategoriesData_categories._();
 
   factory GCategoriesData_categories(
-          [Function(GCategoriesData_categoriesBuilder b) updates]) =
+          [void Function(GCategoriesData_categoriesBuilder b) updates]) =
       _$GCategoriesData_categories;
 
   static void _initializeBuilder(GCategoriesData_categoriesBuilder b) =>

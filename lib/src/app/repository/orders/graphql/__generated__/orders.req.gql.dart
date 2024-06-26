@@ -23,7 +23,8 @@ abstract class GProductOrdersReq
         _i1.OperationRequest<_i2.GProductOrdersData, _i3.GProductOrdersVars> {
   GProductOrdersReq._();
 
-  factory GProductOrdersReq([Function(GProductOrdersReqBuilder b) updates]) =
+  factory GProductOrdersReq(
+          [void Function(GProductOrdersReqBuilder b) updates]) =
       _$GProductOrdersReq;
 
   static void _initializeBuilder(GProductOrdersReqBuilder b) => b
@@ -41,6 +42,7 @@ abstract class GProductOrdersReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -62,6 +64,9 @@ abstract class GProductOrdersReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GProductOrdersData? parseData(Map<String, dynamic> json) =>
       _i2.GProductOrdersData.fromJson(json);
 
@@ -69,7 +74,7 @@ abstract class GProductOrdersReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GProductOrdersData data) => data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GProductOrdersData, _i3.GProductOrdersVars>
@@ -97,7 +102,8 @@ abstract class GVehicleOrdersReq
         _i1.OperationRequest<_i2.GVehicleOrdersData, _i3.GVehicleOrdersVars> {
   GVehicleOrdersReq._();
 
-  factory GVehicleOrdersReq([Function(GVehicleOrdersReqBuilder b) updates]) =
+  factory GVehicleOrdersReq(
+          [void Function(GVehicleOrdersReqBuilder b) updates]) =
       _$GVehicleOrdersReq;
 
   static void _initializeBuilder(GVehicleOrdersReqBuilder b) => b
@@ -115,6 +121,7 @@ abstract class GVehicleOrdersReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -136,6 +143,9 @@ abstract class GVehicleOrdersReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GVehicleOrdersData? parseData(Map<String, dynamic> json) =>
       _i2.GVehicleOrdersData.fromJson(json);
 
@@ -143,7 +153,7 @@ abstract class GVehicleOrdersReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GVehicleOrdersData data) => data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GVehicleOrdersData, _i3.GVehicleOrdersVars>
@@ -173,7 +183,8 @@ abstract class GTestDriveOrdersReq
   GTestDriveOrdersReq._();
 
   factory GTestDriveOrdersReq(
-      [Function(GTestDriveOrdersReqBuilder b) updates]) = _$GTestDriveOrdersReq;
+          [void Function(GTestDriveOrdersReqBuilder b) updates]) =
+      _$GTestDriveOrdersReq;
 
   static void _initializeBuilder(GTestDriveOrdersReqBuilder b) => b
     ..operation = _i4.Operation(
@@ -190,6 +201,7 @@ abstract class GTestDriveOrdersReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -211,6 +223,9 @@ abstract class GTestDriveOrdersReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GTestDriveOrdersData? parseData(Map<String, dynamic> json) =>
       _i2.GTestDriveOrdersData.fromJson(json);
 
@@ -218,7 +233,8 @@ abstract class GTestDriveOrdersReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GTestDriveOrdersData data) =>
+      data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GTestDriveOrdersData, _i3.GTestDriveOrdersVars>
@@ -248,7 +264,7 @@ abstract class GUpdateProductOrderReq
   GUpdateProductOrderReq._();
 
   factory GUpdateProductOrderReq(
-          [Function(GUpdateProductOrderReqBuilder b) updates]) =
+          [void Function(GUpdateProductOrderReqBuilder b) updates]) =
       _$GUpdateProductOrderReq;
 
   static void _initializeBuilder(GUpdateProductOrderReqBuilder b) => b
@@ -266,6 +282,7 @@ abstract class GUpdateProductOrderReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -287,6 +304,9 @@ abstract class GUpdateProductOrderReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GUpdateProductOrderData? parseData(Map<String, dynamic> json) =>
       _i2.GUpdateProductOrderData.fromJson(json);
 
@@ -294,7 +314,8 @@ abstract class GUpdateProductOrderReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GUpdateProductOrderData data) =>
+      data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GUpdateProductOrderData, _i3.GUpdateProductOrderVars>
@@ -324,7 +345,7 @@ abstract class GUpdateVehicleOrderReq
   GUpdateVehicleOrderReq._();
 
   factory GUpdateVehicleOrderReq(
-          [Function(GUpdateVehicleOrderReqBuilder b) updates]) =
+          [void Function(GUpdateVehicleOrderReqBuilder b) updates]) =
       _$GUpdateVehicleOrderReq;
 
   static void _initializeBuilder(GUpdateVehicleOrderReqBuilder b) => b
@@ -342,6 +363,7 @@ abstract class GUpdateVehicleOrderReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -363,6 +385,9 @@ abstract class GUpdateVehicleOrderReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GUpdateVehicleOrderData? parseData(Map<String, dynamic> json) =>
       _i2.GUpdateVehicleOrderData.fromJson(json);
 
@@ -370,7 +395,8 @@ abstract class GUpdateVehicleOrderReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GUpdateVehicleOrderData data) =>
+      data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GUpdateVehicleOrderData, _i3.GUpdateVehicleOrderVars>
@@ -400,7 +426,7 @@ abstract class GUpdateTestDriveOrderReq
   GUpdateTestDriveOrderReq._();
 
   factory GUpdateTestDriveOrderReq(
-          [Function(GUpdateTestDriveOrderReqBuilder b) updates]) =
+          [void Function(GUpdateTestDriveOrderReqBuilder b) updates]) =
       _$GUpdateTestDriveOrderReq;
 
   static void _initializeBuilder(GUpdateTestDriveOrderReqBuilder b) => b
@@ -418,6 +444,7 @@ abstract class GUpdateTestDriveOrderReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -439,6 +466,9 @@ abstract class GUpdateTestDriveOrderReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GUpdateTestDriveOrderData? parseData(Map<String, dynamic> json) =>
       _i2.GUpdateTestDriveOrderData.fromJson(json);
 
@@ -446,7 +476,8 @@ abstract class GUpdateTestDriveOrderReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GUpdateTestDriveOrderData data) =>
+      data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GUpdateTestDriveOrderData,
@@ -478,7 +509,7 @@ abstract class GCreateOrderRejectionByDealerReq
   GCreateOrderRejectionByDealerReq._();
 
   factory GCreateOrderRejectionByDealerReq(
-          [Function(GCreateOrderRejectionByDealerReqBuilder b) updates]) =
+          [void Function(GCreateOrderRejectionByDealerReqBuilder b) updates]) =
       _$GCreateOrderRejectionByDealerReq;
 
   static void _initializeBuilder(GCreateOrderRejectionByDealerReqBuilder b) => b
@@ -496,6 +527,7 @@ abstract class GCreateOrderRejectionByDealerReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -517,6 +549,9 @@ abstract class GCreateOrderRejectionByDealerReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GCreateOrderRejectionByDealerData? parseData(Map<String, dynamic> json) =>
       _i2.GCreateOrderRejectionByDealerData.fromJson(json);
 
@@ -524,7 +559,8 @@ abstract class GCreateOrderRejectionByDealerReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GCreateOrderRejectionByDealerData data) =>
+      data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GCreateOrderRejectionByDealerData,

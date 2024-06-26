@@ -16,7 +16,8 @@ abstract class GProductOrdersData
     implements Built<GProductOrdersData, GProductOrdersDataBuilder> {
   GProductOrdersData._();
 
-  factory GProductOrdersData([Function(GProductOrdersDataBuilder b) updates]) =
+  factory GProductOrdersData(
+          [void Function(GProductOrdersDataBuilder b) updates]) =
       _$GProductOrdersData;
 
   static void _initializeBuilder(GProductOrdersDataBuilder b) =>
@@ -47,7 +48,7 @@ abstract class GProductOrdersData_productOrders
   GProductOrdersData_productOrders._();
 
   factory GProductOrdersData_productOrders(
-          [Function(GProductOrdersData_productOrdersBuilder b) updates]) =
+          [void Function(GProductOrdersData_productOrdersBuilder b) updates]) =
       _$GProductOrdersData_productOrders;
 
   static void _initializeBuilder(GProductOrdersData_productOrdersBuilder b) =>
@@ -84,7 +85,7 @@ abstract class GProductOrdersData_productOrders_dealer
   GProductOrdersData_productOrders_dealer._();
 
   factory GProductOrdersData_productOrders_dealer(
-      [Function(GProductOrdersData_productOrders_dealerBuilder b)
+      [void Function(GProductOrdersData_productOrders_dealerBuilder b)
           updates]) = _$GProductOrdersData_productOrders_dealer;
 
   static void _initializeBuilder(
@@ -120,7 +121,8 @@ abstract class GProductOrdersData_productOrders_dealer_productVariant
   GProductOrdersData_productOrders_dealer_productVariant._();
 
   factory GProductOrdersData_productOrders_dealer_productVariant(
-      [Function(GProductOrdersData_productOrders_dealer_productVariantBuilder b)
+      [void Function(
+              GProductOrdersData_productOrders_dealer_productVariantBuilder b)
           updates]) = _$GProductOrdersData_productOrders_dealer_productVariant;
 
   static void _initializeBuilder(
@@ -155,7 +157,7 @@ abstract class GProductOrdersData_productOrders_dealer_productVariant_product
   GProductOrdersData_productOrders_dealer_productVariant_product._();
 
   factory GProductOrdersData_productOrders_dealer_productVariant_product(
-          [Function(
+          [void Function(
                   GProductOrdersData_productOrders_dealer_productVariant_productBuilder
                       b)
               updates]) =
@@ -195,7 +197,7 @@ abstract class GProductOrdersData_productOrders_dealer_dealer
   GProductOrdersData_productOrders_dealer_dealer._();
 
   factory GProductOrdersData_productOrders_dealer_dealer(
-      [Function(GProductOrdersData_productOrders_dealer_dealerBuilder b)
+      [void Function(GProductOrdersData_productOrders_dealer_dealerBuilder b)
           updates]) = _$GProductOrdersData_productOrders_dealer_dealer;
 
   static void _initializeBuilder(
@@ -228,7 +230,7 @@ abstract class GProductOrdersData_productOrders_dealer_prices
   GProductOrdersData_productOrders_dealer_prices._();
 
   factory GProductOrdersData_productOrders_dealer_prices(
-      [Function(GProductOrdersData_productOrders_dealer_pricesBuilder b)
+      [void Function(GProductOrdersData_productOrders_dealer_pricesBuilder b)
           updates]) = _$GProductOrdersData_productOrders_dealer_prices;
 
   static void _initializeBuilder(
@@ -262,7 +264,7 @@ abstract class GProductOrdersData_productOrders_dealer_prices_category
   GProductOrdersData_productOrders_dealer_prices_category._();
 
   factory GProductOrdersData_productOrders_dealer_prices_category(
-      [Function(
+      [void Function(
               GProductOrdersData_productOrders_dealer_prices_categoryBuilder b)
           updates]) = _$GProductOrdersData_productOrders_dealer_prices_category;
 
@@ -298,8 +300,8 @@ abstract class GProductOrdersData_productOrders_order
   GProductOrdersData_productOrders_order._();
 
   factory GProductOrdersData_productOrders_order(
-          [Function(GProductOrdersData_productOrders_orderBuilder b) updates]) =
-      _$GProductOrdersData_productOrders_order;
+      [void Function(GProductOrdersData_productOrders_orderBuilder b)
+          updates]) = _$GProductOrdersData_productOrders_order;
 
   static void _initializeBuilder(
           GProductOrdersData_productOrders_orderBuilder b) =>
@@ -333,7 +335,7 @@ abstract class GProductOrdersData_productOrders_order_user
   GProductOrdersData_productOrders_order_user._();
 
   factory GProductOrdersData_productOrders_order_user(
-      [Function(GProductOrdersData_productOrders_order_userBuilder b)
+      [void Function(GProductOrdersData_productOrders_order_userBuilder b)
           updates]) = _$GProductOrdersData_productOrders_order_user;
 
   static void _initializeBuilder(
@@ -371,7 +373,8 @@ abstract class GProductOrdersData_productOrders_order_user_addresses
   GProductOrdersData_productOrders_order_user_addresses._();
 
   factory GProductOrdersData_productOrders_order_user_addresses(
-      [Function(GProductOrdersData_productOrders_order_user_addressesBuilder b)
+      [void Function(
+              GProductOrdersData_productOrders_order_user_addressesBuilder b)
           updates]) = _$GProductOrdersData_productOrders_order_user_addresses;
 
   static void _initializeBuilder(
@@ -409,7 +412,8 @@ abstract class GVehicleOrdersData
     implements Built<GVehicleOrdersData, GVehicleOrdersDataBuilder> {
   GVehicleOrdersData._();
 
-  factory GVehicleOrdersData([Function(GVehicleOrdersDataBuilder b) updates]) =
+  factory GVehicleOrdersData(
+          [void Function(GVehicleOrdersDataBuilder b) updates]) =
       _$GVehicleOrdersData;
 
   static void _initializeBuilder(GVehicleOrdersDataBuilder b) =>
@@ -440,7 +444,7 @@ abstract class GVehicleOrdersData_vehicleOrders
   GVehicleOrdersData_vehicleOrders._();
 
   factory GVehicleOrdersData_vehicleOrders(
-          [Function(GVehicleOrdersData_vehicleOrdersBuilder b) updates]) =
+          [void Function(GVehicleOrdersData_vehicleOrdersBuilder b) updates]) =
       _$GVehicleOrdersData_vehicleOrders;
 
   static void _initializeBuilder(GVehicleOrdersData_vehicleOrdersBuilder b) =>
@@ -477,7 +481,7 @@ abstract class GVehicleOrdersData_vehicleOrders_dealer
   GVehicleOrdersData_vehicleOrders_dealer._();
 
   factory GVehicleOrdersData_vehicleOrders_dealer(
-      [Function(GVehicleOrdersData_vehicleOrders_dealerBuilder b)
+      [void Function(GVehicleOrdersData_vehicleOrders_dealerBuilder b)
           updates]) = _$GVehicleOrdersData_vehicleOrders_dealer;
 
   static void _initializeBuilder(
@@ -514,7 +518,8 @@ abstract class GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant
   GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant._();
 
   factory GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant(
-      [Function(GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder b)
+      [void Function(
+              GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder b)
           updates]) = _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant;
 
   static void _initializeBuilder(
@@ -549,7 +554,7 @@ abstract class GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle
   GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle._();
 
   factory GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle(
-          [Function(
+          [void Function(
                   GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleBuilder
                       b)
               updates]) =
@@ -589,7 +594,8 @@ abstract class GVehicleOrdersData_vehicleOrders_dealer_vehicleColor
   GVehicleOrdersData_vehicleOrders_dealer_vehicleColor._();
 
   factory GVehicleOrdersData_vehicleOrders_dealer_vehicleColor(
-      [Function(GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder b)
+      [void Function(
+              GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder b)
           updates]) = _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor;
 
   static void _initializeBuilder(
@@ -626,7 +632,7 @@ abstract class GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images
   GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images._();
 
   factory GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images(
-      [Function(
+      [void Function(
               GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_imagesBuilder
                   b)
           updates]) = _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images;
@@ -664,7 +670,7 @@ abstract class GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image
   GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image._();
 
   factory GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image(
-          [Function(
+          [void Function(
                   GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder
                       b)
               updates]) =
@@ -705,7 +711,7 @@ abstract class GVehicleOrdersData_vehicleOrders_dealer_dealer
   GVehicleOrdersData_vehicleOrders_dealer_dealer._();
 
   factory GVehicleOrdersData_vehicleOrders_dealer_dealer(
-      [Function(GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder b)
+      [void Function(GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder b)
           updates]) = _$GVehicleOrdersData_vehicleOrders_dealer_dealer;
 
   static void _initializeBuilder(
@@ -738,7 +744,7 @@ abstract class GVehicleOrdersData_vehicleOrders_dealer_prices
   GVehicleOrdersData_vehicleOrders_dealer_prices._();
 
   factory GVehicleOrdersData_vehicleOrders_dealer_prices(
-      [Function(GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder b)
+      [void Function(GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder b)
           updates]) = _$GVehicleOrdersData_vehicleOrders_dealer_prices;
 
   static void _initializeBuilder(
@@ -774,7 +780,7 @@ abstract class GVehicleOrdersData_vehicleOrders_dealer_prices_category
   GVehicleOrdersData_vehicleOrders_dealer_prices_category._();
 
   factory GVehicleOrdersData_vehicleOrders_dealer_prices_category(
-      [Function(
+      [void Function(
               GVehicleOrdersData_vehicleOrders_dealer_prices_categoryBuilder b)
           updates]) = _$GVehicleOrdersData_vehicleOrders_dealer_prices_category;
 
@@ -810,8 +816,8 @@ abstract class GVehicleOrdersData_vehicleOrders_order
   GVehicleOrdersData_vehicleOrders_order._();
 
   factory GVehicleOrdersData_vehicleOrders_order(
-          [Function(GVehicleOrdersData_vehicleOrders_orderBuilder b) updates]) =
-      _$GVehicleOrdersData_vehicleOrders_order;
+      [void Function(GVehicleOrdersData_vehicleOrders_orderBuilder b)
+          updates]) = _$GVehicleOrdersData_vehicleOrders_order;
 
   static void _initializeBuilder(
           GVehicleOrdersData_vehicleOrders_orderBuilder b) =>
@@ -845,7 +851,7 @@ abstract class GVehicleOrdersData_vehicleOrders_order_user
   GVehicleOrdersData_vehicleOrders_order_user._();
 
   factory GVehicleOrdersData_vehicleOrders_order_user(
-      [Function(GVehicleOrdersData_vehicleOrders_order_userBuilder b)
+      [void Function(GVehicleOrdersData_vehicleOrders_order_userBuilder b)
           updates]) = _$GVehicleOrdersData_vehicleOrders_order_user;
 
   static void _initializeBuilder(
@@ -883,7 +889,8 @@ abstract class GVehicleOrdersData_vehicleOrders_order_user_addresses
   GVehicleOrdersData_vehicleOrders_order_user_addresses._();
 
   factory GVehicleOrdersData_vehicleOrders_order_user_addresses(
-      [Function(GVehicleOrdersData_vehicleOrders_order_user_addressesBuilder b)
+      [void Function(
+              GVehicleOrdersData_vehicleOrders_order_user_addressesBuilder b)
           updates]) = _$GVehicleOrdersData_vehicleOrders_order_user_addresses;
 
   static void _initializeBuilder(
@@ -922,7 +929,7 @@ abstract class GTestDriveOrdersData
   GTestDriveOrdersData._();
 
   factory GTestDriveOrdersData(
-          [Function(GTestDriveOrdersDataBuilder b) updates]) =
+          [void Function(GTestDriveOrdersDataBuilder b) updates]) =
       _$GTestDriveOrdersData;
 
   static void _initializeBuilder(GTestDriveOrdersDataBuilder b) =>
@@ -953,8 +960,8 @@ abstract class GTestDriveOrdersData_testDriveOrders
   GTestDriveOrdersData_testDriveOrders._();
 
   factory GTestDriveOrdersData_testDriveOrders(
-          [Function(GTestDriveOrdersData_testDriveOrdersBuilder b) updates]) =
-      _$GTestDriveOrdersData_testDriveOrders;
+      [void Function(GTestDriveOrdersData_testDriveOrdersBuilder b)
+          updates]) = _$GTestDriveOrdersData_testDriveOrders;
 
   static void _initializeBuilder(
           GTestDriveOrdersData_testDriveOrdersBuilder b) =>
@@ -991,7 +998,7 @@ abstract class GTestDriveOrdersData_testDriveOrders_dealer
   GTestDriveOrdersData_testDriveOrders_dealer._();
 
   factory GTestDriveOrdersData_testDriveOrders_dealer(
-      [Function(GTestDriveOrdersData_testDriveOrders_dealerBuilder b)
+      [void Function(GTestDriveOrdersData_testDriveOrders_dealerBuilder b)
           updates]) = _$GTestDriveOrdersData_testDriveOrders_dealer;
 
   static void _initializeBuilder(
@@ -1029,7 +1036,7 @@ abstract class GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant._();
 
   factory GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant(
-      [Function(
+      [void Function(
               GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder
                   b)
           updates]) = _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant;
@@ -1069,7 +1076,7 @@ abstract class GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicl
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle._();
 
   factory GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle(
-          [Function(
+          [void Function(
                   GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder
                       b)
               updates]) =
@@ -1109,7 +1116,7 @@ abstract class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor._();
 
   factory GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor(
-      [Function(
+      [void Function(
               GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder b)
           updates]) = _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor;
 
@@ -1147,7 +1154,7 @@ abstract class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images._();
 
   factory GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images(
-          [Function(
+          [void Function(
                   GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesBuilder
                       b)
               updates]) =
@@ -1190,7 +1197,7 @@ abstract class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_i
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image._();
 
   factory GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image(
-          [Function(
+          [void Function(
                   GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuilder
                       b)
               updates]) =
@@ -1231,7 +1238,8 @@ abstract class GTestDriveOrdersData_testDriveOrders_dealer_dealer
   GTestDriveOrdersData_testDriveOrders_dealer_dealer._();
 
   factory GTestDriveOrdersData_testDriveOrders_dealer_dealer(
-      [Function(GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder b)
+      [void Function(
+              GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder b)
           updates]) = _$GTestDriveOrdersData_testDriveOrders_dealer_dealer;
 
   static void _initializeBuilder(
@@ -1265,7 +1273,7 @@ abstract class GTestDriveOrdersData_testDriveOrders_order
   GTestDriveOrdersData_testDriveOrders_order._();
 
   factory GTestDriveOrdersData_testDriveOrders_order(
-      [Function(GTestDriveOrdersData_testDriveOrders_orderBuilder b)
+      [void Function(GTestDriveOrdersData_testDriveOrders_orderBuilder b)
           updates]) = _$GTestDriveOrdersData_testDriveOrders_order;
 
   static void _initializeBuilder(
@@ -1300,7 +1308,7 @@ abstract class GTestDriveOrdersData_testDriveOrders_order_user
   GTestDriveOrdersData_testDriveOrders_order_user._();
 
   factory GTestDriveOrdersData_testDriveOrders_order_user(
-      [Function(GTestDriveOrdersData_testDriveOrders_order_userBuilder b)
+      [void Function(GTestDriveOrdersData_testDriveOrders_order_userBuilder b)
           updates]) = _$GTestDriveOrdersData_testDriveOrders_order_user;
 
   static void _initializeBuilder(
@@ -1339,7 +1347,7 @@ abstract class GTestDriveOrdersData_testDriveOrders_order_user_addresses
   GTestDriveOrdersData_testDriveOrders_order_user_addresses._();
 
   factory GTestDriveOrdersData_testDriveOrders_order_user_addresses(
-      [Function(
+      [void Function(
               GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder
                   b)
           updates]) = _$GTestDriveOrdersData_testDriveOrders_order_user_addresses;
@@ -1380,7 +1388,7 @@ abstract class GUpdateProductOrderData
   GUpdateProductOrderData._();
 
   factory GUpdateProductOrderData(
-          [Function(GUpdateProductOrderDataBuilder b) updates]) =
+          [void Function(GUpdateProductOrderDataBuilder b) updates]) =
       _$GUpdateProductOrderData;
 
   static void _initializeBuilder(GUpdateProductOrderDataBuilder b) =>
@@ -1411,7 +1419,7 @@ abstract class GUpdateProductOrderData_updateProductOrder
   GUpdateProductOrderData_updateProductOrder._();
 
   factory GUpdateProductOrderData_updateProductOrder(
-      [Function(GUpdateProductOrderData_updateProductOrderBuilder b)
+      [void Function(GUpdateProductOrderData_updateProductOrderBuilder b)
           updates]) = _$GUpdateProductOrderData_updateProductOrder;
 
   static void _initializeBuilder(
@@ -1442,7 +1450,7 @@ abstract class GUpdateVehicleOrderData
   GUpdateVehicleOrderData._();
 
   factory GUpdateVehicleOrderData(
-          [Function(GUpdateVehicleOrderDataBuilder b) updates]) =
+          [void Function(GUpdateVehicleOrderDataBuilder b) updates]) =
       _$GUpdateVehicleOrderData;
 
   static void _initializeBuilder(GUpdateVehicleOrderDataBuilder b) =>
@@ -1473,7 +1481,7 @@ abstract class GUpdateVehicleOrderData_updateVehicleOrder
   GUpdateVehicleOrderData_updateVehicleOrder._();
 
   factory GUpdateVehicleOrderData_updateVehicleOrder(
-      [Function(GUpdateVehicleOrderData_updateVehicleOrderBuilder b)
+      [void Function(GUpdateVehicleOrderData_updateVehicleOrderBuilder b)
           updates]) = _$GUpdateVehicleOrderData_updateVehicleOrder;
 
   static void _initializeBuilder(
@@ -1505,7 +1513,7 @@ abstract class GUpdateTestDriveOrderData
   GUpdateTestDriveOrderData._();
 
   factory GUpdateTestDriveOrderData(
-          [Function(GUpdateTestDriveOrderDataBuilder b) updates]) =
+          [void Function(GUpdateTestDriveOrderDataBuilder b) updates]) =
       _$GUpdateTestDriveOrderData;
 
   static void _initializeBuilder(GUpdateTestDriveOrderDataBuilder b) =>
@@ -1536,7 +1544,7 @@ abstract class GUpdateTestDriveOrderData_updateTestDriveOrder
   GUpdateTestDriveOrderData_updateTestDriveOrder._();
 
   factory GUpdateTestDriveOrderData_updateTestDriveOrder(
-      [Function(GUpdateTestDriveOrderData_updateTestDriveOrderBuilder b)
+      [void Function(GUpdateTestDriveOrderData_updateTestDriveOrderBuilder b)
           updates]) = _$GUpdateTestDriveOrderData_updateTestDriveOrder;
 
   static void _initializeBuilder(
@@ -1570,7 +1578,7 @@ abstract class GCreateOrderRejectionByDealerData
   GCreateOrderRejectionByDealerData._();
 
   factory GCreateOrderRejectionByDealerData(
-          [Function(GCreateOrderRejectionByDealerDataBuilder b) updates]) =
+          [void Function(GCreateOrderRejectionByDealerDataBuilder b) updates]) =
       _$GCreateOrderRejectionByDealerData;
 
   static void _initializeBuilder(GCreateOrderRejectionByDealerDataBuilder b) =>
@@ -1603,7 +1611,7 @@ abstract class GCreateOrderRejectionByDealerData_createOrderRejectionByDealer
   GCreateOrderRejectionByDealerData_createOrderRejectionByDealer._();
 
   factory GCreateOrderRejectionByDealerData_createOrderRejectionByDealer(
-          [Function(
+          [void Function(
                   GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder
                       b)
               updates]) =

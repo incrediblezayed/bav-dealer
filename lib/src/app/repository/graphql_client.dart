@@ -50,7 +50,6 @@ class GraphqlClient {
   late Client Function({required bool isMultipart, required String token})
       httpClient;
 
-
   ///Initialize the GraphQL Client
   ///This method initializes the GraphQL Client
   ///and sets the [client] variable
@@ -61,7 +60,6 @@ class GraphqlClient {
   ///Mostly in the main() function
   ///and this should be called once [CacheProvider] is initialized
   Future<void> initGqlClient() async {
-
     await _setupInterceptor();
     'Dev Environment ${Constants.isDev}'.log();
     'Iniatiaing GraphQL Client'.log();
@@ -140,7 +138,6 @@ class GraphqlClient {
       return Client(
         link: httpLink(isMultipart: isMultipart, token: token),
         cache: cache,
-
       );
     };
 

@@ -145,6 +145,9 @@ class AppTheme {
 
   ///Default Theme Data
   static ThemeData get theme => ThemeData(
+        dialogTheme: const DialogTheme(
+          surfaceTintColor: Colors.white,
+        ),
         appBarTheme: AppBarTheme(
           titleTextStyle:
               AppTexts.labelMedium?.copyWith(fontWeight: FontWeight.w700),
@@ -186,7 +189,7 @@ class AppTheme {
         inputDecorationTheme: inputDecorationTheme,
         fontFamily: 'SFPro',
         radioTheme: RadioThemeData(
-          fillColor: MaterialStateProperty.all(primaryColor),
+          fillColor: WidgetStateProperty.all(primaryColor),
         ),
       );
 }

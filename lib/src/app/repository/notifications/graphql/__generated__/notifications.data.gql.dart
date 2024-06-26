@@ -17,7 +17,7 @@ abstract class GAppNotificationsData
   GAppNotificationsData._();
 
   factory GAppNotificationsData(
-          [Function(GAppNotificationsDataBuilder b) updates]) =
+          [void Function(GAppNotificationsDataBuilder b) updates]) =
       _$GAppNotificationsData;
 
   static void _initializeBuilder(GAppNotificationsDataBuilder b) =>
@@ -48,8 +48,8 @@ abstract class GAppNotificationsData_appNotifications
   GAppNotificationsData_appNotifications._();
 
   factory GAppNotificationsData_appNotifications(
-          [Function(GAppNotificationsData_appNotificationsBuilder b) updates]) =
-      _$GAppNotificationsData_appNotifications;
+      [void Function(GAppNotificationsData_appNotificationsBuilder b)
+          updates]) = _$GAppNotificationsData_appNotifications;
 
   static void _initializeBuilder(
           GAppNotificationsData_appNotificationsBuilder b) =>
@@ -86,7 +86,7 @@ abstract class GAppNotificationsData_appNotifications_notificationType
   GAppNotificationsData_appNotifications_notificationType._();
 
   factory GAppNotificationsData_appNotifications_notificationType(
-      [Function(
+      [void Function(
               GAppNotificationsData_appNotifications_notificationTypeBuilder b)
           updates]) = _$GAppNotificationsData_appNotifications_notificationType;
 

@@ -15,7 +15,8 @@ abstract class GCreateReportVars
     implements Built<GCreateReportVars, GCreateReportVarsBuilder> {
   GCreateReportVars._();
 
-  factory GCreateReportVars([Function(GCreateReportVarsBuilder b) updates]) =
+  factory GCreateReportVars(
+          [void Function(GCreateReportVarsBuilder b) updates]) =
       _$GCreateReportVars;
 
   _i1.GReportCreateInput get data;
@@ -39,7 +40,8 @@ abstract class GCreateFeedbackVars
   GCreateFeedbackVars._();
 
   factory GCreateFeedbackVars(
-      [Function(GCreateFeedbackVarsBuilder b) updates]) = _$GCreateFeedbackVars;
+          [void Function(GCreateFeedbackVarsBuilder b) updates]) =
+      _$GCreateFeedbackVars;
 
   _i1.GFeedbackCreateInput get data;
   static Serializer<GCreateFeedbackVars> get serializer =>
@@ -61,7 +63,7 @@ abstract class GCategoriesVars
     implements Built<GCategoriesVars, GCategoriesVarsBuilder> {
   GCategoriesVars._();
 
-  factory GCategoriesVars([Function(GCategoriesVarsBuilder b) updates]) =
+  factory GCategoriesVars([void Function(GCategoriesVarsBuilder b) updates]) =
       _$GCategoriesVars;
 
   static Serializer<GCategoriesVars> get serializer =>

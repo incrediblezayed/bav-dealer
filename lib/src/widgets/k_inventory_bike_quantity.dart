@@ -1,8 +1,9 @@
 import 'package:collection/collection.dart';
+import 'package:dealerapp/src/app/model/dealer_stock_model.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/guarantees/graphql/__generated__/guarantees.data.gql.dart';
-import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
+import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
@@ -18,6 +19,7 @@ class QuantityScreen extends ConsumerStatefulWidget {
     required this.guarantees,
     this.index,
     this.isUpdate = false,
+    this.product = false,
     this.vehicleDealerId,
     super.key,
   }) : assert(
@@ -27,10 +29,11 @@ class QuantityScreen extends ConsumerStatefulWidget {
   final bool isUpdate;
   final String variantId;
   final String colorId;
-  final List<GVehicleDealersData_vehicleDealers_prices> prices;
-  final List<GVehicleDealersData_vehicleDealers_guarantees> guarantees;
+  final List<Price> prices;
+  final List<Guarantee> guarantees;
   final int? index;
   final String? vehicleDealerId;
+  final bool product;
 
   @override
   ConsumerState<QuantityScreen> createState() => _QuantityScreenState();
@@ -40,7 +43,9 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
   List<PriceModel> prices = [];
   List<TextEditingController> controller = [];
   late List<ValueItem<String>> selectedGuarantees = [];
+
   String get variantId => widget.variantId;
+
   String get colorId => widget.colorId;
   final List<GGuaranteesData_guarantees> _guaranteeDetails = [];
   List<ValueItem<String>> guarantees = [];
@@ -48,26 +53,28 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      prices = List<PriceModel>.from(ref.read(inventoryProvider).prices)
-          .map(
-            (e) => PriceModel(
-              price: widget.prices
-                      .firstWhereOrNull(
-                        (element) => element.category?.name == e.name,
-                      )
-                      ?.amount ??
-                  0,
-              type: e.type,
-              name: e.name,
-              priceId: widget.prices
-                      .firstWhereOrNull(
-                        (element) => element.category?.name == e.name,
-                      )
-                      ?.id ??
-                  '',
-            ),
-          )
-          .toList();
+      prices = List<PriceModel>.from(ref.read(inventoryProvider).prices).map(
+        (e) {
+          final priceId = widget.prices
+                  .firstWhereOrNull(
+                    (element) => element.category?.name == e.name,
+                  )
+                  ?.id ??
+              '';
+          priceId.log();
+          return PriceModel(
+            price: widget.prices
+                    .firstWhereOrNull(
+                      (element) => element.category?.name == e.name,
+                    )
+                    ?.amount ??
+                0,
+            type: e.type,
+            name: e.name,
+            priceId: priceId,
+          );
+        },
+      ).toList();
       controller = prices
           .map(
             (e) => TextEditingController(
@@ -76,7 +83,7 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                         (element) => element.category?.name == e.name,
                       )
                       ?.amount
-                      ?.toString() ??
+                      .toString() ??
                   '',
             ),
           )
@@ -182,35 +189,68 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                       child: KButton(
                         onPressed: () {
                           if (widget.isUpdate) {
-                            inventoryPro
-                                .updateVehicleDealer(
-                              index: widget.index!,
-                              id: widget.vehicleDealerId!,
-                              guarantees: selectedGuarantees
-                                  .map((e) => e.value!)
-                                  .toList(),
-                              prices: prices,
-                            )
-                                .then((value) {
-                              for (var i = 0; i < controller.length; i++) {
-                                controller[i].clear();
-                              }
-                            });
+                            if (widget.product) {
+                              inventoryPro
+                                  .updateProductDealer(
+                                index: widget.index!,
+                                id: widget.vehicleDealerId!,
+                                guarantees: selectedGuarantees
+                                    .map((e) => e.value!)
+                                    .toList(),
+                                prices: prices,
+                              )
+                                  .then((value) {
+                                for (var i = 0; i < controller.length; i++) {
+                                  controller[i].clear();
+                                }
+                              });
+                            } else {
+                              inventoryPro
+                                  .updateVehicleDealer(
+                                index: widget.index!,
+                                id: widget.vehicleDealerId!,
+                                guarantees: selectedGuarantees
+                                    .map((e) => e.value!)
+                                    .toList(),
+                                prices: prices,
+                              )
+                                  .then((value) {
+                                for (var i = 0; i < controller.length; i++) {
+                                  controller[i].clear();
+                                }
+                              });
+                            }
                           } else {
-                            inventoryPro
-                                .createStockRequest(
-                              guarantees: selectedGuarantees
-                                  .map((e) => e.value!)
-                                  .toList(),
-                              variantId: variantId,
-                              colorId: colorId,
-                              prices: prices,
-                            )
-                                .then((value) {
-                              for (var i = 0; i < controller.length; i++) {
-                                controller[i].clear();
-                              }
-                            });
+                            if (widget.product) {
+                              inventoryPro
+                                  .createProductStockRequest(
+                                guarantees: selectedGuarantees
+                                    .map((e) => e.value!)
+                                    .toList(),
+                                variantId: variantId,
+                                prices: prices,
+                              )
+                                  .then((value) {
+                                for (var i = 0; i < controller.length; i++) {
+                                  controller[i].clear();
+                                }
+                              });
+                            } else {
+                              inventoryPro
+                                  .createStockRequest(
+                                guarantees: selectedGuarantees
+                                    .map((e) => e.value!)
+                                    .toList(),
+                                variantId: variantId,
+                                colorId: colorId,
+                                prices: prices,
+                              )
+                                  .then((value) {
+                                for (var i = 0; i < controller.length; i++) {
+                                  controller[i].clear();
+                                }
+                              });
+                            }
                           }
                           Navigator.pop(context);
                         },

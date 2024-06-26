@@ -263,7 +263,6 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                         colorId: selectedColor!.id,
                         guarantees: const [],
                         prices: const [],
-                        
                       ),
                     ),
                   );
@@ -286,188 +285,134 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
               ),
               KButton(
                 onPressed: () {
+                  final controller = TextEditingController();
                   showDialog(
                     context: context,
                     builder: (BuildContext context) {
-                      return AlertDialog(
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text('Test Ride Details'),
-                            IconButton(
-                              icon: const Icon(Icons.close),
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                            ),
-                          ],
-                        ),
-                        content: Wrap(
-                          runSpacing: 10,
-                          spacing: 10,
-                          children: [
-                            // DropdownButton<VehicleColor>(
-                            //   isExpanded: true, // Make dropdown button full width
-                            //   icon: const Icon(
-                            //       Icons.arrow_drop_down), // Downward arrow icon
-                            //   iconSize: 24,
-                            //   elevation: 16,
-                            //   underline: Container(
-                            //     // Set the underline to an empty container
-                            //     height: 0,
-                            //   ),
-                            //   style: const TextStyle(color: Colors.black),
-                            //   value: selectedColor, // Selected item (set dynamically)
-                            //   onChanged: (VehicleColor? newValue) {
-                            //     setState(() {
-                            //       selectedColor = newValue;
-                            //     });
-                            //     vehiclePro.getSelectedVehicleDealers(
-                            //       selectedColor?.id,
-                            //       variant.id,
-                            //     );
-                            //   },
-                            //   items:
-                            //   variant.colors.map<DropdownMenuItem<VehicleColor>>(
-                            //         (VehicleColor e) {
-                            //       return DropdownMenuItem<VehicleColor>(
-                            //         value: e,
-                            //         child: Row(
-                            //           children: [
-                            //             Container(
-                            //               height: 40,
-                            //               width: 30,
-                            //               decoration: BoxDecoration(
-                            //                 borderRadius: BorderRadius.circular(7.0),
-                            //               ),
-                            //               child: ClipRRect(
-                            //                 borderRadius: BorderRadius.circular(6.0),
-                            //                 child: KCachedNWImage(
-                            //                   // e.images.firstOrNull?.image!.url,
-                            //                   e.gallery.firstOrNull?.file?.file?.url,
-                            //                   // Helpers.getFirstNonNullImage(variant),
-                            //                   fit: BoxFit.fill,
-                            //                   width: 30,
-                            //                   height: 40,
-                            //                 ),
-                            //               ),
-                            //             ),
-                            //             const SizedBox(
-                            //               width: 15.0,
-                            //             ),
-                            //             Text(
-                            //               e.name,
-                            //             ),
-                            //
-                            //           ],
-                            //         ),
-                            //       );
-                            //     },
-                            //   ).toList(),
-                            // ),
-                            DropdownButton<VehicleColor>(
-                              isExpanded: true,
-                              onChanged: (VehicleColor? newValue) {
-                                setState(() {
-                                  testRideColor = newValue;
-                                });
-                              },
-                              items: variants.colors.map((VehicleColor item) {
-                                return DropdownMenuItem<VehicleColor>(
-                                  value: item,
-                                  child: Row(
-                                    children: [
-                                      CircleAvatar(
-                                        backgroundColor: Colors.grey,
-                                        radius: 12.5.h,
-                                        child: CircleAvatar(
-                                          radius: 10.h,
-                                          backgroundColor: item.code,
-                                        ),
-                                      ),
-                                      // Container(
-                                      //   height: 40,
-                                      //   width: 30,
-                                      //   decoration: BoxDecoration(
-                                      //     borderRadius: BorderRadius.circular(7.0),
-                                      //   ),
-                                      //   child: ClipRRect(
-                                      //     borderRadius: BorderRadius.circular(6.0),
-                                      //     child: KCachedNWImage(
-                                      //       // e.images.firstOrNull?.image!.url,
-                                      //       e.gallery.firstOrNull?.file?.image.url,
-                                      //       // e.images.firstOrNull?.image?.url,
-                                      //       // e.galleryView.firstOrNull?.file.image.url,
-                                      //       // Helpers.getFirstNonNullImage(variant),
-                                      //       fit: BoxFit.fill,
-                                      //       width: 30,
-                                      //       height: 40,
-                                      //     ),
-                                      //   ),
-                                      // ),
-                                      const SizedBox(
-                                        width: 15,
-                                      ),
-                                      Text(
-                                        item.name,
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              }).toList(),
-                            ),
-                            KTextField(
-                              // controller: controller[i],
-                              label: 'Test Ride',
-                              hintText: 'Enter amount',
-                              onChanged: (value) {},
-                              inputType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly,
+                      return StatefulBuilder(
+                        builder: (context, setState) {
+                          return AlertDialog(
+                            title: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text('Test Ride Details'),
+                                IconButton(
+                                  icon: const Icon(Icons.close),
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                ),
                               ],
                             ),
-                          ],
-                        ),
-                        actions: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(
-                                height: 50,
-                                width: MediaQuery.sizeOf(context).width * 0.3,
-                                child: KButton(
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
+                            content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                DropdownButton<VehicleColor>(
+                                  isExpanded: true,
+                                  onChanged: (VehicleColor? newValue) {
+                                    setState(() {
+                                      testRideColor = newValue;
+                                    });
                                   },
-                                  text: 'Cancel',
+                                  value: testRideColor,
+                                  items:
+                                      variants.colors.map((VehicleColor item) {
+                                    return DropdownMenuItem<VehicleColor>(
+                                      value: item,
+                                      child: Row(
+                                        children: [
+                                          CircleAvatar(
+                                            backgroundColor: Colors.grey,
+                                            radius: 12.5.h,
+                                            child: CircleAvatar(
+                                              radius: 10.h,
+                                              backgroundColor: item.code,
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            width: 15,
+                                          ),
+                                          Text(
+                                            item.name,
+                                          ),
+                                        ],
+                                      ),
+                                    );
+                                  }).toList(),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 50,
-                                width: MediaQuery.sizeOf(context).width * 0.3,
-                                child: KButton(
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                  text: 'Submit',
+                                KTextField(
+                                  controller: controller,
+                                  label: 'Test Ride',
+                                  hintText: 'Enter amount',
+                                  onChanged: (value) {},
+                                  inputType: TextInputType.number,
+                                  inputFormatters: [
+                                    FilteringTextInputFormatter.digitsOnly,
+                                  ],
                                 ),
+                              ],
+                            ),
+                            actions: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
+                                    height: 50,
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.3,
+                                    child: KButton(
+                                      onPressed: () {
+                                        AppRoutes.pop();
+                                      },
+                                      text: 'Cancel',
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  SizedBox(
+                                    height: 50,
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.3,
+                                    child: KButton(
+                                      onPressed: () async {
+                                        if (controller.text.isEmpty) {
+                                          AppRoutes.showErrorSnackbar(
+                                              message:
+                                                  'Please enter an amount');
+                                        } else {
+                                          AppRoutes.pop();
+                                          AppRoutes.showLoadingDialog();
+                                          await inventoryPro
+                                              .addTestDriveDealerStock(
+                                                  variantId: variants.id,
+                                                  colorId: testRideColor!.id,
+                                                  amount: controller.text);
+                                          AppRoutes.pop();
+                                        }
+                                      },
+                                      text: 'Submit',
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
 
-                          // ElevatedButton(
-                          //   onPressed: () {
-                          //     // Perform submit action
-                          //   },
-                          //   child: Text('Submit'),
-                          // ),
-                          // ElevatedButton(
-                          //   onPressed: () {
-                          //     Navigator.of(context).pop();
-                          //   },
-                          //   child: Text('Cancel'),
-                          // ),
-                        ],
+                              // ElevatedButton(
+                              //   onPressed: () {
+                              //     // Perform submit action
+                              //   },
+                              //   child: Text('Submit'),
+                              // ),
+                              // ElevatedButton(
+                              //   onPressed: () {
+                              //     Navigator.of(context).pop();
+                              //   },
+                              //   child: Text('Cancel'),
+                              // ),
+                            ],
+                          );
+                        },
                       );
                     },
                   );

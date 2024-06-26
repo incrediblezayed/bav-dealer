@@ -110,10 +110,23 @@ Serializers _$serializers = (new Serializers().toBuilder()
           .serializer)
       ..add(GCreateOrderRejectionByDealerReq.serializer)
       ..add(GCreateOrderRejectionByDealerVars.serializer)
+      ..add(GCreateProductDealerData.serializer)
+      ..add(GCreateProductDealerData_createProductDealer.serializer)
+      ..add(GCreateProductDealerReq.serializer)
+      ..add(GCreateProductDealerStockRequestData.serializer)
+      ..add(GCreateProductDealerStockRequestData_createProductDealerStockRequest
+          .serializer)
+      ..add(GCreateProductDealerStockRequestReq.serializer)
+      ..add(GCreateProductDealerStockRequestVars.serializer)
+      ..add(GCreateProductDealerVars.serializer)
       ..add(GCreateReportData.serializer)
       ..add(GCreateReportData_createReport.serializer)
       ..add(GCreateReportReq.serializer)
       ..add(GCreateReportVars.serializer)
+      ..add(GCreateTestDriveDealerData.serializer)
+      ..add(GCreateTestDriveDealerData_createTestDriveDealer.serializer)
+      ..add(GCreateTestDriveDealerReq.serializer)
+      ..add(GCreateTestDriveDealerVars.serializer)
       ..add(GCreateUserData.serializer)
       ..add(GCreateUserData_createUser.serializer)
       ..add(GCreateUserReq.serializer)
@@ -372,6 +385,21 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GProductDealerUpdateInput.serializer)
       ..add(GProductDealerWhereInput.serializer)
       ..add(GProductDealerWhereUniqueInput.serializer)
+      ..add(GProductDealersData.serializer)
+      ..add(GProductDealersData_productDealers.serializer)
+      ..add(GProductDealersData_productDealers_guarantees.serializer)
+      ..add(GProductDealersData_productDealers_prices.serializer)
+      ..add(GProductDealersData_productDealers_prices_category.serializer)
+      ..add(GProductDealersData_productDealers_productVariant.serializer)
+      ..add(GProductDealersData_productDealers_productVariant_images.serializer)
+      ..add(GProductDealersData_productDealers_productVariant_images_image
+          .serializer)
+      ..add(
+          GProductDealersData_productDealers_productVariant_product.serializer)
+      ..add(GProductDealersData_productDealers_productVariant_product_brand
+          .serializer)
+      ..add(GProductDealersReq.serializer)
+      ..add(GProductDealersVars.serializer)
       ..add(GProductGalleryItemCreateInput.serializer)
       ..add(GProductGalleryItemManyRelationFilter.serializer)
       ..add(GProductGalleryItemOrderByInput.serializer)
@@ -624,6 +652,20 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GTestDriveDealerUpdateInput.serializer)
       ..add(GTestDriveDealerWhereInput.serializer)
       ..add(GTestDriveDealerWhereUniqueInput.serializer)
+      ..add(GTestDriveDealersData.serializer)
+      ..add(GTestDriveDealersData_testDriveDealers.serializer)
+      ..add(GTestDriveDealersData_testDriveDealers_vehicleColor.serializer)
+      ..add(
+          GTestDriveDealersData_testDriveDealers_vehicleColor_images.serializer)
+      ..add(GTestDriveDealersData_testDriveDealers_vehicleColor_images_image
+          .serializer)
+      ..add(GTestDriveDealersData_testDriveDealers_vehicleVariant.serializer)
+      ..add(GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle
+          .serializer)
+      ..add(GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brand
+          .serializer)
+      ..add(GTestDriveDealersReq.serializer)
+      ..add(GTestDriveDealersVars.serializer)
       ..add(GTestDriveOrderCreateInput.serializer)
       ..add(GTestDriveOrderManyRelationFilter.serializer)
       ..add(GTestDriveOrderOrderByInput.serializer)
@@ -653,14 +695,52 @@ Serializers _$serializers = (new Serializers().toBuilder()
           GTestDriveOrdersData_testDriveOrders_order_user_addresses.serializer)
       ..add(GTestDriveOrdersReq.serializer)
       ..add(GTestDriveOrdersVars.serializer)
+      ..add(GUpdateDealerData.serializer)
+      ..add(GUpdateDealerData_updateDealer.serializer)
+      ..add(GUpdateDealerReq.serializer)
+      ..add(GUpdateDealerVars.serializer)
       ..add(GUpdatePricesData.serializer)
       ..add(GUpdatePricesData_updatePrices.serializer)
       ..add(GUpdatePricesReq.serializer)
       ..add(GUpdatePricesVars.serializer)
+      ..add(GUpdateProductDealerData.serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer.serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer_guarantees.serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer_prices.serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer_prices_category
+          .serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer_productVariant
+          .serializer)
+      ..add(GUpdateProductDealerData_updateProductDealer_productVariant_product
+          .serializer)
+      ..add(
+          GUpdateProductDealerData_updateProductDealer_productVariant_product_brand
+              .serializer)
+      ..add(GUpdateProductDealerReq.serializer)
+      ..add(GUpdateProductDealerVars.serializer)
       ..add(GUpdateProductOrderData.serializer)
       ..add(GUpdateProductOrderData_updateProductOrder.serializer)
       ..add(GUpdateProductOrderReq.serializer)
       ..add(GUpdateProductOrderVars.serializer)
+      ..add(GUpdateTestDriveDealerData.serializer)
+      ..add(GUpdateTestDriveDealerData_updateTestDriveDealer.serializer)
+      ..add(GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor
+          .serializer)
+      ..add(GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images
+          .serializer)
+      ..add(
+          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image
+              .serializer)
+      ..add(GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant
+          .serializer)
+      ..add(
+          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant_vehicle
+              .serializer)
+      ..add(
+          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant_vehicle_brand
+              .serializer)
+      ..add(GUpdateTestDriveDealerReq.serializer)
+      ..add(GUpdateTestDriveDealerVars.serializer)
       ..add(GUpdateTestDriveOrderData.serializer)
       ..add(GUpdateTestDriveOrderData_updateTestDriveOrder.serializer)
       ..add(GUpdateTestDriveOrderReq.serializer)
@@ -796,6 +876,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleDealerUpdateInput.serializer)
       ..add(GVehicleDealerWhereInput.serializer)
       ..add(GVehicleDealerWhereUniqueInput.serializer)
+      ..add(GVehicleDealersCountData.serializer)
+      ..add(GVehicleDealersCountReq.serializer)
+      ..add(GVehicleDealersCountVars.serializer)
       ..add(GVehicleDealersData.serializer)
       ..add(GVehicleDealersData_vehicleDealers.serializer)
       ..add(GVehicleDealersData_vehicleDealers_guarantees.serializer)
@@ -1636,6 +1719,28 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<GProductDealerWhereInput>())
       ..addBuilderFactory(
           const FullType(BuiltList,
+              const [const FullType(GProductDealersData_productDealers)]),
+          () => new ListBuilder<GProductDealersData_productDealers>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GProductDealersData_productDealers_prices)
+          ]),
+          () => new ListBuilder<GProductDealersData_productDealers_prices>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GProductDealersData_productDealers_guarantees)
+          ]),
+          () =>
+              new ListBuilder<GProductDealersData_productDealers_guarantees>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GProductDealersData_productDealers_productVariant_images)
+          ]),
+          () => new ListBuilder<
+              GProductDealersData_productDealers_productVariant_images>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
               const [const FullType(GProductGalleryItemCreateInput)]),
           () => new ListBuilder<GProductGalleryItemCreateInput>())
       ..addBuilderFactory(
@@ -2166,6 +2271,17 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(GTestDriveDealerWhereInput)]),
           () => new ListBuilder<GTestDriveDealerWhereInput>())
       ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GTestDriveDealersData_testDriveDealers)]),
+          () => new ListBuilder<GTestDriveDealersData_testDriveDealers>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GTestDriveDealersData_testDriveDealers_vehicleColor_images)
+          ]),
+          () => new ListBuilder<
+              GTestDriveDealersData_testDriveDealers_vehicleColor_images>())
+      ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GTestDriveOrderCreateInput)]),
           () => new ListBuilder<GTestDriveOrderCreateInput>())
@@ -2223,6 +2339,26 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<
               GTestDriveOrdersData_testDriveOrders_order_user_addresses>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(GUpdateProductDealerData_updateProductDealer_prices)
+          ]),
+          () => new ListBuilder<
+              GUpdateProductDealerData_updateProductDealer_prices>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GUpdateProductDealerData_updateProductDealer_guarantees)
+          ]),
+          () => new ListBuilder<
+              GUpdateProductDealerData_updateProductDealer_guarantees>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images)
+          ]),
+          () => new ListBuilder<
+              GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(GUpdateVehicleDealerData_updateVehicleDealer_prices)
@@ -2961,7 +3097,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType.nullable(GUpdatePricesData_updatePrices)]),
-          () => new ListBuilder<GUpdatePricesData_updatePrices?>()))
+          () => new ListBuilder<GUpdatePricesData_updatePrices?>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType.nullable(double)]),
+          () => new ListBuilder<double?>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

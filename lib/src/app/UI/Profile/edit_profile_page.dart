@@ -54,6 +54,9 @@ class _ProfilePageState extends ConsumerState<EditProfile> {
   void initState() {
     fillData();
     super.initState();
+    Future.delayed(Duration.zero, () {
+      ref.read(authProvider).updatePosition();
+    });
   }
 
   @override
@@ -163,6 +166,9 @@ class _ProfilePageState extends ConsumerState<EditProfile> {
                 text: 'Update',
                 onTap: () async {
                   unawaited(AppRoutes.showLoadingDialog());
+
+                  authPro.updateDealer();
+
                   await authPro.updateUser(
                     id: _user.id,
                     email: emailController.text,

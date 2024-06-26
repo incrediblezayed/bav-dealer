@@ -891,6 +891,8 @@ class _$GProductOrdersReq extends GProductOrdersReq {
   final _i1.FetchPolicy? fetchPolicy;
   @override
   final bool executeOnListen;
+  @override
+  final _i4.Context? context;
 
   factory _$GProductOrdersReq(
           [void Function(GProductOrdersReqBuilder)? updates]) =>
@@ -905,7 +907,8 @@ class _$GProductOrdersReq extends GProductOrdersReq {
       this.updateCacheHandlerKey,
       this.updateCacheHandlerContext,
       this.fetchPolicy,
-      required this.executeOnListen})
+      required this.executeOnListen,
+      this.context})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(vars, r'GProductOrdersReq', 'vars');
     BuiltValueNullFieldError.checkNotNull(
@@ -935,7 +938,8 @@ class _$GProductOrdersReq extends GProductOrdersReq {
         updateCacheHandlerKey == other.updateCacheHandlerKey &&
         updateCacheHandlerContext == other.updateCacheHandlerContext &&
         fetchPolicy == other.fetchPolicy &&
-        executeOnListen == other.executeOnListen;
+        executeOnListen == other.executeOnListen &&
+        context == other.context;
   }
 
   @override
@@ -950,6 +954,7 @@ class _$GProductOrdersReq extends GProductOrdersReq {
     _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
     _$hash = $jc(_$hash, fetchPolicy.hashCode);
     _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jc(_$hash, context.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -965,7 +970,8 @@ class _$GProductOrdersReq extends GProductOrdersReq {
           ..add('updateCacheHandlerKey', updateCacheHandlerKey)
           ..add('updateCacheHandlerContext', updateCacheHandlerContext)
           ..add('fetchPolicy', fetchPolicy)
-          ..add('executeOnListen', executeOnListen))
+          ..add('executeOnListen', executeOnListen)
+          ..add('context', context))
         .toString();
   }
 }
@@ -1026,6 +1032,10 @@ class GProductOrdersReqBuilder
   set executeOnListen(bool? executeOnListen) =>
       _$this._executeOnListen = executeOnListen;
 
+  _i4.Context? _context;
+  _i4.Context? get context => _$this._context;
+  set context(_i4.Context? context) => _$this._context = context;
+
   GProductOrdersReqBuilder() {
     GProductOrdersReq._initializeBuilder(this);
   }
@@ -1042,6 +1052,7 @@ class GProductOrdersReqBuilder
       _updateCacheHandlerContext = $v.updateCacheHandlerContext;
       _fetchPolicy = $v.fetchPolicy;
       _executeOnListen = $v.executeOnListen;
+      _context = $v.context;
       _$v = null;
     }
     return this;
@@ -1076,7 +1087,8 @@ class GProductOrdersReqBuilder
               updateCacheHandlerContext: updateCacheHandlerContext,
               fetchPolicy: fetchPolicy,
               executeOnListen: BuiltValueNullFieldError.checkNotNull(
-                  executeOnListen, r'GProductOrdersReq', 'executeOnListen'));
+                  executeOnListen, r'GProductOrdersReq', 'executeOnListen'),
+              context: context);
     } catch (_) {
       late String _$failedField;
       try {
@@ -1116,6 +1128,8 @@ class _$GVehicleOrdersReq extends GVehicleOrdersReq {
   final _i1.FetchPolicy? fetchPolicy;
   @override
   final bool executeOnListen;
+  @override
+  final _i4.Context? context;
 
   factory _$GVehicleOrdersReq(
           [void Function(GVehicleOrdersReqBuilder)? updates]) =>
@@ -1130,7 +1144,8 @@ class _$GVehicleOrdersReq extends GVehicleOrdersReq {
       this.updateCacheHandlerKey,
       this.updateCacheHandlerContext,
       this.fetchPolicy,
-      required this.executeOnListen})
+      required this.executeOnListen,
+      this.context})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(vars, r'GVehicleOrdersReq', 'vars');
     BuiltValueNullFieldError.checkNotNull(
@@ -1160,7 +1175,8 @@ class _$GVehicleOrdersReq extends GVehicleOrdersReq {
         updateCacheHandlerKey == other.updateCacheHandlerKey &&
         updateCacheHandlerContext == other.updateCacheHandlerContext &&
         fetchPolicy == other.fetchPolicy &&
-        executeOnListen == other.executeOnListen;
+        executeOnListen == other.executeOnListen &&
+        context == other.context;
   }
 
   @override
@@ -1175,6 +1191,7 @@ class _$GVehicleOrdersReq extends GVehicleOrdersReq {
     _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
     _$hash = $jc(_$hash, fetchPolicy.hashCode);
     _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jc(_$hash, context.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -1190,7 +1207,8 @@ class _$GVehicleOrdersReq extends GVehicleOrdersReq {
           ..add('updateCacheHandlerKey', updateCacheHandlerKey)
           ..add('updateCacheHandlerContext', updateCacheHandlerContext)
           ..add('fetchPolicy', fetchPolicy)
-          ..add('executeOnListen', executeOnListen))
+          ..add('executeOnListen', executeOnListen)
+          ..add('context', context))
         .toString();
   }
 }
@@ -1251,6 +1269,10 @@ class GVehicleOrdersReqBuilder
   set executeOnListen(bool? executeOnListen) =>
       _$this._executeOnListen = executeOnListen;
 
+  _i4.Context? _context;
+  _i4.Context? get context => _$this._context;
+  set context(_i4.Context? context) => _$this._context = context;
+
   GVehicleOrdersReqBuilder() {
     GVehicleOrdersReq._initializeBuilder(this);
   }
@@ -1267,6 +1289,7 @@ class GVehicleOrdersReqBuilder
       _updateCacheHandlerContext = $v.updateCacheHandlerContext;
       _fetchPolicy = $v.fetchPolicy;
       _executeOnListen = $v.executeOnListen;
+      _context = $v.context;
       _$v = null;
     }
     return this;
@@ -1301,7 +1324,8 @@ class GVehicleOrdersReqBuilder
               updateCacheHandlerContext: updateCacheHandlerContext,
               fetchPolicy: fetchPolicy,
               executeOnListen: BuiltValueNullFieldError.checkNotNull(
-                  executeOnListen, r'GVehicleOrdersReq', 'executeOnListen'));
+                  executeOnListen, r'GVehicleOrdersReq', 'executeOnListen'),
+              context: context);
     } catch (_) {
       late String _$failedField;
       try {
@@ -1341,6 +1365,8 @@ class _$GTestDriveOrdersReq extends GTestDriveOrdersReq {
   final _i1.FetchPolicy? fetchPolicy;
   @override
   final bool executeOnListen;
+  @override
+  final _i4.Context? context;
 
   factory _$GTestDriveOrdersReq(
           [void Function(GTestDriveOrdersReqBuilder)? updates]) =>
@@ -1355,7 +1381,8 @@ class _$GTestDriveOrdersReq extends GTestDriveOrdersReq {
       this.updateCacheHandlerKey,
       this.updateCacheHandlerContext,
       this.fetchPolicy,
-      required this.executeOnListen})
+      required this.executeOnListen,
+      this.context})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(vars, r'GTestDriveOrdersReq', 'vars');
     BuiltValueNullFieldError.checkNotNull(
@@ -1386,7 +1413,8 @@ class _$GTestDriveOrdersReq extends GTestDriveOrdersReq {
         updateCacheHandlerKey == other.updateCacheHandlerKey &&
         updateCacheHandlerContext == other.updateCacheHandlerContext &&
         fetchPolicy == other.fetchPolicy &&
-        executeOnListen == other.executeOnListen;
+        executeOnListen == other.executeOnListen &&
+        context == other.context;
   }
 
   @override
@@ -1401,6 +1429,7 @@ class _$GTestDriveOrdersReq extends GTestDriveOrdersReq {
     _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
     _$hash = $jc(_$hash, fetchPolicy.hashCode);
     _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jc(_$hash, context.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -1416,7 +1445,8 @@ class _$GTestDriveOrdersReq extends GTestDriveOrdersReq {
           ..add('updateCacheHandlerKey', updateCacheHandlerKey)
           ..add('updateCacheHandlerContext', updateCacheHandlerContext)
           ..add('fetchPolicy', fetchPolicy)
-          ..add('executeOnListen', executeOnListen))
+          ..add('executeOnListen', executeOnListen)
+          ..add('context', context))
         .toString();
   }
 }
@@ -1477,6 +1507,10 @@ class GTestDriveOrdersReqBuilder
   set executeOnListen(bool? executeOnListen) =>
       _$this._executeOnListen = executeOnListen;
 
+  _i4.Context? _context;
+  _i4.Context? get context => _$this._context;
+  set context(_i4.Context? context) => _$this._context = context;
+
   GTestDriveOrdersReqBuilder() {
     GTestDriveOrdersReq._initializeBuilder(this);
   }
@@ -1493,6 +1527,7 @@ class GTestDriveOrdersReqBuilder
       _updateCacheHandlerContext = $v.updateCacheHandlerContext;
       _fetchPolicy = $v.fetchPolicy;
       _executeOnListen = $v.executeOnListen;
+      _context = $v.context;
       _$v = null;
     }
     return this;
@@ -1527,7 +1562,8 @@ class GTestDriveOrdersReqBuilder
               updateCacheHandlerContext: updateCacheHandlerContext,
               fetchPolicy: fetchPolicy,
               executeOnListen: BuiltValueNullFieldError.checkNotNull(
-                  executeOnListen, r'GTestDriveOrdersReq', 'executeOnListen'));
+                  executeOnListen, r'GTestDriveOrdersReq', 'executeOnListen'),
+              context: context);
     } catch (_) {
       late String _$failedField;
       try {
@@ -1567,6 +1603,8 @@ class _$GUpdateProductOrderReq extends GUpdateProductOrderReq {
   final _i1.FetchPolicy? fetchPolicy;
   @override
   final bool executeOnListen;
+  @override
+  final _i4.Context? context;
 
   factory _$GUpdateProductOrderReq(
           [void Function(GUpdateProductOrderReqBuilder)? updates]) =>
@@ -1581,7 +1619,8 @@ class _$GUpdateProductOrderReq extends GUpdateProductOrderReq {
       this.updateCacheHandlerKey,
       this.updateCacheHandlerContext,
       this.fetchPolicy,
-      required this.executeOnListen})
+      required this.executeOnListen,
+      this.context})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         vars, r'GUpdateProductOrderReq', 'vars');
@@ -1613,7 +1652,8 @@ class _$GUpdateProductOrderReq extends GUpdateProductOrderReq {
         updateCacheHandlerKey == other.updateCacheHandlerKey &&
         updateCacheHandlerContext == other.updateCacheHandlerContext &&
         fetchPolicy == other.fetchPolicy &&
-        executeOnListen == other.executeOnListen;
+        executeOnListen == other.executeOnListen &&
+        context == other.context;
   }
 
   @override
@@ -1628,6 +1668,7 @@ class _$GUpdateProductOrderReq extends GUpdateProductOrderReq {
     _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
     _$hash = $jc(_$hash, fetchPolicy.hashCode);
     _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jc(_$hash, context.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -1643,7 +1684,8 @@ class _$GUpdateProductOrderReq extends GUpdateProductOrderReq {
           ..add('updateCacheHandlerKey', updateCacheHandlerKey)
           ..add('updateCacheHandlerContext', updateCacheHandlerContext)
           ..add('fetchPolicy', fetchPolicy)
-          ..add('executeOnListen', executeOnListen))
+          ..add('executeOnListen', executeOnListen)
+          ..add('context', context))
         .toString();
   }
 }
@@ -1706,6 +1748,10 @@ class GUpdateProductOrderReqBuilder
   set executeOnListen(bool? executeOnListen) =>
       _$this._executeOnListen = executeOnListen;
 
+  _i4.Context? _context;
+  _i4.Context? get context => _$this._context;
+  set context(_i4.Context? context) => _$this._context = context;
+
   GUpdateProductOrderReqBuilder() {
     GUpdateProductOrderReq._initializeBuilder(this);
   }
@@ -1722,6 +1768,7 @@ class GUpdateProductOrderReqBuilder
       _updateCacheHandlerContext = $v.updateCacheHandlerContext;
       _fetchPolicy = $v.fetchPolicy;
       _executeOnListen = $v.executeOnListen;
+      _context = $v.context;
       _$v = null;
     }
     return this;
@@ -1758,7 +1805,8 @@ class GUpdateProductOrderReqBuilder
               executeOnListen: BuiltValueNullFieldError.checkNotNull(
                   executeOnListen,
                   r'GUpdateProductOrderReq',
-                  'executeOnListen'));
+                  'executeOnListen'),
+              context: context);
     } catch (_) {
       late String _$failedField;
       try {
@@ -1798,6 +1846,8 @@ class _$GUpdateVehicleOrderReq extends GUpdateVehicleOrderReq {
   final _i1.FetchPolicy? fetchPolicy;
   @override
   final bool executeOnListen;
+  @override
+  final _i4.Context? context;
 
   factory _$GUpdateVehicleOrderReq(
           [void Function(GUpdateVehicleOrderReqBuilder)? updates]) =>
@@ -1812,7 +1862,8 @@ class _$GUpdateVehicleOrderReq extends GUpdateVehicleOrderReq {
       this.updateCacheHandlerKey,
       this.updateCacheHandlerContext,
       this.fetchPolicy,
-      required this.executeOnListen})
+      required this.executeOnListen,
+      this.context})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         vars, r'GUpdateVehicleOrderReq', 'vars');
@@ -1844,7 +1895,8 @@ class _$GUpdateVehicleOrderReq extends GUpdateVehicleOrderReq {
         updateCacheHandlerKey == other.updateCacheHandlerKey &&
         updateCacheHandlerContext == other.updateCacheHandlerContext &&
         fetchPolicy == other.fetchPolicy &&
-        executeOnListen == other.executeOnListen;
+        executeOnListen == other.executeOnListen &&
+        context == other.context;
   }
 
   @override
@@ -1859,6 +1911,7 @@ class _$GUpdateVehicleOrderReq extends GUpdateVehicleOrderReq {
     _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
     _$hash = $jc(_$hash, fetchPolicy.hashCode);
     _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jc(_$hash, context.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -1874,7 +1927,8 @@ class _$GUpdateVehicleOrderReq extends GUpdateVehicleOrderReq {
           ..add('updateCacheHandlerKey', updateCacheHandlerKey)
           ..add('updateCacheHandlerContext', updateCacheHandlerContext)
           ..add('fetchPolicy', fetchPolicy)
-          ..add('executeOnListen', executeOnListen))
+          ..add('executeOnListen', executeOnListen)
+          ..add('context', context))
         .toString();
   }
 }
@@ -1937,6 +1991,10 @@ class GUpdateVehicleOrderReqBuilder
   set executeOnListen(bool? executeOnListen) =>
       _$this._executeOnListen = executeOnListen;
 
+  _i4.Context? _context;
+  _i4.Context? get context => _$this._context;
+  set context(_i4.Context? context) => _$this._context = context;
+
   GUpdateVehicleOrderReqBuilder() {
     GUpdateVehicleOrderReq._initializeBuilder(this);
   }
@@ -1953,6 +2011,7 @@ class GUpdateVehicleOrderReqBuilder
       _updateCacheHandlerContext = $v.updateCacheHandlerContext;
       _fetchPolicy = $v.fetchPolicy;
       _executeOnListen = $v.executeOnListen;
+      _context = $v.context;
       _$v = null;
     }
     return this;
@@ -1989,7 +2048,8 @@ class GUpdateVehicleOrderReqBuilder
               executeOnListen: BuiltValueNullFieldError.checkNotNull(
                   executeOnListen,
                   r'GUpdateVehicleOrderReq',
-                  'executeOnListen'));
+                  'executeOnListen'),
+              context: context);
     } catch (_) {
       late String _$failedField;
       try {
@@ -2030,6 +2090,8 @@ class _$GUpdateTestDriveOrderReq extends GUpdateTestDriveOrderReq {
   final _i1.FetchPolicy? fetchPolicy;
   @override
   final bool executeOnListen;
+  @override
+  final _i4.Context? context;
 
   factory _$GUpdateTestDriveOrderReq(
           [void Function(GUpdateTestDriveOrderReqBuilder)? updates]) =>
@@ -2044,7 +2106,8 @@ class _$GUpdateTestDriveOrderReq extends GUpdateTestDriveOrderReq {
       this.updateCacheHandlerKey,
       this.updateCacheHandlerContext,
       this.fetchPolicy,
-      required this.executeOnListen})
+      required this.executeOnListen,
+      this.context})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         vars, r'GUpdateTestDriveOrderReq', 'vars');
@@ -2076,7 +2139,8 @@ class _$GUpdateTestDriveOrderReq extends GUpdateTestDriveOrderReq {
         updateCacheHandlerKey == other.updateCacheHandlerKey &&
         updateCacheHandlerContext == other.updateCacheHandlerContext &&
         fetchPolicy == other.fetchPolicy &&
-        executeOnListen == other.executeOnListen;
+        executeOnListen == other.executeOnListen &&
+        context == other.context;
   }
 
   @override
@@ -2091,6 +2155,7 @@ class _$GUpdateTestDriveOrderReq extends GUpdateTestDriveOrderReq {
     _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
     _$hash = $jc(_$hash, fetchPolicy.hashCode);
     _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jc(_$hash, context.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -2106,7 +2171,8 @@ class _$GUpdateTestDriveOrderReq extends GUpdateTestDriveOrderReq {
           ..add('updateCacheHandlerKey', updateCacheHandlerKey)
           ..add('updateCacheHandlerContext', updateCacheHandlerContext)
           ..add('fetchPolicy', fetchPolicy)
-          ..add('executeOnListen', executeOnListen))
+          ..add('executeOnListen', executeOnListen)
+          ..add('context', context))
         .toString();
   }
 }
@@ -2171,6 +2237,10 @@ class GUpdateTestDriveOrderReqBuilder
   set executeOnListen(bool? executeOnListen) =>
       _$this._executeOnListen = executeOnListen;
 
+  _i4.Context? _context;
+  _i4.Context? get context => _$this._context;
+  set context(_i4.Context? context) => _$this._context = context;
+
   GUpdateTestDriveOrderReqBuilder() {
     GUpdateTestDriveOrderReq._initializeBuilder(this);
   }
@@ -2187,6 +2257,7 @@ class GUpdateTestDriveOrderReqBuilder
       _updateCacheHandlerContext = $v.updateCacheHandlerContext;
       _fetchPolicy = $v.fetchPolicy;
       _executeOnListen = $v.executeOnListen;
+      _context = $v.context;
       _$v = null;
     }
     return this;
@@ -2223,7 +2294,8 @@ class GUpdateTestDriveOrderReqBuilder
               executeOnListen: BuiltValueNullFieldError.checkNotNull(
                   executeOnListen,
                   r'GUpdateTestDriveOrderReq',
-                  'executeOnListen'));
+                  'executeOnListen'),
+              context: context);
     } catch (_) {
       late String _$failedField;
       try {
@@ -2265,6 +2337,8 @@ class _$GCreateOrderRejectionByDealerReq
   final _i1.FetchPolicy? fetchPolicy;
   @override
   final bool executeOnListen;
+  @override
+  final _i4.Context? context;
 
   factory _$GCreateOrderRejectionByDealerReq(
           [void Function(GCreateOrderRejectionByDealerReqBuilder)? updates]) =>
@@ -2279,7 +2353,8 @@ class _$GCreateOrderRejectionByDealerReq
       this.updateCacheHandlerKey,
       this.updateCacheHandlerContext,
       this.fetchPolicy,
-      required this.executeOnListen})
+      required this.executeOnListen,
+      this.context})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         vars, r'GCreateOrderRejectionByDealerReq', 'vars');
@@ -2311,7 +2386,8 @@ class _$GCreateOrderRejectionByDealerReq
         updateCacheHandlerKey == other.updateCacheHandlerKey &&
         updateCacheHandlerContext == other.updateCacheHandlerContext &&
         fetchPolicy == other.fetchPolicy &&
-        executeOnListen == other.executeOnListen;
+        executeOnListen == other.executeOnListen &&
+        context == other.context;
   }
 
   @override
@@ -2326,6 +2402,7 @@ class _$GCreateOrderRejectionByDealerReq
     _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
     _$hash = $jc(_$hash, fetchPolicy.hashCode);
     _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jc(_$hash, context.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -2341,7 +2418,8 @@ class _$GCreateOrderRejectionByDealerReq
           ..add('updateCacheHandlerKey', updateCacheHandlerKey)
           ..add('updateCacheHandlerContext', updateCacheHandlerContext)
           ..add('fetchPolicy', fetchPolicy)
-          ..add('executeOnListen', executeOnListen))
+          ..add('executeOnListen', executeOnListen)
+          ..add('context', context))
         .toString();
   }
 }
@@ -2410,6 +2488,10 @@ class GCreateOrderRejectionByDealerReqBuilder
   set executeOnListen(bool? executeOnListen) =>
       _$this._executeOnListen = executeOnListen;
 
+  _i4.Context? _context;
+  _i4.Context? get context => _$this._context;
+  set context(_i4.Context? context) => _$this._context = context;
+
   GCreateOrderRejectionByDealerReqBuilder() {
     GCreateOrderRejectionByDealerReq._initializeBuilder(this);
   }
@@ -2426,6 +2508,7 @@ class GCreateOrderRejectionByDealerReqBuilder
       _updateCacheHandlerContext = $v.updateCacheHandlerContext;
       _fetchPolicy = $v.fetchPolicy;
       _executeOnListen = $v.executeOnListen;
+      _context = $v.context;
       _$v = null;
     }
     return this;
@@ -2462,7 +2545,8 @@ class GCreateOrderRejectionByDealerReqBuilder
               executeOnListen: BuiltValueNullFieldError.checkNotNull(
                   executeOnListen,
                   r'GCreateOrderRejectionByDealerReq',
-                  'executeOnListen'));
+                  'executeOnListen'),
+              context: context);
     } catch (_) {
       late String _$failedField;
       try {

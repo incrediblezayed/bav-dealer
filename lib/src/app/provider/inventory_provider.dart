@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:developer';
 
+import 'package:dealerapp/src/app/model/dealer_stock_model.dart';
 import 'package:dealerapp/src/app/model/product_details_model.dart';
 import 'package:dealerapp/src/app/model/variant_details.model.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
@@ -9,8 +11,10 @@ import 'package:dealerapp/src/utils/global_exports.dart';
 
 class InventoryProvider extends ChangeNotifier {
   List<GPriceCategoriesData_priceCategories> _priceCategories = [];
+
   List<GPriceCategoriesData_priceCategories> get priceCategories =>
       _priceCategories;
+
   set priceCategories(List<GPriceCategoriesData_priceCategories> data) {
     _priceCategories = data;
     notifyListeners();
@@ -18,8 +22,10 @@ class InventoryProvider extends ChangeNotifier {
 
   List<PriceModel> prices = [];
   List<ProductVariantModel> _products = [];
+
   List<ProductVariantModel> get products => _products;
   List<VariantDetailsModel> _vehicles = [];
+
   List<VariantDetailsModel> get vehicles => _vehicles;
 
   set products(List<ProductVariantModel> data) {
@@ -34,29 +40,44 @@ class InventoryProvider extends ChangeNotifier {
 
   final InventoryRepository _inventoryRepository = InventoryRepository();
 
-  List<GVehicleDealersData_vehicleDealers> _vehicleDealers = [];
-  List<GVehicleDealersData_vehicleDealers> get vehicleDealers =>
-      _vehicleDealers;
-  set vehicleDealers(List<GVehicleDealersData_vehicleDealers> data) {
+  List<DealerStockModel> _vehicleDealers = [];
+
+  List<DealerStockModel> get vehicleDealers => _vehicleDealers;
+
+  set vehicleDealers(List<DealerStockModel> data) {
     _vehicleDealers = data;
     notifyListeners();
   }
 
-  Future<void> init() async {
-    await getStocks();
-    await getPriceCategories();
-    await getVehicles();
-    await getProducts();
+  List<DealerStockModel>? _testDriveStock;
+
+  List<DealerStockModel>? get testDriveStock => _testDriveStock;
+
+  set testDriveStock(List<DealerStockModel>? value) {
+    _testDriveStock = value;
+    notifyListeners();
   }
 
-  Timer? _productDebounce;
-  late TextEditingController productSearchController = TextEditingController()
-    ..addListener(() {
-      _productDebounce?.cancel();
-      _productDebounce = Timer(const Duration(milliseconds: 500), () {
-        getProducts();
-      });
-    });
+  List<DealerStockModel> _productDealers = [];
+
+  List<DealerStockModel> get productDealers => _productDealers;
+
+  set productDealers(List<DealerStockModel> data) {
+    _productDealers = data;
+    notifyListeners();
+  }
+
+  Future<void> init() async {
+    await Future.wait([
+      getStocks(),
+      getPriceCategories(),
+      getVehicles(),
+      getProducts(),
+      getTestDriveStock(),
+      getProductStocks(),
+    ]);
+  }
+
   Timer? _inventoryDebounce;
 
   late TextEditingController inventorySearchController = TextEditingController()
@@ -76,10 +97,11 @@ class InventoryProvider extends ChangeNotifier {
         getStocks();
       });
     });
+
   Future<void> getProducts() async {
     try {
       final getProduct = await _inventoryRepository.getProducts(
-        search: productSearchController.text,
+        search: inventorySearchController.text,
         skip: 0,
         take: 15,
       );
@@ -98,7 +120,7 @@ class InventoryProvider extends ChangeNotifier {
       final response = await _inventoryRepository.getProducts(
         take: 15,
         skip: prices.length,
-        search: productSearchController.text,
+        search: inventorySearchController.text,
       );
       _handleProductsResponse(response);
     } catch (e) {
@@ -211,17 +233,32 @@ class InventoryProvider extends ChangeNotifier {
     required String variantId,
     required int quantity,
     required String type,
+    bool product = false,
   }) async {
     try {
-      final result = await _inventoryRepository.updateStockRequest(
-        colorId: colorId,
-        variantId: variantId,
-        stock: quantity,
-        type: type,
-      );
+      bool result;
+
+      if (product) {
+        result = await _inventoryRepository.createProductDealerStockRequest(
+          variantId: variantId,
+          stock: quantity,
+          type: type,
+        );
+      } else {
+        result = await _inventoryRepository.updateStockRequest(
+          colorId: colorId,
+          variantId: variantId,
+          stock: quantity,
+          type: type,
+        );
+      }
 
       if (result) {
-        await getVehicles();
+        if (product) {
+          await getVehicles();
+        } else {
+          await getProductStocks();
+        }
         await AppRoutes.showSuccessSnackbar(
           message: 'Request Created Successfully',
         );
@@ -286,6 +323,21 @@ class InventoryProvider extends ChangeNotifier {
     }
   }
 
+  Future<void> getProductStocks() async {
+    try {
+      final result = await _inventoryRepository.currentProductStock(
+        text: myStockSearchController.text,
+      );
+
+      productDealers = result;
+    } catch (e) {
+      e.log();
+      await AppRoutes.showErrorSnackbar(
+        message: 'Error while fetching list of vehicles',
+      );
+    }
+  }
+
   Future<void> updateVehicleDealer({
     required int index,
     required String id,
@@ -303,6 +355,113 @@ class InventoryProvider extends ChangeNotifier {
       await AppRoutes.showSuccessSnackbar(
         message: 'Request Updated Successfully',
       );
+    } catch (e) {
+      e.log();
+    }
+  }
+
+  Future<void> createProductStockRequest({
+    required String variantId,
+    required List<PriceModel> prices,
+    required List<String> guarantees,
+  }) async {
+    unawaited(AppRoutes.showLoadingDialog());
+    try {
+      final result = await _inventoryRepository.createProductStockRequest(
+        variantId: variantId,
+        prices: prices,
+        guarantees: guarantees,
+      );
+      await getProductStocks();
+      await getProducts();
+      if (result) {
+        await AppRoutes.showSuccessSnackbar(
+          message: 'Request added successfully',
+        );
+      } else {
+        await AppRoutes.showErrorSnackbar(
+          message: 'Failed to add vehicle request',
+        );
+      }
+    } catch (e) {
+      e.log();
+      await AppRoutes.showErrorSnackbar(message: 'Failed to add vehicle');
+    }
+    AppRoutes.pop();
+  }
+
+  Future<void> updateProductDealer({
+    required int index,
+    required String id,
+    required List<String> guarantees,
+    List<PriceModel>? prices,
+  }) async {
+    try {
+      final result = await _inventoryRepository.updateProductDealer(
+        dealerId: id,
+        guarantees: guarantees,
+        prices: prices,
+      );
+      productDealers[index] = result;
+      notifyListeners();
+      await AppRoutes.showSuccessSnackbar(
+        message: 'Request Updated Successfully',
+      );
+    } catch (e) {
+      e.log();
+    }
+  }
+
+  int totalTestDriveCount = 0;
+
+  Future<void> getTestDriveStock() async {
+    final stocks = await _inventoryRepository.getTestDriveStock(
+        skip: 0, take: 15, query: inventorySearchController.text);
+    totalTestDriveCount = stocks.$1;
+    testDriveStock = stocks.$2;
+  }
+
+  Future<void> getMoreTestDriveStock() async {
+    if (isCallInProgress) {
+      return;
+    }
+    isCallInProgress = true;
+    final stocks = await _inventoryRepository.getTestDriveStock(
+        skip: testDriveStock?.length ?? 0,
+        take: 15,
+        query: inventorySearchController.text);
+    if (testDriveStock != null) {
+      testDriveStock!.addAll(stocks.$2);
+      notifyListeners();
+    } else {
+      testDriveStock = stocks.$2;
+    }
+    isCallInProgress = false;
+  }
+
+  Future<void> addTestDriveDealerStock(
+      {required String variantId,
+      required String? colorId,
+      required String amount,
+      String? testDriveDealerId,
+      int? index}) async {
+    try {
+      final result = await _inventoryRepository.addToTestDriveStock(
+          colorId: colorId,
+          variantId: variantId,
+          amount: amount,
+          testDriveDealerId: testDriveDealerId);
+      if (result != null) {
+        if (index != null && testDriveStock != null) {
+          testDriveStock![index] = result;
+          notifyListeners();
+        } else {
+          getTestDriveStock();
+        }
+        AppRoutes.showSuccessSnackbar(message: 'Stock Added successfully');
+      } else {
+        AppRoutes.showErrorSnackbar(message: 'Failed to add stock');
+      }
     } catch (e) {
       e.log();
     }

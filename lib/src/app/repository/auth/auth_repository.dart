@@ -192,7 +192,7 @@ class AuthRepository {
             if (imageFile != null) b.vars.data.profile_image.upload = imageFile;
             b.fetchPolicy = FetchPolicy.NoCache;
 
-            return b;
+            b;
           }),
         ).first;
         if (response.linkException != null) {
@@ -223,8 +223,7 @@ class AuthRepository {
             b.vars.where.id = id;
             b.vars.data.phoneNumber = phoneNumber;
             b.fetchPolicy = FetchPolicy.NoCache;
-
-            return b;
+            b;
           }),
         ).first;
         if (response.linkException != null) {
@@ -372,4 +371,37 @@ class AuthRepository {
     }
     return false;
   }
+
+  Future updateDealer({required double lat, required double long}) async {
+    try {
+      final dealerId = cacheProvider.getDealerId();
+
+      final result = await _client
+          .request(
+        GUpdateDealerReq((b) => b.vars
+          ..data.lLng = long
+          ..data.lLat = lat
+          ..where.id = dealerId),
+      )
+          .first;
+
+      if(result.linkException != null) {
+        throw result.linkException!;
+      }
+
+      if(result.graphqlErrors != null) {
+        throw Exception(result.graphqlErrors?.firstOrNull?.message ?? 'Something went wrong while updating dealer details');
+      }
+
+      if (result.data?.updateDealer?.id != null) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      e.log();
+      rethrow;
+    }
+  }
+
 }

@@ -23,7 +23,7 @@ abstract class GCreateUserReq
         _i1.OperationRequest<_i2.GCreateUserData, _i3.GCreateUserVars> {
   GCreateUserReq._();
 
-  factory GCreateUserReq([Function(GCreateUserReqBuilder b) updates]) =
+  factory GCreateUserReq([void Function(GCreateUserReqBuilder b) updates]) =
       _$GCreateUserReq;
 
   static void _initializeBuilder(GCreateUserReqBuilder b) => b
@@ -41,6 +41,7 @@ abstract class GCreateUserReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -62,6 +63,9 @@ abstract class GCreateUserReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GCreateUserData? parseData(Map<String, dynamic> json) =>
       _i2.GCreateUserData.fromJson(json);
 
@@ -69,7 +73,7 @@ abstract class GCreateUserReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GCreateUserData data) => data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GCreateUserData, _i3.GCreateUserVars>
@@ -97,7 +101,8 @@ abstract class GCurrentUserOTPReq
         _i1.OperationRequest<_i2.GCurrentUserOTPData, _i3.GCurrentUserOTPVars> {
   GCurrentUserOTPReq._();
 
-  factory GCurrentUserOTPReq([Function(GCurrentUserOTPReqBuilder b) updates]) =
+  factory GCurrentUserOTPReq(
+          [void Function(GCurrentUserOTPReqBuilder b) updates]) =
       _$GCurrentUserOTPReq;
 
   static void _initializeBuilder(GCurrentUserOTPReqBuilder b) => b
@@ -115,6 +120,7 @@ abstract class GCurrentUserOTPReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -136,6 +142,9 @@ abstract class GCurrentUserOTPReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GCurrentUserOTPData? parseData(Map<String, dynamic> json) =>
       _i2.GCurrentUserOTPData.fromJson(json);
 
@@ -143,7 +152,8 @@ abstract class GCurrentUserOTPReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GCurrentUserOTPData data) =>
+      data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GCurrentUserOTPData, _i3.GCurrentUserOTPVars>
@@ -173,7 +183,8 @@ abstract class GValidateUserOTPReq
   GValidateUserOTPReq._();
 
   factory GValidateUserOTPReq(
-      [Function(GValidateUserOTPReqBuilder b) updates]) = _$GValidateUserOTPReq;
+          [void Function(GValidateUserOTPReqBuilder b) updates]) =
+      _$GValidateUserOTPReq;
 
   static void _initializeBuilder(GValidateUserOTPReqBuilder b) => b
     ..operation = _i4.Operation(
@@ -190,6 +201,7 @@ abstract class GValidateUserOTPReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -211,6 +223,9 @@ abstract class GValidateUserOTPReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GValidateUserOTPData? parseData(Map<String, dynamic> json) =>
       _i2.GValidateUserOTPData.fromJson(json);
 
@@ -218,7 +233,8 @@ abstract class GValidateUserOTPReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GValidateUserOTPData data) =>
+      data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GValidateUserOTPData, _i3.GValidateUserOTPVars>
@@ -249,7 +265,7 @@ abstract class GSendUserPasswordResetLinkReq
   GSendUserPasswordResetLinkReq._();
 
   factory GSendUserPasswordResetLinkReq(
-          [Function(GSendUserPasswordResetLinkReqBuilder b) updates]) =
+          [void Function(GSendUserPasswordResetLinkReqBuilder b) updates]) =
       _$GSendUserPasswordResetLinkReq;
 
   static void _initializeBuilder(GSendUserPasswordResetLinkReqBuilder b) => b
@@ -267,6 +283,7 @@ abstract class GSendUserPasswordResetLinkReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -288,6 +305,9 @@ abstract class GSendUserPasswordResetLinkReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GSendUserPasswordResetLinkData? parseData(Map<String, dynamic> json) =>
       _i2.GSendUserPasswordResetLinkData.fromJson(json);
 
@@ -295,7 +315,8 @@ abstract class GSendUserPasswordResetLinkReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GSendUserPasswordResetLinkData data) =>
+      data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GSendUserPasswordResetLinkData,
@@ -327,7 +348,7 @@ abstract class GRedeemUserPasswordResetTokenReq
   GRedeemUserPasswordResetTokenReq._();
 
   factory GRedeemUserPasswordResetTokenReq(
-          [Function(GRedeemUserPasswordResetTokenReqBuilder b) updates]) =
+          [void Function(GRedeemUserPasswordResetTokenReqBuilder b) updates]) =
       _$GRedeemUserPasswordResetTokenReq;
 
   static void _initializeBuilder(GRedeemUserPasswordResetTokenReqBuilder b) => b
@@ -345,6 +366,7 @@ abstract class GRedeemUserPasswordResetTokenReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -366,6 +388,9 @@ abstract class GRedeemUserPasswordResetTokenReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GRedeemUserPasswordResetTokenData? parseData(Map<String, dynamic> json) =>
       _i2.GRedeemUserPasswordResetTokenData.fromJson(json);
 
@@ -373,7 +398,8 @@ abstract class GRedeemUserPasswordResetTokenReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GRedeemUserPasswordResetTokenData data) =>
+      data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GRedeemUserPasswordResetTokenData,
@@ -406,8 +432,8 @@ abstract class GValidateUserPasswordResetTokenReq
   GValidateUserPasswordResetTokenReq._();
 
   factory GValidateUserPasswordResetTokenReq(
-          [Function(GValidateUserPasswordResetTokenReqBuilder b) updates]) =
-      _$GValidateUserPasswordResetTokenReq;
+      [void Function(GValidateUserPasswordResetTokenReqBuilder b)
+          updates]) = _$GValidateUserPasswordResetTokenReq;
 
   static void _initializeBuilder(GValidateUserPasswordResetTokenReqBuilder b) =>
       b
@@ -425,6 +451,7 @@ abstract class GValidateUserPasswordResetTokenReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -446,6 +473,9 @@ abstract class GValidateUserPasswordResetTokenReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GValidateUserPasswordResetTokenData? parseData(
           Map<String, dynamic> json) =>
       _i2.GValidateUserPasswordResetTokenData.fromJson(json);
@@ -454,7 +484,9 @@ abstract class GValidateUserPasswordResetTokenReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(
+          _i2.GValidateUserPasswordResetTokenData data) =>
+      data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GValidateUserPasswordResetTokenData,
@@ -484,7 +516,7 @@ abstract class GCreateDealerReq
         _i1.OperationRequest<_i2.GCreateDealerData, _i3.GCreateDealerVars> {
   GCreateDealerReq._();
 
-  factory GCreateDealerReq([Function(GCreateDealerReqBuilder b) updates]) =
+  factory GCreateDealerReq([void Function(GCreateDealerReqBuilder b) updates]) =
       _$GCreateDealerReq;
 
   static void _initializeBuilder(GCreateDealerReqBuilder b) => b
@@ -502,6 +534,7 @@ abstract class GCreateDealerReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -523,6 +556,9 @@ abstract class GCreateDealerReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GCreateDealerData? parseData(Map<String, dynamic> json) =>
       _i2.GCreateDealerData.fromJson(json);
 
@@ -530,7 +566,7 @@ abstract class GCreateDealerReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GCreateDealerData data) => data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GCreateDealerData, _i3.GCreateDealerVars>
@@ -561,7 +597,7 @@ abstract class GAuthenticateUserWithPasswordReq
   GAuthenticateUserWithPasswordReq._();
 
   factory GAuthenticateUserWithPasswordReq(
-          [Function(GAuthenticateUserWithPasswordReqBuilder b) updates]) =
+          [void Function(GAuthenticateUserWithPasswordReqBuilder b) updates]) =
       _$GAuthenticateUserWithPasswordReq;
 
   static void _initializeBuilder(GAuthenticateUserWithPasswordReqBuilder b) => b
@@ -579,6 +615,7 @@ abstract class GAuthenticateUserWithPasswordReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -600,6 +637,9 @@ abstract class GAuthenticateUserWithPasswordReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GAuthenticateUserWithPasswordData? parseData(Map<String, dynamic> json) =>
       _i2.GAuthenticateUserWithPasswordData.fromJson(json);
 
@@ -607,7 +647,8 @@ abstract class GAuthenticateUserWithPasswordReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GAuthenticateUserWithPasswordData data) =>
+      data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GAuthenticateUserWithPasswordData,
@@ -637,7 +678,7 @@ abstract class GUserReq
         _i1.OperationRequest<_i2.GUserData, _i3.GUserVars> {
   GUserReq._();
 
-  factory GUserReq([Function(GUserReqBuilder b) updates]) = _$GUserReq;
+  factory GUserReq([void Function(GUserReqBuilder b) updates]) = _$GUserReq;
 
   static void _initializeBuilder(GUserReqBuilder b) => b
     ..operation = _i4.Operation(
@@ -654,6 +695,7 @@ abstract class GUserReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -675,6 +717,9 @@ abstract class GUserReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GUserData? parseData(Map<String, dynamic> json) =>
       _i2.GUserData.fromJson(json);
 
@@ -682,7 +727,7 @@ abstract class GUserReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GUserData data) => data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GUserData, _i3.GUserVars> transformOperation(
@@ -709,7 +754,7 @@ abstract class GUpdateUserReq
         _i1.OperationRequest<_i2.GUpdateUserData, _i3.GUpdateUserVars> {
   GUpdateUserReq._();
 
-  factory GUpdateUserReq([Function(GUpdateUserReqBuilder b) updates]) =
+  factory GUpdateUserReq([void Function(GUpdateUserReqBuilder b) updates]) =
       _$GUpdateUserReq;
 
   static void _initializeBuilder(GUpdateUserReqBuilder b) => b
@@ -727,6 +772,7 @@ abstract class GUpdateUserReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -748,6 +794,9 @@ abstract class GUpdateUserReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GUpdateUserData? parseData(Map<String, dynamic> json) =>
       _i2.GUpdateUserData.fromJson(json);
 
@@ -755,7 +804,7 @@ abstract class GUpdateUserReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GUpdateUserData data) => data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GUpdateUserData, _i3.GUpdateUserVars>
@@ -783,7 +832,8 @@ abstract class GDealerReq
         _i1.OperationRequest<_i2.GDealerData, _i3.GDealerVars> {
   GDealerReq._();
 
-  factory GDealerReq([Function(GDealerReqBuilder b) updates]) = _$GDealerReq;
+  factory GDealerReq([void Function(GDealerReqBuilder b) updates]) =
+      _$GDealerReq;
 
   static void _initializeBuilder(GDealerReqBuilder b) => b
     ..operation = _i4.Operation(
@@ -800,6 +850,7 @@ abstract class GDealerReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -821,6 +872,9 @@ abstract class GDealerReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GDealerData? parseData(Map<String, dynamic> json) =>
       _i2.GDealerData.fromJson(json);
 
@@ -828,7 +882,7 @@ abstract class GDealerReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GDealerData data) => data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GDealerData, _i3.GDealerVars> transformOperation(
@@ -845,6 +899,84 @@ abstract class GDealerReq
   static GDealerReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
         GDealerReq.serializer,
+        json,
+      );
+}
+
+abstract class GUpdateDealerReq
+    implements
+        Built<GUpdateDealerReq, GUpdateDealerReqBuilder>,
+        _i1.OperationRequest<_i2.GUpdateDealerData, _i3.GUpdateDealerVars> {
+  GUpdateDealerReq._();
+
+  factory GUpdateDealerReq([void Function(GUpdateDealerReqBuilder b) updates]) =
+      _$GUpdateDealerReq;
+
+  static void _initializeBuilder(GUpdateDealerReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'UpdateDealer',
+    )
+    ..executeOnListen = true;
+
+  @override
+  _i3.GUpdateDealerVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GUpdateDealerData? Function(
+    _i2.GUpdateDealerData?,
+    _i2.GUpdateDealerData?,
+  )? get updateResult;
+  @override
+  _i2.GUpdateDealerData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
+  _i2.GUpdateDealerData? parseData(Map<String, dynamic> json) =>
+      _i2.GUpdateDealerData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(_i2.GUpdateDealerData data) => data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GUpdateDealerData, _i3.GUpdateDealerVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GUpdateDealerReq> get serializer =>
+      _$gUpdateDealerReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GUpdateDealerReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUpdateDealerReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GUpdateDealerReq.serializer,
         json,
       );
 }

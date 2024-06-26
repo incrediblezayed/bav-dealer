@@ -1,7 +1,8 @@
 import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/list_of_vehicles.dart';
 import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/my_stock.dart';
+import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/my_testdrive_stock.dart';
+import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
-import 'package:dealerapp/src/widgets/empty_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -16,9 +17,31 @@ class MyInventory extends ConsumerStatefulWidget {
 
 class _MyInventoryState extends ConsumerState<MyInventory>
     with TickerProviderStateMixin {
-  late final _tabController = TabController(length: 3, vsync: this);
+  late final _tabController = TabController(length: 5, vsync: this);
 
   bool showSearch = false;
+
+  @override
+  void initState() {
+    _tabController.addListener(tabListener);
+    super.initState();
+  }
+
+  void tabListener() async {
+    final inventoryPro = ref.read(inventoryProvider);
+    if (!_tabController.indexIsChanging) {
+      Map<int, Future<void>> tabFunctions = {
+        0: inventoryPro.getVehicles(),
+        1: inventoryPro.getStocks(),
+        2: inventoryPro.getTestDriveStock(),
+        3: inventoryPro.getProducts(),
+        4: inventoryPro.getProductStocks(),
+      };
+      if (tabFunctions.containsKey(_tabController.index)) {
+        await tabFunctions[_tabController.index];
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,15 +78,24 @@ class _MyInventoryState extends ConsumerState<MyInventory>
           labelColor: AppTheme.primaryColor,
           unselectedLabelColor: Colors.grey,
           controller: _tabController,
+          isScrollable: true,
+          automaticIndicatorColorAdjustment: true,
+          tabAlignment: TabAlignment.start,
           tabs: const [
             Tab(
               text: 'List Of Vehicle',
             ),
             Tab(
-              text: 'My Stock',
+              text: 'Vehicle Stock',
+            ),
+            Tab(
+              text: 'Test Drive Stock',
             ),
             Tab(
               text: 'Products',
+            ),
+            Tab(
+              text: 'Product Stock',
             ),
           ],
         ),
@@ -77,8 +109,13 @@ class _MyInventoryState extends ConsumerState<MyInventory>
           MyStockPage(
             showSearch: showSearch,
           ),
+          MyTestDriveStockPage(showSearch: showSearch),
           MyProduct(
             showSearch: showSearch,
+          ),
+          MyStockPage(
+            showSearch: showSearch,
+            product: true,
           ),
           //const EmptyWidget(title: 'Uh oh! You have no products.'),
         ],
