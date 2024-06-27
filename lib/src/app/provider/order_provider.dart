@@ -436,7 +436,25 @@ class OrdersProvider extends ChangeNotifier {
       loading = false;
     }
   } */
-
+Future<void> acceptProductOrder(String id) async {
+  try {
+    unawaited(AppRoutes.showLoadingDialog());
+    final success = await _orderRepository.updateProductOrderStatus(
+        productOrderId: id,
+        status: OrderStatus.accepted.name
+    );
+    AppRoutes.pop();
+    if (success) {
+      await getPendingOrders();
+      await getAcceptedOrders();
+    } else {
+      throw Exception();
+    }
+  }catch (e) {
+    e.log();
+    await AppRoutes.showErrorSnackbar(message: 'Failed to accept order');
+  }
+}
   Future<void> acceptOrder(String id) async {
     try {
       unawaited(AppRoutes.showLoadingDialog());
@@ -480,21 +498,23 @@ class OrdersProvider extends ChangeNotifier {
   Future<void> rejectOrder({
     required String id,
     required String reason,
-    required bool isPurchaseOrder,
+    required String orderType, // Change to String
     String? description,
   }) async {
     try {
       unawaited(AppRoutes.showLoadingDialog());
       final success = await _orderRepository.rejectOrder(
-        isPurchaseOrder: isPurchaseOrder,
         orderId: id,
         reason: reason,
+        orderType: orderType, // Pass the order type
         description: description,
       );
       AppRoutes.pop();
       if (success) {
         await getPendingOrders();
         await getRejectedOrders();
+        await getProductPendingOrders();
+        await getProductRejectedOrders();
         await AppRoutes.showSuccessSnackbar(
           message: 'Order rejection requested',
         );
@@ -506,4 +526,5 @@ class OrdersProvider extends ChangeNotifier {
       await AppRoutes.showErrorSnackbar(message: 'Failed to reject order');
     }
   }
+
 }

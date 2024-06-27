@@ -133,6 +133,8 @@ abstract class GProductOrdersData_productOrders_dealer_productVariant
   String get G__typename;
   GProductOrdersData_productOrders_dealer_productVariant_product? get product;
   String? get name;
+  BuiltList<GProductOrdersData_productOrders_dealer_productVariant_images>?
+      get images;
   static Serializer<GProductOrdersData_productOrders_dealer_productVariant>
       get serializer =>
           _$gProductOrdersDataProductOrdersDealerProductVariantSerializer;
@@ -185,6 +187,88 @@ abstract class GProductOrdersData_productOrders_dealer_productVariant_product
   static GProductOrdersData_productOrders_dealer_productVariant_product?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
             GProductOrdersData_productOrders_dealer_productVariant_product
+                .serializer,
+            json,
+          );
+}
+
+abstract class GProductOrdersData_productOrders_dealer_productVariant_images
+    implements
+        Built<GProductOrdersData_productOrders_dealer_productVariant_images,
+            GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder> {
+  GProductOrdersData_productOrders_dealer_productVariant_images._();
+
+  factory GProductOrdersData_productOrders_dealer_productVariant_images(
+          [Function(
+                  GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder
+                      b)
+              updates]) =
+      _$GProductOrdersData_productOrders_dealer_productVariant_images;
+
+  static void _initializeBuilder(
+          GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder
+              b) =>
+      b..G__typename = 'ProductImage';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GProductOrdersData_productOrders_dealer_productVariant_images_image?
+      get image;
+  static Serializer<
+          GProductOrdersData_productOrders_dealer_productVariant_images>
+      get serializer =>
+          _$gProductOrdersDataProductOrdersDealerProductVariantImagesSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductOrdersData_productOrders_dealer_productVariant_images
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrdersData_productOrders_dealer_productVariant_images?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GProductOrdersData_productOrders_dealer_productVariant_images
+                .serializer,
+            json,
+          );
+}
+
+abstract class GProductOrdersData_productOrders_dealer_productVariant_images_image
+    implements
+        Built<
+            GProductOrdersData_productOrders_dealer_productVariant_images_image,
+            GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder> {
+  GProductOrdersData_productOrders_dealer_productVariant_images_image._();
+
+  factory GProductOrdersData_productOrders_dealer_productVariant_images_image(
+          [Function(
+                  GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder
+                      b)
+              updates]) =
+      _$GProductOrdersData_productOrders_dealer_productVariant_images_image;
+
+  static void _initializeBuilder(
+          GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder
+              b) =>
+      b..G__typename = 'ImageFieldOutput';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get url;
+  static Serializer<
+          GProductOrdersData_productOrders_dealer_productVariant_images_image>
+      get serializer =>
+          _$gProductOrdersDataProductOrdersDealerProductVariantImagesImageSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductOrdersData_productOrders_dealer_productVariant_images_image
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductOrdersData_productOrders_dealer_productVariant_images_image?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GProductOrdersData_productOrders_dealer_productVariant_images_image
                 .serializer,
             json,
           );

@@ -105,11 +105,10 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(6.r),
                       child: KCachedNWImage(
-                        widget.vehiclePurchaseOrders.dealer!.vehicleColor!
-                                .images?.firstOrNull?.image?.url ??
-                            '',
+                        widget.vehiclePurchaseOrders.dealer?.vehicleColor?.images?.firstOrNull?.image?.url ?? '',
                         fit: BoxFit.cover,
-                      ),
+                      )
+
                     ),
                   ),
                   SizedBox(width: 20.w),
@@ -578,8 +577,8 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                             .read(orderProvider(OrderFamily.purchaseOrders))
                             .rejectOrder(
                               id: vehiclePurchaseOrders.id,
-                              reason: selectedReason,
-                              isPurchaseOrder: true,
+                              reason: selectedReason, orderType: 'vehicle',
+
                             );
                       },
                       child: Text(

@@ -585,8 +585,8 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                             .read(orderProvider(OrderFamily.purchaseOrders))
                             .rejectOrder(
                               id:  vehicleTestDriveOrders.id,
-                              reason:  selectedReason,
-                              isPurchaseOrder:  false,
+                              reason:  selectedReason, orderType: 'testDrive',
+
                             );
                       },
                       child: AutoSizeText(
