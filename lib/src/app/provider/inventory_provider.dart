@@ -107,7 +107,7 @@ class InventoryProvider extends ChangeNotifier {
       );
       _handleProductsResponse(getProduct);
     } catch (e) {
-       _handleError(e, 'Error while fetching list of products');
+      _handleError(e, 'Error while fetching list of products');
     }
   }
 

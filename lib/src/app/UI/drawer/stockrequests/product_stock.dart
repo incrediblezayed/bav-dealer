@@ -54,7 +54,8 @@ class ProductStock extends ConsumerWidget {
 
                   final product = data.elementAt(index); // Retrieve individual product
 
-                  return KStockProductCard(
+                  return
+                    KStockProductCard(
                     product: product, // Pass individual product to card widget
                   );
                 },
