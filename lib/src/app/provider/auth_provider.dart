@@ -568,14 +568,14 @@ class AuthProvider extends ChangeNotifier {
             onPressed: () {
               AppRoutes.pop();
             },
-            child: Text('No'),
+            child: const Text('No'),
           ),
           TextButton(
             onPressed: () async {
               AppRoutes.pop();
               await Geolocator.openLocationSettings();
             },
-            child: Text('Yes'),
+            child: const Text('Yes'),
           ),
         ],
       );

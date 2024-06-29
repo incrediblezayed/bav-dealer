@@ -20,6 +20,14 @@ Serializer<
         GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery>
     _$gProductDealerStockRequestsDataProductDealerStockRequestsProductVariantGallerySerializer =
     new _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallerySerializer();
+Serializer<
+        GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product>
+    _$gProductDealerStockRequestsDataProductDealerStockRequestsProductVariantProductSerializer =
+    new _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productSerializer();
+Serializer<
+        GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand>
+    _$gProductDealerStockRequestsDataProductDealerStockRequestsProductVariantProductBrandSerializer =
+    new _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandSerializer();
 Serializer<GVehicleDealerStockRequestsData>
     _$gVehicleDealerStockRequestsDataSerializer =
     new _$GVehicleDealerStockRequestsDataSerializer();
@@ -38,7 +46,14 @@ Serializer<
         GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant>
     _$gVehicleDealerStockRequestsDataVehicleDealerStockRequestsVehicleVariantSerializer =
     new _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariantSerializer();
-Serializer<GQueryData> _$gQueryDataSerializer = new _$GQueryDataSerializer();
+Serializer<
+        GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle>
+    _$gVehicleDealerStockRequestsDataVehicleDealerStockRequestsVehicleVariantVehicleSerializer =
+    new _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleSerializer();
+Serializer<
+        GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand>
+    _$gVehicleDealerStockRequestsDataVehicleDealerStockRequestsVehicleVariantVehicleBrandSerializer =
+    new _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandSerializer();
 
 class _$GProductDealerStockRequestsDataSerializer
     implements StructuredSerializer<GProductDealerStockRequestsData> {
@@ -70,6 +85,12 @@ class _$GProductDealerStockRequestsDataSerializer
                   GProductDealerStockRequestsData_productDealerStockRequests)
             ])));
     }
+    value = object.productDealerStockRequestsCount;
+    if (value != null) {
+      result
+        ..add('productDealerStockRequestsCount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -96,6 +117,10 @@ class _$GProductDealerStockRequestsDataSerializer
                 const FullType(
                     GProductDealerStockRequestsData_productDealerStockRequests)
               ]))! as BuiltList<Object?>);
+          break;
+        case 'productDealerStockRequestsCount':
+          result.productDealerStockRequestsCount = serializers
+              .deserialize(value, specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -261,6 +286,13 @@ class _$GProductDealerStockRequestsData_productDealerStockRequests_productVarian
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.GDateTime)));
+    }
     value = object.gallery;
     if (value != null) {
       result
@@ -270,6 +302,14 @@ class _$GProductDealerStockRequestsData_productDealerStockRequests_productVarian
               const FullType(
                   GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery)
             ])));
+    }
+    value = object.product;
+    if (value != null) {
+      result
+        ..add('product')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product)));
     }
     return result;
   }
@@ -291,13 +331,17 @@ class _$GProductDealerStockRequestsData_productDealerStockRequests_productVarian
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
         case 'name':
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
           break;
         case 'gallery':
           result.gallery.replace(serializers.deserialize(value,
@@ -305,6 +349,12 @@ class _$GProductDealerStockRequestsData_productDealerStockRequests_productVarian
                 const FullType(
                     GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery)
               ]))! as BuiltList<Object?>);
+          break;
+        case 'product':
+          result.product.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product))!
+              as GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product);
           break;
       }
     }
@@ -382,6 +432,169 @@ class _$GProductDealerStockRequestsData_productDealerStockRequests_productVarian
   }
 }
 
+class _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productSerializer
+    implements
+        StructuredSerializer<
+            GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product> {
+  @override
+  final Iterable<Type> types = const [
+    GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product,
+    _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product
+  ];
+  @override
+  final String wireName =
+      'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.brand;
+    if (value != null) {
+      result
+        ..add('brand')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'brand':
+          result.brand.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand))!
+              as GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand);
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandSerializer
+    implements
+        StructuredSerializer<
+            GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand> {
+  @override
+  final Iterable<Type> types = const [
+    GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand,
+    _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand
+  ];
+  @override
+  final String wireName =
+      'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$GVehicleDealerStockRequestsDataSerializer
     implements StructuredSerializer<GVehicleDealerStockRequestsData> {
   @override
@@ -412,6 +625,12 @@ class _$GVehicleDealerStockRequestsDataSerializer
                   GVehicleDealerStockRequestsData_vehicleDealerStockRequests)
             ])));
     }
+    value = object.vehicleDealerStockRequestsCount;
+    if (value != null) {
+      result
+        ..add('vehicleDealerStockRequestsCount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -438,6 +657,10 @@ class _$GVehicleDealerStockRequestsDataSerializer
                 const FullType(
                     GVehicleDealerStockRequestsData_vehicleDealerStockRequests)
               ]))! as BuiltList<Object?>);
+          break;
+        case 'vehicleDealerStockRequestsCount':
+          result.vehicleDealerStockRequestsCount = serializers
+              .deserialize(value, specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -471,12 +694,11 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequestsSerializer
       serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
     Object? value;
-    value = object.accepted;
+    value = object.stock;
     if (value != null) {
       result
-        ..add('accepted')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(bool)));
+        ..add('stock')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     value = object.type;
     if (value != null) {
@@ -489,12 +711,6 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequestsSerializer
     if (value != null) {
       result
         ..add('totalPrice')
-        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
-    }
-    value = object.stock;
-    if (value != null) {
-      result
-        ..add('stock')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     value = object.vehicleColor;
@@ -537,9 +753,9 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequestsSerializer
           result.id = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
-        case 'accepted':
-          result.accepted = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool?;
+        case 'stock':
+          result.stock = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'type':
           result.type = serializers.deserialize(value,
@@ -547,10 +763,6 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequestsSerializer
           break;
         case 'totalPrice':
           result.totalPrice = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
-          break;
-        case 'stock':
-          result.stock = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
           break;
         case 'vehicleColor':
@@ -606,6 +818,13 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColorS
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.code;
+    if (value != null) {
+      result
+        ..add('code')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.gallery;
     if (value != null) {
       result
@@ -642,6 +861,10 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColorS
           break;
         case 'name':
           result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'code':
+          result.code = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'gallery':
@@ -761,6 +984,21 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVarian
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.GDateTime)));
+    }
+    value = object.vehicle;
+    if (value != null) {
+      result
+        ..add('vehicle')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle)));
+    }
     return result;
   }
 
@@ -789,6 +1027,16 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVarian
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
+          break;
+        case 'vehicle':
+          result.vehicle.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle))!
+              as GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle);
+          break;
       }
     }
 
@@ -796,34 +1044,64 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVarian
   }
 }
 
-class _$GQueryDataSerializer implements StructuredSerializer<GQueryData> {
+class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleSerializer
+    implements
+        StructuredSerializer<
+            GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle> {
   @override
-  final Iterable<Type> types = const [GQueryData, _$GQueryData];
+  final Iterable<Type> types = const [
+    GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle,
+    _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle
+  ];
   @override
-  final String wireName = 'GQueryData';
+  final String wireName =
+      'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, GQueryData object,
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle
+          object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
       serializers.serialize(object.G__typename,
           specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
     Object? value;
-    value = object.vehicleDealerStockRequestsCount;
+    value = object.brand;
     if (value != null) {
       result
-        ..add('vehicleDealerStockRequestsCount')
-        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+        ..add('brand')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand)));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     return result;
   }
 
   @override
-  GQueryData deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GQueryDataBuilder();
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -835,9 +1113,92 @@ class _$GQueryDataSerializer implements StructuredSerializer<GQueryData> {
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
-        case 'vehicleDealerStockRequestsCount':
-          result.vehicleDealerStockRequestsCount = serializers
-              .deserialize(value, specifiedType: const FullType(int)) as int?;
+        case 'brand':
+          result.brand.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand))!
+              as GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand);
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandSerializer
+    implements
+        StructuredSerializer<
+            GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand,
+    _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand
+  ];
+  @override
+  final String wireName =
+      'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -853,13 +1214,17 @@ class _$GProductDealerStockRequestsData
   @override
   final BuiltList<GProductDealerStockRequestsData_productDealerStockRequests>?
       productDealerStockRequests;
+  @override
+  final int? productDealerStockRequestsCount;
 
   factory _$GProductDealerStockRequestsData(
           [void Function(GProductDealerStockRequestsDataBuilder)? updates]) =>
       (new GProductDealerStockRequestsDataBuilder()..update(updates))._build();
 
   _$GProductDealerStockRequestsData._(
-      {required this.G__typename, this.productDealerStockRequests})
+      {required this.G__typename,
+      this.productDealerStockRequests,
+      this.productDealerStockRequestsCount})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GProductDealerStockRequestsData', 'G__typename');
@@ -879,7 +1244,9 @@ class _$GProductDealerStockRequestsData
     if (identical(other, this)) return true;
     return other is GProductDealerStockRequestsData &&
         G__typename == other.G__typename &&
-        productDealerStockRequests == other.productDealerStockRequests;
+        productDealerStockRequests == other.productDealerStockRequests &&
+        productDealerStockRequestsCount ==
+            other.productDealerStockRequestsCount;
   }
 
   @override
@@ -887,6 +1254,7 @@ class _$GProductDealerStockRequestsData
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, productDealerStockRequests.hashCode);
+    _$hash = $jc(_$hash, productDealerStockRequestsCount.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -895,7 +1263,9 @@ class _$GProductDealerStockRequestsData
   String toString() {
     return (newBuiltValueToStringHelper(r'GProductDealerStockRequestsData')
           ..add('G__typename', G__typename)
-          ..add('productDealerStockRequests', productDealerStockRequests))
+          ..add('productDealerStockRequests', productDealerStockRequests)
+          ..add('productDealerStockRequestsCount',
+              productDealerStockRequestsCount))
         .toString();
   }
 }
@@ -922,6 +1292,12 @@ class GProductDealerStockRequestsDataBuilder
               productDealerStockRequests) =>
       _$this._productDealerStockRequests = productDealerStockRequests;
 
+  int? _productDealerStockRequestsCount;
+  int? get productDealerStockRequestsCount =>
+      _$this._productDealerStockRequestsCount;
+  set productDealerStockRequestsCount(int? productDealerStockRequestsCount) =>
+      _$this._productDealerStockRequestsCount = productDealerStockRequestsCount;
+
   GProductDealerStockRequestsDataBuilder() {
     GProductDealerStockRequestsData._initializeBuilder(this);
   }
@@ -931,6 +1307,7 @@ class GProductDealerStockRequestsDataBuilder
     if ($v != null) {
       _G__typename = $v.G__typename;
       _productDealerStockRequests = $v.productDealerStockRequests?.toBuilder();
+      _productDealerStockRequestsCount = $v.productDealerStockRequestsCount;
       _$v = null;
     }
     return this;
@@ -957,7 +1334,8 @@ class GProductDealerStockRequestsDataBuilder
           new _$GProductDealerStockRequestsData._(
               G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                   r'GProductDealerStockRequestsData', 'G__typename'),
-              productDealerStockRequests: _productDealerStockRequests?.build());
+              productDealerStockRequests: _productDealerStockRequests?.build(),
+              productDealerStockRequestsCount: productDealerStockRequestsCount);
     } catch (_) {
       late String _$failedField;
       try {
@@ -1209,13 +1587,18 @@ class _$GProductDealerStockRequestsData_productDealerStockRequests_productVarian
   @override
   final String G__typename;
   @override
+  final String id;
+  @override
   final String? name;
   @override
-  final String id;
+  final _i2.GDateTime? modifiedAt;
   @override
   final BuiltList<
           GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery>?
       gallery;
+  @override
+  final GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product?
+      product;
 
   factory _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant(
           [void Function(
@@ -1226,7 +1609,12 @@ class _$GProductDealerStockRequestsData_productDealerStockRequests_productVarian
           ._build();
 
   _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant._(
-      {required this.G__typename, this.name, required this.id, this.gallery})
+      {required this.G__typename,
+      required this.id,
+      this.name,
+      this.modifiedAt,
+      this.gallery,
+      this.product})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
@@ -1257,18 +1645,22 @@ class _$GProductDealerStockRequestsData_productDealerStockRequests_productVarian
     return other
             is GProductDealerStockRequestsData_productDealerStockRequests_productVariant &&
         G__typename == other.G__typename &&
-        name == other.name &&
         id == other.id &&
-        gallery == other.gallery;
+        name == other.name &&
+        modifiedAt == other.modifiedAt &&
+        gallery == other.gallery &&
+        product == other.product;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, gallery.hashCode);
+    _$hash = $jc(_$hash, product.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -1278,9 +1670,11 @@ class _$GProductDealerStockRequestsData_productDealerStockRequests_productVarian
     return (newBuiltValueToStringHelper(
             r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant')
           ..add('G__typename', G__typename)
-          ..add('name', name)
           ..add('id', id)
-          ..add('gallery', gallery))
+          ..add('name', name)
+          ..add('modifiedAt', modifiedAt)
+          ..add('gallery', gallery)
+          ..add('product', product))
         .toString();
   }
 }
@@ -1297,13 +1691,19 @@ class GProductDealerStockRequestsData_productDealerStockRequests_productVariantB
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
+  _i2.GDateTimeBuilder? _modifiedAt;
+  _i2.GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new _i2.GDateTimeBuilder();
+  set modifiedAt(_i2.GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
 
   ListBuilder<
           GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery>?
@@ -1318,6 +1718,16 @@ class GProductDealerStockRequestsData_productDealerStockRequests_productVariantB
               gallery) =>
       _$this._gallery = gallery;
 
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder?
+      _product;
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder
+      get product => _$this._product ??=
+          new GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder();
+  set product(
+          GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder?
+              product) =>
+      _$this._product = product;
+
   GProductDealerStockRequestsData_productDealerStockRequests_productVariantBuilder() {
     GProductDealerStockRequestsData_productDealerStockRequests_productVariant
         ._initializeBuilder(this);
@@ -1328,9 +1738,11 @@ class GProductDealerStockRequestsData_productDealerStockRequests_productVariantB
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _name = $v.name;
       _id = $v.id;
+      _name = $v.name;
+      _modifiedAt = $v.modifiedAt?.toBuilder();
       _gallery = $v.gallery?.toBuilder();
+      _product = $v.product?.toBuilder();
       _$v = null;
     }
     return this;
@@ -1369,17 +1781,23 @@ class GProductDealerStockRequestsData_productDealerStockRequests_productVariantB
                   G__typename,
                   r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant',
                   'G__typename'),
-              name: name,
               id: BuiltValueNullFieldError.checkNotNull(
                   id,
                   r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant',
                   'id'),
-              gallery: _gallery?.build());
+              name: name,
+              modifiedAt: _modifiedAt?.build(),
+              gallery: _gallery?.build(),
+              product: _product?.build());
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
         _$failedField = 'gallery';
         _gallery?.build();
+        _$failedField = 'product';
+        _product?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant',
@@ -1545,6 +1963,359 @@ class GProductDealerStockRequestsData_productDealerStockRequests_productVariant_
   }
 }
 
+class _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product
+    extends GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product {
+  @override
+  final String G__typename;
+  @override
+  final GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand?
+      brand;
+  @override
+  final String? name;
+  @override
+  final String id;
+  @override
+  final String? description;
+
+  factory _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product(
+          [void Function(
+                  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder)?
+              updates]) =>
+      (new GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product._(
+      {required this.G__typename,
+      this.brand,
+      this.name,
+      required this.id,
+      this.description})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id,
+        r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product',
+        'id');
+  }
+
+  @override
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product
+      rebuild(
+              void Function(
+                      GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder
+      toBuilder() =>
+          new GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product &&
+        G__typename == other.G__typename &&
+        brand == other.brand &&
+        name == other.name &&
+        id == other.id &&
+        description == other.description;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, brand.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product')
+          ..add('G__typename', G__typename)
+          ..add('brand', brand)
+          ..add('name', name)
+          ..add('id', id)
+          ..add('description', description))
+        .toString();
+  }
+}
+
+class GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder
+    implements
+        Builder<
+            GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product,
+            GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder> {
+  _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder?
+      _brand;
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder
+      get brand => _$this._brand ??=
+          new GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder();
+  set brand(
+          GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder?
+              brand) =>
+      _$this._brand = brand;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder() {
+    GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product
+        ._initializeBuilder(this);
+  }
+
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _brand = $v.brand?.toBuilder();
+      _name = $v.name;
+      _id = $v.id;
+      _description = $v.description;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product
+      build() => _build();
+
+  _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product
+      _build() {
+    _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product
+        _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product
+              ._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product',
+                  'G__typename'),
+              brand: _brand?.build(),
+              name: name,
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id,
+                  r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product',
+                  'id'),
+              description: description);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'brand';
+        _brand?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand
+    extends GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? name;
+
+  factory _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand(
+          [void Function(
+                  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder)?
+              updates]) =>
+      (new GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand._(
+      {required this.G__typename, required this.id, this.name})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id,
+        r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand',
+        'id');
+  }
+
+  @override
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand
+      rebuild(
+              void Function(
+                      GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder
+      toBuilder() =>
+          new GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        name == other.name;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('name', name))
+        .toString();
+  }
+}
+
+class GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder
+    implements
+        Builder<
+            GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand,
+            GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder> {
+  _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder() {
+    GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand
+        ._initializeBuilder(this);
+  }
+
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _name = $v.name;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand
+      build() => _build();
+
+  _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand
+      _build() {
+    final _$result = _$v ??
+        new _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand
+            ._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand',
+                'id'),
+            name: name);
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$GVehicleDealerStockRequestsData
     extends GVehicleDealerStockRequestsData {
   @override
@@ -1552,13 +2323,17 @@ class _$GVehicleDealerStockRequestsData
   @override
   final BuiltList<GVehicleDealerStockRequestsData_vehicleDealerStockRequests>?
       vehicleDealerStockRequests;
+  @override
+  final int? vehicleDealerStockRequestsCount;
 
   factory _$GVehicleDealerStockRequestsData(
           [void Function(GVehicleDealerStockRequestsDataBuilder)? updates]) =>
       (new GVehicleDealerStockRequestsDataBuilder()..update(updates))._build();
 
   _$GVehicleDealerStockRequestsData._(
-      {required this.G__typename, this.vehicleDealerStockRequests})
+      {required this.G__typename,
+      this.vehicleDealerStockRequests,
+      this.vehicleDealerStockRequestsCount})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GVehicleDealerStockRequestsData', 'G__typename');
@@ -1578,7 +2353,9 @@ class _$GVehicleDealerStockRequestsData
     if (identical(other, this)) return true;
     return other is GVehicleDealerStockRequestsData &&
         G__typename == other.G__typename &&
-        vehicleDealerStockRequests == other.vehicleDealerStockRequests;
+        vehicleDealerStockRequests == other.vehicleDealerStockRequests &&
+        vehicleDealerStockRequestsCount ==
+            other.vehicleDealerStockRequestsCount;
   }
 
   @override
@@ -1586,6 +2363,7 @@ class _$GVehicleDealerStockRequestsData
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, vehicleDealerStockRequests.hashCode);
+    _$hash = $jc(_$hash, vehicleDealerStockRequestsCount.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -1594,7 +2372,9 @@ class _$GVehicleDealerStockRequestsData
   String toString() {
     return (newBuiltValueToStringHelper(r'GVehicleDealerStockRequestsData')
           ..add('G__typename', G__typename)
-          ..add('vehicleDealerStockRequests', vehicleDealerStockRequests))
+          ..add('vehicleDealerStockRequests', vehicleDealerStockRequests)
+          ..add('vehicleDealerStockRequestsCount',
+              vehicleDealerStockRequestsCount))
         .toString();
   }
 }
@@ -1621,6 +2401,12 @@ class GVehicleDealerStockRequestsDataBuilder
               vehicleDealerStockRequests) =>
       _$this._vehicleDealerStockRequests = vehicleDealerStockRequests;
 
+  int? _vehicleDealerStockRequestsCount;
+  int? get vehicleDealerStockRequestsCount =>
+      _$this._vehicleDealerStockRequestsCount;
+  set vehicleDealerStockRequestsCount(int? vehicleDealerStockRequestsCount) =>
+      _$this._vehicleDealerStockRequestsCount = vehicleDealerStockRequestsCount;
+
   GVehicleDealerStockRequestsDataBuilder() {
     GVehicleDealerStockRequestsData._initializeBuilder(this);
   }
@@ -1630,6 +2416,7 @@ class GVehicleDealerStockRequestsDataBuilder
     if ($v != null) {
       _G__typename = $v.G__typename;
       _vehicleDealerStockRequests = $v.vehicleDealerStockRequests?.toBuilder();
+      _vehicleDealerStockRequestsCount = $v.vehicleDealerStockRequestsCount;
       _$v = null;
     }
     return this;
@@ -1656,7 +2443,8 @@ class GVehicleDealerStockRequestsDataBuilder
           new _$GVehicleDealerStockRequestsData._(
               G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                   r'GVehicleDealerStockRequestsData', 'G__typename'),
-              vehicleDealerStockRequests: _vehicleDealerStockRequests?.build());
+              vehicleDealerStockRequests: _vehicleDealerStockRequests?.build(),
+              vehicleDealerStockRequestsCount: vehicleDealerStockRequestsCount);
     } catch (_) {
       late String _$failedField;
       try {
@@ -1680,13 +2468,11 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests
   @override
   final String id;
   @override
-  final bool? accepted;
+  final int? stock;
   @override
   final String? type;
   @override
   final int? totalPrice;
-  @override
-  final int? stock;
   @override
   final GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor?
       vehicleColor;
@@ -1705,10 +2491,9 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests
   _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests._(
       {required this.G__typename,
       required this.id,
-      this.accepted,
+      this.stock,
       this.type,
       this.totalPrice,
-      this.stock,
       this.vehicleColor,
       this.vehicleVariant})
       : super._() {
@@ -1740,10 +2525,9 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests
             is GVehicleDealerStockRequestsData_vehicleDealerStockRequests &&
         G__typename == other.G__typename &&
         id == other.id &&
-        accepted == other.accepted &&
+        stock == other.stock &&
         type == other.type &&
         totalPrice == other.totalPrice &&
-        stock == other.stock &&
         vehicleColor == other.vehicleColor &&
         vehicleVariant == other.vehicleVariant;
   }
@@ -1753,10 +2537,9 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, accepted.hashCode);
+    _$hash = $jc(_$hash, stock.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, totalPrice.hashCode);
-    _$hash = $jc(_$hash, stock.hashCode);
     _$hash = $jc(_$hash, vehicleColor.hashCode);
     _$hash = $jc(_$hash, vehicleVariant.hashCode);
     _$hash = $jf(_$hash);
@@ -1769,10 +2552,9 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests
             r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests')
           ..add('G__typename', G__typename)
           ..add('id', id)
-          ..add('accepted', accepted)
+          ..add('stock', stock)
           ..add('type', type)
           ..add('totalPrice', totalPrice)
-          ..add('stock', stock)
           ..add('vehicleColor', vehicleColor)
           ..add('vehicleVariant', vehicleVariant))
         .toString();
@@ -1793,9 +2575,9 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequestsBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  bool? _accepted;
-  bool? get accepted => _$this._accepted;
-  set accepted(bool? accepted) => _$this._accepted = accepted;
+  int? _stock;
+  int? get stock => _$this._stock;
+  set stock(int? stock) => _$this._stock = stock;
 
   String? _type;
   String? get type => _$this._type;
@@ -1804,10 +2586,6 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequestsBuilder
   int? _totalPrice;
   int? get totalPrice => _$this._totalPrice;
   set totalPrice(int? totalPrice) => _$this._totalPrice = totalPrice;
-
-  int? _stock;
-  int? get stock => _$this._stock;
-  set stock(int? stock) => _$this._stock = stock;
 
   GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColorBuilder?
       _vehicleColor;
@@ -1839,10 +2617,9 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequestsBuilder
     if ($v != null) {
       _G__typename = $v.G__typename;
       _id = $v.id;
-      _accepted = $v.accepted;
+      _stock = $v.stock;
       _type = $v.type;
       _totalPrice = $v.totalPrice;
-      _stock = $v.stock;
       _vehicleColor = $v.vehicleColor?.toBuilder();
       _vehicleVariant = $v.vehicleVariant?.toBuilder();
       _$v = null;
@@ -1882,10 +2659,9 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequestsBuilder
                   id,
                   r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests',
                   'id'),
-              accepted: accepted,
+              stock: stock,
               type: type,
               totalPrice: totalPrice,
-              stock: stock,
               vehicleColor: _vehicleColor?.build(),
               vehicleVariant: _vehicleVariant?.build());
     } catch (_) {
@@ -1917,6 +2693,8 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor
   @override
   final String? name;
   @override
+  final String? code;
+  @override
   final BuiltList<
           GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery>?
       gallery;
@@ -1930,7 +2708,11 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor
           ._build();
 
   _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor._(
-      {required this.G__typename, required this.id, this.name, this.gallery})
+      {required this.G__typename,
+      required this.id,
+      this.name,
+      this.code,
+      this.gallery})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
@@ -1963,6 +2745,7 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor
         G__typename == other.G__typename &&
         id == other.id &&
         name == other.name &&
+        code == other.code &&
         gallery == other.gallery;
   }
 
@@ -1972,6 +2755,7 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
     _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -1984,6 +2768,7 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor
           ..add('G__typename', G__typename)
           ..add('id', id)
           ..add('name', name)
+          ..add('code', code)
           ..add('gallery', gallery))
         .toString();
   }
@@ -2008,6 +2793,10 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColorBui
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  String? _code;
+  String? get code => _$this._code;
+  set code(String? code) => _$this._code = code;
 
   ListBuilder<
           GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery>?
@@ -2034,6 +2823,7 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColorBui
       _G__typename = $v.G__typename;
       _id = $v.id;
       _name = $v.name;
+      _code = $v.code;
       _gallery = $v.gallery?.toBuilder();
       _$v = null;
     }
@@ -2078,6 +2868,7 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColorBui
                   r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor',
                   'id'),
               name: name,
+              code: code,
               gallery: _gallery?.build());
     } catch (_) {
       late String _$failedField;
@@ -2257,6 +3048,11 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVarian
   final String id;
   @override
   final String? name;
+  @override
+  final _i2.GDateTime? modifiedAt;
+  @override
+  final GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle?
+      vehicle;
 
   factory _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant(
           [void Function(
@@ -2267,7 +3063,11 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVarian
           ._build();
 
   _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant._(
-      {required this.G__typename, required this.id, this.name})
+      {required this.G__typename,
+      required this.id,
+      this.name,
+      this.modifiedAt,
+      this.vehicle})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
@@ -2299,7 +3099,9 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVarian
             is GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant &&
         G__typename == other.G__typename &&
         id == other.id &&
-        name == other.name;
+        name == other.name &&
+        modifiedAt == other.modifiedAt &&
+        vehicle == other.vehicle;
   }
 
   @override
@@ -2308,6 +3110,8 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVarian
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, vehicle.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -2318,7 +3122,9 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVarian
             r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant')
           ..add('G__typename', G__typename)
           ..add('id', id)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('modifiedAt', modifiedAt)
+          ..add('vehicle', vehicle))
         .toString();
   }
 }
@@ -2343,6 +3149,22 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariantB
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  _i2.GDateTimeBuilder? _modifiedAt;
+  _i2.GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new _i2.GDateTimeBuilder();
+  set modifiedAt(_i2.GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder?
+      _vehicle;
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder
+      get vehicle => _$this._vehicle ??=
+          new GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder();
+  set vehicle(
+          GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder?
+              vehicle) =>
+      _$this._vehicle = vehicle;
+
   GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariantBuilder() {
     GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant
         ._initializeBuilder(this);
@@ -2355,6 +3177,8 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariantB
       _G__typename = $v.G__typename;
       _id = $v.id;
       _name = $v.name;
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _vehicle = $v.vehicle?.toBuilder();
       _$v = null;
     }
     return this;
@@ -2383,121 +3207,391 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariantB
 
   _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant
       _build() {
-    final _$result = _$v ??
-        new _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant
-            ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant',
-                'id'),
-            name: name);
+    _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant
+        _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant
+              ._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant',
+                  'G__typename'),
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id,
+                  r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant',
+                  'id'),
+              name: name,
+              modifiedAt: _modifiedAt?.build(),
+              vehicle: _vehicle?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'vehicle';
+        _vehicle?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }
 }
 
-class _$GQueryData extends GQueryData {
+class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle
+    extends GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle {
   @override
   final String G__typename;
   @override
-  final int? vehicleDealerStockRequestsCount;
+  final GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand?
+      brand;
+  @override
+  final String? name;
+  @override
+  final String id;
+  @override
+  final String? description;
 
-  factory _$GQueryData([void Function(GQueryDataBuilder)? updates]) =>
-      (new GQueryDataBuilder()..update(updates))._build();
+  factory _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle(
+          [void Function(
+                  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder)?
+              updates]) =>
+      (new GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder()
+            ..update(updates))
+          ._build();
 
-  _$GQueryData._(
-      {required this.G__typename, this.vehicleDealerStockRequestsCount})
+  _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle._(
+      {required this.G__typename,
+      this.brand,
+      this.name,
+      required this.id,
+      this.description})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GQueryData', 'G__typename');
+        G__typename,
+        r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id,
+        r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle',
+        'id');
   }
 
   @override
-  GQueryData rebuild(void Function(GQueryDataBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle
+      rebuild(
+              void Function(
+                      GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
 
   @override
-  GQueryDataBuilder toBuilder() => new GQueryDataBuilder()..replace(this);
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder
+      toBuilder() =>
+          new GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder()
+            ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GQueryData &&
+    return other
+            is GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle &&
         G__typename == other.G__typename &&
-        vehicleDealerStockRequestsCount ==
-            other.vehicleDealerStockRequestsCount;
+        brand == other.brand &&
+        name == other.name &&
+        id == other.id &&
+        description == other.description;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, vehicleDealerStockRequestsCount.hashCode);
+    _$hash = $jc(_$hash, brand.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GQueryData')
+    return (newBuiltValueToStringHelper(
+            r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle')
           ..add('G__typename', G__typename)
-          ..add('vehicleDealerStockRequestsCount',
-              vehicleDealerStockRequestsCount))
+          ..add('brand', brand)
+          ..add('name', name)
+          ..add('id', id)
+          ..add('description', description))
         .toString();
   }
 }
 
-class GQueryDataBuilder implements Builder<GQueryData, GQueryDataBuilder> {
-  _$GQueryData? _$v;
+class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder
+    implements
+        Builder<
+            GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle,
+            GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder> {
+  _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle?
+      _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  int? _vehicleDealerStockRequestsCount;
-  int? get vehicleDealerStockRequestsCount =>
-      _$this._vehicleDealerStockRequestsCount;
-  set vehicleDealerStockRequestsCount(int? vehicleDealerStockRequestsCount) =>
-      _$this._vehicleDealerStockRequestsCount = vehicleDealerStockRequestsCount;
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder?
+      _brand;
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder
+      get brand => _$this._brand ??=
+          new GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder();
+  set brand(
+          GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder?
+              brand) =>
+      _$this._brand = brand;
 
-  GQueryDataBuilder() {
-    GQueryData._initializeBuilder(this);
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder() {
+    GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle
+        ._initializeBuilder(this);
   }
 
-  GQueryDataBuilder get _$this {
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder
+      get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _vehicleDealerStockRequestsCount = $v.vehicleDealerStockRequestsCount;
+      _brand = $v.brand?.toBuilder();
+      _name = $v.name;
+      _id = $v.id;
+      _description = $v.description;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(GQueryData other) {
+  void replace(
+      GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle
+          other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GQueryData;
+    _$v = other
+        as _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle;
   }
 
   @override
-  void update(void Function(GQueryDataBuilder)? updates) {
+  void update(
+      void Function(
+              GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder)?
+          updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GQueryData build() => _build();
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle
+      build() => _build();
 
-  _$GQueryData _build() {
+  _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle
+      _build() {
+    _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle
+        _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle
+              ._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle',
+                  'G__typename'),
+              brand: _brand?.build(),
+              name: name,
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id,
+                  r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle',
+                  'id'),
+              description: description);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'brand';
+        _brand?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand
+    extends GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand {
+  @override
+  final String G__typename;
+  @override
+  final String id;
+  @override
+  final String? name;
+
+  factory _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand(
+          [void Function(
+                  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder)?
+              updates]) =>
+      (new GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand._(
+      {required this.G__typename, required this.id, this.name})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id,
+        r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand',
+        'id');
+  }
+
+  @override
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand
+      rebuild(
+              void Function(
+                      GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder)
+                  updates) =>
+          (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder
+      toBuilder() =>
+          new GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        name == other.name;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('name', name))
+        .toString();
+  }
+}
+
+class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder
+    implements
+        Builder<
+            GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand,
+            GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder> {
+  _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand?
+      _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder() {
+    GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand
+        ._initializeBuilder(this);
+  }
+
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id;
+      _name = $v.name;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand;
+  }
+
+  @override
+  void update(
+      void Function(
+              GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand
+      build() => _build();
+
+  _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand
+      _build() {
     final _$result = _$v ??
-        new _$GQueryData._(
+        new _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand
+            ._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GQueryData', 'G__typename'),
-            vehicleDealerStockRequestsCount: vehicleDealerStockRequestsCount);
+                G__typename,
+                r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand',
+                'id'),
+            name: name);
     replace(_$result);
     return _$result;
   }

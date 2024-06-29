@@ -379,6 +379,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(
           GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery
               .serializer)
+      ..add(
+          GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product
+              .serializer)
+      ..add(
+          GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand
+              .serializer)
       ..add(GProductDealerStockRequestsReq.serializer)
       ..add(GProductDealerStockRequestsVars.serializer)
       ..add(GProductDealerUpdateArgs.serializer)
@@ -568,10 +574,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GProductVideoWhereUniqueInput.serializer)
       ..add(GProductWhereInput.serializer)
       ..add(GProductWhereUniqueInput.serializer)
-      ..add(GQueryData.serializer)
       ..add(GQueryMode.serializer)
-      ..add(GQueryReq.serializer)
-      ..add(GQueryVars.serializer)
       ..add(GRedeemUserPasswordResetTokenData.serializer)
       ..add(GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken
           .serializer)
@@ -675,6 +678,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GTestDriveOrderUpdateInput.serializer)
       ..add(GTestDriveOrderWhereInput.serializer)
       ..add(GTestDriveOrderWhereUniqueInput.serializer)
+      ..add(GTestDriveOrdersCountData.serializer)
+      ..add(GTestDriveOrdersCountReq.serializer)
+      ..add(GTestDriveOrdersCountVars.serializer)
       ..add(GTestDriveOrdersData.serializer)
       ..add(GTestDriveOrdersData_testDriveOrders.serializer)
       ..add(GTestDriveOrdersData_testDriveOrders_dealer.serializer)
@@ -870,6 +876,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(
           GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant
               .serializer)
+      ..add(
+          GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle
+              .serializer)
+      ..add(
+          GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand
+              .serializer)
       ..add(GVehicleDealerStockRequestsReq.serializer)
       ..add(GVehicleDealerStockRequestsVars.serializer)
       ..add(GVehicleDealerUpdateArgs.serializer)
@@ -932,6 +944,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleOrderUpdateInput.serializer)
       ..add(GVehicleOrderWhereInput.serializer)
       ..add(GVehicleOrderWhereUniqueInput.serializer)
+      ..add(GVehicleOrdersCountData.serializer)
+      ..add(GVehicleOrdersCountReq.serializer)
+      ..add(GVehicleOrdersCountVars.serializer)
       ..add(GVehicleOrdersData.serializer)
       ..add(GVehicleOrdersData_vehicleOrders.serializer)
       ..add(GVehicleOrdersData_vehicleOrders_dealer.serializer)
@@ -1679,6 +1694,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GProductWhereUniqueInput)]),
           () => new ListBuilder<GProductWhereUniqueInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GProductDealerStockRequestOrderByInput)]),
+          () => new ListBuilder<GProductDealerStockRequestOrderByInput>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(GProductDealerStockRequestWhereInput)]),

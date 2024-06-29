@@ -120,7 +120,8 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                       children: [
                         Text(
                           widget.vehiclePurchaseOrders.dealer?.vehicleVariant
-                              ?.name??'',
+                                  ?.name ??
+                              '',
                           style: theme.headlineMedium,
                         ),
                         SizedBox(height: 10.h),
@@ -161,7 +162,8 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                                 children: [
                                   Text(
                                     widget.vehiclePurchaseOrders.dealer
-                                        ?.vehicleVariant?.name??'',
+                                            ?.vehicleVariant?.name ??
+                                        '',
                                     style: theme.labelMedium!.copyWith(
                                       color: Colors.black.withOpacity(.5),
                                       fontWeight: FontWeight.w500,

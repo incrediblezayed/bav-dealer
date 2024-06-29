@@ -39,6 +39,10 @@ dependencies:
   multi_dropdown: ^2.1.4
   geolocator: ^12.0.0
 
+  stack_trace: any
+  built_value: any
+  http: any
+  collection: any
 dev_dependencies:
   flutter_lints: ^4.0.0
   build_runner: ^2.4.11

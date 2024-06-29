@@ -3,7 +3,6 @@ import 'package:dealerapp/src/app/provider/order_provider.dart';
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
-import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class KOrderProductCard extends ConsumerStatefulWidget {
@@ -15,7 +14,8 @@ class KOrderProductCard extends ConsumerStatefulWidget {
   final GProductOrdersData_productOrders productPurchaseOrders;
 
   @override
-  ConsumerState<KOrderProductCard> createState() => _KPurchaseOrderProductCardState();
+  ConsumerState<KOrderProductCard> createState() =>
+      _KPurchaseOrderProductCardState();
 }
 
 class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
@@ -171,7 +171,7 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                                   Text(
                                     // widget.bikeOrderModel.color,
                                     widget.productPurchaseOrders.dealer
-                                        ?.productVariant?.name ??
+                                            ?.productVariant?.name ??
                                         '',
                                     style: theme.labelMedium!.copyWith(
                                       color: Colors.black.withOpacity(.5),
@@ -577,15 +577,15 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                         ref
                             .read(orderProvider(OrderFamily.purchaseOrders))
                             .rejectOrder(
-                          id: productPurchaseOrders.id,
-                          reason: selectedReason,
-                          isPurchaseOrder: true,
-                        );
+                              id: productPurchaseOrders.id,
+                              reason: selectedReason,
+                              isPurchaseOrder: true,
+                            );
                       },
                       child: Text(
                         'Submit',
                         style:
-                        theme.headlineSmall!.copyWith(color: Colors.white),
+                            theme.headlineSmall!.copyWith(color: Colors.white),
                       ),
                     ),
                   ),

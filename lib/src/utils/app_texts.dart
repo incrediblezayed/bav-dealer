@@ -42,8 +42,6 @@ class AppTexts {
     color: AppTheme.defaultCaptionColor,
   );
 
-
-
   /// Body Medium
   static TextStyle? get bodyMedium => defaultTextTheme.bodyMedium?.copyWith(
         color: AppTheme.defaultTitleColor,

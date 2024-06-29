@@ -1,5 +1,5 @@
 ///Data Model for Guarantees
-class Guarantees{
+class Guarantees {
   ///Image Field Output Default Constructor
   Guarantees({
     this.id,

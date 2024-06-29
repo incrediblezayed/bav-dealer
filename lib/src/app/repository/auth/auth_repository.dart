@@ -378,19 +378,20 @@ class AuthRepository {
 
       final result = await _client
           .request(
-        GUpdateDealerReq((b) => b.vars
-          ..data.lLng = long
-          ..data.lLat = lat
-          ..where.id = dealerId),
-      )
+            GUpdateDealerReq((b) => b.vars
+              ..data.lLng = long
+              ..data.lLat = lat
+              ..where.id = dealerId),
+          )
           .first;
 
-      if(result.linkException != null) {
+      if (result.linkException != null) {
         throw result.linkException!;
       }
 
-      if(result.graphqlErrors != null) {
-        throw Exception(result.graphqlErrors?.firstOrNull?.message ?? 'Something went wrong while updating dealer details');
+      if (result.graphqlErrors != null) {
+        throw Exception(result.graphqlErrors?.firstOrNull?.message ??
+            'Something went wrong while updating dealer details');
       }
 
       if (result.data?.updateDealer?.id != null) {
@@ -403,5 +404,4 @@ class AuthRepository {
       rethrow;
     }
   }
-
 }

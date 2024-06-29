@@ -302,11 +302,11 @@ class AppDrawer extends ConsumerWidget {
                       icon: AppImages.stockRequests,
                       onTap: () {
                         AppRoutes.push(
-                          page: const StockRequests(
-                          ),
+                          page: const StockRequests(),
                         );
                       },
                     ),
+
                     ///Order History Expansion Tile
                     const KExpansionTile(),
                     /* _drawerTile(

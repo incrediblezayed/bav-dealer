@@ -10,8 +10,12 @@ Serializer<GProductOrdersVars> _$gProductOrdersVarsSerializer =
     new _$GProductOrdersVarsSerializer();
 Serializer<GVehicleOrdersVars> _$gVehicleOrdersVarsSerializer =
     new _$GVehicleOrdersVarsSerializer();
+Serializer<GVehicleOrdersCountVars> _$gVehicleOrdersCountVarsSerializer =
+    new _$GVehicleOrdersCountVarsSerializer();
 Serializer<GTestDriveOrdersVars> _$gTestDriveOrdersVarsSerializer =
     new _$GTestDriveOrdersVarsSerializer();
+Serializer<GTestDriveOrdersCountVars> _$gTestDriveOrdersCountVarsSerializer =
+    new _$GTestDriveOrdersCountVarsSerializer();
 Serializer<GUpdateProductOrderVars> _$gUpdateProductOrderVarsSerializer =
     new _$GUpdateProductOrderVarsSerializer();
 Serializer<GUpdateVehicleOrderVars> _$gUpdateVehicleOrderVarsSerializer =
@@ -130,6 +134,53 @@ class _$GVehicleOrdersVarsSerializer
   }
 }
 
+class _$GVehicleOrdersCountVarsSerializer
+    implements StructuredSerializer<GVehicleOrdersCountVars> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleOrdersCountVars,
+    _$GVehicleOrdersCountVars
+  ];
+  @override
+  final String wireName = 'GVehicleOrdersCountVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleOrdersCountVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(_i1.GVehicleOrderWhereInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GVehicleOrdersCountVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleOrdersCountVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i1.GVehicleOrderWhereInput))!
+              as _i1.GVehicleOrderWhereInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$GTestDriveOrdersVarsSerializer
     implements StructuredSerializer<GTestDriveOrdersVars> {
   @override
@@ -179,6 +230,53 @@ class _$GTestDriveOrdersVarsSerializer
               specifiedType: const FullType(BuiltList, const [
                 const FullType(_i1.GTestDriveOrderOrderByInput)
               ]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GTestDriveOrdersCountVarsSerializer
+    implements StructuredSerializer<GTestDriveOrdersCountVars> {
+  @override
+  final Iterable<Type> types = const [
+    GTestDriveOrdersCountVars,
+    _$GTestDriveOrdersCountVars
+  ];
+  @override
+  final String wireName = 'GTestDriveOrdersCountVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GTestDriveOrdersCountVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(_i1.GTestDriveOrderWhereInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GTestDriveOrdersCountVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GTestDriveOrdersCountVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i1.GTestDriveOrderWhereInput))!
+              as _i1.GTestDriveOrderWhereInput);
           break;
       }
     }
@@ -641,6 +739,105 @@ class GVehicleOrdersVarsBuilder
   }
 }
 
+class _$GVehicleOrdersCountVars extends GVehicleOrdersCountVars {
+  @override
+  final _i1.GVehicleOrderWhereInput where;
+
+  factory _$GVehicleOrdersCountVars(
+          [void Function(GVehicleOrdersCountVarsBuilder)? updates]) =>
+      (new GVehicleOrdersCountVarsBuilder()..update(updates))._build();
+
+  _$GVehicleOrdersCountVars._({required this.where}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GVehicleOrdersCountVars', 'where');
+  }
+
+  @override
+  GVehicleOrdersCountVars rebuild(
+          void Function(GVehicleOrdersCountVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleOrdersCountVarsBuilder toBuilder() =>
+      new GVehicleOrdersCountVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleOrdersCountVars && where == other.where;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GVehicleOrdersCountVars')
+          ..add('where', where))
+        .toString();
+  }
+}
+
+class GVehicleOrdersCountVarsBuilder
+    implements
+        Builder<GVehicleOrdersCountVars, GVehicleOrdersCountVarsBuilder> {
+  _$GVehicleOrdersCountVars? _$v;
+
+  _i1.GVehicleOrderWhereInputBuilder? _where;
+  _i1.GVehicleOrderWhereInputBuilder get where =>
+      _$this._where ??= new _i1.GVehicleOrderWhereInputBuilder();
+  set where(_i1.GVehicleOrderWhereInputBuilder? where) => _$this._where = where;
+
+  GVehicleOrdersCountVarsBuilder();
+
+  GVehicleOrdersCountVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleOrdersCountVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleOrdersCountVars;
+  }
+
+  @override
+  void update(void Function(GVehicleOrdersCountVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleOrdersCountVars build() => _build();
+
+  _$GVehicleOrdersCountVars _build() {
+    _$GVehicleOrdersCountVars _$result;
+    try {
+      _$result = _$v ?? new _$GVehicleOrdersCountVars._(where: where.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleOrdersCountVars', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$GTestDriveOrdersVars extends GTestDriveOrdersVars {
   @override
   final _i1.GTestDriveOrderWhereInput where;
@@ -752,6 +949,106 @@ class GTestDriveOrdersVarsBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GTestDriveOrdersVars', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GTestDriveOrdersCountVars extends GTestDriveOrdersCountVars {
+  @override
+  final _i1.GTestDriveOrderWhereInput where;
+
+  factory _$GTestDriveOrdersCountVars(
+          [void Function(GTestDriveOrdersCountVarsBuilder)? updates]) =>
+      (new GTestDriveOrdersCountVarsBuilder()..update(updates))._build();
+
+  _$GTestDriveOrdersCountVars._({required this.where}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GTestDriveOrdersCountVars', 'where');
+  }
+
+  @override
+  GTestDriveOrdersCountVars rebuild(
+          void Function(GTestDriveOrdersCountVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GTestDriveOrdersCountVarsBuilder toBuilder() =>
+      new GTestDriveOrdersCountVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GTestDriveOrdersCountVars && where == other.where;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GTestDriveOrdersCountVars')
+          ..add('where', where))
+        .toString();
+  }
+}
+
+class GTestDriveOrdersCountVarsBuilder
+    implements
+        Builder<GTestDriveOrdersCountVars, GTestDriveOrdersCountVarsBuilder> {
+  _$GTestDriveOrdersCountVars? _$v;
+
+  _i1.GTestDriveOrderWhereInputBuilder? _where;
+  _i1.GTestDriveOrderWhereInputBuilder get where =>
+      _$this._where ??= new _i1.GTestDriveOrderWhereInputBuilder();
+  set where(_i1.GTestDriveOrderWhereInputBuilder? where) =>
+      _$this._where = where;
+
+  GTestDriveOrdersCountVarsBuilder();
+
+  GTestDriveOrdersCountVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GTestDriveOrdersCountVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GTestDriveOrdersCountVars;
+  }
+
+  @override
+  void update(void Function(GTestDriveOrdersCountVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GTestDriveOrdersCountVars build() => _build();
+
+  _$GTestDriveOrdersCountVars _build() {
+    _$GTestDriveOrdersCountVars _$result;
+    try {
+      _$result = _$v ?? new _$GTestDriveOrdersCountVars._(where: where.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GTestDriveOrdersCountVars', _$failedField, e.toString());
       }
       rethrow;
     }

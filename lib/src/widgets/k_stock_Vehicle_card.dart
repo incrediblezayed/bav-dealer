@@ -1,16 +1,16 @@
-import 'package:dealerapp/src/utils/global_exports.dart';
-import 'package:flutter/material.dart';
-import 'package:dealerapp/src/widgets/k_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:dealerapp/src/app/model/dealer_stock_model.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:dealerapp/src/utils/global_exports.dart';
+import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
 
 class KStockVehicleCard extends StatelessWidget {
   const KStockVehicleCard({
     required this.variant,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
-  final Map<String, dynamic> variant;
+  final DealerStockModel variant;
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +28,39 @@ class KStockVehicleCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                variant['id'] ?? '',
-                style: theme.headlineLarge!
-                    .copyWith(fontSize: 24.sp, fontWeight: FontWeight.w500),
+              Container(
+                decoration: BoxDecoration(
+                  color: AppTheme.primaryColor.withOpacity(.1),
+                  borderRadius: BorderRadius.circular(10.r),
+                ),
+                width: double.maxFinite,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 16.h,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AutoSizeText(
+                        'STOCK ID #${variant.id}',
+                        style: theme.labelLarge!.copyWith(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w700,
+                          color: AppTheme.black,
+                        ),
+                      ),
+                      SizedBox(height: 6.h),
+                      AutoSizeText(
+                        variant.createdAt.toLocal().formatTohhmmaddMMyy,
+                      ),
+                    ],
+                  ),
+                ),
               ),
               SizedBox(height: 10.h),
               Text(
-                variant['vehicleVariant']['name'] ?? '',
+                variant.variant.parentProduct?.name ?? '',
                 style: theme.labelMedium!.copyWith(
                   color: Colors.black.withOpacity(.5),
                   fontWeight: FontWeight.w500,
@@ -56,9 +81,8 @@ class KStockVehicleCard extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(6.r),
                           // Placeholder for the product image
-                          child: Container(
-                            color: Colors.grey[300],
-                          ),
+                          child:
+                              KCachedNWImage(variant.images.firstOrNull?.url),
                         ),
                       ),
                       SizedBox(width: 20.w),
@@ -77,7 +101,7 @@ class KStockVehicleCard extends StatelessWidget {
                                 SizedBox(width: 10.w),
                                 Flexible(
                                   child: Text(
-                                    variant['vehicleVariant']['name'] ?? '',
+                                    variant.variant.name,
                                     style: theme.labelMedium!.copyWith(
                                       color: Colors.black.withOpacity(.5),
                                       fontWeight: FontWeight.w500,
@@ -98,10 +122,76 @@ class KStockVehicleCard extends StatelessWidget {
                                 ),
                                 SizedBox(width: 10.w),
                                 Text(
-                                  variant['totalPrice'].toString() ?? '',
+                                  variant.totalPrice.toPrice(),
+                                  style: theme.labelLarge!.copyWith(
+                                      fontWeight: FontWeight.w600,
+                                      color: AppTheme.primaryColor),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 6.h),
+                            Row(
+                              children: [
+                                Text(
+                                  'Request Type',
+                                  style: theme.labelMedium!.copyWith(
+                                    color: Colors.black.withOpacity(.5),
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(width: 10.w),
+                                Text(
+                                  variant.type ?? '',
                                   style: theme.labelLarge!.copyWith(
                                     fontWeight: FontWeight.w600,
-                                    color: Colors.blue, // Change the color to match your theme
+                                    color: variant.type == 'add'
+                                        ? AppTheme.primaryColor
+                                        : AppTheme.red,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 6.h),
+                            Row(
+                              children: [
+                                Text(
+                                  'Stock',
+                                  style: theme.labelMedium!.copyWith(
+                                    color: Colors.black.withOpacity(.5),
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(width: 10.w),
+                                Text(
+                                  (variant.type == 'add' ? '' : '-') +
+                                      (variant.stock?.toString() ?? ''),
+                                  style: theme.labelLarge!.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                    color: variant.type == 'add'
+                                        ? AppTheme.primaryColor
+                                        : AppTheme.red,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 6.h),
+                            Row(
+                              children: [
+                                Text(
+                                  'Status',
+                                  style: theme.labelMedium!.copyWith(
+                                    color: Colors.black.withOpacity(.5),
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(width: 10.w),
+                                Text(
+                                  variant.accepted ? 'Accepted' : 'Processing',
+                                  style: theme.labelLarge!.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                    color: variant.accepted
+                                        ? AppTheme.primaryColor
+                                        : AppTheme.red,
                                   ),
                                 ),
                               ],
@@ -115,15 +205,6 @@ class KStockVehicleCard extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 10.h),
-              KButton(
-                onPressed: () {
-                  // Implement your onPressed logic here
-                },
-                text: 'Add (or) Update',
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
             ],
           ),
         ),

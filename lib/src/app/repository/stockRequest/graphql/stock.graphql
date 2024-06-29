@@ -1,5 +1,5 @@
-query ProductDealerStockRequests {
-  productDealerStockRequests {
+query ProductDealerStockRequests($where: ProductDealerStockRequestWhereInput!, $orderBy: [ProductDealerStockRequestOrderByInput!]!, $take: Int, $skip: Int!) {
+  productDealerStockRequests(where: $where, orderBy: $orderBy, take: $take, skip: $skip) {
     id
     accepted
     type
@@ -7,27 +7,37 @@ query ProductDealerStockRequests {
     stock
     modifiedAt
     productVariant {
-      name
       id
+      name
+      modifiedAt
       gallery {
         id
         file
       }
+      product {
+        brand {
+          id
+          name
+        }
+        name
+        id
+        description
+      }
     }
   }
+  productDealerStockRequestsCount(where: $where)
 }
 
 query VehicleDealerStockRequests($where: VehicleDealerStockRequestWhereInput!, $orderBy: [VehicleDealerStockRequestOrderByInput!]!, $take: Int, $skip: Int!) {
-
   vehicleDealerStockRequests(where: $where, orderBy: $orderBy, take: $take, skip: $skip) {
     id
-    accepted
+    stock
     type
     totalPrice
-    stock
     vehicleColor {
       id
       name
+      code
       gallery {
         id
         file
@@ -36,10 +46,17 @@ query VehicleDealerStockRequests($where: VehicleDealerStockRequestWhereInput!, $
     vehicleVariant {
       id
       name
+      modifiedAt
+      vehicle {
+        brand {
+          id
+          name
+        }
+        name
+        id
+        description
+      }
     }
   }
-}
-
-query Query($where: VehicleDealerStockRequestWhereInput!) {
   vehicleDealerStockRequestsCount(where: $where)
 }

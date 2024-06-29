@@ -110,6 +110,10 @@ query VehicleOrders(
   }
 }
 
+query VehicleOrdersCount($where: VehicleOrderWhereInput!) {
+  vehicleOrdersCount(where: $where)
+}
+
 query TestDriveOrders(
   $where: TestDriveOrderWhereInput!
   $orderBy: [TestDriveOrderOrderByInput!]!
@@ -164,6 +168,10 @@ query TestDriveOrders(
     }
     createdAt
   }
+}
+
+query TestDriveOrdersCount($where: TestDriveOrderWhereInput!) {
+  testDriveOrdersCount(where: $where)
 }
 
 mutation UpdateProductOrder(

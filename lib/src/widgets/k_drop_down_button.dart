@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 
 class KDropDownButton extends StatelessWidget {
   const KDropDownButton({
-    Key? key,
+    super.key,
     this.hintText,
     this.readOnly,
     this.inputType,
@@ -22,7 +22,7 @@ class KDropDownButton extends StatelessWidget {
     this.maxLines,
     this.textAlign = TextAlign.start,
     this.items,
-  }) : super(key: key);
+  });
 
   final String? hintText;
   final int? maxLines;
@@ -41,7 +41,7 @@ class KDropDownButton extends StatelessWidget {
   final FocusNode? focusNode;
   final BoxConstraints? suffixIconConstraints;
   final Widget Function(BuildContext context, EditableTextState state)?
-  contextMenuBuilder;
+      contextMenuBuilder;
   final TextAlign textAlign;
 
   @override

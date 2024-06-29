@@ -1,4 +1,3 @@
-
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/empty_widget.dart';
@@ -37,7 +36,8 @@ class NotificationPage extends ConsumerWidget {
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
         child: notificationPro.notifications.isEmpty
-            ? const Center(child: EmptyWidget(title: 'Uh-Oh No notifications found'))
+            ? const Center(
+                child: EmptyWidget(title: 'Uh-Oh No notifications found'))
             : ListView(
                 physics: const BouncingScrollPhysics(),
                 children: notificationPro.notifications

@@ -6,23 +6,24 @@ import 'package:flutter_svg/flutter_svg.dart';
 ///Bottom bar button
 class KBottomBarButton extends StatelessWidget {
   ///Constructor for bottom bar button
-  const KBottomBarButton(
-      {required this.text,
-      required this.onTap,
-      super.key,
-      this.bottomBarHeight,
-      this.imageHeight,
-      this.imageWidth,
-      this.leftPadding,
-      this.rightPadding,
-      this.image,
-      this.color = AppTheme.primaryColor,
-      this.size,
-      this.fontSize,
-      this.minSize = false,
-      this.radius = 5,
-      this.fontWeight,
-      this.secondaryColor,});
+  const KBottomBarButton({
+    required this.text,
+    required this.onTap,
+    super.key,
+    this.bottomBarHeight,
+    this.imageHeight,
+    this.imageWidth,
+    this.leftPadding,
+    this.rightPadding,
+    this.image,
+    this.color = AppTheme.primaryColor,
+    this.size,
+    this.fontSize,
+    this.minSize = false,
+    this.radius = 5,
+    this.fontWeight,
+    this.secondaryColor,
+  });
 
   final Color? secondaryColor;
 

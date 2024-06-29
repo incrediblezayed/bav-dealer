@@ -11,11 +11,12 @@ import 'package:http/http.dart' as http;
 
 class ReportRepository {
   final _client = getIt<GraphqlClient>();
-  Future<bool> createFeedback(
-      {required String title,
-      required String description,
-      required String categoryId,
-      required List<String> attachments,}) async {
+  Future<bool> createFeedback({
+    required String title,
+    required String description,
+    required String categoryId,
+    required List<String> attachments,
+  }) async {
     try {
       final userId = cacheProvider.getUserId();
 
@@ -30,24 +31,27 @@ class ReportRepository {
 
       final response = await _client
           .httpClient(
-              isMultipart: files.isNotEmpty,
-              token: cacheProvider.getSessionToken()!,)
-          .request(GCreateFeedbackReq(
-            (b) => b
-              ..vars.data.title = title
-              ..vars.data.description = description
-              ..vars.data.user.connect.id = userId
-              ..vars.data.category.connect.id = categoryId
-              ..vars.data.attachments.create =
-                  ListBuilder<GFeedbackAttachmentCreateInput>(
-                files.map<GFeedbackAttachmentCreateInput>(
-                  (e) => GFeedbackAttachmentCreateInput(
-                    (b) => b..image.upload = e,
+            isMultipart: files.isNotEmpty,
+            token: cacheProvider.getSessionToken()!,
+          )
+          .request(
+            GCreateFeedbackReq(
+              (b) => b
+                ..vars.data.title = title
+                ..vars.data.description = description
+                ..vars.data.user.connect.id = userId
+                ..vars.data.category.connect.id = categoryId
+                ..vars.data.attachments.create =
+                    ListBuilder<GFeedbackAttachmentCreateInput>(
+                  files.map<GFeedbackAttachmentCreateInput>(
+                    (e) => GFeedbackAttachmentCreateInput(
+                      (b) => b..image.upload = e,
+                    ),
                   ),
-                ),
-              )
-              ..fetchPolicy = FetchPolicy.NoCache,
-          ),)
+                )
+                ..fetchPolicy = FetchPolicy.NoCache,
+            ),
+          )
           .first;
       return response.data?.createFeedback?.id != null;
     } catch (e) {
@@ -56,41 +60,48 @@ class ReportRepository {
     }
   }
 
-  Future<bool> createReport(
-      {required String title,
-      required String description,
-      required String categoryId,
-      required List<String> attachments,}) async {
+  Future<bool> createReport({
+    required String title,
+    required String description,
+    required String categoryId,
+    required List<String> attachments,
+  }) async {
     try {
       final userId = cacheProvider.getUserId();
 
       final files = <http.MultipartFile>[];
       for (var i = 0; i < attachments.length; i++) {
-        final file = await http.MultipartFile.fromPath('image', attachments[i],
-            filename: attachments[i].split('/').last,);
+        final file = await http.MultipartFile.fromPath(
+          'image',
+          attachments[i],
+          filename: attachments[i].split('/').last,
+        );
         files.add(file);
       }
 
       final response = await _client
           .httpClient(
-              isMultipart: files.isNotEmpty,
-              token: cacheProvider.getSessionToken()!,)
-          .request(GCreateReportReq(
-            (b) => b
-              ..vars.data.title = title
-              ..vars.data.description = description
-              ..vars.data.user.connect.id = userId
-              ..vars.data.category.connect.id = categoryId
-              ..vars.data.attachments.create =
-                  ListBuilder<GReportAttachmentCreateInput>(
-                files.map<GReportAttachmentCreateInput>(
-                  (e) => GReportAttachmentCreateInput(
-                    (b) => b..image.upload = e,
+            isMultipart: files.isNotEmpty,
+            token: cacheProvider.getSessionToken()!,
+          )
+          .request(
+            GCreateReportReq(
+              (b) => b
+                ..vars.data.title = title
+                ..vars.data.description = description
+                ..vars.data.user.connect.id = userId
+                ..vars.data.category.connect.id = categoryId
+                ..vars.data.attachments.create =
+                    ListBuilder<GReportAttachmentCreateInput>(
+                  files.map<GReportAttachmentCreateInput>(
+                    (e) => GReportAttachmentCreateInput(
+                      (b) => b..image.upload = e,
+                    ),
                   ),
-                ),
-              )
-              ..fetchPolicy = FetchPolicy.NoCache,
-          ),)
+                )
+                ..fetchPolicy = FetchPolicy.NoCache,
+            ),
+          )
           .first;
       return response.data?.createReport?.id != null;
     } catch (e) {

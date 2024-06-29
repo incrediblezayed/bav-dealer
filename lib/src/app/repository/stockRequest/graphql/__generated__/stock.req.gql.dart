@@ -26,7 +26,7 @@ abstract class GProductDealerStockRequestsReq
   GProductDealerStockRequestsReq._();
 
   factory GProductDealerStockRequestsReq(
-          [Function(GProductDealerStockRequestsReqBuilder b) updates]) =
+          [void Function(GProductDealerStockRequestsReqBuilder b) updates]) =
       _$GProductDealerStockRequestsReq;
 
   static void _initializeBuilder(GProductDealerStockRequestsReqBuilder b) => b
@@ -44,6 +44,7 @@ abstract class GProductDealerStockRequestsReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -65,6 +66,9 @@ abstract class GProductDealerStockRequestsReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GProductDealerStockRequestsData? parseData(Map<String, dynamic> json) =>
       _i2.GProductDealerStockRequestsData.fromJson(json);
 
@@ -72,7 +76,8 @@ abstract class GProductDealerStockRequestsReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GProductDealerStockRequestsData data) =>
+      data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GProductDealerStockRequestsData,
@@ -104,7 +109,7 @@ abstract class GVehicleDealerStockRequestsReq
   GVehicleDealerStockRequestsReq._();
 
   factory GVehicleDealerStockRequestsReq(
-          [Function(GVehicleDealerStockRequestsReqBuilder b) updates]) =
+          [void Function(GVehicleDealerStockRequestsReqBuilder b) updates]) =
       _$GVehicleDealerStockRequestsReq;
 
   static void _initializeBuilder(GVehicleDealerStockRequestsReqBuilder b) => b
@@ -122,6 +127,7 @@ abstract class GVehicleDealerStockRequestsReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -143,6 +149,9 @@ abstract class GVehicleDealerStockRequestsReq
   @override
   bool get executeOnListen;
   @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
   _i2.GVehicleDealerStockRequestsData? parseData(Map<String, dynamic> json) =>
       _i2.GVehicleDealerStockRequestsData.fromJson(json);
 
@@ -150,7 +159,8 @@ abstract class GVehicleDealerStockRequestsReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GVehicleDealerStockRequestsData data) =>
+      data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GVehicleDealerStockRequestsData,
@@ -169,78 +179,6 @@ abstract class GVehicleDealerStockRequestsReq
   static GVehicleDealerStockRequestsReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
         GVehicleDealerStockRequestsReq.serializer,
-        json,
-      );
-}
-
-abstract class GQueryReq
-    implements
-        Built<GQueryReq, GQueryReqBuilder>,
-        _i1.OperationRequest<_i2.GQueryData, _i3.GQueryVars> {
-  GQueryReq._();
-
-  factory GQueryReq([Function(GQueryReqBuilder b) updates]) = _$GQueryReq;
-
-  static void _initializeBuilder(GQueryReqBuilder b) => b
-    ..operation = _i4.Operation(
-      document: _i5.document,
-      operationName: 'Query',
-    )
-    ..executeOnListen = true;
-
-  @override
-  _i3.GQueryVars get vars;
-  @override
-  _i4.Operation get operation;
-  @override
-  _i4.Request get execRequest => _i4.Request(
-        operation: operation,
-        variables: vars.toJson(),
-      );
-
-  @override
-  String? get requestId;
-  @override
-  @BuiltValueField(serialize: false)
-  _i2.GQueryData? Function(
-    _i2.GQueryData?,
-    _i2.GQueryData?,
-  )? get updateResult;
-  @override
-  _i2.GQueryData? get optimisticResponse;
-  @override
-  String? get updateCacheHandlerKey;
-  @override
-  Map<String, dynamic>? get updateCacheHandlerContext;
-  @override
-  _i1.FetchPolicy? get fetchPolicy;
-  @override
-  bool get executeOnListen;
-  @override
-  _i2.GQueryData? parseData(Map<String, dynamic> json) =>
-      _i2.GQueryData.fromJson(json);
-
-  @override
-  Map<String, dynamic> varsToJson() => vars.toJson();
-
-  @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
-
-  @override
-  _i1.OperationRequest<_i2.GQueryData, _i3.GQueryVars> transformOperation(
-          _i4.Operation Function(_i4.Operation) transform) =>
-      this.rebuild((b) => b..operation = transform(operation));
-
-  static Serializer<GQueryReq> get serializer => _$gQueryReqSerializer;
-
-  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
-        GQueryReq.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GQueryReq? fromJson(Map<String, dynamic> json) =>
-      _i6.serializers.deserializeWith(
-        GQueryReq.serializer,
         json,
       );
 }

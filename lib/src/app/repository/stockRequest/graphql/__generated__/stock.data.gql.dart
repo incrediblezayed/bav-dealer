@@ -20,7 +20,7 @@ abstract class GProductDealerStockRequestsData
   GProductDealerStockRequestsData._();
 
   factory GProductDealerStockRequestsData(
-          [Function(GProductDealerStockRequestsDataBuilder b) updates]) =
+          [void Function(GProductDealerStockRequestsDataBuilder b) updates]) =
       _$GProductDealerStockRequestsData;
 
   static void _initializeBuilder(GProductDealerStockRequestsDataBuilder b) =>
@@ -30,6 +30,7 @@ abstract class GProductDealerStockRequestsData
   String get G__typename;
   BuiltList<GProductDealerStockRequestsData_productDealerStockRequests>?
       get productDealerStockRequests;
+  int? get productDealerStockRequestsCount;
   static Serializer<GProductDealerStockRequestsData> get serializer =>
       _$gProductDealerStockRequestsDataSerializer;
 
@@ -52,7 +53,7 @@ abstract class GProductDealerStockRequestsData_productDealerStockRequests
   GProductDealerStockRequestsData_productDealerStockRequests._();
 
   factory GProductDealerStockRequestsData_productDealerStockRequests(
-      [Function(
+      [void Function(
               GProductDealerStockRequestsData_productDealerStockRequestsBuilder
                   b)
           updates]) = _$GProductDealerStockRequestsData_productDealerStockRequests;
@@ -97,7 +98,7 @@ abstract class GProductDealerStockRequestsData_productDealerStockRequests_produc
   GProductDealerStockRequestsData_productDealerStockRequests_productVariant._();
 
   factory GProductDealerStockRequestsData_productDealerStockRequests_productVariant(
-          [Function(
+          [void Function(
                   GProductDealerStockRequestsData_productDealerStockRequests_productVariantBuilder
                       b)
               updates]) =
@@ -110,11 +111,14 @@ abstract class GProductDealerStockRequestsData_productDealerStockRequests_produc
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  String? get name;
   String get id;
+  String? get name;
+  _i2.GDateTime? get modifiedAt;
   BuiltList<
           GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery>?
       get gallery;
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product?
+      get product;
   static Serializer<
           GProductDealerStockRequestsData_productDealerStockRequests_productVariant>
       get serializer =>
@@ -142,7 +146,7 @@ abstract class GProductDealerStockRequestsData_productDealerStockRequests_produc
   GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery._();
 
   factory GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery(
-          [Function(
+          [void Function(
                   GProductDealerStockRequestsData_productDealerStockRequests_productVariant_galleryBuilder
                       b)
               updates]) =
@@ -176,6 +180,93 @@ abstract class GProductDealerStockRequestsData_productDealerStockRequests_produc
           );
 }
 
+abstract class GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product
+    implements
+        Built<
+            GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product,
+            GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder> {
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product._();
+
+  factory GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product(
+          [void Function(
+                  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder
+                      b)
+              updates]) =
+      _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product;
+
+  static void _initializeBuilder(
+          GProductDealerStockRequestsData_productDealerStockRequests_productVariant_productBuilder
+              b) =>
+      b..G__typename = 'Product';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand?
+      get brand;
+  String? get name;
+  String get id;
+  String? get description;
+  static Serializer<
+          GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product>
+      get serializer =>
+          _$gProductDealerStockRequestsDataProductDealerStockRequestsProductVariantProductSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product
+                .serializer,
+            json,
+          );
+}
+
+abstract class GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand
+    implements
+        Built<
+            GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand,
+            GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder> {
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand._();
+
+  factory GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand(
+          [void Function(
+                  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder
+                      b)
+              updates]) =
+      _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand;
+
+  static void _initializeBuilder(
+          GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brandBuilder
+              b) =>
+      b..G__typename = 'Brand';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  static Serializer<
+          GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand>
+      get serializer =>
+          _$gProductDealerStockRequestsDataProductDealerStockRequestsProductVariantProductBrandSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand
+                .serializer,
+            json,
+          );
+}
+
 abstract class GVehicleDealerStockRequestsData
     implements
         Built<GVehicleDealerStockRequestsData,
@@ -183,7 +274,7 @@ abstract class GVehicleDealerStockRequestsData
   GVehicleDealerStockRequestsData._();
 
   factory GVehicleDealerStockRequestsData(
-          [Function(GVehicleDealerStockRequestsDataBuilder b) updates]) =
+          [void Function(GVehicleDealerStockRequestsDataBuilder b) updates]) =
       _$GVehicleDealerStockRequestsData;
 
   static void _initializeBuilder(GVehicleDealerStockRequestsDataBuilder b) =>
@@ -193,6 +284,7 @@ abstract class GVehicleDealerStockRequestsData
   String get G__typename;
   BuiltList<GVehicleDealerStockRequestsData_vehicleDealerStockRequests>?
       get vehicleDealerStockRequests;
+  int? get vehicleDealerStockRequestsCount;
   static Serializer<GVehicleDealerStockRequestsData> get serializer =>
       _$gVehicleDealerStockRequestsDataSerializer;
 
@@ -215,7 +307,7 @@ abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests
   GVehicleDealerStockRequestsData_vehicleDealerStockRequests._();
 
   factory GVehicleDealerStockRequestsData_vehicleDealerStockRequests(
-      [Function(
+      [void Function(
               GVehicleDealerStockRequestsData_vehicleDealerStockRequestsBuilder
                   b)
           updates]) = _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests;
@@ -228,10 +320,9 @@ abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   String get id;
-  bool? get accepted;
+  int? get stock;
   String? get type;
   int? get totalPrice;
-  int? get stock;
   GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor?
       get vehicleColor;
   GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant?
@@ -261,7 +352,7 @@ abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicl
   GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor._();
 
   factory GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor(
-          [Function(
+          [void Function(
                   GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColorBuilder
                       b)
               updates]) =
@@ -276,6 +367,7 @@ abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicl
   String get G__typename;
   String get id;
   String? get name;
+  String? get code;
   BuiltList<
           GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery>?
       get gallery;
@@ -306,7 +398,7 @@ abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicl
   GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery._();
 
   factory GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery(
-          [Function(
+          [void Function(
                   GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_galleryBuilder
                       b)
               updates]) =
@@ -348,7 +440,7 @@ abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicl
   GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant._();
 
   factory GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant(
-          [Function(
+          [void Function(
                   GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariantBuilder
                       b)
               updates]) =
@@ -363,6 +455,9 @@ abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicl
   String get G__typename;
   String get id;
   String? get name;
+  _i2.GDateTime? get modifiedAt;
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle?
+      get vehicle;
   static Serializer<
           GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant>
       get serializer =>
@@ -382,27 +477,89 @@ abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicl
           );
 }
 
-abstract class GQueryData implements Built<GQueryData, GQueryDataBuilder> {
-  GQueryData._();
+abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle
+    implements
+        Built<
+            GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle,
+            GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder> {
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle._();
 
-  factory GQueryData([Function(GQueryDataBuilder b) updates]) = _$GQueryData;
+  factory GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle(
+          [void Function(
+                  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder
+                      b)
+              updates]) =
+      _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle;
 
-  static void _initializeBuilder(GQueryDataBuilder b) =>
-      b..G__typename = 'Query';
+  static void _initializeBuilder(
+          GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicleBuilder
+              b) =>
+      b..G__typename = 'Vehicle';
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  int? get vehicleDealerStockRequestsCount;
-  static Serializer<GQueryData> get serializer => _$gQueryDataSerializer;
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand?
+      get brand;
+  String? get name;
+  String get id;
+  String? get description;
+  static Serializer<
+          GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle>
+      get serializer =>
+          _$gVehicleDealerStockRequestsDataVehicleDealerStockRequestsVehicleVariantVehicleSerializer;
 
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GQueryData.serializer,
+        GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle
+            .serializer,
         this,
       ) as Map<String, dynamic>);
 
-  static GQueryData? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GQueryData.serializer,
-        json,
-      );
+  static GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle
+                .serializer,
+            json,
+          );
+}
+
+abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand
+    implements
+        Built<
+            GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand,
+            GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder> {
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand._();
+
+  factory GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand(
+          [void Function(
+                  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder
+                      b)
+              updates]) =
+      _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand;
+
+  static void _initializeBuilder(
+          GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brandBuilder
+              b) =>
+      b..G__typename = 'Brand';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  static Serializer<
+          GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand>
+      get serializer =>
+          _$gVehicleDealerStockRequestsDataVehicleDealerStockRequestsVehicleVariantVehicleBrandSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand
+            .serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand?
+      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
+            GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand
+                .serializer,
+            json,
+          );
 }
