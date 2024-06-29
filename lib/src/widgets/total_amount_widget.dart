@@ -1,8 +1,11 @@
 import 'package:dealerapp/src/utils/global_exports.dart';
 
 class TotalAmountWidget extends StatelessWidget {
-
-  const TotalAmountWidget({required this.price, required this.shippingCharges, required this.serviceTax, super.key,
+  const TotalAmountWidget({
+    required this.price,
+    required this.shippingCharges,
+    required this.serviceTax,
+    super.key,
   });
   final double price; // Base amount
   final double shippingCharges;

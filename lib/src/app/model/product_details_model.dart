@@ -59,7 +59,8 @@ class ProductVariantModel {
                 json['gallery'].map((x) => Gallery.fromJson(x)),
               ),
         product: null,
-        images: (json['images'] as List).map((e) => ImageItem.fromJson(e)).toList(),
+        images:
+            (json['images'] as List).map((e) => ImageItem.fromJson(e)).toList(),
         itemType: ItemType.vehicle,
       );
     } catch (e) {
@@ -96,7 +97,8 @@ class ProductVariantModel {
                 json['gallery'].map((x) => Gallery.fromJson(x)),
               ),
         product: ProductModel.fromJson(json['product']),
-        images: (json['images'] as List).map((e) => ImageItem.fromJson(e)).toList(),
+        images:
+            (json['images'] as List).map((e) => ImageItem.fromJson(e)).toList(),
         itemType: ItemType.product,
       );
     } catch (e) {
@@ -526,8 +528,8 @@ String _getImageUrl(dynamic url) {
       return GraphqlClient.baseUrl + myUrl;
     }
   }
-
 }
+
 class ImageItem {
   final String id;
   final String name;
@@ -547,6 +549,7 @@ class ImageItem {
     );
   }
 }
+
 class ImageDetail {
   final String url;
   final String? extension;

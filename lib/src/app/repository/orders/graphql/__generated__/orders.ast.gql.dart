@@ -665,6 +665,36 @@ const VehicleOrders = _i1.OperationDefinitionNode(
     )
   ]),
 );
+const VehicleOrdersCount = _i1.OperationDefinitionNode(
+  type: _i1.OperationType.query,
+  name: _i1.NameNode(value: 'VehicleOrdersCount'),
+  variableDefinitions: [
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'VehicleOrderWhereInput'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    )
+  ],
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'vehicleOrdersCount'),
+      alias: null,
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'where'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+        )
+      ],
+      directives: [],
+      selectionSet: null,
+    )
+  ]),
+);
 const TestDriveOrders = _i1.OperationDefinitionNode(
   type: _i1.OperationType.query,
   name: _i1.NameNode(value: 'TestDriveOrders'),
@@ -988,6 +1018,36 @@ const TestDriveOrders = _i1.OperationDefinitionNode(
     )
   ]),
 );
+const TestDriveOrdersCount = _i1.OperationDefinitionNode(
+  type: _i1.OperationType.query,
+  name: _i1.NameNode(value: 'TestDriveOrdersCount'),
+  variableDefinitions: [
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'TestDriveOrderWhereInput'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    )
+  ],
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'testDriveOrdersCount'),
+      alias: null,
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'where'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+        )
+      ],
+      directives: [],
+      selectionSet: null,
+    )
+  ]),
+);
 const UpdateProductOrder = _i1.OperationDefinitionNode(
   type: _i1.OperationType.mutation,
   name: _i1.NameNode(value: 'UpdateProductOrder'),
@@ -1182,7 +1242,9 @@ const CreateOrderRejectionByDealer = _i1.OperationDefinitionNode(
 const document = _i1.DocumentNode(definitions: [
   ProductOrders,
   VehicleOrders,
+  VehicleOrdersCount,
   TestDriveOrders,
+  TestDriveOrdersCount,
   UpdateProductOrder,
   UpdateVehicleOrder,
   UpdateTestDriveOrder,

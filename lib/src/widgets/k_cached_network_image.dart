@@ -41,7 +41,6 @@ class KCachedNWImage extends Image {
               : isExternal || imageUrl.contains('https')
                   ? imageUrl
                   : GraphqlClient.baseUrl + imageUrl,
-      
           loadingBuilder: (context, child, loadingProgress) {
             if (loadingProgress == null) {
               return child;

@@ -4,7 +4,6 @@ import 'dart:convert';
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:flutter/material.dart';
 
-
 enum NotificationType {
   orderNotification(
     icon: AppImages.notificationOrder,

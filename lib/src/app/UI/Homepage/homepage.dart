@@ -3,7 +3,6 @@ import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/purchase_orders.da
 import 'package:dealerapp/src/app/UI/Homepage/Test_Orders/test_orders.dart';
 import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
 import 'package:dealerapp/src/app/UI/notification_page.dart/notification_page.dart';
-import 'package:dealerapp/src/app/UI/report_page/report_page.dart';
 import 'package:dealerapp/src/app/UI/splash_screen/splash_screen.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/provider/order_provider.dart';
@@ -17,12 +16,27 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'Product_Orders/products_orders.dart';
 
 ///HomePage
-class HomePage extends ConsumerWidget {
+class HomePage extends ConsumerStatefulWidget {
   ///Constructor
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends ConsumerState<HomePage> {
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback(
+      (timeStamp) {
+        ref.read(homePageProvider).onInit();
+      },
+    );
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     initTracking();
     final theme = Theme.of(context).textTheme;
     final user = cacheProvider.getUser()!;
@@ -122,7 +136,7 @@ class HomePage extends ConsumerWidget {
                             size: 70.sp,
                           ),
                         ) , */
-        
+
                     Image.asset(AppImages.person),
                     SizedBox(
                       width: 10.w,
@@ -159,7 +173,7 @@ class HomePage extends ConsumerWidget {
                             size: 70.sp,
                           ),
                         ) , */
-        
+
                     Image.asset(AppImages.person),
                     SizedBox(
                       width: 10.w,

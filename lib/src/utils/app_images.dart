@@ -45,6 +45,7 @@ class AppImages {
   static const String purchaseNew = '$_imagesPath/newPurchase.png';
   static const String purchaseOrder = '$_imagesPath/purchaseOrder.png';
   static const String termsNew = '$_imagesPath/termsNew.png';
+  static const String stockRequests = '$_imagesPath/requestApprove.png';
 
   static const String profile = '$_imagesPath/profile.png';
   static const String person = '$_imagesPath/person.png';
@@ -59,7 +60,6 @@ class AppImages {
   static const String sbi = '$_imagesPath/sbi.png';
   static const String card = '$_imagesPath/card.png';
   static const String walletHistoryEmpty = '$_imagesPath/empty_wallet.png';
-
   static const String notificationOrder = '$_imagesPath/notificationOrder.png';
   static const String notificationPassword =
       '$_imagesPath/notificationPassword.png';

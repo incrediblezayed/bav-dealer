@@ -46,8 +46,9 @@ class UserProfileImage extends StatelessWidget {
                     frameBuilder:
                         (context, child, frame, wasSynchronouslyLoaded) {
                       return ClipRRect(
-                          borderRadius: BorderRadius.circular(size),
-                          child: child,);
+                        borderRadius: BorderRadius.circular(size),
+                        child: child,
+                      );
                     },
                     errorBuilder: (context, url, error) {
                       error.log();

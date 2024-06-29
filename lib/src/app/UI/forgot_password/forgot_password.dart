@@ -19,11 +19,13 @@ class ForgotPasswordPage extends ConsumerWidget {
         titleTextStyle: theme.headlineLarge,
       ),
       body: Padding(
-        padding: EdgeInsets.only(left: 20.w, right: 20.w,),
+        padding: EdgeInsets.only(
+          left: 20.w,
+          right: 20.w,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
             SizedBox(
               height: 16.h,
             ),

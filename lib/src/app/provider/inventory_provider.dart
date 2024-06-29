@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:dealerapp/src/app/model/dealer_stock_model.dart';
 import 'package:dealerapp/src/app/model/product_details_model.dart';

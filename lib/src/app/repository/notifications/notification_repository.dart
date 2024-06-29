@@ -1,5 +1,3 @@
-
-
 import 'package:dealerapp/src/app/repository/graphql_client.dart';
 import 'package:dealerapp/src/app/repository/notifications/graphql/__generated__/notifications.data.gql.dart';
 import 'package:dealerapp/src/app/repository/notifications/graphql/__generated__/notifications.req.gql.dart';

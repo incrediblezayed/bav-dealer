@@ -62,6 +62,30 @@ abstract class GVehicleOrdersVars
       );
 }
 
+abstract class GVehicleOrdersCountVars
+    implements Built<GVehicleOrdersCountVars, GVehicleOrdersCountVarsBuilder> {
+  GVehicleOrdersCountVars._();
+
+  factory GVehicleOrdersCountVars(
+          [void Function(GVehicleOrdersCountVarsBuilder b) updates]) =
+      _$GVehicleOrdersCountVars;
+
+  _i1.GVehicleOrderWhereInput get where;
+  static Serializer<GVehicleOrdersCountVars> get serializer =>
+      _$gVehicleOrdersCountVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleOrdersCountVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleOrdersCountVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleOrdersCountVars.serializer,
+        json,
+      );
+}
+
 abstract class GTestDriveOrdersVars
     implements Built<GTestDriveOrdersVars, GTestDriveOrdersVarsBuilder> {
   GTestDriveOrdersVars._();
@@ -83,6 +107,31 @@ abstract class GTestDriveOrdersVars
   static GTestDriveOrdersVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GTestDriveOrdersVars.serializer,
+        json,
+      );
+}
+
+abstract class GTestDriveOrdersCountVars
+    implements
+        Built<GTestDriveOrdersCountVars, GTestDriveOrdersCountVarsBuilder> {
+  GTestDriveOrdersCountVars._();
+
+  factory GTestDriveOrdersCountVars(
+          [void Function(GTestDriveOrdersCountVarsBuilder b) updates]) =
+      _$GTestDriveOrdersCountVars;
+
+  _i1.GTestDriveOrderWhereInput get where;
+  static Serializer<GTestDriveOrdersCountVars> get serializer =>
+      _$gTestDriveOrdersCountVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GTestDriveOrdersCountVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GTestDriveOrdersCountVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GTestDriveOrdersCountVars.serializer,
         json,
       );
 }

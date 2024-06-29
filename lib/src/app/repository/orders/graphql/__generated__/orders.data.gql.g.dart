@@ -79,6 +79,8 @@ Serializer<GVehicleOrdersData_vehicleOrders_order_user>
 Serializer<GVehicleOrdersData_vehicleOrders_order_user_addresses>
     _$gVehicleOrdersDataVehicleOrdersOrderUserAddressesSerializer =
     new _$GVehicleOrdersData_vehicleOrders_order_user_addressesSerializer();
+Serializer<GVehicleOrdersCountData> _$gVehicleOrdersCountDataSerializer =
+    new _$GVehicleOrdersCountDataSerializer();
 Serializer<GTestDriveOrdersData> _$gTestDriveOrdersDataSerializer =
     new _$GTestDriveOrdersDataSerializer();
 Serializer<GTestDriveOrdersData_testDriveOrders>
@@ -115,6 +117,8 @@ Serializer<GTestDriveOrdersData_testDriveOrders_order_user>
 Serializer<GTestDriveOrdersData_testDriveOrders_order_user_addresses>
     _$gTestDriveOrdersDataTestDriveOrdersOrderUserAddressesSerializer =
     new _$GTestDriveOrdersData_testDriveOrders_order_user_addressesSerializer();
+Serializer<GTestDriveOrdersCountData> _$gTestDriveOrdersCountDataSerializer =
+    new _$GTestDriveOrdersCountDataSerializer();
 Serializer<GUpdateProductOrderData> _$gUpdateProductOrderDataSerializer =
     new _$GUpdateProductOrderDataSerializer();
 Serializer<GUpdateProductOrderData_updateProductOrder>
@@ -2197,6 +2201,62 @@ class _$GVehicleOrdersData_vehicleOrders_order_user_addressesSerializer
   }
 }
 
+class _$GVehicleOrdersCountDataSerializer
+    implements StructuredSerializer<GVehicleOrdersCountData> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleOrdersCountData,
+    _$GVehicleOrdersCountData
+  ];
+  @override
+  final String wireName = 'GVehicleOrdersCountData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleOrdersCountData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.vehicleOrdersCount;
+    if (value != null) {
+      result
+        ..add('vehicleOrdersCount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleOrdersCountData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleOrdersCountDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'vehicleOrdersCount':
+          result.vehicleOrdersCount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$GTestDriveOrdersDataSerializer
     implements StructuredSerializer<GTestDriveOrdersData> {
   @override
@@ -3194,6 +3254,62 @@ class _$GTestDriveOrdersData_testDriveOrders_order_user_addressesSerializer
         case 'name':
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GTestDriveOrdersCountDataSerializer
+    implements StructuredSerializer<GTestDriveOrdersCountData> {
+  @override
+  final Iterable<Type> types = const [
+    GTestDriveOrdersCountData,
+    _$GTestDriveOrdersCountData
+  ];
+  @override
+  final String wireName = 'GTestDriveOrdersCountData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GTestDriveOrdersCountData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.testDriveOrdersCount;
+    if (value != null) {
+      result
+        ..add('testDriveOrdersCount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    return result;
+  }
+
+  @override
+  GTestDriveOrdersCountData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GTestDriveOrdersCountDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'testDriveOrdersCount':
+          result.testDriveOrdersCount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -7679,6 +7795,111 @@ class GVehicleOrdersData_vehicleOrders_order_user_addressesBuilder
   }
 }
 
+class _$GVehicleOrdersCountData extends GVehicleOrdersCountData {
+  @override
+  final String G__typename;
+  @override
+  final int? vehicleOrdersCount;
+
+  factory _$GVehicleOrdersCountData(
+          [void Function(GVehicleOrdersCountDataBuilder)? updates]) =>
+      (new GVehicleOrdersCountDataBuilder()..update(updates))._build();
+
+  _$GVehicleOrdersCountData._(
+      {required this.G__typename, this.vehicleOrdersCount})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GVehicleOrdersCountData', 'G__typename');
+  }
+
+  @override
+  GVehicleOrdersCountData rebuild(
+          void Function(GVehicleOrdersCountDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleOrdersCountDataBuilder toBuilder() =>
+      new GVehicleOrdersCountDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleOrdersCountData &&
+        G__typename == other.G__typename &&
+        vehicleOrdersCount == other.vehicleOrdersCount;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, vehicleOrdersCount.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GVehicleOrdersCountData')
+          ..add('G__typename', G__typename)
+          ..add('vehicleOrdersCount', vehicleOrdersCount))
+        .toString();
+  }
+}
+
+class GVehicleOrdersCountDataBuilder
+    implements
+        Builder<GVehicleOrdersCountData, GVehicleOrdersCountDataBuilder> {
+  _$GVehicleOrdersCountData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _vehicleOrdersCount;
+  int? get vehicleOrdersCount => _$this._vehicleOrdersCount;
+  set vehicleOrdersCount(int? vehicleOrdersCount) =>
+      _$this._vehicleOrdersCount = vehicleOrdersCount;
+
+  GVehicleOrdersCountDataBuilder() {
+    GVehicleOrdersCountData._initializeBuilder(this);
+  }
+
+  GVehicleOrdersCountDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _vehicleOrdersCount = $v.vehicleOrdersCount;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleOrdersCountData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleOrdersCountData;
+  }
+
+  @override
+  void update(void Function(GVehicleOrdersCountDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleOrdersCountData build() => _build();
+
+  _$GVehicleOrdersCountData _build() {
+    final _$result = _$v ??
+        new _$GVehicleOrdersCountData._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GVehicleOrdersCountData', 'G__typename'),
+            vehicleOrdersCount: vehicleOrdersCount);
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$GTestDriveOrdersData extends GTestDriveOrdersData {
   @override
   final String G__typename;
@@ -9667,6 +9888,111 @@ class GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder
             address: address,
             district: district,
             name: name);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GTestDriveOrdersCountData extends GTestDriveOrdersCountData {
+  @override
+  final String G__typename;
+  @override
+  final int? testDriveOrdersCount;
+
+  factory _$GTestDriveOrdersCountData(
+          [void Function(GTestDriveOrdersCountDataBuilder)? updates]) =>
+      (new GTestDriveOrdersCountDataBuilder()..update(updates))._build();
+
+  _$GTestDriveOrdersCountData._(
+      {required this.G__typename, this.testDriveOrdersCount})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GTestDriveOrdersCountData', 'G__typename');
+  }
+
+  @override
+  GTestDriveOrdersCountData rebuild(
+          void Function(GTestDriveOrdersCountDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GTestDriveOrdersCountDataBuilder toBuilder() =>
+      new GTestDriveOrdersCountDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GTestDriveOrdersCountData &&
+        G__typename == other.G__typename &&
+        testDriveOrdersCount == other.testDriveOrdersCount;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, testDriveOrdersCount.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GTestDriveOrdersCountData')
+          ..add('G__typename', G__typename)
+          ..add('testDriveOrdersCount', testDriveOrdersCount))
+        .toString();
+  }
+}
+
+class GTestDriveOrdersCountDataBuilder
+    implements
+        Builder<GTestDriveOrdersCountData, GTestDriveOrdersCountDataBuilder> {
+  _$GTestDriveOrdersCountData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _testDriveOrdersCount;
+  int? get testDriveOrdersCount => _$this._testDriveOrdersCount;
+  set testDriveOrdersCount(int? testDriveOrdersCount) =>
+      _$this._testDriveOrdersCount = testDriveOrdersCount;
+
+  GTestDriveOrdersCountDataBuilder() {
+    GTestDriveOrdersCountData._initializeBuilder(this);
+  }
+
+  GTestDriveOrdersCountDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _testDriveOrdersCount = $v.testDriveOrdersCount;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GTestDriveOrdersCountData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GTestDriveOrdersCountData;
+  }
+
+  @override
+  void update(void Function(GTestDriveOrdersCountDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GTestDriveOrdersCountData build() => _build();
+
+  _$GTestDriveOrdersCountData _build() {
+    final _$result = _$v ??
+        new _$GTestDriveOrdersCountData._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GTestDriveOrdersCountData', 'G__typename'),
+            testDriveOrdersCount: testDriveOrdersCount);
     replace(_$result);
     return _$result;
   }
