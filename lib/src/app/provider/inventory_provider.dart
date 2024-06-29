@@ -79,23 +79,17 @@ class InventoryProvider extends ChangeNotifier {
 
   Timer? _inventoryDebounce;
 
-  late TextEditingController inventorySearchController = TextEditingController()
-    ..addListener(() {
+  late TextEditingController inventorySearchController =
+      TextEditingController();
+
+  void onSearchTextChanged({required Function() onSearch}) {
+    if (_inventoryDebounce?.isActive ?? false) {
       _inventoryDebounce?.cancel();
-      _inventoryDebounce = Timer(const Duration(milliseconds: 500), () {
-        getVehicles();
-      });
+    }
+    _inventoryDebounce = Timer(const Duration(milliseconds: 500), () {
+      onSearch();
     });
-
-  Timer? _myStockDebounce;
-
-  late TextEditingController myStockSearchController = TextEditingController()
-    ..addListener(() {
-      _myStockDebounce?.cancel();
-      _myStockDebounce = Timer(const Duration(milliseconds: 500), () {
-        getStocks();
-      });
-    });
+  }
 
   Future<void> getProducts() async {
     try {
@@ -310,7 +304,7 @@ class InventoryProvider extends ChangeNotifier {
   Future<void> getStocks() async {
     try {
       final result = await _inventoryRepository.currentStock(
-        text: myStockSearchController.text,
+        text: inventorySearchController.text,
       );
 
       vehicleDealers = result;
@@ -325,7 +319,7 @@ class InventoryProvider extends ChangeNotifier {
   Future<void> getProductStocks() async {
     try {
       final result = await _inventoryRepository.currentProductStock(
-        text: myStockSearchController.text,
+        text: inventorySearchController.text,
       );
 
       productDealers = result;

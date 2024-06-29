@@ -31,6 +31,10 @@ class ListOfVehicles extends ConsumerWidget {
               padding: const EdgeInsets.all(8),
               child: TextField(
                 controller: inventoryPro.inventorySearchController,
+                onChanged: (v) {
+                  inventoryPro.onSearchTextChanged(
+                      onSearch: inventoryPro.getVehicles);
+                },
                 decoration: const InputDecoration(
                   filled: true,
                   fillColor: Colors.white,

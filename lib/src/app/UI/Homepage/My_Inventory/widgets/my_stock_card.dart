@@ -331,7 +331,7 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                                                 } catch (e, s) {
                                                   e.log(
                                                       name:
-                                                          'This Error has pissed me off',
+                                                          'Add Test Drive Dealer Stock Error',
                                                       error: e,
                                                       stackTrace: s);
                                                 }

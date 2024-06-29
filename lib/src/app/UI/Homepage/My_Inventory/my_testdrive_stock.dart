@@ -22,6 +22,10 @@ class MyTestDriveStockPage extends ConsumerWidget {
               padding: const EdgeInsets.all(8),
               child: TextField(
                 controller: inventoryPro.inventorySearchController,
+                onChanged: (v) {
+                  inventoryPro.onSearchTextChanged(
+                      onSearch: inventoryPro.getTestDriveStock);
+                },
                 decoration: const InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
