@@ -8,6 +8,11 @@ query ProductOrders($where: ProductOrderWhereInput!, $orderBy: [ProductOrderOrde
           name
         }
         name
+        images {
+          image {
+            url
+          }
+        }
       }
       dealer {
         id

@@ -169,6 +169,26 @@ class OrderRepository {
     return 0;
   }
 
+  Future<bool> updateProductOrderStatus({
+    required String productOrderId,
+    required String status,
+}) async {
+    try{
+    final response = await _client.request(GUpdateProductOrderReq(
+          (b) => b.vars
+        ..data.status = status
+        ..where.id = productOrderId,
+    )).first;
+    if (response.linkException != null ||
+        (response.graphqlErrors?.isNotEmpty ?? false)) {
+      throw Exception('Failed to update status');
+    }
+    return response.data?.updateProductOrder?.id != null;
+  }catch (e) {
+      e.log();
+    }
+    return false;
+  }
   Future<bool> updateOrderStatus({
     required String vehicleOrderId,
     required String status,
@@ -222,43 +242,55 @@ class OrderRepository {
   Future<bool> rejectOrder({
     required String orderId,
     required String reason,
-    required bool isPurchaseOrder,
+    required String orderType, // Instead of bool, use String to distinguish order types
     String? description,
   }) async {
     try {
       final response = await _client.request(
         GCreateOrderRejectionByDealerReq(
-          (b) {
+              (b) {
             b.vars.data
               ..reason = reason
               ..description = description;
-            if (isPurchaseOrder) {
+
+            if (orderType == 'vehicle') {
               b.vars.data.vehicleOrders.connect =
                   ListBuilder<GVehicleOrderWhereUniqueInput>([
-                GVehicleOrderWhereUniqueInput(
-                  (b) => b..id = orderId,
-                ),
-              ]);
-            } else {
+                    GVehicleOrderWhereUniqueInput(
+                          (b) => b.id = orderId,
+                    ),
+                  ]);
+            } else if (orderType == 'testDrive') {
               b.vars.data.testDriveOrders.connect =
                   ListBuilder<GTestDriveOrderWhereUniqueInput>([
-                GTestDriveOrderWhereUniqueInput(
-                  (b) => b..id = orderId,
-                ),
-              ]);
+                    GTestDriveOrderWhereUniqueInput(
+                          (b) => b.id = orderId,
+                    ),
+                  ]);
+            } else if (orderType == 'product') {
+              b.vars.data.productOrders.connect =
+                  ListBuilder<GProductOrderWhereUniqueInput>([
+                    GProductOrderWhereUniqueInput(
+                          (b) => b.id = orderId,
+                    ),
+                  ]);
+            } else {
+              throw Exception('Invalid order type');
             }
-            b;
           },
         ),
       ).first;
+
       if (response.linkException != null ||
           (response.graphqlErrors?.isNotEmpty ?? false)) {
         throw Exception('Failed to reject order');
       }
+
       return response.data?.createOrderRejectionByDealer?.id != null;
     } catch (e) {
       e.log();
     }
+
     return false;
   }
 }

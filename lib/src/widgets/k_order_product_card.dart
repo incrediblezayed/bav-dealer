@@ -3,6 +3,7 @@ import 'package:dealerapp/src/app/provider/order_provider.dart';
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
+import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class KOrderProductCard extends ConsumerStatefulWidget {
@@ -60,7 +61,7 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'ORDER ID #${widget.productPurchaseOrders.id}',
+                        'ORDER ID #${widget.productPurchaseOrders.id}' ?? '',
                         style: theme.labelLarge!.copyWith(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w700,
@@ -70,24 +71,27 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                       SizedBox(height: 6.h),
                       Text(
                         widget.productPurchaseOrders.createdAt.toDateTime!
-                            .toLocal()
-                            .formatTohhmmaddMMyy,
+                                .toLocal()
+                                .formatTohhmmaddMMyy ??
+                            '',
                       ),
                     ],
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 6.h),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 20.w,
-              ),
+
+            /*Padding(
+              padding: const EdgeInsets.only(left: 8.0),
               child: Text(
-                'EV Model Details',
-                style: theme.headlineMedium,
+                widget.productPurchaseOrders.dealer?.productVariant?.name ?? '',
+                style: theme.labelMedium?.copyWith(
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w700,
+                  color: AppTheme.black,
+                ) ?? TextStyle(), // Providing a default TextStyle in case theme.labelMedium is null
               ),
-            ),
+            ),*/
             SizedBox(height: 6.h),
             Padding(
               padding: EdgeInsets.symmetric(
@@ -96,7 +100,7 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
               ),
               child: Row(
                 children: [
-                  /*Container(
+                  Container(
                     height: 100.h,
                     width: 100.w,
                     decoration: BoxDecoration(
@@ -105,13 +109,12 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(6.r),
                       child: KCachedNWImage(
-                        widget.productPurchaseOrders.dealer!.vehicleColor!
-                            .images?.firstOrNull?.image?.url ??
-                            '',
+                        widget.productPurchaseOrders.dealer?.productVariant
+                            ?.images?.first.image?.url,
                         fit: BoxFit.cover,
                       ),
                     ),
-                  ),*/
+                  ),
                   SizedBox(width: 20.w),
                   Expanded(
                     child: Column(
@@ -119,32 +122,24 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          widget.productPurchaseOrders.dealer!.productVariant!
-                              .name!,
-                          style: theme.headlineMedium,
+                          widget.productPurchaseOrders.dealer?.productVariant
+                                  ?.name ??
+                              '',
+                          style: theme.labelMedium?.copyWith(
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w700,
+                                color: AppTheme.black,
+                              ) ??
+                              const TextStyle(), // Providing a default TextStyle in case theme.labelMedium is null
                         ),
-                        SizedBox(height: 10.h),
+                        SizedBox(
+                          height: 10.h,
+                        ),
                         Row(
                           children: [
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  'Model',
-                                  style: theme.labelMedium!.copyWith(
-                                    color: Colors.black.withOpacity(.5),
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                SizedBox(height: 6.h),
-                                Text(
-                                  'Color',
-                                  style: theme.labelMedium!.copyWith(
-                                    color: Colors.black.withOpacity(.5),
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                SizedBox(height: 6.h),
                                 Text(
                                   'Price',
                                   style: theme.labelMedium!.copyWith(
@@ -160,34 +155,14 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    widget.productPurchaseOrders.dealer!
-                                        .productVariant!.name!,
-                                    style: theme.labelMedium!.copyWith(
-                                      color: Colors.black.withOpacity(.5),
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  SizedBox(height: 6.h),
-                                  Text(
-                                    // widget.bikeOrderModel.color,
-                                    widget.productPurchaseOrders.dealer
-                                            ?.productVariant?.name ??
+                                    widget.productPurchaseOrders.price
+                                            .toPrice() ??
                                         '',
-                                    style: theme.labelMedium!.copyWith(
-                                      color: Colors.black.withOpacity(.5),
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  SizedBox(height: 6.h),
-                                  /* Text(
-                                    widget.vehiclePurchaseOrders.dealer!
-                                        .vehicleVariant!.price
-                                        .toString(),
                                     style: theme.labelLarge!.copyWith(
                                       fontWeight: FontWeight.w600,
                                       color: AppTheme.primaryColor,
                                     ),
-                                  ) */
+                                  )
                                 ],
                               ),
                             ),
@@ -346,7 +321,8 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              ordersPro.acceptOrder(productPurchaseOrders.id);
+                              ordersPro
+                                  .acceptProductOrder(productPurchaseOrders.id);
                             },
                             child: Container(
                               height: 50.h,
@@ -381,7 +357,7 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                           ),
                           SizedBox(width: 100.w),
                           Text(
-                            'accepted',
+                            'Accepted',
                             style: theme.labelMedium!.copyWith(
                               color: AppTheme.primaryColor,
                               fontWeight: FontWeight.w700,
@@ -390,6 +366,9 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                         ],
                       ),
                     ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
                   if (productPurchaseOrders.status == 'rejected')
                     Column(
                       children: [
@@ -579,7 +558,7 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                             .rejectOrder(
                               id: productPurchaseOrders.id,
                               reason: selectedReason,
-                              isPurchaseOrder: true,
+                              orderType: 'product',
                             );
                       },
                       child: Text(

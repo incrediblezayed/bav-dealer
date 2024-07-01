@@ -442,6 +442,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GProductOrdersData_productOrders_dealer_prices.serializer)
       ..add(GProductOrdersData_productOrders_dealer_prices_category.serializer)
       ..add(GProductOrdersData_productOrders_dealer_productVariant.serializer)
+      ..add(GProductOrdersData_productOrders_dealer_productVariant_images
+          .serializer)
+      ..add(GProductOrdersData_productOrders_dealer_productVariant_images_image
+          .serializer)
       ..add(GProductOrdersData_productOrders_dealer_productVariant_product
           .serializer)
       ..add(GProductOrdersData_productOrders_order.serializer)
@@ -1880,6 +1884,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () =>
               new ListBuilder<GProductOrdersData_productOrders_dealer_prices>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                GProductOrdersData_productOrders_dealer_productVariant_images)
+          ]),
+          () => new ListBuilder<
+              GProductOrdersData_productOrders_dealer_productVariant_images>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(

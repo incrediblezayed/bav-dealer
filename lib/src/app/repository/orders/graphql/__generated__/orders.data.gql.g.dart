@@ -20,6 +20,12 @@ Serializer<GProductOrdersData_productOrders_dealer_productVariant>
 Serializer<GProductOrdersData_productOrders_dealer_productVariant_product>
     _$gProductOrdersDataProductOrdersDealerProductVariantProductSerializer =
     new _$GProductOrdersData_productOrders_dealer_productVariant_productSerializer();
+Serializer<GProductOrdersData_productOrders_dealer_productVariant_images>
+    _$gProductOrdersDataProductOrdersDealerProductVariantImagesSerializer =
+    new _$GProductOrdersData_productOrders_dealer_productVariant_imagesSerializer();
+Serializer<GProductOrdersData_productOrders_dealer_productVariant_images_image>
+    _$gProductOrdersDataProductOrdersDealerProductVariantImagesImageSerializer =
+    new _$GProductOrdersData_productOrders_dealer_productVariant_images_imageSerializer();
 Serializer<GProductOrdersData_productOrders_dealer_dealer>
     _$gProductOrdersDataProductOrdersDealerDealerSerializer =
     new _$GProductOrdersData_productOrders_dealer_dealerSerializer();
@@ -443,6 +449,16 @@ class _$GProductOrdersData_productOrders_dealer_productVariantSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.images;
+    if (value != null) {
+      result
+        ..add('images')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(
+                  GProductOrdersData_productOrders_dealer_productVariant_images)
+            ])));
+    }
     return result;
   }
 
@@ -472,6 +488,13 @@ class _$GProductOrdersData_productOrders_dealer_productVariantSerializer
         case 'name':
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
+          break;
+        case 'images':
+          result.images.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(
+                    GProductOrdersData_productOrders_dealer_productVariant_images)
+              ]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -533,6 +556,128 @@ class _$GProductOrdersData_productOrders_dealer_productVariant_productSerializer
         case 'name':
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductOrdersData_productOrders_dealer_productVariant_imagesSerializer
+    implements
+        StructuredSerializer<
+            GProductOrdersData_productOrders_dealer_productVariant_images> {
+  @override
+  final Iterable<Type> types = const [
+    GProductOrdersData_productOrders_dealer_productVariant_images,
+    _$GProductOrdersData_productOrders_dealer_productVariant_images
+  ];
+  @override
+  final String wireName =
+      'GProductOrdersData_productOrders_dealer_productVariant_images';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductOrdersData_productOrders_dealer_productVariant_images object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.image;
+    if (value != null) {
+      result
+        ..add('image')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GProductOrdersData_productOrders_dealer_productVariant_images_image)));
+    }
+    return result;
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_productVariant_images deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'image':
+          result.image.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GProductOrdersData_productOrders_dealer_productVariant_images_image))!
+              as GProductOrdersData_productOrders_dealer_productVariant_images_image);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductOrdersData_productOrders_dealer_productVariant_images_imageSerializer
+    implements
+        StructuredSerializer<
+            GProductOrdersData_productOrders_dealer_productVariant_images_image> {
+  @override
+  final Iterable<Type> types = const [
+    GProductOrdersData_productOrders_dealer_productVariant_images_image,
+    _$GProductOrdersData_productOrders_dealer_productVariant_images_image
+  ];
+  @override
+  final String wireName =
+      'GProductOrdersData_productOrders_dealer_productVariant_images_image';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers,
+      GProductOrdersData_productOrders_dealer_productVariant_images_image
+          object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'url',
+      serializers.serialize(object.url, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_productVariant_images_image
+      deserialize(Serializers serializers, Iterable<Object?> serialized,
+          {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'url':
+          result.url = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -4280,6 +4425,9 @@ class _$GProductOrdersData_productOrders_dealer_productVariant
   final GProductOrdersData_productOrders_dealer_productVariant_product? product;
   @override
   final String? name;
+  @override
+  final BuiltList<
+      GProductOrdersData_productOrders_dealer_productVariant_images>? images;
 
   factory _$GProductOrdersData_productOrders_dealer_productVariant(
           [void Function(
@@ -4290,7 +4438,7 @@ class _$GProductOrdersData_productOrders_dealer_productVariant
           ._build();
 
   _$GProductOrdersData_productOrders_dealer_productVariant._(
-      {required this.G__typename, this.product, this.name})
+      {required this.G__typename, this.product, this.name, this.images})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
@@ -4316,7 +4464,8 @@ class _$GProductOrdersData_productOrders_dealer_productVariant
     return other is GProductOrdersData_productOrders_dealer_productVariant &&
         G__typename == other.G__typename &&
         product == other.product &&
-        name == other.name;
+        name == other.name &&
+        images == other.images;
   }
 
   @override
@@ -4325,6 +4474,7 @@ class _$GProductOrdersData_productOrders_dealer_productVariant
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, product.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, images.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -4335,7 +4485,8 @@ class _$GProductOrdersData_productOrders_dealer_productVariant
             r'GProductOrdersData_productOrders_dealer_productVariant')
           ..add('G__typename', G__typename)
           ..add('product', product)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('images', images))
         .toString();
   }
 }
@@ -4364,6 +4515,17 @@ class GProductOrdersData_productOrders_dealer_productVariantBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  ListBuilder<GProductOrdersData_productOrders_dealer_productVariant_images>?
+      _images;
+  ListBuilder<GProductOrdersData_productOrders_dealer_productVariant_images>
+      get images => _$this._images ??= new ListBuilder<
+          GProductOrdersData_productOrders_dealer_productVariant_images>();
+  set images(
+          ListBuilder<
+                  GProductOrdersData_productOrders_dealer_productVariant_images>?
+              images) =>
+      _$this._images = images;
+
   GProductOrdersData_productOrders_dealer_productVariantBuilder() {
     GProductOrdersData_productOrders_dealer_productVariant._initializeBuilder(
         this);
@@ -4375,6 +4537,7 @@ class GProductOrdersData_productOrders_dealer_productVariantBuilder
       _G__typename = $v.G__typename;
       _product = $v.product?.toBuilder();
       _name = $v.name;
+      _images = $v.images?.toBuilder();
       _$v = null;
     }
     return this;
@@ -4407,12 +4570,16 @@ class GProductOrdersData_productOrders_dealer_productVariantBuilder
                   r'GProductOrdersData_productOrders_dealer_productVariant',
                   'G__typename'),
               product: _product?.build(),
-              name: name);
+              name: name,
+              images: _images?.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'product';
         _product?.build();
+
+        _$failedField = 'images';
+        _images?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GProductOrdersData_productOrders_dealer_productVariant',
@@ -4549,6 +4716,295 @@ class GProductOrdersData_productOrders_dealer_productVariant_productBuilder
                 r'GProductOrdersData_productOrders_dealer_productVariant_product',
                 'G__typename'),
             name: name);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductOrdersData_productOrders_dealer_productVariant_images
+    extends GProductOrdersData_productOrders_dealer_productVariant_images {
+  @override
+  final String G__typename;
+  @override
+  final GProductOrdersData_productOrders_dealer_productVariant_images_image?
+      image;
+
+  factory _$GProductOrdersData_productOrders_dealer_productVariant_images(
+          [void Function(
+                  GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder)?
+              updates]) =>
+      (new GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductOrdersData_productOrders_dealer_productVariant_images._(
+      {required this.G__typename, this.image})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductOrdersData_productOrders_dealer_productVariant_images',
+        'G__typename');
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_productVariant_images rebuild(
+          void Function(
+                  GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder
+      toBuilder() =>
+          new GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductOrdersData_productOrders_dealer_productVariant_images &&
+        G__typename == other.G__typename &&
+        image == other.image;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductOrdersData_productOrders_dealer_productVariant_images')
+          ..add('G__typename', G__typename)
+          ..add('image', image))
+        .toString();
+  }
+}
+
+class GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder
+    implements
+        Builder<GProductOrdersData_productOrders_dealer_productVariant_images,
+            GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder> {
+  _$GProductOrdersData_productOrders_dealer_productVariant_images? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder?
+      _image;
+  GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder
+      get image => _$this._image ??=
+          new GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder();
+  set image(
+          GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder?
+              image) =>
+      _$this._image = image;
+
+  GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder() {
+    GProductOrdersData_productOrders_dealer_productVariant_images
+        ._initializeBuilder(this);
+  }
+
+  GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _image = $v.image?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductOrdersData_productOrders_dealer_productVariant_images other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GProductOrdersData_productOrders_dealer_productVariant_images;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_productVariant_images build() =>
+      _build();
+
+  _$GProductOrdersData_productOrders_dealer_productVariant_images _build() {
+    _$GProductOrdersData_productOrders_dealer_productVariant_images _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductOrdersData_productOrders_dealer_productVariant_images._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GProductOrdersData_productOrders_dealer_productVariant_images',
+                  'G__typename'),
+              image: _image?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'image';
+        _image?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductOrdersData_productOrders_dealer_productVariant_images',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductOrdersData_productOrders_dealer_productVariant_images_image
+    extends GProductOrdersData_productOrders_dealer_productVariant_images_image {
+  @override
+  final String G__typename;
+  @override
+  final String url;
+
+  factory _$GProductOrdersData_productOrders_dealer_productVariant_images_image(
+          [void Function(
+                  GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder)?
+              updates]) =>
+      (new GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductOrdersData_productOrders_dealer_productVariant_images_image._(
+      {required this.G__typename, required this.url})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductOrdersData_productOrders_dealer_productVariant_images_image',
+        'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        url,
+        r'GProductOrdersData_productOrders_dealer_productVariant_images_image',
+        'url');
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_productVariant_images_image rebuild(
+          void Function(
+                  GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder
+      toBuilder() =>
+          new GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other
+            is GProductOrdersData_productOrders_dealer_productVariant_images_image &&
+        G__typename == other.G__typename &&
+        url == other.url;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, url.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductOrdersData_productOrders_dealer_productVariant_images_image')
+          ..add('G__typename', G__typename)
+          ..add('url', url))
+        .toString();
+  }
+}
+
+class GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder
+    implements
+        Builder<
+            GProductOrdersData_productOrders_dealer_productVariant_images_image,
+            GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder> {
+  _$GProductOrdersData_productOrders_dealer_productVariant_images_image? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
+
+  GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder() {
+    GProductOrdersData_productOrders_dealer_productVariant_images_image
+        ._initializeBuilder(this);
+  }
+
+  GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder
+      get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _url = $v.url;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductOrdersData_productOrders_dealer_productVariant_images_image
+          other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other
+        as _$GProductOrdersData_productOrders_dealer_productVariant_images_image;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductOrdersData_productOrders_dealer_productVariant_images_image build() =>
+      _build();
+
+  _$GProductOrdersData_productOrders_dealer_productVariant_images_image
+      _build() {
+    final _$result = _$v ??
+        new _$GProductOrdersData_productOrders_dealer_productVariant_images_image
+            ._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductOrdersData_productOrders_dealer_productVariant_images_image',
+                'G__typename'),
+            url: BuiltValueNullFieldError.checkNotNull(
+                url,
+                r'GProductOrdersData_productOrders_dealer_productVariant_images_image',
+                'url'));
     replace(_$result);
     return _$result;
   }
