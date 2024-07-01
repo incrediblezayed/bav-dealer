@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "577678113871",
+    "project_id": "bavelectric-4b4a6",
+    "storage_bucket": "bavelectric-4b4a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577678113871:android:2a277afc7bbf7c222ffe3a",
+        "android_client_info": {
+          "package_name": "com.bavelectric.dealerapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGGmbATGoAZyfNC6h8ULUTAI1F3iJZKTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
