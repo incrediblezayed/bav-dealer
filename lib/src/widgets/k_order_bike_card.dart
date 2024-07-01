@@ -29,7 +29,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
     final theme = Theme.of(context).textTheme;
     final ordersPro = ref.read(orderProvider(OrderFamily.purchaseOrders));
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
+      padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: Colors.white,
@@ -105,11 +105,11 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(6.r),
                       child: KCachedNWImage(
-                        widget.vehiclePurchaseOrders.dealer!.vehicleColor!
-                                .images?.firstOrNull?.image?.url ??
-                            '',
+                        widget.vehiclePurchaseOrders.dealer?.vehicleColor?.images
+                            ?.firstOrNull?.image?.url ?? '', // Use ?. for optional chaining
                         fit: BoxFit.cover,
                       ),
+
                     ),
                   ),
                   SizedBox(width: 20.w),
@@ -155,7 +155,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                                 ),
                               ],
                             ),
-                            SizedBox(width: 20.w),
+                            SizedBox(width: 10.w),
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -181,15 +181,14 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                                     ),
                                   ),
                                   SizedBox(height: 6.h),
-                                  /* Text(
-                                    widget.vehiclePurchaseOrders.dealer!
-                                        .vehicleVariant!.price
+                                   Text(
+                                    widget.vehiclePurchaseOrders.price
                                         .toString(),
                                     style: theme.labelLarge!.copyWith(
                                       fontWeight: FontWeight.w600,
                                       color: AppTheme.primaryColor,
                                     ),
-                                  ) */
+                                  )
                                 ],
                               ),
                             ),
@@ -445,9 +444,9 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                 ],
               ),
             ),
-            /*SizedBox(
+            SizedBox(
               height: 10.h,
-            ),*/
+            ),
 
 /*             if (vehiclePurchaseOrders.status == 'created')
               Center(
