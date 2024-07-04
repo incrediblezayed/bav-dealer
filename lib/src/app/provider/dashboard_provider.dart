@@ -35,10 +35,10 @@ class HomePageProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  int _rankCount = 0;
-  int get rankCount => _rankCount;
-  set rankCount(int rankCount) {
-    _rankCount = rankCount;
+  int _productCount = 0;
+  int get productCount => _productCount;
+  set productCount(int productCount) {
+    _productCount = productCount;
     notifyListeners();
   }
 
@@ -58,6 +58,10 @@ class HomePageProvider extends ChangeNotifier {
     purchaseCount = (await ref
             .read(orderProvider(OrderFamily.purchaseOrders))
             .getPendingOrders())
+        .length;
+    productCount = (await ref
+        .read(orderProvider(OrderFamily.productOrders))
+        .getProductPendingOrders())
         .length;
     Future.delayed(const Duration(seconds: 10), () {
       onInit();

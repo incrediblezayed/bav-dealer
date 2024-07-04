@@ -240,7 +240,7 @@ class HomePage extends ConsumerWidget {
                             SizedBox(height: 10.h),
                             StagerredContainer(
                               height: 138.h,
-                              count: controller.rankCount.toString(),
+                              count: controller.productCount.toString(),
                               countColor: const Color(0xfffdb35f),
                               arrowColor: const Color(0xfffdb35f),
                               containerBgColor: const Color(0xffffec8a),
