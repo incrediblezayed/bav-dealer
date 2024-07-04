@@ -93,12 +93,13 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
               label: 'New Password',
               obsecureText: authPro.isPassword,
               suffixIcon: IconButton(
-                  onPressed: authPro.isObsecure,
-                  icon: Icon(
-                    authPro.isPassword
-                        ? Icons.visibility_off_outlined
-                        : Icons.visibility_outlined,
-                  ),),
+                onPressed: authPro.isObsecure,
+                icon: Icon(
+                  authPro.isPassword
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
+                ),
+              ),
             ),
             SizedBox(
               height: 16.h,
@@ -109,12 +110,13 @@ class _LoginPageState extends ConsumerState<EnterYourDetailsPage> {
               label: 'Confirm Password',
               obsecureText: authPro.isPassword,
               suffixIcon: IconButton(
-                  onPressed: authPro.isObsecure,
-                  icon: Icon(
-                    authPro.isPassword
-                        ? Icons.visibility_off_outlined
-                        : Icons.visibility_outlined,
-                  ),),
+                onPressed: authPro.isObsecure,
+                icon: Icon(
+                  authPro.isPassword
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
+                ),
+              ),
             ),
             SizedBox(
               height: 16.h,

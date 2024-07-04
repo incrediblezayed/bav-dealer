@@ -23,6 +23,9 @@ class _MyInventoryState extends ConsumerState<MyInventory>
 
   @override
   void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      ref.read(inventoryProvider).init();
+    });
     _tabController.addListener(tabListener);
     super.initState();
   }

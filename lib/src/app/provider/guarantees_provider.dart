@@ -9,8 +9,7 @@ class GuaranteesProvider extends ChangeNotifier {
 
   List<GGuaranteesData_guarantees> _guarantees = [];
 
-  List<GGuaranteesData_guarantees> get guarantees =>
-      _guarantees;
+  List<GGuaranteesData_guarantees> get guarantees => _guarantees;
 
   set guarantees(List<GGuaranteesData_guarantees> value) {
     _guarantees = value;

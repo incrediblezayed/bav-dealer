@@ -162,7 +162,6 @@ class CacheProvider {
   ///
   ///For getting the session token with the key [_sessionToken]
   String? getSessionToken() {
-
     return _stringBox.get(_sessionToken);
   }
 

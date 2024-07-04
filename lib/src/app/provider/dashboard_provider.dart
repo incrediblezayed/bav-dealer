@@ -6,9 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 /// Dashboard Provider
 /// This provider is used manage the home page with bottom navigation bar
 class HomePageProvider extends ChangeNotifier {
-  HomePageProvider(this.ref) {
-    onInit();
-  }
+  HomePageProvider(this.ref);
   final Ref ref;
 
   ///Page index
@@ -52,27 +50,15 @@ class HomePageProvider extends ChangeNotifier {
   Future<void> onInit() async {
     inventoryCount = await ref.read(inventoryProvider).getInventoryCount();
     testOrderCount = (await ref
-            .read(orderProvider(OrderFamily.testDriveOrders))
-            .getTestDrivePendingOrders())
-        .length;
+        .read(orderProvider(OrderFamily.testDriveOrders))
+        .getTestDrivePendingOrdersCount());
     purchaseCount = (await ref
-            .read(orderProvider(OrderFamily.purchaseOrders))
-            .getPendingOrders())
-        .length;
+        .read(orderProvider(OrderFamily.purchaseOrders))
+        .getPendingOrdersCount());
     Future.delayed(const Duration(seconds: 10), () {
       onInit();
     });
   }
 
   ///Page controller
-  PageController pageController = PageController();
-
-  ///Change the page as per index
-  void changePage(int index) {
-    pageController.animateToPage(
-      index,
-      duration: const Duration(milliseconds: 300),
-      curve: Curves.decelerate,
-    );
-  }
 }

@@ -62,7 +62,7 @@ class AddressPage extends ConsumerWidget {
             ),
             KButton(
               onPressed: () async {
-             /*    if (authPro.shopAddressController.text.isEmpty) {
+                /*    if (authPro.shopAddressController.text.isEmpty) {
                   AppRoutes.showErrorSnackbar(
                       message: 'Please fill the shop address');
                 } */

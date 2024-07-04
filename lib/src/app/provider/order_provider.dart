@@ -24,6 +24,10 @@ enum OrderStatus {
 class OrdersProvider extends ChangeNotifier {
   final OrderRepository _orderRepository = OrderRepository();
 
+  OrderFamily orderFamily;
+
+  OrdersProvider({required this.orderFamily});
+
   bool isInPage = false;
 
   bool _loading = true;
@@ -70,7 +74,8 @@ class OrdersProvider extends ChangeNotifier {
   } */
 
   List<GProductOrdersData_productOrders> _productpendingOrders = [];
-  List<GProductOrdersData_productOrders> get productpendingOrders => _productpendingOrders;
+  List<GProductOrdersData_productOrders> get productpendingOrders =>
+      _productpendingOrders;
   set productpendingOrders(List<GProductOrdersData_productOrders> data) {
     _productpendingOrders = data;
     notifyListeners();
@@ -92,7 +97,8 @@ class OrdersProvider extends ChangeNotifier {
   }
 
   List<GProductOrdersData_productOrders> _productacceptedOrders = [];
-  List<GProductOrdersData_productOrders> get productacceptedOrders => _productacceptedOrders;
+  List<GProductOrdersData_productOrders> get productacceptedOrders =>
+      _productacceptedOrders;
   set productacceptedOrders(List<GProductOrdersData_productOrders> data) {
     _productacceptedOrders = data;
     notifyListeners();
@@ -114,7 +120,8 @@ class OrdersProvider extends ChangeNotifier {
   }
 
   List<GProductOrdersData_productOrders> _productrejectedOrders = [];
-  List<GProductOrdersData_productOrders> get productrejectedOrders => _productrejectedOrders;
+  List<GProductOrdersData_productOrders> get productrejectedOrders =>
+      _productrejectedOrders;
   set productrejectedOrders(List<GProductOrdersData_productOrders> data) {
     _productrejectedOrders = data;
     notifyListeners();
@@ -174,7 +181,7 @@ class OrdersProvider extends ChangeNotifier {
       await getTestDriveAcceptedOrders();
       await getTestDriveRejectedOrders();
       await getTestDriveDeliveredOrders();
-    } else if (orderFamily == OrderFamily.productOrders){
+    } else if (orderFamily == OrderFamily.productOrders) {
       await getProductPendingOrders();
       await getProductAcceptedOrders();
       await getProductRejectedOrders();
@@ -185,7 +192,7 @@ class OrdersProvider extends ChangeNotifier {
   Future<List<GProductOrdersData_productOrders>> getProductPendingOrders() async {
     try {
       final getProductOrders =
-      await _orderRepository.getProductOrders('created');
+          await _orderRepository.getProductOrders('created');
 
       if (getProductOrders != null) {
         productpendingOrders = getProductOrders;
@@ -224,6 +231,15 @@ class OrdersProvider extends ChangeNotifier {
     return [];
   }
 
+  Future<int> getPendingOrdersCount() async {
+    try {
+      return await _orderRepository.getVehicleOrdersCount('created');
+    } catch (e) {
+      e.log();
+      return 0;
+    }
+  }
+
   Future<List<GTestDriveOrdersData_testDriveOrders>>
       getTestDrivePendingOrders() async {
     try {
@@ -248,7 +264,7 @@ class OrdersProvider extends ChangeNotifier {
   Future<List<GProductOrdersData_productOrders>> getProductAcceptedOrders() async {
     try {
       final getProductOrders =
-      await _orderRepository.getProductOrders('accepted');
+          await _orderRepository.getProductOrders('accepted');
 
       if (getProductOrders != null) {
         productacceptedOrders = getProductOrders;
@@ -304,10 +320,11 @@ class OrdersProvider extends ChangeNotifier {
       loading = false;
     }
   }
+
   Future<void> getProductRejectedOrders() async {
     try {
       final getProductOrders =
-      await _orderRepository.getProductOrders('rejected');
+          await _orderRepository.getProductOrders('rejected');
 
       if (getProductOrders != null) {
         productrejectedOrders = getProductOrders;
@@ -322,6 +339,7 @@ class OrdersProvider extends ChangeNotifier {
       loading = false;
     }
   }
+
   Future<void> getRejectedOrders() async {
     try {
       final getVehicleOrders =
@@ -361,7 +379,7 @@ class OrdersProvider extends ChangeNotifier {
   Future<void> getProductDeliveredOrders() async {
     try {
       final getProductOrders =
-      await _orderRepository.getProductOrders('delivered');
+          await _orderRepository.getProductOrders('delivered');
 
       if (getProductOrders != null) {
         productdeliveredOrders = getProductOrders;

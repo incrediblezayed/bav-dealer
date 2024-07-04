@@ -172,8 +172,10 @@ class GraphqlClient {
               }
 
               final queryData = options.data as Map;
-              final name = (queryData['operationName'] as String)
-                ..log(name: 'Operation Name', color: LogColors.cyan);
+              (queryData['operationName'] as String).log(
+                name: 'Operation Name',
+                color: LogColors.cyan,
+              );
               if (kDebugMode) {
                 if (queryData['variables'] != null &&
                     queryData['variables'] is Map &&

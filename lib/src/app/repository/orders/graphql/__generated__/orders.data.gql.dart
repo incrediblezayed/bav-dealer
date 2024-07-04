@@ -1008,6 +1008,35 @@ abstract class GVehicleOrdersData_vehicleOrders_order_user_addresses
       );
 }
 
+abstract class GVehicleOrdersCountData
+    implements Built<GVehicleOrdersCountData, GVehicleOrdersCountDataBuilder> {
+  GVehicleOrdersCountData._();
+
+  factory GVehicleOrdersCountData(
+          [void Function(GVehicleOrdersCountDataBuilder b) updates]) =
+      _$GVehicleOrdersCountData;
+
+  static void _initializeBuilder(GVehicleOrdersCountDataBuilder b) =>
+      b..G__typename = 'Query';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int? get vehicleOrdersCount;
+  static Serializer<GVehicleOrdersCountData> get serializer =>
+      _$gVehicleOrdersCountDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GVehicleOrdersCountData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleOrdersCountData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GVehicleOrdersCountData.serializer,
+        json,
+      );
+}
+
 abstract class GTestDriveOrdersData
     implements Built<GTestDriveOrdersData, GTestDriveOrdersDataBuilder> {
   GTestDriveOrdersData._();
@@ -1463,6 +1492,36 @@ abstract class GTestDriveOrdersData_testDriveOrders_order_user_addresses
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GTestDriveOrdersData_testDriveOrders_order_user_addresses.serializer,
+        json,
+      );
+}
+
+abstract class GTestDriveOrdersCountData
+    implements
+        Built<GTestDriveOrdersCountData, GTestDriveOrdersCountDataBuilder> {
+  GTestDriveOrdersCountData._();
+
+  factory GTestDriveOrdersCountData(
+          [void Function(GTestDriveOrdersCountDataBuilder b) updates]) =
+      _$GTestDriveOrdersCountData;
+
+  static void _initializeBuilder(GTestDriveOrdersCountDataBuilder b) =>
+      b..G__typename = 'Query';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int? get testDriveOrdersCount;
+  static Serializer<GTestDriveOrdersCountData> get serializer =>
+      _$gTestDriveOrdersCountDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GTestDriveOrdersCountData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GTestDriveOrdersCountData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GTestDriveOrdersCountData.serializer,
         json,
       );
 }

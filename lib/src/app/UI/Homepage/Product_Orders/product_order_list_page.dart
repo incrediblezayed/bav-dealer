@@ -1,3 +1,4 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -7,6 +8,7 @@ import '../../../../widgets/k_order_product_card.dart';
 import '../../../provider/app_provider.dart';
 import '../../../provider/order_provider.dart';
 import '../../../repository/orders/graphql/__generated__/orders.data.gql.dart';
+
 
 class ProductOrderListPage extends ConsumerWidget {
   const ProductOrderListPage({required this.data, required this.orderPro, super.key});
@@ -37,11 +39,7 @@ class ProductOrderListPage extends ConsumerWidget {
                 ref.refresh(orderProvider(OrderFamily.productOrders));
               },
             ),
-          )
-              .toList(),
-        ),
-      ),
-    );
+          );
   }
 }
 

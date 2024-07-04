@@ -21,7 +21,11 @@ class MyTestDriveStockPage extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(8),
               child: TextField(
-                controller: inventoryPro.myStockSearchController,
+                controller: inventoryPro.inventorySearchController,
+                onChanged: (v) {
+                  inventoryPro.onSearchTextChanged(
+                      onSearch: inventoryPro.getTestDriveStock);
+                },
                 decoration: const InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
@@ -48,7 +52,7 @@ class MyTestDriveStockPage extends ConsumerWidget {
                   await inventoryPro.getTestDriveStock();
                 },
                 child: inventoryPro.testDriveStock == null
-                    ? Center(
+                    ? const Center(
                         child: CircularProgressIndicator(),
                       )
                     : inventoryPro.vehicleDealers.isEmpty
@@ -62,7 +66,7 @@ class MyTestDriveStockPage extends ConsumerWidget {
                             itemBuilder: (context, index) {
                               if (index >=
                                   inventoryPro.testDriveStock!.length) {
-                                return Center(
+                                return const Center(
                                     child: CircularProgressIndicator());
                               }
                               return MyStockCard(

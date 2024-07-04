@@ -1,5 +1,4 @@
 import 'package:dealerapp/src/app/UI/Homepage/Product_Orders/product_order_list_page.dart';
-import 'package:dealerapp/src/app/UI/Homepage/Purchase_Orders/orders_list_page.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/provider/order_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
@@ -14,9 +13,9 @@ class ProductOrders extends ConsumerStatefulWidget {
 }
 
 class _ProductOrdersState extends ConsumerState<ProductOrders>
-  with TickerProviderStateMixin {
+    with TickerProviderStateMixin {
   late final TabController _tabController =
-  TabController(length: 4, vsync: this);
+      TabController(length: 4, vsync: this);
   void onTabChanged(int index, OrdersProvider provider) {
     if (index == 0) {
       provider.getProductPendingOrders();
@@ -28,6 +27,7 @@ class _ProductOrdersState extends ConsumerState<ProductOrders>
       provider.getProductDeliveredOrders();
     }
   }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
@@ -83,13 +83,11 @@ class _ProductOrdersState extends ConsumerState<ProductOrders>
         ]
             .map(
               (e) => ProductOrderListPage(
-            data: e,
-            orderPro: OrdersProvider(),
-          ),
-        )
+                data: e,
+                orderPro: orderPro,
+              ),
+            )
             .toList(),
-
-
       ),
     );
   }

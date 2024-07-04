@@ -8,7 +8,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ReportPage extends ConsumerWidget {
-
   const ReportPage({required this.isFeedback, super.key});
   final bool isFeedback;
   @override
@@ -61,12 +60,13 @@ class ReportPage extends ConsumerWidget {
               TextField(
                 controller: reportPro.title,
                 decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Colors.black.withOpacity(.2)),),
-                    fillColor: Colors.white,
-                    hintText: 'Title',
-                    hintStyle: TextStyle(color: Colors.black.withOpacity(.2)),),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black.withOpacity(.2)),
+                  ),
+                  fillColor: Colors.white,
+                  hintText: 'Title',
+                  hintStyle: TextStyle(color: Colors.black.withOpacity(.2)),
+                ),
               ),
               SizedBox(height: 16.h),
               Stack(
@@ -75,15 +75,17 @@ class ReportPage extends ConsumerWidget {
                     controller: reportPro.description,
                     maxLines: 8,
                     decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.black.withOpacity(.2),),),
-                        fillColor: Colors.white,
-                        hintText: isFeedback
-                            ? 'Write you detailed feedback'
-                            : 'Write a reason for reporting',
-                        hintStyle:
-                            TextStyle(color: Colors.black.withOpacity(.2)),),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.black.withOpacity(.2),
+                        ),
+                      ),
+                      fillColor: Colors.white,
+                      hintText: isFeedback
+                          ? 'Write you detailed feedback'
+                          : 'Write a reason for reporting',
+                      hintStyle: TextStyle(color: Colors.black.withOpacity(.2)),
+                    ),
                   ),
                   Positioned(
                     right: 8,
@@ -108,41 +110,45 @@ class ReportPage extends ConsumerWidget {
                   shrinkWrap: true,
                   children: reportPro.attachments
                       .map(
-                          (e) => LayoutBuilder(builder: (context, constraints) {
-                                return Stack(
-                                  children: [
-                                    Image.file(
-                                      File(e),
-                                      fit: BoxFit.cover,
-                                      width: constraints.maxWidth,
-                                      height: constraints.maxHeight,
-                                    ),
-                                    Positioned(
-                                      right: 0,
-                                      top: 0,
-                                      child: IconButton(
-                                        icon: const Icon(Icons.close),
-                                        onPressed: () {
-                                          reportPro.removeAttachment(e);
-                                        },
-                                      ),
-                                    ),
-                                  ],
-                                );
-                              },),)
+                        (e) => LayoutBuilder(
+                          builder: (context, constraints) {
+                            return Stack(
+                              children: [
+                                Image.file(
+                                  File(e),
+                                  fit: BoxFit.cover,
+                                  width: constraints.maxWidth,
+                                  height: constraints.maxHeight,
+                                ),
+                                Positioned(
+                                  right: 0,
+                                  top: 0,
+                                  child: IconButton(
+                                    icon: const Icon(Icons.close),
+                                    onPressed: () {
+                                      reportPro.removeAttachment(e);
+                                    },
+                                  ),
+                                ),
+                              ],
+                            );
+                          },
+                        ),
+                      )
                       .toList(),
                 ),
               ],
               SizedBox(height: 20.h),
               KBottomBarButton(
-                  text: 'Submit',
-                  onTap: () {
-                    if (isFeedback) {
-                      reportPro.createFeedback();
-                    } else {
-                      reportPro.createReport();
-                    }
-                  },),
+                text: 'Submit',
+                onTap: () {
+                  if (isFeedback) {
+                    reportPro.createFeedback();
+                  } else {
+                    reportPro.createReport();
+                  }
+                },
+              ),
             ],
           ),
         ),

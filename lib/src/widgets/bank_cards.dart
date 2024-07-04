@@ -12,10 +12,12 @@ class BankCard extends StatelessWidget {
     super.key,
   });
 
-  ///image 
+  ///image
   final String image;
+
   ///title
   final String title;
+
   ///ontap
   // ignore: inference_failure_on_function_return_type
   final Function()? onTap;
@@ -46,7 +48,7 @@ class BankCard extends StatelessWidget {
           const Spacer(),
           IconButton(
             onPressed: () {},
-            icon:  const Icon(
+            icon: const Icon(
               Icons.arrow_forward_ios_sharp,
               color: Colors.grey,
             ),

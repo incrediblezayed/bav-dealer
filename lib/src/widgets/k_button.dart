@@ -8,8 +8,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class KButton extends StatelessWidget {
   /// Constructor
   const KButton({required this.onPressed, required this.text, super.key});
+
   ///onpressed
   final Function()? onPressed;
+
   ///text
   final String text;
 

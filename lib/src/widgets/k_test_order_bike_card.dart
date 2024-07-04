@@ -353,7 +353,8 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                           GestureDetector(
                             onTap: () {
                               ordersPro.acceptTestDriveOrder(
-                                  vehicleTestDriveOrders.id,);
+                                vehicleTestDriveOrders.id,
+                              );
                             },
                             child: Container(
                               height: 50.h,
@@ -584,9 +585,9 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                         ref
                             .read(orderProvider(OrderFamily.purchaseOrders))
                             .rejectOrder(
-                              id:  vehicleTestDriveOrders.id,
-                              reason:  selectedReason, orderType: 'testDrive',
-
+                              id: vehicleTestDriveOrders.id,
+                              reason: selectedReason,
+                              orderType: 'testDrive',
                             );
                       },
                       child: AutoSizeText(

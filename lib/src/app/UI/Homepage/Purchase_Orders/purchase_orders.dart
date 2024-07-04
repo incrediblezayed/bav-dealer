@@ -85,7 +85,7 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
             .map(
               (e) => OrdersListPage(
                 data: e,
-                orderPro: OrdersProvider(),
+                orderPro: orderPro,
               ),
             )
             .toList(),

@@ -26,6 +26,10 @@ class MyProduct extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(8),
               child: TextField(
+                onChanged: (v) {
+                  inventoryPro.onSearchTextChanged(
+                      onSearch: inventoryPro.getProducts);
+                },
                 controller: inventoryPro.inventorySearchController,
                 decoration: const InputDecoration(
                   filled: true,
