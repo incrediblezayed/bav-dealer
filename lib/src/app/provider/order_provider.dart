@@ -182,7 +182,7 @@ class OrdersProvider extends ChangeNotifier {
     }
   }
 
-  Future<List<Object>> getProductPendingOrders() async {
+  Future<List<GProductOrdersData_productOrders>> getProductPendingOrders() async {
     try {
       final getProductOrders =
       await _orderRepository.getProductOrders('created');
@@ -245,7 +245,7 @@ class OrdersProvider extends ChangeNotifier {
     return [];
   }
 
-  Future<List<Object>> getProductAcceptedOrders() async {
+  Future<List<GProductOrdersData_productOrders>> getProductAcceptedOrders() async {
     try {
       final getProductOrders =
       await _orderRepository.getProductOrders('accepted');
@@ -253,6 +253,7 @@ class OrdersProvider extends ChangeNotifier {
       if (getProductOrders != null) {
         productacceptedOrders = getProductOrders;
         return getProductOrders;
+
       } else {
         await AppRoutes.showErrorSnackbar(
           message: 'Error while fetching list of products',
@@ -303,14 +304,13 @@ class OrdersProvider extends ChangeNotifier {
       loading = false;
     }
   }
-  Future<List<Object>> getProductRejectedOrders() async {
+  Future<void> getProductRejectedOrders() async {
     try {
       final getProductOrders =
       await _orderRepository.getProductOrders('rejected');
 
       if (getProductOrders != null) {
         productrejectedOrders = getProductOrders;
-        return getProductOrders;
       } else {
         await AppRoutes.showErrorSnackbar(
           message: 'Error while fetching list of products',
@@ -321,7 +321,6 @@ class OrdersProvider extends ChangeNotifier {
     } finally {
       loading = false;
     }
-    return [];
   }
   Future<void> getRejectedOrders() async {
     try {
@@ -359,14 +358,13 @@ class OrdersProvider extends ChangeNotifier {
     }
   }
 
-  Future<List<Object>> getProductDeliveredOrders() async {
+  Future<void> getProductDeliveredOrders() async {
     try {
       final getProductOrders =
       await _orderRepository.getProductOrders('delivered');
 
       if (getProductOrders != null) {
         productdeliveredOrders = getProductOrders;
-        return getProductOrders;
       } else {
         await AppRoutes.showErrorSnackbar(
           message: 'Error while fetching list of products',
@@ -377,7 +375,6 @@ class OrdersProvider extends ChangeNotifier {
     } finally {
       loading = false;
     }
-    return [];
   }
 
   Future<void> getDeliveredOrders() async {
