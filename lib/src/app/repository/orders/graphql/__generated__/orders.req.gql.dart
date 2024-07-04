@@ -175,6 +175,87 @@ abstract class GVehicleOrdersReq
       );
 }
 
+abstract class GVehicleOrdersCountReq
+    implements
+        Built<GVehicleOrdersCountReq, GVehicleOrdersCountReqBuilder>,
+        _i1.OperationRequest<_i2.GVehicleOrdersCountData,
+            _i3.GVehicleOrdersCountVars> {
+  GVehicleOrdersCountReq._();
+
+  factory GVehicleOrdersCountReq(
+          [void Function(GVehicleOrdersCountReqBuilder b) updates]) =
+      _$GVehicleOrdersCountReq;
+
+  static void _initializeBuilder(GVehicleOrdersCountReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'VehicleOrdersCount',
+    )
+    ..executeOnListen = true;
+
+  @override
+  _i3.GVehicleOrdersCountVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GVehicleOrdersCountData? Function(
+    _i2.GVehicleOrdersCountData?,
+    _i2.GVehicleOrdersCountData?,
+  )? get updateResult;
+  @override
+  _i2.GVehicleOrdersCountData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
+  _i2.GVehicleOrdersCountData? parseData(Map<String, dynamic> json) =>
+      _i2.GVehicleOrdersCountData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(_i2.GVehicleOrdersCountData data) =>
+      data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GVehicleOrdersCountData, _i3.GVehicleOrdersCountVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GVehicleOrdersCountReq> get serializer =>
+      _$gVehicleOrdersCountReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GVehicleOrdersCountReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleOrdersCountReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GVehicleOrdersCountReq.serializer,
+        json,
+      );
+}
+
 abstract class GTestDriveOrdersReq
     implements
         Built<GTestDriveOrdersReq, GTestDriveOrdersReqBuilder>,
@@ -252,6 +333,88 @@ abstract class GTestDriveOrdersReq
   static GTestDriveOrdersReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
         GTestDriveOrdersReq.serializer,
+        json,
+      );
+}
+
+abstract class GTestDriveOrdersCountReq
+    implements
+        Built<GTestDriveOrdersCountReq, GTestDriveOrdersCountReqBuilder>,
+        _i1.OperationRequest<_i2.GTestDriveOrdersCountData,
+            _i3.GTestDriveOrdersCountVars> {
+  GTestDriveOrdersCountReq._();
+
+  factory GTestDriveOrdersCountReq(
+          [void Function(GTestDriveOrdersCountReqBuilder b) updates]) =
+      _$GTestDriveOrdersCountReq;
+
+  static void _initializeBuilder(GTestDriveOrdersCountReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'TestDriveOrdersCount',
+    )
+    ..executeOnListen = true;
+
+  @override
+  _i3.GTestDriveOrdersCountVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GTestDriveOrdersCountData? Function(
+    _i2.GTestDriveOrdersCountData?,
+    _i2.GTestDriveOrdersCountData?,
+  )? get updateResult;
+  @override
+  _i2.GTestDriveOrdersCountData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
+  _i2.GTestDriveOrdersCountData? parseData(Map<String, dynamic> json) =>
+      _i2.GTestDriveOrdersCountData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(_i2.GTestDriveOrdersCountData data) =>
+      data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GTestDriveOrdersCountData,
+      _i3.GTestDriveOrdersCountVars> transformOperation(
+          _i4.Operation Function(_i4.Operation) transform) =>
+      this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GTestDriveOrdersCountReq> get serializer =>
+      _$gTestDriveOrdersCountReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GTestDriveOrdersCountReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GTestDriveOrdersCountReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GTestDriveOrdersCountReq.serializer,
         json,
       );
 }

@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:collection/collection.dart';
 import 'package:dealerapp/src/app/UI/login/login_page.dart';
@@ -232,7 +230,6 @@ class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
     );
   }
 
-  
   int time = 60;
 
   void onPageChanged(int index) {

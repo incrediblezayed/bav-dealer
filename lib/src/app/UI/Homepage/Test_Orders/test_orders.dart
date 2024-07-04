@@ -67,18 +67,21 @@ class _PurchaseOrdersState extends ConsumerState<TestOrders>
         ),
       ),
       body: TabBarView(
-          controller: _tabController,
-          children: [
-            orderPro.testDrivePendingOrders,
-            orderPro.testDriveDeliveredOrders,
-            orderPro.testDriveRejectedOrders,
-            orderPro.testDriveDeliveredOrders,
-          ]
-              .map((e) => TestOrdersListPage(
-                    data: e,
-                    ordersPro: OrdersProvider(),
-                  ),)
-              .toList(),),
+        controller: _tabController,
+        children: [
+          orderPro.testDrivePendingOrders,
+          orderPro.testDriveDeliveredOrders,
+          orderPro.testDriveRejectedOrders,
+          orderPro.testDriveDeliveredOrders,
+        ]
+            .map(
+              (e) => TestOrdersListPage(
+                data: e,
+                ordersPro: orderPro,
+              ),
+            )
+            .toList(),
+      ),
     );
   }
 }

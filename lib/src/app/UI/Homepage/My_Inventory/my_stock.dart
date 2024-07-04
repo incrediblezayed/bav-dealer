@@ -23,7 +23,13 @@ class MyStockPage extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(8),
               child: TextField(
-                controller: inventoryPro.myStockSearchController,
+                controller: inventoryPro.inventorySearchController,
+                onChanged: (v) {
+                  inventoryPro.onSearchTextChanged(
+                      onSearch: product
+                          ? inventoryPro.getProductStocks
+                          : inventoryPro.getStocks);
+                },
                 decoration: const InputDecoration(
                   filled: true,
                   fillColor: Colors.white,

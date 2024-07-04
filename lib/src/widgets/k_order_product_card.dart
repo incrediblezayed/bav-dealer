@@ -367,6 +367,29 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                   style: theme.headlineMedium?.copyWith(
                     fontSize: 14.sp,
                     color: Colors.white,
+                  const SizedBox(height: 16),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(24.r),
+                    child: MaterialButton(
+                      height: 50.h,
+                      minWidth: 300.w,
+                      color: const Color(0xffe36666),
+                      onPressed: () {
+                        AppRoutes.pop();
+                        ref
+                            .read(orderProvider(OrderFamily.purchaseOrders))
+                            .rejectOrder(
+                              id: productPurchaseOrders.id,
+                              reason: selectedReason,
+                              orderType: 'product',
+                            );
+                      },
+                      child: Text(
+                        'Submit',
+                        style:
+                            theme.headlineSmall!.copyWith(color: Colors.white),
+                      ),
+                    ),
                   ),
                 ),
               ),

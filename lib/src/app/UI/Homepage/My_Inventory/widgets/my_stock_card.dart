@@ -80,7 +80,7 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(6.r),
                   child: KCachedNWImage(
-                    dealerStock.images.firstOrNull?.image.url ?? '',
+                    dealerStock.images.firstOrNull?.url ?? '',
                     fit: BoxFit.cover,
                   )
 
@@ -319,20 +319,21 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                                                 try {
                                                   await inventoryPro
                                                       .addTestDriveDealerStock(
-                                                      variantId: dealerStock
-                                                          .variant.id,
-                                                      colorId: dealerStock
-                                                          .vehicleColor?.id,
-                                                      amount: controller.text,
-                                                      index: widget.index,
-                                                      testDriveDealerId:
-                                                      dealerStock.id);
-                                                }catch(e, s) {
+                                                          variantId: dealerStock
+                                                              .variant.id,
+                                                          colorId: dealerStock
+                                                              .vehicleColor?.id,
+                                                          amount:
+                                                              controller.text,
+                                                          index: widget.index,
+                                                          testDriveDealerId:
+                                                              dealerStock.id);
+                                                } catch (e, s) {
                                                   e.log(
-                                                    name: 'This Error has pissed me off',
-                                                    error: e,
-                                                    stackTrace: s
-                                                  );
+                                                      name:
+                                                          'Add Test Drive Dealer Stock Error',
+                                                      error: e,
+                                                      stackTrace: s);
                                                 }
                                                 AppRoutes.pop();
                                               }
@@ -357,10 +358,7 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                               index: widget.index,
                               product: isProduct,
                               vehicleDealerId: dealerStock.id,
-                              variantId: (isProduct
-                                      ? dealerStock.productVariant
-                                      : dealerStock.vehicleVariant)!
-                                  .id,
+                              variantId: dealerStock.variant.id,
                               colorId: dealerStock.vehicleColor?.id ?? '',
                               guarantees:
                                   dealerStock.guarantees?.toList() ?? [],
@@ -395,10 +393,7 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                       inventoryPro.updateStockRequest(
                         colorId: dealerStock.vehicleColor!.id,
                         product: isProduct,
-                        variantId: (isProduct
-                                ? dealerStock.productVariant
-                                : dealerStock.vehicleVariant)!
-                            .id,
+                        variantId: dealerStock.variant.id,
                         quantity: selectedQuantity,
                         type: 'remove',
                       );
@@ -415,10 +410,7 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                       inventoryPro.updateStockRequest(
                         colorId: dealerStock.vehicleColor?.id ?? '',
                         product: isProduct,
-                        variantId: (isProduct
-                                ? dealerStock.productVariant
-                                : dealerStock.vehicleVariant)!
-                            .id,
+                        variantId: dealerStock.variant.id,
                         quantity: selectedQuantity,
                         type: 'add',
                       );

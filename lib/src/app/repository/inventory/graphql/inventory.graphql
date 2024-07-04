@@ -493,7 +493,6 @@ query ProductDealers($where: ProductDealerWhereInput!) {
         description
       }
     }
-
     id
     stock
     prices {

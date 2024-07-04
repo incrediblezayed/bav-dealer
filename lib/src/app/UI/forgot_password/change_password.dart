@@ -18,14 +18,14 @@ class ChangePasswordPage extends ConsumerWidget {
     final theme = Theme.of(context).textTheme;
     final authPro = ref.watch(authProvider);
     return Scaffold(
-      appBar: MyAppBar(title: 'Change Password', titleTextStyle: theme.headlineLarge),
+      appBar: MyAppBar(
+          title: 'Change Password', titleTextStyle: theme.headlineLarge),
       resizeToAvoidBottomInset: false,
       body: Padding(
         padding: EdgeInsets.only(left: 20.w, right: 20.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
             SizedBox(
               height: 16.h,
             ),

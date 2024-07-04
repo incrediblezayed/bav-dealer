@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:built_collection/built_collection.dart';
 import 'package:dealerapp/src/app/model/dealer_stock_model.dart';
 import 'package:dealerapp/src/app/model/product_details_model.dart';
@@ -11,6 +9,7 @@ import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inv
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.req.gql.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/get_it.dart';
+import 'package:dealerapp/src/utils/log_colors.dart';
 import 'package:ferry/ferry.dart';
 
 ///Inventory Repository Class
@@ -26,6 +25,9 @@ class InventoryRepository {
     String search = '',
   }) async {
     try {
+      'Getting list of products'.log(
+        color: LogColors.green
+      );
       final response = await _client.request(
         GProductVariantsReq(
           (b) {
@@ -34,7 +36,7 @@ class InventoryRepository {
               ..vars.take = take
               ..vars.where.name.mode = GQueryMode.insensitive;
             if (ids != null) {
-              b..vars.where.id.notIn = ListBuilder<String>(ids);
+              b.vars.where.id.notIn = ListBuilder<String>(ids);
             }
           },
         ),
@@ -56,8 +58,6 @@ class InventoryRepository {
               )
               .first;
           final count = countQuery.data?.productVariantsCount ?? 0;
-          log('jsdokfjm');
-          print('jhjiosdkzfopslkf');
 
           final productList = response.data!.productVariants!
               .map((p0) => ProductVariantModel.productFromJson(p0.toJson()))

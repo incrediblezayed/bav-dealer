@@ -6,21 +6,23 @@ import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.req.gql.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/index.dart';
+import 'package:dealerapp/src/utils/log_colors.dart';
 
 class OrderRepository {
   final _client = getIt<GraphqlClient>().client;
 
   Future<List<GProductOrdersData_productOrders>?> getProductOrders(
-    String OrderStatus,
+    String orderStatus,
   ) async {
     try {
       final dealerId = cacheProvider.getDealerId();
+      'Getting list of products orders'.log(color: LogColors.green);
       final response = await _client
           .request(
             GProductOrdersReq(
               (b) => b.vars
                 ..where.dealer.dealer.id.equals = dealerId
-                ..where.status.equals = OrderStatus
+                ..where.status.equals = orderStatus
                 ..orderBy = ListBuilder([
                   GProductOrderOrderByInput(
                     (b) => b.createdAt = GOrderDirection.desc,
@@ -48,6 +50,10 @@ class OrderRepository {
   ) async {
     try {
       final dealerId = cacheProvider.getDealerId();
+      'Vehicle Orders'.log(
+        color: LogColors.green,
+        stackTrace: StackTrace.current,
+      );
       final response = await _client
           .request(
             GVehicleOrdersReq(
@@ -108,6 +114,61 @@ class OrderRepository {
     }
     return null;
   }
+
+  Future<int> getTestDriveOrdersCount(
+    String orderStatus,
+  ) async {
+    try {
+      final dealerId = cacheProvider.getDealerId();
+      final response = await _client
+          .request(
+            GTestDriveOrdersCountReq(
+              (b) => b.vars
+                ..where.dealer.dealer.id.equals = dealerId
+                ..where.status.equals = orderStatus,
+            ),
+          )
+          .first;
+
+      if (response.linkException != null ||
+          (response.graphqlErrors?.isNotEmpty ?? false)) {
+        throw Exception('Something went wrong while getting test order lists');
+      } else {
+        return response.data?.testDriveOrdersCount ?? 0;
+      }
+    } catch (e) {
+      e.log();
+    }
+    return 0;
+  }
+
+  Future<int> getVehicleOrdersCount(
+    String orderStatus,
+  ) async {
+    try {
+      final dealerId = cacheProvider.getDealerId();
+      final response = await _client
+          .request(
+            GVehicleOrdersCountReq(
+              (b) => b.vars
+                ..where.dealer.dealer.id.equals = dealerId
+                ..where.status.equals = orderStatus,
+            ),
+          )
+          .first;
+
+      if (response.linkException != null ||
+          (response.graphqlErrors?.isNotEmpty ?? false)) {
+        throw Exception('Something went wrong while getting test order lists');
+      } else {
+        return response.data?.vehicleOrdersCount ?? 0;
+      }
+    } catch (e) {
+      e.log();
+    }
+    return 0;
+  }
+
   Future<bool> updateProductOrderStatus({
     required String productOrderId,
     required String status,

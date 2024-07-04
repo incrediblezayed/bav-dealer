@@ -899,6 +899,7 @@ import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders
         GProductOrdersData_productOrders_order,
         GProductOrdersData_productOrders_order_user,
         GProductOrdersData_productOrders_order_user_addresses,
+        GTestDriveOrdersCountData,
         GTestDriveOrdersData,
         GTestDriveOrdersData_testDriveOrders,
         GTestDriveOrdersData_testDriveOrders_dealer,
@@ -917,6 +918,7 @@ import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders
         GUpdateTestDriveOrderData_updateTestDriveOrder,
         GUpdateVehicleOrderData,
         GUpdateVehicleOrderData_updateVehicleOrder,
+        GVehicleOrdersCountData,
         GVehicleOrdersData,
         GVehicleOrdersData_vehicleOrders,
         GVehicleOrdersData_vehicleOrders_dealer,
@@ -935,19 +937,23 @@ import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders
     show
         GCreateOrderRejectionByDealerReq,
         GProductOrdersReq,
+        GTestDriveOrdersCountReq,
         GTestDriveOrdersReq,
         GUpdateProductOrderReq,
         GUpdateTestDriveOrderReq,
         GUpdateVehicleOrderReq,
+        GVehicleOrdersCountReq,
         GVehicleOrdersReq;
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.var.gql.dart'
     show
         GCreateOrderRejectionByDealerVars,
         GProductOrdersVars,
+        GTestDriveOrdersCountVars,
         GTestDriveOrdersVars,
         GUpdateProductOrderVars,
         GUpdateTestDriveOrderVars,
         GUpdateVehicleOrderVars,
+        GVehicleOrdersCountVars,
         GVehicleOrdersVars;
 import 'package:dealerapp/src/app/repository/report/graphql/__generated__/report.data.gql.dart'
     show
@@ -961,6 +967,25 @@ import 'package:dealerapp/src/app/repository/report/graphql/__generated__/report
     show GCategoriesReq, GCreateFeedbackReq, GCreateReportReq;
 import 'package:dealerapp/src/app/repository/report/graphql/__generated__/report.var.gql.dart'
     show GCategoriesVars, GCreateFeedbackVars, GCreateReportVars;
+import 'package:dealerapp/src/app/repository/stockRequest/graphql/__generated__/stock.data.gql.dart'
+    show
+        GProductDealerStockRequestsData,
+        GProductDealerStockRequestsData_productDealerStockRequests,
+        GProductDealerStockRequestsData_productDealerStockRequests_productVariant,
+        GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery,
+        GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product,
+        GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand,
+        GVehicleDealerStockRequestsData,
+        GVehicleDealerStockRequestsData_vehicleDealerStockRequests,
+        GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor,
+        GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery,
+        GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant,
+        GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle,
+        GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand;
+import 'package:dealerapp/src/app/repository/stockRequest/graphql/__generated__/stock.req.gql.dart'
+    show GProductDealerStockRequestsReq, GVehicleDealerStockRequestsReq;
+import 'package:dealerapp/src/app/repository/stockRequest/graphql/__generated__/stock.var.gql.dart'
+    show GProductDealerStockRequestsVars, GVehicleDealerStockRequestsVars;
 import 'package:dealerapp/src/custom_serializers/upload_serializer.dart'
     show UploadSerializer;
 import 'package:ferry_exec/ferry_exec.dart';
@@ -1323,6 +1348,14 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GProductDealerStockRequestUpdateInput,
   GProductDealerStockRequestWhereInput,
   GProductDealerStockRequestWhereUniqueInput,
+  GProductDealerStockRequestsData,
+  GProductDealerStockRequestsData_productDealerStockRequests,
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant,
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery,
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product,
+  GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand,
+  GProductDealerStockRequestsReq,
+  GProductDealerStockRequestsVars,
   GProductDealerUpdateArgs,
   GProductDealerUpdateInput,
   GProductDealerWhereInput,
@@ -1587,6 +1620,9 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GTestDriveOrderUpdateInput,
   GTestDriveOrderWhereInput,
   GTestDriveOrderWhereUniqueInput,
+  GTestDriveOrdersCountData,
+  GTestDriveOrdersCountReq,
+  GTestDriveOrdersCountVars,
   GTestDriveOrdersData,
   GTestDriveOrdersData_testDriveOrders,
   GTestDriveOrdersData_testDriveOrders_dealer,
@@ -1740,6 +1776,15 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GVehicleDealerStockRequestUpdateInput,
   GVehicleDealerStockRequestWhereInput,
   GVehicleDealerStockRequestWhereUniqueInput,
+  GVehicleDealerStockRequestsData,
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests,
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor,
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery,
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant,
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle,
+  GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand,
+  GVehicleDealerStockRequestsReq,
+  GVehicleDealerStockRequestsVars,
   GVehicleDealerUpdateArgs,
   GVehicleDealerUpdateInput,
   GVehicleDealerWhereInput,
@@ -1797,6 +1842,9 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GVehicleOrderUpdateInput,
   GVehicleOrderWhereInput,
   GVehicleOrderWhereUniqueInput,
+  GVehicleOrdersCountData,
+  GVehicleOrdersCountReq,
+  GVehicleOrdersCountVars,
   GVehicleOrdersData,
   GVehicleOrdersData_vehicleOrders,
   GVehicleOrdersData_vehicleOrders_dealer,

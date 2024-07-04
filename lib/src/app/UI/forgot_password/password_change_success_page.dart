@@ -44,11 +44,12 @@ class PasswordChangeSuccessPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: KBottomBarButton(
-                      secondaryColor: Colors.white,
-                      text: 'Back To Home',
-                      onTap: () {
-                        AppRoutes.push(page: const LoginPage());
-                      },),
+                    secondaryColor: Colors.white,
+                    text: 'Back To Home',
+                    onTap: () {
+                      AppRoutes.push(page: const LoginPage());
+                    },
+                  ),
                 ),
               ],
             ),
