@@ -5,14 +5,15 @@ import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 class KOrderProductCard extends ConsumerStatefulWidget {
   ///
   const KOrderProductCard({
     required this.productPurchaseOrders,
+    required this.onOrderAccepted, // Add this callback
     super.key,
   });
   final GProductOrdersData_productOrders productPurchaseOrders;
+  final VoidCallback onOrderAccepted; // Define the callback
 
   @override
   ConsumerState<KOrderProductCard> createState() =>
@@ -46,11 +47,9 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
               ),
               child: Container(
                 decoration: BoxDecoration(
-                  // color: const Color(0xffe0f4f2),
                   color: AppTheme.primaryColor.withOpacity(.1),
                   borderRadius: BorderRadius.circular(10.r),
                 ),
-                // height: 80.h,
                 width: double.maxFinite,
                 child: Padding(
                   padding: EdgeInsets.symmetric(
@@ -71,8 +70,8 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                       SizedBox(height: 6.h),
                       Text(
                         widget.productPurchaseOrders.createdAt.toDateTime!
-                                .toLocal()
-                                .formatTohhmmaddMMyy ??
+                            .toLocal()
+                            .formatTohhmmaddMMyy ??
                             '',
                       ),
                     ],
@@ -80,18 +79,6 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                 ),
               ),
             ),
-
-            /*Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: Text(
-                widget.productPurchaseOrders.dealer?.productVariant?.name ?? '',
-                style: theme.labelMedium?.copyWith(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w700,
-                  color: AppTheme.black,
-                ) ?? TextStyle(), // Providing a default TextStyle in case theme.labelMedium is null
-              ),
-            ),*/
             SizedBox(height: 6.h),
             Padding(
               padding: EdgeInsets.symmetric(
@@ -123,18 +110,16 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                       children: [
                         Text(
                           widget.productPurchaseOrders.dealer?.productVariant
-                                  ?.name ??
+                              ?.name ??
                               '',
                           style: theme.labelMedium?.copyWith(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w700,
-                                color: AppTheme.black,
-                              ) ??
-                              const TextStyle(), // Providing a default TextStyle in case theme.labelMedium is null
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w700,
+                            color: AppTheme.black,
+                          ) ??
+                              TextStyle(),
                         ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
+                        SizedBox(height: 10.h),
                         Row(
                           children: [
                             Column(
@@ -156,7 +141,7 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                                 children: [
                                   Text(
                                     widget.productPurchaseOrders.price
-                                            .toPrice() ??
+                                        .toString() ??
                                         '',
                                     style: theme.labelLarge!.copyWith(
                                       fontWeight: FontWeight.w600,
@@ -174,118 +159,6 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                 ],
               ),
             ),
-            /*     Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 20.w,
-                vertical: 10.h,
-              ),
-              child: Text(
-                'Customer Info',
-                style: theme.headlineMedium,
-              ),
-            ), */
-            /* Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: Row(
-                children: [
-                  /* Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Name',
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Text(
-                        'Email Id',
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Text(
-                        'Contact Number',
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Text(
-                        'Alternative Number',
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      SizedBox(height: 6.h),
-                      Text(
-                        'Address',
-                        style: theme.labelMedium!.copyWith(
-                          color: Colors.black.withOpacity(.5),
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ) */
-                  //SizedBox(width: 20.w),
-                  /* Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.vehiclePurchaseOrders.order!.user!.name!,
-                          style: theme.labelMedium!.copyWith(
-                            color: Colors.black.withOpacity(.5),
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(height: 6.h),
-                        Text(
-                          widget.vehiclePurchaseOrders.order!.user!.email!,
-                          style: theme.labelMedium!.copyWith(
-                            color: Colors.black.withOpacity(.5),
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(height: 6.h),
-                        Text(
-                          widget
-                              .vehiclePurchaseOrders.order!.user!.phoneNumber!,
-                          style: theme.labelMedium!.copyWith(
-                            color: Colors.black.withOpacity(.5),
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(height: 6.h),
-                        Text(
-                          widget
-                              .vehiclePurchaseOrders.order!.user!.phoneNumber!,
-                          style: theme.labelMedium!.copyWith(
-                            color: Colors.black.withOpacity(.5),
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(height: 6.h),
-                        Text(
-                          widget.vehiclePurchaseOrders.order!.user!.addresses!
-                                  .firstOrNull?.address ??
-                              '',
-                          style: theme.labelMedium!.copyWith(
-                            color: Colors.black.withOpacity(.5),
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ) */
-                ],
-              ),
-            ) */
             SizedBox(
               height: 20.h,
             ),
@@ -322,7 +195,10 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                           GestureDetector(
                             onTap: () {
                               ordersPro
-                                  .acceptProductOrder(productPurchaseOrders.id);
+                                  .acceptProductOrder(productPurchaseOrders.id)
+                                  .then((_) {
+                                widget.onOrderAccepted(); // Call the refresh callback
+                              });
                             },
                             child: Container(
                               height: 50.h,
@@ -366,9 +242,6 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                         ],
                       ),
                     ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
                   if (productPurchaseOrders.status == 'rejected')
                     Column(
                       children: [
@@ -422,46 +295,6 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                 ],
               ),
             ),
-            /*SizedBox(
-              height: 10.h,
-            ),*/
-
-/*             if (vehiclePurchaseOrders.status == 'created')
-              Center(
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Ready To Pick',
-                    style: theme.headlineSmall!
-                        .copyWith(color: AppTheme.primaryColor),
-                  ),
-                ),
-              ), */
-            /*if (vehiclePurchaseOrders.status == 'delivered')
-              InkWell(
-                onTap: () {},
-                child: Center(
-                  child: Container(
-                    width: 300.w,
-                    height: 55.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5.r),
-                      border: Border.all(color: AppTheme.primaryColor),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Download Invoice',
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w400,
-                          color: AppTheme.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),*/
-            /*SizedBox(height: 16.h),*/
           ],
         ),
       ),
@@ -477,73 +310,63 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
     await showModalBottomSheet(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(24.r),
-          topRight: Radius.circular(24.r),
+          topLeft: Radius.circular(20.r),
+          topRight: Radius.circular(20.r),
         ),
       ),
       context: context,
-      builder: (BuildContext context) {
-        return StatefulBuilder(
-          builder: (context, setState) {
-            return Container(
-              padding: EdgeInsets.symmetric(vertical: 6.h),
-              height: 330.h,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(24.r),
-                  topRight: Radius.circular(24.r),
+      isScrollControlled: true,
+      builder: (context) {
+        return Padding(
+          padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 16.w),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'Reason For Rejection',
+                style: theme.headlineMedium?.copyWith(
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black,
                 ),
               ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    height: 10.h,
-                    width: 100.w,
-                    decoration: BoxDecoration(
-                      color: const Color(0xffe9e9e9),
-                      borderRadius: BorderRadius.circular(10.r),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 26.h,
-                  ),
-                  Text(
-                    'Reason For Rejection',
-                    style: theme.headlineLarge,
-                  ),
-                  const SizedBox(height: 20),
-                  ListView.builder(
-                    shrinkWrap: true,
-                    physics: const BouncingScrollPhysics(),
-                    itemCount: reasons.length,
-                    itemBuilder: (context, index) {
-                      return GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            selectedReason = reasons[index];
-                          });
-                        },
-                        child: ColoredBox(
-                          color: selectedReason == reasons[index]
-                              ? const Color(0xfffff4f4)
-                              : Colors.transparent,
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(vertical: 16.h),
-                            child: Text(
-                              reasons[index],
-                              textAlign: TextAlign.center,
-                              style: theme.headlineSmall!.copyWith(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ),
-                        ),
-                      );
+              SizedBox(height: 20.h),
+              ListView.builder(
+                shrinkWrap: true,
+                itemCount: reasons.length,
+                itemBuilder: (context, index) {
+                  return RadioListTile(
+                    title: Text(reasons[index]),
+                    value: reasons[index],
+                    groupValue: selectedReason,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedReason = value.toString();
+                      });
                     },
+                  );
+                },
+              ),
+              SizedBox(height: 20.h),
+              TextButton(
+                onPressed: () {
+                  setState(() {
+                    rejectionReason = selectedReason;
+                  });
+                  Navigator.pop(context);
+                },
+                style: TextButton.styleFrom(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20.w,
+                    vertical: 10.h,
                   ),
+                  backgroundColor: AppTheme.primaryColor,
+                ),
+                child: Text(
+                  'Reject Order',
+                  style: theme.headlineMedium?.copyWith(
+                    fontSize: 14.sp,
+                    color: Colors.white,
                   const SizedBox(height: 16),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(24.r),
@@ -568,12 +391,14 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                       ),
                     ),
                   ),
-                ],
+                ),
               ),
-            );
-          },
+            ],
+          ),
         );
       },
     );
   }
 }
+
+
