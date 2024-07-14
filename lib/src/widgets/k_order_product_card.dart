@@ -5,6 +5,7 @@ import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 class KOrderProductCard extends ConsumerStatefulWidget {
   ///
   const KOrderProductCard({
@@ -70,8 +71,8 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                       SizedBox(height: 6.h),
                       Text(
                         widget.productPurchaseOrders.createdAt.toDateTime!
-                            .toLocal()
-                            .formatTohhmmaddMMyy ??
+                                .toLocal()
+                                .formatTohhmmaddMMyy ??
                             '',
                       ),
                     ],
@@ -110,14 +111,14 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                       children: [
                         Text(
                           widget.productPurchaseOrders.dealer?.productVariant
-                              ?.name ??
+                                  ?.name ??
                               '',
                           style: theme.labelMedium?.copyWith(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w700,
-                            color: AppTheme.black,
-                          ) ??
-                              TextStyle(),
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w700,
+                                color: AppTheme.black,
+                              ) ??
+                              const TextStyle(),
                         ),
                         SizedBox(height: 10.h),
                         Row(
@@ -141,7 +142,7 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                                 children: [
                                   Text(
                                     widget.productPurchaseOrders.price
-                                        .toString() ??
+                                            .toString() ??
                                         '',
                                     style: theme.labelLarge!.copyWith(
                                       fontWeight: FontWeight.w600,
@@ -197,7 +198,8 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                               ordersPro
                                   .acceptProductOrder(productPurchaseOrders.id)
                                   .then((_) {
-                                widget.onOrderAccepted(); // Call the refresh callback
+                                widget
+                                    .onOrderAccepted(); // Call the refresh callback
                               });
                             },
                             child: Container(
@@ -319,36 +321,56 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
       builder: (context) {
         return Padding(
           padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 16.w),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                'Reason For Rejection',
-                style: theme.headlineMedium?.copyWith(
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black,
+          child: Column(mainAxisSize: MainAxisSize.min, children: [
+            Text(
+              'Reason For Rejection',
+              style: theme.headlineMedium?.copyWith(
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w500,
+                color: Colors.black,
+              ),
+            ),
+            SizedBox(height: 20.h),
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: reasons.length,
+              itemBuilder: (context, index) {
+                return RadioListTile(
+                  title: Text(reasons[index]),
+                  value: reasons[index],
+                  groupValue: selectedReason,
+                  onChanged: (value) {
+                    setState(() {
+                      selectedReason = value.toString();
+                    });
+                  },
+                );
+              },
+            ),
+            SizedBox(height: 20.h),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(24.r),
+              child: MaterialButton(
+                height: 50.h,
+                minWidth: 300.w,
+                color: const Color(0xffe36666),
+                onPressed: () {
+                  AppRoutes.pop();
+                  ref
+                      .read(orderProvider(OrderFamily.purchaseOrders))
+                      .rejectOrder(
+                        id: productPurchaseOrders.id,
+                        reason: selectedReason,
+                        orderType: 'product',
+                      );
+                },
+                child: Text(
+                  'Submit',
+                  style: theme.headlineSmall!.copyWith(color: Colors.white),
                 ),
               ),
-              SizedBox(height: 20.h),
-              ListView.builder(
-                shrinkWrap: true,
-                itemCount: reasons.length,
-                itemBuilder: (context, index) {
-                  return RadioListTile(
-                    title: Text(reasons[index]),
-                    value: reasons[index],
-                    groupValue: selectedReason,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedReason = value.toString();
-                      });
-                    },
-                  );
-                },
-              ),
-              SizedBox(height: 20.h),
-              TextButton(
+            )
+            /* TextButton(
                 onPressed: () {
                   setState(() {
                     rejectionReason = selectedReason;
@@ -366,9 +388,9 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                   'Reject Order',
                   style: theme.headlineMedium?.copyWith(
                     fontSize: 14.sp,
-                    color: Colors.white,
-                  const SizedBox(height: 16),
-                  ClipRRect(
+                    color: Colors.white
+                  const SizedBox(height: 16), */
+            /* ClipRRect(
                     borderRadius: BorderRadius.circular(24.r),
                     child: MaterialButton(
                       height: 50.h,
@@ -390,15 +412,11 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                             theme.headlineSmall!.copyWith(color: Colors.white),
                       ),
                     ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+                  ) */
+            ,
+          ]),
         );
       },
     );
   }
 }
-
-

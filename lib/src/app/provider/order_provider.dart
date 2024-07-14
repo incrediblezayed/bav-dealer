@@ -189,7 +189,8 @@ class OrdersProvider extends ChangeNotifier {
     }
   }
 
-  Future<List<GProductOrdersData_productOrders>> getProductPendingOrders() async {
+  Future<List<GProductOrdersData_productOrders>>
+      getProductPendingOrders() async {
     try {
       final getProductOrders =
           await _orderRepository.getProductOrders('created');
@@ -240,6 +241,15 @@ class OrdersProvider extends ChangeNotifier {
     }
   }
 
+  Future<int> getTestDrivePendingOrdersCount() async {
+    try {
+      return await _orderRepository.getTestDriveOrdersCount('created');
+    } catch (e) {
+      e.log();
+      return 0;
+    }
+  }
+
   Future<List<GTestDriveOrdersData_testDriveOrders>>
       getTestDrivePendingOrders() async {
     try {
@@ -261,7 +271,8 @@ class OrdersProvider extends ChangeNotifier {
     return [];
   }
 
-  Future<List<GProductOrdersData_productOrders>> getProductAcceptedOrders() async {
+  Future<List<GProductOrdersData_productOrders>>
+      getProductAcceptedOrders() async {
     try {
       final getProductOrders =
           await _orderRepository.getProductOrders('accepted');
@@ -269,7 +280,6 @@ class OrdersProvider extends ChangeNotifier {
       if (getProductOrders != null) {
         productacceptedOrders = getProductOrders;
         return getProductOrders;
-
       } else {
         await AppRoutes.showErrorSnackbar(
           message: 'Error while fetching list of products',
@@ -451,25 +461,24 @@ class OrdersProvider extends ChangeNotifier {
       loading = false;
     }
   } */
-Future<void> acceptProductOrder(String id) async {
-  try {
-    unawaited(AppRoutes.showLoadingDialog());
-    final success = await _orderRepository.updateProductOrderStatus(
-        productOrderId: id,
-        status: OrderStatus.accepted.name
-    );
-    AppRoutes.pop();
-    if (success) {
-      await getPendingOrders();
-      await getAcceptedOrders();
-    } else {
-      throw Exception();
+  Future<void> acceptProductOrder(String id) async {
+    try {
+      unawaited(AppRoutes.showLoadingDialog());
+      final success = await _orderRepository.updateProductOrderStatus(
+          productOrderId: id, status: OrderStatus.accepted.name);
+      AppRoutes.pop();
+      if (success) {
+        await getPendingOrders();
+        await getAcceptedOrders();
+      } else {
+        throw Exception();
+      }
+    } catch (e) {
+      e.log();
+      await AppRoutes.showErrorSnackbar(message: 'Failed to accept order');
     }
-  }catch (e) {
-    e.log();
-    await AppRoutes.showErrorSnackbar(message: 'Failed to accept order');
   }
-}
+
   Future<void> acceptOrder(String id) async {
     try {
       unawaited(AppRoutes.showLoadingDialog());
@@ -541,5 +550,4 @@ Future<void> acceptProductOrder(String id) async {
       await AppRoutes.showErrorSnackbar(message: 'Failed to reject order');
     }
   }
-
 }

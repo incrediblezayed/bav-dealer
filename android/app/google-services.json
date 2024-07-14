@@ -7,6 +7,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:577678113871:android:53cbcc2e24de1f8d2ffe3a",
+        "android_client_info": {
+          "package_name": "com.bav.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGGmbATGoAZyfNC6h8ULUTAI1F3iJZKTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:577678113871:android:2a277afc7bbf7c222ffe3a",
         "android_client_info": {
           "package_name": "com.bavelectric.dealerapp"
