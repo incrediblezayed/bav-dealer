@@ -235,10 +235,10 @@ class Variant {
               ? null
               : Guarantee.fromJson(json['product'])
           : Guarantee.fromJson(json['vehicle']),
-      images: json['gallery'] == null
+      images: json['images'] == null
           ? []
           : List<ImageElement>.from(
-              json['gallery'].map((x) => ImageElement.fromJson(x))));
+              json['images'].map((x) => ImageElement.fromJson(x))));
 }
 
 class VehicleColor {
@@ -274,10 +274,10 @@ class VehicleColor {
         id: json['id'] ?? '',
         name: json['name'] ?? '',
         code: json['code'] ?? '#ffffff',
-        images: json['gallery'] == null
+        images: json['images'] == null
             ? []
             : List<ImageElement>.from(
-                    json['gallery'].map((x) => ImageElement.fromJson(x)))
+                    json['images'].map((x) => ImageElement.fromJson(x)))
                 .where(
                   (element) => element.url.isNotEmpty,
                 )
@@ -299,6 +299,6 @@ class ImageElement {
 
   factory ImageElement.fromJson(Map<String, dynamic> json) => ImageElement(
         id: json['id'] ?? '',
-        url: json['file']?['image']?['url'] ?? '',
+        url: json['image']?['url'] ?? json['file']?['image']?['url'] ?? '',
       );
 }

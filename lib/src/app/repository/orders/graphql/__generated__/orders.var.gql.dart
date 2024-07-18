@@ -22,6 +22,8 @@ abstract class GProductOrdersVars
 
   _i1.GProductOrderWhereInput get where;
   BuiltList<_i1.GProductOrderOrderByInput> get orderBy;
+  int get skip;
+  int get take;
   static Serializer<GProductOrdersVars> get serializer =>
       _$gProductOrdersVarsSerializer;
 
@@ -47,6 +49,8 @@ abstract class GVehicleOrdersVars
 
   BuiltList<_i1.GVehicleOrderOrderByInput> get orderBy;
   _i1.GVehicleOrderWhereInput get where;
+  int get skip;
+  int get take;
   static Serializer<GVehicleOrdersVars> get serializer =>
       _$gVehicleOrdersVarsSerializer;
 
@@ -96,6 +100,8 @@ abstract class GTestDriveOrdersVars
 
   _i1.GTestDriveOrderWhereInput get where;
   BuiltList<_i1.GTestDriveOrderOrderByInput> get orderBy;
+  int get skip;
+  int get take;
   static Serializer<GTestDriveOrdersVars> get serializer =>
       _$gTestDriveOrdersVarsSerializer;
 

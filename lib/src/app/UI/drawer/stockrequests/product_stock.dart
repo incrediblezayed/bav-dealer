@@ -48,7 +48,7 @@ class ProductStock extends ConsumerWidget {
                 }
                 return true;
               },
-              child: RefreshIndicator(
+              child: RefreshIndicator.adaptive(
                 onRefresh: () async {
                   await stockPro.getProductStock(); // Refresh products data
                 },

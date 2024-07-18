@@ -81,7 +81,7 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                   borderRadius: BorderRadius.circular(6.r),
                   child: KCachedNWImage(
                     dealerStock.images.firstOrNull?.url ?? '',
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                   )
 
                   /* KCachedNWImage(

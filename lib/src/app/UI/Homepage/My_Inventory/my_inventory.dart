@@ -1,3 +1,4 @@
+import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/filter_page.dart';
 import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/list_of_vehicles.dart';
 import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/my_stock.dart';
 import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/my_testdrive_stock.dart';
@@ -41,6 +42,7 @@ class _MyInventoryState extends ConsumerState<MyInventory>
         4: inventoryPro.getProductStocks(),
       };
       if (tabFunctions.containsKey(_tabController.index)) {
+        inventoryPro.clearFilters(_tabController.index);
         await tabFunctions[_tabController.index];
       }
     }
@@ -67,6 +69,13 @@ class _MyInventoryState extends ConsumerState<MyInventory>
           style: theme.headlineLarge,
         ),
         actions: [
+          IconButton(
+              onPressed: () {
+                AppRoutes.push(
+                  page: FilterPage(currentTab: _tabController.index),
+                );
+              },
+              icon: const Icon(Iconsax.filter)),
           IconButton(
             onPressed: () {
               setState(() {

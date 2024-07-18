@@ -29,9 +29,39 @@ const ProductOrders = _i1.OperationDefinitionNode(
       defaultValue: _i1.DefaultValueNode(value: null),
       directives: [],
     ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'skip')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'take')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
   ],
   directives: [],
   selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'productOrdersCount'),
+      alias: null,
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'where'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+        )
+      ],
+      directives: [],
+      selectionSet: null,
+    ),
     _i1.FieldNode(
       name: _i1.NameNode(value: 'productOrders'),
       alias: null,
@@ -43,6 +73,14 @@ const ProductOrders = _i1.OperationDefinitionNode(
         _i1.ArgumentNode(
           name: _i1.NameNode(value: 'orderBy'),
           value: _i1.VariableNode(name: _i1.NameNode(value: 'orderBy')),
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'skip'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'skip')),
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'take'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'take')),
         ),
       ],
       directives: [],
@@ -318,7 +356,7 @@ const ProductOrders = _i1.OperationDefinitionNode(
           selectionSet: null,
         ),
       ]),
-    )
+    ),
   ]),
 );
 const VehicleOrders = _i1.OperationDefinitionNode(
@@ -346,9 +384,39 @@ const VehicleOrders = _i1.OperationDefinitionNode(
       defaultValue: _i1.DefaultValueNode(value: null),
       directives: [],
     ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'skip')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'take')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
   ],
   directives: [],
   selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'vehicleOrdersCount'),
+      alias: null,
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'where'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+        )
+      ],
+      directives: [],
+      selectionSet: null,
+    ),
     _i1.FieldNode(
       name: _i1.NameNode(value: 'vehicleOrders'),
       alias: null,
@@ -360,6 +428,14 @@ const VehicleOrders = _i1.OperationDefinitionNode(
         _i1.ArgumentNode(
           name: _i1.NameNode(value: 'where'),
           value: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'skip'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'skip')),
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'take'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'take')),
         ),
       ],
       directives: [],
@@ -685,7 +761,7 @@ const VehicleOrders = _i1.OperationDefinitionNode(
           selectionSet: null,
         ),
       ]),
-    )
+    ),
   ]),
 );
 const VehicleOrdersCount = _i1.OperationDefinitionNode(
@@ -743,9 +819,39 @@ const TestDriveOrders = _i1.OperationDefinitionNode(
       defaultValue: _i1.DefaultValueNode(value: null),
       directives: [],
     ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'skip')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'take')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
   ],
   directives: [],
   selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'testDriveOrdersCount'),
+      alias: null,
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'where'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+        )
+      ],
+      directives: [],
+      selectionSet: null,
+    ),
     _i1.FieldNode(
       name: _i1.NameNode(value: 'testDriveOrders'),
       alias: null,
@@ -757,6 +863,14 @@ const TestDriveOrders = _i1.OperationDefinitionNode(
         _i1.ArgumentNode(
           name: _i1.NameNode(value: 'orderBy'),
           value: _i1.VariableNode(name: _i1.NameNode(value: 'orderBy')),
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'skip'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'skip')),
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'take'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'take')),
         ),
       ],
       directives: [],
@@ -1038,7 +1152,7 @@ const TestDriveOrders = _i1.OperationDefinitionNode(
           selectionSet: null,
         ),
       ]),
-    )
+    ),
   ]),
 );
 const TestDriveOrdersCount = _i1.OperationDefinitionNode(

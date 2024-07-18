@@ -39,6 +39,13 @@ query ProductVariants(
       }
     }
     totalPrice
+    images {
+      image {
+        url
+        width
+        id
+      }
+    }
     gallery {
       file
       type
@@ -143,6 +150,13 @@ query ProductVariant(
       }
     }
     totalPrice
+          images {
+        image {
+          url
+          width
+          id
+        }
+      }
     gallery {
       file
       type
@@ -218,6 +232,7 @@ query VehicleVariants(
   $skip: Int!
   $take: Int
 ) {
+  vehicleVariantsCount(where: $where)
   vehicleVariants(where: $where, orderBy: $orderBy, skip: $skip, take: $take) {
     prices {
       amount
@@ -275,8 +290,9 @@ query VehicleDealersCount($where: VehicleDealerWhereInput!) {
   vehicleDealersCount(where: $where)
 }
 
-query VehicleDealers($where: VehicleDealerWhereInput!) {
-  vehicleDealers(where: $where) {
+query VehicleDealers($where: VehicleDealerWhereInput!, $take: Int, $skip: Int!) {
+  vehicleDealersCount(where: $where)
+  vehicleDealers(where: $where, take: $take, skip: $skip) {
     vehicleColor {
       id
       name
@@ -471,8 +487,9 @@ mutation CreateTestDriveDealer($data: TestDriveDealerCreateInput!) {
   }
 }
 
-query ProductDealers($where: ProductDealerWhereInput!) {
-  productDealers(where: $where) {
+query ProductDealers($where: ProductDealerWhereInput!, $take: Int, $skip: Int!) {
+  productDealersCount(where: $where)
+  productDealers(where: $where, take: $take, skip: $skip) {
     productVariant {
       id
       name
@@ -563,5 +580,31 @@ mutation CreateProductDealerStockRequest(
     type
     stock
     totalPrice
+  }
+}
+
+query VehicleFilterData {
+  vehicleTypes {
+    id
+    name
+    description
+  }
+  brands {
+    id
+    name
+    type
+  }
+}
+
+query ProductFilterData {
+  productTypes {
+    id
+    name
+    description
+  }
+  brands {
+    id
+    name
+    type
   }
 }

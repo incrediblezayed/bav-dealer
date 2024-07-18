@@ -2,6 +2,7 @@ import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/log_colors.dart';
+import 'package:dealerapp/src/widgets/default_pagination_scroll_callback.dart';
 import 'package:dealerapp/src/widgets/k_inventory_product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -14,7 +15,7 @@ class MyProduct extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final inventoryPro = ref.watch(inventoryProvider);
     final data = inventoryPro.products.where(
-      (e) => !inventoryPro.productDealers.any(
+      (e) => !(inventoryPro.productDealers ?? []).any(
         (element) => element.variant.id == e.id,
       ),
     );
@@ -39,64 +40,46 @@ class MyProduct extends ConsumerWidget {
               ),
             ),
           Expanded(
-            child: RefreshIndicator(
-              onRefresh: () async {
-                await inventoryPro.getProducts();
-              },
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: data.length,
-                itemBuilder: (context, index) {
-                  index.log(
-                    color: LogColors.green,
-                    name: 'Index',
-                  );
-                  inventoryPro.count.log(
-                    name: 'Total Product Count',
-                  );
+            child: DefaultScrollPaginationCallback(
+                onLoadMore: () {
+                  inventoryPro.getProducts();
+                },
+                callbackCondition:
+                    inventoryPro.products.length < inventoryPro.productsCount,
+                child: RefreshIndicator.adaptive(
+                  onRefresh: () async {
+                    await inventoryPro.getProducts();
+                  },
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: data.length,
+                    itemBuilder: (context, index) {
+                      index.log(
+                        color: LogColors.green,
+                        name: 'Index',
+                      );
+                      inventoryPro.vehiclesCount.log(
+                        name: 'Total Product Count',
+                      );
 
-                  if (index >= data.length) {
-                    inventoryPro.getPaginatedProducts();
-                    return const Center(
-                      child: CircularProgressIndicator.adaptive(),
-                    );
-                  }
-                  final product = data.elementAt(index);
-                  return KInvetoryProductCard(
-                    variant: product,
-                  );
-                  /*ListTile(
+                      if (index >= data.length) {
+                        inventoryPro.getPaginatedProducts();
+                        return const Center(
+                          child: CircularProgressIndicator.adaptive(),
+                        );
+                      }
+                      final product = data.elementAt(index);
+                      return KInvetoryProductCard(
+                        variant: product,
+                      );
+                      /*ListTile(
                     title: Text(product.name.toString()),
                     subtitle: Text(product.vehicle.toString()),
                     // Add more UI elements as needed
                   );*/
-                },
-                /*itemBuilder: (context, index) {
-                  index.log(
-                    color: LogColors.green,
-                    name: 'Index',
-                  );
-                  inventoryPro.count.log(
-                    name: 'Total Product Count',
-                  );
-
-                  if (index >= inventoryPro.products.length) {
-                    inventoryPro.getPaginatedProducts();
-                    return const Center(
-                      child: CircularProgressIndicator.adaptive(),
-                    );
-                  }
-                 log('${data.elementAt(index)}');
-                  final item = data.elementAt(index);
-                  return KInvetoryProductCard( variant: item,
-
-                  );
-                  */ /*KInventoryBikeCard(
-                    variant: item,
-                  );*/ /*
-                },*/
-              ),
-            ),
+                    },
+                  ),
+                )),
           ),
         ],
       ),

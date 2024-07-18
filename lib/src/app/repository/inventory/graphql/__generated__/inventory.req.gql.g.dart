@@ -48,6 +48,10 @@ Serializer<GUpdateProductDealerReq> _$gUpdateProductDealerReqSerializer =
 Serializer<GCreateProductDealerStockRequestReq>
     _$gCreateProductDealerStockRequestReqSerializer =
     new _$GCreateProductDealerStockRequestReqSerializer();
+Serializer<GVehicleFilterDataReq> _$gVehicleFilterDataReqSerializer =
+    new _$GVehicleFilterDataReqSerializer();
+Serializer<GProductFilterDataReq> _$gProductFilterDataReqSerializer =
+    new _$GProductFilterDataReqSerializer();
 
 class _$GProductVariantsReqSerializer
     implements StructuredSerializer<GProductVariantsReq> {
@@ -2456,6 +2460,250 @@ class _$GCreateProductDealerStockRequestReqSerializer
                   specifiedType:
                       const FullType(_i2.GCreateProductDealerStockRequestData))!
               as _i2.GCreateProductDealerStockRequestData);
+          break;
+        case 'updateCacheHandlerKey':
+          result.updateCacheHandlerKey = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'updateCacheHandlerContext':
+          result.updateCacheHandlerContext = serializers.deserialize(value,
+              specifiedType: const FullType(Map, const [
+                const FullType(String),
+                const FullType(dynamic)
+              ])) as Map<String, dynamic>?;
+          break;
+        case 'fetchPolicy':
+          result.fetchPolicy = serializers.deserialize(value,
+                  specifiedType: const FullType(_i1.FetchPolicy))
+              as _i1.FetchPolicy?;
+          break;
+        case 'executeOnListen':
+          result.executeOnListen = serializers.deserialize(value,
+              specifiedType: const FullType(bool))! as bool;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GVehicleFilterDataReqSerializer
+    implements StructuredSerializer<GVehicleFilterDataReq> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleFilterDataReq,
+    _$GVehicleFilterDataReq
+  ];
+  @override
+  final String wireName = 'GVehicleFilterDataReq';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleFilterDataReq object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'vars',
+      serializers.serialize(object.vars,
+          specifiedType: const FullType(_i3.GVehicleFilterDataVars)),
+      'operation',
+      serializers.serialize(object.operation,
+          specifiedType: const FullType(_i4.Operation)),
+      'executeOnListen',
+      serializers.serialize(object.executeOnListen,
+          specifiedType: const FullType(bool)),
+    ];
+    Object? value;
+    value = object.requestId;
+    if (value != null) {
+      result
+        ..add('requestId')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.optimisticResponse;
+    if (value != null) {
+      result
+        ..add('optimisticResponse')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.GVehicleFilterDataData)));
+    }
+    value = object.updateCacheHandlerKey;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerKey')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.updateCacheHandlerContext;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerContext')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                Map, const [const FullType(String), const FullType(dynamic)])));
+    }
+    value = object.fetchPolicy;
+    if (value != null) {
+      result
+        ..add('fetchPolicy')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i1.FetchPolicy)));
+    }
+    return result;
+  }
+
+  @override
+  GVehicleFilterDataReq deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GVehicleFilterDataReqBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'vars':
+          result.vars.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i3.GVehicleFilterDataVars))!
+              as _i3.GVehicleFilterDataVars);
+          break;
+        case 'operation':
+          result.operation = serializers.deserialize(value,
+              specifiedType: const FullType(_i4.Operation))! as _i4.Operation;
+          break;
+        case 'requestId':
+          result.requestId = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'optimisticResponse':
+          result.optimisticResponse.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.GVehicleFilterDataData))!
+              as _i2.GVehicleFilterDataData);
+          break;
+        case 'updateCacheHandlerKey':
+          result.updateCacheHandlerKey = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'updateCacheHandlerContext':
+          result.updateCacheHandlerContext = serializers.deserialize(value,
+              specifiedType: const FullType(Map, const [
+                const FullType(String),
+                const FullType(dynamic)
+              ])) as Map<String, dynamic>?;
+          break;
+        case 'fetchPolicy':
+          result.fetchPolicy = serializers.deserialize(value,
+                  specifiedType: const FullType(_i1.FetchPolicy))
+              as _i1.FetchPolicy?;
+          break;
+        case 'executeOnListen':
+          result.executeOnListen = serializers.deserialize(value,
+              specifiedType: const FullType(bool))! as bool;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductFilterDataReqSerializer
+    implements StructuredSerializer<GProductFilterDataReq> {
+  @override
+  final Iterable<Type> types = const [
+    GProductFilterDataReq,
+    _$GProductFilterDataReq
+  ];
+  @override
+  final String wireName = 'GProductFilterDataReq';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductFilterDataReq object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'vars',
+      serializers.serialize(object.vars,
+          specifiedType: const FullType(_i3.GProductFilterDataVars)),
+      'operation',
+      serializers.serialize(object.operation,
+          specifiedType: const FullType(_i4.Operation)),
+      'executeOnListen',
+      serializers.serialize(object.executeOnListen,
+          specifiedType: const FullType(bool)),
+    ];
+    Object? value;
+    value = object.requestId;
+    if (value != null) {
+      result
+        ..add('requestId')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.optimisticResponse;
+    if (value != null) {
+      result
+        ..add('optimisticResponse')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.GProductFilterDataData)));
+    }
+    value = object.updateCacheHandlerKey;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerKey')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.updateCacheHandlerContext;
+    if (value != null) {
+      result
+        ..add('updateCacheHandlerContext')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                Map, const [const FullType(String), const FullType(dynamic)])));
+    }
+    value = object.fetchPolicy;
+    if (value != null) {
+      result
+        ..add('fetchPolicy')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i1.FetchPolicy)));
+    }
+    return result;
+  }
+
+  @override
+  GProductFilterDataReq deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GProductFilterDataReqBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'vars':
+          result.vars.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i3.GProductFilterDataVars))!
+              as _i3.GProductFilterDataVars);
+          break;
+        case 'operation':
+          result.operation = serializers.deserialize(value,
+              specifiedType: const FullType(_i4.Operation))! as _i4.Operation;
+          break;
+        case 'requestId':
+          result.requestId = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'optimisticResponse':
+          result.optimisticResponse.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.GProductFilterDataData))!
+              as _i2.GProductFilterDataData);
           break;
         case 'updateCacheHandlerKey':
           result.updateCacheHandlerKey = serializers.deserialize(value,
@@ -7343,6 +7591,486 @@ class GCreateProductDealerStockRequestReqBuilder
             r'GCreateProductDealerStockRequestReq',
             _$failedField,
             e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleFilterDataReq extends GVehicleFilterDataReq {
+  @override
+  final _i3.GVehicleFilterDataVars vars;
+  @override
+  final _i4.Operation operation;
+  @override
+  final String? requestId;
+  @override
+  final _i2.GVehicleFilterDataData? Function(
+      _i2.GVehicleFilterDataData?, _i2.GVehicleFilterDataData?)? updateResult;
+  @override
+  final _i2.GVehicleFilterDataData? optimisticResponse;
+  @override
+  final String? updateCacheHandlerKey;
+  @override
+  final Map<String, dynamic>? updateCacheHandlerContext;
+  @override
+  final _i1.FetchPolicy? fetchPolicy;
+  @override
+  final bool executeOnListen;
+  @override
+  final _i4.Context? context;
+
+  factory _$GVehicleFilterDataReq(
+          [void Function(GVehicleFilterDataReqBuilder)? updates]) =>
+      (new GVehicleFilterDataReqBuilder()..update(updates))._build();
+
+  _$GVehicleFilterDataReq._(
+      {required this.vars,
+      required this.operation,
+      this.requestId,
+      this.updateResult,
+      this.optimisticResponse,
+      this.updateCacheHandlerKey,
+      this.updateCacheHandlerContext,
+      this.fetchPolicy,
+      required this.executeOnListen,
+      this.context})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        vars, r'GVehicleFilterDataReq', 'vars');
+    BuiltValueNullFieldError.checkNotNull(
+        operation, r'GVehicleFilterDataReq', 'operation');
+    BuiltValueNullFieldError.checkNotNull(
+        executeOnListen, r'GVehicleFilterDataReq', 'executeOnListen');
+  }
+
+  @override
+  GVehicleFilterDataReq rebuild(
+          void Function(GVehicleFilterDataReqBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleFilterDataReqBuilder toBuilder() =>
+      new GVehicleFilterDataReqBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    final dynamic _$dynamicOther = other;
+    return other is GVehicleFilterDataReq &&
+        vars == other.vars &&
+        operation == other.operation &&
+        requestId == other.requestId &&
+        updateResult == _$dynamicOther.updateResult &&
+        optimisticResponse == other.optimisticResponse &&
+        updateCacheHandlerKey == other.updateCacheHandlerKey &&
+        updateCacheHandlerContext == other.updateCacheHandlerContext &&
+        fetchPolicy == other.fetchPolicy &&
+        executeOnListen == other.executeOnListen &&
+        context == other.context;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, vars.hashCode);
+    _$hash = $jc(_$hash, operation.hashCode);
+    _$hash = $jc(_$hash, requestId.hashCode);
+    _$hash = $jc(_$hash, updateResult.hashCode);
+    _$hash = $jc(_$hash, optimisticResponse.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerKey.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
+    _$hash = $jc(_$hash, fetchPolicy.hashCode);
+    _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jc(_$hash, context.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GVehicleFilterDataReq')
+          ..add('vars', vars)
+          ..add('operation', operation)
+          ..add('requestId', requestId)
+          ..add('updateResult', updateResult)
+          ..add('optimisticResponse', optimisticResponse)
+          ..add('updateCacheHandlerKey', updateCacheHandlerKey)
+          ..add('updateCacheHandlerContext', updateCacheHandlerContext)
+          ..add('fetchPolicy', fetchPolicy)
+          ..add('executeOnListen', executeOnListen)
+          ..add('context', context))
+        .toString();
+  }
+}
+
+class GVehicleFilterDataReqBuilder
+    implements Builder<GVehicleFilterDataReq, GVehicleFilterDataReqBuilder> {
+  _$GVehicleFilterDataReq? _$v;
+
+  _i3.GVehicleFilterDataVarsBuilder? _vars;
+  _i3.GVehicleFilterDataVarsBuilder get vars =>
+      _$this._vars ??= new _i3.GVehicleFilterDataVarsBuilder();
+  set vars(_i3.GVehicleFilterDataVarsBuilder? vars) => _$this._vars = vars;
+
+  _i4.Operation? _operation;
+  _i4.Operation? get operation => _$this._operation;
+  set operation(_i4.Operation? operation) => _$this._operation = operation;
+
+  String? _requestId;
+  String? get requestId => _$this._requestId;
+  set requestId(String? requestId) => _$this._requestId = requestId;
+
+  _i2.GVehicleFilterDataData? Function(
+      _i2.GVehicleFilterDataData?, _i2.GVehicleFilterDataData?)? _updateResult;
+  _i2.GVehicleFilterDataData? Function(
+          _i2.GVehicleFilterDataData?, _i2.GVehicleFilterDataData?)?
+      get updateResult => _$this._updateResult;
+  set updateResult(
+          _i2.GVehicleFilterDataData? Function(
+                  _i2.GVehicleFilterDataData?, _i2.GVehicleFilterDataData?)?
+              updateResult) =>
+      _$this._updateResult = updateResult;
+
+  _i2.GVehicleFilterDataDataBuilder? _optimisticResponse;
+  _i2.GVehicleFilterDataDataBuilder get optimisticResponse =>
+      _$this._optimisticResponse ??= new _i2.GVehicleFilterDataDataBuilder();
+  set optimisticResponse(
+          _i2.GVehicleFilterDataDataBuilder? optimisticResponse) =>
+      _$this._optimisticResponse = optimisticResponse;
+
+  String? _updateCacheHandlerKey;
+  String? get updateCacheHandlerKey => _$this._updateCacheHandlerKey;
+  set updateCacheHandlerKey(String? updateCacheHandlerKey) =>
+      _$this._updateCacheHandlerKey = updateCacheHandlerKey;
+
+  Map<String, dynamic>? _updateCacheHandlerContext;
+  Map<String, dynamic>? get updateCacheHandlerContext =>
+      _$this._updateCacheHandlerContext;
+  set updateCacheHandlerContext(
+          Map<String, dynamic>? updateCacheHandlerContext) =>
+      _$this._updateCacheHandlerContext = updateCacheHandlerContext;
+
+  _i1.FetchPolicy? _fetchPolicy;
+  _i1.FetchPolicy? get fetchPolicy => _$this._fetchPolicy;
+  set fetchPolicy(_i1.FetchPolicy? fetchPolicy) =>
+      _$this._fetchPolicy = fetchPolicy;
+
+  bool? _executeOnListen;
+  bool? get executeOnListen => _$this._executeOnListen;
+  set executeOnListen(bool? executeOnListen) =>
+      _$this._executeOnListen = executeOnListen;
+
+  _i4.Context? _context;
+  _i4.Context? get context => _$this._context;
+  set context(_i4.Context? context) => _$this._context = context;
+
+  GVehicleFilterDataReqBuilder() {
+    GVehicleFilterDataReq._initializeBuilder(this);
+  }
+
+  GVehicleFilterDataReqBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _vars = $v.vars.toBuilder();
+      _operation = $v.operation;
+      _requestId = $v.requestId;
+      _updateResult = $v.updateResult;
+      _optimisticResponse = $v.optimisticResponse?.toBuilder();
+      _updateCacheHandlerKey = $v.updateCacheHandlerKey;
+      _updateCacheHandlerContext = $v.updateCacheHandlerContext;
+      _fetchPolicy = $v.fetchPolicy;
+      _executeOnListen = $v.executeOnListen;
+      _context = $v.context;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GVehicleFilterDataReq other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleFilterDataReq;
+  }
+
+  @override
+  void update(void Function(GVehicleFilterDataReqBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleFilterDataReq build() => _build();
+
+  _$GVehicleFilterDataReq _build() {
+    _$GVehicleFilterDataReq _$result;
+    try {
+      _$result = _$v ??
+          new _$GVehicleFilterDataReq._(
+              vars: vars.build(),
+              operation: BuiltValueNullFieldError.checkNotNull(
+                  operation, r'GVehicleFilterDataReq', 'operation'),
+              requestId: requestId,
+              updateResult: updateResult,
+              optimisticResponse: _optimisticResponse?.build(),
+              updateCacheHandlerKey: updateCacheHandlerKey,
+              updateCacheHandlerContext: updateCacheHandlerContext,
+              fetchPolicy: fetchPolicy,
+              executeOnListen: BuiltValueNullFieldError.checkNotNull(
+                  executeOnListen, r'GVehicleFilterDataReq', 'executeOnListen'),
+              context: context);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'vars';
+        vars.build();
+
+        _$failedField = 'optimisticResponse';
+        _optimisticResponse?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GVehicleFilterDataReq', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductFilterDataReq extends GProductFilterDataReq {
+  @override
+  final _i3.GProductFilterDataVars vars;
+  @override
+  final _i4.Operation operation;
+  @override
+  final String? requestId;
+  @override
+  final _i2.GProductFilterDataData? Function(
+      _i2.GProductFilterDataData?, _i2.GProductFilterDataData?)? updateResult;
+  @override
+  final _i2.GProductFilterDataData? optimisticResponse;
+  @override
+  final String? updateCacheHandlerKey;
+  @override
+  final Map<String, dynamic>? updateCacheHandlerContext;
+  @override
+  final _i1.FetchPolicy? fetchPolicy;
+  @override
+  final bool executeOnListen;
+  @override
+  final _i4.Context? context;
+
+  factory _$GProductFilterDataReq(
+          [void Function(GProductFilterDataReqBuilder)? updates]) =>
+      (new GProductFilterDataReqBuilder()..update(updates))._build();
+
+  _$GProductFilterDataReq._(
+      {required this.vars,
+      required this.operation,
+      this.requestId,
+      this.updateResult,
+      this.optimisticResponse,
+      this.updateCacheHandlerKey,
+      this.updateCacheHandlerContext,
+      this.fetchPolicy,
+      required this.executeOnListen,
+      this.context})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        vars, r'GProductFilterDataReq', 'vars');
+    BuiltValueNullFieldError.checkNotNull(
+        operation, r'GProductFilterDataReq', 'operation');
+    BuiltValueNullFieldError.checkNotNull(
+        executeOnListen, r'GProductFilterDataReq', 'executeOnListen');
+  }
+
+  @override
+  GProductFilterDataReq rebuild(
+          void Function(GProductFilterDataReqBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductFilterDataReqBuilder toBuilder() =>
+      new GProductFilterDataReqBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    final dynamic _$dynamicOther = other;
+    return other is GProductFilterDataReq &&
+        vars == other.vars &&
+        operation == other.operation &&
+        requestId == other.requestId &&
+        updateResult == _$dynamicOther.updateResult &&
+        optimisticResponse == other.optimisticResponse &&
+        updateCacheHandlerKey == other.updateCacheHandlerKey &&
+        updateCacheHandlerContext == other.updateCacheHandlerContext &&
+        fetchPolicy == other.fetchPolicy &&
+        executeOnListen == other.executeOnListen &&
+        context == other.context;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, vars.hashCode);
+    _$hash = $jc(_$hash, operation.hashCode);
+    _$hash = $jc(_$hash, requestId.hashCode);
+    _$hash = $jc(_$hash, updateResult.hashCode);
+    _$hash = $jc(_$hash, optimisticResponse.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerKey.hashCode);
+    _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
+    _$hash = $jc(_$hash, fetchPolicy.hashCode);
+    _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jc(_$hash, context.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GProductFilterDataReq')
+          ..add('vars', vars)
+          ..add('operation', operation)
+          ..add('requestId', requestId)
+          ..add('updateResult', updateResult)
+          ..add('optimisticResponse', optimisticResponse)
+          ..add('updateCacheHandlerKey', updateCacheHandlerKey)
+          ..add('updateCacheHandlerContext', updateCacheHandlerContext)
+          ..add('fetchPolicy', fetchPolicy)
+          ..add('executeOnListen', executeOnListen)
+          ..add('context', context))
+        .toString();
+  }
+}
+
+class GProductFilterDataReqBuilder
+    implements Builder<GProductFilterDataReq, GProductFilterDataReqBuilder> {
+  _$GProductFilterDataReq? _$v;
+
+  _i3.GProductFilterDataVarsBuilder? _vars;
+  _i3.GProductFilterDataVarsBuilder get vars =>
+      _$this._vars ??= new _i3.GProductFilterDataVarsBuilder();
+  set vars(_i3.GProductFilterDataVarsBuilder? vars) => _$this._vars = vars;
+
+  _i4.Operation? _operation;
+  _i4.Operation? get operation => _$this._operation;
+  set operation(_i4.Operation? operation) => _$this._operation = operation;
+
+  String? _requestId;
+  String? get requestId => _$this._requestId;
+  set requestId(String? requestId) => _$this._requestId = requestId;
+
+  _i2.GProductFilterDataData? Function(
+      _i2.GProductFilterDataData?, _i2.GProductFilterDataData?)? _updateResult;
+  _i2.GProductFilterDataData? Function(
+          _i2.GProductFilterDataData?, _i2.GProductFilterDataData?)?
+      get updateResult => _$this._updateResult;
+  set updateResult(
+          _i2.GProductFilterDataData? Function(
+                  _i2.GProductFilterDataData?, _i2.GProductFilterDataData?)?
+              updateResult) =>
+      _$this._updateResult = updateResult;
+
+  _i2.GProductFilterDataDataBuilder? _optimisticResponse;
+  _i2.GProductFilterDataDataBuilder get optimisticResponse =>
+      _$this._optimisticResponse ??= new _i2.GProductFilterDataDataBuilder();
+  set optimisticResponse(
+          _i2.GProductFilterDataDataBuilder? optimisticResponse) =>
+      _$this._optimisticResponse = optimisticResponse;
+
+  String? _updateCacheHandlerKey;
+  String? get updateCacheHandlerKey => _$this._updateCacheHandlerKey;
+  set updateCacheHandlerKey(String? updateCacheHandlerKey) =>
+      _$this._updateCacheHandlerKey = updateCacheHandlerKey;
+
+  Map<String, dynamic>? _updateCacheHandlerContext;
+  Map<String, dynamic>? get updateCacheHandlerContext =>
+      _$this._updateCacheHandlerContext;
+  set updateCacheHandlerContext(
+          Map<String, dynamic>? updateCacheHandlerContext) =>
+      _$this._updateCacheHandlerContext = updateCacheHandlerContext;
+
+  _i1.FetchPolicy? _fetchPolicy;
+  _i1.FetchPolicy? get fetchPolicy => _$this._fetchPolicy;
+  set fetchPolicy(_i1.FetchPolicy? fetchPolicy) =>
+      _$this._fetchPolicy = fetchPolicy;
+
+  bool? _executeOnListen;
+  bool? get executeOnListen => _$this._executeOnListen;
+  set executeOnListen(bool? executeOnListen) =>
+      _$this._executeOnListen = executeOnListen;
+
+  _i4.Context? _context;
+  _i4.Context? get context => _$this._context;
+  set context(_i4.Context? context) => _$this._context = context;
+
+  GProductFilterDataReqBuilder() {
+    GProductFilterDataReq._initializeBuilder(this);
+  }
+
+  GProductFilterDataReqBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _vars = $v.vars.toBuilder();
+      _operation = $v.operation;
+      _requestId = $v.requestId;
+      _updateResult = $v.updateResult;
+      _optimisticResponse = $v.optimisticResponse?.toBuilder();
+      _updateCacheHandlerKey = $v.updateCacheHandlerKey;
+      _updateCacheHandlerContext = $v.updateCacheHandlerContext;
+      _fetchPolicy = $v.fetchPolicy;
+      _executeOnListen = $v.executeOnListen;
+      _context = $v.context;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GProductFilterDataReq other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductFilterDataReq;
+  }
+
+  @override
+  void update(void Function(GProductFilterDataReqBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductFilterDataReq build() => _build();
+
+  _$GProductFilterDataReq _build() {
+    _$GProductFilterDataReq _$result;
+    try {
+      _$result = _$v ??
+          new _$GProductFilterDataReq._(
+              vars: vars.build(),
+              operation: BuiltValueNullFieldError.checkNotNull(
+                  operation, r'GProductFilterDataReq', 'operation'),
+              requestId: requestId,
+              updateResult: updateResult,
+              optimisticResponse: _optimisticResponse?.build(),
+              updateCacheHandlerKey: updateCacheHandlerKey,
+              updateCacheHandlerContext: updateCacheHandlerContext,
+              fetchPolicy: fetchPolicy,
+              executeOnListen: BuiltValueNullFieldError.checkNotNull(
+                  executeOnListen, r'GProductFilterDataReq', 'executeOnListen'),
+              context: context);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'vars';
+        vars.build();
+
+        _$failedField = 'optimisticResponse';
+        _optimisticResponse?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GProductFilterDataReq', _$failedField, e.toString());
       }
       rethrow;
     }

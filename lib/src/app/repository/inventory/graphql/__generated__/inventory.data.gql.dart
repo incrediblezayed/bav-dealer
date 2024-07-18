@@ -65,10 +65,10 @@ abstract class GProductVariantsData_productVariants
   BuiltList<GProductVariantsData_productVariants_specifications>?
       get specifications;
   int? get totalPrice;
+  BuiltList<GProductVariantsData_productVariants_images>? get images;
   BuiltList<GProductVariantsData_productVariants_gallery>? get gallery;
   GProductVariantsData_productVariants_product? get product;
   BuiltList<GProductVariantsData_productVariants_tags>? get tags;
-  BuiltList<GProductVariantsData_productVariants_images>? get images;
   static Serializer<GProductVariantsData_productVariants> get serializer =>
       _$gProductVariantsDataProductVariantsSerializer;
 
@@ -321,6 +321,77 @@ abstract class GProductVariantsData_productVariants_specifications_category
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GProductVariantsData_productVariants_specifications_category.serializer,
+        json,
+      );
+}
+
+abstract class GProductVariantsData_productVariants_images
+    implements
+        Built<GProductVariantsData_productVariants_images,
+            GProductVariantsData_productVariants_imagesBuilder> {
+  GProductVariantsData_productVariants_images._();
+
+  factory GProductVariantsData_productVariants_images(
+      [void Function(GProductVariantsData_productVariants_imagesBuilder b)
+          updates]) = _$GProductVariantsData_productVariants_images;
+
+  static void _initializeBuilder(
+          GProductVariantsData_productVariants_imagesBuilder b) =>
+      b..G__typename = 'ProductImage';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GProductVariantsData_productVariants_images_image? get image;
+  String get id;
+  String? get name;
+  static Serializer<GProductVariantsData_productVariants_images>
+      get serializer => _$gProductVariantsDataProductVariantsImagesSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductVariantsData_productVariants_images.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantsData_productVariants_images? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductVariantsData_productVariants_images.serializer,
+        json,
+      );
+}
+
+abstract class GProductVariantsData_productVariants_images_image
+    implements
+        Built<GProductVariantsData_productVariants_images_image,
+            GProductVariantsData_productVariants_images_imageBuilder> {
+  GProductVariantsData_productVariants_images_image._();
+
+  factory GProductVariantsData_productVariants_images_image(
+      [void Function(GProductVariantsData_productVariants_images_imageBuilder b)
+          updates]) = _$GProductVariantsData_productVariants_images_image;
+
+  static void _initializeBuilder(
+          GProductVariantsData_productVariants_images_imageBuilder b) =>
+      b..G__typename = 'ImageFieldOutput';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get url;
+  int get width;
+  String get id;
+  static Serializer<GProductVariantsData_productVariants_images_image>
+      get serializer =>
+          _$gProductVariantsDataProductVariantsImagesImageSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductVariantsData_productVariants_images_image.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantsData_productVariants_images_image? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductVariantsData_productVariants_images_image.serializer,
         json,
       );
 }
@@ -721,75 +792,6 @@ abstract class GProductVariantsData_productVariants_tags
       );
 }
 
-abstract class GProductVariantsData_productVariants_images
-    implements
-        Built<GProductVariantsData_productVariants_images,
-            GProductVariantsData_productVariants_imagesBuilder> {
-  GProductVariantsData_productVariants_images._();
-
-  factory GProductVariantsData_productVariants_images(
-      [void Function(GProductVariantsData_productVariants_imagesBuilder b)
-          updates]) = _$GProductVariantsData_productVariants_images;
-
-  static void _initializeBuilder(
-          GProductVariantsData_productVariants_imagesBuilder b) =>
-      b..G__typename = 'ProductImage';
-
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  String get id;
-  String? get name;
-  GProductVariantsData_productVariants_images_image? get image;
-  static Serializer<GProductVariantsData_productVariants_images>
-      get serializer => _$gProductVariantsDataProductVariantsImagesSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GProductVariantsData_productVariants_images.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GProductVariantsData_productVariants_images? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GProductVariantsData_productVariants_images.serializer,
-        json,
-      );
-}
-
-abstract class GProductVariantsData_productVariants_images_image
-    implements
-        Built<GProductVariantsData_productVariants_images_image,
-            GProductVariantsData_productVariants_images_imageBuilder> {
-  GProductVariantsData_productVariants_images_image._();
-
-  factory GProductVariantsData_productVariants_images_image(
-      [void Function(GProductVariantsData_productVariants_images_imageBuilder b)
-          updates]) = _$GProductVariantsData_productVariants_images_image;
-
-  static void _initializeBuilder(
-          GProductVariantsData_productVariants_images_imageBuilder b) =>
-      b..G__typename = 'ImageFieldOutput';
-
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  String get url;
-  static Serializer<GProductVariantsData_productVariants_images_image>
-      get serializer =>
-          _$gProductVariantsDataProductVariantsImagesImageSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GProductVariantsData_productVariants_images_image.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GProductVariantsData_productVariants_images_image? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GProductVariantsData_productVariants_images_image.serializer,
-        json,
-      );
-}
-
 abstract class GProductVariantsCountData
     implements
         Built<GProductVariantsCountData, GProductVariantsCountDataBuilder> {
@@ -871,10 +873,10 @@ abstract class GProductVariantData_productVariant
   BuiltList<GProductVariantData_productVariant_specifications>?
       get specifications;
   int? get totalPrice;
+  BuiltList<GProductVariantData_productVariant_images>? get images;
   BuiltList<GProductVariantData_productVariant_gallery>? get gallery;
   GProductVariantData_productVariant_product? get product;
   BuiltList<GProductVariantData_productVariant_tags>? get tags;
-  BuiltList<GProductVariantData_productVariant_images>? get images;
   static Serializer<GProductVariantData_productVariant> get serializer =>
       _$gProductVariantDataProductVariantSerializer;
 
@@ -1124,6 +1126,77 @@ abstract class GProductVariantData_productVariant_specifications_category
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GProductVariantData_productVariant_specifications_category.serializer,
+        json,
+      );
+}
+
+abstract class GProductVariantData_productVariant_images
+    implements
+        Built<GProductVariantData_productVariant_images,
+            GProductVariantData_productVariant_imagesBuilder> {
+  GProductVariantData_productVariant_images._();
+
+  factory GProductVariantData_productVariant_images(
+      [void Function(GProductVariantData_productVariant_imagesBuilder b)
+          updates]) = _$GProductVariantData_productVariant_images;
+
+  static void _initializeBuilder(
+          GProductVariantData_productVariant_imagesBuilder b) =>
+      b..G__typename = 'ProductImage';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GProductVariantData_productVariant_images_image? get image;
+  String get id;
+  String? get name;
+  static Serializer<GProductVariantData_productVariant_images> get serializer =>
+      _$gProductVariantDataProductVariantImagesSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductVariantData_productVariant_images.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantData_productVariant_images? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductVariantData_productVariant_images.serializer,
+        json,
+      );
+}
+
+abstract class GProductVariantData_productVariant_images_image
+    implements
+        Built<GProductVariantData_productVariant_images_image,
+            GProductVariantData_productVariant_images_imageBuilder> {
+  GProductVariantData_productVariant_images_image._();
+
+  factory GProductVariantData_productVariant_images_image(
+      [void Function(GProductVariantData_productVariant_images_imageBuilder b)
+          updates]) = _$GProductVariantData_productVariant_images_image;
+
+  static void _initializeBuilder(
+          GProductVariantData_productVariant_images_imageBuilder b) =>
+      b..G__typename = 'ImageFieldOutput';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get url;
+  int get width;
+  String get id;
+  static Serializer<GProductVariantData_productVariant_images_image>
+      get serializer =>
+          _$gProductVariantDataProductVariantImagesImageSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductVariantData_productVariant_images_image.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductVariantData_productVariant_images_image? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductVariantData_productVariant_images_image.serializer,
         json,
       );
 }
@@ -1522,75 +1595,6 @@ abstract class GProductVariantData_productVariant_tags
       );
 }
 
-abstract class GProductVariantData_productVariant_images
-    implements
-        Built<GProductVariantData_productVariant_images,
-            GProductVariantData_productVariant_imagesBuilder> {
-  GProductVariantData_productVariant_images._();
-
-  factory GProductVariantData_productVariant_images(
-      [void Function(GProductVariantData_productVariant_imagesBuilder b)
-          updates]) = _$GProductVariantData_productVariant_images;
-
-  static void _initializeBuilder(
-          GProductVariantData_productVariant_imagesBuilder b) =>
-      b..G__typename = 'ProductImage';
-
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  String get id;
-  String? get name;
-  GProductVariantData_productVariant_images_image? get image;
-  static Serializer<GProductVariantData_productVariant_images> get serializer =>
-      _$gProductVariantDataProductVariantImagesSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GProductVariantData_productVariant_images.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GProductVariantData_productVariant_images? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GProductVariantData_productVariant_images.serializer,
-        json,
-      );
-}
-
-abstract class GProductVariantData_productVariant_images_image
-    implements
-        Built<GProductVariantData_productVariant_images_image,
-            GProductVariantData_productVariant_images_imageBuilder> {
-  GProductVariantData_productVariant_images_image._();
-
-  factory GProductVariantData_productVariant_images_image(
-      [void Function(GProductVariantData_productVariant_images_imageBuilder b)
-          updates]) = _$GProductVariantData_productVariant_images_image;
-
-  static void _initializeBuilder(
-          GProductVariantData_productVariant_images_imageBuilder b) =>
-      b..G__typename = 'ImageFieldOutput';
-
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  String get url;
-  static Serializer<GProductVariantData_productVariant_images_image>
-      get serializer =>
-          _$gProductVariantDataProductVariantImagesImageSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GProductVariantData_productVariant_images_image.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GProductVariantData_productVariant_images_image? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GProductVariantData_productVariant_images_image.serializer,
-        json,
-      );
-}
-
 abstract class GProductTypesData
     implements Built<GProductTypesData, GProductTypesDataBuilder> {
   GProductTypesData._();
@@ -1665,6 +1669,7 @@ abstract class GVehicleVariantsData
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
+  int? get vehicleVariantsCount;
   BuiltList<GVehicleVariantsData_vehicleVariants>? get vehicleVariants;
   static Serializer<GVehicleVariantsData> get serializer =>
       _$gVehicleVariantsDataSerializer;
@@ -2156,6 +2161,7 @@ abstract class GVehicleDealersData
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
+  int? get vehicleDealersCount;
   BuiltList<GVehicleDealersData_vehicleDealers>? get vehicleDealers;
   static Serializer<GVehicleDealersData> get serializer =>
       _$gVehicleDealersDataSerializer;
@@ -3883,6 +3889,7 @@ abstract class GProductDealersData
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
+  int? get productDealersCount;
   BuiltList<GProductDealersData_productDealers>? get productDealers;
   static Serializer<GProductDealersData> get serializer =>
       _$gProductDealersDataSerializer;
@@ -4687,4 +4694,200 @@ abstract class GCreateProductDealerStockRequestData_createProductDealerStockRequ
                 .serializer,
             json,
           );
+}
+
+abstract class GVehicleFilterDataData
+    implements Built<GVehicleFilterDataData, GVehicleFilterDataDataBuilder> {
+  GVehicleFilterDataData._();
+
+  factory GVehicleFilterDataData(
+          [void Function(GVehicleFilterDataDataBuilder b) updates]) =
+      _$GVehicleFilterDataData;
+
+  static void _initializeBuilder(GVehicleFilterDataDataBuilder b) =>
+      b..G__typename = 'Query';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  BuiltList<GVehicleFilterDataData_vehicleTypes>? get vehicleTypes;
+  BuiltList<GVehicleFilterDataData_brands>? get brands;
+  static Serializer<GVehicleFilterDataData> get serializer =>
+      _$gVehicleFilterDataDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GVehicleFilterDataData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleFilterDataData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GVehicleFilterDataData.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleFilterDataData_vehicleTypes
+    implements
+        Built<GVehicleFilterDataData_vehicleTypes,
+            GVehicleFilterDataData_vehicleTypesBuilder> {
+  GVehicleFilterDataData_vehicleTypes._();
+
+  factory GVehicleFilterDataData_vehicleTypes(
+      [void Function(GVehicleFilterDataData_vehicleTypesBuilder b)
+          updates]) = _$GVehicleFilterDataData_vehicleTypes;
+
+  static void _initializeBuilder(
+          GVehicleFilterDataData_vehicleTypesBuilder b) =>
+      b..G__typename = 'VehicleType';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  String? get description;
+  static Serializer<GVehicleFilterDataData_vehicleTypes> get serializer =>
+      _$gVehicleFilterDataDataVehicleTypesSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GVehicleFilterDataData_vehicleTypes.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleFilterDataData_vehicleTypes? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GVehicleFilterDataData_vehicleTypes.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleFilterDataData_brands
+    implements
+        Built<GVehicleFilterDataData_brands,
+            GVehicleFilterDataData_brandsBuilder> {
+  GVehicleFilterDataData_brands._();
+
+  factory GVehicleFilterDataData_brands(
+          [void Function(GVehicleFilterDataData_brandsBuilder b) updates]) =
+      _$GVehicleFilterDataData_brands;
+
+  static void _initializeBuilder(GVehicleFilterDataData_brandsBuilder b) =>
+      b..G__typename = 'Brand';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  BuiltList<String>? get type;
+  static Serializer<GVehicleFilterDataData_brands> get serializer =>
+      _$gVehicleFilterDataDataBrandsSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GVehicleFilterDataData_brands.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleFilterDataData_brands? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GVehicleFilterDataData_brands.serializer,
+        json,
+      );
+}
+
+abstract class GProductFilterDataData
+    implements Built<GProductFilterDataData, GProductFilterDataDataBuilder> {
+  GProductFilterDataData._();
+
+  factory GProductFilterDataData(
+          [void Function(GProductFilterDataDataBuilder b) updates]) =
+      _$GProductFilterDataData;
+
+  static void _initializeBuilder(GProductFilterDataDataBuilder b) =>
+      b..G__typename = 'Query';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  BuiltList<GProductFilterDataData_productTypes>? get productTypes;
+  BuiltList<GProductFilterDataData_brands>? get brands;
+  static Serializer<GProductFilterDataData> get serializer =>
+      _$gProductFilterDataDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductFilterDataData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductFilterDataData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductFilterDataData.serializer,
+        json,
+      );
+}
+
+abstract class GProductFilterDataData_productTypes
+    implements
+        Built<GProductFilterDataData_productTypes,
+            GProductFilterDataData_productTypesBuilder> {
+  GProductFilterDataData_productTypes._();
+
+  factory GProductFilterDataData_productTypes(
+      [void Function(GProductFilterDataData_productTypesBuilder b)
+          updates]) = _$GProductFilterDataData_productTypes;
+
+  static void _initializeBuilder(
+          GProductFilterDataData_productTypesBuilder b) =>
+      b..G__typename = 'ProductType';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  String? get description;
+  static Serializer<GProductFilterDataData_productTypes> get serializer =>
+      _$gProductFilterDataDataProductTypesSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductFilterDataData_productTypes.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductFilterDataData_productTypes? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductFilterDataData_productTypes.serializer,
+        json,
+      );
+}
+
+abstract class GProductFilterDataData_brands
+    implements
+        Built<GProductFilterDataData_brands,
+            GProductFilterDataData_brandsBuilder> {
+  GProductFilterDataData_brands._();
+
+  factory GProductFilterDataData_brands(
+          [void Function(GProductFilterDataData_brandsBuilder b) updates]) =
+      _$GProductFilterDataData_brands;
+
+  static void _initializeBuilder(GProductFilterDataData_brandsBuilder b) =>
+      b..G__typename = 'Brand';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get id;
+  String? get name;
+  BuiltList<String>? get type;
+  static Serializer<GProductFilterDataData_brands> get serializer =>
+      _$gProductFilterDataDataBrandsSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductFilterDataData_brands.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductFilterDataData_brands? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductFilterDataData_brands.serializer,
+        json,
+      );
 }

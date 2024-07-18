@@ -103,12 +103,13 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                       borderRadius: BorderRadius.circular(6.r),
                     ),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(6.r),
-                      child: KCachedNWImage(
-                        widget.vehiclePurchaseOrders.dealer?.vehicleColor?.images?.firstOrNull?.image?.url ?? '',
-                        fit: BoxFit.cover,
-                      )
-                    ),
+                        borderRadius: BorderRadius.circular(6.r),
+                        child: KCachedNWImage(
+                          widget.vehiclePurchaseOrders.dealer?.vehicleColor
+                                  ?.images?.firstOrNull?.image?.url ??
+                              '',
+                          fit: BoxFit.cover,
+                        )),
                   ),
                   SizedBox(width: 20.w),
                   Expanded(
@@ -179,7 +180,7 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                                     ),
                                   ),
                                   SizedBox(height: 6.h),
-                                   Text(
+                                  Text(
                                     widget.vehiclePurchaseOrders.price
                                         .toString(),
                                     style: theme.labelLarge!.copyWith(
@@ -577,8 +578,8 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KOrderBikeCard> {
                             .read(orderProvider(OrderFamily.purchaseOrders))
                             .rejectOrder(
                               id: vehiclePurchaseOrders.id,
-                              reason: selectedReason, orderType: 'vehicle',
-
+                              reason: selectedReason,
+                              orderType: 'vehicle',
                             );
                       },
                       child: Text(

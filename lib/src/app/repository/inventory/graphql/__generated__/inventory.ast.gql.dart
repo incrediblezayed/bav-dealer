@@ -286,6 +286,43 @@ const ProductVariants = _i1.OperationDefinitionNode(
           selectionSet: null,
         ),
         _i1.FieldNode(
+          name: _i1.NameNode(value: 'images'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: _i1.SelectionSetNode(selections: [
+            _i1.FieldNode(
+              name: _i1.NameNode(value: 'image'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: _i1.SelectionSetNode(selections: [
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'url'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'width'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'id'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ]),
+            )
+          ]),
+        ),
+        _i1.FieldNode(
           name: _i1.NameNode(value: 'gallery'),
           alias: null,
           arguments: [],
@@ -900,6 +937,43 @@ const ProductVariant = _i1.OperationDefinitionNode(
           selectionSet: null,
         ),
         _i1.FieldNode(
+          name: _i1.NameNode(value: 'images'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: _i1.SelectionSetNode(selections: [
+            _i1.FieldNode(
+              name: _i1.NameNode(value: 'image'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: _i1.SelectionSetNode(selections: [
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'url'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'width'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'id'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ]),
+            )
+          ]),
+        ),
+        _i1.FieldNode(
           name: _i1.NameNode(value: 'gallery'),
           alias: null,
           arguments: [],
@@ -1321,6 +1395,18 @@ const VehicleVariants = _i1.OperationDefinitionNode(
   directives: [],
   selectionSet: _i1.SelectionSetNode(selections: [
     _i1.FieldNode(
+      name: _i1.NameNode(value: 'vehicleVariantsCount'),
+      alias: null,
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'where'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+        )
+      ],
+      directives: [],
+      selectionSet: null,
+    ),
+    _i1.FieldNode(
       name: _i1.NameNode(value: 'vehicleVariants'),
       alias: null,
       arguments: [
@@ -1541,7 +1627,7 @@ const VehicleVariants = _i1.OperationDefinitionNode(
           ]),
         ),
       ]),
-    )
+    ),
   ]),
 );
 const VehicleVariantsCount = _i1.OperationDefinitionNode(
@@ -1668,10 +1754,40 @@ const VehicleDealers = _i1.OperationDefinitionNode(
       ),
       defaultValue: _i1.DefaultValueNode(value: null),
       directives: [],
-    )
+    ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'take')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'skip')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
   ],
   directives: [],
   selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'vehicleDealersCount'),
+      alias: null,
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'where'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+        )
+      ],
+      directives: [],
+      selectionSet: null,
+    ),
     _i1.FieldNode(
       name: _i1.NameNode(value: 'vehicleDealers'),
       alias: null,
@@ -1679,7 +1795,15 @@ const VehicleDealers = _i1.OperationDefinitionNode(
         _i1.ArgumentNode(
           name: _i1.NameNode(value: 'where'),
           value: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
-        )
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'take'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'take')),
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'skip'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'skip')),
+        ),
       ],
       directives: [],
       selectionSet: _i1.SelectionSetNode(selections: [
@@ -1917,7 +2041,7 @@ const VehicleDealers = _i1.OperationDefinitionNode(
           ]),
         ),
       ]),
-    )
+    ),
   ]),
 );
 const CreateVehicleDealer = _i1.OperationDefinitionNode(
@@ -2796,10 +2920,40 @@ const ProductDealers = _i1.OperationDefinitionNode(
       ),
       defaultValue: _i1.DefaultValueNode(value: null),
       directives: [],
-    )
+    ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'take')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'skip')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
   ],
   directives: [],
   selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'productDealersCount'),
+      alias: null,
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'where'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
+        )
+      ],
+      directives: [],
+      selectionSet: null,
+    ),
     _i1.FieldNode(
       name: _i1.NameNode(value: 'productDealers'),
       alias: null,
@@ -2807,7 +2961,15 @@ const ProductDealers = _i1.OperationDefinitionNode(
         _i1.ArgumentNode(
           name: _i1.NameNode(value: 'where'),
           value: _i1.VariableNode(name: _i1.NameNode(value: 'where')),
-        )
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'take'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'take')),
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'skip'),
+          value: _i1.VariableNode(name: _i1.NameNode(value: 'skip')),
+        ),
       ],
       directives: [],
       selectionSet: _i1.SelectionSetNode(selections: [
@@ -3016,7 +3178,7 @@ const ProductDealers = _i1.OperationDefinitionNode(
           ]),
         ),
       ]),
-    )
+    ),
   ]),
 );
 const CreateProductDealer = _i1.OperationDefinitionNode(
@@ -3327,6 +3489,138 @@ const CreateProductDealerStockRequest = _i1.OperationDefinitionNode(
     )
   ]),
 );
+const VehicleFilterData = _i1.OperationDefinitionNode(
+  type: _i1.OperationType.query,
+  name: _i1.NameNode(value: 'VehicleFilterData'),
+  variableDefinitions: [],
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'vehicleTypes'),
+      alias: null,
+      arguments: [],
+      directives: [],
+      selectionSet: _i1.SelectionSetNode(selections: [
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'id'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'name'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'description'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+      ]),
+    ),
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'brands'),
+      alias: null,
+      arguments: [],
+      directives: [],
+      selectionSet: _i1.SelectionSetNode(selections: [
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'id'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'name'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'type'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+      ]),
+    ),
+  ]),
+);
+const ProductFilterData = _i1.OperationDefinitionNode(
+  type: _i1.OperationType.query,
+  name: _i1.NameNode(value: 'ProductFilterData'),
+  variableDefinitions: [],
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'productTypes'),
+      alias: null,
+      arguments: [],
+      directives: [],
+      selectionSet: _i1.SelectionSetNode(selections: [
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'id'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'name'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'description'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+      ]),
+    ),
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'brands'),
+      alias: null,
+      arguments: [],
+      directives: [],
+      selectionSet: _i1.SelectionSetNode(selections: [
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'id'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'name'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'type'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+      ]),
+    ),
+  ]),
+);
 const document = _i1.DocumentNode(definitions: [
   ProductVariants,
   ProductVariantsCount,
@@ -3348,4 +3642,6 @@ const document = _i1.DocumentNode(definitions: [
   CreateProductDealer,
   UpdateProductDealer,
   CreateProductDealerStockRequest,
+  VehicleFilterData,
+  ProductFilterData,
 ]);

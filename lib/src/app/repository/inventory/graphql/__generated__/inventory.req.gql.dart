@@ -1650,3 +1650,165 @@ abstract class GCreateProductDealerStockRequestReq
         json,
       );
 }
+
+abstract class GVehicleFilterDataReq
+    implements
+        Built<GVehicleFilterDataReq, GVehicleFilterDataReqBuilder>,
+        _i1.OperationRequest<_i2.GVehicleFilterDataData,
+            _i3.GVehicleFilterDataVars> {
+  GVehicleFilterDataReq._();
+
+  factory GVehicleFilterDataReq(
+          [void Function(GVehicleFilterDataReqBuilder b) updates]) =
+      _$GVehicleFilterDataReq;
+
+  static void _initializeBuilder(GVehicleFilterDataReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'VehicleFilterData',
+    )
+    ..executeOnListen = true;
+
+  @override
+  _i3.GVehicleFilterDataVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GVehicleFilterDataData? Function(
+    _i2.GVehicleFilterDataData?,
+    _i2.GVehicleFilterDataData?,
+  )? get updateResult;
+  @override
+  _i2.GVehicleFilterDataData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
+  _i2.GVehicleFilterDataData? parseData(Map<String, dynamic> json) =>
+      _i2.GVehicleFilterDataData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(_i2.GVehicleFilterDataData data) =>
+      data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GVehicleFilterDataData, _i3.GVehicleFilterDataVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GVehicleFilterDataReq> get serializer =>
+      _$gVehicleFilterDataReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GVehicleFilterDataReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleFilterDataReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GVehicleFilterDataReq.serializer,
+        json,
+      );
+}
+
+abstract class GProductFilterDataReq
+    implements
+        Built<GProductFilterDataReq, GProductFilterDataReqBuilder>,
+        _i1.OperationRequest<_i2.GProductFilterDataData,
+            _i3.GProductFilterDataVars> {
+  GProductFilterDataReq._();
+
+  factory GProductFilterDataReq(
+          [void Function(GProductFilterDataReqBuilder b) updates]) =
+      _$GProductFilterDataReq;
+
+  static void _initializeBuilder(GProductFilterDataReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'ProductFilterData',
+    )
+    ..executeOnListen = true;
+
+  @override
+  _i3.GProductFilterDataVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GProductFilterDataData? Function(
+    _i2.GProductFilterDataData?,
+    _i2.GProductFilterDataData?,
+  )? get updateResult;
+  @override
+  _i2.GProductFilterDataData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
+  _i2.GProductFilterDataData? parseData(Map<String, dynamic> json) =>
+      _i2.GProductFilterDataData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(_i2.GProductFilterDataData data) =>
+      data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GProductFilterDataData, _i3.GProductFilterDataVars>
+      transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
+          this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GProductFilterDataReq> get serializer =>
+      _$gProductFilterDataReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GProductFilterDataReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductFilterDataReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GProductFilterDataReq.serializer,
+        json,
+      );
+}

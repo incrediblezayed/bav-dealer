@@ -81,8 +81,9 @@ class KStockVehicleCard extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(6.r),
                           // Placeholder for the product image
-                          child:
-                              KCachedNWImage(variant.images.firstOrNull?.url),
+                          child: KCachedNWImage(
+                            variant.images.firstOrNull?.url,
+                          ),
                         ),
                       ),
                       SizedBox(width: 20.w),

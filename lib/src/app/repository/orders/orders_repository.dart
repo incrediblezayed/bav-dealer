@@ -11,9 +11,11 @@ import 'package:dealerapp/src/utils/log_colors.dart';
 class OrderRepository {
   final _client = getIt<GraphqlClient>().client;
 
-  Future<List<GProductOrdersData_productOrders>?> getProductOrders(
-    String orderStatus,
-  ) async {
+  Future<(int,List<GProductOrdersData_productOrders>?)> getProductOrders(
+    {required String orderStatus,
+    required int skip,
+    required int take,
+  }) async {
     try {
       final dealerId = cacheProvider.getDealerId();
       'Getting list of products orders'.log(color: LogColors.green);
@@ -21,6 +23,8 @@ class OrderRepository {
           .request(
             GProductOrdersReq(
               (b) => b.vars
+                ..skip = skip
+                ..take = take
                 ..where.dealer.dealer.id.equals = dealerId
                 ..where.status.equals = orderStatus
                 ..orderBy = ListBuilder([
@@ -37,27 +41,30 @@ class OrderRepository {
           'Something went wrong while getting purchase order lists',
         );
       } else {
-        return response.data?.productOrders?.toList();
+        return (
+          response.data?.productOrdersCount ?? 0,
+          response.data?.productOrders?.toList()
+        );
       }
     } catch (e) {
       e.log();
     }
-    return null;
+    return (0, null);
   }
 
-  Future<List<GVehicleOrdersData_vehicleOrders>?> getVehicleOrders(
-    String orderStatus,
-  ) async {
+  Future<(int, List<GVehicleOrdersData_vehicleOrders>?)> getVehicleOrders({
+    required String orderStatus,
+    required int skip,
+    required int take,
+  }) async {
     try {
       final dealerId = cacheProvider.getDealerId();
-      'Vehicle Orders'.log(
-        color: LogColors.green,
-        stackTrace: StackTrace.current,
-      );
       final response = await _client
           .request(
             GVehicleOrdersReq(
               (b) => b.vars
+                ..skip = skip
+                ..take = take
                 ..where.dealer.dealer.id.equals = dealerId
                 ..where.status.equals = orderStatus
                 ..orderBy = ListBuilder([
@@ -71,27 +78,33 @@ class OrderRepository {
 
       if (response.linkException != null ||
           (response.graphqlErrors?.isNotEmpty ?? false)) {
-        throw Exception(
-          'Something went wrong while getting purchase order lists',
-        );
+        throw Exception('Something went wrong while getting vehicle order lists');
       } else {
-        return response.data?.vehicleOrders?.toList();
+        return (
+          response.data?.vehicleOrdersCount ?? 0,
+          response.data?.vehicleOrders?.toList()
+        );
       }
     } catch (e) {
       e.log();
     }
-    return null;
+    return (0, null);
   }
 
-  Future<List<GTestDriveOrdersData_testDriveOrders>?> getTestDriveOrders(
-    String orderStatus,
-  ) async {
+  Future<(int, List<GTestDriveOrdersData_testDriveOrders>?)>
+      getTestDriveOrders({
+    required String orderStatus,
+    required int skip,
+    required int take,
+  }) async {
     try {
       final dealerId = cacheProvider.getDealerId();
       final response = await _client
           .request(
             GTestDriveOrdersReq(
               (b) => b.vars
+                ..skip = skip
+                ..take = take
                 ..where.dealer.dealer.id.equals = dealerId
                 ..where.status.equals = orderStatus
                 ..orderBy = ListBuilder([
@@ -107,12 +120,15 @@ class OrderRepository {
           (response.graphqlErrors?.isNotEmpty ?? false)) {
         throw Exception('Something went wrong while getting test order lists');
       } else {
-        return response.data?.testDriveOrders?.toList();
+        return (
+          response.data?.testDriveOrdersCount ?? 0,
+          response.data?.testDriveOrders?.toList()
+        );
       }
     } catch (e) {
       e.log();
     }
-    return null;
+    return (0, null);
   }
 
   Future<int> getTestDriveOrdersCount(
@@ -172,23 +188,26 @@ class OrderRepository {
   Future<bool> updateProductOrderStatus({
     required String productOrderId,
     required String status,
-}) async {
-    try{
-    final response = await _client.request(GUpdateProductOrderReq(
-          (b) => b.vars
-        ..data.status = status
-        ..where.id = productOrderId,
-    )).first;
-    if (response.linkException != null ||
-        (response.graphqlErrors?.isNotEmpty ?? false)) {
-      throw Exception('Failed to update status');
-    }
-    return response.data?.updateProductOrder?.id != null;
-  }catch (e) {
+  }) async {
+    try {
+      final response = await _client
+          .request(GUpdateProductOrderReq(
+            (b) => b.vars
+              ..data.status = status
+              ..where.id = productOrderId,
+          ))
+          .first;
+      if (response.linkException != null ||
+          (response.graphqlErrors?.isNotEmpty ?? false)) {
+        throw Exception('Failed to update status');
+      }
+      return response.data?.updateProductOrder?.id != null;
+    } catch (e) {
       e.log();
     }
     return false;
   }
+
   Future<bool> updateOrderStatus({
     required String vehicleOrderId,
     required String status,
@@ -242,13 +261,14 @@ class OrderRepository {
   Future<bool> rejectOrder({
     required String orderId,
     required String reason,
-    required String orderType, // Instead of bool, use String to distinguish order types
+    required String
+        orderType, // Instead of bool, use String to distinguish order types
     String? description,
   }) async {
     try {
       final response = await _client.request(
         GCreateOrderRejectionByDealerReq(
-              (b) {
+          (b) {
             b.vars.data
               ..reason = reason
               ..description = description;
@@ -256,24 +276,24 @@ class OrderRepository {
             if (orderType == 'vehicle') {
               b.vars.data.vehicleOrders.connect =
                   ListBuilder<GVehicleOrderWhereUniqueInput>([
-                    GVehicleOrderWhereUniqueInput(
-                          (b) => b.id = orderId,
-                    ),
-                  ]);
+                GVehicleOrderWhereUniqueInput(
+                  (b) => b.id = orderId,
+                ),
+              ]);
             } else if (orderType == 'testDrive') {
               b.vars.data.testDriveOrders.connect =
                   ListBuilder<GTestDriveOrderWhereUniqueInput>([
-                    GTestDriveOrderWhereUniqueInput(
-                          (b) => b.id = orderId,
-                    ),
-                  ]);
+                GTestDriveOrderWhereUniqueInput(
+                  (b) => b.id = orderId,
+                ),
+              ]);
             } else if (orderType == 'product') {
               b.vars.data.productOrders.connect =
                   ListBuilder<GProductOrderWhereUniqueInput>([
-                    GProductOrderWhereUniqueInput(
-                          (b) => b.id = orderId,
-                    ),
-                  ]);
+                GProductOrderWhereUniqueInput(
+                  (b) => b.id = orderId,
+                ),
+              ]);
             } else {
               throw Exception('Invalid order type');
             }

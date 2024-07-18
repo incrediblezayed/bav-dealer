@@ -406,6 +406,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
           .serializer)
       ..add(GProductDealersReq.serializer)
       ..add(GProductDealersVars.serializer)
+      ..add(GProductFilterDataData.serializer)
+      ..add(GProductFilterDataData_brands.serializer)
+      ..add(GProductFilterDataData_productTypes.serializer)
+      ..add(GProductFilterDataReq.serializer)
+      ..add(GProductFilterDataVars.serializer)
       ..add(GProductGalleryItemCreateInput.serializer)
       ..add(GProductGalleryItemManyRelationFilter.serializer)
       ..add(GProductGalleryItemOrderByInput.serializer)
@@ -911,6 +916,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
           .serializer)
       ..add(GVehicleDealersReq.serializer)
       ..add(GVehicleDealersVars.serializer)
+      ..add(GVehicleFilterDataData.serializer)
+      ..add(GVehicleFilterDataData_brands.serializer)
+      ..add(GVehicleFilterDataData_vehicleTypes.serializer)
+      ..add(GVehicleFilterDataReq.serializer)
+      ..add(GVehicleFilterDataVars.serializer)
       ..add(GVehicleGalleryItemCreateInput.serializer)
       ..add(GVehicleGalleryItemManyRelationFilter.serializer)
       ..add(GVehicleGalleryItemOrderByInput.serializer)
@@ -1764,6 +1774,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
               GProductDealersData_productDealers_productVariant_images>())
       ..addBuilderFactory(
           const FullType(BuiltList,
+              const [const FullType(GProductFilterDataData_productTypes)]),
+          () => new ListBuilder<GProductFilterDataData_productTypes>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GProductFilterDataData_brands)]),
+          () => new ListBuilder<GProductFilterDataData_brands>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
               const [const FullType(GProductGalleryItemCreateInput)]),
           () => new ListBuilder<GProductGalleryItemCreateInput>())
       ..addBuilderFactory(
@@ -2007,6 +2025,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
               GProductVariantData_productVariant_specifications>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
+            const FullType(GProductVariantData_productVariant_images)
+          ]),
+          () => new ListBuilder<GProductVariantData_productVariant_images>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
             const FullType(GProductVariantData_productVariant_gallery)
           ]),
           () => new ListBuilder<GProductVariantData_productVariant_gallery>())
@@ -2014,11 +2037,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(GProductVariantData_productVariant_tags)]),
           () => new ListBuilder<GProductVariantData_productVariant_tags>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [
-            const FullType(GProductVariantData_productVariant_images)
-          ]),
-          () => new ListBuilder<GProductVariantData_productVariant_images>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
@@ -2071,6 +2089,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
               GProductVariantsData_productVariants_specifications>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
+            const FullType(GProductVariantsData_productVariants_images)
+          ]),
+          () => new ListBuilder<GProductVariantsData_productVariants_images>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
             const FullType(GProductVariantsData_productVariants_gallery)
           ]),
           () => new ListBuilder<GProductVariantsData_productVariants_gallery>())
@@ -2079,11 +2102,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
             const FullType(GProductVariantsData_productVariants_tags)
           ]),
           () => new ListBuilder<GProductVariantsData_productVariants_tags>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [
-            const FullType(GProductVariantsData_productVariants_images)
-          ]),
-          () => new ListBuilder<GProductVariantsData_productVariants_images>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
@@ -2640,6 +2658,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
               GVehicleDealersData_vehicleDealers_vehicleColor_images>())
       ..addBuilderFactory(
           const FullType(BuiltList,
+              const [const FullType(GVehicleFilterDataData_vehicleTypes)]),
+          () => new ListBuilder<GVehicleFilterDataData_vehicleTypes>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GVehicleFilterDataData_brands)]),
+          () => new ListBuilder<GVehicleFilterDataData_brands>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
               const [const FullType(GVehicleGalleryItemCreateInput)]),
           () => new ListBuilder<GVehicleGalleryItemCreateInput>())
       ..addBuilderFactory(
@@ -3048,6 +3074,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GWalletWhereInput)]),
           () => new ListBuilder<GWalletWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

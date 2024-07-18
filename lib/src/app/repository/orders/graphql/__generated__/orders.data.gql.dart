@@ -25,6 +25,7 @@ abstract class GProductOrdersData
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
+  int? get productOrdersCount;
   BuiltList<GProductOrdersData_productOrders>? get productOrders;
   static Serializer<GProductOrdersData> get serializer =>
       _$gProductOrdersDataSerializer;
@@ -199,7 +200,7 @@ abstract class GProductOrdersData_productOrders_dealer_productVariant_images
   GProductOrdersData_productOrders_dealer_productVariant_images._();
 
   factory GProductOrdersData_productOrders_dealer_productVariant_images(
-          [Function(
+          [void Function(
                   GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder
                       b)
               updates]) =
@@ -241,7 +242,7 @@ abstract class GProductOrdersData_productOrders_dealer_productVariant_images_ima
   GProductOrdersData_productOrders_dealer_productVariant_images_image._();
 
   factory GProductOrdersData_productOrders_dealer_productVariant_images_image(
-          [Function(
+          [void Function(
                   GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder
                       b)
               updates]) =
@@ -505,6 +506,7 @@ abstract class GVehicleOrdersData
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
+  int? get vehicleOrdersCount;
   BuiltList<GVehicleOrdersData_vehicleOrders>? get vehicleOrders;
   static Serializer<GVehicleOrdersData> get serializer =>
       _$gVehicleOrdersDataSerializer;
@@ -1050,6 +1052,7 @@ abstract class GTestDriveOrdersData
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
+  int? get testDriveOrdersCount;
   BuiltList<GTestDriveOrdersData_testDriveOrders>? get testDriveOrders;
   static Serializer<GTestDriveOrdersData> get serializer =>
       _$gTestDriveOrdersDataSerializer;

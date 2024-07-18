@@ -1,7 +1,7 @@
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
-import 'package:dealerapp/src/utils/extensions.dart';
-import 'package:dealerapp/src/utils/log_colors.dart';
+import 'package:dealerapp/src/widgets/default_pagination_scroll_callback.dart';
+import 'package:dealerapp/src/widgets/empty_widget.dart';
 import 'package:dealerapp/src/widgets/k_inventory_bike_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -13,10 +13,10 @@ class ListOfVehicles extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final inventoryPro = ref.watch(inventoryProvider);
-    final data = inventoryPro.vehicles.where(
+    final data = inventoryPro.vehicles?.where(
       (element) => element.colors
           .where(
-            (p0) => !inventoryPro.vehicleDealers
+            (p0) => !(inventoryPro.vehicleDealers ?? [])
                 .map((e) => e.vehicleColor?.id)
                 .contains(p0.id),
           )
@@ -43,38 +43,43 @@ class ListOfVehicles extends ConsumerWidget {
               ),
             ),
           Expanded(
-            child: RefreshIndicator(
-              onRefresh: () async {
-                await inventoryPro.getVehicles();
-              },
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: data.length +
-                    (inventoryPro.count >= inventoryPro.vehicles.length
-                        ? 1
-                        : 0),
-                itemBuilder: (context, index) {
-                  index.log(
-                    color: LogColors.green,
-                    name: 'Index',
-                  );
-                  inventoryPro.count.log(
-                    name: 'Total Vehicle Count',
-                  );
-
-                  if (index >= data.length) {
-                    inventoryPro.getPaginatedVehicles();
-                    return const Center(
-                      child: CircularProgressIndicator.adaptive(),
-                    );
-                  }
-                  final item = data.elementAt(index);
-                  return KInventoryBikeCard(
-                    variant: item,
-                  );
-                },
-              ),
-            ),
+            child: data == null
+                ? const Center(
+                    child: CircularProgressIndicator.adaptive(),
+                  )
+                : data.isEmpty
+                    ? const EmptyWidget(title: 'No Vehicles Found')
+                    : DefaultScrollPaginationCallback(
+                        onLoadMore: () async {
+                          await inventoryPro.getPaginatedVehicles();
+                        },
+                        callbackCondition: inventoryPro.vehicles!.length <
+                            inventoryPro.vehiclesCount,
+                        child: RefreshIndicator.adaptive(
+                          onRefresh: () async {
+                            await inventoryPro.getVehicles();
+                          },
+                          child: ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: data.length +
+                                (inventoryPro.vehicles!.length <
+                                        inventoryPro.vehiclesCount
+                                    ? 1
+                                    : 0),
+                            itemBuilder: (context, index) {
+                              if (index >= data.length) {
+                                return const Center(
+                                  child: CircularProgressIndicator.adaptive(),
+                                );
+                              }
+                              final item = data.elementAt(index);
+                              return KInventoryBikeCard(
+                                variant: item,
+                              );
+                            },
+                          ),
+                        ),
+                      ),
           ),
         ],
       ),

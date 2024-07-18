@@ -164,6 +164,12 @@ class _$GProductOrdersDataSerializer
           specifiedType: const FullType(String)),
     ];
     Object? value;
+    value = object.productOrdersCount;
+    if (value != null) {
+      result
+        ..add('productOrdersCount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     value = object.productOrders;
     if (value != null) {
       result
@@ -190,6 +196,10 @@ class _$GProductOrdersDataSerializer
         case '__typename':
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
+          break;
+        case 'productOrdersCount':
+          result.productOrdersCount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'productOrders':
           result.productOrders.replace(serializers.deserialize(value,
@@ -1207,6 +1217,12 @@ class _$GVehicleOrdersDataSerializer
           specifiedType: const FullType(String)),
     ];
     Object? value;
+    value = object.vehicleOrdersCount;
+    if (value != null) {
+      result
+        ..add('vehicleOrdersCount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     value = object.vehicleOrders;
     if (value != null) {
       result
@@ -1233,6 +1249,10 @@ class _$GVehicleOrdersDataSerializer
         case '__typename':
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
+          break;
+        case 'vehicleOrdersCount':
+          result.vehicleOrdersCount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'vehicleOrders':
           result.vehicleOrders.replace(serializers.deserialize(value,
@@ -2422,6 +2442,12 @@ class _$GTestDriveOrdersDataSerializer
           specifiedType: const FullType(String)),
     ];
     Object? value;
+    value = object.testDriveOrdersCount;
+    if (value != null) {
+      result
+        ..add('testDriveOrdersCount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     value = object.testDriveOrders;
     if (value != null) {
       result
@@ -2448,6 +2474,10 @@ class _$GTestDriveOrdersDataSerializer
         case '__typename':
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
+          break;
+        case 'testDriveOrdersCount':
+          result.testDriveOrdersCount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'testDriveOrders':
           result.testDriveOrders.replace(serializers.deserialize(value,
@@ -3923,13 +3953,16 @@ class _$GProductOrdersData extends GProductOrdersData {
   @override
   final String G__typename;
   @override
+  final int? productOrdersCount;
+  @override
   final BuiltList<GProductOrdersData_productOrders>? productOrders;
 
   factory _$GProductOrdersData(
           [void Function(GProductOrdersDataBuilder)? updates]) =>
       (new GProductOrdersDataBuilder()..update(updates))._build();
 
-  _$GProductOrdersData._({required this.G__typename, this.productOrders})
+  _$GProductOrdersData._(
+      {required this.G__typename, this.productOrdersCount, this.productOrders})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GProductOrdersData', 'G__typename');
@@ -3949,6 +3982,7 @@ class _$GProductOrdersData extends GProductOrdersData {
     if (identical(other, this)) return true;
     return other is GProductOrdersData &&
         G__typename == other.G__typename &&
+        productOrdersCount == other.productOrdersCount &&
         productOrders == other.productOrders;
   }
 
@@ -3956,6 +3990,7 @@ class _$GProductOrdersData extends GProductOrdersData {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, productOrdersCount.hashCode);
     _$hash = $jc(_$hash, productOrders.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -3965,6 +4000,7 @@ class _$GProductOrdersData extends GProductOrdersData {
   String toString() {
     return (newBuiltValueToStringHelper(r'GProductOrdersData')
           ..add('G__typename', G__typename)
+          ..add('productOrdersCount', productOrdersCount)
           ..add('productOrders', productOrders))
         .toString();
   }
@@ -3977,6 +4013,11 @@ class GProductOrdersDataBuilder
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _productOrdersCount;
+  int? get productOrdersCount => _$this._productOrdersCount;
+  set productOrdersCount(int? productOrdersCount) =>
+      _$this._productOrdersCount = productOrdersCount;
 
   ListBuilder<GProductOrdersData_productOrders>? _productOrders;
   ListBuilder<GProductOrdersData_productOrders> get productOrders =>
@@ -3994,6 +4035,7 @@ class GProductOrdersDataBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
+      _productOrdersCount = $v.productOrdersCount;
       _productOrders = $v.productOrders?.toBuilder();
       _$v = null;
     }
@@ -4021,6 +4063,7 @@ class GProductOrdersDataBuilder
           new _$GProductOrdersData._(
               G__typename: BuiltValueNullFieldError.checkNotNull(
                   G__typename, r'GProductOrdersData', 'G__typename'),
+              productOrdersCount: productOrdersCount,
               productOrders: _productOrders?.build());
     } catch (_) {
       late String _$failedField;
@@ -5975,13 +6018,16 @@ class _$GVehicleOrdersData extends GVehicleOrdersData {
   @override
   final String G__typename;
   @override
+  final int? vehicleOrdersCount;
+  @override
   final BuiltList<GVehicleOrdersData_vehicleOrders>? vehicleOrders;
 
   factory _$GVehicleOrdersData(
           [void Function(GVehicleOrdersDataBuilder)? updates]) =>
       (new GVehicleOrdersDataBuilder()..update(updates))._build();
 
-  _$GVehicleOrdersData._({required this.G__typename, this.vehicleOrders})
+  _$GVehicleOrdersData._(
+      {required this.G__typename, this.vehicleOrdersCount, this.vehicleOrders})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GVehicleOrdersData', 'G__typename');
@@ -6001,6 +6047,7 @@ class _$GVehicleOrdersData extends GVehicleOrdersData {
     if (identical(other, this)) return true;
     return other is GVehicleOrdersData &&
         G__typename == other.G__typename &&
+        vehicleOrdersCount == other.vehicleOrdersCount &&
         vehicleOrders == other.vehicleOrders;
   }
 
@@ -6008,6 +6055,7 @@ class _$GVehicleOrdersData extends GVehicleOrdersData {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, vehicleOrdersCount.hashCode);
     _$hash = $jc(_$hash, vehicleOrders.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -6017,6 +6065,7 @@ class _$GVehicleOrdersData extends GVehicleOrdersData {
   String toString() {
     return (newBuiltValueToStringHelper(r'GVehicleOrdersData')
           ..add('G__typename', G__typename)
+          ..add('vehicleOrdersCount', vehicleOrdersCount)
           ..add('vehicleOrders', vehicleOrders))
         .toString();
   }
@@ -6029,6 +6078,11 @@ class GVehicleOrdersDataBuilder
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _vehicleOrdersCount;
+  int? get vehicleOrdersCount => _$this._vehicleOrdersCount;
+  set vehicleOrdersCount(int? vehicleOrdersCount) =>
+      _$this._vehicleOrdersCount = vehicleOrdersCount;
 
   ListBuilder<GVehicleOrdersData_vehicleOrders>? _vehicleOrders;
   ListBuilder<GVehicleOrdersData_vehicleOrders> get vehicleOrders =>
@@ -6046,6 +6100,7 @@ class GVehicleOrdersDataBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
+      _vehicleOrdersCount = $v.vehicleOrdersCount;
       _vehicleOrders = $v.vehicleOrders?.toBuilder();
       _$v = null;
     }
@@ -6073,6 +6128,7 @@ class GVehicleOrdersDataBuilder
           new _$GVehicleOrdersData._(
               G__typename: BuiltValueNullFieldError.checkNotNull(
                   G__typename, r'GVehicleOrdersData', 'G__typename'),
+              vehicleOrdersCount: vehicleOrdersCount,
               vehicleOrders: _vehicleOrders?.build());
     } catch (_) {
       late String _$failedField;
@@ -8360,13 +8416,18 @@ class _$GTestDriveOrdersData extends GTestDriveOrdersData {
   @override
   final String G__typename;
   @override
+  final int? testDriveOrdersCount;
+  @override
   final BuiltList<GTestDriveOrdersData_testDriveOrders>? testDriveOrders;
 
   factory _$GTestDriveOrdersData(
           [void Function(GTestDriveOrdersDataBuilder)? updates]) =>
       (new GTestDriveOrdersDataBuilder()..update(updates))._build();
 
-  _$GTestDriveOrdersData._({required this.G__typename, this.testDriveOrders})
+  _$GTestDriveOrdersData._(
+      {required this.G__typename,
+      this.testDriveOrdersCount,
+      this.testDriveOrders})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GTestDriveOrdersData', 'G__typename');
@@ -8386,6 +8447,7 @@ class _$GTestDriveOrdersData extends GTestDriveOrdersData {
     if (identical(other, this)) return true;
     return other is GTestDriveOrdersData &&
         G__typename == other.G__typename &&
+        testDriveOrdersCount == other.testDriveOrdersCount &&
         testDriveOrders == other.testDriveOrders;
   }
 
@@ -8393,6 +8455,7 @@ class _$GTestDriveOrdersData extends GTestDriveOrdersData {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, testDriveOrdersCount.hashCode);
     _$hash = $jc(_$hash, testDriveOrders.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -8402,6 +8465,7 @@ class _$GTestDriveOrdersData extends GTestDriveOrdersData {
   String toString() {
     return (newBuiltValueToStringHelper(r'GTestDriveOrdersData')
           ..add('G__typename', G__typename)
+          ..add('testDriveOrdersCount', testDriveOrdersCount)
           ..add('testDriveOrders', testDriveOrders))
         .toString();
   }
@@ -8414,6 +8478,11 @@ class GTestDriveOrdersDataBuilder
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _testDriveOrdersCount;
+  int? get testDriveOrdersCount => _$this._testDriveOrdersCount;
+  set testDriveOrdersCount(int? testDriveOrdersCount) =>
+      _$this._testDriveOrdersCount = testDriveOrdersCount;
 
   ListBuilder<GTestDriveOrdersData_testDriveOrders>? _testDriveOrders;
   ListBuilder<GTestDriveOrdersData_testDriveOrders> get testDriveOrders =>
@@ -8431,6 +8500,7 @@ class GTestDriveOrdersDataBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
+      _testDriveOrdersCount = $v.testDriveOrdersCount;
       _testDriveOrders = $v.testDriveOrders?.toBuilder();
       _$v = null;
     }
@@ -8458,6 +8528,7 @@ class GTestDriveOrdersDataBuilder
           new _$GTestDriveOrdersData._(
               G__typename: BuiltValueNullFieldError.checkNotNull(
                   G__typename, r'GTestDriveOrdersData', 'G__typename'),
+              testDriveOrdersCount: testDriveOrdersCount,
               testDriveOrders: _testDriveOrders?.build());
     } catch (_) {
       late String _$failedField;

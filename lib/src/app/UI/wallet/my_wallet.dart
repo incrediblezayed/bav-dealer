@@ -72,7 +72,7 @@ class _MyWalletState extends ConsumerState<MyWallet>
     final walletPro = ref.watch(walletProvider);
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
-    return RefreshIndicator(
+    return RefreshIndicator.adaptive(
       onRefresh: () {
         AppRoutes.scaffoldMessengerKey.currentState
             ?.hideCurrentMaterialBanner();

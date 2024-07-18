@@ -1,5 +1,6 @@
-query ProductOrders($where: ProductOrderWhereInput!, $orderBy: [ProductOrderOrderByInput!]!) {
-  productOrders(where: $where, orderBy: $orderBy) {
+query ProductOrders($where: ProductOrderWhereInput!, $orderBy: [ProductOrderOrderByInput!]!, $skip: Int!, $take: Int!) {
+  productOrdersCount(where: $where)
+  productOrders(where: $where, orderBy: $orderBy, skip: $skip, take: $take) {
     id
     price
     dealer {
@@ -54,8 +55,11 @@ query ProductOrders($where: ProductOrderWhereInput!, $orderBy: [ProductOrderOrde
 query VehicleOrders(
   $orderBy: [VehicleOrderOrderByInput!]!
   $where: VehicleOrderWhereInput!
+  $skip: Int!
+  $take: Int!
 ) {
-  vehicleOrders(orderBy: $orderBy, where: $where) {
+  vehicleOrdersCount(where: $where)
+  vehicleOrders(orderBy: $orderBy, where: $where, skip: $skip, take: $take) {
     id
     price
     dealer {
@@ -122,8 +126,11 @@ query VehicleOrdersCount($where: VehicleOrderWhereInput!) {
 query TestDriveOrders(
   $where: TestDriveOrderWhereInput!
   $orderBy: [TestDriveOrderOrderByInput!]!
+  $skip: Int!
+  $take: Int!
 ) {
-  testDriveOrders(where: $where, orderBy: $orderBy) {
+  testDriveOrdersCount(where: $where)
+  testDriveOrders(where: $where, orderBy: $orderBy, skip: $skip, take: $take) {
     id
     price
     dealer {

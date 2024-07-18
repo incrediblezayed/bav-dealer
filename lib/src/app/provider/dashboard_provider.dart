@@ -57,8 +57,8 @@ class HomePageProvider extends ChangeNotifier {
             .getPendingOrders())
         .length;
     productCount = (await ref
-        .read(orderProvider(OrderFamily.productOrders))
-        .getProductPendingOrders())
+            .read(orderProvider(OrderFamily.productOrders))
+            .getProductPendingOrders())
         .length;
     Future.delayed(const Duration(seconds: 10), () {
       onInit();

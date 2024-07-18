@@ -45,6 +45,10 @@ class _$GProductOrdersVarsSerializer
       serializers.serialize(object.orderBy,
           specifiedType: const FullType(BuiltList,
               const [const FullType(_i1.GProductOrderOrderByInput)])),
+      'skip',
+      serializers.serialize(object.skip, specifiedType: const FullType(int)),
+      'take',
+      serializers.serialize(object.take, specifiedType: const FullType(int)),
     ];
 
     return result;
@@ -73,6 +77,14 @@ class _$GProductOrdersVarsSerializer
                 const FullType(_i1.GProductOrderOrderByInput)
               ]))! as BuiltList<Object?>);
           break;
+        case 'skip':
+          result.skip = serializers.deserialize(value,
+              specifiedType: const FullType(int))! as int;
+          break;
+        case 'take':
+          result.take = serializers.deserialize(value,
+              specifiedType: const FullType(int))! as int;
+          break;
       }
     }
 
@@ -99,6 +111,10 @@ class _$GVehicleOrdersVarsSerializer
       'where',
       serializers.serialize(object.where,
           specifiedType: const FullType(_i1.GVehicleOrderWhereInput)),
+      'skip',
+      serializers.serialize(object.skip, specifiedType: const FullType(int)),
+      'take',
+      serializers.serialize(object.take, specifiedType: const FullType(int)),
     ];
 
     return result;
@@ -126,6 +142,14 @@ class _$GVehicleOrdersVarsSerializer
           result.where.replace(serializers.deserialize(value,
                   specifiedType: const FullType(_i1.GVehicleOrderWhereInput))!
               as _i1.GVehicleOrderWhereInput);
+          break;
+        case 'skip':
+          result.skip = serializers.deserialize(value,
+              specifiedType: const FullType(int))! as int;
+          break;
+        case 'take':
+          result.take = serializers.deserialize(value,
+              specifiedType: const FullType(int))! as int;
           break;
       }
     }
@@ -203,6 +227,10 @@ class _$GTestDriveOrdersVarsSerializer
       serializers.serialize(object.orderBy,
           specifiedType: const FullType(BuiltList,
               const [const FullType(_i1.GTestDriveOrderOrderByInput)])),
+      'skip',
+      serializers.serialize(object.skip, specifiedType: const FullType(int)),
+      'take',
+      serializers.serialize(object.take, specifiedType: const FullType(int)),
     ];
 
     return result;
@@ -230,6 +258,14 @@ class _$GTestDriveOrdersVarsSerializer
               specifiedType: const FullType(BuiltList, const [
                 const FullType(_i1.GTestDriveOrderOrderByInput)
               ]))! as BuiltList<Object?>);
+          break;
+        case 'skip':
+          result.skip = serializers.deserialize(value,
+              specifiedType: const FullType(int))! as int;
+          break;
+        case 'take':
+          result.take = serializers.deserialize(value,
+              specifiedType: const FullType(int))! as int;
           break;
       }
     }
@@ -508,17 +544,27 @@ class _$GProductOrdersVars extends GProductOrdersVars {
   final _i1.GProductOrderWhereInput where;
   @override
   final BuiltList<_i1.GProductOrderOrderByInput> orderBy;
+  @override
+  final int skip;
+  @override
+  final int take;
 
   factory _$GProductOrdersVars(
           [void Function(GProductOrdersVarsBuilder)? updates]) =>
       (new GProductOrdersVarsBuilder()..update(updates))._build();
 
-  _$GProductOrdersVars._({required this.where, required this.orderBy})
+  _$GProductOrdersVars._(
+      {required this.where,
+      required this.orderBy,
+      required this.skip,
+      required this.take})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         where, r'GProductOrdersVars', 'where');
     BuiltValueNullFieldError.checkNotNull(
         orderBy, r'GProductOrdersVars', 'orderBy');
+    BuiltValueNullFieldError.checkNotNull(skip, r'GProductOrdersVars', 'skip');
+    BuiltValueNullFieldError.checkNotNull(take, r'GProductOrdersVars', 'take');
   }
 
   @override
@@ -535,7 +581,9 @@ class _$GProductOrdersVars extends GProductOrdersVars {
     if (identical(other, this)) return true;
     return other is GProductOrdersVars &&
         where == other.where &&
-        orderBy == other.orderBy;
+        orderBy == other.orderBy &&
+        skip == other.skip &&
+        take == other.take;
   }
 
   @override
@@ -543,6 +591,8 @@ class _$GProductOrdersVars extends GProductOrdersVars {
     var _$hash = 0;
     _$hash = $jc(_$hash, where.hashCode);
     _$hash = $jc(_$hash, orderBy.hashCode);
+    _$hash = $jc(_$hash, skip.hashCode);
+    _$hash = $jc(_$hash, take.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -551,7 +601,9 @@ class _$GProductOrdersVars extends GProductOrdersVars {
   String toString() {
     return (newBuiltValueToStringHelper(r'GProductOrdersVars')
           ..add('where', where)
-          ..add('orderBy', orderBy))
+          ..add('orderBy', orderBy)
+          ..add('skip', skip)
+          ..add('take', take))
         .toString();
   }
 }
@@ -571,6 +623,14 @@ class GProductOrdersVarsBuilder
   set orderBy(ListBuilder<_i1.GProductOrderOrderByInput>? orderBy) =>
       _$this._orderBy = orderBy;
 
+  int? _skip;
+  int? get skip => _$this._skip;
+  set skip(int? skip) => _$this._skip = skip;
+
+  int? _take;
+  int? get take => _$this._take;
+  set take(int? take) => _$this._take = take;
+
   GProductOrdersVarsBuilder();
 
   GProductOrdersVarsBuilder get _$this {
@@ -578,6 +638,8 @@ class GProductOrdersVarsBuilder
     if ($v != null) {
       _where = $v.where.toBuilder();
       _orderBy = $v.orderBy.toBuilder();
+      _skip = $v.skip;
+      _take = $v.take;
       _$v = null;
     }
     return this;
@@ -602,7 +664,12 @@ class GProductOrdersVarsBuilder
     try {
       _$result = _$v ??
           new _$GProductOrdersVars._(
-              where: where.build(), orderBy: orderBy.build());
+              where: where.build(),
+              orderBy: orderBy.build(),
+              skip: BuiltValueNullFieldError.checkNotNull(
+                  skip, r'GProductOrdersVars', 'skip'),
+              take: BuiltValueNullFieldError.checkNotNull(
+                  take, r'GProductOrdersVars', 'take'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -626,17 +693,27 @@ class _$GVehicleOrdersVars extends GVehicleOrdersVars {
   final BuiltList<_i1.GVehicleOrderOrderByInput> orderBy;
   @override
   final _i1.GVehicleOrderWhereInput where;
+  @override
+  final int skip;
+  @override
+  final int take;
 
   factory _$GVehicleOrdersVars(
           [void Function(GVehicleOrdersVarsBuilder)? updates]) =>
       (new GVehicleOrdersVarsBuilder()..update(updates))._build();
 
-  _$GVehicleOrdersVars._({required this.orderBy, required this.where})
+  _$GVehicleOrdersVars._(
+      {required this.orderBy,
+      required this.where,
+      required this.skip,
+      required this.take})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         orderBy, r'GVehicleOrdersVars', 'orderBy');
     BuiltValueNullFieldError.checkNotNull(
         where, r'GVehicleOrdersVars', 'where');
+    BuiltValueNullFieldError.checkNotNull(skip, r'GVehicleOrdersVars', 'skip');
+    BuiltValueNullFieldError.checkNotNull(take, r'GVehicleOrdersVars', 'take');
   }
 
   @override
@@ -653,7 +730,9 @@ class _$GVehicleOrdersVars extends GVehicleOrdersVars {
     if (identical(other, this)) return true;
     return other is GVehicleOrdersVars &&
         orderBy == other.orderBy &&
-        where == other.where;
+        where == other.where &&
+        skip == other.skip &&
+        take == other.take;
   }
 
   @override
@@ -661,6 +740,8 @@ class _$GVehicleOrdersVars extends GVehicleOrdersVars {
     var _$hash = 0;
     _$hash = $jc(_$hash, orderBy.hashCode);
     _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, skip.hashCode);
+    _$hash = $jc(_$hash, take.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -669,7 +750,9 @@ class _$GVehicleOrdersVars extends GVehicleOrdersVars {
   String toString() {
     return (newBuiltValueToStringHelper(r'GVehicleOrdersVars')
           ..add('orderBy', orderBy)
-          ..add('where', where))
+          ..add('where', where)
+          ..add('skip', skip)
+          ..add('take', take))
         .toString();
   }
 }
@@ -689,6 +772,14 @@ class GVehicleOrdersVarsBuilder
       _$this._where ??= new _i1.GVehicleOrderWhereInputBuilder();
   set where(_i1.GVehicleOrderWhereInputBuilder? where) => _$this._where = where;
 
+  int? _skip;
+  int? get skip => _$this._skip;
+  set skip(int? skip) => _$this._skip = skip;
+
+  int? _take;
+  int? get take => _$this._take;
+  set take(int? take) => _$this._take = take;
+
   GVehicleOrdersVarsBuilder();
 
   GVehicleOrdersVarsBuilder get _$this {
@@ -696,6 +787,8 @@ class GVehicleOrdersVarsBuilder
     if ($v != null) {
       _orderBy = $v.orderBy.toBuilder();
       _where = $v.where.toBuilder();
+      _skip = $v.skip;
+      _take = $v.take;
       _$v = null;
     }
     return this;
@@ -720,7 +813,12 @@ class GVehicleOrdersVarsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrdersVars._(
-              orderBy: orderBy.build(), where: where.build());
+              orderBy: orderBy.build(),
+              where: where.build(),
+              skip: BuiltValueNullFieldError.checkNotNull(
+                  skip, r'GVehicleOrdersVars', 'skip'),
+              take: BuiltValueNullFieldError.checkNotNull(
+                  take, r'GVehicleOrdersVars', 'take'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -843,17 +941,29 @@ class _$GTestDriveOrdersVars extends GTestDriveOrdersVars {
   final _i1.GTestDriveOrderWhereInput where;
   @override
   final BuiltList<_i1.GTestDriveOrderOrderByInput> orderBy;
+  @override
+  final int skip;
+  @override
+  final int take;
 
   factory _$GTestDriveOrdersVars(
           [void Function(GTestDriveOrdersVarsBuilder)? updates]) =>
       (new GTestDriveOrdersVarsBuilder()..update(updates))._build();
 
-  _$GTestDriveOrdersVars._({required this.where, required this.orderBy})
+  _$GTestDriveOrdersVars._(
+      {required this.where,
+      required this.orderBy,
+      required this.skip,
+      required this.take})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         where, r'GTestDriveOrdersVars', 'where');
     BuiltValueNullFieldError.checkNotNull(
         orderBy, r'GTestDriveOrdersVars', 'orderBy');
+    BuiltValueNullFieldError.checkNotNull(
+        skip, r'GTestDriveOrdersVars', 'skip');
+    BuiltValueNullFieldError.checkNotNull(
+        take, r'GTestDriveOrdersVars', 'take');
   }
 
   @override
@@ -870,7 +980,9 @@ class _$GTestDriveOrdersVars extends GTestDriveOrdersVars {
     if (identical(other, this)) return true;
     return other is GTestDriveOrdersVars &&
         where == other.where &&
-        orderBy == other.orderBy;
+        orderBy == other.orderBy &&
+        skip == other.skip &&
+        take == other.take;
   }
 
   @override
@@ -878,6 +990,8 @@ class _$GTestDriveOrdersVars extends GTestDriveOrdersVars {
     var _$hash = 0;
     _$hash = $jc(_$hash, where.hashCode);
     _$hash = $jc(_$hash, orderBy.hashCode);
+    _$hash = $jc(_$hash, skip.hashCode);
+    _$hash = $jc(_$hash, take.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -886,7 +1000,9 @@ class _$GTestDriveOrdersVars extends GTestDriveOrdersVars {
   String toString() {
     return (newBuiltValueToStringHelper(r'GTestDriveOrdersVars')
           ..add('where', where)
-          ..add('orderBy', orderBy))
+          ..add('orderBy', orderBy)
+          ..add('skip', skip)
+          ..add('take', take))
         .toString();
   }
 }
@@ -907,6 +1023,14 @@ class GTestDriveOrdersVarsBuilder
   set orderBy(ListBuilder<_i1.GTestDriveOrderOrderByInput>? orderBy) =>
       _$this._orderBy = orderBy;
 
+  int? _skip;
+  int? get skip => _$this._skip;
+  set skip(int? skip) => _$this._skip = skip;
+
+  int? _take;
+  int? get take => _$this._take;
+  set take(int? take) => _$this._take = take;
+
   GTestDriveOrdersVarsBuilder();
 
   GTestDriveOrdersVarsBuilder get _$this {
@@ -914,6 +1038,8 @@ class GTestDriveOrdersVarsBuilder
     if ($v != null) {
       _where = $v.where.toBuilder();
       _orderBy = $v.orderBy.toBuilder();
+      _skip = $v.skip;
+      _take = $v.take;
       _$v = null;
     }
     return this;
@@ -938,7 +1064,12 @@ class GTestDriveOrdersVarsBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveOrdersVars._(
-              where: where.build(), orderBy: orderBy.build());
+              where: where.build(),
+              orderBy: orderBy.build(),
+              skip: BuiltValueNullFieldError.checkNotNull(
+                  skip, r'GTestDriveOrdersVars', 'skip'),
+              take: BuiltValueNullFieldError.checkNotNull(
+                  take, r'GTestDriveOrdersVars', 'take'));
     } catch (_) {
       late String _$failedField;
       try {

@@ -71,9 +71,8 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                       SizedBox(height: 6.h),
                       Text(
                         widget.productPurchaseOrders.createdAt.toDateTime!
-                                .toLocal()
-                                .formatTohhmmaddMMyy ??
-                            '',
+                            .toLocal()
+                            .formatTohhmmaddMMyy,
                       ),
                     ],
                   ),

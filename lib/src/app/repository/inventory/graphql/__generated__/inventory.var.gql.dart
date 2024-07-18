@@ -226,6 +226,8 @@ abstract class GVehicleDealersVars
       _$GVehicleDealersVars;
 
   _i1.GVehicleDealerWhereInput get where;
+  int? get take;
+  int get skip;
   static Serializer<GVehicleDealersVars> get serializer =>
       _$gVehicleDealersVarsSerializer;
 
@@ -425,6 +427,8 @@ abstract class GProductDealersVars
       _$GProductDealersVars;
 
   _i1.GProductDealerWhereInput get where;
+  int? get take;
+  int get skip;
   static Serializer<GProductDealersVars> get serializer =>
       _$gProductDealersVarsSerializer;
 
@@ -514,6 +518,52 @@ abstract class GCreateProductDealerStockRequestVars
           Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
         GCreateProductDealerStockRequestVars.serializer,
+        json,
+      );
+}
+
+abstract class GVehicleFilterDataVars
+    implements Built<GVehicleFilterDataVars, GVehicleFilterDataVarsBuilder> {
+  GVehicleFilterDataVars._();
+
+  factory GVehicleFilterDataVars(
+          [void Function(GVehicleFilterDataVarsBuilder b) updates]) =
+      _$GVehicleFilterDataVars;
+
+  static Serializer<GVehicleFilterDataVars> get serializer =>
+      _$gVehicleFilterDataVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GVehicleFilterDataVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GVehicleFilterDataVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GVehicleFilterDataVars.serializer,
+        json,
+      );
+}
+
+abstract class GProductFilterDataVars
+    implements Built<GProductFilterDataVars, GProductFilterDataVarsBuilder> {
+  GProductFilterDataVars._();
+
+  factory GProductFilterDataVars(
+          [void Function(GProductFilterDataVarsBuilder b) updates]) =
+      _$GProductFilterDataVars;
+
+  static Serializer<GProductFilterDataVars> get serializer =>
+      _$gProductFilterDataVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GProductFilterDataVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductFilterDataVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GProductFilterDataVars.serializer,
         json,
       );
 }

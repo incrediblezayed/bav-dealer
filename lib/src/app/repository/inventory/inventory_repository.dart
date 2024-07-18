@@ -23,18 +23,25 @@ class InventoryRepository {
     required int skip,
     List<String>? ids,
     String search = '',
+    List<String> brands = const [],
+    List<String> types = const [],
   }) async {
     try {
-      'Getting list of products'.log(
-        color: LogColors.green
-      );
+      'Getting list of products'.log(color: LogColors.green);
       final response = await _client.request(
         GProductVariantsReq(
           (b) {
             b
               ..vars.skip = skip
               ..vars.take = take
+              ..vars.where.name.contains = search
               ..vars.where.name.mode = GQueryMode.insensitive;
+            if (brands.isNotEmpty) {
+              b.vars.where.product.brand.name.Gin = ListBuilder<String>(brands);
+            }
+            if (types.isNotEmpty) {
+              b.vars.where.product.type.name.Gin = ListBuilder<String>(types);
+            }
             if (ids != null) {
               b.vars.where.id.notIn = ListBuilder<String>(ids);
             }
@@ -119,24 +126,35 @@ class InventoryRepository {
     required int skip,
     List<String>? ids,
     String search = '',
+    List<String> brands = const [],
+    List<String> types = const [],
   }) async {
     try {
-      final response = await _client.request(
-        GVehicleVariantsReq(
-          (b) {
-            b
-              ..vars.skip = skip
-              ..vars.take = take
-              ..vars.where.name.contains = search
-              ..vars.where.name.mode = GQueryMode.insensitive;
-            if (ids == null) {
-              b;
-            } else {
-              b..vars.where.id.notIn = ListBuilder<String>(ids);
-            }
-          },
-        ),
-      ).first;
+      final vehicleVariantQuery = GVehicleVariantsReq(
+        (b) {
+          b
+            ..vars.skip = skip
+            ..vars.take = take
+            ..vars.where.name.contains = search
+            ..vars.where.name.mode = GQueryMode.insensitive;
+          if (brands.isNotEmpty) {
+            b.vars.where.vehicle.brand.name.Gin = ListBuilder<String>(brands);
+          }
+          if (types.isNotEmpty) {
+            b.vars.where.vehicle.type.name.Gin = ListBuilder<String>(types);
+          }
+          if (ids == null) {
+            b;
+          } else {
+            b.vars.where.id.notIn = ListBuilder<String>(ids);
+          }
+        },
+      );
+      final response = await _client
+          .request(
+            vehicleVariantQuery,
+          )
+          .first;
 
       if (response.linkException != null ||
           (response.graphqlErrors?.isNotEmpty ?? false)) {
@@ -145,18 +163,8 @@ class InventoryRepository {
         if (response.data?.vehicleVariants == null) {
           return (0, null);
         } else {
-          final countQuery = await _client
-              .request(
-                GVehicleVariantsCountReq(
-                  (b) => b
-                    ..vars.where =
-                        response.operationRequest.vars.where.toBuilder(),
-                ),
-              )
-              .first;
-          final count = countQuery.data?.vehicleVariantsCount ?? 0;
           return (
-            count,
+            response.data!.vehicleVariantsCount ?? 0,
             response.data!.vehicleVariants!
                 .map((p0) => VariantDetailsModel.fromJson(p0.toJson()))
                 .toList()
@@ -262,20 +270,34 @@ class InventoryRepository {
     return 0;
   }
 
-  Future<List<DealerStockModel>> currentStock({
+  Future<(int, List<DealerStockModel>)> currentStock({
     String text = '',
+    List<String> brands = const [],
+    List<String> types = const [],
+    int skip = 0,
+    int take = 15,
   }) async {
     try {
-      final result = await _client
-          .request(
-            GVehicleDealersReq(
-              (b) => b
-                ..vars.where.dealer.id.equals = cacheProvider.getDealerId()
-                ..vars.where.vehicleVariant.name.contains = text
-                ..vars.where.vehicleVariant.name.mode = GQueryMode.insensitive,
-            ),
-          )
-          .first;
+      final result = await _client.request(
+        GVehicleDealersReq(
+          (b) {
+            b
+              ..vars.where.dealer.id.equals = cacheProvider.getDealerId()
+              ..vars.where.vehicleVariant.name.contains = text
+              ..vars.where.vehicleVariant.name.mode = GQueryMode.insensitive
+              ..vars.skip = skip
+              ..vars.take = take;
+            if (brands.isNotEmpty) {
+              b.vars.where.vehicleVariant.vehicle.brand.name.Gin =
+                  ListBuilder<String>(brands);
+            }
+            if (types.isNotEmpty) {
+              b.vars.where.vehicleVariant.vehicle.type.name.Gin =
+                  ListBuilder<String>(types);
+            }
+          },
+        ),
+      ).first;
       if (result.linkException != null) {
         throw result.linkException!;
       }
@@ -290,28 +312,41 @@ class InventoryRepository {
               (e) => DealerStockModel.fromJson(e.toJson(), DealerType.vehicle),
             )
             .toList();
-        return dealers;
+        return (result.data!.vehicleDealersCount ?? 0, dealers);
       }
     } catch (e) {
       e.log();
     }
-    return [];
+    return (0, <DealerStockModel>[]);
   }
 
-  Future<List<DealerStockModel>> currentProductStock({
-    String text = '',
-  }) async {
+  Future<(int, List<DealerStockModel>)> currentProductStock(
+      {String text = '',
+      List<String> brands = const [],
+      List<String> types = const [],
+      int skip = 0,
+      int take = 15}) async {
     try {
-      final result = await _client
-          .request(
-            GProductDealersReq(
-              (b) => b
-                ..vars.where.dealer.id.equals = cacheProvider.getDealerId()
-                ..vars.where.productVariant.name.contains = text
-                ..vars.where.productVariant.name.mode = GQueryMode.insensitive,
-            ),
-          )
-          .first;
+      final result = await _client.request(
+        GProductDealersReq(
+          (b) {
+            b
+              ..vars.where.dealer.id.equals = cacheProvider.getDealerId()
+              ..vars.where.productVariant.name.contains = text
+              ..vars.where.productVariant.name.mode = GQueryMode.insensitive
+              ..vars.skip = skip
+              ..vars.take = take;
+            if (brands.isNotEmpty) {
+              b.vars.where.productVariant.product.brand.name.Gin =
+                  ListBuilder<String>(brands);
+            }
+            if (types.isNotEmpty) {
+              b.vars.where.productVariant.product.type.name.Gin =
+                  ListBuilder<String>(types);
+            }
+          },
+        ),
+      ).first;
       if (result.linkException != null) {
         throw result.linkException!;
       }
@@ -326,12 +361,12 @@ class InventoryRepository {
               (e) => DealerStockModel.fromJson(e.toJson(), DealerType.product),
             )
             .toList();
-        return dealers;
+        return (result.data!.productDealersCount ?? 0, dealers);
       }
     } catch (e) {
       e.log();
     }
-    return [];
+    return (0, <DealerStockModel>[]);
   }
 
   Future<List<GPriceCategoriesData_priceCategories>>
@@ -604,24 +639,36 @@ class InventoryRepository {
   }
 
   Future<(int, List<DealerStockModel>)> getTestDriveStock(
-      {required int skip, required int take, required String query}) async {
+      {required int skip,
+      required int take,
+      required String query,
+      List<String> brands = const [],
+      List<String> types = const []}) async {
     final dealerId = cacheProvider.getDealerId();
     try {
       dealerId.log();
 
-      final response = await _client
-          .request(
-            GTestDriveDealersReq(
-              (b) => b
-                ..vars.where.dealer.id.equals = dealerId
-                ..vars.where.available.equals = true
-                ..vars.where.vehicleVariant.name.contains = query
-                ..vars.where.vehicleVariant.name.mode = GQueryMode.insensitive
-                ..vars.skip = skip
-                ..vars.take = take,
-            ),
-          )
-          .first;
+      final response = await _client.request(
+        GTestDriveDealersReq(
+          (b) {
+            b
+              ..vars.where.dealer.id.equals = dealerId
+              ..vars.where.available.equals = true
+              ..vars.where.vehicleVariant.name.contains = query
+              ..vars.where.vehicleVariant.name.mode = GQueryMode.insensitive
+              ..vars.skip = skip
+              ..vars.take = take;
+            if (brands.isNotEmpty) {
+              b.vars.where.vehicleVariant.vehicle.brand.name.Gin =
+                  ListBuilder<String>(brands);
+            }
+            if (types.isNotEmpty) {
+              b.vars.where.vehicleVariant.vehicle.type.name.Gin =
+                  ListBuilder<String>(types);
+            }
+          },
+        ),
+      ).first;
       if (response.linkException != null) {
         throw response.linkException!;
       }
@@ -706,6 +753,59 @@ class InventoryRepository {
     } catch (e) {
       e.log();
       rethrow;
+    }
+  }
+
+  ///Filter queries
+  Future<(List<String>, List<String>)> getProductData() async {
+    try {
+      final response = await _client.request(GProductFilterDataReq()).first;
+      if (response.linkException != null) {
+        throw response.linkException!;
+      }
+      if (response.graphqlErrors?.isNotEmpty ?? false) {
+        throw response.graphqlErrors!.first;
+      }
+      if (response.data != null) {
+        return (
+          response.data!.productTypes!.map((e) => e.name ?? '').toList(),
+          response.data!.brands!
+              .where((e) => e.type?.contains('product') ?? false)
+              .map((e) => e.name ?? '')
+              .toList(),
+        );
+      } else {
+        return (<String>[], <String>[]);
+      }
+    } catch (e) {
+      e.log();
+      return (<String>[], <String>[]);
+    }
+  }
+
+  Future<(List<String>, List<String>)> getVehicleData() async {
+    try {
+      final response = await _client.request(GVehicleFilterDataReq()).first;
+      if (response.linkException != null) {
+        throw response.linkException!;
+      }
+      if (response.graphqlErrors?.isNotEmpty ?? false) {
+        throw response.graphqlErrors!.first;
+      }
+      if (response.data != null) {
+        return (
+          response.data!.vehicleTypes!.map((e) => e.name ?? '').toList(),
+          response.data!.brands!
+              .where((e) => e.type?.contains('vehicle') ?? false)
+              .map((e) => e.name ?? '')
+              .toList()
+        );
+      } else {
+        return (<String>[], <String>[]);
+      }
+    } catch (e) {
+      e.log();
+      return (<String>[], <String>[]);
     }
   }
 }

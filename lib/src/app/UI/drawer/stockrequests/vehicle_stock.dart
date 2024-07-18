@@ -51,7 +51,7 @@ class VehicleStock extends ConsumerWidget {
                 }
                 return true;
               },
-              child: RefreshIndicator(
+              child: RefreshIndicator.adaptive(
                 onRefresh: () async {
                   await stockPro.getVehicleStock();
                 },

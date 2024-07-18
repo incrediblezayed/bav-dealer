@@ -14,6 +14,12 @@ class PurchaseOrders extends ConsumerStatefulWidget {
 
 class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
     with TickerProviderStateMixin {
+  @override
+  void initState() {
+    super.initState();
+    onTabChanged(0, ref.read(orderProvider(OrderFamily.purchaseOrders)));
+  }
+
   late final TabController _tabController =
       TabController(length: 4, vsync: this);
 
@@ -86,6 +92,7 @@ class _PurchaseOrdersState extends ConsumerState<PurchaseOrders>
               (e) => OrdersListPage(
                 data: e,
                 orderPro: orderPro,
+                tab: _tabController.index,
               ),
             )
             .toList(),

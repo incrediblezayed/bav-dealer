@@ -34,9 +34,7 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
 
   late VehicleColor? selectedColor = variants.colors
       .where(
-        (p0) => !ref
-            .read(inventoryProvider)
-            .vehicleDealers
+        (p0) => !(ref.read(inventoryProvider).vehicleDealers ?? [])
             .map((e) => e.vehicleColor?.id)
             .contains(p0.id),
       )
@@ -198,9 +196,10 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                               children: [
                                 ...variants.colors
                                     .where(
-                                      (p0) => !inventoryPro.vehicleDealers
-                                          .map((e) => e.vehicleColor?.id)
-                                          .contains(p0.id),
+                                      (p0) =>
+                                          !(inventoryPro.vehicleDealers ?? [])
+                                              .map((e) => e.vehicleColor?.id)
+                                              .contains(p0.id),
                                     )
                                     .map(
                                       (e) => GestureDetector(
@@ -269,11 +268,11 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                   setState(() {
                     selectedColor = variants.colors
                         .where(
-                          (p0) => !ref
-                              .read(inventoryProvider)
-                              .vehicleDealers
-                              .map((e) => e.vehicleColor!.id)
-                              .contains(p0.id),
+                          (p0) =>
+                              !(ref.read(inventoryProvider).vehicleDealers ??
+                                      [])
+                                  .map((e) => e.vehicleColor!.id)
+                                  .contains(p0.id),
                         )
                         .firstOrNull;
                   });

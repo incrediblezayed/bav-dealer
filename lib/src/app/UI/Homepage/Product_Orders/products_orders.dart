@@ -16,6 +16,13 @@ class _ProductOrdersState extends ConsumerState<ProductOrders>
     with TickerProviderStateMixin {
   late final TabController _tabController =
       TabController(length: 4, vsync: this);
+
+  @override
+  void initState() {
+    super.initState();
+    onTabChanged(0, ref.read(orderProvider(OrderFamily.productOrders)));
+  }
+
   void onTabChanged(int index, OrdersProvider provider) {
     if (index == 0) {
       provider.getProductPendingOrders();
@@ -85,6 +92,7 @@ class _ProductOrdersState extends ConsumerState<ProductOrders>
               (e) => ProductOrderListPage(
                 data: e,
                 orderPro: orderPro,
+                tab: _tabController.index,
               ),
             )
             .toList(),

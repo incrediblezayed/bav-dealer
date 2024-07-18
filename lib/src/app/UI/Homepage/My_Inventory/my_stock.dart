@@ -1,6 +1,7 @@
 import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/widgets/my_stock_card.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
+import 'package:dealerapp/src/widgets/default_pagination_scroll_callback.dart';
 import 'package:dealerapp/src/widgets/empty_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -14,6 +15,8 @@ class MyStockPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final inventoryPro = ref.watch(inventoryProvider);
+    final data =
+        product ? inventoryPro.productDealers : inventoryPro.vehicleDealers;
     return Container(
       padding: const EdgeInsets.all(6),
       color: AppTheme.textFieldFill,
@@ -38,35 +41,53 @@ class MyStockPage extends ConsumerWidget {
               ),
             ),
           Expanded(
-            child: RefreshIndicator(
-              onRefresh: () async {
-                if (product) {
-                  await inventoryPro.getProductStocks();
-                } else {
-                  await inventoryPro.getStocks();
-                }
-              },
-              child: (product
-                          ? inventoryPro.productDealers
-                          : inventoryPro.vehicleDealers)
-                      .isEmpty
-                  ? const EmptyWidget(title: 'Uh oh! You have no orders.')
-                  : ListView.builder(
-                      itemCount: (product
-                              ? inventoryPro.productDealers
-                              : inventoryPro.vehicleDealers)
-                          .length,
-                      itemBuilder: (context, index) {
-                        return MyStockCard(
-                          dealerStock: (product
-                              ? inventoryPro.productDealers
-                              : inventoryPro.vehicleDealers)[index],
-                          index: index,
-                          product: product,
-                        );
+            child: data == null
+                ? const CircularProgressIndicator()
+                : DefaultScrollPaginationCallback(
+                    onLoadMore: () async {
+                      if (product) {
+                        await inventoryPro.getMoreProductStock();
+                      } else {
+                        await inventoryPro.getMoreStock();
+                      }
+                    },
+                    callbackCondition: data.length <
+                        (product
+                            ? inventoryPro.productDealersCount
+                            : inventoryPro.vehicleStockCount),
+                    child: RefreshIndicator.adaptive(
+                      onRefresh: () async {
+                        if (product) {
+                          await inventoryPro.getProductStocks();
+                        } else {
+                          await inventoryPro.getStocks();
+                        }
                       },
-                    ),
-            ),
+                      child: data.isEmpty
+                          ? const EmptyWidget(
+                              title: 'Uh oh! You have no stock.')
+                          : ListView.builder(
+                              itemCount: data.length +
+                                  (data.length <
+                                          (product
+                                              ? inventoryPro.productDealersCount
+                                              : inventoryPro.vehicleStockCount)
+                                      ? 1
+                                      : 0),
+                              itemBuilder: (context, index) {
+                                if (index >= data.length) {
+                                  return const Center(
+                                    child: CircularProgressIndicator.adaptive(),
+                                  );
+                                }
+                                return MyStockCard(
+                                  dealerStock: data[index],
+                                  index: index,
+                                  product: product,
+                                );
+                              },
+                            ),
+                    )),
           ),
         ],
       ),

@@ -23,27 +23,27 @@ class InventoryProvider extends ChangeNotifier {
   List<ProductVariantModel> _products = [];
 
   List<ProductVariantModel> get products => _products;
-  List<VariantDetailsModel> _vehicles = [];
+  List<VariantDetailsModel>? _vehicles = [];
 
-  List<VariantDetailsModel> get vehicles => _vehicles;
+  List<VariantDetailsModel>? get vehicles => _vehicles;
 
   set products(List<ProductVariantModel> data) {
     _products = data;
     notifyListeners();
   }
 
-  set vehicles(List<VariantDetailsModel> data) {
+  set vehicles(List<VariantDetailsModel>? data) {
     _vehicles = data;
     notifyListeners();
   }
 
   final InventoryRepository _inventoryRepository = InventoryRepository();
 
-  List<DealerStockModel> _vehicleDealers = [];
+  List<DealerStockModel>? _vehicleDealers = [];
 
-  List<DealerStockModel> get vehicleDealers => _vehicleDealers;
+  List<DealerStockModel>? get vehicleDealers => _vehicleDealers;
 
-  set vehicleDealers(List<DealerStockModel> data) {
+  set vehicleDealers(List<DealerStockModel>? data) {
     _vehicleDealers = data;
     notifyListeners();
   }
@@ -57,14 +57,16 @@ class InventoryProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<DealerStockModel> _productDealers = [];
+  List<DealerStockModel>? _productDealers = [];
 
-  List<DealerStockModel> get productDealers => _productDealers;
+  List<DealerStockModel>? get productDealers => _productDealers;
 
-  set productDealers(List<DealerStockModel> data) {
+  set productDealers(List<DealerStockModel>? data) {
     _productDealers = data;
     notifyListeners();
   }
+
+  int productDealersCount = 0;
 
   Future<void> init() async {
     await Future.wait([
@@ -97,6 +99,8 @@ class InventoryProvider extends ChangeNotifier {
         search: inventorySearchController.text,
         skip: 0,
         take: 15,
+        brands: selectedBrands,
+        types: selectedTypes,
       );
       _handleProductsResponse(getProduct);
     } catch (e) {
@@ -112,10 +116,12 @@ class InventoryProvider extends ChangeNotifier {
       isCallInProgress = true;
       final response = await _inventoryRepository.getProducts(
         take: 15,
-        skip: prices.length,
+        skip: products.length,
         search: inventorySearchController.text,
+        brands: selectedBrands,
+        types: selectedTypes,
       );
-      _handleProductsResponse(response);
+      products.addAll(response.$2 ?? []);
     } catch (e) {
       _handleError(e, 'Error while fetching list of products');
     } finally {
@@ -125,14 +131,16 @@ class InventoryProvider extends ChangeNotifier {
 
   Future<void> getVehicles() async {
     try {
+      vehicles = null;
       final getVehicles = await _inventoryRepository.getVehicles(
         search: inventorySearchController.text,
         skip: 0,
         take: 15,
+        brands: selectedBrands,
+        types: selectedTypes,
       );
-
       if (getVehicles.$2 != null) {
-        count = getVehicles.$1;
+        vehiclesCount = getVehicles.$1;
         vehicles = getVehicles.$2!;
       } else {
         await AppRoutes.showErrorSnackbar(
@@ -144,7 +152,8 @@ class InventoryProvider extends ChangeNotifier {
     }
   }
 
-  int count = 0;
+  int vehiclesCount = 0;
+  int productsCount = 0;
 
   bool isCallInProgress = false;
 
@@ -156,12 +165,18 @@ class InventoryProvider extends ChangeNotifier {
       isCallInProgress = true;
       final response = await _inventoryRepository.getVehicles(
         take: 15,
-        skip: vehicles.length,
+        skip: vehicles?.length ?? 0,
         search: inventorySearchController.text,
+        brands: selectedBrands,
+        types: selectedTypes,
       );
 
       if (response.$2 != null) {
-        vehicles.addAll(response.$2!);
+        if (vehicles != null) {
+          vehicles?.addAll(response.$2!);
+        } else {
+          vehicles = response.$2!;
+        }
         notifyListeners();
       }
       isCallInProgress = false;
@@ -247,10 +262,10 @@ class InventoryProvider extends ChangeNotifier {
       }
 
       if (result) {
-        if (product) {
-          await getVehicles();
+        if (!product) {
+          await Future.wait([getVehicles(), getTestDriveStock()]);
         } else {
-          await getProductStocks();
+          await Future.wait([getProducts(), getProductStocks()]);
         }
         await AppRoutes.showSuccessSnackbar(
           message: 'Request Created Successfully',
@@ -270,7 +285,7 @@ class InventoryProvider extends ChangeNotifier {
   ) async {
     final tuple = response;
     if (tuple.$2 != null) {
-      count = tuple.$1;
+      productsCount = tuple.$1;
       products = tuple.$2!;
     } else {
       await AppRoutes.showErrorSnackbar(
@@ -286,11 +301,6 @@ class InventoryProvider extends ChangeNotifier {
     );
   }
 
-  ProductVariantModel _mapToProductModel(Map<String, dynamic> productJson) {
-    // Logic to map JSON to ProductDetailsModel
-    return ProductVariantModel.productFromJson(productJson);
-  }
-
   Future<int> getInventoryCount() async {
     try {
       final result = await _inventoryRepository.getStockCount();
@@ -301,13 +311,17 @@ class InventoryProvider extends ChangeNotifier {
     }
   }
 
+  int vehicleStockCount = 0;
+
   Future<void> getStocks() async {
     try {
       final result = await _inventoryRepository.currentStock(
         text: inventorySearchController.text,
+        brands: selectedBrands,
+        types: selectedTypes,
       );
-
-      vehicleDealers = result;
+      vehicleStockCount = result.$1;
+      vehicleDealers = result.$2;
     } catch (e) {
       e.log();
       await AppRoutes.showErrorSnackbar(
@@ -316,19 +330,62 @@ class InventoryProvider extends ChangeNotifier {
     }
   }
 
+  Future<void> getMoreStock() async {
+    if (isCallInProgress) {
+      return;
+    }
+    isCallInProgress = true;
+    final result = await _inventoryRepository.currentStock(
+      text: inventorySearchController.text,
+      brands: selectedBrands,
+      types: selectedTypes,
+      skip: vehicleDealers?.length ?? 0,
+      take: 15,
+    );
+    if (vehicleDealers != null) {
+      vehicleDealers?.addAll(result.$2);
+    } else {
+      vehicleDealers = result.$2;
+    }
+    isCallInProgress = false;
+  }
+
   Future<void> getProductStocks() async {
     try {
       final result = await _inventoryRepository.currentProductStock(
         text: inventorySearchController.text,
+        brands: selectedBrands,
+        types: selectedTypes,
       );
-
-      productDealers = result;
+      productDealersCount = result.$1;
+      productDealers = result.$2;
     } catch (e) {
       e.log();
       await AppRoutes.showErrorSnackbar(
         message: 'Error while fetching list of vehicles',
       );
     }
+  }
+
+  Future<void> getMoreProductStock() async {
+    if (isCallInProgress) {
+      return;
+    }
+    isCallInProgress = true;
+    final result = await _inventoryRepository.currentProductStock(
+      text: inventorySearchController.text,
+      brands: selectedBrands,
+      types: selectedTypes,
+      skip: productDealers?.length ?? 0,
+      take: 15,
+    );
+    if (productDealers != null) {
+      productDealers?.addAll(result.$2);
+    } else {
+      productDealers = result.$2;
+    }
+
+    isCallInProgress = false;
   }
 
   Future<void> updateVehicleDealer({
@@ -343,7 +400,11 @@ class InventoryProvider extends ChangeNotifier {
         guarantees: guarantees,
         prices: prices,
       );
-      vehicleDealers[index] = result;
+      if (vehicleDealers != null) {
+        vehicleDealers![index] = result;
+      } else {
+        getStocks();
+      }
       notifyListeners();
       await AppRoutes.showSuccessSnackbar(
         message: 'Request Updated Successfully',
@@ -395,7 +456,11 @@ class InventoryProvider extends ChangeNotifier {
         guarantees: guarantees,
         prices: prices,
       );
-      productDealers[index] = result;
+      if (productDealers != null) {
+        productDealers![index] = result;
+      } else {
+        getProductStocks();
+      }
       notifyListeners();
       await AppRoutes.showSuccessSnackbar(
         message: 'Request Updated Successfully',
@@ -409,7 +474,11 @@ class InventoryProvider extends ChangeNotifier {
 
   Future<void> getTestDriveStock() async {
     final stocks = await _inventoryRepository.getTestDriveStock(
-        skip: 0, take: 15, query: inventorySearchController.text);
+        skip: 0,
+        take: 15,
+        query: inventorySearchController.text,
+        brands: selectedBrands,
+        types: selectedTypes);
     totalTestDriveCount = stocks.$1;
     testDriveStock = stocks.$2;
   }
@@ -457,6 +526,94 @@ class InventoryProvider extends ChangeNotifier {
       }
     } catch (e) {
       e.log();
+    }
+  }
+
+  /// Filter Logic
+  ///
+  bool _filterLoading = false;
+
+  bool get filterLoading => _filterLoading;
+  set filterLoading(bool value) {
+    _filterLoading = value;
+    notifyListeners();
+  }
+
+  bool isFilterApplied = false;
+
+  List<String> vehicleTypes = [];
+  List<String> vehicleBrands = [];
+  List<String> productTypes = [];
+  List<String> productBrands = [];
+
+  List<String> selectedTypes = [];
+  List<String> selectedBrands = [];
+
+  void toggleType(String type) {
+    if (selectedTypes.contains(type)) {
+      selectedTypes.remove(type);
+    } else {
+      selectedTypes.add(type);
+    }
+
+    notifyListeners();
+  }
+
+  void toggleBrand(String brand) {
+    if (selectedBrands.contains(brand)) {
+      selectedBrands.remove(brand);
+    } else {
+      selectedBrands.add(brand);
+    }
+    notifyListeners();
+  }
+
+  void clearFilters(int tab) {
+    selectedTypes.clear();
+    selectedBrands.clear();
+    isFilterApplied = false;
+    getDatabasedonTab(tab);
+    notifyListeners();
+  }
+
+  Future<void> getProductFilterData() async {
+    filterLoading = true;
+    final result = await _inventoryRepository.getProductData();
+    productTypes = result.$1;
+    productBrands = result.$2;
+    filterLoading = false;
+  }
+
+  Future<void> getVehicleFilterData() async {
+    filterLoading = true;
+    final result = await _inventoryRepository.getVehicleData();
+    vehicleTypes = result.$1;
+    vehicleBrands = result.$2;
+    filterLoading = false;
+  }
+
+  Future<void> applyFilter(int currentTab) async {
+    isFilterApplied = true;
+    getDatabasedonTab(currentTab);
+  }
+
+  Future<void> getDatabasedonTab(int tab) async {
+    switch (tab) {
+      case 0:
+        getVehicles();
+        break;
+      case 1:
+        getStocks();
+        break;
+      case 2:
+        getTestDriveStock();
+        break;
+      case 3:
+        getProducts();
+        break;
+      case 4:
+        getProductStocks();
+        break;
     }
   }
 }

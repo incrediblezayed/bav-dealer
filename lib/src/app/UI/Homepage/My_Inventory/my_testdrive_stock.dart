@@ -1,6 +1,7 @@
 import 'package:dealerapp/src/app/UI/Homepage/My_Inventory/widgets/my_stock_card.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
+import 'package:dealerapp/src/widgets/default_pagination_scroll_callback.dart';
 import 'package:dealerapp/src/widgets/empty_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -34,20 +35,13 @@ class MyTestDriveStockPage extends ConsumerWidget {
               ),
             ),
           Expanded(
-            child: NotificationListener<ScrollNotification>(
-              onNotification: (notification) {
-                if (notification is ScrollEndNotification) {
-                  if (notification.metrics.pixels >
-                      (notification.metrics.maxScrollExtent * 0.8)) {
-                    if ((inventoryPro.testDriveStock?.length ?? 0) <
-                        inventoryPro.totalTestDriveCount) {
-                      inventoryPro.getMoreTestDriveStock();
-                    }
-                  }
-                }
-                return true;
+            child: DefaultScrollPaginationCallback(
+              callbackCondition: (inventoryPro.testDriveStock?.length ?? 0) <
+                  inventoryPro.totalTestDriveCount,
+              onLoadMore: () {
+                inventoryPro.getMoreTestDriveStock();
               },
-              child: RefreshIndicator(
+              child: RefreshIndicator.adaptive(
                 onRefresh: () async {
                   await inventoryPro.getTestDriveStock();
                 },
@@ -55,8 +49,9 @@ class MyTestDriveStockPage extends ConsumerWidget {
                     ? const Center(
                         child: CircularProgressIndicator(),
                       )
-                    : inventoryPro.vehicleDealers.isEmpty
-                        ? const EmptyWidget(title: 'Uh oh! You have no orders.')
+                    : inventoryPro.testDriveStock!.isEmpty
+                        ? const EmptyWidget(
+                            title: 'Uh oh! You have no test drive stock.')
                         : ListView.builder(
                             itemCount: inventoryPro.testDriveStock!.length +
                                 (inventoryPro.totalTestDriveCount >
@@ -67,7 +62,8 @@ class MyTestDriveStockPage extends ConsumerWidget {
                               if (index >=
                                   inventoryPro.testDriveStock!.length) {
                                 return const Center(
-                                    child: CircularProgressIndicator());
+                                    child:
+                                        CircularProgressIndicator.adaptive());
                               }
                               return MyStockCard(
                                 dealerStock:

@@ -48,6 +48,10 @@ Serializer<GUpdateProductDealerVars> _$gUpdateProductDealerVarsSerializer =
 Serializer<GCreateProductDealerStockRequestVars>
     _$gCreateProductDealerStockRequestVarsSerializer =
     new _$GCreateProductDealerStockRequestVarsSerializer();
+Serializer<GVehicleFilterDataVars> _$gVehicleFilterDataVarsSerializer =
+    new _$GVehicleFilterDataVarsSerializer();
+Serializer<GProductFilterDataVars> _$gProductFilterDataVarsSerializer =
+    new _$GProductFilterDataVarsSerializer();
 
 class _$GProductVariantsVarsSerializer
     implements StructuredSerializer<GProductVariantsVars> {
@@ -500,8 +504,16 @@ class _$GVehicleDealersVarsSerializer
       'where',
       serializers.serialize(object.where,
           specifiedType: const FullType(_i1.GVehicleDealerWhereInput)),
+      'skip',
+      serializers.serialize(object.skip, specifiedType: const FullType(int)),
     ];
-
+    Object? value;
+    value = object.take;
+    if (value != null) {
+      result
+        ..add('take')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -521,6 +533,14 @@ class _$GVehicleDealersVarsSerializer
           result.where.replace(serializers.deserialize(value,
                   specifiedType: const FullType(_i1.GVehicleDealerWhereInput))!
               as _i1.GVehicleDealerWhereInput);
+          break;
+        case 'take':
+          result.take = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'skip':
+          result.skip = serializers.deserialize(value,
+              specifiedType: const FullType(int))! as int;
           break;
       }
     }
@@ -889,8 +909,16 @@ class _$GProductDealersVarsSerializer
       'where',
       serializers.serialize(object.where,
           specifiedType: const FullType(_i1.GProductDealerWhereInput)),
+      'skip',
+      serializers.serialize(object.skip, specifiedType: const FullType(int)),
     ];
-
+    Object? value;
+    value = object.take;
+    if (value != null) {
+      result
+        ..add('take')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -910,6 +938,14 @@ class _$GProductDealersVarsSerializer
           result.where.replace(serializers.deserialize(value,
                   specifiedType: const FullType(_i1.GProductDealerWhereInput))!
               as _i1.GProductDealerWhereInput);
+          break;
+        case 'take':
+          result.take = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'skip':
+          result.skip = serializers.deserialize(value,
+              specifiedType: const FullType(int))! as int;
           break;
       }
     }
@@ -1067,6 +1103,56 @@ class _$GCreateProductDealerStockRequestVarsSerializer
     }
 
     return result.build();
+  }
+}
+
+class _$GVehicleFilterDataVarsSerializer
+    implements StructuredSerializer<GVehicleFilterDataVars> {
+  @override
+  final Iterable<Type> types = const [
+    GVehicleFilterDataVars,
+    _$GVehicleFilterDataVars
+  ];
+  @override
+  final String wireName = 'GVehicleFilterDataVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GVehicleFilterDataVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    return <Object?>[];
+  }
+
+  @override
+  GVehicleFilterDataVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    return new GVehicleFilterDataVarsBuilder().build();
+  }
+}
+
+class _$GProductFilterDataVarsSerializer
+    implements StructuredSerializer<GProductFilterDataVars> {
+  @override
+  final Iterable<Type> types = const [
+    GProductFilterDataVars,
+    _$GProductFilterDataVars
+  ];
+  @override
+  final String wireName = 'GProductFilterDataVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GProductFilterDataVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    return <Object?>[];
+  }
+
+  @override
+  GProductFilterDataVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    return new GProductFilterDataVarsBuilder().build();
   }
 }
 
@@ -1968,14 +2054,20 @@ class GVehicleDealersCountVarsBuilder
 class _$GVehicleDealersVars extends GVehicleDealersVars {
   @override
   final _i1.GVehicleDealerWhereInput where;
+  @override
+  final int? take;
+  @override
+  final int skip;
 
   factory _$GVehicleDealersVars(
           [void Function(GVehicleDealersVarsBuilder)? updates]) =>
       (new GVehicleDealersVarsBuilder()..update(updates))._build();
 
-  _$GVehicleDealersVars._({required this.where}) : super._() {
+  _$GVehicleDealersVars._({required this.where, this.take, required this.skip})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(
         where, r'GVehicleDealersVars', 'where');
+    BuiltValueNullFieldError.checkNotNull(skip, r'GVehicleDealersVars', 'skip');
   }
 
   @override
@@ -1990,13 +2082,18 @@ class _$GVehicleDealersVars extends GVehicleDealersVars {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GVehicleDealersVars && where == other.where;
+    return other is GVehicleDealersVars &&
+        where == other.where &&
+        take == other.take &&
+        skip == other.skip;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, take.hashCode);
+    _$hash = $jc(_$hash, skip.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -2004,7 +2101,9 @@ class _$GVehicleDealersVars extends GVehicleDealersVars {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GVehicleDealersVars')
-          ..add('where', where))
+          ..add('where', where)
+          ..add('take', take)
+          ..add('skip', skip))
         .toString();
   }
 }
@@ -2019,12 +2118,22 @@ class GVehicleDealersVarsBuilder
   set where(_i1.GVehicleDealerWhereInputBuilder? where) =>
       _$this._where = where;
 
+  int? _take;
+  int? get take => _$this._take;
+  set take(int? take) => _$this._take = take;
+
+  int? _skip;
+  int? get skip => _$this._skip;
+  set skip(int? skip) => _$this._skip = skip;
+
   GVehicleDealersVarsBuilder();
 
   GVehicleDealersVarsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _where = $v.where.toBuilder();
+      _take = $v.take;
+      _skip = $v.skip;
       _$v = null;
     }
     return this;
@@ -2047,7 +2156,12 @@ class GVehicleDealersVarsBuilder
   _$GVehicleDealersVars _build() {
     _$GVehicleDealersVars _$result;
     try {
-      _$result = _$v ?? new _$GVehicleDealersVars._(where: where.build());
+      _$result = _$v ??
+          new _$GVehicleDealersVars._(
+              where: where.build(),
+              take: take,
+              skip: BuiltValueNullFieldError.checkNotNull(
+                  skip, r'GVehicleDealersVars', 'skip'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -2788,14 +2902,20 @@ class GCreateTestDriveDealerVarsBuilder
 class _$GProductDealersVars extends GProductDealersVars {
   @override
   final _i1.GProductDealerWhereInput where;
+  @override
+  final int? take;
+  @override
+  final int skip;
 
   factory _$GProductDealersVars(
           [void Function(GProductDealersVarsBuilder)? updates]) =>
       (new GProductDealersVarsBuilder()..update(updates))._build();
 
-  _$GProductDealersVars._({required this.where}) : super._() {
+  _$GProductDealersVars._({required this.where, this.take, required this.skip})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(
         where, r'GProductDealersVars', 'where');
+    BuiltValueNullFieldError.checkNotNull(skip, r'GProductDealersVars', 'skip');
   }
 
   @override
@@ -2810,13 +2930,18 @@ class _$GProductDealersVars extends GProductDealersVars {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GProductDealersVars && where == other.where;
+    return other is GProductDealersVars &&
+        where == other.where &&
+        take == other.take &&
+        skip == other.skip;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, take.hashCode);
+    _$hash = $jc(_$hash, skip.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -2824,7 +2949,9 @@ class _$GProductDealersVars extends GProductDealersVars {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GProductDealersVars')
-          ..add('where', where))
+          ..add('where', where)
+          ..add('take', take)
+          ..add('skip', skip))
         .toString();
   }
 }
@@ -2839,12 +2966,22 @@ class GProductDealersVarsBuilder
   set where(_i1.GProductDealerWhereInputBuilder? where) =>
       _$this._where = where;
 
+  int? _take;
+  int? get take => _$this._take;
+  set take(int? take) => _$this._take = take;
+
+  int? _skip;
+  int? get skip => _$this._skip;
+  set skip(int? skip) => _$this._skip = skip;
+
   GProductDealersVarsBuilder();
 
   GProductDealersVarsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _where = $v.where.toBuilder();
+      _take = $v.take;
+      _skip = $v.skip;
       _$v = null;
     }
     return this;
@@ -2867,7 +3004,12 @@ class GProductDealersVarsBuilder
   _$GProductDealersVars _build() {
     _$GProductDealersVars _$result;
     try {
-      _$result = _$v ?? new _$GProductDealersVars._(where: where.build());
+      _$result = _$v ??
+          new _$GProductDealersVars._(
+              where: where.build(),
+              take: take,
+              skip: BuiltValueNullFieldError.checkNotNull(
+                  skip, r'GProductDealersVars', 'skip'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -3205,6 +3347,126 @@ class GCreateProductDealerStockRequestVarsBuilder
       }
       rethrow;
     }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GVehicleFilterDataVars extends GVehicleFilterDataVars {
+  factory _$GVehicleFilterDataVars(
+          [void Function(GVehicleFilterDataVarsBuilder)? updates]) =>
+      (new GVehicleFilterDataVarsBuilder()..update(updates))._build();
+
+  _$GVehicleFilterDataVars._() : super._();
+
+  @override
+  GVehicleFilterDataVars rebuild(
+          void Function(GVehicleFilterDataVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GVehicleFilterDataVarsBuilder toBuilder() =>
+      new GVehicleFilterDataVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GVehicleFilterDataVars;
+  }
+
+  @override
+  int get hashCode {
+    return 945814059;
+  }
+
+  @override
+  String toString() {
+    return newBuiltValueToStringHelper(r'GVehicleFilterDataVars').toString();
+  }
+}
+
+class GVehicleFilterDataVarsBuilder
+    implements Builder<GVehicleFilterDataVars, GVehicleFilterDataVarsBuilder> {
+  _$GVehicleFilterDataVars? _$v;
+
+  GVehicleFilterDataVarsBuilder();
+
+  @override
+  void replace(GVehicleFilterDataVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GVehicleFilterDataVars;
+  }
+
+  @override
+  void update(void Function(GVehicleFilterDataVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GVehicleFilterDataVars build() => _build();
+
+  _$GVehicleFilterDataVars _build() {
+    final _$result = _$v ?? new _$GVehicleFilterDataVars._();
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductFilterDataVars extends GProductFilterDataVars {
+  factory _$GProductFilterDataVars(
+          [void Function(GProductFilterDataVarsBuilder)? updates]) =>
+      (new GProductFilterDataVarsBuilder()..update(updates))._build();
+
+  _$GProductFilterDataVars._() : super._();
+
+  @override
+  GProductFilterDataVars rebuild(
+          void Function(GProductFilterDataVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductFilterDataVarsBuilder toBuilder() =>
+      new GProductFilterDataVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductFilterDataVars;
+  }
+
+  @override
+  int get hashCode {
+    return 952152778;
+  }
+
+  @override
+  String toString() {
+    return newBuiltValueToStringHelper(r'GProductFilterDataVars').toString();
+  }
+}
+
+class GProductFilterDataVarsBuilder
+    implements Builder<GProductFilterDataVars, GProductFilterDataVarsBuilder> {
+  _$GProductFilterDataVars? _$v;
+
+  GProductFilterDataVarsBuilder();
+
+  @override
+  void replace(GProductFilterDataVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductFilterDataVars;
+  }
+
+  @override
+  void update(void Function(GProductFilterDataVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductFilterDataVars build() => _build();
+
+  _$GProductFilterDataVars _build() {
+    final _$result = _$v ?? new _$GProductFilterDataVars._();
     replace(_$result);
     return _$result;
   }
