@@ -3481,6 +3481,7 @@ type Dealer {
   lLat: Float
   lLng: Float
   location: [Float]
+  mouApproved: Boolean
 }
 
 input DealerWhereUniqueInput {
@@ -3499,6 +3500,7 @@ input DealerWhereInput {
   addresses: DealerAddressManyRelationFilter
   lLat: FloatNullableFilter
   lLng: FloatNullableFilter
+  mouApproved: BooleanFilter
 }
 
 input DealerAddressManyRelationFilter {
@@ -3514,6 +3516,7 @@ input DealerOrderByInput {
   approved: OrderDirection
   lLat: OrderDirection
   lLng: OrderDirection
+  mouApproved: OrderDirection
 }
 
 input DealerUpdateInput {
@@ -3524,6 +3527,7 @@ input DealerUpdateInput {
   addresses: DealerAddressRelateToManyForUpdateInput
   lLat: Float
   lLng: Float
+  mouApproved: Boolean
 }
 
 input DealerAddressRelateToManyForUpdateInput {
@@ -3546,6 +3550,7 @@ input DealerCreateInput {
   addresses: DealerAddressRelateToManyForCreateInput
   lLat: Float
   lLng: Float
+  mouApproved: Boolean
 }
 
 input DealerAddressRelateToManyForCreateInput {
@@ -6065,6 +6070,7 @@ type Mutation {
   createInitialUser(data: CreateInitialUserInput!): UserAuthenticationWithPasswordSuccess!
   sendUserPasswordResetLink(phoneNumber: String!): String!
   redeemUserPasswordResetToken(phoneNumber: String!, token: String!, password: String!): RedeemUserPasswordResetTokenResult
+  sendDealerMOUApprovalOTP: JSON
   startOrder(addressId: ID!, items: [OrderItem!]!, payments: [PaymentItem!]!, couponCode: String): JSON
   verifyOrderPayment(razorpayPaymentId: String!, razorpayOrderId: String!, razorpaySignature: String): JSON
   addAmountToWallet(amount: Int!): JSON

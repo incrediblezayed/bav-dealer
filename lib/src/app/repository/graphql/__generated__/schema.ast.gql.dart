@@ -25337,6 +25337,15 @@ const Dealer = _i1.ObjectTypeDefinitionNode(
         isNonNull: false,
       ),
     ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'mouApproved'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+    ),
   ],
 );
 const DealerWhereUniqueInput = _i1.InputObjectTypeDefinitionNode(
@@ -25466,6 +25475,15 @@ const DealerWhereInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'mouApproved'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'BooleanFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const DealerAddressManyRelationFilter = _i1.InputObjectTypeDefinitionNode(
@@ -25559,6 +25577,15 @@ const DealerOrderByInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'mouApproved'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const DealerUpdateInput = _i1.InputObjectTypeDefinitionNode(
@@ -25624,6 +25651,15 @@ const DealerUpdateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'Float'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'mouApproved'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -25772,6 +25808,15 @@ const DealerCreateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'Float'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'mouApproved'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -51167,6 +51212,15 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
       ],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'RedeemUserPasswordResetTokenResult'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'sendDealerMOUApprovalOTP'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'JSON'),
         isNonNull: false,
       ),
     ),

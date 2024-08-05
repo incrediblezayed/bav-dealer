@@ -1063,6 +1063,13 @@ const Dealer = _i1.OperationDefinitionNode(
           directives: [],
           selectionSet: null,
         ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'mouApproved'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
       ]),
     )
   ]),
@@ -1139,6 +1146,21 @@ const UpdateDealer = _i1.OperationDefinitionNode(
     )
   ]),
 );
+const SendDealerMOUApprovalOTP = _i1.OperationDefinitionNode(
+  type: _i1.OperationType.mutation,
+  name: _i1.NameNode(value: 'SendDealerMOUApprovalOTP'),
+  variableDefinitions: [],
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'sendDealerMOUApprovalOTP'),
+      alias: null,
+      arguments: [],
+      directives: [],
+      selectionSet: null,
+    )
+  ]),
+);
 const document = _i1.DocumentNode(definitions: [
   CreateUser,
   CurrentUserOTP,
@@ -1152,4 +1174,5 @@ const document = _i1.DocumentNode(definitions: [
   UpdateUser,
   Dealer,
   UpdateDealer,
+  SendDealerMOUApprovalOTP,
 ]);

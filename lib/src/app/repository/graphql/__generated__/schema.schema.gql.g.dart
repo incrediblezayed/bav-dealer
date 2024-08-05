@@ -37685,6 +37685,13 @@ class _$GDealerWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GFloatNullableFilter)));
     }
+    value = object.mouApproved;
+    if (value != null) {
+      result
+        ..add('mouApproved')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GBooleanFilter)));
+    }
     return result;
   }
 
@@ -37757,6 +37764,11 @@ class _$GDealerWhereInputSerializer
           result.lLng.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GFloatNullableFilter))!
               as GFloatNullableFilter);
+          break;
+        case 'mouApproved':
+          result.mouApproved.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GBooleanFilter))!
+              as GBooleanFilter);
           break;
       }
     }
@@ -37897,6 +37909,13 @@ class _$GDealerOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.mouApproved;
+    if (value != null) {
+      result
+        ..add('mouApproved')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     return result;
   }
 
@@ -37939,6 +37958,11 @@ class _$GDealerOrderByInputSerializer
           break;
         case 'lLng':
           result.lLng = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'mouApproved':
+          result.mouApproved = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -38012,6 +38036,13 @@ class _$GDealerUpdateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(double)));
     }
+    value = object.mouApproved;
+    if (value != null) {
+      result
+        ..add('mouApproved')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -38058,6 +38089,10 @@ class _$GDealerUpdateInputSerializer
         case 'lLng':
           result.lLng = serializers.deserialize(value,
               specifiedType: const FullType(double)) as double?;
+          break;
+        case 'mouApproved':
+          result.mouApproved = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -38274,6 +38309,13 @@ class _$GDealerCreateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(double)));
     }
+    value = object.mouApproved;
+    if (value != null) {
+      result
+        ..add('mouApproved')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -38320,6 +38362,10 @@ class _$GDealerCreateInputSerializer
         case 'lLng':
           result.lLng = serializers.deserialize(value,
               specifiedType: const FullType(double)) as double?;
+          break;
+        case 'mouApproved':
+          result.mouApproved = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -117550,6 +117596,8 @@ class _$GDealerWhereInput extends GDealerWhereInput {
   final GFloatNullableFilter? lLat;
   @override
   final GFloatNullableFilter? lLng;
+  @override
+  final GBooleanFilter? mouApproved;
 
   factory _$GDealerWhereInput(
           [void Function(GDealerWhereInputBuilder)? updates]) =>
@@ -117566,7 +117614,8 @@ class _$GDealerWhereInput extends GDealerWhereInput {
       this.approved,
       this.addresses,
       this.lLat,
-      this.lLng})
+      this.lLng,
+      this.mouApproved})
       : super._();
 
   @override
@@ -117591,7 +117640,8 @@ class _$GDealerWhereInput extends GDealerWhereInput {
         approved == other.approved &&
         addresses == other.addresses &&
         lLat == other.lLat &&
-        lLng == other.lLng;
+        lLng == other.lLng &&
+        mouApproved == other.mouApproved;
   }
 
   @override
@@ -117608,6 +117658,7 @@ class _$GDealerWhereInput extends GDealerWhereInput {
     _$hash = $jc(_$hash, addresses.hashCode);
     _$hash = $jc(_$hash, lLat.hashCode);
     _$hash = $jc(_$hash, lLng.hashCode);
+    _$hash = $jc(_$hash, mouApproved.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -117625,7 +117676,8 @@ class _$GDealerWhereInput extends GDealerWhereInput {
           ..add('approved', approved)
           ..add('addresses', addresses)
           ..add('lLat', lLat)
-          ..add('lLng', lLng))
+          ..add('lLng', lLng)
+          ..add('mouApproved', mouApproved))
         .toString();
   }
 }
@@ -117691,6 +117743,12 @@ class GDealerWhereInputBuilder
       _$this._lLng ??= new GFloatNullableFilterBuilder();
   set lLng(GFloatNullableFilterBuilder? lLng) => _$this._lLng = lLng;
 
+  GBooleanFilterBuilder? _mouApproved;
+  GBooleanFilterBuilder get mouApproved =>
+      _$this._mouApproved ??= new GBooleanFilterBuilder();
+  set mouApproved(GBooleanFilterBuilder? mouApproved) =>
+      _$this._mouApproved = mouApproved;
+
   GDealerWhereInputBuilder();
 
   GDealerWhereInputBuilder get _$this {
@@ -117707,6 +117765,7 @@ class GDealerWhereInputBuilder
       _addresses = $v.addresses?.toBuilder();
       _lLat = $v.lLat?.toBuilder();
       _lLng = $v.lLng?.toBuilder();
+      _mouApproved = $v.mouApproved?.toBuilder();
       _$v = null;
     }
     return this;
@@ -117741,7 +117800,8 @@ class GDealerWhereInputBuilder
               approved: _approved?.build(),
               addresses: _addresses?.build(),
               lLat: _lLat?.build(),
-              lLng: _lLng?.build());
+              lLng: _lLng?.build(),
+              mouApproved: _mouApproved?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -117767,6 +117827,8 @@ class GDealerWhereInputBuilder
         _lLat?.build();
         _$failedField = 'lLng';
         _lLng?.build();
+        _$failedField = 'mouApproved';
+        _mouApproved?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GDealerWhereInput', _$failedField, e.toString());
@@ -117921,6 +117983,8 @@ class _$GDealerOrderByInput extends GDealerOrderByInput {
   final GOrderDirection? lLat;
   @override
   final GOrderDirection? lLng;
+  @override
+  final GOrderDirection? mouApproved;
 
   factory _$GDealerOrderByInput(
           [void Function(GDealerOrderByInputBuilder)? updates]) =>
@@ -117932,7 +117996,8 @@ class _$GDealerOrderByInput extends GDealerOrderByInput {
       this.modifiedAt,
       this.approved,
       this.lLat,
-      this.lLng})
+      this.lLng,
+      this.mouApproved})
       : super._();
 
   @override
@@ -117953,7 +118018,8 @@ class _$GDealerOrderByInput extends GDealerOrderByInput {
         modifiedAt == other.modifiedAt &&
         approved == other.approved &&
         lLat == other.lLat &&
-        lLng == other.lLng;
+        lLng == other.lLng &&
+        mouApproved == other.mouApproved;
   }
 
   @override
@@ -117965,6 +118031,7 @@ class _$GDealerOrderByInput extends GDealerOrderByInput {
     _$hash = $jc(_$hash, approved.hashCode);
     _$hash = $jc(_$hash, lLat.hashCode);
     _$hash = $jc(_$hash, lLng.hashCode);
+    _$hash = $jc(_$hash, mouApproved.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -117977,7 +118044,8 @@ class _$GDealerOrderByInput extends GDealerOrderByInput {
           ..add('modifiedAt', modifiedAt)
           ..add('approved', approved)
           ..add('lLat', lLat)
-          ..add('lLng', lLng))
+          ..add('lLng', lLng)
+          ..add('mouApproved', mouApproved))
         .toString();
   }
 }
@@ -118011,6 +118079,11 @@ class GDealerOrderByInputBuilder
   GOrderDirection? get lLng => _$this._lLng;
   set lLng(GOrderDirection? lLng) => _$this._lLng = lLng;
 
+  GOrderDirection? _mouApproved;
+  GOrderDirection? get mouApproved => _$this._mouApproved;
+  set mouApproved(GOrderDirection? mouApproved) =>
+      _$this._mouApproved = mouApproved;
+
   GDealerOrderByInputBuilder();
 
   GDealerOrderByInputBuilder get _$this {
@@ -118022,6 +118095,7 @@ class GDealerOrderByInputBuilder
       _approved = $v.approved;
       _lLat = $v.lLat;
       _lLng = $v.lLng;
+      _mouApproved = $v.mouApproved;
       _$v = null;
     }
     return this;
@@ -118049,7 +118123,8 @@ class GDealerOrderByInputBuilder
             modifiedAt: modifiedAt,
             approved: approved,
             lLat: lLat,
-            lLng: lLng);
+            lLng: lLng,
+            mouApproved: mouApproved);
     replace(_$result);
     return _$result;
   }
@@ -118070,6 +118145,8 @@ class _$GDealerUpdateInput extends GDealerUpdateInput {
   final double? lLat;
   @override
   final double? lLng;
+  @override
+  final bool? mouApproved;
 
   factory _$GDealerUpdateInput(
           [void Function(GDealerUpdateInputBuilder)? updates]) =>
@@ -118082,7 +118159,8 @@ class _$GDealerUpdateInput extends GDealerUpdateInput {
       this.approved,
       this.addresses,
       this.lLat,
-      this.lLng})
+      this.lLng,
+      this.mouApproved})
       : super._();
 
   @override
@@ -118104,7 +118182,8 @@ class _$GDealerUpdateInput extends GDealerUpdateInput {
         approved == other.approved &&
         addresses == other.addresses &&
         lLat == other.lLat &&
-        lLng == other.lLng;
+        lLng == other.lLng &&
+        mouApproved == other.mouApproved;
   }
 
   @override
@@ -118117,6 +118196,7 @@ class _$GDealerUpdateInput extends GDealerUpdateInput {
     _$hash = $jc(_$hash, addresses.hashCode);
     _$hash = $jc(_$hash, lLat.hashCode);
     _$hash = $jc(_$hash, lLng.hashCode);
+    _$hash = $jc(_$hash, mouApproved.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -118130,7 +118210,8 @@ class _$GDealerUpdateInput extends GDealerUpdateInput {
           ..add('approved', approved)
           ..add('addresses', addresses)
           ..add('lLat', lLat)
-          ..add('lLng', lLng))
+          ..add('lLng', lLng)
+          ..add('mouApproved', mouApproved))
         .toString();
   }
 }
@@ -118174,6 +118255,10 @@ class GDealerUpdateInputBuilder
   double? get lLng => _$this._lLng;
   set lLng(double? lLng) => _$this._lLng = lLng;
 
+  bool? _mouApproved;
+  bool? get mouApproved => _$this._mouApproved;
+  set mouApproved(bool? mouApproved) => _$this._mouApproved = mouApproved;
+
   GDealerUpdateInputBuilder();
 
   GDealerUpdateInputBuilder get _$this {
@@ -118186,6 +118271,7 @@ class GDealerUpdateInputBuilder
       _addresses = $v.addresses?.toBuilder();
       _lLat = $v.lLat;
       _lLng = $v.lLng;
+      _mouApproved = $v.mouApproved;
       _$v = null;
     }
     return this;
@@ -118216,7 +118302,8 @@ class GDealerUpdateInputBuilder
               approved: approved,
               addresses: _addresses?.build(),
               lLat: lLat,
-              lLng: lLng);
+              lLng: lLng,
+              mouApproved: mouApproved);
     } catch (_) {
       late String _$failedField;
       try {
@@ -118523,6 +118610,8 @@ class _$GDealerCreateInput extends GDealerCreateInput {
   final double? lLat;
   @override
   final double? lLng;
+  @override
+  final bool? mouApproved;
 
   factory _$GDealerCreateInput(
           [void Function(GDealerCreateInputBuilder)? updates]) =>
@@ -118535,7 +118624,8 @@ class _$GDealerCreateInput extends GDealerCreateInput {
       this.approved,
       this.addresses,
       this.lLat,
-      this.lLng})
+      this.lLng,
+      this.mouApproved})
       : super._();
 
   @override
@@ -118557,7 +118647,8 @@ class _$GDealerCreateInput extends GDealerCreateInput {
         approved == other.approved &&
         addresses == other.addresses &&
         lLat == other.lLat &&
-        lLng == other.lLng;
+        lLng == other.lLng &&
+        mouApproved == other.mouApproved;
   }
 
   @override
@@ -118570,6 +118661,7 @@ class _$GDealerCreateInput extends GDealerCreateInput {
     _$hash = $jc(_$hash, addresses.hashCode);
     _$hash = $jc(_$hash, lLat.hashCode);
     _$hash = $jc(_$hash, lLng.hashCode);
+    _$hash = $jc(_$hash, mouApproved.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -118583,7 +118675,8 @@ class _$GDealerCreateInput extends GDealerCreateInput {
           ..add('approved', approved)
           ..add('addresses', addresses)
           ..add('lLat', lLat)
-          ..add('lLng', lLng))
+          ..add('lLng', lLng)
+          ..add('mouApproved', mouApproved))
         .toString();
   }
 }
@@ -118627,6 +118720,10 @@ class GDealerCreateInputBuilder
   double? get lLng => _$this._lLng;
   set lLng(double? lLng) => _$this._lLng = lLng;
 
+  bool? _mouApproved;
+  bool? get mouApproved => _$this._mouApproved;
+  set mouApproved(bool? mouApproved) => _$this._mouApproved = mouApproved;
+
   GDealerCreateInputBuilder();
 
   GDealerCreateInputBuilder get _$this {
@@ -118639,6 +118736,7 @@ class GDealerCreateInputBuilder
       _addresses = $v.addresses?.toBuilder();
       _lLat = $v.lLat;
       _lLng = $v.lLng;
+      _mouApproved = $v.mouApproved;
       _$v = null;
     }
     return this;
@@ -118669,7 +118767,8 @@ class GDealerCreateInputBuilder
               approved: approved,
               addresses: _addresses?.build(),
               lLat: lLat,
-              lLng: lLng);
+              lLng: lLng,
+              mouApproved: mouApproved);
     } catch (_) {
       late String _$failedField;
       try {

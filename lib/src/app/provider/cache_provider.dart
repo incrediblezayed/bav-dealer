@@ -55,6 +55,8 @@ class CacheProvider {
 
   final String _dealerId = 'dealerId';
 
+  final String _dealer = 'dealer';
+
   ///Initialize the Hive
   ///
   ///This method initializes the Hive
@@ -182,8 +184,9 @@ class CacheProvider {
   ///Set dealer Id Method
   ///
   ///For storing the user id with the key [_userId]
-  Future<void> setDealerId(String dealerId) async {
-    await _stringBox.put(_dealerId, dealerId);
+  Future<void> setDealerId(GDealerData_dealers dealer) async {
+    await _stringBox.put(_dealerId, dealer.id);
+    await setDealer(dealer);
   }
 
   ///Get dealer Id Method
@@ -191,6 +194,20 @@ class CacheProvider {
   ///For getting the user id with the key [_userId]
   String? getDealerId() {
     return _stringBox.get(_dealerId);
+  }
+
+  Future<void> setDealer(GDealerData_dealers dealer) async {
+    await _stringBox.put(_dealer, jsonEncode(dealer.toJson()));
+  }
+
+  GDealerData_dealers? getDealer() {
+    final dealerJson = _stringBox.get(_dealer);
+    if (dealerJson != null) {
+      return GDealerData_dealers.fromJson(
+        jsonDecode(dealerJson) as Map<String, dynamic>,
+      );
+    }
+    return null;
   }
 
   ///Clear Method

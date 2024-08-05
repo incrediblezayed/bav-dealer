@@ -307,3 +307,28 @@ abstract class GUpdateDealerVars
         json,
       );
 }
+
+abstract class GSendDealerMOUApprovalOTPVars
+    implements
+        Built<GSendDealerMOUApprovalOTPVars,
+            GSendDealerMOUApprovalOTPVarsBuilder> {
+  GSendDealerMOUApprovalOTPVars._();
+
+  factory GSendDealerMOUApprovalOTPVars(
+          [void Function(GSendDealerMOUApprovalOTPVarsBuilder b) updates]) =
+      _$GSendDealerMOUApprovalOTPVars;
+
+  static Serializer<GSendDealerMOUApprovalOTPVars> get serializer =>
+      _$gSendDealerMOUApprovalOTPVarsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GSendDealerMOUApprovalOTPVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GSendDealerMOUApprovalOTPVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GSendDealerMOUApprovalOTPVars.serializer,
+        json,
+      );
+}

@@ -45,6 +45,7 @@ dependencies:
   built_value: any
   http: any
   collection: any
+  sms_autofill: ^2.4.0
 dev_dependencies:
   flutter_lints: ^4.0.0
   build_runner: ^2.4.11

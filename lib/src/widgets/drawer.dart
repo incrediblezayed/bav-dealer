@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dealerapp/src/app/UI/Profile/edit_profile_page.dart';
 import 'package:dealerapp/src/app/UI/drawer/about_us.dart';
 import 'package:dealerapp/src/app/UI/drawer/contact_us.dart';
+import 'package:dealerapp/src/app/UI/drawer/mou_page.dart';
 import 'package:dealerapp/src/app/UI/drawer/terms_conditions.dart';
 import 'package:dealerapp/src/app/UI/forgot_password/forgot_password_flow.dart';
 import 'package:dealerapp/src/app/UI/login/login_page.dart';
@@ -30,6 +31,7 @@ class AppDrawer extends ConsumerWidget {
     required String title,
     required String icon,
     required void Function() onTap,
+    Widget? iconWidget,
     double? height,
     double? width,
     bool isSvg = true,
@@ -37,17 +39,18 @@ class AppDrawer extends ConsumerWidget {
     return ListTile(
       contentPadding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 20.w),
       // contentPadding: EdgeInsets.symmetric(horizontal: 31.w, vertical: 4.h),
-      leading: isSvg
-          ? SvgPicture.asset(
-              icon,
-              // height: 17.5.h,
-              // width: 14.w,
-            )
-          : Image.asset(
-              icon,
-              height: 25,
-              width: 25,
-            ),
+      leading: iconWidget ??
+          (isSvg
+              ? SvgPicture.asset(
+                  icon,
+                  // height: 17.5.h,
+                  // width: 14.w,
+                )
+              : Image.asset(
+                  icon,
+                  height: 25,
+                  width: 25,
+                )),
       title: Text(
         title,
         style: TextStyle(
@@ -369,6 +372,14 @@ class AppDrawer extends ConsumerWidget {
                             isFeedback: false,
                           ),
                         );
+                      },
+                    ),
+                    _drawerTile(
+                      title: 'MOU',
+                      icon: '',
+                      iconWidget: const Icon(Icons.attachment_outlined),
+                      onTap: () {
+                        AppRoutes.push(page: const MouPage());
                       },
                     ),
                     _drawerTile(

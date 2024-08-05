@@ -103,9 +103,12 @@ class _ProfilePageState extends ConsumerState<EditProfile> {
                           authPro.pickImage();
                         },
                         child: CircleAvatar(
-                          radius: 15,
+                          radius: 20,
                           backgroundColor: AppTheme.primaryColor,
-                          child: SvgPicture.asset(AppImages.camera),
+                          child: SvgPicture.asset(
+                            AppImages.camera,
+                            width: 18,
+                          ),
                         ),
                       ),
                     ),

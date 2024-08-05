@@ -11046,6 +11046,7 @@ abstract class GDealerWhereInput
   GDealerAddressManyRelationFilter? get addresses;
   GFloatNullableFilter? get lLat;
   GFloatNullableFilter? get lLng;
+  GBooleanFilter? get mouApproved;
   static Serializer<GDealerWhereInput> get serializer =>
       _$gDealerWhereInputSerializer;
 
@@ -11104,6 +11105,7 @@ abstract class GDealerOrderByInput
   GOrderDirection? get approved;
   GOrderDirection? get lLat;
   GOrderDirection? get lLng;
+  GOrderDirection? get mouApproved;
   static Serializer<GDealerOrderByInput> get serializer =>
       _$gDealerOrderByInputSerializer;
 
@@ -11134,6 +11136,7 @@ abstract class GDealerUpdateInput
   GDealerAddressRelateToManyForUpdateInput? get addresses;
   double? get lLat;
   double? get lLng;
+  bool? get mouApproved;
   static Serializer<GDealerUpdateInput> get serializer =>
       _$gDealerUpdateInputSerializer;
 
@@ -11219,6 +11222,7 @@ abstract class GDealerCreateInput
   GDealerAddressRelateToManyForCreateInput? get addresses;
   double? get lLat;
   double? get lLng;
+  bool? get mouApproved;
   static Serializer<GDealerCreateInput> get serializer =>
       _$gDealerCreateInputSerializer;
 

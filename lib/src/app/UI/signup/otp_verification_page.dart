@@ -181,7 +181,7 @@ class _OTPVerificationPageState extends ConsumerState<OTPVerificationPage> {
             ),
             KButton(
               onPressed: () {
-                authPro.validateOTP(isEmail: true);
+                authPro.validateOTP(key: 'email');
                 /*  if (authPro.otpController.isEmpty) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(

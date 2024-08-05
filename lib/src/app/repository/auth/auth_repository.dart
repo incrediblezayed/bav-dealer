@@ -141,17 +141,19 @@ class AuthRepository {
             ),
           )
           .first;
-
       if (response.linkException != null ||
           (response.graphqlErrors?.isNotEmpty ?? false) == true) {
         throw Exception('Something went wrong while getting the otp');
       }
-
-      return response.data?.validateUserOTP?.isNotEmpty ?? false;
+      if (response.data?.validateUserOTP == null ||
+          response.data?.validateUserOTP == '' ||
+          response.data?.validateUserOTP == 'OTP Failed') {
+        return false;
+      }
+      return true;
     } catch (e) {
       e.log();
     }
-
     return false;
   }
 
@@ -402,6 +404,17 @@ class AuthRepository {
     } catch (e) {
       e.log();
       rethrow;
+    }
+  }
+
+  Future<bool> sendMouApprovalOTP() async {
+    try {
+      await _client.request(GSendDealerMOUApprovalOTPReq()).first;
+
+      return true;
+    } catch (e) {
+      e.log();
+      return false;
     }
   }
 }

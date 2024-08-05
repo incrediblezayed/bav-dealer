@@ -4,6 +4,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
+import 'package:built_value/json_object.dart' as _i4;
 import 'package:built_value/serializer.dart';
 import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema.gql.dart'
     as _i2;
@@ -1167,6 +1168,7 @@ abstract class GDealerData_dealers
   String get G__typename;
   String get id;
   bool? get approved;
+  bool? get mouApproved;
   static Serializer<GDealerData_dealers> get serializer =>
       _$gDealerDataDealersSerializer;
 
@@ -1241,6 +1243,37 @@ abstract class GUpdateDealerData_updateDealer
   static GUpdateDealerData_updateDealer? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GUpdateDealerData_updateDealer.serializer,
+        json,
+      );
+}
+
+abstract class GSendDealerMOUApprovalOTPData
+    implements
+        Built<GSendDealerMOUApprovalOTPData,
+            GSendDealerMOUApprovalOTPDataBuilder> {
+  GSendDealerMOUApprovalOTPData._();
+
+  factory GSendDealerMOUApprovalOTPData(
+          [void Function(GSendDealerMOUApprovalOTPDataBuilder b) updates]) =
+      _$GSendDealerMOUApprovalOTPData;
+
+  static void _initializeBuilder(GSendDealerMOUApprovalOTPDataBuilder b) =>
+      b..G__typename = 'Mutation';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  _i4.JsonObject? get sendDealerMOUApprovalOTP;
+  static Serializer<GSendDealerMOUApprovalOTPData> get serializer =>
+      _$gSendDealerMOUApprovalOTPDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GSendDealerMOUApprovalOTPData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GSendDealerMOUApprovalOTPData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GSendDealerMOUApprovalOTPData.serializer,
         json,
       );
 }

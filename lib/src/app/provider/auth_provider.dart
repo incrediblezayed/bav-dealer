@@ -75,6 +75,10 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
+  Future<GDealerData_dealers?> getDealerByUserId() async {
+    return _authRepository.getDealerByUser();
+  }
+
   final AuthRepository _authRepository = AuthRepository();
 
   Future<void> createDealer() async {
@@ -250,7 +254,7 @@ class AuthProvider extends ChangeNotifier {
       final dealer = await getDealerId();
       if (dealer != null) {
         if (dealer.approved ?? false) {
-          await cacheProvider.setDealerId(dealer.id);
+          await cacheProvider.setDealerId(dealer);
           clear();
           await AppRoutes.pushAndRemoveUntil(page: const HomePage());
         } else {
@@ -272,23 +276,36 @@ class AuthProvider extends ChangeNotifier {
   ///Validate OTP Method
   ///
   ///It is used to Validate the user
-  Future<void> validateOTP({required bool isEmail}) async {
+  Future<bool> validateOTP({required String key, String? otp}) async {
     try {
-      final key = isEmail ? 'emailVerification' : 'phoneNumberVerification';
-
+      final otpKey = switch (key) {
+        'email;' => 'emailVerification',
+        'phone' => 'phoneNumberVerification',
+        'mou' => 'dealerMOUApproval',
+        _ => throw Exception('Invalid key'),
+      };
       final response = await _authRepository.validateOTP(
-        key,
-        otpController.map((e) => e.text).join(),
+        otpKey,
+        otp ?? otpController.map((e) => e.text).join(),
       );
+      if (key == 'mou') {
+        return response;
+      }
       if (response) {
         await createDealer();
       } else {
         throw Exception('Something went wrong');
       }
+      return response;
     } catch (e) {
       e.log();
       await AppRoutes.showErrorSnackbar(message: e.toString());
+      return false;
     }
+  }
+
+  Future<bool> sendMouApprovalOTP() async {
+    return await _authRepository.sendMouApprovalOTP();
   }
 
   PageController pageController = PageController();

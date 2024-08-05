@@ -980,3 +980,86 @@ abstract class GUpdateDealerReq
         json,
       );
 }
+
+abstract class GSendDealerMOUApprovalOTPReq
+    implements
+        Built<GSendDealerMOUApprovalOTPReq,
+            GSendDealerMOUApprovalOTPReqBuilder>,
+        _i1.OperationRequest<_i2.GSendDealerMOUApprovalOTPData,
+            _i3.GSendDealerMOUApprovalOTPVars> {
+  GSendDealerMOUApprovalOTPReq._();
+
+  factory GSendDealerMOUApprovalOTPReq(
+          [void Function(GSendDealerMOUApprovalOTPReqBuilder b) updates]) =
+      _$GSendDealerMOUApprovalOTPReq;
+
+  static void _initializeBuilder(GSendDealerMOUApprovalOTPReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'SendDealerMOUApprovalOTP',
+    )
+    ..executeOnListen = true;
+
+  @override
+  _i3.GSendDealerMOUApprovalOTPVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GSendDealerMOUApprovalOTPData? Function(
+    _i2.GSendDealerMOUApprovalOTPData?,
+    _i2.GSendDealerMOUApprovalOTPData?,
+  )? get updateResult;
+  @override
+  _i2.GSendDealerMOUApprovalOTPData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
+  _i2.GSendDealerMOUApprovalOTPData? parseData(Map<String, dynamic> json) =>
+      _i2.GSendDealerMOUApprovalOTPData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(_i2.GSendDealerMOUApprovalOTPData data) =>
+      data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GSendDealerMOUApprovalOTPData,
+      _i3.GSendDealerMOUApprovalOTPVars> transformOperation(
+          _i4.Operation Function(_i4.Operation) transform) =>
+      this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GSendDealerMOUApprovalOTPReq> get serializer =>
+      _$gSendDealerMOUApprovalOTPReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GSendDealerMOUApprovalOTPReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GSendDealerMOUApprovalOTPReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GSendDealerMOUApprovalOTPReq.serializer,
+        json,
+      );
+}

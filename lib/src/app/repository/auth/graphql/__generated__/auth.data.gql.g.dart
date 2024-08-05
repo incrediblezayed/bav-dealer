@@ -95,6 +95,9 @@ Serializer<GUpdateDealerData> _$gUpdateDealerDataSerializer =
 Serializer<GUpdateDealerData_updateDealer>
     _$gUpdateDealerDataUpdateDealerSerializer =
     new _$GUpdateDealerData_updateDealerSerializer();
+Serializer<GSendDealerMOUApprovalOTPData>
+    _$gSendDealerMOUApprovalOTPDataSerializer =
+    new _$GSendDealerMOUApprovalOTPDataSerializer();
 
 class _$GCreateUserDataSerializer
     implements StructuredSerializer<GCreateUserData> {
@@ -2533,6 +2536,13 @@ class _$GDealerData_dealersSerializer
         ..add(
             serializers.serialize(value, specifiedType: const FullType(bool)));
     }
+    value = object.mouApproved;
+    if (value != null) {
+      result
+        ..add('mouApproved')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -2558,6 +2568,10 @@ class _$GDealerData_dealersSerializer
           break;
         case 'approved':
           result.approved = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'mouApproved':
+          result.mouApproved = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
           break;
       }
@@ -2702,6 +2716,63 @@ class _$GUpdateDealerData_updateDealerSerializer
                   specifiedType: const FullType(
                       BuiltList, const [const FullType.nullable(double)]))!
               as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GSendDealerMOUApprovalOTPDataSerializer
+    implements StructuredSerializer<GSendDealerMOUApprovalOTPData> {
+  @override
+  final Iterable<Type> types = const [
+    GSendDealerMOUApprovalOTPData,
+    _$GSendDealerMOUApprovalOTPData
+  ];
+  @override
+  final String wireName = 'GSendDealerMOUApprovalOTPData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GSendDealerMOUApprovalOTPData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.sendDealerMOUApprovalOTP;
+    if (value != null) {
+      result
+        ..add('sendDealerMOUApprovalOTP')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i4.JsonObject)));
+    }
+    return result;
+  }
+
+  @override
+  GSendDealerMOUApprovalOTPData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GSendDealerMOUApprovalOTPDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'sendDealerMOUApprovalOTP':
+          result.sendDealerMOUApprovalOTP = serializers.deserialize(value,
+              specifiedType: const FullType(_i4.JsonObject)) as _i4.JsonObject?;
           break;
       }
     }
@@ -7485,13 +7556,18 @@ class _$GDealerData_dealers extends GDealerData_dealers {
   final String id;
   @override
   final bool? approved;
+  @override
+  final bool? mouApproved;
 
   factory _$GDealerData_dealers(
           [void Function(GDealerData_dealersBuilder)? updates]) =>
       (new GDealerData_dealersBuilder()..update(updates))._build();
 
   _$GDealerData_dealers._(
-      {required this.G__typename, required this.id, this.approved})
+      {required this.G__typename,
+      required this.id,
+      this.approved,
+      this.mouApproved})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GDealerData_dealers', 'G__typename');
@@ -7513,7 +7589,8 @@ class _$GDealerData_dealers extends GDealerData_dealers {
     return other is GDealerData_dealers &&
         G__typename == other.G__typename &&
         id == other.id &&
-        approved == other.approved;
+        approved == other.approved &&
+        mouApproved == other.mouApproved;
   }
 
   @override
@@ -7522,6 +7599,7 @@ class _$GDealerData_dealers extends GDealerData_dealers {
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, approved.hashCode);
+    _$hash = $jc(_$hash, mouApproved.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -7531,7 +7609,8 @@ class _$GDealerData_dealers extends GDealerData_dealers {
     return (newBuiltValueToStringHelper(r'GDealerData_dealers')
           ..add('G__typename', G__typename)
           ..add('id', id)
-          ..add('approved', approved))
+          ..add('approved', approved)
+          ..add('mouApproved', mouApproved))
         .toString();
   }
 }
@@ -7552,6 +7631,10 @@ class GDealerData_dealersBuilder
   bool? get approved => _$this._approved;
   set approved(bool? approved) => _$this._approved = approved;
 
+  bool? _mouApproved;
+  bool? get mouApproved => _$this._mouApproved;
+  set mouApproved(bool? mouApproved) => _$this._mouApproved = mouApproved;
+
   GDealerData_dealersBuilder() {
     GDealerData_dealers._initializeBuilder(this);
   }
@@ -7562,6 +7645,7 @@ class GDealerData_dealersBuilder
       _G__typename = $v.G__typename;
       _id = $v.id;
       _approved = $v.approved;
+      _mouApproved = $v.mouApproved;
       _$v = null;
     }
     return this;
@@ -7588,7 +7672,8 @@ class GDealerData_dealersBuilder
                 G__typename, r'GDealerData_dealers', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'GDealerData_dealers', 'id'),
-            approved: approved);
+            approved: approved,
+            mouApproved: mouApproved);
     replace(_$result);
     return _$result;
   }
@@ -7864,6 +7949,113 @@ class GUpdateDealerData_updateDealerBuilder
       }
       rethrow;
     }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GSendDealerMOUApprovalOTPData extends GSendDealerMOUApprovalOTPData {
+  @override
+  final String G__typename;
+  @override
+  final _i4.JsonObject? sendDealerMOUApprovalOTP;
+
+  factory _$GSendDealerMOUApprovalOTPData(
+          [void Function(GSendDealerMOUApprovalOTPDataBuilder)? updates]) =>
+      (new GSendDealerMOUApprovalOTPDataBuilder()..update(updates))._build();
+
+  _$GSendDealerMOUApprovalOTPData._(
+      {required this.G__typename, this.sendDealerMOUApprovalOTP})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GSendDealerMOUApprovalOTPData', 'G__typename');
+  }
+
+  @override
+  GSendDealerMOUApprovalOTPData rebuild(
+          void Function(GSendDealerMOUApprovalOTPDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GSendDealerMOUApprovalOTPDataBuilder toBuilder() =>
+      new GSendDealerMOUApprovalOTPDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GSendDealerMOUApprovalOTPData &&
+        G__typename == other.G__typename &&
+        sendDealerMOUApprovalOTP == other.sendDealerMOUApprovalOTP;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, sendDealerMOUApprovalOTP.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GSendDealerMOUApprovalOTPData')
+          ..add('G__typename', G__typename)
+          ..add('sendDealerMOUApprovalOTP', sendDealerMOUApprovalOTP))
+        .toString();
+  }
+}
+
+class GSendDealerMOUApprovalOTPDataBuilder
+    implements
+        Builder<GSendDealerMOUApprovalOTPData,
+            GSendDealerMOUApprovalOTPDataBuilder> {
+  _$GSendDealerMOUApprovalOTPData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  _i4.JsonObject? _sendDealerMOUApprovalOTP;
+  _i4.JsonObject? get sendDealerMOUApprovalOTP =>
+      _$this._sendDealerMOUApprovalOTP;
+  set sendDealerMOUApprovalOTP(_i4.JsonObject? sendDealerMOUApprovalOTP) =>
+      _$this._sendDealerMOUApprovalOTP = sendDealerMOUApprovalOTP;
+
+  GSendDealerMOUApprovalOTPDataBuilder() {
+    GSendDealerMOUApprovalOTPData._initializeBuilder(this);
+  }
+
+  GSendDealerMOUApprovalOTPDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _sendDealerMOUApprovalOTP = $v.sendDealerMOUApprovalOTP;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GSendDealerMOUApprovalOTPData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GSendDealerMOUApprovalOTPData;
+  }
+
+  @override
+  void update(void Function(GSendDealerMOUApprovalOTPDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GSendDealerMOUApprovalOTPData build() => _build();
+
+  _$GSendDealerMOUApprovalOTPData _build() {
+    final _$result = _$v ??
+        new _$GSendDealerMOUApprovalOTPData._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GSendDealerMOUApprovalOTPData', 'G__typename'),
+            sendDealerMOUApprovalOTP: sendDealerMOUApprovalOTP);
     replace(_$result);
     return _$result;
   }

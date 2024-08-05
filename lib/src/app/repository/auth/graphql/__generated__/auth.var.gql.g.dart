@@ -32,6 +32,9 @@ Serializer<GUpdateUserVars> _$gUpdateUserVarsSerializer =
 Serializer<GDealerVars> _$gDealerVarsSerializer = new _$GDealerVarsSerializer();
 Serializer<GUpdateDealerVars> _$gUpdateDealerVarsSerializer =
     new _$GUpdateDealerVarsSerializer();
+Serializer<GSendDealerMOUApprovalOTPVars>
+    _$gSendDealerMOUApprovalOTPVarsSerializer =
+    new _$GSendDealerMOUApprovalOTPVarsSerializer();
 
 class _$GCreateUserVarsSerializer
     implements StructuredSerializer<GCreateUserVars> {
@@ -608,6 +611,31 @@ class _$GUpdateDealerVarsSerializer
     }
 
     return result.build();
+  }
+}
+
+class _$GSendDealerMOUApprovalOTPVarsSerializer
+    implements StructuredSerializer<GSendDealerMOUApprovalOTPVars> {
+  @override
+  final Iterable<Type> types = const [
+    GSendDealerMOUApprovalOTPVars,
+    _$GSendDealerMOUApprovalOTPVars
+  ];
+  @override
+  final String wireName = 'GSendDealerMOUApprovalOTPVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GSendDealerMOUApprovalOTPVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    return <Object?>[];
+  }
+
+  @override
+  GSendDealerMOUApprovalOTPVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    return new GSendDealerMOUApprovalOTPVarsBuilder().build();
   }
 }
 
@@ -1821,6 +1849,69 @@ class GUpdateDealerVarsBuilder
       }
       rethrow;
     }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GSendDealerMOUApprovalOTPVars extends GSendDealerMOUApprovalOTPVars {
+  factory _$GSendDealerMOUApprovalOTPVars(
+          [void Function(GSendDealerMOUApprovalOTPVarsBuilder)? updates]) =>
+      (new GSendDealerMOUApprovalOTPVarsBuilder()..update(updates))._build();
+
+  _$GSendDealerMOUApprovalOTPVars._() : super._();
+
+  @override
+  GSendDealerMOUApprovalOTPVars rebuild(
+          void Function(GSendDealerMOUApprovalOTPVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GSendDealerMOUApprovalOTPVarsBuilder toBuilder() =>
+      new GSendDealerMOUApprovalOTPVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GSendDealerMOUApprovalOTPVars;
+  }
+
+  @override
+  int get hashCode {
+    return 943360699;
+  }
+
+  @override
+  String toString() {
+    return newBuiltValueToStringHelper(r'GSendDealerMOUApprovalOTPVars')
+        .toString();
+  }
+}
+
+class GSendDealerMOUApprovalOTPVarsBuilder
+    implements
+        Builder<GSendDealerMOUApprovalOTPVars,
+            GSendDealerMOUApprovalOTPVarsBuilder> {
+  _$GSendDealerMOUApprovalOTPVars? _$v;
+
+  GSendDealerMOUApprovalOTPVarsBuilder();
+
+  @override
+  void replace(GSendDealerMOUApprovalOTPVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GSendDealerMOUApprovalOTPVars;
+  }
+
+  @override
+  void update(void Function(GSendDealerMOUApprovalOTPVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GSendDealerMOUApprovalOTPVars build() => _build();
+
+  _$GSendDealerMOUApprovalOTPVars _build() {
+    final _$result = _$v ?? new _$GSendDealerMOUApprovalOTPVars._();
     replace(_$result);
     return _$result;
   }

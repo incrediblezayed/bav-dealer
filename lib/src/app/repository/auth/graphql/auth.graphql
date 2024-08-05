@@ -159,6 +159,7 @@ query Dealer($where: DealerWhereInput!) {
   dealers(where: $where) {
     id
     approved
+    mouApproved
   }
 }
 
@@ -169,4 +170,8 @@ mutation UpdateDealer($where: DealerWhereUniqueInput!, $data: DealerUpdateInput!
     lLng
     location
   }
+}
+
+mutation SendDealerMOUApprovalOTP {
+  sendDealerMOUApprovalOTP
 }
