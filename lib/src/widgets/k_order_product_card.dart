@@ -61,7 +61,7 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'ORDER ID #${widget.productPurchaseOrders.id}' ?? '',
+                        'ORDER ID #${widget.productPurchaseOrders.id}',
                         style: theme.labelLarge!.copyWith(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w700,
@@ -141,8 +141,7 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                                 children: [
                                   Text(
                                     widget.productPurchaseOrders.price
-                                            .toString() ??
-                                        '',
+                                        .toString(),
                                     style: theme.labelLarge!.copyWith(
                                       fontWeight: FontWeight.w600,
                                       color: AppTheme.primaryColor,
