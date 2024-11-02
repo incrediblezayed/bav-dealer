@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:dealerapp/src/app/model/variant_details.model.dart';
+import 'package:dealerapp/src/app/model/product_details_model.dart';
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart';
 import 'package:dealerapp/src/app/repository/orders/orders_repository.dart';
 import 'package:dealerapp/src/utils/app_routes.dart';
@@ -39,22 +39,22 @@ class OrdersProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  VariantDetailsModel? _selectedVehicle;
+  ProductVariantModel? _selectedVehicle;
 
   ///
-  VariantDetailsModel? get selectedVehicle => _selectedVehicle;
+  ProductVariantModel? get selectedVehicle => _selectedVehicle;
 
   ///
-  set selectedVehicle(VariantDetailsModel? data) {
+  set selectedVehicle(ProductVariantModel? data) {
     _selectedVehicle = data;
     notifyListeners();
   }
 
-  VariantDetailsModel? _selectedVariants;
+  ProductVariantModel? _selectedVariants;
 
   ///
-  VariantDetailsModel? get selectedVariants => _selectedVariants;
-  set selectedVariants(VariantDetailsModel? data) {
+  ProductVariantModel? get selectedVariants => _selectedVariants;
+  set selectedVariants(ProductVariantModel? data) {
     _selectedVariants = data;
     notifyListeners();
   }

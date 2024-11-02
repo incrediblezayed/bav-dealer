@@ -65,7 +65,6 @@ abstract class GProductVariantsData_productVariants
   BuiltList<GProductVariantsData_productVariants_specifications>?
       get specifications;
   int? get totalPrice;
-  BuiltList<GProductVariantsData_productVariants_images>? get images;
   BuiltList<GProductVariantsData_productVariants_gallery>? get gallery;
   GProductVariantsData_productVariants_product? get product;
   BuiltList<GProductVariantsData_productVariants_tags>? get tags;
@@ -321,77 +320,6 @@ abstract class GProductVariantsData_productVariants_specifications_category
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GProductVariantsData_productVariants_specifications_category.serializer,
-        json,
-      );
-}
-
-abstract class GProductVariantsData_productVariants_images
-    implements
-        Built<GProductVariantsData_productVariants_images,
-            GProductVariantsData_productVariants_imagesBuilder> {
-  GProductVariantsData_productVariants_images._();
-
-  factory GProductVariantsData_productVariants_images(
-      [void Function(GProductVariantsData_productVariants_imagesBuilder b)
-          updates]) = _$GProductVariantsData_productVariants_images;
-
-  static void _initializeBuilder(
-          GProductVariantsData_productVariants_imagesBuilder b) =>
-      b..G__typename = 'ProductImage';
-
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  GProductVariantsData_productVariants_images_image? get image;
-  String get id;
-  String? get name;
-  static Serializer<GProductVariantsData_productVariants_images>
-      get serializer => _$gProductVariantsDataProductVariantsImagesSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GProductVariantsData_productVariants_images.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GProductVariantsData_productVariants_images? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GProductVariantsData_productVariants_images.serializer,
-        json,
-      );
-}
-
-abstract class GProductVariantsData_productVariants_images_image
-    implements
-        Built<GProductVariantsData_productVariants_images_image,
-            GProductVariantsData_productVariants_images_imageBuilder> {
-  GProductVariantsData_productVariants_images_image._();
-
-  factory GProductVariantsData_productVariants_images_image(
-      [void Function(GProductVariantsData_productVariants_images_imageBuilder b)
-          updates]) = _$GProductVariantsData_productVariants_images_image;
-
-  static void _initializeBuilder(
-          GProductVariantsData_productVariants_images_imageBuilder b) =>
-      b..G__typename = 'ImageFieldOutput';
-
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  String get url;
-  int get width;
-  String get id;
-  static Serializer<GProductVariantsData_productVariants_images_image>
-      get serializer =>
-          _$gProductVariantsDataProductVariantsImagesImageSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GProductVariantsData_productVariants_images_image.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GProductVariantsData_productVariants_images_image? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GProductVariantsData_productVariants_images_image.serializer,
         json,
       );
 }
@@ -873,7 +801,6 @@ abstract class GProductVariantData_productVariant
   BuiltList<GProductVariantData_productVariant_specifications>?
       get specifications;
   int? get totalPrice;
-  BuiltList<GProductVariantData_productVariant_images>? get images;
   BuiltList<GProductVariantData_productVariant_gallery>? get gallery;
   GProductVariantData_productVariant_product? get product;
   BuiltList<GProductVariantData_productVariant_tags>? get tags;
@@ -1126,77 +1053,6 @@ abstract class GProductVariantData_productVariant_specifications_category
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GProductVariantData_productVariant_specifications_category.serializer,
-        json,
-      );
-}
-
-abstract class GProductVariantData_productVariant_images
-    implements
-        Built<GProductVariantData_productVariant_images,
-            GProductVariantData_productVariant_imagesBuilder> {
-  GProductVariantData_productVariant_images._();
-
-  factory GProductVariantData_productVariant_images(
-      [void Function(GProductVariantData_productVariant_imagesBuilder b)
-          updates]) = _$GProductVariantData_productVariant_images;
-
-  static void _initializeBuilder(
-          GProductVariantData_productVariant_imagesBuilder b) =>
-      b..G__typename = 'ProductImage';
-
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  GProductVariantData_productVariant_images_image? get image;
-  String get id;
-  String? get name;
-  static Serializer<GProductVariantData_productVariant_images> get serializer =>
-      _$gProductVariantDataProductVariantImagesSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GProductVariantData_productVariant_images.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GProductVariantData_productVariant_images? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GProductVariantData_productVariant_images.serializer,
-        json,
-      );
-}
-
-abstract class GProductVariantData_productVariant_images_image
-    implements
-        Built<GProductVariantData_productVariant_images_image,
-            GProductVariantData_productVariant_images_imageBuilder> {
-  GProductVariantData_productVariant_images_image._();
-
-  factory GProductVariantData_productVariant_images_image(
-      [void Function(GProductVariantData_productVariant_images_imageBuilder b)
-          updates]) = _$GProductVariantData_productVariant_images_image;
-
-  static void _initializeBuilder(
-          GProductVariantData_productVariant_images_imageBuilder b) =>
-      b..G__typename = 'ImageFieldOutput';
-
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  String get url;
-  int get width;
-  String get id;
-  static Serializer<GProductVariantData_productVariant_images_image>
-      get serializer =>
-          _$gProductVariantDataProductVariantImagesImageSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GProductVariantData_productVariant_images_image.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GProductVariantData_productVariant_images_image? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GProductVariantData_productVariant_images_image.serializer,
         json,
       );
 }
@@ -1814,7 +1670,7 @@ abstract class GVehicleVariantsData_vehicleVariants_colors
   String get G__typename;
   String get id;
   String? get code;
-  BuiltList<GVehicleVariantsData_vehicleVariants_colors_images>? get images;
+  BuiltList<GVehicleVariantsData_vehicleVariants_colors_gallery>? get gallery;
   String? get name;
   static Serializer<GVehicleVariantsData_vehicleVariants_colors>
       get serializer => _$gVehicleVariantsDataVehicleVariantsColorsSerializer;
@@ -1832,75 +1688,39 @@ abstract class GVehicleVariantsData_vehicleVariants_colors
       );
 }
 
-abstract class GVehicleVariantsData_vehicleVariants_colors_images
+abstract class GVehicleVariantsData_vehicleVariants_colors_gallery
     implements
-        Built<GVehicleVariantsData_vehicleVariants_colors_images,
-            GVehicleVariantsData_vehicleVariants_colors_imagesBuilder> {
-  GVehicleVariantsData_vehicleVariants_colors_images._();
+        Built<GVehicleVariantsData_vehicleVariants_colors_gallery,
+            GVehicleVariantsData_vehicleVariants_colors_galleryBuilder> {
+  GVehicleVariantsData_vehicleVariants_colors_gallery._();
 
-  factory GVehicleVariantsData_vehicleVariants_colors_images(
+  factory GVehicleVariantsData_vehicleVariants_colors_gallery(
       [void Function(
-              GVehicleVariantsData_vehicleVariants_colors_imagesBuilder b)
-          updates]) = _$GVehicleVariantsData_vehicleVariants_colors_images;
+              GVehicleVariantsData_vehicleVariants_colors_galleryBuilder b)
+          updates]) = _$GVehicleVariantsData_vehicleVariants_colors_gallery;
 
   static void _initializeBuilder(
-          GVehicleVariantsData_vehicleVariants_colors_imagesBuilder b) =>
-      b..G__typename = 'VehicleImage';
+          GVehicleVariantsData_vehicleVariants_colors_galleryBuilder b) =>
+      b..G__typename = 'VehicleGalleryItem';
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  String? get name;
-  GVehicleVariantsData_vehicleVariants_colors_images_image? get image;
-  static Serializer<GVehicleVariantsData_vehicleVariants_colors_images>
+  _i2.JsonObject? get file;
+  String? get type;
+  int? get index;
+  static Serializer<GVehicleVariantsData_vehicleVariants_colors_gallery>
       get serializer =>
-          _$gVehicleVariantsDataVehicleVariantsColorsImagesSerializer;
+          _$gVehicleVariantsDataVehicleVariantsColorsGallerySerializer;
 
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GVehicleVariantsData_vehicleVariants_colors_images.serializer,
+        GVehicleVariantsData_vehicleVariants_colors_gallery.serializer,
         this,
       ) as Map<String, dynamic>);
 
-  static GVehicleVariantsData_vehicleVariants_colors_images? fromJson(
+  static GVehicleVariantsData_vehicleVariants_colors_gallery? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        GVehicleVariantsData_vehicleVariants_colors_images.serializer,
-        json,
-      );
-}
-
-abstract class GVehicleVariantsData_vehicleVariants_colors_images_image
-    implements
-        Built<GVehicleVariantsData_vehicleVariants_colors_images_image,
-            GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder> {
-  GVehicleVariantsData_vehicleVariants_colors_images_image._();
-
-  factory GVehicleVariantsData_vehicleVariants_colors_images_image(
-      [void Function(
-              GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder b)
-          updates]) = _$GVehicleVariantsData_vehicleVariants_colors_images_image;
-
-  static void _initializeBuilder(
-          GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder b) =>
-      b..G__typename = 'ImageFieldOutput';
-
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  String get url;
-  int get width;
-  String get id;
-  static Serializer<GVehicleVariantsData_vehicleVariants_colors_images_image>
-      get serializer =>
-          _$gVehicleVariantsDataVehicleVariantsColorsImagesImageSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GVehicleVariantsData_vehicleVariants_colors_images_image.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GVehicleVariantsData_vehicleVariants_colors_images_image? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GVehicleVariantsData_vehicleVariants_colors_images_image.serializer,
+        GVehicleVariantsData_vehicleVariants_colors_gallery.serializer,
         json,
       );
 }
@@ -2235,7 +2055,8 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleColor
   String get id;
   String? get name;
   String? get code;
-  BuiltList<GVehicleDealersData_vehicleDealers_vehicleColor_images>? get images;
+  BuiltList<GVehicleDealersData_vehicleDealers_vehicleColor_gallery>?
+      get gallery;
   static Serializer<GVehicleDealersData_vehicleDealers_vehicleColor>
       get serializer =>
           _$gVehicleDealersDataVehicleDealersVehicleColorSerializer;
@@ -2253,77 +2074,39 @@ abstract class GVehicleDealersData_vehicleDealers_vehicleColor
       );
 }
 
-abstract class GVehicleDealersData_vehicleDealers_vehicleColor_images
+abstract class GVehicleDealersData_vehicleDealers_vehicleColor_gallery
     implements
-        Built<GVehicleDealersData_vehicleDealers_vehicleColor_images,
-            GVehicleDealersData_vehicleDealers_vehicleColor_imagesBuilder> {
-  GVehicleDealersData_vehicleDealers_vehicleColor_images._();
+        Built<GVehicleDealersData_vehicleDealers_vehicleColor_gallery,
+            GVehicleDealersData_vehicleDealers_vehicleColor_galleryBuilder> {
+  GVehicleDealersData_vehicleDealers_vehicleColor_gallery._();
 
-  factory GVehicleDealersData_vehicleDealers_vehicleColor_images(
+  factory GVehicleDealersData_vehicleDealers_vehicleColor_gallery(
       [void Function(
-              GVehicleDealersData_vehicleDealers_vehicleColor_imagesBuilder b)
-          updates]) = _$GVehicleDealersData_vehicleDealers_vehicleColor_images;
+              GVehicleDealersData_vehicleDealers_vehicleColor_galleryBuilder b)
+          updates]) = _$GVehicleDealersData_vehicleDealers_vehicleColor_gallery;
 
   static void _initializeBuilder(
-          GVehicleDealersData_vehicleDealers_vehicleColor_imagesBuilder b) =>
-      b..G__typename = 'VehicleImage';
+          GVehicleDealersData_vehicleDealers_vehicleColor_galleryBuilder b) =>
+      b..G__typename = 'VehicleGalleryItem';
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  String get id;
-  GVehicleDealersData_vehicleDealers_vehicleColor_images_image? get image;
-  static Serializer<GVehicleDealersData_vehicleDealers_vehicleColor_images>
+  _i2.JsonObject? get file;
+  String? get type;
+  int? get index;
+  static Serializer<GVehicleDealersData_vehicleDealers_vehicleColor_gallery>
       get serializer =>
-          _$gVehicleDealersDataVehicleDealersVehicleColorImagesSerializer;
+          _$gVehicleDealersDataVehicleDealersVehicleColorGallerySerializer;
 
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GVehicleDealersData_vehicleDealers_vehicleColor_images.serializer,
+        GVehicleDealersData_vehicleDealers_vehicleColor_gallery.serializer,
         this,
       ) as Map<String, dynamic>);
 
-  static GVehicleDealersData_vehicleDealers_vehicleColor_images? fromJson(
+  static GVehicleDealersData_vehicleDealers_vehicleColor_gallery? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        GVehicleDealersData_vehicleDealers_vehicleColor_images.serializer,
-        json,
-      );
-}
-
-abstract class GVehicleDealersData_vehicleDealers_vehicleColor_images_image
-    implements
-        Built<GVehicleDealersData_vehicleDealers_vehicleColor_images_image,
-            GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder> {
-  GVehicleDealersData_vehicleDealers_vehicleColor_images_image._();
-
-  factory GVehicleDealersData_vehicleDealers_vehicleColor_images_image(
-          [void Function(
-                  GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder
-                      b)
-              updates]) =
-      _$GVehicleDealersData_vehicleDealers_vehicleColor_images_image;
-
-  static void _initializeBuilder(
-          GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder
-              b) =>
-      b..G__typename = 'ImageFieldOutput';
-
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  String get url;
-  static Serializer<
-          GVehicleDealersData_vehicleDealers_vehicleColor_images_image>
-      get serializer =>
-          _$gVehicleDealersDataVehicleDealersVehicleColorImagesImageSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GVehicleDealersData_vehicleDealers_vehicleColor_images_image.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GVehicleDealersData_vehicleDealers_vehicleColor_images_image? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GVehicleDealersData_vehicleDealers_vehicleColor_images_image.serializer,
+        GVehicleDealersData_vehicleDealers_vehicleColor_gallery.serializer,
         json,
       );
 }
@@ -2772,8 +2555,8 @@ abstract class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor
   String get id;
   String? get name;
   String? get code;
-  BuiltList<GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images>?
-      get images;
+  BuiltList<GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery>?
+      get gallery;
   static Serializer<GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor>
       get serializer =>
           _$gUpdateVehicleDealerDataUpdateVehicleDealerVehicleColorSerializer;
@@ -2791,84 +2574,43 @@ abstract class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor
       );
 }
 
-abstract class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images
+abstract class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery
     implements
-        Built<GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images,
-            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder> {
-  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images._();
+        Built<GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery,
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_galleryBuilder> {
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery._();
 
-  factory GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images(
+  factory GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery(
           [void Function(
-                  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder
+                  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_galleryBuilder
                       b)
               updates]) =
-      _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images;
+      _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery;
 
   static void _initializeBuilder(
-          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_galleryBuilder
               b) =>
-      b..G__typename = 'VehicleImage';
+      b..G__typename = 'VehicleGalleryItem';
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  String get id;
-  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image?
-      get image;
+  _i2.JsonObject? get file;
+  String? get type;
+  int? get index;
   static Serializer<
-          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images>
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery>
       get serializer =>
-          _$gUpdateVehicleDealerDataUpdateVehicleDealerVehicleColorImagesSerializer;
+          _$gUpdateVehicleDealerDataUpdateVehicleDealerVehicleColorGallerySerializer;
 
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images
+        GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery
             .serializer,
         this,
       ) as Map<String, dynamic>);
 
-  static GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images?
+  static GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
-            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images
-                .serializer,
-            json,
-          );
-}
-
-abstract class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image
-    implements
-        Built<
-            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image,
-            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder> {
-  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image._();
-
-  factory GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image(
-          [void Function(
-                  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder
-                      b)
-              updates]) =
-      _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image;
-
-  static void _initializeBuilder(
-          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder
-              b) =>
-      b..G__typename = 'ImageFieldOutput';
-
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  String get url;
-  static Serializer<
-          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image>
-      get serializer =>
-          _$gUpdateVehicleDealerDataUpdateVehicleDealerVehicleColorImagesImageSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image
-            .serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image?
-      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
-            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery
                 .serializer,
             json,
           );
@@ -3262,8 +3004,8 @@ abstract class GTestDriveDealersData_testDriveDealers_vehicleColor
   String get id;
   String? get name;
   String? get code;
-  BuiltList<GTestDriveDealersData_testDriveDealers_vehicleColor_images>?
-      get images;
+  BuiltList<GTestDriveDealersData_testDriveDealers_vehicleColor_gallery>?
+      get gallery;
   static Serializer<GTestDriveDealersData_testDriveDealers_vehicleColor>
       get serializer =>
           _$gTestDriveDealersDataTestDriveDealersVehicleColorSerializer;
@@ -3281,82 +3023,43 @@ abstract class GTestDriveDealersData_testDriveDealers_vehicleColor
       );
 }
 
-abstract class GTestDriveDealersData_testDriveDealers_vehicleColor_images
+abstract class GTestDriveDealersData_testDriveDealers_vehicleColor_gallery
     implements
-        Built<GTestDriveDealersData_testDriveDealers_vehicleColor_images,
-            GTestDriveDealersData_testDriveDealers_vehicleColor_imagesBuilder> {
-  GTestDriveDealersData_testDriveDealers_vehicleColor_images._();
+        Built<GTestDriveDealersData_testDriveDealers_vehicleColor_gallery,
+            GTestDriveDealersData_testDriveDealers_vehicleColor_galleryBuilder> {
+  GTestDriveDealersData_testDriveDealers_vehicleColor_gallery._();
 
-  factory GTestDriveDealersData_testDriveDealers_vehicleColor_images(
+  factory GTestDriveDealersData_testDriveDealers_vehicleColor_gallery(
       [void Function(
-              GTestDriveDealersData_testDriveDealers_vehicleColor_imagesBuilder
+              GTestDriveDealersData_testDriveDealers_vehicleColor_galleryBuilder
                   b)
-          updates]) = _$GTestDriveDealersData_testDriveDealers_vehicleColor_images;
+          updates]) = _$GTestDriveDealersData_testDriveDealers_vehicleColor_gallery;
 
   static void _initializeBuilder(
-          GTestDriveDealersData_testDriveDealers_vehicleColor_imagesBuilder
+          GTestDriveDealersData_testDriveDealers_vehicleColor_galleryBuilder
               b) =>
-      b..G__typename = 'VehicleImage';
+      b..G__typename = 'VehicleGalleryItem';
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  String get id;
-  GTestDriveDealersData_testDriveDealers_vehicleColor_images_image? get image;
-  static Serializer<GTestDriveDealersData_testDriveDealers_vehicleColor_images>
+  _i2.JsonObject? get file;
+  String? get type;
+  int? get index;
+  static Serializer<GTestDriveDealersData_testDriveDealers_vehicleColor_gallery>
       get serializer =>
-          _$gTestDriveDealersDataTestDriveDealersVehicleColorImagesSerializer;
+          _$gTestDriveDealersDataTestDriveDealersVehicleColorGallerySerializer;
 
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GTestDriveDealersData_testDriveDealers_vehicleColor_images.serializer,
+        GTestDriveDealersData_testDriveDealers_vehicleColor_gallery.serializer,
         this,
       ) as Map<String, dynamic>);
 
-  static GTestDriveDealersData_testDriveDealers_vehicleColor_images? fromJson(
+  static GTestDriveDealersData_testDriveDealers_vehicleColor_gallery? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        GTestDriveDealersData_testDriveDealers_vehicleColor_images.serializer,
+        GTestDriveDealersData_testDriveDealers_vehicleColor_gallery.serializer,
         json,
       );
-}
-
-abstract class GTestDriveDealersData_testDriveDealers_vehicleColor_images_image
-    implements
-        Built<GTestDriveDealersData_testDriveDealers_vehicleColor_images_image,
-            GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder> {
-  GTestDriveDealersData_testDriveDealers_vehicleColor_images_image._();
-
-  factory GTestDriveDealersData_testDriveDealers_vehicleColor_images_image(
-          [void Function(
-                  GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder
-                      b)
-              updates]) =
-      _$GTestDriveDealersData_testDriveDealers_vehicleColor_images_image;
-
-  static void _initializeBuilder(
-          GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder
-              b) =>
-      b..G__typename = 'ImageFieldOutput';
-
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  String get url;
-  static Serializer<
-          GTestDriveDealersData_testDriveDealers_vehicleColor_images_image>
-      get serializer =>
-          _$gTestDriveDealersDataTestDriveDealersVehicleColorImagesImageSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GTestDriveDealersData_testDriveDealers_vehicleColor_images_image
-            .serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GTestDriveDealersData_testDriveDealers_vehicleColor_images_image?
-      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
-            GTestDriveDealersData_testDriveDealers_vehicleColor_images_image
-                .serializer,
-            json,
-          );
 }
 
 abstract class GTestDriveDealersData_testDriveDealers_vehicleVariant
@@ -3576,8 +3279,8 @@ abstract class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor
   String? get name;
   String? get code;
   BuiltList<
-          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images>?
-      get images;
+          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery>?
+      get gallery;
   static Serializer<
           GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor>
       get serializer =>
@@ -3597,85 +3300,44 @@ abstract class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor
           );
 }
 
-abstract class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images
+abstract class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery
     implements
         Built<
-            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images,
-            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesBuilder> {
-  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images._();
+            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery,
+            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_galleryBuilder> {
+  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery._();
 
-  factory GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images(
+  factory GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery(
           [void Function(
-                  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesBuilder
+                  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_galleryBuilder
                       b)
               updates]) =
-      _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images;
+      _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery;
 
   static void _initializeBuilder(
-          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesBuilder
+          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_galleryBuilder
               b) =>
-      b..G__typename = 'VehicleImage';
+      b..G__typename = 'VehicleGalleryItem';
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  String get id;
-  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image?
-      get image;
+  _i2.JsonObject? get file;
+  String? get type;
+  int? get index;
   static Serializer<
-          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images>
+          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery>
       get serializer =>
-          _$gUpdateTestDriveDealerDataUpdateTestDriveDealerVehicleColorImagesSerializer;
+          _$gUpdateTestDriveDealerDataUpdateTestDriveDealerVehicleColorGallerySerializer;
 
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images
+        GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery
             .serializer,
         this,
       ) as Map<String, dynamic>);
 
-  static GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images?
+  static GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery?
       fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
-            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images
-                .serializer,
-            json,
-          );
-}
-
-abstract class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image
-    implements
-        Built<
-            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image,
-            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder> {
-  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image._();
-
-  factory GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image(
-          [void Function(
-                  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder
-                      b)
-              updates]) =
-      _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image;
-
-  static void _initializeBuilder(
-          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder
-              b) =>
-      b..G__typename = 'ImageFieldOutput';
-
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  String get url;
-  static Serializer<
-          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image>
-      get serializer =>
-          _$gUpdateTestDriveDealerDataUpdateTestDriveDealerVehicleColorImagesImageSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image
-            .serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image?
-      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
-            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image
+            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery
                 .serializer,
             json,
           );
@@ -3962,9 +3624,9 @@ abstract class GProductDealersData_productDealers_productVariant
   String get id;
   String? get name;
   _i3.GDateTime? get modifiedAt;
-  BuiltList<GProductDealersData_productDealers_productVariant_images>?
-      get images;
   GProductDealersData_productDealers_productVariant_product? get product;
+  BuiltList<GProductDealersData_productDealers_productVariant_gallery>?
+      get gallery;
   static Serializer<GProductDealersData_productDealers_productVariant>
       get serializer =>
           _$gProductDealersDataProductDealersProductVariantSerializer;
@@ -3980,82 +3642,6 @@ abstract class GProductDealersData_productDealers_productVariant
         GProductDealersData_productDealers_productVariant.serializer,
         json,
       );
-}
-
-abstract class GProductDealersData_productDealers_productVariant_images
-    implements
-        Built<GProductDealersData_productDealers_productVariant_images,
-            GProductDealersData_productDealers_productVariant_imagesBuilder> {
-  GProductDealersData_productDealers_productVariant_images._();
-
-  factory GProductDealersData_productDealers_productVariant_images(
-      [void Function(
-              GProductDealersData_productDealers_productVariant_imagesBuilder b)
-          updates]) = _$GProductDealersData_productDealers_productVariant_images;
-
-  static void _initializeBuilder(
-          GProductDealersData_productDealers_productVariant_imagesBuilder b) =>
-      b..G__typename = 'ProductImage';
-
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  String get id;
-  GProductDealersData_productDealers_productVariant_images_image? get image;
-  static Serializer<GProductDealersData_productDealers_productVariant_images>
-      get serializer =>
-          _$gProductDealersDataProductDealersProductVariantImagesSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GProductDealersData_productDealers_productVariant_images.serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GProductDealersData_productDealers_productVariant_images? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GProductDealersData_productDealers_productVariant_images.serializer,
-        json,
-      );
-}
-
-abstract class GProductDealersData_productDealers_productVariant_images_image
-    implements
-        Built<GProductDealersData_productDealers_productVariant_images_image,
-            GProductDealersData_productDealers_productVariant_images_imageBuilder> {
-  GProductDealersData_productDealers_productVariant_images_image._();
-
-  factory GProductDealersData_productDealers_productVariant_images_image(
-          [void Function(
-                  GProductDealersData_productDealers_productVariant_images_imageBuilder
-                      b)
-              updates]) =
-      _$GProductDealersData_productDealers_productVariant_images_image;
-
-  static void _initializeBuilder(
-          GProductDealersData_productDealers_productVariant_images_imageBuilder
-              b) =>
-      b..G__typename = 'ImageFieldOutput';
-
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  String get url;
-  static Serializer<
-          GProductDealersData_productDealers_productVariant_images_image>
-      get serializer =>
-          _$gProductDealersDataProductDealersProductVariantImagesImageSerializer;
-
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GProductDealersData_productDealers_productVariant_images_image
-            .serializer,
-        this,
-      ) as Map<String, dynamic>);
-
-  static GProductDealersData_productDealers_productVariant_images_image?
-      fromJson(Map<String, dynamic> json) => _i1.serializers.deserializeWith(
-            GProductDealersData_productDealers_productVariant_images_image
-                .serializer,
-            json,
-          );
 }
 
 abstract class GProductDealersData_productDealers_productVariant_product
@@ -4136,6 +3722,44 @@ abstract class GProductDealersData_productDealers_productVariant_product_brand
                 .serializer,
             json,
           );
+}
+
+abstract class GProductDealersData_productDealers_productVariant_gallery
+    implements
+        Built<GProductDealersData_productDealers_productVariant_gallery,
+            GProductDealersData_productDealers_productVariant_galleryBuilder> {
+  GProductDealersData_productDealers_productVariant_gallery._();
+
+  factory GProductDealersData_productDealers_productVariant_gallery(
+      [void Function(
+              GProductDealersData_productDealers_productVariant_galleryBuilder
+                  b)
+          updates]) = _$GProductDealersData_productDealers_productVariant_gallery;
+
+  static void _initializeBuilder(
+          GProductDealersData_productDealers_productVariant_galleryBuilder b) =>
+      b..G__typename = 'ProductGalleryItem';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  _i2.JsonObject? get file;
+  String? get type;
+  int? get index;
+  static Serializer<GProductDealersData_productDealers_productVariant_gallery>
+      get serializer =>
+          _$gProductDealersDataProductDealersProductVariantGallerySerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GProductDealersData_productDealers_productVariant_gallery.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GProductDealersData_productDealers_productVariant_gallery? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GProductDealersData_productDealers_productVariant_gallery.serializer,
+        json,
+      );
 }
 
 abstract class GProductDealersData_productDealers_prices

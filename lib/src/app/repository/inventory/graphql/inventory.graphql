@@ -29,7 +29,7 @@ query ProductVariants(
         description
         unit
       }
-      typgallery
+      type
       intValue
       stringValue
       category {
@@ -39,13 +39,6 @@ query ProductVariants(
       }
     }
     totalPrice
-    images {
-      image {
-        url
-        width
-        id
-      }
-    }
     gallery {
       file
       type
@@ -97,13 +90,6 @@ query ProductVariants(
       id
       title
       description
-    }
-    images {
-      id
-      name
-      image {
-        url
-      }
     }
   }
 }
@@ -150,13 +136,6 @@ query ProductVariant(
       }
     }
     totalPrice
-          images {
-        image {
-          url
-          width
-          id
-        }
-      }
     gallery {
       file
       type
@@ -209,13 +188,6 @@ query ProductVariant(
       title
       description
     }
-    images {
-      id
-      name
-      image {
-        url
-      }
-    }
   }
 }
 
@@ -244,20 +216,12 @@ query VehicleVariants(
     colors {
       id
       code
-      images {
-        name
-        image {
-          url
-          width
-          id
-        }
+      gallery {
+        file
+        type
+        index
       }
       name
-    }
-    gallery {
-      file
-      type
-      index
     }
     name
     default
@@ -295,18 +259,21 @@ query VehicleDealersCount($where: VehicleDealerWhereInput!) {
   vehicleDealersCount(where: $where)
 }
 
-query VehicleDealers($where: VehicleDealerWhereInput!, $take: Int, $skip: Int!) {
+query VehicleDealers(
+  $where: VehicleDealerWhereInput!
+  $take: Int
+  $skip: Int!
+) {
   vehicleDealersCount(where: $where)
   vehicleDealers(where: $where, take: $take, skip: $skip) {
     vehicleColor {
       id
       name
       code
-      images {
-        id
-        image {
-          url
-        }
+      gallery {
+        file
+        type
+        index
       }
     }
     vehicleVariant {
@@ -368,11 +335,10 @@ mutation UpdateVehicleDealer(
       id
       name
       code
-      images {
-        id
-        image {
-          url
-        }
+      gallery {
+        file
+        type
+        index
       }
     }
     vehicleVariant {
@@ -424,11 +390,10 @@ query TestDriveDealers(
       id
       name
       code
-      images {
-        id
-        image {
-          url
-        }
+      gallery {
+        file
+        type
+        index
       }
     }
     vehicleVariant {
@@ -460,11 +425,10 @@ mutation UpdateTestDriveDealer(
       id
       name
       code
-      images {
-        id
-        image {
-          url
-        }
+      gallery {
+        file
+        type
+        index
       }
     }
     vehicleVariant {
@@ -492,19 +456,17 @@ mutation CreateTestDriveDealer($data: TestDriveDealerCreateInput!) {
   }
 }
 
-query ProductDealers($where: ProductDealerWhereInput!, $take: Int, $skip: Int!) {
+query ProductDealers(
+  $where: ProductDealerWhereInput!
+  $take: Int
+  $skip: Int!
+) {
   productDealersCount(where: $where)
   productDealers(where: $where, take: $take, skip: $skip) {
     productVariant {
       id
       name
       modifiedAt
-      images {
-        id
-        image {
-          url
-        }
-      }
       product {
         brand {
           id
@@ -513,6 +475,11 @@ query ProductDealers($where: ProductDealerWhereInput!, $take: Int, $skip: Int!) 
         name
         id
         description
+      }
+      gallery {
+        file
+        type
+        index
       }
     }
     id

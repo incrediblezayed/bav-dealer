@@ -9,7 +9,7 @@ import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:multi_dropdown/multiselect_dropdown.dart';
+import 'package:multi_dropdown/multi_dropdown.dart';
 
 class QuantityScreen extends ConsumerStatefulWidget {
   const QuantityScreen({
@@ -42,13 +42,13 @@ class QuantityScreen extends ConsumerStatefulWidget {
 class _QuantityScreenState extends ConsumerState<QuantityScreen> {
   List<PriceModel> prices = [];
   List<TextEditingController> controller = [];
-  late List<ValueItem<String>> selectedGuarantees = [];
+  late List<String> selectedGuarantees = [];
 
   String get variantId => widget.variantId;
 
   String get colorId => widget.colorId;
   final List<GGuaranteesData_guarantees> _guaranteeDetails = [];
-  List<ValueItem<String>> guarantees = [];
+  List<DropdownItem<String>> guarantees = [];
 
   @override
   void initState() {
@@ -108,13 +108,14 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
     if (initial || guarantees.isEmpty) {
       guarantees = guaranteesPro.guarantees
           .map(
-            (e) => ValueItem(label: e.name!, value: e.id),
+            (e) => DropdownItem(label: e.name!, value: e.id),
           )
           .toList();
       selectedGuarantees = guarantees
           .where(
             (element) => widget.guarantees.any((e) => e.id == element.value),
           )
+          .map((e) => e.value)
           .toList();
       initial = false;
     }
@@ -131,19 +132,30 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                 SizedBox(
                   height: 10.h,
                 ),
-                MultiSelectDropDown<String>(
-                  onOptionRemoved: (index, option) {
+                MultiDropdown<String>(
+                  /*  onOptionRemoved: (index, option) {
                     selectedGuarantees.remove(option);
                     setState(() {});
-                  },
-                  borderColor: Colors.black.withOpacity(.6),
+                  }, */
+                  /* borderColor: ,
                   borderRadius: 4,
-                  selectedOptions: selectedGuarantees,
-                  optionTextStyle: const TextStyle(color: Colors.black),
-                  onOptionSelected: (selectedOptions) {
-                    selectedGuarantees = selectedOptions;
+                  selectedOptions: selectedGuarantees, */
+                  dropdownDecoration: const DropdownDecoration(),
+                  fieldDecoration: FieldDecoration(
+                    border: OutlineInputBorder(
+                        borderSide:
+                            BorderSide(color: Colors.black.withOpacity(.3))),
+                    borderRadius: 4,
+                  ),
+                  dropdownItemDecoration: const DropdownItemDecoration(
+                    textColor: Colors.black,
+                  ),
+                  onSelectionChange: (selectedOptions) {
+                    setState(() {
+                      selectedGuarantees = selectedOptions;
+                    });
                   },
-                  options: guarantees,
+                  items: guarantees,
                 ),
                 SizedBox(
                   height: 10.h,
@@ -194,9 +206,7 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                                   .updateProductDealer(
                                 index: widget.index!,
                                 id: widget.vehicleDealerId!,
-                                guarantees: selectedGuarantees
-                                    .map((e) => e.value!)
-                                    .toList(),
+                                guarantees: selectedGuarantees.toList(),
                                 prices: prices,
                               )
                                   .then((value) {
@@ -209,9 +219,7 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                                   .updateVehicleDealer(
                                 index: widget.index!,
                                 id: widget.vehicleDealerId!,
-                                guarantees: selectedGuarantees
-                                    .map((e) => e.value!)
-                                    .toList(),
+                                guarantees: selectedGuarantees.toList(),
                                 prices: prices,
                               )
                                   .then((value) {
@@ -224,9 +232,7 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                             if (widget.product) {
                               inventoryPro
                                   .createProductStockRequest(
-                                guarantees: selectedGuarantees
-                                    .map((e) => e.value!)
-                                    .toList(),
+                                guarantees: selectedGuarantees.toList(),
                                 variantId: variantId,
                                 prices: prices,
                               )
@@ -238,9 +244,7 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                             } else {
                               inventoryPro
                                   .createStockRequest(
-                                guarantees: selectedGuarantees
-                                    .map((e) => e.value!)
-                                    .toList(),
+                                guarantees: selectedGuarantees.toList(),
                                 variantId: variantId,
                                 colorId: colorId,
                                 prices: prices,

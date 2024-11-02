@@ -1,5 +1,5 @@
 import 'package:collection/collection.dart';
-import 'package:dealerapp/src/app/model/variant_details.model.dart';
+import 'package:dealerapp/src/app/model/product_details_model.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
@@ -14,14 +14,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class KInventoryBikeCard extends ConsumerStatefulWidget {
   const KInventoryBikeCard({required this.variant, super.key});
 
-  final VariantDetailsModel variant;
+  final ProductVariantModel variant;
 
   @override
   ConsumerState<KInventoryBikeCard> createState() => _KInventoryBikeCardState();
 }
 
 class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
-  VariantDetailsModel get variants => widget.variant;
+  ProductVariantModel get variants => widget.variant;
   bool isEdit = false;
   int selectedQuantity = 1;
   void updateQuantity(int? quantity) {
@@ -30,9 +30,9 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
     });
   }
 
-  late VehicleColor? testRideColor = variants.colors.first;
+  late VehicleColor? testRideColor = variants.sortedColors.first;
 
-  late VehicleColor? selectedColor = variants.colors
+  late VehicleColor? selectedColor = variants.sortedColors
       .where(
         (p0) => !(ref.read(inventoryProvider).vehicleDealers ?? [])
             .map((e) => e.vehicleColor?.id)
@@ -87,13 +87,13 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                variants.vehicle.name,
+                variants.vehicle?.name ?? '',
                 style: theme.headlineLarge!
                     .copyWith(fontSize: 24.sp, fontWeight: FontWeight.w500),
               ),
               SizedBox(height: 10.h),
               Text(
-                variants.vehicle.brand.name,
+                variants.vehicle?.brand?.name ?? '',
                 style: theme.labelMedium!.copyWith(
                   color: Colors.black.withOpacity(.5),
                   fontWeight: FontWeight.w500,
@@ -114,7 +114,9 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(6.r),
                           child: KCachedNWImage(
-                            selectedColor?.images.firstOrNull?.image?.url ?? '',
+                            selectedColor
+                                    ?.gallery.firstOrNull?.file?.file?.url ??
+                                '',
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -194,7 +196,7 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                               runSpacing: 10,
                               spacing: 10,
                               children: [
-                                ...variants.colors
+                                ...variants.sortedColors
                                     .where(
                                       (p0) =>
                                           !(inventoryPro.vehicleDealers ?? [])
@@ -251,6 +253,7 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
               ),
               KButton(
                 onPressed: () async {
+                  widget.variant.id.log(name: 'variant id');
                   if (selectedColor == null) {
                     return;
                   }
@@ -266,7 +269,7 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                     ),
                   );
                   setState(() {
-                    selectedColor = variants.colors
+                    selectedColor = variants.sortedColors
                         .where(
                           (p0) =>
                               !(ref.read(inventoryProvider).vehicleDealers ??
@@ -314,8 +317,8 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                                     });
                                   },
                                   value: testRideColor,
-                                  items:
-                                      variants.colors.map((VehicleColor item) {
+                                  items: variants.sortedColors
+                                      .map((VehicleColor item) {
                                     return DropdownMenuItem<VehicleColor>(
                                       value: item,
                                       child: Row(

@@ -286,43 +286,6 @@ const ProductVariants = _i1.OperationDefinitionNode(
           selectionSet: null,
         ),
         _i1.FieldNode(
-          name: _i1.NameNode(value: 'images'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: _i1.SelectionSetNode(selections: [
-            _i1.FieldNode(
-              name: _i1.NameNode(value: 'image'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: _i1.SelectionSetNode(selections: [
-                _i1.FieldNode(
-                  name: _i1.NameNode(value: 'url'),
-                  alias: null,
-                  arguments: [],
-                  directives: [],
-                  selectionSet: null,
-                ),
-                _i1.FieldNode(
-                  name: _i1.NameNode(value: 'width'),
-                  alias: null,
-                  arguments: [],
-                  directives: [],
-                  selectionSet: null,
-                ),
-                _i1.FieldNode(
-                  name: _i1.NameNode(value: 'id'),
-                  alias: null,
-                  arguments: [],
-                  directives: [],
-                  selectionSet: null,
-                ),
-              ]),
-            )
-          ]),
-        ),
-        _i1.FieldNode(
           name: _i1.NameNode(value: 'gallery'),
           alias: null,
           arguments: [],
@@ -623,43 +586,6 @@ const ProductVariants = _i1.OperationDefinitionNode(
               arguments: [],
               directives: [],
               selectionSet: null,
-            ),
-          ]),
-        ),
-        _i1.FieldNode(
-          name: _i1.NameNode(value: 'images'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: _i1.SelectionSetNode(selections: [
-            _i1.FieldNode(
-              name: _i1.NameNode(value: 'id'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null,
-            ),
-            _i1.FieldNode(
-              name: _i1.NameNode(value: 'name'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null,
-            ),
-            _i1.FieldNode(
-              name: _i1.NameNode(value: 'image'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: _i1.SelectionSetNode(selections: [
-                _i1.FieldNode(
-                  name: _i1.NameNode(value: 'url'),
-                  alias: null,
-                  arguments: [],
-                  directives: [],
-                  selectionSet: null,
-                )
-              ]),
             ),
           ]),
         ),
@@ -937,43 +863,6 @@ const ProductVariant = _i1.OperationDefinitionNode(
           selectionSet: null,
         ),
         _i1.FieldNode(
-          name: _i1.NameNode(value: 'images'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: _i1.SelectionSetNode(selections: [
-            _i1.FieldNode(
-              name: _i1.NameNode(value: 'image'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: _i1.SelectionSetNode(selections: [
-                _i1.FieldNode(
-                  name: _i1.NameNode(value: 'url'),
-                  alias: null,
-                  arguments: [],
-                  directives: [],
-                  selectionSet: null,
-                ),
-                _i1.FieldNode(
-                  name: _i1.NameNode(value: 'width'),
-                  alias: null,
-                  arguments: [],
-                  directives: [],
-                  selectionSet: null,
-                ),
-                _i1.FieldNode(
-                  name: _i1.NameNode(value: 'id'),
-                  alias: null,
-                  arguments: [],
-                  directives: [],
-                  selectionSet: null,
-                ),
-              ]),
-            )
-          ]),
-        ),
-        _i1.FieldNode(
           name: _i1.NameNode(value: 'gallery'),
           alias: null,
           arguments: [],
@@ -1277,43 +1166,6 @@ const ProductVariant = _i1.OperationDefinitionNode(
             ),
           ]),
         ),
-        _i1.FieldNode(
-          name: _i1.NameNode(value: 'images'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: _i1.SelectionSetNode(selections: [
-            _i1.FieldNode(
-              name: _i1.NameNode(value: 'id'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null,
-            ),
-            _i1.FieldNode(
-              name: _i1.NameNode(value: 'name'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null,
-            ),
-            _i1.FieldNode(
-              name: _i1.NameNode(value: 'image'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: _i1.SelectionSetNode(selections: [
-                _i1.FieldNode(
-                  name: _i1.NameNode(value: 'url'),
-                  alias: null,
-                  arguments: [],
-                  directives: [],
-                  selectionSet: null,
-                )
-              ]),
-            ),
-          ]),
-        ),
       ]),
     )
   ]),
@@ -1487,46 +1339,31 @@ const VehicleVariants = _i1.OperationDefinitionNode(
               selectionSet: null,
             ),
             _i1.FieldNode(
-              name: _i1.NameNode(value: 'images'),
+              name: _i1.NameNode(value: 'gallery'),
               alias: null,
               arguments: [],
               directives: [],
               selectionSet: _i1.SelectionSetNode(selections: [
                 _i1.FieldNode(
-                  name: _i1.NameNode(value: 'name'),
+                  name: _i1.NameNode(value: 'file'),
                   alias: null,
                   arguments: [],
                   directives: [],
                   selectionSet: null,
                 ),
                 _i1.FieldNode(
-                  name: _i1.NameNode(value: 'image'),
+                  name: _i1.NameNode(value: 'type'),
                   alias: null,
                   arguments: [],
                   directives: [],
-                  selectionSet: _i1.SelectionSetNode(selections: [
-                    _i1.FieldNode(
-                      name: _i1.NameNode(value: 'url'),
-                      alias: null,
-                      arguments: [],
-                      directives: [],
-                      selectionSet: null,
-                    ),
-                    _i1.FieldNode(
-                      name: _i1.NameNode(value: 'width'),
-                      alias: null,
-                      arguments: [],
-                      directives: [],
-                      selectionSet: null,
-                    ),
-                    _i1.FieldNode(
-                      name: _i1.NameNode(value: 'id'),
-                      alias: null,
-                      arguments: [],
-                      directives: [],
-                      selectionSet: null,
-                    ),
-                  ]),
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'index'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
                 ),
               ]),
             ),
@@ -1835,32 +1672,31 @@ const VehicleDealers = _i1.OperationDefinitionNode(
               selectionSet: null,
             ),
             _i1.FieldNode(
-              name: _i1.NameNode(value: 'images'),
+              name: _i1.NameNode(value: 'gallery'),
               alias: null,
               arguments: [],
               directives: [],
               selectionSet: _i1.SelectionSetNode(selections: [
                 _i1.FieldNode(
-                  name: _i1.NameNode(value: 'id'),
+                  name: _i1.NameNode(value: 'file'),
                   alias: null,
                   arguments: [],
                   directives: [],
                   selectionSet: null,
                 ),
                 _i1.FieldNode(
-                  name: _i1.NameNode(value: 'image'),
+                  name: _i1.NameNode(value: 'type'),
                   alias: null,
                   arguments: [],
                   directives: [],
-                  selectionSet: _i1.SelectionSetNode(selections: [
-                    _i1.FieldNode(
-                      name: _i1.NameNode(value: 'url'),
-                      alias: null,
-                      arguments: [],
-                      directives: [],
-                      selectionSet: null,
-                    )
-                  ]),
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'index'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
                 ),
               ]),
             ),
@@ -2201,32 +2037,31 @@ const UpdateVehicleDealer = _i1.OperationDefinitionNode(
               selectionSet: null,
             ),
             _i1.FieldNode(
-              name: _i1.NameNode(value: 'images'),
+              name: _i1.NameNode(value: 'gallery'),
               alias: null,
               arguments: [],
               directives: [],
               selectionSet: _i1.SelectionSetNode(selections: [
                 _i1.FieldNode(
-                  name: _i1.NameNode(value: 'id'),
+                  name: _i1.NameNode(value: 'file'),
                   alias: null,
                   arguments: [],
                   directives: [],
                   selectionSet: null,
                 ),
                 _i1.FieldNode(
-                  name: _i1.NameNode(value: 'image'),
+                  name: _i1.NameNode(value: 'type'),
                   alias: null,
                   arguments: [],
                   directives: [],
-                  selectionSet: _i1.SelectionSetNode(selections: [
-                    _i1.FieldNode(
-                      name: _i1.NameNode(value: 'url'),
-                      alias: null,
-                      arguments: [],
-                      directives: [],
-                      selectionSet: null,
-                    )
-                  ]),
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'index'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
                 ),
               ]),
             ),
@@ -2532,32 +2367,31 @@ const TestDriveDealers = _i1.OperationDefinitionNode(
               selectionSet: null,
             ),
             _i1.FieldNode(
-              name: _i1.NameNode(value: 'images'),
+              name: _i1.NameNode(value: 'gallery'),
               alias: null,
               arguments: [],
               directives: [],
               selectionSet: _i1.SelectionSetNode(selections: [
                 _i1.FieldNode(
-                  name: _i1.NameNode(value: 'id'),
+                  name: _i1.NameNode(value: 'file'),
                   alias: null,
                   arguments: [],
                   directives: [],
                   selectionSet: null,
                 ),
                 _i1.FieldNode(
-                  name: _i1.NameNode(value: 'image'),
+                  name: _i1.NameNode(value: 'type'),
                   alias: null,
                   arguments: [],
                   directives: [],
-                  selectionSet: _i1.SelectionSetNode(selections: [
-                    _i1.FieldNode(
-                      name: _i1.NameNode(value: 'url'),
-                      alias: null,
-                      arguments: [],
-                      directives: [],
-                      selectionSet: null,
-                    )
-                  ]),
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'index'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
                 ),
               ]),
             ),
@@ -2741,32 +2575,31 @@ const UpdateTestDriveDealer = _i1.OperationDefinitionNode(
               selectionSet: null,
             ),
             _i1.FieldNode(
-              name: _i1.NameNode(value: 'images'),
+              name: _i1.NameNode(value: 'gallery'),
               alias: null,
               arguments: [],
               directives: [],
               selectionSet: _i1.SelectionSetNode(selections: [
                 _i1.FieldNode(
-                  name: _i1.NameNode(value: 'id'),
+                  name: _i1.NameNode(value: 'file'),
                   alias: null,
                   arguments: [],
                   directives: [],
                   selectionSet: null,
                 ),
                 _i1.FieldNode(
-                  name: _i1.NameNode(value: 'image'),
+                  name: _i1.NameNode(value: 'type'),
                   alias: null,
                   arguments: [],
                   directives: [],
-                  selectionSet: _i1.SelectionSetNode(selections: [
-                    _i1.FieldNode(
-                      name: _i1.NameNode(value: 'url'),
-                      alias: null,
-                      arguments: [],
-                      directives: [],
-                      selectionSet: null,
-                    )
-                  ]),
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'index'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
                 ),
               ]),
             ),
@@ -3001,36 +2834,6 @@ const ProductDealers = _i1.OperationDefinitionNode(
               selectionSet: null,
             ),
             _i1.FieldNode(
-              name: _i1.NameNode(value: 'images'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: _i1.SelectionSetNode(selections: [
-                _i1.FieldNode(
-                  name: _i1.NameNode(value: 'id'),
-                  alias: null,
-                  arguments: [],
-                  directives: [],
-                  selectionSet: null,
-                ),
-                _i1.FieldNode(
-                  name: _i1.NameNode(value: 'image'),
-                  alias: null,
-                  arguments: [],
-                  directives: [],
-                  selectionSet: _i1.SelectionSetNode(selections: [
-                    _i1.FieldNode(
-                      name: _i1.NameNode(value: 'url'),
-                      alias: null,
-                      arguments: [],
-                      directives: [],
-                      selectionSet: null,
-                    )
-                  ]),
-                ),
-              ]),
-            ),
-            _i1.FieldNode(
               name: _i1.NameNode(value: 'product'),
               alias: null,
               arguments: [],
@@ -3074,6 +2877,35 @@ const ProductDealers = _i1.OperationDefinitionNode(
                 ),
                 _i1.FieldNode(
                   name: _i1.NameNode(value: 'description'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ]),
+            ),
+            _i1.FieldNode(
+              name: _i1.NameNode(value: 'gallery'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: _i1.SelectionSetNode(selections: [
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'file'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'type'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'index'),
                   alias: null,
                   arguments: [],
                   directives: [],
