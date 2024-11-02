@@ -30,12 +30,6 @@ Serializer<
 Serializer<GProductVariantsData_productVariants_specifications_category>
     _$gProductVariantsDataProductVariantsSpecificationsCategorySerializer =
     new _$GProductVariantsData_productVariants_specifications_categorySerializer();
-Serializer<GProductVariantsData_productVariants_images>
-    _$gProductVariantsDataProductVariantsImagesSerializer =
-    new _$GProductVariantsData_productVariants_imagesSerializer();
-Serializer<GProductVariantsData_productVariants_images_image>
-    _$gProductVariantsDataProductVariantsImagesImageSerializer =
-    new _$GProductVariantsData_productVariants_images_imageSerializer();
 Serializer<GProductVariantsData_productVariants_gallery>
     _$gProductVariantsDataProductVariantsGallerySerializer =
     new _$GProductVariantsData_productVariants_gallerySerializer();
@@ -94,12 +88,6 @@ Serializer<
 Serializer<GProductVariantData_productVariant_specifications_category>
     _$gProductVariantDataProductVariantSpecificationsCategorySerializer =
     new _$GProductVariantData_productVariant_specifications_categorySerializer();
-Serializer<GProductVariantData_productVariant_images>
-    _$gProductVariantDataProductVariantImagesSerializer =
-    new _$GProductVariantData_productVariant_imagesSerializer();
-Serializer<GProductVariantData_productVariant_images_image>
-    _$gProductVariantDataProductVariantImagesImageSerializer =
-    new _$GProductVariantData_productVariant_images_imageSerializer();
 Serializer<GProductVariantData_productVariant_gallery>
     _$gProductVariantDataProductVariantGallerySerializer =
     new _$GProductVariantData_productVariant_gallerySerializer();
@@ -151,12 +139,9 @@ Serializer<GVehicleVariantsData_vehicleVariants_prices_category>
 Serializer<GVehicleVariantsData_vehicleVariants_colors>
     _$gVehicleVariantsDataVehicleVariantsColorsSerializer =
     new _$GVehicleVariantsData_vehicleVariants_colorsSerializer();
-Serializer<GVehicleVariantsData_vehicleVariants_colors_images>
-    _$gVehicleVariantsDataVehicleVariantsColorsImagesSerializer =
-    new _$GVehicleVariantsData_vehicleVariants_colors_imagesSerializer();
-Serializer<GVehicleVariantsData_vehicleVariants_colors_images_image>
-    _$gVehicleVariantsDataVehicleVariantsColorsImagesImageSerializer =
-    new _$GVehicleVariantsData_vehicleVariants_colors_images_imageSerializer();
+Serializer<GVehicleVariantsData_vehicleVariants_colors_gallery>
+    _$gVehicleVariantsDataVehicleVariantsColorsGallerySerializer =
+    new _$GVehicleVariantsData_vehicleVariants_colors_gallerySerializer();
 Serializer<GVehicleVariantsData_vehicleVariants_vehicle>
     _$gVehicleVariantsDataVehicleVariantsVehicleSerializer =
     new _$GVehicleVariantsData_vehicleVariants_vehicleSerializer();
@@ -184,12 +169,9 @@ Serializer<GVehicleDealersData_vehicleDealers>
 Serializer<GVehicleDealersData_vehicleDealers_vehicleColor>
     _$gVehicleDealersDataVehicleDealersVehicleColorSerializer =
     new _$GVehicleDealersData_vehicleDealers_vehicleColorSerializer();
-Serializer<GVehicleDealersData_vehicleDealers_vehicleColor_images>
-    _$gVehicleDealersDataVehicleDealersVehicleColorImagesSerializer =
-    new _$GVehicleDealersData_vehicleDealers_vehicleColor_imagesSerializer();
-Serializer<GVehicleDealersData_vehicleDealers_vehicleColor_images_image>
-    _$gVehicleDealersDataVehicleDealersVehicleColorImagesImageSerializer =
-    new _$GVehicleDealersData_vehicleDealers_vehicleColor_images_imageSerializer();
+Serializer<GVehicleDealersData_vehicleDealers_vehicleColor_gallery>
+    _$gVehicleDealersDataVehicleDealersVehicleColorGallerySerializer =
+    new _$GVehicleDealersData_vehicleDealers_vehicleColor_gallerySerializer();
 Serializer<GVehicleDealersData_vehicleDealers_vehicleVariant>
     _$gVehicleDealersDataVehicleDealersVehicleVariantSerializer =
     new _$GVehicleDealersData_vehicleDealers_vehicleVariantSerializer();
@@ -226,13 +208,9 @@ Serializer<GUpdateVehicleDealerData_updateVehicleDealer>
 Serializer<GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor>
     _$gUpdateVehicleDealerDataUpdateVehicleDealerVehicleColorSerializer =
     new _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColorSerializer();
-Serializer<GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images>
-    _$gUpdateVehicleDealerDataUpdateVehicleDealerVehicleColorImagesSerializer =
-    new _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesSerializer();
-Serializer<
-        GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image>
-    _$gUpdateVehicleDealerDataUpdateVehicleDealerVehicleColorImagesImageSerializer =
-    new _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageSerializer();
+Serializer<GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery>
+    _$gUpdateVehicleDealerDataUpdateVehicleDealerVehicleColorGallerySerializer =
+    new _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallerySerializer();
 Serializer<GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant>
     _$gUpdateVehicleDealerDataUpdateVehicleDealerVehicleVariantSerializer =
     new _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariantSerializer();
@@ -265,12 +243,9 @@ Serializer<GTestDriveDealersData_testDriveDealers>
 Serializer<GTestDriveDealersData_testDriveDealers_vehicleColor>
     _$gTestDriveDealersDataTestDriveDealersVehicleColorSerializer =
     new _$GTestDriveDealersData_testDriveDealers_vehicleColorSerializer();
-Serializer<GTestDriveDealersData_testDriveDealers_vehicleColor_images>
-    _$gTestDriveDealersDataTestDriveDealersVehicleColorImagesSerializer =
-    new _$GTestDriveDealersData_testDriveDealers_vehicleColor_imagesSerializer();
-Serializer<GTestDriveDealersData_testDriveDealers_vehicleColor_images_image>
-    _$gTestDriveDealersDataTestDriveDealersVehicleColorImagesImageSerializer =
-    new _$GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageSerializer();
+Serializer<GTestDriveDealersData_testDriveDealers_vehicleColor_gallery>
+    _$gTestDriveDealersDataTestDriveDealersVehicleColorGallerySerializer =
+    new _$GTestDriveDealersData_testDriveDealers_vehicleColor_gallerySerializer();
 Serializer<GTestDriveDealersData_testDriveDealers_vehicleVariant>
     _$gTestDriveDealersDataTestDriveDealersVehicleVariantSerializer =
     new _$GTestDriveDealersData_testDriveDealers_vehicleVariantSerializer();
@@ -288,13 +263,10 @@ Serializer<GUpdateTestDriveDealerData_updateTestDriveDealer>
 Serializer<GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor>
     _$gUpdateTestDriveDealerDataUpdateTestDriveDealerVehicleColorSerializer =
     new _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColorSerializer();
-Serializer<GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images>
-    _$gUpdateTestDriveDealerDataUpdateTestDriveDealerVehicleColorImagesSerializer =
-    new _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesSerializer();
 Serializer<
-        GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image>
-    _$gUpdateTestDriveDealerDataUpdateTestDriveDealerVehicleColorImagesImageSerializer =
-    new _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageSerializer();
+        GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery>
+    _$gUpdateTestDriveDealerDataUpdateTestDriveDealerVehicleColorGallerySerializer =
+    new _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallerySerializer();
 Serializer<GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant>
     _$gUpdateTestDriveDealerDataUpdateTestDriveDealerVehicleVariantSerializer =
     new _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariantSerializer();
@@ -319,18 +291,15 @@ Serializer<GProductDealersData_productDealers>
 Serializer<GProductDealersData_productDealers_productVariant>
     _$gProductDealersDataProductDealersProductVariantSerializer =
     new _$GProductDealersData_productDealers_productVariantSerializer();
-Serializer<GProductDealersData_productDealers_productVariant_images>
-    _$gProductDealersDataProductDealersProductVariantImagesSerializer =
-    new _$GProductDealersData_productDealers_productVariant_imagesSerializer();
-Serializer<GProductDealersData_productDealers_productVariant_images_image>
-    _$gProductDealersDataProductDealersProductVariantImagesImageSerializer =
-    new _$GProductDealersData_productDealers_productVariant_images_imageSerializer();
 Serializer<GProductDealersData_productDealers_productVariant_product>
     _$gProductDealersDataProductDealersProductVariantProductSerializer =
     new _$GProductDealersData_productDealers_productVariant_productSerializer();
 Serializer<GProductDealersData_productDealers_productVariant_product_brand>
     _$gProductDealersDataProductDealersProductVariantProductBrandSerializer =
     new _$GProductDealersData_productDealers_productVariant_product_brandSerializer();
+Serializer<GProductDealersData_productDealers_productVariant_gallery>
+    _$gProductDealersDataProductDealersProductVariantGallerySerializer =
+    new _$GProductDealersData_productDealers_productVariant_gallerySerializer();
 Serializer<GProductDealersData_productDealers_prices>
     _$gProductDealersDataProductDealersPricesSerializer =
     new _$GProductDealersData_productDealers_pricesSerializer();
@@ -513,15 +482,6 @@ class _$GProductVariantsData_productVariantsSerializer
         ..add('totalPrice')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    value = object.images;
-    if (value != null) {
-      result
-        ..add('images')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(BuiltList, const [
-              const FullType(GProductVariantsData_productVariants_images)
-            ])));
-    }
     value = object.gallery;
     if (value != null) {
       result
@@ -595,12 +555,6 @@ class _$GProductVariantsData_productVariantsSerializer
         case 'totalPrice':
           result.totalPrice = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
-          break;
-        case 'images':
-          result.images.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [
-                const FullType(GProductVariantsData_productVariants_images)
-              ]))! as BuiltList<Object?>);
           break;
         case 'gallery':
           result.gallery.replace(serializers.deserialize(value,
@@ -1138,151 +1092,6 @@ class _$GProductVariantsData_productVariants_specifications_categorySerializer
         case 'description':
           result.description = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GProductVariantsData_productVariants_imagesSerializer
-    implements
-        StructuredSerializer<GProductVariantsData_productVariants_images> {
-  @override
-  final Iterable<Type> types = const [
-    GProductVariantsData_productVariants_images,
-    _$GProductVariantsData_productVariants_images
-  ];
-  @override
-  final String wireName = 'GProductVariantsData_productVariants_images';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers,
-      GProductVariantsData_productVariants_images object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
-    ];
-    Object? value;
-    value = object.image;
-    if (value != null) {
-      result
-        ..add('image')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                GProductVariantsData_productVariants_images_image)));
-    }
-    value = object.name;
-    if (value != null) {
-      result
-        ..add('name')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    return result;
-  }
-
-  @override
-  GProductVariantsData_productVariants_images deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GProductVariantsData_productVariants_imagesBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'image':
-          result.image.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      GProductVariantsData_productVariants_images_image))!
-              as GProductVariantsData_productVariants_images_image);
-          break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'name':
-          result.name = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GProductVariantsData_productVariants_images_imageSerializer
-    implements
-        StructuredSerializer<
-            GProductVariantsData_productVariants_images_image> {
-  @override
-  final Iterable<Type> types = const [
-    GProductVariantsData_productVariants_images_image,
-    _$GProductVariantsData_productVariants_images_image
-  ];
-  @override
-  final String wireName = 'GProductVariantsData_productVariants_images_image';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers,
-      GProductVariantsData_productVariants_images_image object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
-      'url',
-      serializers.serialize(object.url, specifiedType: const FullType(String)),
-      'width',
-      serializers.serialize(object.width, specifiedType: const FullType(int)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
-    ];
-
-    return result;
-  }
-
-  @override
-  GProductVariantsData_productVariants_images_image deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result =
-        new GProductVariantsData_productVariants_images_imageBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'url':
-          result.url = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'width':
-          result.width = serializers.deserialize(value,
-              specifiedType: const FullType(int))! as int;
-          break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -2358,15 +2167,6 @@ class _$GProductVariantData_productVariantSerializer
         ..add('totalPrice')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    value = object.images;
-    if (value != null) {
-      result
-        ..add('images')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(BuiltList, const [
-              const FullType(GProductVariantData_productVariant_images)
-            ])));
-    }
     value = object.gallery;
     if (value != null) {
       result
@@ -2440,12 +2240,6 @@ class _$GProductVariantData_productVariantSerializer
         case 'totalPrice':
           result.totalPrice = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
-          break;
-        case 'images':
-          result.images.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [
-                const FullType(GProductVariantData_productVariant_images)
-              ]))! as BuiltList<Object?>);
           break;
         case 'gallery':
           result.gallery.replace(serializers.deserialize(value,
@@ -2981,148 +2775,6 @@ class _$GProductVariantData_productVariant_specifications_categorySerializer
         case 'description':
           result.description = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GProductVariantData_productVariant_imagesSerializer
-    implements StructuredSerializer<GProductVariantData_productVariant_images> {
-  @override
-  final Iterable<Type> types = const [
-    GProductVariantData_productVariant_images,
-    _$GProductVariantData_productVariant_images
-  ];
-  @override
-  final String wireName = 'GProductVariantData_productVariant_images';
-
-  @override
-  Iterable<Object?> serialize(
-      Serializers serializers, GProductVariantData_productVariant_images object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
-    ];
-    Object? value;
-    value = object.image;
-    if (value != null) {
-      result
-        ..add('image')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                GProductVariantData_productVariant_images_image)));
-    }
-    value = object.name;
-    if (value != null) {
-      result
-        ..add('name')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    return result;
-  }
-
-  @override
-  GProductVariantData_productVariant_images deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GProductVariantData_productVariant_imagesBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'image':
-          result.image.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      GProductVariantData_productVariant_images_image))!
-              as GProductVariantData_productVariant_images_image);
-          break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'name':
-          result.name = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GProductVariantData_productVariant_images_imageSerializer
-    implements
-        StructuredSerializer<GProductVariantData_productVariant_images_image> {
-  @override
-  final Iterable<Type> types = const [
-    GProductVariantData_productVariant_images_image,
-    _$GProductVariantData_productVariant_images_image
-  ];
-  @override
-  final String wireName = 'GProductVariantData_productVariant_images_image';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers,
-      GProductVariantData_productVariant_images_image object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
-      'url',
-      serializers.serialize(object.url, specifiedType: const FullType(String)),
-      'width',
-      serializers.serialize(object.width, specifiedType: const FullType(int)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
-    ];
-
-    return result;
-  }
-
-  @override
-  GProductVariantData_productVariant_images_image deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GProductVariantData_productVariant_images_imageBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'url':
-          result.url = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'width':
-          result.width = serializers.deserialize(value,
-              specifiedType: const FullType(int))! as int;
-          break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -4508,13 +4160,14 @@ class _$GVehicleVariantsData_vehicleVariants_colorsSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.images;
+    value = object.gallery;
     if (value != null) {
       result
-        ..add('images')
+        ..add('gallery')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(BuiltList, const [
-              const FullType(GVehicleVariantsData_vehicleVariants_colors_images)
+              const FullType(
+                  GVehicleVariantsData_vehicleVariants_colors_gallery)
             ])));
     }
     value = object.name;
@@ -4551,11 +4204,11 @@ class _$GVehicleVariantsData_vehicleVariants_colorsSerializer
           result.code = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'images':
-          result.images.replace(serializers.deserialize(value,
+        case 'gallery':
+          result.gallery.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
                 const FullType(
-                    GVehicleVariantsData_vehicleVariants_colors_images)
+                    GVehicleVariantsData_vehicleVariants_colors_gallery)
               ]))! as BuiltList<Object?>);
           break;
         case 'name':
@@ -4569,21 +4222,21 @@ class _$GVehicleVariantsData_vehicleVariants_colorsSerializer
   }
 }
 
-class _$GVehicleVariantsData_vehicleVariants_colors_imagesSerializer
+class _$GVehicleVariantsData_vehicleVariants_colors_gallerySerializer
     implements
         StructuredSerializer<
-            GVehicleVariantsData_vehicleVariants_colors_images> {
+            GVehicleVariantsData_vehicleVariants_colors_gallery> {
   @override
   final Iterable<Type> types = const [
-    GVehicleVariantsData_vehicleVariants_colors_images,
-    _$GVehicleVariantsData_vehicleVariants_colors_images
+    GVehicleVariantsData_vehicleVariants_colors_gallery,
+    _$GVehicleVariantsData_vehicleVariants_colors_gallery
   ];
   @override
-  final String wireName = 'GVehicleVariantsData_vehicleVariants_colors_images';
+  final String wireName = 'GVehicleVariantsData_vehicleVariants_colors_gallery';
 
   @override
   Iterable<Object?> serialize(Serializers serializers,
-      GVehicleVariantsData_vehicleVariants_colors_images object,
+      GVehicleVariantsData_vehicleVariants_colors_gallery object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
@@ -4591,30 +4244,35 @@ class _$GVehicleVariantsData_vehicleVariants_colors_imagesSerializer
           specifiedType: const FullType(String)),
     ];
     Object? value;
-    value = object.name;
+    value = object.file;
     if (value != null) {
       result
-        ..add('name')
+        ..add('file')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.JsonObject)));
+    }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.image;
+    value = object.index;
     if (value != null) {
       result
-        ..add('image')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                GVehicleVariantsData_vehicleVariants_colors_images_image)));
+        ..add('index')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     return result;
   }
 
   @override
-  GVehicleVariantsData_vehicleVariants_colors_images deserialize(
+  GVehicleVariantsData_vehicleVariants_colors_gallery deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GVehicleVariantsData_vehicleVariants_colors_imagesBuilder();
+        new GVehicleVariantsData_vehicleVariants_colors_galleryBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -4626,83 +4284,17 @@ class _$GVehicleVariantsData_vehicleVariants_colors_imagesSerializer
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
-        case 'name':
-          result.name = serializers.deserialize(value,
+        case 'file':
+          result.file = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
+          break;
+        case 'type':
+          result.type = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'image':
-          result.image.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      GVehicleVariantsData_vehicleVariants_colors_images_image))!
-              as GVehicleVariantsData_vehicleVariants_colors_images_image);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GVehicleVariantsData_vehicleVariants_colors_images_imageSerializer
-    implements
-        StructuredSerializer<
-            GVehicleVariantsData_vehicleVariants_colors_images_image> {
-  @override
-  final Iterable<Type> types = const [
-    GVehicleVariantsData_vehicleVariants_colors_images_image,
-    _$GVehicleVariantsData_vehicleVariants_colors_images_image
-  ];
-  @override
-  final String wireName =
-      'GVehicleVariantsData_vehicleVariants_colors_images_image';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers,
-      GVehicleVariantsData_vehicleVariants_colors_images_image object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
-      'url',
-      serializers.serialize(object.url, specifiedType: const FullType(String)),
-      'width',
-      serializers.serialize(object.width, specifiedType: const FullType(int)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
-    ];
-
-    return result;
-  }
-
-  @override
-  GVehicleVariantsData_vehicleVariants_colors_images_image deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result =
-        new GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'url':
-          result.url = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'width':
-          result.width = serializers.deserialize(value,
-              specifiedType: const FullType(int))! as int;
-          break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+        case 'index':
+          result.index = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -5422,14 +5014,14 @@ class _$GVehicleDealersData_vehicleDealers_vehicleColorSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.images;
+    value = object.gallery;
     if (value != null) {
       result
-        ..add('images')
+        ..add('gallery')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(BuiltList, const [
               const FullType(
-                  GVehicleDealersData_vehicleDealers_vehicleColor_images)
+                  GVehicleDealersData_vehicleDealers_vehicleColor_gallery)
             ])));
     }
     return result;
@@ -5463,11 +5055,11 @@ class _$GVehicleDealersData_vehicleDealers_vehicleColorSerializer
           result.code = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'images':
-          result.images.replace(serializers.deserialize(value,
+        case 'gallery':
+          result.gallery.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
                 const FullType(
-                    GVehicleDealersData_vehicleDealers_vehicleColor_images)
+                    GVehicleDealersData_vehicleDealers_vehicleColor_gallery)
               ]))! as BuiltList<Object?>);
           break;
       }
@@ -5477,48 +5069,58 @@ class _$GVehicleDealersData_vehicleDealers_vehicleColorSerializer
   }
 }
 
-class _$GVehicleDealersData_vehicleDealers_vehicleColor_imagesSerializer
+class _$GVehicleDealersData_vehicleDealers_vehicleColor_gallerySerializer
     implements
         StructuredSerializer<
-            GVehicleDealersData_vehicleDealers_vehicleColor_images> {
+            GVehicleDealersData_vehicleDealers_vehicleColor_gallery> {
   @override
   final Iterable<Type> types = const [
-    GVehicleDealersData_vehicleDealers_vehicleColor_images,
-    _$GVehicleDealersData_vehicleDealers_vehicleColor_images
+    GVehicleDealersData_vehicleDealers_vehicleColor_gallery,
+    _$GVehicleDealersData_vehicleDealers_vehicleColor_gallery
   ];
   @override
   final String wireName =
-      'GVehicleDealersData_vehicleDealers_vehicleColor_images';
+      'GVehicleDealersData_vehicleDealers_vehicleColor_gallery';
 
   @override
   Iterable<Object?> serialize(Serializers serializers,
-      GVehicleDealersData_vehicleDealers_vehicleColor_images object,
+      GVehicleDealersData_vehicleDealers_vehicleColor_gallery object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
       serializers.serialize(object.G__typename,
           specifiedType: const FullType(String)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
     Object? value;
-    value = object.image;
+    value = object.file;
     if (value != null) {
       result
-        ..add('image')
+        ..add('file')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                GVehicleDealersData_vehicleDealers_vehicleColor_images_image)));
+            specifiedType: const FullType(_i2.JsonObject)));
+    }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.index;
+    if (value != null) {
+      result
+        ..add('index')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     return result;
   }
 
   @override
-  GVehicleDealersData_vehicleDealers_vehicleColor_images deserialize(
+  GVehicleDealersData_vehicleDealers_vehicleColor_gallery deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GVehicleDealersData_vehicleDealers_vehicleColor_imagesBuilder();
+        new GVehicleDealersData_vehicleDealers_vehicleColor_galleryBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -5530,71 +5132,17 @@ class _$GVehicleDealersData_vehicleDealers_vehicleColor_imagesSerializer
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+        case 'file':
+          result.file = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
-        case 'image':
-          result.image.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      GVehicleDealersData_vehicleDealers_vehicleColor_images_image))!
-              as GVehicleDealersData_vehicleDealers_vehicleColor_images_image);
+        case 'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GVehicleDealersData_vehicleDealers_vehicleColor_images_imageSerializer
-    implements
-        StructuredSerializer<
-            GVehicleDealersData_vehicleDealers_vehicleColor_images_image> {
-  @override
-  final Iterable<Type> types = const [
-    GVehicleDealersData_vehicleDealers_vehicleColor_images_image,
-    _$GVehicleDealersData_vehicleDealers_vehicleColor_images_image
-  ];
-  @override
-  final String wireName =
-      'GVehicleDealersData_vehicleDealers_vehicleColor_images_image';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers,
-      GVehicleDealersData_vehicleDealers_vehicleColor_images_image object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
-      'url',
-      serializers.serialize(object.url, specifiedType: const FullType(String)),
-    ];
-
-    return result;
-  }
-
-  @override
-  GVehicleDealersData_vehicleDealers_vehicleColor_images_image deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result =
-        new GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'url':
-          result.url = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+        case 'index':
+          result.index = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -6573,14 +6121,14 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColorSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.images;
+    value = object.gallery;
     if (value != null) {
       result
-        ..add('images')
+        ..add('gallery')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(BuiltList, const [
               const FullType(
-                  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images)
+                  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery)
             ])));
     }
     return result;
@@ -6615,11 +6163,11 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColorSerializer
           result.code = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'images':
-          result.images.replace(serializers.deserialize(value,
+        case 'gallery':
+          result.gallery.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
                 const FullType(
-                    GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images)
+                    GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery)
               ]))! as BuiltList<Object?>);
           break;
       }
@@ -6629,48 +6177,58 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColorSerializer
   }
 }
 
-class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesSerializer
+class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallerySerializer
     implements
         StructuredSerializer<
-            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images> {
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery> {
   @override
   final Iterable<Type> types = const [
-    GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images,
-    _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images
+    GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery,
+    _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery
   ];
   @override
   final String wireName =
-      'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images';
+      'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery';
 
   @override
   Iterable<Object?> serialize(Serializers serializers,
-      GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images object,
+      GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
       serializers.serialize(object.G__typename,
           specifiedType: const FullType(String)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
     Object? value;
-    value = object.image;
+    value = object.file;
     if (value != null) {
       result
-        ..add('image')
+        ..add('file')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image)));
+            specifiedType: const FullType(_i2.JsonObject)));
+    }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.index;
+    if (value != null) {
+      result
+        ..add('index')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     return result;
   }
 
   @override
-  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images deserialize(
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder();
+        new GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_galleryBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -6682,73 +6240,17 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesSerializ
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+        case 'file':
+          result.file = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
-        case 'image':
-          result.image.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image))!
-              as GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image);
+        case 'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageSerializer
-    implements
-        StructuredSerializer<
-            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image> {
-  @override
-  final Iterable<Type> types = const [
-    GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image,
-    _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image
-  ];
-  @override
-  final String wireName =
-      'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image';
-
-  @override
-  Iterable<Object?> serialize(
-      Serializers serializers,
-      GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image
-          object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
-      'url',
-      serializers.serialize(object.url, specifiedType: const FullType(String)),
-    ];
-
-    return result;
-  }
-
-  @override
-  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image
-      deserialize(Serializers serializers, Iterable<Object?> serialized,
-          {FullType specifiedType = FullType.unspecified}) {
-    final result =
-        new GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'url':
-          result.url = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+        case 'index':
+          result.index = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -7544,14 +7046,14 @@ class _$GTestDriveDealersData_testDriveDealers_vehicleColorSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.images;
+    value = object.gallery;
     if (value != null) {
       result
-        ..add('images')
+        ..add('gallery')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(BuiltList, const [
               const FullType(
-                  GTestDriveDealersData_testDriveDealers_vehicleColor_images)
+                  GTestDriveDealersData_testDriveDealers_vehicleColor_gallery)
             ])));
     }
     return result;
@@ -7586,11 +7088,11 @@ class _$GTestDriveDealersData_testDriveDealers_vehicleColorSerializer
           result.code = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'images':
-          result.images.replace(serializers.deserialize(value,
+        case 'gallery':
+          result.gallery.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
                 const FullType(
-                    GTestDriveDealersData_testDriveDealers_vehicleColor_images)
+                    GTestDriveDealersData_testDriveDealers_vehicleColor_gallery)
               ]))! as BuiltList<Object?>);
           break;
       }
@@ -7600,48 +7102,58 @@ class _$GTestDriveDealersData_testDriveDealers_vehicleColorSerializer
   }
 }
 
-class _$GTestDriveDealersData_testDriveDealers_vehicleColor_imagesSerializer
+class _$GTestDriveDealersData_testDriveDealers_vehicleColor_gallerySerializer
     implements
         StructuredSerializer<
-            GTestDriveDealersData_testDriveDealers_vehicleColor_images> {
+            GTestDriveDealersData_testDriveDealers_vehicleColor_gallery> {
   @override
   final Iterable<Type> types = const [
-    GTestDriveDealersData_testDriveDealers_vehicleColor_images,
-    _$GTestDriveDealersData_testDriveDealers_vehicleColor_images
+    GTestDriveDealersData_testDriveDealers_vehicleColor_gallery,
+    _$GTestDriveDealersData_testDriveDealers_vehicleColor_gallery
   ];
   @override
   final String wireName =
-      'GTestDriveDealersData_testDriveDealers_vehicleColor_images';
+      'GTestDriveDealersData_testDriveDealers_vehicleColor_gallery';
 
   @override
   Iterable<Object?> serialize(Serializers serializers,
-      GTestDriveDealersData_testDriveDealers_vehicleColor_images object,
+      GTestDriveDealersData_testDriveDealers_vehicleColor_gallery object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
       serializers.serialize(object.G__typename,
           specifiedType: const FullType(String)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
     Object? value;
-    value = object.image;
+    value = object.file;
     if (value != null) {
       result
-        ..add('image')
+        ..add('file')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                GTestDriveDealersData_testDriveDealers_vehicleColor_images_image)));
+            specifiedType: const FullType(_i2.JsonObject)));
+    }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.index;
+    if (value != null) {
+      result
+        ..add('index')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     return result;
   }
 
   @override
-  GTestDriveDealersData_testDriveDealers_vehicleColor_images deserialize(
+  GTestDriveDealersData_testDriveDealers_vehicleColor_gallery deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GTestDriveDealersData_testDriveDealers_vehicleColor_imagesBuilder();
+        new GTestDriveDealersData_testDriveDealers_vehicleColor_galleryBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -7653,71 +7165,17 @@ class _$GTestDriveDealersData_testDriveDealers_vehicleColor_imagesSerializer
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+        case 'file':
+          result.file = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
-        case 'image':
-          result.image.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      GTestDriveDealersData_testDriveDealers_vehicleColor_images_image))!
-              as GTestDriveDealersData_testDriveDealers_vehicleColor_images_image);
+        case 'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageSerializer
-    implements
-        StructuredSerializer<
-            GTestDriveDealersData_testDriveDealers_vehicleColor_images_image> {
-  @override
-  final Iterable<Type> types = const [
-    GTestDriveDealersData_testDriveDealers_vehicleColor_images_image,
-    _$GTestDriveDealersData_testDriveDealers_vehicleColor_images_image
-  ];
-  @override
-  final String wireName =
-      'GTestDriveDealersData_testDriveDealers_vehicleColor_images_image';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers,
-      GTestDriveDealersData_testDriveDealers_vehicleColor_images_image object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
-      'url',
-      serializers.serialize(object.url, specifiedType: const FullType(String)),
-    ];
-
-    return result;
-  }
-
-  @override
-  GTestDriveDealersData_testDriveDealers_vehicleColor_images_image deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result =
-        new GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'url':
-          result.url = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+        case 'index':
+          result.index = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -8170,14 +7628,14 @@ class _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColorSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.images;
+    value = object.gallery;
     if (value != null) {
       result
-        ..add('images')
+        ..add('gallery')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(BuiltList, const [
               const FullType(
-                  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images)
+                  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery)
             ])));
     }
     return result;
@@ -8212,11 +7670,11 @@ class _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColorSerializer
           result.code = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'images':
-          result.images.replace(serializers.deserialize(value,
+        case 'gallery':
+          result.gallery.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
                 const FullType(
-                    GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images)
+                    GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery)
               ]))! as BuiltList<Object?>);
           break;
       }
@@ -8226,50 +7684,60 @@ class _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColorSerializer
   }
 }
 
-class _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesSerializer
+class _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallerySerializer
     implements
         StructuredSerializer<
-            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images> {
+            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery> {
   @override
   final Iterable<Type> types = const [
-    GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images,
-    _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images
+    GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery,
+    _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery
   ];
   @override
   final String wireName =
-      'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images';
+      'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery';
 
   @override
   Iterable<Object?> serialize(
       Serializers serializers,
-      GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images
+      GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery
           object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
       serializers.serialize(object.G__typename,
           specifiedType: const FullType(String)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
     Object? value;
-    value = object.image;
+    value = object.file;
     if (value != null) {
       result
-        ..add('image')
+        ..add('file')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image)));
+            specifiedType: const FullType(_i2.JsonObject)));
+    }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.index;
+    if (value != null) {
+      result
+        ..add('index')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     return result;
   }
 
   @override
-  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images
+  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery
       deserialize(Serializers serializers, Iterable<Object?> serialized,
           {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesBuilder();
+        new GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_galleryBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -8281,73 +7749,17 @@ class _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesSeri
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+        case 'file':
+          result.file = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
-        case 'image':
-          result.image.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image))!
-              as GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image);
+        case 'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageSerializer
-    implements
-        StructuredSerializer<
-            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image> {
-  @override
-  final Iterable<Type> types = const [
-    GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image,
-    _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image
-  ];
-  @override
-  final String wireName =
-      'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image';
-
-  @override
-  Iterable<Object?> serialize(
-      Serializers serializers,
-      GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image
-          object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
-      'url',
-      serializers.serialize(object.url, specifiedType: const FullType(String)),
-    ];
-
-    return result;
-  }
-
-  @override
-  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image
-      deserialize(Serializers serializers, Iterable<Object?> serialized,
-          {FullType specifiedType = FullType.unspecified}) {
-    final result =
-        new GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'url':
-          result.url = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+        case 'index':
+          result.index = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -8949,16 +8361,6 @@ class _$GProductDealersData_productDealers_productVariantSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(_i3.GDateTime)));
     }
-    value = object.images;
-    if (value != null) {
-      result
-        ..add('images')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(BuiltList, const [
-              const FullType(
-                  GProductDealersData_productDealers_productVariant_images)
-            ])));
-    }
     value = object.product;
     if (value != null) {
       result
@@ -8966,6 +8368,16 @@ class _$GProductDealersData_productDealers_productVariantSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(
                 GProductDealersData_productDealers_productVariant_product)));
+    }
+    value = object.gallery;
+    if (value != null) {
+      result
+        ..add('gallery')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(
+                  GProductDealersData_productDealers_productVariant_gallery)
+            ])));
     }
     return result;
   }
@@ -8999,144 +8411,18 @@ class _$GProductDealersData_productDealers_productVariantSerializer
           result.modifiedAt.replace(serializers.deserialize(value,
               specifiedType: const FullType(_i3.GDateTime))! as _i3.GDateTime);
           break;
-        case 'images':
-          result.images.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [
-                const FullType(
-                    GProductDealersData_productDealers_productVariant_images)
-              ]))! as BuiltList<Object?>);
-          break;
         case 'product':
           result.product.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
                       GProductDealersData_productDealers_productVariant_product))!
               as GProductDealersData_productDealers_productVariant_product);
           break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GProductDealersData_productDealers_productVariant_imagesSerializer
-    implements
-        StructuredSerializer<
-            GProductDealersData_productDealers_productVariant_images> {
-  @override
-  final Iterable<Type> types = const [
-    GProductDealersData_productDealers_productVariant_images,
-    _$GProductDealersData_productDealers_productVariant_images
-  ];
-  @override
-  final String wireName =
-      'GProductDealersData_productDealers_productVariant_images';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers,
-      GProductDealersData_productDealers_productVariant_images object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
-    ];
-    Object? value;
-    value = object.image;
-    if (value != null) {
-      result
-        ..add('image')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                GProductDealersData_productDealers_productVariant_images_image)));
-    }
-    return result;
-  }
-
-  @override
-  GProductDealersData_productDealers_productVariant_images deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result =
-        new GProductDealersData_productDealers_productVariant_imagesBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'image':
-          result.image.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      GProductDealersData_productDealers_productVariant_images_image))!
-              as GProductDealersData_productDealers_productVariant_images_image);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$GProductDealersData_productDealers_productVariant_images_imageSerializer
-    implements
-        StructuredSerializer<
-            GProductDealersData_productDealers_productVariant_images_image> {
-  @override
-  final Iterable<Type> types = const [
-    GProductDealersData_productDealers_productVariant_images_image,
-    _$GProductDealersData_productDealers_productVariant_images_image
-  ];
-  @override
-  final String wireName =
-      'GProductDealersData_productDealers_productVariant_images_image';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers,
-      GProductDealersData_productDealers_productVariant_images_image object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
-      'url',
-      serializers.serialize(object.url, specifiedType: const FullType(String)),
-    ];
-
-    return result;
-  }
-
-  @override
-  GProductDealersData_productDealers_productVariant_images_image deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result =
-        new GProductDealersData_productDealers_productVariant_images_imageBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
-          break;
-        case 'url':
-          result.url = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+        case 'gallery':
+          result.gallery.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(
+                    GProductDealersData_productDealers_productVariant_gallery)
+              ]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -9296,6 +8582,88 @@ class _$GProductDealersData_productDealers_productVariant_product_brandSerialize
         case 'name':
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GProductDealersData_productDealers_productVariant_gallerySerializer
+    implements
+        StructuredSerializer<
+            GProductDealersData_productDealers_productVariant_gallery> {
+  @override
+  final Iterable<Type> types = const [
+    GProductDealersData_productDealers_productVariant_gallery,
+    _$GProductDealersData_productDealers_productVariant_gallery
+  ];
+  @override
+  final String wireName =
+      'GProductDealersData_productDealers_productVariant_gallery';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GProductDealersData_productDealers_productVariant_gallery object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.file;
+    if (value != null) {
+      result
+        ..add('file')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.JsonObject)));
+    }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.index;
+    if (value != null) {
+      result
+        ..add('index')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    return result;
+  }
+
+  @override
+  GProductDealersData_productDealers_productVariant_gallery deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GProductDealersData_productDealers_productVariant_galleryBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'file':
+          result.file = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
+          break;
+        case 'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'index':
+          result.index = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -11025,8 +10393,6 @@ class _$GProductVariantsData_productVariants
   @override
   final int? totalPrice;
   @override
-  final BuiltList<GProductVariantsData_productVariants_images>? images;
-  @override
   final BuiltList<GProductVariantsData_productVariants_gallery>? gallery;
   @override
   final GProductVariantsData_productVariants_product? product;
@@ -11047,7 +10413,6 @@ class _$GProductVariantsData_productVariants
       this.prices,
       this.specifications,
       this.totalPrice,
-      this.images,
       this.gallery,
       this.product,
       this.tags})
@@ -11078,7 +10443,6 @@ class _$GProductVariantsData_productVariants
         prices == other.prices &&
         specifications == other.specifications &&
         totalPrice == other.totalPrice &&
-        images == other.images &&
         gallery == other.gallery &&
         product == other.product &&
         tags == other.tags;
@@ -11094,7 +10458,6 @@ class _$GProductVariantsData_productVariants
     _$hash = $jc(_$hash, prices.hashCode);
     _$hash = $jc(_$hash, specifications.hashCode);
     _$hash = $jc(_$hash, totalPrice.hashCode);
-    _$hash = $jc(_$hash, images.hashCode);
     _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jc(_$hash, product.hashCode);
     _$hash = $jc(_$hash, tags.hashCode);
@@ -11112,7 +10475,6 @@ class _$GProductVariantsData_productVariants
           ..add('prices', prices)
           ..add('specifications', specifications)
           ..add('totalPrice', totalPrice)
-          ..add('images', images)
           ..add('gallery', gallery)
           ..add('product', product)
           ..add('tags', tags))
@@ -11165,14 +10527,6 @@ class GProductVariantsData_productVariantsBuilder
   int? get totalPrice => _$this._totalPrice;
   set totalPrice(int? totalPrice) => _$this._totalPrice = totalPrice;
 
-  ListBuilder<GProductVariantsData_productVariants_images>? _images;
-  ListBuilder<GProductVariantsData_productVariants_images> get images =>
-      _$this._images ??=
-          new ListBuilder<GProductVariantsData_productVariants_images>();
-  set images(
-          ListBuilder<GProductVariantsData_productVariants_images>? images) =>
-      _$this._images = images;
-
   ListBuilder<GProductVariantsData_productVariants_gallery>? _gallery;
   ListBuilder<GProductVariantsData_productVariants_gallery> get gallery =>
       _$this._gallery ??=
@@ -11209,7 +10563,6 @@ class GProductVariantsData_productVariantsBuilder
       _prices = $v.prices?.toBuilder();
       _specifications = $v.specifications?.toBuilder();
       _totalPrice = $v.totalPrice;
-      _images = $v.images?.toBuilder();
       _gallery = $v.gallery?.toBuilder();
       _product = $v.product?.toBuilder();
       _tags = $v.tags?.toBuilder();
@@ -11247,7 +10600,6 @@ class GProductVariantsData_productVariantsBuilder
               prices: _prices?.build(),
               specifications: _specifications?.build(),
               totalPrice: totalPrice,
-              images: _images?.build(),
               gallery: _gallery?.build(),
               product: _product?.build(),
               tags: _tags?.build());
@@ -11259,8 +10611,6 @@ class GProductVariantsData_productVariantsBuilder
         _$failedField = 'specifications';
         _specifications?.build();
 
-        _$failedField = 'images';
-        _images?.build();
         _$failedField = 'gallery';
         _gallery?.build();
         _$failedField = 'product';
@@ -12297,316 +11647,6 @@ class GProductVariantsData_productVariants_specifications_categoryBuilder
                 'id'),
             name: name,
             description: description);
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GProductVariantsData_productVariants_images
-    extends GProductVariantsData_productVariants_images {
-  @override
-  final String G__typename;
-  @override
-  final GProductVariantsData_productVariants_images_image? image;
-  @override
-  final String id;
-  @override
-  final String? name;
-
-  factory _$GProductVariantsData_productVariants_images(
-          [void Function(GProductVariantsData_productVariants_imagesBuilder)?
-              updates]) =>
-      (new GProductVariantsData_productVariants_imagesBuilder()
-            ..update(updates))
-          ._build();
-
-  _$GProductVariantsData_productVariants_images._(
-      {required this.G__typename, this.image, required this.id, this.name})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GProductVariantsData_productVariants_images', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GProductVariantsData_productVariants_images', 'id');
-  }
-
-  @override
-  GProductVariantsData_productVariants_images rebuild(
-          void Function(GProductVariantsData_productVariants_imagesBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GProductVariantsData_productVariants_imagesBuilder toBuilder() =>
-      new GProductVariantsData_productVariants_imagesBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GProductVariantsData_productVariants_images &&
-        G__typename == other.G__typename &&
-        image == other.image &&
-        id == other.id &&
-        name == other.name;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, image.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(
-            r'GProductVariantsData_productVariants_images')
-          ..add('G__typename', G__typename)
-          ..add('image', image)
-          ..add('id', id)
-          ..add('name', name))
-        .toString();
-  }
-}
-
-class GProductVariantsData_productVariants_imagesBuilder
-    implements
-        Builder<GProductVariantsData_productVariants_images,
-            GProductVariantsData_productVariants_imagesBuilder> {
-  _$GProductVariantsData_productVariants_images? _$v;
-
-  String? _G__typename;
-  String? get G__typename => _$this._G__typename;
-  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
-
-  GProductVariantsData_productVariants_images_imageBuilder? _image;
-  GProductVariantsData_productVariants_images_imageBuilder get image =>
-      _$this._image ??=
-          new GProductVariantsData_productVariants_images_imageBuilder();
-  set image(GProductVariantsData_productVariants_images_imageBuilder? image) =>
-      _$this._image = image;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  GProductVariantsData_productVariants_imagesBuilder() {
-    GProductVariantsData_productVariants_images._initializeBuilder(this);
-  }
-
-  GProductVariantsData_productVariants_imagesBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _G__typename = $v.G__typename;
-      _image = $v.image?.toBuilder();
-      _id = $v.id;
-      _name = $v.name;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(GProductVariantsData_productVariants_images other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GProductVariantsData_productVariants_images;
-  }
-
-  @override
-  void update(
-      void Function(GProductVariantsData_productVariants_imagesBuilder)?
-          updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GProductVariantsData_productVariants_images build() => _build();
-
-  _$GProductVariantsData_productVariants_images _build() {
-    _$GProductVariantsData_productVariants_images _$result;
-    try {
-      _$result = _$v ??
-          new _$GProductVariantsData_productVariants_images._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductVariantsData_productVariants_images',
-                  'G__typename'),
-              image: _image?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GProductVariantsData_productVariants_images', 'id'),
-              name: name);
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'image';
-        _image?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GProductVariantsData_productVariants_images',
-            _$failedField,
-            e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GProductVariantsData_productVariants_images_image
-    extends GProductVariantsData_productVariants_images_image {
-  @override
-  final String G__typename;
-  @override
-  final String url;
-  @override
-  final int width;
-  @override
-  final String id;
-
-  factory _$GProductVariantsData_productVariants_images_image(
-          [void Function(
-                  GProductVariantsData_productVariants_images_imageBuilder)?
-              updates]) =>
-      (new GProductVariantsData_productVariants_images_imageBuilder()
-            ..update(updates))
-          ._build();
-
-  _$GProductVariantsData_productVariants_images_image._(
-      {required this.G__typename,
-      required this.url,
-      required this.width,
-      required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GProductVariantsData_productVariants_images_image', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        url, r'GProductVariantsData_productVariants_images_image', 'url');
-    BuiltValueNullFieldError.checkNotNull(
-        width, r'GProductVariantsData_productVariants_images_image', 'width');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GProductVariantsData_productVariants_images_image', 'id');
-  }
-
-  @override
-  GProductVariantsData_productVariants_images_image rebuild(
-          void Function(
-                  GProductVariantsData_productVariants_images_imageBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GProductVariantsData_productVariants_images_imageBuilder toBuilder() =>
-      new GProductVariantsData_productVariants_images_imageBuilder()
-        ..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GProductVariantsData_productVariants_images_image &&
-        G__typename == other.G__typename &&
-        url == other.url &&
-        width == other.width &&
-        id == other.id;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, url.hashCode);
-    _$hash = $jc(_$hash, width.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(
-            r'GProductVariantsData_productVariants_images_image')
-          ..add('G__typename', G__typename)
-          ..add('url', url)
-          ..add('width', width)
-          ..add('id', id))
-        .toString();
-  }
-}
-
-class GProductVariantsData_productVariants_images_imageBuilder
-    implements
-        Builder<GProductVariantsData_productVariants_images_image,
-            GProductVariantsData_productVariants_images_imageBuilder> {
-  _$GProductVariantsData_productVariants_images_image? _$v;
-
-  String? _G__typename;
-  String? get G__typename => _$this._G__typename;
-  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
-
-  String? _url;
-  String? get url => _$this._url;
-  set url(String? url) => _$this._url = url;
-
-  int? _width;
-  int? get width => _$this._width;
-  set width(int? width) => _$this._width = width;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  GProductVariantsData_productVariants_images_imageBuilder() {
-    GProductVariantsData_productVariants_images_image._initializeBuilder(this);
-  }
-
-  GProductVariantsData_productVariants_images_imageBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _G__typename = $v.G__typename;
-      _url = $v.url;
-      _width = $v.width;
-      _id = $v.id;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(GProductVariantsData_productVariants_images_image other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GProductVariantsData_productVariants_images_image;
-  }
-
-  @override
-  void update(
-      void Function(GProductVariantsData_productVariants_images_imageBuilder)?
-          updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GProductVariantsData_productVariants_images_image build() => _build();
-
-  _$GProductVariantsData_productVariants_images_image _build() {
-    final _$result = _$v ??
-        new _$GProductVariantsData_productVariants_images_image._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductVariantsData_productVariants_images_image',
-                'G__typename'),
-            url: BuiltValueNullFieldError.checkNotNull(url,
-                r'GProductVariantsData_productVariants_images_image', 'url'),
-            width: BuiltValueNullFieldError.checkNotNull(width,
-                r'GProductVariantsData_productVariants_images_image', 'width'),
-            id: BuiltValueNullFieldError.checkNotNull(id,
-                r'GProductVariantsData_productVariants_images_image', 'id'));
     replace(_$result);
     return _$result;
   }
@@ -14596,8 +13636,6 @@ class _$GProductVariantData_productVariant
   @override
   final int? totalPrice;
   @override
-  final BuiltList<GProductVariantData_productVariant_images>? images;
-  @override
   final BuiltList<GProductVariantData_productVariant_gallery>? gallery;
   @override
   final GProductVariantData_productVariant_product? product;
@@ -14618,7 +13656,6 @@ class _$GProductVariantData_productVariant
       this.prices,
       this.specifications,
       this.totalPrice,
-      this.images,
       this.gallery,
       this.product,
       this.tags})
@@ -14649,7 +13686,6 @@ class _$GProductVariantData_productVariant
         prices == other.prices &&
         specifications == other.specifications &&
         totalPrice == other.totalPrice &&
-        images == other.images &&
         gallery == other.gallery &&
         product == other.product &&
         tags == other.tags;
@@ -14665,7 +13701,6 @@ class _$GProductVariantData_productVariant
     _$hash = $jc(_$hash, prices.hashCode);
     _$hash = $jc(_$hash, specifications.hashCode);
     _$hash = $jc(_$hash, totalPrice.hashCode);
-    _$hash = $jc(_$hash, images.hashCode);
     _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jc(_$hash, product.hashCode);
     _$hash = $jc(_$hash, tags.hashCode);
@@ -14683,7 +13718,6 @@ class _$GProductVariantData_productVariant
           ..add('prices', prices)
           ..add('specifications', specifications)
           ..add('totalPrice', totalPrice)
-          ..add('images', images)
           ..add('gallery', gallery)
           ..add('product', product)
           ..add('tags', tags))
@@ -14735,13 +13769,6 @@ class GProductVariantData_productVariantBuilder
   int? get totalPrice => _$this._totalPrice;
   set totalPrice(int? totalPrice) => _$this._totalPrice = totalPrice;
 
-  ListBuilder<GProductVariantData_productVariant_images>? _images;
-  ListBuilder<GProductVariantData_productVariant_images> get images =>
-      _$this._images ??=
-          new ListBuilder<GProductVariantData_productVariant_images>();
-  set images(ListBuilder<GProductVariantData_productVariant_images>? images) =>
-      _$this._images = images;
-
   ListBuilder<GProductVariantData_productVariant_gallery>? _gallery;
   ListBuilder<GProductVariantData_productVariant_gallery> get gallery =>
       _$this._gallery ??=
@@ -14778,7 +13805,6 @@ class GProductVariantData_productVariantBuilder
       _prices = $v.prices?.toBuilder();
       _specifications = $v.specifications?.toBuilder();
       _totalPrice = $v.totalPrice;
-      _images = $v.images?.toBuilder();
       _gallery = $v.gallery?.toBuilder();
       _product = $v.product?.toBuilder();
       _tags = $v.tags?.toBuilder();
@@ -14816,7 +13842,6 @@ class GProductVariantData_productVariantBuilder
               prices: _prices?.build(),
               specifications: _specifications?.build(),
               totalPrice: totalPrice,
-              images: _images?.build(),
               gallery: _gallery?.build(),
               product: _product?.build(),
               tags: _tags?.build());
@@ -14828,8 +13853,6 @@ class GProductVariantData_productVariantBuilder
         _$failedField = 'specifications';
         _specifications?.build();
 
-        _$failedField = 'images';
-        _images?.build();
         _$failedField = 'gallery';
         _gallery?.build();
         _$failedField = 'product';
@@ -15852,312 +14875,6 @@ class GProductVariantData_productVariant_specifications_categoryBuilder
                 'id'),
             name: name,
             description: description);
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GProductVariantData_productVariant_images
-    extends GProductVariantData_productVariant_images {
-  @override
-  final String G__typename;
-  @override
-  final GProductVariantData_productVariant_images_image? image;
-  @override
-  final String id;
-  @override
-  final String? name;
-
-  factory _$GProductVariantData_productVariant_images(
-          [void Function(GProductVariantData_productVariant_imagesBuilder)?
-              updates]) =>
-      (new GProductVariantData_productVariant_imagesBuilder()..update(updates))
-          ._build();
-
-  _$GProductVariantData_productVariant_images._(
-      {required this.G__typename, this.image, required this.id, this.name})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GProductVariantData_productVariant_images', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GProductVariantData_productVariant_images', 'id');
-  }
-
-  @override
-  GProductVariantData_productVariant_images rebuild(
-          void Function(GProductVariantData_productVariant_imagesBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GProductVariantData_productVariant_imagesBuilder toBuilder() =>
-      new GProductVariantData_productVariant_imagesBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GProductVariantData_productVariant_images &&
-        G__typename == other.G__typename &&
-        image == other.image &&
-        id == other.id &&
-        name == other.name;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, image.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(
-            r'GProductVariantData_productVariant_images')
-          ..add('G__typename', G__typename)
-          ..add('image', image)
-          ..add('id', id)
-          ..add('name', name))
-        .toString();
-  }
-}
-
-class GProductVariantData_productVariant_imagesBuilder
-    implements
-        Builder<GProductVariantData_productVariant_images,
-            GProductVariantData_productVariant_imagesBuilder> {
-  _$GProductVariantData_productVariant_images? _$v;
-
-  String? _G__typename;
-  String? get G__typename => _$this._G__typename;
-  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
-
-  GProductVariantData_productVariant_images_imageBuilder? _image;
-  GProductVariantData_productVariant_images_imageBuilder get image =>
-      _$this._image ??=
-          new GProductVariantData_productVariant_images_imageBuilder();
-  set image(GProductVariantData_productVariant_images_imageBuilder? image) =>
-      _$this._image = image;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  GProductVariantData_productVariant_imagesBuilder() {
-    GProductVariantData_productVariant_images._initializeBuilder(this);
-  }
-
-  GProductVariantData_productVariant_imagesBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _G__typename = $v.G__typename;
-      _image = $v.image?.toBuilder();
-      _id = $v.id;
-      _name = $v.name;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(GProductVariantData_productVariant_images other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GProductVariantData_productVariant_images;
-  }
-
-  @override
-  void update(
-      void Function(GProductVariantData_productVariant_imagesBuilder)?
-          updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GProductVariantData_productVariant_images build() => _build();
-
-  _$GProductVariantData_productVariant_images _build() {
-    _$GProductVariantData_productVariant_images _$result;
-    try {
-      _$result = _$v ??
-          new _$GProductVariantData_productVariant_images._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GProductVariantData_productVariant_images', 'G__typename'),
-              image: _image?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GProductVariantData_productVariant_images', 'id'),
-              name: name);
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'image';
-        _image?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GProductVariantData_productVariant_images',
-            _$failedField,
-            e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GProductVariantData_productVariant_images_image
-    extends GProductVariantData_productVariant_images_image {
-  @override
-  final String G__typename;
-  @override
-  final String url;
-  @override
-  final int width;
-  @override
-  final String id;
-
-  factory _$GProductVariantData_productVariant_images_image(
-          [void Function(
-                  GProductVariantData_productVariant_images_imageBuilder)?
-              updates]) =>
-      (new GProductVariantData_productVariant_images_imageBuilder()
-            ..update(updates))
-          ._build();
-
-  _$GProductVariantData_productVariant_images_image._(
-      {required this.G__typename,
-      required this.url,
-      required this.width,
-      required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GProductVariantData_productVariant_images_image', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        url, r'GProductVariantData_productVariant_images_image', 'url');
-    BuiltValueNullFieldError.checkNotNull(
-        width, r'GProductVariantData_productVariant_images_image', 'width');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GProductVariantData_productVariant_images_image', 'id');
-  }
-
-  @override
-  GProductVariantData_productVariant_images_image rebuild(
-          void Function(GProductVariantData_productVariant_images_imageBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GProductVariantData_productVariant_images_imageBuilder toBuilder() =>
-      new GProductVariantData_productVariant_images_imageBuilder()
-        ..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GProductVariantData_productVariant_images_image &&
-        G__typename == other.G__typename &&
-        url == other.url &&
-        width == other.width &&
-        id == other.id;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, url.hashCode);
-    _$hash = $jc(_$hash, width.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(
-            r'GProductVariantData_productVariant_images_image')
-          ..add('G__typename', G__typename)
-          ..add('url', url)
-          ..add('width', width)
-          ..add('id', id))
-        .toString();
-  }
-}
-
-class GProductVariantData_productVariant_images_imageBuilder
-    implements
-        Builder<GProductVariantData_productVariant_images_image,
-            GProductVariantData_productVariant_images_imageBuilder> {
-  _$GProductVariantData_productVariant_images_image? _$v;
-
-  String? _G__typename;
-  String? get G__typename => _$this._G__typename;
-  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
-
-  String? _url;
-  String? get url => _$this._url;
-  set url(String? url) => _$this._url = url;
-
-  int? _width;
-  int? get width => _$this._width;
-  set width(int? width) => _$this._width = width;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  GProductVariantData_productVariant_images_imageBuilder() {
-    GProductVariantData_productVariant_images_image._initializeBuilder(this);
-  }
-
-  GProductVariantData_productVariant_images_imageBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _G__typename = $v.G__typename;
-      _url = $v.url;
-      _width = $v.width;
-      _id = $v.id;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(GProductVariantData_productVariant_images_image other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GProductVariantData_productVariant_images_image;
-  }
-
-  @override
-  void update(
-      void Function(GProductVariantData_productVariant_images_imageBuilder)?
-          updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GProductVariantData_productVariant_images_image build() => _build();
-
-  _$GProductVariantData_productVariant_images_image _build() {
-    final _$result = _$v ??
-        new _$GProductVariantData_productVariant_images_image._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductVariantData_productVariant_images_image',
-                'G__typename'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url, r'GProductVariantData_productVariant_images_image', 'url'),
-            width: BuiltValueNullFieldError.checkNotNull(width,
-                r'GProductVariantData_productVariant_images_image', 'width'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GProductVariantData_productVariant_images_image', 'id'));
     replace(_$result);
     return _$result;
   }
@@ -18761,7 +17478,7 @@ class _$GVehicleVariantsData_vehicleVariants_colors
   @override
   final String? code;
   @override
-  final BuiltList<GVehicleVariantsData_vehicleVariants_colors_images>? images;
+  final BuiltList<GVehicleVariantsData_vehicleVariants_colors_gallery>? gallery;
   @override
   final String? name;
 
@@ -18776,7 +17493,7 @@ class _$GVehicleVariantsData_vehicleVariants_colors
       {required this.G__typename,
       required this.id,
       this.code,
-      this.images,
+      this.gallery,
       this.name})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
@@ -18802,7 +17519,7 @@ class _$GVehicleVariantsData_vehicleVariants_colors
         G__typename == other.G__typename &&
         id == other.id &&
         code == other.code &&
-        images == other.images &&
+        gallery == other.gallery &&
         name == other.name;
   }
 
@@ -18812,7 +17529,7 @@ class _$GVehicleVariantsData_vehicleVariants_colors
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, code.hashCode);
-    _$hash = $jc(_$hash, images.hashCode);
+    _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -18825,7 +17542,7 @@ class _$GVehicleVariantsData_vehicleVariants_colors
           ..add('G__typename', G__typename)
           ..add('id', id)
           ..add('code', code)
-          ..add('images', images)
+          ..add('gallery', gallery)
           ..add('name', name))
         .toString();
   }
@@ -18849,14 +17566,15 @@ class GVehicleVariantsData_vehicleVariants_colorsBuilder
   String? get code => _$this._code;
   set code(String? code) => _$this._code = code;
 
-  ListBuilder<GVehicleVariantsData_vehicleVariants_colors_images>? _images;
-  ListBuilder<GVehicleVariantsData_vehicleVariants_colors_images> get images =>
-      _$this._images ??=
-          new ListBuilder<GVehicleVariantsData_vehicleVariants_colors_images>();
-  set images(
-          ListBuilder<GVehicleVariantsData_vehicleVariants_colors_images>?
-              images) =>
-      _$this._images = images;
+  ListBuilder<GVehicleVariantsData_vehicleVariants_colors_gallery>? _gallery;
+  ListBuilder<
+      GVehicleVariantsData_vehicleVariants_colors_gallery> get gallery => _$this
+          ._gallery ??=
+      new ListBuilder<GVehicleVariantsData_vehicleVariants_colors_gallery>();
+  set gallery(
+          ListBuilder<GVehicleVariantsData_vehicleVariants_colors_gallery>?
+              gallery) =>
+      _$this._gallery = gallery;
 
   String? _name;
   String? get name => _$this._name;
@@ -18872,7 +17590,7 @@ class GVehicleVariantsData_vehicleVariants_colorsBuilder
       _G__typename = $v.G__typename;
       _id = $v.id;
       _code = $v.code;
-      _images = $v.images?.toBuilder();
+      _gallery = $v.gallery?.toBuilder();
       _name = $v.name;
       _$v = null;
     }
@@ -18907,13 +17625,13 @@ class GVehicleVariantsData_vehicleVariants_colorsBuilder
               id: BuiltValueNullFieldError.checkNotNull(
                   id, r'GVehicleVariantsData_vehicleVariants_colors', 'id'),
               code: code,
-              images: _images?.build(),
+              gallery: _gallery?.build(),
               name: name);
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'images';
-        _images?.build();
+        _$failedField = 'gallery';
+        _gallery?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleVariantsData_vehicleVariants_colors',
@@ -18927,57 +17645,61 @@ class GVehicleVariantsData_vehicleVariants_colorsBuilder
   }
 }
 
-class _$GVehicleVariantsData_vehicleVariants_colors_images
-    extends GVehicleVariantsData_vehicleVariants_colors_images {
+class _$GVehicleVariantsData_vehicleVariants_colors_gallery
+    extends GVehicleVariantsData_vehicleVariants_colors_gallery {
   @override
   final String G__typename;
   @override
-  final String? name;
+  final _i2.JsonObject? file;
   @override
-  final GVehicleVariantsData_vehicleVariants_colors_images_image? image;
+  final String? type;
+  @override
+  final int? index;
 
-  factory _$GVehicleVariantsData_vehicleVariants_colors_images(
+  factory _$GVehicleVariantsData_vehicleVariants_colors_gallery(
           [void Function(
-                  GVehicleVariantsData_vehicleVariants_colors_imagesBuilder)?
+                  GVehicleVariantsData_vehicleVariants_colors_galleryBuilder)?
               updates]) =>
-      (new GVehicleVariantsData_vehicleVariants_colors_imagesBuilder()
+      (new GVehicleVariantsData_vehicleVariants_colors_galleryBuilder()
             ..update(updates))
           ._build();
 
-  _$GVehicleVariantsData_vehicleVariants_colors_images._(
-      {required this.G__typename, this.name, this.image})
+  _$GVehicleVariantsData_vehicleVariants_colors_gallery._(
+      {required this.G__typename, this.file, this.type, this.index})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GVehicleVariantsData_vehicleVariants_colors_images', 'G__typename');
+        r'GVehicleVariantsData_vehicleVariants_colors_gallery', 'G__typename');
   }
 
   @override
-  GVehicleVariantsData_vehicleVariants_colors_images rebuild(
+  GVehicleVariantsData_vehicleVariants_colors_gallery rebuild(
           void Function(
-                  GVehicleVariantsData_vehicleVariants_colors_imagesBuilder)
+                  GVehicleVariantsData_vehicleVariants_colors_galleryBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GVehicleVariantsData_vehicleVariants_colors_imagesBuilder toBuilder() =>
-      new GVehicleVariantsData_vehicleVariants_colors_imagesBuilder()
+  GVehicleVariantsData_vehicleVariants_colors_galleryBuilder toBuilder() =>
+      new GVehicleVariantsData_vehicleVariants_colors_galleryBuilder()
         ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GVehicleVariantsData_vehicleVariants_colors_images &&
+    return other is GVehicleVariantsData_vehicleVariants_colors_gallery &&
         G__typename == other.G__typename &&
-        name == other.name &&
-        image == other.image;
+        file == other.file &&
+        type == other.type &&
+        index == other.index;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jc(_$hash, file.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, index.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -18985,254 +17707,80 @@ class _$GVehicleVariantsData_vehicleVariants_colors_images
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'GVehicleVariantsData_vehicleVariants_colors_images')
+            r'GVehicleVariantsData_vehicleVariants_colors_gallery')
           ..add('G__typename', G__typename)
-          ..add('name', name)
-          ..add('image', image))
+          ..add('file', file)
+          ..add('type', type)
+          ..add('index', index))
         .toString();
   }
 }
 
-class GVehicleVariantsData_vehicleVariants_colors_imagesBuilder
+class GVehicleVariantsData_vehicleVariants_colors_galleryBuilder
     implements
-        Builder<GVehicleVariantsData_vehicleVariants_colors_images,
-            GVehicleVariantsData_vehicleVariants_colors_imagesBuilder> {
-  _$GVehicleVariantsData_vehicleVariants_colors_images? _$v;
+        Builder<GVehicleVariantsData_vehicleVariants_colors_gallery,
+            GVehicleVariantsData_vehicleVariants_colors_galleryBuilder> {
+  _$GVehicleVariantsData_vehicleVariants_colors_gallery? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
+  _i2.JsonObject? _file;
+  _i2.JsonObject? get file => _$this._file;
+  set file(_i2.JsonObject? file) => _$this._file = file;
 
-  GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder? _image;
-  GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder get image =>
-      _$this._image ??=
-          new GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder();
-  set image(
-          GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder?
-              image) =>
-      _$this._image = image;
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
 
-  GVehicleVariantsData_vehicleVariants_colors_imagesBuilder() {
-    GVehicleVariantsData_vehicleVariants_colors_images._initializeBuilder(this);
-  }
+  int? _index;
+  int? get index => _$this._index;
+  set index(int? index) => _$this._index = index;
 
-  GVehicleVariantsData_vehicleVariants_colors_imagesBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _G__typename = $v.G__typename;
-      _name = $v.name;
-      _image = $v.image?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(GVehicleVariantsData_vehicleVariants_colors_images other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GVehicleVariantsData_vehicleVariants_colors_images;
-  }
-
-  @override
-  void update(
-      void Function(GVehicleVariantsData_vehicleVariants_colors_imagesBuilder)?
-          updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GVehicleVariantsData_vehicleVariants_colors_images build() => _build();
-
-  _$GVehicleVariantsData_vehicleVariants_colors_images _build() {
-    _$GVehicleVariantsData_vehicleVariants_colors_images _$result;
-    try {
-      _$result = _$v ??
-          new _$GVehicleVariantsData_vehicleVariants_colors_images._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehicleVariantsData_vehicleVariants_colors_images',
-                  'G__typename'),
-              name: name,
-              image: _image?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'image';
-        _image?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GVehicleVariantsData_vehicleVariants_colors_images',
-            _$failedField,
-            e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GVehicleVariantsData_vehicleVariants_colors_images_image
-    extends GVehicleVariantsData_vehicleVariants_colors_images_image {
-  @override
-  final String G__typename;
-  @override
-  final String url;
-  @override
-  final int width;
-  @override
-  final String id;
-
-  factory _$GVehicleVariantsData_vehicleVariants_colors_images_image(
-          [void Function(
-                  GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder)?
-              updates]) =>
-      (new GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder()
-            ..update(updates))
-          ._build();
-
-  _$GVehicleVariantsData_vehicleVariants_colors_images_image._(
-      {required this.G__typename,
-      required this.url,
-      required this.width,
-      required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GVehicleVariantsData_vehicleVariants_colors_images_image',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(url,
-        r'GVehicleVariantsData_vehicleVariants_colors_images_image', 'url');
-    BuiltValueNullFieldError.checkNotNull(width,
-        r'GVehicleVariantsData_vehicleVariants_colors_images_image', 'width');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GVehicleVariantsData_vehicleVariants_colors_images_image', 'id');
-  }
-
-  @override
-  GVehicleVariantsData_vehicleVariants_colors_images_image rebuild(
-          void Function(
-                  GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder toBuilder() =>
-      new GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder()
-        ..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GVehicleVariantsData_vehicleVariants_colors_images_image &&
-        G__typename == other.G__typename &&
-        url == other.url &&
-        width == other.width &&
-        id == other.id;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, url.hashCode);
-    _$hash = $jc(_$hash, width.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(
-            r'GVehicleVariantsData_vehicleVariants_colors_images_image')
-          ..add('G__typename', G__typename)
-          ..add('url', url)
-          ..add('width', width)
-          ..add('id', id))
-        .toString();
-  }
-}
-
-class GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder
-    implements
-        Builder<GVehicleVariantsData_vehicleVariants_colors_images_image,
-            GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder> {
-  _$GVehicleVariantsData_vehicleVariants_colors_images_image? _$v;
-
-  String? _G__typename;
-  String? get G__typename => _$this._G__typename;
-  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
-
-  String? _url;
-  String? get url => _$this._url;
-  set url(String? url) => _$this._url = url;
-
-  int? _width;
-  int? get width => _$this._width;
-  set width(int? width) => _$this._width = width;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder() {
-    GVehicleVariantsData_vehicleVariants_colors_images_image._initializeBuilder(
+  GVehicleVariantsData_vehicleVariants_colors_galleryBuilder() {
+    GVehicleVariantsData_vehicleVariants_colors_gallery._initializeBuilder(
         this);
   }
 
-  GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder get _$this {
+  GVehicleVariantsData_vehicleVariants_colors_galleryBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _url = $v.url;
-      _width = $v.width;
-      _id = $v.id;
+      _file = $v.file;
+      _type = $v.type;
+      _index = $v.index;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(GVehicleVariantsData_vehicleVariants_colors_images_image other) {
+  void replace(GVehicleVariantsData_vehicleVariants_colors_gallery other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GVehicleVariantsData_vehicleVariants_colors_images_image;
+    _$v = other as _$GVehicleVariantsData_vehicleVariants_colors_gallery;
   }
 
   @override
   void update(
-      void Function(
-              GVehicleVariantsData_vehicleVariants_colors_images_imageBuilder)?
+      void Function(GVehicleVariantsData_vehicleVariants_colors_galleryBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GVehicleVariantsData_vehicleVariants_colors_images_image build() => _build();
+  GVehicleVariantsData_vehicleVariants_colors_gallery build() => _build();
 
-  _$GVehicleVariantsData_vehicleVariants_colors_images_image _build() {
+  _$GVehicleVariantsData_vehicleVariants_colors_gallery _build() {
     final _$result = _$v ??
-        new _$GVehicleVariantsData_vehicleVariants_colors_images_image._(
+        new _$GVehicleVariantsData_vehicleVariants_colors_gallery._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
-                r'GVehicleVariantsData_vehicleVariants_colors_images_image',
+                r'GVehicleVariantsData_vehicleVariants_colors_gallery',
                 'G__typename'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url,
-                r'GVehicleVariantsData_vehicleVariants_colors_images_image',
-                'url'),
-            width: BuiltValueNullFieldError.checkNotNull(
-                width,
-                r'GVehicleVariantsData_vehicleVariants_colors_images_image',
-                'width'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GVehicleVariantsData_vehicleVariants_colors_images_image',
-                'id'));
+            file: file,
+            type: type,
+            index: index);
     replace(_$result);
     return _$result;
   }
@@ -20536,8 +19084,8 @@ class _$GVehicleDealersData_vehicleDealers_vehicleColor
   @override
   final String? code;
   @override
-  final BuiltList<GVehicleDealersData_vehicleDealers_vehicleColor_images>?
-      images;
+  final BuiltList<GVehicleDealersData_vehicleDealers_vehicleColor_gallery>?
+      gallery;
 
   factory _$GVehicleDealersData_vehicleDealers_vehicleColor(
           [void Function(
@@ -20552,7 +19100,7 @@ class _$GVehicleDealersData_vehicleDealers_vehicleColor
       required this.id,
       this.name,
       this.code,
-      this.images})
+      this.gallery})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
         r'GVehicleDealersData_vehicleDealers_vehicleColor', 'G__typename');
@@ -20579,7 +19127,7 @@ class _$GVehicleDealersData_vehicleDealers_vehicleColor
         id == other.id &&
         name == other.name &&
         code == other.code &&
-        images == other.images;
+        gallery == other.gallery;
   }
 
   @override
@@ -20589,7 +19137,7 @@ class _$GVehicleDealersData_vehicleDealers_vehicleColor
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, code.hashCode);
-    _$hash = $jc(_$hash, images.hashCode);
+    _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -20602,7 +19150,7 @@ class _$GVehicleDealersData_vehicleDealers_vehicleColor
           ..add('id', id)
           ..add('name', name)
           ..add('code', code)
-          ..add('images', images))
+          ..add('gallery', gallery))
         .toString();
   }
 }
@@ -20629,14 +19177,15 @@ class GVehicleDealersData_vehicleDealers_vehicleColorBuilder
   String? get code => _$this._code;
   set code(String? code) => _$this._code = code;
 
-  ListBuilder<GVehicleDealersData_vehicleDealers_vehicleColor_images>? _images;
-  ListBuilder<GVehicleDealersData_vehicleDealers_vehicleColor_images>
-      get images => _$this._images ??= new ListBuilder<
-          GVehicleDealersData_vehicleDealers_vehicleColor_images>();
-  set images(
-          ListBuilder<GVehicleDealersData_vehicleDealers_vehicleColor_images>?
-              images) =>
-      _$this._images = images;
+  ListBuilder<GVehicleDealersData_vehicleDealers_vehicleColor_gallery>?
+      _gallery;
+  ListBuilder<GVehicleDealersData_vehicleDealers_vehicleColor_gallery>
+      get gallery => _$this._gallery ??= new ListBuilder<
+          GVehicleDealersData_vehicleDealers_vehicleColor_gallery>();
+  set gallery(
+          ListBuilder<GVehicleDealersData_vehicleDealers_vehicleColor_gallery>?
+              gallery) =>
+      _$this._gallery = gallery;
 
   GVehicleDealersData_vehicleDealers_vehicleColorBuilder() {
     GVehicleDealersData_vehicleDealers_vehicleColor._initializeBuilder(this);
@@ -20649,7 +19198,7 @@ class GVehicleDealersData_vehicleDealers_vehicleColorBuilder
       _id = $v.id;
       _name = $v.name;
       _code = $v.code;
-      _images = $v.images?.toBuilder();
+      _gallery = $v.gallery?.toBuilder();
       _$v = null;
     }
     return this;
@@ -20684,12 +19233,12 @@ class GVehicleDealersData_vehicleDealers_vehicleColorBuilder
                   id, r'GVehicleDealersData_vehicleDealers_vehicleColor', 'id'),
               name: name,
               code: code,
-              images: _images?.build());
+              gallery: _gallery?.build());
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'images';
-        _images?.build();
+        _$failedField = 'gallery';
+        _gallery?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GVehicleDealersData_vehicleDealers_vehicleColor',
@@ -20703,61 +19252,63 @@ class GVehicleDealersData_vehicleDealers_vehicleColorBuilder
   }
 }
 
-class _$GVehicleDealersData_vehicleDealers_vehicleColor_images
-    extends GVehicleDealersData_vehicleDealers_vehicleColor_images {
+class _$GVehicleDealersData_vehicleDealers_vehicleColor_gallery
+    extends GVehicleDealersData_vehicleDealers_vehicleColor_gallery {
   @override
   final String G__typename;
   @override
-  final String id;
+  final _i2.JsonObject? file;
   @override
-  final GVehicleDealersData_vehicleDealers_vehicleColor_images_image? image;
+  final String? type;
+  @override
+  final int? index;
 
-  factory _$GVehicleDealersData_vehicleDealers_vehicleColor_images(
+  factory _$GVehicleDealersData_vehicleDealers_vehicleColor_gallery(
           [void Function(
-                  GVehicleDealersData_vehicleDealers_vehicleColor_imagesBuilder)?
+                  GVehicleDealersData_vehicleDealers_vehicleColor_galleryBuilder)?
               updates]) =>
-      (new GVehicleDealersData_vehicleDealers_vehicleColor_imagesBuilder()
+      (new GVehicleDealersData_vehicleDealers_vehicleColor_galleryBuilder()
             ..update(updates))
           ._build();
 
-  _$GVehicleDealersData_vehicleDealers_vehicleColor_images._(
-      {required this.G__typename, required this.id, this.image})
+  _$GVehicleDealersData_vehicleDealers_vehicleColor_gallery._(
+      {required this.G__typename, this.file, this.type, this.index})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
-        r'GVehicleDealersData_vehicleDealers_vehicleColor_images',
+        r'GVehicleDealersData_vehicleDealers_vehicleColor_gallery',
         'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GVehicleDealersData_vehicleDealers_vehicleColor_images', 'id');
   }
 
   @override
-  GVehicleDealersData_vehicleDealers_vehicleColor_images rebuild(
+  GVehicleDealersData_vehicleDealers_vehicleColor_gallery rebuild(
           void Function(
-                  GVehicleDealersData_vehicleDealers_vehicleColor_imagesBuilder)
+                  GVehicleDealersData_vehicleDealers_vehicleColor_galleryBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GVehicleDealersData_vehicleDealers_vehicleColor_imagesBuilder toBuilder() =>
-      new GVehicleDealersData_vehicleDealers_vehicleColor_imagesBuilder()
+  GVehicleDealersData_vehicleDealers_vehicleColor_galleryBuilder toBuilder() =>
+      new GVehicleDealersData_vehicleDealers_vehicleColor_galleryBuilder()
         ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GVehicleDealersData_vehicleDealers_vehicleColor_images &&
+    return other is GVehicleDealersData_vehicleDealers_vehicleColor_gallery &&
         G__typename == other.G__typename &&
-        id == other.id &&
-        image == other.image;
+        file == other.file &&
+        type == other.type &&
+        index == other.index;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jc(_$hash, file.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, index.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -20765,230 +19316,81 @@ class _$GVehicleDealersData_vehicleDealers_vehicleColor_images
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'GVehicleDealersData_vehicleDealers_vehicleColor_images')
+            r'GVehicleDealersData_vehicleDealers_vehicleColor_gallery')
           ..add('G__typename', G__typename)
-          ..add('id', id)
-          ..add('image', image))
+          ..add('file', file)
+          ..add('type', type)
+          ..add('index', index))
         .toString();
   }
 }
 
-class GVehicleDealersData_vehicleDealers_vehicleColor_imagesBuilder
+class GVehicleDealersData_vehicleDealers_vehicleColor_galleryBuilder
     implements
-        Builder<GVehicleDealersData_vehicleDealers_vehicleColor_images,
-            GVehicleDealersData_vehicleDealers_vehicleColor_imagesBuilder> {
-  _$GVehicleDealersData_vehicleDealers_vehicleColor_images? _$v;
+        Builder<GVehicleDealersData_vehicleDealers_vehicleColor_gallery,
+            GVehicleDealersData_vehicleDealers_vehicleColor_galleryBuilder> {
+  _$GVehicleDealersData_vehicleDealers_vehicleColor_gallery? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
+  _i2.JsonObject? _file;
+  _i2.JsonObject? get file => _$this._file;
+  set file(_i2.JsonObject? file) => _$this._file = file;
 
-  GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder? _image;
-  GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder
-      get image => _$this._image ??=
-          new GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder();
-  set image(
-          GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder?
-              image) =>
-      _$this._image = image;
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
 
-  GVehicleDealersData_vehicleDealers_vehicleColor_imagesBuilder() {
-    GVehicleDealersData_vehicleDealers_vehicleColor_images._initializeBuilder(
+  int? _index;
+  int? get index => _$this._index;
+  set index(int? index) => _$this._index = index;
+
+  GVehicleDealersData_vehicleDealers_vehicleColor_galleryBuilder() {
+    GVehicleDealersData_vehicleDealers_vehicleColor_gallery._initializeBuilder(
         this);
   }
 
-  GVehicleDealersData_vehicleDealers_vehicleColor_imagesBuilder get _$this {
+  GVehicleDealersData_vehicleDealers_vehicleColor_galleryBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _id = $v.id;
-      _image = $v.image?.toBuilder();
+      _file = $v.file;
+      _type = $v.type;
+      _index = $v.index;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(GVehicleDealersData_vehicleDealers_vehicleColor_images other) {
+  void replace(GVehicleDealersData_vehicleDealers_vehicleColor_gallery other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GVehicleDealersData_vehicleDealers_vehicleColor_images;
+    _$v = other as _$GVehicleDealersData_vehicleDealers_vehicleColor_gallery;
   }
 
   @override
   void update(
       void Function(
-              GVehicleDealersData_vehicleDealers_vehicleColor_imagesBuilder)?
+              GVehicleDealersData_vehicleDealers_vehicleColor_galleryBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GVehicleDealersData_vehicleDealers_vehicleColor_images build() => _build();
+  GVehicleDealersData_vehicleDealers_vehicleColor_gallery build() => _build();
 
-  _$GVehicleDealersData_vehicleDealers_vehicleColor_images _build() {
-    _$GVehicleDealersData_vehicleDealers_vehicleColor_images _$result;
-    try {
-      _$result = _$v ??
-          new _$GVehicleDealersData_vehicleDealers_vehicleColor_images._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehicleDealersData_vehicleDealers_vehicleColor_images',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GVehicleDealersData_vehicleDealers_vehicleColor_images',
-                  'id'),
-              image: _image?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'image';
-        _image?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GVehicleDealersData_vehicleDealers_vehicleColor_images',
-            _$failedField,
-            e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GVehicleDealersData_vehicleDealers_vehicleColor_images_image
-    extends GVehicleDealersData_vehicleDealers_vehicleColor_images_image {
-  @override
-  final String G__typename;
-  @override
-  final String url;
-
-  factory _$GVehicleDealersData_vehicleDealers_vehicleColor_images_image(
-          [void Function(
-                  GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder)?
-              updates]) =>
-      (new GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder()
-            ..update(updates))
-          ._build();
-
-  _$GVehicleDealersData_vehicleDealers_vehicleColor_images_image._(
-      {required this.G__typename, required this.url})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GVehicleDealersData_vehicleDealers_vehicleColor_images_image',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(url,
-        r'GVehicleDealersData_vehicleDealers_vehicleColor_images_image', 'url');
-  }
-
-  @override
-  GVehicleDealersData_vehicleDealers_vehicleColor_images_image rebuild(
-          void Function(
-                  GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder
-      toBuilder() =>
-          new GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder()
-            ..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other
-            is GVehicleDealersData_vehicleDealers_vehicleColor_images_image &&
-        G__typename == other.G__typename &&
-        url == other.url;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, url.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(
-            r'GVehicleDealersData_vehicleDealers_vehicleColor_images_image')
-          ..add('G__typename', G__typename)
-          ..add('url', url))
-        .toString();
-  }
-}
-
-class GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder
-    implements
-        Builder<GVehicleDealersData_vehicleDealers_vehicleColor_images_image,
-            GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder> {
-  _$GVehicleDealersData_vehicleDealers_vehicleColor_images_image? _$v;
-
-  String? _G__typename;
-  String? get G__typename => _$this._G__typename;
-  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
-
-  String? _url;
-  String? get url => _$this._url;
-  set url(String? url) => _$this._url = url;
-
-  GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder() {
-    GVehicleDealersData_vehicleDealers_vehicleColor_images_image
-        ._initializeBuilder(this);
-  }
-
-  GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder
-      get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _G__typename = $v.G__typename;
-      _url = $v.url;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(
-      GVehicleDealersData_vehicleDealers_vehicleColor_images_image other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v =
-        other as _$GVehicleDealersData_vehicleDealers_vehicleColor_images_image;
-  }
-
-  @override
-  void update(
-      void Function(
-              GVehicleDealersData_vehicleDealers_vehicleColor_images_imageBuilder)?
-          updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GVehicleDealersData_vehicleDealers_vehicleColor_images_image build() =>
-      _build();
-
-  _$GVehicleDealersData_vehicleDealers_vehicleColor_images_image _build() {
+  _$GVehicleDealersData_vehicleDealers_vehicleColor_gallery _build() {
     final _$result = _$v ??
-        new _$GVehicleDealersData_vehicleDealers_vehicleColor_images_image._(
+        new _$GVehicleDealersData_vehicleDealers_vehicleColor_gallery._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
-                r'GVehicleDealersData_vehicleDealers_vehicleColor_images_image',
+                r'GVehicleDealersData_vehicleDealers_vehicleColor_gallery',
                 'G__typename'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url,
-                r'GVehicleDealersData_vehicleDealers_vehicleColor_images_image',
-                'url'));
+            file: file,
+            type: type,
+            index: index);
     replace(_$result);
     return _$result;
   }
@@ -22854,7 +21256,8 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor
   final String? code;
   @override
   final BuiltList<
-      GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images>? images;
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery>?
+      gallery;
 
   factory _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor(
           [void Function(
@@ -22869,7 +21272,7 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor
       required this.id,
       this.name,
       this.code,
-      this.images})
+      this.gallery})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
@@ -22900,7 +21303,7 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor
         id == other.id &&
         name == other.name &&
         code == other.code &&
-        images == other.images;
+        gallery == other.gallery;
   }
 
   @override
@@ -22910,7 +21313,7 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, code.hashCode);
-    _$hash = $jc(_$hash, images.hashCode);
+    _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -22923,7 +21326,7 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor
           ..add('id', id)
           ..add('name', name)
           ..add('code', code)
-          ..add('images', images))
+          ..add('gallery', gallery))
         .toString();
   }
 }
@@ -22950,16 +21353,17 @@ class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColorBuilder
   String? get code => _$this._code;
   set code(String? code) => _$this._code = code;
 
-  ListBuilder<GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images>?
-      _images;
-  ListBuilder<GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images>
-      get images => _$this._images ??= new ListBuilder<
-          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images>();
-  set images(
+  ListBuilder<
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery>?
+      _gallery;
+  ListBuilder<GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery>
+      get gallery => _$this._gallery ??= new ListBuilder<
+          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery>();
+  set gallery(
           ListBuilder<
-                  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images>?
-              images) =>
-      _$this._images = images;
+                  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery>?
+              gallery) =>
+      _$this._gallery = gallery;
 
   GUpdateVehicleDealerData_updateVehicleDealer_vehicleColorBuilder() {
     GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor
@@ -22973,7 +21377,7 @@ class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColorBuilder
       _id = $v.id;
       _name = $v.name;
       _code = $v.code;
-      _images = $v.images?.toBuilder();
+      _gallery = $v.gallery?.toBuilder();
       _$v = null;
     }
     return this;
@@ -23012,12 +21416,12 @@ class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColorBuilder
                   'id'),
               name: name,
               code: code,
-              images: _images?.build());
+              gallery: _gallery?.build());
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'images';
-        _images?.build();
+        _$failedField = 'gallery';
+        _gallery?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor',
@@ -23031,66 +21435,65 @@ class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColorBuilder
   }
 }
 
-class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images
-    extends GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images {
+class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery
+    extends GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery {
   @override
   final String G__typename;
   @override
-  final String id;
+  final _i2.JsonObject? file;
   @override
-  final GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image?
-      image;
+  final String? type;
+  @override
+  final int? index;
 
-  factory _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images(
+  factory _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery(
           [void Function(
-                  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder)?
+                  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_galleryBuilder)?
               updates]) =>
-      (new GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder()
+      (new GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_galleryBuilder()
             ..update(updates))
           ._build();
 
-  _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images._(
-      {required this.G__typename, required this.id, this.image})
+  _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery._(
+      {required this.G__typename, this.file, this.type, this.index})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
-        r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images',
+        r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery',
         'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id,
-        r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images',
-        'id');
   }
 
   @override
-  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images rebuild(
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery rebuild(
           void Function(
-                  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder)
+                  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_galleryBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_galleryBuilder
       toBuilder() =>
-          new GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder()
+          new GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_galleryBuilder()
             ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other
-            is GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images &&
+            is GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery &&
         G__typename == other.G__typename &&
-        id == other.id &&
-        image == other.image;
+        file == other.file &&
+        type == other.type &&
+        index == other.index;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jc(_$hash, file.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, index.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -23098,51 +21501,51 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images')
+            r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery')
           ..add('G__typename', G__typename)
-          ..add('id', id)
-          ..add('image', image))
+          ..add('file', file)
+          ..add('type', type)
+          ..add('index', index))
         .toString();
   }
 }
 
-class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder
+class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_galleryBuilder
     implements
         Builder<
-            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images,
-            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder> {
-  _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images? _$v;
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery,
+            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_galleryBuilder> {
+  _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
+  _i2.JsonObject? _file;
+  _i2.JsonObject? get file => _$this._file;
+  set file(_i2.JsonObject? file) => _$this._file = file;
 
-  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder?
-      _image;
-  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder
-      get image => _$this._image ??=
-          new GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder();
-  set image(
-          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder?
-              image) =>
-      _$this._image = image;
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
 
-  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder() {
-    GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images
+  int? _index;
+  int? get index => _$this._index;
+  set index(int? index) => _$this._index = index;
+
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_galleryBuilder() {
+    GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery
         ._initializeBuilder(this);
   }
 
-  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_galleryBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _id = $v.id;
-      _image = $v.image?.toBuilder();
+      _file = $v.file;
+      _type = $v.type;
+      _index = $v.index;
       _$v = null;
     }
     return this;
@@ -23150,191 +21553,35 @@ class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder
 
   @override
   void replace(
-      GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images other) {
+      GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other
-        as _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images;
+        as _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery;
   }
 
   @override
   void update(
       void Function(
-              GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_imagesBuilder)?
+              GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_galleryBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images build() =>
+  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery build() =>
       _build();
 
-  _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images _build() {
-    _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images _$result;
-    try {
-      _$result = _$v ??
-          new _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images
-              ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images',
-                  'id'),
-              image: _image?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'image';
-        _image?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images',
-            _$failedField,
-            e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image
-    extends GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image {
-  @override
-  final String G__typename;
-  @override
-  final String url;
-
-  factory _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image(
-          [void Function(
-                  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder)?
-              updates]) =>
-      (new GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder()
-            ..update(updates))
-          ._build();
-
-  _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image._(
-      {required this.G__typename, required this.url})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        url,
-        r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image',
-        'url');
-  }
-
-  @override
-  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image rebuild(
-          void Function(
-                  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder
-      toBuilder() =>
-          new GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder()
-            ..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other
-            is GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image &&
-        G__typename == other.G__typename &&
-        url == other.url;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, url.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(
-            r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image')
-          ..add('G__typename', G__typename)
-          ..add('url', url))
-        .toString();
-  }
-}
-
-class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder
-    implements
-        Builder<
-            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image,
-            GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder> {
-  _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image? _$v;
-
-  String? _G__typename;
-  String? get G__typename => _$this._G__typename;
-  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
-
-  String? _url;
-  String? get url => _$this._url;
-  set url(String? url) => _$this._url = url;
-
-  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder() {
-    GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image
-        ._initializeBuilder(this);
-  }
-
-  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder
-      get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _G__typename = $v.G__typename;
-      _url = $v.url;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(
-      GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image
-          other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other
-        as _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image;
-  }
-
-  @override
-  void update(
-      void Function(
-              GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_imageBuilder)?
-          updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image
-      build() => _build();
-
-  _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image
-      _build() {
+  _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery _build() {
     final _$result = _$v ??
-        new _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image
+        new _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery
             ._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
-                r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image',
+                r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery',
                 'G__typename'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url,
-                r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image',
-                'url'));
+            file: file,
+            type: type,
+            index: index);
     replace(_$result);
     return _$result;
   }
@@ -24897,8 +23144,8 @@ class _$GTestDriveDealersData_testDriveDealers_vehicleColor
   @override
   final String? code;
   @override
-  final BuiltList<GTestDriveDealersData_testDriveDealers_vehicleColor_images>?
-      images;
+  final BuiltList<GTestDriveDealersData_testDriveDealers_vehicleColor_gallery>?
+      gallery;
 
   factory _$GTestDriveDealersData_testDriveDealers_vehicleColor(
           [void Function(
@@ -24913,7 +23160,7 @@ class _$GTestDriveDealersData_testDriveDealers_vehicleColor
       required this.id,
       this.name,
       this.code,
-      this.images})
+      this.gallery})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
         r'GTestDriveDealersData_testDriveDealers_vehicleColor', 'G__typename');
@@ -24941,7 +23188,7 @@ class _$GTestDriveDealersData_testDriveDealers_vehicleColor
         id == other.id &&
         name == other.name &&
         code == other.code &&
-        images == other.images;
+        gallery == other.gallery;
   }
 
   @override
@@ -24951,7 +23198,7 @@ class _$GTestDriveDealersData_testDriveDealers_vehicleColor
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, code.hashCode);
-    _$hash = $jc(_$hash, images.hashCode);
+    _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -24964,7 +23211,7 @@ class _$GTestDriveDealersData_testDriveDealers_vehicleColor
           ..add('id', id)
           ..add('name', name)
           ..add('code', code)
-          ..add('images', images))
+          ..add('gallery', gallery))
         .toString();
   }
 }
@@ -24991,16 +23238,16 @@ class GTestDriveDealersData_testDriveDealers_vehicleColorBuilder
   String? get code => _$this._code;
   set code(String? code) => _$this._code = code;
 
-  ListBuilder<GTestDriveDealersData_testDriveDealers_vehicleColor_images>?
-      _images;
-  ListBuilder<GTestDriveDealersData_testDriveDealers_vehicleColor_images>
-      get images => _$this._images ??= new ListBuilder<
-          GTestDriveDealersData_testDriveDealers_vehicleColor_images>();
-  set images(
+  ListBuilder<GTestDriveDealersData_testDriveDealers_vehicleColor_gallery>?
+      _gallery;
+  ListBuilder<GTestDriveDealersData_testDriveDealers_vehicleColor_gallery>
+      get gallery => _$this._gallery ??= new ListBuilder<
+          GTestDriveDealersData_testDriveDealers_vehicleColor_gallery>();
+  set gallery(
           ListBuilder<
-                  GTestDriveDealersData_testDriveDealers_vehicleColor_images>?
-              images) =>
-      _$this._images = images;
+                  GTestDriveDealersData_testDriveDealers_vehicleColor_gallery>?
+              gallery) =>
+      _$this._gallery = gallery;
 
   GTestDriveDealersData_testDriveDealers_vehicleColorBuilder() {
     GTestDriveDealersData_testDriveDealers_vehicleColor._initializeBuilder(
@@ -25014,7 +23261,7 @@ class GTestDriveDealersData_testDriveDealers_vehicleColorBuilder
       _id = $v.id;
       _name = $v.name;
       _code = $v.code;
-      _images = $v.images?.toBuilder();
+      _gallery = $v.gallery?.toBuilder();
       _$v = null;
     }
     return this;
@@ -25049,12 +23296,12 @@ class GTestDriveDealersData_testDriveDealers_vehicleColorBuilder
                   r'GTestDriveDealersData_testDriveDealers_vehicleColor', 'id'),
               name: name,
               code: code,
-              images: _images?.build());
+              gallery: _gallery?.build());
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'images';
-        _images?.build();
+        _$failedField = 'gallery';
+        _gallery?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GTestDriveDealersData_testDriveDealers_vehicleColor',
@@ -25068,63 +23315,65 @@ class GTestDriveDealersData_testDriveDealers_vehicleColorBuilder
   }
 }
 
-class _$GTestDriveDealersData_testDriveDealers_vehicleColor_images
-    extends GTestDriveDealersData_testDriveDealers_vehicleColor_images {
+class _$GTestDriveDealersData_testDriveDealers_vehicleColor_gallery
+    extends GTestDriveDealersData_testDriveDealers_vehicleColor_gallery {
   @override
   final String G__typename;
   @override
-  final String id;
+  final _i2.JsonObject? file;
   @override
-  final GTestDriveDealersData_testDriveDealers_vehicleColor_images_image? image;
+  final String? type;
+  @override
+  final int? index;
 
-  factory _$GTestDriveDealersData_testDriveDealers_vehicleColor_images(
+  factory _$GTestDriveDealersData_testDriveDealers_vehicleColor_gallery(
           [void Function(
-                  GTestDriveDealersData_testDriveDealers_vehicleColor_imagesBuilder)?
+                  GTestDriveDealersData_testDriveDealers_vehicleColor_galleryBuilder)?
               updates]) =>
-      (new GTestDriveDealersData_testDriveDealers_vehicleColor_imagesBuilder()
+      (new GTestDriveDealersData_testDriveDealers_vehicleColor_galleryBuilder()
             ..update(updates))
           ._build();
 
-  _$GTestDriveDealersData_testDriveDealers_vehicleColor_images._(
-      {required this.G__typename, required this.id, this.image})
+  _$GTestDriveDealersData_testDriveDealers_vehicleColor_gallery._(
+      {required this.G__typename, this.file, this.type, this.index})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
-        r'GTestDriveDealersData_testDriveDealers_vehicleColor_images',
+        r'GTestDriveDealersData_testDriveDealers_vehicleColor_gallery',
         'G__typename');
-    BuiltValueNullFieldError.checkNotNull(id,
-        r'GTestDriveDealersData_testDriveDealers_vehicleColor_images', 'id');
   }
 
   @override
-  GTestDriveDealersData_testDriveDealers_vehicleColor_images rebuild(
+  GTestDriveDealersData_testDriveDealers_vehicleColor_gallery rebuild(
           void Function(
-                  GTestDriveDealersData_testDriveDealers_vehicleColor_imagesBuilder)
+                  GTestDriveDealersData_testDriveDealers_vehicleColor_galleryBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GTestDriveDealersData_testDriveDealers_vehicleColor_imagesBuilder
+  GTestDriveDealersData_testDriveDealers_vehicleColor_galleryBuilder
       toBuilder() =>
-          new GTestDriveDealersData_testDriveDealers_vehicleColor_imagesBuilder()
+          new GTestDriveDealersData_testDriveDealers_vehicleColor_galleryBuilder()
             ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other
-            is GTestDriveDealersData_testDriveDealers_vehicleColor_images &&
+            is GTestDriveDealersData_testDriveDealers_vehicleColor_gallery &&
         G__typename == other.G__typename &&
-        id == other.id &&
-        image == other.image;
+        file == other.file &&
+        type == other.type &&
+        index == other.index;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jc(_$hash, file.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, index.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -25132,200 +23381,50 @@ class _$GTestDriveDealersData_testDriveDealers_vehicleColor_images
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'GTestDriveDealersData_testDriveDealers_vehicleColor_images')
+            r'GTestDriveDealersData_testDriveDealers_vehicleColor_gallery')
           ..add('G__typename', G__typename)
-          ..add('id', id)
-          ..add('image', image))
+          ..add('file', file)
+          ..add('type', type)
+          ..add('index', index))
         .toString();
   }
 }
 
-class GTestDriveDealersData_testDriveDealers_vehicleColor_imagesBuilder
+class GTestDriveDealersData_testDriveDealers_vehicleColor_galleryBuilder
     implements
-        Builder<GTestDriveDealersData_testDriveDealers_vehicleColor_images,
-            GTestDriveDealersData_testDriveDealers_vehicleColor_imagesBuilder> {
-  _$GTestDriveDealersData_testDriveDealers_vehicleColor_images? _$v;
+        Builder<GTestDriveDealersData_testDriveDealers_vehicleColor_gallery,
+            GTestDriveDealersData_testDriveDealers_vehicleColor_galleryBuilder> {
+  _$GTestDriveDealersData_testDriveDealers_vehicleColor_gallery? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
+  _i2.JsonObject? _file;
+  _i2.JsonObject? get file => _$this._file;
+  set file(_i2.JsonObject? file) => _$this._file = file;
 
-  GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder?
-      _image;
-  GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder
-      get image => _$this._image ??=
-          new GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder();
-  set image(
-          GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder?
-              image) =>
-      _$this._image = image;
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
 
-  GTestDriveDealersData_testDriveDealers_vehicleColor_imagesBuilder() {
-    GTestDriveDealersData_testDriveDealers_vehicleColor_images
+  int? _index;
+  int? get index => _$this._index;
+  set index(int? index) => _$this._index = index;
+
+  GTestDriveDealersData_testDriveDealers_vehicleColor_galleryBuilder() {
+    GTestDriveDealersData_testDriveDealers_vehicleColor_gallery
         ._initializeBuilder(this);
   }
 
-  GTestDriveDealersData_testDriveDealers_vehicleColor_imagesBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _G__typename = $v.G__typename;
-      _id = $v.id;
-      _image = $v.image?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(
-      GTestDriveDealersData_testDriveDealers_vehicleColor_images other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GTestDriveDealersData_testDriveDealers_vehicleColor_images;
-  }
-
-  @override
-  void update(
-      void Function(
-              GTestDriveDealersData_testDriveDealers_vehicleColor_imagesBuilder)?
-          updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GTestDriveDealersData_testDriveDealers_vehicleColor_images build() =>
-      _build();
-
-  _$GTestDriveDealersData_testDriveDealers_vehicleColor_images _build() {
-    _$GTestDriveDealersData_testDriveDealers_vehicleColor_images _$result;
-    try {
-      _$result = _$v ??
-          new _$GTestDriveDealersData_testDriveDealers_vehicleColor_images._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GTestDriveDealersData_testDriveDealers_vehicleColor_images',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GTestDriveDealersData_testDriveDealers_vehicleColor_images',
-                  'id'),
-              image: _image?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'image';
-        _image?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GTestDriveDealersData_testDriveDealers_vehicleColor_images',
-            _$failedField,
-            e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GTestDriveDealersData_testDriveDealers_vehicleColor_images_image
-    extends GTestDriveDealersData_testDriveDealers_vehicleColor_images_image {
-  @override
-  final String G__typename;
-  @override
-  final String url;
-
-  factory _$GTestDriveDealersData_testDriveDealers_vehicleColor_images_image(
-          [void Function(
-                  GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder)?
-              updates]) =>
-      (new GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder()
-            ..update(updates))
-          ._build();
-
-  _$GTestDriveDealersData_testDriveDealers_vehicleColor_images_image._(
-      {required this.G__typename, required this.url})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GTestDriveDealersData_testDriveDealers_vehicleColor_images_image',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        url,
-        r'GTestDriveDealersData_testDriveDealers_vehicleColor_images_image',
-        'url');
-  }
-
-  @override
-  GTestDriveDealersData_testDriveDealers_vehicleColor_images_image rebuild(
-          void Function(
-                  GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder
-      toBuilder() =>
-          new GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder()
-            ..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other
-            is GTestDriveDealersData_testDriveDealers_vehicleColor_images_image &&
-        G__typename == other.G__typename &&
-        url == other.url;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, url.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(
-            r'GTestDriveDealersData_testDriveDealers_vehicleColor_images_image')
-          ..add('G__typename', G__typename)
-          ..add('url', url))
-        .toString();
-  }
-}
-
-class GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder
-    implements
-        Builder<
-            GTestDriveDealersData_testDriveDealers_vehicleColor_images_image,
-            GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder> {
-  _$GTestDriveDealersData_testDriveDealers_vehicleColor_images_image? _$v;
-
-  String? _G__typename;
-  String? get G__typename => _$this._G__typename;
-  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
-
-  String? _url;
-  String? get url => _$this._url;
-  set url(String? url) => _$this._url = url;
-
-  GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder() {
-    GTestDriveDealersData_testDriveDealers_vehicleColor_images_image
-        ._initializeBuilder(this);
-  }
-
-  GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder
+  GTestDriveDealersData_testDriveDealers_vehicleColor_galleryBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _url = $v.url;
+      _file = $v.file;
+      _type = $v.type;
+      _index = $v.index;
       _$v = null;
     }
     return this;
@@ -25333,36 +23432,34 @@ class GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder
 
   @override
   void replace(
-      GTestDriveDealersData_testDriveDealers_vehicleColor_images_image other) {
+      GTestDriveDealersData_testDriveDealers_vehicleColor_gallery other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other
-        as _$GTestDriveDealersData_testDriveDealers_vehicleColor_images_image;
+    _$v =
+        other as _$GTestDriveDealersData_testDriveDealers_vehicleColor_gallery;
   }
 
   @override
   void update(
       void Function(
-              GTestDriveDealersData_testDriveDealers_vehicleColor_images_imageBuilder)?
+              GTestDriveDealersData_testDriveDealers_vehicleColor_galleryBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GTestDriveDealersData_testDriveDealers_vehicleColor_images_image build() =>
+  GTestDriveDealersData_testDriveDealers_vehicleColor_gallery build() =>
       _build();
 
-  _$GTestDriveDealersData_testDriveDealers_vehicleColor_images_image _build() {
+  _$GTestDriveDealersData_testDriveDealers_vehicleColor_gallery _build() {
     final _$result = _$v ??
-        new _$GTestDriveDealersData_testDriveDealers_vehicleColor_images_image
-            ._(
+        new _$GTestDriveDealersData_testDriveDealers_vehicleColor_gallery._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
-                r'GTestDriveDealersData_testDriveDealers_vehicleColor_images_image',
+                r'GTestDriveDealersData_testDriveDealers_vehicleColor_gallery',
                 'G__typename'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url,
-                r'GTestDriveDealersData_testDriveDealers_vehicleColor_images_image',
-                'url'));
+            file: file,
+            type: type,
+            index: index);
     replace(_$result);
     return _$result;
   }
@@ -26222,8 +24319,8 @@ class _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor
   final String? code;
   @override
   final BuiltList<
-          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images>?
-      images;
+          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery>?
+      gallery;
 
   factory _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor(
           [void Function(
@@ -26238,7 +24335,7 @@ class _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor
       required this.id,
       this.name,
       this.code,
-      this.images})
+      this.gallery})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
@@ -26270,7 +24367,7 @@ class _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor
         id == other.id &&
         name == other.name &&
         code == other.code &&
-        images == other.images;
+        gallery == other.gallery;
   }
 
   @override
@@ -26280,7 +24377,7 @@ class _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, code.hashCode);
-    _$hash = $jc(_$hash, images.hashCode);
+    _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -26293,7 +24390,7 @@ class _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor
           ..add('id', id)
           ..add('name', name)
           ..add('code', code)
-          ..add('images', images))
+          ..add('gallery', gallery))
         .toString();
   }
 }
@@ -26321,17 +24418,17 @@ class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColorBuilder
   set code(String? code) => _$this._code = code;
 
   ListBuilder<
-          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images>?
-      _images;
+          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery>?
+      _gallery;
   ListBuilder<
-          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images>
-      get images => _$this._images ??= new ListBuilder<
-          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images>();
-  set images(
+          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery>
+      get gallery => _$this._gallery ??= new ListBuilder<
+          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery>();
+  set gallery(
           ListBuilder<
-                  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images>?
-              images) =>
-      _$this._images = images;
+                  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery>?
+              gallery) =>
+      _$this._gallery = gallery;
 
   GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColorBuilder() {
     GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor
@@ -26346,7 +24443,7 @@ class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColorBuilder
       _id = $v.id;
       _name = $v.name;
       _code = $v.code;
-      _images = $v.images?.toBuilder();
+      _gallery = $v.gallery?.toBuilder();
       _$v = null;
     }
     return this;
@@ -26387,12 +24484,12 @@ class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColorBuilder
                   'id'),
               name: name,
               code: code,
-              images: _images?.build());
+              gallery: _gallery?.build());
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'images';
-        _images?.build();
+        _$failedField = 'gallery';
+        _gallery?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor',
@@ -26406,66 +24503,65 @@ class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColorBuilder
   }
 }
 
-class _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images
-    extends GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images {
+class _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery
+    extends GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery {
   @override
   final String G__typename;
   @override
-  final String id;
+  final _i2.JsonObject? file;
   @override
-  final GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image?
-      image;
+  final String? type;
+  @override
+  final int? index;
 
-  factory _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images(
+  factory _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery(
           [void Function(
-                  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesBuilder)?
+                  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_galleryBuilder)?
               updates]) =>
-      (new GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesBuilder()
+      (new GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_galleryBuilder()
             ..update(updates))
           ._build();
 
-  _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images._(
-      {required this.G__typename, required this.id, this.image})
+  _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery._(
+      {required this.G__typename, this.file, this.type, this.index})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
-        r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images',
+        r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery',
         'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id,
-        r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images',
-        'id');
   }
 
   @override
-  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images rebuild(
+  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery rebuild(
           void Function(
-                  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesBuilder)
+                  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_galleryBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesBuilder
+  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_galleryBuilder
       toBuilder() =>
-          new GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesBuilder()
+          new GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_galleryBuilder()
             ..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other
-            is GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images &&
+            is GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery &&
         G__typename == other.G__typename &&
-        id == other.id &&
-        image == other.image;
+        file == other.file &&
+        type == other.type &&
+        index == other.index;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, image.hashCode);
+    _$hash = $jc(_$hash, file.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, index.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -26473,51 +24569,51 @@ class _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images')
+            r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery')
           ..add('G__typename', G__typename)
-          ..add('id', id)
-          ..add('image', image))
+          ..add('file', file)
+          ..add('type', type)
+          ..add('index', index))
         .toString();
   }
 }
 
-class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesBuilder
+class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_galleryBuilder
     implements
         Builder<
-            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images,
-            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesBuilder> {
-  _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images? _$v;
+            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery,
+            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_galleryBuilder> {
+  _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
+  _i2.JsonObject? _file;
+  _i2.JsonObject? get file => _$this._file;
+  set file(_i2.JsonObject? file) => _$this._file = file;
 
-  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder?
-      _image;
-  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder
-      get image => _$this._image ??=
-          new GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder();
-  set image(
-          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder?
-              image) =>
-      _$this._image = image;
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
 
-  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesBuilder() {
-    GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images
+  int? _index;
+  int? get index => _$this._index;
+  set index(int? index) => _$this._index = index;
+
+  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_galleryBuilder() {
+    GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery
         ._initializeBuilder(this);
   }
 
-  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesBuilder
+  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_galleryBuilder
       get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _id = $v.id;
-      _image = $v.image?.toBuilder();
+      _file = $v.file;
+      _type = $v.type;
+      _index = $v.index;
       _$v = null;
     }
     return this;
@@ -26525,196 +24621,37 @@ class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesBuilde
 
   @override
   void replace(
-      GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images
+      GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery
           other) {
     ArgumentError.checkNotNull(other, 'other');
     _$v = other
-        as _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images;
+        as _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery;
   }
 
   @override
   void update(
       void Function(
-              GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_imagesBuilder)?
+              GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_galleryBuilder)?
           updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images
+  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery
       build() => _build();
 
-  _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images
-      _build() {
-    _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images
-        _$result;
-    try {
-      _$result = _$v ??
-          new _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images
-              ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images',
-                  'id'),
-              image: _image?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'image';
-        _image?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images',
-            _$failedField,
-            e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image
-    extends GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image {
-  @override
-  final String G__typename;
-  @override
-  final String url;
-
-  factory _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image(
-          [void Function(
-                  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder)?
-              updates]) =>
-      (new GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder()
-            ..update(updates))
-          ._build();
-
-  _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image._(
-      {required this.G__typename, required this.url})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        url,
-        r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image',
-        'url');
-  }
-
-  @override
-  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image
-      rebuild(
-              void Function(
-                      GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder)
-                  updates) =>
-          (toBuilder()..update(updates)).build();
-
-  @override
-  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder
-      toBuilder() =>
-          new GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder()
-            ..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other
-            is GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image &&
-        G__typename == other.G__typename &&
-        url == other.url;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, url.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(
-            r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image')
-          ..add('G__typename', G__typename)
-          ..add('url', url))
-        .toString();
-  }
-}
-
-class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder
-    implements
-        Builder<
-            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image,
-            GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder> {
-  _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image?
-      _$v;
-
-  String? _G__typename;
-  String? get G__typename => _$this._G__typename;
-  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
-
-  String? _url;
-  String? get url => _$this._url;
-  set url(String? url) => _$this._url = url;
-
-  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder() {
-    GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image
-        ._initializeBuilder(this);
-  }
-
-  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder
-      get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _G__typename = $v.G__typename;
-      _url = $v.url;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(
-      GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image
-          other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other
-        as _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image;
-  }
-
-  @override
-  void update(
-      void Function(
-              GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_imageBuilder)?
-          updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image
-      build() => _build();
-
-  _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image
+  _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery
       _build() {
     final _$result = _$v ??
-        new _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image
+        new _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery
             ._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
-                r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image',
+                r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery',
                 'G__typename'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url,
-                r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image',
-                'url'));
+            file: file,
+            type: type,
+            index: index);
     replace(_$result);
     return _$result;
   }
@@ -27864,10 +25801,10 @@ class _$GProductDealersData_productDealers_productVariant
   @override
   final _i3.GDateTime? modifiedAt;
   @override
-  final BuiltList<GProductDealersData_productDealers_productVariant_images>?
-      images;
-  @override
   final GProductDealersData_productDealers_productVariant_product? product;
+  @override
+  final BuiltList<GProductDealersData_productDealers_productVariant_gallery>?
+      gallery;
 
   factory _$GProductDealersData_productDealers_productVariant(
           [void Function(
@@ -27882,8 +25819,8 @@ class _$GProductDealersData_productDealers_productVariant
       required this.id,
       this.name,
       this.modifiedAt,
-      this.images,
-      this.product})
+      this.product,
+      this.gallery})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
         r'GProductDealersData_productDealers_productVariant', 'G__typename');
@@ -27911,8 +25848,8 @@ class _$GProductDealersData_productDealers_productVariant
         id == other.id &&
         name == other.name &&
         modifiedAt == other.modifiedAt &&
-        images == other.images &&
-        product == other.product;
+        product == other.product &&
+        gallery == other.gallery;
   }
 
   @override
@@ -27922,8 +25859,8 @@ class _$GProductDealersData_productDealers_productVariant
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
-    _$hash = $jc(_$hash, images.hashCode);
     _$hash = $jc(_$hash, product.hashCode);
+    _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -27936,8 +25873,8 @@ class _$GProductDealersData_productDealers_productVariant
           ..add('id', id)
           ..add('name', name)
           ..add('modifiedAt', modifiedAt)
-          ..add('images', images)
-          ..add('product', product))
+          ..add('product', product)
+          ..add('gallery', gallery))
         .toString();
   }
 }
@@ -27966,16 +25903,6 @@ class GProductDealersData_productDealers_productVariantBuilder
   set modifiedAt(_i3.GDateTimeBuilder? modifiedAt) =>
       _$this._modifiedAt = modifiedAt;
 
-  ListBuilder<GProductDealersData_productDealers_productVariant_images>?
-      _images;
-  ListBuilder<GProductDealersData_productDealers_productVariant_images>
-      get images => _$this._images ??= new ListBuilder<
-          GProductDealersData_productDealers_productVariant_images>();
-  set images(
-          ListBuilder<GProductDealersData_productDealers_productVariant_images>?
-              images) =>
-      _$this._images = images;
-
   GProductDealersData_productDealers_productVariant_productBuilder? _product;
   GProductDealersData_productDealers_productVariant_productBuilder
       get product => _$this._product ??=
@@ -27984,6 +25911,17 @@ class GProductDealersData_productDealers_productVariantBuilder
           GProductDealersData_productDealers_productVariant_productBuilder?
               product) =>
       _$this._product = product;
+
+  ListBuilder<GProductDealersData_productDealers_productVariant_gallery>?
+      _gallery;
+  ListBuilder<GProductDealersData_productDealers_productVariant_gallery>
+      get gallery => _$this._gallery ??= new ListBuilder<
+          GProductDealersData_productDealers_productVariant_gallery>();
+  set gallery(
+          ListBuilder<
+                  GProductDealersData_productDealers_productVariant_gallery>?
+              gallery) =>
+      _$this._gallery = gallery;
 
   GProductDealersData_productDealers_productVariantBuilder() {
     GProductDealersData_productDealers_productVariant._initializeBuilder(this);
@@ -27996,8 +25934,8 @@ class GProductDealersData_productDealers_productVariantBuilder
       _id = $v.id;
       _name = $v.name;
       _modifiedAt = $v.modifiedAt?.toBuilder();
-      _images = $v.images?.toBuilder();
       _product = $v.product?.toBuilder();
+      _gallery = $v.gallery?.toBuilder();
       _$v = null;
     }
     return this;
@@ -28032,17 +25970,17 @@ class GProductDealersData_productDealers_productVariantBuilder
                   r'GProductDealersData_productDealers_productVariant', 'id'),
               name: name,
               modifiedAt: _modifiedAt?.build(),
-              images: _images?.build(),
-              product: _product?.build());
+              product: _product?.build(),
+              gallery: _gallery?.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'modifiedAt';
         _modifiedAt?.build();
-        _$failedField = 'images';
-        _images?.build();
         _$failedField = 'product';
         _product?.build();
+        _$failedField = 'gallery';
+        _gallery?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GProductDealersData_productDealers_productVariant',
@@ -28051,299 +25989,6 @@ class GProductDealersData_productDealers_productVariantBuilder
       }
       rethrow;
     }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GProductDealersData_productDealers_productVariant_images
-    extends GProductDealersData_productDealers_productVariant_images {
-  @override
-  final String G__typename;
-  @override
-  final String id;
-  @override
-  final GProductDealersData_productDealers_productVariant_images_image? image;
-
-  factory _$GProductDealersData_productDealers_productVariant_images(
-          [void Function(
-                  GProductDealersData_productDealers_productVariant_imagesBuilder)?
-              updates]) =>
-      (new GProductDealersData_productDealers_productVariant_imagesBuilder()
-            ..update(updates))
-          ._build();
-
-  _$GProductDealersData_productDealers_productVariant_images._(
-      {required this.G__typename, required this.id, this.image})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GProductDealersData_productDealers_productVariant_images',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GProductDealersData_productDealers_productVariant_images', 'id');
-  }
-
-  @override
-  GProductDealersData_productDealers_productVariant_images rebuild(
-          void Function(
-                  GProductDealersData_productDealers_productVariant_imagesBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GProductDealersData_productDealers_productVariant_imagesBuilder toBuilder() =>
-      new GProductDealersData_productDealers_productVariant_imagesBuilder()
-        ..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GProductDealersData_productDealers_productVariant_images &&
-        G__typename == other.G__typename &&
-        id == other.id &&
-        image == other.image;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, image.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(
-            r'GProductDealersData_productDealers_productVariant_images')
-          ..add('G__typename', G__typename)
-          ..add('id', id)
-          ..add('image', image))
-        .toString();
-  }
-}
-
-class GProductDealersData_productDealers_productVariant_imagesBuilder
-    implements
-        Builder<GProductDealersData_productDealers_productVariant_images,
-            GProductDealersData_productDealers_productVariant_imagesBuilder> {
-  _$GProductDealersData_productDealers_productVariant_images? _$v;
-
-  String? _G__typename;
-  String? get G__typename => _$this._G__typename;
-  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  GProductDealersData_productDealers_productVariant_images_imageBuilder? _image;
-  GProductDealersData_productDealers_productVariant_images_imageBuilder
-      get image => _$this._image ??=
-          new GProductDealersData_productDealers_productVariant_images_imageBuilder();
-  set image(
-          GProductDealersData_productDealers_productVariant_images_imageBuilder?
-              image) =>
-      _$this._image = image;
-
-  GProductDealersData_productDealers_productVariant_imagesBuilder() {
-    GProductDealersData_productDealers_productVariant_images._initializeBuilder(
-        this);
-  }
-
-  GProductDealersData_productDealers_productVariant_imagesBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _G__typename = $v.G__typename;
-      _id = $v.id;
-      _image = $v.image?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(GProductDealersData_productDealers_productVariant_images other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GProductDealersData_productDealers_productVariant_images;
-  }
-
-  @override
-  void update(
-      void Function(
-              GProductDealersData_productDealers_productVariant_imagesBuilder)?
-          updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GProductDealersData_productDealers_productVariant_images build() => _build();
-
-  _$GProductDealersData_productDealers_productVariant_images _build() {
-    _$GProductDealersData_productDealers_productVariant_images _$result;
-    try {
-      _$result = _$v ??
-          new _$GProductDealersData_productDealers_productVariant_images._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductDealersData_productDealers_productVariant_images',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GProductDealersData_productDealers_productVariant_images',
-                  'id'),
-              image: _image?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'image';
-        _image?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GProductDealersData_productDealers_productVariant_images',
-            _$failedField,
-            e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$GProductDealersData_productDealers_productVariant_images_image
-    extends GProductDealersData_productDealers_productVariant_images_image {
-  @override
-  final String G__typename;
-  @override
-  final String url;
-
-  factory _$GProductDealersData_productDealers_productVariant_images_image(
-          [void Function(
-                  GProductDealersData_productDealers_productVariant_images_imageBuilder)?
-              updates]) =>
-      (new GProductDealersData_productDealers_productVariant_images_imageBuilder()
-            ..update(updates))
-          ._build();
-
-  _$GProductDealersData_productDealers_productVariant_images_image._(
-      {required this.G__typename, required this.url})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GProductDealersData_productDealers_productVariant_images_image',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        url,
-        r'GProductDealersData_productDealers_productVariant_images_image',
-        'url');
-  }
-
-  @override
-  GProductDealersData_productDealers_productVariant_images_image rebuild(
-          void Function(
-                  GProductDealersData_productDealers_productVariant_images_imageBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GProductDealersData_productDealers_productVariant_images_imageBuilder
-      toBuilder() =>
-          new GProductDealersData_productDealers_productVariant_images_imageBuilder()
-            ..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other
-            is GProductDealersData_productDealers_productVariant_images_image &&
-        G__typename == other.G__typename &&
-        url == other.url;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, url.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(
-            r'GProductDealersData_productDealers_productVariant_images_image')
-          ..add('G__typename', G__typename)
-          ..add('url', url))
-        .toString();
-  }
-}
-
-class GProductDealersData_productDealers_productVariant_images_imageBuilder
-    implements
-        Builder<GProductDealersData_productDealers_productVariant_images_image,
-            GProductDealersData_productDealers_productVariant_images_imageBuilder> {
-  _$GProductDealersData_productDealers_productVariant_images_image? _$v;
-
-  String? _G__typename;
-  String? get G__typename => _$this._G__typename;
-  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
-
-  String? _url;
-  String? get url => _$this._url;
-  set url(String? url) => _$this._url = url;
-
-  GProductDealersData_productDealers_productVariant_images_imageBuilder() {
-    GProductDealersData_productDealers_productVariant_images_image
-        ._initializeBuilder(this);
-  }
-
-  GProductDealersData_productDealers_productVariant_images_imageBuilder
-      get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _G__typename = $v.G__typename;
-      _url = $v.url;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(
-      GProductDealersData_productDealers_productVariant_images_image other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other
-        as _$GProductDealersData_productDealers_productVariant_images_image;
-  }
-
-  @override
-  void update(
-      void Function(
-              GProductDealersData_productDealers_productVariant_images_imageBuilder)?
-          updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GProductDealersData_productDealers_productVariant_images_image build() =>
-      _build();
-
-  _$GProductDealersData_productDealers_productVariant_images_image _build() {
-    final _$result = _$v ??
-        new _$GProductDealersData_productDealers_productVariant_images_image._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductDealersData_productDealers_productVariant_images_image',
-                'G__typename'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url,
-                r'GProductDealersData_productDealers_productVariant_images_image',
-                'url'));
     replace(_$result);
     return _$result;
   }
@@ -28677,6 +26322,152 @@ class GProductDealersData_productDealers_productVariant_product_brandBuilder
                 r'GProductDealersData_productDealers_productVariant_product_brand',
                 'id'),
             name: name);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GProductDealersData_productDealers_productVariant_gallery
+    extends GProductDealersData_productDealers_productVariant_gallery {
+  @override
+  final String G__typename;
+  @override
+  final _i2.JsonObject? file;
+  @override
+  final String? type;
+  @override
+  final int? index;
+
+  factory _$GProductDealersData_productDealers_productVariant_gallery(
+          [void Function(
+                  GProductDealersData_productDealers_productVariant_galleryBuilder)?
+              updates]) =>
+      (new GProductDealersData_productDealers_productVariant_galleryBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GProductDealersData_productDealers_productVariant_gallery._(
+      {required this.G__typename, this.file, this.type, this.index})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GProductDealersData_productDealers_productVariant_gallery',
+        'G__typename');
+  }
+
+  @override
+  GProductDealersData_productDealers_productVariant_gallery rebuild(
+          void Function(
+                  GProductDealersData_productDealers_productVariant_galleryBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GProductDealersData_productDealers_productVariant_galleryBuilder
+      toBuilder() =>
+          new GProductDealersData_productDealers_productVariant_galleryBuilder()
+            ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GProductDealersData_productDealers_productVariant_gallery &&
+        G__typename == other.G__typename &&
+        file == other.file &&
+        type == other.type &&
+        index == other.index;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, file.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, index.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GProductDealersData_productDealers_productVariant_gallery')
+          ..add('G__typename', G__typename)
+          ..add('file', file)
+          ..add('type', type)
+          ..add('index', index))
+        .toString();
+  }
+}
+
+class GProductDealersData_productDealers_productVariant_galleryBuilder
+    implements
+        Builder<GProductDealersData_productDealers_productVariant_gallery,
+            GProductDealersData_productDealers_productVariant_galleryBuilder> {
+  _$GProductDealersData_productDealers_productVariant_gallery? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  _i2.JsonObject? _file;
+  _i2.JsonObject? get file => _$this._file;
+  set file(_i2.JsonObject? file) => _$this._file = file;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
+
+  int? _index;
+  int? get index => _$this._index;
+  set index(int? index) => _$this._index = index;
+
+  GProductDealersData_productDealers_productVariant_galleryBuilder() {
+    GProductDealersData_productDealers_productVariant_gallery
+        ._initializeBuilder(this);
+  }
+
+  GProductDealersData_productDealers_productVariant_galleryBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _file = $v.file;
+      _type = $v.type;
+      _index = $v.index;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(
+      GProductDealersData_productDealers_productVariant_gallery other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GProductDealersData_productDealers_productVariant_gallery;
+  }
+
+  @override
+  void update(
+      void Function(
+              GProductDealersData_productDealers_productVariant_galleryBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GProductDealersData_productDealers_productVariant_gallery build() => _build();
+
+  _$GProductDealersData_productDealers_productVariant_gallery _build() {
+    final _$result = _$v ??
+        new _$GProductDealersData_productDealers_productVariant_gallery._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductDealersData_productDealers_productVariant_gallery',
+                'G__typename'),
+            file: file,
+            type: type,
+            index: index);
     replace(_$result);
     return _$result;
   }

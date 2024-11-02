@@ -1,7 +1,6 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:dealerapp/src/app/model/dealer_stock_model.dart';
 import 'package:dealerapp/src/app/model/product_details_model.dart';
-import 'package:dealerapp/src/app/model/variant_details.model.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema.gql.dart';
 import 'package:dealerapp/src/app/repository/graphql_client.dart';
@@ -121,7 +120,7 @@ class InventoryRepository {
     return (0, null);
   }*/
 
-  Future<(int, List<VariantDetailsModel>?)> getVehicles({
+  Future<(int, List<ProductVariantModel>?)> getVehicles({
     required int take,
     required int skip,
     List<String>? ids,
@@ -166,7 +165,7 @@ class InventoryRepository {
           return (
             response.data!.vehicleVariantsCount ?? 0,
             response.data!.vehicleVariants!
-                .map((p0) => VariantDetailsModel.fromJson(p0.toJson()))
+                .map((p0) => ProductVariantModel.vehicleFromJson(p0.toJson()))
                 .toList()
           );
         }

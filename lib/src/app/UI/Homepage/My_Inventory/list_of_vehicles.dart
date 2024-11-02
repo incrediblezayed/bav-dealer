@@ -14,7 +14,7 @@ class ListOfVehicles extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final inventoryPro = ref.watch(inventoryProvider);
     final data = inventoryPro.vehicles?.where(
-      (element) => element.colors
+      (element) => element.sortedColors
           .where(
             (p0) => !(inventoryPro.vehicleDealers ?? [])
                 .map((e) => e.vehicleColor?.id)

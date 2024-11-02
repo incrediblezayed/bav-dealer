@@ -101,7 +101,7 @@ class _KInvetoryProductCardState extends ConsumerState<KInvetoryProductCard> {
                           borderRadius: BorderRadius.circular(6.r),
                           // Placeholder for the product image
                           child: KCachedNWImage(
-                            variants.images.firstOrNull?.image.url ??
+                            variants.gallery.firstOrNull?.file?.file?.url ??
                                 '', // Use the URL of the product image
                             fit: BoxFit.cover,
                           ),

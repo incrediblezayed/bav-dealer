@@ -397,9 +397,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GProductDealersData_productDealers_prices.serializer)
       ..add(GProductDealersData_productDealers_prices_category.serializer)
       ..add(GProductDealersData_productDealers_productVariant.serializer)
-      ..add(GProductDealersData_productDealers_productVariant_images.serializer)
-      ..add(GProductDealersData_productDealers_productVariant_images_image
-          .serializer)
+      ..add(
+          GProductDealersData_productDealers_productVariant_gallery.serializer)
       ..add(
           GProductDealersData_productDealers_productVariant_product.serializer)
       ..add(GProductDealersData_productDealers_productVariant_product_brand
@@ -498,8 +497,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GProductVariantData.serializer)
       ..add(GProductVariantData_productVariant.serializer)
       ..add(GProductVariantData_productVariant_gallery.serializer)
-      ..add(GProductVariantData_productVariant_images.serializer)
-      ..add(GProductVariantData_productVariant_images_image.serializer)
       ..add(GProductVariantData_productVariant_prices.serializer)
       ..add(GProductVariantData_productVariant_prices_category.serializer)
       ..add(GProductVariantData_productVariant_product.serializer)
@@ -543,8 +540,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GProductVariantsData.serializer)
       ..add(GProductVariantsData_productVariants.serializer)
       ..add(GProductVariantsData_productVariants_gallery.serializer)
-      ..add(GProductVariantsData_productVariants_images.serializer)
-      ..add(GProductVariantsData_productVariants_images_image.serializer)
       ..add(GProductVariantsData_productVariants_prices.serializer)
       ..add(GProductVariantsData_productVariants_prices_category.serializer)
       ..add(GProductVariantsData_productVariants_product.serializer)
@@ -670,9 +665,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GTestDriveDealersData.serializer)
       ..add(GTestDriveDealersData_testDriveDealers.serializer)
       ..add(GTestDriveDealersData_testDriveDealers_vehicleColor.serializer)
-      ..add(
-          GTestDriveDealersData_testDriveDealers_vehicleColor_images.serializer)
-      ..add(GTestDriveDealersData_testDriveDealers_vehicleColor_images_image
+      ..add(GTestDriveDealersData_testDriveDealers_vehicleColor_gallery
           .serializer)
       ..add(GTestDriveDealersData_testDriveDealers_vehicleVariant.serializer)
       ..add(GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle
@@ -744,10 +737,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GUpdateTestDriveDealerData_updateTestDriveDealer.serializer)
       ..add(GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor
           .serializer)
-      ..add(GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images
-          .serializer)
       ..add(
-          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images_image
+          GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery
               .serializer)
       ..add(GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant
           .serializer)
@@ -775,11 +766,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           .serializer)
       ..add(
           GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor.serializer)
-      ..add(GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images
+      ..add(GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery
           .serializer)
-      ..add(
-          GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images_image
-              .serializer)
       ..add(GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant
           .serializer)
       ..add(GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle
@@ -909,9 +897,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleDealersData_vehicleDealers_prices.serializer)
       ..add(GVehicleDealersData_vehicleDealers_prices_category.serializer)
       ..add(GVehicleDealersData_vehicleDealers_vehicleColor.serializer)
-      ..add(GVehicleDealersData_vehicleDealers_vehicleColor_images.serializer)
-      ..add(GVehicleDealersData_vehicleDealers_vehicleColor_images_image
-          .serializer)
+      ..add(GVehicleDealersData_vehicleDealers_vehicleColor_gallery.serializer)
       ..add(GVehicleDealersData_vehicleDealers_vehicleVariant.serializer)
       ..add(
           GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle.serializer)
@@ -1041,8 +1027,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GVehicleVariantsData.serializer)
       ..add(GVehicleVariantsData_vehicleVariants.serializer)
       ..add(GVehicleVariantsData_vehicleVariants_colors.serializer)
-      ..add(GVehicleVariantsData_vehicleVariants_colors_images.serializer)
-      ..add(GVehicleVariantsData_vehicleVariants_colors_images_image.serializer)
+      ..add(GVehicleVariantsData_vehicleVariants_colors_gallery.serializer)
       ..add(GVehicleVariantsData_vehicleVariants_prices.serializer)
       ..add(GVehicleVariantsData_vehicleVariants_prices_category.serializer)
       ..add(GVehicleVariantsData_vehicleVariants_vehicle.serializer)
@@ -1771,10 +1756,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
-                GProductDealersData_productDealers_productVariant_images)
+                GProductDealersData_productDealers_productVariant_gallery)
           ]),
           () => new ListBuilder<
-              GProductDealersData_productDealers_productVariant_images>())
+              GProductDealersData_productDealers_productVariant_gallery>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(GProductFilterDataData_productTypes)]),
@@ -2028,11 +2013,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
               GProductVariantData_productVariant_specifications>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
-            const FullType(GProductVariantData_productVariant_images)
-          ]),
-          () => new ListBuilder<GProductVariantData_productVariant_images>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [
             const FullType(GProductVariantData_productVariant_gallery)
           ]),
           () => new ListBuilder<GProductVariantData_productVariant_gallery>())
@@ -2090,11 +2070,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<
               GProductVariantsData_productVariants_specifications>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [
-            const FullType(GProductVariantsData_productVariants_images)
-          ]),
-          () => new ListBuilder<GProductVariantsData_productVariants_images>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(GProductVariantsData_productVariants_gallery)
@@ -2328,10 +2303,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
-                GTestDriveDealersData_testDriveDealers_vehicleColor_images)
+                GTestDriveDealersData_testDriveDealers_vehicleColor_gallery)
           ]),
           () => new ListBuilder<
-              GTestDriveDealersData_testDriveDealers_vehicleColor_images>())
+              GTestDriveDealersData_testDriveDealers_vehicleColor_gallery>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GTestDriveOrderCreateInput)]),
@@ -2406,10 +2381,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
-                GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images)
+                GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery)
           ]),
           () => new ListBuilder<
-              GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_images>())
+              GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(GUpdateVehicleDealerData_updateVehicleDealer_prices)
@@ -2426,10 +2401,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
-                GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images)
+                GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery)
           ]),
           () => new ListBuilder<
-              GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_images>())
+              GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GUserData_user_addresses)]),
@@ -2655,10 +2630,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
-                GVehicleDealersData_vehicleDealers_vehicleColor_images)
+                GVehicleDealersData_vehicleDealers_vehicleColor_gallery)
           ]),
           () => new ListBuilder<
-              GVehicleDealersData_vehicleDealers_vehicleColor_images>())
+              GVehicleDealersData_vehicleDealers_vehicleColor_gallery>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(GVehicleFilterDataData_vehicleTypes)]),
@@ -2981,10 +2956,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<GVehicleVariantsData_vehicleVariants>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
-            const FullType(GVehicleVariantsData_vehicleVariants_colors_images)
+            const FullType(GVehicleVariantsData_vehicleVariants_colors_gallery)
           ]),
           () => new ListBuilder<
-              GVehicleVariantsData_vehicleVariants_colors_images>())
+              GVehicleVariantsData_vehicleVariants_colors_gallery>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(GVehicleVariantsData_vehicleVariants_prices)

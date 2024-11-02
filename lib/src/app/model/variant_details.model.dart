@@ -1,12 +1,13 @@
-// ignore_for_file: public_member_api_docs
+/* // ignore_for_file: public_member_api_docs
 
 import 'dart:convert';
 import 'dart:ui';
 
+import 'package:collection/collection.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 
-class VariantDetailsModel {
-  VariantDetailsModel({
+class ProductVariantModel {
+  ProductVariantModel({
     required this.prices,
     required this.colors,
     required this.name,
@@ -14,13 +15,19 @@ class VariantDetailsModel {
     required this.totalPrice,
     required this.vehicle,
     required this.tags,
+    required this.gallery,
   });
 
-  factory VariantDetailsModel.fromRawJson(String str) =>
-      VariantDetailsModel.fromJson(json.decode(str));
+  factory ProductVariantModel.fromRawJson(String str) =>
+      ProductVariantModel.fromJson(json.decode(str));
 
-  factory VariantDetailsModel.fromJson(Map<String, dynamic> json) =>
-      VariantDetailsModel(
+  factory ProductVariantModel.fromJson(Map<String, dynamic> json) =>
+      ProductVariantModel(
+        gallery: json['gallery'] == null
+            ? []
+            : List<Gallery>.from(
+                json['gallery'].map((x) => Gallery.fromJson(x)),
+              ).sortedBy<num>((e) => e.index),
         prices: List<VehiclePrice>.from(
           json['prices'].map((x) => VehiclePrice.fromJson(x)),
         ),
@@ -38,8 +45,12 @@ class VariantDetailsModel {
             : [],
       );
 
+  List<Gallery> get galleryImages =>
+      gallery.where((e) => e.type == 'image').toList();
+
   final List<VehiclePrice> prices;
   final List<VehicleColor> colors;
+  final List<Gallery> gallery;
   final String name;
   final String id;
   final int totalPrice;
@@ -69,7 +80,7 @@ class VehicleColor {
             ? []
             : List<Gallery>.from(
                 json['gallery'].map((x) => Gallery.fromJson(x)),
-              ),
+              ).sortedBy<num>((e) => e.index),
         galleryView: json['galleryView'] == null
             ? []
             : List<GalleryView>.from(
@@ -84,7 +95,7 @@ class VehicleColor {
             ? []
             : List<Gallery>.from(
                 json['reels'].map((x) => Gallery.fromJson(x)),
-              ),
+              ).sortedBy<num>((e) => e.index),
         name: json['name'],
         videos: json['videos'] == null
             ? []
@@ -463,3 +474,4 @@ class Brand {
   final String name;
   final Logo? logo;
 }
+ */

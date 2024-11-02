@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:dealerapp/src/app/model/dealer_stock_model.dart';
 import 'package:dealerapp/src/app/model/product_details_model.dart';
-import 'package:dealerapp/src/app/model/variant_details.model.dart';
 import 'package:dealerapp/src/app/repository/inventory/graphql/__generated__/inventory.data.gql.dart';
 import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
@@ -23,16 +22,16 @@ class InventoryProvider extends ChangeNotifier {
   List<ProductVariantModel> _products = [];
 
   List<ProductVariantModel> get products => _products;
-  List<VariantDetailsModel>? _vehicles = [];
+  List<ProductVariantModel>? _vehicles = [];
 
-  List<VariantDetailsModel>? get vehicles => _vehicles;
+  List<ProductVariantModel>? get vehicles => _vehicles;
 
   set products(List<ProductVariantModel> data) {
     _products = data;
     notifyListeners();
   }
 
-  set vehicles(List<VariantDetailsModel>? data) {
+  set vehicles(List<ProductVariantModel>? data) {
     _vehicles = data;
     notifyListeners();
   }

@@ -1,11 +1,15 @@
-import 'dart:convert';
-import 'dart:ui';
+// ignore_for_file:  sort_constructors_first
+// ignore_for_file: public_member_api_docs
 
+import 'dart:convert';
+
+import 'package:collection/collection.dart';
 import 'package:dealerapp/src/app/repository/graphql_client.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/log_colors.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 enum ItemType {
   product,
@@ -13,56 +17,54 @@ enum ItemType {
 }
 
 class ProductVariantModel {
-  ProductVariantModel({
-    required this.prices,
-    required this.colors,
-    required this.name,
-    required this.specifications,
-    required this.id,
-    required this.totalPrice,
-    required this.vehicle,
-    required this.tags,
-    required this.gallery,
-    required this.product,
-    required this.itemType,
-    required this.images,
-  });
+  ProductVariantModel(
+      {required this.prices,
+      required List<VehicleColor> colors,
+      required this.name,
+      required this.specifications,
+      required this.id,
+      required this.totalPrice,
+      required this.vehicle,
+      required this.tags,
+      required this.gallery,
+      required this.product,
+      required this.itemType})
+      : _colors = colors;
 
-  factory ProductVariantModel.vehicleFromJson(Map<String, dynamic> json) {
+  factory ProductVariantModel.vehicleFromJson(
+    Map<String, dynamic> json,
+  ) {
     try {
       return ProductVariantModel(
-        prices: json['prices'] == null
-            ? []
-            : List<VehiclePrice>.from(
-                json['prices'].map((x) => VehiclePrice.fromJson(x)),
-              ),
-        colors: json['colors'] == null
-            ? []
-            : List<VehicleColor>.from(
-                json['colors'].map((x) => VehicleColor.fromJson(x)),
-              ),
-        name: json['name'],
-        specifications: json['specifications'] == null
-            ? []
-            : List<Specification>.from(
-                json['specifications'].map((x) => Specification.fromJson(x)),
-              ),
-        id: json['id'],
-        totalPrice: json['totalPrice'],
-        vehicle: ProductModel.fromJson(json['vehicle']),
-        tags: json['tags'] != null && json['tags'].length > 0
-            ? List<Tag>.from(json['tags'].map((x) => Tag.fromJson(x)))
-            : [],
-        gallery: json['gallery'] == null
-            ? []
-            : List<Gallery>.from(
-                json['gallery'].map((x) => Gallery.fromJson(x)),
-              ),
-        product: null,
-        images:
-            (json['images'] as List).map((e) => ImageItem.fromJson(e)).toList(),
-        itemType: ItemType.vehicle,
-      );
+          prices: json['prices'] == null
+              ? []
+              : List<VehiclePrice>.from(
+                  json['prices'].map((x) => VehiclePrice.fromJson(x)),
+                ),
+          colors: json['colors'] == null
+              ? []
+              : List<VehicleColor>.from(
+                  json['colors'].map((x) => VehicleColor.fromJson(x)),
+                ),
+          name: json['name'],
+          specifications: json['specifications'] == null
+              ? []
+              : List<Specification>.from(
+                  json['specifications'].map((x) => Specification.fromJson(x)),
+                ),
+          id: json['id'],
+          totalPrice: json['totalPrice'],
+          vehicle: ProductModel.fromJson(json['vehicle']),
+          tags: json['tags'] != null && json['tags'].length > 0
+              ? List<Tag>.from(json['tags'].map((x) => Tag.fromJson(x)))
+              : [],
+          gallery: json['gallery'] == null
+              ? []
+              : List<Gallery>.from(
+                  json['gallery'].map((x) => Gallery.fromJson(x)),
+                ).sorted((a, b) => a.index.compareTo(b.index)),
+          product: null,
+          itemType: ItemType.vehicle);
     } catch (e) {
       e.log();
       if (e is! DioException) {
@@ -77,30 +79,29 @@ class ProductVariantModel {
   factory ProductVariantModel.productFromJson(Map<String, dynamic> json) {
     try {
       return ProductVariantModel(
-        prices: [],
-        colors: [],
-        name: json['name'],
-        specifications: json['specifications'] == null
-            ? []
-            : List<Specification>.from(
-                json['specifications'].map((x) => Specification.fromJson(x)),
-              ),
-        id: json['id'],
-        totalPrice: json['totalPrice'],
-        vehicle: null,
-        tags: json['tags'] != null && json['tags'].length > 0
-            ? List<Tag>.from(json['tags'].map((x) => Tag.fromJson(x)))
-            : [],
-        gallery: json['gallery'] == null
-            ? []
-            : List<Gallery>.from(
-                json['gallery'].map((x) => Gallery.fromJson(x)),
-              ),
-        product: ProductModel.fromJson(json['product']),
-        images:
-            (json['images'] as List).map((e) => ImageItem.fromJson(e)).toList(),
-        itemType: ItemType.product,
-      );
+          prices: [],
+          colors: [],
+          name: json['name'],
+          specifications: json['specifications'] == null
+              ? []
+              : List<Specification>.from(
+                  json['specifications'].map((x) => Specification.fromJson(x)),
+                ),
+          id: json['id'],
+          totalPrice: json['totalPrice'] is int
+              ? json['totalPrice']
+              : int.tryParse(json['totalPrice']?.toString() ?? '0'),
+          vehicle: null,
+          tags: json['tags'] != null && json['tags'].length > 0
+              ? List<Tag>.from(json['tags'].map((x) => Tag.fromJson(x)))
+              : [],
+          gallery: json['gallery'] == null
+              ? []
+              : List<Gallery>.from(
+                  json['gallery'].map((x) => Gallery.fromJson(x)),
+                ).sorted((a, b) => a.index.compareTo(b.index)),
+          product: ProductModel.fromJson(json['product']),
+          itemType: ItemType.product);
     } catch (e) {
       e.log();
       if (e is! DioException) {
@@ -114,19 +115,68 @@ class ProductVariantModel {
 
   ProductModel get parentProduct =>
       itemType == ItemType.product ? product! : vehicle!;
+
+  Specification? get rangeSpecification =>
+      specifications.firstWhereOrNull(
+        (element) => element.specification.name == 'Range',
+      ) ??
+      parentProduct.specifications.firstWhereOrNull(
+        (element) => element.specification.name == 'Range',
+      );
+
+  Specification? get batteryCapacitySpecification =>
+      specifications.firstWhereOrNull(
+        (element) => element.specification.name == 'Battery Capacity',
+      ) ??
+      parentProduct.specifications.firstWhereOrNull(
+        (element) => element.specification.name == 'Battery Capacity',
+      );
+
+  Specification? get batteryWarranty =>
+      specifications.firstWhereOrNull(
+        (element) => element.specification.name == 'Battery Warranty',
+      ) ??
+      parentProduct.specifications.firstWhereOrNull(
+        (element) => element.specification.name == 'Battery Warranty',
+      );
+
+  List<Gallery> get images => gallery
+      .where((e) => e.type == GalleryItemType.image)
+      .sortedBy<num>((e) => e.index)
+      .toList();
+
+  List<VehicleColor> get sortedColors =>
+      _colors.sortedBy<num>((e) => e.isDefault ? 0 : 1);
+
   final List<VehiclePrice> prices;
-  final List<VehicleColor> colors;
+  final List<VehicleColor> _colors;
   final String name;
   final List<Specification> specifications;
   final String id;
   final int? totalPrice;
   final ProductModel? vehicle;
   final List<Tag> tags;
-  final List<ImageItem> images;
 
   final ProductModel? product;
   final List<Gallery> gallery;
   final ItemType itemType;
+
+  @override
+  String toString() {
+    return '''ProductVariantModel(
+      id: $id,
+      name: $name,
+      itemType: $itemType,
+      totalPrice: $totalPrice,
+      prices: ${prices.length},
+      colors: ${_colors.length},
+      specifications: ${specifications.length},
+      tags: ${tags.length},
+      gallery: ${gallery.length},
+      vehicle: ${vehicle?.name},
+      product: ${product?.name}
+    )''';
+  }
 }
 
 class VehicleColor {
@@ -135,28 +185,43 @@ class VehicleColor {
     required this.code,
     required this.gallery,
     required this.name,
+    required this.isDefault,
   });
 
   factory VehicleColor.fromRawJson(String str) =>
       VehicleColor.fromJson(json.decode(str));
 
-  factory VehicleColor.fromJson(Map<String, dynamic> json) => VehicleColor(
-        id: json['id'],
-        code: HexColor.fromHex(json['code'] ?? '#000000'),
-        name: json['name'],
-        gallery: json['gallery'] == null
-            ? []
-            : List<Gallery>.from(
-                json['gallery'].map((x) => Gallery.fromJson(x)),
-              ),
+  factory VehicleColor.fromJson(Map<String, dynamic> json) {
+    Color color = Colors.black;
+    try {
+      color = HexColor.fromHex(json['code'] ?? '#000000');
+    } catch (e) {
+      e.log();
+      json.log(
+        color: LogColors.red,
       );
+    }
+    return VehicleColor(
+      id: json['id']?.toString() ?? '', // Ensure id is a string
+      code: color, // Default to black if null
+      name: json['name'] ?? '', // Default to empty string if null
+      gallery: json['gallery'] == null
+          ? []
+          : List<Gallery>.from(json['gallery'].map((x) => Gallery.fromJson(x)))
+              .sortedBy<num>((e) => e.index),
+      isDefault: json['default'] ?? false,
+    );
+  }
+
   final String id;
   final Color code;
   final List<Gallery> gallery;
   final String name;
+  final bool isDefault;
 
   List<Gallery> get images => gallery
       .where((element) => element.type == GalleryItemType.image)
+      .sortedBy<num>((e) => e.index)
       .toList();
 
   @override
@@ -166,12 +231,17 @@ class VehicleColor {
     return other.id == id &&
         other.code == code &&
         listEquals(other.gallery, gallery) &&
-        other.name == name;
+        other.name == name &&
+        other.isDefault == isDefault;
   }
 
   @override
   int get hashCode {
-    return id.hashCode ^ code.hashCode ^ gallery.hashCode ^ name.hashCode;
+    return id.hashCode ^
+        code.hashCode ^
+        gallery.hashCode ^
+        name.hashCode ^
+        isDefault.hashCode;
   }
 }
 
@@ -186,7 +256,9 @@ class Gallery {
 
   factory Gallery.fromJson(Map<String, dynamic> json) => Gallery(
         file: json['file'] == null ? null : ImageElement.fromJson(json['file']),
-        index: json['index'],
+        index: json['index'] is int
+            ? json['index']
+            : int.tryParse(json['index']?.toString() ?? '0'),
         type: GalleryItemType.values.firstWhere(
           (e) => e.name == json['type'],
         ),
@@ -195,6 +267,11 @@ class Gallery {
   final ImageElement? file;
   final int index;
   final GalleryItemType type;
+
+  @override
+  String toString() {
+    return 'Gallery(file: $file, index: $index, type: $type)';
+  }
 }
 
 class ImageElement {
@@ -207,17 +284,26 @@ class ImageElement {
       ImageElement.fromJson(json.decode(str));
 
   factory ImageElement.fromJson(Map<String, dynamic> json) => ImageElement(
-        name: json['name'],
+        name: json['name'] ?? json['filename'] ?? '',
         file: json['image'] == null
             ? json['video'] == null
                 ? json['file'] == null
-                    ? null
+                    ? json['url'] == null
+                        ? null
+                        : Logo(
+                            url: json['url'],
+                            extension: json['extension'] ?? '')
                     : Logo.fromJson(json['file'])
                 : Logo.fromJson(json['video'])
             : Logo.fromJson(json['image']),
       );
   final String? name;
   final Logo? file;
+
+  @override
+  String toString() {
+    return 'ImageElement(name: $name, file: $file)';
+  }
 }
 
 class Logo {
@@ -240,6 +326,11 @@ class Logo {
 
   final String url;
   final String? extension;
+
+  @override
+  String toString() {
+    return 'Logo(url: $url, extension: $extension)';
+  }
 }
 
 class VideoElement {
@@ -313,12 +404,13 @@ class Specification {
       return Specification(
         id: json['id'],
         name: json['name'],
-        specification: Type.fromJson(json['specification']),
+        specification: ProductType.fromJson(json['specification']),
         type: json['type'],
         intValue: json['intValue'],
         stringValue: json['stringValue'],
-        category:
-            json['category'] == null ? null : Type.fromJson(json['category']),
+        category: json['category'] == null
+            ? null
+            : ProductType.fromJson(json['category']),
         isKeyFeature: json['isKeyFeature'] ?? false,
       );
     } catch (e) {
@@ -350,7 +442,7 @@ class Specification {
     ];
   }
 
-  String getValue() {
+  String getValueWithUnit() {
     var data = '';
     if (type == 'int') {
       data = intValue.toString();
@@ -360,48 +452,52 @@ class Specification {
     return data.isEmpty ? '' : '$data ${specification.unit}';
   }
 
+  String? get value => type == 'int' ? intValue?.toString() : stringValue;
   final String id;
   final String name;
-  final Type specification;
+  final ProductType specification;
   final String type;
   final int? intValue;
   final String? stringValue;
-  final Type? category;
+  final ProductType? category;
   final bool isKeyFeature;
 }
 
-class Type {
-  Type({
+class ProductType {
+  ProductType({
     required this.id,
     required this.name,
     required this.description,
     required this.unit,
+    required this.vehicleType,
     this.logo,
   });
 
-  factory Type.fromRawJson(String str) => Type.fromJson(json.decode(str));
+  factory ProductType.fromRawJson(String str) =>
+      ProductType.fromJson(json.decode(str));
 
-  factory Type.fromJson(Map<String, dynamic> json) => Type(
-        id: json['id'],
+  factory ProductType.fromJson(Map<String, dynamic> json) => ProductType(
+        id: json['id'] ?? '',
         name: json['name'],
-        description: json['description'],
+        description: json['description'] ?? '',
         unit: json['unit'] ?? '',
         logo: json['logo'] == null ? null : Logo.fromJson(json['logo']),
+        vehicleType: json['vehicleType'] == null
+            ? null
+            : ProductType.fromJson(json['vehicleType']),
       );
-
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'description': description,
-        'unit': unit,
-        'logo': logo?.toJson(),
-      };
 
   final String id;
   final String name;
   final String description;
   final String unit;
+  final ProductType? vehicleType;
   final Logo? logo;
+
+  @override
+  String toString() {
+    return 'ProductType(id: $id, name: $name, description: $description, unit: $unit, vehicleType: $vehicleType, logo: $logo)';
+  }
 }
 
 class Tag {
@@ -430,6 +526,11 @@ class Tag {
   final String description;
 
   @override
+  String toString() {
+    return 'Tag(title: $title, description: $description)';
+  }
+
+  @override
   bool operator ==(covariant Tag other) {
     if (identical(this, other)) return true;
 
@@ -452,6 +553,7 @@ class ProductModel {
     required this.type,
     required this.subTypes,
     required this.specifications,
+    required this.brochure,
   });
 
   factory ProductModel.fromRawJson(String str) =>
@@ -463,11 +565,11 @@ class ProductModel {
         description: json['description'],
         longDescription: json['longDescription'] ?? '',
         id: json['id'],
-        type: json['type'] == null ? null : Type.fromJson(json['type']),
+        type: json['type'] == null ? null : ProductType.fromJson(json['type']),
         subTypes: json['subTypes'] == null
             ? []
-            : List<Type>.from(
-                json['subTypes'].map((x) => Type.fromJson(x)),
+            : List<ProductType>.from(
+                json['subTypes'].map((x) => ProductType.fromJson(x)),
               ),
         specifications: json['specifications'] == null ||
                 json['specifications'].length == 0
@@ -475,15 +577,19 @@ class ProductModel {
             : List<Specification>.from(
                 json['specifications'].map((x) => Specification.fromJson(x)),
               ),
+        brochure: json['brochure'] == null
+            ? null
+            : ImageElement.fromJson(json['brochure']),
       );
   final Brand? brand;
   final String name;
   final String? description;
   final String? longDescription;
   final String id;
-  final Type? type;
-  final List<Type> subTypes;
+  final ProductType? type;
+  final List<ProductType> subTypes;
   final List<Specification> specifications;
+  final ImageElement? brochure;
 }
 
 class Brand {
@@ -492,7 +598,11 @@ class Brand {
     required this.name,
     this.logo,
     this.type = const [],
+    this.index,
   });
+
+  ItemType get itemType =>
+      type.contains('vehicle') ? ItemType.vehicle : ItemType.product;
 
   factory Brand.fromRawJson(String str) => Brand.fromJson(json.decode(str));
 
@@ -505,13 +615,12 @@ class Brand {
             : List<String>.from(
                 json['type'].map((x) => x),
               ),
+        index: json['index'],
       );
-
-  ItemType get itemType =>
-      type.contains('vehicle') ? ItemType.vehicle : ItemType.product;
   final String id;
   final String name;
   final Logo? logo;
+  final int? index;
   final List<String> type;
 }
 
@@ -527,45 +636,5 @@ String _getImageUrl(dynamic url) {
     } else {
       return GraphqlClient.baseUrl + myUrl;
     }
-  }
-}
-
-class ImageItem {
-  final String id;
-  final String name;
-  final ImageDetail image;
-
-  ImageItem({
-    required this.id,
-    required this.name,
-    required this.image,
-  });
-
-  factory ImageItem.fromJson(Map<String, dynamic> json) {
-    return ImageItem(
-      id: json['id'],
-      name: json['name'],
-      image: ImageDetail.fromJson(json['image']),
-    );
-  }
-}
-
-class ImageDetail {
-  final String url;
-  final String? extension;
-  final int? filesize;
-
-  ImageDetail({
-    required this.url,
-    this.extension,
-    this.filesize,
-  });
-
-  factory ImageDetail.fromJson(Map<String, dynamic> json) {
-    return ImageDetail(
-      url: json['url'],
-      extension: json['extension'],
-      filesize: json['filesize'],
-    );
   }
 }
