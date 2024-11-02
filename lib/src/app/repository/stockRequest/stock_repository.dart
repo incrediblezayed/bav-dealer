@@ -28,6 +28,7 @@ class StockRepository {
       return (
         response.data?.productDealerStockRequestsCount ?? 0,
         (response.data?.productDealerStockRequests?.toList() ?? [])
+            .where((e) => e.productVariant != null)
             .map(
               (e) => DealerStockModel.fromJson(e.toJson(), DealerType.product),
             )
@@ -56,6 +57,7 @@ class StockRepository {
       return (
         response.data?.vehicleDealerStockRequestsCount ?? 0,
         (response.data?.vehicleDealerStockRequests?.toList() ?? [])
+            .where((e) => e.vehicleVariant != null)
             .map(
               (e) => DealerStockModel.fromJson(e.toJson(), DealerType.vehicle),
             )
