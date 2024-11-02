@@ -768,6 +768,7 @@ type VehicleType {
   modifiedAt: DateTime
   name: String
   description: String
+  icon: ImageFieldOutput
 }
 
 input VehicleTypeWhereUniqueInput {
@@ -798,6 +799,7 @@ input VehicleTypeUpdateInput {
   modifiedAt: DateTime
   name: String
   description: String
+  icon: ImageFieldInput
 }
 
 input VehicleTypeUpdateArgs {
@@ -810,6 +812,7 @@ input VehicleTypeCreateInput {
   modifiedAt: DateTime
   name: String
   description: String
+  icon: ImageFieldInput
 }
 
 type VehicleSubType {
@@ -884,6 +887,7 @@ type Brand {
   name: String
   type: [String!]
   logo: ImageFieldOutput
+  index: Int
 }
 
 input BrandWhereUniqueInput {
@@ -898,6 +902,18 @@ input BrandWhereInput {
   createdAt: DateTimeNullableFilter
   modifiedAt: DateTimeNullableFilter
   name: StringFilter
+  index: IntNullableFilter
+}
+
+input IntNullableFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: IntNullableFilter
 }
 
 input BrandOrderByInput {
@@ -905,6 +921,7 @@ input BrandOrderByInput {
   createdAt: OrderDirection
   modifiedAt: OrderDirection
   name: OrderDirection
+  index: OrderDirection
 }
 
 input BrandUpdateInput {
@@ -913,6 +930,7 @@ input BrandUpdateInput {
   name: String
   type: [String!]
   logo: ImageFieldInput
+  index: Int
 }
 
 input BrandUpdateArgs {
@@ -926,6 +944,7 @@ input BrandCreateInput {
   name: String
   type: [String!]
   logo: ImageFieldInput
+  index: Int
 }
 
 type Specification {
@@ -1129,6 +1148,7 @@ type Vehicle {
   colors(where: VehicleColorWhereInput! = {}, orderBy: [VehicleColorOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleColor!]
   colorsCount(where: VehicleColorWhereInput! = {}): Int
   informative: Boolean
+  brochure: FileFieldOutput
 }
 
 input VehicleWhereUniqueInput {
@@ -1201,6 +1221,7 @@ input VehicleUpdateInput {
   specifications: VehicleSpecificationRelateToManyForUpdateInput
   colors: VehicleColorRelateToManyForUpdateInput
   informative: Boolean
+  brochure: FileFieldInput
 }
 
 input VehicleSubTypeRelateToManyForUpdateInput {
@@ -1255,6 +1276,7 @@ input VehicleCreateInput {
   specifications: VehicleSpecificationRelateToManyForCreateInput
   colors: VehicleColorRelateToManyForCreateInput
   informative: Boolean
+  brochure: FileFieldInput
 }
 
 input VehicleSubTypeRelateToManyForCreateInput {
@@ -1288,6 +1310,7 @@ type VehicleColor {
   modifiedAt: DateTime
   name: String
   code: String
+  default: Boolean
   vehicle: Vehicle
   vehicleVariant(where: VehicleVariantWhereInput! = {}, orderBy: [VehicleVariantOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleVariant!]
   vehicleVariantCount(where: VehicleVariantWhereInput! = {}): Int
@@ -1317,6 +1340,7 @@ input VehicleColorWhereInput {
   modifiedAt: DateTimeNullableFilter
   name: StringFilter
   code: StringFilter
+  default: BooleanFilter
   vehicle: VehicleWhereInput
   vehicleVariant: VehicleVariantManyRelationFilter
   images: VehicleImageManyRelationFilter
@@ -1356,6 +1380,7 @@ input VehicleColorOrderByInput {
   modifiedAt: OrderDirection
   name: OrderDirection
   code: OrderDirection
+  default: OrderDirection
   disabled: OrderDirection
 }
 
@@ -1364,6 +1389,7 @@ input VehicleColorUpdateInput {
   modifiedAt: DateTime
   name: String
   code: String
+  default: Boolean
   vehicle: VehicleRelateToOneForUpdateInput
   vehicleVariant: VehicleVariantRelateToManyForUpdateInput
   images: VehicleImageRelateToManyForUpdateInput
@@ -1417,6 +1443,7 @@ input VehicleColorCreateInput {
   modifiedAt: DateTime
   name: String
   code: String
+  default: Boolean
   vehicle: VehicleRelateToOneForCreateInput
   vehicleVariant: VehicleVariantRelateToManyForCreateInput
   images: VehicleImageRelateToManyForCreateInput
@@ -1477,17 +1504,6 @@ input VehicleGalleryItemWhereInput {
   fileId: StringFilter
   color: VehicleColorWhereInput
   index: IntNullableFilter
-}
-
-input IntNullableFilter {
-  equals: Int
-  in: [Int!]
-  notIn: [Int!]
-  lt: Int
-  lte: Int
-  gt: Int
-  gte: Int
-  not: IntNullableFilter
 }
 
 input VehicleGalleryItemOrderByInput {
@@ -1980,6 +1996,7 @@ type VehicleVariant {
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  index: Int
   vehicle: Vehicle
   default: Boolean
   specifications(where: VehicleSpecificationWhereInput! = {}, orderBy: [VehicleSpecificationOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleSpecification!]
@@ -2009,6 +2026,7 @@ input VehicleVariantWhereInput {
   createdAt: DateTimeNullableFilter
   modifiedAt: DateTimeNullableFilter
   name: StringFilter
+  index: IntNullableFilter
   vehicle: VehicleWhereInput
   default: BooleanFilter
   specifications: VehicleSpecificationManyRelationFilter
@@ -2030,6 +2048,7 @@ input VehicleVariantOrderByInput {
   createdAt: OrderDirection
   modifiedAt: OrderDirection
   name: OrderDirection
+  index: OrderDirection
   default: OrderDirection
   informative: OrderDirection
   disabled: OrderDirection
@@ -2039,6 +2058,7 @@ input VehicleVariantUpdateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  index: Int
   vehicle: VehicleRelateToOneForUpdateInput
   default: Boolean
   specifications: VehicleSpecificationRelateToManyForUpdateInput
@@ -2065,6 +2085,7 @@ input VehicleVariantCreateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  index: Int
   vehicle: VehicleRelateToOneForCreateInput
   default: Boolean
   specifications: VehicleSpecificationRelateToManyForCreateInput
@@ -5054,6 +5075,7 @@ type ProductVariant {
   modifiedAt: DateTime
   name: String
   product: Product
+  index: Int
   default: Boolean
   specifications(where: ProductSpecificationWhereInput! = {}, orderBy: [ProductSpecificationOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductSpecification!]
   specificationsCount(where: ProductSpecificationWhereInput! = {}): Int
@@ -5089,6 +5111,7 @@ input ProductVariantWhereInput {
   modifiedAt: DateTimeNullableFilter
   name: StringFilter
   product: ProductWhereInput
+  index: IntNullableFilter
   default: BooleanFilter
   specifications: ProductSpecificationManyRelationFilter
   tags: TagManyRelationFilter
@@ -5129,6 +5152,7 @@ input ProductVariantOrderByInput {
   createdAt: OrderDirection
   modifiedAt: OrderDirection
   name: OrderDirection
+  index: OrderDirection
   default: OrderDirection
   disabled: OrderDirection
 }
@@ -5138,6 +5162,7 @@ input ProductVariantUpdateInput {
   modifiedAt: DateTime
   name: String
   product: ProductRelateToOneForUpdateInput
+  index: Int
   default: Boolean
   specifications: ProductSpecificationRelateToManyForUpdateInput
   tags: TagRelateToManyForUpdateInput
@@ -5187,6 +5212,7 @@ input ProductVariantCreateInput {
   modifiedAt: DateTime
   name: String
   product: ProductRelateToOneForCreateInput
+  index: Int
   default: Boolean
   specifications: ProductSpecificationRelateToManyForCreateInput
   tags: TagRelateToManyForCreateInput
@@ -5620,6 +5646,263 @@ input CategoryCreateInput {
   modifiedAt: DateTime
   name: String
   description: String
+}
+
+type Search {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  searchText: String
+  rank: Int
+  type: String
+  users(where: SearchUserWhereInput! = {}, orderBy: [SearchUserOrderByInput!]! = [], take: Int, skip: Int! = 0): [SearchUser!]
+  usersCount(where: SearchUserWhereInput! = {}): Int
+}
+
+input SearchWhereUniqueInput {
+  id: ID
+}
+
+input SearchWhereInput {
+  AND: [SearchWhereInput!]
+  OR: [SearchWhereInput!]
+  NOT: [SearchWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  searchText: StringFilter
+  rank: IntNullableFilter
+  type: StringFilter
+  users: SearchUserManyRelationFilter
+}
+
+input SearchUserManyRelationFilter {
+  every: SearchUserWhereInput
+  some: SearchUserWhereInput
+  none: SearchUserWhereInput
+}
+
+input SearchOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  searchText: OrderDirection
+  rank: OrderDirection
+  type: OrderDirection
+}
+
+input SearchUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  searchText: String
+  rank: Int
+  type: String
+  users: SearchUserRelateToManyForUpdateInput
+}
+
+input SearchUserRelateToManyForUpdateInput {
+  disconnect: [SearchUserWhereUniqueInput!]
+  set: [SearchUserWhereUniqueInput!]
+  create: [SearchUserCreateInput!]
+  connect: [SearchUserWhereUniqueInput!]
+}
+
+input SearchUpdateArgs {
+  where: SearchWhereUniqueInput!
+  data: SearchUpdateInput!
+}
+
+input SearchCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  searchText: String
+  rank: Int
+  type: String
+  users: SearchUserRelateToManyForCreateInput
+}
+
+input SearchUserRelateToManyForCreateInput {
+  create: [SearchUserCreateInput!]
+  connect: [SearchUserWhereUniqueInput!]
+}
+
+type SearchUser {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: User
+  rank: Int
+  search: Search
+}
+
+input SearchUserWhereUniqueInput {
+  id: ID
+}
+
+input SearchUserWhereInput {
+  AND: [SearchUserWhereInput!]
+  OR: [SearchUserWhereInput!]
+  NOT: [SearchUserWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  user: UserWhereInput
+  rank: IntNullableFilter
+  search: SearchWhereInput
+}
+
+input SearchUserOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  rank: OrderDirection
+}
+
+input SearchUserUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForUpdateInput
+  rank: Int
+  search: SearchRelateToOneForUpdateInput
+}
+
+input SearchRelateToOneForUpdateInput {
+  create: SearchCreateInput
+  connect: SearchWhereUniqueInput
+  disconnect: Boolean
+}
+
+input SearchUserUpdateArgs {
+  where: SearchUserWhereUniqueInput!
+  data: SearchUserUpdateInput!
+}
+
+input SearchUserCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForCreateInput
+  rank: Int
+  search: SearchRelateToOneForCreateInput
+}
+
+input SearchRelateToOneForCreateInput {
+  create: SearchCreateInput
+  connect: SearchWhereUniqueInput
+}
+
+type FinanceOfferEnquiry {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  phoneNumber: String
+  alternativeNumber: String
+  employmentType: String
+  address: String
+  annualIncome: String
+}
+
+input FinanceOfferEnquiryWhereUniqueInput {
+  id: ID
+}
+
+input FinanceOfferEnquiryWhereInput {
+  AND: [FinanceOfferEnquiryWhereInput!]
+  OR: [FinanceOfferEnquiryWhereInput!]
+  NOT: [FinanceOfferEnquiryWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  name: StringFilter
+  phoneNumber: StringFilter
+  alternativeNumber: StringFilter
+  employmentType: StringFilter
+  address: StringFilter
+  annualIncome: StringFilter
+}
+
+input FinanceOfferEnquiryOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  name: OrderDirection
+  phoneNumber: OrderDirection
+  alternativeNumber: OrderDirection
+  employmentType: OrderDirection
+  address: OrderDirection
+  annualIncome: OrderDirection
+}
+
+input FinanceOfferEnquiryUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  phoneNumber: String
+  alternativeNumber: String
+  employmentType: String
+  address: String
+  annualIncome: String
+}
+
+input FinanceOfferEnquiryUpdateArgs {
+  where: FinanceOfferEnquiryWhereUniqueInput!
+  data: FinanceOfferEnquiryUpdateInput!
+}
+
+input FinanceOfferEnquiryCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  name: String
+  phoneNumber: String
+  alternativeNumber: String
+  employmentType: String
+  address: String
+  annualIncome: String
+}
+
+type ContactUs {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  contact: String
+}
+
+input ContactUsWhereUniqueInput {
+  id: ID
+}
+
+input ContactUsWhereInput {
+  AND: [ContactUsWhereInput!]
+  OR: [ContactUsWhereInput!]
+  NOT: [ContactUsWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  contact: StringFilter
+}
+
+input ContactUsOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  contact: OrderDirection
+}
+
+input ContactUsUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  contact: String
+}
+
+input ContactUsUpdateArgs {
+  where: ContactUsWhereUniqueInput!
+  data: ContactUsUpdateInput!
+}
+
+input ContactUsCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  contact: String
 }
 
 """
@@ -6060,6 +6343,30 @@ type Mutation {
   updateCategories(data: [CategoryUpdateArgs!]!): [Category]
   deleteCategory(where: CategoryWhereUniqueInput!): Category
   deleteCategories(where: [CategoryWhereUniqueInput!]!): [Category]
+  createSearch(data: SearchCreateInput!): Search
+  createSearches(data: [SearchCreateInput!]!): [Search]
+  updateSearch(where: SearchWhereUniqueInput!, data: SearchUpdateInput!): Search
+  updateSearches(data: [SearchUpdateArgs!]!): [Search]
+  deleteSearch(where: SearchWhereUniqueInput!): Search
+  deleteSearches(where: [SearchWhereUniqueInput!]!): [Search]
+  createSearchUser(data: SearchUserCreateInput!): SearchUser
+  createSearchUsers(data: [SearchUserCreateInput!]!): [SearchUser]
+  updateSearchUser(where: SearchUserWhereUniqueInput!, data: SearchUserUpdateInput!): SearchUser
+  updateSearchUsers(data: [SearchUserUpdateArgs!]!): [SearchUser]
+  deleteSearchUser(where: SearchUserWhereUniqueInput!): SearchUser
+  deleteSearchUsers(where: [SearchUserWhereUniqueInput!]!): [SearchUser]
+  createFinanceOfferEnquiry(data: FinanceOfferEnquiryCreateInput!): FinanceOfferEnquiry
+  createFinanceOfferEnquiries(data: [FinanceOfferEnquiryCreateInput!]!): [FinanceOfferEnquiry]
+  updateFinanceOfferEnquiry(where: FinanceOfferEnquiryWhereUniqueInput!, data: FinanceOfferEnquiryUpdateInput!): FinanceOfferEnquiry
+  updateFinanceOfferEnquiries(data: [FinanceOfferEnquiryUpdateArgs!]!): [FinanceOfferEnquiry]
+  deleteFinanceOfferEnquiry(where: FinanceOfferEnquiryWhereUniqueInput!): FinanceOfferEnquiry
+  deleteFinanceOfferEnquiries(where: [FinanceOfferEnquiryWhereUniqueInput!]!): [FinanceOfferEnquiry]
+  createContactUs(data: ContactUsCreateInput!): ContactUs
+  createContactuses(data: [ContactUsCreateInput!]!): [ContactUs]
+  updateContactUs(where: ContactUsWhereUniqueInput!, data: ContactUsUpdateInput!): ContactUs
+  updateContactuses(data: [ContactUsUpdateArgs!]!): [ContactUs]
+  deleteContactUs(where: ContactUsWhereUniqueInput!): ContactUs
+  deleteContactuses(where: [ContactUsWhereUniqueInput!]!): [ContactUs]
   endSession: Boolean!
   startTransaction(deviceId: String!, connectorId: Int, duration: Int, walletUsageLimit: Int): JSON
   stopTransaction(deviceId: String!, connectorId: Int): JSON
@@ -6070,6 +6377,7 @@ type Mutation {
   createInitialUser(data: CreateInitialUserInput!): UserAuthenticationWithPasswordSuccess!
   sendUserPasswordResetLink(phoneNumber: String!): String!
   redeemUserPasswordResetToken(phoneNumber: String!, token: String!, password: String!): RedeemUserPasswordResetTokenResult
+  updateSearchRank(searchText: String!, user: ID!, type: UpdateSearchType!): JSON
   sendDealerMOUApprovalOTP: JSON
   startOrder(addressId: ID!, items: [OrderItem!]!, payments: [PaymentItem!]!, couponCode: String): JSON
   verifyOrderPayment(razorpayPaymentId: String!, razorpayOrderId: String!, razorpaySignature: String): JSON
@@ -6098,6 +6406,12 @@ enum PaymentItemType {
   razorpay
   wallet
   cash
+}
+
+enum UpdateSearchType {
+  vehicle
+  product
+  all
 }
 
 union UserAuthenticationWithPasswordResult = UserAuthenticationWithPasswordSuccess | UserAuthenticationWithPasswordFailure
@@ -6346,6 +6660,18 @@ type Query {
   categories(where: CategoryWhereInput! = {}, orderBy: [CategoryOrderByInput!]! = [], take: Int, skip: Int! = 0): [Category!]
   category(where: CategoryWhereUniqueInput!): Category
   categoriesCount(where: CategoryWhereInput! = {}): Int
+  searches(where: SearchWhereInput! = {}, orderBy: [SearchOrderByInput!]! = [], take: Int, skip: Int! = 0): [Search!]
+  search(where: SearchWhereUniqueInput!): Search
+  searchesCount(where: SearchWhereInput! = {}): Int
+  searchUsers(where: SearchUserWhereInput! = {}, orderBy: [SearchUserOrderByInput!]! = [], take: Int, skip: Int! = 0): [SearchUser!]
+  searchUser(where: SearchUserWhereUniqueInput!): SearchUser
+  searchUsersCount(where: SearchUserWhereInput! = {}): Int
+  financeOfferEnquiries(where: FinanceOfferEnquiryWhereInput! = {}, orderBy: [FinanceOfferEnquiryOrderByInput!]! = [], take: Int, skip: Int! = 0): [FinanceOfferEnquiry!]
+  financeOfferEnquiry(where: FinanceOfferEnquiryWhereUniqueInput!): FinanceOfferEnquiry
+  financeOfferEnquiriesCount(where: FinanceOfferEnquiryWhereInput! = {}): Int
+  contactuses(where: ContactUsWhereInput! = {}, orderBy: [ContactUsOrderByInput!]! = [], take: Int, skip: Int! = 0): [ContactUs!]
+  contactUs(where: ContactUsWhereUniqueInput!): ContactUs
+  contactusesCount(where: ContactUsWhereInput! = {}): Int
   keystone: KeystoneMeta!
   getDeviceState(deviceId: String!): JSON
   getDeviceDetails(deviceId: String, location: [Float!], distance: Int, fullAddress: Boolean = false): JSON
@@ -6355,6 +6681,7 @@ type Query {
   getPincode(pincode: String!): JSON
   authenticatedItem: AuthenticatedItem
   validateUserPasswordResetToken(phoneNumber: String!, token: String!): ValidateUserPasswordResetTokenResult
+  searchSuggestion(query: String!): [String!]
   getCouponAppliedDetails(couponCode: String!, items: [Item!]!): JSON
   getOfferAppliedDetails(items: [Item!]!): JSON
   getNearestDealers(location: [Float!]!): [NearestDealer!]

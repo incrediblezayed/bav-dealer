@@ -140,13 +140,30 @@ class InventoryRepository {
           if (brands.isNotEmpty) {
             b.vars.where.vehicle.brand.name.Gin = ListBuilder<String>(brands);
           }
+
           if (types.isNotEmpty) {
             b.vars.where.vehicle.type.name.Gin = ListBuilder<String>(types);
           }
+
+          b.vars.orderBy = ListBuilder<
+              GVehicleVariantOrderByInput>(<GVehicleVariantOrderByInput>[
+            GVehicleVariantOrderByInput((b) {
+              b.index = GOrderDirection.asc;
+            })
+          ]);
+
           if (ids == null) {
             b;
           } else {
             b.vars.where.id.notIn = ListBuilder<String>(ids);
+            b.vars.orderBy = ListBuilder<
+                GVehicleVariantOrderByInput>(<GVehicleVariantOrderByInput>[
+              GVehicleVariantOrderByInput(
+                (b) {
+                  b.index = GOrderDirection.asc;
+                },
+              )
+            ]);
           }
         },
       );
