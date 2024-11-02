@@ -29,7 +29,7 @@ query ProductVariants(
         description
         unit
       }
-      type
+      typgallery
       intValue
       stringValue
       category {
@@ -253,6 +253,11 @@ query VehicleVariants(
         }
       }
       name
+    }
+    gallery {
+      file
+      type
+      index
     }
     name
     default
