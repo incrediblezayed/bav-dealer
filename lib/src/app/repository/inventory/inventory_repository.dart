@@ -41,6 +41,13 @@ class InventoryRepository {
             if (types.isNotEmpty) {
               b.vars.where.product.type.name.Gin = ListBuilder<String>(types);
             }
+
+            b.vars.orderBy = ListBuilder<
+                GProductVariantOrderByInput>(<GProductVariantOrderByInput>[
+              GProductVariantOrderByInput((b) {
+                b.index = GOrderDirection.asc;
+              })
+            ]);
             if (ids != null) {
               b.vars.where.id.notIn = ListBuilder<String>(ids);
             }
@@ -166,15 +173,12 @@ class InventoryRepository {
           }
         },
       );
-      final response = await _client
-          .request(
-            vehicleVariantQuery,
-          )
-          .first;
+
+      final response = await _client.request(vehicleVariantQuery).first;
 
       if (response.linkException != null ||
           (response.graphqlErrors?.isNotEmpty ?? false)) {
-        throw Exception('Somthing went wrong while getting list of vehicles');
+        throw Exception('Something went wrong while getting list of vehicles');
       } else {
         if (response.data?.vehicleVariants == null) {
           return (0, null);

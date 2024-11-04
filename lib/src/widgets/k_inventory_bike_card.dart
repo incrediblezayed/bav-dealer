@@ -4,6 +4,8 @@ import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/inventory/inventory_repository.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
+import 'package:dealerapp/src/utils/ui_extenstions.dart';
+import 'package:dealerapp/src/widgets/axifomia_text.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
 import 'package:dealerapp/src/widgets/k_inventory_bike_quantity.dart';
@@ -73,6 +75,7 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
   Widget build(BuildContext context) {
     final inventoryPro = ref.watch(inventoryProvider);
     final theme = Theme.of(context).textTheme;
+
     // VehicleColor? testRideColor = variants.colors.firstOrNull;
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 6.h, horizontal: 6.w),
@@ -192,32 +195,6 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                               ],
                             ),
                             SizedBox(height: 16.h),
-                            Wrap(
-                              runSpacing: 10,
-                              spacing: 10,
-                              children: [
-                                ...variants.sortedColors
-                                    .where(
-                                      (p0) =>
-                                          !(inventoryPro.vehicleDealers ?? [])
-                                              .map((e) => e.vehicleColor?.id)
-                                              .contains(p0.id),
-                                    )
-                                    .map(
-                                      (e) => GestureDetector(
-                                        onTap: () => updateColor(e),
-                                        child: CircleAvatar(
-                                          backgroundColor: Colors.grey,
-                                          radius: 12.5.h,
-                                          child: CircleAvatar(
-                                            radius: 10.h,
-                                            backgroundColor: e.code,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                              ],
-                            ),
                           ],
                         ),
                       ),
@@ -248,6 +225,95 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
               //     ],
               //   ),
               // ),
+              Row(
+                children: [
+                  const Spacer(),
+                  PopupMenuButton<VehicleColor>(
+                    elevation: 1,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    initialValue: selectedColor,
+                    shadowColor: Colors.grey.withOpacity(.5),
+                    child: Row(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisSize: MainAxisSize.min,
+                          children: variants.sortedColors
+                              .map(
+                                (color) => Container(
+                                  alignment: Alignment.centerRight,
+                                  width: 28,
+                                  decoration: ShapeDecoration(
+                                    shape: CircleBorder(
+                                      side: BorderSide(
+                                        width: 2,
+                                        color: color == selectedColor
+                                            ? const Color(0xff03826D)
+                                            : Colors.transparent,
+                                      ),
+                                    ),
+                                  ),
+                                  child: Padding(
+                                    padding: 1.pa,
+                                    child: CircleAvatar(
+                                      backgroundColor: color.code,
+                                    ),
+                                  ),
+                                ),
+                              )
+                              .toList(),
+                        ),
+                        const Icon(Icons.keyboard_arrow_down_sharp),
+                      ],
+                    ),
+                    onSelected: (value) {
+                      selectedColor = value;
+                      setState(() {});
+                    },
+                    itemBuilder: (context) {
+                      return variants.sortedColors
+                          .map((e) => PopupMenuItem(
+                                value: e,
+                                child: ListTile(
+                                  contentPadding: EdgeInsets.zero,
+                                  leading: Container(
+                                    alignment: Alignment.centerRight,
+                                    width: 28,
+                                    decoration: ShapeDecoration(
+                                      shape: CircleBorder(
+                                        side: BorderSide(
+                                          width: 2,
+                                          color: selectedColor?.code == e.code
+                                              ? const Color(0xff03826D)
+                                              : Colors.transparent,
+                                        ),
+                                      ),
+                                    ),
+                                    child: Padding(
+                                      padding: 1.pa,
+                                      child: CircleAvatar(
+                                        backgroundColor: e.code,
+                                        radius: 14,
+                                      ),
+                                    ),
+                                  ),
+                                  horizontalTitleGap: 0,
+                                  title: DefaultScaledText(
+                                    e.name,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(fontSize: 12),
+                                  ),
+                                ),
+                              ))
+                          .toList();
+                    },
+                  ),
+                ],
+              ),
               SizedBox(
                 height: 10.h,
               ),
