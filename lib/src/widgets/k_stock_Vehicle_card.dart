@@ -82,7 +82,7 @@ class KStockVehicleCard extends StatelessWidget {
                           borderRadius: BorderRadius.circular(6.r),
                           // Placeholder for the product image
                           child: KCachedNWImage(
-                            variant.images.firstOrNull?.url,
+                            variant.images.firstOrNull?.file?.file?.url,
                           ),
                         ),
                       ),

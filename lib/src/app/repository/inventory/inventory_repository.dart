@@ -71,6 +71,7 @@ class InventoryRepository {
               )
               .first;
           final count = countQuery.data?.productVariantsCount ?? 0;
+          print('$count, PROPDUCT VARIANT COUNT TOTAL ==========');
 
           final productList = response.data!.productVariants!
               .map((p0) => ProductVariantModel.productFromJson(p0.toJson()))

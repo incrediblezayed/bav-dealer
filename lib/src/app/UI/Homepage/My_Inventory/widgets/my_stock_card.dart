@@ -80,7 +80,7 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(6.r),
                   child: KCachedNWImage(
-                    dealerStock.images.firstOrNull?.url ?? '',
+                    dealerStock.images.firstOrNull?.file?.file?.url ?? '',
                     fit: BoxFit.contain,
                   )
 
@@ -98,6 +98,7 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                 child: Column(
                   children: [
                     Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'Model',
@@ -118,18 +119,20 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 6.h),
+                    SizedBox(height: 8.h),
                     if (!isProduct)
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text(
-                            'Color',
-                            style: theme.labelMedium!.copyWith(
-                              color: Colors.black.withOpacity(.5),
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(width: 10.w),
+                          // Text(
+                          //   'Color',
+                          //   style: theme.labelMedium!.copyWith(
+                          //     color: Colors.black.withOpacity(.5),
+                          //     fontWeight: FontWeight.w500,
+                          //   ),
+                          // ),
+                          // SizedBox(width: 10.w),
+
                           Flexible(
                             child: Text(
                               dealerStock.vehicleColor?.name ?? '',
@@ -139,9 +142,18 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                               ),
                             ),
                           ),
+                          CircleAvatar(
+                            backgroundColor: Colors.grey,
+                            radius: 10.h,
+                            child: CircleAvatar(
+                              radius: 8.h,
+                              backgroundColor: dealerStock.vehicleColor?.code,
+                            ),
+                          ),
+                          const SizedBox(width: 5),
                         ],
                       ),
-                    SizedBox(height: 6.h),
+                    SizedBox(height: 8.h),
                     Row(
                       children: [
                         Text(

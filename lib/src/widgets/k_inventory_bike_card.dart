@@ -400,8 +400,10 @@ class _KInventoryBikeCardState extends ConsumerState<KInventoryBikeCard> {
                                           const SizedBox(
                                             width: 15,
                                           ),
-                                          Text(
-                                            item.name,
+                                          Expanded(
+                                            child: Text(
+                                              item.name,
+                                            ),
                                           ),
                                         ],
                                       ),

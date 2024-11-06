@@ -19,14 +19,14 @@ class InventoryProvider extends ChangeNotifier {
   }
 
   List<PriceModel> prices = [];
-  List<ProductVariantModel> _products = [];
+  List<ProductVariantModel>? _products = [];
 
-  List<ProductVariantModel> get products => _products;
+  List<ProductVariantModel>? get products => _products;
   List<ProductVariantModel>? _vehicles = [];
 
   List<ProductVariantModel>? get vehicles => _vehicles;
 
-  set products(List<ProductVariantModel> data) {
+  set products(List<ProductVariantModel>? data) {
     _products = data;
     notifyListeners();
   }
@@ -87,13 +87,14 @@ class InventoryProvider extends ChangeNotifier {
     if (_inventoryDebounce?.isActive ?? false) {
       _inventoryDebounce?.cancel();
     }
-    _inventoryDebounce = Timer(const Duration(milliseconds: 500), () {
+    _inventoryDebounce = Timer(const Duration(milliseconds: 700), () {
       onSearch();
     });
   }
 
   Future<void> getProducts() async {
     try {
+      products = null;
       final getProduct = await _inventoryRepository.getProducts(
         search: inventorySearchController.text,
         skip: 0,
@@ -115,12 +116,17 @@ class InventoryProvider extends ChangeNotifier {
       isCallInProgress = true;
       final response = await _inventoryRepository.getProducts(
         take: 15,
-        skip: products.length,
+        skip: products?.length ?? 0,
         search: inventorySearchController.text,
         brands: selectedBrands,
         types: selectedTypes,
       );
-      products.addAll(response.$2 ?? []);
+      if (products != null) {
+        products!.addAll(response.$2 ?? []);
+        notifyListeners();
+      } else {
+        products = response.$2;
+      }
     } catch (e) {
       _handleError(e, 'Error while fetching list of products');
     } finally {

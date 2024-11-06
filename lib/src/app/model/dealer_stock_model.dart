@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:dealerapp/src/app/model/product_details_model.dart';
+
 enum DealerType { product, vehicle, testDrive }
 
 class DealerStockModel {
@@ -22,7 +24,7 @@ class DealerStockModel {
         DealerType.vehicle => _vehicleVariant!
       };
 
-  List<ImageElement> get images => dealerType == DealerType.product
+  List<Gallery> get images => dealerType == DealerType.product
       ? variant.images
       : (vehicleColor?.images ?? []);
 
@@ -200,7 +202,7 @@ class Variant {
   final String name;
   final DateTime modifiedAt;
   final Guarantee? parentProduct;
-  final List<ImageElement> images;
+  final List<Gallery> images;
 
   Variant(
       {required this.id,
@@ -208,19 +210,6 @@ class Variant {
       required this.modifiedAt,
       this.parentProduct,
       this.images = const []});
-
-  Variant copyWith(
-          {String? id,
-          String? name,
-          DateTime? modifiedAt,
-          Guarantee? parentProduct,
-          List<ImageElement>? images}) =>
-      Variant(
-          id: id ?? this.id,
-          name: name ?? this.name,
-          modifiedAt: modifiedAt ?? this.modifiedAt,
-          parentProduct: parentProduct ?? this.parentProduct,
-          images: images ?? this.images);
 
   factory Variant.fromRawJson(String str) => Variant.fromJson(json.decode(str));
 
@@ -235,70 +224,8 @@ class Variant {
               ? null
               : Guarantee.fromJson(json['product'])
           : Guarantee.fromJson(json['vehicle']),
-      images: json['images'] == null
+      images: json['gallery'] == null
           ? []
-          : List<ImageElement>.from(
-              json['images'].map((x) => ImageElement.fromJson(x))));
-}
-
-class VehicleColor {
-  final String id;
-  final String name;
-  final String code;
-  final List<ImageElement> images;
-
-  VehicleColor({
-    required this.id,
-    required this.name,
-    required this.code,
-    required this.images,
-  });
-
-  VehicleColor copyWith({
-    String? id,
-    String? name,
-    String? code,
-    List<ImageElement>? images,
-  }) =>
-      VehicleColor(
-        id: id ?? this.id,
-        name: name ?? this.name,
-        code: code ?? this.code,
-        images: images ?? this.images,
-      );
-
-  factory VehicleColor.fromRawJson(String str) =>
-      VehicleColor.fromJson(json.decode(str));
-
-  factory VehicleColor.fromJson(Map<String, dynamic> json) => VehicleColor(
-        id: json['id'] ?? '',
-        name: json['name'] ?? '',
-        code: json['code'] ?? '#ffffff',
-        images: json['images'] == null
-            ? []
-            : List<ImageElement>.from(
-                    json['images'].map((x) => ImageElement.fromJson(x)))
-                .where(
-                  (element) => element.url.isNotEmpty,
-                )
-                .toList(),
-      );
-}
-
-class ImageElement {
-  final String id;
-  final String url;
-
-  ImageElement({
-    required this.id,
-    required this.url,
-  });
-
-  factory ImageElement.fromRawJson(String str) =>
-      ImageElement.fromJson(json.decode(str));
-
-  factory ImageElement.fromJson(Map<String, dynamic> json) => ImageElement(
-        id: json['id'] ?? '',
-        url: json['image']?['url'] ?? json['file']?['image']?['url'] ?? '',
-      );
+          : List<Gallery>.from(
+              json['gallery'].map((x) => Gallery.fromJson(x))));
 }

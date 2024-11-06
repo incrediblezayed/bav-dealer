@@ -17,9 +17,15 @@ class DefaultScrollPaginationCallback extends StatelessWidget {
     return NotificationListener<ScrollNotification>(
       onNotification: (ScrollNotification notification) {
         if (notification is ScrollEndNotification) {
+          print('${notification.metrics.pixels}, ===================');
+          print(
+              '${notification.metrics.maxScrollExtent * notifyExtent}, NOTIFYyyyyyyyyyy');
+          print('$callbackCondition, CALLBACKKKKCONDITIONNNNN====');
           if (notification.metrics.pixels >
               (notification.metrics.maxScrollExtent * notifyExtent)) {
+            print('CONDITION 1 SATISFIEDDDD');
             if (callbackCondition) {
+              print('CONDITION 2 SATISFIEDDDDD');
               onLoadMore();
             }
           }

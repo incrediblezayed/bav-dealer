@@ -14,7 +14,7 @@ class MyProduct extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final inventoryPro = ref.watch(inventoryProvider);
-    final data = inventoryPro.products.where(
+    final data = inventoryPro.products?.where(
       (e) => !(inventoryPro.productDealers ?? []).any(
         (element) => element.variant.id == e.id,
       ),
@@ -40,46 +40,48 @@ class MyProduct extends ConsumerWidget {
               ),
             ),
           Expanded(
-            child: DefaultScrollPaginationCallback(
-                onLoadMore: () {
-                  inventoryPro.getProducts();
-                },
-                callbackCondition:
-                    inventoryPro.products.length < inventoryPro.productsCount,
-                child: RefreshIndicator.adaptive(
-                  onRefresh: () async {
-                    await inventoryPro.getProducts();
-                  },
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: data.length,
-                    itemBuilder: (context, index) {
-                      index.log(
-                        color: LogColors.green,
-                        name: 'Index',
-                      );
-                      inventoryPro.vehiclesCount.log(
-                        name: 'Total Product Count',
-                      );
+            child: data == null
+                ? const Center(child: CircularProgressIndicator())
+                : DefaultScrollPaginationCallback(
+                    onLoadMore: () {
+                      inventoryPro.getPaginatedProducts();
+                    },
+                    callbackCondition: (inventoryPro.products?.length ?? 0) <
+                        inventoryPro.productsCount,
+                    child: RefreshIndicator.adaptive(
+                      onRefresh: () async {
+                        await inventoryPro.getProducts();
+                      },
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: data.length,
+                        itemBuilder: (context, index) {
+                          index.log(
+                            color: LogColors.green,
+                            name: 'Index',
+                          );
+                          inventoryPro.vehiclesCount.log(
+                            name: 'Total Product Count',
+                          );
 
-                      if (index >= data.length) {
-                        inventoryPro.getPaginatedProducts();
-                        return const Center(
-                          child: CircularProgressIndicator.adaptive(),
-                        );
-                      }
-                      final product = data.elementAt(index);
-                      return KInvetoryProductCard(
-                        variant: product,
-                      );
-                      /*ListTile(
+                          if (index >= data.length) {
+                            // inventoryPro.getPaginatedProducts();
+                            return const Center(
+                              child: CircularProgressIndicator.adaptive(),
+                            );
+                          }
+                          final product = data.elementAt(index);
+                          return KInvetoryProductCard(
+                            variant: product,
+                          );
+                          /*ListTile(
                     title: Text(product.name.toString()),
                     subtitle: Text(product.vehicle.toString()),
                     // Add more UI elements as needed
                   );*/
-                    },
-                  ),
-                )),
+                        },
+                      ),
+                    )),
           ),
         ],
       ),

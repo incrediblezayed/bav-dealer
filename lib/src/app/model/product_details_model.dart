@@ -100,7 +100,10 @@ class ProductVariantModel {
               : List<Gallery>.from(
                   json['gallery'].map((x) => Gallery.fromJson(x)),
                 ).sorted((a, b) => a.index.compareTo(b.index)),
-          product: ProductModel.fromJson(json['product']),
+          // product: ProductModel.fromJson(json['product']),
+          product: json['product'] == null
+              ? null
+              : ProductModel.fromJson(json['product']),
           itemType: ItemType.product);
     } catch (e) {
       e.log();
