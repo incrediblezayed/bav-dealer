@@ -303,6 +303,7 @@ class AppDrawer extends ConsumerWidget {
                     _drawerTile(
                       title: 'Stock Requests',
                       icon: AppImages.stockRequests,
+                      isSvg: false,
                       onTap: () {
                         AppRoutes.push(
                           page: const StockRequests(),

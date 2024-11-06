@@ -34,8 +34,6 @@ class AuthProvider extends ChangeNotifier {
 
   XFile? _image;
 
-  List<FocusNode> otpNode = List.generate(6, (index) => FocusNode());
-
   ///Getter for image
   XFile? get image => _image;
 
@@ -286,7 +284,7 @@ class AuthProvider extends ChangeNotifier {
       };
       final response = await _authRepository.validateOTP(
         otpKey,
-        otp ?? otpController.map((e) => e.text).join(),
+        otp ?? otpController.text,
       );
       if (key == 'mou') {
         return response;
@@ -314,8 +312,7 @@ class AuthProvider extends ChangeNotifier {
   TextEditingController mobileController = TextEditingController();
 
   ///OTP Controller
-  List<TextEditingController> otpController =
-      List.generate(6, (index) => TextEditingController());
+  TextEditingController otpController = TextEditingController();
 
   ///Name Controller
   TextEditingController firstNameController = TextEditingController();
@@ -365,9 +362,10 @@ class AuthProvider extends ChangeNotifier {
   void clear() {
     phoneNumberController.clear();
     passwordController.clear();
-    for (final element in otpController) {
+    otpController.clear();
+    /* for (final element in otpController) {
       element.clear();
-    }
+    } */
     firstNameController.clear();
     lastNameController.clear();
     emailIdController.clear();
@@ -482,7 +480,7 @@ class AuthProvider extends ChangeNotifier {
       await AppRoutes.showErrorSnackbar(message: 'Please enter phone number');
       return;
     }
-    final otp = otpController.map((e) => e.text).join();
+    final otp = otpController.text;
     if (otp.isEmpty) {
       await AppRoutes.showErrorSnackbar(message: 'Please enter OTP');
       return;
@@ -518,7 +516,7 @@ class AuthProvider extends ChangeNotifier {
       final data = await _authRepository.resetPassword(
         phoneNumber: phoneNumberController.text,
         password: passwordController.text,
-        token: otpController.map((e) => e.text).join(),
+        token: otpController.text,
       );
       if (!data) {
         await AppRoutes.showErrorSnackbar(message: 'Something went wrong');

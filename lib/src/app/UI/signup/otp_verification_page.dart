@@ -1,9 +1,7 @@
-import 'package:collection/collection.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/app_images.dart';
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
-import 'package:dealerapp/src/widgets/k_textfiled.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -101,7 +99,14 @@ class _OTPVerificationPageState extends ConsumerState<OTPVerificationPage> {
             SizedBox(
               height: 20.h,
             ),
-            Row(
+            TextField(
+              controller: authPro.otpController,
+              keyboardType: TextInputType.number,
+              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+              maxLength: 6,
+              textAlign: TextAlign.center,
+            ),
+            /* Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: authPro.otpController
                   .mapIndexed(
@@ -172,7 +177,7 @@ class _OTPVerificationPageState extends ConsumerState<OTPVerificationPage> {
                     ),
                   )
                   .toList(),
-            ),
+            ) */
             SizedBox(
               height: 20.h,
             ),

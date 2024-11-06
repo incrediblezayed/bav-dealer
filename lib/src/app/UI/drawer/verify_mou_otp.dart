@@ -1,10 +1,8 @@
 import 'dart:async';
 
-import 'package:collection/collection.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/index.dart';
 import 'package:dealerapp/src/widgets/k_bottom_bar_button.dart';
-import 'package:dealerapp/src/widgets/k_textfiled.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -59,19 +57,11 @@ class _VerifyMouOtpState extends ConsumerState<VerifyMouOtp> {
 
   @override
   void dispose() {
-    for (var i = 0; i < otpController.length; i++) {
-      otpController[i].dispose();
-      listenerController[i].dispose();
-      otpNode[i].dispose();
-    }
+    otpController.dispose();
     super.dispose();
   }
 
-  final List<FocusNode> listenerController =
-      List.generate(6, (index) => FocusNode());
-  final List<FocusNode> otpNode = List.generate(6, (index) => FocusNode());
-  final List<TextEditingController> otpController =
-      List.generate(6, (index) => TextEditingController());
+  final TextEditingController otpController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +77,14 @@ class _VerifyMouOtpState extends ConsumerState<VerifyMouOtp> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Row(
+            TextField(
+              controller: otpController,
+              keyboardType: TextInputType.number,
+              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+              maxLength: 6,
+              textAlign: TextAlign.center,
+            ),
+            /* Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: otpController
                   .mapIndexed(
@@ -161,22 +158,21 @@ class _VerifyMouOtpState extends ConsumerState<VerifyMouOtp> {
                     ),
                   )
                   .toList(),
-            ),
+            ) */
             const SizedBox(height: 20),
             AnimatedBuilder(
-              animation: Listenable.merge(otpController),
+              animation: otpController,
               builder: (context, child) {
                 return KBottomBarButton(
-                  color:
-                      otpController.every((element) => element.text.isNotEmpty)
-                          ? AppTheme.primaryColor
-                          : Colors.grey,
+                  color: otpController.text.length == 6
+                      ? AppTheme.primaryColor
+                      : Colors.grey,
                   text: 'Verify',
                   onTap: () {
                     authPro
                         .validateOTP(
                       key: 'mou',
-                      otp: otpController.map((e) => e.text).join(),
+                      otp: otpController.text,
                     )
                         .then((value) {
                       if (value) {

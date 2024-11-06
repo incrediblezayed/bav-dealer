@@ -60,24 +60,27 @@ class VehicleStock extends ConsumerWidget {
                         child: EmptyWidget(
                             title: 'No Vehicle Stock Request Found'),
                       )
-                    : ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: data.length +
-                            (stockPro.vehicleCount > data.length ? 1 : 0),
-                        itemBuilder: (context, index) {
-                          if (index >= data.length) {
-                            return const Center(
-                              child: CircularProgressIndicator.adaptive(),
-                            );
-                          }
+                    : data.isEmpty
+                        ? const EmptyWidget(
+                            title: 'No Vehicle Stock Request Found')
+                        : ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: data.length +
+                                (stockPro.vehicleCount > data.length ? 1 : 0),
+                            itemBuilder: (context, index) {
+                              if (index >= data.length) {
+                                return const Center(
+                                  child: CircularProgressIndicator.adaptive(),
+                                );
+                              }
 
-                          final vehicle = data.elementAt(index);
+                              final vehicle = data.elementAt(index);
 
-                          return KStockVehicleCard(
-                            variant: vehicle,
-                          );
-                        },
-                      ),
+                              return KStockVehicleCard(
+                                variant: vehicle,
+                              );
+                            },
+                          ),
               ),
             ),
           ),

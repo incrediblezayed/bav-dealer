@@ -56,22 +56,24 @@ class ProductStock extends ConsumerWidget {
                     ? const Center(
                         child: EmptyWidget(title: 'No Product Request Found'),
                       )
-                    : ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: data.length +
-                            (stockPro.productCount > data.length ? 1 : 0),
-                        itemBuilder: (context, index) {
-                          if (index >= data.length) {
-                            return const Center(
-                              child: CircularProgressIndicator.adaptive(),
-                            );
-                          }
-                          final product = data.elementAt(index);
-                          return KStockVehicleCard(
-                            variant: product,
-                          );
-                        },
-                      ),
+                    : data.isEmpty
+                        ? const EmptyWidget(title: 'No Product Request Found')
+                        : ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: data.length +
+                                (stockPro.productCount > data.length ? 1 : 0),
+                            itemBuilder: (context, index) {
+                              if (index >= data.length) {
+                                return const Center(
+                                  child: CircularProgressIndicator.adaptive(),
+                                );
+                              }
+                              final product = data.elementAt(index);
+                              return KStockVehicleCard(
+                                variant: product,
+                              );
+                            },
+                          ),
               ),
             ),
           ),

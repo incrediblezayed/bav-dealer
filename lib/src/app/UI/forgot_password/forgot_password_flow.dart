@@ -1,5 +1,4 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:collection/collection.dart';
 import 'package:dealerapp/src/app/UI/login/login_page.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/app_texts.dart';
@@ -77,7 +76,14 @@ class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
         SizedBox(
           height: 16.h,
         ),
-        Row(
+        TextField(
+          controller: authPro.otpController,
+          keyboardType: TextInputType.number,
+          inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+          maxLength: 6,
+          textAlign: TextAlign.center,
+        ),
+        /* Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: authPro.otpController
               .mapIndexed(
@@ -147,7 +153,7 @@ class _ForgotPasswordState extends ConsumerState<ForgotPassword> {
                 ),
               )
               .toList(),
-        ),
+        ) */
         SizedBox(
           height: 16.h,
         ),
