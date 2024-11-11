@@ -4,7 +4,12 @@
     {
       "type": "flutter",
       "command": "flutter",
-      "args": ["build", "apk", "--dart-define-from-file", "devEnv.json"],
+      "args": [
+        "build",
+        "apk",
+        "--dart-define-from-file",
+        "devEnv.json"
+      ],
       "group": "build",
       "problemMatcher": [],
       "label": "Build Bav Dealer Dev APK"
@@ -12,7 +17,12 @@
     {
       "type": "flutter",
       "command": "flutter",
-      "args": ["build", "apk", "--dart-define-from-file", "prodEnv.json"],
+      "args": [
+        "build",
+        "apk",
+        "--dart-define-from-file",
+        "prodEnv.json"
+      ],
       "group": "build",
       "problemMatcher": [],
       "label": "Build Bav Dealer Prod APK"
@@ -20,7 +30,12 @@
     {
       "type": "flutter",
       "command": "flutter",
-      "args": ["build", "appbundle", "--dart-define-from-file", "devEnv.json"],
+      "args": [
+        "build",
+        "appbundle",
+        "--dart-define-from-file",
+        "devEnv.json"
+      ],
       "group": "build",
       "problemMatcher": [],
       "label": "Build Bav Dealer Dev appbundle"
@@ -33,8 +48,8 @@
         "appbundle",
         "--dart-define-from-file",
         "prodEnv.json",
-        "--build-name=1.0.8",
-        "--build-number=8"
+        "--build-name=1.0.9",
+        "--build-number=9"
       ],
       "group": "build",
       "problemMatcher": [],
@@ -43,7 +58,12 @@
     {
       "type": "flutter",
       "command": "flutter",
-      "args": ["build", "ipa", "--dart-define-from-file", "devEnv.json"],
+      "args": [
+        "build",
+        "ipa",
+        "--dart-define-from-file",
+        "devEnv.json"
+      ],
       "group": "build",
       "problemMatcher": [],
       "label": "Build Bav Dealer Dev ipa"
@@ -56,8 +76,8 @@
         "ipa",
         "--dart-define-from-file",
         "prodEnv.json",
-        "--build-name=1.0.8",
-        "--build-number=8"
+        "--build-name=1.0.9",
+        "--build-number=9"
       ],
       "group": "build",
       "problemMatcher": [],
@@ -67,7 +87,12 @@
       "type": "dart",
       "command": "dart",
       "group": "build",
-      "args": ["run", "build_runner", "build", "--delete-conflicting-outputs"],
+      "args": [
+        "run",
+        "build_runner",
+        "build",
+        "--delete-conflicting-outputs"
+      ],
       "label": "Dart run build_runner"
     }
   ]

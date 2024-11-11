@@ -4,6 +4,7 @@ import 'package:dealerapp/src/utils/app_texts.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_bottom_bar_button.dart';
+import 'package:dealerapp/src/widgets/loading_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 ///Filter page
@@ -136,7 +137,7 @@ class _FilterPageState extends ConsumerState<FilterPage> {
         ),
         body: provider.filterLoading
             ? const Center(
-                child: CircularProgressIndicator(),
+                child: LoadingWidget(),
               )
             : Row(
                 children: [

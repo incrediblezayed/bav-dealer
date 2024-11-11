@@ -2,6 +2,7 @@ import 'package:dealerapp/src/app/provider/app_provider.dart'; // Assuming this 
 import 'package:dealerapp/src/utils/app_theme.dart';
 import 'package:dealerapp/src/widgets/empty_widget.dart';
 import 'package:dealerapp/src/widgets/k_stock_Vehicle_card.dart';
+import 'package:dealerapp/src/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -65,7 +66,7 @@ class ProductStock extends ConsumerWidget {
                             itemBuilder: (context, index) {
                               if (index >= data.length) {
                                 return const Center(
-                                  child: CircularProgressIndicator.adaptive(),
+                                  child: LoadingWidget(),
                                 );
                               }
                               final product = data.elementAt(index);

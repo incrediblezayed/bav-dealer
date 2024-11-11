@@ -1,4 +1,5 @@
 import 'package:dealerapp/src/widgets/default_pagination_scroll_callback.dart';
+import 'package:dealerapp/src/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -24,7 +25,7 @@ class ProductOrderListPage extends ConsumerWidget {
     final data = this.data;
     final count = orderPro.productOrderCount;
     if (data == null) {
-      return const Center(child: CircularProgressIndicator.adaptive());
+      return const Center(child: LoadingWidget());
     } else {
       if (data.isEmpty) {
         return const EmptyWidget(title: 'Uh oh! You have no orders.');
@@ -63,7 +64,7 @@ class ProductOrderListPage extends ConsumerWidget {
                   itemCount: data.length + (data.length < count ? 1 : 0),
                   itemBuilder: (context, index) {
                     if (index >= data.length) {
-                      return const CircularProgressIndicator.adaptive();
+                      return const LoadingWidget();
                     }
                     return KOrderProductCard(
                       productPurchaseOrders: data[index],

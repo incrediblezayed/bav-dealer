@@ -3,6 +3,7 @@ import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/default_pagination_scroll_callback.dart';
 import 'package:dealerapp/src/widgets/empty_widget.dart';
+import 'package:dealerapp/src/widgets/loading_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MyStockPage extends ConsumerWidget {
@@ -42,7 +43,7 @@ class MyStockPage extends ConsumerWidget {
             ),
           Expanded(
             child: data == null
-                ? const CircularProgressIndicator()
+                ? const LoadingWidget()
                 : DefaultScrollPaginationCallback(
                     onLoadMore: () async {
                       if (product) {
@@ -77,7 +78,7 @@ class MyStockPage extends ConsumerWidget {
                               itemBuilder: (context, index) {
                                 if (index >= data.length) {
                                   return const Center(
-                                    child: CircularProgressIndicator.adaptive(),
+                                    child: LoadingWidget(),
                                   );
                                 }
                                 return MyStockCard(

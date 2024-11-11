@@ -3,6 +3,7 @@ import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders
 import 'package:dealerapp/src/widgets/default_pagination_scroll_callback.dart';
 import 'package:dealerapp/src/widgets/empty_widget.dart';
 import 'package:dealerapp/src/widgets/k_test_order_bike_card.dart';
+import 'package:dealerapp/src/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 
 class TestOrdersListPage extends StatelessWidget {
@@ -21,7 +22,7 @@ class TestOrdersListPage extends StatelessWidget {
     final count = ordersPro.testDriveOrderCount;
     return data == null
         ? const Center(
-            child: CircularProgressIndicator.adaptive(),
+            child: LoadingWidget(),
           )
         : data!.isEmpty
             ? const EmptyWidget(title: 'Uh oh! You have no orders.')
@@ -60,7 +61,7 @@ class TestOrdersListPage extends StatelessWidget {
                             data!.length + (data!.length < count ? 1 : 0),
                         itemBuilder: (context, index) {
                           if (index >= data!.length) {
-                            return const CircularProgressIndicator.adaptive();
+                            return const LoadingWidget();
                           }
                           return KTestOrdersBikeCard(
                             vehicleTestDriveOrders: data![index],

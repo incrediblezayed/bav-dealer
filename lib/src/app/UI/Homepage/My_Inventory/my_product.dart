@@ -4,6 +4,7 @@ import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/log_colors.dart';
 import 'package:dealerapp/src/widgets/default_pagination_scroll_callback.dart';
 import 'package:dealerapp/src/widgets/k_inventory_product_card.dart';
+import 'package:dealerapp/src/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -41,7 +42,7 @@ class MyProduct extends ConsumerWidget {
             ),
           Expanded(
             child: data == null
-                ? const Center(child: CircularProgressIndicator())
+                ? const Center(child: LoadingWidget())
                 : DefaultScrollPaginationCallback(
                     onLoadMore: () {
                       inventoryPro.getPaginatedProducts();
@@ -67,7 +68,7 @@ class MyProduct extends ConsumerWidget {
                           if (index >= data.length) {
                             // inventoryPro.getPaginatedProducts();
                             return const Center(
-                              child: CircularProgressIndicator.adaptive(),
+                              child: LoadingWidget(),
                             );
                           }
                           final product = data.elementAt(index);

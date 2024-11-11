@@ -68,6 +68,9 @@ class AppImages {
   static const String notificationSecurity =
       '$_imagesPath/notificationSecurity.png';
 
+  ///Loading gif
+  static const String loadingGif = 'assets/gifs/loading_two.gif';
+
   /// Camera Icon SVG
   static const String camera = '$_imagesPath/camera.svg';
 }

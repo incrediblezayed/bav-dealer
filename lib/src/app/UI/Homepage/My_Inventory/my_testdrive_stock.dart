@@ -3,6 +3,7 @@ import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/default_pagination_scroll_callback.dart';
 import 'package:dealerapp/src/widgets/empty_widget.dart';
+import 'package:dealerapp/src/widgets/loading_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MyTestDriveStockPage extends ConsumerWidget {
@@ -47,7 +48,7 @@ class MyTestDriveStockPage extends ConsumerWidget {
                 },
                 child: inventoryPro.testDriveStock == null
                     ? const Center(
-                        child: CircularProgressIndicator(),
+                        child: LoadingWidget(),
                       )
                     : inventoryPro.testDriveStock!.isEmpty
                         ? const EmptyWidget(
@@ -61,9 +62,7 @@ class MyTestDriveStockPage extends ConsumerWidget {
                             itemBuilder: (context, index) {
                               if (index >=
                                   inventoryPro.testDriveStock!.length) {
-                                return const Center(
-                                    child:
-                                        CircularProgressIndicator.adaptive());
+                                return const Center(child: LoadingWidget());
                               }
                               return MyStockCard(
                                 dealerStock:

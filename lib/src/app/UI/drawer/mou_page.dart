@@ -4,6 +4,7 @@ import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.dat
 import 'package:dealerapp/src/utils/app_texts.dart';
 import 'package:dealerapp/src/utils/index.dart';
 import 'package:dealerapp/src/widgets/k_bottom_bar_button.dart';
+import 'package:dealerapp/src/widgets/loading_widget.dart';
 import 'package:dealerapp/src/widgets/my_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -69,7 +70,7 @@ class _MouPageState extends ConsumerState<MouPage> {
         title: 'MOU',
       ),
       body: dealer == null
-          ? const Center(child: CircularProgressIndicator())
+          ? const Center(child: LoadingWidget())
           : SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
