@@ -17,8 +17,8 @@ class LoadingWidget extends StatelessWidget {
         children: [
           Image.asset(
             AppImages.loadingGif,
-            height: size.height * 0.7,
-            width: size.width * 0.7,
+            height: size.height * 0.18,
+            width: size.width * 0.18,
           ),
         ],
       ),
