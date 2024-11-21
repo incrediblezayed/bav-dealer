@@ -13,6 +13,7 @@ query ProductDealerStockRequests($where: ProductDealerStockRequestWhereInput!, $
       gallery {
         id
         file
+        type
       }
       product {
         brand {
@@ -41,6 +42,7 @@ query VehicleDealerStockRequests($where: VehicleDealerStockRequestWhereInput!, $
       gallery {
         id
         file
+        type
       }
     }
     vehicleVariant {

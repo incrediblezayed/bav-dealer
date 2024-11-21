@@ -13,7 +13,7 @@ import 'package:stack_trace/stack_trace.dart' as stack_trace;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(true);
+  await FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(true);
   setupLocator();
 
   /// Initialize the Cache Provider

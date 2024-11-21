@@ -7,6 +7,7 @@ import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:dealerapp/src/widgets/k_textfiled.dart';
+import 'package:dealerapp/src/widgets/loading_widget.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:multi_dropdown/multi_dropdown.dart';
@@ -50,9 +51,15 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
   final List<GGuaranteesData_guarantees> _guaranteeDetails = [];
   List<DropdownItem<String>> guarantees = [];
 
+  bool isLoading = true;
+
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      final guarantees = ref.read(guaranteesProvider).guarantees;
+      if (guarantees.isEmpty) {
+        await ref.read(guaranteesProvider.notifier).getGuarantees();
+      }
       prices = List<PriceModel>.from(ref.read(inventoryProvider).prices).map(
         (e) {
           final priceId = widget.prices
@@ -88,6 +95,7 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
             ),
           )
           .toList();
+      isLoading = false;
       setState(() {});
     });
     super.initState();
@@ -123,151 +131,163 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
       appBar: AppBar(
         title: const Text('Vehicle Details'),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Center(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 10.h,
-                ),
-                MultiDropdown<String>(
-                  /*  onOptionRemoved: (index, option) {
+      body: isLoading
+          ? const Center(
+              child: LoadingWidget(),
+            )
+          : SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Center(
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                      MultiDropdown<String>(
+                        /*  onOptionRemoved: (index, option) {
                     selectedGuarantees.remove(option);
                     setState(() {});
                   }, */
-                  /* borderColor: ,
+                        /* borderColor: ,
                   borderRadius: 4,
                   selectedOptions: selectedGuarantees, */
-                  dropdownDecoration: const DropdownDecoration(),
-                  fieldDecoration: FieldDecoration(
-                    border: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Colors.black.withOpacity(.3))),
-                    borderRadius: 4,
-                  ),
-                  dropdownItemDecoration: const DropdownItemDecoration(
-                    textColor: Colors.black,
-                  ),
-                  onSelectionChange: (selectedOptions) {
-                    setState(() {
-                      selectedGuarantees = selectedOptions;
-                    });
-                  },
-                  items: guarantees,
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                ...prices.mapIndexed(
-                  (i, e) => Column(
-                    children: [
-                      KTextField(
-                        controller: controller[i],
-                        label: e.name,
-                        hintText: 'Enter ${e.name}',
-                        onChanged: (value) {
-                          final price = int.parse(value);
-                          prices[i].price = price;
+                        dropdownDecoration: const DropdownDecoration(),
+                        fieldDecoration: FieldDecoration(
+                          border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.black.withOpacity(.3))),
+                          borderRadius: 4,
+                        ),
+                        dropdownItemDecoration: const DropdownItemDecoration(
+                          textColor: Colors.black,
+                        ),
+                        onSelectionChange: (selectedOptions) {
+                          setState(() {
+                            selectedGuarantees = selectedOptions;
+                          });
                         },
-                        inputType: TextInputType.number,
-                        inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly,
-                        ],
+                        items: guarantees,
                       ),
                       SizedBox(
                         height: 10.h,
                       ),
+                      ...prices.mapIndexed(
+                        (i, e) => Column(
+                          children: [
+                            KTextField(
+                              controller: controller[i],
+                              label: e.name,
+                              hintText: 'Enter ${e.name}',
+                              onChanged: (value) {
+                                final price = int.parse(value);
+                                prices[i].price = price;
+                              },
+                              inputType: TextInputType.number,
+                              inputFormatters: [
+                                FilteringTextInputFormatter.digitsOnly,
+                              ],
+                            ),
+                            SizedBox(
+                              height: 10.h,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          SizedBox(
+                            height: 50,
+                            width: MediaQuery.sizeOf(context).width * 0.4,
+                            child: KButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              text: 'Cancel',
+                            ),
+                          ),
+                          SizedBox(
+                            height: 50,
+                            width: MediaQuery.sizeOf(context).width * 0.4,
+                            child: KButton(
+                              onPressed: () {
+                                if (widget.isUpdate) {
+                                  if (widget.product) {
+                                    inventoryPro
+                                        .updateProductDealer(
+                                      index: widget.index!,
+                                      id: widget.vehicleDealerId!,
+                                      guarantees: selectedGuarantees.toList(),
+                                      prices: prices,
+                                    )
+                                        .then((value) {
+                                      for (var i = 0;
+                                          i < controller.length;
+                                          i++) {
+                                        controller[i].clear();
+                                      }
+                                    });
+                                  } else {
+                                    inventoryPro
+                                        .updateVehicleDealer(
+                                      index: widget.index!,
+                                      id: widget.vehicleDealerId!,
+                                      guarantees: selectedGuarantees.toList(),
+                                      prices: prices,
+                                    )
+                                        .then((value) {
+                                      for (var i = 0;
+                                          i < controller.length;
+                                          i++) {
+                                        controller[i].clear();
+                                      }
+                                    });
+                                  }
+                                } else {
+                                  if (widget.product) {
+                                    inventoryPro
+                                        .createProductStockRequest(
+                                      guarantees: selectedGuarantees.toList(),
+                                      variantId: variantId,
+                                      prices: prices,
+                                    )
+                                        .then((value) {
+                                      for (var i = 0;
+                                          i < controller.length;
+                                          i++) {
+                                        controller[i].clear();
+                                      }
+                                    });
+                                  } else {
+                                    inventoryPro
+                                        .createStockRequest(
+                                      guarantees: selectedGuarantees.toList(),
+                                      variantId: variantId,
+                                      colorId: colorId,
+                                      prices: prices,
+                                    )
+                                        .then((value) {
+                                      for (var i = 0;
+                                          i < controller.length;
+                                          i++) {
+                                        controller[i].clear();
+                                      }
+                                    });
+                                  }
+                                }
+                                Navigator.pop(context);
+                              },
+                              text: 'Submit',
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SizedBox(
-                      height: 50,
-                      width: MediaQuery.sizeOf(context).width * 0.4,
-                      child: KButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        text: 'Cancel',
-                      ),
-                    ),
-                    SizedBox(
-                      height: 50,
-                      width: MediaQuery.sizeOf(context).width * 0.4,
-                      child: KButton(
-                        onPressed: () {
-                          if (widget.isUpdate) {
-                            if (widget.product) {
-                              inventoryPro
-                                  .updateProductDealer(
-                                index: widget.index!,
-                                id: widget.vehicleDealerId!,
-                                guarantees: selectedGuarantees.toList(),
-                                prices: prices,
-                              )
-                                  .then((value) {
-                                for (var i = 0; i < controller.length; i++) {
-                                  controller[i].clear();
-                                }
-                              });
-                            } else {
-                              inventoryPro
-                                  .updateVehicleDealer(
-                                index: widget.index!,
-                                id: widget.vehicleDealerId!,
-                                guarantees: selectedGuarantees.toList(),
-                                prices: prices,
-                              )
-                                  .then((value) {
-                                for (var i = 0; i < controller.length; i++) {
-                                  controller[i].clear();
-                                }
-                              });
-                            }
-                          } else {
-                            if (widget.product) {
-                              inventoryPro
-                                  .createProductStockRequest(
-                                guarantees: selectedGuarantees.toList(),
-                                variantId: variantId,
-                                prices: prices,
-                              )
-                                  .then((value) {
-                                for (var i = 0; i < controller.length; i++) {
-                                  controller[i].clear();
-                                }
-                              });
-                            } else {
-                              inventoryPro
-                                  .createStockRequest(
-                                guarantees: selectedGuarantees.toList(),
-                                variantId: variantId,
-                                colorId: colorId,
-                                prices: prices,
-                              )
-                                  .then((value) {
-                                for (var i = 0; i < controller.length; i++) {
-                                  controller[i].clear();
-                                }
-                              });
-                            }
-                          }
-                          Navigator.pop(context);
-                        },
-                        text: 'Submit',
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+              ),
             ),
-          ),
-        ),
-      ),
     );
   }
 }

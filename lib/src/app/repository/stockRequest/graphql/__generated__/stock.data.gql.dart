@@ -161,6 +161,7 @@ abstract class GProductDealerStockRequestsData_productDealerStockRequests_produc
   String get G__typename;
   String get id;
   _i3.JsonObject? get file;
+  String? get type;
   static Serializer<
           GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery>
       get serializer =>
@@ -413,6 +414,7 @@ abstract class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicl
   String get G__typename;
   String get id;
   _i3.JsonObject? get file;
+  String? get type;
   static Serializer<
           GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery>
       get serializer =>

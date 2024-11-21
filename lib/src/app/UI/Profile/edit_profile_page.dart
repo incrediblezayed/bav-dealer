@@ -138,6 +138,7 @@ class _ProfilePageState extends ConsumerState<EditProfile> {
                 controller: phoneController,
                 hintText: 'Enter your phone number',
                 label: 'Phone Number',
+                helperText: 'Phone number cannot be updated',
                 readOnly: true,
               ),
               const SizedBox(

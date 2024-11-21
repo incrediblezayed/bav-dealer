@@ -3,6 +3,7 @@ import 'package:dealerapp/src/app/provider/order_provider.dart';
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
+import 'package:dealerapp/src/utils/ui_extenstions.dart';
 import 'package:dealerapp/src/widgets/k_cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -295,6 +296,7 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                 ],
               ),
             ),
+            20.g,
           ],
         ),
       ),
@@ -367,7 +369,8 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                   style: theme.headlineSmall!.copyWith(color: Colors.white),
                 ),
               ),
-            )
+            ),
+
             /* TextButton(
                 onPressed: () {
                   setState(() {
@@ -411,7 +414,6 @@ class _KPurchaseOrderProductCardState extends ConsumerState<KOrderProductCard> {
                       ),
                     ),
                   ) */
-            ,
           ]),
         );
       },

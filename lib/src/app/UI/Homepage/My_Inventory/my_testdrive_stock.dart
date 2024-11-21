@@ -16,7 +16,6 @@ class MyTestDriveStockPage extends ConsumerWidget {
     final inventoryPro = ref.watch(inventoryProvider);
     return Container(
       padding: const EdgeInsets.all(6),
-      color: AppTheme.textFieldFill,
       child: Column(
         children: [
           if (showSearch)

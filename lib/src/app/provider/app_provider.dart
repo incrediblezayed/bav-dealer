@@ -13,7 +13,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 final cacheProvider = getIt<CacheProvider>();
 final authProvider = ChangeNotifierProvider((ref) => AuthProvider());
 final inventoryProvider = ChangeNotifierProvider((ref) => InventoryProvider());
-final stockProvider = ChangeNotifierProvider((ref) => StockProvider()..init());
+final stockProvider = ChangeNotifierProvider((ref) => StockProvider());
 final orderProvider =
     ChangeNotifierProvider.family<OrdersProvider, OrderFamily>(
   (ref, orderFamily) => OrdersProvider(orderFamily: orderFamily),

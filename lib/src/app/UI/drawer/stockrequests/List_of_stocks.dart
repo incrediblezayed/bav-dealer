@@ -1,5 +1,6 @@
 import 'package:dealerapp/src/app/UI/drawer/stockrequests/product_stock.dart';
 import 'package:dealerapp/src/app/UI/drawer/stockrequests/vehicle_stock.dart';
+import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:iconsax/iconsax.dart';
@@ -18,12 +19,25 @@ class _StockRequestsState extends ConsumerState<StockRequests>
   bool showSearch = false;
 
   @override
+  void initState() {
+    ref.read(stockProvider.notifier).init();
+    super.initState();
+  }
+
+  void onTabChanged(int index) {
+    if (index == 0) {
+      ref.read(stockProvider.notifier).getProductStock();
+    } else {
+      ref.read(stockProvider.notifier).getVehicleStock();
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: AppTheme.scaffoldBgColor,
         leading: GestureDetector(
           onTap: () {
             AppRoutes.pop();

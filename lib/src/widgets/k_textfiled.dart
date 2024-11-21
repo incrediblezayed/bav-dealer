@@ -11,7 +11,7 @@ class KTextField extends StatelessWidget {
   const KTextField({
     super.key,
     this.hintText,
-    this.readOnly,
+    this.readOnly = false,
     this.inputType,
     this.controller,
     this.inputFormatters,
@@ -25,15 +25,17 @@ class KTextField extends StatelessWidget {
     this.contextMenuBuilder,
     this.focusNode,
     this.maxLines,
+    this.helperText,
     this.textAlign = TextAlign.start,
   });
 
   ///hintText
   final String? hintText;
+  final String? helperText;
 
   final int? maxLines;
 
-  final bool? readOnly;
+  final bool readOnly;
 
   final TextInputType? inputType;
 
@@ -73,6 +75,7 @@ class KTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      readOnly: readOnly,
       textAlign: textAlign,
       focusNode: focusNode,
       contextMenuBuilder: contextMenuBuilder,
@@ -82,6 +85,7 @@ class KTextField extends StatelessWidget {
       obscureText: obsecureText,
       maxLength: maxLength,
       decoration: InputDecoration(
+        helperText: helperText,
         prefixIcon: prefixIcon,
         counterText: '',
         fillColor: AppTheme.white,

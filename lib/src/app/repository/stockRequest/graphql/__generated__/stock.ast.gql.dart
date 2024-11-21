@@ -162,6 +162,13 @@ const ProductDealerStockRequests = _i1.OperationDefinitionNode(
                   directives: [],
                   selectionSet: null,
                 ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'type'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
               ]),
             ),
             _i1.FieldNode(
@@ -372,6 +379,13 @@ const VehicleDealerStockRequests = _i1.OperationDefinitionNode(
                 ),
                 _i1.FieldNode(
                   name: _i1.NameNode(value: 'file'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'type'),
                   alias: null,
                   arguments: [],
                   directives: [],

@@ -397,6 +397,13 @@ class _$GProductDealerStockRequestsData_productDealerStockRequests_productVarian
         ..add(serializers.serialize(value,
             specifiedType: const FullType(_i3.JsonObject)));
     }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -424,6 +431,10 @@ class _$GProductDealerStockRequestsData_productDealerStockRequests_productVarian
         case 'file':
           result.file = serializers.deserialize(value,
               specifiedType: const FullType(_i3.JsonObject)) as _i3.JsonObject?;
+          break;
+        case 'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -915,6 +926,13 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_
         ..add(serializers.serialize(value,
             specifiedType: const FullType(_i3.JsonObject)));
     }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -942,6 +960,10 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_
         case 'file':
           result.file = serializers.deserialize(value,
               specifiedType: const FullType(_i3.JsonObject)) as _i3.JsonObject?;
+          break;
+        case 'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -1819,6 +1841,8 @@ class _$GProductDealerStockRequestsData_productDealerStockRequests_productVarian
   final String id;
   @override
   final _i3.JsonObject? file;
+  @override
+  final String? type;
 
   factory _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery(
           [void Function(
@@ -1829,7 +1853,7 @@ class _$GProductDealerStockRequestsData_productDealerStockRequests_productVarian
           ._build();
 
   _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery._(
-      {required this.G__typename, required this.id, this.file})
+      {required this.G__typename, required this.id, this.file, this.type})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
@@ -1862,7 +1886,8 @@ class _$GProductDealerStockRequestsData_productDealerStockRequests_productVarian
             is GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery &&
         G__typename == other.G__typename &&
         id == other.id &&
-        file == other.file;
+        file == other.file &&
+        type == other.type;
   }
 
   @override
@@ -1871,6 +1896,7 @@ class _$GProductDealerStockRequestsData_productDealerStockRequests_productVarian
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, file.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -1881,7 +1907,8 @@ class _$GProductDealerStockRequestsData_productDealerStockRequests_productVarian
             r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery')
           ..add('G__typename', G__typename)
           ..add('id', id)
-          ..add('file', file))
+          ..add('file', file)
+          ..add('type', type))
         .toString();
   }
 }
@@ -1906,6 +1933,10 @@ class GProductDealerStockRequestsData_productDealerStockRequests_productVariant_
   _i3.JsonObject? get file => _$this._file;
   set file(_i3.JsonObject? file) => _$this._file = file;
 
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
+
   GProductDealerStockRequestsData_productDealerStockRequests_productVariant_galleryBuilder() {
     GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery
         ._initializeBuilder(this);
@@ -1918,6 +1949,7 @@ class GProductDealerStockRequestsData_productDealerStockRequests_productVariant_
       _G__typename = $v.G__typename;
       _id = $v.id;
       _file = $v.file;
+      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -1957,7 +1989,8 @@ class GProductDealerStockRequestsData_productDealerStockRequests_productVariant_
                 id,
                 r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery',
                 'id'),
-            file: file);
+            file: file,
+            type: type);
     replace(_$result);
     return _$result;
   }
@@ -2896,6 +2929,8 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_
   final String id;
   @override
   final _i3.JsonObject? file;
+  @override
+  final String? type;
 
   factory _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery(
           [void Function(
@@ -2906,7 +2941,7 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_
           ._build();
 
   _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery._(
-      {required this.G__typename, required this.id, this.file})
+      {required this.G__typename, required this.id, this.file, this.type})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
@@ -2939,7 +2974,8 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_
             is GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery &&
         G__typename == other.G__typename &&
         id == other.id &&
-        file == other.file;
+        file == other.file &&
+        type == other.type;
   }
 
   @override
@@ -2948,6 +2984,7 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, file.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -2958,7 +2995,8 @@ class _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_
             r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery')
           ..add('G__typename', G__typename)
           ..add('id', id)
-          ..add('file', file))
+          ..add('file', file)
+          ..add('type', type))
         .toString();
   }
 }
@@ -2983,6 +3021,10 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_ga
   _i3.JsonObject? get file => _$this._file;
   set file(_i3.JsonObject? file) => _$this._file = file;
 
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
+
   GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_galleryBuilder() {
     GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery
         ._initializeBuilder(this);
@@ -2995,6 +3037,7 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_ga
       _G__typename = $v.G__typename;
       _id = $v.id;
       _file = $v.file;
+      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -3034,7 +3077,8 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_ga
                 id,
                 r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery',
                 'id'),
-            file: file);
+            file: file,
+            type: type);
     replace(_$result);
     return _$result;
   }

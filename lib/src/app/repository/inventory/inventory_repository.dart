@@ -142,6 +142,7 @@ class InventoryRepository {
           b
             ..vars.skip = skip
             ..vars.take = take
+            ..vars.where.informative.equals = false
             ..vars.where.name.contains = search
             ..vars.where.name.mode = GQueryMode.insensitive;
           if (brands.isNotEmpty) {

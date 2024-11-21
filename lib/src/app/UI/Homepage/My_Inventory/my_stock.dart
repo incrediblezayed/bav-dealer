@@ -20,7 +20,6 @@ class MyStockPage extends ConsumerWidget {
         product ? inventoryPro.productDealers : inventoryPro.vehicleDealers;
     return Container(
       padding: const EdgeInsets.all(6),
-      color: AppTheme.textFieldFill,
       child: Column(
         children: [
           if (showSearch)

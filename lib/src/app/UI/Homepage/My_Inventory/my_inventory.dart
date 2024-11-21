@@ -52,9 +52,10 @@ class _MyInventoryState extends ConsumerState<MyInventory>
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
     return Scaffold(
+      
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: AppTheme.scaffoldBgColor,
+        backgroundColor: AppTheme.white,
         leading: GestureDetector(
           onTap: () {
             AppRoutes.pop();

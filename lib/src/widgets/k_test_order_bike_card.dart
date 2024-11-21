@@ -106,8 +106,8 @@ class _KPurchaseOrderBikeCardState extends ConsumerState<KTestOrdersBikeCard> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(6.r),
                       child: KCachedNWImage(
-                        widget.vehicleTestDriveOrders.dealer!.vehicleColor!
-                                .images?.firstOrNull?.image?.url ??
+                        widget.vehicleTestDriveOrders.dealer!.vehicleColor
+                                ?.images?.firstOrNull?.image?.url ??
                             '',
                         fit: BoxFit.cover,
                       ),

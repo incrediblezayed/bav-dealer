@@ -113,7 +113,7 @@ class AppTheme {
   ///Focused Textfield Border
   static InputBorder focusedTextfieldBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(6.r),
-    borderSide: const BorderSide(color: AppTheme.primaryColor),
+    borderSide: const BorderSide(color: primaryColor),
   );
 
   ///Input Decoration
@@ -146,12 +146,12 @@ class AppTheme {
   ///Default Theme Data
   static ThemeData get theme => ThemeData(
         dialogTheme: const DialogTheme(
-          surfaceTintColor: Colors.white,
+          surfaceTintColor: white,
         ),
         appBarTheme: AppBarTheme(
           titleTextStyle:
               AppTexts.labelMedium?.copyWith(fontWeight: FontWeight.w700),
-          backgroundColor: scaffoldBgColor,
+          backgroundColor: white,
           elevation: 0,
           iconTheme: const IconThemeData(color: textColor),
           titleSpacing: 0,
@@ -160,22 +160,22 @@ class AppTheme {
           headlineLarge: TextStyle(
             fontSize: 20.sp,
             fontWeight: FontWeight.w700,
-            color: AppTheme.textColor,
+            color: textColor,
           ),
           headlineMedium: TextStyle(
             fontSize: 16.sp,
             fontWeight: FontWeight.w600,
-            color: AppTheme.textColor,
+            color: textColor,
           ),
           labelLarge: TextStyle(
             fontSize: 16.sp,
             fontWeight: FontWeight.w400,
-            color: AppTheme.textColor,
+            color: textColor,
           ),
           headlineSmall: TextStyle(
             fontSize: 14.sp,
             fontWeight: FontWeight.w600,
-            color: AppTheme.textColor,
+            color: textColor,
           ),
           labelMedium: TextStyle(
             fontSize: 14.sp,
@@ -184,7 +184,7 @@ class AppTheme {
           ),
         ),
         dividerColor: Colors.transparent,
-        scaffoldBackgroundColor: scaffoldBgColor,
+        scaffoldBackgroundColor: white,
         primaryColor: primaryColor,
         inputDecorationTheme: inputDecorationTheme,
         fontFamily: 'SFPro',
