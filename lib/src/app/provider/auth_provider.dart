@@ -137,6 +137,7 @@ class AuthProvider extends ChangeNotifier {
         }
       }
     } catch (e) {
+      AppRoutes.showErrorSnackbar(message: e.toString());
       print(e);
     } finally {
       AppRoutes.pop();

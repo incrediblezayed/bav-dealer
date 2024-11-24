@@ -68,11 +68,7 @@ class AddressPage extends ConsumerWidget {
                 } */
                 await authPro.regsiter();
 
-                await authPro.signUpPageController.animateToPage(
-                  authPro.currentPageIndex + 1,
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.easeInOut,
-                );
+                
               },
               text: 'Next',
             ),

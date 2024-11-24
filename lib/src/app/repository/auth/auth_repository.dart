@@ -55,15 +55,18 @@ class AuthRepository {
 
       if (response.linkException != null ||
           (response.graphqlErrors?.isNotEmpty ?? false)) {
-        throw Exception('Something went wrong');
+        if (response.linkException != null) {
+          throw Exception('Something went wrong while registering');
+        } else {
+          throw Exception(response.graphqlErrors!.firstOrNull?.message ??
+              'Something went wrong while registering');
+        }
       }
 
       return response.data?.createUser?.id != null;
     } catch (e) {
-      print(e);
+      rethrow;
     }
-
-    return false;
   }
 
   ///Login user
