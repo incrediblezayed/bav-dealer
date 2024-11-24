@@ -423,6 +423,55 @@ input ReferralUserCreateInput {
   referee: UserRelateToOneForCreateInput
 }
 
+type FirebaseDeviceToken {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  deviceToken: String
+  user: User
+}
+
+input FirebaseDeviceTokenWhereUniqueInput {
+  id: ID
+}
+
+input FirebaseDeviceTokenWhereInput {
+  AND: [FirebaseDeviceTokenWhereInput!]
+  OR: [FirebaseDeviceTokenWhereInput!]
+  NOT: [FirebaseDeviceTokenWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  deviceToken: StringFilter
+  user: UserWhereInput
+}
+
+input FirebaseDeviceTokenOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+  deviceToken: OrderDirection
+}
+
+input FirebaseDeviceTokenUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  deviceToken: String
+  user: UserRelateToOneForUpdateInput
+}
+
+input FirebaseDeviceTokenUpdateArgs {
+  where: FirebaseDeviceTokenWhereUniqueInput!
+  data: FirebaseDeviceTokenUpdateInput!
+}
+
+input FirebaseDeviceTokenCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  deviceToken: String
+  user: UserRelateToOneForCreateInput
+}
+
 type Address {
   id: ID!
   createdAt: DateTime
@@ -5929,6 +5978,12 @@ type Mutation {
   updateReferralUsers(data: [ReferralUserUpdateArgs!]!): [ReferralUser]
   deleteReferralUser(where: ReferralUserWhereUniqueInput!): ReferralUser
   deleteReferralUsers(where: [ReferralUserWhereUniqueInput!]!): [ReferralUser]
+  createFirebaseDeviceToken(data: FirebaseDeviceTokenCreateInput!): FirebaseDeviceToken
+  createFirebaseDeviceTokens(data: [FirebaseDeviceTokenCreateInput!]!): [FirebaseDeviceToken]
+  updateFirebaseDeviceToken(where: FirebaseDeviceTokenWhereUniqueInput!, data: FirebaseDeviceTokenUpdateInput!): FirebaseDeviceToken
+  updateFirebaseDeviceTokens(data: [FirebaseDeviceTokenUpdateArgs!]!): [FirebaseDeviceToken]
+  deleteFirebaseDeviceToken(where: FirebaseDeviceTokenWhereUniqueInput!): FirebaseDeviceToken
+  deleteFirebaseDeviceTokens(where: [FirebaseDeviceTokenWhereUniqueInput!]!): [FirebaseDeviceToken]
   createAddress(data: AddressCreateInput!): Address
   createAddresses(data: [AddressCreateInput!]!): [Address]
   updateAddress(where: AddressWhereUniqueInput!, data: AddressUpdateInput!): Address
@@ -6453,6 +6508,9 @@ type Query {
   referralUsers(where: ReferralUserWhereInput! = {}, orderBy: [ReferralUserOrderByInput!]! = [], take: Int, skip: Int! = 0): [ReferralUser!]
   referralUser(where: ReferralUserWhereUniqueInput!): ReferralUser
   referralUsersCount(where: ReferralUserWhereInput! = {}): Int
+  firebaseDeviceTokens(where: FirebaseDeviceTokenWhereInput! = {}, orderBy: [FirebaseDeviceTokenOrderByInput!]! = [], take: Int, skip: Int! = 0): [FirebaseDeviceToken!]
+  firebaseDeviceToken(where: FirebaseDeviceTokenWhereUniqueInput!): FirebaseDeviceToken
+  firebaseDeviceTokensCount(where: FirebaseDeviceTokenWhereInput! = {}): Int
   addresses(where: AddressWhereInput! = {}, orderBy: [AddressOrderByInput!]! = [], take: Int, skip: Int! = 0): [Address!]
   address(where: AddressWhereUniqueInput!): Address
   addressesCount(where: AddressWhereInput! = {}): Int

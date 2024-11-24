@@ -19,6 +19,8 @@ final orderProvider =
   (ref, orderFamily) => OrdersProvider(orderFamily: orderFamily),
 );
 final homePageProvider = ChangeNotifierProvider(HomePageProvider.new);
+// final pushNotificationServiceProvider =
+//     Provider((ref) => PushNotificationService());
 
 final notificationsProvider =
     ChangeNotifierProvider((ref) => NotificationsProvider()..init());

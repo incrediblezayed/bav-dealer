@@ -445,6 +445,24 @@ Serializer<GReferralUserUpdateArgs> _$gReferralUserUpdateArgsSerializer =
     new _$GReferralUserUpdateArgsSerializer();
 Serializer<GReferralUserCreateInput> _$gReferralUserCreateInputSerializer =
     new _$GReferralUserCreateInputSerializer();
+Serializer<GFirebaseDeviceTokenWhereUniqueInput>
+    _$gFirebaseDeviceTokenWhereUniqueInputSerializer =
+    new _$GFirebaseDeviceTokenWhereUniqueInputSerializer();
+Serializer<GFirebaseDeviceTokenWhereInput>
+    _$gFirebaseDeviceTokenWhereInputSerializer =
+    new _$GFirebaseDeviceTokenWhereInputSerializer();
+Serializer<GFirebaseDeviceTokenOrderByInput>
+    _$gFirebaseDeviceTokenOrderByInputSerializer =
+    new _$GFirebaseDeviceTokenOrderByInputSerializer();
+Serializer<GFirebaseDeviceTokenUpdateInput>
+    _$gFirebaseDeviceTokenUpdateInputSerializer =
+    new _$GFirebaseDeviceTokenUpdateInputSerializer();
+Serializer<GFirebaseDeviceTokenUpdateArgs>
+    _$gFirebaseDeviceTokenUpdateArgsSerializer =
+    new _$GFirebaseDeviceTokenUpdateArgsSerializer();
+Serializer<GFirebaseDeviceTokenCreateInput>
+    _$gFirebaseDeviceTokenCreateInputSerializer =
+    new _$GFirebaseDeviceTokenCreateInputSerializer();
 Serializer<GAddressWhereUniqueInput> _$gAddressWhereUniqueInputSerializer =
     new _$GAddressWhereUniqueInputSerializer();
 Serializer<GAddressWhereInput> _$gAddressWhereInputSerializer =
@@ -6110,6 +6128,504 @@ class _$GReferralUserCreateInputSerializer
           break;
         case 'referee':
           result.referee.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserRelateToOneForCreateInput))!
+              as GUserRelateToOneForCreateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GFirebaseDeviceTokenWhereUniqueInputSerializer
+    implements StructuredSerializer<GFirebaseDeviceTokenWhereUniqueInput> {
+  @override
+  final Iterable<Type> types = const [
+    GFirebaseDeviceTokenWhereUniqueInput,
+    _$GFirebaseDeviceTokenWhereUniqueInput
+  ];
+  @override
+  final String wireName = 'GFirebaseDeviceTokenWhereUniqueInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GFirebaseDeviceTokenWhereUniqueInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GFirebaseDeviceTokenWhereUniqueInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GFirebaseDeviceTokenWhereUniqueInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GFirebaseDeviceTokenWhereInputSerializer
+    implements StructuredSerializer<GFirebaseDeviceTokenWhereInput> {
+  @override
+  final Iterable<Type> types = const [
+    GFirebaseDeviceTokenWhereInput,
+    _$GFirebaseDeviceTokenWhereInput
+  ];
+  @override
+  final String wireName = 'GFirebaseDeviceTokenWhereInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GFirebaseDeviceTokenWhereInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.AND;
+    if (value != null) {
+      result
+        ..add('AND')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GFirebaseDeviceTokenWhereInput)])));
+    }
+    value = object.OR;
+    if (value != null) {
+      result
+        ..add('OR')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GFirebaseDeviceTokenWhereInput)])));
+    }
+    value = object.NOT;
+    if (value != null) {
+      result
+        ..add('NOT')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(GFirebaseDeviceTokenWhereInput)])));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GIDFilter)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.deviceToken;
+    if (value != null) {
+      result
+        ..add('deviceToken')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.user;
+    if (value != null) {
+      result
+        ..add('user')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserWhereInput)));
+    }
+    return result;
+  }
+
+  @override
+  GFirebaseDeviceTokenWhereInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GFirebaseDeviceTokenWhereInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'AND':
+          result.AND.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GFirebaseDeviceTokenWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'OR':
+          result.OR.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GFirebaseDeviceTokenWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'NOT':
+          result.NOT.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GFirebaseDeviceTokenWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GIDFilter))! as GIDFilter);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'deviceToken':
+          result.deviceToken.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'user':
+          result.user.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GUserWhereInput))!
+              as GUserWhereInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GFirebaseDeviceTokenOrderByInputSerializer
+    implements StructuredSerializer<GFirebaseDeviceTokenOrderByInput> {
+  @override
+  final Iterable<Type> types = const [
+    GFirebaseDeviceTokenOrderByInput,
+    _$GFirebaseDeviceTokenOrderByInput
+  ];
+  @override
+  final String wireName = 'GFirebaseDeviceTokenOrderByInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GFirebaseDeviceTokenOrderByInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.deviceToken;
+    if (value != null) {
+      result
+        ..add('deviceToken')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    return result;
+  }
+
+  @override
+  GFirebaseDeviceTokenOrderByInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GFirebaseDeviceTokenOrderByInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'createdAt':
+          result.createdAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'modifiedAt':
+          result.modifiedAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'deviceToken':
+          result.deviceToken = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GFirebaseDeviceTokenUpdateInputSerializer
+    implements StructuredSerializer<GFirebaseDeviceTokenUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GFirebaseDeviceTokenUpdateInput,
+    _$GFirebaseDeviceTokenUpdateInput
+  ];
+  @override
+  final String wireName = 'GFirebaseDeviceTokenUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GFirebaseDeviceTokenUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.deviceToken;
+    if (value != null) {
+      result
+        ..add('deviceToken')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.user;
+    if (value != null) {
+      result
+        ..add('user')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserRelateToOneForUpdateInput)));
+    }
+    return result;
+  }
+
+  @override
+  GFirebaseDeviceTokenUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GFirebaseDeviceTokenUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'deviceToken':
+          result.deviceToken = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'user':
+          result.user.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserRelateToOneForUpdateInput))!
+              as GUserRelateToOneForUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GFirebaseDeviceTokenUpdateArgsSerializer
+    implements StructuredSerializer<GFirebaseDeviceTokenUpdateArgs> {
+  @override
+  final Iterable<Type> types = const [
+    GFirebaseDeviceTokenUpdateArgs,
+    _$GFirebaseDeviceTokenUpdateArgs
+  ];
+  @override
+  final String wireName = 'GFirebaseDeviceTokenUpdateArgs';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GFirebaseDeviceTokenUpdateArgs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(GFirebaseDeviceTokenWhereUniqueInput)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(GFirebaseDeviceTokenUpdateInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GFirebaseDeviceTokenUpdateArgs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GFirebaseDeviceTokenUpdateArgsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GFirebaseDeviceTokenWhereUniqueInput))!
+              as GFirebaseDeviceTokenWhereUniqueInput);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GFirebaseDeviceTokenUpdateInput))!
+              as GFirebaseDeviceTokenUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GFirebaseDeviceTokenCreateInputSerializer
+    implements StructuredSerializer<GFirebaseDeviceTokenCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GFirebaseDeviceTokenCreateInput,
+    _$GFirebaseDeviceTokenCreateInput
+  ];
+  @override
+  final String wireName = 'GFirebaseDeviceTokenCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GFirebaseDeviceTokenCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.deviceToken;
+    if (value != null) {
+      result
+        ..add('deviceToken')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.user;
+    if (value != null) {
+      result
+        ..add('user')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserRelateToOneForCreateInput)));
+    }
+    return result;
+  }
+
+  @override
+  GFirebaseDeviceTokenCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GFirebaseDeviceTokenCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'deviceToken':
+          result.deviceToken = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'user':
+          result.user.replace(serializers.deserialize(value,
                   specifiedType:
                       const FullType(GUserRelateToOneForCreateInput))!
               as GUserRelateToOneForCreateInput);
@@ -69480,6 +69996,837 @@ class GReferralUserCreateInputBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GReferralUserCreateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GFirebaseDeviceTokenWhereUniqueInput
+    extends GFirebaseDeviceTokenWhereUniqueInput {
+  @override
+  final String? id;
+
+  factory _$GFirebaseDeviceTokenWhereUniqueInput(
+          [void Function(GFirebaseDeviceTokenWhereUniqueInputBuilder)?
+              updates]) =>
+      (new GFirebaseDeviceTokenWhereUniqueInputBuilder()..update(updates))
+          ._build();
+
+  _$GFirebaseDeviceTokenWhereUniqueInput._({this.id}) : super._();
+
+  @override
+  GFirebaseDeviceTokenWhereUniqueInput rebuild(
+          void Function(GFirebaseDeviceTokenWhereUniqueInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GFirebaseDeviceTokenWhereUniqueInputBuilder toBuilder() =>
+      new GFirebaseDeviceTokenWhereUniqueInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GFirebaseDeviceTokenWhereUniqueInput && id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GFirebaseDeviceTokenWhereUniqueInput')
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GFirebaseDeviceTokenWhereUniqueInputBuilder
+    implements
+        Builder<GFirebaseDeviceTokenWhereUniqueInput,
+            GFirebaseDeviceTokenWhereUniqueInputBuilder> {
+  _$GFirebaseDeviceTokenWhereUniqueInput? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GFirebaseDeviceTokenWhereUniqueInputBuilder();
+
+  GFirebaseDeviceTokenWhereUniqueInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GFirebaseDeviceTokenWhereUniqueInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GFirebaseDeviceTokenWhereUniqueInput;
+  }
+
+  @override
+  void update(
+      void Function(GFirebaseDeviceTokenWhereUniqueInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GFirebaseDeviceTokenWhereUniqueInput build() => _build();
+
+  _$GFirebaseDeviceTokenWhereUniqueInput _build() {
+    final _$result =
+        _$v ?? new _$GFirebaseDeviceTokenWhereUniqueInput._(id: id);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GFirebaseDeviceTokenWhereInput extends GFirebaseDeviceTokenWhereInput {
+  @override
+  final BuiltList<GFirebaseDeviceTokenWhereInput>? AND;
+  @override
+  final BuiltList<GFirebaseDeviceTokenWhereInput>? OR;
+  @override
+  final BuiltList<GFirebaseDeviceTokenWhereInput>? NOT;
+  @override
+  final GIDFilter? id;
+  @override
+  final GDateTimeNullableFilter? createdAt;
+  @override
+  final GDateTimeNullableFilter? modifiedAt;
+  @override
+  final GStringFilter? deviceToken;
+  @override
+  final GUserWhereInput? user;
+
+  factory _$GFirebaseDeviceTokenWhereInput(
+          [void Function(GFirebaseDeviceTokenWhereInputBuilder)? updates]) =>
+      (new GFirebaseDeviceTokenWhereInputBuilder()..update(updates))._build();
+
+  _$GFirebaseDeviceTokenWhereInput._(
+      {this.AND,
+      this.OR,
+      this.NOT,
+      this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.deviceToken,
+      this.user})
+      : super._();
+
+  @override
+  GFirebaseDeviceTokenWhereInput rebuild(
+          void Function(GFirebaseDeviceTokenWhereInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GFirebaseDeviceTokenWhereInputBuilder toBuilder() =>
+      new GFirebaseDeviceTokenWhereInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GFirebaseDeviceTokenWhereInput &&
+        AND == other.AND &&
+        OR == other.OR &&
+        NOT == other.NOT &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        deviceToken == other.deviceToken &&
+        user == other.user;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, AND.hashCode);
+    _$hash = $jc(_$hash, OR.hashCode);
+    _$hash = $jc(_$hash, NOT.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, deviceToken.hashCode);
+    _$hash = $jc(_$hash, user.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GFirebaseDeviceTokenWhereInput')
+          ..add('AND', AND)
+          ..add('OR', OR)
+          ..add('NOT', NOT)
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('deviceToken', deviceToken)
+          ..add('user', user))
+        .toString();
+  }
+}
+
+class GFirebaseDeviceTokenWhereInputBuilder
+    implements
+        Builder<GFirebaseDeviceTokenWhereInput,
+            GFirebaseDeviceTokenWhereInputBuilder> {
+  _$GFirebaseDeviceTokenWhereInput? _$v;
+
+  ListBuilder<GFirebaseDeviceTokenWhereInput>? _AND;
+  ListBuilder<GFirebaseDeviceTokenWhereInput> get AND =>
+      _$this._AND ??= new ListBuilder<GFirebaseDeviceTokenWhereInput>();
+  set AND(ListBuilder<GFirebaseDeviceTokenWhereInput>? AND) =>
+      _$this._AND = AND;
+
+  ListBuilder<GFirebaseDeviceTokenWhereInput>? _OR;
+  ListBuilder<GFirebaseDeviceTokenWhereInput> get OR =>
+      _$this._OR ??= new ListBuilder<GFirebaseDeviceTokenWhereInput>();
+  set OR(ListBuilder<GFirebaseDeviceTokenWhereInput>? OR) => _$this._OR = OR;
+
+  ListBuilder<GFirebaseDeviceTokenWhereInput>? _NOT;
+  ListBuilder<GFirebaseDeviceTokenWhereInput> get NOT =>
+      _$this._NOT ??= new ListBuilder<GFirebaseDeviceTokenWhereInput>();
+  set NOT(ListBuilder<GFirebaseDeviceTokenWhereInput>? NOT) =>
+      _$this._NOT = NOT;
+
+  GIDFilterBuilder? _id;
+  GIDFilterBuilder get id => _$this._id ??= new GIDFilterBuilder();
+  set id(GIDFilterBuilder? id) => _$this._id = id;
+
+  GDateTimeNullableFilterBuilder? _createdAt;
+  GDateTimeNullableFilterBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeNullableFilterBuilder();
+  set createdAt(GDateTimeNullableFilterBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GDateTimeNullableFilterBuilder? _modifiedAt;
+  GDateTimeNullableFilterBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeNullableFilterBuilder();
+  set modifiedAt(GDateTimeNullableFilterBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GStringFilterBuilder? _deviceToken;
+  GStringFilterBuilder get deviceToken =>
+      _$this._deviceToken ??= new GStringFilterBuilder();
+  set deviceToken(GStringFilterBuilder? deviceToken) =>
+      _$this._deviceToken = deviceToken;
+
+  GUserWhereInputBuilder? _user;
+  GUserWhereInputBuilder get user =>
+      _$this._user ??= new GUserWhereInputBuilder();
+  set user(GUserWhereInputBuilder? user) => _$this._user = user;
+
+  GFirebaseDeviceTokenWhereInputBuilder();
+
+  GFirebaseDeviceTokenWhereInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _AND = $v.AND?.toBuilder();
+      _OR = $v.OR?.toBuilder();
+      _NOT = $v.NOT?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _deviceToken = $v.deviceToken?.toBuilder();
+      _user = $v.user?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GFirebaseDeviceTokenWhereInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GFirebaseDeviceTokenWhereInput;
+  }
+
+  @override
+  void update(void Function(GFirebaseDeviceTokenWhereInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GFirebaseDeviceTokenWhereInput build() => _build();
+
+  _$GFirebaseDeviceTokenWhereInput _build() {
+    _$GFirebaseDeviceTokenWhereInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GFirebaseDeviceTokenWhereInput._(
+              AND: _AND?.build(),
+              OR: _OR?.build(),
+              NOT: _NOT?.build(),
+              id: _id?.build(),
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              deviceToken: _deviceToken?.build(),
+              user: _user?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'AND';
+        _AND?.build();
+        _$failedField = 'OR';
+        _OR?.build();
+        _$failedField = 'NOT';
+        _NOT?.build();
+        _$failedField = 'id';
+        _id?.build();
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'deviceToken';
+        _deviceToken?.build();
+        _$failedField = 'user';
+        _user?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GFirebaseDeviceTokenWhereInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GFirebaseDeviceTokenOrderByInput
+    extends GFirebaseDeviceTokenOrderByInput {
+  @override
+  final GOrderDirection? id;
+  @override
+  final GOrderDirection? createdAt;
+  @override
+  final GOrderDirection? modifiedAt;
+  @override
+  final GOrderDirection? deviceToken;
+
+  factory _$GFirebaseDeviceTokenOrderByInput(
+          [void Function(GFirebaseDeviceTokenOrderByInputBuilder)? updates]) =>
+      (new GFirebaseDeviceTokenOrderByInputBuilder()..update(updates))._build();
+
+  _$GFirebaseDeviceTokenOrderByInput._(
+      {this.id, this.createdAt, this.modifiedAt, this.deviceToken})
+      : super._();
+
+  @override
+  GFirebaseDeviceTokenOrderByInput rebuild(
+          void Function(GFirebaseDeviceTokenOrderByInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GFirebaseDeviceTokenOrderByInputBuilder toBuilder() =>
+      new GFirebaseDeviceTokenOrderByInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GFirebaseDeviceTokenOrderByInput &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        deviceToken == other.deviceToken;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, deviceToken.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GFirebaseDeviceTokenOrderByInput')
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('deviceToken', deviceToken))
+        .toString();
+  }
+}
+
+class GFirebaseDeviceTokenOrderByInputBuilder
+    implements
+        Builder<GFirebaseDeviceTokenOrderByInput,
+            GFirebaseDeviceTokenOrderByInputBuilder> {
+  _$GFirebaseDeviceTokenOrderByInput? _$v;
+
+  GOrderDirection? _id;
+  GOrderDirection? get id => _$this._id;
+  set id(GOrderDirection? id) => _$this._id = id;
+
+  GOrderDirection? _createdAt;
+  GOrderDirection? get createdAt => _$this._createdAt;
+  set createdAt(GOrderDirection? createdAt) => _$this._createdAt = createdAt;
+
+  GOrderDirection? _modifiedAt;
+  GOrderDirection? get modifiedAt => _$this._modifiedAt;
+  set modifiedAt(GOrderDirection? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GOrderDirection? _deviceToken;
+  GOrderDirection? get deviceToken => _$this._deviceToken;
+  set deviceToken(GOrderDirection? deviceToken) =>
+      _$this._deviceToken = deviceToken;
+
+  GFirebaseDeviceTokenOrderByInputBuilder();
+
+  GFirebaseDeviceTokenOrderByInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _createdAt = $v.createdAt;
+      _modifiedAt = $v.modifiedAt;
+      _deviceToken = $v.deviceToken;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GFirebaseDeviceTokenOrderByInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GFirebaseDeviceTokenOrderByInput;
+  }
+
+  @override
+  void update(void Function(GFirebaseDeviceTokenOrderByInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GFirebaseDeviceTokenOrderByInput build() => _build();
+
+  _$GFirebaseDeviceTokenOrderByInput _build() {
+    final _$result = _$v ??
+        new _$GFirebaseDeviceTokenOrderByInput._(
+            id: id,
+            createdAt: createdAt,
+            modifiedAt: modifiedAt,
+            deviceToken: deviceToken);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GFirebaseDeviceTokenUpdateInput
+    extends GFirebaseDeviceTokenUpdateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final String? deviceToken;
+  @override
+  final GUserRelateToOneForUpdateInput? user;
+
+  factory _$GFirebaseDeviceTokenUpdateInput(
+          [void Function(GFirebaseDeviceTokenUpdateInputBuilder)? updates]) =>
+      (new GFirebaseDeviceTokenUpdateInputBuilder()..update(updates))._build();
+
+  _$GFirebaseDeviceTokenUpdateInput._(
+      {this.createdAt, this.modifiedAt, this.deviceToken, this.user})
+      : super._();
+
+  @override
+  GFirebaseDeviceTokenUpdateInput rebuild(
+          void Function(GFirebaseDeviceTokenUpdateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GFirebaseDeviceTokenUpdateInputBuilder toBuilder() =>
+      new GFirebaseDeviceTokenUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GFirebaseDeviceTokenUpdateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        deviceToken == other.deviceToken &&
+        user == other.user;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, deviceToken.hashCode);
+    _$hash = $jc(_$hash, user.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GFirebaseDeviceTokenUpdateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('deviceToken', deviceToken)
+          ..add('user', user))
+        .toString();
+  }
+}
+
+class GFirebaseDeviceTokenUpdateInputBuilder
+    implements
+        Builder<GFirebaseDeviceTokenUpdateInput,
+            GFirebaseDeviceTokenUpdateInputBuilder> {
+  _$GFirebaseDeviceTokenUpdateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  String? _deviceToken;
+  String? get deviceToken => _$this._deviceToken;
+  set deviceToken(String? deviceToken) => _$this._deviceToken = deviceToken;
+
+  GUserRelateToOneForUpdateInputBuilder? _user;
+  GUserRelateToOneForUpdateInputBuilder get user =>
+      _$this._user ??= new GUserRelateToOneForUpdateInputBuilder();
+  set user(GUserRelateToOneForUpdateInputBuilder? user) => _$this._user = user;
+
+  GFirebaseDeviceTokenUpdateInputBuilder();
+
+  GFirebaseDeviceTokenUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _deviceToken = $v.deviceToken;
+      _user = $v.user?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GFirebaseDeviceTokenUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GFirebaseDeviceTokenUpdateInput;
+  }
+
+  @override
+  void update(void Function(GFirebaseDeviceTokenUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GFirebaseDeviceTokenUpdateInput build() => _build();
+
+  _$GFirebaseDeviceTokenUpdateInput _build() {
+    _$GFirebaseDeviceTokenUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GFirebaseDeviceTokenUpdateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              deviceToken: deviceToken,
+              user: _user?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+
+        _$failedField = 'user';
+        _user?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GFirebaseDeviceTokenUpdateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GFirebaseDeviceTokenUpdateArgs extends GFirebaseDeviceTokenUpdateArgs {
+  @override
+  final GFirebaseDeviceTokenWhereUniqueInput where;
+  @override
+  final GFirebaseDeviceTokenUpdateInput data;
+
+  factory _$GFirebaseDeviceTokenUpdateArgs(
+          [void Function(GFirebaseDeviceTokenUpdateArgsBuilder)? updates]) =>
+      (new GFirebaseDeviceTokenUpdateArgsBuilder()..update(updates))._build();
+
+  _$GFirebaseDeviceTokenUpdateArgs._({required this.where, required this.data})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GFirebaseDeviceTokenUpdateArgs', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        data, r'GFirebaseDeviceTokenUpdateArgs', 'data');
+  }
+
+  @override
+  GFirebaseDeviceTokenUpdateArgs rebuild(
+          void Function(GFirebaseDeviceTokenUpdateArgsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GFirebaseDeviceTokenUpdateArgsBuilder toBuilder() =>
+      new GFirebaseDeviceTokenUpdateArgsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GFirebaseDeviceTokenUpdateArgs &&
+        where == other.where &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GFirebaseDeviceTokenUpdateArgs')
+          ..add('where', where)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GFirebaseDeviceTokenUpdateArgsBuilder
+    implements
+        Builder<GFirebaseDeviceTokenUpdateArgs,
+            GFirebaseDeviceTokenUpdateArgsBuilder> {
+  _$GFirebaseDeviceTokenUpdateArgs? _$v;
+
+  GFirebaseDeviceTokenWhereUniqueInputBuilder? _where;
+  GFirebaseDeviceTokenWhereUniqueInputBuilder get where =>
+      _$this._where ??= new GFirebaseDeviceTokenWhereUniqueInputBuilder();
+  set where(GFirebaseDeviceTokenWhereUniqueInputBuilder? where) =>
+      _$this._where = where;
+
+  GFirebaseDeviceTokenUpdateInputBuilder? _data;
+  GFirebaseDeviceTokenUpdateInputBuilder get data =>
+      _$this._data ??= new GFirebaseDeviceTokenUpdateInputBuilder();
+  set data(GFirebaseDeviceTokenUpdateInputBuilder? data) => _$this._data = data;
+
+  GFirebaseDeviceTokenUpdateArgsBuilder();
+
+  GFirebaseDeviceTokenUpdateArgsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GFirebaseDeviceTokenUpdateArgs other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GFirebaseDeviceTokenUpdateArgs;
+  }
+
+  @override
+  void update(void Function(GFirebaseDeviceTokenUpdateArgsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GFirebaseDeviceTokenUpdateArgs build() => _build();
+
+  _$GFirebaseDeviceTokenUpdateArgs _build() {
+    _$GFirebaseDeviceTokenUpdateArgs _$result;
+    try {
+      _$result = _$v ??
+          new _$GFirebaseDeviceTokenUpdateArgs._(
+              where: where.build(), data: data.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GFirebaseDeviceTokenUpdateArgs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GFirebaseDeviceTokenCreateInput
+    extends GFirebaseDeviceTokenCreateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final String? deviceToken;
+  @override
+  final GUserRelateToOneForCreateInput? user;
+
+  factory _$GFirebaseDeviceTokenCreateInput(
+          [void Function(GFirebaseDeviceTokenCreateInputBuilder)? updates]) =>
+      (new GFirebaseDeviceTokenCreateInputBuilder()..update(updates))._build();
+
+  _$GFirebaseDeviceTokenCreateInput._(
+      {this.createdAt, this.modifiedAt, this.deviceToken, this.user})
+      : super._();
+
+  @override
+  GFirebaseDeviceTokenCreateInput rebuild(
+          void Function(GFirebaseDeviceTokenCreateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GFirebaseDeviceTokenCreateInputBuilder toBuilder() =>
+      new GFirebaseDeviceTokenCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GFirebaseDeviceTokenCreateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        deviceToken == other.deviceToken &&
+        user == other.user;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, deviceToken.hashCode);
+    _$hash = $jc(_$hash, user.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GFirebaseDeviceTokenCreateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('deviceToken', deviceToken)
+          ..add('user', user))
+        .toString();
+  }
+}
+
+class GFirebaseDeviceTokenCreateInputBuilder
+    implements
+        Builder<GFirebaseDeviceTokenCreateInput,
+            GFirebaseDeviceTokenCreateInputBuilder> {
+  _$GFirebaseDeviceTokenCreateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  String? _deviceToken;
+  String? get deviceToken => _$this._deviceToken;
+  set deviceToken(String? deviceToken) => _$this._deviceToken = deviceToken;
+
+  GUserRelateToOneForCreateInputBuilder? _user;
+  GUserRelateToOneForCreateInputBuilder get user =>
+      _$this._user ??= new GUserRelateToOneForCreateInputBuilder();
+  set user(GUserRelateToOneForCreateInputBuilder? user) => _$this._user = user;
+
+  GFirebaseDeviceTokenCreateInputBuilder();
+
+  GFirebaseDeviceTokenCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _deviceToken = $v.deviceToken;
+      _user = $v.user?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GFirebaseDeviceTokenCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GFirebaseDeviceTokenCreateInput;
+  }
+
+  @override
+  void update(void Function(GFirebaseDeviceTokenCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GFirebaseDeviceTokenCreateInput build() => _build();
+
+  _$GFirebaseDeviceTokenCreateInput _build() {
+    _$GFirebaseDeviceTokenCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GFirebaseDeviceTokenCreateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              deviceToken: deviceToken,
+              user: _user?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+
+        _$failedField = 'user';
+        _user?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GFirebaseDeviceTokenCreateInput', _$failedField, e.toString());
       }
       rethrow;
     }

@@ -1272,6 +1272,181 @@ abstract class GReferralUserCreateInput
       );
 }
 
+abstract class GFirebaseDeviceTokenWhereUniqueInput
+    implements
+        Built<GFirebaseDeviceTokenWhereUniqueInput,
+            GFirebaseDeviceTokenWhereUniqueInputBuilder> {
+  GFirebaseDeviceTokenWhereUniqueInput._();
+
+  factory GFirebaseDeviceTokenWhereUniqueInput(
+      [void Function(GFirebaseDeviceTokenWhereUniqueInputBuilder b)
+          updates]) = _$GFirebaseDeviceTokenWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GFirebaseDeviceTokenWhereUniqueInput> get serializer =>
+      _$gFirebaseDeviceTokenWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GFirebaseDeviceTokenWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GFirebaseDeviceTokenWhereUniqueInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GFirebaseDeviceTokenWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GFirebaseDeviceTokenWhereInput
+    implements
+        Built<GFirebaseDeviceTokenWhereInput,
+            GFirebaseDeviceTokenWhereInputBuilder> {
+  GFirebaseDeviceTokenWhereInput._();
+
+  factory GFirebaseDeviceTokenWhereInput(
+          [void Function(GFirebaseDeviceTokenWhereInputBuilder b) updates]) =
+      _$GFirebaseDeviceTokenWhereInput;
+
+  BuiltList<GFirebaseDeviceTokenWhereInput>? get AND;
+  BuiltList<GFirebaseDeviceTokenWhereInput>? get OR;
+  BuiltList<GFirebaseDeviceTokenWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GStringFilter? get deviceToken;
+  GUserWhereInput? get user;
+  static Serializer<GFirebaseDeviceTokenWhereInput> get serializer =>
+      _$gFirebaseDeviceTokenWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GFirebaseDeviceTokenWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GFirebaseDeviceTokenWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GFirebaseDeviceTokenWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GFirebaseDeviceTokenOrderByInput
+    implements
+        Built<GFirebaseDeviceTokenOrderByInput,
+            GFirebaseDeviceTokenOrderByInputBuilder> {
+  GFirebaseDeviceTokenOrderByInput._();
+
+  factory GFirebaseDeviceTokenOrderByInput(
+          [void Function(GFirebaseDeviceTokenOrderByInputBuilder b) updates]) =
+      _$GFirebaseDeviceTokenOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  GOrderDirection? get deviceToken;
+  static Serializer<GFirebaseDeviceTokenOrderByInput> get serializer =>
+      _$gFirebaseDeviceTokenOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GFirebaseDeviceTokenOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GFirebaseDeviceTokenOrderByInput? fromJson(
+          Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GFirebaseDeviceTokenOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GFirebaseDeviceTokenUpdateInput
+    implements
+        Built<GFirebaseDeviceTokenUpdateInput,
+            GFirebaseDeviceTokenUpdateInputBuilder> {
+  GFirebaseDeviceTokenUpdateInput._();
+
+  factory GFirebaseDeviceTokenUpdateInput(
+          [void Function(GFirebaseDeviceTokenUpdateInputBuilder b) updates]) =
+      _$GFirebaseDeviceTokenUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get deviceToken;
+  GUserRelateToOneForUpdateInput? get user;
+  static Serializer<GFirebaseDeviceTokenUpdateInput> get serializer =>
+      _$gFirebaseDeviceTokenUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GFirebaseDeviceTokenUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GFirebaseDeviceTokenUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GFirebaseDeviceTokenUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GFirebaseDeviceTokenUpdateArgs
+    implements
+        Built<GFirebaseDeviceTokenUpdateArgs,
+            GFirebaseDeviceTokenUpdateArgsBuilder> {
+  GFirebaseDeviceTokenUpdateArgs._();
+
+  factory GFirebaseDeviceTokenUpdateArgs(
+          [void Function(GFirebaseDeviceTokenUpdateArgsBuilder b) updates]) =
+      _$GFirebaseDeviceTokenUpdateArgs;
+
+  GFirebaseDeviceTokenWhereUniqueInput get where;
+  GFirebaseDeviceTokenUpdateInput get data;
+  static Serializer<GFirebaseDeviceTokenUpdateArgs> get serializer =>
+      _$gFirebaseDeviceTokenUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GFirebaseDeviceTokenUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GFirebaseDeviceTokenUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GFirebaseDeviceTokenUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GFirebaseDeviceTokenCreateInput
+    implements
+        Built<GFirebaseDeviceTokenCreateInput,
+            GFirebaseDeviceTokenCreateInputBuilder> {
+  GFirebaseDeviceTokenCreateInput._();
+
+  factory GFirebaseDeviceTokenCreateInput(
+          [void Function(GFirebaseDeviceTokenCreateInputBuilder b) updates]) =
+      _$GFirebaseDeviceTokenCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  String? get deviceToken;
+  GUserRelateToOneForCreateInput? get user;
+  static Serializer<GFirebaseDeviceTokenCreateInput> get serializer =>
+      _$gFirebaseDeviceTokenCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GFirebaseDeviceTokenCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GFirebaseDeviceTokenCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GFirebaseDeviceTokenCreateInput.serializer,
+        json,
+      );
+}
+
 abstract class GAddressWhereUniqueInput
     implements
         Built<GAddressWhereUniqueInput, GAddressWhereUniqueInputBuilder> {

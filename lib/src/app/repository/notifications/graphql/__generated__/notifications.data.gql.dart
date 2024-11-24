@@ -115,3 +115,69 @@ abstract class GAppNotificationsData_appNotifications_notificationType
         json,
       );
 }
+
+abstract class GUserDeviceRegistrationData
+    implements
+        Built<GUserDeviceRegistrationData, GUserDeviceRegistrationDataBuilder> {
+  GUserDeviceRegistrationData._();
+
+  factory GUserDeviceRegistrationData(
+          [void Function(GUserDeviceRegistrationDataBuilder b) updates]) =
+      _$GUserDeviceRegistrationData;
+
+  static void _initializeBuilder(GUserDeviceRegistrationDataBuilder b) =>
+      b..G__typename = 'Mutation';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GUserDeviceRegistrationData_createFirebaseDeviceToken?
+      get createFirebaseDeviceToken;
+  static Serializer<GUserDeviceRegistrationData> get serializer =>
+      _$gUserDeviceRegistrationDataSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUserDeviceRegistrationData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUserDeviceRegistrationData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUserDeviceRegistrationData.serializer,
+        json,
+      );
+}
+
+abstract class GUserDeviceRegistrationData_createFirebaseDeviceToken
+    implements
+        Built<GUserDeviceRegistrationData_createFirebaseDeviceToken,
+            GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder> {
+  GUserDeviceRegistrationData_createFirebaseDeviceToken._();
+
+  factory GUserDeviceRegistrationData_createFirebaseDeviceToken(
+      [void Function(
+              GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder b)
+          updates]) = _$GUserDeviceRegistrationData_createFirebaseDeviceToken;
+
+  static void _initializeBuilder(
+          GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder b) =>
+      b..G__typename = 'FirebaseDeviceToken';
+
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String? get deviceToken;
+  static Serializer<GUserDeviceRegistrationData_createFirebaseDeviceToken>
+      get serializer =>
+          _$gUserDeviceRegistrationDataCreateFirebaseDeviceTokenSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUserDeviceRegistrationData_createFirebaseDeviceToken.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUserDeviceRegistrationData_createFirebaseDeviceToken? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUserDeviceRegistrationData_createFirebaseDeviceToken.serializer,
+        json,
+      );
+}

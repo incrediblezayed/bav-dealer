@@ -216,10 +216,15 @@ class AuthProvider extends ChangeNotifier {
         otp = await _authRepository.getCurrentOtp('phoneNumberVerification');
       }
       if (otp != null) {
+        print('$otp, +++++++++++++++++++++OTP+++++++++++++++');
         /*    AppRoutes.showSuccessSnackbar(
           message: otp,
           duration: const Duration(minutes: 1),
         ); */
+      } else {
+        await AppRoutes.showErrorSnackbar(
+          message: 'Failed to get OTP',
+        );
       }
     } catch (e) {
       e.log();
@@ -277,7 +282,7 @@ class AuthProvider extends ChangeNotifier {
   Future<bool> validateOTP({required String key, String? otp}) async {
     try {
       final otpKey = switch (key) {
-        'email;' => 'emailVerification',
+        'email' => 'emailVerification',
         'phone' => 'phoneNumberVerification',
         'mou' => 'dealerMOUApproval',
         _ => throw Exception('Invalid key'),

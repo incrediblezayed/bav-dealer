@@ -209,6 +209,12 @@ import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema
         GFinanceOfferEnquiryUpdateInput,
         GFinanceOfferEnquiryWhereInput,
         GFinanceOfferEnquiryWhereUniqueInput,
+        GFirebaseDeviceTokenCreateInput,
+        GFirebaseDeviceTokenOrderByInput,
+        GFirebaseDeviceTokenUpdateArgs,
+        GFirebaseDeviceTokenUpdateInput,
+        GFirebaseDeviceTokenWhereInput,
+        GFirebaseDeviceTokenWhereUniqueInput,
         GFloatFilter,
         GFloatNullableFilter,
         GGuaranteeCreateInput,
@@ -910,11 +916,13 @@ import 'package:dealerapp/src/app/repository/notifications/graphql/__generated__
     show
         GAppNotificationsData,
         GAppNotificationsData_appNotifications,
-        GAppNotificationsData_appNotifications_notificationType;
+        GAppNotificationsData_appNotifications_notificationType,
+        GUserDeviceRegistrationData,
+        GUserDeviceRegistrationData_createFirebaseDeviceToken;
 import 'package:dealerapp/src/app/repository/notifications/graphql/__generated__/notifications.req.gql.dart'
-    show GAppNotificationsReq;
+    show GAppNotificationsReq, GUserDeviceRegistrationReq;
 import 'package:dealerapp/src/app/repository/notifications/graphql/__generated__/notifications.var.gql.dart'
-    show GAppNotificationsVars;
+    show GAppNotificationsVars, GUserDeviceRegistrationVars;
 import 'package:dealerapp/src/app/repository/orders/graphql/__generated__/orders.data.gql.dart'
     show
         GCreateOrderRejectionByDealerData,
@@ -1234,6 +1242,12 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GFinanceOfferEnquiryUpdateInput,
   GFinanceOfferEnquiryWhereInput,
   GFinanceOfferEnquiryWhereUniqueInput,
+  GFirebaseDeviceTokenCreateInput,
+  GFirebaseDeviceTokenOrderByInput,
+  GFirebaseDeviceTokenUpdateArgs,
+  GFirebaseDeviceTokenUpdateInput,
+  GFirebaseDeviceTokenWhereInput,
+  GFirebaseDeviceTokenWhereUniqueInput,
   GFloatFilter,
   GFloatNullableFilter,
   GGuaranteeCreateInput,
@@ -1767,6 +1781,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GUserData_user_favorites_vehicleVariant,
   GUserData_user_profile_image,
   GUserData_user_referralCode,
+  GUserDeviceRegistrationData,
+  GUserDeviceRegistrationData_createFirebaseDeviceToken,
+  GUserDeviceRegistrationReq,
+  GUserDeviceRegistrationVars,
   GUserOrderByInput,
   GUserProductReviewAttachmentCreateInput,
   GUserProductReviewAttachmentManyRelationFilter,

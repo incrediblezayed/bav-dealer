@@ -97,3 +97,85 @@ abstract class GAppNotificationsReq
         json,
       );
 }
+
+abstract class GUserDeviceRegistrationReq
+    implements
+        Built<GUserDeviceRegistrationReq, GUserDeviceRegistrationReqBuilder>,
+        _i1.OperationRequest<_i2.GUserDeviceRegistrationData,
+            _i3.GUserDeviceRegistrationVars> {
+  GUserDeviceRegistrationReq._();
+
+  factory GUserDeviceRegistrationReq(
+          [void Function(GUserDeviceRegistrationReqBuilder b) updates]) =
+      _$GUserDeviceRegistrationReq;
+
+  static void _initializeBuilder(GUserDeviceRegistrationReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'UserDeviceRegistration',
+    )
+    ..executeOnListen = true;
+
+  @override
+  _i3.GUserDeviceRegistrationVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
+      );
+
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GUserDeviceRegistrationData? Function(
+    _i2.GUserDeviceRegistrationData?,
+    _i2.GUserDeviceRegistrationData?,
+  )? get updateResult;
+  @override
+  _i2.GUserDeviceRegistrationData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
+  @override
+  _i2.GUserDeviceRegistrationData? parseData(Map<String, dynamic> json) =>
+      _i2.GUserDeviceRegistrationData.fromJson(json);
+
+  @override
+  Map<String, dynamic> varsToJson() => vars.toJson();
+
+  @override
+  Map<String, dynamic> dataToJson(_i2.GUserDeviceRegistrationData data) =>
+      data.toJson();
+
+  @override
+  _i1.OperationRequest<_i2.GUserDeviceRegistrationData,
+      _i3.GUserDeviceRegistrationVars> transformOperation(
+          _i4.Operation Function(_i4.Operation) transform) =>
+      this.rebuild((b) => b..operation = transform(operation));
+
+  static Serializer<GUserDeviceRegistrationReq> get serializer =>
+      _$gUserDeviceRegistrationReqSerializer;
+
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GUserDeviceRegistrationReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GUserDeviceRegistrationReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GUserDeviceRegistrationReq.serializer,
+        json,
+      );
+}

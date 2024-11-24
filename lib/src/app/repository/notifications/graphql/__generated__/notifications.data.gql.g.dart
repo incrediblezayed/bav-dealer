@@ -14,6 +14,12 @@ Serializer<GAppNotificationsData_appNotifications>
 Serializer<GAppNotificationsData_appNotifications_notificationType>
     _$gAppNotificationsDataAppNotificationsNotificationTypeSerializer =
     new _$GAppNotificationsData_appNotifications_notificationTypeSerializer();
+Serializer<GUserDeviceRegistrationData>
+    _$gUserDeviceRegistrationDataSerializer =
+    new _$GUserDeviceRegistrationDataSerializer();
+Serializer<GUserDeviceRegistrationData_createFirebaseDeviceToken>
+    _$gUserDeviceRegistrationDataCreateFirebaseDeviceTokenSerializer =
+    new _$GUserDeviceRegistrationData_createFirebaseDeviceTokenSerializer();
 
 class _$GAppNotificationsDataSerializer
     implements StructuredSerializer<GAppNotificationsData> {
@@ -255,6 +261,128 @@ class _$GAppNotificationsData_appNotifications_notificationTypeSerializer
           break;
         case 'name':
           result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserDeviceRegistrationDataSerializer
+    implements StructuredSerializer<GUserDeviceRegistrationData> {
+  @override
+  final Iterable<Type> types = const [
+    GUserDeviceRegistrationData,
+    _$GUserDeviceRegistrationData
+  ];
+  @override
+  final String wireName = 'GUserDeviceRegistrationData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUserDeviceRegistrationData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.createFirebaseDeviceToken;
+    if (value != null) {
+      result
+        ..add('createFirebaseDeviceToken')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GUserDeviceRegistrationData_createFirebaseDeviceToken)));
+    }
+    return result;
+  }
+
+  @override
+  GUserDeviceRegistrationData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GUserDeviceRegistrationDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'createFirebaseDeviceToken':
+          result.createFirebaseDeviceToken.replace(serializers.deserialize(
+                  value,
+                  specifiedType: const FullType(
+                      GUserDeviceRegistrationData_createFirebaseDeviceToken))!
+              as GUserDeviceRegistrationData_createFirebaseDeviceToken);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GUserDeviceRegistrationData_createFirebaseDeviceTokenSerializer
+    implements
+        StructuredSerializer<
+            GUserDeviceRegistrationData_createFirebaseDeviceToken> {
+  @override
+  final Iterable<Type> types = const [
+    GUserDeviceRegistrationData_createFirebaseDeviceToken,
+    _$GUserDeviceRegistrationData_createFirebaseDeviceToken
+  ];
+  @override
+  final String wireName =
+      'GUserDeviceRegistrationData_createFirebaseDeviceToken';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GUserDeviceRegistrationData_createFirebaseDeviceToken object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.deviceToken;
+    if (value != null) {
+      result
+        ..add('deviceToken')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GUserDeviceRegistrationData_createFirebaseDeviceToken deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'deviceToken':
+          result.deviceToken = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
       }
@@ -750,6 +878,253 @@ class GAppNotificationsData_appNotifications_notificationTypeBuilder
       }
       rethrow;
     }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserDeviceRegistrationData extends GUserDeviceRegistrationData {
+  @override
+  final String G__typename;
+  @override
+  final GUserDeviceRegistrationData_createFirebaseDeviceToken?
+      createFirebaseDeviceToken;
+
+  factory _$GUserDeviceRegistrationData(
+          [void Function(GUserDeviceRegistrationDataBuilder)? updates]) =>
+      (new GUserDeviceRegistrationDataBuilder()..update(updates))._build();
+
+  _$GUserDeviceRegistrationData._(
+      {required this.G__typename, this.createFirebaseDeviceToken})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GUserDeviceRegistrationData', 'G__typename');
+  }
+
+  @override
+  GUserDeviceRegistrationData rebuild(
+          void Function(GUserDeviceRegistrationDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserDeviceRegistrationDataBuilder toBuilder() =>
+      new GUserDeviceRegistrationDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserDeviceRegistrationData &&
+        G__typename == other.G__typename &&
+        createFirebaseDeviceToken == other.createFirebaseDeviceToken;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, createFirebaseDeviceToken.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GUserDeviceRegistrationData')
+          ..add('G__typename', G__typename)
+          ..add('createFirebaseDeviceToken', createFirebaseDeviceToken))
+        .toString();
+  }
+}
+
+class GUserDeviceRegistrationDataBuilder
+    implements
+        Builder<GUserDeviceRegistrationData,
+            GUserDeviceRegistrationDataBuilder> {
+  _$GUserDeviceRegistrationData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder?
+      _createFirebaseDeviceToken;
+  GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder
+      get createFirebaseDeviceToken => _$this._createFirebaseDeviceToken ??=
+          new GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder();
+  set createFirebaseDeviceToken(
+          GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder?
+              createFirebaseDeviceToken) =>
+      _$this._createFirebaseDeviceToken = createFirebaseDeviceToken;
+
+  GUserDeviceRegistrationDataBuilder() {
+    GUserDeviceRegistrationData._initializeBuilder(this);
+  }
+
+  GUserDeviceRegistrationDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _createFirebaseDeviceToken = $v.createFirebaseDeviceToken?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserDeviceRegistrationData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserDeviceRegistrationData;
+  }
+
+  @override
+  void update(void Function(GUserDeviceRegistrationDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserDeviceRegistrationData build() => _build();
+
+  _$GUserDeviceRegistrationData _build() {
+    _$GUserDeviceRegistrationData _$result;
+    try {
+      _$result = _$v ??
+          new _$GUserDeviceRegistrationData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GUserDeviceRegistrationData', 'G__typename'),
+              createFirebaseDeviceToken: _createFirebaseDeviceToken?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createFirebaseDeviceToken';
+        _createFirebaseDeviceToken?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GUserDeviceRegistrationData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserDeviceRegistrationData_createFirebaseDeviceToken
+    extends GUserDeviceRegistrationData_createFirebaseDeviceToken {
+  @override
+  final String G__typename;
+  @override
+  final String? deviceToken;
+
+  factory _$GUserDeviceRegistrationData_createFirebaseDeviceToken(
+          [void Function(
+                  GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder)?
+              updates]) =>
+      (new GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GUserDeviceRegistrationData_createFirebaseDeviceToken._(
+      {required this.G__typename, this.deviceToken})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename,
+        r'GUserDeviceRegistrationData_createFirebaseDeviceToken',
+        'G__typename');
+  }
+
+  @override
+  GUserDeviceRegistrationData_createFirebaseDeviceToken rebuild(
+          void Function(
+                  GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder toBuilder() =>
+      new GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserDeviceRegistrationData_createFirebaseDeviceToken &&
+        G__typename == other.G__typename &&
+        deviceToken == other.deviceToken;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, deviceToken.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GUserDeviceRegistrationData_createFirebaseDeviceToken')
+          ..add('G__typename', G__typename)
+          ..add('deviceToken', deviceToken))
+        .toString();
+  }
+}
+
+class GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder
+    implements
+        Builder<GUserDeviceRegistrationData_createFirebaseDeviceToken,
+            GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder> {
+  _$GUserDeviceRegistrationData_createFirebaseDeviceToken? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _deviceToken;
+  String? get deviceToken => _$this._deviceToken;
+  set deviceToken(String? deviceToken) => _$this._deviceToken = deviceToken;
+
+  GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder() {
+    GUserDeviceRegistrationData_createFirebaseDeviceToken._initializeBuilder(
+        this);
+  }
+
+  GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _deviceToken = $v.deviceToken;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GUserDeviceRegistrationData_createFirebaseDeviceToken other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserDeviceRegistrationData_createFirebaseDeviceToken;
+  }
+
+  @override
+  void update(
+      void Function(
+              GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserDeviceRegistrationData_createFirebaseDeviceToken build() => _build();
+
+  _$GUserDeviceRegistrationData_createFirebaseDeviceToken _build() {
+    final _$result = _$v ??
+        new _$GUserDeviceRegistrationData_createFirebaseDeviceToken._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GUserDeviceRegistrationData_createFirebaseDeviceToken',
+                'G__typename'),
+            deviceToken: deviceToken);
     replace(_$result);
     return _$result;
   }

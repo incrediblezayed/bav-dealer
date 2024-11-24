@@ -11,4 +11,12 @@ query AppNotifications {
     }
     title
   }
+
+  
+}
+
+mutation UserDeviceRegistration($data: FirebaseDeviceTokenCreateInput!) {
+  createFirebaseDeviceToken(data: $data) {
+    deviceToken   
+  }
 }

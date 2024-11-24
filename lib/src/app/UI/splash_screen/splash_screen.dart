@@ -6,6 +6,7 @@ import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 import 'package:dealerapp/src/app/UI/Homepage/homepage.dart';
 import 'package:dealerapp/src/app/UI/login/login_page.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
+import 'package:dealerapp/src/app/provider/push_notification_service.dart';
 import 'package:dealerapp/src/utils/constants.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -71,6 +72,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
       final model = await ref.read(authProvider).getUser(user.id);
       if (model != null) {
         await cacheProvider.setUser(model);
+        await PushNotificationService.init();
         await AppRoutes.pushAndRemoveUntil(page: const HomePage());
       } else {
         await cacheProvider.clear();

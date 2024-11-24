@@ -223,6 +223,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GFinanceOfferEnquiryUpdateInput.serializer)
       ..add(GFinanceOfferEnquiryWhereInput.serializer)
       ..add(GFinanceOfferEnquiryWhereUniqueInput.serializer)
+      ..add(GFirebaseDeviceTokenCreateInput.serializer)
+      ..add(GFirebaseDeviceTokenOrderByInput.serializer)
+      ..add(GFirebaseDeviceTokenUpdateArgs.serializer)
+      ..add(GFirebaseDeviceTokenUpdateInput.serializer)
+      ..add(GFirebaseDeviceTokenWhereInput.serializer)
+      ..add(GFirebaseDeviceTokenWhereUniqueInput.serializer)
       ..add(GFloatFilter.serializer)
       ..add(GFloatNullableFilter.serializer)
       ..add(GGuaranteeCreateInput.serializer)
@@ -821,6 +827,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GUserData_user_favorites_vehicleVariant.serializer)
       ..add(GUserData_user_profile_image.serializer)
       ..add(GUserData_user_referralCode.serializer)
+      ..add(GUserDeviceRegistrationData.serializer)
+      ..add(GUserDeviceRegistrationData_createFirebaseDeviceToken.serializer)
+      ..add(GUserDeviceRegistrationReq.serializer)
+      ..add(GUserDeviceRegistrationVars.serializer)
       ..add(GUserOrderByInput.serializer)
       ..add(GUserProductReviewAttachmentCreateInput.serializer)
       ..add(GUserProductReviewAttachmentManyRelationFilter.serializer)
@@ -1424,6 +1434,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(GFinanceOfferEnquiryWhereInput)]),
           () => new ListBuilder<GFinanceOfferEnquiryWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GFirebaseDeviceTokenWhereInput)]),
+          () => new ListBuilder<GFirebaseDeviceTokenWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GFirebaseDeviceTokenWhereInput)]),
+          () => new ListBuilder<GFirebaseDeviceTokenWhereInput>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GFirebaseDeviceTokenWhereInput)]),
+          () => new ListBuilder<GFirebaseDeviceTokenWhereInput>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GGuaranteeCreateInput)]),
