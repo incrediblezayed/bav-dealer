@@ -636,4 +636,17 @@ class AuthProvider extends ChangeNotifier {
     //   notifyListeners();
     // }
   }
+
+  Future<bool?> checkPhoneNumberVerification(
+      {required String phoneNumber}) async {
+    try {
+      final response = await _authRepository.checkPhoneVerification(
+          phoneNumber: phoneNumber);
+      final isVerified = response;
+
+      return isVerified;
+    } catch (e) {
+      throw Exception('Error checking phone verification');
+    }
+  }
 }

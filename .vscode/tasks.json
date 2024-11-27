@@ -48,8 +48,8 @@
         "appbundle",
         "--dart-define-from-file",
         "prodEnv.json",
-        "--build-name=1.0.9",
-        "--build-number=9"
+        "--build-name=1.1.0",
+        "--build-number=10"
       ],
       "group": "build",
       "problemMatcher": [],
@@ -76,8 +76,8 @@
         "ipa",
         "--dart-define-from-file",
         "prodEnv.json",
-        "--build-name=1.0.9",
-        "--build-number=9"
+        "--build-name=1.1.0",
+        "--build-number=10"
       ],
       "group": "build",
       "problemMatcher": [],

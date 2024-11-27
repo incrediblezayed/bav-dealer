@@ -3,6 +3,7 @@
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.data.gql.dart';
 import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.req.gql.dart';
+import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema.gql.dart';
 import 'package:dealerapp/src/app/repository/graphql_client.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/get_it.dart';
@@ -67,6 +68,28 @@ class AuthRepository {
     } catch (e) {
       rethrow;
     }
+  }
+
+  Future<bool?> checkPhoneVerification({required String phoneNumber}) async {
+    try {
+      final inputBuilder = GUserWhereUniqueInput(
+        (b) {
+          b.phoneNumber = phoneNumber;
+        },
+      ).toBuilder();
+      final phoneVerificationReq = GUserReq(
+        (b) => b..vars.where = inputBuilder,
+      );
+      final response = await _client.request(phoneVerificationReq).first;
+      if (response.data?.user == null) {
+        return null;
+      } else {
+        return response.data!.user!.phoneNumberVerified ?? false;
+      }
+    } catch (e, trace) {
+      e.log(stackTrace: trace);
+    }
+    return null;
   }
 
   ///Login user

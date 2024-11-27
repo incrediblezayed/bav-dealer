@@ -1,3 +1,5 @@
+import 'package:dealerapp/src/app/UI/login/login_page.dart';
+import 'package:dealerapp/src/app/UI/signup/otp_verification_page.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:dealerapp/src/widgets/k_bottom_bar_button.dart';
@@ -59,7 +61,11 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
             ),
             SizedBox(height: 14.h),
             KBottomBarButton(
-              onTap: () {
+              onTap: () async {
+                final verificationStatus =
+                    await authPro.checkPhoneNumberVerification(
+                  phoneNumber: authPro.phoneNumberController.text,
+                );
                 if (authPro.phoneNumberController.text.isEmpty) {
                   AppRoutes.showErrorSnackbar(
                     message: 'Please Enter Mobile No.',
@@ -70,6 +76,15 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                   AppRoutes.showErrorSnackbar(
                     message: 'You must agree to our terms and conditions',
                   );
+                } else if (verificationStatus == false) {
+                  AppRoutes.showErrorSnackbar(
+                      message:
+                          'Your phone number is not verified please enter otp to verify');
+                  AppRoutes.push(page: const OTPVerificationPage());
+                } else if (verificationStatus == true) {
+                  AppRoutes.showErrorSnackbar(
+                      message: 'You are already registered, please login');
+                  AppRoutes.pushAndRemoveUntil(page: const LoginPage());
                 } else {
                   authPro.signUpPageController.animateToPage(
                     authPro.currentPageIndex + 1,
