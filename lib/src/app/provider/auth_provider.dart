@@ -18,6 +18,8 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
 
+enum LoginState { success, failure, otpVerification }
+
 ///Auth Provider Instance
 
 ///Auth Class
@@ -126,8 +128,8 @@ class AuthProvider extends ChangeNotifier {
 
       if (response) {
         final loggedIn = await loginApi(fromSignUp: true);
-        if (!loggedIn) {
-          await AppRoutes.showErrorSnackbar(message: 'Failed to create User');
+        if (loggedIn == LoginState.failure) {
+          await AppRoutes.showErrorSnackbar(message: 'Failed to register User');
           return;
         } else {
           await signUpPageController.nextPage(
@@ -148,34 +150,40 @@ class AuthProvider extends ChangeNotifier {
 
   /// This Method hits the login api and gets the relevant data back
   /// [fromSignUp] is used to check if the user is logging in
-  Future<bool> loginApi({required bool fromSignUp}) async {
+  Future<LoginState> loginApi({required bool fromSignUp}) async {
     final data = await _authRepository.login(
       phoneNumberController.text,
       passwordController.text,
     );
+
     if (data.containsKey('message')) {
       await AppRoutes.showErrorSnackbar(message: data['message'] as String);
-      return false;
+      return LoginState.failure;
     } else {
+      final sessionToken = data['sessionToken'] as String;
+      await cacheProvider.setSessionToken(sessionToken);
       final user = UserModel.fromJson(data['item'] as Map<String, dynamic>);
+
       if (!fromSignUp) {
-        if (!(user.phoneNumberVerified ?? true)) {
-          await AppRoutes.showErrorSnackbar(message: 'User not verified');
-          return false;
+        bool isPhoneVerified = user.phoneNumberVerified ?? false;
+        if (!isPhoneVerified) {
+          await _authRepository.updateUser(
+              image: null,
+              userDio: true,
+              id: user.id!,
+              email: user.email!,
+              phoneNumber: user.phoneNumber!,
+              name: user.name!);
+          await getCurrentUserOtp(isEmail: false);
+          return LoginState.otpVerification;
         }
         if (user.deactivate) {
-          await AppRoutes.showErrorSnackbar(message: 'User not found');
-          return false;
-        }
-        if (user.deactivate) {
-          await AppRoutes.showErrorSnackbar(message: 'User not found');
-          return false;
+          await AppRoutes.showErrorSnackbar(
+              message: 'User not found Please register');
+          return LoginState.failure;
         }
       }
-      final sessionToken = data['sessionToken'] as String;
-      print(
-          'Bearer1 ${cacheProvider.setSessionToken(sessionToken.toString())}');
-      await cacheProvider.setSessionToken(sessionToken);
+
       final newUser = await _authRepository.getUser(userId: user.id!);
       await cacheProvider.setUserId(user.id!);
       userId = user.id!;
@@ -192,7 +200,7 @@ class AuthProvider extends ChangeNotifier {
         );
         await getCurrentUserOtp(isEmail: false);
       }
-      return true;
+      return LoginState.success;
     }
   }
 
@@ -254,7 +262,7 @@ class AuthProvider extends ChangeNotifier {
     unawaited(AppRoutes.showLoadingDialog());
     final response = await loginApi(fromSignUp: false);
     AppRoutes.pop();
-    if (response) {
+    if (response == LoginState.success) {
       final dealer = await getDealerId();
       if (dealer != null) {
         if (dealer.approved ?? false) {
@@ -269,18 +277,25 @@ class AuthProvider extends ChangeNotifier {
           await cacheProvider.clear();
         }
       } else {
-        await AppRoutes.showErrorSnackbar(
-          message: 'Something went wrong please try agian later',
-        );
+        await createDealer();
         await cacheProvider.clear();
       }
+    } else if (response == LoginState.otpVerification) {
+      AppRoutes.push(
+          page: const OTPVerificationPage(
+        isLoginVerification: true,
+      ));
     }
   }
 
   ///Validate OTP Method
   ///
   ///It is used to Validate the user
-  Future<bool> validateOTP({required String key, String? otp}) async {
+  Future<bool> validateOTP({
+    required String key,
+    bool isLoginVerificaion = false,
+    String? otp,
+  }) async {
     try {
       final otpKey = switch (key) {
         'email' => 'emailVerification',
@@ -296,7 +311,11 @@ class AuthProvider extends ChangeNotifier {
         return response;
       }
       if (response) {
-        await createDealer();
+        if (isLoginVerificaion) {
+          login();
+        } else {
+          await createDealer();
+        }
       } else {
         throw Exception('Something went wrong');
       }
@@ -637,16 +656,14 @@ class AuthProvider extends ChangeNotifier {
     // }
   }
 
-  Future<bool?> checkPhoneNumberVerification(
-      {required String phoneNumber}) async {
+  Future<bool> checkIsUserRegistered({required String phoneNumber}) async {
     try {
-      final response = await _authRepository.checkPhoneVerification(
-          phoneNumber: phoneNumber);
+      final response =
+          await _authRepository.checkIsUserRegistered(phoneNumber: phoneNumber);
       final isVerified = response;
-
       return isVerified;
     } catch (e) {
-      throw Exception('Error checking phone verification');
+      throw Exception('Error checking user registration');
     }
   }
 }

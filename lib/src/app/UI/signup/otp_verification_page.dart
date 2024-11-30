@@ -1,6 +1,6 @@
 import 'package:dealerapp/src/app/provider/app_provider.dart';
-import 'package:dealerapp/src/utils/app_images.dart';
-import 'package:dealerapp/src/utils/app_theme.dart';
+import 'package:dealerapp/src/utils/index.dart';
+import 'package:dealerapp/src/utils/ui_extenstions.dart';
 import 'package:dealerapp/src/widgets/k_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,8 +11,13 @@ import 'package:iconsax/iconsax.dart';
 
 ///OTP Verfication Page
 class OTPVerificationPage extends ConsumerStatefulWidget {
+  final bool isLoginVerification;
+
   ///Constructor
-  const OTPVerificationPage({super.key});
+  const OTPVerificationPage({
+    super.key,
+    this.isLoginVerification = false,
+  });
 
   @override
   ConsumerState<OTPVerificationPage> createState() =>
@@ -20,212 +25,147 @@ class OTPVerificationPage extends ConsumerStatefulWidget {
 }
 
 class _OTPVerificationPageState extends ConsumerState<OTPVerificationPage> {
-  final listenerController = List.generate(6, (index) => FocusNode());
-
   @override
   Widget build(BuildContext context) {
     final authPro = ref.watch(authProvider);
 
-    final size = MediaQuery.sizeOf(context);
     final theme = Theme.of(context).textTheme;
     return Scaffold(
       backgroundColor: AppTheme.scaffoldBgColor,
       body: Padding(
-        padding:
-            EdgeInsets.only(left: 20.w, right: 20.w, top: 30.h, bottom: 30.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    if (authPro.currentPageIndex <
-                        authPro.signUpPages.length - 1) {
-                      authPro.signUpPageController.animateToPage(
-                        authPro.currentPageIndex - 1,
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut,
-                      );
-                    }
-                  },
-                  child: const Icon(
-                    Iconsax.arrow_left,
-                    color: AppTheme.textColor,
+        padding: widget.isLoginVerification
+            ? MediaQuery.viewPaddingOf(context)
+            : 0.pa,
+        child: Padding(
+          padding:
+              EdgeInsets.only(left: 20.w, right: 20.w, top: 30.h, bottom: 30.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      if (authPro.currentPageIndex <
+                          authPro.signUpPages.length - 1) {
+                        authPro.signUpPageController.animateToPage(
+                          authPro.currentPageIndex - 1,
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeInOut,
+                        );
+                      }
+                    },
+                    child: const Icon(
+                      Iconsax.arrow_left,
+                      color: AppTheme.textColor,
+                    ),
                   ),
-                ),
-                SizedBox(width: 10.w),
-                Text(
-                  'OTP Verification',
-                  style: theme.headlineLarge,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 6.h,
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 30.w),
+                  SizedBox(width: 10.w),
+                  Text(
+                    'OTP Verification',
+                    style: theme.headlineLarge,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 6.h,
+              ),
+              Row(
+                children: [
+                  Text(
+                    'Enter The OTP Shared On ? ',
+                    style: theme.labelMedium,
+                  ),
+                  SizedBox(
+                    width: 6.w,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      if (widget.isLoginVerification) {
+                        AppRoutes.pop();
+                      } else {
+                        authPro.signUpPageController.animateToPage(
+                          0,
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeInOut,
+                        );
+                      }
+                    },
+                    child: Row(
+                      children: [
+                        Text(
+                          authPro.phoneNumberController.text,
+                          style: theme.labelMedium,
+                        ),
+                        6.g,
+                        SvgPicture.asset(AppImages.edit)
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              TextField(
+                controller: authPro.otpController,
+                keyboardType: TextInputType.number,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                maxLength: 6,
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(
+                height: 6.h,
+              ),
+              KButton(
+                onPressed: () {
+                  if (authPro.otpController.text.length < 6) {
+                    AppRoutes.showErrorSnackbar(message: 'Please enter OTP');
+                  } else {
+                    authPro.validateOTP(
+                        key: 'phone',
+                        isLoginVerificaion: widget.isLoginVerification);
+                  }
+                  /*  if (authPro.otpController.isEmpty) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        backgroundColor: AppTheme.primaryColor,
+                        content: Text('Please Enter OTP'),
+                      ),
+                    );
+                  } else if (authPro.currentPageIndex <
+                      authPro.signUpPages.length - 1) {
+                    authPro.signUpPageController.animateToPage(
+                      authPro.currentPageIndex + 1,
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    );
+                  } */
+                },
+                text: 'Confirm',
+              ),
+              SizedBox(height: 20.h),
+              InkWell(
+                onTap: () {
+                  authPro.resendOTPForSignUp();
+                },
+                child: Align(
                   child: RichText(
                     text: TextSpan(
-                      text: 'Enter The OTP Shared On ? ',
+                      text: "Didn't Get An OTP ?",
                       style: theme.labelMedium,
                       children: [
                         TextSpan(
-                          text: authPro.phoneNumberController.text,
-                          style: theme.labelMedium,
+                          text: ' Resend SMS',
+                          style: theme.headlineSmall,
                         ),
                       ],
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 6.w,
-                ),
-                InkWell(
-                  onTap: () {
-                    authPro.signUpPageController.animateToPage(
-                      0,
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
-                    );
-                  },
-                  child: SvgPicture.asset(AppImages.edit),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            TextField(
-              controller: authPro.otpController,
-              keyboardType: TextInputType.number,
-              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-              maxLength: 6,
-              textAlign: TextAlign.center,
-            ),
-            /* Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: authPro.otpController
-                  .mapIndexed(
-                    (i, e) => SizedBox(
-                      width: MediaQuery.sizeOf(context).width * .12,
-                      child: RawKeyboardListener(
-                        focusNode: listenerController[i],
-                        onKey: (value) {
-                          if (value is RawKeyUpEvent) {
-                            if (value.logicalKey.keyId == 4294967304) {
-                              if (i != 0) {
-                                authPro.otpNode[i - 1].requestFocus();
-                              }
-                            } else {
-                              if (authPro.otpController[i].text.isNotEmpty) {
-                                if (i != 5) {
-                                  authPro.otpNode[i + 1].requestFocus();
-                                  authPro.otpController[i + 1].text =
-                                      value.data.keyLabel;
-                                }
-                              }
-                            }
-                          }
-                        },
-                        child: KTextField(
-                          maxLength: 1,
-                          textAlign: TextAlign.center,
-                          inputFormatters: [
-                            FilteringTextInputFormatter.digitsOnly,
-                          ],
-                          inputType: TextInputType.number,
-                          contextMenuBuilder: (context, editableTextState) {
-                            final option = ContextMenuButtonItem(
-                              label: 'Paste',
-                              onPressed: () {
-                                Clipboard.getData('text/plain').then((value) {
-                                  if (value != null &&
-                                      value.text != null &&
-                                      value.text!.isNotEmpty) {
-                                    value.text!
-                                        .split('')
-                                        .forEachIndexed((index, element) {
-                                      authPro.otpController[index].text =
-                                          element;
-                                    });
-                                  }
-                                });
-                              },
-                            );
-                            return AdaptiveTextSelectionToolbar.buttonItems(
-                              buttonItems: [option],
-                              anchors: editableTextState.contextMenuAnchors,
-                            );
-                          },
-                          onChanged: (value) {
-                            print(value);
-                            if (value.isNotEmpty) {
-                              if (i != 5) {
-                                authPro.otpNode[i + 1].requestFocus();
-                              }
-                            }
-                          },
-                          focusNode: authPro.otpNode[i],
-                          controller: e,
-                          hintText: '',
-                        ),
-                      ),
-                    ),
-                  )
-                  .toList(),
-            ) */
-            SizedBox(
-              height: 20.h,
-            ),
-            SizedBox(
-              height: 6.h,
-            ),
-            KButton(
-              onPressed: () {
-                authPro.validateOTP(key: 'phone');
-                /*  if (authPro.otpController.isEmpty) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      backgroundColor: AppTheme.primaryColor,
-                      content: Text('Please Enter OTP'),
-                    ),
-                  );
-                } else if (authPro.currentPageIndex <
-                    authPro.signUpPages.length - 1) {
-                  authPro.signUpPageController.animateToPage(
-                    authPro.currentPageIndex + 1,
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
-                } */
-              },
-              text: 'Confirm',
-            ),
-            SizedBox(height: 20.h),
-            InkWell(
-              onTap: () {
-                authPro.resendOTPForSignUp();
-              },
-              child: Align(
-                child: RichText(
-                  text: TextSpan(
-                    text: "Didn't Get An OTP ?",
-                    style: theme.labelMedium,
-                    children: [
-                      TextSpan(
-                        text: ' Resend SMS',
-                        style: theme.headlineSmall,
-                      ),
-                    ],
-                  ),
-                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

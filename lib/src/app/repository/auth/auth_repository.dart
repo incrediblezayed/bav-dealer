@@ -70,7 +70,7 @@ class AuthRepository {
     }
   }
 
-  Future<bool?> checkPhoneVerification({required String phoneNumber}) async {
+  Future<bool> checkIsUserRegistered({required String phoneNumber}) async {
     try {
       final inputBuilder = GUserWhereUniqueInput(
         (b) {
@@ -81,15 +81,15 @@ class AuthRepository {
         (b) => b..vars.where = inputBuilder,
       );
       final response = await _client.request(phoneVerificationReq).first;
-      if (response.data?.user == null) {
-        return null;
+      if (response.data?.user != null) {
+        return true;
       } else {
-        return response.data!.user!.phoneNumberVerified ?? false;
+        return false;
       }
     } catch (e, trace) {
       e.log(stackTrace: trace);
     }
-    return null;
+    return false;
   }
 
   ///Login user

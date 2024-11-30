@@ -34,7 +34,7 @@ dependencies:
   url_launcher: ^6.3.1
   another_flushbar: ^1.12.30
   webview_flutter: ^4.10.0
-  sentry_flutter: ^8.9.0
+  sentry_flutter: ^8.10.1
   app_tracking_transparency: ^2.0.6
   multi_dropdown: ^3.0.1
   geolocator: ^13.0.1
