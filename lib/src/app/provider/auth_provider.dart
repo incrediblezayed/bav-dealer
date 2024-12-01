@@ -315,7 +315,7 @@ class AuthProvider extends ChangeNotifier {
         otp ?? otpController.text,
       );
 
-      if (response == 'OTP success') {
+      if (response == 'OTP Success') {
         if (key == 'mou') {
           AppRoutes.showSuccessSnackbar(message: 'OTP Verified Successfully');
         } else if (isLoginVerificaion) {

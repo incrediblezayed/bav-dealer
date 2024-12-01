@@ -61,9 +61,13 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
             SizedBox(height: 14.h),
             KBottomBarButton(
               onTap: () async {
-                final verificationStatus = await authPro.checkIsUserRegistered(
+                final isUserRegistered = await authPro.checkIsUserRegistered(
                   phoneNumber: authPro.phoneNumberController.text,
                 );
+                if (!context.mounted) {
+                  AppRoutes.showErrorSnackbar(message: 'Failed to register');
+                  return;
+                }
                 if (authPro.phoneNumberController.text.isEmpty) {
                   AppRoutes.showErrorSnackbar(
                     message: 'Please Enter Mobile No.',
@@ -74,7 +78,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                   AppRoutes.showErrorSnackbar(
                     message: 'You must agree to our terms and conditions',
                   );
-                } else if (verificationStatus) {
+                } else if (isUserRegistered) {
                   AppRoutes.showErrorSnackbar(
                       message: 'You are already registered, please login');
                   AppRoutes.pushAndRemoveUntil(page: const LoginPage());
