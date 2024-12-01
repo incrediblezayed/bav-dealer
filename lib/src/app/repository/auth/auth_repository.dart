@@ -155,7 +155,7 @@ class AuthRepository {
   /// This method is used to validate the otp of user
   /// [key] - key of the otp key can be either emailVerification or phoneNumberVerification
   /// [otp] - otp of the user
-  Future<bool> validateOTP(
+  Future<String> validateOTP(
     String key,
     String otp,
   ) async {
@@ -171,18 +171,16 @@ class AuthRepository {
           .first;
       if (response.linkException != null ||
           (response.graphqlErrors?.isNotEmpty ?? false) == true) {
-        throw Exception('Something went wrong while getting the otp');
+        return response.linkException?.toString() ??
+            response.graphqlErrors?.firstOrNull?.message ??
+            'Something went wrong';
       }
-      if (response.data?.validateUserOTP == null ||
-          response.data?.validateUserOTP == '' ||
-          response.data?.validateUserOTP == 'OTP Failed') {
-        return false;
-      }
-      return true;
+
+      return response.data?.validateUserOTP ?? 'Something went wrong';
     } catch (e) {
       e.log();
     }
-    return false;
+    return 'Something went wrong';
   }
 
   ///Update user

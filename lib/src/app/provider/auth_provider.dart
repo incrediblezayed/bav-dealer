@@ -173,6 +173,7 @@ class AuthProvider extends ChangeNotifier {
       if (!fromSignUp) {
         bool isPhoneVerified = user.phoneNumberVerified ?? false;
         if (!isPhoneVerified) {
+          userId = user.id!;
           await _authRepository.updateUser(
               image: null,
               userDio: true,
@@ -297,7 +298,7 @@ class AuthProvider extends ChangeNotifier {
   ///Validate OTP Method
   ///
   ///It is used to Validate the user
-  Future<bool> validateOTP({
+  Future<void> validateOTP({
     required String key,
     bool isLoginVerificaion = false,
     String? otp,
@@ -313,23 +314,26 @@ class AuthProvider extends ChangeNotifier {
         otpKey,
         otp ?? otpController.text,
       );
-      if (key == 'mou') {
-        return response;
-      }
-      if (response) {
-        if (isLoginVerificaion) {
-          login();
+
+      if (response == 'OTP success') {
+        if (key == 'mou') {
+          AppRoutes.showSuccessSnackbar(message: 'OTP Verified Successfully');
+        } else if (isLoginVerificaion) {
+          await login();
         } else {
           await createDealer();
         }
+      } else if (response == 'OTP Failed') {
+        throw 'Invalid OTP';
       } else {
-        throw Exception('Something went wrong');
+        throw response;
       }
-      return response;
     } catch (e) {
-      e.log();
-      await AppRoutes.showErrorSnackbar(message: e.toString());
-      return false;
+      String text = e.toString();
+      if (text.contains('Exception:')) {
+        text = text.split('Exception:').last;
+      }
+      await AppRoutes.showErrorSnackbar(message: text);
     }
   }
 

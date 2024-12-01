@@ -169,21 +169,10 @@ class _VerifyMouOtpState extends ConsumerState<VerifyMouOtp> {
                       : Colors.grey,
                   text: 'Verify',
                   onTap: () {
-                    authPro
-                        .validateOTP(
+                    authPro.validateOTP(
                       key: 'mou',
                       otp: otpController.text,
-                    )
-                        .then((value) {
-                      if (value) {
-                        AppRoutes.showSuccessSnackbar(
-                            message: 'OTP verified successfully');
-                        AppRoutes.pop(true);
-                      } else {
-                        AppRoutes.showErrorSnackbar(
-                            message: 'OTP verification failed');
-                      }
-                    });
+                    );
                   },
                 );
               },
