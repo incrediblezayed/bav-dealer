@@ -70,11 +70,13 @@ class AuthRepository {
     }
   }
 
-  Future<bool> checkIsUserRegistered({required String phoneNumber}) async {
+  Future<bool> checkIsUserRegistered(
+      {required String? phoneNumber, String? email}) async {
     try {
       final inputBuilder = GUserWhereUniqueInput(
         (b) {
           b.phoneNumber = phoneNumber;
+          b.email = email;
         },
       ).toBuilder();
       final phoneVerificationReq = GUserReq(

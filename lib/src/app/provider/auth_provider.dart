@@ -117,6 +117,12 @@ class AuthProvider extends ChangeNotifier {
       );
       return;
     }
+    final isEmailInUse = await checkIsUserRegistered(
+        phoneNumber: null, email: emailIdController.text);
+    if (isEmailInUse) {
+      AppRoutes.showErrorSnackbar(message: 'Email is already in use');
+      return;
+    }
     unawaited(AppRoutes.showLoadingDialog());
     try {
       final response = await _authRepository.register(
@@ -656,10 +662,11 @@ class AuthProvider extends ChangeNotifier {
     // }
   }
 
-  Future<bool> checkIsUserRegistered({required String phoneNumber}) async {
+  Future<bool> checkIsUserRegistered(
+      {required String? phoneNumber, String? email}) async {
     try {
-      final response =
-          await _authRepository.checkIsUserRegistered(phoneNumber: phoneNumber);
+      final response = await _authRepository.checkIsUserRegistered(
+          phoneNumber: phoneNumber, email: email);
       final isVerified = response;
       return isVerified;
     } catch (e) {
