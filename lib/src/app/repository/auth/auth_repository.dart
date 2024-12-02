@@ -35,12 +35,12 @@ class AuthRepository {
     return null;
   }
 
-  Future<bool> register({
-    required String name,
-    required String phoneNumber,
-    required String email,
-    required String password,
-  }) async {
+  Future<bool> register(
+      {required String name,
+      required String phoneNumber,
+      required String email,
+      required String password,
+      required String city}) async {
     try {
       final response = await _client
           .request(
@@ -49,7 +49,8 @@ class AuthRepository {
                 ..vars.data.name = name
                 ..vars.data.phoneNumber = phoneNumber
                 ..vars.data.email = email
-                ..vars.data.password = password,
+                ..vars.data.password = password
+                ..vars.data.address = city,
             ),
           )
           .first;

@@ -101,7 +101,7 @@ class AuthProvider extends ChangeNotifier {
     return _authRepository.getDealerByUser();
   }
 
-  Future<void> regsiter() async {
+  Future<void> register() async {
     if (firstNameController.text.isEmpty ||
         lastNameController.text.isEmpty ||
         phoneNumberController.text.isEmpty ||
@@ -126,11 +126,11 @@ class AuthProvider extends ChangeNotifier {
     unawaited(AppRoutes.showLoadingDialog());
     try {
       final response = await _authRepository.register(
-        name: '${firstNameController.text} ${lastNameController.text}',
-        phoneNumber: phoneNumberController.text,
-        email: emailIdController.text,
-        password: passwordController.text,
-      );
+          name: '${firstNameController.text} ${lastNameController.text}',
+          phoneNumber: phoneNumberController.text,
+          email: emailIdController.text,
+          password: passwordController.text,
+          city: shopAddressController.text);
 
       if (response) {
         final loggedIn = await loginApi(fromSignUp: true);

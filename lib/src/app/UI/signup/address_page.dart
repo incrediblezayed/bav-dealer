@@ -66,9 +66,7 @@ class AddressPage extends ConsumerWidget {
                   AppRoutes.showErrorSnackbar(
                       message: 'Please fill the shop address');
                 } */
-                await authPro.regsiter();
-
-                
+                await authPro.register();
               },
               text: 'Next',
             ),
