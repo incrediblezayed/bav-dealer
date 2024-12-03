@@ -180,7 +180,7 @@ class InventoryRepository {
 
       if (response.linkException != null ||
           (response.graphqlErrors?.isNotEmpty ?? false)) {
-        throw Exception('Something went wrong while getting list of vehicles');
+         throw Exception('Something went wrong while getting list of vehicles');
       } else {
         if (response.data?.vehicleVariants == null) {
           return (0, null);

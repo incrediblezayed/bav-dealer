@@ -529,7 +529,7 @@ class AuthProvider extends ChangeNotifier {
       token: otp,
     );
     if (!data) {
-      await AppRoutes.showErrorSnackbar(message: 'Something went wrong');
+      await AppRoutes.showErrorSnackbar(message: 'Please enter valid OTP');
     } else {
       await AppRoutes.showSuccessSnackbar(message: 'OTP verified successfully');
       await signUpPageController.animateToPage(
