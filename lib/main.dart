@@ -3,6 +3,7 @@ import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/graphql_client.dart';
 import 'package:dealerapp/src/dealer_app.dart';
 import 'package:dealerapp/src/utils/constants.dart';
+import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/global_exports.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -13,7 +14,20 @@ import 'package:stack_trace/stack_trace.dart' as stack_trace;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  await FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(true);
+  try {
+    'Initializing Firebase Analytics'.log();
+    await FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(true);
+    await FirebaseAnalytics.instance.setDefaultEventParameters({
+      'app': 'BAVDealer',
+    });
+    FirebaseAnalytics.instance.app.options.log();
+    (await FirebaseAnalytics.instance.appInstanceId).log();
+    await FirebaseAnalytics.instance
+        .logEvent(name: 'test_event', parameters: {'app': 'BAVDealer'});
+  } catch (e) {
+    'Error while initializing Firebase Analytics'.log();
+    e.log();
+  }
   setupLocator();
 
   /// Initialize the Cache Provider

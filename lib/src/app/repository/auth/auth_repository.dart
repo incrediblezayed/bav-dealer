@@ -442,16 +442,19 @@ class AuthRepository {
     return false;
   }
 
-  Future updateDealer({required double lat, required double long}) async {
+  Future updateDealer(
+      {required double lat, required double long, String? dealerId}) async {
     try {
-      final dealerId = cacheProvider.getDealerId();
+      final id = dealerId ?? cacheProvider.getDealerId();
 
       final result = await _client
           .request(
-            GUpdateDealerReq((b) => b.vars
-              ..data.lLng = long
-              ..data.lLat = lat
-              ..where.id = dealerId),
+            GUpdateDealerReq(
+              (b) => b.vars
+                ..data.lLng = long
+                ..data.lLat = lat
+                ..where.id = id,
+            ),
           )
           .first;
 

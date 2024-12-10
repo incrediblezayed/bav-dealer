@@ -26,6 +26,10 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>BAV Dealer requires location permission for setting up the coordinates for the dealer's showroom</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>BAV Dealer requires location permission for setting up the coordinates for the dealer's showroom</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>The app uses photo library so user can upload their profile picture or they can add
 			attachments to their &amp; feedback</string>

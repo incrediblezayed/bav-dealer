@@ -86,6 +86,7 @@ class AuthProvider extends ChangeNotifier {
     final user = cacheProvider.getUserId();
     final check = await _authRepository.createDealer(user!);
     if (check != null) {
+      updateDealer(position: _selectedLatLng, dealerId: check);
       await cacheProvider.clear();
       clear();
       await AppRoutes.showSuccessSnackbar(
@@ -411,6 +412,17 @@ class AuthProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  LatLng? _selectedLatLng;
+  Future<void> setAddressFromLatLng(LatLng latLng) async {
+    final address = await getAddressFromLatLong(latLng);
+    if (address != null) {
+      shopAddressController.text = address.$1;
+      _selectedLatLng = latLng;
+
+      notifyListeners();
+    }
+  }
+
   ///List of sign up pages
   final List<Widget> signUpPages = [
     const SignUpPage(),
@@ -653,10 +665,12 @@ class AuthProvider extends ChangeNotifier {
     return await Geolocator.getCurrentPosition();
   }
 
-  Future<void> updateDealer() async {
+  Future<void> updateDealer({LatLng? position, String? dealerId}) async {
     try {
       final response = await _authRepository.updateDealer(
-          lat: position?.latitude ?? 0.0, long: position?.longitude ?? 0.0);
+          lat: this.position?.latitude ?? position?.latitude ?? 0.0,
+          long: this.position?.longitude ?? position?.longitude ?? 0.0,
+          dealerId: dealerId);
       if (response == null) {
         await AppRoutes.showErrorSnackbar(
           message: response ?? 'Something went wrong',

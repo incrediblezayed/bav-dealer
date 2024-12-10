@@ -54,7 +54,7 @@ class DefaultFirebaseOptions {
     appId: '1:577678113871:android:2a277afc7bbf7c222ffe3a',
     messagingSenderId: '577678113871',
     projectId: 'bavelectric-4b4a6',
-    storageBucket: 'bavelectric-4b4a6.appspot.com',
+    storageBucket: 'bavelectric-4b4a6.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
@@ -62,7 +62,7 @@ class DefaultFirebaseOptions {
     appId: '1:577678113871:ios:dd49afc2abd7c6b62ffe3a',
     messagingSenderId: '577678113871',
     projectId: 'bavelectric-4b4a6',
-    storageBucket: 'bavelectric-4b4a6.appspot.com',
+    storageBucket: 'bavelectric-4b4a6.firebasestorage.app',
     iosBundleId: 'com.bavelectric.dealerapp',
   );
 }
