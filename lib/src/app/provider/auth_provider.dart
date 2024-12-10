@@ -16,6 +16,7 @@ import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 
 enum LoginState { success, failure, otpVerification }
@@ -429,6 +430,13 @@ class AuthProvider extends ChangeNotifier {
   void isObsecure() {
     isPassword = !isPassword;
     notifyListeners();
+  }
+
+  Future<(String, String, String, String)?> getAddressFromLatLong(
+      LatLng latLng) async {
+    final address = await _authRepository.getAddressFromLatlng(latLng: latLng);
+
+    return address;
   }
 
   ///Method to update the user

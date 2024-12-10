@@ -1,13 +1,17 @@
 // ignore_for_file: sdk_version_since
 
+import 'package:collection/collection.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
 import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.data.gql.dart';
 import 'package:dealerapp/src/app/repository/auth/graphql/__generated__/auth.req.gql.dart';
 import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema.gql.dart';
 import 'package:dealerapp/src/app/repository/graphql_client.dart';
+import 'package:dealerapp/src/utils/constants.dart';
 import 'package:dealerapp/src/utils/extensions.dart';
 import 'package:dealerapp/src/utils/get_it.dart';
 import 'package:ferry/ferry.dart';
+import 'package:google_geocoding_api/google_geocoding_api.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart' as http;
 
 class AuthRepository {
@@ -31,6 +35,43 @@ class AuthRepository {
       return response.data?.createDealer?.id;
     } catch (e) {
       e.log();
+    }
+    return null;
+  }
+
+  GoogleGeocodingApi get _googleGeoCodingApi =>
+      GoogleGeocodingApi(Constants.googleMapApiKey);
+
+  Future<(String, String, String, String)?> getAddressFromLatlng(
+      {required LatLng latLng}) async {
+    try {
+      final address = await _googleGeoCodingApi.reverse(
+        '${latLng.latitude},${latLng.longitude}',
+        language: 'en',
+      );
+      if (address.status == GoogleResponseStatusCode.ok) {
+        return (
+          address.results.first.formattedAddress,
+          address.results.first.addressComponents
+                  .firstWhereOrNull(
+                    (element) => element.types.contains('locality'),
+                  )
+                  ?.longName ??
+              '',
+          address.results.first.addressComponents
+                  .firstWhereOrNull((element) =>
+                      element.types.contains('administrative_area_level_1'))
+                  ?.longName ??
+              '',
+          address.results.first.addressComponents
+                  .firstWhereOrNull(
+                      (element) => element.types.contains('postal_code'))
+                  ?.longName ??
+              ''
+        );
+      }
+    } catch (e, trace) {
+      e.log(stackTrace: trace);
     }
     return null;
   }

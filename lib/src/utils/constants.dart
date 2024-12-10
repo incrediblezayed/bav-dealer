@@ -16,6 +16,8 @@ class Constants {
   /// This is the base url for the api
   static const String seen = 'seen';
 
+  static String googleMapApiKey = 'AIzaSyB--ZEHsg92N-EmjSqQICFmjns-ommVL5A';
+
   ///Rupee
   static const String rupee = '₹';
 
