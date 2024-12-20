@@ -24,10 +24,8 @@ class PushNotificationService {
 
   // String? get deviceToken => _deviceToken;
 
-  static const _chargeChannelId = 'charge_channel_id';
-  static const _generalChannelId = 'bav_channel_id';
-  static const _bavChannelName = 'BAV Notification';
-  static const _chargeChannelName = 'Charging Notification';
+  static const _generalChannelId = 'dealer_channel_id';
+  static const _bavChannelName = 'BAV Dealer Notification';
 
   /// Initialize the push notification service
   static Future<void> initLocalNotifications() async {
@@ -41,95 +39,28 @@ class PushNotificationService {
           .resolvePlatformSpecificImplementation<
               AndroidFlutterLocalNotificationsPlugin>()
           ?.requestNotificationsPermission();
-      const chargingChannel = AndroidNotificationChannel(
-        _chargeChannelId,
-        _chargeChannelName,
-        description: 'Notification channel for showing charging status',
-        importance: Importance.max,
-      );
+
       const bavChannel = AndroidNotificationChannel(
         _generalChannelId,
         _bavChannelName,
         description: 'Bav general notifications',
         importance: Importance.max,
       );
-      await _flutterLocalNotificationsPlugin
-          .resolvePlatformSpecificImplementation<
-              AndroidFlutterLocalNotificationsPlugin>()
-          ?.createNotificationChannel(chargingChannel);
       _flutterLocalNotificationsPlugin
           .resolvePlatformSpecificImplementation<
               AndroidFlutterLocalNotificationsPlugin>()
           ?.createNotificationChannel(bavChannel);
     }
-  }
-
-  static int _chargingNotificationId = 0;
-
-  /// Create charging notification
-  static Future<void> createChargingNotification(int progress) async {
-    _chargingNotificationId = DateTime.now().millisecondsSinceEpoch;
-    final androidNotificationDetails = AndroidNotificationDetails(
-      _chargeChannelId,
-      _chargeChannelName,
-      showProgress: true,
-      progress: progress,
-      category: AndroidNotificationCategory.service,
-      ongoing: true,
-      maxProgress: 100,
-      importance: Importance.max,
-      priority: Priority.high,
-      autoCancel: false,
+    const initSettings = InitializationSettings(
+      android: AndroidInitializationSettings('mipmap/ic_launcher'),
+      iOS: DarwinInitializationSettings(),
     );
-    const iOSNotificationDetails = DarwinNotificationDetails();
-    final notificationDetails = NotificationDetails(
-      android: androidNotificationDetails,
-      iOS: iOSNotificationDetails,
-    );
-
-    await _flutterLocalNotificationsPlugin.show(
-      _chargingNotificationId,
-      'Charging',
-      'Vehicle is charging',
-      notificationDetails,
-    );
-  }
-
-  /// Update charging notification
-  static Future<void> updateChargingProgress(int progress) async {
-    final androidNotificationDetails = AndroidNotificationDetails(
-      _chargeChannelId,
-      _chargeChannelName,
-      showProgress: true,
-      progress: progress,
-      category: AndroidNotificationCategory.service,
-      ongoing: true,
-      maxProgress: 100,
-      importance: Importance.max,
-      priority: Priority.high,
-      autoCancel: false,
-    );
-    const iOSNotificationDetails = DarwinNotificationDetails();
-    final notificationDetails = NotificationDetails(
-      android: androidNotificationDetails,
-      iOS: iOSNotificationDetails,
-    );
-
-    await _flutterLocalNotificationsPlugin.show(
-      _chargingNotificationId,
-      'Charging',
-      'Vehicle is charging',
-      notificationDetails,
-    );
-  }
-
-  /// Cancel charging notification
-  static Future<void> cancelChargingNotification() async {
-    await _flutterLocalNotificationsPlugin.cancel(_chargingNotificationId);
+    _flutterLocalNotificationsPlugin.initialize(initSettings);
   }
 
   static Future<void> updateDeviceTokenToServer(String? deviceToken) async {
     final userId = cacheProvider.getUserId();
+    deviceToken?.log();
     if (userId != null) {
       await getIt<GraphqlClient>()
           .client
