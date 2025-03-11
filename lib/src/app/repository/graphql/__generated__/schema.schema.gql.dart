@@ -1283,6 +1283,7 @@ abstract class GFirebaseDeviceTokenWhereUniqueInput
           updates]) = _$GFirebaseDeviceTokenWhereUniqueInput;
 
   String? get id;
+  String? get deviceToken;
   static Serializer<GFirebaseDeviceTokenWhereUniqueInput> get serializer =>
       _$gFirebaseDeviceTokenWhereUniqueInputSerializer;
 
@@ -4417,6 +4418,7 @@ abstract class GVehicleColorUpdateInput
   GVehicleVideoRelateToManyForUpdateInput? get videos;
   GVehicleGalleryItemRelateToManyForUpdateInput? get gallery;
   GVehicleReelRelateToManyForUpdateInput? get reels;
+  _i4.JsonObject? get googleImages;
   bool? get disabled;
   static Serializer<GVehicleColorUpdateInput> get serializer =>
       _$gVehicleColorUpdateInputSerializer;
@@ -4629,6 +4631,7 @@ abstract class GVehicleColorCreateInput
   GVehicleVideoRelateToManyForCreateInput? get videos;
   GVehicleGalleryItemRelateToManyForCreateInput? get gallery;
   GVehicleReelRelateToManyForCreateInput? get reels;
+  _i4.JsonObject? get googleImages;
   bool? get disabled;
   static Serializer<GVehicleColorCreateInput> get serializer =>
       _$gVehicleColorCreateInputSerializer;
@@ -6471,6 +6474,7 @@ abstract class GVehicleVariantWhereUniqueInput
       _$GVehicleVariantWhereUniqueInput;
 
   String? get id;
+  String? get key;
   static Serializer<GVehicleVariantWhereUniqueInput> get serializer =>
       _$gVehicleVariantWhereUniqueInputSerializer;
 
@@ -6502,6 +6506,7 @@ abstract class GVehicleVariantWhereInput
   GDateTimeNullableFilter? get createdAt;
   GDateTimeNullableFilter? get modifiedAt;
   GStringFilter? get name;
+  GStringFilter? get key;
   GIntNullableFilter? get index;
   GVehicleWhereInput? get vehicle;
   @BuiltValueField(wireName: 'default')
@@ -6511,6 +6516,7 @@ abstract class GVehicleVariantWhereInput
   GTagManyRelationFilter? get tags;
   GBooleanFilter? get informative;
   GPriceManyRelationFilter? get prices;
+  GStringFilter? get gtin;
   GBooleanFilter? get disabled;
   static Serializer<GVehicleVariantWhereInput> get serializer =>
       _$gVehicleVariantWhereInputSerializer;
@@ -6566,10 +6572,12 @@ abstract class GVehicleVariantOrderByInput
   GOrderDirection? get createdAt;
   GOrderDirection? get modifiedAt;
   GOrderDirection? get name;
+  GOrderDirection? get key;
   GOrderDirection? get index;
   @BuiltValueField(wireName: 'default')
   GOrderDirection? get Gdefault;
   GOrderDirection? get informative;
+  GOrderDirection? get gtin;
   GOrderDirection? get disabled;
   static Serializer<GVehicleVariantOrderByInput> get serializer =>
       _$gVehicleVariantOrderByInputSerializer;
@@ -6598,6 +6606,7 @@ abstract class GVehicleVariantUpdateInput
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
   String? get name;
+  String? get key;
   int? get index;
   GVehicleRelateToOneForUpdateInput? get vehicle;
   @BuiltValueField(wireName: 'default')
@@ -6607,6 +6616,7 @@ abstract class GVehicleVariantUpdateInput
   GTagRelateToManyForUpdateInput? get tags;
   bool? get informative;
   GPriceRelateToManyForUpdateInput? get prices;
+  String? get gtin;
   bool? get disabled;
   static Serializer<GVehicleVariantUpdateInput> get serializer =>
       _$gVehicleVariantUpdateInputSerializer;
@@ -6690,6 +6700,7 @@ abstract class GVehicleVariantCreateInput
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
   String? get name;
+  String? get key;
   int? get index;
   GVehicleRelateToOneForCreateInput? get vehicle;
   @BuiltValueField(wireName: 'default')
@@ -6699,6 +6710,7 @@ abstract class GVehicleVariantCreateInput
   GTagRelateToManyForCreateInput? get tags;
   bool? get informative;
   GPriceRelateToManyForCreateInput? get prices;
+  String? get gtin;
   bool? get disabled;
   static Serializer<GVehicleVariantCreateInput> get serializer =>
       _$gVehicleVariantCreateInputSerializer;
@@ -7218,6 +7230,7 @@ abstract class GPriceWhereInput
   GDateTimeNullableFilter? get modifiedAt;
   GPriceCategoryWhereInput? get category;
   GIntFilter? get amount;
+  GIntNullableFilter? get originalAmount;
   static Serializer<GPriceWhereInput> get serializer =>
       _$gPriceWhereInputSerializer;
 
@@ -7245,6 +7258,7 @@ abstract class GPriceOrderByInput
   GOrderDirection? get createdAt;
   GOrderDirection? get modifiedAt;
   GOrderDirection? get amount;
+  GOrderDirection? get originalAmount;
   static Serializer<GPriceOrderByInput> get serializer =>
       _$gPriceOrderByInputSerializer;
 
@@ -7272,6 +7286,7 @@ abstract class GPriceUpdateInput
   GDateTime? get modifiedAt;
   GPriceCategoryRelateToOneForUpdateInput? get category;
   int? get amount;
+  int? get originalAmount;
   static Serializer<GPriceUpdateInput> get serializer =>
       _$gPriceUpdateInputSerializer;
 
@@ -7352,6 +7367,7 @@ abstract class GPriceCreateInput
   GDateTime? get modifiedAt;
   GPriceCategoryRelateToOneForCreateInput? get category;
   int? get amount;
+  int? get originalAmount;
   static Serializer<GPriceCreateInput> get serializer =>
       _$gPriceCreateInputSerializer;
 
@@ -11029,6 +11045,7 @@ abstract class GExpertReviewWhereUniqueInput
       _$GExpertReviewWhereUniqueInput;
 
   String? get id;
+  String? get key;
   static Serializer<GExpertReviewWhereUniqueInput> get serializer =>
       _$gExpertReviewWhereUniqueInputSerializer;
 
@@ -11059,6 +11076,7 @@ abstract class GExpertReviewWhereInput
   GDateTimeNullableFilter? get createdAt;
   GDateTimeNullableFilter? get modifiedAt;
   GStringFilter? get title;
+  GStringFilter? get key;
   GStringFilter? get description;
   GUserWhereInput? get user;
   GIntNullableFilter? get likes;
@@ -11091,6 +11109,7 @@ abstract class GExpertReviewOrderByInput
   GOrderDirection? get createdAt;
   GOrderDirection? get modifiedAt;
   GOrderDirection? get title;
+  GOrderDirection? get key;
   GOrderDirection? get description;
   GOrderDirection? get likes;
   GOrderDirection? get disabled;
@@ -11121,6 +11140,7 @@ abstract class GExpertReviewUpdateInput
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
   String? get title;
+  String? get key;
   String? get description;
   GImageFieldInput? get banner;
   GUserRelateToOneForUpdateInput? get user;
@@ -11178,6 +11198,7 @@ abstract class GExpertReviewCreateInput
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
   String? get title;
+  String? get key;
   String? get description;
   GImageFieldInput? get banner;
   GUserRelateToOneForCreateInput? get user;
@@ -12979,6 +13000,7 @@ abstract class GNewsItemWhereUniqueInput
       _$GNewsItemWhereUniqueInput;
 
   String? get id;
+  String? get key;
   static Serializer<GNewsItemWhereUniqueInput> get serializer =>
       _$gNewsItemWhereUniqueInputSerializer;
 
@@ -13009,6 +13031,7 @@ abstract class GNewsItemWhereInput
   GDateTimeNullableFilter? get createdAt;
   GDateTimeNullableFilter? get modifiedAt;
   GStringFilter? get title;
+  GStringFilter? get key;
   GStringFilter? get description;
   GStringFilter? get authorName;
   GNewsCategoryManyRelationFilter? get categories;
@@ -13127,6 +13150,7 @@ abstract class GNewsItemOrderByInput
   GOrderDirection? get createdAt;
   GOrderDirection? get modifiedAt;
   GOrderDirection? get title;
+  GOrderDirection? get key;
   GOrderDirection? get description;
   GOrderDirection? get authorName;
   GOrderDirection? get disabled;
@@ -13156,6 +13180,7 @@ abstract class GNewsItemUpdateInput
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
   String? get title;
+  String? get key;
   String? get description;
   String? get authorName;
   GNewsCategoryRelateToManyForUpdateInput? get categories;
@@ -13333,6 +13358,7 @@ abstract class GNewsItemCreateInput
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
   String? get title;
+  String? get key;
   String? get description;
   String? get authorName;
   GNewsCategoryRelateToManyForCreateInput? get categories;
@@ -14056,6 +14082,7 @@ abstract class GCouponWhereInput
   GDateTimeNullableFilter? get createdAt;
   GDateTimeNullableFilter? get modifiedAt;
   GStringFilter? get code;
+  GBooleanFilter? get publiclyVisible;
   GStringFilter? get description;
   GDateTimeNullableFilter? get startFrom;
   GDateTimeNullableFilter? get expireBy;
@@ -14144,6 +14171,7 @@ abstract class GCouponOrderByInput
   GOrderDirection? get createdAt;
   GOrderDirection? get modifiedAt;
   GOrderDirection? get code;
+  GOrderDirection? get publiclyVisible;
   GOrderDirection? get description;
   GOrderDirection? get startFrom;
   GOrderDirection? get expireBy;
@@ -14175,6 +14203,7 @@ abstract class GCouponUpdateInput
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
   String? get code;
+  bool? get publiclyVisible;
   String? get description;
   _i4.JsonObject? get logic;
   GDateTime? get startFrom;
@@ -14294,6 +14323,7 @@ abstract class GCouponCreateInput
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
   String? get code;
+  bool? get publiclyVisible;
   String? get description;
   _i4.JsonObject? get logic;
   GDateTime? get startFrom;
@@ -16320,6 +16350,7 @@ abstract class GProductVariantWhereUniqueInput
       _$GProductVariantWhereUniqueInput;
 
   String? get id;
+  String? get key;
   static Serializer<GProductVariantWhereUniqueInput> get serializer =>
       _$gProductVariantWhereUniqueInputSerializer;
 
@@ -16351,6 +16382,7 @@ abstract class GProductVariantWhereInput
   GDateTimeNullableFilter? get createdAt;
   GDateTimeNullableFilter? get modifiedAt;
   GStringFilter? get name;
+  GStringFilter? get key;
   GProductWhereInput? get product;
   GIntNullableFilter? get index;
   @BuiltValueField(wireName: 'default')
@@ -16362,6 +16394,7 @@ abstract class GProductVariantWhereInput
   GProductVideoManyRelationFilter? get videos;
   GProductGalleryItemManyRelationFilter? get gallery;
   GProductReelManyRelationFilter? get reels;
+  GStringFilter? get gtin;
   GBooleanFilter? get disabled;
   static Serializer<GProductVariantWhereInput> get serializer =>
       _$gProductVariantWhereInputSerializer;
@@ -16504,9 +16537,11 @@ abstract class GProductVariantOrderByInput
   GOrderDirection? get createdAt;
   GOrderDirection? get modifiedAt;
   GOrderDirection? get name;
+  GOrderDirection? get key;
   GOrderDirection? get index;
   @BuiltValueField(wireName: 'default')
   GOrderDirection? get Gdefault;
+  GOrderDirection? get gtin;
   GOrderDirection? get disabled;
   static Serializer<GProductVariantOrderByInput> get serializer =>
       _$gProductVariantOrderByInputSerializer;
@@ -16535,6 +16570,7 @@ abstract class GProductVariantUpdateInput
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
   String? get name;
+  String? get key;
   GProductRelateToOneForUpdateInput? get product;
   int? get index;
   @BuiltValueField(wireName: 'default')
@@ -16546,6 +16582,7 @@ abstract class GProductVariantUpdateInput
   GProductVideoRelateToManyForUpdateInput? get videos;
   GProductGalleryItemRelateToManyForUpdateInput? get gallery;
   GProductReelRelateToManyForUpdateInput? get reels;
+  String? get gtin;
   bool? get disabled;
   static Serializer<GProductVariantUpdateInput> get serializer =>
       _$gProductVariantUpdateInputSerializer;
@@ -16721,6 +16758,7 @@ abstract class GProductVariantCreateInput
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
   String? get name;
+  String? get key;
   GProductRelateToOneForCreateInput? get product;
   int? get index;
   @BuiltValueField(wireName: 'default')
@@ -16732,6 +16770,7 @@ abstract class GProductVariantCreateInput
   GProductVideoRelateToManyForCreateInput? get videos;
   GProductGalleryItemRelateToManyForCreateInput? get gallery;
   GProductReelRelateToManyForCreateInput? get reels;
+  String? get gtin;
   bool? get disabled;
   static Serializer<GProductVariantCreateInput> get serializer =>
       _$gProductVariantCreateInputSerializer;
@@ -18906,6 +18945,186 @@ abstract class GContactUsCreateInput
         GContactUsCreateInput.serializer,
         json,
       );
+}
+
+abstract class GNotifyUserWhereUniqueInput
+    implements
+        Built<GNotifyUserWhereUniqueInput, GNotifyUserWhereUniqueInputBuilder> {
+  GNotifyUserWhereUniqueInput._();
+
+  factory GNotifyUserWhereUniqueInput(
+          [void Function(GNotifyUserWhereUniqueInputBuilder b) updates]) =
+      _$GNotifyUserWhereUniqueInput;
+
+  String? get id;
+  static Serializer<GNotifyUserWhereUniqueInput> get serializer =>
+      _$gNotifyUserWhereUniqueInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNotifyUserWhereUniqueInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNotifyUserWhereUniqueInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNotifyUserWhereUniqueInput.serializer,
+        json,
+      );
+}
+
+abstract class GNotifyUserWhereInput
+    implements Built<GNotifyUserWhereInput, GNotifyUserWhereInputBuilder> {
+  GNotifyUserWhereInput._();
+
+  factory GNotifyUserWhereInput(
+          [void Function(GNotifyUserWhereInputBuilder b) updates]) =
+      _$GNotifyUserWhereInput;
+
+  BuiltList<GNotifyUserWhereInput>? get AND;
+  BuiltList<GNotifyUserWhereInput>? get OR;
+  BuiltList<GNotifyUserWhereInput>? get NOT;
+  GIDFilter? get id;
+  GDateTimeNullableFilter? get createdAt;
+  GDateTimeNullableFilter? get modifiedAt;
+  GUserWhereInput? get user;
+  GProductWhereInput? get product;
+  GVehicleWhereInput? get vehicle;
+  static Serializer<GNotifyUserWhereInput> get serializer =>
+      _$gNotifyUserWhereInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNotifyUserWhereInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNotifyUserWhereInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNotifyUserWhereInput.serializer,
+        json,
+      );
+}
+
+abstract class GNotifyUserOrderByInput
+    implements Built<GNotifyUserOrderByInput, GNotifyUserOrderByInputBuilder> {
+  GNotifyUserOrderByInput._();
+
+  factory GNotifyUserOrderByInput(
+          [void Function(GNotifyUserOrderByInputBuilder b) updates]) =
+      _$GNotifyUserOrderByInput;
+
+  GOrderDirection? get id;
+  GOrderDirection? get createdAt;
+  GOrderDirection? get modifiedAt;
+  static Serializer<GNotifyUserOrderByInput> get serializer =>
+      _$gNotifyUserOrderByInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNotifyUserOrderByInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNotifyUserOrderByInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNotifyUserOrderByInput.serializer,
+        json,
+      );
+}
+
+abstract class GNotifyUserUpdateInput
+    implements Built<GNotifyUserUpdateInput, GNotifyUserUpdateInputBuilder> {
+  GNotifyUserUpdateInput._();
+
+  factory GNotifyUserUpdateInput(
+          [void Function(GNotifyUserUpdateInputBuilder b) updates]) =
+      _$GNotifyUserUpdateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GUserRelateToOneForUpdateInput? get user;
+  GProductRelateToOneForUpdateInput? get product;
+  GVehicleRelateToOneForUpdateInput? get vehicle;
+  static Serializer<GNotifyUserUpdateInput> get serializer =>
+      _$gNotifyUserUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNotifyUserUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNotifyUserUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNotifyUserUpdateInput.serializer,
+        json,
+      );
+}
+
+abstract class GNotifyUserUpdateArgs
+    implements Built<GNotifyUserUpdateArgs, GNotifyUserUpdateArgsBuilder> {
+  GNotifyUserUpdateArgs._();
+
+  factory GNotifyUserUpdateArgs(
+          [void Function(GNotifyUserUpdateArgsBuilder b) updates]) =
+      _$GNotifyUserUpdateArgs;
+
+  GNotifyUserWhereUniqueInput get where;
+  GNotifyUserUpdateInput get data;
+  static Serializer<GNotifyUserUpdateArgs> get serializer =>
+      _$gNotifyUserUpdateArgsSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNotifyUserUpdateArgs.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNotifyUserUpdateArgs? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNotifyUserUpdateArgs.serializer,
+        json,
+      );
+}
+
+abstract class GNotifyUserCreateInput
+    implements Built<GNotifyUserCreateInput, GNotifyUserCreateInputBuilder> {
+  GNotifyUserCreateInput._();
+
+  factory GNotifyUserCreateInput(
+          [void Function(GNotifyUserCreateInputBuilder b) updates]) =
+      _$GNotifyUserCreateInput;
+
+  GDateTime? get createdAt;
+  GDateTime? get modifiedAt;
+  GUserRelateToOneForCreateInput? get user;
+  GProductRelateToOneForCreateInput? get product;
+  GVehicleRelateToOneForCreateInput? get vehicle;
+  static Serializer<GNotifyUserCreateInput> get serializer =>
+      _$gNotifyUserCreateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GNotifyUserCreateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GNotifyUserCreateInput? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GNotifyUserCreateInput.serializer,
+        json,
+      );
+}
+
+class Gtype extends EnumClass {
+  const Gtype._(String name) : super(name);
+
+  static const Gtype VEHICLE_DESCRIPTION = _$gtypeVEHICLE_DESCRIPTION;
+
+  static const Gtype VEHICLE_LONG_DESCRIPTION = _$gtypeVEHICLE_LONG_DESCRIPTION;
+
+  static const Gtype PRODUCT_DESCRIPTION = _$gtypePRODUCT_DESCRIPTION;
+
+  static Serializer<Gtype> get serializer => _$gtypeSerializer;
+
+  static BuiltSet<Gtype> get values => _$gtypeValues;
+
+  static Gtype valueOf(String name) => _$gtypeValueOf(name);
 }
 
 abstract class GOrderItem implements Built<GOrderItem, GOrderItemBuilder> {

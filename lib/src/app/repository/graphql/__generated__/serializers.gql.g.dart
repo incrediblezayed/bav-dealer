@@ -314,6 +314,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GNotificationTypeUpdateInput.serializer)
       ..add(GNotificationTypeWhereInput.serializer)
       ..add(GNotificationTypeWhereUniqueInput.serializer)
+      ..add(GNotifyUserCreateInput.serializer)
+      ..add(GNotifyUserOrderByInput.serializer)
+      ..add(GNotifyUserUpdateArgs.serializer)
+      ..add(GNotifyUserUpdateInput.serializer)
+      ..add(GNotifyUserWhereInput.serializer)
+      ..add(GNotifyUserWhereUniqueInput.serializer)
       ..add(GOfferCreateInput.serializer)
       ..add(GOfferOrderByInput.serializer)
       ..add(GOfferUpdateArgs.serializer)
@@ -1100,6 +1106,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GWalletUpdateInput.serializer)
       ..add(GWalletWhereInput.serializer)
       ..add(GWalletWhereUniqueInput.serializer)
+      ..add(Gtype.serializer)
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GAddressCreateInput)]),
@@ -1639,6 +1646,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GNotificationTypeWhereInput)]),
           () => new ListBuilder<GNotificationTypeWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNotifyUserWhereInput)]),
+          () => new ListBuilder<GNotifyUserWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNotifyUserWhereInput)]),
+          () => new ListBuilder<GNotifyUserWhereInput>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GNotifyUserWhereInput)]),
+          () => new ListBuilder<GNotifyUserWhereInput>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GOfferWhereInput)]),
           () => new ListBuilder<GOfferWhereInput>())

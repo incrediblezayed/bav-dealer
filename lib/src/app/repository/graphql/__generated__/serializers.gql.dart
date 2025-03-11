@@ -296,6 +296,12 @@ import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema
         GNotificationTypeUpdateInput,
         GNotificationTypeWhereInput,
         GNotificationTypeWhereUniqueInput,
+        GNotifyUserCreateInput,
+        GNotifyUserOrderByInput,
+        GNotifyUserUpdateArgs,
+        GNotifyUserUpdateInput,
+        GNotifyUserWhereInput,
+        GNotifyUserWhereUniqueInput,
         GOfferCreateInput,
         GOfferOrderByInput,
         GOfferUpdateArgs,
@@ -734,7 +740,8 @@ import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema
         GWalletUpdateArgs,
         GWalletUpdateInput,
         GWalletWhereInput,
-        GWalletWhereUniqueInput;
+        GWalletWhereUniqueInput,
+        Gtype;
 import 'package:dealerapp/src/app/repository/guarantees/graphql/__generated__/guarantees.data.gql.dart'
     show GGuaranteesData, GGuaranteesData_guarantees;
 import 'package:dealerapp/src/app/repository/guarantees/graphql/__generated__/guarantees.req.gql.dart'
@@ -1333,6 +1340,12 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GNotificationTypeUpdateInput,
   GNotificationTypeWhereInput,
   GNotificationTypeWhereUniqueInput,
+  GNotifyUserCreateInput,
+  GNotifyUserOrderByInput,
+  GNotifyUserUpdateArgs,
+  GNotifyUserUpdateInput,
+  GNotifyUserWhereInput,
+  GNotifyUserWhereUniqueInput,
   GOfferCreateInput,
   GOfferOrderByInput,
   GOfferUpdateArgs,
@@ -2037,5 +2050,6 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GWalletUpdateInput,
   GWalletWhereInput,
   GWalletWhereUniqueInput,
+  Gtype,
 ])
 final Serializers serializers = _serializersBuilder.build();

@@ -74,6 +74,30 @@ final BuiltSet<GOrderDirection> _$gOrderDirectionValues =
   _$gOrderDirectiondesc,
 ]);
 
+const Gtype _$gtypeVEHICLE_DESCRIPTION = const Gtype._('VEHICLE_DESCRIPTION');
+const Gtype _$gtypeVEHICLE_LONG_DESCRIPTION =
+    const Gtype._('VEHICLE_LONG_DESCRIPTION');
+const Gtype _$gtypePRODUCT_DESCRIPTION = const Gtype._('PRODUCT_DESCRIPTION');
+
+Gtype _$gtypeValueOf(String name) {
+  switch (name) {
+    case 'VEHICLE_DESCRIPTION':
+      return _$gtypeVEHICLE_DESCRIPTION;
+    case 'VEHICLE_LONG_DESCRIPTION':
+      return _$gtypeVEHICLE_LONG_DESCRIPTION;
+    case 'PRODUCT_DESCRIPTION':
+      return _$gtypePRODUCT_DESCRIPTION;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<Gtype> _$gtypeValues = new BuiltSet<Gtype>(const <Gtype>[
+  _$gtypeVEHICLE_DESCRIPTION,
+  _$gtypeVEHICLE_LONG_DESCRIPTION,
+  _$gtypePRODUCT_DESCRIPTION,
+]);
+
 const GOrderItemType _$gOrderItemTypevehicleDealer =
     const GOrderItemType._('vehicleDealer');
 const GOrderItemType _$gOrderItemTypetestDriveDealer =
@@ -1966,6 +1990,20 @@ Serializer<GContactUsUpdateArgs> _$gContactUsUpdateArgsSerializer =
     new _$GContactUsUpdateArgsSerializer();
 Serializer<GContactUsCreateInput> _$gContactUsCreateInputSerializer =
     new _$GContactUsCreateInputSerializer();
+Serializer<GNotifyUserWhereUniqueInput>
+    _$gNotifyUserWhereUniqueInputSerializer =
+    new _$GNotifyUserWhereUniqueInputSerializer();
+Serializer<GNotifyUserWhereInput> _$gNotifyUserWhereInputSerializer =
+    new _$GNotifyUserWhereInputSerializer();
+Serializer<GNotifyUserOrderByInput> _$gNotifyUserOrderByInputSerializer =
+    new _$GNotifyUserOrderByInputSerializer();
+Serializer<GNotifyUserUpdateInput> _$gNotifyUserUpdateInputSerializer =
+    new _$GNotifyUserUpdateInputSerializer();
+Serializer<GNotifyUserUpdateArgs> _$gNotifyUserUpdateArgsSerializer =
+    new _$GNotifyUserUpdateArgsSerializer();
+Serializer<GNotifyUserCreateInput> _$gNotifyUserCreateInputSerializer =
+    new _$GNotifyUserCreateInputSerializer();
+Serializer<Gtype> _$gtypeSerializer = new _$GtypeSerializer();
 Serializer<GOrderItem> _$gOrderItemSerializer = new _$GOrderItemSerializer();
 Serializer<GOrderItemType> _$gOrderItemTypeSerializer =
     new _$GOrderItemTypeSerializer();
@@ -6162,6 +6200,13 @@ class _$GFirebaseDeviceTokenWhereUniqueInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.deviceToken;
+    if (value != null) {
+      result
+        ..add('deviceToken')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -6179,6 +6224,10 @@ class _$GFirebaseDeviceTokenWhereUniqueInputSerializer
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'deviceToken':
+          result.deviceToken = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
       }
@@ -16529,6 +16578,13 @@ class _$GVehicleColorUpdateInputSerializer
             specifiedType:
                 const FullType(GVehicleReelRelateToManyForUpdateInput)));
     }
+    value = object.googleImages;
+    if (value != null) {
+      result
+        ..add('googleImages')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i4.JsonObject)));
+    }
     value = object.disabled;
     if (value != null) {
       result
@@ -16606,6 +16662,10 @@ class _$GVehicleColorUpdateInputSerializer
                   specifiedType:
                       const FullType(GVehicleReelRelateToManyForUpdateInput))!
               as GVehicleReelRelateToManyForUpdateInput);
+          break;
+        case 'googleImages':
+          result.googleImages = serializers.deserialize(value,
+              specifiedType: const FullType(_i4.JsonObject)) as _i4.JsonObject?;
           break;
         case 'disabled':
           result.disabled = serializers.deserialize(value,
@@ -17221,6 +17281,13 @@ class _$GVehicleColorCreateInputSerializer
             specifiedType:
                 const FullType(GVehicleReelRelateToManyForCreateInput)));
     }
+    value = object.googleImages;
+    if (value != null) {
+      result
+        ..add('googleImages')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i4.JsonObject)));
+    }
     value = object.disabled;
     if (value != null) {
       result
@@ -17298,6 +17365,10 @@ class _$GVehicleColorCreateInputSerializer
                   specifiedType:
                       const FullType(GVehicleReelRelateToManyForCreateInput))!
               as GVehicleReelRelateToManyForCreateInput);
+          break;
+        case 'googleImages':
+          result.googleImages = serializers.deserialize(value,
+              specifiedType: const FullType(_i4.JsonObject)) as _i4.JsonObject?;
           break;
         case 'disabled':
           result.disabled = serializers.deserialize(value,
@@ -22893,6 +22964,13 @@ class _$GVehicleVariantWhereUniqueInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -22910,6 +22988,10 @@ class _$GVehicleVariantWhereUniqueInputSerializer
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'key':
+          result.key = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
       }
@@ -22987,6 +23069,13 @@ class _$GVehicleVariantWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GStringFilter)));
     }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
     value = object.index;
     if (value != null) {
       result
@@ -23043,6 +23132,13 @@ class _$GVehicleVariantWhereInputSerializer
         ..add('prices')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GPriceManyRelationFilter)));
+    }
+    value = object.gtin;
+    if (value != null) {
+      result
+        ..add('gtin')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
     }
     value = object.disabled;
     if (value != null) {
@@ -23102,6 +23198,10 @@ class _$GVehicleVariantWhereInputSerializer
           result.name.replace(serializers.deserialize(value,
               specifiedType: const FullType(GStringFilter))! as GStringFilter);
           break;
+        case 'key':
+          result.key.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
         case 'index':
           result.index.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GIntNullableFilter))!
@@ -23143,6 +23243,10 @@ class _$GVehicleVariantWhereInputSerializer
           result.prices.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GPriceManyRelationFilter))!
               as GPriceManyRelationFilter);
+          break;
+        case 'gtin':
+          result.gtin.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
           break;
         case 'disabled':
           result.disabled.replace(serializers.deserialize(value,
@@ -23274,6 +23378,13 @@ class _$GVehicleVariantOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     value = object.index;
     if (value != null) {
       result
@@ -23292,6 +23403,13 @@ class _$GVehicleVariantOrderByInputSerializer
     if (value != null) {
       result
         ..add('informative')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.gtin;
+    if (value != null) {
+      result
+        ..add('gtin')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
@@ -23337,6 +23455,11 @@ class _$GVehicleVariantOrderByInputSerializer
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
+        case 'key':
+          result.key = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
         case 'index':
           result.index = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
@@ -23349,6 +23472,11 @@ class _$GVehicleVariantOrderByInputSerializer
           break;
         case 'informative':
           result.informative = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'gtin':
+          result.gtin = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -23398,6 +23526,13 @@ class _$GVehicleVariantUpdateInputSerializer
     if (value != null) {
       result
         ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -23458,6 +23593,13 @@ class _$GVehicleVariantUpdateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GPriceRelateToManyForUpdateInput)));
     }
+    value = object.gtin;
+    if (value != null) {
+      result
+        ..add('gtin')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.disabled;
     if (value != null) {
       result
@@ -23490,6 +23632,10 @@ class _$GVehicleVariantUpdateInputSerializer
           break;
         case 'name':
           result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'key':
+          result.key = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'index':
@@ -23533,6 +23679,10 @@ class _$GVehicleVariantUpdateInputSerializer
                   specifiedType:
                       const FullType(GPriceRelateToManyForUpdateInput))!
               as GPriceRelateToManyForUpdateInput);
+          break;
+        case 'gtin':
+          result.gtin = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'disabled':
           result.disabled = serializers.deserialize(value,
@@ -23732,6 +23882,13 @@ class _$GVehicleVariantCreateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.index;
     if (value != null) {
       result
@@ -23789,6 +23946,13 @@ class _$GVehicleVariantCreateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GPriceRelateToManyForCreateInput)));
     }
+    value = object.gtin;
+    if (value != null) {
+      result
+        ..add('gtin')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.disabled;
     if (value != null) {
       result
@@ -23821,6 +23985,10 @@ class _$GVehicleVariantCreateInputSerializer
           break;
         case 'name':
           result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'key':
+          result.key = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'index':
@@ -23864,6 +24032,10 @@ class _$GVehicleVariantCreateInputSerializer
                   specifiedType:
                       const FullType(GPriceRelateToManyForCreateInput))!
               as GPriceRelateToManyForCreateInput);
+          break;
+        case 'gtin':
+          result.gtin = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'disabled':
           result.disabled = serializers.deserialize(value,
@@ -25620,6 +25792,13 @@ class _$GPriceWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GIntFilter)));
     }
+    value = object.originalAmount;
+    if (value != null) {
+      result
+        ..add('originalAmount')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GIntNullableFilter)));
+    }
     return result;
   }
 
@@ -25676,6 +25855,11 @@ class _$GPriceWhereInputSerializer
           result.amount.replace(serializers.deserialize(value,
               specifiedType: const FullType(GIntFilter))! as GIntFilter);
           break;
+        case 'originalAmount':
+          result.originalAmount.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GIntNullableFilter))!
+              as GIntNullableFilter);
+          break;
       }
     }
 
@@ -25724,6 +25908,13 @@ class _$GPriceOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.originalAmount;
+    if (value != null) {
+      result
+        ..add('originalAmount')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     return result;
   }
 
@@ -25756,6 +25947,11 @@ class _$GPriceOrderByInputSerializer
           break;
         case 'amount':
           result.amount = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'originalAmount':
+          result.originalAmount = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -25806,6 +26002,12 @@ class _$GPriceUpdateInputSerializer
         ..add('amount')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.originalAmount;
+    if (value != null) {
+      result
+        ..add('originalAmount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -25837,6 +26039,10 @@ class _$GPriceUpdateInputSerializer
           break;
         case 'amount':
           result.amount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'originalAmount':
+          result.originalAmount = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
           break;
       }
@@ -26011,6 +26217,12 @@ class _$GPriceCreateInputSerializer
         ..add('amount')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.originalAmount;
+    if (value != null) {
+      result
+        ..add('originalAmount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -26042,6 +26254,10 @@ class _$GPriceCreateInputSerializer
           break;
         case 'amount':
           result.amount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'originalAmount':
+          result.originalAmount = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
           break;
       }
@@ -37709,6 +37925,13 @@ class _$GExpertReviewWhereUniqueInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -37726,6 +37949,10 @@ class _$GExpertReviewWhereUniqueInputSerializer
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'key':
+          result.key = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
       }
@@ -37800,6 +38027,13 @@ class _$GExpertReviewWhereInputSerializer
     if (value != null) {
       result
         ..add('title')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GStringFilter)));
     }
@@ -37882,6 +38116,10 @@ class _$GExpertReviewWhereInputSerializer
           result.title.replace(serializers.deserialize(value,
               specifiedType: const FullType(GStringFilter))! as GStringFilter);
           break;
+        case 'key':
+          result.key.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
         case 'description':
           result.description.replace(serializers.deserialize(value,
               specifiedType: const FullType(GStringFilter))! as GStringFilter);
@@ -37952,6 +38190,13 @@ class _$GExpertReviewOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     value = object.description;
     if (value != null) {
       result
@@ -38005,6 +38250,11 @@ class _$GExpertReviewOrderByInputSerializer
           break;
         case 'title':
           result.title = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'key':
+          result.key = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -38067,6 +38317,13 @@ class _$GExpertReviewUpdateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.description;
     if (value != null) {
       result
@@ -38126,6 +38383,10 @@ class _$GExpertReviewUpdateInputSerializer
           break;
         case 'title':
           result.title = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'key':
+          result.key = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'description':
@@ -38250,6 +38511,13 @@ class _$GExpertReviewCreateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.description;
     if (value != null) {
       result
@@ -38309,6 +38577,10 @@ class _$GExpertReviewCreateInputSerializer
           break;
         case 'title':
           result.title = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'key':
+          result.key = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'description':
@@ -43922,6 +44194,13 @@ class _$GNewsItemWhereUniqueInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -43939,6 +44218,10 @@ class _$GNewsItemWhereUniqueInputSerializer
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'key':
+          result.key = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
       }
@@ -44013,6 +44296,13 @@ class _$GNewsItemWhereInputSerializer
     if (value != null) {
       result
         ..add('title')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GStringFilter)));
     }
@@ -44114,6 +44404,10 @@ class _$GNewsItemWhereInputSerializer
           break;
         case 'title':
           result.title.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'key':
+          result.key.replace(serializers.deserialize(value,
               specifiedType: const FullType(GStringFilter))! as GStringFilter);
           break;
         case 'description':
@@ -44424,6 +44718,13 @@ class _$GNewsItemOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     value = object.description;
     if (value != null) {
       result
@@ -44477,6 +44778,11 @@ class _$GNewsItemOrderByInputSerializer
           break;
         case 'title':
           result.title = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'key':
+          result.key = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -44536,6 +44842,13 @@ class _$GNewsItemUpdateInputSerializer
     if (value != null) {
       result
         ..add('title')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -44616,6 +44929,10 @@ class _$GNewsItemUpdateInputSerializer
           break;
         case 'title':
           result.title = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'key':
+          result.key = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'description':
@@ -45109,6 +45426,13 @@ class _$GNewsItemCreateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.description;
     if (value != null) {
       result
@@ -45186,6 +45510,10 @@ class _$GNewsItemCreateInputSerializer
           break;
         case 'title':
           result.title = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'key':
+          result.key = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'description':
@@ -47182,6 +47510,13 @@ class _$GCouponWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GStringFilter)));
     }
+    value = object.publiclyVisible;
+    if (value != null) {
+      result
+        ..add('publiclyVisible')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GBooleanFilter)));
+    }
     value = object.description;
     if (value != null) {
       result
@@ -47281,6 +47616,11 @@ class _$GCouponWhereInputSerializer
         case 'code':
           result.code.replace(serializers.deserialize(value,
               specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
+        case 'publiclyVisible':
+          result.publiclyVisible.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GBooleanFilter))!
+              as GBooleanFilter);
           break;
         case 'description':
           result.description.replace(serializers.deserialize(value,
@@ -47515,6 +47855,13 @@ class _$GCouponOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.publiclyVisible;
+    if (value != null) {
+      result
+        ..add('publiclyVisible')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     value = object.description;
     if (value != null) {
       result
@@ -47585,6 +47932,11 @@ class _$GCouponOrderByInputSerializer
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
+        case 'publiclyVisible':
+          result.publiclyVisible = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
         case 'description':
           result.description = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
@@ -47650,6 +48002,13 @@ class _$GCouponUpdateInputSerializer
         ..add('code')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
+    }
+    value = object.publiclyVisible;
+    if (value != null) {
+      result
+        ..add('publiclyVisible')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
     }
     value = object.description;
     if (value != null) {
@@ -47733,6 +48092,10 @@ class _$GCouponUpdateInputSerializer
         case 'code':
           result.code = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
+          break;
+        case 'publiclyVisible':
+          result.publiclyVisible = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
         case 'description':
           result.description = serializers.deserialize(value,
@@ -48050,6 +48413,13 @@ class _$GCouponCreateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.publiclyVisible;
+    if (value != null) {
+      result
+        ..add('publiclyVisible')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     value = object.description;
     if (value != null) {
       result
@@ -48132,6 +48502,10 @@ class _$GCouponCreateInputSerializer
         case 'code':
           result.code = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
+          break;
+        case 'publiclyVisible':
+          result.publiclyVisible = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
         case 'description':
           result.description = serializers.deserialize(value,
@@ -54609,6 +54983,13 @@ class _$GProductVariantWhereUniqueInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -54626,6 +55007,10 @@ class _$GProductVariantWhereUniqueInputSerializer
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'key':
+          result.key = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
       }
@@ -54703,6 +55088,13 @@ class _$GProductVariantWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GStringFilter)));
     }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
     value = object.product;
     if (value != null) {
       result
@@ -54775,6 +55167,13 @@ class _$GProductVariantWhereInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GProductReelManyRelationFilter)));
     }
+    value = object.gtin;
+    if (value != null) {
+      result
+        ..add('gtin')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GStringFilter)));
+    }
     value = object.disabled;
     if (value != null) {
       result
@@ -54833,6 +55232,10 @@ class _$GProductVariantWhereInputSerializer
           result.name.replace(serializers.deserialize(value,
               specifiedType: const FullType(GStringFilter))! as GStringFilter);
           break;
+        case 'key':
+          result.key.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
+          break;
         case 'product':
           result.product.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GProductWhereInput))!
@@ -54887,6 +55290,10 @@ class _$GProductVariantWhereInputSerializer
                   specifiedType:
                       const FullType(GProductReelManyRelationFilter))!
               as GProductReelManyRelationFilter);
+          break;
+        case 'gtin':
+          result.gtin.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GStringFilter))! as GStringFilter);
           break;
         case 'disabled':
           result.disabled.replace(serializers.deserialize(value,
@@ -55240,6 +55647,13 @@ class _$GProductVariantOrderByInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
     value = object.index;
     if (value != null) {
       result
@@ -55251,6 +55665,13 @@ class _$GProductVariantOrderByInputSerializer
     if (value != null) {
       result
         ..add('default')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.gtin;
+    if (value != null) {
+      result
+        ..add('gtin')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GOrderDirection)));
     }
@@ -55296,6 +55717,11 @@ class _$GProductVariantOrderByInputSerializer
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
+        case 'key':
+          result.key = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
         case 'index':
           result.index = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
@@ -55303,6 +55729,11 @@ class _$GProductVariantOrderByInputSerializer
           break;
         case 'default':
           result.Gdefault = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'gtin':
+          result.gtin = serializers.deserialize(value,
                   specifiedType: const FullType(GOrderDirection))
               as GOrderDirection?;
           break;
@@ -55352,6 +55783,13 @@ class _$GProductVariantUpdateInputSerializer
     if (value != null) {
       result
         ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -55429,6 +55867,13 @@ class _$GProductVariantUpdateInputSerializer
             specifiedType:
                 const FullType(GProductReelRelateToManyForUpdateInput)));
     }
+    value = object.gtin;
+    if (value != null) {
+      result
+        ..add('gtin')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.disabled;
     if (value != null) {
       result
@@ -55461,6 +55906,10 @@ class _$GProductVariantUpdateInputSerializer
           break;
         case 'name':
           result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'key':
+          result.key = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'product':
@@ -55518,6 +55967,10 @@ class _$GProductVariantUpdateInputSerializer
                   specifiedType:
                       const FullType(GProductReelRelateToManyForUpdateInput))!
               as GProductReelRelateToManyForUpdateInput);
+          break;
+        case 'gtin':
+          result.gtin = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'disabled':
           result.disabled = serializers.deserialize(value,
@@ -56000,6 +56453,13 @@ class _$GProductVariantCreateInputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.key;
+    if (value != null) {
+      result
+        ..add('key')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.product;
     if (value != null) {
       result
@@ -56074,6 +56534,13 @@ class _$GProductVariantCreateInputSerializer
             specifiedType:
                 const FullType(GProductReelRelateToManyForCreateInput)));
     }
+    value = object.gtin;
+    if (value != null) {
+      result
+        ..add('gtin')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.disabled;
     if (value != null) {
       result
@@ -56106,6 +56573,10 @@ class _$GProductVariantCreateInputSerializer
           break;
         case 'name':
           result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'key':
+          result.key = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'product':
@@ -56163,6 +56634,10 @@ class _$GProductVariantCreateInputSerializer
                   specifiedType:
                       const FullType(GProductReelRelateToManyForCreateInput))!
               as GProductReelRelateToManyForCreateInput);
+          break;
+        case 'gtin':
+          result.gtin = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'disabled':
           result.disabled = serializers.deserialize(value,
@@ -63020,6 +63495,550 @@ class _$GContactUsCreateInputSerializer
 
     return result.build();
   }
+}
+
+class _$GNotifyUserWhereUniqueInputSerializer
+    implements StructuredSerializer<GNotifyUserWhereUniqueInput> {
+  @override
+  final Iterable<Type> types = const [
+    GNotifyUserWhereUniqueInput,
+    _$GNotifyUserWhereUniqueInput
+  ];
+  @override
+  final String wireName = 'GNotifyUserWhereUniqueInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GNotifyUserWhereUniqueInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GNotifyUserWhereUniqueInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GNotifyUserWhereUniqueInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GNotifyUserWhereInputSerializer
+    implements StructuredSerializer<GNotifyUserWhereInput> {
+  @override
+  final Iterable<Type> types = const [
+    GNotifyUserWhereInput,
+    _$GNotifyUserWhereInput
+  ];
+  @override
+  final String wireName = 'GNotifyUserWhereInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GNotifyUserWhereInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.AND;
+    if (value != null) {
+      result
+        ..add('AND')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GNotifyUserWhereInput)])));
+    }
+    value = object.OR;
+    if (value != null) {
+      result
+        ..add('OR')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GNotifyUserWhereInput)])));
+    }
+    value = object.NOT;
+    if (value != null) {
+      result
+        ..add('NOT')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(GNotifyUserWhereInput)])));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GIDFilter)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTimeNullableFilter)));
+    }
+    value = object.user;
+    if (value != null) {
+      result
+        ..add('user')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserWhereInput)));
+    }
+    value = object.product;
+    if (value != null) {
+      result
+        ..add('product')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GProductWhereInput)));
+    }
+    value = object.vehicle;
+    if (value != null) {
+      result
+        ..add('vehicle')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GVehicleWhereInput)));
+    }
+    return result;
+  }
+
+  @override
+  GNotifyUserWhereInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GNotifyUserWhereInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'AND':
+          result.AND.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GNotifyUserWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'OR':
+          result.OR.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GNotifyUserWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'NOT':
+          result.NOT.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(GNotifyUserWhereInput)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GIDFilter))! as GIDFilter);
+          break;
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GDateTimeNullableFilter))!
+              as GDateTimeNullableFilter);
+          break;
+        case 'user':
+          result.user.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GUserWhereInput))!
+              as GUserWhereInput);
+          break;
+        case 'product':
+          result.product.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GProductWhereInput))!
+              as GProductWhereInput);
+          break;
+        case 'vehicle':
+          result.vehicle.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GVehicleWhereInput))!
+              as GVehicleWhereInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GNotifyUserOrderByInputSerializer
+    implements StructuredSerializer<GNotifyUserOrderByInput> {
+  @override
+  final Iterable<Type> types = const [
+    GNotifyUserOrderByInput,
+    _$GNotifyUserOrderByInput
+  ];
+  @override
+  final String wireName = 'GNotifyUserOrderByInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GNotifyUserOrderByInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GOrderDirection)));
+    }
+    return result;
+  }
+
+  @override
+  GNotifyUserOrderByInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GNotifyUserOrderByInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'createdAt':
+          result.createdAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+        case 'modifiedAt':
+          result.modifiedAt = serializers.deserialize(value,
+                  specifiedType: const FullType(GOrderDirection))
+              as GOrderDirection?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GNotifyUserUpdateInputSerializer
+    implements StructuredSerializer<GNotifyUserUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GNotifyUserUpdateInput,
+    _$GNotifyUserUpdateInput
+  ];
+  @override
+  final String wireName = 'GNotifyUserUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GNotifyUserUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.user;
+    if (value != null) {
+      result
+        ..add('user')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserRelateToOneForUpdateInput)));
+    }
+    value = object.product;
+    if (value != null) {
+      result
+        ..add('product')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GProductRelateToOneForUpdateInput)));
+    }
+    value = object.vehicle;
+    if (value != null) {
+      result
+        ..add('vehicle')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GVehicleRelateToOneForUpdateInput)));
+    }
+    return result;
+  }
+
+  @override
+  GNotifyUserUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GNotifyUserUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'user':
+          result.user.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserRelateToOneForUpdateInput))!
+              as GUserRelateToOneForUpdateInput);
+          break;
+        case 'product':
+          result.product.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GProductRelateToOneForUpdateInput))!
+              as GProductRelateToOneForUpdateInput);
+          break;
+        case 'vehicle':
+          result.vehicle.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleRelateToOneForUpdateInput))!
+              as GVehicleRelateToOneForUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GNotifyUserUpdateArgsSerializer
+    implements StructuredSerializer<GNotifyUserUpdateArgs> {
+  @override
+  final Iterable<Type> types = const [
+    GNotifyUserUpdateArgs,
+    _$GNotifyUserUpdateArgs
+  ];
+  @override
+  final String wireName = 'GNotifyUserUpdateArgs';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GNotifyUserUpdateArgs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(GNotifyUserWhereUniqueInput)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(GNotifyUserUpdateInput)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GNotifyUserUpdateArgs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GNotifyUserUpdateArgsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GNotifyUserWhereUniqueInput))!
+              as GNotifyUserWhereUniqueInput);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GNotifyUserUpdateInput))!
+              as GNotifyUserUpdateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GNotifyUserCreateInputSerializer
+    implements StructuredSerializer<GNotifyUserCreateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GNotifyUserCreateInput,
+    _$GNotifyUserCreateInput
+  ];
+  @override
+  final String wireName = 'GNotifyUserCreateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GNotifyUserCreateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.createdAt;
+    if (value != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.modifiedAt;
+    if (value != null) {
+      result
+        ..add('modifiedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GDateTime)));
+    }
+    value = object.user;
+    if (value != null) {
+      result
+        ..add('user')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GUserRelateToOneForCreateInput)));
+    }
+    value = object.product;
+    if (value != null) {
+      result
+        ..add('product')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GProductRelateToOneForCreateInput)));
+    }
+    value = object.vehicle;
+    if (value != null) {
+      result
+        ..add('vehicle')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GVehicleRelateToOneForCreateInput)));
+    }
+    return result;
+  }
+
+  @override
+  GNotifyUserCreateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GNotifyUserCreateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'createdAt':
+          result.createdAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'modifiedAt':
+          result.modifiedAt.replace(serializers.deserialize(value,
+              specifiedType: const FullType(GDateTime))! as GDateTime);
+          break;
+        case 'user':
+          result.user.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GUserRelateToOneForCreateInput))!
+              as GUserRelateToOneForCreateInput);
+          break;
+        case 'product':
+          result.product.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GProductRelateToOneForCreateInput))!
+              as GProductRelateToOneForCreateInput);
+          break;
+        case 'vehicle':
+          result.vehicle.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GVehicleRelateToOneForCreateInput))!
+              as GVehicleRelateToOneForCreateInput);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GtypeSerializer implements PrimitiveSerializer<Gtype> {
+  @override
+  final Iterable<Type> types = const <Type>[Gtype];
+  @override
+  final String wireName = 'Gtype';
+
+  @override
+  Object serialize(Serializers serializers, Gtype object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      object.name;
+
+  @override
+  Gtype deserialize(Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      Gtype.valueOf(serialized as String);
 }
 
 class _$GOrderItemSerializer implements StructuredSerializer<GOrderItem> {
@@ -70008,6 +71027,8 @@ class _$GFirebaseDeviceTokenWhereUniqueInput
     extends GFirebaseDeviceTokenWhereUniqueInput {
   @override
   final String? id;
+  @override
+  final String? deviceToken;
 
   factory _$GFirebaseDeviceTokenWhereUniqueInput(
           [void Function(GFirebaseDeviceTokenWhereUniqueInputBuilder)?
@@ -70015,7 +71036,8 @@ class _$GFirebaseDeviceTokenWhereUniqueInput
       (new GFirebaseDeviceTokenWhereUniqueInputBuilder()..update(updates))
           ._build();
 
-  _$GFirebaseDeviceTokenWhereUniqueInput._({this.id}) : super._();
+  _$GFirebaseDeviceTokenWhereUniqueInput._({this.id, this.deviceToken})
+      : super._();
 
   @override
   GFirebaseDeviceTokenWhereUniqueInput rebuild(
@@ -70029,13 +71051,16 @@ class _$GFirebaseDeviceTokenWhereUniqueInput
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GFirebaseDeviceTokenWhereUniqueInput && id == other.id;
+    return other is GFirebaseDeviceTokenWhereUniqueInput &&
+        id == other.id &&
+        deviceToken == other.deviceToken;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, deviceToken.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -70043,7 +71068,8 @@ class _$GFirebaseDeviceTokenWhereUniqueInput
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GFirebaseDeviceTokenWhereUniqueInput')
-          ..add('id', id))
+          ..add('id', id)
+          ..add('deviceToken', deviceToken))
         .toString();
   }
 }
@@ -70058,12 +71084,17 @@ class GFirebaseDeviceTokenWhereUniqueInputBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
+  String? _deviceToken;
+  String? get deviceToken => _$this._deviceToken;
+  set deviceToken(String? deviceToken) => _$this._deviceToken = deviceToken;
+
   GFirebaseDeviceTokenWhereUniqueInputBuilder();
 
   GFirebaseDeviceTokenWhereUniqueInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
+      _deviceToken = $v.deviceToken;
       _$v = null;
     }
     return this;
@@ -70085,8 +71116,9 @@ class GFirebaseDeviceTokenWhereUniqueInputBuilder
   GFirebaseDeviceTokenWhereUniqueInput build() => _build();
 
   _$GFirebaseDeviceTokenWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GFirebaseDeviceTokenWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GFirebaseDeviceTokenWhereUniqueInput._(
+            id: id, deviceToken: deviceToken);
     replace(_$result);
     return _$result;
   }
@@ -86501,6 +87533,8 @@ class _$GVehicleColorUpdateInput extends GVehicleColorUpdateInput {
   @override
   final GVehicleReelRelateToManyForUpdateInput? reels;
   @override
+  final _i4.JsonObject? googleImages;
+  @override
   final bool? disabled;
 
   factory _$GVehicleColorUpdateInput(
@@ -86519,6 +87553,7 @@ class _$GVehicleColorUpdateInput extends GVehicleColorUpdateInput {
       this.videos,
       this.gallery,
       this.reels,
+      this.googleImages,
       this.disabled})
       : super._();
 
@@ -86546,6 +87581,7 @@ class _$GVehicleColorUpdateInput extends GVehicleColorUpdateInput {
         videos == other.videos &&
         gallery == other.gallery &&
         reels == other.reels &&
+        googleImages == other.googleImages &&
         disabled == other.disabled;
   }
 
@@ -86563,6 +87599,7 @@ class _$GVehicleColorUpdateInput extends GVehicleColorUpdateInput {
     _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jc(_$hash, reels.hashCode);
+    _$hash = $jc(_$hash, googleImages.hashCode);
     _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -86582,6 +87619,7 @@ class _$GVehicleColorUpdateInput extends GVehicleColorUpdateInput {
           ..add('videos', videos)
           ..add('gallery', gallery)
           ..add('reels', reels)
+          ..add('googleImages', googleImages)
           ..add('disabled', disabled))
         .toString();
   }
@@ -86654,6 +87692,11 @@ class GVehicleColorUpdateInputBuilder
   set reels(GVehicleReelRelateToManyForUpdateInputBuilder? reels) =>
       _$this._reels = reels;
 
+  _i4.JsonObject? _googleImages;
+  _i4.JsonObject? get googleImages => _$this._googleImages;
+  set googleImages(_i4.JsonObject? googleImages) =>
+      _$this._googleImages = googleImages;
+
   bool? _disabled;
   bool? get disabled => _$this._disabled;
   set disabled(bool? disabled) => _$this._disabled = disabled;
@@ -86674,6 +87717,7 @@ class GVehicleColorUpdateInputBuilder
       _videos = $v.videos?.toBuilder();
       _gallery = $v.gallery?.toBuilder();
       _reels = $v.reels?.toBuilder();
+      _googleImages = $v.googleImages;
       _disabled = $v.disabled;
       _$v = null;
     }
@@ -86710,6 +87754,7 @@ class GVehicleColorUpdateInputBuilder
               videos: _videos?.build(),
               gallery: _gallery?.build(),
               reels: _reels?.build(),
+              googleImages: googleImages,
               disabled: disabled);
     } catch (_) {
       late String _$failedField;
@@ -87642,6 +88687,8 @@ class _$GVehicleColorCreateInput extends GVehicleColorCreateInput {
   @override
   final GVehicleReelRelateToManyForCreateInput? reels;
   @override
+  final _i4.JsonObject? googleImages;
+  @override
   final bool? disabled;
 
   factory _$GVehicleColorCreateInput(
@@ -87660,6 +88707,7 @@ class _$GVehicleColorCreateInput extends GVehicleColorCreateInput {
       this.videos,
       this.gallery,
       this.reels,
+      this.googleImages,
       this.disabled})
       : super._();
 
@@ -87687,6 +88735,7 @@ class _$GVehicleColorCreateInput extends GVehicleColorCreateInput {
         videos == other.videos &&
         gallery == other.gallery &&
         reels == other.reels &&
+        googleImages == other.googleImages &&
         disabled == other.disabled;
   }
 
@@ -87704,6 +88753,7 @@ class _$GVehicleColorCreateInput extends GVehicleColorCreateInput {
     _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jc(_$hash, reels.hashCode);
+    _$hash = $jc(_$hash, googleImages.hashCode);
     _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -87723,6 +88773,7 @@ class _$GVehicleColorCreateInput extends GVehicleColorCreateInput {
           ..add('videos', videos)
           ..add('gallery', gallery)
           ..add('reels', reels)
+          ..add('googleImages', googleImages)
           ..add('disabled', disabled))
         .toString();
   }
@@ -87795,6 +88846,11 @@ class GVehicleColorCreateInputBuilder
   set reels(GVehicleReelRelateToManyForCreateInputBuilder? reels) =>
       _$this._reels = reels;
 
+  _i4.JsonObject? _googleImages;
+  _i4.JsonObject? get googleImages => _$this._googleImages;
+  set googleImages(_i4.JsonObject? googleImages) =>
+      _$this._googleImages = googleImages;
+
   bool? _disabled;
   bool? get disabled => _$this._disabled;
   set disabled(bool? disabled) => _$this._disabled = disabled;
@@ -87815,6 +88871,7 @@ class GVehicleColorCreateInputBuilder
       _videos = $v.videos?.toBuilder();
       _gallery = $v.gallery?.toBuilder();
       _reels = $v.reels?.toBuilder();
+      _googleImages = $v.googleImages;
       _disabled = $v.disabled;
       _$v = null;
     }
@@ -87851,6 +88908,7 @@ class GVehicleColorCreateInputBuilder
               videos: _videos?.build(),
               gallery: _gallery?.build(),
               reels: _reels?.build(),
+              googleImages: googleImages,
               disabled: disabled);
     } catch (_) {
       late String _$failedField;
@@ -96996,12 +98054,14 @@ class _$GVehicleVariantWhereUniqueInput
     extends GVehicleVariantWhereUniqueInput {
   @override
   final String? id;
+  @override
+  final String? key;
 
   factory _$GVehicleVariantWhereUniqueInput(
           [void Function(GVehicleVariantWhereUniqueInputBuilder)? updates]) =>
       (new GVehicleVariantWhereUniqueInputBuilder()..update(updates))._build();
 
-  _$GVehicleVariantWhereUniqueInput._({this.id}) : super._();
+  _$GVehicleVariantWhereUniqueInput._({this.id, this.key}) : super._();
 
   @override
   GVehicleVariantWhereUniqueInput rebuild(
@@ -97015,13 +98075,16 @@ class _$GVehicleVariantWhereUniqueInput
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GVehicleVariantWhereUniqueInput && id == other.id;
+    return other is GVehicleVariantWhereUniqueInput &&
+        id == other.id &&
+        key == other.key;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -97029,7 +98092,8 @@ class _$GVehicleVariantWhereUniqueInput
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GVehicleVariantWhereUniqueInput')
-          ..add('id', id))
+          ..add('id', id)
+          ..add('key', key))
         .toString();
   }
 }
@@ -97044,12 +98108,17 @@ class GVehicleVariantWhereUniqueInputBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
+  String? _key;
+  String? get key => _$this._key;
+  set key(String? key) => _$this._key = key;
+
   GVehicleVariantWhereUniqueInputBuilder();
 
   GVehicleVariantWhereUniqueInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
+      _key = $v.key;
       _$v = null;
     }
     return this;
@@ -97070,7 +98139,8 @@ class GVehicleVariantWhereUniqueInputBuilder
   GVehicleVariantWhereUniqueInput build() => _build();
 
   _$GVehicleVariantWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GVehicleVariantWhereUniqueInput._(id: id);
+    final _$result =
+        _$v ?? new _$GVehicleVariantWhereUniqueInput._(id: id, key: key);
     replace(_$result);
     return _$result;
   }
@@ -97092,6 +98162,8 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
   @override
   final GStringFilter? name;
   @override
+  final GStringFilter? key;
+  @override
   final GIntNullableFilter? index;
   @override
   final GVehicleWhereInput? vehicle;
@@ -97108,6 +98180,8 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
   @override
   final GPriceManyRelationFilter? prices;
   @override
+  final GStringFilter? gtin;
+  @override
   final GBooleanFilter? disabled;
 
   factory _$GVehicleVariantWhereInput(
@@ -97122,6 +98196,7 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
       this.createdAt,
       this.modifiedAt,
       this.name,
+      this.key,
       this.index,
       this.vehicle,
       this.Gdefault,
@@ -97130,6 +98205,7 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
       this.tags,
       this.informative,
       this.prices,
+      this.gtin,
       this.disabled})
       : super._();
 
@@ -97153,6 +98229,7 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
+        key == other.key &&
         index == other.index &&
         vehicle == other.vehicle &&
         Gdefault == other.Gdefault &&
@@ -97161,6 +98238,7 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
         tags == other.tags &&
         informative == other.informative &&
         prices == other.prices &&
+        gtin == other.gtin &&
         disabled == other.disabled;
   }
 
@@ -97174,6 +98252,7 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, index.hashCode);
     _$hash = $jc(_$hash, vehicle.hashCode);
     _$hash = $jc(_$hash, Gdefault.hashCode);
@@ -97182,6 +98261,7 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
     _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, informative.hashCode);
     _$hash = $jc(_$hash, prices.hashCode);
+    _$hash = $jc(_$hash, gtin.hashCode);
     _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -97197,6 +98277,7 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
+          ..add('key', key)
           ..add('index', index)
           ..add('vehicle', vehicle)
           ..add('Gdefault', Gdefault)
@@ -97205,6 +98286,7 @@ class _$GVehicleVariantWhereInput extends GVehicleVariantWhereInput {
           ..add('tags', tags)
           ..add('informative', informative)
           ..add('prices', prices)
+          ..add('gtin', gtin)
           ..add('disabled', disabled))
         .toString();
   }
@@ -97249,6 +98331,10 @@ class GVehicleVariantWhereInputBuilder
   GStringFilterBuilder? _name;
   GStringFilterBuilder get name => _$this._name ??= new GStringFilterBuilder();
   set name(GStringFilterBuilder? name) => _$this._name = name;
+
+  GStringFilterBuilder? _key;
+  GStringFilterBuilder get key => _$this._key ??= new GStringFilterBuilder();
+  set key(GStringFilterBuilder? key) => _$this._key = key;
 
   GIntNullableFilterBuilder? _index;
   GIntNullableFilterBuilder get index =>
@@ -97296,6 +98382,10 @@ class GVehicleVariantWhereInputBuilder
   set prices(GPriceManyRelationFilterBuilder? prices) =>
       _$this._prices = prices;
 
+  GStringFilterBuilder? _gtin;
+  GStringFilterBuilder get gtin => _$this._gtin ??= new GStringFilterBuilder();
+  set gtin(GStringFilterBuilder? gtin) => _$this._gtin = gtin;
+
   GBooleanFilterBuilder? _disabled;
   GBooleanFilterBuilder get disabled =>
       _$this._disabled ??= new GBooleanFilterBuilder();
@@ -97313,6 +98403,7 @@ class GVehicleVariantWhereInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _name = $v.name?.toBuilder();
+      _key = $v.key?.toBuilder();
       _index = $v.index?.toBuilder();
       _vehicle = $v.vehicle?.toBuilder();
       _Gdefault = $v.Gdefault?.toBuilder();
@@ -97321,6 +98412,7 @@ class GVehicleVariantWhereInputBuilder
       _tags = $v.tags?.toBuilder();
       _informative = $v.informative?.toBuilder();
       _prices = $v.prices?.toBuilder();
+      _gtin = $v.gtin?.toBuilder();
       _disabled = $v.disabled?.toBuilder();
       _$v = null;
     }
@@ -97353,6 +98445,7 @@ class GVehicleVariantWhereInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               name: _name?.build(),
+              key: _key?.build(),
               index: _index?.build(),
               vehicle: _vehicle?.build(),
               Gdefault: _Gdefault?.build(),
@@ -97361,6 +98454,7 @@ class GVehicleVariantWhereInputBuilder
               tags: _tags?.build(),
               informative: _informative?.build(),
               prices: _prices?.build(),
+              gtin: _gtin?.build(),
               disabled: _disabled?.build());
     } catch (_) {
       late String _$failedField;
@@ -97379,6 +98473,8 @@ class GVehicleVariantWhereInputBuilder
         _modifiedAt?.build();
         _$failedField = 'name';
         _name?.build();
+        _$failedField = 'key';
+        _key?.build();
         _$failedField = 'index';
         _index?.build();
         _$failedField = 'vehicle';
@@ -97395,6 +98491,8 @@ class GVehicleVariantWhereInputBuilder
         _informative?.build();
         _$failedField = 'prices';
         _prices?.build();
+        _$failedField = 'gtin';
+        _gtin?.build();
         _$failedField = 'disabled';
         _disabled?.build();
       } catch (e) {
@@ -97544,11 +98642,15 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
   @override
   final GOrderDirection? name;
   @override
+  final GOrderDirection? key;
+  @override
   final GOrderDirection? index;
   @override
   final GOrderDirection? Gdefault;
   @override
   final GOrderDirection? informative;
+  @override
+  final GOrderDirection? gtin;
   @override
   final GOrderDirection? disabled;
 
@@ -97561,9 +98663,11 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
       this.createdAt,
       this.modifiedAt,
       this.name,
+      this.key,
       this.index,
       this.Gdefault,
       this.informative,
+      this.gtin,
       this.disabled})
       : super._();
 
@@ -97584,9 +98688,11 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
+        key == other.key &&
         index == other.index &&
         Gdefault == other.Gdefault &&
         informative == other.informative &&
+        gtin == other.gtin &&
         disabled == other.disabled;
   }
 
@@ -97597,9 +98703,11 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, index.hashCode);
     _$hash = $jc(_$hash, Gdefault.hashCode);
     _$hash = $jc(_$hash, informative.hashCode);
+    _$hash = $jc(_$hash, gtin.hashCode);
     _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -97612,9 +98720,11 @@ class _$GVehicleVariantOrderByInput extends GVehicleVariantOrderByInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
+          ..add('key', key)
           ..add('index', index)
           ..add('Gdefault', Gdefault)
           ..add('informative', informative)
+          ..add('gtin', gtin)
           ..add('disabled', disabled))
         .toString();
   }
@@ -97643,6 +98753,10 @@ class GVehicleVariantOrderByInputBuilder
   GOrderDirection? get name => _$this._name;
   set name(GOrderDirection? name) => _$this._name = name;
 
+  GOrderDirection? _key;
+  GOrderDirection? get key => _$this._key;
+  set key(GOrderDirection? key) => _$this._key = key;
+
   GOrderDirection? _index;
   GOrderDirection? get index => _$this._index;
   set index(GOrderDirection? index) => _$this._index = index;
@@ -97655,6 +98769,10 @@ class GVehicleVariantOrderByInputBuilder
   GOrderDirection? get informative => _$this._informative;
   set informative(GOrderDirection? informative) =>
       _$this._informative = informative;
+
+  GOrderDirection? _gtin;
+  GOrderDirection? get gtin => _$this._gtin;
+  set gtin(GOrderDirection? gtin) => _$this._gtin = gtin;
 
   GOrderDirection? _disabled;
   GOrderDirection? get disabled => _$this._disabled;
@@ -97669,9 +98787,11 @@ class GVehicleVariantOrderByInputBuilder
       _createdAt = $v.createdAt;
       _modifiedAt = $v.modifiedAt;
       _name = $v.name;
+      _key = $v.key;
       _index = $v.index;
       _Gdefault = $v.Gdefault;
       _informative = $v.informative;
+      _gtin = $v.gtin;
       _disabled = $v.disabled;
       _$v = null;
     }
@@ -97699,9 +98819,11 @@ class GVehicleVariantOrderByInputBuilder
             createdAt: createdAt,
             modifiedAt: modifiedAt,
             name: name,
+            key: key,
             index: index,
             Gdefault: Gdefault,
             informative: informative,
+            gtin: gtin,
             disabled: disabled);
     replace(_$result);
     return _$result;
@@ -97715,6 +98837,8 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
   final GDateTime? modifiedAt;
   @override
   final String? name;
+  @override
+  final String? key;
   @override
   final int? index;
   @override
@@ -97732,6 +98856,8 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
   @override
   final GPriceRelateToManyForUpdateInput? prices;
   @override
+  final String? gtin;
+  @override
   final bool? disabled;
 
   factory _$GVehicleVariantUpdateInput(
@@ -97742,6 +98868,7 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
       {this.createdAt,
       this.modifiedAt,
       this.name,
+      this.key,
       this.index,
       this.vehicle,
       this.Gdefault,
@@ -97750,6 +98877,7 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
       this.tags,
       this.informative,
       this.prices,
+      this.gtin,
       this.disabled})
       : super._();
 
@@ -97769,6 +98897,7 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
+        key == other.key &&
         index == other.index &&
         vehicle == other.vehicle &&
         Gdefault == other.Gdefault &&
@@ -97777,6 +98906,7 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
         tags == other.tags &&
         informative == other.informative &&
         prices == other.prices &&
+        gtin == other.gtin &&
         disabled == other.disabled;
   }
 
@@ -97786,6 +98916,7 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, index.hashCode);
     _$hash = $jc(_$hash, vehicle.hashCode);
     _$hash = $jc(_$hash, Gdefault.hashCode);
@@ -97794,6 +98925,7 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
     _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, informative.hashCode);
     _$hash = $jc(_$hash, prices.hashCode);
+    _$hash = $jc(_$hash, gtin.hashCode);
     _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -97805,6 +98937,7 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
+          ..add('key', key)
           ..add('index', index)
           ..add('vehicle', vehicle)
           ..add('Gdefault', Gdefault)
@@ -97813,6 +98946,7 @@ class _$GVehicleVariantUpdateInput extends GVehicleVariantUpdateInput {
           ..add('tags', tags)
           ..add('informative', informative)
           ..add('prices', prices)
+          ..add('gtin', gtin)
           ..add('disabled', disabled))
         .toString();
   }
@@ -97837,6 +98971,10 @@ class GVehicleVariantUpdateInputBuilder
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  String? _key;
+  String? get key => _$this._key;
+  set key(String? key) => _$this._key = key;
 
   int? _index;
   int? get index => _$this._index;
@@ -97882,6 +99020,10 @@ class GVehicleVariantUpdateInputBuilder
   set prices(GPriceRelateToManyForUpdateInputBuilder? prices) =>
       _$this._prices = prices;
 
+  String? _gtin;
+  String? get gtin => _$this._gtin;
+  set gtin(String? gtin) => _$this._gtin = gtin;
+
   bool? _disabled;
   bool? get disabled => _$this._disabled;
   set disabled(bool? disabled) => _$this._disabled = disabled;
@@ -97894,6 +99036,7 @@ class GVehicleVariantUpdateInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _name = $v.name;
+      _key = $v.key;
       _index = $v.index;
       _vehicle = $v.vehicle?.toBuilder();
       _Gdefault = $v.Gdefault;
@@ -97902,6 +99045,7 @@ class GVehicleVariantUpdateInputBuilder
       _tags = $v.tags?.toBuilder();
       _informative = $v.informative;
       _prices = $v.prices?.toBuilder();
+      _gtin = $v.gtin;
       _disabled = $v.disabled;
       _$v = null;
     }
@@ -97930,6 +99074,7 @@ class GVehicleVariantUpdateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               name: name,
+              key: key,
               index: index,
               vehicle: _vehicle?.build(),
               Gdefault: Gdefault,
@@ -97938,6 +99083,7 @@ class GVehicleVariantUpdateInputBuilder
               tags: _tags?.build(),
               informative: informative,
               prices: _prices?.build(),
+              gtin: gtin,
               disabled: disabled);
     } catch (_) {
       late String _$failedField;
@@ -98243,6 +99389,8 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
   @override
   final String? name;
   @override
+  final String? key;
+  @override
   final int? index;
   @override
   final GVehicleRelateToOneForCreateInput? vehicle;
@@ -98259,6 +99407,8 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
   @override
   final GPriceRelateToManyForCreateInput? prices;
   @override
+  final String? gtin;
+  @override
   final bool? disabled;
 
   factory _$GVehicleVariantCreateInput(
@@ -98269,6 +99419,7 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
       {this.createdAt,
       this.modifiedAt,
       this.name,
+      this.key,
       this.index,
       this.vehicle,
       this.Gdefault,
@@ -98277,6 +99428,7 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
       this.tags,
       this.informative,
       this.prices,
+      this.gtin,
       this.disabled})
       : super._();
 
@@ -98296,6 +99448,7 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
+        key == other.key &&
         index == other.index &&
         vehicle == other.vehicle &&
         Gdefault == other.Gdefault &&
@@ -98304,6 +99457,7 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
         tags == other.tags &&
         informative == other.informative &&
         prices == other.prices &&
+        gtin == other.gtin &&
         disabled == other.disabled;
   }
 
@@ -98313,6 +99467,7 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, index.hashCode);
     _$hash = $jc(_$hash, vehicle.hashCode);
     _$hash = $jc(_$hash, Gdefault.hashCode);
@@ -98321,6 +99476,7 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
     _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, informative.hashCode);
     _$hash = $jc(_$hash, prices.hashCode);
+    _$hash = $jc(_$hash, gtin.hashCode);
     _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -98332,6 +99488,7 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
+          ..add('key', key)
           ..add('index', index)
           ..add('vehicle', vehicle)
           ..add('Gdefault', Gdefault)
@@ -98340,6 +99497,7 @@ class _$GVehicleVariantCreateInput extends GVehicleVariantCreateInput {
           ..add('tags', tags)
           ..add('informative', informative)
           ..add('prices', prices)
+          ..add('gtin', gtin)
           ..add('disabled', disabled))
         .toString();
   }
@@ -98364,6 +99522,10 @@ class GVehicleVariantCreateInputBuilder
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  String? _key;
+  String? get key => _$this._key;
+  set key(String? key) => _$this._key = key;
 
   int? _index;
   int? get index => _$this._index;
@@ -98409,6 +99571,10 @@ class GVehicleVariantCreateInputBuilder
   set prices(GPriceRelateToManyForCreateInputBuilder? prices) =>
       _$this._prices = prices;
 
+  String? _gtin;
+  String? get gtin => _$this._gtin;
+  set gtin(String? gtin) => _$this._gtin = gtin;
+
   bool? _disabled;
   bool? get disabled => _$this._disabled;
   set disabled(bool? disabled) => _$this._disabled = disabled;
@@ -98421,6 +99587,7 @@ class GVehicleVariantCreateInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _name = $v.name;
+      _key = $v.key;
       _index = $v.index;
       _vehicle = $v.vehicle?.toBuilder();
       _Gdefault = $v.Gdefault;
@@ -98429,6 +99596,7 @@ class GVehicleVariantCreateInputBuilder
       _tags = $v.tags?.toBuilder();
       _informative = $v.informative;
       _prices = $v.prices?.toBuilder();
+      _gtin = $v.gtin;
       _disabled = $v.disabled;
       _$v = null;
     }
@@ -98457,6 +99625,7 @@ class GVehicleVariantCreateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               name: name,
+              key: key,
               index: index,
               vehicle: _vehicle?.build(),
               Gdefault: Gdefault,
@@ -98465,6 +99634,7 @@ class GVehicleVariantCreateInputBuilder
               tags: _tags?.build(),
               informative: informative,
               prices: _prices?.build(),
+              gtin: gtin,
               disabled: disabled);
     } catch (_) {
       late String _$failedField;
@@ -101121,6 +102291,8 @@ class _$GPriceWhereInput extends GPriceWhereInput {
   final GPriceCategoryWhereInput? category;
   @override
   final GIntFilter? amount;
+  @override
+  final GIntNullableFilter? originalAmount;
 
   factory _$GPriceWhereInput(
           [void Function(GPriceWhereInputBuilder)? updates]) =>
@@ -101134,7 +102306,8 @@ class _$GPriceWhereInput extends GPriceWhereInput {
       this.createdAt,
       this.modifiedAt,
       this.category,
-      this.amount})
+      this.amount,
+      this.originalAmount})
       : super._();
 
   @override
@@ -101156,7 +102329,8 @@ class _$GPriceWhereInput extends GPriceWhereInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         category == other.category &&
-        amount == other.amount;
+        amount == other.amount &&
+        originalAmount == other.originalAmount;
   }
 
   @override
@@ -101170,6 +102344,7 @@ class _$GPriceWhereInput extends GPriceWhereInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, category.hashCode);
     _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, originalAmount.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -101184,7 +102359,8 @@ class _$GPriceWhereInput extends GPriceWhereInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('category', category)
-          ..add('amount', amount))
+          ..add('amount', amount)
+          ..add('originalAmount', originalAmount))
         .toString();
   }
 }
@@ -101234,6 +102410,12 @@ class GPriceWhereInputBuilder
   GIntFilterBuilder get amount => _$this._amount ??= new GIntFilterBuilder();
   set amount(GIntFilterBuilder? amount) => _$this._amount = amount;
 
+  GIntNullableFilterBuilder? _originalAmount;
+  GIntNullableFilterBuilder get originalAmount =>
+      _$this._originalAmount ??= new GIntNullableFilterBuilder();
+  set originalAmount(GIntNullableFilterBuilder? originalAmount) =>
+      _$this._originalAmount = originalAmount;
+
   GPriceWhereInputBuilder();
 
   GPriceWhereInputBuilder get _$this {
@@ -101247,6 +102429,7 @@ class GPriceWhereInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _category = $v.category?.toBuilder();
       _amount = $v.amount?.toBuilder();
+      _originalAmount = $v.originalAmount?.toBuilder();
       _$v = null;
     }
     return this;
@@ -101278,7 +102461,8 @@ class GPriceWhereInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               category: _category?.build(),
-              amount: _amount?.build());
+              amount: _amount?.build(),
+              originalAmount: _originalAmount?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -101298,6 +102482,8 @@ class GPriceWhereInputBuilder
         _category?.build();
         _$failedField = 'amount';
         _amount?.build();
+        _$failedField = 'originalAmount';
+        _originalAmount?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GPriceWhereInput', _$failedField, e.toString());
@@ -101318,13 +102504,19 @@ class _$GPriceOrderByInput extends GPriceOrderByInput {
   final GOrderDirection? modifiedAt;
   @override
   final GOrderDirection? amount;
+  @override
+  final GOrderDirection? originalAmount;
 
   factory _$GPriceOrderByInput(
           [void Function(GPriceOrderByInputBuilder)? updates]) =>
       (new GPriceOrderByInputBuilder()..update(updates))._build();
 
   _$GPriceOrderByInput._(
-      {this.id, this.createdAt, this.modifiedAt, this.amount})
+      {this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.amount,
+      this.originalAmount})
       : super._();
 
   @override
@@ -101343,7 +102535,8 @@ class _$GPriceOrderByInput extends GPriceOrderByInput {
         id == other.id &&
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
-        amount == other.amount;
+        amount == other.amount &&
+        originalAmount == other.originalAmount;
   }
 
   @override
@@ -101353,6 +102546,7 @@ class _$GPriceOrderByInput extends GPriceOrderByInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, originalAmount.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -101363,7 +102557,8 @@ class _$GPriceOrderByInput extends GPriceOrderByInput {
           ..add('id', id)
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
-          ..add('amount', amount))
+          ..add('amount', amount)
+          ..add('originalAmount', originalAmount))
         .toString();
   }
 }
@@ -101389,6 +102584,11 @@ class GPriceOrderByInputBuilder
   GOrderDirection? get amount => _$this._amount;
   set amount(GOrderDirection? amount) => _$this._amount = amount;
 
+  GOrderDirection? _originalAmount;
+  GOrderDirection? get originalAmount => _$this._originalAmount;
+  set originalAmount(GOrderDirection? originalAmount) =>
+      _$this._originalAmount = originalAmount;
+
   GPriceOrderByInputBuilder();
 
   GPriceOrderByInputBuilder get _$this {
@@ -101398,6 +102598,7 @@ class GPriceOrderByInputBuilder
       _createdAt = $v.createdAt;
       _modifiedAt = $v.modifiedAt;
       _amount = $v.amount;
+      _originalAmount = $v.originalAmount;
       _$v = null;
     }
     return this;
@@ -101423,7 +102624,8 @@ class GPriceOrderByInputBuilder
             id: id,
             createdAt: createdAt,
             modifiedAt: modifiedAt,
-            amount: amount);
+            amount: amount,
+            originalAmount: originalAmount);
     replace(_$result);
     return _$result;
   }
@@ -101438,13 +102640,19 @@ class _$GPriceUpdateInput extends GPriceUpdateInput {
   final GPriceCategoryRelateToOneForUpdateInput? category;
   @override
   final int? amount;
+  @override
+  final int? originalAmount;
 
   factory _$GPriceUpdateInput(
           [void Function(GPriceUpdateInputBuilder)? updates]) =>
       (new GPriceUpdateInputBuilder()..update(updates))._build();
 
   _$GPriceUpdateInput._(
-      {this.createdAt, this.modifiedAt, this.category, this.amount})
+      {this.createdAt,
+      this.modifiedAt,
+      this.category,
+      this.amount,
+      this.originalAmount})
       : super._();
 
   @override
@@ -101462,7 +102670,8 @@ class _$GPriceUpdateInput extends GPriceUpdateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         category == other.category &&
-        amount == other.amount;
+        amount == other.amount &&
+        originalAmount == other.originalAmount;
   }
 
   @override
@@ -101472,6 +102681,7 @@ class _$GPriceUpdateInput extends GPriceUpdateInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, category.hashCode);
     _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, originalAmount.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -101482,7 +102692,8 @@ class _$GPriceUpdateInput extends GPriceUpdateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('category', category)
-          ..add('amount', amount))
+          ..add('amount', amount)
+          ..add('originalAmount', originalAmount))
         .toString();
   }
 }
@@ -101512,6 +102723,11 @@ class GPriceUpdateInputBuilder
   int? get amount => _$this._amount;
   set amount(int? amount) => _$this._amount = amount;
 
+  int? _originalAmount;
+  int? get originalAmount => _$this._originalAmount;
+  set originalAmount(int? originalAmount) =>
+      _$this._originalAmount = originalAmount;
+
   GPriceUpdateInputBuilder();
 
   GPriceUpdateInputBuilder get _$this {
@@ -101521,6 +102737,7 @@ class GPriceUpdateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _category = $v.category?.toBuilder();
       _amount = $v.amount;
+      _originalAmount = $v.originalAmount;
       _$v = null;
     }
     return this;
@@ -101548,7 +102765,8 @@ class GPriceUpdateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               category: _category?.build(),
-              amount: amount);
+              amount: amount,
+              originalAmount: originalAmount);
     } catch (_) {
       late String _$failedField;
       try {
@@ -101827,13 +103045,19 @@ class _$GPriceCreateInput extends GPriceCreateInput {
   final GPriceCategoryRelateToOneForCreateInput? category;
   @override
   final int? amount;
+  @override
+  final int? originalAmount;
 
   factory _$GPriceCreateInput(
           [void Function(GPriceCreateInputBuilder)? updates]) =>
       (new GPriceCreateInputBuilder()..update(updates))._build();
 
   _$GPriceCreateInput._(
-      {this.createdAt, this.modifiedAt, this.category, this.amount})
+      {this.createdAt,
+      this.modifiedAt,
+      this.category,
+      this.amount,
+      this.originalAmount})
       : super._();
 
   @override
@@ -101851,7 +103075,8 @@ class _$GPriceCreateInput extends GPriceCreateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         category == other.category &&
-        amount == other.amount;
+        amount == other.amount &&
+        originalAmount == other.originalAmount;
   }
 
   @override
@@ -101861,6 +103086,7 @@ class _$GPriceCreateInput extends GPriceCreateInput {
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, category.hashCode);
     _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, originalAmount.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -101871,7 +103097,8 @@ class _$GPriceCreateInput extends GPriceCreateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('category', category)
-          ..add('amount', amount))
+          ..add('amount', amount)
+          ..add('originalAmount', originalAmount))
         .toString();
   }
 }
@@ -101901,6 +103128,11 @@ class GPriceCreateInputBuilder
   int? get amount => _$this._amount;
   set amount(int? amount) => _$this._amount = amount;
 
+  int? _originalAmount;
+  int? get originalAmount => _$this._originalAmount;
+  set originalAmount(int? originalAmount) =>
+      _$this._originalAmount = originalAmount;
+
   GPriceCreateInputBuilder();
 
   GPriceCreateInputBuilder get _$this {
@@ -101910,6 +103142,7 @@ class GPriceCreateInputBuilder
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _category = $v.category?.toBuilder();
       _amount = $v.amount;
+      _originalAmount = $v.originalAmount;
       _$v = null;
     }
     return this;
@@ -101937,7 +103170,8 @@ class GPriceCreateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               category: _category?.build(),
-              amount: amount);
+              amount: amount,
+              originalAmount: originalAmount);
     } catch (_) {
       late String _$failedField;
       try {
@@ -121020,12 +122254,14 @@ class GUserProductReviewRelateToOneForCreateInputBuilder
 class _$GExpertReviewWhereUniqueInput extends GExpertReviewWhereUniqueInput {
   @override
   final String? id;
+  @override
+  final String? key;
 
   factory _$GExpertReviewWhereUniqueInput(
           [void Function(GExpertReviewWhereUniqueInputBuilder)? updates]) =>
       (new GExpertReviewWhereUniqueInputBuilder()..update(updates))._build();
 
-  _$GExpertReviewWhereUniqueInput._({this.id}) : super._();
+  _$GExpertReviewWhereUniqueInput._({this.id, this.key}) : super._();
 
   @override
   GExpertReviewWhereUniqueInput rebuild(
@@ -121039,13 +122275,16 @@ class _$GExpertReviewWhereUniqueInput extends GExpertReviewWhereUniqueInput {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GExpertReviewWhereUniqueInput && id == other.id;
+    return other is GExpertReviewWhereUniqueInput &&
+        id == other.id &&
+        key == other.key;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -121053,7 +122292,8 @@ class _$GExpertReviewWhereUniqueInput extends GExpertReviewWhereUniqueInput {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GExpertReviewWhereUniqueInput')
-          ..add('id', id))
+          ..add('id', id)
+          ..add('key', key))
         .toString();
   }
 }
@@ -121068,12 +122308,17 @@ class GExpertReviewWhereUniqueInputBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
+  String? _key;
+  String? get key => _$this._key;
+  set key(String? key) => _$this._key = key;
+
   GExpertReviewWhereUniqueInputBuilder();
 
   GExpertReviewWhereUniqueInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
+      _key = $v.key;
       _$v = null;
     }
     return this;
@@ -121094,7 +122339,8 @@ class GExpertReviewWhereUniqueInputBuilder
   GExpertReviewWhereUniqueInput build() => _build();
 
   _$GExpertReviewWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GExpertReviewWhereUniqueInput._(id: id);
+    final _$result =
+        _$v ?? new _$GExpertReviewWhereUniqueInput._(id: id, key: key);
     replace(_$result);
     return _$result;
   }
@@ -121116,6 +122362,8 @@ class _$GExpertReviewWhereInput extends GExpertReviewWhereInput {
   @override
   final GStringFilter? title;
   @override
+  final GStringFilter? key;
+  @override
   final GStringFilter? description;
   @override
   final GUserWhereInput? user;
@@ -121136,6 +122384,7 @@ class _$GExpertReviewWhereInput extends GExpertReviewWhereInput {
       this.createdAt,
       this.modifiedAt,
       this.title,
+      this.key,
       this.description,
       this.user,
       this.likes,
@@ -121162,6 +122411,7 @@ class _$GExpertReviewWhereInput extends GExpertReviewWhereInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         title == other.title &&
+        key == other.key &&
         description == other.description &&
         user == other.user &&
         likes == other.likes &&
@@ -121178,6 +122428,7 @@ class _$GExpertReviewWhereInput extends GExpertReviewWhereInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, likes.hashCode);
@@ -121196,6 +122447,7 @@ class _$GExpertReviewWhereInput extends GExpertReviewWhereInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('title', title)
+          ..add('key', key)
           ..add('description', description)
           ..add('user', user)
           ..add('likes', likes)
@@ -121245,6 +122497,10 @@ class GExpertReviewWhereInputBuilder
       _$this._title ??= new GStringFilterBuilder();
   set title(GStringFilterBuilder? title) => _$this._title = title;
 
+  GStringFilterBuilder? _key;
+  GStringFilterBuilder get key => _$this._key ??= new GStringFilterBuilder();
+  set key(GStringFilterBuilder? key) => _$this._key = key;
+
   GStringFilterBuilder? _description;
   GStringFilterBuilder get description =>
       _$this._description ??= new GStringFilterBuilder();
@@ -121278,6 +122534,7 @@ class GExpertReviewWhereInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _title = $v.title?.toBuilder();
+      _key = $v.key?.toBuilder();
       _description = $v.description?.toBuilder();
       _user = $v.user?.toBuilder();
       _likes = $v.likes?.toBuilder();
@@ -121313,6 +122570,7 @@ class GExpertReviewWhereInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               title: _title?.build(),
+              key: _key?.build(),
               description: _description?.build(),
               user: _user?.build(),
               likes: _likes?.build(),
@@ -121334,6 +122592,8 @@ class GExpertReviewWhereInputBuilder
         _modifiedAt?.build();
         _$failedField = 'title';
         _title?.build();
+        _$failedField = 'key';
+        _key?.build();
         _$failedField = 'description';
         _description?.build();
         _$failedField = 'user';
@@ -121363,6 +122623,8 @@ class _$GExpertReviewOrderByInput extends GExpertReviewOrderByInput {
   @override
   final GOrderDirection? title;
   @override
+  final GOrderDirection? key;
+  @override
   final GOrderDirection? description;
   @override
   final GOrderDirection? likes;
@@ -121378,6 +122640,7 @@ class _$GExpertReviewOrderByInput extends GExpertReviewOrderByInput {
       this.createdAt,
       this.modifiedAt,
       this.title,
+      this.key,
       this.description,
       this.likes,
       this.disabled})
@@ -121400,6 +122663,7 @@ class _$GExpertReviewOrderByInput extends GExpertReviewOrderByInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         title == other.title &&
+        key == other.key &&
         description == other.description &&
         likes == other.likes &&
         disabled == other.disabled;
@@ -121412,6 +122676,7 @@ class _$GExpertReviewOrderByInput extends GExpertReviewOrderByInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, likes.hashCode);
     _$hash = $jc(_$hash, disabled.hashCode);
@@ -121426,6 +122691,7 @@ class _$GExpertReviewOrderByInput extends GExpertReviewOrderByInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('title', title)
+          ..add('key', key)
           ..add('description', description)
           ..add('likes', likes)
           ..add('disabled', disabled))
@@ -121455,6 +122721,10 @@ class GExpertReviewOrderByInputBuilder
   GOrderDirection? get title => _$this._title;
   set title(GOrderDirection? title) => _$this._title = title;
 
+  GOrderDirection? _key;
+  GOrderDirection? get key => _$this._key;
+  set key(GOrderDirection? key) => _$this._key = key;
+
   GOrderDirection? _description;
   GOrderDirection? get description => _$this._description;
   set description(GOrderDirection? description) =>
@@ -121477,6 +122747,7 @@ class GExpertReviewOrderByInputBuilder
       _createdAt = $v.createdAt;
       _modifiedAt = $v.modifiedAt;
       _title = $v.title;
+      _key = $v.key;
       _description = $v.description;
       _likes = $v.likes;
       _disabled = $v.disabled;
@@ -121506,6 +122777,7 @@ class GExpertReviewOrderByInputBuilder
             createdAt: createdAt,
             modifiedAt: modifiedAt,
             title: title,
+            key: key,
             description: description,
             likes: likes,
             disabled: disabled);
@@ -121521,6 +122793,8 @@ class _$GExpertReviewUpdateInput extends GExpertReviewUpdateInput {
   final GDateTime? modifiedAt;
   @override
   final String? title;
+  @override
+  final String? key;
   @override
   final String? description;
   @override
@@ -121540,6 +122814,7 @@ class _$GExpertReviewUpdateInput extends GExpertReviewUpdateInput {
       {this.createdAt,
       this.modifiedAt,
       this.title,
+      this.key,
       this.description,
       this.banner,
       this.user,
@@ -121563,6 +122838,7 @@ class _$GExpertReviewUpdateInput extends GExpertReviewUpdateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         title == other.title &&
+        key == other.key &&
         description == other.description &&
         banner == other.banner &&
         user == other.user &&
@@ -121576,6 +122852,7 @@ class _$GExpertReviewUpdateInput extends GExpertReviewUpdateInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, banner.hashCode);
     _$hash = $jc(_$hash, user.hashCode);
@@ -121591,6 +122868,7 @@ class _$GExpertReviewUpdateInput extends GExpertReviewUpdateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('title', title)
+          ..add('key', key)
           ..add('description', description)
           ..add('banner', banner)
           ..add('user', user)
@@ -121619,6 +122897,10 @@ class GExpertReviewUpdateInputBuilder
   String? _title;
   String? get title => _$this._title;
   set title(String? title) => _$this._title = title;
+
+  String? _key;
+  String? get key => _$this._key;
+  set key(String? key) => _$this._key = key;
 
   String? _description;
   String? get description => _$this._description;
@@ -121650,6 +122932,7 @@ class GExpertReviewUpdateInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _title = $v.title;
+      _key = $v.key;
       _description = $v.description;
       _banner = $v.banner?.toBuilder();
       _user = $v.user?.toBuilder();
@@ -121682,6 +122965,7 @@ class GExpertReviewUpdateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               title: title,
+              key: key,
               description: description,
               banner: _banner?.build(),
               user: _user?.build(),
@@ -121837,6 +123121,8 @@ class _$GExpertReviewCreateInput extends GExpertReviewCreateInput {
   @override
   final String? title;
   @override
+  final String? key;
+  @override
   final String? description;
   @override
   final GImageFieldInput? banner;
@@ -121855,6 +123141,7 @@ class _$GExpertReviewCreateInput extends GExpertReviewCreateInput {
       {this.createdAt,
       this.modifiedAt,
       this.title,
+      this.key,
       this.description,
       this.banner,
       this.user,
@@ -121878,6 +123165,7 @@ class _$GExpertReviewCreateInput extends GExpertReviewCreateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         title == other.title &&
+        key == other.key &&
         description == other.description &&
         banner == other.banner &&
         user == other.user &&
@@ -121891,6 +123179,7 @@ class _$GExpertReviewCreateInput extends GExpertReviewCreateInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, banner.hashCode);
     _$hash = $jc(_$hash, user.hashCode);
@@ -121906,6 +123195,7 @@ class _$GExpertReviewCreateInput extends GExpertReviewCreateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('title', title)
+          ..add('key', key)
           ..add('description', description)
           ..add('banner', banner)
           ..add('user', user)
@@ -121934,6 +123224,10 @@ class GExpertReviewCreateInputBuilder
   String? _title;
   String? get title => _$this._title;
   set title(String? title) => _$this._title = title;
+
+  String? _key;
+  String? get key => _$this._key;
+  set key(String? key) => _$this._key = key;
 
   String? _description;
   String? get description => _$this._description;
@@ -121965,6 +123259,7 @@ class GExpertReviewCreateInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _title = $v.title;
+      _key = $v.key;
       _description = $v.description;
       _banner = $v.banner?.toBuilder();
       _user = $v.user?.toBuilder();
@@ -121997,6 +123292,7 @@ class GExpertReviewCreateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               title: title,
+              key: key,
               description: description,
               banner: _banner?.build(),
               user: _user?.build(),
@@ -131143,12 +132439,14 @@ class GTagCreateInputBuilder
 class _$GNewsItemWhereUniqueInput extends GNewsItemWhereUniqueInput {
   @override
   final String? id;
+  @override
+  final String? key;
 
   factory _$GNewsItemWhereUniqueInput(
           [void Function(GNewsItemWhereUniqueInputBuilder)? updates]) =>
       (new GNewsItemWhereUniqueInputBuilder()..update(updates))._build();
 
-  _$GNewsItemWhereUniqueInput._({this.id}) : super._();
+  _$GNewsItemWhereUniqueInput._({this.id, this.key}) : super._();
 
   @override
   GNewsItemWhereUniqueInput rebuild(
@@ -131162,13 +132460,16 @@ class _$GNewsItemWhereUniqueInput extends GNewsItemWhereUniqueInput {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GNewsItemWhereUniqueInput && id == other.id;
+    return other is GNewsItemWhereUniqueInput &&
+        id == other.id &&
+        key == other.key;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -131176,7 +132477,8 @@ class _$GNewsItemWhereUniqueInput extends GNewsItemWhereUniqueInput {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GNewsItemWhereUniqueInput')
-          ..add('id', id))
+          ..add('id', id)
+          ..add('key', key))
         .toString();
   }
 }
@@ -131190,12 +132492,17 @@ class GNewsItemWhereUniqueInputBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
+  String? _key;
+  String? get key => _$this._key;
+  set key(String? key) => _$this._key = key;
+
   GNewsItemWhereUniqueInputBuilder();
 
   GNewsItemWhereUniqueInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
+      _key = $v.key;
       _$v = null;
     }
     return this;
@@ -131216,7 +132523,7 @@ class GNewsItemWhereUniqueInputBuilder
   GNewsItemWhereUniqueInput build() => _build();
 
   _$GNewsItemWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GNewsItemWhereUniqueInput._(id: id);
+    final _$result = _$v ?? new _$GNewsItemWhereUniqueInput._(id: id, key: key);
     replace(_$result);
     return _$result;
   }
@@ -131237,6 +132544,8 @@ class _$GNewsItemWhereInput extends GNewsItemWhereInput {
   final GDateTimeNullableFilter? modifiedAt;
   @override
   final GStringFilter? title;
+  @override
+  final GStringFilter? key;
   @override
   final GStringFilter? description;
   @override
@@ -131264,6 +132573,7 @@ class _$GNewsItemWhereInput extends GNewsItemWhereInput {
       this.createdAt,
       this.modifiedAt,
       this.title,
+      this.key,
       this.description,
       this.authorName,
       this.categories,
@@ -131293,6 +132603,7 @@ class _$GNewsItemWhereInput extends GNewsItemWhereInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         title == other.title &&
+        key == other.key &&
         description == other.description &&
         authorName == other.authorName &&
         categories == other.categories &&
@@ -131312,6 +132623,7 @@ class _$GNewsItemWhereInput extends GNewsItemWhereInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, authorName.hashCode);
     _$hash = $jc(_$hash, categories.hashCode);
@@ -131333,6 +132645,7 @@ class _$GNewsItemWhereInput extends GNewsItemWhereInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('title', title)
+          ..add('key', key)
           ..add('description', description)
           ..add('authorName', authorName)
           ..add('categories', categories)
@@ -131383,6 +132696,10 @@ class GNewsItemWhereInputBuilder
   GStringFilterBuilder get title =>
       _$this._title ??= new GStringFilterBuilder();
   set title(GStringFilterBuilder? title) => _$this._title = title;
+
+  GStringFilterBuilder? _key;
+  GStringFilterBuilder get key => _$this._key ??= new GStringFilterBuilder();
+  set key(GStringFilterBuilder? key) => _$this._key = key;
 
   GStringFilterBuilder? _description;
   GStringFilterBuilder get description =>
@@ -131439,6 +132756,7 @@ class GNewsItemWhereInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _title = $v.title?.toBuilder();
+      _key = $v.key?.toBuilder();
       _description = $v.description?.toBuilder();
       _authorName = $v.authorName?.toBuilder();
       _categories = $v.categories?.toBuilder();
@@ -131477,6 +132795,7 @@ class GNewsItemWhereInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               title: _title?.build(),
+              key: _key?.build(),
               description: _description?.build(),
               authorName: _authorName?.build(),
               categories: _categories?.build(),
@@ -131501,6 +132820,8 @@ class GNewsItemWhereInputBuilder
         _modifiedAt?.build();
         _$failedField = 'title';
         _title?.build();
+        _$failedField = 'key';
+        _key?.build();
         _$failedField = 'description';
         _description?.build();
         _$failedField = 'authorName';
@@ -131926,6 +133247,8 @@ class _$GNewsItemOrderByInput extends GNewsItemOrderByInput {
   @override
   final GOrderDirection? title;
   @override
+  final GOrderDirection? key;
+  @override
   final GOrderDirection? description;
   @override
   final GOrderDirection? authorName;
@@ -131941,6 +133264,7 @@ class _$GNewsItemOrderByInput extends GNewsItemOrderByInput {
       this.createdAt,
       this.modifiedAt,
       this.title,
+      this.key,
       this.description,
       this.authorName,
       this.disabled})
@@ -131963,6 +133287,7 @@ class _$GNewsItemOrderByInput extends GNewsItemOrderByInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         title == other.title &&
+        key == other.key &&
         description == other.description &&
         authorName == other.authorName &&
         disabled == other.disabled;
@@ -131975,6 +133300,7 @@ class _$GNewsItemOrderByInput extends GNewsItemOrderByInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, authorName.hashCode);
     _$hash = $jc(_$hash, disabled.hashCode);
@@ -131989,6 +133315,7 @@ class _$GNewsItemOrderByInput extends GNewsItemOrderByInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('title', title)
+          ..add('key', key)
           ..add('description', description)
           ..add('authorName', authorName)
           ..add('disabled', disabled))
@@ -132017,6 +133344,10 @@ class GNewsItemOrderByInputBuilder
   GOrderDirection? get title => _$this._title;
   set title(GOrderDirection? title) => _$this._title = title;
 
+  GOrderDirection? _key;
+  GOrderDirection? get key => _$this._key;
+  set key(GOrderDirection? key) => _$this._key = key;
+
   GOrderDirection? _description;
   GOrderDirection? get description => _$this._description;
   set description(GOrderDirection? description) =>
@@ -132040,6 +133371,7 @@ class GNewsItemOrderByInputBuilder
       _createdAt = $v.createdAt;
       _modifiedAt = $v.modifiedAt;
       _title = $v.title;
+      _key = $v.key;
       _description = $v.description;
       _authorName = $v.authorName;
       _disabled = $v.disabled;
@@ -132069,6 +133401,7 @@ class GNewsItemOrderByInputBuilder
             createdAt: createdAt,
             modifiedAt: modifiedAt,
             title: title,
+            key: key,
             description: description,
             authorName: authorName,
             disabled: disabled);
@@ -132084,6 +133417,8 @@ class _$GNewsItemUpdateInput extends GNewsItemUpdateInput {
   final GDateTime? modifiedAt;
   @override
   final String? title;
+  @override
+  final String? key;
   @override
   final String? description;
   @override
@@ -132107,6 +133442,7 @@ class _$GNewsItemUpdateInput extends GNewsItemUpdateInput {
       {this.createdAt,
       this.modifiedAt,
       this.title,
+      this.key,
       this.description,
       this.authorName,
       this.categories,
@@ -132132,6 +133468,7 @@ class _$GNewsItemUpdateInput extends GNewsItemUpdateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         title == other.title &&
+        key == other.key &&
         description == other.description &&
         authorName == other.authorName &&
         categories == other.categories &&
@@ -132147,6 +133484,7 @@ class _$GNewsItemUpdateInput extends GNewsItemUpdateInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, authorName.hashCode);
     _$hash = $jc(_$hash, categories.hashCode);
@@ -132164,6 +133502,7 @@ class _$GNewsItemUpdateInput extends GNewsItemUpdateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('title', title)
+          ..add('key', key)
           ..add('description', description)
           ..add('authorName', authorName)
           ..add('categories', categories)
@@ -132193,6 +133532,10 @@ class GNewsItemUpdateInputBuilder
   String? _title;
   String? get title => _$this._title;
   set title(String? title) => _$this._title = title;
+
+  String? _key;
+  String? get key => _$this._key;
+  set key(String? key) => _$this._key = key;
 
   String? _description;
   String? get description => _$this._description;
@@ -132241,6 +133584,7 @@ class GNewsItemUpdateInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _title = $v.title;
+      _key = $v.key;
       _description = $v.description;
       _authorName = $v.authorName;
       _categories = $v.categories?.toBuilder();
@@ -132275,6 +133619,7 @@ class GNewsItemUpdateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               title: title,
+              key: key,
               description: description,
               authorName: authorName,
               categories: _categories?.build(),
@@ -133032,6 +134377,8 @@ class _$GNewsItemCreateInput extends GNewsItemCreateInput {
   @override
   final String? title;
   @override
+  final String? key;
+  @override
   final String? description;
   @override
   final String? authorName;
@@ -133054,6 +134401,7 @@ class _$GNewsItemCreateInput extends GNewsItemCreateInput {
       {this.createdAt,
       this.modifiedAt,
       this.title,
+      this.key,
       this.description,
       this.authorName,
       this.categories,
@@ -133079,6 +134427,7 @@ class _$GNewsItemCreateInput extends GNewsItemCreateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         title == other.title &&
+        key == other.key &&
         description == other.description &&
         authorName == other.authorName &&
         categories == other.categories &&
@@ -133094,6 +134443,7 @@ class _$GNewsItemCreateInput extends GNewsItemCreateInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, authorName.hashCode);
     _$hash = $jc(_$hash, categories.hashCode);
@@ -133111,6 +134461,7 @@ class _$GNewsItemCreateInput extends GNewsItemCreateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('title', title)
+          ..add('key', key)
           ..add('description', description)
           ..add('authorName', authorName)
           ..add('categories', categories)
@@ -133140,6 +134491,10 @@ class GNewsItemCreateInputBuilder
   String? _title;
   String? get title => _$this._title;
   set title(String? title) => _$this._title = title;
+
+  String? _key;
+  String? get key => _$this._key;
+  set key(String? key) => _$this._key = key;
 
   String? _description;
   String? get description => _$this._description;
@@ -133188,6 +134543,7 @@ class GNewsItemCreateInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _title = $v.title;
+      _key = $v.key;
       _description = $v.description;
       _authorName = $v.authorName;
       _categories = $v.categories?.toBuilder();
@@ -133222,6 +134578,7 @@ class GNewsItemCreateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               title: title,
+              key: key,
               description: description,
               authorName: authorName,
               categories: _categories?.build(),
@@ -136475,6 +137832,8 @@ class _$GCouponWhereInput extends GCouponWhereInput {
   @override
   final GStringFilter? code;
   @override
+  final GBooleanFilter? publiclyVisible;
+  @override
   final GStringFilter? description;
   @override
   final GDateTimeNullableFilter? startFrom;
@@ -136501,6 +137860,7 @@ class _$GCouponWhereInput extends GCouponWhereInput {
       this.createdAt,
       this.modifiedAt,
       this.code,
+      this.publiclyVisible,
       this.description,
       this.startFrom,
       this.expireBy,
@@ -136529,6 +137889,7 @@ class _$GCouponWhereInput extends GCouponWhereInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         code == other.code &&
+        publiclyVisible == other.publiclyVisible &&
         description == other.description &&
         startFrom == other.startFrom &&
         expireBy == other.expireBy &&
@@ -136548,6 +137909,7 @@ class _$GCouponWhereInput extends GCouponWhereInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, code.hashCode);
+    _$hash = $jc(_$hash, publiclyVisible.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, startFrom.hashCode);
     _$hash = $jc(_$hash, expireBy.hashCode);
@@ -136569,6 +137931,7 @@ class _$GCouponWhereInput extends GCouponWhereInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('code', code)
+          ..add('publiclyVisible', publiclyVisible)
           ..add('description', description)
           ..add('startFrom', startFrom)
           ..add('expireBy', expireBy)
@@ -136618,6 +137981,12 @@ class GCouponWhereInputBuilder
   GStringFilterBuilder? _code;
   GStringFilterBuilder get code => _$this._code ??= new GStringFilterBuilder();
   set code(GStringFilterBuilder? code) => _$this._code = code;
+
+  GBooleanFilterBuilder? _publiclyVisible;
+  GBooleanFilterBuilder get publiclyVisible =>
+      _$this._publiclyVisible ??= new GBooleanFilterBuilder();
+  set publiclyVisible(GBooleanFilterBuilder? publiclyVisible) =>
+      _$this._publiclyVisible = publiclyVisible;
 
   GStringFilterBuilder? _description;
   GStringFilterBuilder get description =>
@@ -136673,6 +138042,7 @@ class GCouponWhereInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _code = $v.code?.toBuilder();
+      _publiclyVisible = $v.publiclyVisible?.toBuilder();
       _description = $v.description?.toBuilder();
       _startFrom = $v.startFrom?.toBuilder();
       _expireBy = $v.expireBy?.toBuilder();
@@ -136711,6 +138081,7 @@ class GCouponWhereInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               code: _code?.build(),
+              publiclyVisible: _publiclyVisible?.build(),
               description: _description?.build(),
               startFrom: _startFrom?.build(),
               expireBy: _expireBy?.build(),
@@ -136735,6 +138106,8 @@ class GCouponWhereInputBuilder
         _modifiedAt?.build();
         _$failedField = 'code';
         _code?.build();
+        _$failedField = 'publiclyVisible';
+        _publiclyVisible?.build();
         _$failedField = 'description';
         _description?.build();
         _$failedField = 'startFrom';
@@ -137026,6 +138399,8 @@ class _$GCouponOrderByInput extends GCouponOrderByInput {
   @override
   final GOrderDirection? code;
   @override
+  final GOrderDirection? publiclyVisible;
+  @override
   final GOrderDirection? description;
   @override
   final GOrderDirection? startFrom;
@@ -137045,6 +138420,7 @@ class _$GCouponOrderByInput extends GCouponOrderByInput {
       this.createdAt,
       this.modifiedAt,
       this.code,
+      this.publiclyVisible,
       this.description,
       this.startFrom,
       this.expireBy,
@@ -137069,6 +138445,7 @@ class _$GCouponOrderByInput extends GCouponOrderByInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         code == other.code &&
+        publiclyVisible == other.publiclyVisible &&
         description == other.description &&
         startFrom == other.startFrom &&
         expireBy == other.expireBy &&
@@ -137083,6 +138460,7 @@ class _$GCouponOrderByInput extends GCouponOrderByInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, code.hashCode);
+    _$hash = $jc(_$hash, publiclyVisible.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, startFrom.hashCode);
     _$hash = $jc(_$hash, expireBy.hashCode);
@@ -137099,6 +138477,7 @@ class _$GCouponOrderByInput extends GCouponOrderByInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('code', code)
+          ..add('publiclyVisible', publiclyVisible)
           ..add('description', description)
           ..add('startFrom', startFrom)
           ..add('expireBy', expireBy)
@@ -137128,6 +138507,11 @@ class GCouponOrderByInputBuilder
   GOrderDirection? _code;
   GOrderDirection? get code => _$this._code;
   set code(GOrderDirection? code) => _$this._code = code;
+
+  GOrderDirection? _publiclyVisible;
+  GOrderDirection? get publiclyVisible => _$this._publiclyVisible;
+  set publiclyVisible(GOrderDirection? publiclyVisible) =>
+      _$this._publiclyVisible = publiclyVisible;
 
   GOrderDirection? _description;
   GOrderDirection? get description => _$this._description;
@@ -137161,6 +138545,7 @@ class GCouponOrderByInputBuilder
       _createdAt = $v.createdAt;
       _modifiedAt = $v.modifiedAt;
       _code = $v.code;
+      _publiclyVisible = $v.publiclyVisible;
       _description = $v.description;
       _startFrom = $v.startFrom;
       _expireBy = $v.expireBy;
@@ -137192,6 +138577,7 @@ class GCouponOrderByInputBuilder
             createdAt: createdAt,
             modifiedAt: modifiedAt,
             code: code,
+            publiclyVisible: publiclyVisible,
             description: description,
             startFrom: startFrom,
             expireBy: expireBy,
@@ -137209,6 +138595,8 @@ class _$GCouponUpdateInput extends GCouponUpdateInput {
   final GDateTime? modifiedAt;
   @override
   final String? code;
+  @override
+  final bool? publiclyVisible;
   @override
   final String? description;
   @override
@@ -137234,6 +138622,7 @@ class _$GCouponUpdateInput extends GCouponUpdateInput {
       {this.createdAt,
       this.modifiedAt,
       this.code,
+      this.publiclyVisible,
       this.description,
       this.logic,
       this.startFrom,
@@ -137260,6 +138649,7 @@ class _$GCouponUpdateInput extends GCouponUpdateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         code == other.code &&
+        publiclyVisible == other.publiclyVisible &&
         description == other.description &&
         logic == other.logic &&
         startFrom == other.startFrom &&
@@ -137276,6 +138666,7 @@ class _$GCouponUpdateInput extends GCouponUpdateInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, code.hashCode);
+    _$hash = $jc(_$hash, publiclyVisible.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, logic.hashCode);
     _$hash = $jc(_$hash, startFrom.hashCode);
@@ -137294,6 +138685,7 @@ class _$GCouponUpdateInput extends GCouponUpdateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('code', code)
+          ..add('publiclyVisible', publiclyVisible)
           ..add('description', description)
           ..add('logic', logic)
           ..add('startFrom', startFrom)
@@ -137324,6 +138716,11 @@ class GCouponUpdateInputBuilder
   String? _code;
   String? get code => _$this._code;
   set code(String? code) => _$this._code = code;
+
+  bool? _publiclyVisible;
+  bool? get publiclyVisible => _$this._publiclyVisible;
+  set publiclyVisible(bool? publiclyVisible) =>
+      _$this._publiclyVisible = publiclyVisible;
 
   String? _description;
   String? get description => _$this._description;
@@ -137372,6 +138769,7 @@ class GCouponUpdateInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _code = $v.code;
+      _publiclyVisible = $v.publiclyVisible;
       _description = $v.description;
       _logic = $v.logic;
       _startFrom = $v.startFrom?.toBuilder();
@@ -137407,6 +138805,7 @@ class GCouponUpdateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               code: code,
+              publiclyVisible: publiclyVisible,
               description: description,
               logic: logic,
               startFrom: _startFrom?.build(),
@@ -137865,6 +139264,8 @@ class _$GCouponCreateInput extends GCouponCreateInput {
   @override
   final String? code;
   @override
+  final bool? publiclyVisible;
+  @override
   final String? description;
   @override
   final _i4.JsonObject? logic;
@@ -137889,6 +139290,7 @@ class _$GCouponCreateInput extends GCouponCreateInput {
       {this.createdAt,
       this.modifiedAt,
       this.code,
+      this.publiclyVisible,
       this.description,
       this.logic,
       this.startFrom,
@@ -137915,6 +139317,7 @@ class _$GCouponCreateInput extends GCouponCreateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         code == other.code &&
+        publiclyVisible == other.publiclyVisible &&
         description == other.description &&
         logic == other.logic &&
         startFrom == other.startFrom &&
@@ -137931,6 +139334,7 @@ class _$GCouponCreateInput extends GCouponCreateInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, code.hashCode);
+    _$hash = $jc(_$hash, publiclyVisible.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, logic.hashCode);
     _$hash = $jc(_$hash, startFrom.hashCode);
@@ -137949,6 +139353,7 @@ class _$GCouponCreateInput extends GCouponCreateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('code', code)
+          ..add('publiclyVisible', publiclyVisible)
           ..add('description', description)
           ..add('logic', logic)
           ..add('startFrom', startFrom)
@@ -137979,6 +139384,11 @@ class GCouponCreateInputBuilder
   String? _code;
   String? get code => _$this._code;
   set code(String? code) => _$this._code = code;
+
+  bool? _publiclyVisible;
+  bool? get publiclyVisible => _$this._publiclyVisible;
+  set publiclyVisible(bool? publiclyVisible) =>
+      _$this._publiclyVisible = publiclyVisible;
 
   String? _description;
   String? get description => _$this._description;
@@ -138027,6 +139437,7 @@ class GCouponCreateInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _code = $v.code;
+      _publiclyVisible = $v.publiclyVisible;
       _description = $v.description;
       _logic = $v.logic;
       _startFrom = $v.startFrom?.toBuilder();
@@ -138062,6 +139473,7 @@ class GCouponCreateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               code: code,
+              publiclyVisible: publiclyVisible,
               description: description,
               logic: logic,
               startFrom: _startFrom?.build(),
@@ -148541,12 +149953,14 @@ class _$GProductVariantWhereUniqueInput
     extends GProductVariantWhereUniqueInput {
   @override
   final String? id;
+  @override
+  final String? key;
 
   factory _$GProductVariantWhereUniqueInput(
           [void Function(GProductVariantWhereUniqueInputBuilder)? updates]) =>
       (new GProductVariantWhereUniqueInputBuilder()..update(updates))._build();
 
-  _$GProductVariantWhereUniqueInput._({this.id}) : super._();
+  _$GProductVariantWhereUniqueInput._({this.id, this.key}) : super._();
 
   @override
   GProductVariantWhereUniqueInput rebuild(
@@ -148560,13 +149974,16 @@ class _$GProductVariantWhereUniqueInput
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GProductVariantWhereUniqueInput && id == other.id;
+    return other is GProductVariantWhereUniqueInput &&
+        id == other.id &&
+        key == other.key;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -148574,7 +149991,8 @@ class _$GProductVariantWhereUniqueInput
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GProductVariantWhereUniqueInput')
-          ..add('id', id))
+          ..add('id', id)
+          ..add('key', key))
         .toString();
   }
 }
@@ -148589,12 +150007,17 @@ class GProductVariantWhereUniqueInputBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
+  String? _key;
+  String? get key => _$this._key;
+  set key(String? key) => _$this._key = key;
+
   GProductVariantWhereUniqueInputBuilder();
 
   GProductVariantWhereUniqueInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
+      _key = $v.key;
       _$v = null;
     }
     return this;
@@ -148615,7 +150038,8 @@ class GProductVariantWhereUniqueInputBuilder
   GProductVariantWhereUniqueInput build() => _build();
 
   _$GProductVariantWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GProductVariantWhereUniqueInput._(id: id);
+    final _$result =
+        _$v ?? new _$GProductVariantWhereUniqueInput._(id: id, key: key);
     replace(_$result);
     return _$result;
   }
@@ -148637,6 +150061,8 @@ class _$GProductVariantWhereInput extends GProductVariantWhereInput {
   @override
   final GStringFilter? name;
   @override
+  final GStringFilter? key;
+  @override
   final GProductWhereInput? product;
   @override
   final GIntNullableFilter? index;
@@ -148657,6 +150083,8 @@ class _$GProductVariantWhereInput extends GProductVariantWhereInput {
   @override
   final GProductReelManyRelationFilter? reels;
   @override
+  final GStringFilter? gtin;
+  @override
   final GBooleanFilter? disabled;
 
   factory _$GProductVariantWhereInput(
@@ -148671,6 +150099,7 @@ class _$GProductVariantWhereInput extends GProductVariantWhereInput {
       this.createdAt,
       this.modifiedAt,
       this.name,
+      this.key,
       this.product,
       this.index,
       this.Gdefault,
@@ -148681,6 +150110,7 @@ class _$GProductVariantWhereInput extends GProductVariantWhereInput {
       this.videos,
       this.gallery,
       this.reels,
+      this.gtin,
       this.disabled})
       : super._();
 
@@ -148704,6 +150134,7 @@ class _$GProductVariantWhereInput extends GProductVariantWhereInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
+        key == other.key &&
         product == other.product &&
         index == other.index &&
         Gdefault == other.Gdefault &&
@@ -148714,6 +150145,7 @@ class _$GProductVariantWhereInput extends GProductVariantWhereInput {
         videos == other.videos &&
         gallery == other.gallery &&
         reels == other.reels &&
+        gtin == other.gtin &&
         disabled == other.disabled;
   }
 
@@ -148727,6 +150159,7 @@ class _$GProductVariantWhereInput extends GProductVariantWhereInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, product.hashCode);
     _$hash = $jc(_$hash, index.hashCode);
     _$hash = $jc(_$hash, Gdefault.hashCode);
@@ -148737,6 +150170,7 @@ class _$GProductVariantWhereInput extends GProductVariantWhereInput {
     _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jc(_$hash, reels.hashCode);
+    _$hash = $jc(_$hash, gtin.hashCode);
     _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -148752,6 +150186,7 @@ class _$GProductVariantWhereInput extends GProductVariantWhereInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
+          ..add('key', key)
           ..add('product', product)
           ..add('index', index)
           ..add('Gdefault', Gdefault)
@@ -148762,6 +150197,7 @@ class _$GProductVariantWhereInput extends GProductVariantWhereInput {
           ..add('videos', videos)
           ..add('gallery', gallery)
           ..add('reels', reels)
+          ..add('gtin', gtin)
           ..add('disabled', disabled))
         .toString();
   }
@@ -148806,6 +150242,10 @@ class GProductVariantWhereInputBuilder
   GStringFilterBuilder? _name;
   GStringFilterBuilder get name => _$this._name ??= new GStringFilterBuilder();
   set name(GStringFilterBuilder? name) => _$this._name = name;
+
+  GStringFilterBuilder? _key;
+  GStringFilterBuilder get key => _$this._key ??= new GStringFilterBuilder();
+  set key(GStringFilterBuilder? key) => _$this._key = key;
 
   GProductWhereInputBuilder? _product;
   GProductWhereInputBuilder get product =>
@@ -148865,6 +150305,10 @@ class GProductVariantWhereInputBuilder
   set reels(GProductReelManyRelationFilterBuilder? reels) =>
       _$this._reels = reels;
 
+  GStringFilterBuilder? _gtin;
+  GStringFilterBuilder get gtin => _$this._gtin ??= new GStringFilterBuilder();
+  set gtin(GStringFilterBuilder? gtin) => _$this._gtin = gtin;
+
   GBooleanFilterBuilder? _disabled;
   GBooleanFilterBuilder get disabled =>
       _$this._disabled ??= new GBooleanFilterBuilder();
@@ -148882,6 +150326,7 @@ class GProductVariantWhereInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _name = $v.name?.toBuilder();
+      _key = $v.key?.toBuilder();
       _product = $v.product?.toBuilder();
       _index = $v.index?.toBuilder();
       _Gdefault = $v.Gdefault?.toBuilder();
@@ -148892,6 +150337,7 @@ class GProductVariantWhereInputBuilder
       _videos = $v.videos?.toBuilder();
       _gallery = $v.gallery?.toBuilder();
       _reels = $v.reels?.toBuilder();
+      _gtin = $v.gtin?.toBuilder();
       _disabled = $v.disabled?.toBuilder();
       _$v = null;
     }
@@ -148924,6 +150370,7 @@ class GProductVariantWhereInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               name: _name?.build(),
+              key: _key?.build(),
               product: _product?.build(),
               index: _index?.build(),
               Gdefault: _Gdefault?.build(),
@@ -148934,6 +150381,7 @@ class GProductVariantWhereInputBuilder
               videos: _videos?.build(),
               gallery: _gallery?.build(),
               reels: _reels?.build(),
+              gtin: _gtin?.build(),
               disabled: _disabled?.build());
     } catch (_) {
       late String _$failedField;
@@ -148952,6 +150400,8 @@ class GProductVariantWhereInputBuilder
         _modifiedAt?.build();
         _$failedField = 'name';
         _name?.build();
+        _$failedField = 'key';
+        _key?.build();
         _$failedField = 'product';
         _product?.build();
         _$failedField = 'index';
@@ -148972,6 +150422,8 @@ class GProductVariantWhereInputBuilder
         _gallery?.build();
         _$failedField = 'reels';
         _reels?.build();
+        _$failedField = 'gtin';
+        _gtin?.build();
         _$failedField = 'disabled';
         _disabled?.build();
       } catch (e) {
@@ -149522,9 +150974,13 @@ class _$GProductVariantOrderByInput extends GProductVariantOrderByInput {
   @override
   final GOrderDirection? name;
   @override
+  final GOrderDirection? key;
+  @override
   final GOrderDirection? index;
   @override
   final GOrderDirection? Gdefault;
+  @override
+  final GOrderDirection? gtin;
   @override
   final GOrderDirection? disabled;
 
@@ -149537,8 +150993,10 @@ class _$GProductVariantOrderByInput extends GProductVariantOrderByInput {
       this.createdAt,
       this.modifiedAt,
       this.name,
+      this.key,
       this.index,
       this.Gdefault,
+      this.gtin,
       this.disabled})
       : super._();
 
@@ -149559,8 +151017,10 @@ class _$GProductVariantOrderByInput extends GProductVariantOrderByInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
+        key == other.key &&
         index == other.index &&
         Gdefault == other.Gdefault &&
+        gtin == other.gtin &&
         disabled == other.disabled;
   }
 
@@ -149571,8 +151031,10 @@ class _$GProductVariantOrderByInput extends GProductVariantOrderByInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, index.hashCode);
     _$hash = $jc(_$hash, Gdefault.hashCode);
+    _$hash = $jc(_$hash, gtin.hashCode);
     _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -149585,8 +151047,10 @@ class _$GProductVariantOrderByInput extends GProductVariantOrderByInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
+          ..add('key', key)
           ..add('index', index)
           ..add('Gdefault', Gdefault)
+          ..add('gtin', gtin)
           ..add('disabled', disabled))
         .toString();
   }
@@ -149615,6 +151079,10 @@ class GProductVariantOrderByInputBuilder
   GOrderDirection? get name => _$this._name;
   set name(GOrderDirection? name) => _$this._name = name;
 
+  GOrderDirection? _key;
+  GOrderDirection? get key => _$this._key;
+  set key(GOrderDirection? key) => _$this._key = key;
+
   GOrderDirection? _index;
   GOrderDirection? get index => _$this._index;
   set index(GOrderDirection? index) => _$this._index = index;
@@ -149622,6 +151090,10 @@ class GProductVariantOrderByInputBuilder
   GOrderDirection? _Gdefault;
   GOrderDirection? get Gdefault => _$this._Gdefault;
   set Gdefault(GOrderDirection? Gdefault) => _$this._Gdefault = Gdefault;
+
+  GOrderDirection? _gtin;
+  GOrderDirection? get gtin => _$this._gtin;
+  set gtin(GOrderDirection? gtin) => _$this._gtin = gtin;
 
   GOrderDirection? _disabled;
   GOrderDirection? get disabled => _$this._disabled;
@@ -149636,8 +151108,10 @@ class GProductVariantOrderByInputBuilder
       _createdAt = $v.createdAt;
       _modifiedAt = $v.modifiedAt;
       _name = $v.name;
+      _key = $v.key;
       _index = $v.index;
       _Gdefault = $v.Gdefault;
+      _gtin = $v.gtin;
       _disabled = $v.disabled;
       _$v = null;
     }
@@ -149665,8 +151139,10 @@ class GProductVariantOrderByInputBuilder
             createdAt: createdAt,
             modifiedAt: modifiedAt,
             name: name,
+            key: key,
             index: index,
             Gdefault: Gdefault,
+            gtin: gtin,
             disabled: disabled);
     replace(_$result);
     return _$result;
@@ -149680,6 +151156,8 @@ class _$GProductVariantUpdateInput extends GProductVariantUpdateInput {
   final GDateTime? modifiedAt;
   @override
   final String? name;
+  @override
+  final String? key;
   @override
   final GProductRelateToOneForUpdateInput? product;
   @override
@@ -149701,6 +151179,8 @@ class _$GProductVariantUpdateInput extends GProductVariantUpdateInput {
   @override
   final GProductReelRelateToManyForUpdateInput? reels;
   @override
+  final String? gtin;
+  @override
   final bool? disabled;
 
   factory _$GProductVariantUpdateInput(
@@ -149711,6 +151191,7 @@ class _$GProductVariantUpdateInput extends GProductVariantUpdateInput {
       {this.createdAt,
       this.modifiedAt,
       this.name,
+      this.key,
       this.product,
       this.index,
       this.Gdefault,
@@ -149721,6 +151202,7 @@ class _$GProductVariantUpdateInput extends GProductVariantUpdateInput {
       this.videos,
       this.gallery,
       this.reels,
+      this.gtin,
       this.disabled})
       : super._();
 
@@ -149740,6 +151222,7 @@ class _$GProductVariantUpdateInput extends GProductVariantUpdateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
+        key == other.key &&
         product == other.product &&
         index == other.index &&
         Gdefault == other.Gdefault &&
@@ -149750,6 +151233,7 @@ class _$GProductVariantUpdateInput extends GProductVariantUpdateInput {
         videos == other.videos &&
         gallery == other.gallery &&
         reels == other.reels &&
+        gtin == other.gtin &&
         disabled == other.disabled;
   }
 
@@ -149759,6 +151243,7 @@ class _$GProductVariantUpdateInput extends GProductVariantUpdateInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, product.hashCode);
     _$hash = $jc(_$hash, index.hashCode);
     _$hash = $jc(_$hash, Gdefault.hashCode);
@@ -149769,6 +151254,7 @@ class _$GProductVariantUpdateInput extends GProductVariantUpdateInput {
     _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jc(_$hash, reels.hashCode);
+    _$hash = $jc(_$hash, gtin.hashCode);
     _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -149780,6 +151266,7 @@ class _$GProductVariantUpdateInput extends GProductVariantUpdateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
+          ..add('key', key)
           ..add('product', product)
           ..add('index', index)
           ..add('Gdefault', Gdefault)
@@ -149790,6 +151277,7 @@ class _$GProductVariantUpdateInput extends GProductVariantUpdateInput {
           ..add('videos', videos)
           ..add('gallery', gallery)
           ..add('reels', reels)
+          ..add('gtin', gtin)
           ..add('disabled', disabled))
         .toString();
   }
@@ -149814,6 +151302,10 @@ class GProductVariantUpdateInputBuilder
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  String? _key;
+  String? get key => _$this._key;
+  set key(String? key) => _$this._key = key;
 
   GProductRelateToOneForUpdateInputBuilder? _product;
   GProductRelateToOneForUpdateInputBuilder get product =>
@@ -149874,6 +151366,10 @@ class GProductVariantUpdateInputBuilder
   set reels(GProductReelRelateToManyForUpdateInputBuilder? reels) =>
       _$this._reels = reels;
 
+  String? _gtin;
+  String? get gtin => _$this._gtin;
+  set gtin(String? gtin) => _$this._gtin = gtin;
+
   bool? _disabled;
   bool? get disabled => _$this._disabled;
   set disabled(bool? disabled) => _$this._disabled = disabled;
@@ -149886,6 +151382,7 @@ class GProductVariantUpdateInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _name = $v.name;
+      _key = $v.key;
       _product = $v.product?.toBuilder();
       _index = $v.index;
       _Gdefault = $v.Gdefault;
@@ -149896,6 +151393,7 @@ class GProductVariantUpdateInputBuilder
       _videos = $v.videos?.toBuilder();
       _gallery = $v.gallery?.toBuilder();
       _reels = $v.reels?.toBuilder();
+      _gtin = $v.gtin;
       _disabled = $v.disabled;
       _$v = null;
     }
@@ -149924,6 +151422,7 @@ class GProductVariantUpdateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               name: name,
+              key: key,
               product: _product?.build(),
               index: index,
               Gdefault: Gdefault,
@@ -149934,6 +151433,7 @@ class GProductVariantUpdateInputBuilder
               videos: _videos?.build(),
               gallery: _gallery?.build(),
               reels: _reels?.build(),
+              gtin: gtin,
               disabled: disabled);
     } catch (_) {
       late String _$failedField;
@@ -150724,6 +152224,8 @@ class _$GProductVariantCreateInput extends GProductVariantCreateInput {
   @override
   final String? name;
   @override
+  final String? key;
+  @override
   final GProductRelateToOneForCreateInput? product;
   @override
   final int? index;
@@ -150744,6 +152246,8 @@ class _$GProductVariantCreateInput extends GProductVariantCreateInput {
   @override
   final GProductReelRelateToManyForCreateInput? reels;
   @override
+  final String? gtin;
+  @override
   final bool? disabled;
 
   factory _$GProductVariantCreateInput(
@@ -150754,6 +152258,7 @@ class _$GProductVariantCreateInput extends GProductVariantCreateInput {
       {this.createdAt,
       this.modifiedAt,
       this.name,
+      this.key,
       this.product,
       this.index,
       this.Gdefault,
@@ -150764,6 +152269,7 @@ class _$GProductVariantCreateInput extends GProductVariantCreateInput {
       this.videos,
       this.gallery,
       this.reels,
+      this.gtin,
       this.disabled})
       : super._();
 
@@ -150783,6 +152289,7 @@ class _$GProductVariantCreateInput extends GProductVariantCreateInput {
         createdAt == other.createdAt &&
         modifiedAt == other.modifiedAt &&
         name == other.name &&
+        key == other.key &&
         product == other.product &&
         index == other.index &&
         Gdefault == other.Gdefault &&
@@ -150793,6 +152300,7 @@ class _$GProductVariantCreateInput extends GProductVariantCreateInput {
         videos == other.videos &&
         gallery == other.gallery &&
         reels == other.reels &&
+        gtin == other.gtin &&
         disabled == other.disabled;
   }
 
@@ -150802,6 +152310,7 @@ class _$GProductVariantCreateInput extends GProductVariantCreateInput {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, modifiedAt.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, key.hashCode);
     _$hash = $jc(_$hash, product.hashCode);
     _$hash = $jc(_$hash, index.hashCode);
     _$hash = $jc(_$hash, Gdefault.hashCode);
@@ -150812,6 +152321,7 @@ class _$GProductVariantCreateInput extends GProductVariantCreateInput {
     _$hash = $jc(_$hash, videos.hashCode);
     _$hash = $jc(_$hash, gallery.hashCode);
     _$hash = $jc(_$hash, reels.hashCode);
+    _$hash = $jc(_$hash, gtin.hashCode);
     _$hash = $jc(_$hash, disabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -150823,6 +152333,7 @@ class _$GProductVariantCreateInput extends GProductVariantCreateInput {
           ..add('createdAt', createdAt)
           ..add('modifiedAt', modifiedAt)
           ..add('name', name)
+          ..add('key', key)
           ..add('product', product)
           ..add('index', index)
           ..add('Gdefault', Gdefault)
@@ -150833,6 +152344,7 @@ class _$GProductVariantCreateInput extends GProductVariantCreateInput {
           ..add('videos', videos)
           ..add('gallery', gallery)
           ..add('reels', reels)
+          ..add('gtin', gtin)
           ..add('disabled', disabled))
         .toString();
   }
@@ -150857,6 +152369,10 @@ class GProductVariantCreateInputBuilder
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  String? _key;
+  String? get key => _$this._key;
+  set key(String? key) => _$this._key = key;
 
   GProductRelateToOneForCreateInputBuilder? _product;
   GProductRelateToOneForCreateInputBuilder get product =>
@@ -150917,6 +152433,10 @@ class GProductVariantCreateInputBuilder
   set reels(GProductReelRelateToManyForCreateInputBuilder? reels) =>
       _$this._reels = reels;
 
+  String? _gtin;
+  String? get gtin => _$this._gtin;
+  set gtin(String? gtin) => _$this._gtin = gtin;
+
   bool? _disabled;
   bool? get disabled => _$this._disabled;
   set disabled(bool? disabled) => _$this._disabled = disabled;
@@ -150929,6 +152449,7 @@ class GProductVariantCreateInputBuilder
       _createdAt = $v.createdAt?.toBuilder();
       _modifiedAt = $v.modifiedAt?.toBuilder();
       _name = $v.name;
+      _key = $v.key;
       _product = $v.product?.toBuilder();
       _index = $v.index;
       _Gdefault = $v.Gdefault;
@@ -150939,6 +152460,7 @@ class GProductVariantCreateInputBuilder
       _videos = $v.videos?.toBuilder();
       _gallery = $v.gallery?.toBuilder();
       _reels = $v.reels?.toBuilder();
+      _gtin = $v.gtin;
       _disabled = $v.disabled;
       _$v = null;
     }
@@ -150967,6 +152489,7 @@ class GProductVariantCreateInputBuilder
               createdAt: _createdAt?.build(),
               modifiedAt: _modifiedAt?.build(),
               name: name,
+              key: key,
               product: _product?.build(),
               index: index,
               Gdefault: Gdefault,
@@ -150977,6 +152500,7 @@ class GProductVariantCreateInputBuilder
               videos: _videos?.build(),
               gallery: _gallery?.build(),
               reels: _reels?.build(),
+              gtin: gtin,
               disabled: disabled);
     } catch (_) {
       late String _$failedField;
@@ -162090,6 +163614,852 @@ class GContactUsCreateInputBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GContactUsCreateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GNotifyUserWhereUniqueInput extends GNotifyUserWhereUniqueInput {
+  @override
+  final String? id;
+
+  factory _$GNotifyUserWhereUniqueInput(
+          [void Function(GNotifyUserWhereUniqueInputBuilder)? updates]) =>
+      (new GNotifyUserWhereUniqueInputBuilder()..update(updates))._build();
+
+  _$GNotifyUserWhereUniqueInput._({this.id}) : super._();
+
+  @override
+  GNotifyUserWhereUniqueInput rebuild(
+          void Function(GNotifyUserWhereUniqueInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GNotifyUserWhereUniqueInputBuilder toBuilder() =>
+      new GNotifyUserWhereUniqueInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GNotifyUserWhereUniqueInput && id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GNotifyUserWhereUniqueInput')
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GNotifyUserWhereUniqueInputBuilder
+    implements
+        Builder<GNotifyUserWhereUniqueInput,
+            GNotifyUserWhereUniqueInputBuilder> {
+  _$GNotifyUserWhereUniqueInput? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  GNotifyUserWhereUniqueInputBuilder();
+
+  GNotifyUserWhereUniqueInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GNotifyUserWhereUniqueInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GNotifyUserWhereUniqueInput;
+  }
+
+  @override
+  void update(void Function(GNotifyUserWhereUniqueInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GNotifyUserWhereUniqueInput build() => _build();
+
+  _$GNotifyUserWhereUniqueInput _build() {
+    final _$result = _$v ?? new _$GNotifyUserWhereUniqueInput._(id: id);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GNotifyUserWhereInput extends GNotifyUserWhereInput {
+  @override
+  final BuiltList<GNotifyUserWhereInput>? AND;
+  @override
+  final BuiltList<GNotifyUserWhereInput>? OR;
+  @override
+  final BuiltList<GNotifyUserWhereInput>? NOT;
+  @override
+  final GIDFilter? id;
+  @override
+  final GDateTimeNullableFilter? createdAt;
+  @override
+  final GDateTimeNullableFilter? modifiedAt;
+  @override
+  final GUserWhereInput? user;
+  @override
+  final GProductWhereInput? product;
+  @override
+  final GVehicleWhereInput? vehicle;
+
+  factory _$GNotifyUserWhereInput(
+          [void Function(GNotifyUserWhereInputBuilder)? updates]) =>
+      (new GNotifyUserWhereInputBuilder()..update(updates))._build();
+
+  _$GNotifyUserWhereInput._(
+      {this.AND,
+      this.OR,
+      this.NOT,
+      this.id,
+      this.createdAt,
+      this.modifiedAt,
+      this.user,
+      this.product,
+      this.vehicle})
+      : super._();
+
+  @override
+  GNotifyUserWhereInput rebuild(
+          void Function(GNotifyUserWhereInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GNotifyUserWhereInputBuilder toBuilder() =>
+      new GNotifyUserWhereInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GNotifyUserWhereInput &&
+        AND == other.AND &&
+        OR == other.OR &&
+        NOT == other.NOT &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        user == other.user &&
+        product == other.product &&
+        vehicle == other.vehicle;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, AND.hashCode);
+    _$hash = $jc(_$hash, OR.hashCode);
+    _$hash = $jc(_$hash, NOT.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, user.hashCode);
+    _$hash = $jc(_$hash, product.hashCode);
+    _$hash = $jc(_$hash, vehicle.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GNotifyUserWhereInput')
+          ..add('AND', AND)
+          ..add('OR', OR)
+          ..add('NOT', NOT)
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('user', user)
+          ..add('product', product)
+          ..add('vehicle', vehicle))
+        .toString();
+  }
+}
+
+class GNotifyUserWhereInputBuilder
+    implements Builder<GNotifyUserWhereInput, GNotifyUserWhereInputBuilder> {
+  _$GNotifyUserWhereInput? _$v;
+
+  ListBuilder<GNotifyUserWhereInput>? _AND;
+  ListBuilder<GNotifyUserWhereInput> get AND =>
+      _$this._AND ??= new ListBuilder<GNotifyUserWhereInput>();
+  set AND(ListBuilder<GNotifyUserWhereInput>? AND) => _$this._AND = AND;
+
+  ListBuilder<GNotifyUserWhereInput>? _OR;
+  ListBuilder<GNotifyUserWhereInput> get OR =>
+      _$this._OR ??= new ListBuilder<GNotifyUserWhereInput>();
+  set OR(ListBuilder<GNotifyUserWhereInput>? OR) => _$this._OR = OR;
+
+  ListBuilder<GNotifyUserWhereInput>? _NOT;
+  ListBuilder<GNotifyUserWhereInput> get NOT =>
+      _$this._NOT ??= new ListBuilder<GNotifyUserWhereInput>();
+  set NOT(ListBuilder<GNotifyUserWhereInput>? NOT) => _$this._NOT = NOT;
+
+  GIDFilterBuilder? _id;
+  GIDFilterBuilder get id => _$this._id ??= new GIDFilterBuilder();
+  set id(GIDFilterBuilder? id) => _$this._id = id;
+
+  GDateTimeNullableFilterBuilder? _createdAt;
+  GDateTimeNullableFilterBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeNullableFilterBuilder();
+  set createdAt(GDateTimeNullableFilterBuilder? createdAt) =>
+      _$this._createdAt = createdAt;
+
+  GDateTimeNullableFilterBuilder? _modifiedAt;
+  GDateTimeNullableFilterBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeNullableFilterBuilder();
+  set modifiedAt(GDateTimeNullableFilterBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GUserWhereInputBuilder? _user;
+  GUserWhereInputBuilder get user =>
+      _$this._user ??= new GUserWhereInputBuilder();
+  set user(GUserWhereInputBuilder? user) => _$this._user = user;
+
+  GProductWhereInputBuilder? _product;
+  GProductWhereInputBuilder get product =>
+      _$this._product ??= new GProductWhereInputBuilder();
+  set product(GProductWhereInputBuilder? product) => _$this._product = product;
+
+  GVehicleWhereInputBuilder? _vehicle;
+  GVehicleWhereInputBuilder get vehicle =>
+      _$this._vehicle ??= new GVehicleWhereInputBuilder();
+  set vehicle(GVehicleWhereInputBuilder? vehicle) => _$this._vehicle = vehicle;
+
+  GNotifyUserWhereInputBuilder();
+
+  GNotifyUserWhereInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _AND = $v.AND?.toBuilder();
+      _OR = $v.OR?.toBuilder();
+      _NOT = $v.NOT?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _user = $v.user?.toBuilder();
+      _product = $v.product?.toBuilder();
+      _vehicle = $v.vehicle?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GNotifyUserWhereInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GNotifyUserWhereInput;
+  }
+
+  @override
+  void update(void Function(GNotifyUserWhereInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GNotifyUserWhereInput build() => _build();
+
+  _$GNotifyUserWhereInput _build() {
+    _$GNotifyUserWhereInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GNotifyUserWhereInput._(
+              AND: _AND?.build(),
+              OR: _OR?.build(),
+              NOT: _NOT?.build(),
+              id: _id?.build(),
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              user: _user?.build(),
+              product: _product?.build(),
+              vehicle: _vehicle?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'AND';
+        _AND?.build();
+        _$failedField = 'OR';
+        _OR?.build();
+        _$failedField = 'NOT';
+        _NOT?.build();
+        _$failedField = 'id';
+        _id?.build();
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'user';
+        _user?.build();
+        _$failedField = 'product';
+        _product?.build();
+        _$failedField = 'vehicle';
+        _vehicle?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GNotifyUserWhereInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GNotifyUserOrderByInput extends GNotifyUserOrderByInput {
+  @override
+  final GOrderDirection? id;
+  @override
+  final GOrderDirection? createdAt;
+  @override
+  final GOrderDirection? modifiedAt;
+
+  factory _$GNotifyUserOrderByInput(
+          [void Function(GNotifyUserOrderByInputBuilder)? updates]) =>
+      (new GNotifyUserOrderByInputBuilder()..update(updates))._build();
+
+  _$GNotifyUserOrderByInput._({this.id, this.createdAt, this.modifiedAt})
+      : super._();
+
+  @override
+  GNotifyUserOrderByInput rebuild(
+          void Function(GNotifyUserOrderByInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GNotifyUserOrderByInputBuilder toBuilder() =>
+      new GNotifyUserOrderByInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GNotifyUserOrderByInput &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GNotifyUserOrderByInput')
+          ..add('id', id)
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt))
+        .toString();
+  }
+}
+
+class GNotifyUserOrderByInputBuilder
+    implements
+        Builder<GNotifyUserOrderByInput, GNotifyUserOrderByInputBuilder> {
+  _$GNotifyUserOrderByInput? _$v;
+
+  GOrderDirection? _id;
+  GOrderDirection? get id => _$this._id;
+  set id(GOrderDirection? id) => _$this._id = id;
+
+  GOrderDirection? _createdAt;
+  GOrderDirection? get createdAt => _$this._createdAt;
+  set createdAt(GOrderDirection? createdAt) => _$this._createdAt = createdAt;
+
+  GOrderDirection? _modifiedAt;
+  GOrderDirection? get modifiedAt => _$this._modifiedAt;
+  set modifiedAt(GOrderDirection? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GNotifyUserOrderByInputBuilder();
+
+  GNotifyUserOrderByInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _createdAt = $v.createdAt;
+      _modifiedAt = $v.modifiedAt;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GNotifyUserOrderByInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GNotifyUserOrderByInput;
+  }
+
+  @override
+  void update(void Function(GNotifyUserOrderByInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GNotifyUserOrderByInput build() => _build();
+
+  _$GNotifyUserOrderByInput _build() {
+    final _$result = _$v ??
+        new _$GNotifyUserOrderByInput._(
+            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GNotifyUserUpdateInput extends GNotifyUserUpdateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final GUserRelateToOneForUpdateInput? user;
+  @override
+  final GProductRelateToOneForUpdateInput? product;
+  @override
+  final GVehicleRelateToOneForUpdateInput? vehicle;
+
+  factory _$GNotifyUserUpdateInput(
+          [void Function(GNotifyUserUpdateInputBuilder)? updates]) =>
+      (new GNotifyUserUpdateInputBuilder()..update(updates))._build();
+
+  _$GNotifyUserUpdateInput._(
+      {this.createdAt, this.modifiedAt, this.user, this.product, this.vehicle})
+      : super._();
+
+  @override
+  GNotifyUserUpdateInput rebuild(
+          void Function(GNotifyUserUpdateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GNotifyUserUpdateInputBuilder toBuilder() =>
+      new GNotifyUserUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GNotifyUserUpdateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        user == other.user &&
+        product == other.product &&
+        vehicle == other.vehicle;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, user.hashCode);
+    _$hash = $jc(_$hash, product.hashCode);
+    _$hash = $jc(_$hash, vehicle.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GNotifyUserUpdateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('user', user)
+          ..add('product', product)
+          ..add('vehicle', vehicle))
+        .toString();
+  }
+}
+
+class GNotifyUserUpdateInputBuilder
+    implements Builder<GNotifyUserUpdateInput, GNotifyUserUpdateInputBuilder> {
+  _$GNotifyUserUpdateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GUserRelateToOneForUpdateInputBuilder? _user;
+  GUserRelateToOneForUpdateInputBuilder get user =>
+      _$this._user ??= new GUserRelateToOneForUpdateInputBuilder();
+  set user(GUserRelateToOneForUpdateInputBuilder? user) => _$this._user = user;
+
+  GProductRelateToOneForUpdateInputBuilder? _product;
+  GProductRelateToOneForUpdateInputBuilder get product =>
+      _$this._product ??= new GProductRelateToOneForUpdateInputBuilder();
+  set product(GProductRelateToOneForUpdateInputBuilder? product) =>
+      _$this._product = product;
+
+  GVehicleRelateToOneForUpdateInputBuilder? _vehicle;
+  GVehicleRelateToOneForUpdateInputBuilder get vehicle =>
+      _$this._vehicle ??= new GVehicleRelateToOneForUpdateInputBuilder();
+  set vehicle(GVehicleRelateToOneForUpdateInputBuilder? vehicle) =>
+      _$this._vehicle = vehicle;
+
+  GNotifyUserUpdateInputBuilder();
+
+  GNotifyUserUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _user = $v.user?.toBuilder();
+      _product = $v.product?.toBuilder();
+      _vehicle = $v.vehicle?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GNotifyUserUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GNotifyUserUpdateInput;
+  }
+
+  @override
+  void update(void Function(GNotifyUserUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GNotifyUserUpdateInput build() => _build();
+
+  _$GNotifyUserUpdateInput _build() {
+    _$GNotifyUserUpdateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GNotifyUserUpdateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              user: _user?.build(),
+              product: _product?.build(),
+              vehicle: _vehicle?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'user';
+        _user?.build();
+        _$failedField = 'product';
+        _product?.build();
+        _$failedField = 'vehicle';
+        _vehicle?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GNotifyUserUpdateInput', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GNotifyUserUpdateArgs extends GNotifyUserUpdateArgs {
+  @override
+  final GNotifyUserWhereUniqueInput where;
+  @override
+  final GNotifyUserUpdateInput data;
+
+  factory _$GNotifyUserUpdateArgs(
+          [void Function(GNotifyUserUpdateArgsBuilder)? updates]) =>
+      (new GNotifyUserUpdateArgsBuilder()..update(updates))._build();
+
+  _$GNotifyUserUpdateArgs._({required this.where, required this.data})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'GNotifyUserUpdateArgs', 'where');
+    BuiltValueNullFieldError.checkNotNull(
+        data, r'GNotifyUserUpdateArgs', 'data');
+  }
+
+  @override
+  GNotifyUserUpdateArgs rebuild(
+          void Function(GNotifyUserUpdateArgsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GNotifyUserUpdateArgsBuilder toBuilder() =>
+      new GNotifyUserUpdateArgsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GNotifyUserUpdateArgs &&
+        where == other.where &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, where.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GNotifyUserUpdateArgs')
+          ..add('where', where)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GNotifyUserUpdateArgsBuilder
+    implements Builder<GNotifyUserUpdateArgs, GNotifyUserUpdateArgsBuilder> {
+  _$GNotifyUserUpdateArgs? _$v;
+
+  GNotifyUserWhereUniqueInputBuilder? _where;
+  GNotifyUserWhereUniqueInputBuilder get where =>
+      _$this._where ??= new GNotifyUserWhereUniqueInputBuilder();
+  set where(GNotifyUserWhereUniqueInputBuilder? where) => _$this._where = where;
+
+  GNotifyUserUpdateInputBuilder? _data;
+  GNotifyUserUpdateInputBuilder get data =>
+      _$this._data ??= new GNotifyUserUpdateInputBuilder();
+  set data(GNotifyUserUpdateInputBuilder? data) => _$this._data = data;
+
+  GNotifyUserUpdateArgsBuilder();
+
+  GNotifyUserUpdateArgsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _where = $v.where.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GNotifyUserUpdateArgs other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GNotifyUserUpdateArgs;
+  }
+
+  @override
+  void update(void Function(GNotifyUserUpdateArgsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GNotifyUserUpdateArgs build() => _build();
+
+  _$GNotifyUserUpdateArgs _build() {
+    _$GNotifyUserUpdateArgs _$result;
+    try {
+      _$result = _$v ??
+          new _$GNotifyUserUpdateArgs._(
+              where: where.build(), data: data.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'where';
+        where.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GNotifyUserUpdateArgs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GNotifyUserCreateInput extends GNotifyUserCreateInput {
+  @override
+  final GDateTime? createdAt;
+  @override
+  final GDateTime? modifiedAt;
+  @override
+  final GUserRelateToOneForCreateInput? user;
+  @override
+  final GProductRelateToOneForCreateInput? product;
+  @override
+  final GVehicleRelateToOneForCreateInput? vehicle;
+
+  factory _$GNotifyUserCreateInput(
+          [void Function(GNotifyUserCreateInputBuilder)? updates]) =>
+      (new GNotifyUserCreateInputBuilder()..update(updates))._build();
+
+  _$GNotifyUserCreateInput._(
+      {this.createdAt, this.modifiedAt, this.user, this.product, this.vehicle})
+      : super._();
+
+  @override
+  GNotifyUserCreateInput rebuild(
+          void Function(GNotifyUserCreateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GNotifyUserCreateInputBuilder toBuilder() =>
+      new GNotifyUserCreateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GNotifyUserCreateInput &&
+        createdAt == other.createdAt &&
+        modifiedAt == other.modifiedAt &&
+        user == other.user &&
+        product == other.product &&
+        vehicle == other.vehicle;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, modifiedAt.hashCode);
+    _$hash = $jc(_$hash, user.hashCode);
+    _$hash = $jc(_$hash, product.hashCode);
+    _$hash = $jc(_$hash, vehicle.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GNotifyUserCreateInput')
+          ..add('createdAt', createdAt)
+          ..add('modifiedAt', modifiedAt)
+          ..add('user', user)
+          ..add('product', product)
+          ..add('vehicle', vehicle))
+        .toString();
+  }
+}
+
+class GNotifyUserCreateInputBuilder
+    implements Builder<GNotifyUserCreateInput, GNotifyUserCreateInputBuilder> {
+  _$GNotifyUserCreateInput? _$v;
+
+  GDateTimeBuilder? _createdAt;
+  GDateTimeBuilder get createdAt =>
+      _$this._createdAt ??= new GDateTimeBuilder();
+  set createdAt(GDateTimeBuilder? createdAt) => _$this._createdAt = createdAt;
+
+  GDateTimeBuilder? _modifiedAt;
+  GDateTimeBuilder get modifiedAt =>
+      _$this._modifiedAt ??= new GDateTimeBuilder();
+  set modifiedAt(GDateTimeBuilder? modifiedAt) =>
+      _$this._modifiedAt = modifiedAt;
+
+  GUserRelateToOneForCreateInputBuilder? _user;
+  GUserRelateToOneForCreateInputBuilder get user =>
+      _$this._user ??= new GUserRelateToOneForCreateInputBuilder();
+  set user(GUserRelateToOneForCreateInputBuilder? user) => _$this._user = user;
+
+  GProductRelateToOneForCreateInputBuilder? _product;
+  GProductRelateToOneForCreateInputBuilder get product =>
+      _$this._product ??= new GProductRelateToOneForCreateInputBuilder();
+  set product(GProductRelateToOneForCreateInputBuilder? product) =>
+      _$this._product = product;
+
+  GVehicleRelateToOneForCreateInputBuilder? _vehicle;
+  GVehicleRelateToOneForCreateInputBuilder get vehicle =>
+      _$this._vehicle ??= new GVehicleRelateToOneForCreateInputBuilder();
+  set vehicle(GVehicleRelateToOneForCreateInputBuilder? vehicle) =>
+      _$this._vehicle = vehicle;
+
+  GNotifyUserCreateInputBuilder();
+
+  GNotifyUserCreateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _createdAt = $v.createdAt?.toBuilder();
+      _modifiedAt = $v.modifiedAt?.toBuilder();
+      _user = $v.user?.toBuilder();
+      _product = $v.product?.toBuilder();
+      _vehicle = $v.vehicle?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GNotifyUserCreateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GNotifyUserCreateInput;
+  }
+
+  @override
+  void update(void Function(GNotifyUserCreateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GNotifyUserCreateInput build() => _build();
+
+  _$GNotifyUserCreateInput _build() {
+    _$GNotifyUserCreateInput _$result;
+    try {
+      _$result = _$v ??
+          new _$GNotifyUserCreateInput._(
+              createdAt: _createdAt?.build(),
+              modifiedAt: _modifiedAt?.build(),
+              user: _user?.build(),
+              product: _product?.build(),
+              vehicle: _vehicle?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'createdAt';
+        _createdAt?.build();
+        _$failedField = 'modifiedAt';
+        _modifiedAt?.build();
+        _$failedField = 'user';
+        _user?.build();
+        _$failedField = 'product';
+        _product?.build();
+        _$failedField = 'vehicle';
+        _vehicle?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GNotifyUserCreateInput', _$failedField, e.toString());
       }
       rethrow;
     }

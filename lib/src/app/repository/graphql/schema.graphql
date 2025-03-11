@@ -1,3 +1,4 @@
+
 type User {
   id: ID!
   createdAt: DateTime
@@ -433,6 +434,7 @@ type FirebaseDeviceToken {
 
 input FirebaseDeviceTokenWhereUniqueInput {
   id: ID
+  deviceToken: String
 }
 
 input FirebaseDeviceTokenWhereInput {
@@ -1373,6 +1375,7 @@ type VehicleColor {
   reels(where: VehicleReelWhereInput! = {}, orderBy: [VehicleReelOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleReel!]
   reelsCount(where: VehicleReelWhereInput! = {}): Int
   reelsView: JSON
+  googleImages: JSON
   disabled: Boolean
 }
 
@@ -1445,6 +1448,7 @@ input VehicleColorUpdateInput {
   videos: VehicleVideoRelateToManyForUpdateInput
   gallery: VehicleGalleryItemRelateToManyForUpdateInput
   reels: VehicleReelRelateToManyForUpdateInput
+  googleImages: JSON
   disabled: Boolean
 }
 
@@ -1499,6 +1503,7 @@ input VehicleColorCreateInput {
   videos: VehicleVideoRelateToManyForCreateInput
   gallery: VehicleGalleryItemRelateToManyForCreateInput
   reels: VehicleReelRelateToManyForCreateInput
+  googleImages: JSON
   disabled: Boolean
 }
 
@@ -2045,6 +2050,7 @@ type VehicleVariant {
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  key: String
   index: Int
   vehicle: Vehicle
   default: Boolean
@@ -2060,11 +2066,13 @@ type VehicleVariant {
   totalPrice: Int
   availableVehicleDealer(location: [Float!], vehicleColorId: ID, limit: Int, offset: Int): JSON
   availableTestDriveDealer(location: [Float!], vehicleColorId: ID, limit: Int, offset: Int): JSON
+  gtin: String
   disabled: Boolean
 }
 
 input VehicleVariantWhereUniqueInput {
   id: ID
+  key: String
 }
 
 input VehicleVariantWhereInput {
@@ -2075,6 +2083,7 @@ input VehicleVariantWhereInput {
   createdAt: DateTimeNullableFilter
   modifiedAt: DateTimeNullableFilter
   name: StringFilter
+  key: StringFilter
   index: IntNullableFilter
   vehicle: VehicleWhereInput
   default: BooleanFilter
@@ -2083,6 +2092,7 @@ input VehicleVariantWhereInput {
   tags: TagManyRelationFilter
   informative: BooleanFilter
   prices: PriceManyRelationFilter
+  gtin: StringFilter
   disabled: BooleanFilter
 }
 
@@ -2097,9 +2107,11 @@ input VehicleVariantOrderByInput {
   createdAt: OrderDirection
   modifiedAt: OrderDirection
   name: OrderDirection
+  key: OrderDirection
   index: OrderDirection
   default: OrderDirection
   informative: OrderDirection
+  gtin: OrderDirection
   disabled: OrderDirection
 }
 
@@ -2107,6 +2119,7 @@ input VehicleVariantUpdateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  key: String
   index: Int
   vehicle: VehicleRelateToOneForUpdateInput
   default: Boolean
@@ -2115,6 +2128,7 @@ input VehicleVariantUpdateInput {
   tags: TagRelateToManyForUpdateInput
   informative: Boolean
   prices: PriceRelateToManyForUpdateInput
+  gtin: String
   disabled: Boolean
 }
 
@@ -2134,6 +2148,7 @@ input VehicleVariantCreateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  key: String
   index: Int
   vehicle: VehicleRelateToOneForCreateInput
   default: Boolean
@@ -2142,6 +2157,7 @@ input VehicleVariantCreateInput {
   tags: TagRelateToManyForCreateInput
   informative: Boolean
   prices: PriceRelateToManyForCreateInput
+  gtin: String
   disabled: Boolean
 }
 
@@ -2308,6 +2324,7 @@ type Price {
   modifiedAt: DateTime
   category: PriceCategory
   amount: Int
+  originalAmount: Int
 }
 
 input PriceWhereUniqueInput {
@@ -2323,6 +2340,7 @@ input PriceWhereInput {
   modifiedAt: DateTimeNullableFilter
   category: PriceCategoryWhereInput
   amount: IntFilter
+  originalAmount: IntNullableFilter
 }
 
 input PriceOrderByInput {
@@ -2330,6 +2348,7 @@ input PriceOrderByInput {
   createdAt: OrderDirection
   modifiedAt: OrderDirection
   amount: OrderDirection
+  originalAmount: OrderDirection
 }
 
 input PriceUpdateInput {
@@ -2337,6 +2356,7 @@ input PriceUpdateInput {
   modifiedAt: DateTime
   category: PriceCategoryRelateToOneForUpdateInput
   amount: Int
+  originalAmount: Int
 }
 
 input PriceCategoryRelateToOneForUpdateInput {
@@ -2355,6 +2375,7 @@ input PriceCreateInput {
   modifiedAt: DateTime
   category: PriceCategoryRelateToOneForCreateInput
   amount: Int
+  originalAmount: Int
 }
 
 input PriceCategoryRelateToOneForCreateInput {
@@ -3477,6 +3498,7 @@ type ExpertReview {
   createdAt: DateTime
   modifiedAt: DateTime
   title: String
+  key: String
   description: String
   banner: ImageFieldOutput
   user: User
@@ -3486,6 +3508,7 @@ type ExpertReview {
 
 input ExpertReviewWhereUniqueInput {
   id: ID
+  key: String
 }
 
 input ExpertReviewWhereInput {
@@ -3496,6 +3519,7 @@ input ExpertReviewWhereInput {
   createdAt: DateTimeNullableFilter
   modifiedAt: DateTimeNullableFilter
   title: StringFilter
+  key: StringFilter
   description: StringFilter
   user: UserWhereInput
   likes: IntNullableFilter
@@ -3507,6 +3531,7 @@ input ExpertReviewOrderByInput {
   createdAt: OrderDirection
   modifiedAt: OrderDirection
   title: OrderDirection
+  key: OrderDirection
   description: OrderDirection
   likes: OrderDirection
   disabled: OrderDirection
@@ -3516,6 +3541,7 @@ input ExpertReviewUpdateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   title: String
+  key: String
   description: String
   banner: ImageFieldInput
   user: UserRelateToOneForUpdateInput
@@ -3532,6 +3558,7 @@ input ExpertReviewCreateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   title: String
+  key: String
   description: String
   banner: ImageFieldInput
   user: UserRelateToOneForCreateInput
@@ -4096,6 +4123,7 @@ type NewsItem {
   createdAt: DateTime
   modifiedAt: DateTime
   title: String
+  key: String
   description: String
   authorName: String
   categories(where: NewsCategoryWhereInput! = {}, orderBy: [NewsCategoryOrderByInput!]! = [], take: Int, skip: Int! = 0): [NewsCategory!]
@@ -4110,6 +4138,7 @@ type NewsItem {
 
 input NewsItemWhereUniqueInput {
   id: ID
+  key: String
 }
 
 input NewsItemWhereInput {
@@ -4120,6 +4149,7 @@ input NewsItemWhereInput {
   createdAt: DateTimeNullableFilter
   modifiedAt: DateTimeNullableFilter
   title: StringFilter
+  key: StringFilter
   description: StringFilter
   authorName: StringFilter
   categories: NewsCategoryManyRelationFilter
@@ -4152,6 +4182,7 @@ input NewsItemOrderByInput {
   createdAt: OrderDirection
   modifiedAt: OrderDirection
   title: OrderDirection
+  key: OrderDirection
   description: OrderDirection
   authorName: OrderDirection
   disabled: OrderDirection
@@ -4161,6 +4192,7 @@ input NewsItemUpdateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   title: String
+  key: String
   description: String
   authorName: String
   categories: NewsCategoryRelateToManyForUpdateInput
@@ -4206,6 +4238,7 @@ input NewsItemCreateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   title: String
+  key: String
   description: String
   authorName: String
   categories: NewsCategoryRelateToManyForCreateInput
@@ -4393,6 +4426,7 @@ type Coupon {
   createdAt: DateTime
   modifiedAt: DateTime
   code: String
+  publiclyVisible: Boolean
   description: String
   logic: JSON
   startFrom: DateTime
@@ -4418,6 +4452,7 @@ input CouponWhereInput {
   createdAt: DateTimeNullableFilter
   modifiedAt: DateTimeNullableFilter
   code: StringFilter
+  publiclyVisible: BooleanFilter
   description: StringFilter
   startFrom: DateTimeNullableFilter
   expireBy: DateTimeNullableFilter
@@ -4444,6 +4479,7 @@ input CouponOrderByInput {
   createdAt: OrderDirection
   modifiedAt: OrderDirection
   code: OrderDirection
+  publiclyVisible: OrderDirection
   description: OrderDirection
   startFrom: OrderDirection
   expireBy: OrderDirection
@@ -4455,6 +4491,7 @@ input CouponUpdateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   code: String
+  publiclyVisible: Boolean
   description: String
   logic: JSON
   startFrom: DateTime
@@ -4488,6 +4525,7 @@ input CouponCreateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   code: String
+  publiclyVisible: Boolean
   description: String
   logic: JSON
   startFrom: DateTime
@@ -5123,6 +5161,7 @@ type ProductVariant {
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  key: String
   product: Product
   index: Int
   default: Boolean
@@ -5144,11 +5183,13 @@ type ProductVariant {
   reelsView: JSON
   totalPrice: Int
   availableProductDealer(location: [Float!], limit: Int, offset: Int): JSON
+  gtin: String
   disabled: Boolean
 }
 
 input ProductVariantWhereUniqueInput {
   id: ID
+  key: String
 }
 
 input ProductVariantWhereInput {
@@ -5159,6 +5200,7 @@ input ProductVariantWhereInput {
   createdAt: DateTimeNullableFilter
   modifiedAt: DateTimeNullableFilter
   name: StringFilter
+  key: StringFilter
   product: ProductWhereInput
   index: IntNullableFilter
   default: BooleanFilter
@@ -5169,6 +5211,7 @@ input ProductVariantWhereInput {
   videos: ProductVideoManyRelationFilter
   gallery: ProductGalleryItemManyRelationFilter
   reels: ProductReelManyRelationFilter
+  gtin: StringFilter
   disabled: BooleanFilter
 }
 
@@ -5201,8 +5244,10 @@ input ProductVariantOrderByInput {
   createdAt: OrderDirection
   modifiedAt: OrderDirection
   name: OrderDirection
+  key: OrderDirection
   index: OrderDirection
   default: OrderDirection
+  gtin: OrderDirection
   disabled: OrderDirection
 }
 
@@ -5210,6 +5255,7 @@ input ProductVariantUpdateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  key: String
   product: ProductRelateToOneForUpdateInput
   index: Int
   default: Boolean
@@ -5220,6 +5266,7 @@ input ProductVariantUpdateInput {
   videos: ProductVideoRelateToManyForUpdateInput
   gallery: ProductGalleryItemRelateToManyForUpdateInput
   reels: ProductReelRelateToManyForUpdateInput
+  gtin: String
   disabled: Boolean
 }
 
@@ -5260,6 +5307,7 @@ input ProductVariantCreateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  key: String
   product: ProductRelateToOneForCreateInput
   index: Int
   default: Boolean
@@ -5270,6 +5318,7 @@ input ProductVariantCreateInput {
   videos: ProductVideoRelateToManyForCreateInput
   gallery: ProductGalleryItemRelateToManyForCreateInput
   reels: ProductReelRelateToManyForCreateInput
+  gtin: String
   disabled: Boolean
 }
 
@@ -5954,6 +6003,58 @@ input ContactUsCreateInput {
   contact: String
 }
 
+type NotifyUser {
+  id: ID!
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: User
+  product: Product
+  vehicle: Vehicle
+}
+
+input NotifyUserWhereUniqueInput {
+  id: ID
+}
+
+input NotifyUserWhereInput {
+  AND: [NotifyUserWhereInput!]
+  OR: [NotifyUserWhereInput!]
+  NOT: [NotifyUserWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  modifiedAt: DateTimeNullableFilter
+  user: UserWhereInput
+  product: ProductWhereInput
+  vehicle: VehicleWhereInput
+}
+
+input NotifyUserOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  modifiedAt: OrderDirection
+}
+
+input NotifyUserUpdateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForUpdateInput
+  product: ProductRelateToOneForUpdateInput
+  vehicle: VehicleRelateToOneForUpdateInput
+}
+
+input NotifyUserUpdateArgs {
+  where: NotifyUserWhereUniqueInput!
+  data: NotifyUserUpdateInput!
+}
+
+input NotifyUserCreateInput {
+  createdAt: DateTime
+  modifiedAt: DateTime
+  user: UserRelateToOneForCreateInput
+  product: ProductRelateToOneForCreateInput
+  vehicle: VehicleRelateToOneForCreateInput
+}
+
 """
 The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 """
@@ -6422,6 +6523,12 @@ type Mutation {
   updateContactuses(data: [ContactUsUpdateArgs!]!): [ContactUs]
   deleteContactUs(where: ContactUsWhereUniqueInput!): ContactUs
   deleteContactuses(where: [ContactUsWhereUniqueInput!]!): [ContactUs]
+  createNotifyUser(data: NotifyUserCreateInput!): NotifyUser
+  createNotifyUsers(data: [NotifyUserCreateInput!]!): [NotifyUser]
+  updateNotifyUser(where: NotifyUserWhereUniqueInput!, data: NotifyUserUpdateInput!): NotifyUser
+  updateNotifyUsers(data: [NotifyUserUpdateArgs!]!): [NotifyUser]
+  deleteNotifyUser(where: NotifyUserWhereUniqueInput!): NotifyUser
+  deleteNotifyUsers(where: [NotifyUserWhereUniqueInput!]!): [NotifyUser]
   endSession: Boolean!
   startTransaction(deviceId: String!, connectorId: Int, duration: Int, walletUsageLimit: Int): JSON
   stopTransaction(deviceId: String!, connectorId: Int): JSON
@@ -6433,12 +6540,21 @@ type Mutation {
   sendUserPasswordResetLink(phoneNumber: String!): String!
   redeemUserPasswordResetToken(phoneNumber: String!, token: String!, password: String!): RedeemUserPasswordResetTokenResult
   updateSearchRank(searchText: String!, user: ID!, type: UpdateSearchType!): JSON
+  sendFirebasePushNotification(message: JSON!): JSON
   sendDealerMOUApprovalOTP: JSON
   startOrder(addressId: ID!, items: [OrderItem!]!, payments: [PaymentItem!]!, couponCode: String): JSON
   verifyOrderPayment(razorpayPaymentId: String!, razorpayOrderId: String!, razorpaySignature: String): JSON
   addAmountToWallet(amount: Int!): JSON
   verifyWalletPayment(razorpayPaymentId: String!, razorpayOrderId: String!, razorpaySignature: String): JSON
+  generateDescription(type: type!, name: String!): String
+  getImages(search: String!, pages: Int, vehicleColorId: ID!): JSON
   submitReferralCode(code: String!): Boolean
+}
+
+enum type {
+  VEHICLE_DESCRIPTION
+  VEHICLE_LONG_DESCRIPTION
+  PRODUCT_DESCRIPTION
 }
 
 input OrderItem {
@@ -6730,6 +6846,9 @@ type Query {
   contactuses(where: ContactUsWhereInput! = {}, orderBy: [ContactUsOrderByInput!]! = [], take: Int, skip: Int! = 0): [ContactUs!]
   contactUs(where: ContactUsWhereUniqueInput!): ContactUs
   contactusesCount(where: ContactUsWhereInput! = {}): Int
+  notifyUsers(where: NotifyUserWhereInput! = {}, orderBy: [NotifyUserOrderByInput!]! = [], take: Int, skip: Int! = 0): [NotifyUser!]
+  notifyUser(where: NotifyUserWhereUniqueInput!): NotifyUser
+  notifyUsersCount(where: NotifyUserWhereInput! = {}): Int
   keystone: KeystoneMeta!
   getDeviceState(deviceId: String!): JSON
   getDeviceDetails(deviceId: String, location: [Float!], distance: Int, fullAddress: Boolean = false): JSON

@@ -53,6 +53,46 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
 
   bool isLoading = true;
 
+  void _showPopup() {
+    TextEditingController amountController = TextEditingController();
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Enter Original Amount'),
+          content: TextField(
+            controller: amountController,
+            keyboardType: TextInputType.number,
+            decoration: const InputDecoration(
+              hintText: 'Enter amount',
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text(
+                'Cancel',
+                style: TextStyle(color: AppTheme.red),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                String enteredAmount = amountController.text;
+                if (enteredAmount.isNotEmpty) {
+                  print('Entered Amount: $enteredAmount');
+                  Navigator.pop(context);
+                }
+              },
+              child: const Text('OK',
+                  style: TextStyle(color: AppTheme.primaryColor)),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
@@ -146,12 +186,13 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                       ),
                       MultiDropdown<String>(
                         /*  onOptionRemoved: (index, option) {
-                    selectedGuarantees.remove(option);
-                    setState(() {});
-                  }, */
+                                          selectedGuarantees.remove(option);
+                                          setState(() {});
+                                        }, */
                         /* borderColor: ,
-                  borderRadius: 4,
-                  selectedOptions: selectedGuarantees, */
+                                        borderRadius: 4,
+                                        selectedOptions: selectedGuarantees, */
+
                         dropdownDecoration: const DropdownDecoration(),
                         fieldDecoration: FieldDecoration(
                           border: OutlineInputBorder(
@@ -168,6 +209,12 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                           });
                         },
                         items: guarantees,
+                      ),
+                      const SizedBox(
+                          width: 8), // Spacing between dropdown and icon
+                      IconButton(
+                        icon: const Icon(Icons.add, color: Colors.blue),
+                        onPressed: _showPopup,
                       ),
                       SizedBox(
                         height: 10.h,
