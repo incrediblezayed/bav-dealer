@@ -53,7 +53,7 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
 
   bool isLoading = true;
 
-  void _showPopup() {
+  void _showPopup(int index) {
     TextEditingController amountController = TextEditingController();
 
     showDialog(
@@ -78,9 +78,9 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
             ),
             TextButton(
               onPressed: () {
-                String enteredAmount = amountController.text;
-                if (enteredAmount.isNotEmpty) {
-                  print('Entered Amount: $enteredAmount');
+                String originalAmount = amountController.text;
+                if (originalAmount.isNotEmpty) {
+                  print('Entered Amount: $originalAmount');
                   Navigator.pop(context);
                 }
               },
@@ -115,6 +115,12 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                       (element) => element.category?.name == e.name,
                     )
                     ?.amount ??
+                0,
+            originalAmount: widget.prices
+                    .firstWhereOrNull(
+                      (element) => element.category?.name == e.name,
+                    )
+                    ?.originalAmount ??
                 0,
             type: e.type,
             name: e.name,
@@ -212,10 +218,7 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                       ),
                       const SizedBox(
                           width: 8), // Spacing between dropdown and icon
-                      IconButton(
-                        icon: const Icon(Icons.add, color: Colors.blue),
-                        onPressed: _showPopup,
-                      ),
+
                       SizedBox(
                         height: 10.h,
                       ),
@@ -234,6 +237,12 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                               inputFormatters: [
                                 FilteringTextInputFormatter.digitsOnly,
                               ],
+                              suffixIcon: IconButton(
+                                icon: const Icon(Icons.add),
+                                onPressed: () {
+                                  _showPopup(i);
+                                },
+                              ),
                             ),
                             SizedBox(
                               height: 10.h,

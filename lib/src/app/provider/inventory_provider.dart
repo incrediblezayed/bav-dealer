@@ -200,6 +200,7 @@ class InventoryProvider extends ChangeNotifier {
               type: e.id,
               name: e.name!,
               priceId: '',
+              originalAmount: 0,
             ),
           )
           .toList();

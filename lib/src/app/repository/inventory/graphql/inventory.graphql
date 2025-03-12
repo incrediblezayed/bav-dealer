@@ -11,6 +11,7 @@ query ProductVariants(
     availableProductDealer(location: $location)
     prices {
       amount
+      originalAmount
       category {
         name
         description
@@ -108,6 +109,7 @@ query ProductVariant(
     availableProductDealer(location: $location)
     prices {
       amount
+      originalAmount
       category {
         name
         description
@@ -208,6 +210,7 @@ query VehicleVariants(
   vehicleVariants(where: $where, orderBy: $orderBy, skip: $skip, take: $take) {
     prices {
       amount
+      originalAmount
       category {
         name
         description
@@ -296,6 +299,7 @@ query VehicleDealers(
     prices {
       id
       amount
+      originalAmount
       category {
         id
         name
@@ -360,6 +364,7 @@ mutation UpdateVehicleDealer(
     prices {
       id
       amount
+      originalAmount
       category {
         id
         name
@@ -487,6 +492,7 @@ query ProductDealers(
     prices {
       id
       amount
+      originalAmount
       category {
         id
         name
@@ -531,6 +537,7 @@ mutation UpdateProductDealer(
     totalPrice
     prices {
       amount
+      originalAmount
       id
       category {
         id

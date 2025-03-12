@@ -21,6 +21,7 @@ query ProductOrders($where: ProductOrderWhereInput!, $orderBy: [ProductOrderOrde
       id
       prices {
         amount
+        originalAmount
         category {
           name
           id
@@ -86,6 +87,7 @@ query VehicleOrders(
       id
       prices {
         amount
+        originalAmount
         createdAt
         id
         category {

@@ -159,9 +159,11 @@ class Category {
 class Price {
   final String id;
   final int amount;
+  final int originalAmount;
   final Category? category;
 
   Price({
+    required this.originalAmount,
     required this.id,
     required this.amount,
     required this.category,
@@ -170,11 +172,13 @@ class Price {
   Price copyWith({
     String? id,
     int? amount,
+    int? originalAmount,
     Category? category,
   }) =>
       Price(
         id: id ?? this.id,
         amount: amount ?? this.amount,
+        originalAmount: originalAmount ?? this.originalAmount,
         category: category ?? this.category,
       );
 
@@ -185,6 +189,7 @@ class Price {
   factory Price.fromJson(Map<String, dynamic> json) => Price(
         id: json['id'],
         amount: json['amount'],
+        originalAmount: json['originalAmount'],
         category: json['category'] == null
             ? null
             : Category.fromJson(json['category']),

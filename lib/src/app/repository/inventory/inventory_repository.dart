@@ -180,7 +180,7 @@ class InventoryRepository {
 
       if (response.linkException != null ||
           (response.graphqlErrors?.isNotEmpty ?? false)) {
-         throw Exception('Something went wrong while getting list of vehicles');
+        throw Exception('Something went wrong while getting list of vehicles');
       } else {
         if (response.data?.vehicleVariants == null) {
           return (0, null);
@@ -833,15 +833,17 @@ class InventoryRepository {
 }
 
 class PriceModel {
+   int price;
+  final int originalAmount;
+  final String type;
+  final String name;
+  final String priceId;
+
   PriceModel({
     required this.price,
+    required this.originalAmount,
     required this.type,
     required this.name,
     required this.priceId,
   });
-
-  int price;
-  final String type;
-  final String name;
-  final String priceId;
 }
