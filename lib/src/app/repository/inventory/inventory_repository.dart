@@ -438,6 +438,7 @@ class InventoryRepository {
                     (e) => GPriceCreateInput(
                       (b) => b
                         ..amount = e.price
+                        ..originalAmount = e.originalAmount
                         ..category.connect.id = e.type,
                     ),
                   ),
@@ -479,7 +480,8 @@ class InventoryRepository {
                       (e) => GPriceUpdateArgs(
                         (b) => b
                           ..where.id = e.priceId
-                          ..data.amount = e.price,
+                          ..data.amount = e.price
+                          ..data.originalAmount = e.originalAmount,
                       ),
                     )
                     .toList(),
@@ -510,6 +512,7 @@ class InventoryRepository {
                   (e) => GPriceCreateInput(
                     (b) => b
                       ..amount = e.price
+                      ..originalAmount = e.originalAmount
                       ..category.connect.id = e.type,
                   ),
                 ),
@@ -562,6 +565,7 @@ class InventoryRepository {
                     (e) => GPriceCreateInput(
                       (b) => b
                         ..amount = e.price
+                        ..originalAmount = e.originalAmount
                         ..category.connect.id = e.type,
                     ),
                   ),
@@ -603,7 +607,8 @@ class InventoryRepository {
                       (e) => GPriceUpdateArgs(
                         (b) => b
                           ..where.id = e.priceId
-                          ..data.amount = e.price,
+                          ..data.amount = e.price
+                          ..data.originalAmount = e.originalAmount,
                       ),
                     )
                     .toList(),
@@ -634,6 +639,7 @@ class InventoryRepository {
                   (e) => GPriceCreateInput(
                     (b) => b
                       ..amount = e.price
+                      ..originalAmount = e.originalAmount
                       ..category.connect.id = e.type,
                   ),
                 ),
@@ -833,8 +839,8 @@ class InventoryRepository {
 }
 
 class PriceModel {
-   int price;
-  final int originalAmount;
+  int price;
+  int originalAmount;
   final String type;
   final String name;
   final String priceId;

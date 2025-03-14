@@ -54,8 +54,8 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
   bool isLoading = true;
 
   void _showPopup(int index) {
-    TextEditingController amountController = TextEditingController();
-
+    TextEditingController amountController =
+        TextEditingController(text: prices[index].originalAmount.toString());
     showDialog(
       context: context,
       builder: (context) {
@@ -79,8 +79,9 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
             TextButton(
               onPressed: () {
                 String originalAmount = amountController.text;
-                if (originalAmount.isNotEmpty) {
-                  print('Entered Amount: $originalAmount');
+                if (originalAmount.isNotEmpty &&
+                    int.tryParse(originalAmount) != null) {
+                  prices[index].originalAmount = int.parse(originalAmount);
                   Navigator.pop(context);
                 }
               },
@@ -121,7 +122,7 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                       (element) => element.category?.name == e.name,
                     )
                     ?.originalAmount ??
-                0,
+                -1,
             type: e.type,
             name: e.name,
             priceId: priceId,
