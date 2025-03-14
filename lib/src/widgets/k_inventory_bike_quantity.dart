@@ -238,12 +238,15 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                               inputFormatters: [
                                 FilteringTextInputFormatter.digitsOnly,
                               ],
-                              suffixIcon: IconButton(
-                                icon: const Icon(Icons.add),
-                                onPressed: () {
-                                  _showPopup(i);
-                                },
-                              ),
+                              suffixIcon: prices[i].originalAmount == -1 ||
+                                      prices[i].originalAmount == 0
+                                  ? IconButton(
+                                      icon: const Icon(Icons.add),
+                                      onPressed: () {
+                                        _showPopup(i);
+                                      },
+                                    )
+                                  : Text(prices[i].originalAmount.toPrice()),
                             ),
                             SizedBox(
                               height: 10.h,
