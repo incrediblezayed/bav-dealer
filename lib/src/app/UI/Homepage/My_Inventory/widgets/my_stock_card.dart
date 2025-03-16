@@ -246,7 +246,10 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                         ),
                       ),
                       label: const Text('Quantity'),
-                      icon: const Icon(Icons.edit),
+                      icon: const Icon(
+                        Icons.edit,
+                        color: Colors.white,
+                      ),
                       onPressed: () {
                         setState(() {
                           isEdit = true;
@@ -388,7 +391,10 @@ class _MyStockCardState extends ConsumerState<MyStockCard> {
                       ),
                     ),
                     label: const Text('Prices'),
-                    icon: const Icon(Icons.edit),
+                    icon: const Icon(
+                      Icons.edit,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],

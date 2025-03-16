@@ -150,6 +150,8 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
     super.initState();
   }
 
+  MultiSelectController<String> multiSelectController = MultiSelectController();
+
   String getLabel(String id) {
     final guarantee =
         _guaranteeDetails.firstWhereOrNull((element) => element.id == id);
@@ -165,7 +167,11 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
     if (initial || guarantees.isEmpty) {
       guarantees = guaranteesPro.guarantees
           .map(
-            (e) => DropdownItem(label: e.name!, value: e.id),
+            (e) => DropdownItem(
+              label: e.name!,
+              value: e.id,
+              selected: widget.guarantees.any((w) => w.id == e.id),
+            ),
           )
           .toList();
       selectedGuarantees = guarantees
@@ -200,8 +206,8 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                                         }, */
                         /* borderColor: ,
                                         borderRadius: 4,
-                                        selectedOptions: selectedGuarantees, */
-
+                                        , */
+                        controller: multiSelectController,
                         dropdownDecoration: const DropdownDecoration(),
                         fieldDecoration: FieldDecoration(
                           border: OutlineInputBorder(

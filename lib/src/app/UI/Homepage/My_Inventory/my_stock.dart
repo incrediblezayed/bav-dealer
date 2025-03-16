@@ -18,6 +18,7 @@ class MyStockPage extends ConsumerWidget {
     final inventoryPro = ref.watch(inventoryProvider);
     final data =
         product ? inventoryPro.productDealers : inventoryPro.vehicleDealers;
+
     return Container(
       padding: const EdgeInsets.all(6),
       child: Column(

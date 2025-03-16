@@ -1,0 +1,2 @@
+/Users/incrediblezayed/Projects/Bhasusa/bav-dealerapp/android/app/.cxx/RelWithDebInfo/5c595u6u/x86_64/CMakeFiles/edit_cache.dir
+/Users/incrediblezayed/Projects/Bhasusa/bav-dealerapp/android/app/.cxx/RelWithDebInfo/5c595u6u/x86_64/CMakeFiles/rebuild_cache.dir

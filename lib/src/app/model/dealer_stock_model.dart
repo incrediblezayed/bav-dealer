@@ -189,7 +189,7 @@ class Price {
   factory Price.fromJson(Map<String, dynamic> json) => Price(
         id: json['id'],
         amount: json['amount'],
-        originalAmount: json['originalAmount'],
+        originalAmount: json['originalAmount'] ?? -1,
         category: json['category'] == null
             ? null
             : Category.fromJson(json['category']),
