@@ -82,6 +82,8 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                 if (originalAmount.isNotEmpty &&
                     int.tryParse(originalAmount) != null) {
                   prices[index].originalAmount = int.parse(originalAmount);
+
+                  setState(() {});
                   Navigator.pop(context);
                 }
               },
@@ -246,10 +248,35 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                                         _showPopup(i);
                                       },
                                     )
-                                  : Text(prices[i].originalAmount.toPrice()),
+                                  : IconButton(
+                                      icon: const Icon(
+                                        Icons.check,
+                                        color: AppTheme.primaryColor,
+                                      ),
+                                      onPressed: () {
+                                        _showPopup(i);
+                                      },
+                                    ),
+                              // : Text(
+                              //     prices[i].originalAmount.toPrice(),
+                              //   ),
                             ),
                             SizedBox(
-                              height: 10.h,
+                              height: 5.h,
+                            ),
+                            if (prices[i].originalAmount > 0)
+                              Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  'Original Amount: ${prices[i].originalAmount.toPrice()}',
+                                  style: const TextStyle(
+                                    color: AppTheme.textColor,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ),
+                            SizedBox(
+                              height: 20.h,
                             ),
                           ],
                         ),
