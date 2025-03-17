@@ -64551,8 +64551,9 @@ class GDateTimeBuilder implements Builder<GDateTime, GDateTimeBuilder> {
   _$GDateTime _build() {
     final _$result = _$v ??
         new _$GDateTime._(
-            value: BuiltValueNullFieldError.checkNotNull(
-                value, r'GDateTime', 'value'));
+          value: BuiltValueNullFieldError.checkNotNull(
+              value, r'GDateTime', 'value'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -64657,7 +64658,10 @@ class GUserWhereUniqueInputBuilder
   _$GUserWhereUniqueInput _build() {
     final _$result = _$v ??
         new _$GUserWhereUniqueInput._(
-            id: id, phoneNumber: phoneNumber, email: email);
+          id: id,
+          phoneNumber: phoneNumber,
+          email: email,
+        );
     replace(_$result);
     return _$result;
   }
@@ -65009,28 +65013,29 @@ class GUserWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GUserWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              phoneNumber: _phoneNumber?.build(),
-              email: _email?.build(),
-              address: _address?.build(),
-              emailVerified: _emailVerified?.build(),
-              phoneNumberVerified: _phoneNumberVerified?.build(),
-              isAdmin: _isAdmin?.build(),
-              addresses: _addresses?.build(),
-              favorites: _favorites?.build(),
-              cartItems: _cartItems?.build(),
-              wallet: _wallet?.build(),
-              referralCode: _referralCode?.build(),
-              deactivate: _deactivate?.build(),
-              passwordResetToken: _passwordResetToken?.build(),
-              passwordResetIssuedAt: _passwordResetIssuedAt?.build(),
-              passwordResetRedeemedAt: _passwordResetRedeemedAt?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            phoneNumber: _phoneNumber?.build(),
+            email: _email?.build(),
+            address: _address?.build(),
+            emailVerified: _emailVerified?.build(),
+            phoneNumberVerified: _phoneNumberVerified?.build(),
+            isAdmin: _isAdmin?.build(),
+            addresses: _addresses?.build(),
+            favorites: _favorites?.build(),
+            cartItems: _cartItems?.build(),
+            wallet: _wallet?.build(),
+            referralCode: _referralCode?.build(),
+            deactivate: _deactivate?.build(),
+            passwordResetToken: _passwordResetToken?.build(),
+            passwordResetIssuedAt: _passwordResetIssuedAt?.build(),
+            passwordResetRedeemedAt: _passwordResetRedeemedAt?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -65244,14 +65249,15 @@ class GIDFilterBuilder implements Builder<GIDFilter, GIDFilterBuilder> {
     try {
       _$result = _$v ??
           new _$GIDFilter._(
-              equals: equals,
-              Gin: _Gin?.build(),
-              notIn: _notIn?.build(),
-              lt: lt,
-              lte: lte,
-              gt: gt,
-              gte: gte,
-              not: _not?.build());
+            equals: equals,
+            Gin: _Gin?.build(),
+            notIn: _notIn?.build(),
+            lt: lt,
+            lte: lte,
+            gt: gt,
+            gte: gte,
+            not: _not?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -65436,14 +65442,15 @@ class GDateTimeNullableFilterBuilder
     try {
       _$result = _$v ??
           new _$GDateTimeNullableFilter._(
-              equals: _equals?.build(),
-              Gin: _Gin?.build(),
-              notIn: _notIn?.build(),
-              lt: _lt?.build(),
-              lte: _lte?.build(),
-              gt: _gt?.build(),
-              gte: _gte?.build(),
-              not: _not?.build());
+            equals: _equals?.build(),
+            Gin: _Gin?.build(),
+            notIn: _notIn?.build(),
+            lt: _lt?.build(),
+            lte: _lte?.build(),
+            gt: _gt?.build(),
+            gte: _gte?.build(),
+            not: _not?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -65675,18 +65682,19 @@ class GStringFilterBuilder
     try {
       _$result = _$v ??
           new _$GStringFilter._(
-              equals: equals,
-              Gin: _Gin?.build(),
-              notIn: _notIn?.build(),
-              lt: lt,
-              lte: lte,
-              gt: gt,
-              gte: gte,
-              contains: contains,
-              startsWith: startsWith,
-              endsWith: endsWith,
-              mode: mode,
-              not: _not?.build());
+            equals: equals,
+            Gin: _Gin?.build(),
+            notIn: _notIn?.build(),
+            lt: lt,
+            lte: lte,
+            gt: gt,
+            gte: gte,
+            contains: contains,
+            startsWith: startsWith,
+            endsWith: endsWith,
+            mode: mode,
+            not: _not?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -65901,17 +65909,18 @@ class GNestedStringFilterBuilder
     try {
       _$result = _$v ??
           new _$GNestedStringFilter._(
-              equals: equals,
-              Gin: _Gin?.build(),
-              notIn: _notIn?.build(),
-              lt: lt,
-              lte: lte,
-              gt: gt,
-              gte: gte,
-              contains: contains,
-              startsWith: startsWith,
-              endsWith: endsWith,
-              not: _not?.build());
+            equals: equals,
+            Gin: _Gin?.build(),
+            notIn: _notIn?.build(),
+            lt: lt,
+            lte: lte,
+            gt: gt,
+            gte: gte,
+            contains: contains,
+            startsWith: startsWith,
+            endsWith: endsWith,
+            not: _not?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -66019,8 +66028,11 @@ class GBooleanFilterBuilder
   _$GBooleanFilter _build() {
     _$GBooleanFilter _$result;
     try {
-      _$result =
-          _$v ?? new _$GBooleanFilter._(equals: equals, not: _not?.build());
+      _$result = _$v ??
+          new _$GBooleanFilter._(
+            equals: equals,
+            not: _not?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -66142,9 +66154,10 @@ class GAddressManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GAddressManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -66271,9 +66284,10 @@ class GFavoriteManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GFavoriteManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -66400,9 +66414,10 @@ class GCartItemManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GCartItemManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -66500,8 +66515,9 @@ class GPasswordFilterBuilder
   _$GPasswordFilter _build() {
     final _$result = _$v ??
         new _$GPasswordFilter._(
-            isSet: BuiltValueNullFieldError.checkNotNull(
-                isSet, r'GPasswordFilter', 'isSet'));
+          isSet: BuiltValueNullFieldError.checkNotNull(
+              isSet, r'GPasswordFilter', 'isSet'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -66726,19 +66742,20 @@ class GUserOrderByInputBuilder
   _$GUserOrderByInput _build() {
     final _$result = _$v ??
         new _$GUserOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            phoneNumber: phoneNumber,
-            email: email,
-            address: address,
-            emailVerified: emailVerified,
-            phoneNumberVerified: phoneNumberVerified,
-            isAdmin: isAdmin,
-            deactivate: deactivate,
-            passwordResetIssuedAt: passwordResetIssuedAt,
-            passwordResetRedeemedAt: passwordResetRedeemedAt);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          phoneNumber: phoneNumber,
+          email: email,
+          address: address,
+          emailVerified: emailVerified,
+          phoneNumberVerified: phoneNumberVerified,
+          isAdmin: isAdmin,
+          deactivate: deactivate,
+          passwordResetIssuedAt: passwordResetIssuedAt,
+          passwordResetRedeemedAt: passwordResetRedeemedAt,
+        );
     replace(_$result);
     return _$result;
   }
@@ -67083,28 +67100,29 @@ class GUserUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              phoneNumber: phoneNumber,
-              email: email,
-              address: address,
-              password: password,
-              emailVerified: emailVerified,
-              phoneNumberVerified: phoneNumberVerified,
-              isAdmin: isAdmin,
-              profile_image: _profile_image?.build(),
-              aadhaar: _aadhaar?.build(),
-              driving_license: _driving_license?.build(),
-              addresses: _addresses?.build(),
-              favorites: _favorites?.build(),
-              cartItems: _cartItems?.build(),
-              wallet: _wallet?.build(),
-              referralCode: _referralCode?.build(),
-              deactivate: deactivate,
-              passwordResetToken: passwordResetToken,
-              passwordResetIssuedAt: _passwordResetIssuedAt?.build(),
-              passwordResetRedeemedAt: _passwordResetRedeemedAt?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            phoneNumber: phoneNumber,
+            email: email,
+            address: address,
+            password: password,
+            emailVerified: emailVerified,
+            phoneNumberVerified: phoneNumberVerified,
+            isAdmin: isAdmin,
+            profile_image: _profile_image?.build(),
+            aadhaar: _aadhaar?.build(),
+            driving_license: _driving_license?.build(),
+            addresses: _addresses?.build(),
+            favorites: _favorites?.build(),
+            cartItems: _cartItems?.build(),
+            wallet: _wallet?.build(),
+            referralCode: _referralCode?.build(),
+            deactivate: deactivate,
+            passwordResetToken: passwordResetToken,
+            passwordResetIssuedAt: _passwordResetIssuedAt?.build(),
+            passwordResetRedeemedAt: _passwordResetRedeemedAt?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -67224,8 +67242,9 @@ class GImageFieldInputBuilder
   _$GImageFieldInput _build() {
     final _$result = _$v ??
         new _$GImageFieldInput._(
-            upload: BuiltValueNullFieldError.checkNotNull(
-                upload, r'GImageFieldInput', 'upload'));
+          upload: BuiltValueNullFieldError.checkNotNull(
+              upload, r'GImageFieldInput', 'upload'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -67308,8 +67327,9 @@ class GFileFieldInputBuilder
   _$GFileFieldInput _build() {
     final _$result = _$v ??
         new _$GFileFieldInput._(
-            upload: BuiltValueNullFieldError.checkNotNull(
-                upload, r'GFileFieldInput', 'upload'));
+          upload: BuiltValueNullFieldError.checkNotNull(
+              upload, r'GFileFieldInput', 'upload'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -67440,10 +67460,11 @@ class GAddressRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GAddressRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -67591,10 +67612,11 @@ class GFavoriteRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GFavoriteRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -67744,10 +67766,11 @@ class GCartItemRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GCartItemRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -67880,9 +67903,10 @@ class GWalletRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GWalletRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -68015,9 +68039,10 @@ class GReferralCodeRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GReferralCodeRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -68130,7 +68155,10 @@ class GUserUpdateArgsBuilder
     _$GUserUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GUserUpdateArgs._(where: where.build(), data: data.build());
+          new _$GUserUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -68488,28 +68516,29 @@ class GUserCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              phoneNumber: phoneNumber,
-              email: email,
-              address: address,
-              password: password,
-              emailVerified: emailVerified,
-              phoneNumberVerified: phoneNumberVerified,
-              isAdmin: isAdmin,
-              profile_image: _profile_image?.build(),
-              aadhaar: _aadhaar?.build(),
-              driving_license: _driving_license?.build(),
-              addresses: _addresses?.build(),
-              favorites: _favorites?.build(),
-              cartItems: _cartItems?.build(),
-              wallet: _wallet?.build(),
-              referralCode: _referralCode?.build(),
-              deactivate: deactivate,
-              passwordResetToken: passwordResetToken,
-              passwordResetIssuedAt: _passwordResetIssuedAt?.build(),
-              passwordResetRedeemedAt: _passwordResetRedeemedAt?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            phoneNumber: phoneNumber,
+            email: email,
+            address: address,
+            password: password,
+            emailVerified: emailVerified,
+            phoneNumberVerified: phoneNumberVerified,
+            isAdmin: isAdmin,
+            profile_image: _profile_image?.build(),
+            aadhaar: _aadhaar?.build(),
+            driving_license: _driving_license?.build(),
+            addresses: _addresses?.build(),
+            favorites: _favorites?.build(),
+            cartItems: _cartItems?.build(),
+            wallet: _wallet?.build(),
+            referralCode: _referralCode?.build(),
+            deactivate: deactivate,
+            passwordResetToken: passwordResetToken,
+            passwordResetIssuedAt: _passwordResetIssuedAt?.build(),
+            passwordResetRedeemedAt: _passwordResetRedeemedAt?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -68651,7 +68680,9 @@ class GAddressRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GAddressRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -68771,7 +68802,9 @@ class GFavoriteRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GFavoriteRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -68893,7 +68926,9 @@ class GCartItemRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GCartItemRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -69010,7 +69045,9 @@ class GWalletRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GWalletRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -69132,7 +69169,9 @@ class GReferralCodeRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GReferralCodeRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -69241,8 +69280,11 @@ class GReferralCodeWhereUniqueInputBuilder
   GReferralCodeWhereUniqueInput build() => _build();
 
   _$GReferralCodeWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GReferralCodeWhereUniqueInput._(id: id, code: code);
+    final _$result = _$v ??
+        new _$GReferralCodeWhereUniqueInput._(
+          id: id,
+          code: code,
+        );
     replace(_$result);
     return _$result;
   }
@@ -69416,14 +69458,15 @@ class GReferralCodeWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GReferralCodeWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              code: _code?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            code: _code?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -69566,7 +69609,11 @@ class GReferralCodeOrderByInputBuilder
   _$GReferralCodeOrderByInput _build() {
     final _$result = _$v ??
         new _$GReferralCodeOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt, code: code);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          code: code,
+        );
     replace(_$result);
     return _$result;
   }
@@ -69689,10 +69736,11 @@ class GReferralCodeUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GReferralCodeUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              code: code);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            code: code,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -69820,9 +69868,10 @@ class GUserRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -69941,7 +69990,9 @@ class GReferralCodeUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GReferralCodeUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -70077,10 +70128,11 @@ class GReferralCodeCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GReferralCodeCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              code: code);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            code: code,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -70196,7 +70248,9 @@ class GUserRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -70292,7 +70346,10 @@ class GReferralUserWhereUniqueInputBuilder
   GReferralUserWhereUniqueInput build() => _build();
 
   _$GReferralUserWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GReferralUserWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GReferralUserWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -70467,14 +70524,15 @@ class GReferralUserWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GReferralUserWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              referrer: _referrer?.build(),
-              referee: _referee?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            referrer: _referrer?.build(),
+            referee: _referee?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -70606,7 +70664,10 @@ class GReferralUserOrderByInputBuilder
   _$GReferralUserOrderByInput _build() {
     final _$result = _$v ??
         new _$GReferralUserOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+        );
     replace(_$result);
     return _$result;
   }
@@ -70732,10 +70793,11 @@ class GReferralUserUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GReferralUserUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              referrer: _referrer?.build(),
-              referee: _referee?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            referrer: _referrer?.build(),
+            referee: _referee?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -70858,7 +70920,9 @@ class GReferralUserUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GReferralUserUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -70997,10 +71061,11 @@ class GReferralUserCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GReferralUserCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              referrer: _referrer?.build(),
-              referee: _referee?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            referrer: _referrer?.build(),
+            referee: _referee?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -71118,7 +71183,9 @@ class GFirebaseDeviceTokenWhereUniqueInputBuilder
   _$GFirebaseDeviceTokenWhereUniqueInput _build() {
     final _$result = _$v ??
         new _$GFirebaseDeviceTokenWhereUniqueInput._(
-            id: id, deviceToken: deviceToken);
+          id: id,
+          deviceToken: deviceToken,
+        );
     replace(_$result);
     return _$result;
   }
@@ -71297,14 +71364,15 @@ class GFirebaseDeviceTokenWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GFirebaseDeviceTokenWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              deviceToken: _deviceToken?.build(),
-              user: _user?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            deviceToken: _deviceToken?.build(),
+            user: _user?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -71450,10 +71518,11 @@ class GFirebaseDeviceTokenOrderByInputBuilder
   _$GFirebaseDeviceTokenOrderByInput _build() {
     final _$result = _$v ??
         new _$GFirebaseDeviceTokenOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            deviceToken: deviceToken);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          deviceToken: deviceToken,
+        );
     replace(_$result);
     return _$result;
   }
@@ -71578,10 +71647,11 @@ class GFirebaseDeviceTokenUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GFirebaseDeviceTokenUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              deviceToken: deviceToken,
-              user: _user?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            deviceToken: deviceToken,
+            user: _user?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -71704,7 +71774,9 @@ class GFirebaseDeviceTokenUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GFirebaseDeviceTokenUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -71842,10 +71914,11 @@ class GFirebaseDeviceTokenCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GFirebaseDeviceTokenCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              deviceToken: deviceToken,
-              user: _user?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            deviceToken: deviceToken,
+            user: _user?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -71943,7 +72016,10 @@ class GAddressWhereUniqueInputBuilder
   GAddressWhereUniqueInput build() => _build();
 
   _$GAddressWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GAddressWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GAddressWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -72224,23 +72300,24 @@ class GAddressWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GAddressWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              phoneNumber: _phoneNumber?.build(),
-              pinCode: _pinCode?.build(),
-              address: _address?.build(),
-              town: _town?.build(),
-              district: _district?.build(),
-              state: _state?.build(),
-              Gdefault: _Gdefault?.build(),
-              user: _user?.build(),
-              lLat: _lLat?.build(),
-              lLng: _lLng?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            phoneNumber: _phoneNumber?.build(),
+            pinCode: _pinCode?.build(),
+            address: _address?.build(),
+            town: _town?.build(),
+            district: _district?.build(),
+            state: _state?.build(),
+            Gdefault: _Gdefault?.build(),
+            user: _user?.build(),
+            lLat: _lLat?.build(),
+            lLng: _lLng?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -72449,14 +72526,15 @@ class GFloatNullableFilterBuilder
     try {
       _$result = _$v ??
           new _$GFloatNullableFilter._(
-              equals: equals,
-              Gin: _Gin?.build(),
-              notIn: _notIn?.build(),
-              lt: lt,
-              lte: lte,
-              gt: gt,
-              gte: gte,
-              not: _not?.build());
+            equals: equals,
+            Gin: _Gin?.build(),
+            notIn: _notIn?.build(),
+            lt: lt,
+            lte: lte,
+            gt: gt,
+            gte: gte,
+            not: _not?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -72692,19 +72770,20 @@ class GAddressOrderByInputBuilder
   _$GAddressOrderByInput _build() {
     final _$result = _$v ??
         new _$GAddressOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            phoneNumber: phoneNumber,
-            pinCode: pinCode,
-            address: address,
-            town: town,
-            district: district,
-            state: state,
-            Gdefault: Gdefault,
-            lLat: lLat,
-            lLng: lLng);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          phoneNumber: phoneNumber,
+          pinCode: pinCode,
+          address: address,
+          town: town,
+          district: district,
+          state: state,
+          Gdefault: Gdefault,
+          lLat: lLat,
+          lLng: lLng,
+        );
     replace(_$result);
     return _$result;
   }
@@ -72928,19 +73007,20 @@ class GAddressUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GAddressUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              phoneNumber: phoneNumber,
-              pinCode: pinCode,
-              address: address,
-              town: town,
-              district: district,
-              state: state,
-              Gdefault: Gdefault,
-              user: _user?.build(),
-              lLat: lLat,
-              lLng: lLng);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            phoneNumber: phoneNumber,
+            pinCode: pinCode,
+            address: address,
+            town: town,
+            district: district,
+            state: state,
+            Gdefault: Gdefault,
+            user: _user?.build(),
+            lLat: lLat,
+            lLng: lLng,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -73058,7 +73138,10 @@ class GAddressUpdateArgsBuilder
     _$GAddressUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GAddressUpdateArgs._(where: where.build(), data: data.build());
+          new _$GAddressUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -73295,19 +73378,20 @@ class GAddressCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GAddressCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              phoneNumber: phoneNumber,
-              pinCode: pinCode,
-              address: address,
-              town: town,
-              district: district,
-              state: state,
-              Gdefault: Gdefault,
-              user: _user?.build(),
-              lLat: lLat,
-              lLng: lLng);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            phoneNumber: phoneNumber,
+            pinCode: pinCode,
+            address: address,
+            town: town,
+            district: district,
+            state: state,
+            Gdefault: Gdefault,
+            user: _user?.build(),
+            lLat: lLat,
+            lLng: lLng,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -73406,7 +73490,10 @@ class GDealerAddressWhereUniqueInputBuilder
   GDealerAddressWhereUniqueInput build() => _build();
 
   _$GDealerAddressWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GDealerAddressWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GDealerAddressWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -73652,20 +73739,21 @@ class GDealerAddressWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GDealerAddressWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              phoneNumber: _phoneNumber?.build(),
-              pinCode: _pinCode?.build(),
-              address: _address?.build(),
-              town: _town?.build(),
-              district: _district?.build(),
-              state: _state?.build(),
-              dealer: _dealer?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            phoneNumber: _phoneNumber?.build(),
+            pinCode: _pinCode?.build(),
+            address: _address?.build(),
+            town: _town?.build(),
+            district: _district?.build(),
+            state: _state?.build(),
+            dealer: _dealer?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -73890,16 +73978,17 @@ class GDealerAddressOrderByInputBuilder
   _$GDealerAddressOrderByInput _build() {
     final _$result = _$v ??
         new _$GDealerAddressOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            phoneNumber: phoneNumber,
-            pinCode: pinCode,
-            address: address,
-            town: town,
-            district: district,
-            state: state);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          phoneNumber: phoneNumber,
+          pinCode: pinCode,
+          address: address,
+          town: town,
+          district: district,
+          state: state,
+        );
     replace(_$result);
     return _$result;
   }
@@ -74092,16 +74181,17 @@ class GDealerAddressUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GDealerAddressUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              phoneNumber: phoneNumber,
-              pinCode: pinCode,
-              address: address,
-              town: town,
-              district: district,
-              state: state,
-              dealer: _dealer?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            phoneNumber: phoneNumber,
+            pinCode: pinCode,
+            address: address,
+            town: town,
+            district: district,
+            state: state,
+            dealer: _dealer?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -74231,9 +74321,10 @@ class GDealerRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GDealerRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -74352,7 +74443,9 @@ class GDealerAddressUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GDealerAddressUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -74558,16 +74651,17 @@ class GDealerAddressCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GDealerAddressCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              phoneNumber: phoneNumber,
-              pinCode: pinCode,
-              address: address,
-              town: town,
-              district: district,
-              state: state,
-              dealer: _dealer?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            phoneNumber: phoneNumber,
+            pinCode: pinCode,
+            address: address,
+            town: town,
+            district: district,
+            state: state,
+            dealer: _dealer?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -74685,7 +74779,9 @@ class GDealerRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GDealerRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -74780,7 +74876,10 @@ class GFavoriteWhereUniqueInputBuilder
   GFavoriteWhereUniqueInput build() => _build();
 
   _$GFavoriteWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GFavoriteWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GFavoriteWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -74968,15 +75067,16 @@ class GFavoriteWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GFavoriteWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              user: _user?.build(),
-              productVariant: _productVariant?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            user: _user?.build(),
+            productVariant: _productVariant?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -75109,7 +75209,10 @@ class GFavoriteOrderByInputBuilder
   _$GFavoriteOrderByInput _build() {
     final _$result = _$v ??
         new _$GFavoriteOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+        );
     replace(_$result);
     return _$result;
   }
@@ -75253,11 +75356,12 @@ class GFavoriteUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GFavoriteUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              user: _user?.build(),
-              productVariant: _productVariant?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            user: _user?.build(),
+            productVariant: _productVariant?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -75396,9 +75500,10 @@ class GVehicleVariantRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVariantRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -75533,9 +75638,10 @@ class GProductVariantRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -75652,7 +75758,10 @@ class GFavoriteUpdateArgsBuilder
     _$GFavoriteUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GFavoriteUpdateArgs._(where: where.build(), data: data.build());
+          new _$GFavoriteUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -75809,11 +75918,12 @@ class GFavoriteCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GFavoriteCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              user: _user?.build(),
-              productVariant: _productVariant?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            user: _user?.build(),
+            productVariant: _productVariant?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -75941,7 +76051,9 @@ class GVehicleVariantRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVariantRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -76065,7 +76177,9 @@ class GProductVariantRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -76162,7 +76276,10 @@ class GCartItemWhereUniqueInputBuilder
   GCartItemWhereUniqueInput build() => _build();
 
   _$GCartItemWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GCartItemWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GCartItemWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -76363,16 +76480,17 @@ class GCartItemWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GCartItemWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              vehicleColor: _vehicleColor?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              productVariant: _productVariant?.build(),
-              user: _user?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            vehicleColor: _vehicleColor?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            productVariant: _productVariant?.build(),
+            user: _user?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -76507,7 +76625,10 @@ class GCartItemOrderByInputBuilder
   _$GCartItemOrderByInput _build() {
     final _$result = _$v ??
         new _$GCartItemOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+        );
     replace(_$result);
     return _$result;
   }
@@ -76666,12 +76787,13 @@ class GCartItemUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GCartItemUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              vehicleColor: _vehicleColor?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              productVariant: _productVariant?.build(),
-              user: _user?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            vehicleColor: _vehicleColor?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            productVariant: _productVariant?.build(),
+            user: _user?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -76812,9 +76934,10 @@ class GVehicleColorRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleColorRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -76931,7 +77054,10 @@ class GCartItemUpdateArgsBuilder
     _$GCartItemUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GCartItemUpdateArgs._(where: where.build(), data: data.build());
+          new _$GCartItemUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -77103,12 +77229,13 @@ class GCartItemCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GCartItemCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              vehicleColor: _vehicleColor?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              productVariant: _productVariant?.build(),
-              user: _user?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            vehicleColor: _vehicleColor?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            productVariant: _productVariant?.build(),
+            user: _user?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -77238,7 +77365,9 @@ class GVehicleColorRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleColorRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -77336,7 +77465,10 @@ class GVehicleTypeWhereUniqueInputBuilder
   GVehicleTypeWhereUniqueInput build() => _build();
 
   _$GVehicleTypeWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GVehicleTypeWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GVehicleTypeWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -77510,14 +77642,15 @@ class GVehicleTypeWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleTypeWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              description: _description?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            description: _description?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -77671,11 +77804,12 @@ class GVehicleTypeOrderByInputBuilder
   _$GVehicleTypeOrderByInput _build() {
     final _$result = _$v ??
         new _$GVehicleTypeOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            description: description);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -77808,11 +77942,12 @@ class GVehicleTypeUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleTypeUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description,
-              icon: _icon?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+            icon: _icon?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -77933,7 +78068,9 @@ class GVehicleTypeUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleTypeUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -78079,11 +78216,12 @@ class GVehicleTypeCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleTypeCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description,
-              icon: _icon?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+            icon: _icon?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -78183,7 +78321,10 @@ class GVehicleSubTypeWhereUniqueInputBuilder
   GVehicleSubTypeWhereUniqueInput build() => _build();
 
   _$GVehicleSubTypeWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GVehicleSubTypeWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GVehicleSubTypeWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -78371,15 +78512,16 @@ class GVehicleSubTypeWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleSubTypeWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              description: _description?.build(),
-              vehicleType: _vehicleType?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            description: _description?.build(),
+            vehicleType: _vehicleType?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -78536,11 +78678,12 @@ class GVehicleSubTypeOrderByInputBuilder
   _$GVehicleSubTypeOrderByInput _build() {
     final _$result = _$v ??
         new _$GVehicleSubTypeOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            description: description);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -78679,11 +78822,12 @@ class GVehicleSubTypeUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleSubTypeUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description,
-              vehicleType: _vehicleType?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+            vehicleType: _vehicleType?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -78818,9 +78962,10 @@ class GVehicleTypeRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleTypeRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -78941,7 +79086,9 @@ class GVehicleSubTypeUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleSubTypeUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -79093,11 +79240,12 @@ class GVehicleSubTypeCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleSubTypeCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description,
-              vehicleType: _vehicleType?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+            vehicleType: _vehicleType?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -79221,7 +79369,9 @@ class GVehicleTypeRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleTypeRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -79317,7 +79467,10 @@ class GBrandWhereUniqueInputBuilder
   GBrandWhereUniqueInput build() => _build();
 
   _$GBrandWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GBrandWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GBrandWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -79489,14 +79642,15 @@ class GBrandWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GBrandWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              index: _index?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            index: _index?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -79687,14 +79841,15 @@ class GIntNullableFilterBuilder
     try {
       _$result = _$v ??
           new _$GIntNullableFilter._(
-              equals: equals,
-              Gin: _Gin?.build(),
-              notIn: _notIn?.build(),
-              lt: lt,
-              lte: lte,
-              gt: gt,
-              gte: gte,
-              not: _not?.build());
+            equals: equals,
+            Gin: _Gin?.build(),
+            notIn: _notIn?.build(),
+            lt: lt,
+            lte: lte,
+            gt: gt,
+            gte: gte,
+            not: _not?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -79837,11 +79992,12 @@ class GBrandOrderByInputBuilder
   _$GBrandOrderByInput _build() {
     final _$result = _$v ??
         new _$GBrandOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            index: index);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          index: index,
+        );
     replace(_$result);
     return _$result;
   }
@@ -79987,12 +80143,13 @@ class GBrandUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GBrandUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              type: _type?.build(),
-              logo: _logo?.build(),
-              index: index);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            type: _type?.build(),
+            logo: _logo?.build(),
+            index: index,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -80109,7 +80266,10 @@ class GBrandUpdateArgsBuilder
     _$GBrandUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GBrandUpdateArgs._(where: where.build(), data: data.build());
+          new _$GBrandUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -80268,12 +80428,13 @@ class GBrandCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GBrandCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              type: _type?.build(),
-              logo: _logo?.build(),
-              index: index);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            type: _type?.build(),
+            logo: _logo?.build(),
+            index: index,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -80385,8 +80546,11 @@ class GSpecificationWhereUniqueInputBuilder
   GSpecificationWhereUniqueInput build() => _build();
 
   _$GSpecificationWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GSpecificationWhereUniqueInput._(id: id, name: name);
+    final _$result = _$v ??
+        new _$GSpecificationWhereUniqueInput._(
+          id: id,
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -80572,15 +80736,16 @@ class GSpecificationWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GSpecificationWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              description: _description?.build(),
-              unit: _unit?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            description: _description?.build(),
+            unit: _unit?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -80751,12 +80916,13 @@ class GSpecificationOrderByInputBuilder
   _$GSpecificationOrderByInput _build() {
     final _$result = _$v ??
         new _$GSpecificationOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            description: description,
-            unit: unit);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          description: description,
+          unit: unit,
+        );
     replace(_$result);
     return _$result;
   }
@@ -80904,12 +81070,13 @@ class GSpecificationUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GSpecificationUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              image: _image?.build(),
-              name: name,
-              description: description,
-              unit: unit);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            image: _image?.build(),
+            name: name,
+            description: description,
+            unit: unit,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -81030,7 +81197,9 @@ class GSpecificationUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GSpecificationUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -81191,12 +81360,13 @@ class GSpecificationCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GSpecificationCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              image: _image?.build(),
-              name: name,
-              description: description,
-              unit: unit);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            image: _image?.build(),
+            name: name,
+            description: description,
+            unit: unit,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -81312,7 +81482,10 @@ class GSpecificationCategoryWhereUniqueInputBuilder
 
   _$GSpecificationCategoryWhereUniqueInput _build() {
     final _$result = _$v ??
-        new _$GSpecificationCategoryWhereUniqueInput._(id: id, name: name);
+        new _$GSpecificationCategoryWhereUniqueInput._(
+          id: id,
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -81491,14 +81664,15 @@ class GSpecificationCategoryWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GSpecificationCategoryWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              description: _description?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            description: _description?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -81657,11 +81831,12 @@ class GSpecificationCategoryOrderByInputBuilder
   _$GSpecificationCategoryOrderByInput _build() {
     final _$result = _$v ??
         new _$GSpecificationCategoryOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            description: description);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -81787,10 +81962,11 @@ class GSpecificationCategoryUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GSpecificationCategoryUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -81913,7 +82089,9 @@ class GSpecificationCategoryUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GSpecificationCategoryUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -82052,10 +82230,11 @@ class GSpecificationCategoryCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GSpecificationCategoryCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -82152,7 +82331,10 @@ class GTestDriveDealerWhereUniqueInputBuilder
   GTestDriveDealerWhereUniqueInput build() => _build();
 
   _$GTestDriveDealerWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GTestDriveDealerWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GTestDriveDealerWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -82365,17 +82547,18 @@ class GTestDriveDealerWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveDealerWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              vehicleColor: _vehicleColor?.build(),
-              price: _price?.build(),
-              available: _available?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            vehicleColor: _vehicleColor?.build(),
+            price: _price?.build(),
+            available: _available?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -82567,14 +82750,15 @@ class GIntFilterBuilder implements Builder<GIntFilter, GIntFilterBuilder> {
     try {
       _$result = _$v ??
           new _$GIntFilter._(
-              equals: equals,
-              Gin: _Gin?.build(),
-              notIn: _notIn?.build(),
-              lt: lt,
-              lte: lte,
-              gt: gt,
-              gte: gte,
-              not: _not?.build());
+            equals: equals,
+            Gin: _Gin?.build(),
+            notIn: _notIn?.build(),
+            lt: lt,
+            lte: lte,
+            gt: gt,
+            gte: gte,
+            not: _not?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -82719,11 +82903,12 @@ class GTestDriveDealerOrderByInputBuilder
   _$GTestDriveDealerOrderByInput _build() {
     final _$result = _$v ??
         new _$GTestDriveDealerOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            price: price,
-            available: available);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          price: price,
+          available: available,
+        );
     replace(_$result);
     return _$result;
   }
@@ -82892,13 +83077,14 @@ class GTestDriveDealerUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveDealerUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              vehicleColor: _vehicleColor?.build(),
-              price: price,
-              available: available);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            vehicleColor: _vehicleColor?.build(),
+            price: price,
+            available: available,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -83023,7 +83209,9 @@ class GTestDriveDealerUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveDealerUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -83205,13 +83393,14 @@ class GTestDriveDealerCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveDealerCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              vehicleColor: _vehicleColor?.build(),
-              price: price,
-              available: available);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            vehicleColor: _vehicleColor?.build(),
+            price: price,
+            available: available,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -83312,7 +83501,10 @@ class GVehicleWhereUniqueInputBuilder
   GVehicleWhereUniqueInput build() => _build();
 
   _$GVehicleWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GVehicleWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GVehicleWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -83590,22 +83782,23 @@ class GVehicleWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              description: _description?.build(),
-              longDescription: _longDescription?.build(),
-              type: _type?.build(),
-              subType: _subType?.build(),
-              brand: _brand?.build(),
-              variants: _variants?.build(),
-              specifications: _specifications?.build(),
-              colors: _colors?.build(),
-              informative: _informative?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            description: _description?.build(),
+            longDescription: _longDescription?.build(),
+            type: _type?.build(),
+            subType: _subType?.build(),
+            brand: _brand?.build(),
+            variants: _variants?.build(),
+            specifications: _specifications?.build(),
+            colors: _colors?.build(),
+            informative: _informative?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -83761,9 +83954,10 @@ class GVehicleSubTypeManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GVehicleSubTypeManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -83893,9 +84087,10 @@ class GVehicleVariantManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVariantManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -84030,9 +84225,10 @@ class GVehicleSpecificationManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GVehicleSpecificationManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -84162,9 +84358,10 @@ class GVehicleColorManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GVehicleColorManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -84335,13 +84532,14 @@ class GVehicleOrderByInputBuilder
   _$GVehicleOrderByInput _build() {
     final _$result = _$v ??
         new _$GVehicleOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            description: description,
-            longDescription: longDescription,
-            informative: informative);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          description: description,
+          longDescription: longDescription,
+          informative: informative,
+        );
     replace(_$result);
     return _$result;
   }
@@ -84583,19 +84781,20 @@ class GVehicleUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description,
-              longDescription: longDescription,
-              type: _type?.build(),
-              subType: _subType?.build(),
-              brand: _brand?.build(),
-              variants: _variants?.build(),
-              specifications: _specifications?.build(),
-              colors: _colors?.build(),
-              informative: informative,
-              brochure: _brochure?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+            longDescription: longDescription,
+            type: _type?.build(),
+            subType: _subType?.build(),
+            brand: _brand?.build(),
+            variants: _variants?.build(),
+            specifications: _specifications?.build(),
+            colors: _colors?.build(),
+            informative: informative,
+            brochure: _brochure?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -84759,10 +84958,11 @@ class GVehicleSubTypeRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleSubTypeRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -84895,9 +85095,10 @@ class GBrandRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GBrandRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -85045,10 +85246,11 @@ class GVehicleVariantRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVariantRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -85208,10 +85410,11 @@ class GVehicleSpecificationRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleSpecificationRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -85363,10 +85566,11 @@ class GVehicleColorRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleColorRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -85487,7 +85691,10 @@ class GVehicleUpdateArgsBuilder
     _$GVehicleUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GVehicleUpdateArgs._(where: where.build(), data: data.build());
+          new _$GVehicleUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -85742,19 +85949,20 @@ class GVehicleCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description,
-              longDescription: longDescription,
-              type: _type?.build(),
-              subType: _subType?.build(),
-              brand: _brand?.build(),
-              variants: _variants?.build(),
-              specifications: _specifications?.build(),
-              colors: _colors?.build(),
-              informative: informative,
-              brochure: _brochure?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+            longDescription: longDescription,
+            type: _type?.build(),
+            subType: _subType?.build(),
+            brand: _brand?.build(),
+            variants: _variants?.build(),
+            specifications: _specifications?.build(),
+            colors: _colors?.build(),
+            informative: informative,
+            brochure: _brochure?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -85893,7 +86101,9 @@ class GVehicleSubTypeRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleSubTypeRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -86010,7 +86220,9 @@ class GBrandRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GBrandRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -86133,7 +86345,9 @@ class GVehicleVariantRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVariantRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -86263,7 +86477,9 @@ class GVehicleSpecificationRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleSpecificationRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -86387,7 +86603,9 @@ class GVehicleColorRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleColorRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -86485,7 +86703,10 @@ class GVehicleColorWhereUniqueInputBuilder
   GVehicleColorWhereUniqueInput build() => _build();
 
   _$GVehicleColorWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GVehicleColorWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GVehicleColorWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -86760,22 +86981,23 @@ class GVehicleColorWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleColorWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              code: _code?.build(),
-              Gdefault: _Gdefault?.build(),
-              vehicle: _vehicle?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              images: _images?.build(),
-              videos: _videos?.build(),
-              gallery: _gallery?.build(),
-              reels: _reels?.build(),
-              disabled: _disabled?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            code: _code?.build(),
+            Gdefault: _Gdefault?.build(),
+            vehicle: _vehicle?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            images: _images?.build(),
+            videos: _videos?.build(),
+            gallery: _gallery?.build(),
+            reels: _reels?.build(),
+            disabled: _disabled?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -86929,9 +87151,10 @@ class GVehicleImageManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GVehicleImageManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -87059,9 +87282,10 @@ class GVehicleVideoManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVideoManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -87195,9 +87419,10 @@ class GVehicleGalleryItemManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GVehicleGalleryItemManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -87326,9 +87551,10 @@ class GVehicleReelManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GVehicleReelManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -87497,13 +87723,14 @@ class GVehicleColorOrderByInputBuilder
   _$GVehicleColorOrderByInput _build() {
     final _$result = _$v ??
         new _$GVehicleColorOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            code: code,
-            Gdefault: Gdefault,
-            disabled: disabled);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          code: code,
+          Gdefault: Gdefault,
+          disabled: disabled,
+        );
     replace(_$result);
     return _$result;
   }
@@ -87743,19 +87970,20 @@ class GVehicleColorUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleColorUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              code: code,
-              Gdefault: Gdefault,
-              vehicle: _vehicle?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              images: _images?.build(),
-              videos: _videos?.build(),
-              gallery: _gallery?.build(),
-              reels: _reels?.build(),
-              googleImages: googleImages,
-              disabled: disabled);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            code: code,
+            Gdefault: Gdefault,
+            vehicle: _vehicle?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            images: _images?.build(),
+            videos: _videos?.build(),
+            gallery: _gallery?.build(),
+            reels: _reels?.build(),
+            googleImages: googleImages,
+            disabled: disabled,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -87897,9 +88125,10 @@ class GVehicleRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -88045,10 +88274,11 @@ class GVehicleImageRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleImageRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -88200,10 +88430,11 @@ class GVehicleVideoRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVideoRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -88361,10 +88592,11 @@ class GVehicleGalleryItemRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleGalleryItemRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -88516,10 +88748,11 @@ class GVehicleReelRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleReelRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -88644,7 +88877,9 @@ class GVehicleColorUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleColorUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -88897,19 +89132,20 @@ class GVehicleColorCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleColorCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              code: code,
-              Gdefault: Gdefault,
-              vehicle: _vehicle?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              images: _images?.build(),
-              videos: _videos?.build(),
-              gallery: _gallery?.build(),
-              reels: _reels?.build(),
-              googleImages: googleImages,
-              disabled: disabled);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            code: code,
+            Gdefault: Gdefault,
+            vehicle: _vehicle?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            images: _images?.build(),
+            videos: _videos?.build(),
+            gallery: _gallery?.build(),
+            reels: _reels?.build(),
+            googleImages: googleImages,
+            disabled: disabled,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -89040,7 +89276,9 @@ class GVehicleRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -89162,7 +89400,9 @@ class GVehicleImageRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleImageRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -89286,7 +89526,9 @@ class GVehicleVideoRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVideoRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -89413,7 +89655,9 @@ class GVehicleGalleryItemRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleGalleryItemRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -89537,7 +89781,9 @@ class GVehicleReelRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleReelRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -89639,7 +89885,10 @@ class GVehicleGalleryItemWhereUniqueInputBuilder
   GVehicleGalleryItemWhereUniqueInput build() => _build();
 
   _$GVehicleGalleryItemWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GVehicleGalleryItemWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GVehicleGalleryItemWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -89838,16 +90087,17 @@ class GVehicleGalleryItemWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleGalleryItemWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              type: _type?.build(),
-              fileId: _fileId?.build(),
-              color: _color?.build(),
-              index: _index?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            type: _type?.build(),
+            fileId: _fileId?.build(),
+            color: _color?.build(),
+            index: _index?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -90021,12 +90271,13 @@ class GVehicleGalleryItemOrderByInputBuilder
   _$GVehicleGalleryItemOrderByInput _build() {
     final _$result = _$v ??
         new _$GVehicleGalleryItemOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            type: type,
-            fileId: fileId,
-            index: index);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          type: type,
+          fileId: fileId,
+          index: index,
+        );
     replace(_$result);
     return _$result;
   }
@@ -90176,12 +90427,13 @@ class GVehicleGalleryItemUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleGalleryItemUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              type: type,
-              fileId: fileId,
-              color: _color?.build(),
-              index: index);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            type: type,
+            fileId: fileId,
+            color: _color?.build(),
+            index: index,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -90304,7 +90556,9 @@ class GVehicleGalleryItemUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleGalleryItemUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -90467,12 +90721,13 @@ class GVehicleGalleryItemCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleGalleryItemCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              type: type,
-              fileId: fileId,
-              color: _color?.build(),
-              index: index);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            type: type,
+            fileId: fileId,
+            color: _color?.build(),
+            index: index,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -90571,7 +90826,10 @@ class GVehicleReelWhereUniqueInputBuilder
   GVehicleReelWhereUniqueInput build() => _build();
 
   _$GVehicleReelWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GVehicleReelWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GVehicleReelWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -90780,17 +91038,18 @@ class GVehicleReelWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleReelWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              type: _type?.build(),
-              fileId: _fileId?.build(),
-              color: _color?.build(),
-              index: _index?.build(),
-              disabled: _disabled?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            type: _type?.build(),
+            fileId: _fileId?.build(),
+            color: _color?.build(),
+            index: _index?.build(),
+            disabled: _disabled?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -90975,13 +91234,14 @@ class GVehicleReelOrderByInputBuilder
   _$GVehicleReelOrderByInput _build() {
     final _$result = _$v ??
         new _$GVehicleReelOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            type: type,
-            fileId: fileId,
-            index: index,
-            disabled: disabled);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          type: type,
+          fileId: fileId,
+          index: index,
+          disabled: disabled,
+        );
     replace(_$result);
     return _$result;
   }
@@ -91141,13 +91401,14 @@ class GVehicleReelUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleReelUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              type: type,
-              fileId: fileId,
-              color: _color?.build(),
-              index: index,
-              disabled: disabled);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            type: type,
+            fileId: fileId,
+            color: _color?.build(),
+            index: index,
+            disabled: disabled,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -91268,7 +91529,9 @@ class GVehicleReelUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleReelUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -91441,13 +91704,14 @@ class GVehicleReelCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleReelCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              type: type,
-              fileId: fileId,
-              color: _color?.build(),
-              index: index,
-              disabled: disabled);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            type: type,
+            fileId: fileId,
+            color: _color?.build(),
+            index: index,
+            disabled: disabled,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -91545,7 +91809,10 @@ class GGuaranteeWhereUniqueInputBuilder
   GGuaranteeWhereUniqueInput build() => _build();
 
   _$GGuaranteeWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GGuaranteeWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GGuaranteeWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -91719,14 +91986,15 @@ class GGuaranteeWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GGuaranteeWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              description: _description?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            description: _description?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -91879,11 +92147,12 @@ class GGuaranteeOrderByInputBuilder
   _$GGuaranteeOrderByInput _build() {
     final _$result = _$v ??
         new _$GGuaranteeOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            description: description);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -92004,10 +92273,11 @@ class GGuaranteeUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GGuaranteeUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -92124,7 +92394,9 @@ class GGuaranteeUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GGuaranteeUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -92258,10 +92530,11 @@ class GGuaranteeCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GGuaranteeCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -92357,7 +92630,10 @@ class GGuaranteeFileWhereUniqueInputBuilder
   GGuaranteeFileWhereUniqueInput build() => _build();
 
   _$GGuaranteeFileWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GGuaranteeFileWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GGuaranteeFileWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -92503,12 +92779,13 @@ class GGuaranteeFileWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GGuaranteeFileWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -92636,7 +92913,10 @@ class GGuaranteeFileOrderByInputBuilder
   _$GGuaranteeFileOrderByInput _build() {
     final _$result = _$v ??
         new _$GGuaranteeFileOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+        );
     replace(_$result);
     return _$result;
   }
@@ -92748,9 +93028,10 @@ class GGuaranteeFileUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GGuaranteeFileUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              file: _file?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            file: _file?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -92871,7 +93152,9 @@ class GGuaranteeFileUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GGuaranteeFileUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -92996,9 +93279,10 @@ class GGuaranteeFileCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GGuaranteeFileCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              file: _file?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            file: _file?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -93096,7 +93380,10 @@ class GVehicleDealerWhereUniqueInputBuilder
   GVehicleDealerWhereUniqueInput build() => _build();
 
   _$GVehicleDealerWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GVehicleDealerWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GVehicleDealerWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -93323,18 +93610,19 @@ class GVehicleDealerWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealerWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              guarantees: _guarantees?.build(),
-              vehicleColor: _vehicleColor?.build(),
-              prices: _prices?.build(),
-              stock: _stock?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            guarantees: _guarantees?.build(),
+            vehicleColor: _vehicleColor?.build(),
+            prices: _prices?.build(),
+            stock: _stock?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -93479,9 +93767,10 @@ class GGuaranteeManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GGuaranteeManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -93606,9 +93895,10 @@ class GPriceManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GPriceManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -93741,7 +94031,11 @@ class GVehicleDealerOrderByInputBuilder
   _$GVehicleDealerOrderByInput _build() {
     final _$result = _$v ??
         new _$GVehicleDealerOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt, stock: stock);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          stock: stock,
+        );
     replace(_$result);
     return _$result;
   }
@@ -93924,14 +94218,15 @@ class GVehicleDealerUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealerUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              guarantees: _guarantees?.build(),
-              vehicleColor: _vehicleColor?.build(),
-              prices: _prices?.build(),
-              stock: stock);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            guarantees: _guarantees?.build(),
+            vehicleColor: _vehicleColor?.build(),
+            prices: _prices?.build(),
+            stock: stock,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -94085,10 +94380,11 @@ class GGuaranteeRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GGuaranteeRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -94234,10 +94530,11 @@ class GPriceRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GPriceRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -94360,7 +94657,9 @@ class GVehicleDealerUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealerUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -94556,14 +94855,15 @@ class GVehicleDealerCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealerCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              guarantees: _guarantees?.build(),
-              vehicleColor: _vehicleColor?.build(),
-              prices: _prices?.build(),
-              stock: stock);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            guarantees: _guarantees?.build(),
+            vehicleColor: _vehicleColor?.build(),
+            prices: _prices?.build(),
+            stock: stock,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -94693,7 +94993,9 @@ class GGuaranteeRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GGuaranteeRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -94810,7 +95112,9 @@ class GPriceRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GPriceRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -94906,7 +95210,10 @@ class GVehicleImageWhereUniqueInputBuilder
   GVehicleImageWhereUniqueInput build() => _build();
 
   _$GVehicleImageWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GVehicleImageWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GVehicleImageWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -95069,13 +95376,14 @@ class GVehicleImageWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleImageWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              color: _color?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            color: _color?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -95205,7 +95513,10 @@ class GVehicleImageOrderByInputBuilder
   _$GVehicleImageOrderByInput _build() {
     final _$result = _$v ??
         new _$GVehicleImageOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+        );
     replace(_$result);
     return _$result;
   }
@@ -95330,10 +95641,11 @@ class GVehicleImageUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleImageUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              image: _image?.build(),
-              color: _color?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            image: _image?.build(),
+            color: _color?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -95456,7 +95768,9 @@ class GVehicleImageUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleImageUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -95594,10 +95908,11 @@ class GVehicleImageCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleImageCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              image: _image?.build(),
-              color: _color?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            image: _image?.build(),
+            color: _color?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -95697,7 +96012,10 @@ class GVehicleVideoWhereUniqueInputBuilder
   GVehicleVideoWhereUniqueInput build() => _build();
 
   _$GVehicleVideoWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GVehicleVideoWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GVehicleVideoWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -95860,13 +96178,14 @@ class GVehicleVideoWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVideoWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              color: _color?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            color: _color?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -95996,7 +96315,10 @@ class GVehicleVideoOrderByInputBuilder
   _$GVehicleVideoOrderByInput _build() {
     final _$result = _$v ??
         new _$GVehicleVideoOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+        );
     replace(_$result);
     return _$result;
   }
@@ -96121,10 +96443,11 @@ class GVehicleVideoUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVideoUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              video: _video?.build(),
-              color: _color?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            video: _video?.build(),
+            color: _color?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -96247,7 +96570,9 @@ class GVehicleVideoUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVideoUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -96385,10 +96710,11 @@ class GVehicleVideoCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVideoCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              video: _video?.build(),
-              color: _color?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            video: _video?.build(),
+            color: _color?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -96494,8 +96820,10 @@ class GVehicleSpecificationWhereUniqueInputBuilder
   GVehicleSpecificationWhereUniqueInput build() => _build();
 
   _$GVehicleSpecificationWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GVehicleSpecificationWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GVehicleSpecificationWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -96738,19 +97066,20 @@ class GVehicleSpecificationWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleSpecificationWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              specification: _specification?.build(),
-              type: _type?.build(),
-              intValue: _intValue?.build(),
-              stringValue: _stringValue?.build(),
-              category: _category?.build(),
-              vehicle: _vehicle?.build(),
-              isKeyFeature: _isKeyFeature?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            specification: _specification?.build(),
+            type: _type?.build(),
+            intValue: _intValue?.build(),
+            stringValue: _stringValue?.build(),
+            category: _category?.build(),
+            vehicle: _vehicle?.build(),
+            isKeyFeature: _isKeyFeature?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -96945,13 +97274,14 @@ class GVehicleSpecificationOrderByInputBuilder
   _$GVehicleSpecificationOrderByInput _build() {
     final _$result = _$v ??
         new _$GVehicleSpecificationOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            type: type,
-            intValue: intValue,
-            stringValue: stringValue,
-            isKeyFeature: isKeyFeature);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          type: type,
+          intValue: intValue,
+          stringValue: stringValue,
+          isKeyFeature: isKeyFeature,
+        );
     replace(_$result);
     return _$result;
   }
@@ -97143,15 +97473,16 @@ class GVehicleSpecificationUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleSpecificationUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              specification: _specification?.build(),
-              type: type,
-              intValue: intValue,
-              stringValue: stringValue,
-              category: _category?.build(),
-              vehicle: _vehicle?.build(),
-              isKeyFeature: isKeyFeature);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            specification: _specification?.build(),
+            type: type,
+            intValue: intValue,
+            stringValue: stringValue,
+            category: _category?.build(),
+            vehicle: _vehicle?.build(),
+            isKeyFeature: isKeyFeature,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -97291,9 +97622,10 @@ class GSpecificationRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GSpecificationRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -97432,9 +97764,10 @@ class GSpecificationCategoryRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GSpecificationCategoryRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -97558,7 +97891,9 @@ class GVehicleSpecificationUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleSpecificationUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -97763,15 +98098,16 @@ class GVehicleSpecificationCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleSpecificationCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              specification: _specification?.build(),
-              type: type,
-              intValue: intValue,
-              stringValue: stringValue,
-              category: _category?.build(),
-              vehicle: _vehicle?.build(),
-              isKeyFeature: isKeyFeature);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            specification: _specification?.build(),
+            type: type,
+            intValue: intValue,
+            stringValue: stringValue,
+            category: _category?.build(),
+            vehicle: _vehicle?.build(),
+            isKeyFeature: isKeyFeature,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -97900,7 +98236,9 @@ class GSpecificationRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GSpecificationRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -98029,7 +98367,9 @@ class GSpecificationCategoryRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GSpecificationCategoryRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -98139,8 +98479,11 @@ class GVehicleVariantWhereUniqueInputBuilder
   GVehicleVariantWhereUniqueInput build() => _build();
 
   _$GVehicleVariantWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GVehicleVariantWhereUniqueInput._(id: id, key: key);
+    final _$result = _$v ??
+        new _$GVehicleVariantWhereUniqueInput._(
+          id: id,
+          key: key,
+        );
     replace(_$result);
     return _$result;
   }
@@ -98438,24 +98781,25 @@ class GVehicleVariantWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVariantWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              key: _key?.build(),
-              index: _index?.build(),
-              vehicle: _vehicle?.build(),
-              Gdefault: _Gdefault?.build(),
-              specifications: _specifications?.build(),
-              colors: _colors?.build(),
-              tags: _tags?.build(),
-              informative: _informative?.build(),
-              prices: _prices?.build(),
-              gtin: _gtin?.build(),
-              disabled: _disabled?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            key: _key?.build(),
+            index: _index?.build(),
+            vehicle: _vehicle?.build(),
+            Gdefault: _Gdefault?.build(),
+            specifications: _specifications?.build(),
+            colors: _colors?.build(),
+            tags: _tags?.build(),
+            informative: _informative?.build(),
+            prices: _prices?.build(),
+            gtin: _gtin?.build(),
+            disabled: _disabled?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -98609,9 +98953,10 @@ class GTagManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GTagManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -98815,16 +99160,17 @@ class GVehicleVariantOrderByInputBuilder
   _$GVehicleVariantOrderByInput _build() {
     final _$result = _$v ??
         new _$GVehicleVariantOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            key: key,
-            index: index,
-            Gdefault: Gdefault,
-            informative: informative,
-            gtin: gtin,
-            disabled: disabled);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          key: key,
+          index: index,
+          Gdefault: Gdefault,
+          informative: informative,
+          gtin: gtin,
+          disabled: disabled,
+        );
     replace(_$result);
     return _$result;
   }
@@ -99071,20 +99417,21 @@ class GVehicleVariantUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVariantUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              key: key,
-              index: index,
-              vehicle: _vehicle?.build(),
-              Gdefault: Gdefault,
-              specifications: _specifications?.build(),
-              colors: _colors?.build(),
-              tags: _tags?.build(),
-              informative: informative,
-              prices: _prices?.build(),
-              gtin: gtin,
-              disabled: disabled);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            key: key,
+            index: index,
+            vehicle: _vehicle?.build(),
+            Gdefault: Gdefault,
+            specifications: _specifications?.build(),
+            colors: _colors?.build(),
+            tags: _tags?.build(),
+            informative: informative,
+            prices: _prices?.build(),
+            gtin: gtin,
+            disabled: disabled,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -99236,10 +99583,11 @@ class GTagRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GTagRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -99362,7 +99710,9 @@ class GVehicleVariantUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVariantUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -99622,20 +99972,21 @@ class GVehicleVariantCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVariantCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              key: key,
-              index: index,
-              vehicle: _vehicle?.build(),
-              Gdefault: Gdefault,
-              specifications: _specifications?.build(),
-              colors: _colors?.build(),
-              tags: _tags?.build(),
-              informative: informative,
-              prices: _prices?.build(),
-              gtin: gtin,
-              disabled: disabled);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            key: key,
+            index: index,
+            vehicle: _vehicle?.build(),
+            Gdefault: Gdefault,
+            specifications: _specifications?.build(),
+            colors: _colors?.build(),
+            tags: _tags?.build(),
+            informative: informative,
+            prices: _prices?.build(),
+            gtin: gtin,
+            disabled: disabled,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -99762,7 +100113,9 @@ class GTagRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GTagRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -99866,8 +100219,10 @@ class GVehicleDealerStockRequestWhereUniqueInputBuilder
   GVehicleDealerStockRequestWhereUniqueInput build() => _build();
 
   _$GVehicleDealerStockRequestWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GVehicleDealerStockRequestWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GVehicleDealerStockRequestWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -100113,19 +100468,20 @@ class GVehicleDealerStockRequestWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealerStockRequestWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              guarantees: _guarantees?.build(),
-              vehicleColor: _vehicleColor?.build(),
-              stock: _stock?.build(),
-              accepted: _accepted?.build(),
-              type: _type?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            guarantees: _guarantees?.build(),
+            vehicleColor: _vehicleColor?.build(),
+            stock: _stock?.build(),
+            accepted: _accepted?.build(),
+            type: _type?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -100372,18 +100728,19 @@ class GStringNullableFilterBuilder
     try {
       _$result = _$v ??
           new _$GStringNullableFilter._(
-              equals: equals,
-              Gin: _Gin?.build(),
-              notIn: _notIn?.build(),
-              lt: lt,
-              lte: lte,
-              gt: gt,
-              gte: gte,
-              contains: contains,
-              startsWith: startsWith,
-              endsWith: endsWith,
-              mode: mode,
-              not: _not?.build());
+            equals: equals,
+            Gin: _Gin?.build(),
+            notIn: _notIn?.build(),
+            lt: lt,
+            lte: lte,
+            gt: gt,
+            gte: gte,
+            contains: contains,
+            startsWith: startsWith,
+            endsWith: endsWith,
+            mode: mode,
+            not: _not?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -100600,17 +100957,18 @@ class GNestedStringNullableFilterBuilder
     try {
       _$result = _$v ??
           new _$GNestedStringNullableFilter._(
-              equals: equals,
-              Gin: _Gin?.build(),
-              notIn: _notIn?.build(),
-              lt: lt,
-              lte: lte,
-              gt: gt,
-              gte: gte,
-              contains: contains,
-              startsWith: startsWith,
-              endsWith: endsWith,
-              not: _not?.build());
+            equals: equals,
+            Gin: _Gin?.build(),
+            notIn: _notIn?.build(),
+            lt: lt,
+            lte: lte,
+            gt: gt,
+            gte: gte,
+            contains: contains,
+            startsWith: startsWith,
+            endsWith: endsWith,
+            not: _not?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -100776,12 +101134,13 @@ class GVehicleDealerStockRequestOrderByInputBuilder
   _$GVehicleDealerStockRequestOrderByInput _build() {
     final _$result = _$v ??
         new _$GVehicleDealerStockRequestOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            stock: stock,
-            accepted: accepted,
-            type: type);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          stock: stock,
+          accepted: accepted,
+          type: type,
+        );
     replace(_$result);
     return _$result;
   }
@@ -100980,15 +101339,16 @@ class GVehicleDealerStockRequestUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealerStockRequestUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              guarantees: _guarantees?.build(),
-              vehicleColor: _vehicleColor?.build(),
-              stock: stock,
-              accepted: accepted,
-              type: type);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            guarantees: _guarantees?.build(),
+            vehicleColor: _vehicleColor?.build(),
+            stock: stock,
+            accepted: accepted,
+            type: type,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -101124,7 +101484,9 @@ class GVehicleDealerStockRequestUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealerStockRequestUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -101338,15 +101700,16 @@ class GVehicleDealerStockRequestCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealerStockRequestCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              guarantees: _guarantees?.build(),
-              vehicleColor: _vehicleColor?.build(),
-              stock: stock,
-              accepted: accepted,
-              type: type);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            guarantees: _guarantees?.build(),
+            vehicleColor: _vehicleColor?.build(),
+            stock: stock,
+            accepted: accepted,
+            type: type,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -101452,7 +101815,10 @@ class GPriceCategoryWhereUniqueInputBuilder
   GPriceCategoryWhereUniqueInput build() => _build();
 
   _$GPriceCategoryWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GPriceCategoryWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GPriceCategoryWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -101627,14 +101993,15 @@ class GPriceCategoryWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GPriceCategoryWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              description: _description?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            description: _description?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -101788,11 +102155,12 @@ class GPriceCategoryOrderByInputBuilder
   _$GPriceCategoryOrderByInput _build() {
     final _$result = _$v ??
         new _$GPriceCategoryOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            description: description);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -101914,10 +102282,11 @@ class GPriceCategoryUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GPriceCategoryUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -102036,7 +102405,9 @@ class GPriceCategoryUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GPriceCategoryUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -102171,10 +102542,11 @@ class GPriceCategoryCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GPriceCategoryCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -102268,7 +102640,10 @@ class GPriceWhereUniqueInputBuilder
   GPriceWhereUniqueInput build() => _build();
 
   _$GPriceWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GPriceWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GPriceWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -102454,15 +102829,16 @@ class GPriceWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GPriceWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              category: _category?.build(),
-              amount: _amount?.build(),
-              originalAmount: _originalAmount?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            category: _category?.build(),
+            amount: _amount?.build(),
+            originalAmount: _originalAmount?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -102621,11 +102997,12 @@ class GPriceOrderByInputBuilder
   _$GPriceOrderByInput _build() {
     final _$result = _$v ??
         new _$GPriceOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            amount: amount,
-            originalAmount: originalAmount);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          amount: amount,
+          originalAmount: originalAmount,
+        );
     replace(_$result);
     return _$result;
   }
@@ -102762,11 +103139,12 @@ class GPriceUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GPriceUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              category: _category?.build(),
-              amount: amount,
-              originalAmount: originalAmount);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            category: _category?.build(),
+            amount: amount,
+            originalAmount: originalAmount,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -102901,9 +103279,10 @@ class GPriceCategoryRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GPriceCategoryRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -103017,7 +103396,10 @@ class GPriceUpdateArgsBuilder
     _$GPriceUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GPriceUpdateArgs._(where: where.build(), data: data.build());
+          new _$GPriceUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -103167,11 +103549,12 @@ class GPriceCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GPriceCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              category: _category?.build(),
-              amount: amount,
-              originalAmount: originalAmount);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            category: _category?.build(),
+            amount: amount,
+            originalAmount: originalAmount,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -103295,7 +103678,9 @@ class GPriceCategoryRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GPriceCategoryRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -103392,7 +103777,10 @@ class GWalletWhereUniqueInputBuilder
   GWalletWhereUniqueInput build() => _build();
 
   _$GWalletWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GWalletWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GWalletWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -103565,14 +103953,15 @@ class GWalletWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GWalletWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              amount: _amount?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            amount: _amount?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -103714,10 +104103,11 @@ class GWalletOrderByInputBuilder
   _$GWalletOrderByInput _build() {
     final _$result = _$v ??
         new _$GWalletOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            amount: amount);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          amount: amount,
+        );
     replace(_$result);
     return _$result;
   }
@@ -103839,10 +104229,11 @@ class GWalletUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GWalletUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              amount: amount);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            amount: amount,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -103956,7 +104347,10 @@ class GWalletUpdateArgsBuilder
     _$GWalletUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GWalletUpdateArgs._(where: where.build(), data: data.build());
+          new _$GWalletUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -104091,10 +104485,11 @@ class GWalletCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GWalletCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              amount: amount);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            amount: amount,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -104196,7 +104591,10 @@ class GWalletTransactionWhereUniqueInputBuilder
   GWalletTransactionWhereUniqueInput build() => _build();
 
   _$GWalletTransactionWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GWalletTransactionWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GWalletTransactionWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -104467,22 +104865,23 @@ class GWalletTransactionWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GWalletTransactionWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              wallet: _wallet?.build(),
-              externalTransactionName: _externalTransactionName?.build(),
-              externalTransactionId: _externalTransactionId?.build(),
-              from: _from?.build(),
-              to: _to?.build(),
-              mode: _mode?.build(),
-              type: _type?.build(),
-              status: _status?.build(),
-              amount: _amount?.build(),
-              message: _message?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            wallet: _wallet?.build(),
+            externalTransactionName: _externalTransactionName?.build(),
+            externalTransactionId: _externalTransactionId?.build(),
+            from: _from?.build(),
+            to: _to?.build(),
+            mode: _mode?.build(),
+            type: _type?.build(),
+            status: _status?.build(),
+            amount: _amount?.build(),
+            message: _message?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -104736,18 +105135,19 @@ class GWalletTransactionOrderByInputBuilder
   _$GWalletTransactionOrderByInput _build() {
     final _$result = _$v ??
         new _$GWalletTransactionOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            externalTransactionName: externalTransactionName,
-            externalTransactionId: externalTransactionId,
-            from: from,
-            to: to,
-            mode: mode,
-            type: type,
-            status: status,
-            amount: amount,
-            message: message);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          externalTransactionName: externalTransactionName,
+          externalTransactionId: externalTransactionId,
+          from: from,
+          to: to,
+          mode: mode,
+          type: type,
+          status: status,
+          amount: amount,
+          message: message,
+        );
     replace(_$result);
     return _$result;
   }
@@ -104965,18 +105365,19 @@ class GWalletTransactionUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GWalletTransactionUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              wallet: _wallet?.build(),
-              externalTransactionName: externalTransactionName,
-              externalTransactionId: externalTransactionId,
-              from: from,
-              to: to,
-              mode: mode,
-              type: type,
-              status: status,
-              amount: amount,
-              message: message);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            wallet: _wallet?.build(),
+            externalTransactionName: externalTransactionName,
+            externalTransactionId: externalTransactionId,
+            from: from,
+            to: to,
+            mode: mode,
+            type: type,
+            status: status,
+            amount: amount,
+            message: message,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -105098,7 +105499,9 @@ class GWalletTransactionUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GWalletTransactionUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -105329,18 +105732,19 @@ class GWalletTransactionCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GWalletTransactionCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              wallet: _wallet?.build(),
-              externalTransactionName: externalTransactionName,
-              externalTransactionId: externalTransactionId,
-              from: from,
-              to: to,
-              mode: mode,
-              type: type,
-              status: status,
-              amount: amount,
-              message: message);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            wallet: _wallet?.build(),
+            externalTransactionName: externalTransactionName,
+            externalTransactionId: externalTransactionId,
+            from: from,
+            to: to,
+            mode: mode,
+            type: type,
+            status: status,
+            amount: amount,
+            message: message,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -105436,7 +105840,10 @@ class GOrderWhereUniqueInputBuilder
   GOrderWhereUniqueInput build() => _build();
 
   _$GOrderWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GOrderWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GOrderWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -105651,17 +106058,18 @@ class GOrderWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GOrderWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              vehicleOrders: _vehicleOrders?.build(),
-              testDriveOrders: _testDriveOrders?.build(),
-              productOrders: _productOrders?.build(),
-              payments: _payments?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            vehicleOrders: _vehicleOrders?.build(),
+            testDriveOrders: _testDriveOrders?.build(),
+            productOrders: _productOrders?.build(),
+            payments: _payments?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -105805,9 +106213,10 @@ class GVehicleOrderManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrderManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -105937,9 +106346,10 @@ class GTestDriveOrderManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveOrderManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -106067,9 +106477,10 @@ class GProductOrderManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GProductOrderManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -106195,9 +106606,10 @@ class GPaymentManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GPaymentManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -106318,7 +106730,10 @@ class GOrderOrderByInputBuilder
   _$GOrderOrderByInput _build() {
     final _$result = _$v ??
         new _$GOrderOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+        );
     replace(_$result);
     return _$result;
   }
@@ -106489,13 +106904,14 @@ class GOrderUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GOrderUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              vehicleOrders: _vehicleOrders?.build(),
-              testDriveOrders: _testDriveOrders?.build(),
-              productOrders: _productOrders?.build(),
-              payments: _payments?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            vehicleOrders: _vehicleOrders?.build(),
+            testDriveOrders: _testDriveOrders?.build(),
+            productOrders: _productOrders?.build(),
+            payments: _payments?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -106651,10 +107067,11 @@ class GVehicleOrderRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrderRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -106808,10 +107225,11 @@ class GTestDriveOrderRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveOrderRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -106963,10 +107381,11 @@ class GProductOrderRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductOrderRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -107116,10 +107535,11 @@ class GPaymentRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GPaymentRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -107235,7 +107655,10 @@ class GOrderUpdateArgsBuilder
     _$GOrderUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GOrderUpdateArgs._(where: where.build(), data: data.build());
+          new _$GOrderUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -107419,13 +107842,14 @@ class GOrderCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GOrderCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              vehicleOrders: _vehicleOrders?.build(),
-              testDriveOrders: _testDriveOrders?.build(),
-              productOrders: _productOrders?.build(),
-              payments: _payments?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            vehicleOrders: _vehicleOrders?.build(),
+            testDriveOrders: _testDriveOrders?.build(),
+            productOrders: _productOrders?.build(),
+            payments: _payments?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -107557,7 +107981,9 @@ class GVehicleOrderRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrderRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -107682,7 +108108,9 @@ class GTestDriveOrderRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveOrderRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -107806,7 +108234,9 @@ class GProductOrderRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductOrderRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -107928,7 +108358,9 @@ class GPaymentRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GPaymentRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -108023,7 +108455,10 @@ class GPaymentWhereUniqueInputBuilder
   GPaymentWhereUniqueInput build() => _build();
 
   _$GPaymentWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GPaymentWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GPaymentWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -108268,20 +108703,21 @@ class GPaymentWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GPaymentWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              order: _order?.build(),
-              transactionId: _transactionId?.build(),
-              name: _name?.build(),
-              type: _type?.build(),
-              status: _status?.build(),
-              amount: _amount?.build(),
-              comment: _comment?.build(),
-              mode: _mode?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            order: _order?.build(),
+            transactionId: _transactionId?.build(),
+            name: _name?.build(),
+            type: _type?.build(),
+            status: _status?.build(),
+            amount: _amount?.build(),
+            comment: _comment?.build(),
+            mode: _mode?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -108480,14 +108916,15 @@ class GFloatFilterBuilder
     try {
       _$result = _$v ??
           new _$GFloatFilter._(
-              equals: equals,
-              Gin: _Gin?.build(),
-              notIn: _notIn?.build(),
-              lt: lt,
-              lte: lte,
-              gt: gt,
-              gte: gte,
-              not: _not?.build());
+            equals: equals,
+            Gin: _Gin?.build(),
+            notIn: _notIn?.build(),
+            lt: lt,
+            lte: lte,
+            gt: gt,
+            gte: gte,
+            not: _not?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -108690,16 +109127,17 @@ class GPaymentOrderByInputBuilder
   _$GPaymentOrderByInput _build() {
     final _$result = _$v ??
         new _$GPaymentOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            transactionId: transactionId,
-            name: name,
-            type: type,
-            status: status,
-            amount: amount,
-            comment: comment,
-            mode: mode);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          transactionId: transactionId,
+          name: name,
+          type: type,
+          status: status,
+          amount: amount,
+          comment: comment,
+          mode: mode,
+        );
     replace(_$result);
     return _$result;
   }
@@ -108892,16 +109330,17 @@ class GPaymentUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GPaymentUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              order: _order?.build(),
-              transactionId: transactionId,
-              name: name,
-              type: type,
-              status: status,
-              amount: amount,
-              comment: comment,
-              mode: mode);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            order: _order?.build(),
+            transactionId: transactionId,
+            name: name,
+            type: type,
+            status: status,
+            amount: amount,
+            comment: comment,
+            mode: mode,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -109030,9 +109469,10 @@ class GOrderRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GOrderRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -109147,7 +109587,10 @@ class GPaymentUpdateArgsBuilder
     _$GPaymentUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GPaymentUpdateArgs._(where: where.build(), data: data.build());
+          new _$GPaymentUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -109353,16 +109796,17 @@ class GPaymentCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GPaymentCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              order: _order?.build(),
-              transactionId: transactionId,
-              name: name,
-              type: type,
-              status: status,
-              amount: amount,
-              comment: comment,
-              mode: mode);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            order: _order?.build(),
+            transactionId: transactionId,
+            name: name,
+            type: type,
+            status: status,
+            amount: amount,
+            comment: comment,
+            mode: mode,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -109479,7 +109923,9 @@ class GOrderRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GOrderRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -109575,7 +110021,10 @@ class GVehicleOrderWhereUniqueInputBuilder
   GVehicleOrderWhereUniqueInput build() => _build();
 
   _$GVehicleOrderWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GVehicleOrderWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GVehicleOrderWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -109802,18 +110251,19 @@ class GVehicleOrderWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrderWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              order: _order?.build(),
-              price: _price?.build(),
-              status: _status?.build(),
-              address: _address?.build(),
-              additionalInfo: _additionalInfo?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            order: _order?.build(),
+            price: _price?.build(),
+            status: _status?.build(),
+            address: _address?.build(),
+            additionalInfo: _additionalInfo?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -109974,11 +110424,12 @@ class GVehicleOrderOrderByInputBuilder
   _$GVehicleOrderOrderByInput _build() {
     final _$result = _$v ??
         new _$GVehicleOrderOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            price: price,
-            status: status);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          price: price,
+          status: status,
+        );
     replace(_$result);
     return _$result;
   }
@@ -110169,15 +110620,16 @@ class GVehicleOrderUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrderUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              order: _order?.build(),
-              price: price,
-              priceInfo: priceInfo,
-              status: status,
-              address: _address?.build(),
-              additionalInfo: _additionalInfo?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            order: _order?.build(),
+            price: price,
+            priceInfo: priceInfo,
+            status: status,
+            address: _address?.build(),
+            additionalInfo: _additionalInfo?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -110319,9 +110771,10 @@ class GVehicleDealerRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealerRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -110452,9 +110905,10 @@ class GAddressRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GAddressRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -110594,9 +111048,10 @@ class GVehicleOrderAdditionalInfoRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrderAdditionalInfoRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -110717,7 +111172,9 @@ class GVehicleOrderUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrderUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -110921,15 +111378,16 @@ class GVehicleOrderCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrderCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              order: _order?.build(),
-              price: price,
-              priceInfo: priceInfo,
-              status: status,
-              address: _address?.build(),
-              additionalInfo: _additionalInfo?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            order: _order?.build(),
+            price: price,
+            priceInfo: priceInfo,
+            status: status,
+            address: _address?.build(),
+            additionalInfo: _additionalInfo?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -111060,7 +111518,9 @@ class GVehicleDealerRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealerRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -111180,7 +111640,9 @@ class GAddressRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GAddressRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -111310,7 +111772,9 @@ class GVehicleOrderAdditionalInfoRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrderAdditionalInfoRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -111409,7 +111873,10 @@ class GTestDriveOrderWhereUniqueInputBuilder
   GTestDriveOrderWhereUniqueInput build() => _build();
 
   _$GTestDriveOrderWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GTestDriveOrderWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GTestDriveOrderWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -111621,17 +112088,18 @@ class GTestDriveOrderWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveOrderWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              order: _order?.build(),
-              price: _price?.build(),
-              status: _status?.build(),
-              address: _address?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            order: _order?.build(),
+            price: _price?.build(),
+            status: _status?.build(),
+            address: _address?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -111791,11 +112259,12 @@ class GTestDriveOrderOrderByInputBuilder
   _$GTestDriveOrderOrderByInput _build() {
     final _$result = _$v ??
         new _$GTestDriveOrderOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            price: price,
-            status: status);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          price: price,
+          status: status,
+        );
     replace(_$result);
     return _$result;
   }
@@ -111959,13 +112428,14 @@ class GTestDriveOrderUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveOrderUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              order: _order?.build(),
-              price: price,
-              status: status,
-              address: _address?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            order: _order?.build(),
+            price: price,
+            status: status,
+            address: _address?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -112106,9 +112576,10 @@ class GTestDriveDealerRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveDealerRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -112229,7 +112700,9 @@ class GTestDriveOrderUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveOrderUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -112406,13 +112879,14 @@ class GTestDriveOrderCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveOrderCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              order: _order?.build(),
-              price: price,
-              status: status,
-              address: _address?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            order: _order?.build(),
+            price: price,
+            status: status,
+            address: _address?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -112542,7 +113016,9 @@ class GTestDriveDealerRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveDealerRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -112640,7 +113116,10 @@ class GProductOrderWhereUniqueInputBuilder
   GProductOrderWhereUniqueInput build() => _build();
 
   _$GProductOrderWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GProductOrderWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GProductOrderWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -112852,17 +113331,18 @@ class GProductOrderWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GProductOrderWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              order: _order?.build(),
-              price: _price?.build(),
-              status: _status?.build(),
-              address: _address?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            order: _order?.build(),
+            price: _price?.build(),
+            status: _status?.build(),
+            address: _address?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -113021,11 +113501,12 @@ class GProductOrderOrderByInputBuilder
   _$GProductOrderOrderByInput _build() {
     final _$result = _$v ??
         new _$GProductOrderOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            price: price,
-            status: status);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          price: price,
+          status: status,
+        );
     replace(_$result);
     return _$result;
   }
@@ -113200,14 +113681,15 @@ class GProductOrderUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductOrderUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              order: _order?.build(),
-              price: price,
-              priceInfo: priceInfo,
-              status: status,
-              address: _address?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            order: _order?.build(),
+            price: price,
+            priceInfo: priceInfo,
+            status: status,
+            address: _address?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -113347,9 +113829,10 @@ class GProductDealerRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductDealerRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -113470,7 +113953,9 @@ class GProductOrderUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GProductOrderUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -113658,14 +114143,15 @@ class GProductOrderCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductOrderCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              order: _order?.build(),
-              price: price,
-              priceInfo: priceInfo,
-              status: status,
-              address: _address?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            order: _order?.build(),
+            price: price,
+            priceInfo: priceInfo,
+            status: status,
+            address: _address?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -113794,7 +114280,9 @@ class GProductDealerRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductDealerRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -113899,8 +114387,10 @@ class GOrderCancellationRequestWhereUniqueInputBuilder
   GOrderCancellationRequestWhereUniqueInput build() => _build();
 
   _$GOrderCancellationRequestWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GOrderCancellationRequestWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GOrderCancellationRequestWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -114137,18 +114627,19 @@ class GOrderCancellationRequestWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GOrderCancellationRequestWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              vehicleOrders: _vehicleOrders?.build(),
-              testDriveOrders: _testDriveOrders?.build(),
-              productOrders: _productOrders?.build(),
-              approved: _approved?.build(),
-              reason: _reason?.build(),
-              description: _description?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            vehicleOrders: _vehicleOrders?.build(),
+            testDriveOrders: _testDriveOrders?.build(),
+            productOrders: _productOrders?.build(),
+            approved: _approved?.build(),
+            reason: _reason?.build(),
+            description: _description?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -114334,12 +114825,13 @@ class GOrderCancellationRequestOrderByInputBuilder
   _$GOrderCancellationRequestOrderByInput _build() {
     final _$result = _$v ??
         new _$GOrderCancellationRequestOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            approved: approved,
-            reason: reason,
-            description: description);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          approved: approved,
+          reason: reason,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -114525,14 +115017,15 @@ class GOrderCancellationRequestUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GOrderCancellationRequestUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              vehicleOrders: _vehicleOrders?.build(),
-              testDriveOrders: _testDriveOrders?.build(),
-              productOrders: _productOrders?.build(),
-              approved: approved,
-              reason: reason,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            vehicleOrders: _vehicleOrders?.build(),
+            testDriveOrders: _testDriveOrders?.build(),
+            productOrders: _productOrders?.build(),
+            approved: approved,
+            reason: reason,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -114666,7 +115159,9 @@ class GOrderCancellationRequestUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GOrderCancellationRequestUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -114867,14 +115362,15 @@ class GOrderCancellationRequestCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GOrderCancellationRequestCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              vehicleOrders: _vehicleOrders?.build(),
-              testDriveOrders: _testDriveOrders?.build(),
-              productOrders: _productOrders?.build(),
-              approved: approved,
-              reason: reason,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            vehicleOrders: _vehicleOrders?.build(),
+            testDriveOrders: _testDriveOrders?.build(),
+            productOrders: _productOrders?.build(),
+            approved: approved,
+            reason: reason,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -114984,8 +115480,10 @@ class GOrderRejectionByDealerWhereUniqueInputBuilder
   GOrderRejectionByDealerWhereUniqueInput build() => _build();
 
   _$GOrderRejectionByDealerWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GOrderRejectionByDealerWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GOrderRejectionByDealerWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -115220,18 +115718,19 @@ class GOrderRejectionByDealerWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GOrderRejectionByDealerWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              vehicleOrders: _vehicleOrders?.build(),
-              testDriveOrders: _testDriveOrders?.build(),
-              productOrders: _productOrders?.build(),
-              approved: _approved?.build(),
-              reason: _reason?.build(),
-              description: _description?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            vehicleOrders: _vehicleOrders?.build(),
+            testDriveOrders: _testDriveOrders?.build(),
+            productOrders: _productOrders?.build(),
+            approved: _approved?.build(),
+            reason: _reason?.build(),
+            description: _description?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -115413,12 +115912,13 @@ class GOrderRejectionByDealerOrderByInputBuilder
   _$GOrderRejectionByDealerOrderByInput _build() {
     final _$result = _$v ??
         new _$GOrderRejectionByDealerOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            approved: approved,
-            reason: reason,
-            description: description);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          approved: approved,
+          reason: reason,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -115604,14 +116104,15 @@ class GOrderRejectionByDealerUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GOrderRejectionByDealerUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              vehicleOrders: _vehicleOrders?.build(),
-              testDriveOrders: _testDriveOrders?.build(),
-              productOrders: _productOrders?.build(),
-              approved: approved,
-              reason: reason,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            vehicleOrders: _vehicleOrders?.build(),
+            testDriveOrders: _testDriveOrders?.build(),
+            productOrders: _productOrders?.build(),
+            approved: approved,
+            reason: reason,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -115742,7 +116243,9 @@ class GOrderRejectionByDealerUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GOrderRejectionByDealerUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -115941,14 +116444,15 @@ class GOrderRejectionByDealerCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GOrderRejectionByDealerCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              vehicleOrders: _vehicleOrders?.build(),
-              testDriveOrders: _testDriveOrders?.build(),
-              productOrders: _productOrders?.build(),
-              approved: approved,
-              reason: reason,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            vehicleOrders: _vehicleOrders?.build(),
+            testDriveOrders: _testDriveOrders?.build(),
+            productOrders: _productOrders?.build(),
+            approved: approved,
+            reason: reason,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -116059,8 +116563,10 @@ class GVehicleOrderAdditionalInfoWhereUniqueInputBuilder
   GVehicleOrderAdditionalInfoWhereUniqueInput build() => _build();
 
   _$GVehicleOrderAdditionalInfoWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GVehicleOrderAdditionalInfoWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GVehicleOrderAdditionalInfoWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -116257,15 +116763,16 @@ class GVehicleOrderAdditionalInfoWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrderAdditionalInfoWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              code: _code?.build(),
-              hsnCode: _hsnCode?.build(),
-              vehicleOrder: _vehicleOrder?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            code: _code?.build(),
+            hsnCode: _hsnCode?.build(),
+            vehicleOrder: _vehicleOrder?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -116429,11 +116936,12 @@ class GVehicleOrderAdditionalInfoOrderByInputBuilder
   _$GVehicleOrderAdditionalInfoOrderByInput _build() {
     final _$result = _$v ??
         new _$GVehicleOrderAdditionalInfoOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            code: code,
-            hsnCode: hsnCode);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          code: code,
+          hsnCode: hsnCode,
+        );
     replace(_$result);
     return _$result;
   }
@@ -116580,11 +117088,12 @@ class GVehicleOrderAdditionalInfoUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrderAdditionalInfoUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              code: code,
-              hsnCode: hsnCode,
-              vehicleOrder: _vehicleOrder?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            code: code,
+            hsnCode: hsnCode,
+            vehicleOrder: _vehicleOrder?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -116718,7 +117227,9 @@ class GVehicleOrderAdditionalInfoUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrderAdditionalInfoUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -116880,11 +117391,12 @@ class GVehicleOrderAdditionalInfoCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrderAdditionalInfoCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              code: code,
-              hsnCode: hsnCode,
-              vehicleOrder: _vehicleOrder?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            code: code,
+            hsnCode: hsnCode,
+            vehicleOrder: _vehicleOrder?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -116989,7 +117501,10 @@ class GUserVehicleReviewWhereUniqueInputBuilder
   GUserVehicleReviewWhereUniqueInput build() => _build();
 
   _$GUserVehicleReviewWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GUserVehicleReviewWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GUserVehicleReviewWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -117203,17 +117718,18 @@ class GUserVehicleReviewWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GUserVehicleReviewWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              vehicle: _vehicle?.build(),
-              review: _review?.build(),
-              rating: _rating?.build(),
-              attachments: _attachments?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            vehicle: _vehicle?.build(),
+            review: _review?.build(),
+            rating: _rating?.build(),
+            attachments: _attachments?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -117369,9 +117885,10 @@ class GUserVehicleReviewAttachmentManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GUserVehicleReviewAttachmentManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -117517,11 +118034,12 @@ class GUserVehicleReviewOrderByInputBuilder
   _$GUserVehicleReviewOrderByInput _build() {
     final _$result = _$v ??
         new _$GUserVehicleReviewOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            review: review,
-            rating: rating);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          review: review,
+          rating: rating,
+        );
     replace(_$result);
     return _$result;
   }
@@ -117688,13 +118206,14 @@ class GUserVehicleReviewUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserVehicleReviewUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              vehicle: _vehicle?.build(),
-              review: review,
-              rating: rating,
-              attachments: _attachments?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            vehicle: _vehicle?.build(),
+            review: review,
+            rating: rating,
+            attachments: _attachments?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -117861,10 +118380,11 @@ class GUserVehicleReviewAttachmentRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserVehicleReviewAttachmentRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -117990,7 +118510,9 @@ class GUserVehicleReviewUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GUserVehicleReviewUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -118170,13 +118692,14 @@ class GUserVehicleReviewCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserVehicleReviewCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              vehicle: _vehicle?.build(),
-              review: review,
-              rating: rating,
-              attachments: _attachments?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            vehicle: _vehicle?.build(),
+            review: review,
+            rating: rating,
+            attachments: _attachments?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -118315,7 +118838,9 @@ class GUserVehicleReviewAttachmentRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserVehicleReviewAttachmentRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -118422,8 +118947,10 @@ class GUserVehicleReviewAttachmentWhereUniqueInputBuilder
   GUserVehicleReviewAttachmentWhereUniqueInput build() => _build();
 
   _$GUserVehicleReviewAttachmentWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GUserVehicleReviewAttachmentWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GUserVehicleReviewAttachmentWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -118597,13 +119124,14 @@ class GUserVehicleReviewAttachmentWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GUserVehicleReviewAttachmentWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              review: _review?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            review: _review?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -118743,7 +119271,10 @@ class GUserVehicleReviewAttachmentOrderByInputBuilder
   _$GUserVehicleReviewAttachmentOrderByInput _build() {
     final _$result = _$v ??
         new _$GUserVehicleReviewAttachmentOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+        );
     replace(_$result);
     return _$result;
   }
@@ -118876,10 +119407,11 @@ class GUserVehicleReviewAttachmentUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserVehicleReviewAttachmentUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              file: _file?.build(),
-              review: _review?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            file: _file?.build(),
+            review: _review?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -119020,9 +119552,10 @@ class GUserVehicleReviewRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserVehicleReviewRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -119153,7 +119686,9 @@ class GUserVehicleReviewAttachmentUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GUserVehicleReviewAttachmentUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -119301,10 +119836,11 @@ class GUserVehicleReviewAttachmentCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserVehicleReviewAttachmentCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              file: _file?.build(),
-              review: _review?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            file: _file?.build(),
+            review: _review?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -119434,7 +119970,9 @@ class GUserVehicleReviewRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserVehicleReviewRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -119536,7 +120074,10 @@ class GUserProductReviewWhereUniqueInputBuilder
   GUserProductReviewWhereUniqueInput build() => _build();
 
   _$GUserProductReviewWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GUserProductReviewWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GUserProductReviewWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -119750,17 +120291,18 @@ class GUserProductReviewWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GUserProductReviewWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              product: _product?.build(),
-              review: _review?.build(),
-              rating: _rating?.build(),
-              attachments: _attachments?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            product: _product?.build(),
+            review: _review?.build(),
+            rating: _rating?.build(),
+            attachments: _attachments?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -119916,9 +120458,10 @@ class GUserProductReviewAttachmentManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GUserProductReviewAttachmentManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -120064,11 +120607,12 @@ class GUserProductReviewOrderByInputBuilder
   _$GUserProductReviewOrderByInput _build() {
     final _$result = _$v ??
         new _$GUserProductReviewOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            review: review,
-            rating: rating);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          review: review,
+          rating: rating,
+        );
     replace(_$result);
     return _$result;
   }
@@ -120235,13 +120779,14 @@ class GUserProductReviewUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserProductReviewUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              product: _product?.build(),
-              review: review,
-              rating: rating,
-              attachments: _attachments?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            product: _product?.build(),
+            review: review,
+            rating: rating,
+            attachments: _attachments?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -120377,9 +120922,10 @@ class GProductRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -120539,10 +121085,11 @@ class GUserProductReviewAttachmentRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserProductReviewAttachmentRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -120668,7 +121215,9 @@ class GUserProductReviewUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GUserProductReviewUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -120848,13 +121397,14 @@ class GUserProductReviewCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserProductReviewCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              product: _product?.build(),
-              review: review,
-              rating: rating,
-              attachments: _attachments?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            product: _product?.build(),
+            review: review,
+            rating: rating,
+            attachments: _attachments?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -120979,7 +121529,9 @@ class GProductRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -121111,7 +121663,9 @@ class GUserProductReviewAttachmentRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserProductReviewAttachmentRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -121218,8 +121772,10 @@ class GUserProductReviewAttachmentWhereUniqueInputBuilder
   GUserProductReviewAttachmentWhereUniqueInput build() => _build();
 
   _$GUserProductReviewAttachmentWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GUserProductReviewAttachmentWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GUserProductReviewAttachmentWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -121393,13 +121949,14 @@ class GUserProductReviewAttachmentWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GUserProductReviewAttachmentWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              review: _review?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            review: _review?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -121539,7 +122096,10 @@ class GUserProductReviewAttachmentOrderByInputBuilder
   _$GUserProductReviewAttachmentOrderByInput _build() {
     final _$result = _$v ??
         new _$GUserProductReviewAttachmentOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+        );
     replace(_$result);
     return _$result;
   }
@@ -121672,10 +122232,11 @@ class GUserProductReviewAttachmentUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserProductReviewAttachmentUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              file: _file?.build(),
-              review: _review?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            file: _file?.build(),
+            review: _review?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -121816,9 +122377,10 @@ class GUserProductReviewRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserProductReviewRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -121949,7 +122511,9 @@ class GUserProductReviewAttachmentUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GUserProductReviewAttachmentUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -122097,10 +122661,11 @@ class GUserProductReviewAttachmentCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserProductReviewAttachmentCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              file: _file?.build(),
-              review: _review?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            file: _file?.build(),
+            review: _review?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -122230,7 +122795,9 @@ class GUserProductReviewRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GUserProductReviewRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -122339,8 +122906,11 @@ class GExpertReviewWhereUniqueInputBuilder
   GExpertReviewWhereUniqueInput build() => _build();
 
   _$GExpertReviewWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GExpertReviewWhereUniqueInput._(id: id, key: key);
+    final _$result = _$v ??
+        new _$GExpertReviewWhereUniqueInput._(
+          id: id,
+          key: key,
+        );
     replace(_$result);
     return _$result;
   }
@@ -122563,18 +123133,19 @@ class GExpertReviewWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GExpertReviewWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              title: _title?.build(),
-              key: _key?.build(),
-              description: _description?.build(),
-              user: _user?.build(),
-              likes: _likes?.build(),
-              disabled: _disabled?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            title: _title?.build(),
+            key: _key?.build(),
+            description: _description?.build(),
+            user: _user?.build(),
+            likes: _likes?.build(),
+            disabled: _disabled?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -122773,14 +123344,15 @@ class GExpertReviewOrderByInputBuilder
   _$GExpertReviewOrderByInput _build() {
     final _$result = _$v ??
         new _$GExpertReviewOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            title: title,
-            key: key,
-            description: description,
-            likes: likes,
-            disabled: disabled);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          title: title,
+          key: key,
+          description: description,
+          likes: likes,
+          disabled: disabled,
+        );
     replace(_$result);
     return _$result;
   }
@@ -122962,15 +123534,16 @@ class GExpertReviewUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GExpertReviewUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              title: title,
-              key: key,
-              description: description,
-              banner: _banner?.build(),
-              user: _user?.build(),
-              likes: likes,
-              disabled: disabled);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            title: title,
+            key: key,
+            description: description,
+            banner: _banner?.build(),
+            user: _user?.build(),
+            likes: likes,
+            disabled: disabled,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -123094,7 +123667,9 @@ class GExpertReviewUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GExpertReviewUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -123289,15 +123864,16 @@ class GExpertReviewCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GExpertReviewCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              title: title,
-              key: key,
-              description: description,
-              banner: _banner?.build(),
-              user: _user?.build(),
-              likes: likes,
-              disabled: disabled);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            title: title,
+            key: key,
+            description: description,
+            banner: _banner?.build(),
+            user: _user?.build(),
+            likes: likes,
+            disabled: disabled,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -123397,7 +123973,10 @@ class GDealerWhereUniqueInputBuilder
   GDealerWhereUniqueInput build() => _build();
 
   _$GDealerWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GDealerWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GDealerWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -123620,18 +124199,19 @@ class GDealerWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GDealerWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              approved: _approved?.build(),
-              addresses: _addresses?.build(),
-              lLat: _lLat?.build(),
-              lLng: _lLng?.build(),
-              mouApproved: _mouApproved?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            approved: _approved?.build(),
+            addresses: _addresses?.build(),
+            lLat: _lLat?.build(),
+            lLng: _lLng?.build(),
+            mouApproved: _mouApproved?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -123777,9 +124357,10 @@ class GDealerAddressManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GDealerAddressManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -123948,13 +124529,14 @@ class GDealerOrderByInputBuilder
   _$GDealerOrderByInput _build() {
     final _$result = _$v ??
         new _$GDealerOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            approved: approved,
-            lLat: lLat,
-            lLng: lLng,
-            mouApproved: mouApproved);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          approved: approved,
+          lLat: lLat,
+          lLng: lLng,
+          mouApproved: mouApproved,
+        );
     replace(_$result);
     return _$result;
   }
@@ -124126,14 +124708,15 @@ class GDealerUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GDealerUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              approved: approved,
-              addresses: _addresses?.build(),
-              lLat: lLat,
-              lLng: lLng,
-              mouApproved: mouApproved);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            approved: approved,
+            addresses: _addresses?.build(),
+            lLat: lLat,
+            lLng: lLng,
+            mouApproved: mouApproved,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -124285,10 +124868,11 @@ class GDealerAddressRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GDealerAddressRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -124406,7 +124990,10 @@ class GDealerUpdateArgsBuilder
     _$GDealerUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GDealerUpdateArgs._(where: where.build(), data: data.build());
+          new _$GDealerUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -124591,14 +125178,15 @@ class GDealerCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GDealerCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              approved: approved,
-              addresses: _addresses?.build(),
-              lLat: lLat,
-              lLng: lLng,
-              mouApproved: mouApproved);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            approved: approved,
+            addresses: _addresses?.build(),
+            lLat: lLat,
+            lLng: lLng,
+            mouApproved: mouApproved,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -124725,7 +125313,9 @@ class GDealerAddressRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GDealerAddressRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -124837,8 +125427,11 @@ class GNotificationTypeWhereUniqueInputBuilder
   GNotificationTypeWhereUniqueInput build() => _build();
 
   _$GNotificationTypeWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GNotificationTypeWhereUniqueInput._(id: id, name: name);
+    final _$result = _$v ??
+        new _$GNotificationTypeWhereUniqueInput._(
+          id: id,
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -125001,13 +125594,14 @@ class GNotificationTypeWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GNotificationTypeWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -125149,7 +125743,11 @@ class GNotificationTypeOrderByInputBuilder
   _$GNotificationTypeOrderByInput _build() {
     final _$result = _$v ??
         new _$GNotificationTypeOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt, name: name);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -125261,9 +125859,10 @@ class GNotificationTypeUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GNotificationTypeUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -125383,7 +125982,9 @@ class GNotificationTypeUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GNotificationTypeUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -125508,9 +126109,10 @@ class GNotificationTypeCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GNotificationTypeCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -125614,8 +126216,10 @@ class GEmailNotificationTemplateWhereUniqueInputBuilder
   GEmailNotificationTemplateWhereUniqueInput build() => _build();
 
   _$GEmailNotificationTemplateWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GEmailNotificationTemplateWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GEmailNotificationTemplateWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -125810,15 +126414,16 @@ class GEmailNotificationTemplateWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GEmailNotificationTemplateWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              notificationType: _notificationType?.build(),
-              subject: _subject?.build(),
-              body: _body?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            notificationType: _notificationType?.build(),
+            subject: _subject?.build(),
+            body: _body?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -125982,11 +126587,12 @@ class GEmailNotificationTemplateOrderByInputBuilder
   _$GEmailNotificationTemplateOrderByInput _build() {
     final _$result = _$v ??
         new _$GEmailNotificationTemplateOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            subject: subject,
-            body: body);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          subject: subject,
+          body: body,
+        );
     replace(_$result);
     return _$result;
   }
@@ -126134,11 +126740,12 @@ class GEmailNotificationTemplateUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GEmailNotificationTemplateUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              notificationType: _notificationType?.build(),
-              subject: subject,
-              body: body);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            notificationType: _notificationType?.build(),
+            subject: subject,
+            body: body,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -126276,9 +126883,10 @@ class GNotificationTypeRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GNotificationTypeRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -126406,7 +127014,9 @@ class GEmailNotificationTemplateUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GEmailNotificationTemplateUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -126569,11 +127179,12 @@ class GEmailNotificationTemplateCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GEmailNotificationTemplateCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              notificationType: _notificationType?.build(),
-              subject: subject,
-              body: body);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            notificationType: _notificationType?.build(),
+            subject: subject,
+            body: body,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -126700,7 +127311,9 @@ class GNotificationTypeRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GNotificationTypeRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -126804,8 +127417,10 @@ class GSMSNotificationTemplateWhereUniqueInputBuilder
   GSMSNotificationTemplateWhereUniqueInput build() => _build();
 
   _$GSMSNotificationTemplateWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GSMSNotificationTemplateWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GSMSNotificationTemplateWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -127013,16 +127628,17 @@ class GSMSNotificationTemplateWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GSMSNotificationTemplateWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              notificationType: _notificationType?.build(),
-              flowId: _flowId?.build(),
-              sender: _sender?.build(),
-              shortURL: _shortURL?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            notificationType: _notificationType?.build(),
+            flowId: _flowId?.build(),
+            sender: _sender?.build(),
+            shortURL: _shortURL?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -127199,12 +127815,13 @@ class GSMSNotificationTemplateOrderByInputBuilder
   _$GSMSNotificationTemplateOrderByInput _build() {
     final _$result = _$v ??
         new _$GSMSNotificationTemplateOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            flowId: flowId,
-            sender: sender,
-            shortURL: shortURL);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          flowId: flowId,
+          sender: sender,
+          shortURL: shortURL,
+        );
     replace(_$result);
     return _$result;
   }
@@ -127372,13 +127989,14 @@ class GSMSNotificationTemplateUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GSMSNotificationTemplateUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              notificationType: _notificationType?.build(),
-              flowId: flowId,
-              sender: sender,
-              variables: variables,
-              shortURL: shortURL);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            notificationType: _notificationType?.build(),
+            flowId: flowId,
+            sender: sender,
+            variables: variables,
+            shortURL: shortURL,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -127508,7 +128126,9 @@ class GSMSNotificationTemplateUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GSMSNotificationTemplateUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -127689,13 +128309,14 @@ class GSMSNotificationTemplateCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GSMSNotificationTemplateCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              notificationType: _notificationType?.build(),
-              flowId: flowId,
-              sender: sender,
-              variables: variables,
-              shortURL: shortURL);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            notificationType: _notificationType?.build(),
+            flowId: flowId,
+            sender: sender,
+            variables: variables,
+            shortURL: shortURL,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -127801,8 +128422,10 @@ class GAppNotificationTemplateWhereUniqueInputBuilder
   GAppNotificationTemplateWhereUniqueInput build() => _build();
 
   _$GAppNotificationTemplateWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GAppNotificationTemplateWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GAppNotificationTemplateWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -127997,15 +128620,16 @@ class GAppNotificationTemplateWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GAppNotificationTemplateWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              notificationType: _notificationType?.build(),
-              title: _title?.build(),
-              body: _body?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            notificationType: _notificationType?.build(),
+            title: _title?.build(),
+            body: _body?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -128165,11 +128789,12 @@ class GAppNotificationTemplateOrderByInputBuilder
   _$GAppNotificationTemplateOrderByInput _build() {
     final _$result = _$v ??
         new _$GAppNotificationTemplateOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            title: title,
-            body: body);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          title: title,
+          body: body,
+        );
     replace(_$result);
     return _$result;
   }
@@ -128315,11 +128940,12 @@ class GAppNotificationTemplateUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GAppNotificationTemplateUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              notificationType: _notificationType?.build(),
-              title: title,
-              body: body);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            notificationType: _notificationType?.build(),
+            title: title,
+            body: body,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -128449,7 +129075,9 @@ class GAppNotificationTemplateUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GAppNotificationTemplateUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -128608,11 +129236,12 @@ class GAppNotificationTemplateCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GAppNotificationTemplateCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              notificationType: _notificationType?.build(),
-              title: title,
-              body: body);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            notificationType: _notificationType?.build(),
+            title: title,
+            body: body,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -128713,7 +129342,10 @@ class GAppNotificationWhereUniqueInputBuilder
   GAppNotificationWhereUniqueInput build() => _build();
 
   _$GAppNotificationWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GAppNotificationWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GAppNotificationWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -128912,16 +129544,17 @@ class GAppNotificationWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GAppNotificationWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              notificationType: _notificationType?.build(),
-              title: _title?.build(),
-              body: _body?.build(),
-              user: _user?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            notificationType: _notificationType?.build(),
+            title: _title?.build(),
+            body: _body?.build(),
+            user: _user?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -129079,11 +129712,12 @@ class GAppNotificationOrderByInputBuilder
   _$GAppNotificationOrderByInput _build() {
     final _$result = _$v ??
         new _$GAppNotificationOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            title: title,
-            body: body);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          title: title,
+          body: body,
+        );
     replace(_$result);
     return _$result;
   }
@@ -129237,12 +129871,13 @@ class GAppNotificationUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GAppNotificationUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              notificationType: _notificationType?.build(),
-              title: title,
-              body: body,
-              user: _user?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            notificationType: _notificationType?.build(),
+            title: title,
+            body: body,
+            user: _user?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -129366,7 +130001,9 @@ class GAppNotificationUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GAppNotificationUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -129533,12 +130170,13 @@ class GAppNotificationCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GAppNotificationCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              notificationType: _notificationType?.build(),
-              title: title,
-              body: body,
-              user: _user?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            notificationType: _notificationType?.build(),
+            title: title,
+            body: body,
+            user: _user?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -129636,7 +130274,10 @@ class GFAQWhereUniqueInputBuilder
   GFAQWhereUniqueInput build() => _build();
 
   _$GFAQWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GFAQWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GFAQWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -129821,15 +130462,16 @@ class GFAQWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GFAQWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              question: _question?.build(),
-              answer: _answer?.build(),
-              category: _category?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            question: _question?.build(),
+            answer: _answer?.build(),
+            category: _category?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -129982,11 +130624,12 @@ class GFAQOrderByInputBuilder
   _$GFAQOrderByInput _build() {
     final _$result = _$v ??
         new _$GFAQOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            question: question,
-            answer: answer);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          question: question,
+          answer: answer,
+        );
     replace(_$result);
     return _$result;
   }
@@ -130121,11 +130764,12 @@ class GFAQUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GFAQUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              question: question,
-              answer: answer,
-              category: _category?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            question: question,
+            answer: answer,
+            category: _category?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -130258,9 +130902,10 @@ class GCategoryRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GCategoryRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -130371,7 +131016,10 @@ class GFAQUpdateArgsBuilder
     _$GFAQUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GFAQUpdateArgs._(where: where.build(), data: data.build());
+          new _$GFAQUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -130519,11 +131167,12 @@ class GFAQCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GFAQCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              question: question,
-              answer: answer,
-              category: _category?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            question: question,
+            answer: answer,
+            category: _category?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -130645,7 +131294,9 @@ class GCategoryRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GCategoryRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -130741,7 +131392,10 @@ class GHelpSupportWhereUniqueInputBuilder
   GHelpSupportWhereUniqueInput build() => _build();
 
   _$GHelpSupportWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GHelpSupportWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GHelpSupportWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -130953,17 +131607,18 @@ class GHelpSupportWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GHelpSupportWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              title: _title?.build(),
-              description: _description?.build(),
-              category: _category?.build(),
-              solved: _solved?.build(),
-              user: _user?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            title: _title?.build(),
+            description: _description?.build(),
+            category: _category?.build(),
+            solved: _solved?.build(),
+            user: _user?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -131138,12 +131793,13 @@ class GHelpSupportOrderByInputBuilder
   _$GHelpSupportOrderByInput _build() {
     final _$result = _$v ??
         new _$GHelpSupportOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            title: title,
-            description: description,
-            solved: solved);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          title: title,
+          description: description,
+          solved: solved,
+        );
     replace(_$result);
     return _$result;
   }
@@ -131304,13 +131960,14 @@ class GHelpSupportUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GHelpSupportUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              title: title,
-              description: description,
-              category: _category?.build(),
-              solved: solved,
-              user: _user?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            title: title,
+            description: description,
+            category: _category?.build(),
+            solved: solved,
+            user: _user?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -131434,7 +132091,9 @@ class GHelpSupportUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GHelpSupportUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -131608,13 +132267,14 @@ class GHelpSupportCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GHelpSupportCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              title: title,
-              description: description,
-              category: _category?.build(),
-              solved: solved,
-              user: _user?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            title: title,
+            description: description,
+            category: _category?.build(),
+            solved: solved,
+            user: _user?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -131713,7 +132373,10 @@ class GTagWhereUniqueInputBuilder
   GTagWhereUniqueInput build() => _build();
 
   _$GTagWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GTagWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GTagWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -131886,14 +132549,15 @@ class GTagWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GTagWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              title: _title?.build(),
-              description: _description?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            title: _title?.build(),
+            description: _description?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -132045,11 +132709,12 @@ class GTagOrderByInputBuilder
   _$GTagOrderByInput _build() {
     final _$result = _$v ??
         new _$GTagOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            title: title,
-            description: description);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          title: title,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -132168,10 +132833,11 @@ class GTagUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GTagUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              title: title,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            title: title,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -132282,7 +132948,10 @@ class GTagUpdateArgsBuilder
     _$GTagUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GTagUpdateArgs._(where: where.build(), data: data.build());
+          new _$GTagUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -132414,10 +133083,11 @@ class GTagCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GTagCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              title: title,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            title: title,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -132523,7 +133193,11 @@ class GNewsItemWhereUniqueInputBuilder
   GNewsItemWhereUniqueInput build() => _build();
 
   _$GNewsItemWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GNewsItemWhereUniqueInput._(id: id, key: key);
+    final _$result = _$v ??
+        new _$GNewsItemWhereUniqueInput._(
+          id: id,
+          key: key,
+        );
     replace(_$result);
     return _$result;
   }
@@ -132788,21 +133462,22 @@ class GNewsItemWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GNewsItemWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              title: _title?.build(),
-              key: _key?.build(),
-              description: _description?.build(),
-              authorName: _authorName?.build(),
-              categories: _categories?.build(),
-              keywords: _keywords?.build(),
-              banner: _banner?.build(),
-              newsAttachments: _newsAttachments?.build(),
-              disabled: _disabled?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            title: _title?.build(),
+            key: _key?.build(),
+            description: _description?.build(),
+            authorName: _authorName?.build(),
+            categories: _categories?.build(),
+            keywords: _keywords?.build(),
+            banner: _banner?.build(),
+            newsAttachments: _newsAttachments?.build(),
+            disabled: _disabled?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -132954,9 +133629,10 @@ class GNewsCategoryManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GNewsCategoryManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -133082,9 +133758,10 @@ class GKeywordManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GKeywordManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -133214,9 +133891,10 @@ class GNewsAttachmentManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GNewsAttachmentManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -133397,14 +134075,15 @@ class GNewsItemOrderByInputBuilder
   _$GNewsItemOrderByInput _build() {
     final _$result = _$v ??
         new _$GNewsItemOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            title: title,
-            key: key,
-            description: description,
-            authorName: authorName,
-            disabled: disabled);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          title: title,
+          key: key,
+          description: description,
+          authorName: authorName,
+          disabled: disabled,
+        );
     replace(_$result);
     return _$result;
   }
@@ -133616,17 +134295,18 @@ class GNewsItemUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GNewsItemUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              title: title,
-              key: key,
-              description: description,
-              authorName: authorName,
-              categories: _categories?.build(),
-              keywords: _keywords?.build(),
-              banner: _banner?.build(),
-              newsAttachments: _newsAttachments?.build(),
-              disabled: disabled);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            title: title,
+            key: key,
+            description: description,
+            authorName: authorName,
+            categories: _categories?.build(),
+            keywords: _keywords?.build(),
+            banner: _banner?.build(),
+            newsAttachments: _newsAttachments?.build(),
+            disabled: disabled,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -133781,10 +134461,11 @@ class GNewsCategoryRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GNewsCategoryRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -133934,10 +134615,11 @@ class GKeywordRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GKeywordRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -134074,9 +134756,10 @@ class GNewsAttachmentRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GNewsAttachmentRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -134226,10 +134909,11 @@ class GNewsAttachmentRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GNewsAttachmentRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -134350,7 +135034,10 @@ class GNewsItemUpdateArgsBuilder
     _$GNewsItemUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GNewsItemUpdateArgs._(where: where.build(), data: data.build());
+          new _$GNewsItemUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -134575,17 +135262,18 @@ class GNewsItemCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GNewsItemCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              title: title,
-              key: key,
-              description: description,
-              authorName: authorName,
-              categories: _categories?.build(),
-              keywords: _keywords?.build(),
-              banner: _banner?.build(),
-              newsAttachments: _newsAttachments?.build(),
-              disabled: disabled);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            title: title,
+            key: key,
+            description: description,
+            authorName: authorName,
+            categories: _categories?.build(),
+            keywords: _keywords?.build(),
+            banner: _banner?.build(),
+            newsAttachments: _newsAttachments?.build(),
+            disabled: disabled,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -134716,7 +135404,9 @@ class GNewsCategoryRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GNewsCategoryRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -134838,7 +135528,9 @@ class GKeywordRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GKeywordRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -134960,7 +135652,9 @@ class GNewsAttachmentRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GNewsAttachmentRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -135085,7 +135779,9 @@ class GNewsAttachmentRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GNewsAttachmentRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -135183,7 +135879,10 @@ class GNewsCategoryWhereUniqueInputBuilder
   GNewsCategoryWhereUniqueInput build() => _build();
 
   _$GNewsCategoryWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GNewsCategoryWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GNewsCategoryWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -135359,14 +136058,15 @@ class GNewsCategoryWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GNewsCategoryWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              title: _title?.build(),
-              description: _description?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            title: _title?.build(),
+            description: _description?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -135520,11 +136220,12 @@ class GNewsCategoryOrderByInputBuilder
   _$GNewsCategoryOrderByInput _build() {
     final _$result = _$v ??
         new _$GNewsCategoryOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            title: title,
-            description: description);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          title: title,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -135646,10 +136347,11 @@ class GNewsCategoryUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GNewsCategoryUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              title: title,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            title: title,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -135768,7 +136470,9 @@ class GNewsCategoryUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GNewsCategoryUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -135903,10 +136607,11 @@ class GNewsCategoryCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GNewsCategoryCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              title: title,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            title: title,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -136003,7 +136708,10 @@ class GNewsAttachmentWhereUniqueInputBuilder
   GNewsAttachmentWhereUniqueInput build() => _build();
 
   _$GNewsAttachmentWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GNewsAttachmentWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GNewsAttachmentWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -136166,13 +136874,14 @@ class GNewsAttachmentWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GNewsAttachmentWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              news: _news?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            news: _news?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -136303,7 +137012,10 @@ class GNewsAttachmentOrderByInputBuilder
   _$GNewsAttachmentOrderByInput _build() {
     final _$result = _$v ??
         new _$GNewsAttachmentOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+        );
     replace(_$result);
     return _$result;
   }
@@ -136428,10 +137140,11 @@ class GNewsAttachmentUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GNewsAttachmentUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              file: _file?.build(),
-              news: _news?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            file: _file?.build(),
+            news: _news?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -136565,9 +137278,10 @@ class GNewsItemRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GNewsItemRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -136686,7 +137400,9 @@ class GNewsAttachmentUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GNewsAttachmentUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -136824,10 +137540,11 @@ class GNewsAttachmentCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GNewsAttachmentCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              file: _file?.build(),
-              news: _news?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            file: _file?.build(),
+            news: _news?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -136950,7 +137667,9 @@ class GNewsItemRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GNewsItemRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -137045,7 +137764,10 @@ class GKeywordWhereUniqueInputBuilder
   GKeywordWhereUniqueInput build() => _build();
 
   _$GKeywordWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GKeywordWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GKeywordWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -137206,13 +137928,14 @@ class GKeywordWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GKeywordWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -137352,7 +138075,11 @@ class GKeywordOrderByInputBuilder
   _$GKeywordOrderByInput _build() {
     final _$result = _$v ??
         new _$GKeywordOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt, name: name);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -137462,9 +138189,10 @@ class GKeywordUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GKeywordUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -137579,7 +138307,10 @@ class GKeywordUpdateArgsBuilder
     _$GKeywordUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GKeywordUpdateArgs._(where: where.build(), data: data.build());
+          new _$GKeywordUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -137702,9 +138433,10 @@ class GKeywordCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GKeywordCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -137810,7 +138542,11 @@ class GCouponWhereUniqueInputBuilder
   GCouponWhereUniqueInput build() => _build();
 
   _$GCouponWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GCouponWhereUniqueInput._(id: id, code: code);
+    final _$result = _$v ??
+        new _$GCouponWhereUniqueInput._(
+          id: id,
+          code: code,
+        );
     replace(_$result);
     return _$result;
   }
@@ -138074,21 +138810,22 @@ class GCouponWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GCouponWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              code: _code?.build(),
-              publiclyVisible: _publiclyVisible?.build(),
-              description: _description?.build(),
-              startFrom: _startFrom?.build(),
-              expireBy: _expireBy?.build(),
-              vehicles: _vehicles?.build(),
-              vehiclesCondition: _vehiclesCondition?.build(),
-              products: _products?.build(),
-              productsCondition: _productsCondition?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            code: _code?.build(),
+            publiclyVisible: _publiclyVisible?.build(),
+            description: _description?.build(),
+            startFrom: _startFrom?.build(),
+            expireBy: _expireBy?.build(),
+            vehicles: _vehicles?.build(),
+            vehiclesCondition: _vehiclesCondition?.build(),
+            products: _products?.build(),
+            productsCondition: _productsCondition?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -138238,9 +138975,10 @@ class GVehicleManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GVehicleManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -138366,9 +139104,10 @@ class GProductManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GProductManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -138573,16 +139312,17 @@ class GCouponOrderByInputBuilder
   _$GCouponOrderByInput _build() {
     final _$result = _$v ??
         new _$GCouponOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            code: code,
-            publiclyVisible: publiclyVisible,
-            description: description,
-            startFrom: startFrom,
-            expireBy: expireBy,
-            vehiclesCondition: vehiclesCondition,
-            productsCondition: productsCondition);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          code: code,
+          publiclyVisible: publiclyVisible,
+          description: description,
+          startFrom: startFrom,
+          expireBy: expireBy,
+          vehiclesCondition: vehiclesCondition,
+          productsCondition: productsCondition,
+        );
     replace(_$result);
     return _$result;
   }
@@ -138802,18 +139542,19 @@ class GCouponUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GCouponUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              code: code,
-              publiclyVisible: publiclyVisible,
-              description: description,
-              logic: logic,
-              startFrom: _startFrom?.build(),
-              expireBy: _expireBy?.build(),
-              vehicles: _vehicles?.build(),
-              vehiclesCondition: vehiclesCondition,
-              products: _products?.build(),
-              productsCondition: productsCondition);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            code: code,
+            publiclyVisible: publiclyVisible,
+            description: description,
+            logic: logic,
+            startFrom: _startFrom?.build(),
+            expireBy: _expireBy?.build(),
+            vehicles: _vehicles?.build(),
+            vehiclesCondition: vehiclesCondition,
+            products: _products?.build(),
+            productsCondition: productsCondition,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -138967,10 +139708,11 @@ class GVehicleRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -139118,10 +139860,11 @@ class GProductRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -139237,7 +139980,10 @@ class GCouponUpdateArgsBuilder
     _$GCouponUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GCouponUpdateArgs._(where: where.build(), data: data.build());
+          new _$GCouponUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -139470,18 +140216,19 @@ class GCouponCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GCouponCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              code: code,
-              publiclyVisible: publiclyVisible,
-              description: description,
-              logic: logic,
-              startFrom: _startFrom?.build(),
-              expireBy: _expireBy?.build(),
-              vehicles: _vehicles?.build(),
-              vehiclesCondition: vehiclesCondition,
-              products: _products?.build(),
-              productsCondition: productsCondition);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            code: code,
+            publiclyVisible: publiclyVisible,
+            description: description,
+            logic: logic,
+            startFrom: _startFrom?.build(),
+            expireBy: _expireBy?.build(),
+            vehicles: _vehicles?.build(),
+            vehiclesCondition: vehiclesCondition,
+            products: _products?.build(),
+            productsCondition: productsCondition,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -139611,7 +140358,9 @@ class GVehicleRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GVehicleRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -139731,7 +140480,9 @@ class GProductRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -139836,7 +140587,11 @@ class GOfferWhereUniqueInputBuilder
   GOfferWhereUniqueInput build() => _build();
 
   _$GOfferWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GOfferWhereUniqueInput._(id: id, code: code);
+    final _$result = _$v ??
+        new _$GOfferWhereUniqueInput._(
+          id: id,
+          code: code,
+        );
     replace(_$result);
     return _$result;
   }
@@ -140087,20 +140842,21 @@ class GOfferWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GOfferWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              code: _code?.build(),
-              description: _description?.build(),
-              startFrom: _startFrom?.build(),
-              expireBy: _expireBy?.build(),
-              vehicles: _vehicles?.build(),
-              vehiclesCondition: _vehiclesCondition?.build(),
-              products: _products?.build(),
-              productsCondition: _productsCondition?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            code: _code?.build(),
+            description: _description?.build(),
+            startFrom: _startFrom?.build(),
+            expireBy: _expireBy?.build(),
+            vehicles: _vehicles?.build(),
+            vehiclesCondition: _vehiclesCondition?.build(),
+            products: _products?.build(),
+            productsCondition: _productsCondition?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -140315,15 +141071,16 @@ class GOfferOrderByInputBuilder
   _$GOfferOrderByInput _build() {
     final _$result = _$v ??
         new _$GOfferOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            code: code,
-            description: description,
-            startFrom: startFrom,
-            expireBy: expireBy,
-            vehiclesCondition: vehiclesCondition,
-            productsCondition: productsCondition);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          code: code,
+          description: description,
+          startFrom: startFrom,
+          expireBy: expireBy,
+          vehiclesCondition: vehiclesCondition,
+          productsCondition: productsCondition,
+        );
     replace(_$result);
     return _$result;
   }
@@ -140530,17 +141287,18 @@ class GOfferUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GOfferUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              code: code,
-              description: description,
-              logic: logic,
-              startFrom: _startFrom?.build(),
-              expireBy: _expireBy?.build(),
-              vehicles: _vehicles?.build(),
-              vehiclesCondition: vehiclesCondition,
-              products: _products?.build(),
-              productsCondition: productsCondition);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            code: code,
+            description: description,
+            logic: logic,
+            startFrom: _startFrom?.build(),
+            expireBy: _expireBy?.build(),
+            vehicles: _vehicles?.build(),
+            vehiclesCondition: vehiclesCondition,
+            products: _products?.build(),
+            productsCondition: productsCondition,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -140662,7 +141420,10 @@ class GOfferUpdateArgsBuilder
     _$GOfferUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GOfferUpdateArgs._(where: where.build(), data: data.build());
+          new _$GOfferUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -140882,17 +141643,18 @@ class GOfferCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GOfferCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              code: code,
-              description: description,
-              logic: logic,
-              startFrom: _startFrom?.build(),
-              expireBy: _expireBy?.build(),
-              vehicles: _vehicles?.build(),
-              vehiclesCondition: vehiclesCondition,
-              products: _products?.build(),
-              productsCondition: productsCondition);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            code: code,
+            description: description,
+            logic: logic,
+            startFrom: _startFrom?.build(),
+            expireBy: _expireBy?.build(),
+            vehicles: _vehicles?.build(),
+            vehiclesCondition: vehiclesCondition,
+            products: _products?.build(),
+            productsCondition: productsCondition,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -140997,7 +141759,10 @@ class GFeedbackWhereUniqueInputBuilder
   GFeedbackWhereUniqueInput build() => _build();
 
   _$GFeedbackWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GFeedbackWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GFeedbackWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -141211,17 +141976,18 @@ class GFeedbackWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GFeedbackWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              category: _category?.build(),
-              title: _title?.build(),
-              description: _description?.build(),
-              attachments: _attachments?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            category: _category?.build(),
+            title: _title?.build(),
+            description: _description?.build(),
+            attachments: _attachments?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -141371,9 +142137,10 @@ class GFeedbackAttachmentManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GFeedbackAttachmentManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -141518,11 +142285,12 @@ class GFeedbackOrderByInputBuilder
   _$GFeedbackOrderByInput _build() {
     final _$result = _$v ??
         new _$GFeedbackOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            title: title,
-            description: description);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          title: title,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -141686,13 +142454,14 @@ class GFeedbackUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GFeedbackUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              category: _category?.build(),
-              title: title,
-              description: description,
-              attachments: _attachments?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            category: _category?.build(),
+            title: title,
+            description: description,
+            attachments: _attachments?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -141851,10 +142620,11 @@ class GFeedbackAttachmentRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GFeedbackAttachmentRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -141975,7 +142745,10 @@ class GFeedbackUpdateArgsBuilder
     _$GFeedbackUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GFeedbackUpdateArgs._(where: where.build(), data: data.build());
+          new _$GFeedbackUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -142152,13 +142925,14 @@ class GFeedbackCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GFeedbackCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              category: _category?.build(),
-              title: title,
-              description: description,
-              attachments: _attachments?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            category: _category?.build(),
+            title: title,
+            description: description,
+            attachments: _attachments?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -142290,7 +143064,9 @@ class GFeedbackAttachmentRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GFeedbackAttachmentRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -142392,7 +143168,10 @@ class GFeedbackAttachmentWhereUniqueInputBuilder
   GFeedbackAttachmentWhereUniqueInput build() => _build();
 
   _$GFeedbackAttachmentWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GFeedbackAttachmentWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GFeedbackAttachmentWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -142557,13 +143336,14 @@ class GFeedbackAttachmentWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GFeedbackAttachmentWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              feedback: _feedback?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            feedback: _feedback?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -142696,7 +143476,10 @@ class GFeedbackAttachmentOrderByInputBuilder
   _$GFeedbackAttachmentOrderByInput _build() {
     final _$result = _$v ??
         new _$GFeedbackAttachmentOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+        );
     replace(_$result);
     return _$result;
   }
@@ -142822,10 +143605,11 @@ class GFeedbackAttachmentUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GFeedbackAttachmentUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              feedback: _feedback?.build(),
-              image: _image?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            feedback: _feedback?.build(),
+            image: _image?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -142959,9 +143743,10 @@ class GFeedbackRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GFeedbackRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -143081,7 +143866,9 @@ class GFeedbackAttachmentUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GFeedbackAttachmentUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -143220,10 +144007,11 @@ class GFeedbackAttachmentCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GFeedbackAttachmentCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              feedback: _feedback?.build(),
-              image: _image?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            feedback: _feedback?.build(),
+            image: _image?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -143346,7 +144134,9 @@ class GFeedbackRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GFeedbackRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -143441,7 +144231,10 @@ class GReportWhereUniqueInputBuilder
   GReportWhereUniqueInput build() => _build();
 
   _$GReportWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GReportWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GReportWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -143665,18 +144458,19 @@ class GReportWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GReportWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              status: _status?.build(),
-              category: _category?.build(),
-              title: _title?.build(),
-              description: _description?.build(),
-              attachments: _attachments?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            status: _status?.build(),
+            category: _category?.build(),
+            title: _title?.build(),
+            description: _description?.build(),
+            attachments: _attachments?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -143825,9 +144619,10 @@ class GReportAttachmentManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GReportAttachmentManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -143987,12 +144782,13 @@ class GReportOrderByInputBuilder
   _$GReportOrderByInput _build() {
     final _$result = _$v ??
         new _$GReportOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            status: status,
-            title: title,
-            description: description);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          status: status,
+          title: title,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -144167,14 +144963,15 @@ class GReportUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GReportUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              status: status,
-              category: _category?.build(),
-              title: title,
-              description: description,
-              attachments: _attachments?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            status: status,
+            category: _category?.build(),
+            title: title,
+            description: description,
+            attachments: _attachments?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -144332,10 +145129,11 @@ class GReportAttachmentRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GReportAttachmentRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -144453,7 +145251,10 @@ class GReportUpdateArgsBuilder
     _$GReportUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GReportUpdateArgs._(where: where.build(), data: data.build());
+          new _$GReportUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -144641,14 +145442,15 @@ class GReportCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GReportCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              status: status,
-              category: _category?.build(),
-              title: title,
-              description: description,
-              attachments: _attachments?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            status: status,
+            category: _category?.build(),
+            title: title,
+            description: description,
+            attachments: _attachments?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -144780,7 +145582,9 @@ class GReportAttachmentRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GReportAttachmentRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -144881,7 +145685,10 @@ class GReportAttachmentWhereUniqueInputBuilder
   GReportAttachmentWhereUniqueInput build() => _build();
 
   _$GReportAttachmentWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GReportAttachmentWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GReportAttachmentWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -145045,13 +145852,14 @@ class GReportAttachmentWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GReportAttachmentWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              report: _report?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            report: _report?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -145182,7 +145990,10 @@ class GReportAttachmentOrderByInputBuilder
   _$GReportAttachmentOrderByInput _build() {
     final _$result = _$v ??
         new _$GReportAttachmentOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+        );
     replace(_$result);
     return _$result;
   }
@@ -145308,10 +146119,11 @@ class GReportAttachmentUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GReportAttachmentUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              report: _report?.build(),
-              image: _image?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            report: _report?.build(),
+            image: _image?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -145442,9 +146254,10 @@ class GReportRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GReportRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -145564,7 +146377,9 @@ class GReportAttachmentUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GReportAttachmentUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -145703,10 +146518,11 @@ class GReportAttachmentCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GReportAttachmentCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              report: _report?.build(),
-              image: _image?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            report: _report?.build(),
+            image: _image?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -145825,7 +146641,9 @@ class GReportRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GReportRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -145921,7 +146739,10 @@ class GProductTypeWhereUniqueInputBuilder
   GProductTypeWhereUniqueInput build() => _build();
 
   _$GProductTypeWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GProductTypeWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GProductTypeWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -146095,14 +146916,15 @@ class GProductTypeWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GProductTypeWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              description: _description?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            description: _description?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -146256,11 +147078,12 @@ class GProductTypeOrderByInputBuilder
   _$GProductTypeOrderByInput _build() {
     final _$result = _$v ??
         new _$GProductTypeOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            description: description);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -146382,10 +147205,11 @@ class GProductTypeUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductTypeUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -146503,7 +147327,9 @@ class GProductTypeUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GProductTypeUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -146638,10 +147464,11 @@ class GProductTypeCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductTypeCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -146736,7 +147563,10 @@ class GProductWhereUniqueInputBuilder
   GProductWhereUniqueInput build() => _build();
 
   _$GProductWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GProductWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GProductWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -146975,19 +147805,20 @@ class GProductWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GProductWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              description: _description?.build(),
-              longDescription: _longDescription?.build(),
-              type: _type?.build(),
-              brand: _brand?.build(),
-              variants: _variants?.build(),
-              specifications: _specifications?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            description: _description?.build(),
+            longDescription: _longDescription?.build(),
+            type: _type?.build(),
+            brand: _brand?.build(),
+            variants: _variants?.build(),
+            specifications: _specifications?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -147137,9 +147968,10 @@ class GProductVariantManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -147274,9 +148106,10 @@ class GProductSpecificationManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GProductSpecificationManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -147437,12 +148270,13 @@ class GProductOrderByInputBuilder
   _$GProductOrderByInput _build() {
     final _$result = _$v ??
         new _$GProductOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            description: description,
-            longDescription: longDescription);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          description: description,
+          longDescription: longDescription,
+        );
     replace(_$result);
     return _$result;
   }
@@ -147634,15 +148468,16 @@ class GProductUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description,
-              longDescription: longDescription,
-              type: _type?.build(),
-              brand: _brand?.build(),
-              variants: _variants?.build(),
-              specifications: _specifications?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+            longDescription: longDescription,
+            type: _type?.build(),
+            brand: _brand?.build(),
+            variants: _variants?.build(),
+            specifications: _specifications?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -147783,9 +148618,10 @@ class GProductTypeRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductTypeRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -147935,10 +148771,11 @@ class GProductVariantRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -148098,10 +148935,11 @@ class GProductSpecificationRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductSpecificationRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -148222,7 +149060,10 @@ class GProductUpdateArgsBuilder
     _$GProductUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GProductUpdateArgs._(where: where.build(), data: data.build());
+          new _$GProductUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -148427,15 +149268,16 @@ class GProductCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description,
-              longDescription: longDescription,
-              type: _type?.build(),
-              brand: _brand?.build(),
-              variants: _variants?.build(),
-              specifications: _specifications?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+            longDescription: longDescription,
+            type: _type?.build(),
+            brand: _brand?.build(),
+            variants: _variants?.build(),
+            specifications: _specifications?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -148565,7 +149407,9 @@ class GProductTypeRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductTypeRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -148690,7 +149534,9 @@ class GProductVariantRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -148820,7 +149666,9 @@ class GProductSpecificationRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductSpecificationRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -148924,8 +149772,10 @@ class GProductSpecificationWhereUniqueInputBuilder
   GProductSpecificationWhereUniqueInput build() => _build();
 
   _$GProductSpecificationWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GProductSpecificationWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GProductSpecificationWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -149168,19 +150018,20 @@ class GProductSpecificationWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GProductSpecificationWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              specification: _specification?.build(),
-              type: _type?.build(),
-              intValue: _intValue?.build(),
-              stringValue: _stringValue?.build(),
-              category: _category?.build(),
-              product: _product?.build(),
-              isKeyFeature: _isKeyFeature?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            specification: _specification?.build(),
+            type: _type?.build(),
+            intValue: _intValue?.build(),
+            stringValue: _stringValue?.build(),
+            category: _category?.build(),
+            product: _product?.build(),
+            isKeyFeature: _isKeyFeature?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -149375,13 +150226,14 @@ class GProductSpecificationOrderByInputBuilder
   _$GProductSpecificationOrderByInput _build() {
     final _$result = _$v ??
         new _$GProductSpecificationOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            type: type,
-            intValue: intValue,
-            stringValue: stringValue,
-            isKeyFeature: isKeyFeature);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          type: type,
+          intValue: intValue,
+          stringValue: stringValue,
+          isKeyFeature: isKeyFeature,
+        );
     replace(_$result);
     return _$result;
   }
@@ -149573,15 +150425,16 @@ class GProductSpecificationUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductSpecificationUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              specification: _specification?.build(),
-              type: type,
-              intValue: intValue,
-              stringValue: stringValue,
-              category: _category?.build(),
-              product: _product?.build(),
-              isKeyFeature: isKeyFeature);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            specification: _specification?.build(),
+            type: type,
+            intValue: intValue,
+            stringValue: stringValue,
+            category: _category?.build(),
+            product: _product?.build(),
+            isKeyFeature: isKeyFeature,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -149710,7 +150563,9 @@ class GProductSpecificationUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GProductSpecificationUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -149915,15 +150770,16 @@ class GProductSpecificationCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductSpecificationCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              specification: _specification?.build(),
-              type: type,
-              intValue: intValue,
-              stringValue: stringValue,
-              category: _category?.build(),
-              product: _product?.build(),
-              isKeyFeature: isKeyFeature);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            specification: _specification?.build(),
+            type: type,
+            intValue: intValue,
+            stringValue: stringValue,
+            category: _category?.build(),
+            product: _product?.build(),
+            isKeyFeature: isKeyFeature,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -150038,8 +150894,11 @@ class GProductVariantWhereUniqueInputBuilder
   GProductVariantWhereUniqueInput build() => _build();
 
   _$GProductVariantWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GProductVariantWhereUniqueInput._(id: id, key: key);
+    final _$result = _$v ??
+        new _$GProductVariantWhereUniqueInput._(
+          id: id,
+          key: key,
+        );
     replace(_$result);
     return _$result;
   }
@@ -150363,26 +151222,27 @@ class GProductVariantWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              key: _key?.build(),
-              product: _product?.build(),
-              index: _index?.build(),
-              Gdefault: _Gdefault?.build(),
-              specifications: _specifications?.build(),
-              tags: _tags?.build(),
-              prices: _prices?.build(),
-              images: _images?.build(),
-              videos: _videos?.build(),
-              gallery: _gallery?.build(),
-              reels: _reels?.build(),
-              gtin: _gtin?.build(),
-              disabled: _disabled?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            key: _key?.build(),
+            product: _product?.build(),
+            index: _index?.build(),
+            Gdefault: _Gdefault?.build(),
+            specifications: _specifications?.build(),
+            tags: _tags?.build(),
+            prices: _prices?.build(),
+            images: _images?.build(),
+            videos: _videos?.build(),
+            gallery: _gallery?.build(),
+            reels: _reels?.build(),
+            gtin: _gtin?.build(),
+            disabled: _disabled?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -150544,9 +151404,10 @@ class GProductImageManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GProductImageManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -150674,9 +151535,10 @@ class GProductVideoManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GProductVideoManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -150810,9 +151672,10 @@ class GProductGalleryItemManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GProductGalleryItemManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -150941,9 +151804,10 @@ class GProductReelManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GProductReelManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -151135,15 +151999,16 @@ class GProductVariantOrderByInputBuilder
   _$GProductVariantOrderByInput _build() {
     final _$result = _$v ??
         new _$GProductVariantOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            key: key,
-            index: index,
-            Gdefault: Gdefault,
-            gtin: gtin,
-            disabled: disabled);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          key: key,
+          index: index,
+          Gdefault: Gdefault,
+          gtin: gtin,
+          disabled: disabled,
+        );
     replace(_$result);
     return _$result;
   }
@@ -151419,22 +152284,23 @@ class GProductVariantUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              key: key,
-              product: _product?.build(),
-              index: index,
-              Gdefault: Gdefault,
-              specifications: _specifications?.build(),
-              tags: _tags?.build(),
-              prices: _prices?.build(),
-              images: _images?.build(),
-              videos: _videos?.build(),
-              gallery: _gallery?.build(),
-              reels: _reels?.build(),
-              gtin: gtin,
-              disabled: disabled);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            key: key,
+            product: _product?.build(),
+            index: index,
+            Gdefault: Gdefault,
+            specifications: _specifications?.build(),
+            tags: _tags?.build(),
+            prices: _prices?.build(),
+            images: _images?.build(),
+            videos: _videos?.build(),
+            gallery: _gallery?.build(),
+            reels: _reels?.build(),
+            gtin: gtin,
+            disabled: disabled,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -151598,10 +152464,11 @@ class GProductImageRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductImageRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -151753,10 +152620,11 @@ class GProductVideoRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductVideoRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -151914,10 +152782,11 @@ class GProductGalleryItemRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductGalleryItemRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -152069,10 +152938,11 @@ class GProductReelRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductReelRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -152197,7 +153067,9 @@ class GProductVariantUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -152486,22 +153358,23 @@ class GProductVariantCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              key: key,
-              product: _product?.build(),
-              index: index,
-              Gdefault: Gdefault,
-              specifications: _specifications?.build(),
-              tags: _tags?.build(),
-              prices: _prices?.build(),
-              images: _images?.build(),
-              videos: _videos?.build(),
-              gallery: _gallery?.build(),
-              reels: _reels?.build(),
-              gtin: gtin,
-              disabled: disabled);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            key: key,
+            product: _product?.build(),
+            index: index,
+            Gdefault: Gdefault,
+            specifications: _specifications?.build(),
+            tags: _tags?.build(),
+            prices: _prices?.build(),
+            images: _images?.build(),
+            videos: _videos?.build(),
+            gallery: _gallery?.build(),
+            reels: _reels?.build(),
+            gtin: gtin,
+            disabled: disabled,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -152641,7 +153514,9 @@ class GProductImageRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductImageRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -152765,7 +153640,9 @@ class GProductVideoRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductVideoRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -152892,7 +153769,9 @@ class GProductGalleryItemRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductGalleryItemRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -153016,7 +153895,9 @@ class GProductReelRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductReelRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -153114,7 +153995,10 @@ class GProductImageWhereUniqueInputBuilder
   GProductImageWhereUniqueInput build() => _build();
 
   _$GProductImageWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GProductImageWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GProductImageWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -153278,13 +154162,14 @@ class GProductImageWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GProductImageWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              variant: _variant?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            variant: _variant?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -153414,7 +154299,10 @@ class GProductImageOrderByInputBuilder
   _$GProductImageOrderByInput _build() {
     final _$result = _$v ??
         new _$GProductImageOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+        );
     replace(_$result);
     return _$result;
   }
@@ -153539,10 +154427,11 @@ class GProductImageUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductImageUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              image: _image?.build(),
-              variant: _variant?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            image: _image?.build(),
+            variant: _variant?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -153665,7 +154554,9 @@ class GProductImageUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GProductImageUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -153803,10 +154694,11 @@ class GProductImageCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductImageCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              image: _image?.build(),
-              variant: _variant?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            image: _image?.build(),
+            variant: _variant?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -153906,7 +154798,10 @@ class GProductVideoWhereUniqueInputBuilder
   GProductVideoWhereUniqueInput build() => _build();
 
   _$GProductVideoWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GProductVideoWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GProductVideoWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -154070,13 +154965,14 @@ class GProductVideoWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GProductVideoWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              variant: _variant?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            variant: _variant?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -154206,7 +155102,10 @@ class GProductVideoOrderByInputBuilder
   _$GProductVideoOrderByInput _build() {
     final _$result = _$v ??
         new _$GProductVideoOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+        );
     replace(_$result);
     return _$result;
   }
@@ -154331,10 +155230,11 @@ class GProductVideoUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductVideoUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              video: _video?.build(),
-              variant: _variant?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            video: _video?.build(),
+            variant: _variant?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -154457,7 +155357,9 @@ class GProductVideoUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GProductVideoUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -154595,10 +155497,11 @@ class GProductVideoCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductVideoCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              video: _video?.build(),
-              variant: _variant?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            video: _video?.build(),
+            variant: _variant?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -154702,7 +155605,10 @@ class GProductGalleryItemWhereUniqueInputBuilder
   GProductGalleryItemWhereUniqueInput build() => _build();
 
   _$GProductGalleryItemWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GProductGalleryItemWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GProductGalleryItemWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -154902,16 +155808,17 @@ class GProductGalleryItemWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GProductGalleryItemWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              type: _type?.build(),
-              fileId: _fileId?.build(),
-              variant: _variant?.build(),
-              index: _index?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            type: _type?.build(),
+            fileId: _fileId?.build(),
+            variant: _variant?.build(),
+            index: _index?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -155085,12 +155992,13 @@ class GProductGalleryItemOrderByInputBuilder
   _$GProductGalleryItemOrderByInput _build() {
     final _$result = _$v ??
         new _$GProductGalleryItemOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            type: type,
-            fileId: fileId,
-            index: index);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          type: type,
+          fileId: fileId,
+          index: index,
+        );
     replace(_$result);
     return _$result;
   }
@@ -155240,12 +156148,13 @@ class GProductGalleryItemUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductGalleryItemUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              type: type,
-              fileId: fileId,
-              variant: _variant?.build(),
-              index: index);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            type: type,
+            fileId: fileId,
+            variant: _variant?.build(),
+            index: index,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -155368,7 +156277,9 @@ class GProductGalleryItemUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GProductGalleryItemUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -155531,12 +156442,13 @@ class GProductGalleryItemCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductGalleryItemCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              type: type,
-              fileId: fileId,
-              variant: _variant?.build(),
-              index: index);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            type: type,
+            fileId: fileId,
+            variant: _variant?.build(),
+            index: index,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -155635,7 +156547,10 @@ class GProductReelWhereUniqueInputBuilder
   GProductReelWhereUniqueInput build() => _build();
 
   _$GProductReelWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GProductReelWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GProductReelWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -155845,17 +156760,18 @@ class GProductReelWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GProductReelWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              type: _type?.build(),
-              fileId: _fileId?.build(),
-              variant: _variant?.build(),
-              index: _index?.build(),
-              disabled: _disabled?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            type: _type?.build(),
+            fileId: _fileId?.build(),
+            variant: _variant?.build(),
+            index: _index?.build(),
+            disabled: _disabled?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -156040,13 +156956,14 @@ class GProductReelOrderByInputBuilder
   _$GProductReelOrderByInput _build() {
     final _$result = _$v ??
         new _$GProductReelOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            type: type,
-            fileId: fileId,
-            index: index,
-            disabled: disabled);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          type: type,
+          fileId: fileId,
+          index: index,
+          disabled: disabled,
+        );
     replace(_$result);
     return _$result;
   }
@@ -156206,13 +157123,14 @@ class GProductReelUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductReelUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              type: type,
-              fileId: fileId,
-              variant: _variant?.build(),
-              index: index,
-              disabled: disabled);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            type: type,
+            fileId: fileId,
+            variant: _variant?.build(),
+            index: index,
+            disabled: disabled,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -156333,7 +157251,9 @@ class GProductReelUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GProductReelUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -156506,13 +157426,14 @@ class GProductReelCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductReelCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              type: type,
-              fileId: fileId,
-              variant: _variant?.build(),
-              index: index,
-              disabled: disabled);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            type: type,
+            fileId: fileId,
+            variant: _variant?.build(),
+            index: index,
+            disabled: disabled,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -156611,7 +157532,10 @@ class GProductDealerWhereUniqueInputBuilder
   GProductDealerWhereUniqueInput build() => _build();
 
   _$GProductDealerWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GProductDealerWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GProductDealerWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -156825,17 +157749,18 @@ class GProductDealerWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GProductDealerWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              productVariant: _productVariant?.build(),
-              guarantees: _guarantees?.build(),
-              prices: _prices?.build(),
-              stock: _stock?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            productVariant: _productVariant?.build(),
+            guarantees: _guarantees?.build(),
+            prices: _prices?.build(),
+            stock: _stock?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -156984,7 +157909,11 @@ class GProductDealerOrderByInputBuilder
   _$GProductDealerOrderByInput _build() {
     final _$result = _$v ??
         new _$GProductDealerOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt, stock: stock);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          stock: stock,
+        );
     replace(_$result);
     return _$result;
   }
@@ -157152,13 +158081,14 @@ class GProductDealerUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductDealerUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              productVariant: _productVariant?.build(),
-              guarantees: _guarantees?.build(),
-              prices: _prices?.build(),
-              stock: stock);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            productVariant: _productVariant?.build(),
+            guarantees: _guarantees?.build(),
+            prices: _prices?.build(),
+            stock: stock,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -157285,7 +158215,9 @@ class GProductDealerUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GProductDealerUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -157466,13 +158398,14 @@ class GProductDealerCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductDealerCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              productVariant: _productVariant?.build(),
-              guarantees: _guarantees?.build(),
-              prices: _prices?.build(),
-              stock: stock);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            productVariant: _productVariant?.build(),
+            guarantees: _guarantees?.build(),
+            prices: _prices?.build(),
+            stock: stock,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -157584,8 +158517,10 @@ class GProductDealerStockRequestWhereUniqueInputBuilder
   GProductDealerStockRequestWhereUniqueInput build() => _build();
 
   _$GProductDealerStockRequestWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GProductDealerStockRequestWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GProductDealerStockRequestWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -157818,18 +158753,19 @@ class GProductDealerStockRequestWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GProductDealerStockRequestWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              productVariant: _productVariant?.build(),
-              guarantees: _guarantees?.build(),
-              stock: _stock?.build(),
-              accepted: _accepted?.build(),
-              type: _type?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            productVariant: _productVariant?.build(),
+            guarantees: _guarantees?.build(),
+            stock: _stock?.build(),
+            accepted: _accepted?.build(),
+            type: _type?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -158014,12 +158950,13 @@ class GProductDealerStockRequestOrderByInputBuilder
   _$GProductDealerStockRequestOrderByInput _build() {
     final _$result = _$v ??
         new _$GProductDealerStockRequestOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            stock: stock,
-            accepted: accepted,
-            type: type);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          stock: stock,
+          accepted: accepted,
+          type: type,
+        );
     replace(_$result);
     return _$result;
   }
@@ -158203,14 +159140,15 @@ class GProductDealerStockRequestUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductDealerStockRequestUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              productVariant: _productVariant?.build(),
-              guarantees: _guarantees?.build(),
-              stock: stock,
-              accepted: accepted,
-              type: type);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            productVariant: _productVariant?.build(),
+            guarantees: _guarantees?.build(),
+            stock: stock,
+            accepted: accepted,
+            type: type,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -158344,7 +159282,9 @@ class GProductDealerStockRequestUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GProductDealerStockRequestUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -158543,14 +159483,15 @@ class GProductDealerStockRequestCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GProductDealerStockRequestCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              dealer: _dealer?.build(),
-              productVariant: _productVariant?.build(),
-              guarantees: _guarantees?.build(),
-              stock: stock,
-              accepted: accepted,
-              type: type);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            dealer: _dealer?.build(),
+            productVariant: _productVariant?.build(),
+            guarantees: _guarantees?.build(),
+            stock: stock,
+            accepted: accepted,
+            type: type,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -158653,7 +159594,10 @@ class GCategoryWhereUniqueInputBuilder
   GCategoryWhereUniqueInput build() => _build();
 
   _$GCategoryWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GCategoryWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GCategoryWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -158827,14 +159771,15 @@ class GCategoryWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GCategoryWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              description: _description?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            description: _description?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -158987,11 +159932,12 @@ class GCategoryOrderByInputBuilder
   _$GCategoryOrderByInput _build() {
     final _$result = _$v ??
         new _$GCategoryOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            description: description);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -159112,10 +160058,11 @@ class GCategoryUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GCategoryUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -159230,7 +160177,10 @@ class GCategoryUpdateArgsBuilder
     _$GCategoryUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GCategoryUpdateArgs._(where: where.build(), data: data.build());
+          new _$GCategoryUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -159364,10 +160314,11 @@ class GCategoryCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GCategoryCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              description: description);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -159462,7 +160413,10 @@ class GSearchWhereUniqueInputBuilder
   GSearchWhereUniqueInput build() => _build();
 
   _$GSearchWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GSearchWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GSearchWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -159660,16 +160614,17 @@ class GSearchWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GSearchWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              searchText: _searchText?.build(),
-              rank: _rank?.build(),
-              type: _type?.build(),
-              users: _users?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            searchText: _searchText?.build(),
+            rank: _rank?.build(),
+            type: _type?.build(),
+            users: _users?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -159810,9 +160765,10 @@ class GSearchUserManyRelationFilterBuilder
     try {
       _$result = _$v ??
           new _$GSearchUserManyRelationFilter._(
-              every: _every?.build(),
-              some: _some?.build(),
-              none: _none?.build());
+            every: _every?.build(),
+            some: _some?.build(),
+            none: _none?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -159970,12 +160926,13 @@ class GSearchOrderByInputBuilder
   _$GSearchOrderByInput _build() {
     final _$result = _$v ??
         new _$GSearchOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            searchText: searchText,
-            rank: rank,
-            type: type);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          searchText: searchText,
+          rank: rank,
+          type: type,
+        );
     replace(_$result);
     return _$result;
   }
@@ -160123,12 +161080,13 @@ class GSearchUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GSearchUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              searchText: searchText,
-              rank: rank,
-              type: type,
-              users: _users?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            searchText: searchText,
+            rank: rank,
+            type: type,
+            users: _users?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -160277,10 +161235,11 @@ class GSearchUserRelateToManyForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GSearchUserRelateToManyForUpdateInput._(
-              disconnect: _disconnect?.build(),
-              set: _set?.build(),
-              create: _create?.build(),
-              connect: _connect?.build());
+            disconnect: _disconnect?.build(),
+            set: _set?.build(),
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -160398,7 +161357,10 @@ class GSearchUpdateArgsBuilder
     _$GSearchUpdateArgs _$result;
     try {
       _$result = _$v ??
-          new _$GSearchUpdateArgs._(where: where.build(), data: data.build());
+          new _$GSearchUpdateArgs._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -160559,12 +161521,13 @@ class GSearchCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GSearchCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              searchText: searchText,
-              rank: rank,
-              type: type,
-              users: _users?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            searchText: searchText,
+            rank: rank,
+            type: type,
+            users: _users?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -160689,7 +161652,9 @@ class GSearchUserRelateToManyForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GSearchUserRelateToManyForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -160787,7 +161752,10 @@ class GSearchUserWhereUniqueInputBuilder
   GSearchUserWhereUniqueInput build() => _build();
 
   _$GSearchUserWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GSearchUserWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GSearchUserWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -160973,15 +161941,16 @@ class GSearchUserWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GSearchUserWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              rank: _rank?.build(),
-              search: _search?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            rank: _rank?.build(),
+            search: _search?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -161126,7 +162095,11 @@ class GSearchUserOrderByInputBuilder
   _$GSearchUserOrderByInput _build() {
     final _$result = _$v ??
         new _$GSearchUserOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt, rank: rank);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          rank: rank,
+        );
     replace(_$result);
     return _$result;
   }
@@ -161260,11 +162233,12 @@ class GSearchUserUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GSearchUserUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              rank: rank,
-              search: _search?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            rank: rank,
+            search: _search?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -161396,9 +162370,10 @@ class GSearchRelateToOneForUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GSearchRelateToOneForUpdateInput._(
-              create: _create?.build(),
-              connect: _connect?.build(),
-              disconnect: disconnect);
+            create: _create?.build(),
+            connect: _connect?.build(),
+            disconnect: disconnect,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -161515,7 +162490,9 @@ class GSearchUserUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GSearchUserUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -161662,11 +162639,12 @@ class GSearchUserCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GSearchUserCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              rank: rank,
-              search: _search?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            rank: rank,
+            search: _search?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -161786,7 +162764,9 @@ class GSearchRelateToOneForCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GSearchRelateToOneForCreateInput._(
-              create: _create?.build(), connect: _connect?.build());
+            create: _create?.build(),
+            connect: _connect?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -161886,8 +162866,10 @@ class GFinanceOfferEnquiryWhereUniqueInputBuilder
   GFinanceOfferEnquiryWhereUniqueInput build() => _build();
 
   _$GFinanceOfferEnquiryWhereUniqueInput _build() {
-    final _$result =
-        _$v ?? new _$GFinanceOfferEnquiryWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GFinanceOfferEnquiryWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -162116,18 +163098,19 @@ class GFinanceOfferEnquiryWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GFinanceOfferEnquiryWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: _name?.build(),
-              phoneNumber: _phoneNumber?.build(),
-              alternativeNumber: _alternativeNumber?.build(),
-              employmentType: _employmentType?.build(),
-              address: _address?.build(),
-              annualIncome: _annualIncome?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: _name?.build(),
+            phoneNumber: _phoneNumber?.build(),
+            alternativeNumber: _alternativeNumber?.build(),
+            employmentType: _employmentType?.build(),
+            address: _address?.build(),
+            annualIncome: _annualIncome?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -162342,15 +163325,16 @@ class GFinanceOfferEnquiryOrderByInputBuilder
   _$GFinanceOfferEnquiryOrderByInput _build() {
     final _$result = _$v ??
         new _$GFinanceOfferEnquiryOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            name: name,
-            phoneNumber: phoneNumber,
-            alternativeNumber: alternativeNumber,
-            employmentType: employmentType,
-            address: address,
-            annualIncome: annualIncome);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          name: name,
+          phoneNumber: phoneNumber,
+          alternativeNumber: alternativeNumber,
+          employmentType: employmentType,
+          address: address,
+          annualIncome: annualIncome,
+        );
     replace(_$result);
     return _$result;
   }
@@ -162523,14 +163507,15 @@ class GFinanceOfferEnquiryUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GFinanceOfferEnquiryUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              phoneNumber: phoneNumber,
-              alternativeNumber: alternativeNumber,
-              employmentType: employmentType,
-              address: address,
-              annualIncome: annualIncome);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            phoneNumber: phoneNumber,
+            alternativeNumber: alternativeNumber,
+            employmentType: employmentType,
+            address: address,
+            annualIncome: annualIncome,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -162650,7 +163635,9 @@ class GFinanceOfferEnquiryUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GFinanceOfferEnquiryUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -162836,14 +163823,15 @@ class GFinanceOfferEnquiryCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GFinanceOfferEnquiryCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              phoneNumber: phoneNumber,
-              alternativeNumber: alternativeNumber,
-              employmentType: employmentType,
-              address: address,
-              annualIncome: annualIncome);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            phoneNumber: phoneNumber,
+            alternativeNumber: alternativeNumber,
+            employmentType: employmentType,
+            address: address,
+            annualIncome: annualIncome,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -162938,7 +163926,10 @@ class GContactUsWhereUniqueInputBuilder
   GContactUsWhereUniqueInput build() => _build();
 
   _$GContactUsWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GContactUsWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GContactUsWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -163100,13 +164091,14 @@ class GContactUsWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GContactUsWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              contact: _contact?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            contact: _contact?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -163246,10 +164238,11 @@ class GContactUsOrderByInputBuilder
   _$GContactUsOrderByInput _build() {
     final _$result = _$v ??
         new _$GContactUsOrderByInput._(
-            id: id,
-            createdAt: createdAt,
-            modifiedAt: modifiedAt,
-            contact: contact);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+          contact: contact,
+        );
     replace(_$result);
     return _$result;
   }
@@ -163359,9 +164352,10 @@ class GContactUsUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GContactUsUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              contact: contact);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            contact: contact,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -163478,7 +164472,9 @@ class GContactUsUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GContactUsUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -163601,9 +164597,10 @@ class GContactUsCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GContactUsCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              contact: contact);
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            contact: contact,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -163699,7 +164696,10 @@ class GNotifyUserWhereUniqueInputBuilder
   GNotifyUserWhereUniqueInput build() => _build();
 
   _$GNotifyUserWhereUniqueInput _build() {
-    final _$result = _$v ?? new _$GNotifyUserWhereUniqueInput._(id: id);
+    final _$result = _$v ??
+        new _$GNotifyUserWhereUniqueInput._(
+          id: id,
+        );
     replace(_$result);
     return _$result;
   }
@@ -163885,15 +164885,16 @@ class GNotifyUserWhereInputBuilder
     try {
       _$result = _$v ??
           new _$GNotifyUserWhereInput._(
-              AND: _AND?.build(),
-              OR: _OR?.build(),
-              NOT: _NOT?.build(),
-              id: _id?.build(),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              product: _product?.build(),
-              vehicle: _vehicle?.build());
+            AND: _AND?.build(),
+            OR: _OR?.build(),
+            NOT: _NOT?.build(),
+            id: _id?.build(),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            product: _product?.build(),
+            vehicle: _vehicle?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -164027,7 +165028,10 @@ class GNotifyUserOrderByInputBuilder
   _$GNotifyUserOrderByInput _build() {
     final _$result = _$v ??
         new _$GNotifyUserOrderByInput._(
-            id: id, createdAt: createdAt, modifiedAt: modifiedAt);
+          id: id,
+          createdAt: createdAt,
+          modifiedAt: modifiedAt,
+        );
     replace(_$result);
     return _$result;
   }
@@ -164163,11 +165167,12 @@ class GNotifyUserUpdateInputBuilder
     try {
       _$result = _$v ??
           new _$GNotifyUserUpdateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              product: _product?.build(),
-              vehicle: _vehicle?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            product: _product?.build(),
+            vehicle: _vehicle?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -164290,7 +165295,9 @@ class GNotifyUserUpdateArgsBuilder
     try {
       _$result = _$v ??
           new _$GNotifyUserUpdateArgs._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -164439,11 +165446,12 @@ class GNotifyUserCreateInputBuilder
     try {
       _$result = _$v ??
           new _$GNotifyUserCreateInput._(
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              user: _user?.build(),
-              product: _product?.build(),
-              vehicle: _vehicle?.build());
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            user: _user?.build(),
+            product: _product?.build(),
+            vehicle: _vehicle?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -164555,9 +165563,10 @@ class GOrderItemBuilder implements Builder<GOrderItem, GOrderItemBuilder> {
     try {
       _$result = _$v ??
           new _$GOrderItem._(
-              type: BuiltValueNullFieldError.checkNotNull(
-                  type, r'GOrderItem', 'type'),
-              ids: ids.build());
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'GOrderItem', 'type'),
+            ids: ids.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -164662,10 +165671,11 @@ class GPaymentItemBuilder
   _$GPaymentItem _build() {
     final _$result = _$v ??
         new _$GPaymentItem._(
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'GPaymentItem', 'type'),
-            amount: BuiltValueNullFieldError.checkNotNull(
-                amount, r'GPaymentItem', 'amount'));
+          type: BuiltValueNullFieldError.checkNotNull(
+              type, r'GPaymentItem', 'type'),
+          amount: BuiltValueNullFieldError.checkNotNull(
+              amount, r'GPaymentItem', 'amount'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -164782,10 +165792,11 @@ class GCreateInitialUserInputBuilder
   _$GCreateInitialUserInput _build() {
     final _$result = _$v ??
         new _$GCreateInitialUserInput._(
-            name: name,
-            phoneNumber: phoneNumber,
-            email: email,
-            password: password);
+          name: name,
+          phoneNumber: phoneNumber,
+          email: email,
+          password: password,
+        );
     replace(_$result);
     return _$result;
   }
@@ -164878,9 +165889,9 @@ class GItemBuilder implements Builder<GItem, GItemBuilder> {
     try {
       _$result = _$v ??
           new _$GItem._(
-              type:
-                  BuiltValueNullFieldError.checkNotNull(type, r'GItem', 'type'),
-              ids: ids.build());
+            type: BuiltValueNullFieldError.checkNotNull(type, r'GItem', 'type'),
+            ids: ids.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {

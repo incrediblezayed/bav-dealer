@@ -776,6 +776,12 @@ class _$GProductOrdersData_productOrders_dealer_pricesSerializer
         ..add('amount')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.originalAmount;
+    if (value != null) {
+      result
+        ..add('originalAmount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     value = object.category;
     if (value != null) {
       result
@@ -805,6 +811,10 @@ class _$GProductOrdersData_productOrders_dealer_pricesSerializer
           break;
         case 'amount':
           result.amount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'originalAmount':
+          result.originalAmount = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
           break;
         case 'category':
@@ -1927,6 +1937,12 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_pricesSerializer
         ..add('amount')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.originalAmount;
+    if (value != null) {
+      result
+        ..add('originalAmount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     value = object.createdAt;
     if (value != null) {
       result
@@ -1963,6 +1979,10 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_pricesSerializer
           break;
         case 'amount':
           result.amount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'originalAmount':
+          result.originalAmount = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
           break;
         case 'createdAt':
@@ -4061,10 +4081,11 @@ class GProductOrdersDataBuilder
     try {
       _$result = _$v ??
           new _$GProductOrdersData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GProductOrdersData', 'G__typename'),
-              productOrdersCount: productOrdersCount,
-              productOrders: _productOrders?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GProductOrdersData', 'G__typename'),
+            productOrdersCount: productOrdersCount,
+            productOrders: _productOrders?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -4245,15 +4266,16 @@ class GProductOrdersData_productOrdersBuilder
     try {
       _$result = _$v ??
           new _$GProductOrdersData_productOrders._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GProductOrdersData_productOrders', 'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GProductOrdersData_productOrders', 'id'),
-              price: price,
-              dealer: _dealer?.build(),
-              status: status,
-              order: _order?.build(),
-              createdAt: _createdAt?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GProductOrdersData_productOrders', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductOrdersData_productOrders', 'id'),
+            price: price,
+            dealer: _dealer?.build(),
+            status: status,
+            order: _order?.build(),
+            createdAt: _createdAt?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -4430,13 +4452,14 @@ class GProductOrdersData_productOrders_dealerBuilder
     try {
       _$result = _$v ??
           new _$GProductOrdersData_productOrders_dealer._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GProductOrdersData_productOrders_dealer', 'G__typename'),
-              productVariant: _productVariant?.build(),
-              dealer: _dealer?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GProductOrdersData_productOrders_dealer', 'id'),
-              prices: _prices?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GProductOrdersData_productOrders_dealer', 'G__typename'),
+            productVariant: _productVariant?.build(),
+            dealer: _dealer?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductOrdersData_productOrders_dealer', 'id'),
+            prices: _prices?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -4608,13 +4631,14 @@ class GProductOrdersData_productOrders_dealer_productVariantBuilder
     try {
       _$result = _$v ??
           new _$GProductOrdersData_productOrders_dealer_productVariant._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductOrdersData_productOrders_dealer_productVariant',
-                  'G__typename'),
-              product: _product?.build(),
-              name: name,
-              images: _images?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductOrdersData_productOrders_dealer_productVariant',
+                'G__typename'),
+            product: _product?.build(),
+            name: name,
+            images: _images?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -4754,11 +4778,12 @@ class GProductOrdersData_productOrders_dealer_productVariant_productBuilder
   _$GProductOrdersData_productOrders_dealer_productVariant_product _build() {
     final _$result = _$v ??
         new _$GProductOrdersData_productOrders_dealer_productVariant_product._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductOrdersData_productOrders_dealer_productVariant_product',
-                'G__typename'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductOrdersData_productOrders_dealer_productVariant_product',
+              'G__typename'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -4891,11 +4916,12 @@ class GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder
     try {
       _$result = _$v ??
           new _$GProductOrdersData_productOrders_dealer_productVariant_images._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductOrdersData_productOrders_dealer_productVariant_images',
-                  'G__typename'),
-              image: _image?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductOrdersData_productOrders_dealer_productVariant_images',
+                'G__typename'),
+            image: _image?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -5040,14 +5066,15 @@ class GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder
     final _$result = _$v ??
         new _$GProductOrdersData_productOrders_dealer_productVariant_images_image
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductOrdersData_productOrders_dealer_productVariant_images_image',
-                'G__typename'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url,
-                r'GProductOrdersData_productOrders_dealer_productVariant_images_image',
-                'url'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductOrdersData_productOrders_dealer_productVariant_images_image',
+              'G__typename'),
+          url: BuiltValueNullFieldError.checkNotNull(
+              url,
+              r'GProductOrdersData_productOrders_dealer_productVariant_images_image',
+              'url'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -5161,12 +5188,11 @@ class GProductOrdersData_productOrders_dealer_dealerBuilder
   _$GProductOrdersData_productOrders_dealer_dealer _build() {
     final _$result = _$v ??
         new _$GProductOrdersData_productOrders_dealer_dealer._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductOrdersData_productOrders_dealer_dealer',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GProductOrdersData_productOrders_dealer_dealer', 'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+              r'GProductOrdersData_productOrders_dealer_dealer', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GProductOrdersData_productOrders_dealer_dealer', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -5179,6 +5205,8 @@ class _$GProductOrdersData_productOrders_dealer_prices
   @override
   final int? amount;
   @override
+  final int? originalAmount;
+  @override
   final GProductOrdersData_productOrders_dealer_prices_category? category;
 
   factory _$GProductOrdersData_productOrders_dealer_prices(
@@ -5189,7 +5217,10 @@ class _$GProductOrdersData_productOrders_dealer_prices
           ._build();
 
   _$GProductOrdersData_productOrders_dealer_prices._(
-      {required this.G__typename, this.amount, this.category})
+      {required this.G__typename,
+      this.amount,
+      this.originalAmount,
+      this.category})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
         r'GProductOrdersData_productOrders_dealer_prices', 'G__typename');
@@ -5212,6 +5243,7 @@ class _$GProductOrdersData_productOrders_dealer_prices
     return other is GProductOrdersData_productOrders_dealer_prices &&
         G__typename == other.G__typename &&
         amount == other.amount &&
+        originalAmount == other.originalAmount &&
         category == other.category;
   }
 
@@ -5220,6 +5252,7 @@ class _$GProductOrdersData_productOrders_dealer_prices
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, originalAmount.hashCode);
     _$hash = $jc(_$hash, category.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -5231,6 +5264,7 @@ class _$GProductOrdersData_productOrders_dealer_prices
             r'GProductOrdersData_productOrders_dealer_prices')
           ..add('G__typename', G__typename)
           ..add('amount', amount)
+          ..add('originalAmount', originalAmount)
           ..add('category', category))
         .toString();
   }
@@ -5250,6 +5284,11 @@ class GProductOrdersData_productOrders_dealer_pricesBuilder
   int? get amount => _$this._amount;
   set amount(int? amount) => _$this._amount = amount;
 
+  int? _originalAmount;
+  int? get originalAmount => _$this._originalAmount;
+  set originalAmount(int? originalAmount) =>
+      _$this._originalAmount = originalAmount;
+
   GProductOrdersData_productOrders_dealer_prices_categoryBuilder? _category;
   GProductOrdersData_productOrders_dealer_prices_categoryBuilder get category =>
       _$this._category ??=
@@ -5268,6 +5307,7 @@ class GProductOrdersData_productOrders_dealer_pricesBuilder
     if ($v != null) {
       _G__typename = $v.G__typename;
       _amount = $v.amount;
+      _originalAmount = $v.originalAmount;
       _category = $v.category?.toBuilder();
       _$v = null;
     }
@@ -5295,12 +5335,14 @@ class GProductOrdersData_productOrders_dealer_pricesBuilder
     try {
       _$result = _$v ??
           new _$GProductOrdersData_productOrders_dealer_prices._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductOrdersData_productOrders_dealer_prices',
-                  'G__typename'),
-              amount: amount,
-              category: _category?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductOrdersData_productOrders_dealer_prices',
+                'G__typename'),
+            amount: amount,
+            originalAmount: originalAmount,
+            category: _category?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -5443,15 +5485,14 @@ class GProductOrdersData_productOrders_dealer_prices_categoryBuilder
   _$GProductOrdersData_productOrders_dealer_prices_category _build() {
     final _$result = _$v ??
         new _$GProductOrdersData_productOrders_dealer_prices_category._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductOrdersData_productOrders_dealer_prices_category',
-                'G__typename'),
-            name: name,
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GProductOrdersData_productOrders_dealer_prices_category',
-                'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductOrdersData_productOrders_dealer_prices_category',
+              'G__typename'),
+          name: name,
+          id: BuiltValueNullFieldError.checkNotNull(id,
+              r'GProductOrdersData_productOrders_dealer_prices_category', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -5588,12 +5629,13 @@ class GProductOrdersData_productOrders_orderBuilder
     try {
       _$result = _$v ??
           new _$GProductOrdersData_productOrders_order._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GProductOrdersData_productOrders_order', 'G__typename'),
-              user: _user?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GProductOrdersData_productOrders_order', 'id'),
-              createdAt: _createdAt?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GProductOrdersData_productOrders_order', 'G__typename'),
+            user: _user?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductOrdersData_productOrders_order', 'id'),
+            createdAt: _createdAt?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -5776,16 +5818,15 @@ class GProductOrdersData_productOrders_order_userBuilder
     try {
       _$result = _$v ??
           new _$GProductOrdersData_productOrders_order_user._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductOrdersData_productOrders_order_user',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GProductOrdersData_productOrders_order_user', 'id'),
-              email: email,
-              name: name,
-              phoneNumber: phoneNumber,
-              addresses: _addresses?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GProductOrdersData_productOrders_order_user', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductOrdersData_productOrders_order_user', 'id'),
+            email: email,
+            name: name,
+            phoneNumber: phoneNumber,
+            addresses: _addresses?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -5996,19 +6037,20 @@ class GProductOrdersData_productOrders_order_user_addressesBuilder
   _$GProductOrdersData_productOrders_order_user_addresses _build() {
     final _$result = _$v ??
         new _$GProductOrdersData_productOrders_order_user_addresses._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductOrdersData_productOrders_order_user_addresses',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(id,
-                r'GProductOrdersData_productOrders_order_user_addresses', 'id'),
-            phoneNumber: phoneNumber,
-            pinCode: pinCode,
-            state: state,
-            town: town,
-            address: address,
-            district: district,
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductOrdersData_productOrders_order_user_addresses',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(id,
+              r'GProductOrdersData_productOrders_order_user_addresses', 'id'),
+          phoneNumber: phoneNumber,
+          pinCode: pinCode,
+          state: state,
+          town: town,
+          address: address,
+          district: district,
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -6126,10 +6168,11 @@ class GVehicleOrdersDataBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrdersData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GVehicleOrdersData', 'G__typename'),
-              vehicleOrdersCount: vehicleOrdersCount,
-              vehicleOrders: _vehicleOrders?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GVehicleOrdersData', 'G__typename'),
+            vehicleOrdersCount: vehicleOrdersCount,
+            vehicleOrders: _vehicleOrders?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -6310,15 +6353,16 @@ class GVehicleOrdersData_vehicleOrdersBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrdersData_vehicleOrders._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GVehicleOrdersData_vehicleOrders', 'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GVehicleOrdersData_vehicleOrders', 'id'),
-              price: price,
-              dealer: _dealer?.build(),
-              status: status,
-              order: _order?.build(),
-              createdAt: _createdAt?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GVehicleOrdersData_vehicleOrders', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GVehicleOrdersData_vehicleOrders', 'id'),
+            price: price,
+            dealer: _dealer?.build(),
+            status: status,
+            order: _order?.build(),
+            createdAt: _createdAt?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -6511,14 +6555,15 @@ class GVehicleOrdersData_vehicleOrders_dealerBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrdersData_vehicleOrders_dealer._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GVehicleOrdersData_vehicleOrders_dealer', 'G__typename'),
-              vehicleVariant: _vehicleVariant?.build(),
-              vehicleColor: _vehicleColor?.build(),
-              dealer: _dealer?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GVehicleOrdersData_vehicleOrders_dealer', 'id'),
-              prices: _prices?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GVehicleOrdersData_vehicleOrders_dealer', 'G__typename'),
+            vehicleVariant: _vehicleVariant?.build(),
+            vehicleColor: _vehicleColor?.build(),
+            dealer: _dealer?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GVehicleOrdersData_vehicleOrders_dealer', 'id'),
+            prices: _prices?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -6674,12 +6719,13 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant',
-                  'G__typename'),
-              vehicle: _vehicle?.build(),
-              name: name);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant',
+                'G__typename'),
+            vehicle: _vehicle?.build(),
+            name: name,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -6816,11 +6862,12 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleBuilder
   _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle _build() {
     final _$result = _$v ??
         new _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle',
-                'G__typename'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle',
+              'G__typename'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -6966,13 +7013,14 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor',
-                  'G__typename'),
-              name: name,
-              code: code,
-              images: _images?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor',
+                'G__typename'),
+            name: name,
+            code: code,
+            images: _images?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -7130,15 +7178,16 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_imagesBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images',
-                  'id'),
-              image: _image?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images',
+                'id'),
+            image: _image?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -7295,18 +7344,19 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder
     final _$result = _$v ??
         new _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image',
-                'id'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url,
-                r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image',
-                'url'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image',
+              'id'),
+          url: BuiltValueNullFieldError.checkNotNull(
+              url,
+              r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image',
+              'url'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -7420,12 +7470,11 @@ class GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder
   _$GVehicleOrdersData_vehicleOrders_dealer_dealer _build() {
     final _$result = _$v ??
         new _$GVehicleOrdersData_vehicleOrders_dealer_dealer._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GVehicleOrdersData_vehicleOrders_dealer_dealer',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GVehicleOrdersData_vehicleOrders_dealer_dealer', 'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+              r'GVehicleOrdersData_vehicleOrders_dealer_dealer', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GVehicleOrdersData_vehicleOrders_dealer_dealer', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -7437,6 +7486,8 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_prices
   final String G__typename;
   @override
   final int? amount;
+  @override
+  final int? originalAmount;
   @override
   final _i2.GDateTime? createdAt;
   @override
@@ -7454,6 +7505,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_prices
   _$GVehicleOrdersData_vehicleOrders_dealer_prices._(
       {required this.G__typename,
       this.amount,
+      this.originalAmount,
       this.createdAt,
       required this.id,
       this.category})
@@ -7481,6 +7533,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_prices
     return other is GVehicleOrdersData_vehicleOrders_dealer_prices &&
         G__typename == other.G__typename &&
         amount == other.amount &&
+        originalAmount == other.originalAmount &&
         createdAt == other.createdAt &&
         id == other.id &&
         category == other.category;
@@ -7491,6 +7544,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_prices
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, originalAmount.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, category.hashCode);
@@ -7504,6 +7558,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_prices
             r'GVehicleOrdersData_vehicleOrders_dealer_prices')
           ..add('G__typename', G__typename)
           ..add('amount', amount)
+          ..add('originalAmount', originalAmount)
           ..add('createdAt', createdAt)
           ..add('id', id)
           ..add('category', category))
@@ -7524,6 +7579,11 @@ class GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder
   int? _amount;
   int? get amount => _$this._amount;
   set amount(int? amount) => _$this._amount = amount;
+
+  int? _originalAmount;
+  int? get originalAmount => _$this._originalAmount;
+  set originalAmount(int? originalAmount) =>
+      _$this._originalAmount = originalAmount;
 
   _i2.GDateTimeBuilder? _createdAt;
   _i2.GDateTimeBuilder get createdAt =>
@@ -7553,6 +7613,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder
     if ($v != null) {
       _G__typename = $v.G__typename;
       _amount = $v.amount;
+      _originalAmount = $v.originalAmount;
       _createdAt = $v.createdAt?.toBuilder();
       _id = $v.id;
       _category = $v.category?.toBuilder();
@@ -7582,15 +7643,17 @@ class GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrdersData_vehicleOrders_dealer_prices._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehicleOrdersData_vehicleOrders_dealer_prices',
-                  'G__typename'),
-              amount: amount,
-              createdAt: _createdAt?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GVehicleOrdersData_vehicleOrders_dealer_prices', 'id'),
-              category: _category?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GVehicleOrdersData_vehicleOrders_dealer_prices',
+                'G__typename'),
+            amount: amount,
+            originalAmount: originalAmount,
+            createdAt: _createdAt?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GVehicleOrdersData_vehicleOrders_dealer_prices', 'id'),
+            category: _category?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -7736,15 +7799,14 @@ class GVehicleOrdersData_vehicleOrders_dealer_prices_categoryBuilder
   _$GVehicleOrdersData_vehicleOrders_dealer_prices_category _build() {
     final _$result = _$v ??
         new _$GVehicleOrdersData_vehicleOrders_dealer_prices_category._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GVehicleOrdersData_vehicleOrders_dealer_prices_category',
-                'G__typename'),
-            name: name,
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GVehicleOrdersData_vehicleOrders_dealer_prices_category',
-                'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GVehicleOrdersData_vehicleOrders_dealer_prices_category',
+              'G__typename'),
+          name: name,
+          id: BuiltValueNullFieldError.checkNotNull(id,
+              r'GVehicleOrdersData_vehicleOrders_dealer_prices_category', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -7881,12 +7943,13 @@ class GVehicleOrdersData_vehicleOrders_orderBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrdersData_vehicleOrders_order._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GVehicleOrdersData_vehicleOrders_order', 'G__typename'),
-              user: _user?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GVehicleOrdersData_vehicleOrders_order', 'id'),
-              createdAt: _createdAt?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GVehicleOrdersData_vehicleOrders_order', 'G__typename'),
+            user: _user?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GVehicleOrdersData_vehicleOrders_order', 'id'),
+            createdAt: _createdAt?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -8069,16 +8132,15 @@ class GVehicleOrdersData_vehicleOrders_order_userBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrdersData_vehicleOrders_order_user._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehicleOrdersData_vehicleOrders_order_user',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GVehicleOrdersData_vehicleOrders_order_user', 'id'),
-              email: email,
-              name: name,
-              phoneNumber: phoneNumber,
-              addresses: _addresses?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GVehicleOrdersData_vehicleOrders_order_user', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GVehicleOrdersData_vehicleOrders_order_user', 'id'),
+            email: email,
+            name: name,
+            phoneNumber: phoneNumber,
+            addresses: _addresses?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -8289,19 +8351,20 @@ class GVehicleOrdersData_vehicleOrders_order_user_addressesBuilder
   _$GVehicleOrdersData_vehicleOrders_order_user_addresses _build() {
     final _$result = _$v ??
         new _$GVehicleOrdersData_vehicleOrders_order_user_addresses._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GVehicleOrdersData_vehicleOrders_order_user_addresses',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(id,
-                r'GVehicleOrdersData_vehicleOrders_order_user_addresses', 'id'),
-            phoneNumber: phoneNumber,
-            pinCode: pinCode,
-            state: state,
-            town: town,
-            address: address,
-            district: district,
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GVehicleOrdersData_vehicleOrders_order_user_addresses',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(id,
+              r'GVehicleOrdersData_vehicleOrders_order_user_addresses', 'id'),
+          phoneNumber: phoneNumber,
+          pinCode: pinCode,
+          state: state,
+          town: town,
+          address: address,
+          district: district,
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -8404,9 +8467,10 @@ class GVehicleOrdersCountDataBuilder
   _$GVehicleOrdersCountData _build() {
     final _$result = _$v ??
         new _$GVehicleOrdersCountData._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GVehicleOrdersCountData', 'G__typename'),
-            vehicleOrdersCount: vehicleOrdersCount);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GVehicleOrdersCountData', 'G__typename'),
+          vehicleOrdersCount: vehicleOrdersCount,
+        );
     replace(_$result);
     return _$result;
   }
@@ -8526,10 +8590,11 @@ class GTestDriveOrdersDataBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveOrdersData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GTestDriveOrdersData', 'G__typename'),
-              testDriveOrdersCount: testDriveOrdersCount,
-              testDriveOrders: _testDriveOrders?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GTestDriveOrdersData', 'G__typename'),
+            testDriveOrdersCount: testDriveOrdersCount,
+            testDriveOrders: _testDriveOrders?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -8714,15 +8779,16 @@ class GTestDriveOrdersData_testDriveOrdersBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveOrdersData_testDriveOrders._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GTestDriveOrdersData_testDriveOrders', 'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GTestDriveOrdersData_testDriveOrders', 'id'),
-              price: price,
-              dealer: _dealer?.build(),
-              status: status,
-              order: _order?.build(),
-              createdAt: _createdAt?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GTestDriveOrdersData_testDriveOrders', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GTestDriveOrdersData_testDriveOrders', 'id'),
+            price: price,
+            dealer: _dealer?.build(),
+            status: status,
+            order: _order?.build(),
+            createdAt: _createdAt?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -8917,16 +8983,15 @@ class GTestDriveOrdersData_testDriveOrders_dealerBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveOrdersData_testDriveOrders_dealer._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GTestDriveOrdersData_testDriveOrders_dealer',
-                  'G__typename'),
-              vehicleVariant: _vehicleVariant?.build(),
-              vehicleColor: _vehicleColor?.build(),
-              dealer: _dealer?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GTestDriveOrdersData_testDriveOrders_dealer', 'id'),
-              price: price);
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GTestDriveOrdersData_testDriveOrders_dealer', 'G__typename'),
+            vehicleVariant: _vehicleVariant?.build(),
+            vehicleColor: _vehicleColor?.build(),
+            dealer: _dealer?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GTestDriveOrdersData_testDriveOrders_dealer', 'id'),
+            price: price,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -9084,12 +9149,13 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant',
-                  'G__typename'),
-              vehicle: _vehicle?.build(),
-              name: name);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant',
+                'G__typename'),
+            vehicle: _vehicle?.build(),
+            name: name,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -9230,11 +9296,12 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder
     final _$result = _$v ??
         new _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle',
-                'G__typename'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle',
+              'G__typename'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -9382,13 +9449,14 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor',
-                  'G__typename'),
-              name: name,
-              code: code,
-              images: _images?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor',
+                'G__typename'),
+            name: name,
+            code: code,
+            images: _images?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -9549,15 +9617,16 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesBuilder
       _$result = _$v ??
           new _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images',
-                  'id'),
-              image: _image?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images',
+                'id'),
+            image: _image?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -9716,18 +9785,19 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuild
     final _$result = _$v ??
         new _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image',
-                'id'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url,
-                r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image',
-                'url'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image',
+              'id'),
+          url: BuiltValueNullFieldError.checkNotNull(
+              url,
+              r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image',
+              'url'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -9843,12 +9913,13 @@ class GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder
   _$GTestDriveOrdersData_testDriveOrders_dealer_dealer _build() {
     final _$result = _$v ??
         new _$GTestDriveOrdersData_testDriveOrders_dealer_dealer._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GTestDriveOrdersData_testDriveOrders_dealer_dealer',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(id,
-                r'GTestDriveOrdersData_testDriveOrders_dealer_dealer', 'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GTestDriveOrdersData_testDriveOrders_dealer_dealer',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GTestDriveOrdersData_testDriveOrders_dealer_dealer', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -9987,12 +10058,13 @@ class GTestDriveOrdersData_testDriveOrders_orderBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveOrdersData_testDriveOrders_order._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GTestDriveOrdersData_testDriveOrders_order', 'G__typename'),
-              user: _user?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GTestDriveOrdersData_testDriveOrders_order', 'id'),
-              createdAt: _createdAt?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GTestDriveOrdersData_testDriveOrders_order', 'G__typename'),
+            user: _user?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GTestDriveOrdersData_testDriveOrders_order', 'id'),
+            createdAt: _createdAt?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -10178,16 +10250,17 @@ class GTestDriveOrdersData_testDriveOrders_order_userBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveOrdersData_testDriveOrders_order_user._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GTestDriveOrdersData_testDriveOrders_order_user',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GTestDriveOrdersData_testDriveOrders_order_user', 'id'),
-              email: email,
-              name: name,
-              phoneNumber: phoneNumber,
-              addresses: _addresses?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GTestDriveOrdersData_testDriveOrders_order_user',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GTestDriveOrdersData_testDriveOrders_order_user', 'id'),
+            email: email,
+            name: name,
+            phoneNumber: phoneNumber,
+            addresses: _addresses?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -10400,21 +10473,22 @@ class GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder
   _$GTestDriveOrdersData_testDriveOrders_order_user_addresses _build() {
     final _$result = _$v ??
         new _$GTestDriveOrdersData_testDriveOrders_order_user_addresses._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GTestDriveOrdersData_testDriveOrders_order_user_addresses',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GTestDriveOrdersData_testDriveOrders_order_user_addresses',
-                'id'),
-            phoneNumber: phoneNumber,
-            pinCode: pinCode,
-            state: state,
-            town: town,
-            address: address,
-            district: district,
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GTestDriveOrdersData_testDriveOrders_order_user_addresses',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GTestDriveOrdersData_testDriveOrders_order_user_addresses',
+              'id'),
+          phoneNumber: phoneNumber,
+          pinCode: pinCode,
+          state: state,
+          town: town,
+          address: address,
+          district: district,
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -10517,9 +10591,10 @@ class GTestDriveOrdersCountDataBuilder
   _$GTestDriveOrdersCountData _build() {
     final _$result = _$v ??
         new _$GTestDriveOrdersCountData._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GTestDriveOrdersCountData', 'G__typename'),
-            testDriveOrdersCount: testDriveOrdersCount);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GTestDriveOrdersCountData', 'G__typename'),
+          testDriveOrdersCount: testDriveOrdersCount,
+        );
     replace(_$result);
     return _$result;
   }
@@ -10628,9 +10703,10 @@ class GUpdateProductOrderDataBuilder
     try {
       _$result = _$v ??
           new _$GUpdateProductOrderData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GUpdateProductOrderData', 'G__typename'),
-              updateProductOrder: _updateProductOrder?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GUpdateProductOrderData', 'G__typename'),
+            updateProductOrder: _updateProductOrder?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -10753,10 +10829,11 @@ class GUpdateProductOrderData_updateProductOrderBuilder
   _$GUpdateProductOrderData_updateProductOrder _build() {
     final _$result = _$v ??
         new _$GUpdateProductOrderData_updateProductOrder._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                r'GUpdateProductOrderData_updateProductOrder', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GUpdateProductOrderData_updateProductOrder', 'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+              r'GUpdateProductOrderData_updateProductOrder', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GUpdateProductOrderData_updateProductOrder', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -10865,9 +10942,10 @@ class GUpdateVehicleOrderDataBuilder
     try {
       _$result = _$v ??
           new _$GUpdateVehicleOrderData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GUpdateVehicleOrderData', 'G__typename'),
-              updateVehicleOrder: _updateVehicleOrder?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GUpdateVehicleOrderData', 'G__typename'),
+            updateVehicleOrder: _updateVehicleOrder?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -10990,10 +11068,11 @@ class GUpdateVehicleOrderData_updateVehicleOrderBuilder
   _$GUpdateVehicleOrderData_updateVehicleOrder _build() {
     final _$result = _$v ??
         new _$GUpdateVehicleOrderData_updateVehicleOrder._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                r'GUpdateVehicleOrderData_updateVehicleOrder', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GUpdateVehicleOrderData_updateVehicleOrder', 'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+              r'GUpdateVehicleOrderData_updateVehicleOrder', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GUpdateVehicleOrderData_updateVehicleOrder', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -11102,9 +11181,10 @@ class GUpdateTestDriveOrderDataBuilder
     try {
       _$result = _$v ??
           new _$GUpdateTestDriveOrderData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GUpdateTestDriveOrderData', 'G__typename'),
-              updateTestDriveOrder: _updateTestDriveOrder?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GUpdateTestDriveOrderData', 'G__typename'),
+            updateTestDriveOrder: _updateTestDriveOrder?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -11229,12 +11309,11 @@ class GUpdateTestDriveOrderData_updateTestDriveOrderBuilder
   _$GUpdateTestDriveOrderData_updateTestDriveOrder _build() {
     final _$result = _$v ??
         new _$GUpdateTestDriveOrderData_updateTestDriveOrder._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GUpdateTestDriveOrderData_updateTestDriveOrder',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GUpdateTestDriveOrderData_updateTestDriveOrder', 'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+              r'GUpdateTestDriveOrderData_updateTestDriveOrder', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GUpdateTestDriveOrderData_updateTestDriveOrder', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -11351,10 +11430,11 @@ class GCreateOrderRejectionByDealerDataBuilder
     try {
       _$result = _$v ??
           new _$GCreateOrderRejectionByDealerData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GCreateOrderRejectionByDealerData', 'G__typename'),
-              createOrderRejectionByDealer:
-                  _createOrderRejectionByDealer?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GCreateOrderRejectionByDealerData', 'G__typename'),
+            createOrderRejectionByDealer:
+                _createOrderRejectionByDealer?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -11493,14 +11573,15 @@ class GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder
   _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer _build() {
     final _$result = _$v ??
         new _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GCreateOrderRejectionByDealerData_createOrderRejectionByDealer',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GCreateOrderRejectionByDealerData_createOrderRejectionByDealer',
-                'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GCreateOrderRejectionByDealerData_createOrderRejectionByDealer',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GCreateOrderRejectionByDealerData_createOrderRejectionByDealer',
+              'id'),
+        );
     replace(_$result);
     return _$result;
   }

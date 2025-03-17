@@ -296,11 +296,12 @@ class GProductDealerStockRequestsVarsBuilder
     try {
       _$result = _$v ??
           new _$GProductDealerStockRequestsVars._(
-              where: where.build(),
-              orderBy: orderBy.build(),
-              take: take,
-              skip: BuiltValueNullFieldError.checkNotNull(
-                  skip, r'GProductDealerStockRequestsVars', 'skip'));
+            where: where.build(),
+            orderBy: orderBy.build(),
+            take: take,
+            skip: BuiltValueNullFieldError.checkNotNull(
+                skip, r'GProductDealerStockRequestsVars', 'skip'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -450,11 +451,12 @@ class GVehicleDealerStockRequestsVarsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealerStockRequestsVars._(
-              where: where.build(),
-              orderBy: orderBy.build(),
-              take: take,
-              skip: BuiltValueNullFieldError.checkNotNull(
-                  skip, r'GVehicleDealerStockRequestsVars', 'skip'));
+            where: where.build(),
+            orderBy: orderBy.build(),
+            take: take,
+            skip: BuiltValueNullFieldError.checkNotNull(
+                skip, r'GVehicleDealerStockRequestsVars', 'skip'),
+          );
     } catch (_) {
       late String _$failedField;
       try {

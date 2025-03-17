@@ -101,6 +101,7 @@ abstract class GProductVariantsData_productVariants_prices
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   int? get amount;
+  int? get originalAmount;
   GProductVariantsData_productVariants_prices_category? get category;
   static Serializer<GProductVariantsData_productVariants_prices>
       get serializer => _$gProductVariantsDataProductVariantsPricesSerializer;
@@ -837,6 +838,7 @@ abstract class GProductVariantData_productVariant_prices
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   int? get amount;
+  int? get originalAmount;
   GProductVariantData_productVariant_prices_category? get category;
   static Serializer<GProductVariantData_productVariant_prices> get serializer =>
       _$gProductVariantDataProductVariantPricesSerializer;
@@ -1599,6 +1601,7 @@ abstract class GVehicleVariantsData_vehicleVariants_prices
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   int? get amount;
+  int? get originalAmount;
   GVehicleVariantsData_vehicleVariants_prices_category? get category;
   static Serializer<GVehicleVariantsData_vehicleVariants_prices>
       get serializer => _$gVehicleVariantsDataVehicleVariantsPricesSerializer;
@@ -2246,6 +2249,7 @@ abstract class GVehicleDealersData_vehicleDealers_prices
   String get G__typename;
   String get id;
   int? get amount;
+  int? get originalAmount;
   GVehicleDealersData_vehicleDealers_prices_category? get category;
   static Serializer<GVehicleDealersData_vehicleDealers_prices> get serializer =>
       _$gVehicleDealersDataVehicleDealersPricesSerializer;
@@ -2763,6 +2767,7 @@ abstract class GUpdateVehicleDealerData_updateVehicleDealer_prices
   String get G__typename;
   String get id;
   int? get amount;
+  int? get originalAmount;
   GUpdateVehicleDealerData_updateVehicleDealer_prices_category? get category;
   static Serializer<GUpdateVehicleDealerData_updateVehicleDealer_prices>
       get serializer =>
@@ -3780,6 +3785,7 @@ abstract class GProductDealersData_productDealers_prices
   String get G__typename;
   String get id;
   int? get amount;
+  int? get originalAmount;
   GProductDealersData_productDealers_prices_category? get category;
   static Serializer<GProductDealersData_productDealers_prices> get serializer =>
       _$gProductDealersDataProductDealersPricesSerializer;
@@ -4147,6 +4153,7 @@ abstract class GUpdateProductDealerData_updateProductDealer_prices
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   int? get amount;
+  int? get originalAmount;
   String get id;
   GUpdateProductDealerData_updateProductDealer_prices_category? get category;
   static Serializer<GUpdateProductDealerData_updateProductDealer_prices>

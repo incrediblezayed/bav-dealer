@@ -1354,10 +1354,11 @@ class GProductDealerStockRequestsDataBuilder
     try {
       _$result = _$v ??
           new _$GProductDealerStockRequestsData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GProductDealerStockRequestsData', 'G__typename'),
-              productDealerStockRequests: _productDealerStockRequests?.build(),
-              productDealerStockRequestsCount: productDealerStockRequestsCount);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GProductDealerStockRequestsData', 'G__typename'),
+            productDealerStockRequests: _productDealerStockRequests?.build(),
+            productDealerStockRequestsCount: productDealerStockRequestsCount,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1570,20 +1571,21 @@ class GProductDealerStockRequestsData_productDealerStockRequestsBuilder
     try {
       _$result = _$v ??
           new _$GProductDealerStockRequestsData_productDealerStockRequests._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductDealerStockRequestsData_productDealerStockRequests',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GProductDealerStockRequestsData_productDealerStockRequests',
-                  'id'),
-              accepted: accepted,
-              type: type,
-              totalPrice: totalPrice,
-              stock: stock,
-              modifiedAt: _modifiedAt?.build(),
-              productVariant: _productVariant?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductDealerStockRequestsData_productDealerStockRequests',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GProductDealerStockRequestsData_productDealerStockRequests',
+                'id'),
+            accepted: accepted,
+            type: type,
+            totalPrice: totalPrice,
+            stock: stock,
+            modifiedAt: _modifiedAt?.build(),
+            productVariant: _productVariant?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1799,18 +1801,19 @@ class GProductDealerStockRequestsData_productDealerStockRequests_productVariantB
       _$result = _$v ??
           new _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant',
-                  'id'),
-              name: name,
-              modifiedAt: _modifiedAt?.build(),
-              gallery: _gallery?.build(),
-              product: _product?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant',
+                'id'),
+            name: name,
+            modifiedAt: _modifiedAt?.build(),
+            gallery: _gallery?.build(),
+            product: _product?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1981,16 +1984,17 @@ class GProductDealerStockRequestsData_productDealerStockRequests_productVariant_
     final _$result = _$v ??
         new _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery',
-                'id'),
-            file: file,
-            type: type);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_gallery',
+              'id'),
+          file: file,
+          type: type,
+        );
     replace(_$result);
     return _$result;
   }
@@ -2168,17 +2172,18 @@ class GProductDealerStockRequestsData_productDealerStockRequests_productVariant_
       _$result = _$v ??
           new _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product',
-                  'G__typename'),
-              brand: _brand?.build(),
-              name: name,
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product',
-                  'id'),
-              description: description);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product',
+                'G__typename'),
+            brand: _brand?.build(),
+            name: name,
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product',
+                'id'),
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -2335,15 +2340,16 @@ class GProductDealerStockRequestsData_productDealerStockRequests_productVariant_
     final _$result = _$v ??
         new _$GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand',
-                'id'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GProductDealerStockRequestsData_productDealerStockRequests_productVariant_product_brand',
+              'id'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -2474,10 +2480,11 @@ class GVehicleDealerStockRequestsDataBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealerStockRequestsData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GVehicleDealerStockRequestsData', 'G__typename'),
-              vehicleDealerStockRequests: _vehicleDealerStockRequests?.build(),
-              vehicleDealerStockRequestsCount: vehicleDealerStockRequestsCount);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GVehicleDealerStockRequestsData', 'G__typename'),
+            vehicleDealerStockRequests: _vehicleDealerStockRequests?.build(),
+            vehicleDealerStockRequestsCount: vehicleDealerStockRequestsCount,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -2684,19 +2691,20 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequestsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests',
-                  'id'),
-              stock: stock,
-              type: type,
-              totalPrice: totalPrice,
-              vehicleColor: _vehicleColor?.build(),
-              vehicleVariant: _vehicleVariant?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests',
+                'id'),
+            stock: stock,
+            type: type,
+            totalPrice: totalPrice,
+            vehicleColor: _vehicleColor?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -2892,17 +2900,18 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColorBui
       _$result = _$v ??
           new _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor',
-                  'id'),
-              name: name,
-              code: code,
-              gallery: _gallery?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor',
+                'id'),
+            name: name,
+            code: code,
+            gallery: _gallery?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -3069,16 +3078,17 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_ga
     final _$result = _$v ??
         new _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery',
-                'id'),
-            file: file,
-            type: type);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleColor_gallery',
+              'id'),
+          file: file,
+          type: type,
+        );
     replace(_$result);
     return _$result;
   }
@@ -3257,17 +3267,18 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariantB
       _$result = _$v ??
           new _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant',
-                  'id'),
-              name: name,
-              modifiedAt: _modifiedAt?.build(),
-              vehicle: _vehicle?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant',
+                'id'),
+            name: name,
+            modifiedAt: _modifiedAt?.build(),
+            vehicle: _vehicle?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -3460,17 +3471,18 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_
       _$result = _$v ??
           new _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle',
-                  'G__typename'),
-              brand: _brand?.build(),
-              name: name,
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle',
-                  'id'),
-              description: description);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle',
+                'G__typename'),
+            brand: _brand?.build(),
+            name: name,
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle',
+                'id'),
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -3627,15 +3639,16 @@ class GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_
     final _$result = _$v ??
         new _$GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand',
-                'id'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GVehicleDealerStockRequestsData_vehicleDealerStockRequests_vehicleVariant_vehicle_brand',
+              'id'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }

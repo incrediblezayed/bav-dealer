@@ -203,7 +203,10 @@ class GCreateReportVarsBuilder
   _$GCreateReportVars _build() {
     _$GCreateReportVars _$result;
     try {
-      _$result = _$v ?? new _$GCreateReportVars._(data: data.build());
+      _$result = _$v ??
+          new _$GCreateReportVars._(
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -300,7 +303,10 @@ class GCreateFeedbackVarsBuilder
   _$GCreateFeedbackVars _build() {
     _$GCreateFeedbackVars _$result;
     try {
-      _$result = _$v ?? new _$GCreateFeedbackVars._(data: data.build());
+      _$result = _$v ??
+          new _$GCreateFeedbackVars._(
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {

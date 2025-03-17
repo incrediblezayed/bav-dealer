@@ -664,12 +664,13 @@ class GProductOrdersVarsBuilder
     try {
       _$result = _$v ??
           new _$GProductOrdersVars._(
-              where: where.build(),
-              orderBy: orderBy.build(),
-              skip: BuiltValueNullFieldError.checkNotNull(
-                  skip, r'GProductOrdersVars', 'skip'),
-              take: BuiltValueNullFieldError.checkNotNull(
-                  take, r'GProductOrdersVars', 'take'));
+            where: where.build(),
+            orderBy: orderBy.build(),
+            skip: BuiltValueNullFieldError.checkNotNull(
+                skip, r'GProductOrdersVars', 'skip'),
+            take: BuiltValueNullFieldError.checkNotNull(
+                take, r'GProductOrdersVars', 'take'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -813,12 +814,13 @@ class GVehicleOrdersVarsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleOrdersVars._(
-              orderBy: orderBy.build(),
-              where: where.build(),
-              skip: BuiltValueNullFieldError.checkNotNull(
-                  skip, r'GVehicleOrdersVars', 'skip'),
-              take: BuiltValueNullFieldError.checkNotNull(
-                  take, r'GVehicleOrdersVars', 'take'));
+            orderBy: orderBy.build(),
+            where: where.build(),
+            skip: BuiltValueNullFieldError.checkNotNull(
+                skip, r'GVehicleOrdersVars', 'skip'),
+            take: BuiltValueNullFieldError.checkNotNull(
+                take, r'GVehicleOrdersVars', 'take'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -919,7 +921,10 @@ class GVehicleOrdersCountVarsBuilder
   _$GVehicleOrdersCountVars _build() {
     _$GVehicleOrdersCountVars _$result;
     try {
-      _$result = _$v ?? new _$GVehicleOrdersCountVars._(where: where.build());
+      _$result = _$v ??
+          new _$GVehicleOrdersCountVars._(
+            where: where.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1064,12 +1069,13 @@ class GTestDriveOrdersVarsBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveOrdersVars._(
-              where: where.build(),
-              orderBy: orderBy.build(),
-              skip: BuiltValueNullFieldError.checkNotNull(
-                  skip, r'GTestDriveOrdersVars', 'skip'),
-              take: BuiltValueNullFieldError.checkNotNull(
-                  take, r'GTestDriveOrdersVars', 'take'));
+            where: where.build(),
+            orderBy: orderBy.build(),
+            skip: BuiltValueNullFieldError.checkNotNull(
+                skip, r'GTestDriveOrdersVars', 'skip'),
+            take: BuiltValueNullFieldError.checkNotNull(
+                take, r'GTestDriveOrdersVars', 'take'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1171,7 +1177,10 @@ class GTestDriveOrdersCountVarsBuilder
   _$GTestDriveOrdersCountVars _build() {
     _$GTestDriveOrdersCountVars _$result;
     try {
-      _$result = _$v ?? new _$GTestDriveOrdersCountVars._(where: where.build());
+      _$result = _$v ??
+          new _$GTestDriveOrdersCountVars._(
+            where: where.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1288,7 +1297,9 @@ class GUpdateProductOrderVarsBuilder
     try {
       _$result = _$v ??
           new _$GUpdateProductOrderVars._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1407,7 +1418,9 @@ class GUpdateVehicleOrderVarsBuilder
     try {
       _$result = _$v ??
           new _$GUpdateVehicleOrderVars._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1526,7 +1539,9 @@ class GUpdateTestDriveOrderVarsBuilder
     try {
       _$result = _$v ??
           new _$GUpdateTestDriveOrderVars._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1632,8 +1647,10 @@ class GCreateOrderRejectionByDealerVarsBuilder
   _$GCreateOrderRejectionByDealerVars _build() {
     _$GCreateOrderRejectionByDealerVars _$result;
     try {
-      _$result =
-          _$v ?? new _$GCreateOrderRejectionByDealerVars._(data: data.build());
+      _$result = _$v ??
+          new _$GCreateOrderRejectionByDealerVars._(
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {

@@ -716,7 +716,10 @@ class GCreateUserVarsBuilder
   _$GCreateUserVars _build() {
     _$GCreateUserVars _$result;
     try {
-      _$result = _$v ?? new _$GCreateUserVars._(data: data.build());
+      _$result = _$v ??
+          new _$GCreateUserVars._(
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -812,8 +815,9 @@ class GCurrentUserOTPVarsBuilder
   _$GCurrentUserOTPVars _build() {
     final _$result = _$v ??
         new _$GCurrentUserOTPVars._(
-            key: BuiltValueNullFieldError.checkNotNull(
-                key, r'GCurrentUserOTPVars', 'key'));
+          key: BuiltValueNullFieldError.checkNotNull(
+              key, r'GCurrentUserOTPVars', 'key'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -910,10 +914,11 @@ class GValidateUserOTPVarsBuilder
   _$GValidateUserOTPVars _build() {
     final _$result = _$v ??
         new _$GValidateUserOTPVars._(
-            key: BuiltValueNullFieldError.checkNotNull(
-                key, r'GValidateUserOTPVars', 'key'),
-            otp: BuiltValueNullFieldError.checkNotNull(
-                otp, r'GValidateUserOTPVars', 'otp'));
+          key: BuiltValueNullFieldError.checkNotNull(
+              key, r'GValidateUserOTPVars', 'key'),
+          otp: BuiltValueNullFieldError.checkNotNull(
+              otp, r'GValidateUserOTPVars', 'otp'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -1002,8 +1007,9 @@ class GSendUserPasswordResetLinkVarsBuilder
   _$GSendUserPasswordResetLinkVars _build() {
     final _$result = _$v ??
         new _$GSendUserPasswordResetLinkVars._(
-            phoneNumber: BuiltValueNullFieldError.checkNotNull(
-                phoneNumber, r'GSendUserPasswordResetLinkVars', 'phoneNumber'));
+          phoneNumber: BuiltValueNullFieldError.checkNotNull(
+              phoneNumber, r'GSendUserPasswordResetLinkVars', 'phoneNumber'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -1121,12 +1127,13 @@ class GRedeemUserPasswordResetTokenVarsBuilder
   _$GRedeemUserPasswordResetTokenVars _build() {
     final _$result = _$v ??
         new _$GRedeemUserPasswordResetTokenVars._(
-            phoneNumber: BuiltValueNullFieldError.checkNotNull(phoneNumber,
-                r'GRedeemUserPasswordResetTokenVars', 'phoneNumber'),
-            token: BuiltValueNullFieldError.checkNotNull(
-                token, r'GRedeemUserPasswordResetTokenVars', 'token'),
-            password: BuiltValueNullFieldError.checkNotNull(
-                password, r'GRedeemUserPasswordResetTokenVars', 'password'));
+          phoneNumber: BuiltValueNullFieldError.checkNotNull(
+              phoneNumber, r'GRedeemUserPasswordResetTokenVars', 'phoneNumber'),
+          token: BuiltValueNullFieldError.checkNotNull(
+              token, r'GRedeemUserPasswordResetTokenVars', 'token'),
+          password: BuiltValueNullFieldError.checkNotNull(
+              password, r'GRedeemUserPasswordResetTokenVars', 'password'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -1233,10 +1240,11 @@ class GValidateUserPasswordResetTokenVarsBuilder
   _$GValidateUserPasswordResetTokenVars _build() {
     final _$result = _$v ??
         new _$GValidateUserPasswordResetTokenVars._(
-            token: BuiltValueNullFieldError.checkNotNull(
-                token, r'GValidateUserPasswordResetTokenVars', 'token'),
-            phoneNumber: BuiltValueNullFieldError.checkNotNull(phoneNumber,
-                r'GValidateUserPasswordResetTokenVars', 'phoneNumber'));
+          token: BuiltValueNullFieldError.checkNotNull(
+              token, r'GValidateUserPasswordResetTokenVars', 'token'),
+          phoneNumber: BuiltValueNullFieldError.checkNotNull(phoneNumber,
+              r'GValidateUserPasswordResetTokenVars', 'phoneNumber'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -1321,7 +1329,10 @@ class GCreateDealerVarsBuilder
   _$GCreateDealerVars _build() {
     _$GCreateDealerVars _$result;
     try {
-      _$result = _$v ?? new _$GCreateDealerVars._(data: data.build());
+      _$result = _$v ??
+          new _$GCreateDealerVars._(
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1438,10 +1449,11 @@ class GAuthenticateUserWithPasswordVarsBuilder
   _$GAuthenticateUserWithPasswordVars _build() {
     final _$result = _$v ??
         new _$GAuthenticateUserWithPasswordVars._(
-            phoneNumber: BuiltValueNullFieldError.checkNotNull(phoneNumber,
-                r'GAuthenticateUserWithPasswordVars', 'phoneNumber'),
-            password: BuiltValueNullFieldError.checkNotNull(
-                password, r'GAuthenticateUserWithPasswordVars', 'password'));
+          phoneNumber: BuiltValueNullFieldError.checkNotNull(
+              phoneNumber, r'GAuthenticateUserWithPasswordVars', 'phoneNumber'),
+          password: BuiltValueNullFieldError.checkNotNull(
+              password, r'GAuthenticateUserWithPasswordVars', 'password'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -1522,7 +1534,10 @@ class GUserVarsBuilder implements Builder<GUserVars, GUserVarsBuilder> {
   _$GUserVars _build() {
     _$GUserVars _$result;
     try {
-      _$result = _$v ?? new _$GUserVars._(where: where.build());
+      _$result = _$v ??
+          new _$GUserVars._(
+            where: where.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1631,7 +1646,10 @@ class GUpdateUserVarsBuilder
     _$GUpdateUserVars _$result;
     try {
       _$result = _$v ??
-          new _$GUpdateUserVars._(data: data.build(), where: where.build());
+          new _$GUpdateUserVars._(
+            data: data.build(),
+            where: where.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1725,7 +1743,10 @@ class GDealerVarsBuilder implements Builder<GDealerVars, GDealerVarsBuilder> {
   _$GDealerVars _build() {
     _$GDealerVars _$result;
     try {
-      _$result = _$v ?? new _$GDealerVars._(where: where.build());
+      _$result = _$v ??
+          new _$GDealerVars._(
+            where: where.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1835,7 +1856,10 @@ class GUpdateDealerVarsBuilder
     _$GUpdateDealerVars _$result;
     try {
       _$result = _$v ??
-          new _$GUpdateDealerVars._(where: where.build(), data: data.build());
+          new _$GUpdateDealerVars._(
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {

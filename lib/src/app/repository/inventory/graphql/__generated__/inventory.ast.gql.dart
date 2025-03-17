@@ -125,6 +125,13 @@ const ProductVariants = _i1.OperationDefinitionNode(
               selectionSet: null,
             ),
             _i1.FieldNode(
+              name: _i1.NameNode(value: 'originalAmount'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            _i1.FieldNode(
               name: _i1.NameNode(value: 'category'),
               alias: null,
               arguments: [],
@@ -696,6 +703,13 @@ const ProductVariant = _i1.OperationDefinitionNode(
           selectionSet: _i1.SelectionSetNode(selections: [
             _i1.FieldNode(
               name: _i1.NameNode(value: 'amount'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            _i1.FieldNode(
+              name: _i1.NameNode(value: 'originalAmount'),
               alias: null,
               arguments: [],
               directives: [],
@@ -1295,6 +1309,13 @@ const VehicleVariants = _i1.OperationDefinitionNode(
               selectionSet: null,
             ),
             _i1.FieldNode(
+              name: _i1.NameNode(value: 'originalAmount'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            _i1.FieldNode(
               name: _i1.NameNode(value: 'category'),
               alias: null,
               arguments: [],
@@ -1817,6 +1838,13 @@ const VehicleDealers = _i1.OperationDefinitionNode(
               selectionSet: null,
             ),
             _i1.FieldNode(
+              name: _i1.NameNode(value: 'originalAmount'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            _i1.FieldNode(
               name: _i1.NameNode(value: 'category'),
               alias: null,
               arguments: [],
@@ -2176,6 +2204,13 @@ const UpdateVehicleDealer = _i1.OperationDefinitionNode(
             ),
             _i1.FieldNode(
               name: _i1.NameNode(value: 'amount'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            _i1.FieldNode(
+              name: _i1.NameNode(value: 'originalAmount'),
               alias: null,
               arguments: [],
               directives: [],
@@ -2950,6 +2985,13 @@ const ProductDealers = _i1.OperationDefinitionNode(
               selectionSet: null,
             ),
             _i1.FieldNode(
+              name: _i1.NameNode(value: 'originalAmount'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            _i1.FieldNode(
               name: _i1.NameNode(value: 'category'),
               alias: null,
               arguments: [],
@@ -3200,6 +3242,13 @@ const UpdateProductDealer = _i1.OperationDefinitionNode(
           selectionSet: _i1.SelectionSetNode(selections: [
             _i1.FieldNode(
               name: _i1.NameNode(value: 'amount'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+            _i1.FieldNode(
+              name: _i1.NameNode(value: 'originalAmount'),
               alias: null,
               arguments: [],
               directives: [],

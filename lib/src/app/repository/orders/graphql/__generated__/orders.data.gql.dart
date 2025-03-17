@@ -325,6 +325,7 @@ abstract class GProductOrdersData_productOrders_dealer_prices
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   int? get amount;
+  int? get originalAmount;
   GProductOrdersData_productOrders_dealer_prices_category? get category;
   static Serializer<GProductOrdersData_productOrders_dealer_prices>
       get serializer => _$gProductOrdersDataProductOrdersDealerPricesSerializer;
@@ -840,6 +841,7 @@ abstract class GVehicleOrdersData_vehicleOrders_dealer_prices
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   int? get amount;
+  int? get originalAmount;
   _i2.GDateTime? get createdAt;
   String get id;
   GVehicleOrdersData_vehicleOrders_dealer_prices_category? get category;

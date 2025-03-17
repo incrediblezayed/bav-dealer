@@ -2877,9 +2877,10 @@ class GCreateUserDataBuilder
     try {
       _$result = _$v ??
           new _$GCreateUserData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GCreateUserData', 'G__typename'),
-              createUser: _createUser?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GCreateUserData', 'G__typename'),
+            createUser: _createUser?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -2993,10 +2994,11 @@ class GCreateUserData_createUserBuilder
   _$GCreateUserData_createUser _build() {
     final _$result = _$v ??
         new _$GCreateUserData_createUser._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GCreateUserData_createUser', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GCreateUserData_createUser', 'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GCreateUserData_createUser', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GCreateUserData_createUser', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -3097,9 +3099,10 @@ class GCurrentUserOTPDataBuilder
   _$GCurrentUserOTPData _build() {
     final _$result = _$v ??
         new _$GCurrentUserOTPData._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GCurrentUserOTPData', 'G__typename'),
-            currentUserOTP: currentUserOTP);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GCurrentUserOTPData', 'G__typename'),
+          currentUserOTP: currentUserOTP,
+        );
     replace(_$result);
     return _$result;
   }
@@ -3200,9 +3203,10 @@ class GValidateUserOTPDataBuilder
   _$GValidateUserOTPData _build() {
     final _$result = _$v ??
         new _$GValidateUserOTPData._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GValidateUserOTPData', 'G__typename'),
-            validateUserOTP: validateUserOTP);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GValidateUserOTPData', 'G__typename'),
+          validateUserOTP: validateUserOTP,
+        );
     replace(_$result);
     return _$result;
   }
@@ -3308,12 +3312,13 @@ class GSendUserPasswordResetLinkDataBuilder
   _$GSendUserPasswordResetLinkData _build() {
     final _$result = _$v ??
         new _$GSendUserPasswordResetLinkData._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GSendUserPasswordResetLinkData', 'G__typename'),
-            sendUserPasswordResetLink: BuiltValueNullFieldError.checkNotNull(
-                sendUserPasswordResetLink,
-                r'GSendUserPasswordResetLinkData',
-                'sendUserPasswordResetLink'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GSendUserPasswordResetLinkData', 'G__typename'),
+          sendUserPasswordResetLink: BuiltValueNullFieldError.checkNotNull(
+              sendUserPasswordResetLink,
+              r'GSendUserPasswordResetLinkData',
+              'sendUserPasswordResetLink'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -3430,10 +3435,11 @@ class GRedeemUserPasswordResetTokenDataBuilder
     try {
       _$result = _$v ??
           new _$GRedeemUserPasswordResetTokenData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GRedeemUserPasswordResetTokenData', 'G__typename'),
-              redeemUserPasswordResetToken:
-                  _redeemUserPasswordResetToken?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GRedeemUserPasswordResetTokenData', 'G__typename'),
+            redeemUserPasswordResetToken:
+                _redeemUserPasswordResetToken?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -3586,18 +3592,19 @@ class GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder
   _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken _build() {
     final _$result = _$v ??
         new _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken',
-                'G__typename'),
-            code: BuiltValueNullFieldError.checkNotNull(
-                code,
-                r'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken',
-                'code'),
-            message: BuiltValueNullFieldError.checkNotNull(
-                message,
-                r'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken',
-                'message'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken',
+              'G__typename'),
+          code: BuiltValueNullFieldError.checkNotNull(
+              code,
+              r'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken',
+              'code'),
+          message: BuiltValueNullFieldError.checkNotNull(
+              message,
+              r'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken',
+              'message'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -3716,10 +3723,11 @@ class GValidateUserPasswordResetTokenDataBuilder
     try {
       _$result = _$v ??
           new _$GValidateUserPasswordResetTokenData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GValidateUserPasswordResetTokenData', 'G__typename'),
-              validateUserPasswordResetToken:
-                  _validateUserPasswordResetToken?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GValidateUserPasswordResetTokenData', 'G__typename'),
+            validateUserPasswordResetToken:
+                _validateUserPasswordResetToken?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -3878,18 +3886,19 @@ class GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder
     final _$result = _$v ??
         new _$GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken',
-                'G__typename'),
-            code: BuiltValueNullFieldError.checkNotNull(
-                code,
-                r'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken',
-                'code'),
-            message: BuiltValueNullFieldError.checkNotNull(
-                message,
-                r'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken',
-                'message'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken',
+              'G__typename'),
+          code: BuiltValueNullFieldError.checkNotNull(
+              code,
+              r'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken',
+              'code'),
+          message: BuiltValueNullFieldError.checkNotNull(
+              message,
+              r'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken',
+              'message'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -3992,9 +4001,10 @@ class GCreateDealerDataBuilder
     try {
       _$result = _$v ??
           new _$GCreateDealerData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GCreateDealerData', 'G__typename'),
-              createDealer: _createDealer?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GCreateDealerData', 'G__typename'),
+            createDealer: _createDealer?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -4110,10 +4120,11 @@ class GCreateDealerData_createDealerBuilder
   _$GCreateDealerData_createDealer _build() {
     final _$result = _$v ??
         new _$GCreateDealerData_createDealer._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GCreateDealerData_createDealer', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GCreateDealerData_createDealer', 'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GCreateDealerData_createDealer', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GCreateDealerData_createDealer', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -4225,9 +4236,10 @@ class GAuthenticateUserWithPasswordDataBuilder
   _$GAuthenticateUserWithPasswordData _build() {
     final _$result = _$v ??
         new _$GAuthenticateUserWithPasswordData._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                r'GAuthenticateUserWithPasswordData', 'G__typename'),
-            authenticateUserWithPassword: authenticateUserWithPassword);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GAuthenticateUserWithPasswordData', 'G__typename'),
+          authenticateUserWithPassword: authenticateUserWithPassword,
+        );
     replace(_$result);
     return _$result;
   }
@@ -4345,10 +4357,11 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__baseBuilde
     final _$result = _$v ??
         new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base',
-                'G__typename'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base',
+              'G__typename'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -4508,15 +4521,16 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
       _$result = _$v ??
           new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess',
-                  'G__typename'),
-              item: item.build(),
-              sessionToken: BuiltValueNullFieldError.checkNotNull(
-                  sessionToken,
-                  r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess',
-                  'sessionToken'));
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess',
+                'G__typename'),
+            item: item.build(),
+            sessionToken: BuiltValueNullFieldError.checkNotNull(
+                sessionToken,
+                r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess',
+                'sessionToken'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -4815,25 +4829,26 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
       _$result = _$v ??
           new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item',
-                  'id'),
-              name: name,
-              phoneNumber: phoneNumber,
-              email: email,
-              address: address,
-              phoneNumberVerified: phoneNumberVerified,
-              isAdmin: isAdmin,
-              profile_image: _profile_image?.build(),
-              addresses: _addresses?.build(),
-              emailVerified: emailVerified,
-              referralCode: _referralCode?.build(),
-              deactivate: deactivate);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item',
+                'id'),
+            name: name,
+            phoneNumber: phoneNumber,
+            email: email,
+            address: address,
+            phoneNumberVerified: phoneNumberVerified,
+            isAdmin: isAdmin,
+            profile_image: _profile_image?.build(),
+            addresses: _addresses?.build(),
+            emailVerified: emailVerified,
+            referralCode: _referralCode?.build(),
+            deactivate: deactivate,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -5060,24 +5075,37 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
   _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image
       _build() {
     final _$result = _$v ??
-        new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image', 'id'),
-            filesize: BuiltValueNullFieldError.checkNotNull(
-                filesize, r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image', 'filesize'),
-            width: BuiltValueNullFieldError.checkNotNull(
-                width, r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image', 'width'),
-            height: BuiltValueNullFieldError.checkNotNull(
-                height, r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image', 'height'),
-            extension: BuiltValueNullFieldError.checkNotNull(
-                extension,
-                r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image',
-                'extension'),
-            url: BuiltValueNullFieldError.checkNotNull(url, r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image', 'url'));
+        new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image
+            ._(
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image',
+              'id'),
+          filesize: BuiltValueNullFieldError.checkNotNull(
+              filesize,
+              r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image',
+              'filesize'),
+          width: BuiltValueNullFieldError.checkNotNull(
+              width,
+              r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image',
+              'width'),
+          height: BuiltValueNullFieldError.checkNotNull(
+              height,
+              r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image',
+              'height'),
+          extension: BuiltValueNullFieldError.checkNotNull(
+              extension,
+              r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image',
+              'extension'),
+          url: BuiltValueNullFieldError.checkNotNull(
+              url,
+              r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image',
+              'url'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -5329,24 +5357,25 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
       _$result = _$v ??
           new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses',
-                  'id'),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              phoneNumber: phoneNumber,
-              pinCode: pinCode,
-              address: address,
-              town: town,
-              district: district,
-              state: state,
-              Gdefault: Gdefault);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses',
+                'id'),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            phoneNumber: phoneNumber,
+            pinCode: pinCode,
+            address: address,
+            town: town,
+            district: district,
+            state: state,
+            Gdefault: Gdefault,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -5536,17 +5565,18 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
       _$result = _$v ??
           new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode',
-                  'id'),
-              code: code,
-              modifiedAt: _modifiedAt?.build(),
-              createdAt: _createdAt?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode',
+                'id'),
+            code: code,
+            modifiedAt: _modifiedAt?.build(),
+            createdAt: _createdAt?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -5695,14 +5725,15 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
     final _$result = _$v ??
         new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure',
-                'G__typename'),
-            message: BuiltValueNullFieldError.checkNotNull(
-                message,
-                r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure',
-                'message'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure',
+              'G__typename'),
+          message: BuiltValueNullFieldError.checkNotNull(
+              message,
+              r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure',
+              'message'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -5800,9 +5831,10 @@ class GUserDataBuilder implements Builder<GUserData, GUserDataBuilder> {
     try {
       _$result = _$v ??
           new _$GUserData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GUserData', 'G__typename'),
-              user: _user?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GUserData', 'G__typename'),
+            user: _user?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -6084,24 +6116,25 @@ class GUserData_userBuilder
     try {
       _$result = _$v ??
           new _$GUserData_user._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GUserData_user', 'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GUserData_user', 'id'),
-              name: name,
-              phoneNumber: phoneNumber,
-              email: email,
-              address: address,
-              phoneNumberVerified: phoneNumberVerified,
-              isAdmin: isAdmin,
-              profile_image: _profile_image?.build(),
-              addresses: _addresses?.build(),
-              emailVerified: emailVerified,
-              referralCode: _referralCode?.build(),
-              favorites: _favorites?.build(),
-              aadhaar: _aadhaar?.build(),
-              driving_license: _driving_license?.build(),
-              deactivate: deactivate);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GUserData_user', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GUserData_user', 'id'),
+            name: name,
+            phoneNumber: phoneNumber,
+            email: email,
+            address: address,
+            phoneNumberVerified: phoneNumberVerified,
+            isAdmin: isAdmin,
+            profile_image: _profile_image?.build(),
+            addresses: _addresses?.build(),
+            emailVerified: emailVerified,
+            referralCode: _referralCode?.build(),
+            favorites: _favorites?.build(),
+            aadhaar: _aadhaar?.build(),
+            driving_license: _driving_license?.build(),
+            deactivate: deactivate,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -6295,20 +6328,21 @@ class GUserData_user_profile_imageBuilder
   _$GUserData_user_profile_image _build() {
     final _$result = _$v ??
         new _$GUserData_user_profile_image._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GUserData_user_profile_image', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GUserData_user_profile_image', 'id'),
-            filesize: BuiltValueNullFieldError.checkNotNull(
-                filesize, r'GUserData_user_profile_image', 'filesize'),
-            width: BuiltValueNullFieldError.checkNotNull(
-                width, r'GUserData_user_profile_image', 'width'),
-            height: BuiltValueNullFieldError.checkNotNull(
-                height, r'GUserData_user_profile_image', 'height'),
-            extension: BuiltValueNullFieldError.checkNotNull(
-                extension, r'GUserData_user_profile_image', 'extension'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url, r'GUserData_user_profile_image', 'url'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GUserData_user_profile_image', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GUserData_user_profile_image', 'id'),
+          filesize: BuiltValueNullFieldError.checkNotNull(
+              filesize, r'GUserData_user_profile_image', 'filesize'),
+          width: BuiltValueNullFieldError.checkNotNull(
+              width, r'GUserData_user_profile_image', 'width'),
+          height: BuiltValueNullFieldError.checkNotNull(
+              height, r'GUserData_user_profile_image', 'height'),
+          extension: BuiltValueNullFieldError.checkNotNull(
+              extension, r'GUserData_user_profile_image', 'extension'),
+          url: BuiltValueNullFieldError.checkNotNull(
+              url, r'GUserData_user_profile_image', 'url'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -6529,20 +6563,21 @@ class GUserData_user_addressesBuilder
     try {
       _$result = _$v ??
           new _$GUserData_user_addresses._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GUserData_user_addresses', 'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GUserData_user_addresses', 'id'),
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              name: name,
-              phoneNumber: phoneNumber,
-              pinCode: pinCode,
-              address: address,
-              town: town,
-              district: district,
-              state: state,
-              Gdefault: Gdefault);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GUserData_user_addresses', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GUserData_user_addresses', 'id'),
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            name: name,
+            phoneNumber: phoneNumber,
+            pinCode: pinCode,
+            address: address,
+            town: town,
+            district: district,
+            state: state,
+            Gdefault: Gdefault,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -6700,13 +6735,14 @@ class GUserData_user_referralCodeBuilder
     try {
       _$result = _$v ??
           new _$GUserData_user_referralCode._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GUserData_user_referralCode', 'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GUserData_user_referralCode', 'id'),
-              code: code,
-              modifiedAt: _modifiedAt?.build(),
-              createdAt: _createdAt?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GUserData_user_referralCode', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GUserData_user_referralCode', 'id'),
+            code: code,
+            modifiedAt: _modifiedAt?.build(),
+            createdAt: _createdAt?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -6839,11 +6875,12 @@ class GUserData_user_favoritesBuilder
     try {
       _$result = _$v ??
           new _$GUserData_user_favorites._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GUserData_user_favorites', 'G__typename'),
-              vehicleVariant: _vehicleVariant?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GUserData_user_favorites', 'id'));
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GUserData_user_favorites', 'G__typename'),
+            vehicleVariant: _vehicleVariant?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GUserData_user_favorites', 'id'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -6965,10 +7002,11 @@ class GUserData_user_favorites_vehicleVariantBuilder
   _$GUserData_user_favorites_vehicleVariant _build() {
     final _$result = _$v ??
         new _$GUserData_user_favorites_vehicleVariant._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                r'GUserData_user_favorites_vehicleVariant', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GUserData_user_favorites_vehicleVariant', 'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+              r'GUserData_user_favorites_vehicleVariant', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GUserData_user_favorites_vehicleVariant', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -7083,12 +7121,13 @@ class GUserData_user_aadhaarBuilder
   _$GUserData_user_aadhaar _build() {
     final _$result = _$v ??
         new _$GUserData_user_aadhaar._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GUserData_user_aadhaar', 'G__typename'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url, r'GUserData_user_aadhaar', 'url'),
-            filename: BuiltValueNullFieldError.checkNotNull(
-                filename, r'GUserData_user_aadhaar', 'filename'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GUserData_user_aadhaar', 'G__typename'),
+          url: BuiltValueNullFieldError.checkNotNull(
+              url, r'GUserData_user_aadhaar', 'url'),
+          filename: BuiltValueNullFieldError.checkNotNull(
+              filename, r'GUserData_user_aadhaar', 'filename'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -7205,12 +7244,13 @@ class GUserData_user_driving_licenseBuilder
   _$GUserData_user_driving_license _build() {
     final _$result = _$v ??
         new _$GUserData_user_driving_license._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GUserData_user_driving_license', 'G__typename'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url, r'GUserData_user_driving_license', 'url'),
-            filename: BuiltValueNullFieldError.checkNotNull(
-                filename, r'GUserData_user_driving_license', 'filename'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GUserData_user_driving_license', 'G__typename'),
+          url: BuiltValueNullFieldError.checkNotNull(
+              url, r'GUserData_user_driving_license', 'url'),
+          filename: BuiltValueNullFieldError.checkNotNull(
+              filename, r'GUserData_user_driving_license', 'filename'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -7312,9 +7352,10 @@ class GUpdateUserDataBuilder
     try {
       _$result = _$v ??
           new _$GUpdateUserData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GUpdateUserData', 'G__typename'),
-              updateUser: _updateUser?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GUpdateUserData', 'G__typename'),
+            updateUser: _updateUser?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -7428,10 +7469,11 @@ class GUpdateUserData_updateUserBuilder
   _$GUpdateUserData_updateUser _build() {
     final _$result = _$v ??
         new _$GUpdateUserData_updateUser._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GUpdateUserData_updateUser', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GUpdateUserData_updateUser', 'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GUpdateUserData_updateUser', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GUpdateUserData_updateUser', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -7530,9 +7572,10 @@ class GDealerDataBuilder implements Builder<GDealerData, GDealerDataBuilder> {
     try {
       _$result = _$v ??
           new _$GDealerData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GDealerData', 'G__typename'),
-              dealers: _dealers?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GDealerData', 'G__typename'),
+            dealers: _dealers?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -7668,12 +7711,13 @@ class GDealerData_dealersBuilder
   _$GDealerData_dealers _build() {
     final _$result = _$v ??
         new _$GDealerData_dealers._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GDealerData_dealers', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GDealerData_dealers', 'id'),
-            approved: approved,
-            mouApproved: mouApproved);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GDealerData_dealers', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GDealerData_dealers', 'id'),
+          approved: approved,
+          mouApproved: mouApproved,
+        );
     replace(_$result);
     return _$result;
   }
@@ -7776,9 +7820,10 @@ class GUpdateDealerDataBuilder
     try {
       _$result = _$v ??
           new _$GUpdateDealerData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GUpdateDealerData', 'G__typename'),
-              updateDealer: _updateDealer?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GUpdateDealerData', 'G__typename'),
+            updateDealer: _updateDealer?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -7931,13 +7976,14 @@ class GUpdateDealerData_updateDealerBuilder
     try {
       _$result = _$v ??
           new _$GUpdateDealerData_updateDealer._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GUpdateDealerData_updateDealer', 'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GUpdateDealerData_updateDealer', 'id'),
-              lLat: lLat,
-              lLng: lLng,
-              location: _location?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GUpdateDealerData_updateDealer', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GUpdateDealerData_updateDealer', 'id'),
+            lLat: lLat,
+            lLng: lLng,
+            location: _location?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -8053,9 +8099,10 @@ class GSendDealerMOUApprovalOTPDataBuilder
   _$GSendDealerMOUApprovalOTPData _build() {
     final _$result = _$v ??
         new _$GSendDealerMOUApprovalOTPData._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GSendDealerMOUApprovalOTPData', 'G__typename'),
-            sendDealerMOUApprovalOTP: sendDealerMOUApprovalOTP);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GSendDealerMOUApprovalOTPData', 'G__typename'),
+          sendDealerMOUApprovalOTP: sendDealerMOUApprovalOTP,
+        );
     replace(_$result);
     return _$result;
   }

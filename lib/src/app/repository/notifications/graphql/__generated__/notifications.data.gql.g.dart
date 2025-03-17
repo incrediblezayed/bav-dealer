@@ -493,9 +493,10 @@ class GAppNotificationsDataBuilder
     try {
       _$result = _$v ??
           new _$GAppNotificationsData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GAppNotificationsData', 'G__typename'),
-              appNotifications: _appNotifications?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GAppNotificationsData', 'G__typename'),
+            appNotifications: _appNotifications?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -686,15 +687,16 @@ class GAppNotificationsData_appNotificationsBuilder
     try {
       _$result = _$v ??
           new _$GAppNotificationsData_appNotifications._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GAppNotificationsData_appNotifications', 'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GAppNotificationsData_appNotifications', 'id'),
-              body: body,
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              notificationType: _notificationType?.build(),
-              title: title);
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GAppNotificationsData_appNotifications', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GAppNotificationsData_appNotifications', 'id'),
+            body: body,
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            notificationType: _notificationType?.build(),
+            title: title,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -855,16 +857,17 @@ class GAppNotificationsData_appNotifications_notificationTypeBuilder
     try {
       _$result = _$v ??
           new _$GAppNotificationsData_appNotifications_notificationType._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GAppNotificationsData_appNotifications_notificationType',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GAppNotificationsData_appNotifications_notificationType',
-                  'id'),
-              createdAt: _createdAt?.build(),
-              name: name);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GAppNotificationsData_appNotifications_notificationType',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GAppNotificationsData_appNotifications_notificationType',
+                'id'),
+            createdAt: _createdAt?.build(),
+            name: name,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -989,9 +992,10 @@ class GUserDeviceRegistrationDataBuilder
     try {
       _$result = _$v ??
           new _$GUserDeviceRegistrationData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GUserDeviceRegistrationData', 'G__typename'),
-              createFirebaseDeviceToken: _createFirebaseDeviceToken?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GUserDeviceRegistrationData', 'G__typename'),
+            createFirebaseDeviceToken: _createFirebaseDeviceToken?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1120,11 +1124,12 @@ class GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder
   _$GUserDeviceRegistrationData_createFirebaseDeviceToken _build() {
     final _$result = _$v ??
         new _$GUserDeviceRegistrationData_createFirebaseDeviceToken._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GUserDeviceRegistrationData_createFirebaseDeviceToken',
-                'G__typename'),
-            deviceToken: deviceToken);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GUserDeviceRegistrationData_createFirebaseDeviceToken',
+              'G__typename'),
+          deviceToken: deviceToken,
+        );
     replace(_$result);
     return _$result;
   }

@@ -194,6 +194,13 @@ const ProductOrders = _i1.OperationDefinitionNode(
                   selectionSet: null,
                 ),
                 _i1.FieldNode(
+                  name: _i1.NameNode(value: 'originalAmount'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
                   name: _i1.NameNode(value: 'category'),
                   alias: null,
                   arguments: [],
@@ -579,6 +586,13 @@ const VehicleOrders = _i1.OperationDefinitionNode(
               selectionSet: _i1.SelectionSetNode(selections: [
                 _i1.FieldNode(
                   name: _i1.NameNode(value: 'amount'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                _i1.FieldNode(
+                  name: _i1.NameNode(value: 'originalAmount'),
                   alias: null,
                   arguments: [],
                   directives: [],

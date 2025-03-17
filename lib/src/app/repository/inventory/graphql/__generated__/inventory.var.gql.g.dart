@@ -1294,12 +1294,13 @@ class GProductVariantsVarsBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantsVars._(
-              skip: BuiltValueNullFieldError.checkNotNull(
-                  skip, r'GProductVariantsVars', 'skip'),
-              take: take,
-              where: where.build(),
-              location: _location?.build(),
-              orderBy: orderBy.build());
+            skip: BuiltValueNullFieldError.checkNotNull(
+                skip, r'GProductVariantsVars', 'skip'),
+            take: take,
+            where: where.build(),
+            location: _location?.build(),
+            orderBy: orderBy.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1403,7 +1404,10 @@ class GProductVariantsCountVarsBuilder
   _$GProductVariantsCountVars _build() {
     _$GProductVariantsCountVars _$result;
     try {
-      _$result = _$v ?? new _$GProductVariantsCountVars._(where: where.build());
+      _$result = _$v ??
+          new _$GProductVariantsCountVars._(
+            where: where.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1516,7 +1520,9 @@ class GProductVariantVarsBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantVars._(
-              where: where.build(), location: _location?.build());
+            where: where.build(),
+            location: _location?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1720,11 +1726,12 @@ class GVehicleVariantsVarsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVariantsVars._(
-              where: where.build(),
-              orderBy: orderBy.build(),
-              skip: BuiltValueNullFieldError.checkNotNull(
-                  skip, r'GVehicleVariantsVars', 'skip'),
-              take: take);
+            where: where.build(),
+            orderBy: orderBy.build(),
+            skip: BuiltValueNullFieldError.checkNotNull(
+                skip, r'GVehicleVariantsVars', 'skip'),
+            take: take,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1826,7 +1833,10 @@ class GVehicleVariantsCountVarsBuilder
   _$GVehicleVariantsCountVars _build() {
     _$GVehicleVariantsCountVars _$result;
     try {
-      _$result = _$v ?? new _$GVehicleVariantsCountVars._(where: where.build());
+      _$result = _$v ??
+          new _$GVehicleVariantsCountVars._(
+            where: where.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1932,7 +1942,9 @@ class GCreateVehicleDealerStockRequestVarsBuilder
     _$GCreateVehicleDealerStockRequestVars _$result;
     try {
       _$result = _$v ??
-          new _$GCreateVehicleDealerStockRequestVars._(data: data.build());
+          new _$GCreateVehicleDealerStockRequestVars._(
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -2034,7 +2046,10 @@ class GVehicleDealersCountVarsBuilder
   _$GVehicleDealersCountVars _build() {
     _$GVehicleDealersCountVars _$result;
     try {
-      _$result = _$v ?? new _$GVehicleDealersCountVars._(where: where.build());
+      _$result = _$v ??
+          new _$GVehicleDealersCountVars._(
+            where: where.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -2158,10 +2173,11 @@ class GVehicleDealersVarsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealersVars._(
-              where: where.build(),
-              take: take,
-              skip: BuiltValueNullFieldError.checkNotNull(
-                  skip, r'GVehicleDealersVars', 'skip'));
+            where: where.build(),
+            take: take,
+            skip: BuiltValueNullFieldError.checkNotNull(
+                skip, r'GVehicleDealersVars', 'skip'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -2260,7 +2276,10 @@ class GCreateVehicleDealerVarsBuilder
   _$GCreateVehicleDealerVars _build() {
     _$GCreateVehicleDealerVars _$result;
     try {
-      _$result = _$v ?? new _$GCreateVehicleDealerVars._(data: data.build());
+      _$result = _$v ??
+          new _$GCreateVehicleDealerVars._(
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -2437,7 +2456,9 @@ class GUpdateVehicleDealerVarsBuilder
     try {
       _$result = _$v ??
           new _$GUpdateVehicleDealerVars._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -2535,7 +2556,10 @@ class GUpdatePricesVarsBuilder
   _$GUpdatePricesVars _build() {
     _$GUpdatePricesVars _$result;
     try {
-      _$result = _$v ?? new _$GUpdatePricesVars._(data: data.build());
+      _$result = _$v ??
+          new _$GUpdatePricesVars._(
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -2661,10 +2685,11 @@ class GTestDriveDealersVarsBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveDealersVars._(
-              where: where.build(),
-              take: take,
-              skip: BuiltValueNullFieldError.checkNotNull(
-                  skip, r'GTestDriveDealersVars', 'skip'));
+            where: where.build(),
+            take: take,
+            skip: BuiltValueNullFieldError.checkNotNull(
+                skip, r'GTestDriveDealersVars', 'skip'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -2781,7 +2806,9 @@ class GUpdateTestDriveDealerVarsBuilder
     try {
       _$result = _$v ??
           new _$GUpdateTestDriveDealerVars._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -2882,7 +2909,10 @@ class GCreateTestDriveDealerVarsBuilder
   _$GCreateTestDriveDealerVars _build() {
     _$GCreateTestDriveDealerVars _$result;
     try {
-      _$result = _$v ?? new _$GCreateTestDriveDealerVars._(data: data.build());
+      _$result = _$v ??
+          new _$GCreateTestDriveDealerVars._(
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -3006,10 +3036,11 @@ class GProductDealersVarsBuilder
     try {
       _$result = _$v ??
           new _$GProductDealersVars._(
-              where: where.build(),
-              take: take,
-              skip: BuiltValueNullFieldError.checkNotNull(
-                  skip, r'GProductDealersVars', 'skip'));
+            where: where.build(),
+            take: take,
+            skip: BuiltValueNullFieldError.checkNotNull(
+                skip, r'GProductDealersVars', 'skip'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -3108,7 +3139,10 @@ class GCreateProductDealerVarsBuilder
   _$GCreateProductDealerVars _build() {
     _$GCreateProductDealerVars _$result;
     try {
-      _$result = _$v ?? new _$GCreateProductDealerVars._(data: data.build());
+      _$result = _$v ??
+          new _$GCreateProductDealerVars._(
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -3225,7 +3259,9 @@ class GUpdateProductDealerVarsBuilder
     try {
       _$result = _$v ??
           new _$GUpdateProductDealerVars._(
-              where: where.build(), data: data.build());
+            where: where.build(),
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -3333,7 +3369,9 @@ class GCreateProductDealerStockRequestVarsBuilder
     _$GCreateProductDealerStockRequestVars _$result;
     try {
       _$result = _$v ??
-          new _$GCreateProductDealerStockRequestVars._(data: data.build());
+          new _$GCreateProductDealerStockRequestVars._(
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {

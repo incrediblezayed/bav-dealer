@@ -226,9 +226,10 @@ class GGuaranteesDataBuilder
     try {
       _$result = _$v ??
           new _$GGuaranteesData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GGuaranteesData', 'G__typename'),
-              guarantees: _guarantees?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GGuaranteesData', 'G__typename'),
+            guarantees: _guarantees?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -353,11 +354,12 @@ class GGuaranteesData_guaranteesBuilder
   _$GGuaranteesData_guarantees _build() {
     final _$result = _$v ??
         new _$GGuaranteesData_guarantees._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GGuaranteesData_guarantees', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GGuaranteesData_guarantees', 'id'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GGuaranteesData_guarantees', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GGuaranteesData_guarantees', 'id'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }

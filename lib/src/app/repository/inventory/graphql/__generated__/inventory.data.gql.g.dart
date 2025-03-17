@@ -608,6 +608,12 @@ class _$GProductVariantsData_productVariants_pricesSerializer
         ..add('amount')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.originalAmount;
+    if (value != null) {
+      result
+        ..add('originalAmount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     value = object.category;
     if (value != null) {
       result
@@ -637,6 +643,10 @@ class _$GProductVariantsData_productVariants_pricesSerializer
           break;
         case 'amount':
           result.amount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'originalAmount':
+          result.originalAmount = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
           break;
         case 'category':
@@ -2292,6 +2302,12 @@ class _$GProductVariantData_productVariant_pricesSerializer
         ..add('amount')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.originalAmount;
+    if (value != null) {
+      result
+        ..add('originalAmount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     value = object.category;
     if (value != null) {
       result
@@ -2321,6 +2337,10 @@ class _$GProductVariantData_productVariant_pricesSerializer
           break;
         case 'amount':
           result.amount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'originalAmount':
+          result.originalAmount = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
           break;
         case 'category':
@@ -4014,6 +4034,12 @@ class _$GVehicleVariantsData_vehicleVariants_pricesSerializer
         ..add('amount')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.originalAmount;
+    if (value != null) {
+      result
+        ..add('originalAmount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     value = object.category;
     if (value != null) {
       result
@@ -4043,6 +4069,10 @@ class _$GVehicleVariantsData_vehicleVariants_pricesSerializer
           break;
         case 'amount':
           result.amount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'originalAmount':
+          result.originalAmount = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
           break;
         case 'category':
@@ -5429,6 +5459,12 @@ class _$GVehicleDealersData_vehicleDealers_pricesSerializer
         ..add('amount')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.originalAmount;
+    if (value != null) {
+      result
+        ..add('originalAmount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     value = object.category;
     if (value != null) {
       result
@@ -5462,6 +5498,10 @@ class _$GVehicleDealersData_vehicleDealers_pricesSerializer
           break;
         case 'amount':
           result.amount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'originalAmount':
+          result.originalAmount = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
           break;
         case 'category':
@@ -6544,6 +6584,12 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_pricesSerializer
         ..add('amount')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.originalAmount;
+    if (value != null) {
+      result
+        ..add('originalAmount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     value = object.category;
     if (value != null) {
       result
@@ -6578,6 +6624,10 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_pricesSerializer
           break;
         case 'amount':
           result.amount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'originalAmount':
+          result.originalAmount = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
           break;
         case 'category':
@@ -8700,6 +8750,12 @@ class _$GProductDealersData_productDealers_pricesSerializer
         ..add('amount')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.originalAmount;
+    if (value != null) {
+      result
+        ..add('originalAmount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     value = object.category;
     if (value != null) {
       result
@@ -8733,6 +8789,10 @@ class _$GProductDealersData_productDealers_pricesSerializer
           break;
         case 'amount':
           result.amount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'originalAmount':
+          result.originalAmount = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
           break;
         case 'category':
@@ -9468,6 +9528,12 @@ class _$GUpdateProductDealerData_updateProductDealer_pricesSerializer
         ..add('amount')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.originalAmount;
+    if (value != null) {
+      result
+        ..add('originalAmount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     value = object.category;
     if (value != null) {
       result
@@ -9498,6 +9564,10 @@ class _$GUpdateProductDealerData_updateProductDealer_pricesSerializer
           break;
         case 'amount':
           result.amount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'originalAmount':
+          result.originalAmount = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
           break;
         case 'id':
@@ -10356,9 +10426,10 @@ class GProductVariantsDataBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantsData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GProductVariantsData', 'G__typename'),
-              productVariants: _productVariants?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GProductVariantsData', 'G__typename'),
+            productVariants: _productVariants?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -10591,18 +10662,19 @@ class GProductVariantsData_productVariantsBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantsData_productVariants._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GProductVariantsData_productVariants', 'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GProductVariantsData_productVariants', 'id'),
-              name: name,
-              availableProductDealer: availableProductDealer,
-              prices: _prices?.build(),
-              specifications: _specifications?.build(),
-              totalPrice: totalPrice,
-              gallery: _gallery?.build(),
-              product: _product?.build(),
-              tags: _tags?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GProductVariantsData_productVariants', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductVariantsData_productVariants', 'id'),
+            name: name,
+            availableProductDealer: availableProductDealer,
+            prices: _prices?.build(),
+            specifications: _specifications?.build(),
+            totalPrice: totalPrice,
+            gallery: _gallery?.build(),
+            product: _product?.build(),
+            tags: _tags?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -10637,6 +10709,8 @@ class _$GProductVariantsData_productVariants_prices
   @override
   final int? amount;
   @override
+  final int? originalAmount;
+  @override
   final GProductVariantsData_productVariants_prices_category? category;
 
   factory _$GProductVariantsData_productVariants_prices(
@@ -10647,7 +10721,10 @@ class _$GProductVariantsData_productVariants_prices
           ._build();
 
   _$GProductVariantsData_productVariants_prices._(
-      {required this.G__typename, this.amount, this.category})
+      {required this.G__typename,
+      this.amount,
+      this.originalAmount,
+      this.category})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
         r'GProductVariantsData_productVariants_prices', 'G__typename');
@@ -10669,6 +10746,7 @@ class _$GProductVariantsData_productVariants_prices
     return other is GProductVariantsData_productVariants_prices &&
         G__typename == other.G__typename &&
         amount == other.amount &&
+        originalAmount == other.originalAmount &&
         category == other.category;
   }
 
@@ -10677,6 +10755,7 @@ class _$GProductVariantsData_productVariants_prices
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, originalAmount.hashCode);
     _$hash = $jc(_$hash, category.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -10688,6 +10767,7 @@ class _$GProductVariantsData_productVariants_prices
             r'GProductVariantsData_productVariants_prices')
           ..add('G__typename', G__typename)
           ..add('amount', amount)
+          ..add('originalAmount', originalAmount)
           ..add('category', category))
         .toString();
   }
@@ -10707,6 +10787,11 @@ class GProductVariantsData_productVariants_pricesBuilder
   int? get amount => _$this._amount;
   set amount(int? amount) => _$this._amount = amount;
 
+  int? _originalAmount;
+  int? get originalAmount => _$this._originalAmount;
+  set originalAmount(int? originalAmount) =>
+      _$this._originalAmount = originalAmount;
+
   GProductVariantsData_productVariants_prices_categoryBuilder? _category;
   GProductVariantsData_productVariants_prices_categoryBuilder get category =>
       _$this._category ??=
@@ -10725,6 +10810,7 @@ class GProductVariantsData_productVariants_pricesBuilder
     if ($v != null) {
       _G__typename = $v.G__typename;
       _amount = $v.amount;
+      _originalAmount = $v.originalAmount;
       _category = $v.category?.toBuilder();
       _$v = null;
     }
@@ -10752,12 +10838,12 @@ class GProductVariantsData_productVariants_pricesBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantsData_productVariants_prices._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductVariantsData_productVariants_prices',
-                  'G__typename'),
-              amount: amount,
-              category: _category?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GProductVariantsData_productVariants_prices', 'G__typename'),
+            amount: amount,
+            originalAmount: originalAmount,
+            category: _category?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -10896,12 +10982,13 @@ class GProductVariantsData_productVariants_prices_categoryBuilder
   _$GProductVariantsData_productVariants_prices_category _build() {
     final _$result = _$v ??
         new _$GProductVariantsData_productVariants_prices_category._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductVariantsData_productVariants_prices_category',
-                'G__typename'),
-            name: name,
-            description: description);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductVariantsData_productVariants_prices_category',
+              'G__typename'),
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -11111,19 +11198,20 @@ class GProductVariantsData_productVariants_specificationsBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantsData_productVariants_specifications._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductVariantsData_productVariants_specifications',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(id,
-                  r'GProductVariantsData_productVariants_specifications', 'id'),
-              isKeyFeature: isKeyFeature,
-              name: name,
-              specification: _specification?.build(),
-              type: type,
-              intValue: intValue,
-              stringValue: stringValue,
-              category: _category?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantsData_productVariants_specifications',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(id,
+                r'GProductVariantsData_productVariants_specifications', 'id'),
+            isKeyFeature: isKeyFeature,
+            name: name,
+            specification: _specification?.build(),
+            type: type,
+            intValue: intValue,
+            stringValue: stringValue,
+            category: _category?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -11324,18 +11412,19 @@ class GProductVariantsData_productVariants_specifications_specificationBuilder
       _$result = _$v ??
           new _$GProductVariantsData_productVariants_specifications_specification
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductVariantsData_productVariants_specifications_specification',
-                  'G__typename'),
-              image: _image?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GProductVariantsData_productVariants_specifications_specification',
-                  'id'),
-              name: name,
-              description: description,
-              unit: unit);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantsData_productVariants_specifications_specification',
+                'G__typename'),
+            image: _image?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GProductVariantsData_productVariants_specifications_specification',
+                'id'),
+            name: name,
+            description: description,
+            unit: unit,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -11481,14 +11570,15 @@ class GProductVariantsData_productVariants_specifications_specification_imageBui
     final _$result = _$v ??
         new _$GProductVariantsData_productVariants_specifications_specification_image
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductVariantsData_productVariants_specifications_specification_image',
-                'G__typename'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url,
-                r'GProductVariantsData_productVariants_specifications_specification_image',
-                'url'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductVariantsData_productVariants_specifications_specification_image',
+              'G__typename'),
+          url: BuiltValueNullFieldError.checkNotNull(
+              url,
+              r'GProductVariantsData_productVariants_specifications_specification_image',
+              'url'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -11637,16 +11727,17 @@ class GProductVariantsData_productVariants_specifications_categoryBuilder
   _$GProductVariantsData_productVariants_specifications_category _build() {
     final _$result = _$v ??
         new _$GProductVariantsData_productVariants_specifications_category._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductVariantsData_productVariants_specifications_category',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GProductVariantsData_productVariants_specifications_category',
-                'id'),
-            name: name,
-            description: description);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductVariantsData_productVariants_specifications_category',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GProductVariantsData_productVariants_specifications_category',
+              'id'),
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -11777,11 +11868,12 @@ class GProductVariantsData_productVariants_galleryBuilder
   _$GProductVariantsData_productVariants_gallery _build() {
     final _$result = _$v ??
         new _$GProductVariantsData_productVariants_gallery._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                r'GProductVariantsData_productVariants_gallery', 'G__typename'),
-            file: file,
-            type: type,
-            index: index);
+          G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+              r'GProductVariantsData_productVariants_gallery', 'G__typename'),
+          file: file,
+          type: type,
+          index: index,
+        );
     replace(_$result);
     return _$result;
   }
@@ -11978,18 +12070,17 @@ class GProductVariantsData_productVariants_productBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantsData_productVariants_product._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductVariantsData_productVariants_product',
-                  'G__typename'),
-              brand: _brand?.build(),
-              name: name,
-              description: description,
-              longDescription: longDescription,
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GProductVariantsData_productVariants_product', 'id'),
-              type: _type?.build(),
-              specifications: _specifications?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GProductVariantsData_productVariants_product', 'G__typename'),
+            brand: _brand?.build(),
+            name: name,
+            description: description,
+            longDescription: longDescription,
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductVariantsData_productVariants_product', 'id'),
+            type: _type?.build(),
+            specifications: _specifications?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -12150,14 +12241,15 @@ class GProductVariantsData_productVariants_product_brandBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantsData_productVariants_product_brand._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductVariantsData_productVariants_product_brand',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(id,
-                  r'GProductVariantsData_productVariants_product_brand', 'id'),
-              name: name,
-              logo: _logo?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantsData_productVariants_product_brand',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(id,
+                r'GProductVariantsData_productVariants_product_brand', 'id'),
+            name: name,
+            logo: _logo?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -12320,22 +12412,21 @@ class GProductVariantsData_productVariants_product_brand_logoBuilder
   _$GProductVariantsData_productVariants_product_brand_logo _build() {
     final _$result = _$v ??
         new _$GProductVariantsData_productVariants_product_brand_logo._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductVariantsData_productVariants_product_brand_logo',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GProductVariantsData_productVariants_product_brand_logo',
-                'id'),
-            extension: BuiltValueNullFieldError.checkNotNull(
-                extension,
-                r'GProductVariantsData_productVariants_product_brand_logo',
-                'extension'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url,
-                r'GProductVariantsData_productVariants_product_brand_logo',
-                'url'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductVariantsData_productVariants_product_brand_logo',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(id,
+              r'GProductVariantsData_productVariants_product_brand_logo', 'id'),
+          extension: BuiltValueNullFieldError.checkNotNull(
+              extension,
+              r'GProductVariantsData_productVariants_product_brand_logo',
+              'extension'),
+          url: BuiltValueNullFieldError.checkNotNull(
+              url,
+              r'GProductVariantsData_productVariants_product_brand_logo',
+              'url'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -12474,14 +12565,15 @@ class GProductVariantsData_productVariants_product_typeBuilder
   _$GProductVariantsData_productVariants_product_type _build() {
     final _$result = _$v ??
         new _$GProductVariantsData_productVariants_product_type._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductVariantsData_productVariants_product_type',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GProductVariantsData_productVariants_product_type', 'id'),
-            name: name,
-            description: description);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductVariantsData_productVariants_product_type',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GProductVariantsData_productVariants_product_type', 'id'),
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -12701,21 +12793,22 @@ class GProductVariantsData_productVariants_product_specificationsBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantsData_productVariants_product_specifications._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductVariantsData_productVariants_product_specifications',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GProductVariantsData_productVariants_product_specifications',
-                  'id'),
-              isKeyFeature: isKeyFeature,
-              name: name,
-              specification: _specification?.build(),
-              type: type,
-              intValue: intValue,
-              stringValue: stringValue,
-              category: _category?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantsData_productVariants_product_specifications',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GProductVariantsData_productVariants_product_specifications',
+                'id'),
+            isKeyFeature: isKeyFeature,
+            name: name,
+            specification: _specification?.build(),
+            type: type,
+            intValue: intValue,
+            stringValue: stringValue,
+            category: _category?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -12919,18 +13012,19 @@ class GProductVariantsData_productVariants_product_specifications_specificationB
       _$result = _$v ??
           new _$GProductVariantsData_productVariants_product_specifications_specification
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductVariantsData_productVariants_product_specifications_specification',
-                  'G__typename'),
-              image: _image?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GProductVariantsData_productVariants_product_specifications_specification',
-                  'id'),
-              name: name,
-              description: description,
-              unit: unit);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantsData_productVariants_product_specifications_specification',
+                'G__typename'),
+            image: _image?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GProductVariantsData_productVariants_product_specifications_specification',
+                'id'),
+            name: name,
+            description: description,
+            unit: unit,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -13077,14 +13171,15 @@ class GProductVariantsData_productVariants_product_specifications_specification_
     final _$result = _$v ??
         new _$GProductVariantsData_productVariants_product_specifications_specification_image
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductVariantsData_productVariants_product_specifications_specification_image',
-                'G__typename'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url,
-                r'GProductVariantsData_productVariants_product_specifications_specification_image',
-                'url'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductVariantsData_productVariants_product_specifications_specification_image',
+              'G__typename'),
+          url: BuiltValueNullFieldError.checkNotNull(
+              url,
+              r'GProductVariantsData_productVariants_product_specifications_specification_image',
+              'url'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -13239,16 +13334,17 @@ class GProductVariantsData_productVariants_product_specifications_categoryBuilde
     final _$result = _$v ??
         new _$GProductVariantsData_productVariants_product_specifications_category
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductVariantsData_productVariants_product_specifications_category',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GProductVariantsData_productVariants_product_specifications_category',
-                'id'),
-            name: name,
-            description: description);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductVariantsData_productVariants_product_specifications_category',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GProductVariantsData_productVariants_product_specifications_category',
+              'id'),
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -13383,12 +13479,13 @@ class GProductVariantsData_productVariants_tagsBuilder
   _$GProductVariantsData_productVariants_tags _build() {
     final _$result = _$v ??
         new _$GProductVariantsData_productVariants_tags._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                r'GProductVariantsData_productVariants_tags', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GProductVariantsData_productVariants_tags', 'id'),
-            title: title,
-            description: description);
+          G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+              r'GProductVariantsData_productVariants_tags', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GProductVariantsData_productVariants_tags', 'id'),
+          title: title,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -13491,9 +13588,10 @@ class GProductVariantsCountDataBuilder
   _$GProductVariantsCountData _build() {
     final _$result = _$v ??
         new _$GProductVariantsCountData._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GProductVariantsCountData', 'G__typename'),
-            productVariantsCount: productVariantsCount);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GProductVariantsCountData', 'G__typename'),
+          productVariantsCount: productVariantsCount,
+        );
     replace(_$result);
     return _$result;
   }
@@ -13599,9 +13697,10 @@ class GProductVariantDataBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GProductVariantData', 'G__typename'),
-              productVariant: _productVariant?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GProductVariantData', 'G__typename'),
+            productVariant: _productVariant?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -13833,18 +13932,19 @@ class GProductVariantData_productVariantBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantData_productVariant._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GProductVariantData_productVariant', 'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GProductVariantData_productVariant', 'id'),
-              name: name,
-              availableProductDealer: availableProductDealer,
-              prices: _prices?.build(),
-              specifications: _specifications?.build(),
-              totalPrice: totalPrice,
-              gallery: _gallery?.build(),
-              product: _product?.build(),
-              tags: _tags?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GProductVariantData_productVariant', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductVariantData_productVariant', 'id'),
+            name: name,
+            availableProductDealer: availableProductDealer,
+            prices: _prices?.build(),
+            specifications: _specifications?.build(),
+            totalPrice: totalPrice,
+            gallery: _gallery?.build(),
+            product: _product?.build(),
+            tags: _tags?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -13877,6 +13977,8 @@ class _$GProductVariantData_productVariant_prices
   @override
   final int? amount;
   @override
+  final int? originalAmount;
+  @override
   final GProductVariantData_productVariant_prices_category? category;
 
   factory _$GProductVariantData_productVariant_prices(
@@ -13886,7 +13988,10 @@ class _$GProductVariantData_productVariant_prices
           ._build();
 
   _$GProductVariantData_productVariant_prices._(
-      {required this.G__typename, this.amount, this.category})
+      {required this.G__typename,
+      this.amount,
+      this.originalAmount,
+      this.category})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
         r'GProductVariantData_productVariant_prices', 'G__typename');
@@ -13908,6 +14013,7 @@ class _$GProductVariantData_productVariant_prices
     return other is GProductVariantData_productVariant_prices &&
         G__typename == other.G__typename &&
         amount == other.amount &&
+        originalAmount == other.originalAmount &&
         category == other.category;
   }
 
@@ -13916,6 +14022,7 @@ class _$GProductVariantData_productVariant_prices
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, originalAmount.hashCode);
     _$hash = $jc(_$hash, category.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -13927,6 +14034,7 @@ class _$GProductVariantData_productVariant_prices
             r'GProductVariantData_productVariant_prices')
           ..add('G__typename', G__typename)
           ..add('amount', amount)
+          ..add('originalAmount', originalAmount)
           ..add('category', category))
         .toString();
   }
@@ -13946,6 +14054,11 @@ class GProductVariantData_productVariant_pricesBuilder
   int? get amount => _$this._amount;
   set amount(int? amount) => _$this._amount = amount;
 
+  int? _originalAmount;
+  int? get originalAmount => _$this._originalAmount;
+  set originalAmount(int? originalAmount) =>
+      _$this._originalAmount = originalAmount;
+
   GProductVariantData_productVariant_prices_categoryBuilder? _category;
   GProductVariantData_productVariant_prices_categoryBuilder get category =>
       _$this._category ??=
@@ -13964,6 +14077,7 @@ class GProductVariantData_productVariant_pricesBuilder
     if ($v != null) {
       _G__typename = $v.G__typename;
       _amount = $v.amount;
+      _originalAmount = $v.originalAmount;
       _category = $v.category?.toBuilder();
       _$v = null;
     }
@@ -13991,10 +14105,12 @@ class GProductVariantData_productVariant_pricesBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantData_productVariant_prices._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GProductVariantData_productVariant_prices', 'G__typename'),
-              amount: amount,
-              category: _category?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GProductVariantData_productVariant_prices', 'G__typename'),
+            amount: amount,
+            originalAmount: originalAmount,
+            category: _category?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -14131,12 +14247,13 @@ class GProductVariantData_productVariant_prices_categoryBuilder
   _$GProductVariantData_productVariant_prices_category _build() {
     final _$result = _$v ??
         new _$GProductVariantData_productVariant_prices_category._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductVariantData_productVariant_prices_category',
-                'G__typename'),
-            name: name,
-            description: description);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductVariantData_productVariant_prices_category',
+              'G__typename'),
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -14344,19 +14461,20 @@ class GProductVariantData_productVariant_specificationsBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantData_productVariant_specifications._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductVariantData_productVariant_specifications',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(id,
-                  r'GProductVariantData_productVariant_specifications', 'id'),
-              isKeyFeature: isKeyFeature,
-              name: name,
-              specification: _specification?.build(),
-              type: type,
-              intValue: intValue,
-              stringValue: stringValue,
-              category: _category?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantData_productVariant_specifications',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductVariantData_productVariant_specifications', 'id'),
+            isKeyFeature: isKeyFeature,
+            name: name,
+            specification: _specification?.build(),
+            type: type,
+            intValue: intValue,
+            stringValue: stringValue,
+            category: _category?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -14555,18 +14673,19 @@ class GProductVariantData_productVariant_specifications_specificationBuilder
       _$result = _$v ??
           new _$GProductVariantData_productVariant_specifications_specification
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductVariantData_productVariant_specifications_specification',
-                  'G__typename'),
-              image: _image?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GProductVariantData_productVariant_specifications_specification',
-                  'id'),
-              name: name,
-              description: description,
-              unit: unit);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantData_productVariant_specifications_specification',
+                'G__typename'),
+            image: _image?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GProductVariantData_productVariant_specifications_specification',
+                'id'),
+            name: name,
+            description: description,
+            unit: unit,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -14711,14 +14830,15 @@ class GProductVariantData_productVariant_specifications_specification_imageBuild
     final _$result = _$v ??
         new _$GProductVariantData_productVariant_specifications_specification_image
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductVariantData_productVariant_specifications_specification_image',
-                'G__typename'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url,
-                r'GProductVariantData_productVariant_specifications_specification_image',
-                'url'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductVariantData_productVariant_specifications_specification_image',
+              'G__typename'),
+          url: BuiltValueNullFieldError.checkNotNull(
+              url,
+              r'GProductVariantData_productVariant_specifications_specification_image',
+              'url'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -14865,16 +14985,17 @@ class GProductVariantData_productVariant_specifications_categoryBuilder
   _$GProductVariantData_productVariant_specifications_category _build() {
     final _$result = _$v ??
         new _$GProductVariantData_productVariant_specifications_category._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductVariantData_productVariant_specifications_category',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GProductVariantData_productVariant_specifications_category',
-                'id'),
-            name: name,
-            description: description);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductVariantData_productVariant_specifications_category',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GProductVariantData_productVariant_specifications_category',
+              'id'),
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -15004,11 +15125,12 @@ class GProductVariantData_productVariant_galleryBuilder
   _$GProductVariantData_productVariant_gallery _build() {
     final _$result = _$v ??
         new _$GProductVariantData_productVariant_gallery._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                r'GProductVariantData_productVariant_gallery', 'G__typename'),
-            file: file,
-            type: type,
-            index: index);
+          G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+              r'GProductVariantData_productVariant_gallery', 'G__typename'),
+          file: file,
+          type: type,
+          index: index,
+        );
     replace(_$result);
     return _$result;
   }
@@ -15204,16 +15326,17 @@ class GProductVariantData_productVariant_productBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantData_productVariant_product._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GProductVariantData_productVariant_product', 'G__typename'),
-              brand: _brand?.build(),
-              name: name,
-              description: description,
-              longDescription: longDescription,
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GProductVariantData_productVariant_product', 'id'),
-              type: _type?.build(),
-              specifications: _specifications?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GProductVariantData_productVariant_product', 'G__typename'),
+            brand: _brand?.build(),
+            name: name,
+            description: description,
+            longDescription: longDescription,
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductVariantData_productVariant_product', 'id'),
+            type: _type?.build(),
+            specifications: _specifications?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -15372,14 +15495,15 @@ class GProductVariantData_productVariant_product_brandBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantData_productVariant_product_brand._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductVariantData_productVariant_product_brand',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(id,
-                  r'GProductVariantData_productVariant_product_brand', 'id'),
-              name: name,
-              logo: _logo?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantData_productVariant_product_brand',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductVariantData_productVariant_product_brand', 'id'),
+            name: name,
+            logo: _logo?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -15540,20 +15664,19 @@ class GProductVariantData_productVariant_product_brand_logoBuilder
   _$GProductVariantData_productVariant_product_brand_logo _build() {
     final _$result = _$v ??
         new _$GProductVariantData_productVariant_product_brand_logo._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductVariantData_productVariant_product_brand_logo',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(id,
-                r'GProductVariantData_productVariant_product_brand_logo', 'id'),
-            extension: BuiltValueNullFieldError.checkNotNull(
-                extension,
-                r'GProductVariantData_productVariant_product_brand_logo',
-                'extension'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url,
-                r'GProductVariantData_productVariant_product_brand_logo',
-                'url'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductVariantData_productVariant_product_brand_logo',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(id,
+              r'GProductVariantData_productVariant_product_brand_logo', 'id'),
+          extension: BuiltValueNullFieldError.checkNotNull(
+              extension,
+              r'GProductVariantData_productVariant_product_brand_logo',
+              'extension'),
+          url: BuiltValueNullFieldError.checkNotNull(url,
+              r'GProductVariantData_productVariant_product_brand_logo', 'url'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -15691,14 +15814,15 @@ class GProductVariantData_productVariant_product_typeBuilder
   _$GProductVariantData_productVariant_product_type _build() {
     final _$result = _$v ??
         new _$GProductVariantData_productVariant_product_type._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductVariantData_productVariant_product_type',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GProductVariantData_productVariant_product_type', 'id'),
-            name: name,
-            description: description);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductVariantData_productVariant_product_type',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GProductVariantData_productVariant_product_type', 'id'),
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -15914,21 +16038,22 @@ class GProductVariantData_productVariant_product_specificationsBuilder
     try {
       _$result = _$v ??
           new _$GProductVariantData_productVariant_product_specifications._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductVariantData_productVariant_product_specifications',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GProductVariantData_productVariant_product_specifications',
-                  'id'),
-              isKeyFeature: isKeyFeature,
-              name: name,
-              specification: _specification?.build(),
-              type: type,
-              intValue: intValue,
-              stringValue: stringValue,
-              category: _category?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantData_productVariant_product_specifications',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GProductVariantData_productVariant_product_specifications',
+                'id'),
+            isKeyFeature: isKeyFeature,
+            name: name,
+            specification: _specification?.build(),
+            type: type,
+            intValue: intValue,
+            stringValue: stringValue,
+            category: _category?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -16132,18 +16257,19 @@ class GProductVariantData_productVariant_product_specifications_specificationBui
       _$result = _$v ??
           new _$GProductVariantData_productVariant_product_specifications_specification
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductVariantData_productVariant_product_specifications_specification',
-                  'G__typename'),
-              image: _image?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GProductVariantData_productVariant_product_specifications_specification',
-                  'id'),
-              name: name,
-              description: description,
-              unit: unit);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductVariantData_productVariant_product_specifications_specification',
+                'G__typename'),
+            image: _image?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GProductVariantData_productVariant_product_specifications_specification',
+                'id'),
+            name: name,
+            description: description,
+            unit: unit,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -16290,14 +16416,15 @@ class GProductVariantData_productVariant_product_specifications_specification_im
     final _$result = _$v ??
         new _$GProductVariantData_productVariant_product_specifications_specification_image
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductVariantData_productVariant_product_specifications_specification_image',
-                'G__typename'),
-            url: BuiltValueNullFieldError.checkNotNull(
-                url,
-                r'GProductVariantData_productVariant_product_specifications_specification_image',
-                'url'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductVariantData_productVariant_product_specifications_specification_image',
+              'G__typename'),
+          url: BuiltValueNullFieldError.checkNotNull(
+              url,
+              r'GProductVariantData_productVariant_product_specifications_specification_image',
+              'url'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -16452,16 +16579,17 @@ class GProductVariantData_productVariant_product_specifications_categoryBuilder
     final _$result = _$v ??
         new _$GProductVariantData_productVariant_product_specifications_category
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductVariantData_productVariant_product_specifications_category',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GProductVariantData_productVariant_product_specifications_category',
-                'id'),
-            name: name,
-            description: description);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductVariantData_productVariant_product_specifications_category',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GProductVariantData_productVariant_product_specifications_category',
+              'id'),
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -16595,12 +16723,13 @@ class GProductVariantData_productVariant_tagsBuilder
   _$GProductVariantData_productVariant_tags _build() {
     final _$result = _$v ??
         new _$GProductVariantData_productVariant_tags._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                r'GProductVariantData_productVariant_tags', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GProductVariantData_productVariant_tags', 'id'),
-            title: title,
-            description: description);
+          G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+              r'GProductVariantData_productVariant_tags', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GProductVariantData_productVariant_tags', 'id'),
+          title: title,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -16704,9 +16833,10 @@ class GProductTypesDataBuilder
     try {
       _$result = _$v ??
           new _$GProductTypesData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GProductTypesData', 'G__typename'),
-              productTypes: _productTypes?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GProductTypesData', 'G__typename'),
+            productTypes: _productTypes?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -16832,11 +16962,12 @@ class GProductTypesData_productTypesBuilder
   _$GProductTypesData_productTypes _build() {
     final _$result = _$v ??
         new _$GProductTypesData_productTypes._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GProductTypesData_productTypes', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GProductTypesData_productTypes', 'id'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GProductTypesData_productTypes', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GProductTypesData_productTypes', 'id'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -16956,10 +17087,11 @@ class GVehicleVariantsDataBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVariantsData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GVehicleVariantsData', 'G__typename'),
-              vehicleVariantsCount: vehicleVariantsCount,
-              vehicleVariants: _vehicleVariants?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GVehicleVariantsData', 'G__typename'),
+            vehicleVariantsCount: vehicleVariantsCount,
+            vehicleVariants: _vehicleVariants?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -17159,16 +17291,17 @@ class GVehicleVariantsData_vehicleVariantsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVariantsData_vehicleVariants._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GVehicleVariantsData_vehicleVariants', 'G__typename'),
-              prices: _prices?.build(),
-              colors: _colors?.build(),
-              name: name,
-              Gdefault: Gdefault,
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GVehicleVariantsData_vehicleVariants', 'id'),
-              totalPrice: totalPrice,
-              vehicle: _vehicle?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GVehicleVariantsData_vehicleVariants', 'G__typename'),
+            prices: _prices?.build(),
+            colors: _colors?.build(),
+            name: name,
+            Gdefault: Gdefault,
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GVehicleVariantsData_vehicleVariants', 'id'),
+            totalPrice: totalPrice,
+            vehicle: _vehicle?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -17199,6 +17332,8 @@ class _$GVehicleVariantsData_vehicleVariants_prices
   @override
   final int? amount;
   @override
+  final int? originalAmount;
+  @override
   final GVehicleVariantsData_vehicleVariants_prices_category? category;
 
   factory _$GVehicleVariantsData_vehicleVariants_prices(
@@ -17209,7 +17344,10 @@ class _$GVehicleVariantsData_vehicleVariants_prices
           ._build();
 
   _$GVehicleVariantsData_vehicleVariants_prices._(
-      {required this.G__typename, this.amount, this.category})
+      {required this.G__typename,
+      this.amount,
+      this.originalAmount,
+      this.category})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
         r'GVehicleVariantsData_vehicleVariants_prices', 'G__typename');
@@ -17231,6 +17369,7 @@ class _$GVehicleVariantsData_vehicleVariants_prices
     return other is GVehicleVariantsData_vehicleVariants_prices &&
         G__typename == other.G__typename &&
         amount == other.amount &&
+        originalAmount == other.originalAmount &&
         category == other.category;
   }
 
@@ -17239,6 +17378,7 @@ class _$GVehicleVariantsData_vehicleVariants_prices
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, originalAmount.hashCode);
     _$hash = $jc(_$hash, category.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -17250,6 +17390,7 @@ class _$GVehicleVariantsData_vehicleVariants_prices
             r'GVehicleVariantsData_vehicleVariants_prices')
           ..add('G__typename', G__typename)
           ..add('amount', amount)
+          ..add('originalAmount', originalAmount)
           ..add('category', category))
         .toString();
   }
@@ -17269,6 +17410,11 @@ class GVehicleVariantsData_vehicleVariants_pricesBuilder
   int? get amount => _$this._amount;
   set amount(int? amount) => _$this._amount = amount;
 
+  int? _originalAmount;
+  int? get originalAmount => _$this._originalAmount;
+  set originalAmount(int? originalAmount) =>
+      _$this._originalAmount = originalAmount;
+
   GVehicleVariantsData_vehicleVariants_prices_categoryBuilder? _category;
   GVehicleVariantsData_vehicleVariants_prices_categoryBuilder get category =>
       _$this._category ??=
@@ -17287,6 +17433,7 @@ class GVehicleVariantsData_vehicleVariants_pricesBuilder
     if ($v != null) {
       _G__typename = $v.G__typename;
       _amount = $v.amount;
+      _originalAmount = $v.originalAmount;
       _category = $v.category?.toBuilder();
       _$v = null;
     }
@@ -17314,12 +17461,12 @@ class GVehicleVariantsData_vehicleVariants_pricesBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVariantsData_vehicleVariants_prices._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehicleVariantsData_vehicleVariants_prices',
-                  'G__typename'),
-              amount: amount,
-              category: _category?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GVehicleVariantsData_vehicleVariants_prices', 'G__typename'),
+            amount: amount,
+            originalAmount: originalAmount,
+            category: _category?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -17458,12 +17605,13 @@ class GVehicleVariantsData_vehicleVariants_prices_categoryBuilder
   _$GVehicleVariantsData_vehicleVariants_prices_category _build() {
     final _$result = _$v ??
         new _$GVehicleVariantsData_vehicleVariants_prices_category._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GVehicleVariantsData_vehicleVariants_prices_category',
-                'G__typename'),
-            name: name,
-            description: description);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GVehicleVariantsData_vehicleVariants_prices_category',
+              'G__typename'),
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -17618,15 +17766,14 @@ class GVehicleVariantsData_vehicleVariants_colorsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVariantsData_vehicleVariants_colors._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehicleVariantsData_vehicleVariants_colors',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GVehicleVariantsData_vehicleVariants_colors', 'id'),
-              code: code,
-              gallery: _gallery?.build(),
-              name: name);
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GVehicleVariantsData_vehicleVariants_colors', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GVehicleVariantsData_vehicleVariants_colors', 'id'),
+            code: code,
+            gallery: _gallery?.build(),
+            name: name,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -17774,13 +17921,14 @@ class GVehicleVariantsData_vehicleVariants_colors_galleryBuilder
   _$GVehicleVariantsData_vehicleVariants_colors_gallery _build() {
     final _$result = _$v ??
         new _$GVehicleVariantsData_vehicleVariants_colors_gallery._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GVehicleVariantsData_vehicleVariants_colors_gallery',
-                'G__typename'),
-            file: file,
-            type: type,
-            index: index);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GVehicleVariantsData_vehicleVariants_colors_gallery',
+              'G__typename'),
+          file: file,
+          type: type,
+          index: index,
+        );
     replace(_$result);
     return _$result;
   }
@@ -17935,15 +18083,14 @@ class GVehicleVariantsData_vehicleVariants_vehicleBuilder
     try {
       _$result = _$v ??
           new _$GVehicleVariantsData_vehicleVariants_vehicle._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehicleVariantsData_vehicleVariants_vehicle',
-                  'G__typename'),
-              brand: _brand?.build(),
-              name: name,
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GVehicleVariantsData_vehicleVariants_vehicle', 'id'),
-              type: _type?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GVehicleVariantsData_vehicleVariants_vehicle', 'G__typename'),
+            brand: _brand?.build(),
+            name: name,
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GVehicleVariantsData_vehicleVariants_vehicle', 'id'),
+            type: _type?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -18085,13 +18232,14 @@ class GVehicleVariantsData_vehicleVariants_vehicle_brandBuilder
   _$GVehicleVariantsData_vehicleVariants_vehicle_brand _build() {
     final _$result = _$v ??
         new _$GVehicleVariantsData_vehicleVariants_vehicle_brand._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GVehicleVariantsData_vehicleVariants_vehicle_brand',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(id,
-                r'GVehicleVariantsData_vehicleVariants_vehicle_brand', 'id'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GVehicleVariantsData_vehicleVariants_vehicle_brand',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GVehicleVariantsData_vehicleVariants_vehicle_brand', 'id'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -18205,11 +18353,12 @@ class GVehicleVariantsData_vehicleVariants_vehicle_typeBuilder
   _$GVehicleVariantsData_vehicleVariants_vehicle_type _build() {
     final _$result = _$v ??
         new _$GVehicleVariantsData_vehicleVariants_vehicle_type._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GVehicleVariantsData_vehicleVariants_vehicle_type',
-                'G__typename'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GVehicleVariantsData_vehicleVariants_vehicle_type',
+              'G__typename'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -18312,9 +18461,10 @@ class GVehicleVariantsCountDataBuilder
   _$GVehicleVariantsCountData _build() {
     final _$result = _$v ??
         new _$GVehicleVariantsCountData._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GVehicleVariantsCountData', 'G__typename'),
-            vehicleVariantsCount: vehicleVariantsCount);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GVehicleVariantsCountData', 'G__typename'),
+          vehicleVariantsCount: vehicleVariantsCount,
+        );
     replace(_$result);
     return _$result;
   }
@@ -18434,10 +18584,11 @@ class GCreateVehicleDealerStockRequestDataBuilder
     try {
       _$result = _$v ??
           new _$GCreateVehicleDealerStockRequestData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GCreateVehicleDealerStockRequestData', 'G__typename'),
-              createVehicleDealerStockRequest:
-                  _createVehicleDealerStockRequest?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GCreateVehicleDealerStockRequestData', 'G__typename'),
+            createVehicleDealerStockRequest:
+                _createVehicleDealerStockRequest?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -18598,13 +18749,14 @@ class GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequestBuilde
     final _$result = _$v ??
         new _$GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest',
-                'G__typename'),
-            type: type,
-            stock: stock,
-            totalPrice: totalPrice);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GCreateVehicleDealerStockRequestData_createVehicleDealerStockRequest',
+              'G__typename'),
+          type: type,
+          stock: stock,
+          totalPrice: totalPrice,
+        );
     replace(_$result);
     return _$result;
   }
@@ -18707,9 +18859,10 @@ class GVehicleDealersCountDataBuilder
   _$GVehicleDealersCountData _build() {
     final _$result = _$v ??
         new _$GVehicleDealersCountData._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GVehicleDealersCountData', 'G__typename'),
-            vehicleDealersCount: vehicleDealersCount);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GVehicleDealersCountData', 'G__typename'),
+          vehicleDealersCount: vehicleDealersCount,
+        );
     replace(_$result);
     return _$result;
   }
@@ -18829,10 +18982,11 @@ class GVehicleDealersDataBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealersData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GVehicleDealersData', 'G__typename'),
-              vehicleDealersCount: vehicleDealersCount,
-              vehicleDealers: _vehicleDealers?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GVehicleDealersData', 'G__typename'),
+            vehicleDealersCount: vehicleDealersCount,
+            vehicleDealers: _vehicleDealers?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -19039,16 +19193,17 @@ class GVehicleDealersData_vehicleDealersBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealersData_vehicleDealers._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GVehicleDealersData_vehicleDealers', 'G__typename'),
-              vehicleColor: _vehicleColor?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GVehicleDealersData_vehicleDealers', 'id'),
-              stock: stock,
-              prices: _prices?.build(),
-              totalPrice: totalPrice,
-              guarantees: _guarantees?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GVehicleDealersData_vehicleDealers', 'G__typename'),
+            vehicleColor: _vehicleColor?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GVehicleDealersData_vehicleDealers', 'id'),
+            stock: stock,
+            prices: _prices?.build(),
+            totalPrice: totalPrice,
+            guarantees: _guarantees?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -19225,15 +19380,16 @@ class GVehicleDealersData_vehicleDealers_vehicleColorBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealersData_vehicleDealers_vehicleColor._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehicleDealersData_vehicleDealers_vehicleColor',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GVehicleDealersData_vehicleDealers_vehicleColor', 'id'),
-              name: name,
-              code: code,
-              gallery: _gallery?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GVehicleDealersData_vehicleDealers_vehicleColor',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GVehicleDealersData_vehicleDealers_vehicleColor', 'id'),
+            name: name,
+            code: code,
+            gallery: _gallery?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -19384,13 +19540,14 @@ class GVehicleDealersData_vehicleDealers_vehicleColor_galleryBuilder
   _$GVehicleDealersData_vehicleDealers_vehicleColor_gallery _build() {
     final _$result = _$v ??
         new _$GVehicleDealersData_vehicleDealers_vehicleColor_gallery._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GVehicleDealersData_vehicleDealers_vehicleColor_gallery',
-                'G__typename'),
-            file: file,
-            type: type,
-            index: index);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GVehicleDealersData_vehicleDealers_vehicleColor_gallery',
+              'G__typename'),
+          file: file,
+          type: type,
+          index: index,
+        );
     replace(_$result);
     return _$result;
   }
@@ -19549,15 +19706,16 @@ class GVehicleDealersData_vehicleDealers_vehicleVariantBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealersData_vehicleDealers_vehicleVariant._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehicleDealersData_vehicleDealers_vehicleVariant',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(id,
-                  r'GVehicleDealersData_vehicleDealers_vehicleVariant', 'id'),
-              name: name,
-              modifiedAt: _modifiedAt?.build(),
-              vehicle: _vehicle?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GVehicleDealersData_vehicleDealers_vehicleVariant',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GVehicleDealersData_vehicleDealers_vehicleVariant', 'id'),
+            name: name,
+            modifiedAt: _modifiedAt?.build(),
+            vehicle: _vehicle?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -19736,17 +19894,18 @@ class GVehicleDealersData_vehicleDealers_vehicleVariant_vehicleBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle',
-                  'G__typename'),
-              brand: _brand?.build(),
-              name: name,
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle',
-                  'id'),
-              description: description);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle',
+                'G__typename'),
+            brand: _brand?.build(),
+            name: name,
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle',
+                'id'),
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -19897,15 +20056,16 @@ class GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brandBuilder
   _$GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand _build() {
     final _$result = _$v ??
         new _$GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand',
-                'id'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GVehicleDealersData_vehicleDealers_vehicleVariant_vehicle_brand',
+              'id'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -19920,6 +20080,8 @@ class _$GVehicleDealersData_vehicleDealers_prices
   @override
   final int? amount;
   @override
+  final int? originalAmount;
+  @override
   final GVehicleDealersData_vehicleDealers_prices_category? category;
 
   factory _$GVehicleDealersData_vehicleDealers_prices(
@@ -19929,7 +20091,11 @@ class _$GVehicleDealersData_vehicleDealers_prices
           ._build();
 
   _$GVehicleDealersData_vehicleDealers_prices._(
-      {required this.G__typename, required this.id, this.amount, this.category})
+      {required this.G__typename,
+      required this.id,
+      this.amount,
+      this.originalAmount,
+      this.category})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
         r'GVehicleDealersData_vehicleDealers_prices', 'G__typename');
@@ -19954,6 +20120,7 @@ class _$GVehicleDealersData_vehicleDealers_prices
         G__typename == other.G__typename &&
         id == other.id &&
         amount == other.amount &&
+        originalAmount == other.originalAmount &&
         category == other.category;
   }
 
@@ -19963,6 +20130,7 @@ class _$GVehicleDealersData_vehicleDealers_prices
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, originalAmount.hashCode);
     _$hash = $jc(_$hash, category.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -19975,6 +20143,7 @@ class _$GVehicleDealersData_vehicleDealers_prices
           ..add('G__typename', G__typename)
           ..add('id', id)
           ..add('amount', amount)
+          ..add('originalAmount', originalAmount)
           ..add('category', category))
         .toString();
   }
@@ -19998,6 +20167,11 @@ class GVehicleDealersData_vehicleDealers_pricesBuilder
   int? get amount => _$this._amount;
   set amount(int? amount) => _$this._amount = amount;
 
+  int? _originalAmount;
+  int? get originalAmount => _$this._originalAmount;
+  set originalAmount(int? originalAmount) =>
+      _$this._originalAmount = originalAmount;
+
   GVehicleDealersData_vehicleDealers_prices_categoryBuilder? _category;
   GVehicleDealersData_vehicleDealers_prices_categoryBuilder get category =>
       _$this._category ??=
@@ -20017,6 +20191,7 @@ class GVehicleDealersData_vehicleDealers_pricesBuilder
       _G__typename = $v.G__typename;
       _id = $v.id;
       _amount = $v.amount;
+      _originalAmount = $v.originalAmount;
       _category = $v.category?.toBuilder();
       _$v = null;
     }
@@ -20044,12 +20219,14 @@ class GVehicleDealersData_vehicleDealers_pricesBuilder
     try {
       _$result = _$v ??
           new _$GVehicleDealersData_vehicleDealers_prices._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GVehicleDealersData_vehicleDealers_prices', 'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GVehicleDealersData_vehicleDealers_prices', 'id'),
-              amount: amount,
-              category: _category?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GVehicleDealersData_vehicleDealers_prices', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GVehicleDealersData_vehicleDealers_prices', 'id'),
+            amount: amount,
+            originalAmount: originalAmount,
+            category: _category?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -20188,13 +20365,14 @@ class GVehicleDealersData_vehicleDealers_prices_categoryBuilder
   _$GVehicleDealersData_vehicleDealers_prices_category _build() {
     final _$result = _$v ??
         new _$GVehicleDealersData_vehicleDealers_prices_category._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GVehicleDealersData_vehicleDealers_prices_category',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(id,
-                r'GVehicleDealersData_vehicleDealers_prices_category', 'id'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GVehicleDealersData_vehicleDealers_prices_category',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GVehicleDealersData_vehicleDealers_prices_category', 'id'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -20330,14 +20508,13 @@ class GVehicleDealersData_vehicleDealers_guaranteesBuilder
   _$GVehicleDealersData_vehicleDealers_guarantees _build() {
     final _$result = _$v ??
         new _$GVehicleDealersData_vehicleDealers_guarantees._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GVehicleDealersData_vehicleDealers_guarantees',
-                'G__typename'),
-            name: name,
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GVehicleDealersData_vehicleDealers_guarantees', 'id'),
-            description: description);
+          G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+              r'GVehicleDealersData_vehicleDealers_guarantees', 'G__typename'),
+          name: name,
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GVehicleDealersData_vehicleDealers_guarantees', 'id'),
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -20446,9 +20623,10 @@ class GCreateVehicleDealerDataBuilder
     try {
       _$result = _$v ??
           new _$GCreateVehicleDealerData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GCreateVehicleDealerData', 'G__typename'),
-              createVehicleDealer: _createVehicleDealer?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GCreateVehicleDealerData', 'G__typename'),
+            createVehicleDealer: _createVehicleDealer?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -20572,10 +20750,11 @@ class GCreateVehicleDealerData_createVehicleDealerBuilder
   _$GCreateVehicleDealerData_createVehicleDealer _build() {
     final _$result = _$v ??
         new _$GCreateVehicleDealerData_createVehicleDealer._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                r'GCreateVehicleDealerData_createVehicleDealer', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GCreateVehicleDealerData_createVehicleDealer', 'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+              r'GCreateVehicleDealerData_createVehicleDealer', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GCreateVehicleDealerData_createVehicleDealer', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -20681,9 +20860,10 @@ class GPriceCategoriesDataBuilder
     try {
       _$result = _$v ??
           new _$GPriceCategoriesData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GPriceCategoriesData', 'G__typename'),
-              priceCategories: _priceCategories?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GPriceCategoriesData', 'G__typename'),
+            priceCategories: _priceCategories?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -20854,14 +21034,15 @@ class GPriceCategoriesData_priceCategoriesBuilder
     try {
       _$result = _$v ??
           new _$GPriceCategoriesData_priceCategories._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GPriceCategoriesData_priceCategories', 'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GPriceCategoriesData_priceCategories', 'id'),
-              name: name,
-              description: description,
-              createdAt: _createdAt?.build(),
-              modifiedAt: _modifiedAt?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GPriceCategoriesData_priceCategories', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GPriceCategoriesData_priceCategories', 'id'),
+            name: name,
+            description: description,
+            createdAt: _createdAt?.build(),
+            modifiedAt: _modifiedAt?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -20985,9 +21166,10 @@ class GUpdateVehicleDealerDataBuilder
     try {
       _$result = _$v ??
           new _$GUpdateVehicleDealerData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GUpdateVehicleDealerData', 'G__typename'),
-              updateVehicleDealer: _updateVehicleDealer?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GUpdateVehicleDealerData', 'G__typename'),
+            updateVehicleDealer: _updateVehicleDealer?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -21206,18 +21388,17 @@ class GUpdateVehicleDealerData_updateVehicleDealerBuilder
     try {
       _$result = _$v ??
           new _$GUpdateVehicleDealerData_updateVehicleDealer._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GUpdateVehicleDealerData_updateVehicleDealer',
-                  'G__typename'),
-              vehicleColor: _vehicleColor?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GUpdateVehicleDealerData_updateVehicleDealer', 'id'),
-              stock: stock,
-              prices: _prices?.build(),
-              totalPrice: totalPrice,
-              guarantees: _guarantees?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GUpdateVehicleDealerData_updateVehicleDealer', 'G__typename'),
+            vehicleColor: _vehicleColor?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GUpdateVehicleDealerData_updateVehicleDealer', 'id'),
+            stock: stock,
+            prices: _prices?.build(),
+            totalPrice: totalPrice,
+            guarantees: _guarantees?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -21406,17 +21587,18 @@ class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColorBuilder
     try {
       _$result = _$v ??
           new _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor',
-                  'id'),
-              name: name,
-              code: code,
-              gallery: _gallery?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor',
+                'id'),
+            name: name,
+            code: code,
+            gallery: _gallery?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -21575,13 +21757,14 @@ class GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_galleryBuilder
     final _$result = _$v ??
         new _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery',
-                'G__typename'),
-            file: file,
-            type: type,
-            index: index);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleColor_gallery',
+              'G__typename'),
+          file: file,
+          type: type,
+          index: index,
+        );
     replace(_$result);
     return _$result;
   }
@@ -21752,17 +21935,18 @@ class GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariantBuilder
     try {
       _$result = _$v ??
           new _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant',
-                  'id'),
-              name: name,
-              modifiedAt: _modifiedAt?.build(),
-              vehicle: _vehicle?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant',
+                'id'),
+            name: name,
+            modifiedAt: _modifiedAt?.build(),
+            vehicle: _vehicle?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -21953,17 +22137,18 @@ class GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicleBuilder
       _$result = _$v ??
           new _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle',
-                  'G__typename'),
-              brand: _brand?.build(),
-              name: name,
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle',
-                  'id'),
-              description: description);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle',
+                'G__typename'),
+            brand: _brand?.build(),
+            name: name,
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle',
+                'id'),
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -22119,15 +22304,16 @@ class GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brandB
     final _$result = _$v ??
         new _$GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand',
-                'id'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GUpdateVehicleDealerData_updateVehicleDealer_vehicleVariant_vehicle_brand',
+              'id'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -22142,6 +22328,8 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_prices
   @override
   final int? amount;
   @override
+  final int? originalAmount;
+  @override
   final GUpdateVehicleDealerData_updateVehicleDealer_prices_category? category;
 
   factory _$GUpdateVehicleDealerData_updateVehicleDealer_prices(
@@ -22153,7 +22341,11 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_prices
           ._build();
 
   _$GUpdateVehicleDealerData_updateVehicleDealer_prices._(
-      {required this.G__typename, required this.id, this.amount, this.category})
+      {required this.G__typename,
+      required this.id,
+      this.amount,
+      this.originalAmount,
+      this.category})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
         r'GUpdateVehicleDealerData_updateVehicleDealer_prices', 'G__typename');
@@ -22180,6 +22372,7 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_prices
         G__typename == other.G__typename &&
         id == other.id &&
         amount == other.amount &&
+        originalAmount == other.originalAmount &&
         category == other.category;
   }
 
@@ -22189,6 +22382,7 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_prices
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, originalAmount.hashCode);
     _$hash = $jc(_$hash, category.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -22201,6 +22395,7 @@ class _$GUpdateVehicleDealerData_updateVehicleDealer_prices
           ..add('G__typename', G__typename)
           ..add('id', id)
           ..add('amount', amount)
+          ..add('originalAmount', originalAmount)
           ..add('category', category))
         .toString();
   }
@@ -22224,6 +22419,11 @@ class GUpdateVehicleDealerData_updateVehicleDealer_pricesBuilder
   int? get amount => _$this._amount;
   set amount(int? amount) => _$this._amount = amount;
 
+  int? _originalAmount;
+  int? get originalAmount => _$this._originalAmount;
+  set originalAmount(int? originalAmount) =>
+      _$this._originalAmount = originalAmount;
+
   GUpdateVehicleDealerData_updateVehicleDealer_prices_categoryBuilder?
       _category;
   GUpdateVehicleDealerData_updateVehicleDealer_prices_categoryBuilder
@@ -22245,6 +22445,7 @@ class GUpdateVehicleDealerData_updateVehicleDealer_pricesBuilder
       _G__typename = $v.G__typename;
       _id = $v.id;
       _amount = $v.amount;
+      _originalAmount = $v.originalAmount;
       _category = $v.category?.toBuilder();
       _$v = null;
     }
@@ -22272,14 +22473,16 @@ class GUpdateVehicleDealerData_updateVehicleDealer_pricesBuilder
     try {
       _$result = _$v ??
           new _$GUpdateVehicleDealerData_updateVehicleDealer_prices._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GUpdateVehicleDealerData_updateVehicleDealer_prices',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(id,
-                  r'GUpdateVehicleDealerData_updateVehicleDealer_prices', 'id'),
-              amount: amount,
-              category: _category?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GUpdateVehicleDealerData_updateVehicleDealer_prices',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(id,
+                r'GUpdateVehicleDealerData_updateVehicleDealer_prices', 'id'),
+            amount: amount,
+            originalAmount: originalAmount,
+            category: _category?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -22428,15 +22631,16 @@ class GUpdateVehicleDealerData_updateVehicleDealer_prices_categoryBuilder
   _$GUpdateVehicleDealerData_updateVehicleDealer_prices_category _build() {
     final _$result = _$v ??
         new _$GUpdateVehicleDealerData_updateVehicleDealer_prices_category._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GUpdateVehicleDealerData_updateVehicleDealer_prices_category',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GUpdateVehicleDealerData_updateVehicleDealer_prices_category',
-                'id'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GUpdateVehicleDealerData_updateVehicleDealer_prices_category',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GUpdateVehicleDealerData_updateVehicleDealer_prices_category',
+              'id'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -22579,16 +22783,15 @@ class GUpdateVehicleDealerData_updateVehicleDealer_guaranteesBuilder
   _$GUpdateVehicleDealerData_updateVehicleDealer_guarantees _build() {
     final _$result = _$v ??
         new _$GUpdateVehicleDealerData_updateVehicleDealer_guarantees._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GUpdateVehicleDealerData_updateVehicleDealer_guarantees',
-                'G__typename'),
-            name: name,
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GUpdateVehicleDealerData_updateVehicleDealer_guarantees',
-                'id'),
-            description: description);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GUpdateVehicleDealerData_updateVehicleDealer_guarantees',
+              'G__typename'),
+          name: name,
+          id: BuiltValueNullFieldError.checkNotNull(id,
+              r'GUpdateVehicleDealerData_updateVehicleDealer_guarantees', 'id'),
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -22693,9 +22896,10 @@ class GUpdatePricesDataBuilder
     try {
       _$result = _$v ??
           new _$GUpdatePricesData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GUpdatePricesData', 'G__typename'),
-              updatePrices: _updatePrices?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GUpdatePricesData', 'G__typename'),
+            updatePrices: _updatePrices?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -22811,10 +23015,11 @@ class GUpdatePricesData_updatePricesBuilder
   _$GUpdatePricesData_updatePrices _build() {
     final _$result = _$v ??
         new _$GUpdatePricesData_updatePrices._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GUpdatePricesData_updatePrices', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GUpdatePricesData_updatePrices', 'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GUpdatePricesData_updatePrices', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GUpdatePricesData_updatePrices', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -22935,10 +23140,11 @@ class GTestDriveDealersDataBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveDealersData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GTestDriveDealersData', 'G__typename'),
-              testDriveDealers: _testDriveDealers?.build(),
-              testDriveDealersCount: testDriveDealersCount);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GTestDriveDealersData', 'G__typename'),
+            testDriveDealers: _testDriveDealers?.build(),
+            testDriveDealersCount: testDriveDealersCount,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -23106,13 +23312,14 @@ class GTestDriveDealersData_testDriveDealersBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveDealersData_testDriveDealers._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GTestDriveDealersData_testDriveDealers', 'G__typename'),
-              vehicleColor: _vehicleColor?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              price: price,
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GTestDriveDealersData_testDriveDealers', 'id'));
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GTestDriveDealersData_testDriveDealers', 'G__typename'),
+            vehicleColor: _vehicleColor?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            price: price,
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GTestDriveDealersData_testDriveDealers', 'id'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -23288,15 +23495,16 @@ class GTestDriveDealersData_testDriveDealers_vehicleColorBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveDealersData_testDriveDealers_vehicleColor._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GTestDriveDealersData_testDriveDealers_vehicleColor',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(id,
-                  r'GTestDriveDealersData_testDriveDealers_vehicleColor', 'id'),
-              name: name,
-              code: code,
-              gallery: _gallery?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GTestDriveDealersData_testDriveDealers_vehicleColor',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(id,
+                r'GTestDriveDealersData_testDriveDealers_vehicleColor', 'id'),
+            name: name,
+            code: code,
+            gallery: _gallery?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -23453,13 +23661,14 @@ class GTestDriveDealersData_testDriveDealers_vehicleColor_galleryBuilder
   _$GTestDriveDealersData_testDriveDealers_vehicleColor_gallery _build() {
     final _$result = _$v ??
         new _$GTestDriveDealersData_testDriveDealers_vehicleColor_gallery._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GTestDriveDealersData_testDriveDealers_vehicleColor_gallery',
-                'G__typename'),
-            file: file,
-            type: type,
-            index: index);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GTestDriveDealersData_testDriveDealers_vehicleColor_gallery',
+              'G__typename'),
+          file: file,
+          type: type,
+          index: index,
+        );
     replace(_$result);
     return _$result;
   }
@@ -23623,17 +23832,16 @@ class GTestDriveDealersData_testDriveDealers_vehicleVariantBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveDealersData_testDriveDealers_vehicleVariant._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GTestDriveDealersData_testDriveDealers_vehicleVariant',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GTestDriveDealersData_testDriveDealers_vehicleVariant',
-                  'id'),
-              name: name,
-              modifiedAt: _modifiedAt?.build(),
-              vehicle: _vehicle?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GTestDriveDealersData_testDriveDealers_vehicleVariant',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(id,
+                r'GTestDriveDealersData_testDriveDealers_vehicleVariant', 'id'),
+            name: name,
+            modifiedAt: _modifiedAt?.build(),
+            vehicle: _vehicle?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -23817,17 +24025,18 @@ class GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicleBuilder
     try {
       _$result = _$v ??
           new _$GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle',
-                  'G__typename'),
-              brand: _brand?.build(),
-              name: name,
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle',
-                  'id'),
-              description: description);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle',
+                'G__typename'),
+            brand: _brand?.build(),
+            name: name,
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle',
+                'id'),
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -23982,15 +24191,16 @@ class GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brandBuilder
     final _$result = _$v ??
         new _$GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brand
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brand',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brand',
-                'id'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brand',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GTestDriveDealersData_testDriveDealers_vehicleVariant_vehicle_brand',
+              'id'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -24100,9 +24310,10 @@ class GUpdateTestDriveDealerDataBuilder
     try {
       _$result = _$v ??
           new _$GUpdateTestDriveDealerData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GUpdateTestDriveDealerData', 'G__typename'),
-              updateTestDriveDealer: _updateTestDriveDealer?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GUpdateTestDriveDealerData', 'G__typename'),
+            updateTestDriveDealer: _updateTestDriveDealer?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -24278,15 +24489,16 @@ class GUpdateTestDriveDealerData_updateTestDriveDealerBuilder
     try {
       _$result = _$v ??
           new _$GUpdateTestDriveDealerData_updateTestDriveDealer._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GUpdateTestDriveDealerData_updateTestDriveDealer',
-                  'G__typename'),
-              vehicleColor: _vehicleColor?.build(),
-              vehicleVariant: _vehicleVariant?.build(),
-              price: price,
-              id: BuiltValueNullFieldError.checkNotNull(id,
-                  r'GUpdateTestDriveDealerData_updateTestDriveDealer', 'id'));
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GUpdateTestDriveDealerData_updateTestDriveDealer',
+                'G__typename'),
+            vehicleColor: _vehicleColor?.build(),
+            vehicleVariant: _vehicleVariant?.build(),
+            price: price,
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GUpdateTestDriveDealerData_updateTestDriveDealer', 'id'),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -24474,17 +24686,18 @@ class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColorBuilder
     try {
       _$result = _$v ??
           new _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor',
-                  'id'),
-              name: name,
-              code: code,
-              gallery: _gallery?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor',
+                'id'),
+            name: name,
+            code: code,
+            gallery: _gallery?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -24645,13 +24858,14 @@ class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_galleryBuild
     final _$result = _$v ??
         new _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery',
-                'G__typename'),
-            file: file,
-            type: type,
-            index: index);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleColor_gallery',
+              'G__typename'),
+          file: file,
+          type: type,
+          index: index,
+        );
     replace(_$result);
     return _$result;
   }
@@ -24825,17 +25039,18 @@ class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariantBuilder
       _$result = _$v ??
           new _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant',
-                  'id'),
-              name: name,
-              modifiedAt: _modifiedAt?.build(),
-              vehicle: _vehicle?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant',
+                'id'),
+            name: name,
+            modifiedAt: _modifiedAt?.build(),
+            vehicle: _vehicle?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -25027,17 +25242,18 @@ class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant_vehicleBui
       _$result = _$v ??
           new _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant_vehicle
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant_vehicle',
-                  'G__typename'),
-              brand: _brand?.build(),
-              name: name,
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant_vehicle',
-                  'id'),
-              description: description);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant_vehicle',
+                'G__typename'),
+            brand: _brand?.build(),
+            name: name,
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant_vehicle',
+                'id'),
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -25194,15 +25410,16 @@ class GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant_vehicle_br
     final _$result = _$v ??
         new _$GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant_vehicle_brand
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant_vehicle_brand',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant_vehicle_brand',
-                'id'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant_vehicle_brand',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GUpdateTestDriveDealerData_updateTestDriveDealer_vehicleVariant_vehicle_brand',
+              'id'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -25312,9 +25529,10 @@ class GCreateTestDriveDealerDataBuilder
     try {
       _$result = _$v ??
           new _$GCreateTestDriveDealerData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GCreateTestDriveDealerData', 'G__typename'),
-              createTestDriveDealer: _createTestDriveDealer?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GCreateTestDriveDealerData', 'G__typename'),
+            createTestDriveDealer: _createTestDriveDealer?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -25440,12 +25658,13 @@ class GCreateTestDriveDealerData_createTestDriveDealerBuilder
   _$GCreateTestDriveDealerData_createTestDriveDealer _build() {
     final _$result = _$v ??
         new _$GCreateTestDriveDealerData_createTestDriveDealer._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GCreateTestDriveDealerData_createTestDriveDealer',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GCreateTestDriveDealerData_createTestDriveDealer', 'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GCreateTestDriveDealerData_createTestDriveDealer',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GCreateTestDriveDealerData_createTestDriveDealer', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -25565,10 +25784,11 @@ class GProductDealersDataBuilder
     try {
       _$result = _$v ??
           new _$GProductDealersData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GProductDealersData', 'G__typename'),
-              productDealersCount: productDealersCount,
-              productDealers: _productDealers?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GProductDealersData', 'G__typename'),
+            productDealersCount: productDealersCount,
+            productDealers: _productDealers?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -25759,15 +25979,16 @@ class GProductDealersData_productDealersBuilder
     try {
       _$result = _$v ??
           new _$GProductDealersData_productDealers._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GProductDealersData_productDealers', 'G__typename'),
-              productVariant: _productVariant?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GProductDealersData_productDealers', 'id'),
-              stock: stock,
-              prices: _prices?.build(),
-              totalPrice: totalPrice,
-              guarantees: _guarantees?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GProductDealersData_productDealers', 'G__typename'),
+            productVariant: _productVariant?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductDealersData_productDealers', 'id'),
+            stock: stock,
+            prices: _prices?.build(),
+            totalPrice: totalPrice,
+            guarantees: _guarantees?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -25962,16 +26183,17 @@ class GProductDealersData_productDealers_productVariantBuilder
     try {
       _$result = _$v ??
           new _$GProductDealersData_productDealers_productVariant._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductDealersData_productDealers_productVariant',
-                  'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(id,
-                  r'GProductDealersData_productDealers_productVariant', 'id'),
-              name: name,
-              modifiedAt: _modifiedAt?.build(),
-              product: _product?.build(),
-              gallery: _gallery?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductDealersData_productDealers_productVariant',
+                'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductDealersData_productDealers_productVariant', 'id'),
+            name: name,
+            modifiedAt: _modifiedAt?.build(),
+            product: _product?.build(),
+            gallery: _gallery?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -26152,17 +26374,18 @@ class GProductDealersData_productDealers_productVariant_productBuilder
     try {
       _$result = _$v ??
           new _$GProductDealersData_productDealers_productVariant_product._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GProductDealersData_productDealers_productVariant_product',
-                  'G__typename'),
-              brand: _brand?.build(),
-              name: name,
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GProductDealersData_productDealers_productVariant_product',
-                  'id'),
-              description: description);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GProductDealersData_productDealers_productVariant_product',
+                'G__typename'),
+            brand: _brand?.build(),
+            name: name,
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GProductDealersData_productDealers_productVariant_product',
+                'id'),
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -26313,15 +26536,16 @@ class GProductDealersData_productDealers_productVariant_product_brandBuilder
   _$GProductDealersData_productDealers_productVariant_product_brand _build() {
     final _$result = _$v ??
         new _$GProductDealersData_productDealers_productVariant_product_brand._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductDealersData_productDealers_productVariant_product_brand',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GProductDealersData_productDealers_productVariant_product_brand',
-                'id'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductDealersData_productDealers_productVariant_product_brand',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GProductDealersData_productDealers_productVariant_product_brand',
+              'id'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -26461,13 +26685,14 @@ class GProductDealersData_productDealers_productVariant_galleryBuilder
   _$GProductDealersData_productDealers_productVariant_gallery _build() {
     final _$result = _$v ??
         new _$GProductDealersData_productDealers_productVariant_gallery._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductDealersData_productDealers_productVariant_gallery',
-                'G__typename'),
-            file: file,
-            type: type,
-            index: index);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductDealersData_productDealers_productVariant_gallery',
+              'G__typename'),
+          file: file,
+          type: type,
+          index: index,
+        );
     replace(_$result);
     return _$result;
   }
@@ -26482,6 +26707,8 @@ class _$GProductDealersData_productDealers_prices
   @override
   final int? amount;
   @override
+  final int? originalAmount;
+  @override
   final GProductDealersData_productDealers_prices_category? category;
 
   factory _$GProductDealersData_productDealers_prices(
@@ -26491,7 +26718,11 @@ class _$GProductDealersData_productDealers_prices
           ._build();
 
   _$GProductDealersData_productDealers_prices._(
-      {required this.G__typename, required this.id, this.amount, this.category})
+      {required this.G__typename,
+      required this.id,
+      this.amount,
+      this.originalAmount,
+      this.category})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
         r'GProductDealersData_productDealers_prices', 'G__typename');
@@ -26516,6 +26747,7 @@ class _$GProductDealersData_productDealers_prices
         G__typename == other.G__typename &&
         id == other.id &&
         amount == other.amount &&
+        originalAmount == other.originalAmount &&
         category == other.category;
   }
 
@@ -26525,6 +26757,7 @@ class _$GProductDealersData_productDealers_prices
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, originalAmount.hashCode);
     _$hash = $jc(_$hash, category.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -26537,6 +26770,7 @@ class _$GProductDealersData_productDealers_prices
           ..add('G__typename', G__typename)
           ..add('id', id)
           ..add('amount', amount)
+          ..add('originalAmount', originalAmount)
           ..add('category', category))
         .toString();
   }
@@ -26560,6 +26794,11 @@ class GProductDealersData_productDealers_pricesBuilder
   int? get amount => _$this._amount;
   set amount(int? amount) => _$this._amount = amount;
 
+  int? _originalAmount;
+  int? get originalAmount => _$this._originalAmount;
+  set originalAmount(int? originalAmount) =>
+      _$this._originalAmount = originalAmount;
+
   GProductDealersData_productDealers_prices_categoryBuilder? _category;
   GProductDealersData_productDealers_prices_categoryBuilder get category =>
       _$this._category ??=
@@ -26579,6 +26818,7 @@ class GProductDealersData_productDealers_pricesBuilder
       _G__typename = $v.G__typename;
       _id = $v.id;
       _amount = $v.amount;
+      _originalAmount = $v.originalAmount;
       _category = $v.category?.toBuilder();
       _$v = null;
     }
@@ -26606,12 +26846,14 @@ class GProductDealersData_productDealers_pricesBuilder
     try {
       _$result = _$v ??
           new _$GProductDealersData_productDealers_prices._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GProductDealersData_productDealers_prices', 'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GProductDealersData_productDealers_prices', 'id'),
-              amount: amount,
-              category: _category?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GProductDealersData_productDealers_prices', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductDealersData_productDealers_prices', 'id'),
+            amount: amount,
+            originalAmount: originalAmount,
+            category: _category?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -26750,13 +26992,14 @@ class GProductDealersData_productDealers_prices_categoryBuilder
   _$GProductDealersData_productDealers_prices_category _build() {
     final _$result = _$v ??
         new _$GProductDealersData_productDealers_prices_category._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductDealersData_productDealers_prices_category',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(id,
-                r'GProductDealersData_productDealers_prices_category', 'id'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GProductDealersData_productDealers_prices_category',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GProductDealersData_productDealers_prices_category', 'id'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -26892,14 +27135,13 @@ class GProductDealersData_productDealers_guaranteesBuilder
   _$GProductDealersData_productDealers_guarantees _build() {
     final _$result = _$v ??
         new _$GProductDealersData_productDealers_guarantees._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GProductDealersData_productDealers_guarantees',
-                'G__typename'),
-            name: name,
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GProductDealersData_productDealers_guarantees', 'id'),
-            description: description);
+          G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+              r'GProductDealersData_productDealers_guarantees', 'G__typename'),
+          name: name,
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GProductDealersData_productDealers_guarantees', 'id'),
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -27008,9 +27250,10 @@ class GCreateProductDealerDataBuilder
     try {
       _$result = _$v ??
           new _$GCreateProductDealerData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GCreateProductDealerData', 'G__typename'),
-              createProductDealer: _createProductDealer?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GCreateProductDealerData', 'G__typename'),
+            createProductDealer: _createProductDealer?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -27134,10 +27377,11 @@ class GCreateProductDealerData_createProductDealerBuilder
   _$GCreateProductDealerData_createProductDealer _build() {
     final _$result = _$v ??
         new _$GCreateProductDealerData_createProductDealer._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                r'GCreateProductDealerData_createProductDealer', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GCreateProductDealerData_createProductDealer', 'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+              r'GCreateProductDealerData_createProductDealer', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GCreateProductDealerData_createProductDealer', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -27246,9 +27490,10 @@ class GUpdateProductDealerDataBuilder
     try {
       _$result = _$v ??
           new _$GUpdateProductDealerData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GUpdateProductDealerData', 'G__typename'),
-              updateProductDealer: _updateProductDealer?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GUpdateProductDealerData', 'G__typename'),
+            updateProductDealer: _updateProductDealer?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -27450,17 +27695,16 @@ class GUpdateProductDealerData_updateProductDealerBuilder
     try {
       _$result = _$v ??
           new _$GUpdateProductDealerData_updateProductDealer._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GUpdateProductDealerData_updateProductDealer',
-                  'G__typename'),
-              productVariant: _productVariant?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GUpdateProductDealerData_updateProductDealer', 'id'),
-              stock: stock,
-              totalPrice: totalPrice,
-              prices: _prices?.build(),
-              guarantees: _guarantees?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GUpdateProductDealerData_updateProductDealer', 'G__typename'),
+            productVariant: _productVariant?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GUpdateProductDealerData_updateProductDealer', 'id'),
+            stock: stock,
+            totalPrice: totalPrice,
+            prices: _prices?.build(),
+            guarantees: _guarantees?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -27649,17 +27893,18 @@ class GUpdateProductDealerData_updateProductDealer_productVariantBuilder
     try {
       _$result = _$v ??
           new _$GUpdateProductDealerData_updateProductDealer_productVariant._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GUpdateProductDealerData_updateProductDealer_productVariant',
-                  'G__typename'),
-              product: _product?.build(),
-              modifiedAt: _modifiedAt?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GUpdateProductDealerData_updateProductDealer_productVariant',
-                  'id'),
-              name: name);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GUpdateProductDealerData_updateProductDealer_productVariant',
+                'G__typename'),
+            product: _product?.build(),
+            modifiedAt: _modifiedAt?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GUpdateProductDealerData_updateProductDealer_productVariant',
+                'id'),
+            name: name,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -27850,17 +28095,18 @@ class GUpdateProductDealerData_updateProductDealer_productVariant_productBuilder
       _$result = _$v ??
           new _$GUpdateProductDealerData_updateProductDealer_productVariant_product
               ._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GUpdateProductDealerData_updateProductDealer_productVariant_product',
-                  'G__typename'),
-              brand: _brand?.build(),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id,
-                  r'GUpdateProductDealerData_updateProductDealer_productVariant_product',
-                  'id'),
-              name: name,
-              description: description);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GUpdateProductDealerData_updateProductDealer_productVariant_product',
+                'G__typename'),
+            brand: _brand?.build(),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id,
+                r'GUpdateProductDealerData_updateProductDealer_productVariant_product',
+                'id'),
+            name: name,
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -28016,15 +28262,16 @@ class GUpdateProductDealerData_updateProductDealer_productVariant_product_brandB
     final _$result = _$v ??
         new _$GUpdateProductDealerData_updateProductDealer_productVariant_product_brand
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GUpdateProductDealerData_updateProductDealer_productVariant_product_brand',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GUpdateProductDealerData_updateProductDealer_productVariant_product_brand',
-                'id'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GUpdateProductDealerData_updateProductDealer_productVariant_product_brand',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GUpdateProductDealerData_updateProductDealer_productVariant_product_brand',
+              'id'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -28036,6 +28283,8 @@ class _$GUpdateProductDealerData_updateProductDealer_prices
   final String G__typename;
   @override
   final int? amount;
+  @override
+  final int? originalAmount;
   @override
   final String id;
   @override
@@ -28050,7 +28299,11 @@ class _$GUpdateProductDealerData_updateProductDealer_prices
           ._build();
 
   _$GUpdateProductDealerData_updateProductDealer_prices._(
-      {required this.G__typename, this.amount, required this.id, this.category})
+      {required this.G__typename,
+      this.amount,
+      this.originalAmount,
+      required this.id,
+      this.category})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
         r'GUpdateProductDealerData_updateProductDealer_prices', 'G__typename');
@@ -28076,6 +28329,7 @@ class _$GUpdateProductDealerData_updateProductDealer_prices
     return other is GUpdateProductDealerData_updateProductDealer_prices &&
         G__typename == other.G__typename &&
         amount == other.amount &&
+        originalAmount == other.originalAmount &&
         id == other.id &&
         category == other.category;
   }
@@ -28085,6 +28339,7 @@ class _$GUpdateProductDealerData_updateProductDealer_prices
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, originalAmount.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, category.hashCode);
     _$hash = $jf(_$hash);
@@ -28097,6 +28352,7 @@ class _$GUpdateProductDealerData_updateProductDealer_prices
             r'GUpdateProductDealerData_updateProductDealer_prices')
           ..add('G__typename', G__typename)
           ..add('amount', amount)
+          ..add('originalAmount', originalAmount)
           ..add('id', id)
           ..add('category', category))
         .toString();
@@ -28116,6 +28372,11 @@ class GUpdateProductDealerData_updateProductDealer_pricesBuilder
   int? _amount;
   int? get amount => _$this._amount;
   set amount(int? amount) => _$this._amount = amount;
+
+  int? _originalAmount;
+  int? get originalAmount => _$this._originalAmount;
+  set originalAmount(int? originalAmount) =>
+      _$this._originalAmount = originalAmount;
 
   String? _id;
   String? get id => _$this._id;
@@ -28141,6 +28402,7 @@ class GUpdateProductDealerData_updateProductDealer_pricesBuilder
     if ($v != null) {
       _G__typename = $v.G__typename;
       _amount = $v.amount;
+      _originalAmount = $v.originalAmount;
       _id = $v.id;
       _category = $v.category?.toBuilder();
       _$v = null;
@@ -28169,14 +28431,16 @@ class GUpdateProductDealerData_updateProductDealer_pricesBuilder
     try {
       _$result = _$v ??
           new _$GUpdateProductDealerData_updateProductDealer_prices._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GUpdateProductDealerData_updateProductDealer_prices',
-                  'G__typename'),
-              amount: amount,
-              id: BuiltValueNullFieldError.checkNotNull(id,
-                  r'GUpdateProductDealerData_updateProductDealer_prices', 'id'),
-              category: _category?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename,
+                r'GUpdateProductDealerData_updateProductDealer_prices',
+                'G__typename'),
+            amount: amount,
+            originalAmount: originalAmount,
+            id: BuiltValueNullFieldError.checkNotNull(id,
+                r'GUpdateProductDealerData_updateProductDealer_prices', 'id'),
+            category: _category?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -28325,15 +28589,16 @@ class GUpdateProductDealerData_updateProductDealer_prices_categoryBuilder
   _$GUpdateProductDealerData_updateProductDealer_prices_category _build() {
     final _$result = _$v ??
         new _$GUpdateProductDealerData_updateProductDealer_prices_category._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GUpdateProductDealerData_updateProductDealer_prices_category',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GUpdateProductDealerData_updateProductDealer_prices_category',
-                'id'),
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GUpdateProductDealerData_updateProductDealer_prices_category',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id,
+              r'GUpdateProductDealerData_updateProductDealer_prices_category',
+              'id'),
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -28476,16 +28741,15 @@ class GUpdateProductDealerData_updateProductDealer_guaranteesBuilder
   _$GUpdateProductDealerData_updateProductDealer_guarantees _build() {
     final _$result = _$v ??
         new _$GUpdateProductDealerData_updateProductDealer_guarantees._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GUpdateProductDealerData_updateProductDealer_guarantees',
-                'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id,
-                r'GUpdateProductDealerData_updateProductDealer_guarantees',
-                'id'),
-            description: description,
-            name: name);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GUpdateProductDealerData_updateProductDealer_guarantees',
+              'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(id,
+              r'GUpdateProductDealerData_updateProductDealer_guarantees', 'id'),
+          description: description,
+          name: name,
+        );
     replace(_$result);
     return _$result;
   }
@@ -28605,10 +28869,11 @@ class GCreateProductDealerStockRequestDataBuilder
     try {
       _$result = _$v ??
           new _$GCreateProductDealerStockRequestData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GCreateProductDealerStockRequestData', 'G__typename'),
-              createProductDealerStockRequest:
-                  _createProductDealerStockRequest?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GCreateProductDealerStockRequestData', 'G__typename'),
+            createProductDealerStockRequest:
+                _createProductDealerStockRequest?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -28769,13 +29034,14 @@ class GCreateProductDealerStockRequestData_createProductDealerStockRequestBuilde
     final _$result = _$v ??
         new _$GCreateProductDealerStockRequestData_createProductDealerStockRequest
             ._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename,
-                r'GCreateProductDealerStockRequestData_createProductDealerStockRequest',
-                'G__typename'),
-            type: type,
-            stock: stock,
-            totalPrice: totalPrice);
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GCreateProductDealerStockRequestData_createProductDealerStockRequest',
+              'G__typename'),
+          type: type,
+          stock: stock,
+          totalPrice: totalPrice,
+        );
     replace(_$result);
     return _$result;
   }
@@ -28894,10 +29160,11 @@ class GVehicleFilterDataDataBuilder
     try {
       _$result = _$v ??
           new _$GVehicleFilterDataData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GVehicleFilterDataData', 'G__typename'),
-              vehicleTypes: _vehicleTypes?.build(),
-              brands: _brands?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GVehicleFilterDataData', 'G__typename'),
+            vehicleTypes: _vehicleTypes?.build(),
+            brands: _brands?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -29042,12 +29309,13 @@ class GVehicleFilterDataData_vehicleTypesBuilder
   _$GVehicleFilterDataData_vehicleTypes _build() {
     final _$result = _$v ??
         new _$GVehicleFilterDataData_vehicleTypes._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                r'GVehicleFilterDataData_vehicleTypes', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GVehicleFilterDataData_vehicleTypes', 'id'),
-            name: name,
-            description: description);
+          G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+              r'GVehicleFilterDataData_vehicleTypes', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GVehicleFilterDataData_vehicleTypes', 'id'),
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -29174,12 +29442,13 @@ class GVehicleFilterDataData_brandsBuilder
     try {
       _$result = _$v ??
           new _$GVehicleFilterDataData_brands._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GVehicleFilterDataData_brands', 'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GVehicleFilterDataData_brands', 'id'),
-              name: name,
-              type: _type?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GVehicleFilterDataData_brands', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GVehicleFilterDataData_brands', 'id'),
+            name: name,
+            type: _type?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -29309,10 +29578,11 @@ class GProductFilterDataDataBuilder
     try {
       _$result = _$v ??
           new _$GProductFilterDataData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GProductFilterDataData', 'G__typename'),
-              productTypes: _productTypes?.build(),
-              brands: _brands?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GProductFilterDataData', 'G__typename'),
+            productTypes: _productTypes?.build(),
+            brands: _brands?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -29457,12 +29727,13 @@ class GProductFilterDataData_productTypesBuilder
   _$GProductFilterDataData_productTypes _build() {
     final _$result = _$v ??
         new _$GProductFilterDataData_productTypes._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                r'GProductFilterDataData_productTypes', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GProductFilterDataData_productTypes', 'id'),
-            name: name,
-            description: description);
+          G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+              r'GProductFilterDataData_productTypes', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GProductFilterDataData_productTypes', 'id'),
+          name: name,
+          description: description,
+        );
     replace(_$result);
     return _$result;
   }
@@ -29589,12 +29860,13 @@ class GProductFilterDataData_brandsBuilder
     try {
       _$result = _$v ??
           new _$GProductFilterDataData_brands._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GProductFilterDataData_brands', 'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GProductFilterDataData_brands', 'id'),
-              name: name,
-              type: _type?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GProductFilterDataData_brands', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GProductFilterDataData_brands', 'id'),
+            name: name,
+            type: _type?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {

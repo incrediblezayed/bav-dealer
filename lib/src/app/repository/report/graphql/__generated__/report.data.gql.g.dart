@@ -477,9 +477,10 @@ class GCreateReportDataBuilder
     try {
       _$result = _$v ??
           new _$GCreateReportData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GCreateReportData', 'G__typename'),
-              createReport: _createReport?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GCreateReportData', 'G__typename'),
+            createReport: _createReport?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -595,10 +596,11 @@ class GCreateReportData_createReportBuilder
   _$GCreateReportData_createReport _build() {
     final _$result = _$v ??
         new _$GCreateReportData_createReport._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GCreateReportData_createReport', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GCreateReportData_createReport', 'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename, r'GCreateReportData_createReport', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GCreateReportData_createReport', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -704,9 +706,10 @@ class GCreateFeedbackDataBuilder
     try {
       _$result = _$v ??
           new _$GCreateFeedbackData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GCreateFeedbackData', 'G__typename'),
-              createFeedback: _createFeedback?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GCreateFeedbackData', 'G__typename'),
+            createFeedback: _createFeedback?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -826,10 +829,11 @@ class GCreateFeedbackData_createFeedbackBuilder
   _$GCreateFeedbackData_createFeedback _build() {
     final _$result = _$v ??
         new _$GCreateFeedbackData_createFeedback._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                r'GCreateFeedbackData_createFeedback', 'G__typename'),
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GCreateFeedbackData_createFeedback', 'id'));
+          G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+              r'GCreateFeedbackData_createFeedback', 'G__typename'),
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'GCreateFeedbackData_createFeedback', 'id'),
+        );
     replace(_$result);
     return _$result;
   }
@@ -931,9 +935,10 @@ class GCategoriesDataBuilder
     try {
       _$result = _$v ??
           new _$GCategoriesData._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GCategoriesData', 'G__typename'),
-              categories: _categories?.build());
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GCategoriesData', 'G__typename'),
+            categories: _categories?.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
@@ -1086,13 +1091,14 @@ class GCategoriesData_categoriesBuilder
     try {
       _$result = _$v ??
           new _$GCategoriesData_categories._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GCategoriesData_categories', 'G__typename'),
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'GCategoriesData_categories', 'id'),
-              name: name,
-              createdAt: _createdAt?.build(),
-              description: description);
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GCategoriesData_categories', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GCategoriesData_categories', 'id'),
+            name: name,
+            createdAt: _createdAt?.build(),
+            description: description,
+          );
     } catch (_) {
       late String _$failedField;
       try {

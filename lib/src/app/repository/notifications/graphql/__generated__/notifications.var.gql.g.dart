@@ -229,7 +229,10 @@ class GUserDeviceRegistrationVarsBuilder
   _$GUserDeviceRegistrationVars _build() {
     _$GUserDeviceRegistrationVars _$result;
     try {
-      _$result = _$v ?? new _$GUserDeviceRegistrationVars._(data: data.build());
+      _$result = _$v ??
+          new _$GUserDeviceRegistrationVars._(
+            data: data.build(),
+          );
     } catch (_) {
       late String _$failedField;
       try {
