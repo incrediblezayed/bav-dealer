@@ -4,6 +4,12 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:gql/ast.dart' as _i1;
 
+const oneOf = _i1.DirectiveDefinitionNode(
+  name: _i1.NameNode(value: 'oneOf'),
+  args: [],
+  locations: [_i1.DirectiveLocation.inputObject],
+  repeatable: false,
+);
 const User = _i1.ObjectTypeDefinitionNode(
   name: _i1.NameNode(value: 'User'),
   directives: [],
@@ -8161,6 +8167,15 @@ const Vehicle = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'shortDescription'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'type'),
       directives: [],
       args: [],
@@ -8592,6 +8607,15 @@ const VehicleWhereInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'shortDescription'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'StringFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'type'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -8848,6 +8872,15 @@ const VehicleOrderByInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'shortDescription'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'informative'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -8900,6 +8933,15 @@ const VehicleUpdateInput = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'longDescription'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'shortDescription'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
@@ -9301,6 +9343,15 @@ const VehicleCreateInput = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'longDescription'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'shortDescription'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
@@ -14539,6 +14590,15 @@ const VehicleVariant = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'registrationRequired'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'key'),
       directives: [],
       args: [],
@@ -15095,6 +15155,15 @@ const VehicleVariantWhereInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'registrationRequired'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'BooleanFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'key'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -15269,6 +15338,15 @@ const VehicleVariantOrderByInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'registrationRequired'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'key'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -15351,6 +15429,15 @@ const VehicleVariantUpdateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'registrationRequired'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -15562,6 +15649,15 @@ const VehicleVariantCreateInput = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'registrationRequired'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -35737,6 +35833,15 @@ const Product = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'shortDescription'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'type'),
       directives: [],
       args: [],
@@ -36008,6 +36113,15 @@ const ProductWhereInput = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'shortDescription'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'StringFilter'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'type'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -36170,6 +36284,15 @@ const ProductOrderByInput = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'shortDescription'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'OrderDirection'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const ProductUpdateInput = _i1.InputObjectTypeDefinitionNode(
@@ -36214,6 +36337,15 @@ const ProductUpdateInput = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'longDescription'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'shortDescription'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
@@ -36469,6 +36601,15 @@ const ProductCreateInput = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'longDescription'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'shortDescription'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
@@ -62893,7 +63034,20 @@ const Query = _i1.ObjectTypeDefinitionNode(
     ),
     _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'searchSuggestion'),
-      directives: [],
+      directives: [
+        _i1.DirectiveNode(
+          name: _i1.NameNode(value: 'deprecated'),
+          arguments: [
+            _i1.ArgumentNode(
+              name: _i1.NameNode(value: 'reason'),
+              value: _i1.StringValueNode(
+                value: 'please use new searchSuggestionV2 api',
+                isBlock: false,
+              ),
+            )
+          ],
+        )
+      ],
       args: [
         _i1.InputValueDefinitionNode(
           name: _i1.NameNode(value: 'query'),
@@ -62910,6 +63064,25 @@ const Query = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: 'String'),
           isNonNull: true,
         ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'searchSuggestionV2'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'query'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'String'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'JSON'),
         isNonNull: false,
       ),
     ),
@@ -63042,6 +63215,34 @@ const Query = _i1.ObjectTypeDefinitionNode(
           ),
           defaultValue: null,
         )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'JSON'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'getEmailOrPhoneNumberExists'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'phoneNumber'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'String'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'email'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'String'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
       ],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'JSON'),
@@ -63723,6 +63924,7 @@ const KeystoneAdminUISortDirection = _i1.EnumTypeDefinitionNode(
   ],
 );
 const document = _i1.DocumentNode(definitions: [
+  oneOf,
   User,
   DateTime,
   PasswordState,

@@ -7,11 +7,11 @@ part of 'report.var.gql.dart';
 // **************************************************************************
 
 Serializer<GCreateReportVars> _$gCreateReportVarsSerializer =
-    new _$GCreateReportVarsSerializer();
+    _$GCreateReportVarsSerializer();
 Serializer<GCreateFeedbackVars> _$gCreateFeedbackVarsSerializer =
-    new _$GCreateFeedbackVarsSerializer();
+    _$GCreateFeedbackVarsSerializer();
 Serializer<GCategoriesVars> _$gCategoriesVarsSerializer =
-    new _$GCategoriesVarsSerializer();
+    _$GCategoriesVarsSerializer();
 
 class _$GCreateReportVarsSerializer
     implements StructuredSerializer<GCreateReportVars> {
@@ -36,7 +36,7 @@ class _$GCreateReportVarsSerializer
   GCreateReportVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateReportVarsBuilder();
+    final result = GCreateReportVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -83,7 +83,7 @@ class _$GCreateFeedbackVarsSerializer
   GCreateFeedbackVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateFeedbackVarsBuilder();
+    final result = GCreateFeedbackVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -120,7 +120,7 @@ class _$GCategoriesVarsSerializer
   GCategoriesVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    return new GCategoriesVarsBuilder().build();
+    return GCategoriesVarsBuilder().build();
   }
 }
 
@@ -130,19 +130,16 @@ class _$GCreateReportVars extends GCreateReportVars {
 
   factory _$GCreateReportVars(
           [void Function(GCreateReportVarsBuilder)? updates]) =>
-      (new GCreateReportVarsBuilder()..update(updates))._build();
+      (GCreateReportVarsBuilder()..update(updates))._build();
 
-  _$GCreateReportVars._({required this.data}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(data, r'GCreateReportVars', 'data');
-  }
-
+  _$GCreateReportVars._({required this.data}) : super._();
   @override
   GCreateReportVars rebuild(void Function(GCreateReportVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   GCreateReportVarsBuilder toBuilder() =>
-      new GCreateReportVarsBuilder()..replace(this);
+      GCreateReportVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -172,7 +169,7 @@ class GCreateReportVarsBuilder
 
   _i1.GReportCreateInputBuilder? _data;
   _i1.GReportCreateInputBuilder get data =>
-      _$this._data ??= new _i1.GReportCreateInputBuilder();
+      _$this._data ??= _i1.GReportCreateInputBuilder();
   set data(_i1.GReportCreateInputBuilder? data) => _$this._data = data;
 
   GCreateReportVarsBuilder();
@@ -188,7 +185,6 @@ class GCreateReportVarsBuilder
 
   @override
   void replace(GCreateReportVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateReportVars;
   }
 
@@ -204,7 +200,7 @@ class GCreateReportVarsBuilder
     _$GCreateReportVars _$result;
     try {
       _$result = _$v ??
-          new _$GCreateReportVars._(
+          _$GCreateReportVars._(
             data: data.build(),
           );
     } catch (_) {
@@ -213,7 +209,7 @@ class GCreateReportVarsBuilder
         _$failedField = 'data';
         data.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCreateReportVars', _$failedField, e.toString());
       }
       rethrow;
@@ -229,12 +225,9 @@ class _$GCreateFeedbackVars extends GCreateFeedbackVars {
 
   factory _$GCreateFeedbackVars(
           [void Function(GCreateFeedbackVarsBuilder)? updates]) =>
-      (new GCreateFeedbackVarsBuilder()..update(updates))._build();
+      (GCreateFeedbackVarsBuilder()..update(updates))._build();
 
-  _$GCreateFeedbackVars._({required this.data}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(data, r'GCreateFeedbackVars', 'data');
-  }
-
+  _$GCreateFeedbackVars._({required this.data}) : super._();
   @override
   GCreateFeedbackVars rebuild(
           void Function(GCreateFeedbackVarsBuilder) updates) =>
@@ -242,7 +235,7 @@ class _$GCreateFeedbackVars extends GCreateFeedbackVars {
 
   @override
   GCreateFeedbackVarsBuilder toBuilder() =>
-      new GCreateFeedbackVarsBuilder()..replace(this);
+      GCreateFeedbackVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -272,7 +265,7 @@ class GCreateFeedbackVarsBuilder
 
   _i1.GFeedbackCreateInputBuilder? _data;
   _i1.GFeedbackCreateInputBuilder get data =>
-      _$this._data ??= new _i1.GFeedbackCreateInputBuilder();
+      _$this._data ??= _i1.GFeedbackCreateInputBuilder();
   set data(_i1.GFeedbackCreateInputBuilder? data) => _$this._data = data;
 
   GCreateFeedbackVarsBuilder();
@@ -288,7 +281,6 @@ class GCreateFeedbackVarsBuilder
 
   @override
   void replace(GCreateFeedbackVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateFeedbackVars;
   }
 
@@ -304,7 +296,7 @@ class GCreateFeedbackVarsBuilder
     _$GCreateFeedbackVars _$result;
     try {
       _$result = _$v ??
-          new _$GCreateFeedbackVars._(
+          _$GCreateFeedbackVars._(
             data: data.build(),
           );
     } catch (_) {
@@ -313,7 +305,7 @@ class GCreateFeedbackVarsBuilder
         _$failedField = 'data';
         data.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCreateFeedbackVars', _$failedField, e.toString());
       }
       rethrow;
@@ -325,17 +317,15 @@ class GCreateFeedbackVarsBuilder
 
 class _$GCategoriesVars extends GCategoriesVars {
   factory _$GCategoriesVars([void Function(GCategoriesVarsBuilder)? updates]) =>
-      (new GCategoriesVarsBuilder()..update(updates))._build();
+      (GCategoriesVarsBuilder()..update(updates))._build();
 
   _$GCategoriesVars._() : super._();
-
   @override
   GCategoriesVars rebuild(void Function(GCategoriesVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GCategoriesVarsBuilder toBuilder() =>
-      new GCategoriesVarsBuilder()..replace(this);
+  GCategoriesVarsBuilder toBuilder() => GCategoriesVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -362,7 +352,6 @@ class GCategoriesVarsBuilder
 
   @override
   void replace(GCategoriesVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCategoriesVars;
   }
 
@@ -375,7 +364,7 @@ class GCategoriesVarsBuilder
   GCategoriesVars build() => _build();
 
   _$GCategoriesVars _build() {
-    final _$result = _$v ?? new _$GCategoriesVars._();
+    final _$result = _$v ?? _$GCategoriesVars._();
     replace(_$result);
     return _$result;
   }

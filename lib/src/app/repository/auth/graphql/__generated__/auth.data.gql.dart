@@ -10,7 +10,7 @@ import 'package:dealerapp/src/app/repository/graphql/__generated__/schema.schema
     as _i2;
 import 'package:dealerapp/src/app/repository/graphql/__generated__/serializers.gql.dart'
     as _i1;
-import 'package:gql_code_builder/src/serializers/inline_fragment_serializer.dart'
+import 'package:gql_code_builder_serializers/gql_code_builder_serializers.dart'
     as _i3;
 
 part 'auth.data.gql.g.dart';

@@ -7,11 +7,11 @@ part of 'report.req.gql.dart';
 // **************************************************************************
 
 Serializer<GCreateReportReq> _$gCreateReportReqSerializer =
-    new _$GCreateReportReqSerializer();
+    _$GCreateReportReqSerializer();
 Serializer<GCreateFeedbackReq> _$gCreateFeedbackReqSerializer =
-    new _$GCreateFeedbackReqSerializer();
+    _$GCreateFeedbackReqSerializer();
 Serializer<GCategoriesReq> _$gCategoriesReqSerializer =
-    new _$GCategoriesReqSerializer();
+    _$GCategoriesReqSerializer();
 
 class _$GCreateReportReqSerializer
     implements StructuredSerializer<GCreateReportReq> {
@@ -78,7 +78,7 @@ class _$GCreateReportReqSerializer
   GCreateReportReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateReportReqBuilder();
+    final result = GCreateReportReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -197,7 +197,7 @@ class _$GCreateFeedbackReqSerializer
   GCreateFeedbackReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateFeedbackReqBuilder();
+    final result = GCreateFeedbackReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -315,7 +315,7 @@ class _$GCategoriesReqSerializer
   GCategoriesReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCategoriesReqBuilder();
+    final result = GCategoriesReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -393,7 +393,7 @@ class _$GCreateReportReq extends GCreateReportReq {
 
   factory _$GCreateReportReq(
           [void Function(GCreateReportReqBuilder)? updates]) =>
-      (new GCreateReportReqBuilder()..update(updates))._build();
+      (GCreateReportReqBuilder()..update(updates))._build();
 
   _$GCreateReportReq._(
       {required this.vars,
@@ -406,21 +406,14 @@ class _$GCreateReportReq extends GCreateReportReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(vars, r'GCreateReportReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GCreateReportReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GCreateReportReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GCreateReportReq rebuild(void Function(GCreateReportReqBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   GCreateReportReqBuilder toBuilder() =>
-      new GCreateReportReqBuilder()..replace(this);
+      GCreateReportReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -479,7 +472,7 @@ class GCreateReportReqBuilder
 
   _i3.GCreateReportVarsBuilder? _vars;
   _i3.GCreateReportVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GCreateReportVarsBuilder();
+      _$this._vars ??= _i3.GCreateReportVarsBuilder();
   set vars(_i3.GCreateReportVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
@@ -503,7 +496,7 @@ class GCreateReportReqBuilder
 
   _i2.GCreateReportDataBuilder? _optimisticResponse;
   _i2.GCreateReportDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GCreateReportDataBuilder();
+      _$this._optimisticResponse ??= _i2.GCreateReportDataBuilder();
   set optimisticResponse(_i2.GCreateReportDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
@@ -557,7 +550,6 @@ class GCreateReportReqBuilder
 
   @override
   void replace(GCreateReportReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateReportReq;
   }
 
@@ -573,7 +565,7 @@ class GCreateReportReqBuilder
     _$GCreateReportReq _$result;
     try {
       _$result = _$v ??
-          new _$GCreateReportReq._(
+          _$GCreateReportReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GCreateReportReq', 'operation'),
@@ -596,7 +588,7 @@ class GCreateReportReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCreateReportReq', _$failedField, e.toString());
       }
       rethrow;
@@ -631,7 +623,7 @@ class _$GCreateFeedbackReq extends GCreateFeedbackReq {
 
   factory _$GCreateFeedbackReq(
           [void Function(GCreateFeedbackReqBuilder)? updates]) =>
-      (new GCreateFeedbackReqBuilder()..update(updates))._build();
+      (GCreateFeedbackReqBuilder()..update(updates))._build();
 
   _$GCreateFeedbackReq._(
       {required this.vars,
@@ -644,14 +636,7 @@ class _$GCreateFeedbackReq extends GCreateFeedbackReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(vars, r'GCreateFeedbackReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GCreateFeedbackReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GCreateFeedbackReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GCreateFeedbackReq rebuild(
           void Function(GCreateFeedbackReqBuilder) updates) =>
@@ -659,7 +644,7 @@ class _$GCreateFeedbackReq extends GCreateFeedbackReq {
 
   @override
   GCreateFeedbackReqBuilder toBuilder() =>
-      new GCreateFeedbackReqBuilder()..replace(this);
+      GCreateFeedbackReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -718,7 +703,7 @@ class GCreateFeedbackReqBuilder
 
   _i3.GCreateFeedbackVarsBuilder? _vars;
   _i3.GCreateFeedbackVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GCreateFeedbackVarsBuilder();
+      _$this._vars ??= _i3.GCreateFeedbackVarsBuilder();
   set vars(_i3.GCreateFeedbackVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
@@ -742,7 +727,7 @@ class GCreateFeedbackReqBuilder
 
   _i2.GCreateFeedbackDataBuilder? _optimisticResponse;
   _i2.GCreateFeedbackDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GCreateFeedbackDataBuilder();
+      _$this._optimisticResponse ??= _i2.GCreateFeedbackDataBuilder();
   set optimisticResponse(_i2.GCreateFeedbackDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
@@ -796,7 +781,6 @@ class GCreateFeedbackReqBuilder
 
   @override
   void replace(GCreateFeedbackReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateFeedbackReq;
   }
 
@@ -812,7 +796,7 @@ class GCreateFeedbackReqBuilder
     _$GCreateFeedbackReq _$result;
     try {
       _$result = _$v ??
-          new _$GCreateFeedbackReq._(
+          _$GCreateFeedbackReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GCreateFeedbackReq', 'operation'),
@@ -835,7 +819,7 @@ class GCreateFeedbackReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCreateFeedbackReq', _$failedField, e.toString());
       }
       rethrow;
@@ -869,7 +853,7 @@ class _$GCategoriesReq extends GCategoriesReq {
   final _i4.Context? context;
 
   factory _$GCategoriesReq([void Function(GCategoriesReqBuilder)? updates]) =>
-      (new GCategoriesReqBuilder()..update(updates))._build();
+      (GCategoriesReqBuilder()..update(updates))._build();
 
   _$GCategoriesReq._(
       {required this.vars,
@@ -882,21 +866,13 @@ class _$GCategoriesReq extends GCategoriesReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(vars, r'GCategoriesReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GCategoriesReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GCategoriesReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GCategoriesReq rebuild(void Function(GCategoriesReqBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GCategoriesReqBuilder toBuilder() =>
-      new GCategoriesReqBuilder()..replace(this);
+  GCategoriesReqBuilder toBuilder() => GCategoriesReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -955,7 +931,7 @@ class GCategoriesReqBuilder
 
   _i3.GCategoriesVarsBuilder? _vars;
   _i3.GCategoriesVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GCategoriesVarsBuilder();
+      _$this._vars ??= _i3.GCategoriesVarsBuilder();
   set vars(_i3.GCategoriesVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
@@ -978,7 +954,7 @@ class GCategoriesReqBuilder
 
   _i2.GCategoriesDataBuilder? _optimisticResponse;
   _i2.GCategoriesDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GCategoriesDataBuilder();
+      _$this._optimisticResponse ??= _i2.GCategoriesDataBuilder();
   set optimisticResponse(_i2.GCategoriesDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
@@ -1032,7 +1008,6 @@ class GCategoriesReqBuilder
 
   @override
   void replace(GCategoriesReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCategoriesReq;
   }
 
@@ -1048,7 +1023,7 @@ class GCategoriesReqBuilder
     _$GCategoriesReq _$result;
     try {
       _$result = _$v ??
-          new _$GCategoriesReq._(
+          _$GCategoriesReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GCategoriesReq', 'operation'),
@@ -1071,7 +1046,7 @@ class GCategoriesReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCategoriesReq', _$failedField, e.toString());
       }
       rethrow;

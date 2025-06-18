@@ -7,34 +7,34 @@ part of 'auth.req.gql.dart';
 // **************************************************************************
 
 Serializer<GCreateUserReq> _$gCreateUserReqSerializer =
-    new _$GCreateUserReqSerializer();
+    _$GCreateUserReqSerializer();
 Serializer<GCurrentUserOTPReq> _$gCurrentUserOTPReqSerializer =
-    new _$GCurrentUserOTPReqSerializer();
+    _$GCurrentUserOTPReqSerializer();
 Serializer<GValidateUserOTPReq> _$gValidateUserOTPReqSerializer =
-    new _$GValidateUserOTPReqSerializer();
+    _$GValidateUserOTPReqSerializer();
 Serializer<GSendUserPasswordResetLinkReq>
     _$gSendUserPasswordResetLinkReqSerializer =
-    new _$GSendUserPasswordResetLinkReqSerializer();
+    _$GSendUserPasswordResetLinkReqSerializer();
 Serializer<GRedeemUserPasswordResetTokenReq>
     _$gRedeemUserPasswordResetTokenReqSerializer =
-    new _$GRedeemUserPasswordResetTokenReqSerializer();
+    _$GRedeemUserPasswordResetTokenReqSerializer();
 Serializer<GValidateUserPasswordResetTokenReq>
     _$gValidateUserPasswordResetTokenReqSerializer =
-    new _$GValidateUserPasswordResetTokenReqSerializer();
+    _$GValidateUserPasswordResetTokenReqSerializer();
 Serializer<GCreateDealerReq> _$gCreateDealerReqSerializer =
-    new _$GCreateDealerReqSerializer();
+    _$GCreateDealerReqSerializer();
 Serializer<GAuthenticateUserWithPasswordReq>
     _$gAuthenticateUserWithPasswordReqSerializer =
-    new _$GAuthenticateUserWithPasswordReqSerializer();
-Serializer<GUserReq> _$gUserReqSerializer = new _$GUserReqSerializer();
+    _$GAuthenticateUserWithPasswordReqSerializer();
+Serializer<GUserReq> _$gUserReqSerializer = _$GUserReqSerializer();
 Serializer<GUpdateUserReq> _$gUpdateUserReqSerializer =
-    new _$GUpdateUserReqSerializer();
-Serializer<GDealerReq> _$gDealerReqSerializer = new _$GDealerReqSerializer();
+    _$GUpdateUserReqSerializer();
+Serializer<GDealerReq> _$gDealerReqSerializer = _$GDealerReqSerializer();
 Serializer<GUpdateDealerReq> _$gUpdateDealerReqSerializer =
-    new _$GUpdateDealerReqSerializer();
+    _$GUpdateDealerReqSerializer();
 Serializer<GSendDealerMOUApprovalOTPReq>
     _$gSendDealerMOUApprovalOTPReqSerializer =
-    new _$GSendDealerMOUApprovalOTPReqSerializer();
+    _$GSendDealerMOUApprovalOTPReqSerializer();
 
 class _$GCreateUserReqSerializer
     implements StructuredSerializer<GCreateUserReq> {
@@ -101,7 +101,7 @@ class _$GCreateUserReqSerializer
   GCreateUserReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateUserReqBuilder();
+    final result = GCreateUserReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -220,7 +220,7 @@ class _$GCurrentUserOTPReqSerializer
   GCurrentUserOTPReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCurrentUserOTPReqBuilder();
+    final result = GCurrentUserOTPReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -342,7 +342,7 @@ class _$GValidateUserOTPReqSerializer
   GValidateUserOTPReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GValidateUserOTPReqBuilder();
+    final result = GValidateUserOTPReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -464,7 +464,7 @@ class _$GSendUserPasswordResetLinkReqSerializer
   GSendUserPasswordResetLinkReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GSendUserPasswordResetLinkReqBuilder();
+    final result = GSendUserPasswordResetLinkReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -589,7 +589,7 @@ class _$GRedeemUserPasswordResetTokenReqSerializer
   GRedeemUserPasswordResetTokenReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GRedeemUserPasswordResetTokenReqBuilder();
+    final result = GRedeemUserPasswordResetTokenReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -715,7 +715,7 @@ class _$GValidateUserPasswordResetTokenReqSerializer
   GValidateUserPasswordResetTokenReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GValidateUserPasswordResetTokenReqBuilder();
+    final result = GValidateUserPasswordResetTokenReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -835,7 +835,7 @@ class _$GCreateDealerReqSerializer
   GCreateDealerReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateDealerReqBuilder();
+    final result = GCreateDealerReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -958,7 +958,7 @@ class _$GAuthenticateUserWithPasswordReqSerializer
   GAuthenticateUserWithPasswordReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GAuthenticateUserWithPasswordReqBuilder();
+    final result = GAuthenticateUserWithPasswordReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1076,7 +1076,7 @@ class _$GUserReqSerializer implements StructuredSerializer<GUserReq> {
   @override
   GUserReq deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserReqBuilder();
+    final result = GUserReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1192,7 +1192,7 @@ class _$GUpdateUserReqSerializer
   GUpdateUserReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUpdateUserReqBuilder();
+    final result = GUpdateUserReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1308,7 +1308,7 @@ class _$GDealerReqSerializer implements StructuredSerializer<GDealerReq> {
   @override
   GDealerReq deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GDealerReqBuilder();
+    final result = GDealerReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1426,7 +1426,7 @@ class _$GUpdateDealerReqSerializer
   GUpdateDealerReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUpdateDealerReqBuilder();
+    final result = GUpdateDealerReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1548,7 +1548,7 @@ class _$GSendDealerMOUApprovalOTPReqSerializer
   GSendDealerMOUApprovalOTPReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GSendDealerMOUApprovalOTPReqBuilder();
+    final result = GSendDealerMOUApprovalOTPReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1627,7 +1627,7 @@ class _$GCreateUserReq extends GCreateUserReq {
   final _i4.Context? context;
 
   factory _$GCreateUserReq([void Function(GCreateUserReqBuilder)? updates]) =>
-      (new GCreateUserReqBuilder()..update(updates))._build();
+      (GCreateUserReqBuilder()..update(updates))._build();
 
   _$GCreateUserReq._(
       {required this.vars,
@@ -1640,21 +1640,13 @@ class _$GCreateUserReq extends GCreateUserReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(vars, r'GCreateUserReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GCreateUserReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GCreateUserReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GCreateUserReq rebuild(void Function(GCreateUserReqBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GCreateUserReqBuilder toBuilder() =>
-      new GCreateUserReqBuilder()..replace(this);
+  GCreateUserReqBuilder toBuilder() => GCreateUserReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1713,7 +1705,7 @@ class GCreateUserReqBuilder
 
   _i3.GCreateUserVarsBuilder? _vars;
   _i3.GCreateUserVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GCreateUserVarsBuilder();
+      _$this._vars ??= _i3.GCreateUserVarsBuilder();
   set vars(_i3.GCreateUserVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
@@ -1736,7 +1728,7 @@ class GCreateUserReqBuilder
 
   _i2.GCreateUserDataBuilder? _optimisticResponse;
   _i2.GCreateUserDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GCreateUserDataBuilder();
+      _$this._optimisticResponse ??= _i2.GCreateUserDataBuilder();
   set optimisticResponse(_i2.GCreateUserDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
@@ -1790,7 +1782,6 @@ class GCreateUserReqBuilder
 
   @override
   void replace(GCreateUserReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateUserReq;
   }
 
@@ -1806,7 +1797,7 @@ class GCreateUserReqBuilder
     _$GCreateUserReq _$result;
     try {
       _$result = _$v ??
-          new _$GCreateUserReq._(
+          _$GCreateUserReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GCreateUserReq', 'operation'),
@@ -1829,7 +1820,7 @@ class GCreateUserReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCreateUserReq', _$failedField, e.toString());
       }
       rethrow;
@@ -1864,7 +1855,7 @@ class _$GCurrentUserOTPReq extends GCurrentUserOTPReq {
 
   factory _$GCurrentUserOTPReq(
           [void Function(GCurrentUserOTPReqBuilder)? updates]) =>
-      (new GCurrentUserOTPReqBuilder()..update(updates))._build();
+      (GCurrentUserOTPReqBuilder()..update(updates))._build();
 
   _$GCurrentUserOTPReq._(
       {required this.vars,
@@ -1877,14 +1868,7 @@ class _$GCurrentUserOTPReq extends GCurrentUserOTPReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(vars, r'GCurrentUserOTPReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GCurrentUserOTPReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GCurrentUserOTPReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GCurrentUserOTPReq rebuild(
           void Function(GCurrentUserOTPReqBuilder) updates) =>
@@ -1892,7 +1876,7 @@ class _$GCurrentUserOTPReq extends GCurrentUserOTPReq {
 
   @override
   GCurrentUserOTPReqBuilder toBuilder() =>
-      new GCurrentUserOTPReqBuilder()..replace(this);
+      GCurrentUserOTPReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1951,7 +1935,7 @@ class GCurrentUserOTPReqBuilder
 
   _i3.GCurrentUserOTPVarsBuilder? _vars;
   _i3.GCurrentUserOTPVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GCurrentUserOTPVarsBuilder();
+      _$this._vars ??= _i3.GCurrentUserOTPVarsBuilder();
   set vars(_i3.GCurrentUserOTPVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
@@ -1975,7 +1959,7 @@ class GCurrentUserOTPReqBuilder
 
   _i2.GCurrentUserOTPDataBuilder? _optimisticResponse;
   _i2.GCurrentUserOTPDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GCurrentUserOTPDataBuilder();
+      _$this._optimisticResponse ??= _i2.GCurrentUserOTPDataBuilder();
   set optimisticResponse(_i2.GCurrentUserOTPDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
@@ -2029,7 +2013,6 @@ class GCurrentUserOTPReqBuilder
 
   @override
   void replace(GCurrentUserOTPReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCurrentUserOTPReq;
   }
 
@@ -2045,7 +2028,7 @@ class GCurrentUserOTPReqBuilder
     _$GCurrentUserOTPReq _$result;
     try {
       _$result = _$v ??
-          new _$GCurrentUserOTPReq._(
+          _$GCurrentUserOTPReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GCurrentUserOTPReq', 'operation'),
@@ -2068,7 +2051,7 @@ class GCurrentUserOTPReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCurrentUserOTPReq', _$failedField, e.toString());
       }
       rethrow;
@@ -2103,7 +2086,7 @@ class _$GValidateUserOTPReq extends GValidateUserOTPReq {
 
   factory _$GValidateUserOTPReq(
           [void Function(GValidateUserOTPReqBuilder)? updates]) =>
-      (new GValidateUserOTPReqBuilder()..update(updates))._build();
+      (GValidateUserOTPReqBuilder()..update(updates))._build();
 
   _$GValidateUserOTPReq._(
       {required this.vars,
@@ -2116,14 +2099,7 @@ class _$GValidateUserOTPReq extends GValidateUserOTPReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(vars, r'GValidateUserOTPReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GValidateUserOTPReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GValidateUserOTPReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GValidateUserOTPReq rebuild(
           void Function(GValidateUserOTPReqBuilder) updates) =>
@@ -2131,7 +2107,7 @@ class _$GValidateUserOTPReq extends GValidateUserOTPReq {
 
   @override
   GValidateUserOTPReqBuilder toBuilder() =>
-      new GValidateUserOTPReqBuilder()..replace(this);
+      GValidateUserOTPReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -2190,7 +2166,7 @@ class GValidateUserOTPReqBuilder
 
   _i3.GValidateUserOTPVarsBuilder? _vars;
   _i3.GValidateUserOTPVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GValidateUserOTPVarsBuilder();
+      _$this._vars ??= _i3.GValidateUserOTPVarsBuilder();
   set vars(_i3.GValidateUserOTPVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
@@ -2214,7 +2190,7 @@ class GValidateUserOTPReqBuilder
 
   _i2.GValidateUserOTPDataBuilder? _optimisticResponse;
   _i2.GValidateUserOTPDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GValidateUserOTPDataBuilder();
+      _$this._optimisticResponse ??= _i2.GValidateUserOTPDataBuilder();
   set optimisticResponse(_i2.GValidateUserOTPDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
@@ -2268,7 +2244,6 @@ class GValidateUserOTPReqBuilder
 
   @override
   void replace(GValidateUserOTPReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GValidateUserOTPReq;
   }
 
@@ -2284,7 +2259,7 @@ class GValidateUserOTPReqBuilder
     _$GValidateUserOTPReq _$result;
     try {
       _$result = _$v ??
-          new _$GValidateUserOTPReq._(
+          _$GValidateUserOTPReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GValidateUserOTPReq', 'operation'),
@@ -2307,7 +2282,7 @@ class GValidateUserOTPReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GValidateUserOTPReq', _$failedField, e.toString());
       }
       rethrow;
@@ -2343,7 +2318,7 @@ class _$GSendUserPasswordResetLinkReq extends GSendUserPasswordResetLinkReq {
 
   factory _$GSendUserPasswordResetLinkReq(
           [void Function(GSendUserPasswordResetLinkReqBuilder)? updates]) =>
-      (new GSendUserPasswordResetLinkReqBuilder()..update(updates))._build();
+      (GSendUserPasswordResetLinkReqBuilder()..update(updates))._build();
 
   _$GSendUserPasswordResetLinkReq._(
       {required this.vars,
@@ -2356,15 +2331,7 @@ class _$GSendUserPasswordResetLinkReq extends GSendUserPasswordResetLinkReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        vars, r'GSendUserPasswordResetLinkReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GSendUserPasswordResetLinkReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GSendUserPasswordResetLinkReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GSendUserPasswordResetLinkReq rebuild(
           void Function(GSendUserPasswordResetLinkReqBuilder) updates) =>
@@ -2372,7 +2339,7 @@ class _$GSendUserPasswordResetLinkReq extends GSendUserPasswordResetLinkReq {
 
   @override
   GSendUserPasswordResetLinkReqBuilder toBuilder() =>
-      new GSendUserPasswordResetLinkReqBuilder()..replace(this);
+      GSendUserPasswordResetLinkReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -2433,7 +2400,7 @@ class GSendUserPasswordResetLinkReqBuilder
 
   _i3.GSendUserPasswordResetLinkVarsBuilder? _vars;
   _i3.GSendUserPasswordResetLinkVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GSendUserPasswordResetLinkVarsBuilder();
+      _$this._vars ??= _i3.GSendUserPasswordResetLinkVarsBuilder();
   set vars(_i3.GSendUserPasswordResetLinkVarsBuilder? vars) =>
       _$this._vars = vars;
 
@@ -2462,7 +2429,7 @@ class GSendUserPasswordResetLinkReqBuilder
   _i2.GSendUserPasswordResetLinkDataBuilder? _optimisticResponse;
   _i2.GSendUserPasswordResetLinkDataBuilder get optimisticResponse =>
       _$this._optimisticResponse ??=
-          new _i2.GSendUserPasswordResetLinkDataBuilder();
+          _i2.GSendUserPasswordResetLinkDataBuilder();
   set optimisticResponse(
           _i2.GSendUserPasswordResetLinkDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
@@ -2517,7 +2484,6 @@ class GSendUserPasswordResetLinkReqBuilder
 
   @override
   void replace(GSendUserPasswordResetLinkReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GSendUserPasswordResetLinkReq;
   }
 
@@ -2533,7 +2499,7 @@ class GSendUserPasswordResetLinkReqBuilder
     _$GSendUserPasswordResetLinkReq _$result;
     try {
       _$result = _$v ??
-          new _$GSendUserPasswordResetLinkReq._(
+          _$GSendUserPasswordResetLinkReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GSendUserPasswordResetLinkReq', 'operation'),
@@ -2558,7 +2524,7 @@ class GSendUserPasswordResetLinkReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GSendUserPasswordResetLinkReq', _$failedField, e.toString());
       }
       rethrow;
@@ -2595,7 +2561,7 @@ class _$GRedeemUserPasswordResetTokenReq
 
   factory _$GRedeemUserPasswordResetTokenReq(
           [void Function(GRedeemUserPasswordResetTokenReqBuilder)? updates]) =>
-      (new GRedeemUserPasswordResetTokenReqBuilder()..update(updates))._build();
+      (GRedeemUserPasswordResetTokenReqBuilder()..update(updates))._build();
 
   _$GRedeemUserPasswordResetTokenReq._(
       {required this.vars,
@@ -2608,15 +2574,7 @@ class _$GRedeemUserPasswordResetTokenReq
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        vars, r'GRedeemUserPasswordResetTokenReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GRedeemUserPasswordResetTokenReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(executeOnListen,
-        r'GRedeemUserPasswordResetTokenReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GRedeemUserPasswordResetTokenReq rebuild(
           void Function(GRedeemUserPasswordResetTokenReqBuilder) updates) =>
@@ -2624,7 +2582,7 @@ class _$GRedeemUserPasswordResetTokenReq
 
   @override
   GRedeemUserPasswordResetTokenReqBuilder toBuilder() =>
-      new GRedeemUserPasswordResetTokenReqBuilder()..replace(this);
+      GRedeemUserPasswordResetTokenReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -2685,7 +2643,7 @@ class GRedeemUserPasswordResetTokenReqBuilder
 
   _i3.GRedeemUserPasswordResetTokenVarsBuilder? _vars;
   _i3.GRedeemUserPasswordResetTokenVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GRedeemUserPasswordResetTokenVarsBuilder();
+      _$this._vars ??= _i3.GRedeemUserPasswordResetTokenVarsBuilder();
   set vars(_i3.GRedeemUserPasswordResetTokenVarsBuilder? vars) =>
       _$this._vars = vars;
 
@@ -2714,7 +2672,7 @@ class GRedeemUserPasswordResetTokenReqBuilder
   _i2.GRedeemUserPasswordResetTokenDataBuilder? _optimisticResponse;
   _i2.GRedeemUserPasswordResetTokenDataBuilder get optimisticResponse =>
       _$this._optimisticResponse ??=
-          new _i2.GRedeemUserPasswordResetTokenDataBuilder();
+          _i2.GRedeemUserPasswordResetTokenDataBuilder();
   set optimisticResponse(
           _i2.GRedeemUserPasswordResetTokenDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
@@ -2769,7 +2727,6 @@ class GRedeemUserPasswordResetTokenReqBuilder
 
   @override
   void replace(GRedeemUserPasswordResetTokenReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GRedeemUserPasswordResetTokenReq;
   }
 
@@ -2785,7 +2742,7 @@ class GRedeemUserPasswordResetTokenReqBuilder
     _$GRedeemUserPasswordResetTokenReq _$result;
     try {
       _$result = _$v ??
-          new _$GRedeemUserPasswordResetTokenReq._(
+          _$GRedeemUserPasswordResetTokenReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GRedeemUserPasswordResetTokenReq', 'operation'),
@@ -2810,7 +2767,7 @@ class GRedeemUserPasswordResetTokenReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GRedeemUserPasswordResetTokenReq', _$failedField, e.toString());
       }
       rethrow;
@@ -2848,8 +2805,7 @@ class _$GValidateUserPasswordResetTokenReq
   factory _$GValidateUserPasswordResetTokenReq(
           [void Function(GValidateUserPasswordResetTokenReqBuilder)?
               updates]) =>
-      (new GValidateUserPasswordResetTokenReqBuilder()..update(updates))
-          ._build();
+      (GValidateUserPasswordResetTokenReqBuilder()..update(updates))._build();
 
   _$GValidateUserPasswordResetTokenReq._(
       {required this.vars,
@@ -2862,15 +2818,7 @@ class _$GValidateUserPasswordResetTokenReq
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        vars, r'GValidateUserPasswordResetTokenReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GValidateUserPasswordResetTokenReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(executeOnListen,
-        r'GValidateUserPasswordResetTokenReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GValidateUserPasswordResetTokenReq rebuild(
           void Function(GValidateUserPasswordResetTokenReqBuilder) updates) =>
@@ -2878,7 +2826,7 @@ class _$GValidateUserPasswordResetTokenReq
 
   @override
   GValidateUserPasswordResetTokenReqBuilder toBuilder() =>
-      new GValidateUserPasswordResetTokenReqBuilder()..replace(this);
+      GValidateUserPasswordResetTokenReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -2939,7 +2887,7 @@ class GValidateUserPasswordResetTokenReqBuilder
 
   _i3.GValidateUserPasswordResetTokenVarsBuilder? _vars;
   _i3.GValidateUserPasswordResetTokenVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GValidateUserPasswordResetTokenVarsBuilder();
+      _$this._vars ??= _i3.GValidateUserPasswordResetTokenVarsBuilder();
   set vars(_i3.GValidateUserPasswordResetTokenVarsBuilder? vars) =>
       _$this._vars = vars;
 
@@ -2968,7 +2916,7 @@ class GValidateUserPasswordResetTokenReqBuilder
   _i2.GValidateUserPasswordResetTokenDataBuilder? _optimisticResponse;
   _i2.GValidateUserPasswordResetTokenDataBuilder get optimisticResponse =>
       _$this._optimisticResponse ??=
-          new _i2.GValidateUserPasswordResetTokenDataBuilder();
+          _i2.GValidateUserPasswordResetTokenDataBuilder();
   set optimisticResponse(
           _i2.GValidateUserPasswordResetTokenDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
@@ -3023,7 +2971,6 @@ class GValidateUserPasswordResetTokenReqBuilder
 
   @override
   void replace(GValidateUserPasswordResetTokenReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GValidateUserPasswordResetTokenReq;
   }
 
@@ -3040,7 +2987,7 @@ class GValidateUserPasswordResetTokenReqBuilder
     _$GValidateUserPasswordResetTokenReq _$result;
     try {
       _$result = _$v ??
-          new _$GValidateUserPasswordResetTokenReq._(
+          _$GValidateUserPasswordResetTokenReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GValidateUserPasswordResetTokenReq', 'operation'),
@@ -3065,7 +3012,7 @@ class GValidateUserPasswordResetTokenReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GValidateUserPasswordResetTokenReq', _$failedField, e.toString());
       }
       rethrow;
@@ -3100,7 +3047,7 @@ class _$GCreateDealerReq extends GCreateDealerReq {
 
   factory _$GCreateDealerReq(
           [void Function(GCreateDealerReqBuilder)? updates]) =>
-      (new GCreateDealerReqBuilder()..update(updates))._build();
+      (GCreateDealerReqBuilder()..update(updates))._build();
 
   _$GCreateDealerReq._(
       {required this.vars,
@@ -3113,21 +3060,14 @@ class _$GCreateDealerReq extends GCreateDealerReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(vars, r'GCreateDealerReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GCreateDealerReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GCreateDealerReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GCreateDealerReq rebuild(void Function(GCreateDealerReqBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   GCreateDealerReqBuilder toBuilder() =>
-      new GCreateDealerReqBuilder()..replace(this);
+      GCreateDealerReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -3186,7 +3126,7 @@ class GCreateDealerReqBuilder
 
   _i3.GCreateDealerVarsBuilder? _vars;
   _i3.GCreateDealerVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GCreateDealerVarsBuilder();
+      _$this._vars ??= _i3.GCreateDealerVarsBuilder();
   set vars(_i3.GCreateDealerVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
@@ -3210,7 +3150,7 @@ class GCreateDealerReqBuilder
 
   _i2.GCreateDealerDataBuilder? _optimisticResponse;
   _i2.GCreateDealerDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GCreateDealerDataBuilder();
+      _$this._optimisticResponse ??= _i2.GCreateDealerDataBuilder();
   set optimisticResponse(_i2.GCreateDealerDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
@@ -3264,7 +3204,6 @@ class GCreateDealerReqBuilder
 
   @override
   void replace(GCreateDealerReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateDealerReq;
   }
 
@@ -3280,7 +3219,7 @@ class GCreateDealerReqBuilder
     _$GCreateDealerReq _$result;
     try {
       _$result = _$v ??
-          new _$GCreateDealerReq._(
+          _$GCreateDealerReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GCreateDealerReq', 'operation'),
@@ -3303,7 +3242,7 @@ class GCreateDealerReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCreateDealerReq', _$failedField, e.toString());
       }
       rethrow;
@@ -3340,7 +3279,7 @@ class _$GAuthenticateUserWithPasswordReq
 
   factory _$GAuthenticateUserWithPasswordReq(
           [void Function(GAuthenticateUserWithPasswordReqBuilder)? updates]) =>
-      (new GAuthenticateUserWithPasswordReqBuilder()..update(updates))._build();
+      (GAuthenticateUserWithPasswordReqBuilder()..update(updates))._build();
 
   _$GAuthenticateUserWithPasswordReq._(
       {required this.vars,
@@ -3353,15 +3292,7 @@ class _$GAuthenticateUserWithPasswordReq
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        vars, r'GAuthenticateUserWithPasswordReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GAuthenticateUserWithPasswordReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(executeOnListen,
-        r'GAuthenticateUserWithPasswordReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GAuthenticateUserWithPasswordReq rebuild(
           void Function(GAuthenticateUserWithPasswordReqBuilder) updates) =>
@@ -3369,7 +3300,7 @@ class _$GAuthenticateUserWithPasswordReq
 
   @override
   GAuthenticateUserWithPasswordReqBuilder toBuilder() =>
-      new GAuthenticateUserWithPasswordReqBuilder()..replace(this);
+      GAuthenticateUserWithPasswordReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -3430,7 +3361,7 @@ class GAuthenticateUserWithPasswordReqBuilder
 
   _i3.GAuthenticateUserWithPasswordVarsBuilder? _vars;
   _i3.GAuthenticateUserWithPasswordVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GAuthenticateUserWithPasswordVarsBuilder();
+      _$this._vars ??= _i3.GAuthenticateUserWithPasswordVarsBuilder();
   set vars(_i3.GAuthenticateUserWithPasswordVarsBuilder? vars) =>
       _$this._vars = vars;
 
@@ -3459,7 +3390,7 @@ class GAuthenticateUserWithPasswordReqBuilder
   _i2.GAuthenticateUserWithPasswordDataBuilder? _optimisticResponse;
   _i2.GAuthenticateUserWithPasswordDataBuilder get optimisticResponse =>
       _$this._optimisticResponse ??=
-          new _i2.GAuthenticateUserWithPasswordDataBuilder();
+          _i2.GAuthenticateUserWithPasswordDataBuilder();
   set optimisticResponse(
           _i2.GAuthenticateUserWithPasswordDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
@@ -3514,7 +3445,6 @@ class GAuthenticateUserWithPasswordReqBuilder
 
   @override
   void replace(GAuthenticateUserWithPasswordReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GAuthenticateUserWithPasswordReq;
   }
 
@@ -3530,7 +3460,7 @@ class GAuthenticateUserWithPasswordReqBuilder
     _$GAuthenticateUserWithPasswordReq _$result;
     try {
       _$result = _$v ??
-          new _$GAuthenticateUserWithPasswordReq._(
+          _$GAuthenticateUserWithPasswordReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GAuthenticateUserWithPasswordReq', 'operation'),
@@ -3555,7 +3485,7 @@ class GAuthenticateUserWithPasswordReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GAuthenticateUserWithPasswordReq', _$failedField, e.toString());
       }
       rethrow;
@@ -3588,7 +3518,7 @@ class _$GUserReq extends GUserReq {
   final _i4.Context? context;
 
   factory _$GUserReq([void Function(GUserReqBuilder)? updates]) =>
-      (new GUserReqBuilder()..update(updates))._build();
+      (GUserReqBuilder()..update(updates))._build();
 
   _$GUserReq._(
       {required this.vars,
@@ -3601,19 +3531,13 @@ class _$GUserReq extends GUserReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(vars, r'GUserReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(operation, r'GUserReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GUserReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GUserReq rebuild(void Function(GUserReqBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GUserReqBuilder toBuilder() => new GUserReqBuilder()..replace(this);
+  GUserReqBuilder toBuilder() => GUserReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -3670,7 +3594,7 @@ class GUserReqBuilder implements Builder<GUserReq, GUserReqBuilder> {
   _$GUserReq? _$v;
 
   _i3.GUserVarsBuilder? _vars;
-  _i3.GUserVarsBuilder get vars => _$this._vars ??= new _i3.GUserVarsBuilder();
+  _i3.GUserVarsBuilder get vars => _$this._vars ??= _i3.GUserVarsBuilder();
   set vars(_i3.GUserVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
@@ -3691,7 +3615,7 @@ class GUserReqBuilder implements Builder<GUserReq, GUserReqBuilder> {
 
   _i2.GUserDataBuilder? _optimisticResponse;
   _i2.GUserDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GUserDataBuilder();
+      _$this._optimisticResponse ??= _i2.GUserDataBuilder();
   set optimisticResponse(_i2.GUserDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
@@ -3745,7 +3669,6 @@ class GUserReqBuilder implements Builder<GUserReq, GUserReqBuilder> {
 
   @override
   void replace(GUserReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUserReq;
   }
 
@@ -3761,7 +3684,7 @@ class GUserReqBuilder implements Builder<GUserReq, GUserReqBuilder> {
     _$GUserReq _$result;
     try {
       _$result = _$v ??
-          new _$GUserReq._(
+          _$GUserReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GUserReq', 'operation'),
@@ -3784,7 +3707,7 @@ class GUserReqBuilder implements Builder<GUserReq, GUserReqBuilder> {
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUserReq', _$failedField, e.toString());
       }
       rethrow;
@@ -3818,7 +3741,7 @@ class _$GUpdateUserReq extends GUpdateUserReq {
   final _i4.Context? context;
 
   factory _$GUpdateUserReq([void Function(GUpdateUserReqBuilder)? updates]) =>
-      (new GUpdateUserReqBuilder()..update(updates))._build();
+      (GUpdateUserReqBuilder()..update(updates))._build();
 
   _$GUpdateUserReq._(
       {required this.vars,
@@ -3831,21 +3754,13 @@ class _$GUpdateUserReq extends GUpdateUserReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(vars, r'GUpdateUserReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GUpdateUserReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GUpdateUserReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GUpdateUserReq rebuild(void Function(GUpdateUserReqBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GUpdateUserReqBuilder toBuilder() =>
-      new GUpdateUserReqBuilder()..replace(this);
+  GUpdateUserReqBuilder toBuilder() => GUpdateUserReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -3904,7 +3819,7 @@ class GUpdateUserReqBuilder
 
   _i3.GUpdateUserVarsBuilder? _vars;
   _i3.GUpdateUserVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GUpdateUserVarsBuilder();
+      _$this._vars ??= _i3.GUpdateUserVarsBuilder();
   set vars(_i3.GUpdateUserVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
@@ -3927,7 +3842,7 @@ class GUpdateUserReqBuilder
 
   _i2.GUpdateUserDataBuilder? _optimisticResponse;
   _i2.GUpdateUserDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GUpdateUserDataBuilder();
+      _$this._optimisticResponse ??= _i2.GUpdateUserDataBuilder();
   set optimisticResponse(_i2.GUpdateUserDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
@@ -3981,7 +3896,6 @@ class GUpdateUserReqBuilder
 
   @override
   void replace(GUpdateUserReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUpdateUserReq;
   }
 
@@ -3997,7 +3911,7 @@ class GUpdateUserReqBuilder
     _$GUpdateUserReq _$result;
     try {
       _$result = _$v ??
-          new _$GUpdateUserReq._(
+          _$GUpdateUserReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GUpdateUserReq', 'operation'),
@@ -4020,7 +3934,7 @@ class GUpdateUserReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUpdateUserReq', _$failedField, e.toString());
       }
       rethrow;
@@ -4054,7 +3968,7 @@ class _$GDealerReq extends GDealerReq {
   final _i4.Context? context;
 
   factory _$GDealerReq([void Function(GDealerReqBuilder)? updates]) =>
-      (new GDealerReqBuilder()..update(updates))._build();
+      (GDealerReqBuilder()..update(updates))._build();
 
   _$GDealerReq._(
       {required this.vars,
@@ -4067,20 +3981,13 @@ class _$GDealerReq extends GDealerReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(vars, r'GDealerReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GDealerReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GDealerReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GDealerReq rebuild(void Function(GDealerReqBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GDealerReqBuilder toBuilder() => new GDealerReqBuilder()..replace(this);
+  GDealerReqBuilder toBuilder() => GDealerReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -4137,8 +4044,7 @@ class GDealerReqBuilder implements Builder<GDealerReq, GDealerReqBuilder> {
   _$GDealerReq? _$v;
 
   _i3.GDealerVarsBuilder? _vars;
-  _i3.GDealerVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GDealerVarsBuilder();
+  _i3.GDealerVarsBuilder get vars => _$this._vars ??= _i3.GDealerVarsBuilder();
   set vars(_i3.GDealerVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
@@ -4159,7 +4065,7 @@ class GDealerReqBuilder implements Builder<GDealerReq, GDealerReqBuilder> {
 
   _i2.GDealerDataBuilder? _optimisticResponse;
   _i2.GDealerDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GDealerDataBuilder();
+      _$this._optimisticResponse ??= _i2.GDealerDataBuilder();
   set optimisticResponse(_i2.GDealerDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
@@ -4213,7 +4119,6 @@ class GDealerReqBuilder implements Builder<GDealerReq, GDealerReqBuilder> {
 
   @override
   void replace(GDealerReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GDealerReq;
   }
 
@@ -4229,7 +4134,7 @@ class GDealerReqBuilder implements Builder<GDealerReq, GDealerReqBuilder> {
     _$GDealerReq _$result;
     try {
       _$result = _$v ??
-          new _$GDealerReq._(
+          _$GDealerReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GDealerReq', 'operation'),
@@ -4252,7 +4157,7 @@ class GDealerReqBuilder implements Builder<GDealerReq, GDealerReqBuilder> {
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GDealerReq', _$failedField, e.toString());
       }
       rethrow;
@@ -4287,7 +4192,7 @@ class _$GUpdateDealerReq extends GUpdateDealerReq {
 
   factory _$GUpdateDealerReq(
           [void Function(GUpdateDealerReqBuilder)? updates]) =>
-      (new GUpdateDealerReqBuilder()..update(updates))._build();
+      (GUpdateDealerReqBuilder()..update(updates))._build();
 
   _$GUpdateDealerReq._(
       {required this.vars,
@@ -4300,21 +4205,14 @@ class _$GUpdateDealerReq extends GUpdateDealerReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(vars, r'GUpdateDealerReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GUpdateDealerReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GUpdateDealerReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GUpdateDealerReq rebuild(void Function(GUpdateDealerReqBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   GUpdateDealerReqBuilder toBuilder() =>
-      new GUpdateDealerReqBuilder()..replace(this);
+      GUpdateDealerReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -4373,7 +4271,7 @@ class GUpdateDealerReqBuilder
 
   _i3.GUpdateDealerVarsBuilder? _vars;
   _i3.GUpdateDealerVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GUpdateDealerVarsBuilder();
+      _$this._vars ??= _i3.GUpdateDealerVarsBuilder();
   set vars(_i3.GUpdateDealerVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
@@ -4397,7 +4295,7 @@ class GUpdateDealerReqBuilder
 
   _i2.GUpdateDealerDataBuilder? _optimisticResponse;
   _i2.GUpdateDealerDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GUpdateDealerDataBuilder();
+      _$this._optimisticResponse ??= _i2.GUpdateDealerDataBuilder();
   set optimisticResponse(_i2.GUpdateDealerDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
@@ -4451,7 +4349,6 @@ class GUpdateDealerReqBuilder
 
   @override
   void replace(GUpdateDealerReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUpdateDealerReq;
   }
 
@@ -4467,7 +4364,7 @@ class GUpdateDealerReqBuilder
     _$GUpdateDealerReq _$result;
     try {
       _$result = _$v ??
-          new _$GUpdateDealerReq._(
+          _$GUpdateDealerReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GUpdateDealerReq', 'operation'),
@@ -4490,7 +4387,7 @@ class GUpdateDealerReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUpdateDealerReq', _$failedField, e.toString());
       }
       rethrow;
@@ -4526,7 +4423,7 @@ class _$GSendDealerMOUApprovalOTPReq extends GSendDealerMOUApprovalOTPReq {
 
   factory _$GSendDealerMOUApprovalOTPReq(
           [void Function(GSendDealerMOUApprovalOTPReqBuilder)? updates]) =>
-      (new GSendDealerMOUApprovalOTPReqBuilder()..update(updates))._build();
+      (GSendDealerMOUApprovalOTPReqBuilder()..update(updates))._build();
 
   _$GSendDealerMOUApprovalOTPReq._(
       {required this.vars,
@@ -4539,15 +4436,7 @@ class _$GSendDealerMOUApprovalOTPReq extends GSendDealerMOUApprovalOTPReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        vars, r'GSendDealerMOUApprovalOTPReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GSendDealerMOUApprovalOTPReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GSendDealerMOUApprovalOTPReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GSendDealerMOUApprovalOTPReq rebuild(
           void Function(GSendDealerMOUApprovalOTPReqBuilder) updates) =>
@@ -4555,7 +4444,7 @@ class _$GSendDealerMOUApprovalOTPReq extends GSendDealerMOUApprovalOTPReq {
 
   @override
   GSendDealerMOUApprovalOTPReqBuilder toBuilder() =>
-      new GSendDealerMOUApprovalOTPReqBuilder()..replace(this);
+      GSendDealerMOUApprovalOTPReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -4616,7 +4505,7 @@ class GSendDealerMOUApprovalOTPReqBuilder
 
   _i3.GSendDealerMOUApprovalOTPVarsBuilder? _vars;
   _i3.GSendDealerMOUApprovalOTPVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GSendDealerMOUApprovalOTPVarsBuilder();
+      _$this._vars ??= _i3.GSendDealerMOUApprovalOTPVarsBuilder();
   set vars(_i3.GSendDealerMOUApprovalOTPVarsBuilder? vars) =>
       _$this._vars = vars;
 
@@ -4644,8 +4533,7 @@ class GSendDealerMOUApprovalOTPReqBuilder
 
   _i2.GSendDealerMOUApprovalOTPDataBuilder? _optimisticResponse;
   _i2.GSendDealerMOUApprovalOTPDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??=
-          new _i2.GSendDealerMOUApprovalOTPDataBuilder();
+      _$this._optimisticResponse ??= _i2.GSendDealerMOUApprovalOTPDataBuilder();
   set optimisticResponse(
           _i2.GSendDealerMOUApprovalOTPDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
@@ -4700,7 +4588,6 @@ class GSendDealerMOUApprovalOTPReqBuilder
 
   @override
   void replace(GSendDealerMOUApprovalOTPReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GSendDealerMOUApprovalOTPReq;
   }
 
@@ -4716,7 +4603,7 @@ class GSendDealerMOUApprovalOTPReqBuilder
     _$GSendDealerMOUApprovalOTPReq _$result;
     try {
       _$result = _$v ??
-          new _$GSendDealerMOUApprovalOTPReq._(
+          _$GSendDealerMOUApprovalOTPReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GSendDealerMOUApprovalOTPReq', 'operation'),
@@ -4741,7 +4628,7 @@ class GSendDealerMOUApprovalOTPReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GSendDealerMOUApprovalOTPReq', _$failedField, e.toString());
       }
       rethrow;

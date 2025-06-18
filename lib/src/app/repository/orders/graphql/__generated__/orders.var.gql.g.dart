@@ -7,24 +7,24 @@ part of 'orders.var.gql.dart';
 // **************************************************************************
 
 Serializer<GProductOrdersVars> _$gProductOrdersVarsSerializer =
-    new _$GProductOrdersVarsSerializer();
+    _$GProductOrdersVarsSerializer();
 Serializer<GVehicleOrdersVars> _$gVehicleOrdersVarsSerializer =
-    new _$GVehicleOrdersVarsSerializer();
+    _$GVehicleOrdersVarsSerializer();
 Serializer<GVehicleOrdersCountVars> _$gVehicleOrdersCountVarsSerializer =
-    new _$GVehicleOrdersCountVarsSerializer();
+    _$GVehicleOrdersCountVarsSerializer();
 Serializer<GTestDriveOrdersVars> _$gTestDriveOrdersVarsSerializer =
-    new _$GTestDriveOrdersVarsSerializer();
+    _$GTestDriveOrdersVarsSerializer();
 Serializer<GTestDriveOrdersCountVars> _$gTestDriveOrdersCountVarsSerializer =
-    new _$GTestDriveOrdersCountVarsSerializer();
+    _$GTestDriveOrdersCountVarsSerializer();
 Serializer<GUpdateProductOrderVars> _$gUpdateProductOrderVarsSerializer =
-    new _$GUpdateProductOrderVarsSerializer();
+    _$GUpdateProductOrderVarsSerializer();
 Serializer<GUpdateVehicleOrderVars> _$gUpdateVehicleOrderVarsSerializer =
-    new _$GUpdateVehicleOrderVarsSerializer();
+    _$GUpdateVehicleOrderVarsSerializer();
 Serializer<GUpdateTestDriveOrderVars> _$gUpdateTestDriveOrderVarsSerializer =
-    new _$GUpdateTestDriveOrderVarsSerializer();
+    _$GUpdateTestDriveOrderVarsSerializer();
 Serializer<GCreateOrderRejectionByDealerVars>
     _$gCreateOrderRejectionByDealerVarsSerializer =
-    new _$GCreateOrderRejectionByDealerVarsSerializer();
+    _$GCreateOrderRejectionByDealerVarsSerializer();
 
 class _$GProductOrdersVarsSerializer
     implements StructuredSerializer<GProductOrdersVars> {
@@ -58,7 +58,7 @@ class _$GProductOrdersVarsSerializer
   GProductOrdersVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GProductOrdersVarsBuilder();
+    final result = GProductOrdersVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -124,7 +124,7 @@ class _$GVehicleOrdersVarsSerializer
   GVehicleOrdersVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehicleOrdersVarsBuilder();
+    final result = GVehicleOrdersVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -185,7 +185,7 @@ class _$GVehicleOrdersCountVarsSerializer
   GVehicleOrdersCountVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehicleOrdersCountVarsBuilder();
+    final result = GVehicleOrdersCountVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -240,7 +240,7 @@ class _$GTestDriveOrdersVarsSerializer
   GTestDriveOrdersVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GTestDriveOrdersVarsBuilder();
+    final result = GTestDriveOrdersVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -301,7 +301,7 @@ class _$GTestDriveOrdersCountVarsSerializer
   GTestDriveOrdersCountVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GTestDriveOrdersCountVarsBuilder();
+    final result = GTestDriveOrdersCountVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -351,7 +351,7 @@ class _$GUpdateProductOrderVarsSerializer
   GUpdateProductOrderVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUpdateProductOrderVarsBuilder();
+    final result = GUpdateProductOrderVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -407,7 +407,7 @@ class _$GUpdateVehicleOrderVarsSerializer
   GUpdateVehicleOrderVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUpdateVehicleOrderVarsBuilder();
+    final result = GUpdateVehicleOrderVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -463,7 +463,7 @@ class _$GUpdateTestDriveOrderVarsSerializer
   GUpdateTestDriveOrderVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUpdateTestDriveOrderVarsBuilder();
+    final result = GUpdateTestDriveOrderVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -518,7 +518,7 @@ class _$GCreateOrderRejectionByDealerVarsSerializer
   GCreateOrderRejectionByDealerVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateOrderRejectionByDealerVarsBuilder();
+    final result = GCreateOrderRejectionByDealerVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -551,22 +551,14 @@ class _$GProductOrdersVars extends GProductOrdersVars {
 
   factory _$GProductOrdersVars(
           [void Function(GProductOrdersVarsBuilder)? updates]) =>
-      (new GProductOrdersVarsBuilder()..update(updates))._build();
+      (GProductOrdersVarsBuilder()..update(updates))._build();
 
   _$GProductOrdersVars._(
       {required this.where,
       required this.orderBy,
       required this.skip,
       required this.take})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        where, r'GProductOrdersVars', 'where');
-    BuiltValueNullFieldError.checkNotNull(
-        orderBy, r'GProductOrdersVars', 'orderBy');
-    BuiltValueNullFieldError.checkNotNull(skip, r'GProductOrdersVars', 'skip');
-    BuiltValueNullFieldError.checkNotNull(take, r'GProductOrdersVars', 'take');
-  }
-
+      : super._();
   @override
   GProductOrdersVars rebuild(
           void Function(GProductOrdersVarsBuilder) updates) =>
@@ -574,7 +566,7 @@ class _$GProductOrdersVars extends GProductOrdersVars {
 
   @override
   GProductOrdersVarsBuilder toBuilder() =>
-      new GProductOrdersVarsBuilder()..replace(this);
+      GProductOrdersVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -614,12 +606,12 @@ class GProductOrdersVarsBuilder
 
   _i1.GProductOrderWhereInputBuilder? _where;
   _i1.GProductOrderWhereInputBuilder get where =>
-      _$this._where ??= new _i1.GProductOrderWhereInputBuilder();
+      _$this._where ??= _i1.GProductOrderWhereInputBuilder();
   set where(_i1.GProductOrderWhereInputBuilder? where) => _$this._where = where;
 
   ListBuilder<_i1.GProductOrderOrderByInput>? _orderBy;
   ListBuilder<_i1.GProductOrderOrderByInput> get orderBy =>
-      _$this._orderBy ??= new ListBuilder<_i1.GProductOrderOrderByInput>();
+      _$this._orderBy ??= ListBuilder<_i1.GProductOrderOrderByInput>();
   set orderBy(ListBuilder<_i1.GProductOrderOrderByInput>? orderBy) =>
       _$this._orderBy = orderBy;
 
@@ -647,7 +639,6 @@ class GProductOrdersVarsBuilder
 
   @override
   void replace(GProductOrdersVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GProductOrdersVars;
   }
 
@@ -663,7 +654,7 @@ class GProductOrdersVarsBuilder
     _$GProductOrdersVars _$result;
     try {
       _$result = _$v ??
-          new _$GProductOrdersVars._(
+          _$GProductOrdersVars._(
             where: where.build(),
             orderBy: orderBy.build(),
             skip: BuiltValueNullFieldError.checkNotNull(
@@ -679,7 +670,7 @@ class GProductOrdersVarsBuilder
         _$failedField = 'orderBy';
         orderBy.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GProductOrdersVars', _$failedField, e.toString());
       }
       rethrow;
@@ -701,22 +692,14 @@ class _$GVehicleOrdersVars extends GVehicleOrdersVars {
 
   factory _$GVehicleOrdersVars(
           [void Function(GVehicleOrdersVarsBuilder)? updates]) =>
-      (new GVehicleOrdersVarsBuilder()..update(updates))._build();
+      (GVehicleOrdersVarsBuilder()..update(updates))._build();
 
   _$GVehicleOrdersVars._(
       {required this.orderBy,
       required this.where,
       required this.skip,
       required this.take})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        orderBy, r'GVehicleOrdersVars', 'orderBy');
-    BuiltValueNullFieldError.checkNotNull(
-        where, r'GVehicleOrdersVars', 'where');
-    BuiltValueNullFieldError.checkNotNull(skip, r'GVehicleOrdersVars', 'skip');
-    BuiltValueNullFieldError.checkNotNull(take, r'GVehicleOrdersVars', 'take');
-  }
-
+      : super._();
   @override
   GVehicleOrdersVars rebuild(
           void Function(GVehicleOrdersVarsBuilder) updates) =>
@@ -724,7 +707,7 @@ class _$GVehicleOrdersVars extends GVehicleOrdersVars {
 
   @override
   GVehicleOrdersVarsBuilder toBuilder() =>
-      new GVehicleOrdersVarsBuilder()..replace(this);
+      GVehicleOrdersVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -764,13 +747,13 @@ class GVehicleOrdersVarsBuilder
 
   ListBuilder<_i1.GVehicleOrderOrderByInput>? _orderBy;
   ListBuilder<_i1.GVehicleOrderOrderByInput> get orderBy =>
-      _$this._orderBy ??= new ListBuilder<_i1.GVehicleOrderOrderByInput>();
+      _$this._orderBy ??= ListBuilder<_i1.GVehicleOrderOrderByInput>();
   set orderBy(ListBuilder<_i1.GVehicleOrderOrderByInput>? orderBy) =>
       _$this._orderBy = orderBy;
 
   _i1.GVehicleOrderWhereInputBuilder? _where;
   _i1.GVehicleOrderWhereInputBuilder get where =>
-      _$this._where ??= new _i1.GVehicleOrderWhereInputBuilder();
+      _$this._where ??= _i1.GVehicleOrderWhereInputBuilder();
   set where(_i1.GVehicleOrderWhereInputBuilder? where) => _$this._where = where;
 
   int? _skip;
@@ -797,7 +780,6 @@ class GVehicleOrdersVarsBuilder
 
   @override
   void replace(GVehicleOrdersVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GVehicleOrdersVars;
   }
 
@@ -813,7 +795,7 @@ class GVehicleOrdersVarsBuilder
     _$GVehicleOrdersVars _$result;
     try {
       _$result = _$v ??
-          new _$GVehicleOrdersVars._(
+          _$GVehicleOrdersVars._(
             orderBy: orderBy.build(),
             where: where.build(),
             skip: BuiltValueNullFieldError.checkNotNull(
@@ -829,7 +811,7 @@ class GVehicleOrdersVarsBuilder
         _$failedField = 'where';
         where.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GVehicleOrdersVars', _$failedField, e.toString());
       }
       rethrow;
@@ -845,13 +827,9 @@ class _$GVehicleOrdersCountVars extends GVehicleOrdersCountVars {
 
   factory _$GVehicleOrdersCountVars(
           [void Function(GVehicleOrdersCountVarsBuilder)? updates]) =>
-      (new GVehicleOrdersCountVarsBuilder()..update(updates))._build();
+      (GVehicleOrdersCountVarsBuilder()..update(updates))._build();
 
-  _$GVehicleOrdersCountVars._({required this.where}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        where, r'GVehicleOrdersCountVars', 'where');
-  }
-
+  _$GVehicleOrdersCountVars._({required this.where}) : super._();
   @override
   GVehicleOrdersCountVars rebuild(
           void Function(GVehicleOrdersCountVarsBuilder) updates) =>
@@ -859,7 +837,7 @@ class _$GVehicleOrdersCountVars extends GVehicleOrdersCountVars {
 
   @override
   GVehicleOrdersCountVarsBuilder toBuilder() =>
-      new GVehicleOrdersCountVarsBuilder()..replace(this);
+      GVehicleOrdersCountVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -890,7 +868,7 @@ class GVehicleOrdersCountVarsBuilder
 
   _i1.GVehicleOrderWhereInputBuilder? _where;
   _i1.GVehicleOrderWhereInputBuilder get where =>
-      _$this._where ??= new _i1.GVehicleOrderWhereInputBuilder();
+      _$this._where ??= _i1.GVehicleOrderWhereInputBuilder();
   set where(_i1.GVehicleOrderWhereInputBuilder? where) => _$this._where = where;
 
   GVehicleOrdersCountVarsBuilder();
@@ -906,7 +884,6 @@ class GVehicleOrdersCountVarsBuilder
 
   @override
   void replace(GVehicleOrdersCountVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GVehicleOrdersCountVars;
   }
 
@@ -922,7 +899,7 @@ class GVehicleOrdersCountVarsBuilder
     _$GVehicleOrdersCountVars _$result;
     try {
       _$result = _$v ??
-          new _$GVehicleOrdersCountVars._(
+          _$GVehicleOrdersCountVars._(
             where: where.build(),
           );
     } catch (_) {
@@ -931,7 +908,7 @@ class GVehicleOrdersCountVarsBuilder
         _$failedField = 'where';
         where.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GVehicleOrdersCountVars', _$failedField, e.toString());
       }
       rethrow;
@@ -953,24 +930,14 @@ class _$GTestDriveOrdersVars extends GTestDriveOrdersVars {
 
   factory _$GTestDriveOrdersVars(
           [void Function(GTestDriveOrdersVarsBuilder)? updates]) =>
-      (new GTestDriveOrdersVarsBuilder()..update(updates))._build();
+      (GTestDriveOrdersVarsBuilder()..update(updates))._build();
 
   _$GTestDriveOrdersVars._(
       {required this.where,
       required this.orderBy,
       required this.skip,
       required this.take})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        where, r'GTestDriveOrdersVars', 'where');
-    BuiltValueNullFieldError.checkNotNull(
-        orderBy, r'GTestDriveOrdersVars', 'orderBy');
-    BuiltValueNullFieldError.checkNotNull(
-        skip, r'GTestDriveOrdersVars', 'skip');
-    BuiltValueNullFieldError.checkNotNull(
-        take, r'GTestDriveOrdersVars', 'take');
-  }
-
+      : super._();
   @override
   GTestDriveOrdersVars rebuild(
           void Function(GTestDriveOrdersVarsBuilder) updates) =>
@@ -978,7 +945,7 @@ class _$GTestDriveOrdersVars extends GTestDriveOrdersVars {
 
   @override
   GTestDriveOrdersVarsBuilder toBuilder() =>
-      new GTestDriveOrdersVarsBuilder()..replace(this);
+      GTestDriveOrdersVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1018,13 +985,13 @@ class GTestDriveOrdersVarsBuilder
 
   _i1.GTestDriveOrderWhereInputBuilder? _where;
   _i1.GTestDriveOrderWhereInputBuilder get where =>
-      _$this._where ??= new _i1.GTestDriveOrderWhereInputBuilder();
+      _$this._where ??= _i1.GTestDriveOrderWhereInputBuilder();
   set where(_i1.GTestDriveOrderWhereInputBuilder? where) =>
       _$this._where = where;
 
   ListBuilder<_i1.GTestDriveOrderOrderByInput>? _orderBy;
   ListBuilder<_i1.GTestDriveOrderOrderByInput> get orderBy =>
-      _$this._orderBy ??= new ListBuilder<_i1.GTestDriveOrderOrderByInput>();
+      _$this._orderBy ??= ListBuilder<_i1.GTestDriveOrderOrderByInput>();
   set orderBy(ListBuilder<_i1.GTestDriveOrderOrderByInput>? orderBy) =>
       _$this._orderBy = orderBy;
 
@@ -1052,7 +1019,6 @@ class GTestDriveOrdersVarsBuilder
 
   @override
   void replace(GTestDriveOrdersVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GTestDriveOrdersVars;
   }
 
@@ -1068,7 +1034,7 @@ class GTestDriveOrdersVarsBuilder
     _$GTestDriveOrdersVars _$result;
     try {
       _$result = _$v ??
-          new _$GTestDriveOrdersVars._(
+          _$GTestDriveOrdersVars._(
             where: where.build(),
             orderBy: orderBy.build(),
             skip: BuiltValueNullFieldError.checkNotNull(
@@ -1084,7 +1050,7 @@ class GTestDriveOrdersVarsBuilder
         _$failedField = 'orderBy';
         orderBy.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GTestDriveOrdersVars', _$failedField, e.toString());
       }
       rethrow;
@@ -1100,13 +1066,9 @@ class _$GTestDriveOrdersCountVars extends GTestDriveOrdersCountVars {
 
   factory _$GTestDriveOrdersCountVars(
           [void Function(GTestDriveOrdersCountVarsBuilder)? updates]) =>
-      (new GTestDriveOrdersCountVarsBuilder()..update(updates))._build();
+      (GTestDriveOrdersCountVarsBuilder()..update(updates))._build();
 
-  _$GTestDriveOrdersCountVars._({required this.where}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        where, r'GTestDriveOrdersCountVars', 'where');
-  }
-
+  _$GTestDriveOrdersCountVars._({required this.where}) : super._();
   @override
   GTestDriveOrdersCountVars rebuild(
           void Function(GTestDriveOrdersCountVarsBuilder) updates) =>
@@ -1114,7 +1076,7 @@ class _$GTestDriveOrdersCountVars extends GTestDriveOrdersCountVars {
 
   @override
   GTestDriveOrdersCountVarsBuilder toBuilder() =>
-      new GTestDriveOrdersCountVarsBuilder()..replace(this);
+      GTestDriveOrdersCountVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1145,7 +1107,7 @@ class GTestDriveOrdersCountVarsBuilder
 
   _i1.GTestDriveOrderWhereInputBuilder? _where;
   _i1.GTestDriveOrderWhereInputBuilder get where =>
-      _$this._where ??= new _i1.GTestDriveOrderWhereInputBuilder();
+      _$this._where ??= _i1.GTestDriveOrderWhereInputBuilder();
   set where(_i1.GTestDriveOrderWhereInputBuilder? where) =>
       _$this._where = where;
 
@@ -1162,7 +1124,6 @@ class GTestDriveOrdersCountVarsBuilder
 
   @override
   void replace(GTestDriveOrdersCountVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GTestDriveOrdersCountVars;
   }
 
@@ -1178,7 +1139,7 @@ class GTestDriveOrdersCountVarsBuilder
     _$GTestDriveOrdersCountVars _$result;
     try {
       _$result = _$v ??
-          new _$GTestDriveOrdersCountVars._(
+          _$GTestDriveOrdersCountVars._(
             where: where.build(),
           );
     } catch (_) {
@@ -1187,7 +1148,7 @@ class GTestDriveOrdersCountVarsBuilder
         _$failedField = 'where';
         where.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GTestDriveOrdersCountVars', _$failedField, e.toString());
       }
       rethrow;
@@ -1205,16 +1166,10 @@ class _$GUpdateProductOrderVars extends GUpdateProductOrderVars {
 
   factory _$GUpdateProductOrderVars(
           [void Function(GUpdateProductOrderVarsBuilder)? updates]) =>
-      (new GUpdateProductOrderVarsBuilder()..update(updates))._build();
+      (GUpdateProductOrderVarsBuilder()..update(updates))._build();
 
   _$GUpdateProductOrderVars._({required this.where, required this.data})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        where, r'GUpdateProductOrderVars', 'where');
-    BuiltValueNullFieldError.checkNotNull(
-        data, r'GUpdateProductOrderVars', 'data');
-  }
-
+      : super._();
   @override
   GUpdateProductOrderVars rebuild(
           void Function(GUpdateProductOrderVarsBuilder) updates) =>
@@ -1222,7 +1177,7 @@ class _$GUpdateProductOrderVars extends GUpdateProductOrderVars {
 
   @override
   GUpdateProductOrderVarsBuilder toBuilder() =>
-      new GUpdateProductOrderVarsBuilder()..replace(this);
+      GUpdateProductOrderVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1257,13 +1212,13 @@ class GUpdateProductOrderVarsBuilder
 
   _i1.GProductOrderWhereUniqueInputBuilder? _where;
   _i1.GProductOrderWhereUniqueInputBuilder get where =>
-      _$this._where ??= new _i1.GProductOrderWhereUniqueInputBuilder();
+      _$this._where ??= _i1.GProductOrderWhereUniqueInputBuilder();
   set where(_i1.GProductOrderWhereUniqueInputBuilder? where) =>
       _$this._where = where;
 
   _i1.GProductOrderUpdateInputBuilder? _data;
   _i1.GProductOrderUpdateInputBuilder get data =>
-      _$this._data ??= new _i1.GProductOrderUpdateInputBuilder();
+      _$this._data ??= _i1.GProductOrderUpdateInputBuilder();
   set data(_i1.GProductOrderUpdateInputBuilder? data) => _$this._data = data;
 
   GUpdateProductOrderVarsBuilder();
@@ -1280,7 +1235,6 @@ class GUpdateProductOrderVarsBuilder
 
   @override
   void replace(GUpdateProductOrderVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUpdateProductOrderVars;
   }
 
@@ -1296,7 +1250,7 @@ class GUpdateProductOrderVarsBuilder
     _$GUpdateProductOrderVars _$result;
     try {
       _$result = _$v ??
-          new _$GUpdateProductOrderVars._(
+          _$GUpdateProductOrderVars._(
             where: where.build(),
             data: data.build(),
           );
@@ -1308,7 +1262,7 @@ class GUpdateProductOrderVarsBuilder
         _$failedField = 'data';
         data.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUpdateProductOrderVars', _$failedField, e.toString());
       }
       rethrow;
@@ -1326,16 +1280,10 @@ class _$GUpdateVehicleOrderVars extends GUpdateVehicleOrderVars {
 
   factory _$GUpdateVehicleOrderVars(
           [void Function(GUpdateVehicleOrderVarsBuilder)? updates]) =>
-      (new GUpdateVehicleOrderVarsBuilder()..update(updates))._build();
+      (GUpdateVehicleOrderVarsBuilder()..update(updates))._build();
 
   _$GUpdateVehicleOrderVars._({required this.where, required this.data})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        where, r'GUpdateVehicleOrderVars', 'where');
-    BuiltValueNullFieldError.checkNotNull(
-        data, r'GUpdateVehicleOrderVars', 'data');
-  }
-
+      : super._();
   @override
   GUpdateVehicleOrderVars rebuild(
           void Function(GUpdateVehicleOrderVarsBuilder) updates) =>
@@ -1343,7 +1291,7 @@ class _$GUpdateVehicleOrderVars extends GUpdateVehicleOrderVars {
 
   @override
   GUpdateVehicleOrderVarsBuilder toBuilder() =>
-      new GUpdateVehicleOrderVarsBuilder()..replace(this);
+      GUpdateVehicleOrderVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1378,13 +1326,13 @@ class GUpdateVehicleOrderVarsBuilder
 
   _i1.GVehicleOrderWhereUniqueInputBuilder? _where;
   _i1.GVehicleOrderWhereUniqueInputBuilder get where =>
-      _$this._where ??= new _i1.GVehicleOrderWhereUniqueInputBuilder();
+      _$this._where ??= _i1.GVehicleOrderWhereUniqueInputBuilder();
   set where(_i1.GVehicleOrderWhereUniqueInputBuilder? where) =>
       _$this._where = where;
 
   _i1.GVehicleOrderUpdateInputBuilder? _data;
   _i1.GVehicleOrderUpdateInputBuilder get data =>
-      _$this._data ??= new _i1.GVehicleOrderUpdateInputBuilder();
+      _$this._data ??= _i1.GVehicleOrderUpdateInputBuilder();
   set data(_i1.GVehicleOrderUpdateInputBuilder? data) => _$this._data = data;
 
   GUpdateVehicleOrderVarsBuilder();
@@ -1401,7 +1349,6 @@ class GUpdateVehicleOrderVarsBuilder
 
   @override
   void replace(GUpdateVehicleOrderVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUpdateVehicleOrderVars;
   }
 
@@ -1417,7 +1364,7 @@ class GUpdateVehicleOrderVarsBuilder
     _$GUpdateVehicleOrderVars _$result;
     try {
       _$result = _$v ??
-          new _$GUpdateVehicleOrderVars._(
+          _$GUpdateVehicleOrderVars._(
             where: where.build(),
             data: data.build(),
           );
@@ -1429,7 +1376,7 @@ class GUpdateVehicleOrderVarsBuilder
         _$failedField = 'data';
         data.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUpdateVehicleOrderVars', _$failedField, e.toString());
       }
       rethrow;
@@ -1447,16 +1394,10 @@ class _$GUpdateTestDriveOrderVars extends GUpdateTestDriveOrderVars {
 
   factory _$GUpdateTestDriveOrderVars(
           [void Function(GUpdateTestDriveOrderVarsBuilder)? updates]) =>
-      (new GUpdateTestDriveOrderVarsBuilder()..update(updates))._build();
+      (GUpdateTestDriveOrderVarsBuilder()..update(updates))._build();
 
   _$GUpdateTestDriveOrderVars._({required this.where, required this.data})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        where, r'GUpdateTestDriveOrderVars', 'where');
-    BuiltValueNullFieldError.checkNotNull(
-        data, r'GUpdateTestDriveOrderVars', 'data');
-  }
-
+      : super._();
   @override
   GUpdateTestDriveOrderVars rebuild(
           void Function(GUpdateTestDriveOrderVarsBuilder) updates) =>
@@ -1464,7 +1405,7 @@ class _$GUpdateTestDriveOrderVars extends GUpdateTestDriveOrderVars {
 
   @override
   GUpdateTestDriveOrderVarsBuilder toBuilder() =>
-      new GUpdateTestDriveOrderVarsBuilder()..replace(this);
+      GUpdateTestDriveOrderVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1499,13 +1440,13 @@ class GUpdateTestDriveOrderVarsBuilder
 
   _i1.GTestDriveOrderWhereUniqueInputBuilder? _where;
   _i1.GTestDriveOrderWhereUniqueInputBuilder get where =>
-      _$this._where ??= new _i1.GTestDriveOrderWhereUniqueInputBuilder();
+      _$this._where ??= _i1.GTestDriveOrderWhereUniqueInputBuilder();
   set where(_i1.GTestDriveOrderWhereUniqueInputBuilder? where) =>
       _$this._where = where;
 
   _i1.GTestDriveOrderUpdateInputBuilder? _data;
   _i1.GTestDriveOrderUpdateInputBuilder get data =>
-      _$this._data ??= new _i1.GTestDriveOrderUpdateInputBuilder();
+      _$this._data ??= _i1.GTestDriveOrderUpdateInputBuilder();
   set data(_i1.GTestDriveOrderUpdateInputBuilder? data) => _$this._data = data;
 
   GUpdateTestDriveOrderVarsBuilder();
@@ -1522,7 +1463,6 @@ class GUpdateTestDriveOrderVarsBuilder
 
   @override
   void replace(GUpdateTestDriveOrderVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUpdateTestDriveOrderVars;
   }
 
@@ -1538,7 +1478,7 @@ class GUpdateTestDriveOrderVarsBuilder
     _$GUpdateTestDriveOrderVars _$result;
     try {
       _$result = _$v ??
-          new _$GUpdateTestDriveOrderVars._(
+          _$GUpdateTestDriveOrderVars._(
             where: where.build(),
             data: data.build(),
           );
@@ -1550,7 +1490,7 @@ class GUpdateTestDriveOrderVarsBuilder
         _$failedField = 'data';
         data.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUpdateTestDriveOrderVars', _$failedField, e.toString());
       }
       rethrow;
@@ -1567,14 +1507,9 @@ class _$GCreateOrderRejectionByDealerVars
 
   factory _$GCreateOrderRejectionByDealerVars(
           [void Function(GCreateOrderRejectionByDealerVarsBuilder)? updates]) =>
-      (new GCreateOrderRejectionByDealerVarsBuilder()..update(updates))
-          ._build();
+      (GCreateOrderRejectionByDealerVarsBuilder()..update(updates))._build();
 
-  _$GCreateOrderRejectionByDealerVars._({required this.data}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        data, r'GCreateOrderRejectionByDealerVars', 'data');
-  }
-
+  _$GCreateOrderRejectionByDealerVars._({required this.data}) : super._();
   @override
   GCreateOrderRejectionByDealerVars rebuild(
           void Function(GCreateOrderRejectionByDealerVarsBuilder) updates) =>
@@ -1582,7 +1517,7 @@ class _$GCreateOrderRejectionByDealerVars
 
   @override
   GCreateOrderRejectionByDealerVarsBuilder toBuilder() =>
-      new GCreateOrderRejectionByDealerVarsBuilder()..replace(this);
+      GCreateOrderRejectionByDealerVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1614,7 +1549,7 @@ class GCreateOrderRejectionByDealerVarsBuilder
 
   _i1.GOrderRejectionByDealerCreateInputBuilder? _data;
   _i1.GOrderRejectionByDealerCreateInputBuilder get data =>
-      _$this._data ??= new _i1.GOrderRejectionByDealerCreateInputBuilder();
+      _$this._data ??= _i1.GOrderRejectionByDealerCreateInputBuilder();
   set data(_i1.GOrderRejectionByDealerCreateInputBuilder? data) =>
       _$this._data = data;
 
@@ -1631,7 +1566,6 @@ class GCreateOrderRejectionByDealerVarsBuilder
 
   @override
   void replace(GCreateOrderRejectionByDealerVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateOrderRejectionByDealerVars;
   }
 
@@ -1648,7 +1582,7 @@ class GCreateOrderRejectionByDealerVarsBuilder
     _$GCreateOrderRejectionByDealerVars _$result;
     try {
       _$result = _$v ??
-          new _$GCreateOrderRejectionByDealerVars._(
+          _$GCreateOrderRejectionByDealerVars._(
             data: data.build(),
           );
     } catch (_) {
@@ -1657,7 +1591,7 @@ class GCreateOrderRejectionByDealerVarsBuilder
         _$failedField = 'data';
         data.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCreateOrderRejectionByDealerVars', _$failedField, e.toString());
       }
       rethrow;

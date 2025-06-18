@@ -8,10 +8,10 @@ part of 'stock.req.gql.dart';
 
 Serializer<GProductDealerStockRequestsReq>
     _$gProductDealerStockRequestsReqSerializer =
-    new _$GProductDealerStockRequestsReqSerializer();
+    _$GProductDealerStockRequestsReqSerializer();
 Serializer<GVehicleDealerStockRequestsReq>
     _$gVehicleDealerStockRequestsReqSerializer =
-    new _$GVehicleDealerStockRequestsReqSerializer();
+    _$GVehicleDealerStockRequestsReqSerializer();
 
 class _$GProductDealerStockRequestsReqSerializer
     implements StructuredSerializer<GProductDealerStockRequestsReq> {
@@ -83,7 +83,7 @@ class _$GProductDealerStockRequestsReqSerializer
   GProductDealerStockRequestsReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GProductDealerStockRequestsReqBuilder();
+    final result = GProductDealerStockRequestsReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -208,7 +208,7 @@ class _$GVehicleDealerStockRequestsReqSerializer
   GVehicleDealerStockRequestsReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehicleDealerStockRequestsReqBuilder();
+    final result = GVehicleDealerStockRequestsReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -289,7 +289,7 @@ class _$GProductDealerStockRequestsReq extends GProductDealerStockRequestsReq {
 
   factory _$GProductDealerStockRequestsReq(
           [void Function(GProductDealerStockRequestsReqBuilder)? updates]) =>
-      (new GProductDealerStockRequestsReqBuilder()..update(updates))._build();
+      (GProductDealerStockRequestsReqBuilder()..update(updates))._build();
 
   _$GProductDealerStockRequestsReq._(
       {required this.vars,
@@ -302,15 +302,7 @@ class _$GProductDealerStockRequestsReq extends GProductDealerStockRequestsReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        vars, r'GProductDealerStockRequestsReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GProductDealerStockRequestsReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GProductDealerStockRequestsReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GProductDealerStockRequestsReq rebuild(
           void Function(GProductDealerStockRequestsReqBuilder) updates) =>
@@ -318,7 +310,7 @@ class _$GProductDealerStockRequestsReq extends GProductDealerStockRequestsReq {
 
   @override
   GProductDealerStockRequestsReqBuilder toBuilder() =>
-      new GProductDealerStockRequestsReqBuilder()..replace(this);
+      GProductDealerStockRequestsReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -379,7 +371,7 @@ class GProductDealerStockRequestsReqBuilder
 
   _i3.GProductDealerStockRequestsVarsBuilder? _vars;
   _i3.GProductDealerStockRequestsVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GProductDealerStockRequestsVarsBuilder();
+      _$this._vars ??= _i3.GProductDealerStockRequestsVarsBuilder();
   set vars(_i3.GProductDealerStockRequestsVarsBuilder? vars) =>
       _$this._vars = vars;
 
@@ -408,7 +400,7 @@ class GProductDealerStockRequestsReqBuilder
   _i2.GProductDealerStockRequestsDataBuilder? _optimisticResponse;
   _i2.GProductDealerStockRequestsDataBuilder get optimisticResponse =>
       _$this._optimisticResponse ??=
-          new _i2.GProductDealerStockRequestsDataBuilder();
+          _i2.GProductDealerStockRequestsDataBuilder();
   set optimisticResponse(
           _i2.GProductDealerStockRequestsDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
@@ -463,7 +455,6 @@ class GProductDealerStockRequestsReqBuilder
 
   @override
   void replace(GProductDealerStockRequestsReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GProductDealerStockRequestsReq;
   }
 
@@ -479,7 +470,7 @@ class GProductDealerStockRequestsReqBuilder
     _$GProductDealerStockRequestsReq _$result;
     try {
       _$result = _$v ??
-          new _$GProductDealerStockRequestsReq._(
+          _$GProductDealerStockRequestsReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GProductDealerStockRequestsReq', 'operation'),
@@ -504,7 +495,7 @@ class GProductDealerStockRequestsReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GProductDealerStockRequestsReq', _$failedField, e.toString());
       }
       rethrow;
@@ -540,7 +531,7 @@ class _$GVehicleDealerStockRequestsReq extends GVehicleDealerStockRequestsReq {
 
   factory _$GVehicleDealerStockRequestsReq(
           [void Function(GVehicleDealerStockRequestsReqBuilder)? updates]) =>
-      (new GVehicleDealerStockRequestsReqBuilder()..update(updates))._build();
+      (GVehicleDealerStockRequestsReqBuilder()..update(updates))._build();
 
   _$GVehicleDealerStockRequestsReq._(
       {required this.vars,
@@ -553,15 +544,7 @@ class _$GVehicleDealerStockRequestsReq extends GVehicleDealerStockRequestsReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        vars, r'GVehicleDealerStockRequestsReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GVehicleDealerStockRequestsReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GVehicleDealerStockRequestsReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GVehicleDealerStockRequestsReq rebuild(
           void Function(GVehicleDealerStockRequestsReqBuilder) updates) =>
@@ -569,7 +552,7 @@ class _$GVehicleDealerStockRequestsReq extends GVehicleDealerStockRequestsReq {
 
   @override
   GVehicleDealerStockRequestsReqBuilder toBuilder() =>
-      new GVehicleDealerStockRequestsReqBuilder()..replace(this);
+      GVehicleDealerStockRequestsReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -630,7 +613,7 @@ class GVehicleDealerStockRequestsReqBuilder
 
   _i3.GVehicleDealerStockRequestsVarsBuilder? _vars;
   _i3.GVehicleDealerStockRequestsVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GVehicleDealerStockRequestsVarsBuilder();
+      _$this._vars ??= _i3.GVehicleDealerStockRequestsVarsBuilder();
   set vars(_i3.GVehicleDealerStockRequestsVarsBuilder? vars) =>
       _$this._vars = vars;
 
@@ -659,7 +642,7 @@ class GVehicleDealerStockRequestsReqBuilder
   _i2.GVehicleDealerStockRequestsDataBuilder? _optimisticResponse;
   _i2.GVehicleDealerStockRequestsDataBuilder get optimisticResponse =>
       _$this._optimisticResponse ??=
-          new _i2.GVehicleDealerStockRequestsDataBuilder();
+          _i2.GVehicleDealerStockRequestsDataBuilder();
   set optimisticResponse(
           _i2.GVehicleDealerStockRequestsDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
@@ -714,7 +697,6 @@ class GVehicleDealerStockRequestsReqBuilder
 
   @override
   void replace(GVehicleDealerStockRequestsReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GVehicleDealerStockRequestsReq;
   }
 
@@ -730,7 +712,7 @@ class GVehicleDealerStockRequestsReqBuilder
     _$GVehicleDealerStockRequestsReq _$result;
     try {
       _$result = _$v ??
-          new _$GVehicleDealerStockRequestsReq._(
+          _$GVehicleDealerStockRequestsReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GVehicleDealerStockRequestsReq', 'operation'),
@@ -755,7 +737,7 @@ class GVehicleDealerStockRequestsReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GVehicleDealerStockRequestsReq', _$failedField, e.toString());
       }
       rethrow;

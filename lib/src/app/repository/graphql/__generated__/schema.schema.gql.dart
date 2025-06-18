@@ -8,7 +8,7 @@ import 'package:built_value/json_object.dart' as _i4;
 import 'package:built_value/serializer.dart';
 import 'package:dealerapp/src/app/repository/graphql/__generated__/serializers.gql.dart'
     as _i2;
-import 'package:gql_code_builder/src/serializers/default_scalar_serializer.dart'
+import 'package:gql_code_builder_serializers/gql_code_builder_serializers.dart'
     as _i1;
 import 'package:http/http.dart' as _i3;
 
@@ -3633,6 +3633,7 @@ abstract class GVehicleWhereInput
   GStringFilter? get name;
   GStringFilter? get description;
   GStringFilter? get longDescription;
+  GStringFilter? get shortDescription;
   GVehicleTypeWhereInput? get type;
   GVehicleSubTypeManyRelationFilter? get subType;
   GBrandWhereInput? get brand;
@@ -3784,6 +3785,7 @@ abstract class GVehicleOrderByInput
   GOrderDirection? get name;
   GOrderDirection? get description;
   GOrderDirection? get longDescription;
+  GOrderDirection? get shortDescription;
   GOrderDirection? get informative;
   static Serializer<GVehicleOrderByInput> get serializer =>
       _$gVehicleOrderByInputSerializer;
@@ -3813,6 +3815,7 @@ abstract class GVehicleUpdateInput
   String? get name;
   String? get description;
   String? get longDescription;
+  String? get shortDescription;
   GVehicleTypeRelateToOneForUpdateInput? get type;
   GVehicleSubTypeRelateToManyForUpdateInput? get subType;
   GBrandRelateToOneForUpdateInput? get brand;
@@ -4023,6 +4026,7 @@ abstract class GVehicleCreateInput
   String? get name;
   String? get description;
   String? get longDescription;
+  String? get shortDescription;
   GVehicleTypeRelateToOneForCreateInput? get type;
   GVehicleSubTypeRelateToManyForCreateInput? get subType;
   GBrandRelateToOneForCreateInput? get brand;
@@ -6506,6 +6510,7 @@ abstract class GVehicleVariantWhereInput
   GDateTimeNullableFilter? get createdAt;
   GDateTimeNullableFilter? get modifiedAt;
   GStringFilter? get name;
+  GBooleanFilter? get registrationRequired;
   GStringFilter? get key;
   GIntNullableFilter? get index;
   GVehicleWhereInput? get vehicle;
@@ -6572,6 +6577,7 @@ abstract class GVehicleVariantOrderByInput
   GOrderDirection? get createdAt;
   GOrderDirection? get modifiedAt;
   GOrderDirection? get name;
+  GOrderDirection? get registrationRequired;
   GOrderDirection? get key;
   GOrderDirection? get index;
   @BuiltValueField(wireName: 'default')
@@ -6606,6 +6612,7 @@ abstract class GVehicleVariantUpdateInput
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
   String? get name;
+  bool? get registrationRequired;
   String? get key;
   int? get index;
   GVehicleRelateToOneForUpdateInput? get vehicle;
@@ -6700,6 +6707,7 @@ abstract class GVehicleVariantCreateInput
   GDateTime? get createdAt;
   GDateTime? get modifiedAt;
   String? get name;
+  bool? get registrationRequired;
   String? get key;
   int? get index;
   GVehicleRelateToOneForCreateInput? get vehicle;
@@ -15774,6 +15782,7 @@ abstract class GProductWhereInput
   GStringFilter? get name;
   GStringFilter? get description;
   GStringFilter? get longDescription;
+  GStringFilter? get shortDescription;
   GProductTypeWhereInput? get type;
   GBrandWhereInput? get brand;
   GProductVariantManyRelationFilter? get variants;
@@ -15865,6 +15874,7 @@ abstract class GProductOrderByInput
   GOrderDirection? get name;
   GOrderDirection? get description;
   GOrderDirection? get longDescription;
+  GOrderDirection? get shortDescription;
   static Serializer<GProductOrderByInput> get serializer =>
       _$gProductOrderByInputSerializer;
 
@@ -15893,6 +15903,7 @@ abstract class GProductUpdateInput
   String? get name;
   String? get description;
   String? get longDescription;
+  String? get shortDescription;
   GProductTypeRelateToOneForUpdateInput? get type;
   GBrandRelateToOneForUpdateInput? get brand;
   GProductVariantRelateToManyForUpdateInput? get variants;
@@ -16040,6 +16051,7 @@ abstract class GProductCreateInput
   String? get name;
   String? get description;
   String? get longDescription;
+  String? get shortDescription;
   GProductTypeRelateToOneForCreateInput? get type;
   GBrandRelateToOneForCreateInput? get brand;
   GProductVariantRelateToManyForCreateInput? get variants;

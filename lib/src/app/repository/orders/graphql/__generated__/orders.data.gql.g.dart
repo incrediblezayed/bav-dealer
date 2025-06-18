@@ -7,145 +7,145 @@ part of 'orders.data.gql.dart';
 // **************************************************************************
 
 Serializer<GProductOrdersData> _$gProductOrdersDataSerializer =
-    new _$GProductOrdersDataSerializer();
+    _$GProductOrdersDataSerializer();
 Serializer<GProductOrdersData_productOrders>
     _$gProductOrdersDataProductOrdersSerializer =
-    new _$GProductOrdersData_productOrdersSerializer();
+    _$GProductOrdersData_productOrdersSerializer();
 Serializer<GProductOrdersData_productOrders_dealer>
     _$gProductOrdersDataProductOrdersDealerSerializer =
-    new _$GProductOrdersData_productOrders_dealerSerializer();
+    _$GProductOrdersData_productOrders_dealerSerializer();
 Serializer<GProductOrdersData_productOrders_dealer_productVariant>
     _$gProductOrdersDataProductOrdersDealerProductVariantSerializer =
-    new _$GProductOrdersData_productOrders_dealer_productVariantSerializer();
+    _$GProductOrdersData_productOrders_dealer_productVariantSerializer();
 Serializer<GProductOrdersData_productOrders_dealer_productVariant_product>
     _$gProductOrdersDataProductOrdersDealerProductVariantProductSerializer =
-    new _$GProductOrdersData_productOrders_dealer_productVariant_productSerializer();
+    _$GProductOrdersData_productOrders_dealer_productVariant_productSerializer();
 Serializer<GProductOrdersData_productOrders_dealer_productVariant_images>
     _$gProductOrdersDataProductOrdersDealerProductVariantImagesSerializer =
-    new _$GProductOrdersData_productOrders_dealer_productVariant_imagesSerializer();
+    _$GProductOrdersData_productOrders_dealer_productVariant_imagesSerializer();
 Serializer<GProductOrdersData_productOrders_dealer_productVariant_images_image>
     _$gProductOrdersDataProductOrdersDealerProductVariantImagesImageSerializer =
-    new _$GProductOrdersData_productOrders_dealer_productVariant_images_imageSerializer();
+    _$GProductOrdersData_productOrders_dealer_productVariant_images_imageSerializer();
 Serializer<GProductOrdersData_productOrders_dealer_dealer>
     _$gProductOrdersDataProductOrdersDealerDealerSerializer =
-    new _$GProductOrdersData_productOrders_dealer_dealerSerializer();
+    _$GProductOrdersData_productOrders_dealer_dealerSerializer();
 Serializer<GProductOrdersData_productOrders_dealer_prices>
     _$gProductOrdersDataProductOrdersDealerPricesSerializer =
-    new _$GProductOrdersData_productOrders_dealer_pricesSerializer();
+    _$GProductOrdersData_productOrders_dealer_pricesSerializer();
 Serializer<GProductOrdersData_productOrders_dealer_prices_category>
     _$gProductOrdersDataProductOrdersDealerPricesCategorySerializer =
-    new _$GProductOrdersData_productOrders_dealer_prices_categorySerializer();
+    _$GProductOrdersData_productOrders_dealer_prices_categorySerializer();
 Serializer<GProductOrdersData_productOrders_order>
     _$gProductOrdersDataProductOrdersOrderSerializer =
-    new _$GProductOrdersData_productOrders_orderSerializer();
+    _$GProductOrdersData_productOrders_orderSerializer();
 Serializer<GProductOrdersData_productOrders_order_user>
     _$gProductOrdersDataProductOrdersOrderUserSerializer =
-    new _$GProductOrdersData_productOrders_order_userSerializer();
+    _$GProductOrdersData_productOrders_order_userSerializer();
 Serializer<GProductOrdersData_productOrders_order_user_addresses>
     _$gProductOrdersDataProductOrdersOrderUserAddressesSerializer =
-    new _$GProductOrdersData_productOrders_order_user_addressesSerializer();
+    _$GProductOrdersData_productOrders_order_user_addressesSerializer();
 Serializer<GVehicleOrdersData> _$gVehicleOrdersDataSerializer =
-    new _$GVehicleOrdersDataSerializer();
+    _$GVehicleOrdersDataSerializer();
 Serializer<GVehicleOrdersData_vehicleOrders>
     _$gVehicleOrdersDataVehicleOrdersSerializer =
-    new _$GVehicleOrdersData_vehicleOrdersSerializer();
+    _$GVehicleOrdersData_vehicleOrdersSerializer();
 Serializer<GVehicleOrdersData_vehicleOrders_dealer>
     _$gVehicleOrdersDataVehicleOrdersDealerSerializer =
-    new _$GVehicleOrdersData_vehicleOrders_dealerSerializer();
+    _$GVehicleOrdersData_vehicleOrders_dealerSerializer();
 Serializer<GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant>
     _$gVehicleOrdersDataVehicleOrdersDealerVehicleVariantSerializer =
-    new _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantSerializer();
+    _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantSerializer();
 Serializer<GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle>
     _$gVehicleOrdersDataVehicleOrdersDealerVehicleVariantVehicleSerializer =
-    new _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleSerializer();
+    _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleSerializer();
 Serializer<GVehicleOrdersData_vehicleOrders_dealer_vehicleColor>
     _$gVehicleOrdersDataVehicleOrdersDealerVehicleColorSerializer =
-    new _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColorSerializer();
+    _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColorSerializer();
 Serializer<GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images>
     _$gVehicleOrdersDataVehicleOrdersDealerVehicleColorImagesSerializer =
-    new _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_imagesSerializer();
+    _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_imagesSerializer();
 Serializer<GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image>
     _$gVehicleOrdersDataVehicleOrdersDealerVehicleColorImagesImageSerializer =
-    new _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageSerializer();
+    _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageSerializer();
 Serializer<GVehicleOrdersData_vehicleOrders_dealer_dealer>
     _$gVehicleOrdersDataVehicleOrdersDealerDealerSerializer =
-    new _$GVehicleOrdersData_vehicleOrders_dealer_dealerSerializer();
+    _$GVehicleOrdersData_vehicleOrders_dealer_dealerSerializer();
 Serializer<GVehicleOrdersData_vehicleOrders_dealer_prices>
     _$gVehicleOrdersDataVehicleOrdersDealerPricesSerializer =
-    new _$GVehicleOrdersData_vehicleOrders_dealer_pricesSerializer();
+    _$GVehicleOrdersData_vehicleOrders_dealer_pricesSerializer();
 Serializer<GVehicleOrdersData_vehicleOrders_dealer_prices_category>
     _$gVehicleOrdersDataVehicleOrdersDealerPricesCategorySerializer =
-    new _$GVehicleOrdersData_vehicleOrders_dealer_prices_categorySerializer();
+    _$GVehicleOrdersData_vehicleOrders_dealer_prices_categorySerializer();
 Serializer<GVehicleOrdersData_vehicleOrders_order>
     _$gVehicleOrdersDataVehicleOrdersOrderSerializer =
-    new _$GVehicleOrdersData_vehicleOrders_orderSerializer();
+    _$GVehicleOrdersData_vehicleOrders_orderSerializer();
 Serializer<GVehicleOrdersData_vehicleOrders_order_user>
     _$gVehicleOrdersDataVehicleOrdersOrderUserSerializer =
-    new _$GVehicleOrdersData_vehicleOrders_order_userSerializer();
+    _$GVehicleOrdersData_vehicleOrders_order_userSerializer();
 Serializer<GVehicleOrdersData_vehicleOrders_order_user_addresses>
     _$gVehicleOrdersDataVehicleOrdersOrderUserAddressesSerializer =
-    new _$GVehicleOrdersData_vehicleOrders_order_user_addressesSerializer();
+    _$GVehicleOrdersData_vehicleOrders_order_user_addressesSerializer();
 Serializer<GVehicleOrdersCountData> _$gVehicleOrdersCountDataSerializer =
-    new _$GVehicleOrdersCountDataSerializer();
+    _$GVehicleOrdersCountDataSerializer();
 Serializer<GTestDriveOrdersData> _$gTestDriveOrdersDataSerializer =
-    new _$GTestDriveOrdersDataSerializer();
+    _$GTestDriveOrdersDataSerializer();
 Serializer<GTestDriveOrdersData_testDriveOrders>
     _$gTestDriveOrdersDataTestDriveOrdersSerializer =
-    new _$GTestDriveOrdersData_testDriveOrdersSerializer();
+    _$GTestDriveOrdersData_testDriveOrdersSerializer();
 Serializer<GTestDriveOrdersData_testDriveOrders_dealer>
     _$gTestDriveOrdersDataTestDriveOrdersDealerSerializer =
-    new _$GTestDriveOrdersData_testDriveOrders_dealerSerializer();
+    _$GTestDriveOrdersData_testDriveOrders_dealerSerializer();
 Serializer<GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant>
     _$gTestDriveOrdersDataTestDriveOrdersDealerVehicleVariantSerializer =
-    new _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantSerializer();
+    _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantSerializer();
 Serializer<GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle>
     _$gTestDriveOrdersDataTestDriveOrdersDealerVehicleVariantVehicleSerializer =
-    new _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleSerializer();
+    _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleSerializer();
 Serializer<GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor>
     _$gTestDriveOrdersDataTestDriveOrdersDealerVehicleColorSerializer =
-    new _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorSerializer();
+    _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorSerializer();
 Serializer<GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images>
     _$gTestDriveOrdersDataTestDriveOrdersDealerVehicleColorImagesSerializer =
-    new _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesSerializer();
+    _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesSerializer();
 Serializer<
         GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image>
     _$gTestDriveOrdersDataTestDriveOrdersDealerVehicleColorImagesImageSerializer =
-    new _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageSerializer();
+    _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageSerializer();
 Serializer<GTestDriveOrdersData_testDriveOrders_dealer_dealer>
     _$gTestDriveOrdersDataTestDriveOrdersDealerDealerSerializer =
-    new _$GTestDriveOrdersData_testDriveOrders_dealer_dealerSerializer();
+    _$GTestDriveOrdersData_testDriveOrders_dealer_dealerSerializer();
 Serializer<GTestDriveOrdersData_testDriveOrders_order>
     _$gTestDriveOrdersDataTestDriveOrdersOrderSerializer =
-    new _$GTestDriveOrdersData_testDriveOrders_orderSerializer();
+    _$GTestDriveOrdersData_testDriveOrders_orderSerializer();
 Serializer<GTestDriveOrdersData_testDriveOrders_order_user>
     _$gTestDriveOrdersDataTestDriveOrdersOrderUserSerializer =
-    new _$GTestDriveOrdersData_testDriveOrders_order_userSerializer();
+    _$GTestDriveOrdersData_testDriveOrders_order_userSerializer();
 Serializer<GTestDriveOrdersData_testDriveOrders_order_user_addresses>
     _$gTestDriveOrdersDataTestDriveOrdersOrderUserAddressesSerializer =
-    new _$GTestDriveOrdersData_testDriveOrders_order_user_addressesSerializer();
+    _$GTestDriveOrdersData_testDriveOrders_order_user_addressesSerializer();
 Serializer<GTestDriveOrdersCountData> _$gTestDriveOrdersCountDataSerializer =
-    new _$GTestDriveOrdersCountDataSerializer();
+    _$GTestDriveOrdersCountDataSerializer();
 Serializer<GUpdateProductOrderData> _$gUpdateProductOrderDataSerializer =
-    new _$GUpdateProductOrderDataSerializer();
+    _$GUpdateProductOrderDataSerializer();
 Serializer<GUpdateProductOrderData_updateProductOrder>
     _$gUpdateProductOrderDataUpdateProductOrderSerializer =
-    new _$GUpdateProductOrderData_updateProductOrderSerializer();
+    _$GUpdateProductOrderData_updateProductOrderSerializer();
 Serializer<GUpdateVehicleOrderData> _$gUpdateVehicleOrderDataSerializer =
-    new _$GUpdateVehicleOrderDataSerializer();
+    _$GUpdateVehicleOrderDataSerializer();
 Serializer<GUpdateVehicleOrderData_updateVehicleOrder>
     _$gUpdateVehicleOrderDataUpdateVehicleOrderSerializer =
-    new _$GUpdateVehicleOrderData_updateVehicleOrderSerializer();
+    _$GUpdateVehicleOrderData_updateVehicleOrderSerializer();
 Serializer<GUpdateTestDriveOrderData> _$gUpdateTestDriveOrderDataSerializer =
-    new _$GUpdateTestDriveOrderDataSerializer();
+    _$GUpdateTestDriveOrderDataSerializer();
 Serializer<GUpdateTestDriveOrderData_updateTestDriveOrder>
     _$gUpdateTestDriveOrderDataUpdateTestDriveOrderSerializer =
-    new _$GUpdateTestDriveOrderData_updateTestDriveOrderSerializer();
+    _$GUpdateTestDriveOrderData_updateTestDriveOrderSerializer();
 Serializer<GCreateOrderRejectionByDealerData>
     _$gCreateOrderRejectionByDealerDataSerializer =
-    new _$GCreateOrderRejectionByDealerDataSerializer();
+    _$GCreateOrderRejectionByDealerDataSerializer();
 Serializer<GCreateOrderRejectionByDealerData_createOrderRejectionByDealer>
     _$gCreateOrderRejectionByDealerDataCreateOrderRejectionByDealerSerializer =
-    new _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealerSerializer();
+    _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealerSerializer();
 
 class _$GProductOrdersDataSerializer
     implements StructuredSerializer<GProductOrdersData> {
@@ -185,7 +185,7 @@ class _$GProductOrdersDataSerializer
   GProductOrdersData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GProductOrdersDataBuilder();
+    final result = GProductOrdersDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -279,7 +279,7 @@ class _$GProductOrdersData_productOrdersSerializer
   GProductOrdersData_productOrders deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GProductOrdersData_productOrdersBuilder();
+    final result = GProductOrdersData_productOrdersBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -380,7 +380,7 @@ class _$GProductOrdersData_productOrders_dealerSerializer
   GProductOrdersData_productOrders_dealer deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GProductOrdersData_productOrders_dealerBuilder();
+    final result = GProductOrdersData_productOrders_dealerBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -477,7 +477,7 @@ class _$GProductOrdersData_productOrders_dealer_productVariantSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GProductOrdersData_productOrders_dealer_productVariantBuilder();
+        GProductOrdersData_productOrders_dealer_productVariantBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -551,7 +551,7 @@ class _$GProductOrdersData_productOrders_dealer_productVariant_productSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GProductOrdersData_productOrders_dealer_productVariant_productBuilder();
+        GProductOrdersData_productOrders_dealer_productVariant_productBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -613,7 +613,7 @@ class _$GProductOrdersData_productOrders_dealer_productVariant_imagesSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder();
+        GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -673,7 +673,7 @@ class _$GProductOrdersData_productOrders_dealer_productVariant_images_imageSeria
       deserialize(Serializers serializers, Iterable<Object?> serialized,
           {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder();
+        GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -726,7 +726,7 @@ class _$GProductOrdersData_productOrders_dealer_dealerSerializer
   GProductOrdersData_productOrders_dealer_dealer deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GProductOrdersData_productOrders_dealer_dealerBuilder();
+    final result = GProductOrdersData_productOrders_dealer_dealerBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -797,7 +797,7 @@ class _$GProductOrdersData_productOrders_dealer_pricesSerializer
   GProductOrdersData_productOrders_dealer_prices deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GProductOrdersData_productOrders_dealer_pricesBuilder();
+    final result = GProductOrdersData_productOrders_dealer_pricesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -870,7 +870,7 @@ class _$GProductOrdersData_productOrders_dealer_prices_categorySerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GProductOrdersData_productOrders_dealer_prices_categoryBuilder();
+        GProductOrdersData_productOrders_dealer_prices_categoryBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -941,7 +941,7 @@ class _$GProductOrdersData_productOrders_orderSerializer
   GProductOrdersData_productOrders_order deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GProductOrdersData_productOrders_orderBuilder();
+    final result = GProductOrdersData_productOrders_orderBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1035,7 +1035,7 @@ class _$GProductOrdersData_productOrders_order_userSerializer
   GProductOrdersData_productOrders_order_user deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GProductOrdersData_productOrders_order_userBuilder();
+    final result = GProductOrdersData_productOrders_order_userBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1159,7 +1159,7 @@ class _$GProductOrdersData_productOrders_order_user_addressesSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GProductOrdersData_productOrders_order_user_addressesBuilder();
+        GProductOrdersData_productOrders_order_user_addressesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1248,7 +1248,7 @@ class _$GVehicleOrdersDataSerializer
   GVehicleOrdersData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehicleOrdersDataBuilder();
+    final result = GVehicleOrdersDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1342,7 +1342,7 @@ class _$GVehicleOrdersData_vehicleOrdersSerializer
   GVehicleOrdersData_vehicleOrders deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehicleOrdersData_vehicleOrdersBuilder();
+    final result = GVehicleOrdersData_vehicleOrdersBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1451,7 +1451,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealerSerializer
   GVehicleOrdersData_vehicleOrders_dealer deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehicleOrdersData_vehicleOrders_dealerBuilder();
+    final result = GVehicleOrdersData_vehicleOrders_dealerBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1544,7 +1544,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder();
+        GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1611,7 +1611,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleBuilder();
+        GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1689,7 +1689,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColorSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder();
+        GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1764,7 +1764,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_imagesSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_imagesBuilder();
+        GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_imagesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1828,7 +1828,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageSeriali
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder();
+        GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1885,7 +1885,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_dealerSerializer
   GVehicleOrdersData_vehicleOrders_dealer_dealer deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder();
+    final result = GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1965,7 +1965,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_pricesSerializer
   GVehicleOrdersData_vehicleOrders_dealer_prices deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder();
+    final result = GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2046,7 +2046,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_prices_categorySerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GVehicleOrdersData_vehicleOrders_dealer_prices_categoryBuilder();
+        GVehicleOrdersData_vehicleOrders_dealer_prices_categoryBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2117,7 +2117,7 @@ class _$GVehicleOrdersData_vehicleOrders_orderSerializer
   GVehicleOrdersData_vehicleOrders_order deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehicleOrdersData_vehicleOrders_orderBuilder();
+    final result = GVehicleOrdersData_vehicleOrders_orderBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2211,7 +2211,7 @@ class _$GVehicleOrdersData_vehicleOrders_order_userSerializer
   GVehicleOrdersData_vehicleOrders_order_user deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehicleOrdersData_vehicleOrders_order_userBuilder();
+    final result = GVehicleOrdersData_vehicleOrders_order_userBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2335,7 +2335,7 @@ class _$GVehicleOrdersData_vehicleOrders_order_user_addressesSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GVehicleOrdersData_vehicleOrders_order_user_addressesBuilder();
+        GVehicleOrdersData_vehicleOrders_order_user_addressesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2419,7 +2419,7 @@ class _$GVehicleOrdersCountDataSerializer
   GVehicleOrdersCountData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GVehicleOrdersCountDataBuilder();
+    final result = GVehicleOrdersCountDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2483,7 +2483,7 @@ class _$GTestDriveOrdersDataSerializer
   GTestDriveOrdersData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GTestDriveOrdersDataBuilder();
+    final result = GTestDriveOrdersDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2577,7 +2577,7 @@ class _$GTestDriveOrdersData_testDriveOrdersSerializer
   GTestDriveOrdersData_testDriveOrders deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GTestDriveOrdersData_testDriveOrdersBuilder();
+    final result = GTestDriveOrdersData_testDriveOrdersBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2684,7 +2684,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealerSerializer
   GTestDriveOrdersData_testDriveOrders_dealer deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GTestDriveOrdersData_testDriveOrders_dealerBuilder();
+    final result = GTestDriveOrdersData_testDriveOrders_dealerBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2775,7 +2775,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder();
+        GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2842,7 +2842,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleSerial
       deserialize(Serializers serializers, Iterable<Object?> serialized,
           {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder();
+        GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2920,7 +2920,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder();
+        GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2995,7 +2995,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesSerialize
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesBuilder();
+        GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3061,7 +3061,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageSer
       deserialize(Serializers serializers, Iterable<Object?> serialized,
           {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuilder();
+        GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3119,8 +3119,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_dealerSerializer
   GTestDriveOrdersData_testDriveOrders_dealer_dealer deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result =
-        new GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder();
+    final result = GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3188,7 +3187,7 @@ class _$GTestDriveOrdersData_testDriveOrders_orderSerializer
   GTestDriveOrdersData_testDriveOrders_order deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GTestDriveOrdersData_testDriveOrders_orderBuilder();
+    final result = GTestDriveOrdersData_testDriveOrders_orderBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3282,7 +3281,7 @@ class _$GTestDriveOrdersData_testDriveOrders_order_userSerializer
   GTestDriveOrdersData_testDriveOrders_order_user deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GTestDriveOrdersData_testDriveOrders_order_userBuilder();
+    final result = GTestDriveOrdersData_testDriveOrders_order_userBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3406,7 +3405,7 @@ class _$GTestDriveOrdersData_testDriveOrders_order_user_addressesSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder();
+        GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3490,7 +3489,7 @@ class _$GTestDriveOrdersCountDataSerializer
   GTestDriveOrdersCountData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GTestDriveOrdersCountDataBuilder();
+    final result = GTestDriveOrdersCountDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3548,7 +3547,7 @@ class _$GUpdateProductOrderDataSerializer
   GUpdateProductOrderData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUpdateProductOrderDataBuilder();
+    final result = GUpdateProductOrderDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3603,7 +3602,7 @@ class _$GUpdateProductOrderData_updateProductOrderSerializer
   GUpdateProductOrderData_updateProductOrder deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUpdateProductOrderData_updateProductOrderBuilder();
+    final result = GUpdateProductOrderData_updateProductOrderBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3661,7 +3660,7 @@ class _$GUpdateVehicleOrderDataSerializer
   GUpdateVehicleOrderData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUpdateVehicleOrderDataBuilder();
+    final result = GUpdateVehicleOrderDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3716,7 +3715,7 @@ class _$GUpdateVehicleOrderData_updateVehicleOrderSerializer
   GUpdateVehicleOrderData_updateVehicleOrder deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUpdateVehicleOrderData_updateVehicleOrderBuilder();
+    final result = GUpdateVehicleOrderData_updateVehicleOrderBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3774,7 +3773,7 @@ class _$GUpdateTestDriveOrderDataSerializer
   GUpdateTestDriveOrderData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUpdateTestDriveOrderDataBuilder();
+    final result = GUpdateTestDriveOrderDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3829,7 +3828,7 @@ class _$GUpdateTestDriveOrderData_updateTestDriveOrderSerializer
   GUpdateTestDriveOrderData_updateTestDriveOrder deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUpdateTestDriveOrderData_updateTestDriveOrderBuilder();
+    final result = GUpdateTestDriveOrderData_updateTestDriveOrderBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3887,7 +3886,7 @@ class _$GCreateOrderRejectionByDealerDataSerializer
   GCreateOrderRejectionByDealerData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateOrderRejectionByDealerDataBuilder();
+    final result = GCreateOrderRejectionByDealerDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3946,7 +3945,7 @@ class _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealerSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder();
+        GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3979,15 +3978,11 @@ class _$GProductOrdersData extends GProductOrdersData {
 
   factory _$GProductOrdersData(
           [void Function(GProductOrdersDataBuilder)? updates]) =>
-      (new GProductOrdersDataBuilder()..update(updates))._build();
+      (GProductOrdersDataBuilder()..update(updates))._build();
 
   _$GProductOrdersData._(
       {required this.G__typename, this.productOrdersCount, this.productOrders})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GProductOrdersData', 'G__typename');
-  }
-
+      : super._();
   @override
   GProductOrdersData rebuild(
           void Function(GProductOrdersDataBuilder) updates) =>
@@ -3995,7 +3990,7 @@ class _$GProductOrdersData extends GProductOrdersData {
 
   @override
   GProductOrdersDataBuilder toBuilder() =>
-      new GProductOrdersDataBuilder()..replace(this);
+      GProductOrdersDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -4041,8 +4036,7 @@ class GProductOrdersDataBuilder
 
   ListBuilder<GProductOrdersData_productOrders>? _productOrders;
   ListBuilder<GProductOrdersData_productOrders> get productOrders =>
-      _$this._productOrders ??=
-          new ListBuilder<GProductOrdersData_productOrders>();
+      _$this._productOrders ??= ListBuilder<GProductOrdersData_productOrders>();
   set productOrders(
           ListBuilder<GProductOrdersData_productOrders>? productOrders) =>
       _$this._productOrders = productOrders;
@@ -4064,7 +4058,6 @@ class GProductOrdersDataBuilder
 
   @override
   void replace(GProductOrdersData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GProductOrdersData;
   }
 
@@ -4080,7 +4073,7 @@ class GProductOrdersDataBuilder
     _$GProductOrdersData _$result;
     try {
       _$result = _$v ??
-          new _$GProductOrdersData._(
+          _$GProductOrdersData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GProductOrdersData', 'G__typename'),
             productOrdersCount: productOrdersCount,
@@ -4092,7 +4085,7 @@ class GProductOrdersDataBuilder
         _$failedField = 'productOrders';
         _productOrders?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GProductOrdersData', _$failedField, e.toString());
       }
       rethrow;
@@ -4121,7 +4114,7 @@ class _$GProductOrdersData_productOrders
 
   factory _$GProductOrdersData_productOrders(
           [void Function(GProductOrdersData_productOrdersBuilder)? updates]) =>
-      (new GProductOrdersData_productOrdersBuilder()..update(updates))._build();
+      (GProductOrdersData_productOrdersBuilder()..update(updates))._build();
 
   _$GProductOrdersData_productOrders._(
       {required this.G__typename,
@@ -4131,13 +4124,7 @@ class _$GProductOrdersData_productOrders
       this.status,
       this.order,
       this.createdAt})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GProductOrdersData_productOrders', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GProductOrdersData_productOrders', 'id');
-  }
-
+      : super._();
   @override
   GProductOrdersData_productOrders rebuild(
           void Function(GProductOrdersData_productOrdersBuilder) updates) =>
@@ -4145,7 +4132,7 @@ class _$GProductOrdersData_productOrders
 
   @override
   GProductOrdersData_productOrdersBuilder toBuilder() =>
-      new GProductOrdersData_productOrdersBuilder()..replace(this);
+      GProductOrdersData_productOrdersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -4208,7 +4195,7 @@ class GProductOrdersData_productOrdersBuilder
 
   GProductOrdersData_productOrders_dealerBuilder? _dealer;
   GProductOrdersData_productOrders_dealerBuilder get dealer =>
-      _$this._dealer ??= new GProductOrdersData_productOrders_dealerBuilder();
+      _$this._dealer ??= GProductOrdersData_productOrders_dealerBuilder();
   set dealer(GProductOrdersData_productOrders_dealerBuilder? dealer) =>
       _$this._dealer = dealer;
 
@@ -4218,13 +4205,13 @@ class GProductOrdersData_productOrdersBuilder
 
   GProductOrdersData_productOrders_orderBuilder? _order;
   GProductOrdersData_productOrders_orderBuilder get order =>
-      _$this._order ??= new GProductOrdersData_productOrders_orderBuilder();
+      _$this._order ??= GProductOrdersData_productOrders_orderBuilder();
   set order(GProductOrdersData_productOrders_orderBuilder? order) =>
       _$this._order = order;
 
   _i2.GDateTimeBuilder? _createdAt;
   _i2.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+      _$this._createdAt ??= _i2.GDateTimeBuilder();
   set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
@@ -4249,7 +4236,6 @@ class GProductOrdersData_productOrdersBuilder
 
   @override
   void replace(GProductOrdersData_productOrders other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GProductOrdersData_productOrders;
   }
 
@@ -4265,7 +4251,7 @@ class GProductOrdersData_productOrdersBuilder
     _$GProductOrdersData_productOrders _$result;
     try {
       _$result = _$v ??
-          new _$GProductOrdersData_productOrders._(
+          _$GProductOrdersData_productOrders._(
             G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                 r'GProductOrdersData_productOrders', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
@@ -4287,7 +4273,7 @@ class GProductOrdersData_productOrdersBuilder
         _$failedField = 'createdAt';
         _createdAt?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GProductOrdersData_productOrders', _$failedField, e.toString());
       }
       rethrow;
@@ -4313,7 +4299,7 @@ class _$GProductOrdersData_productOrders_dealer
   factory _$GProductOrdersData_productOrders_dealer(
           [void Function(GProductOrdersData_productOrders_dealerBuilder)?
               updates]) =>
-      (new GProductOrdersData_productOrders_dealerBuilder()..update(updates))
+      (GProductOrdersData_productOrders_dealerBuilder()..update(updates))
           ._build();
 
   _$GProductOrdersData_productOrders_dealer._(
@@ -4322,13 +4308,7 @@ class _$GProductOrdersData_productOrders_dealer
       this.dealer,
       required this.id,
       this.prices})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GProductOrdersData_productOrders_dealer', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GProductOrdersData_productOrders_dealer', 'id');
-  }
-
+      : super._();
   @override
   GProductOrdersData_productOrders_dealer rebuild(
           void Function(GProductOrdersData_productOrders_dealerBuilder)
@@ -4337,7 +4317,7 @@ class _$GProductOrdersData_productOrders_dealer
 
   @override
   GProductOrdersData_productOrders_dealerBuilder toBuilder() =>
-      new GProductOrdersData_productOrders_dealerBuilder()..replace(this);
+      GProductOrdersData_productOrders_dealerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -4389,7 +4369,7 @@ class GProductOrdersData_productOrders_dealerBuilder
       _productVariant;
   GProductOrdersData_productOrders_dealer_productVariantBuilder
       get productVariant => _$this._productVariant ??=
-          new GProductOrdersData_productOrders_dealer_productVariantBuilder();
+          GProductOrdersData_productOrders_dealer_productVariantBuilder();
   set productVariant(
           GProductOrdersData_productOrders_dealer_productVariantBuilder?
               productVariant) =>
@@ -4398,7 +4378,7 @@ class GProductOrdersData_productOrders_dealerBuilder
   GProductOrdersData_productOrders_dealer_dealerBuilder? _dealer;
   GProductOrdersData_productOrders_dealer_dealerBuilder get dealer =>
       _$this._dealer ??=
-          new GProductOrdersData_productOrders_dealer_dealerBuilder();
+          GProductOrdersData_productOrders_dealer_dealerBuilder();
   set dealer(GProductOrdersData_productOrders_dealer_dealerBuilder? dealer) =>
       _$this._dealer = dealer;
 
@@ -4409,7 +4389,7 @@ class GProductOrdersData_productOrders_dealerBuilder
   ListBuilder<GProductOrdersData_productOrders_dealer_prices>? _prices;
   ListBuilder<GProductOrdersData_productOrders_dealer_prices> get prices =>
       _$this._prices ??=
-          new ListBuilder<GProductOrdersData_productOrders_dealer_prices>();
+          ListBuilder<GProductOrdersData_productOrders_dealer_prices>();
   set prices(
           ListBuilder<GProductOrdersData_productOrders_dealer_prices>?
               prices) =>
@@ -4434,7 +4414,6 @@ class GProductOrdersData_productOrders_dealerBuilder
 
   @override
   void replace(GProductOrdersData_productOrders_dealer other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GProductOrdersData_productOrders_dealer;
   }
 
@@ -4451,7 +4430,7 @@ class GProductOrdersData_productOrders_dealerBuilder
     _$GProductOrdersData_productOrders_dealer _$result;
     try {
       _$result = _$v ??
-          new _$GProductOrdersData_productOrders_dealer._(
+          _$GProductOrdersData_productOrders_dealer._(
             G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                 r'GProductOrdersData_productOrders_dealer', 'G__typename'),
             productVariant: _productVariant?.build(),
@@ -4471,7 +4450,7 @@ class GProductOrdersData_productOrders_dealerBuilder
         _$failedField = 'prices';
         _prices?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GProductOrdersData_productOrders_dealer',
             _$failedField,
             e.toString());
@@ -4499,19 +4478,13 @@ class _$GProductOrdersData_productOrders_dealer_productVariant
           [void Function(
                   GProductOrdersData_productOrders_dealer_productVariantBuilder)?
               updates]) =>
-      (new GProductOrdersData_productOrders_dealer_productVariantBuilder()
+      (GProductOrdersData_productOrders_dealer_productVariantBuilder()
             ..update(updates))
           ._build();
 
   _$GProductOrdersData_productOrders_dealer_productVariant._(
       {required this.G__typename, this.product, this.name, this.images})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GProductOrdersData_productOrders_dealer_productVariant',
-        'G__typename');
-  }
-
+      : super._();
   @override
   GProductOrdersData_productOrders_dealer_productVariant rebuild(
           void Function(
@@ -4521,7 +4494,7 @@ class _$GProductOrdersData_productOrders_dealer_productVariant
 
   @override
   GProductOrdersData_productOrders_dealer_productVariantBuilder toBuilder() =>
-      new GProductOrdersData_productOrders_dealer_productVariantBuilder()
+      GProductOrdersData_productOrders_dealer_productVariantBuilder()
         ..replace(this);
 
   @override
@@ -4571,7 +4544,7 @@ class GProductOrdersData_productOrders_dealer_productVariantBuilder
       _product;
   GProductOrdersData_productOrders_dealer_productVariant_productBuilder
       get product => _$this._product ??=
-          new GProductOrdersData_productOrders_dealer_productVariant_productBuilder();
+          GProductOrdersData_productOrders_dealer_productVariant_productBuilder();
   set product(
           GProductOrdersData_productOrders_dealer_productVariant_productBuilder?
               product) =>
@@ -4584,7 +4557,7 @@ class GProductOrdersData_productOrders_dealer_productVariantBuilder
   ListBuilder<GProductOrdersData_productOrders_dealer_productVariant_images>?
       _images;
   ListBuilder<GProductOrdersData_productOrders_dealer_productVariant_images>
-      get images => _$this._images ??= new ListBuilder<
+      get images => _$this._images ??= ListBuilder<
           GProductOrdersData_productOrders_dealer_productVariant_images>();
   set images(
           ListBuilder<
@@ -4611,7 +4584,6 @@ class GProductOrdersData_productOrders_dealer_productVariantBuilder
 
   @override
   void replace(GProductOrdersData_productOrders_dealer_productVariant other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GProductOrdersData_productOrders_dealer_productVariant;
   }
 
@@ -4630,7 +4602,7 @@ class GProductOrdersData_productOrders_dealer_productVariantBuilder
     _$GProductOrdersData_productOrders_dealer_productVariant _$result;
     try {
       _$result = _$v ??
-          new _$GProductOrdersData_productOrders_dealer_productVariant._(
+          _$GProductOrdersData_productOrders_dealer_productVariant._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
                 r'GProductOrdersData_productOrders_dealer_productVariant',
@@ -4648,7 +4620,7 @@ class GProductOrdersData_productOrders_dealer_productVariantBuilder
         _$failedField = 'images';
         _images?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GProductOrdersData_productOrders_dealer_productVariant',
             _$failedField,
             e.toString());
@@ -4671,19 +4643,13 @@ class _$GProductOrdersData_productOrders_dealer_productVariant_product
           [void Function(
                   GProductOrdersData_productOrders_dealer_productVariant_productBuilder)?
               updates]) =>
-      (new GProductOrdersData_productOrders_dealer_productVariant_productBuilder()
+      (GProductOrdersData_productOrders_dealer_productVariant_productBuilder()
             ..update(updates))
           ._build();
 
   _$GProductOrdersData_productOrders_dealer_productVariant_product._(
       {required this.G__typename, this.name})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GProductOrdersData_productOrders_dealer_productVariant_product',
-        'G__typename');
-  }
-
+      : super._();
   @override
   GProductOrdersData_productOrders_dealer_productVariant_product rebuild(
           void Function(
@@ -4694,7 +4660,7 @@ class _$GProductOrdersData_productOrders_dealer_productVariant_product
   @override
   GProductOrdersData_productOrders_dealer_productVariant_productBuilder
       toBuilder() =>
-          new GProductOrdersData_productOrders_dealer_productVariant_productBuilder()
+          GProductOrdersData_productOrders_dealer_productVariant_productBuilder()
             ..replace(this);
 
   @override
@@ -4758,7 +4724,6 @@ class GProductOrdersData_productOrders_dealer_productVariant_productBuilder
   @override
   void replace(
       GProductOrdersData_productOrders_dealer_productVariant_product other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GProductOrdersData_productOrders_dealer_productVariant_product;
   }
@@ -4777,7 +4742,7 @@ class GProductOrdersData_productOrders_dealer_productVariant_productBuilder
 
   _$GProductOrdersData_productOrders_dealer_productVariant_product _build() {
     final _$result = _$v ??
-        new _$GProductOrdersData_productOrders_dealer_productVariant_product._(
+        _$GProductOrdersData_productOrders_dealer_productVariant_product._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
               r'GProductOrdersData_productOrders_dealer_productVariant_product',
@@ -4801,19 +4766,13 @@ class _$GProductOrdersData_productOrders_dealer_productVariant_images
           [void Function(
                   GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder)?
               updates]) =>
-      (new GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder()
+      (GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder()
             ..update(updates))
           ._build();
 
   _$GProductOrdersData_productOrders_dealer_productVariant_images._(
       {required this.G__typename, this.image})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GProductOrdersData_productOrders_dealer_productVariant_images',
-        'G__typename');
-  }
-
+      : super._();
   @override
   GProductOrdersData_productOrders_dealer_productVariant_images rebuild(
           void Function(
@@ -4824,7 +4783,7 @@ class _$GProductOrdersData_productOrders_dealer_productVariant_images
   @override
   GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder
       toBuilder() =>
-          new GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder()
+          GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder()
             ..replace(this);
 
   @override
@@ -4869,7 +4828,7 @@ class GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder
       _image;
   GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder
       get image => _$this._image ??=
-          new GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder();
+          GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder();
   set image(
           GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder?
               image) =>
@@ -4894,7 +4853,6 @@ class GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder
   @override
   void replace(
       GProductOrdersData_productOrders_dealer_productVariant_images other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GProductOrdersData_productOrders_dealer_productVariant_images;
   }
@@ -4915,7 +4873,7 @@ class GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder
     _$GProductOrdersData_productOrders_dealer_productVariant_images _$result;
     try {
       _$result = _$v ??
-          new _$GProductOrdersData_productOrders_dealer_productVariant_images._(
+          _$GProductOrdersData_productOrders_dealer_productVariant_images._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
                 r'GProductOrdersData_productOrders_dealer_productVariant_images',
@@ -4928,7 +4886,7 @@ class GProductOrdersData_productOrders_dealer_productVariant_imagesBuilder
         _$failedField = 'image';
         _image?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GProductOrdersData_productOrders_dealer_productVariant_images',
             _$failedField,
             e.toString());
@@ -4951,23 +4909,13 @@ class _$GProductOrdersData_productOrders_dealer_productVariant_images_image
           [void Function(
                   GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder)?
               updates]) =>
-      (new GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder()
+      (GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder()
             ..update(updates))
           ._build();
 
   _$GProductOrdersData_productOrders_dealer_productVariant_images_image._(
       {required this.G__typename, required this.url})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GProductOrdersData_productOrders_dealer_productVariant_images_image',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        url,
-        r'GProductOrdersData_productOrders_dealer_productVariant_images_image',
-        'url');
-  }
-
+      : super._();
   @override
   GProductOrdersData_productOrders_dealer_productVariant_images_image rebuild(
           void Function(
@@ -4978,7 +4926,7 @@ class _$GProductOrdersData_productOrders_dealer_productVariant_images_image
   @override
   GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder
       toBuilder() =>
-          new GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder()
+          GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder()
             ..replace(this);
 
   @override
@@ -5044,7 +4992,6 @@ class GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder
   void replace(
       GProductOrdersData_productOrders_dealer_productVariant_images_image
           other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GProductOrdersData_productOrders_dealer_productVariant_images_image;
   }
@@ -5064,8 +5011,7 @@ class GProductOrdersData_productOrders_dealer_productVariant_images_imageBuilder
   _$GProductOrdersData_productOrders_dealer_productVariant_images_image
       _build() {
     final _$result = _$v ??
-        new _$GProductOrdersData_productOrders_dealer_productVariant_images_image
-            ._(
+        _$GProductOrdersData_productOrders_dealer_productVariant_images_image._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
               r'GProductOrdersData_productOrders_dealer_productVariant_images_image',
@@ -5090,19 +5036,12 @@ class _$GProductOrdersData_productOrders_dealer_dealer
   factory _$GProductOrdersData_productOrders_dealer_dealer(
           [void Function(GProductOrdersData_productOrders_dealer_dealerBuilder)?
               updates]) =>
-      (new GProductOrdersData_productOrders_dealer_dealerBuilder()
-            ..update(updates))
+      (GProductOrdersData_productOrders_dealer_dealerBuilder()..update(updates))
           ._build();
 
   _$GProductOrdersData_productOrders_dealer_dealer._(
       {required this.G__typename, required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GProductOrdersData_productOrders_dealer_dealer', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GProductOrdersData_productOrders_dealer_dealer', 'id');
-  }
-
+      : super._();
   @override
   GProductOrdersData_productOrders_dealer_dealer rebuild(
           void Function(GProductOrdersData_productOrders_dealer_dealerBuilder)
@@ -5111,8 +5050,7 @@ class _$GProductOrdersData_productOrders_dealer_dealer
 
   @override
   GProductOrdersData_productOrders_dealer_dealerBuilder toBuilder() =>
-      new GProductOrdersData_productOrders_dealer_dealerBuilder()
-        ..replace(this);
+      GProductOrdersData_productOrders_dealer_dealerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -5171,7 +5109,6 @@ class GProductOrdersData_productOrders_dealer_dealerBuilder
 
   @override
   void replace(GProductOrdersData_productOrders_dealer_dealer other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GProductOrdersData_productOrders_dealer_dealer;
   }
 
@@ -5187,7 +5124,7 @@ class GProductOrdersData_productOrders_dealer_dealerBuilder
 
   _$GProductOrdersData_productOrders_dealer_dealer _build() {
     final _$result = _$v ??
-        new _$GProductOrdersData_productOrders_dealer_dealer._(
+        _$GProductOrdersData_productOrders_dealer_dealer._(
           G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
               r'GProductOrdersData_productOrders_dealer_dealer', 'G__typename'),
           id: BuiltValueNullFieldError.checkNotNull(
@@ -5212,8 +5149,7 @@ class _$GProductOrdersData_productOrders_dealer_prices
   factory _$GProductOrdersData_productOrders_dealer_prices(
           [void Function(GProductOrdersData_productOrders_dealer_pricesBuilder)?
               updates]) =>
-      (new GProductOrdersData_productOrders_dealer_pricesBuilder()
-            ..update(updates))
+      (GProductOrdersData_productOrders_dealer_pricesBuilder()..update(updates))
           ._build();
 
   _$GProductOrdersData_productOrders_dealer_prices._(
@@ -5221,11 +5157,7 @@ class _$GProductOrdersData_productOrders_dealer_prices
       this.amount,
       this.originalAmount,
       this.category})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GProductOrdersData_productOrders_dealer_prices', 'G__typename');
-  }
-
+      : super._();
   @override
   GProductOrdersData_productOrders_dealer_prices rebuild(
           void Function(GProductOrdersData_productOrders_dealer_pricesBuilder)
@@ -5234,8 +5166,7 @@ class _$GProductOrdersData_productOrders_dealer_prices
 
   @override
   GProductOrdersData_productOrders_dealer_pricesBuilder toBuilder() =>
-      new GProductOrdersData_productOrders_dealer_pricesBuilder()
-        ..replace(this);
+      GProductOrdersData_productOrders_dealer_pricesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -5292,7 +5223,7 @@ class GProductOrdersData_productOrders_dealer_pricesBuilder
   GProductOrdersData_productOrders_dealer_prices_categoryBuilder? _category;
   GProductOrdersData_productOrders_dealer_prices_categoryBuilder get category =>
       _$this._category ??=
-          new GProductOrdersData_productOrders_dealer_prices_categoryBuilder();
+          GProductOrdersData_productOrders_dealer_prices_categoryBuilder();
   set category(
           GProductOrdersData_productOrders_dealer_prices_categoryBuilder?
               category) =>
@@ -5316,7 +5247,6 @@ class GProductOrdersData_productOrders_dealer_pricesBuilder
 
   @override
   void replace(GProductOrdersData_productOrders_dealer_prices other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GProductOrdersData_productOrders_dealer_prices;
   }
 
@@ -5334,7 +5264,7 @@ class GProductOrdersData_productOrders_dealer_pricesBuilder
     _$GProductOrdersData_productOrders_dealer_prices _$result;
     try {
       _$result = _$v ??
-          new _$GProductOrdersData_productOrders_dealer_prices._(
+          _$GProductOrdersData_productOrders_dealer_prices._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
                 r'GProductOrdersData_productOrders_dealer_prices',
@@ -5349,7 +5279,7 @@ class GProductOrdersData_productOrders_dealer_pricesBuilder
         _$failedField = 'category';
         _category?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GProductOrdersData_productOrders_dealer_prices',
             _$failedField,
             e.toString());
@@ -5374,21 +5304,13 @@ class _$GProductOrdersData_productOrders_dealer_prices_category
           [void Function(
                   GProductOrdersData_productOrders_dealer_prices_categoryBuilder)?
               updates]) =>
-      (new GProductOrdersData_productOrders_dealer_prices_categoryBuilder()
+      (GProductOrdersData_productOrders_dealer_prices_categoryBuilder()
             ..update(updates))
           ._build();
 
   _$GProductOrdersData_productOrders_dealer_prices_category._(
       {required this.G__typename, this.name, required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GProductOrdersData_productOrders_dealer_prices_category',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GProductOrdersData_productOrders_dealer_prices_category', 'id');
-  }
-
+      : super._();
   @override
   GProductOrdersData_productOrders_dealer_prices_category rebuild(
           void Function(
@@ -5398,7 +5320,7 @@ class _$GProductOrdersData_productOrders_dealer_prices_category
 
   @override
   GProductOrdersData_productOrders_dealer_prices_categoryBuilder toBuilder() =>
-      new GProductOrdersData_productOrders_dealer_prices_categoryBuilder()
+      GProductOrdersData_productOrders_dealer_prices_categoryBuilder()
         ..replace(this);
 
   @override
@@ -5467,7 +5389,6 @@ class GProductOrdersData_productOrders_dealer_prices_categoryBuilder
 
   @override
   void replace(GProductOrdersData_productOrders_dealer_prices_category other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GProductOrdersData_productOrders_dealer_prices_category;
   }
 
@@ -5484,7 +5405,7 @@ class GProductOrdersData_productOrders_dealer_prices_categoryBuilder
 
   _$GProductOrdersData_productOrders_dealer_prices_category _build() {
     final _$result = _$v ??
-        new _$GProductOrdersData_productOrders_dealer_prices_category._(
+        _$GProductOrdersData_productOrders_dealer_prices_category._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
               r'GProductOrdersData_productOrders_dealer_prices_category',
@@ -5512,18 +5433,12 @@ class _$GProductOrdersData_productOrders_order
   factory _$GProductOrdersData_productOrders_order(
           [void Function(GProductOrdersData_productOrders_orderBuilder)?
               updates]) =>
-      (new GProductOrdersData_productOrders_orderBuilder()..update(updates))
+      (GProductOrdersData_productOrders_orderBuilder()..update(updates))
           ._build();
 
   _$GProductOrdersData_productOrders_order._(
       {required this.G__typename, this.user, required this.id, this.createdAt})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GProductOrdersData_productOrders_order', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GProductOrdersData_productOrders_order', 'id');
-  }
-
+      : super._();
   @override
   GProductOrdersData_productOrders_order rebuild(
           void Function(GProductOrdersData_productOrders_orderBuilder)
@@ -5532,7 +5447,7 @@ class _$GProductOrdersData_productOrders_order
 
   @override
   GProductOrdersData_productOrders_orderBuilder toBuilder() =>
-      new GProductOrdersData_productOrders_orderBuilder()..replace(this);
+      GProductOrdersData_productOrders_orderBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -5579,7 +5494,7 @@ class GProductOrdersData_productOrders_orderBuilder
 
   GProductOrdersData_productOrders_order_userBuilder? _user;
   GProductOrdersData_productOrders_order_userBuilder get user =>
-      _$this._user ??= new GProductOrdersData_productOrders_order_userBuilder();
+      _$this._user ??= GProductOrdersData_productOrders_order_userBuilder();
   set user(GProductOrdersData_productOrders_order_userBuilder? user) =>
       _$this._user = user;
 
@@ -5589,7 +5504,7 @@ class GProductOrdersData_productOrders_orderBuilder
 
   _i2.GDateTimeBuilder? _createdAt;
   _i2.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+      _$this._createdAt ??= _i2.GDateTimeBuilder();
   set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
@@ -5611,7 +5526,6 @@ class GProductOrdersData_productOrders_orderBuilder
 
   @override
   void replace(GProductOrdersData_productOrders_order other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GProductOrdersData_productOrders_order;
   }
 
@@ -5628,7 +5542,7 @@ class GProductOrdersData_productOrders_orderBuilder
     _$GProductOrdersData_productOrders_order _$result;
     try {
       _$result = _$v ??
-          new _$GProductOrdersData_productOrders_order._(
+          _$GProductOrdersData_productOrders_order._(
             G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                 r'GProductOrdersData_productOrders_order', 'G__typename'),
             user: _user?.build(),
@@ -5645,7 +5559,7 @@ class GProductOrdersData_productOrders_orderBuilder
         _$failedField = 'createdAt';
         _createdAt?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GProductOrdersData_productOrders_order',
             _$failedField,
             e.toString());
@@ -5676,8 +5590,7 @@ class _$GProductOrdersData_productOrders_order_user
   factory _$GProductOrdersData_productOrders_order_user(
           [void Function(GProductOrdersData_productOrders_order_userBuilder)?
               updates]) =>
-      (new GProductOrdersData_productOrders_order_userBuilder()
-            ..update(updates))
+      (GProductOrdersData_productOrders_order_userBuilder()..update(updates))
           ._build();
 
   _$GProductOrdersData_productOrders_order_user._(
@@ -5687,13 +5600,7 @@ class _$GProductOrdersData_productOrders_order_user
       this.name,
       this.phoneNumber,
       this.addresses})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GProductOrdersData_productOrders_order_user', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GProductOrdersData_productOrders_order_user', 'id');
-  }
-
+      : super._();
   @override
   GProductOrdersData_productOrders_order_user rebuild(
           void Function(GProductOrdersData_productOrders_order_userBuilder)
@@ -5702,7 +5609,7 @@ class _$GProductOrdersData_productOrders_order_user
 
   @override
   GProductOrdersData_productOrders_order_userBuilder toBuilder() =>
-      new GProductOrdersData_productOrders_order_userBuilder()..replace(this);
+      GProductOrdersData_productOrders_order_userBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -5772,8 +5679,8 @@ class GProductOrdersData_productOrders_order_userBuilder
   ListBuilder<GProductOrdersData_productOrders_order_user_addresses>?
       _addresses;
   ListBuilder<GProductOrdersData_productOrders_order_user_addresses>
-      get addresses => _$this._addresses ??= new ListBuilder<
-          GProductOrdersData_productOrders_order_user_addresses>();
+      get addresses => _$this._addresses ??=
+          ListBuilder<GProductOrdersData_productOrders_order_user_addresses>();
   set addresses(
           ListBuilder<GProductOrdersData_productOrders_order_user_addresses>?
               addresses) =>
@@ -5799,7 +5706,6 @@ class GProductOrdersData_productOrders_order_userBuilder
 
   @override
   void replace(GProductOrdersData_productOrders_order_user other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GProductOrdersData_productOrders_order_user;
   }
 
@@ -5817,7 +5723,7 @@ class GProductOrdersData_productOrders_order_userBuilder
     _$GProductOrdersData_productOrders_order_user _$result;
     try {
       _$result = _$v ??
-          new _$GProductOrdersData_productOrders_order_user._(
+          _$GProductOrdersData_productOrders_order_user._(
             G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                 r'GProductOrdersData_productOrders_order_user', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
@@ -5833,7 +5739,7 @@ class GProductOrdersData_productOrders_order_userBuilder
         _$failedField = 'addresses';
         _addresses?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GProductOrdersData_productOrders_order_user',
             _$failedField,
             e.toString());
@@ -5870,7 +5776,7 @@ class _$GProductOrdersData_productOrders_order_user_addresses
           [void Function(
                   GProductOrdersData_productOrders_order_user_addressesBuilder)?
               updates]) =>
-      (new GProductOrdersData_productOrders_order_user_addressesBuilder()
+      (GProductOrdersData_productOrders_order_user_addressesBuilder()
             ..update(updates))
           ._build();
 
@@ -5884,15 +5790,7 @@ class _$GProductOrdersData_productOrders_order_user_addresses
       this.address,
       this.district,
       this.name})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GProductOrdersData_productOrders_order_user_addresses',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GProductOrdersData_productOrders_order_user_addresses', 'id');
-  }
-
+      : super._();
   @override
   GProductOrdersData_productOrders_order_user_addresses rebuild(
           void Function(
@@ -5902,7 +5800,7 @@ class _$GProductOrdersData_productOrders_order_user_addresses
 
   @override
   GProductOrdersData_productOrders_order_user_addressesBuilder toBuilder() =>
-      new GProductOrdersData_productOrders_order_user_addressesBuilder()
+      GProductOrdersData_productOrders_order_user_addressesBuilder()
         ..replace(this);
 
   @override
@@ -6019,7 +5917,6 @@ class GProductOrdersData_productOrders_order_user_addressesBuilder
 
   @override
   void replace(GProductOrdersData_productOrders_order_user_addresses other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GProductOrdersData_productOrders_order_user_addresses;
   }
 
@@ -6036,7 +5933,7 @@ class GProductOrdersData_productOrders_order_user_addressesBuilder
 
   _$GProductOrdersData_productOrders_order_user_addresses _build() {
     final _$result = _$v ??
-        new _$GProductOrdersData_productOrders_order_user_addresses._(
+        _$GProductOrdersData_productOrders_order_user_addresses._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
               r'GProductOrdersData_productOrders_order_user_addresses',
@@ -6066,15 +5963,11 @@ class _$GVehicleOrdersData extends GVehicleOrdersData {
 
   factory _$GVehicleOrdersData(
           [void Function(GVehicleOrdersDataBuilder)? updates]) =>
-      (new GVehicleOrdersDataBuilder()..update(updates))._build();
+      (GVehicleOrdersDataBuilder()..update(updates))._build();
 
   _$GVehicleOrdersData._(
       {required this.G__typename, this.vehicleOrdersCount, this.vehicleOrders})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GVehicleOrdersData', 'G__typename');
-  }
-
+      : super._();
   @override
   GVehicleOrdersData rebuild(
           void Function(GVehicleOrdersDataBuilder) updates) =>
@@ -6082,7 +5975,7 @@ class _$GVehicleOrdersData extends GVehicleOrdersData {
 
   @override
   GVehicleOrdersDataBuilder toBuilder() =>
-      new GVehicleOrdersDataBuilder()..replace(this);
+      GVehicleOrdersDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -6128,8 +6021,7 @@ class GVehicleOrdersDataBuilder
 
   ListBuilder<GVehicleOrdersData_vehicleOrders>? _vehicleOrders;
   ListBuilder<GVehicleOrdersData_vehicleOrders> get vehicleOrders =>
-      _$this._vehicleOrders ??=
-          new ListBuilder<GVehicleOrdersData_vehicleOrders>();
+      _$this._vehicleOrders ??= ListBuilder<GVehicleOrdersData_vehicleOrders>();
   set vehicleOrders(
           ListBuilder<GVehicleOrdersData_vehicleOrders>? vehicleOrders) =>
       _$this._vehicleOrders = vehicleOrders;
@@ -6151,7 +6043,6 @@ class GVehicleOrdersDataBuilder
 
   @override
   void replace(GVehicleOrdersData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GVehicleOrdersData;
   }
 
@@ -6167,7 +6058,7 @@ class GVehicleOrdersDataBuilder
     _$GVehicleOrdersData _$result;
     try {
       _$result = _$v ??
-          new _$GVehicleOrdersData._(
+          _$GVehicleOrdersData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GVehicleOrdersData', 'G__typename'),
             vehicleOrdersCount: vehicleOrdersCount,
@@ -6179,7 +6070,7 @@ class GVehicleOrdersDataBuilder
         _$failedField = 'vehicleOrders';
         _vehicleOrders?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GVehicleOrdersData', _$failedField, e.toString());
       }
       rethrow;
@@ -6208,7 +6099,7 @@ class _$GVehicleOrdersData_vehicleOrders
 
   factory _$GVehicleOrdersData_vehicleOrders(
           [void Function(GVehicleOrdersData_vehicleOrdersBuilder)? updates]) =>
-      (new GVehicleOrdersData_vehicleOrdersBuilder()..update(updates))._build();
+      (GVehicleOrdersData_vehicleOrdersBuilder()..update(updates))._build();
 
   _$GVehicleOrdersData_vehicleOrders._(
       {required this.G__typename,
@@ -6218,13 +6109,7 @@ class _$GVehicleOrdersData_vehicleOrders
       this.status,
       this.order,
       this.createdAt})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GVehicleOrdersData_vehicleOrders', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GVehicleOrdersData_vehicleOrders', 'id');
-  }
-
+      : super._();
   @override
   GVehicleOrdersData_vehicleOrders rebuild(
           void Function(GVehicleOrdersData_vehicleOrdersBuilder) updates) =>
@@ -6232,7 +6117,7 @@ class _$GVehicleOrdersData_vehicleOrders
 
   @override
   GVehicleOrdersData_vehicleOrdersBuilder toBuilder() =>
-      new GVehicleOrdersData_vehicleOrdersBuilder()..replace(this);
+      GVehicleOrdersData_vehicleOrdersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -6295,7 +6180,7 @@ class GVehicleOrdersData_vehicleOrdersBuilder
 
   GVehicleOrdersData_vehicleOrders_dealerBuilder? _dealer;
   GVehicleOrdersData_vehicleOrders_dealerBuilder get dealer =>
-      _$this._dealer ??= new GVehicleOrdersData_vehicleOrders_dealerBuilder();
+      _$this._dealer ??= GVehicleOrdersData_vehicleOrders_dealerBuilder();
   set dealer(GVehicleOrdersData_vehicleOrders_dealerBuilder? dealer) =>
       _$this._dealer = dealer;
 
@@ -6305,13 +6190,13 @@ class GVehicleOrdersData_vehicleOrdersBuilder
 
   GVehicleOrdersData_vehicleOrders_orderBuilder? _order;
   GVehicleOrdersData_vehicleOrders_orderBuilder get order =>
-      _$this._order ??= new GVehicleOrdersData_vehicleOrders_orderBuilder();
+      _$this._order ??= GVehicleOrdersData_vehicleOrders_orderBuilder();
   set order(GVehicleOrdersData_vehicleOrders_orderBuilder? order) =>
       _$this._order = order;
 
   _i2.GDateTimeBuilder? _createdAt;
   _i2.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+      _$this._createdAt ??= _i2.GDateTimeBuilder();
   set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
@@ -6336,7 +6221,6 @@ class GVehicleOrdersData_vehicleOrdersBuilder
 
   @override
   void replace(GVehicleOrdersData_vehicleOrders other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GVehicleOrdersData_vehicleOrders;
   }
 
@@ -6352,7 +6236,7 @@ class GVehicleOrdersData_vehicleOrdersBuilder
     _$GVehicleOrdersData_vehicleOrders _$result;
     try {
       _$result = _$v ??
-          new _$GVehicleOrdersData_vehicleOrders._(
+          _$GVehicleOrdersData_vehicleOrders._(
             G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                 r'GVehicleOrdersData_vehicleOrders', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
@@ -6374,7 +6258,7 @@ class GVehicleOrdersData_vehicleOrdersBuilder
         _$failedField = 'createdAt';
         _createdAt?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GVehicleOrdersData_vehicleOrders', _$failedField, e.toString());
       }
       rethrow;
@@ -6402,7 +6286,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer
   factory _$GVehicleOrdersData_vehicleOrders_dealer(
           [void Function(GVehicleOrdersData_vehicleOrders_dealerBuilder)?
               updates]) =>
-      (new GVehicleOrdersData_vehicleOrders_dealerBuilder()..update(updates))
+      (GVehicleOrdersData_vehicleOrders_dealerBuilder()..update(updates))
           ._build();
 
   _$GVehicleOrdersData_vehicleOrders_dealer._(
@@ -6412,13 +6296,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer
       this.dealer,
       required this.id,
       this.prices})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GVehicleOrdersData_vehicleOrders_dealer', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GVehicleOrdersData_vehicleOrders_dealer', 'id');
-  }
-
+      : super._();
   @override
   GVehicleOrdersData_vehicleOrders_dealer rebuild(
           void Function(GVehicleOrdersData_vehicleOrders_dealerBuilder)
@@ -6427,7 +6305,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer
 
   @override
   GVehicleOrdersData_vehicleOrders_dealerBuilder toBuilder() =>
-      new GVehicleOrdersData_vehicleOrders_dealerBuilder()..replace(this);
+      GVehicleOrdersData_vehicleOrders_dealerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -6482,7 +6360,7 @@ class GVehicleOrdersData_vehicleOrders_dealerBuilder
       _vehicleVariant;
   GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder
       get vehicleVariant => _$this._vehicleVariant ??=
-          new GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder();
+          GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder();
   set vehicleVariant(
           GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder?
               vehicleVariant) =>
@@ -6491,7 +6369,7 @@ class GVehicleOrdersData_vehicleOrders_dealerBuilder
   GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder? _vehicleColor;
   GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder
       get vehicleColor => _$this._vehicleColor ??=
-          new GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder();
+          GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder();
   set vehicleColor(
           GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder?
               vehicleColor) =>
@@ -6500,7 +6378,7 @@ class GVehicleOrdersData_vehicleOrders_dealerBuilder
   GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder? _dealer;
   GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder get dealer =>
       _$this._dealer ??=
-          new GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder();
+          GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder();
   set dealer(GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder? dealer) =>
       _$this._dealer = dealer;
 
@@ -6511,7 +6389,7 @@ class GVehicleOrdersData_vehicleOrders_dealerBuilder
   ListBuilder<GVehicleOrdersData_vehicleOrders_dealer_prices>? _prices;
   ListBuilder<GVehicleOrdersData_vehicleOrders_dealer_prices> get prices =>
       _$this._prices ??=
-          new ListBuilder<GVehicleOrdersData_vehicleOrders_dealer_prices>();
+          ListBuilder<GVehicleOrdersData_vehicleOrders_dealer_prices>();
   set prices(
           ListBuilder<GVehicleOrdersData_vehicleOrders_dealer_prices>?
               prices) =>
@@ -6537,7 +6415,6 @@ class GVehicleOrdersData_vehicleOrders_dealerBuilder
 
   @override
   void replace(GVehicleOrdersData_vehicleOrders_dealer other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GVehicleOrdersData_vehicleOrders_dealer;
   }
 
@@ -6554,7 +6431,7 @@ class GVehicleOrdersData_vehicleOrders_dealerBuilder
     _$GVehicleOrdersData_vehicleOrders_dealer _$result;
     try {
       _$result = _$v ??
-          new _$GVehicleOrdersData_vehicleOrders_dealer._(
+          _$GVehicleOrdersData_vehicleOrders_dealer._(
             G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                 r'GVehicleOrdersData_vehicleOrders_dealer', 'G__typename'),
             vehicleVariant: _vehicleVariant?.build(),
@@ -6577,7 +6454,7 @@ class GVehicleOrdersData_vehicleOrders_dealerBuilder
         _$failedField = 'prices';
         _prices?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GVehicleOrdersData_vehicleOrders_dealer',
             _$failedField,
             e.toString());
@@ -6602,19 +6479,13 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant
           [void Function(
                   GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder)?
               updates]) =>
-      (new GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder()
+      (GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder()
             ..update(updates))
           ._build();
 
   _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant._(
       {required this.G__typename, this.vehicle, this.name})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant',
-        'G__typename');
-  }
-
+      : super._();
   @override
   GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant rebuild(
           void Function(
@@ -6624,7 +6495,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant
 
   @override
   GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder toBuilder() =>
-      new GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder()
+      GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder()
         ..replace(this);
 
   @override
@@ -6671,7 +6542,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder
       _vehicle;
   GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleBuilder
       get vehicle => _$this._vehicle ??=
-          new GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleBuilder();
+          GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleBuilder();
   set vehicle(
           GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleBuilder?
               vehicle) =>
@@ -6699,7 +6570,6 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder
 
   @override
   void replace(GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant;
   }
 
@@ -6718,7 +6588,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder
     _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant _$result;
     try {
       _$result = _$v ??
-          new _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant._(
+          _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
                 r'GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant',
@@ -6732,7 +6602,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleVariantBuilder
         _$failedField = 'vehicle';
         _vehicle?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant',
             _$failedField,
             e.toString());
@@ -6755,19 +6625,13 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle
           [void Function(
                   GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleBuilder)?
               updates]) =>
-      (new GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleBuilder()
+      (GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleBuilder()
             ..update(updates))
           ._build();
 
   _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle._(
       {required this.G__typename, this.name})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle',
-        'G__typename');
-  }
-
+      : super._();
   @override
   GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle rebuild(
           void Function(
@@ -6778,7 +6642,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle
   @override
   GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleBuilder
       toBuilder() =>
-          new GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleBuilder()
+          GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleBuilder()
             ..replace(this);
 
   @override
@@ -6842,7 +6706,6 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleBuilder
   @override
   void replace(
       GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle;
   }
@@ -6861,7 +6724,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicleBuilder
 
   _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle _build() {
     final _$result = _$v ??
-        new _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle._(
+        _$GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
               r'GVehicleOrdersData_vehicleOrders_dealer_vehicleVariant_vehicle',
@@ -6889,17 +6752,13 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor
           [void Function(
                   GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder)?
               updates]) =>
-      (new GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder()
+      (GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder()
             ..update(updates))
           ._build();
 
   _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor._(
       {required this.G__typename, this.name, this.code, this.images})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor', 'G__typename');
-  }
-
+      : super._();
   @override
   GVehicleOrdersData_vehicleOrders_dealer_vehicleColor rebuild(
           void Function(
@@ -6909,7 +6768,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor
 
   @override
   GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder toBuilder() =>
-      new GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder()
+      GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder()
         ..replace(this);
 
   @override
@@ -6966,7 +6825,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder
   ListBuilder<GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images>?
       _images;
   ListBuilder<GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images>
-      get images => _$this._images ??= new ListBuilder<
+      get images => _$this._images ??= ListBuilder<
           GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images>();
   set images(
           ListBuilder<
@@ -6993,7 +6852,6 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder
 
   @override
   void replace(GVehicleOrdersData_vehicleOrders_dealer_vehicleColor other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor;
   }
 
@@ -7012,7 +6870,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder
     _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor _$result;
     try {
       _$result = _$v ??
-          new _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor._(
+          _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
                 r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor',
@@ -7027,7 +6885,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleColorBuilder
         _$failedField = 'images';
         _images?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor',
             _$failedField,
             e.toString());
@@ -7053,21 +6911,13 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images
           [void Function(
                   GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_imagesBuilder)?
               updates]) =>
-      (new GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_imagesBuilder()
+      (GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_imagesBuilder()
             ..update(updates))
           ._build();
 
   _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images._(
       {required this.G__typename, required this.id, this.image})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(id,
-        r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images', 'id');
-  }
-
+      : super._();
   @override
   GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images rebuild(
           void Function(
@@ -7078,7 +6928,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images
   @override
   GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_imagesBuilder
       toBuilder() =>
-          new GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_imagesBuilder()
+          GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_imagesBuilder()
             ..replace(this);
 
   @override
@@ -7130,7 +6980,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_imagesBuilder
       _image;
   GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder
       get image => _$this._image ??=
-          new GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder();
+          GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder();
   set image(
           GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder?
               image) =>
@@ -7156,7 +7006,6 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_imagesBuilder
   @override
   void replace(
       GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v =
         other as _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images;
   }
@@ -7177,7 +7026,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_imagesBuilder
     _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images _$result;
     try {
       _$result = _$v ??
-          new _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images._(
+          _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
                 r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images',
@@ -7194,7 +7043,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_imagesBuilder
         _$failedField = 'image';
         _image?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images',
             _$failedField,
             e.toString());
@@ -7219,27 +7068,13 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image
           [void Function(
                   GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder)?
               updates]) =>
-      (new GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder()
+      (GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder()
             ..update(updates))
           ._build();
 
   _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image._(
       {required this.G__typename, required this.id, required this.url})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id,
-        r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image',
-        'id');
-    BuiltValueNullFieldError.checkNotNull(
-        url,
-        r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image',
-        'url');
-  }
-
+      : super._();
   @override
   GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image rebuild(
           void Function(
@@ -7250,7 +7085,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image
   @override
   GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder
       toBuilder() =>
-          new GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder()
+          GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder()
             ..replace(this);
 
   @override
@@ -7323,7 +7158,6 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder
   @override
   void replace(
       GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image;
   }
@@ -7342,8 +7176,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_imageBuilder
 
   _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image _build() {
     final _$result = _$v ??
-        new _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image
-            ._(
+        _$GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
               r'GVehicleOrdersData_vehicleOrders_dealer_vehicleColor_images_image',
@@ -7372,19 +7205,12 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_dealer
   factory _$GVehicleOrdersData_vehicleOrders_dealer_dealer(
           [void Function(GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder)?
               updates]) =>
-      (new GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder()
-            ..update(updates))
+      (GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder()..update(updates))
           ._build();
 
   _$GVehicleOrdersData_vehicleOrders_dealer_dealer._(
       {required this.G__typename, required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GVehicleOrdersData_vehicleOrders_dealer_dealer', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GVehicleOrdersData_vehicleOrders_dealer_dealer', 'id');
-  }
-
+      : super._();
   @override
   GVehicleOrdersData_vehicleOrders_dealer_dealer rebuild(
           void Function(GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder)
@@ -7393,8 +7219,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_dealer
 
   @override
   GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder toBuilder() =>
-      new GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder()
-        ..replace(this);
+      GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -7453,7 +7278,6 @@ class GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder
 
   @override
   void replace(GVehicleOrdersData_vehicleOrders_dealer_dealer other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GVehicleOrdersData_vehicleOrders_dealer_dealer;
   }
 
@@ -7469,7 +7293,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_dealerBuilder
 
   _$GVehicleOrdersData_vehicleOrders_dealer_dealer _build() {
     final _$result = _$v ??
-        new _$GVehicleOrdersData_vehicleOrders_dealer_dealer._(
+        _$GVehicleOrdersData_vehicleOrders_dealer_dealer._(
           G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
               r'GVehicleOrdersData_vehicleOrders_dealer_dealer', 'G__typename'),
           id: BuiltValueNullFieldError.checkNotNull(
@@ -7498,8 +7322,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_prices
   factory _$GVehicleOrdersData_vehicleOrders_dealer_prices(
           [void Function(GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder)?
               updates]) =>
-      (new GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder()
-            ..update(updates))
+      (GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder()..update(updates))
           ._build();
 
   _$GVehicleOrdersData_vehicleOrders_dealer_prices._(
@@ -7509,13 +7332,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_prices
       this.createdAt,
       required this.id,
       this.category})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GVehicleOrdersData_vehicleOrders_dealer_prices', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GVehicleOrdersData_vehicleOrders_dealer_prices', 'id');
-  }
-
+      : super._();
   @override
   GVehicleOrdersData_vehicleOrders_dealer_prices rebuild(
           void Function(GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder)
@@ -7524,8 +7341,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_prices
 
   @override
   GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder toBuilder() =>
-      new GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder()
-        ..replace(this);
+      GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -7587,7 +7403,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder
 
   _i2.GDateTimeBuilder? _createdAt;
   _i2.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+      _$this._createdAt ??= _i2.GDateTimeBuilder();
   set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
@@ -7598,7 +7414,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder
   GVehicleOrdersData_vehicleOrders_dealer_prices_categoryBuilder? _category;
   GVehicleOrdersData_vehicleOrders_dealer_prices_categoryBuilder get category =>
       _$this._category ??=
-          new GVehicleOrdersData_vehicleOrders_dealer_prices_categoryBuilder();
+          GVehicleOrdersData_vehicleOrders_dealer_prices_categoryBuilder();
   set category(
           GVehicleOrdersData_vehicleOrders_dealer_prices_categoryBuilder?
               category) =>
@@ -7624,7 +7440,6 @@ class GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder
 
   @override
   void replace(GVehicleOrdersData_vehicleOrders_dealer_prices other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GVehicleOrdersData_vehicleOrders_dealer_prices;
   }
 
@@ -7642,7 +7457,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder
     _$GVehicleOrdersData_vehicleOrders_dealer_prices _$result;
     try {
       _$result = _$v ??
-          new _$GVehicleOrdersData_vehicleOrders_dealer_prices._(
+          _$GVehicleOrdersData_vehicleOrders_dealer_prices._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
                 r'GVehicleOrdersData_vehicleOrders_dealer_prices',
@@ -7663,7 +7478,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_pricesBuilder
         _$failedField = 'category';
         _category?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GVehicleOrdersData_vehicleOrders_dealer_prices',
             _$failedField,
             e.toString());
@@ -7688,21 +7503,13 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_prices_category
           [void Function(
                   GVehicleOrdersData_vehicleOrders_dealer_prices_categoryBuilder)?
               updates]) =>
-      (new GVehicleOrdersData_vehicleOrders_dealer_prices_categoryBuilder()
+      (GVehicleOrdersData_vehicleOrders_dealer_prices_categoryBuilder()
             ..update(updates))
           ._build();
 
   _$GVehicleOrdersData_vehicleOrders_dealer_prices_category._(
       {required this.G__typename, this.name, required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GVehicleOrdersData_vehicleOrders_dealer_prices_category',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GVehicleOrdersData_vehicleOrders_dealer_prices_category', 'id');
-  }
-
+      : super._();
   @override
   GVehicleOrdersData_vehicleOrders_dealer_prices_category rebuild(
           void Function(
@@ -7712,7 +7519,7 @@ class _$GVehicleOrdersData_vehicleOrders_dealer_prices_category
 
   @override
   GVehicleOrdersData_vehicleOrders_dealer_prices_categoryBuilder toBuilder() =>
-      new GVehicleOrdersData_vehicleOrders_dealer_prices_categoryBuilder()
+      GVehicleOrdersData_vehicleOrders_dealer_prices_categoryBuilder()
         ..replace(this);
 
   @override
@@ -7781,7 +7588,6 @@ class GVehicleOrdersData_vehicleOrders_dealer_prices_categoryBuilder
 
   @override
   void replace(GVehicleOrdersData_vehicleOrders_dealer_prices_category other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GVehicleOrdersData_vehicleOrders_dealer_prices_category;
   }
 
@@ -7798,7 +7604,7 @@ class GVehicleOrdersData_vehicleOrders_dealer_prices_categoryBuilder
 
   _$GVehicleOrdersData_vehicleOrders_dealer_prices_category _build() {
     final _$result = _$v ??
-        new _$GVehicleOrdersData_vehicleOrders_dealer_prices_category._(
+        _$GVehicleOrdersData_vehicleOrders_dealer_prices_category._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
               r'GVehicleOrdersData_vehicleOrders_dealer_prices_category',
@@ -7826,18 +7632,12 @@ class _$GVehicleOrdersData_vehicleOrders_order
   factory _$GVehicleOrdersData_vehicleOrders_order(
           [void Function(GVehicleOrdersData_vehicleOrders_orderBuilder)?
               updates]) =>
-      (new GVehicleOrdersData_vehicleOrders_orderBuilder()..update(updates))
+      (GVehicleOrdersData_vehicleOrders_orderBuilder()..update(updates))
           ._build();
 
   _$GVehicleOrdersData_vehicleOrders_order._(
       {required this.G__typename, this.user, required this.id, this.createdAt})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GVehicleOrdersData_vehicleOrders_order', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GVehicleOrdersData_vehicleOrders_order', 'id');
-  }
-
+      : super._();
   @override
   GVehicleOrdersData_vehicleOrders_order rebuild(
           void Function(GVehicleOrdersData_vehicleOrders_orderBuilder)
@@ -7846,7 +7646,7 @@ class _$GVehicleOrdersData_vehicleOrders_order
 
   @override
   GVehicleOrdersData_vehicleOrders_orderBuilder toBuilder() =>
-      new GVehicleOrdersData_vehicleOrders_orderBuilder()..replace(this);
+      GVehicleOrdersData_vehicleOrders_orderBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -7893,7 +7693,7 @@ class GVehicleOrdersData_vehicleOrders_orderBuilder
 
   GVehicleOrdersData_vehicleOrders_order_userBuilder? _user;
   GVehicleOrdersData_vehicleOrders_order_userBuilder get user =>
-      _$this._user ??= new GVehicleOrdersData_vehicleOrders_order_userBuilder();
+      _$this._user ??= GVehicleOrdersData_vehicleOrders_order_userBuilder();
   set user(GVehicleOrdersData_vehicleOrders_order_userBuilder? user) =>
       _$this._user = user;
 
@@ -7903,7 +7703,7 @@ class GVehicleOrdersData_vehicleOrders_orderBuilder
 
   _i2.GDateTimeBuilder? _createdAt;
   _i2.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+      _$this._createdAt ??= _i2.GDateTimeBuilder();
   set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
@@ -7925,7 +7725,6 @@ class GVehicleOrdersData_vehicleOrders_orderBuilder
 
   @override
   void replace(GVehicleOrdersData_vehicleOrders_order other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GVehicleOrdersData_vehicleOrders_order;
   }
 
@@ -7942,7 +7741,7 @@ class GVehicleOrdersData_vehicleOrders_orderBuilder
     _$GVehicleOrdersData_vehicleOrders_order _$result;
     try {
       _$result = _$v ??
-          new _$GVehicleOrdersData_vehicleOrders_order._(
+          _$GVehicleOrdersData_vehicleOrders_order._(
             G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                 r'GVehicleOrdersData_vehicleOrders_order', 'G__typename'),
             user: _user?.build(),
@@ -7959,7 +7758,7 @@ class GVehicleOrdersData_vehicleOrders_orderBuilder
         _$failedField = 'createdAt';
         _createdAt?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GVehicleOrdersData_vehicleOrders_order',
             _$failedField,
             e.toString());
@@ -7990,8 +7789,7 @@ class _$GVehicleOrdersData_vehicleOrders_order_user
   factory _$GVehicleOrdersData_vehicleOrders_order_user(
           [void Function(GVehicleOrdersData_vehicleOrders_order_userBuilder)?
               updates]) =>
-      (new GVehicleOrdersData_vehicleOrders_order_userBuilder()
-            ..update(updates))
+      (GVehicleOrdersData_vehicleOrders_order_userBuilder()..update(updates))
           ._build();
 
   _$GVehicleOrdersData_vehicleOrders_order_user._(
@@ -8001,13 +7799,7 @@ class _$GVehicleOrdersData_vehicleOrders_order_user
       this.name,
       this.phoneNumber,
       this.addresses})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GVehicleOrdersData_vehicleOrders_order_user', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GVehicleOrdersData_vehicleOrders_order_user', 'id');
-  }
-
+      : super._();
   @override
   GVehicleOrdersData_vehicleOrders_order_user rebuild(
           void Function(GVehicleOrdersData_vehicleOrders_order_userBuilder)
@@ -8016,7 +7808,7 @@ class _$GVehicleOrdersData_vehicleOrders_order_user
 
   @override
   GVehicleOrdersData_vehicleOrders_order_userBuilder toBuilder() =>
-      new GVehicleOrdersData_vehicleOrders_order_userBuilder()..replace(this);
+      GVehicleOrdersData_vehicleOrders_order_userBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -8086,8 +7878,8 @@ class GVehicleOrdersData_vehicleOrders_order_userBuilder
   ListBuilder<GVehicleOrdersData_vehicleOrders_order_user_addresses>?
       _addresses;
   ListBuilder<GVehicleOrdersData_vehicleOrders_order_user_addresses>
-      get addresses => _$this._addresses ??= new ListBuilder<
-          GVehicleOrdersData_vehicleOrders_order_user_addresses>();
+      get addresses => _$this._addresses ??=
+          ListBuilder<GVehicleOrdersData_vehicleOrders_order_user_addresses>();
   set addresses(
           ListBuilder<GVehicleOrdersData_vehicleOrders_order_user_addresses>?
               addresses) =>
@@ -8113,7 +7905,6 @@ class GVehicleOrdersData_vehicleOrders_order_userBuilder
 
   @override
   void replace(GVehicleOrdersData_vehicleOrders_order_user other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GVehicleOrdersData_vehicleOrders_order_user;
   }
 
@@ -8131,7 +7922,7 @@ class GVehicleOrdersData_vehicleOrders_order_userBuilder
     _$GVehicleOrdersData_vehicleOrders_order_user _$result;
     try {
       _$result = _$v ??
-          new _$GVehicleOrdersData_vehicleOrders_order_user._(
+          _$GVehicleOrdersData_vehicleOrders_order_user._(
             G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                 r'GVehicleOrdersData_vehicleOrders_order_user', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
@@ -8147,7 +7938,7 @@ class GVehicleOrdersData_vehicleOrders_order_userBuilder
         _$failedField = 'addresses';
         _addresses?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GVehicleOrdersData_vehicleOrders_order_user',
             _$failedField,
             e.toString());
@@ -8184,7 +7975,7 @@ class _$GVehicleOrdersData_vehicleOrders_order_user_addresses
           [void Function(
                   GVehicleOrdersData_vehicleOrders_order_user_addressesBuilder)?
               updates]) =>
-      (new GVehicleOrdersData_vehicleOrders_order_user_addressesBuilder()
+      (GVehicleOrdersData_vehicleOrders_order_user_addressesBuilder()
             ..update(updates))
           ._build();
 
@@ -8198,15 +7989,7 @@ class _$GVehicleOrdersData_vehicleOrders_order_user_addresses
       this.address,
       this.district,
       this.name})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GVehicleOrdersData_vehicleOrders_order_user_addresses',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GVehicleOrdersData_vehicleOrders_order_user_addresses', 'id');
-  }
-
+      : super._();
   @override
   GVehicleOrdersData_vehicleOrders_order_user_addresses rebuild(
           void Function(
@@ -8216,7 +7999,7 @@ class _$GVehicleOrdersData_vehicleOrders_order_user_addresses
 
   @override
   GVehicleOrdersData_vehicleOrders_order_user_addressesBuilder toBuilder() =>
-      new GVehicleOrdersData_vehicleOrders_order_user_addressesBuilder()
+      GVehicleOrdersData_vehicleOrders_order_user_addressesBuilder()
         ..replace(this);
 
   @override
@@ -8333,7 +8116,6 @@ class GVehicleOrdersData_vehicleOrders_order_user_addressesBuilder
 
   @override
   void replace(GVehicleOrdersData_vehicleOrders_order_user_addresses other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GVehicleOrdersData_vehicleOrders_order_user_addresses;
   }
 
@@ -8350,7 +8132,7 @@ class GVehicleOrdersData_vehicleOrders_order_user_addressesBuilder
 
   _$GVehicleOrdersData_vehicleOrders_order_user_addresses _build() {
     final _$result = _$v ??
-        new _$GVehicleOrdersData_vehicleOrders_order_user_addresses._(
+        _$GVehicleOrdersData_vehicleOrders_order_user_addresses._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
               r'GVehicleOrdersData_vehicleOrders_order_user_addresses',
@@ -8378,15 +8160,11 @@ class _$GVehicleOrdersCountData extends GVehicleOrdersCountData {
 
   factory _$GVehicleOrdersCountData(
           [void Function(GVehicleOrdersCountDataBuilder)? updates]) =>
-      (new GVehicleOrdersCountDataBuilder()..update(updates))._build();
+      (GVehicleOrdersCountDataBuilder()..update(updates))._build();
 
   _$GVehicleOrdersCountData._(
       {required this.G__typename, this.vehicleOrdersCount})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GVehicleOrdersCountData', 'G__typename');
-  }
-
+      : super._();
   @override
   GVehicleOrdersCountData rebuild(
           void Function(GVehicleOrdersCountDataBuilder) updates) =>
@@ -8394,7 +8172,7 @@ class _$GVehicleOrdersCountData extends GVehicleOrdersCountData {
 
   @override
   GVehicleOrdersCountDataBuilder toBuilder() =>
-      new GVehicleOrdersCountDataBuilder()..replace(this);
+      GVehicleOrdersCountDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -8452,7 +8230,6 @@ class GVehicleOrdersCountDataBuilder
 
   @override
   void replace(GVehicleOrdersCountData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GVehicleOrdersCountData;
   }
 
@@ -8466,7 +8243,7 @@ class GVehicleOrdersCountDataBuilder
 
   _$GVehicleOrdersCountData _build() {
     final _$result = _$v ??
-        new _$GVehicleOrdersCountData._(
+        _$GVehicleOrdersCountData._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename, r'GVehicleOrdersCountData', 'G__typename'),
           vehicleOrdersCount: vehicleOrdersCount,
@@ -8486,17 +8263,13 @@ class _$GTestDriveOrdersData extends GTestDriveOrdersData {
 
   factory _$GTestDriveOrdersData(
           [void Function(GTestDriveOrdersDataBuilder)? updates]) =>
-      (new GTestDriveOrdersDataBuilder()..update(updates))._build();
+      (GTestDriveOrdersDataBuilder()..update(updates))._build();
 
   _$GTestDriveOrdersData._(
       {required this.G__typename,
       this.testDriveOrdersCount,
       this.testDriveOrders})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GTestDriveOrdersData', 'G__typename');
-  }
-
+      : super._();
   @override
   GTestDriveOrdersData rebuild(
           void Function(GTestDriveOrdersDataBuilder) updates) =>
@@ -8504,7 +8277,7 @@ class _$GTestDriveOrdersData extends GTestDriveOrdersData {
 
   @override
   GTestDriveOrdersDataBuilder toBuilder() =>
-      new GTestDriveOrdersDataBuilder()..replace(this);
+      GTestDriveOrdersDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -8551,7 +8324,7 @@ class GTestDriveOrdersDataBuilder
   ListBuilder<GTestDriveOrdersData_testDriveOrders>? _testDriveOrders;
   ListBuilder<GTestDriveOrdersData_testDriveOrders> get testDriveOrders =>
       _$this._testDriveOrders ??=
-          new ListBuilder<GTestDriveOrdersData_testDriveOrders>();
+          ListBuilder<GTestDriveOrdersData_testDriveOrders>();
   set testDriveOrders(
           ListBuilder<GTestDriveOrdersData_testDriveOrders>? testDriveOrders) =>
       _$this._testDriveOrders = testDriveOrders;
@@ -8573,7 +8346,6 @@ class GTestDriveOrdersDataBuilder
 
   @override
   void replace(GTestDriveOrdersData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GTestDriveOrdersData;
   }
 
@@ -8589,7 +8361,7 @@ class GTestDriveOrdersDataBuilder
     _$GTestDriveOrdersData _$result;
     try {
       _$result = _$v ??
-          new _$GTestDriveOrdersData._(
+          _$GTestDriveOrdersData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GTestDriveOrdersData', 'G__typename'),
             testDriveOrdersCount: testDriveOrdersCount,
@@ -8601,7 +8373,7 @@ class GTestDriveOrdersDataBuilder
         _$failedField = 'testDriveOrders';
         _testDriveOrders?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GTestDriveOrdersData', _$failedField, e.toString());
       }
       rethrow;
@@ -8631,8 +8403,7 @@ class _$GTestDriveOrdersData_testDriveOrders
   factory _$GTestDriveOrdersData_testDriveOrders(
           [void Function(GTestDriveOrdersData_testDriveOrdersBuilder)?
               updates]) =>
-      (new GTestDriveOrdersData_testDriveOrdersBuilder()..update(updates))
-          ._build();
+      (GTestDriveOrdersData_testDriveOrdersBuilder()..update(updates))._build();
 
   _$GTestDriveOrdersData_testDriveOrders._(
       {required this.G__typename,
@@ -8642,13 +8413,7 @@ class _$GTestDriveOrdersData_testDriveOrders
       this.status,
       this.order,
       this.createdAt})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GTestDriveOrdersData_testDriveOrders', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GTestDriveOrdersData_testDriveOrders', 'id');
-  }
-
+      : super._();
   @override
   GTestDriveOrdersData_testDriveOrders rebuild(
           void Function(GTestDriveOrdersData_testDriveOrdersBuilder) updates) =>
@@ -8656,7 +8421,7 @@ class _$GTestDriveOrdersData_testDriveOrders
 
   @override
   GTestDriveOrdersData_testDriveOrdersBuilder toBuilder() =>
-      new GTestDriveOrdersData_testDriveOrdersBuilder()..replace(this);
+      GTestDriveOrdersData_testDriveOrdersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -8719,8 +8484,7 @@ class GTestDriveOrdersData_testDriveOrdersBuilder
 
   GTestDriveOrdersData_testDriveOrders_dealerBuilder? _dealer;
   GTestDriveOrdersData_testDriveOrders_dealerBuilder get dealer =>
-      _$this._dealer ??=
-          new GTestDriveOrdersData_testDriveOrders_dealerBuilder();
+      _$this._dealer ??= GTestDriveOrdersData_testDriveOrders_dealerBuilder();
   set dealer(GTestDriveOrdersData_testDriveOrders_dealerBuilder? dealer) =>
       _$this._dealer = dealer;
 
@@ -8730,13 +8494,13 @@ class GTestDriveOrdersData_testDriveOrdersBuilder
 
   GTestDriveOrdersData_testDriveOrders_orderBuilder? _order;
   GTestDriveOrdersData_testDriveOrders_orderBuilder get order =>
-      _$this._order ??= new GTestDriveOrdersData_testDriveOrders_orderBuilder();
+      _$this._order ??= GTestDriveOrdersData_testDriveOrders_orderBuilder();
   set order(GTestDriveOrdersData_testDriveOrders_orderBuilder? order) =>
       _$this._order = order;
 
   _i2.GDateTimeBuilder? _createdAt;
   _i2.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+      _$this._createdAt ??= _i2.GDateTimeBuilder();
   set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
@@ -8761,7 +8525,6 @@ class GTestDriveOrdersData_testDriveOrdersBuilder
 
   @override
   void replace(GTestDriveOrdersData_testDriveOrders other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GTestDriveOrdersData_testDriveOrders;
   }
 
@@ -8778,7 +8541,7 @@ class GTestDriveOrdersData_testDriveOrdersBuilder
     _$GTestDriveOrdersData_testDriveOrders _$result;
     try {
       _$result = _$v ??
-          new _$GTestDriveOrdersData_testDriveOrders._(
+          _$GTestDriveOrdersData_testDriveOrders._(
             G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                 r'GTestDriveOrdersData_testDriveOrders', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
@@ -8800,7 +8563,7 @@ class GTestDriveOrdersData_testDriveOrdersBuilder
         _$failedField = 'createdAt';
         _createdAt?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GTestDriveOrdersData_testDriveOrders',
             _$failedField,
             e.toString());
@@ -8831,8 +8594,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer
   factory _$GTestDriveOrdersData_testDriveOrders_dealer(
           [void Function(GTestDriveOrdersData_testDriveOrders_dealerBuilder)?
               updates]) =>
-      (new GTestDriveOrdersData_testDriveOrders_dealerBuilder()
-            ..update(updates))
+      (GTestDriveOrdersData_testDriveOrders_dealerBuilder()..update(updates))
           ._build();
 
   _$GTestDriveOrdersData_testDriveOrders_dealer._(
@@ -8842,13 +8604,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer
       this.dealer,
       required this.id,
       this.price})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GTestDriveOrdersData_testDriveOrders_dealer', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GTestDriveOrdersData_testDriveOrders_dealer', 'id');
-  }
-
+      : super._();
   @override
   GTestDriveOrdersData_testDriveOrders_dealer rebuild(
           void Function(GTestDriveOrdersData_testDriveOrders_dealerBuilder)
@@ -8857,7 +8613,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer
 
   @override
   GTestDriveOrdersData_testDriveOrders_dealerBuilder toBuilder() =>
-      new GTestDriveOrdersData_testDriveOrders_dealerBuilder()..replace(this);
+      GTestDriveOrdersData_testDriveOrders_dealerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -8912,7 +8668,7 @@ class GTestDriveOrdersData_testDriveOrders_dealerBuilder
       _vehicleVariant;
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder
       get vehicleVariant => _$this._vehicleVariant ??=
-          new GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder();
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder();
   set vehicleVariant(
           GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder?
               vehicleVariant) =>
@@ -8922,7 +8678,7 @@ class GTestDriveOrdersData_testDriveOrders_dealerBuilder
       _vehicleColor;
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder
       get vehicleColor => _$this._vehicleColor ??=
-          new GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder();
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder();
   set vehicleColor(
           GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder?
               vehicleColor) =>
@@ -8931,7 +8687,7 @@ class GTestDriveOrdersData_testDriveOrders_dealerBuilder
   GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder? _dealer;
   GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder get dealer =>
       _$this._dealer ??=
-          new GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder();
+          GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder();
   set dealer(
           GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder? dealer) =>
       _$this._dealer = dealer;
@@ -8964,7 +8720,6 @@ class GTestDriveOrdersData_testDriveOrders_dealerBuilder
 
   @override
   void replace(GTestDriveOrdersData_testDriveOrders_dealer other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GTestDriveOrdersData_testDriveOrders_dealer;
   }
 
@@ -8982,7 +8737,7 @@ class GTestDriveOrdersData_testDriveOrders_dealerBuilder
     _$GTestDriveOrdersData_testDriveOrders_dealer _$result;
     try {
       _$result = _$v ??
-          new _$GTestDriveOrdersData_testDriveOrders_dealer._(
+          _$GTestDriveOrdersData_testDriveOrders_dealer._(
             G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                 r'GTestDriveOrdersData_testDriveOrders_dealer', 'G__typename'),
             vehicleVariant: _vehicleVariant?.build(),
@@ -9002,7 +8757,7 @@ class GTestDriveOrdersData_testDriveOrders_dealerBuilder
         _$failedField = 'dealer';
         _dealer?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GTestDriveOrdersData_testDriveOrders_dealer',
             _$failedField,
             e.toString());
@@ -9028,19 +8783,13 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant
           [void Function(
                   GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder)?
               updates]) =>
-      (new GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder()
+      (GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder()
             ..update(updates))
           ._build();
 
   _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant._(
       {required this.G__typename, this.vehicle, this.name})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant',
-        'G__typename');
-  }
-
+      : super._();
   @override
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant rebuild(
           void Function(
@@ -9051,7 +8800,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant
   @override
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder
       toBuilder() =>
-          new GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder()
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder()
             ..replace(this);
 
   @override
@@ -9099,7 +8848,7 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder
       _vehicle;
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder
       get vehicle => _$this._vehicle ??=
-          new GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder();
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder();
   set vehicle(
           GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder?
               vehicle) =>
@@ -9128,7 +8877,6 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder
   @override
   void replace(
       GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant;
   }
 
@@ -9148,7 +8896,7 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder
     _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant _$result;
     try {
       _$result = _$v ??
-          new _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant._(
+          _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
                 r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant',
@@ -9162,7 +8910,7 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariantBuilder
         _$failedField = 'vehicle';
         _vehicle?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant',
             _$failedField,
             e.toString());
@@ -9185,19 +8933,13 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle
           [void Function(
                   GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder)?
               updates]) =>
-      (new GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder()
+      (GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder()
             ..update(updates))
           ._build();
 
   _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle._(
       {required this.G__typename, this.name})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle',
-        'G__typename');
-  }
-
+      : super._();
   @override
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle rebuild(
           void Function(
@@ -9208,7 +8950,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle
   @override
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder
       toBuilder() =>
-          new GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder()
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder()
             ..replace(this);
 
   @override
@@ -9274,7 +9016,6 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder
   void replace(
       GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle
           other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle;
   }
@@ -9294,8 +9035,7 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicleBuilder
   _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle
       _build() {
     final _$result = _$v ??
-        new _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle
-            ._(
+        _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
               r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleVariant_vehicle',
@@ -9323,19 +9063,13 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor
           [void Function(
                   GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder)?
               updates]) =>
-      (new GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder()
+      (GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder()
             ..update(updates))
           ._build();
 
   _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor._(
       {required this.G__typename, this.name, this.code, this.images})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor',
-        'G__typename');
-  }
-
+      : super._();
   @override
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor rebuild(
           void Function(
@@ -9345,7 +9079,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor
 
   @override
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder toBuilder() =>
-      new GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder()
+      GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder()
         ..replace(this);
 
   @override
@@ -9402,7 +9136,7 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder
   ListBuilder<GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images>?
       _images;
   ListBuilder<GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images>
-      get images => _$this._images ??= new ListBuilder<
+      get images => _$this._images ??= ListBuilder<
           GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images>();
   set images(
           ListBuilder<
@@ -9429,7 +9163,6 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder
 
   @override
   void replace(GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor;
   }
 
@@ -9448,7 +9181,7 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder
     _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor _$result;
     try {
       _$result = _$v ??
-          new _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor._(
+          _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
                 r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor',
@@ -9463,7 +9196,7 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColorBuilder
         _$failedField = 'images';
         _images?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor',
             _$failedField,
             e.toString());
@@ -9489,23 +9222,13 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images
           [void Function(
                   GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesBuilder)?
               updates]) =>
-      (new GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesBuilder()
+      (GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesBuilder()
             ..update(updates))
           ._build();
 
   _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images._(
       {required this.G__typename, required this.id, this.image})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id,
-        r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images',
-        'id');
-  }
-
+      : super._();
   @override
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images rebuild(
           void Function(
@@ -9516,7 +9239,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images
   @override
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesBuilder
       toBuilder() =>
-          new GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesBuilder()
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesBuilder()
             ..replace(this);
 
   @override
@@ -9568,7 +9291,7 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesBuilder
       _image;
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuilder
       get image => _$this._image ??=
-          new GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuilder();
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuilder();
   set image(
           GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuilder?
               image) =>
@@ -9594,7 +9317,6 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesBuilder
   @override
   void replace(
       GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images;
   }
@@ -9615,8 +9337,7 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesBuilder
     _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images _$result;
     try {
       _$result = _$v ??
-          new _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images
-              ._(
+          _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
                 r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images',
@@ -9633,7 +9354,7 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_imagesBuilder
         _$failedField = 'image';
         _image?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images',
             _$failedField,
             e.toString());
@@ -9658,27 +9379,13 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image
           [void Function(
                   GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuilder)?
               updates]) =>
-      (new GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuilder()
+      (GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuilder()
             ..update(updates))
           ._build();
 
   _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image._(
       {required this.G__typename, required this.id, required this.url})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id,
-        r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image',
-        'id');
-    BuiltValueNullFieldError.checkNotNull(
-        url,
-        r'GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image',
-        'url');
-  }
-
+      : super._();
   @override
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image rebuild(
           void Function(
@@ -9689,7 +9396,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image
   @override
   GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuilder
       toBuilder() =>
-          new GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuilder()
+          GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuilder()
             ..replace(this);
 
   @override
@@ -9763,7 +9470,6 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuild
   void replace(
       GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image
           other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image;
   }
@@ -9783,7 +9489,7 @@ class GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_imageBuild
   _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image
       _build() {
     final _$result = _$v ??
-        new _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image
+        _$GTestDriveOrdersData_testDriveOrders_dealer_vehicleColor_images_image
             ._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
@@ -9814,19 +9520,13 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_dealer
           [void Function(
                   GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder)?
               updates]) =>
-      (new GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder()
+      (GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder()
             ..update(updates))
           ._build();
 
   _$GTestDriveOrdersData_testDriveOrders_dealer_dealer._(
       {required this.G__typename, required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GTestDriveOrdersData_testDriveOrders_dealer_dealer', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GTestDriveOrdersData_testDriveOrders_dealer_dealer', 'id');
-  }
-
+      : super._();
   @override
   GTestDriveOrdersData_testDriveOrders_dealer_dealer rebuild(
           void Function(
@@ -9836,7 +9536,7 @@ class _$GTestDriveOrdersData_testDriveOrders_dealer_dealer
 
   @override
   GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder toBuilder() =>
-      new GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder()
+      GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder()
         ..replace(this);
 
   @override
@@ -9896,7 +9596,6 @@ class GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder
 
   @override
   void replace(GTestDriveOrdersData_testDriveOrders_dealer_dealer other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GTestDriveOrdersData_testDriveOrders_dealer_dealer;
   }
 
@@ -9912,7 +9611,7 @@ class GTestDriveOrdersData_testDriveOrders_dealer_dealerBuilder
 
   _$GTestDriveOrdersData_testDriveOrders_dealer_dealer _build() {
     final _$result = _$v ??
-        new _$GTestDriveOrdersData_testDriveOrders_dealer_dealer._(
+        _$GTestDriveOrdersData_testDriveOrders_dealer_dealer._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
               r'GTestDriveOrdersData_testDriveOrders_dealer_dealer',
@@ -9939,18 +9638,12 @@ class _$GTestDriveOrdersData_testDriveOrders_order
   factory _$GTestDriveOrdersData_testDriveOrders_order(
           [void Function(GTestDriveOrdersData_testDriveOrders_orderBuilder)?
               updates]) =>
-      (new GTestDriveOrdersData_testDriveOrders_orderBuilder()..update(updates))
+      (GTestDriveOrdersData_testDriveOrders_orderBuilder()..update(updates))
           ._build();
 
   _$GTestDriveOrdersData_testDriveOrders_order._(
       {required this.G__typename, this.user, required this.id, this.createdAt})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GTestDriveOrdersData_testDriveOrders_order', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GTestDriveOrdersData_testDriveOrders_order', 'id');
-  }
-
+      : super._();
   @override
   GTestDriveOrdersData_testDriveOrders_order rebuild(
           void Function(GTestDriveOrdersData_testDriveOrders_orderBuilder)
@@ -9959,7 +9652,7 @@ class _$GTestDriveOrdersData_testDriveOrders_order
 
   @override
   GTestDriveOrdersData_testDriveOrders_orderBuilder toBuilder() =>
-      new GTestDriveOrdersData_testDriveOrders_orderBuilder()..replace(this);
+      GTestDriveOrdersData_testDriveOrders_orderBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -10006,8 +9699,7 @@ class GTestDriveOrdersData_testDriveOrders_orderBuilder
 
   GTestDriveOrdersData_testDriveOrders_order_userBuilder? _user;
   GTestDriveOrdersData_testDriveOrders_order_userBuilder get user =>
-      _$this._user ??=
-          new GTestDriveOrdersData_testDriveOrders_order_userBuilder();
+      _$this._user ??= GTestDriveOrdersData_testDriveOrders_order_userBuilder();
   set user(GTestDriveOrdersData_testDriveOrders_order_userBuilder? user) =>
       _$this._user = user;
 
@@ -10017,7 +9709,7 @@ class GTestDriveOrdersData_testDriveOrders_orderBuilder
 
   _i2.GDateTimeBuilder? _createdAt;
   _i2.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+      _$this._createdAt ??= _i2.GDateTimeBuilder();
   set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
@@ -10039,7 +9731,6 @@ class GTestDriveOrdersData_testDriveOrders_orderBuilder
 
   @override
   void replace(GTestDriveOrdersData_testDriveOrders_order other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GTestDriveOrdersData_testDriveOrders_order;
   }
 
@@ -10057,7 +9748,7 @@ class GTestDriveOrdersData_testDriveOrders_orderBuilder
     _$GTestDriveOrdersData_testDriveOrders_order _$result;
     try {
       _$result = _$v ??
-          new _$GTestDriveOrdersData_testDriveOrders_order._(
+          _$GTestDriveOrdersData_testDriveOrders_order._(
             G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                 r'GTestDriveOrdersData_testDriveOrders_order', 'G__typename'),
             user: _user?.build(),
@@ -10074,7 +9765,7 @@ class GTestDriveOrdersData_testDriveOrders_orderBuilder
         _$failedField = 'createdAt';
         _createdAt?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GTestDriveOrdersData_testDriveOrders_order',
             _$failedField,
             e.toString());
@@ -10106,7 +9797,7 @@ class _$GTestDriveOrdersData_testDriveOrders_order_user
           [void Function(
                   GTestDriveOrdersData_testDriveOrders_order_userBuilder)?
               updates]) =>
-      (new GTestDriveOrdersData_testDriveOrders_order_userBuilder()
+      (GTestDriveOrdersData_testDriveOrders_order_userBuilder()
             ..update(updates))
           ._build();
 
@@ -10117,13 +9808,7 @@ class _$GTestDriveOrdersData_testDriveOrders_order_user
       this.name,
       this.phoneNumber,
       this.addresses})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GTestDriveOrdersData_testDriveOrders_order_user', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GTestDriveOrdersData_testDriveOrders_order_user', 'id');
-  }
-
+      : super._();
   @override
   GTestDriveOrdersData_testDriveOrders_order_user rebuild(
           void Function(GTestDriveOrdersData_testDriveOrders_order_userBuilder)
@@ -10132,8 +9817,7 @@ class _$GTestDriveOrdersData_testDriveOrders_order_user
 
   @override
   GTestDriveOrdersData_testDriveOrders_order_userBuilder toBuilder() =>
-      new GTestDriveOrdersData_testDriveOrders_order_userBuilder()
-        ..replace(this);
+      GTestDriveOrdersData_testDriveOrders_order_userBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -10203,7 +9887,7 @@ class GTestDriveOrdersData_testDriveOrders_order_userBuilder
   ListBuilder<GTestDriveOrdersData_testDriveOrders_order_user_addresses>?
       _addresses;
   ListBuilder<GTestDriveOrdersData_testDriveOrders_order_user_addresses>
-      get addresses => _$this._addresses ??= new ListBuilder<
+      get addresses => _$this._addresses ??= ListBuilder<
           GTestDriveOrdersData_testDriveOrders_order_user_addresses>();
   set addresses(
           ListBuilder<
@@ -10231,7 +9915,6 @@ class GTestDriveOrdersData_testDriveOrders_order_userBuilder
 
   @override
   void replace(GTestDriveOrdersData_testDriveOrders_order_user other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GTestDriveOrdersData_testDriveOrders_order_user;
   }
 
@@ -10249,7 +9932,7 @@ class GTestDriveOrdersData_testDriveOrders_order_userBuilder
     _$GTestDriveOrdersData_testDriveOrders_order_user _$result;
     try {
       _$result = _$v ??
-          new _$GTestDriveOrdersData_testDriveOrders_order_user._(
+          _$GTestDriveOrdersData_testDriveOrders_order_user._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
                 r'GTestDriveOrdersData_testDriveOrders_order_user',
@@ -10267,7 +9950,7 @@ class GTestDriveOrdersData_testDriveOrders_order_userBuilder
         _$failedField = 'addresses';
         _addresses?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GTestDriveOrdersData_testDriveOrders_order_user',
             _$failedField,
             e.toString());
@@ -10304,7 +9987,7 @@ class _$GTestDriveOrdersData_testDriveOrders_order_user_addresses
           [void Function(
                   GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder)?
               updates]) =>
-      (new GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder()
+      (GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder()
             ..update(updates))
           ._build();
 
@@ -10318,15 +10001,7 @@ class _$GTestDriveOrdersData_testDriveOrders_order_user_addresses
       this.address,
       this.district,
       this.name})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GTestDriveOrdersData_testDriveOrders_order_user_addresses',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GTestDriveOrdersData_testDriveOrders_order_user_addresses', 'id');
-  }
-
+      : super._();
   @override
   GTestDriveOrdersData_testDriveOrders_order_user_addresses rebuild(
           void Function(
@@ -10337,7 +10012,7 @@ class _$GTestDriveOrdersData_testDriveOrders_order_user_addresses
   @override
   GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder
       toBuilder() =>
-          new GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder()
+          GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder()
             ..replace(this);
 
   @override
@@ -10455,7 +10130,6 @@ class GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder
   @override
   void replace(
       GTestDriveOrdersData_testDriveOrders_order_user_addresses other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GTestDriveOrdersData_testDriveOrders_order_user_addresses;
   }
 
@@ -10472,7 +10146,7 @@ class GTestDriveOrdersData_testDriveOrders_order_user_addressesBuilder
 
   _$GTestDriveOrdersData_testDriveOrders_order_user_addresses _build() {
     final _$result = _$v ??
-        new _$GTestDriveOrdersData_testDriveOrders_order_user_addresses._(
+        _$GTestDriveOrdersData_testDriveOrders_order_user_addresses._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
               r'GTestDriveOrdersData_testDriveOrders_order_user_addresses',
@@ -10502,15 +10176,11 @@ class _$GTestDriveOrdersCountData extends GTestDriveOrdersCountData {
 
   factory _$GTestDriveOrdersCountData(
           [void Function(GTestDriveOrdersCountDataBuilder)? updates]) =>
-      (new GTestDriveOrdersCountDataBuilder()..update(updates))._build();
+      (GTestDriveOrdersCountDataBuilder()..update(updates))._build();
 
   _$GTestDriveOrdersCountData._(
       {required this.G__typename, this.testDriveOrdersCount})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GTestDriveOrdersCountData', 'G__typename');
-  }
-
+      : super._();
   @override
   GTestDriveOrdersCountData rebuild(
           void Function(GTestDriveOrdersCountDataBuilder) updates) =>
@@ -10518,7 +10188,7 @@ class _$GTestDriveOrdersCountData extends GTestDriveOrdersCountData {
 
   @override
   GTestDriveOrdersCountDataBuilder toBuilder() =>
-      new GTestDriveOrdersCountDataBuilder()..replace(this);
+      GTestDriveOrdersCountDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -10576,7 +10246,6 @@ class GTestDriveOrdersCountDataBuilder
 
   @override
   void replace(GTestDriveOrdersCountData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GTestDriveOrdersCountData;
   }
 
@@ -10590,7 +10259,7 @@ class GTestDriveOrdersCountDataBuilder
 
   _$GTestDriveOrdersCountData _build() {
     final _$result = _$v ??
-        new _$GTestDriveOrdersCountData._(
+        _$GTestDriveOrdersCountData._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename, r'GTestDriveOrdersCountData', 'G__typename'),
           testDriveOrdersCount: testDriveOrdersCount,
@@ -10608,15 +10277,11 @@ class _$GUpdateProductOrderData extends GUpdateProductOrderData {
 
   factory _$GUpdateProductOrderData(
           [void Function(GUpdateProductOrderDataBuilder)? updates]) =>
-      (new GUpdateProductOrderDataBuilder()..update(updates))._build();
+      (GUpdateProductOrderDataBuilder()..update(updates))._build();
 
   _$GUpdateProductOrderData._(
       {required this.G__typename, this.updateProductOrder})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUpdateProductOrderData', 'G__typename');
-  }
-
+      : super._();
   @override
   GUpdateProductOrderData rebuild(
           void Function(GUpdateProductOrderDataBuilder) updates) =>
@@ -10624,7 +10289,7 @@ class _$GUpdateProductOrderData extends GUpdateProductOrderData {
 
   @override
   GUpdateProductOrderDataBuilder toBuilder() =>
-      new GUpdateProductOrderDataBuilder()..replace(this);
+      GUpdateProductOrderDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -10664,7 +10329,7 @@ class GUpdateProductOrderDataBuilder
   GUpdateProductOrderData_updateProductOrderBuilder? _updateProductOrder;
   GUpdateProductOrderData_updateProductOrderBuilder get updateProductOrder =>
       _$this._updateProductOrder ??=
-          new GUpdateProductOrderData_updateProductOrderBuilder();
+          GUpdateProductOrderData_updateProductOrderBuilder();
   set updateProductOrder(
           GUpdateProductOrderData_updateProductOrderBuilder?
               updateProductOrder) =>
@@ -10686,7 +10351,6 @@ class GUpdateProductOrderDataBuilder
 
   @override
   void replace(GUpdateProductOrderData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUpdateProductOrderData;
   }
 
@@ -10702,7 +10366,7 @@ class GUpdateProductOrderDataBuilder
     _$GUpdateProductOrderData _$result;
     try {
       _$result = _$v ??
-          new _$GUpdateProductOrderData._(
+          _$GUpdateProductOrderData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GUpdateProductOrderData', 'G__typename'),
             updateProductOrder: _updateProductOrder?.build(),
@@ -10713,7 +10377,7 @@ class GUpdateProductOrderDataBuilder
         _$failedField = 'updateProductOrder';
         _updateProductOrder?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUpdateProductOrderData', _$failedField, e.toString());
       }
       rethrow;
@@ -10733,18 +10397,12 @@ class _$GUpdateProductOrderData_updateProductOrder
   factory _$GUpdateProductOrderData_updateProductOrder(
           [void Function(GUpdateProductOrderData_updateProductOrderBuilder)?
               updates]) =>
-      (new GUpdateProductOrderData_updateProductOrderBuilder()..update(updates))
+      (GUpdateProductOrderData_updateProductOrderBuilder()..update(updates))
           ._build();
 
   _$GUpdateProductOrderData_updateProductOrder._(
       {required this.G__typename, required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GUpdateProductOrderData_updateProductOrder', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GUpdateProductOrderData_updateProductOrder', 'id');
-  }
-
+      : super._();
   @override
   GUpdateProductOrderData_updateProductOrder rebuild(
           void Function(GUpdateProductOrderData_updateProductOrderBuilder)
@@ -10753,7 +10411,7 @@ class _$GUpdateProductOrderData_updateProductOrder
 
   @override
   GUpdateProductOrderData_updateProductOrderBuilder toBuilder() =>
-      new GUpdateProductOrderData_updateProductOrderBuilder()..replace(this);
+      GUpdateProductOrderData_updateProductOrderBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -10812,7 +10470,6 @@ class GUpdateProductOrderData_updateProductOrderBuilder
 
   @override
   void replace(GUpdateProductOrderData_updateProductOrder other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUpdateProductOrderData_updateProductOrder;
   }
 
@@ -10828,7 +10485,7 @@ class GUpdateProductOrderData_updateProductOrderBuilder
 
   _$GUpdateProductOrderData_updateProductOrder _build() {
     final _$result = _$v ??
-        new _$GUpdateProductOrderData_updateProductOrder._(
+        _$GUpdateProductOrderData_updateProductOrder._(
           G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
               r'GUpdateProductOrderData_updateProductOrder', 'G__typename'),
           id: BuiltValueNullFieldError.checkNotNull(
@@ -10847,15 +10504,11 @@ class _$GUpdateVehicleOrderData extends GUpdateVehicleOrderData {
 
   factory _$GUpdateVehicleOrderData(
           [void Function(GUpdateVehicleOrderDataBuilder)? updates]) =>
-      (new GUpdateVehicleOrderDataBuilder()..update(updates))._build();
+      (GUpdateVehicleOrderDataBuilder()..update(updates))._build();
 
   _$GUpdateVehicleOrderData._(
       {required this.G__typename, this.updateVehicleOrder})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUpdateVehicleOrderData', 'G__typename');
-  }
-
+      : super._();
   @override
   GUpdateVehicleOrderData rebuild(
           void Function(GUpdateVehicleOrderDataBuilder) updates) =>
@@ -10863,7 +10516,7 @@ class _$GUpdateVehicleOrderData extends GUpdateVehicleOrderData {
 
   @override
   GUpdateVehicleOrderDataBuilder toBuilder() =>
-      new GUpdateVehicleOrderDataBuilder()..replace(this);
+      GUpdateVehicleOrderDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -10903,7 +10556,7 @@ class GUpdateVehicleOrderDataBuilder
   GUpdateVehicleOrderData_updateVehicleOrderBuilder? _updateVehicleOrder;
   GUpdateVehicleOrderData_updateVehicleOrderBuilder get updateVehicleOrder =>
       _$this._updateVehicleOrder ??=
-          new GUpdateVehicleOrderData_updateVehicleOrderBuilder();
+          GUpdateVehicleOrderData_updateVehicleOrderBuilder();
   set updateVehicleOrder(
           GUpdateVehicleOrderData_updateVehicleOrderBuilder?
               updateVehicleOrder) =>
@@ -10925,7 +10578,6 @@ class GUpdateVehicleOrderDataBuilder
 
   @override
   void replace(GUpdateVehicleOrderData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUpdateVehicleOrderData;
   }
 
@@ -10941,7 +10593,7 @@ class GUpdateVehicleOrderDataBuilder
     _$GUpdateVehicleOrderData _$result;
     try {
       _$result = _$v ??
-          new _$GUpdateVehicleOrderData._(
+          _$GUpdateVehicleOrderData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GUpdateVehicleOrderData', 'G__typename'),
             updateVehicleOrder: _updateVehicleOrder?.build(),
@@ -10952,7 +10604,7 @@ class GUpdateVehicleOrderDataBuilder
         _$failedField = 'updateVehicleOrder';
         _updateVehicleOrder?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUpdateVehicleOrderData', _$failedField, e.toString());
       }
       rethrow;
@@ -10972,18 +10624,12 @@ class _$GUpdateVehicleOrderData_updateVehicleOrder
   factory _$GUpdateVehicleOrderData_updateVehicleOrder(
           [void Function(GUpdateVehicleOrderData_updateVehicleOrderBuilder)?
               updates]) =>
-      (new GUpdateVehicleOrderData_updateVehicleOrderBuilder()..update(updates))
+      (GUpdateVehicleOrderData_updateVehicleOrderBuilder()..update(updates))
           ._build();
 
   _$GUpdateVehicleOrderData_updateVehicleOrder._(
       {required this.G__typename, required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GUpdateVehicleOrderData_updateVehicleOrder', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GUpdateVehicleOrderData_updateVehicleOrder', 'id');
-  }
-
+      : super._();
   @override
   GUpdateVehicleOrderData_updateVehicleOrder rebuild(
           void Function(GUpdateVehicleOrderData_updateVehicleOrderBuilder)
@@ -10992,7 +10638,7 @@ class _$GUpdateVehicleOrderData_updateVehicleOrder
 
   @override
   GUpdateVehicleOrderData_updateVehicleOrderBuilder toBuilder() =>
-      new GUpdateVehicleOrderData_updateVehicleOrderBuilder()..replace(this);
+      GUpdateVehicleOrderData_updateVehicleOrderBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -11051,7 +10697,6 @@ class GUpdateVehicleOrderData_updateVehicleOrderBuilder
 
   @override
   void replace(GUpdateVehicleOrderData_updateVehicleOrder other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUpdateVehicleOrderData_updateVehicleOrder;
   }
 
@@ -11067,7 +10712,7 @@ class GUpdateVehicleOrderData_updateVehicleOrderBuilder
 
   _$GUpdateVehicleOrderData_updateVehicleOrder _build() {
     final _$result = _$v ??
-        new _$GUpdateVehicleOrderData_updateVehicleOrder._(
+        _$GUpdateVehicleOrderData_updateVehicleOrder._(
           G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
               r'GUpdateVehicleOrderData_updateVehicleOrder', 'G__typename'),
           id: BuiltValueNullFieldError.checkNotNull(
@@ -11086,15 +10731,11 @@ class _$GUpdateTestDriveOrderData extends GUpdateTestDriveOrderData {
 
   factory _$GUpdateTestDriveOrderData(
           [void Function(GUpdateTestDriveOrderDataBuilder)? updates]) =>
-      (new GUpdateTestDriveOrderDataBuilder()..update(updates))._build();
+      (GUpdateTestDriveOrderDataBuilder()..update(updates))._build();
 
   _$GUpdateTestDriveOrderData._(
       {required this.G__typename, this.updateTestDriveOrder})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUpdateTestDriveOrderData', 'G__typename');
-  }
-
+      : super._();
   @override
   GUpdateTestDriveOrderData rebuild(
           void Function(GUpdateTestDriveOrderDataBuilder) updates) =>
@@ -11102,7 +10743,7 @@ class _$GUpdateTestDriveOrderData extends GUpdateTestDriveOrderData {
 
   @override
   GUpdateTestDriveOrderDataBuilder toBuilder() =>
-      new GUpdateTestDriveOrderDataBuilder()..replace(this);
+      GUpdateTestDriveOrderDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -11142,7 +10783,7 @@ class GUpdateTestDriveOrderDataBuilder
   GUpdateTestDriveOrderData_updateTestDriveOrderBuilder? _updateTestDriveOrder;
   GUpdateTestDriveOrderData_updateTestDriveOrderBuilder
       get updateTestDriveOrder => _$this._updateTestDriveOrder ??=
-          new GUpdateTestDriveOrderData_updateTestDriveOrderBuilder();
+          GUpdateTestDriveOrderData_updateTestDriveOrderBuilder();
   set updateTestDriveOrder(
           GUpdateTestDriveOrderData_updateTestDriveOrderBuilder?
               updateTestDriveOrder) =>
@@ -11164,7 +10805,6 @@ class GUpdateTestDriveOrderDataBuilder
 
   @override
   void replace(GUpdateTestDriveOrderData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUpdateTestDriveOrderData;
   }
 
@@ -11180,7 +10820,7 @@ class GUpdateTestDriveOrderDataBuilder
     _$GUpdateTestDriveOrderData _$result;
     try {
       _$result = _$v ??
-          new _$GUpdateTestDriveOrderData._(
+          _$GUpdateTestDriveOrderData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GUpdateTestDriveOrderData', 'G__typename'),
             updateTestDriveOrder: _updateTestDriveOrder?.build(),
@@ -11191,7 +10831,7 @@ class GUpdateTestDriveOrderDataBuilder
         _$failedField = 'updateTestDriveOrder';
         _updateTestDriveOrder?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUpdateTestDriveOrderData', _$failedField, e.toString());
       }
       rethrow;
@@ -11211,19 +10851,12 @@ class _$GUpdateTestDriveOrderData_updateTestDriveOrder
   factory _$GUpdateTestDriveOrderData_updateTestDriveOrder(
           [void Function(GUpdateTestDriveOrderData_updateTestDriveOrderBuilder)?
               updates]) =>
-      (new GUpdateTestDriveOrderData_updateTestDriveOrderBuilder()
-            ..update(updates))
+      (GUpdateTestDriveOrderData_updateTestDriveOrderBuilder()..update(updates))
           ._build();
 
   _$GUpdateTestDriveOrderData_updateTestDriveOrder._(
       {required this.G__typename, required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GUpdateTestDriveOrderData_updateTestDriveOrder', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GUpdateTestDriveOrderData_updateTestDriveOrder', 'id');
-  }
-
+      : super._();
   @override
   GUpdateTestDriveOrderData_updateTestDriveOrder rebuild(
           void Function(GUpdateTestDriveOrderData_updateTestDriveOrderBuilder)
@@ -11232,8 +10865,7 @@ class _$GUpdateTestDriveOrderData_updateTestDriveOrder
 
   @override
   GUpdateTestDriveOrderData_updateTestDriveOrderBuilder toBuilder() =>
-      new GUpdateTestDriveOrderData_updateTestDriveOrderBuilder()
-        ..replace(this);
+      GUpdateTestDriveOrderData_updateTestDriveOrderBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -11292,7 +10924,6 @@ class GUpdateTestDriveOrderData_updateTestDriveOrderBuilder
 
   @override
   void replace(GUpdateTestDriveOrderData_updateTestDriveOrder other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUpdateTestDriveOrderData_updateTestDriveOrder;
   }
 
@@ -11308,7 +10939,7 @@ class GUpdateTestDriveOrderData_updateTestDriveOrderBuilder
 
   _$GUpdateTestDriveOrderData_updateTestDriveOrder _build() {
     final _$result = _$v ??
-        new _$GUpdateTestDriveOrderData_updateTestDriveOrder._(
+        _$GUpdateTestDriveOrderData_updateTestDriveOrder._(
           G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
               r'GUpdateTestDriveOrderData_updateTestDriveOrder', 'G__typename'),
           id: BuiltValueNullFieldError.checkNotNull(
@@ -11329,16 +10960,11 @@ class _$GCreateOrderRejectionByDealerData
 
   factory _$GCreateOrderRejectionByDealerData(
           [void Function(GCreateOrderRejectionByDealerDataBuilder)? updates]) =>
-      (new GCreateOrderRejectionByDealerDataBuilder()..update(updates))
-          ._build();
+      (GCreateOrderRejectionByDealerDataBuilder()..update(updates))._build();
 
   _$GCreateOrderRejectionByDealerData._(
       {required this.G__typename, this.createOrderRejectionByDealer})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GCreateOrderRejectionByDealerData', 'G__typename');
-  }
-
+      : super._();
   @override
   GCreateOrderRejectionByDealerData rebuild(
           void Function(GCreateOrderRejectionByDealerDataBuilder) updates) =>
@@ -11346,7 +10972,7 @@ class _$GCreateOrderRejectionByDealerData
 
   @override
   GCreateOrderRejectionByDealerDataBuilder toBuilder() =>
-      new GCreateOrderRejectionByDealerDataBuilder()..replace(this);
+      GCreateOrderRejectionByDealerDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -11389,7 +11015,7 @@ class GCreateOrderRejectionByDealerDataBuilder
   GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder
       get createOrderRejectionByDealer => _$this
               ._createOrderRejectionByDealer ??=
-          new GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder();
+          GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder();
   set createOrderRejectionByDealer(
           GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder?
               createOrderRejectionByDealer) =>
@@ -11412,7 +11038,6 @@ class GCreateOrderRejectionByDealerDataBuilder
 
   @override
   void replace(GCreateOrderRejectionByDealerData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateOrderRejectionByDealerData;
   }
 
@@ -11429,7 +11054,7 @@ class GCreateOrderRejectionByDealerDataBuilder
     _$GCreateOrderRejectionByDealerData _$result;
     try {
       _$result = _$v ??
-          new _$GCreateOrderRejectionByDealerData._(
+          _$GCreateOrderRejectionByDealerData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                 r'GCreateOrderRejectionByDealerData', 'G__typename'),
             createOrderRejectionByDealer:
@@ -11441,7 +11066,7 @@ class GCreateOrderRejectionByDealerDataBuilder
         _$failedField = 'createOrderRejectionByDealer';
         _createOrderRejectionByDealer?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCreateOrderRejectionByDealerData', _$failedField, e.toString());
       }
       rethrow;
@@ -11462,23 +11087,13 @@ class _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer
           [void Function(
                   GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder)?
               updates]) =>
-      (new GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder()
+      (GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder()
             ..update(updates))
           ._build();
 
   _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer._(
       {required this.G__typename, required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GCreateOrderRejectionByDealerData_createOrderRejectionByDealer',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id,
-        r'GCreateOrderRejectionByDealerData_createOrderRejectionByDealer',
-        'id');
-  }
-
+      : super._();
   @override
   GCreateOrderRejectionByDealerData_createOrderRejectionByDealer rebuild(
           void Function(
@@ -11489,7 +11104,7 @@ class _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer
   @override
   GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder
       toBuilder() =>
-          new GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder()
+          GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder()
             ..replace(this);
 
   @override
@@ -11553,7 +11168,6 @@ class GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder
   @override
   void replace(
       GCreateOrderRejectionByDealerData_createOrderRejectionByDealer other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer;
   }
@@ -11572,7 +11186,7 @@ class GCreateOrderRejectionByDealerData_createOrderRejectionByDealerBuilder
 
   _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer _build() {
     final _$result = _$v ??
-        new _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer._(
+        _$GCreateOrderRejectionByDealerData_createOrderRejectionByDealer._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
               r'GCreateOrderRejectionByDealerData_createOrderRejectionByDealer',

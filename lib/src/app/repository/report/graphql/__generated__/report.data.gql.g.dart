@@ -7,19 +7,19 @@ part of 'report.data.gql.dart';
 // **************************************************************************
 
 Serializer<GCreateReportData> _$gCreateReportDataSerializer =
-    new _$GCreateReportDataSerializer();
+    _$GCreateReportDataSerializer();
 Serializer<GCreateReportData_createReport>
     _$gCreateReportDataCreateReportSerializer =
-    new _$GCreateReportData_createReportSerializer();
+    _$GCreateReportData_createReportSerializer();
 Serializer<GCreateFeedbackData> _$gCreateFeedbackDataSerializer =
-    new _$GCreateFeedbackDataSerializer();
+    _$GCreateFeedbackDataSerializer();
 Serializer<GCreateFeedbackData_createFeedback>
     _$gCreateFeedbackDataCreateFeedbackSerializer =
-    new _$GCreateFeedbackData_createFeedbackSerializer();
+    _$GCreateFeedbackData_createFeedbackSerializer();
 Serializer<GCategoriesData> _$gCategoriesDataSerializer =
-    new _$GCategoriesDataSerializer();
+    _$GCategoriesDataSerializer();
 Serializer<GCategoriesData_categories> _$gCategoriesDataCategoriesSerializer =
-    new _$GCategoriesData_categoriesSerializer();
+    _$GCategoriesData_categoriesSerializer();
 
 class _$GCreateReportDataSerializer
     implements StructuredSerializer<GCreateReportData> {
@@ -51,7 +51,7 @@ class _$GCreateReportDataSerializer
   GCreateReportData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateReportDataBuilder();
+    final result = GCreateReportDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -105,7 +105,7 @@ class _$GCreateReportData_createReportSerializer
   GCreateReportData_createReport deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateReportData_createReportBuilder();
+    final result = GCreateReportData_createReportBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -162,7 +162,7 @@ class _$GCreateFeedbackDataSerializer
   GCreateFeedbackData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateFeedbackDataBuilder();
+    final result = GCreateFeedbackDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -216,7 +216,7 @@ class _$GCreateFeedbackData_createFeedbackSerializer
   GCreateFeedbackData_createFeedback deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateFeedbackData_createFeedbackBuilder();
+    final result = GCreateFeedbackData_createFeedbackBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -270,7 +270,7 @@ class _$GCategoriesDataSerializer
   GCategoriesData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCategoriesDataBuilder();
+    final result = GCategoriesDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -345,7 +345,7 @@ class _$GCategoriesData_categoriesSerializer
   GCategoriesData_categories deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCategoriesData_categoriesBuilder();
+    final result = GCategoriesData_categoriesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -388,21 +388,17 @@ class _$GCreateReportData extends GCreateReportData {
 
   factory _$GCreateReportData(
           [void Function(GCreateReportDataBuilder)? updates]) =>
-      (new GCreateReportDataBuilder()..update(updates))._build();
+      (GCreateReportDataBuilder()..update(updates))._build();
 
   _$GCreateReportData._({required this.G__typename, this.createReport})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GCreateReportData', 'G__typename');
-  }
-
+      : super._();
   @override
   GCreateReportData rebuild(void Function(GCreateReportDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   GCreateReportDataBuilder toBuilder() =>
-      new GCreateReportDataBuilder()..replace(this);
+      GCreateReportDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -440,7 +436,7 @@ class GCreateReportDataBuilder
 
   GCreateReportData_createReportBuilder? _createReport;
   GCreateReportData_createReportBuilder get createReport =>
-      _$this._createReport ??= new GCreateReportData_createReportBuilder();
+      _$this._createReport ??= GCreateReportData_createReportBuilder();
   set createReport(GCreateReportData_createReportBuilder? createReport) =>
       _$this._createReport = createReport;
 
@@ -460,7 +456,6 @@ class GCreateReportDataBuilder
 
   @override
   void replace(GCreateReportData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateReportData;
   }
 
@@ -476,7 +471,7 @@ class GCreateReportDataBuilder
     _$GCreateReportData _$result;
     try {
       _$result = _$v ??
-          new _$GCreateReportData._(
+          _$GCreateReportData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GCreateReportData', 'G__typename'),
             createReport: _createReport?.build(),
@@ -487,7 +482,7 @@ class GCreateReportDataBuilder
         _$failedField = 'createReport';
         _createReport?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCreateReportData', _$failedField, e.toString());
       }
       rethrow;
@@ -505,17 +500,11 @@ class _$GCreateReportData_createReport extends GCreateReportData_createReport {
 
   factory _$GCreateReportData_createReport(
           [void Function(GCreateReportData_createReportBuilder)? updates]) =>
-      (new GCreateReportData_createReportBuilder()..update(updates))._build();
+      (GCreateReportData_createReportBuilder()..update(updates))._build();
 
   _$GCreateReportData_createReport._(
       {required this.G__typename, required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GCreateReportData_createReport', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GCreateReportData_createReport', 'id');
-  }
-
+      : super._();
   @override
   GCreateReportData_createReport rebuild(
           void Function(GCreateReportData_createReportBuilder) updates) =>
@@ -523,7 +512,7 @@ class _$GCreateReportData_createReport extends GCreateReportData_createReport {
 
   @override
   GCreateReportData_createReportBuilder toBuilder() =>
-      new GCreateReportData_createReportBuilder()..replace(this);
+      GCreateReportData_createReportBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -581,7 +570,6 @@ class GCreateReportData_createReportBuilder
 
   @override
   void replace(GCreateReportData_createReport other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateReportData_createReport;
   }
 
@@ -595,7 +583,7 @@ class GCreateReportData_createReportBuilder
 
   _$GCreateReportData_createReport _build() {
     final _$result = _$v ??
-        new _$GCreateReportData_createReport._(
+        _$GCreateReportData_createReport._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename, r'GCreateReportData_createReport', 'G__typename'),
           id: BuiltValueNullFieldError.checkNotNull(
@@ -614,14 +602,10 @@ class _$GCreateFeedbackData extends GCreateFeedbackData {
 
   factory _$GCreateFeedbackData(
           [void Function(GCreateFeedbackDataBuilder)? updates]) =>
-      (new GCreateFeedbackDataBuilder()..update(updates))._build();
+      (GCreateFeedbackDataBuilder()..update(updates))._build();
 
   _$GCreateFeedbackData._({required this.G__typename, this.createFeedback})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GCreateFeedbackData', 'G__typename');
-  }
-
+      : super._();
   @override
   GCreateFeedbackData rebuild(
           void Function(GCreateFeedbackDataBuilder) updates) =>
@@ -629,7 +613,7 @@ class _$GCreateFeedbackData extends GCreateFeedbackData {
 
   @override
   GCreateFeedbackDataBuilder toBuilder() =>
-      new GCreateFeedbackDataBuilder()..replace(this);
+      GCreateFeedbackDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -667,8 +651,7 @@ class GCreateFeedbackDataBuilder
 
   GCreateFeedbackData_createFeedbackBuilder? _createFeedback;
   GCreateFeedbackData_createFeedbackBuilder get createFeedback =>
-      _$this._createFeedback ??=
-          new GCreateFeedbackData_createFeedbackBuilder();
+      _$this._createFeedback ??= GCreateFeedbackData_createFeedbackBuilder();
   set createFeedback(
           GCreateFeedbackData_createFeedbackBuilder? createFeedback) =>
       _$this._createFeedback = createFeedback;
@@ -689,7 +672,6 @@ class GCreateFeedbackDataBuilder
 
   @override
   void replace(GCreateFeedbackData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateFeedbackData;
   }
 
@@ -705,7 +687,7 @@ class GCreateFeedbackDataBuilder
     _$GCreateFeedbackData _$result;
     try {
       _$result = _$v ??
-          new _$GCreateFeedbackData._(
+          _$GCreateFeedbackData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GCreateFeedbackData', 'G__typename'),
             createFeedback: _createFeedback?.build(),
@@ -716,7 +698,7 @@ class GCreateFeedbackDataBuilder
         _$failedField = 'createFeedback';
         _createFeedback?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCreateFeedbackData', _$failedField, e.toString());
       }
       rethrow;
@@ -736,18 +718,11 @@ class _$GCreateFeedbackData_createFeedback
   factory _$GCreateFeedbackData_createFeedback(
           [void Function(GCreateFeedbackData_createFeedbackBuilder)?
               updates]) =>
-      (new GCreateFeedbackData_createFeedbackBuilder()..update(updates))
-          ._build();
+      (GCreateFeedbackData_createFeedbackBuilder()..update(updates))._build();
 
   _$GCreateFeedbackData_createFeedback._(
       {required this.G__typename, required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GCreateFeedbackData_createFeedback', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GCreateFeedbackData_createFeedback', 'id');
-  }
-
+      : super._();
   @override
   GCreateFeedbackData_createFeedback rebuild(
           void Function(GCreateFeedbackData_createFeedbackBuilder) updates) =>
@@ -755,7 +730,7 @@ class _$GCreateFeedbackData_createFeedback
 
   @override
   GCreateFeedbackData_createFeedbackBuilder toBuilder() =>
-      new GCreateFeedbackData_createFeedbackBuilder()..replace(this);
+      GCreateFeedbackData_createFeedbackBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -813,7 +788,6 @@ class GCreateFeedbackData_createFeedbackBuilder
 
   @override
   void replace(GCreateFeedbackData_createFeedback other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateFeedbackData_createFeedback;
   }
 
@@ -828,7 +802,7 @@ class GCreateFeedbackData_createFeedbackBuilder
 
   _$GCreateFeedbackData_createFeedback _build() {
     final _$result = _$v ??
-        new _$GCreateFeedbackData_createFeedback._(
+        _$GCreateFeedbackData_createFeedback._(
           G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
               r'GCreateFeedbackData_createFeedback', 'G__typename'),
           id: BuiltValueNullFieldError.checkNotNull(
@@ -846,21 +820,15 @@ class _$GCategoriesData extends GCategoriesData {
   final BuiltList<GCategoriesData_categories>? categories;
 
   factory _$GCategoriesData([void Function(GCategoriesDataBuilder)? updates]) =>
-      (new GCategoriesDataBuilder()..update(updates))._build();
+      (GCategoriesDataBuilder()..update(updates))._build();
 
-  _$GCategoriesData._({required this.G__typename, this.categories})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GCategoriesData', 'G__typename');
-  }
-
+  _$GCategoriesData._({required this.G__typename, this.categories}) : super._();
   @override
   GCategoriesData rebuild(void Function(GCategoriesDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GCategoriesDataBuilder toBuilder() =>
-      new GCategoriesDataBuilder()..replace(this);
+  GCategoriesDataBuilder toBuilder() => GCategoriesDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -898,7 +866,7 @@ class GCategoriesDataBuilder
 
   ListBuilder<GCategoriesData_categories>? _categories;
   ListBuilder<GCategoriesData_categories> get categories =>
-      _$this._categories ??= new ListBuilder<GCategoriesData_categories>();
+      _$this._categories ??= ListBuilder<GCategoriesData_categories>();
   set categories(ListBuilder<GCategoriesData_categories>? categories) =>
       _$this._categories = categories;
 
@@ -918,7 +886,6 @@ class GCategoriesDataBuilder
 
   @override
   void replace(GCategoriesData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCategoriesData;
   }
 
@@ -934,7 +901,7 @@ class GCategoriesDataBuilder
     _$GCategoriesData _$result;
     try {
       _$result = _$v ??
-          new _$GCategoriesData._(
+          _$GCategoriesData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GCategoriesData', 'G__typename'),
             categories: _categories?.build(),
@@ -945,7 +912,7 @@ class GCategoriesDataBuilder
         _$failedField = 'categories';
         _categories?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCategoriesData', _$failedField, e.toString());
       }
       rethrow;
@@ -969,7 +936,7 @@ class _$GCategoriesData_categories extends GCategoriesData_categories {
 
   factory _$GCategoriesData_categories(
           [void Function(GCategoriesData_categoriesBuilder)? updates]) =>
-      (new GCategoriesData_categoriesBuilder()..update(updates))._build();
+      (GCategoriesData_categoriesBuilder()..update(updates))._build();
 
   _$GCategoriesData_categories._(
       {required this.G__typename,
@@ -977,13 +944,7 @@ class _$GCategoriesData_categories extends GCategoriesData_categories {
       this.name,
       this.createdAt,
       this.description})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GCategoriesData_categories', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GCategoriesData_categories', 'id');
-  }
-
+      : super._();
   @override
   GCategoriesData_categories rebuild(
           void Function(GCategoriesData_categoriesBuilder) updates) =>
@@ -991,7 +952,7 @@ class _$GCategoriesData_categories extends GCategoriesData_categories {
 
   @override
   GCategoriesData_categoriesBuilder toBuilder() =>
-      new GCategoriesData_categoriesBuilder()..replace(this);
+      GCategoriesData_categoriesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1047,7 +1008,7 @@ class GCategoriesData_categoriesBuilder
 
   _i2.GDateTimeBuilder? _createdAt;
   _i2.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+      _$this._createdAt ??= _i2.GDateTimeBuilder();
   set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
@@ -1074,7 +1035,6 @@ class GCategoriesData_categoriesBuilder
 
   @override
   void replace(GCategoriesData_categories other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCategoriesData_categories;
   }
 
@@ -1090,7 +1050,7 @@ class GCategoriesData_categoriesBuilder
     _$GCategoriesData_categories _$result;
     try {
       _$result = _$v ??
-          new _$GCategoriesData_categories._(
+          _$GCategoriesData_categories._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GCategoriesData_categories', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
@@ -1105,7 +1065,7 @@ class GCategoriesData_categoriesBuilder
         _$failedField = 'createdAt';
         _createdAt?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCategoriesData_categories', _$failedField, e.toString());
       }
       rethrow;

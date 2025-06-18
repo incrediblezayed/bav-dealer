@@ -7,7 +7,7 @@ part of 'guarantees.var.gql.dart';
 // **************************************************************************
 
 Serializer<GGuaranteesVars> _$gGuaranteesVarsSerializer =
-    new _$GGuaranteesVarsSerializer();
+    _$GGuaranteesVarsSerializer();
 
 class _$GGuaranteesVarsSerializer
     implements StructuredSerializer<GGuaranteesVars> {
@@ -26,23 +26,21 @@ class _$GGuaranteesVarsSerializer
   GGuaranteesVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    return new GGuaranteesVarsBuilder().build();
+    return GGuaranteesVarsBuilder().build();
   }
 }
 
 class _$GGuaranteesVars extends GGuaranteesVars {
   factory _$GGuaranteesVars([void Function(GGuaranteesVarsBuilder)? updates]) =>
-      (new GGuaranteesVarsBuilder()..update(updates))._build();
+      (GGuaranteesVarsBuilder()..update(updates))._build();
 
   _$GGuaranteesVars._() : super._();
-
   @override
   GGuaranteesVars rebuild(void Function(GGuaranteesVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GGuaranteesVarsBuilder toBuilder() =>
-      new GGuaranteesVarsBuilder()..replace(this);
+  GGuaranteesVarsBuilder toBuilder() => GGuaranteesVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -69,7 +67,6 @@ class GGuaranteesVarsBuilder
 
   @override
   void replace(GGuaranteesVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GGuaranteesVars;
   }
 
@@ -82,7 +79,7 @@ class GGuaranteesVarsBuilder
   GGuaranteesVars build() => _build();
 
   _$GGuaranteesVars _build() {
-    final _$result = _$v ?? new _$GGuaranteesVars._();
+    final _$result = _$v ?? _$GGuaranteesVars._();
     replace(_$result);
     return _$result;
   }

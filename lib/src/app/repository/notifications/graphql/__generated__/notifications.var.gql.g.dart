@@ -7,10 +7,10 @@ part of 'notifications.var.gql.dart';
 // **************************************************************************
 
 Serializer<GAppNotificationsVars> _$gAppNotificationsVarsSerializer =
-    new _$GAppNotificationsVarsSerializer();
+    _$GAppNotificationsVarsSerializer();
 Serializer<GUserDeviceRegistrationVars>
     _$gUserDeviceRegistrationVarsSerializer =
-    new _$GUserDeviceRegistrationVarsSerializer();
+    _$GUserDeviceRegistrationVarsSerializer();
 
 class _$GAppNotificationsVarsSerializer
     implements StructuredSerializer<GAppNotificationsVars> {
@@ -33,7 +33,7 @@ class _$GAppNotificationsVarsSerializer
   GAppNotificationsVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    return new GAppNotificationsVarsBuilder().build();
+    return GAppNotificationsVarsBuilder().build();
   }
 }
 
@@ -64,7 +64,7 @@ class _$GUserDeviceRegistrationVarsSerializer
   GUserDeviceRegistrationVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserDeviceRegistrationVarsBuilder();
+    final result = GUserDeviceRegistrationVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -88,10 +88,9 @@ class _$GUserDeviceRegistrationVarsSerializer
 class _$GAppNotificationsVars extends GAppNotificationsVars {
   factory _$GAppNotificationsVars(
           [void Function(GAppNotificationsVarsBuilder)? updates]) =>
-      (new GAppNotificationsVarsBuilder()..update(updates))._build();
+      (GAppNotificationsVarsBuilder()..update(updates))._build();
 
   _$GAppNotificationsVars._() : super._();
-
   @override
   GAppNotificationsVars rebuild(
           void Function(GAppNotificationsVarsBuilder) updates) =>
@@ -99,7 +98,7 @@ class _$GAppNotificationsVars extends GAppNotificationsVars {
 
   @override
   GAppNotificationsVarsBuilder toBuilder() =>
-      new GAppNotificationsVarsBuilder()..replace(this);
+      GAppNotificationsVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -126,7 +125,6 @@ class GAppNotificationsVarsBuilder
 
   @override
   void replace(GAppNotificationsVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GAppNotificationsVars;
   }
 
@@ -139,7 +137,7 @@ class GAppNotificationsVarsBuilder
   GAppNotificationsVars build() => _build();
 
   _$GAppNotificationsVars _build() {
-    final _$result = _$v ?? new _$GAppNotificationsVars._();
+    final _$result = _$v ?? _$GAppNotificationsVars._();
     replace(_$result);
     return _$result;
   }
@@ -151,13 +149,9 @@ class _$GUserDeviceRegistrationVars extends GUserDeviceRegistrationVars {
 
   factory _$GUserDeviceRegistrationVars(
           [void Function(GUserDeviceRegistrationVarsBuilder)? updates]) =>
-      (new GUserDeviceRegistrationVarsBuilder()..update(updates))._build();
+      (GUserDeviceRegistrationVarsBuilder()..update(updates))._build();
 
-  _$GUserDeviceRegistrationVars._({required this.data}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        data, r'GUserDeviceRegistrationVars', 'data');
-  }
-
+  _$GUserDeviceRegistrationVars._({required this.data}) : super._();
   @override
   GUserDeviceRegistrationVars rebuild(
           void Function(GUserDeviceRegistrationVarsBuilder) updates) =>
@@ -165,7 +159,7 @@ class _$GUserDeviceRegistrationVars extends GUserDeviceRegistrationVars {
 
   @override
   GUserDeviceRegistrationVarsBuilder toBuilder() =>
-      new GUserDeviceRegistrationVarsBuilder()..replace(this);
+      GUserDeviceRegistrationVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -197,7 +191,7 @@ class GUserDeviceRegistrationVarsBuilder
 
   _i2.GFirebaseDeviceTokenCreateInputBuilder? _data;
   _i2.GFirebaseDeviceTokenCreateInputBuilder get data =>
-      _$this._data ??= new _i2.GFirebaseDeviceTokenCreateInputBuilder();
+      _$this._data ??= _i2.GFirebaseDeviceTokenCreateInputBuilder();
   set data(_i2.GFirebaseDeviceTokenCreateInputBuilder? data) =>
       _$this._data = data;
 
@@ -214,7 +208,6 @@ class GUserDeviceRegistrationVarsBuilder
 
   @override
   void replace(GUserDeviceRegistrationVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUserDeviceRegistrationVars;
   }
 
@@ -230,7 +223,7 @@ class GUserDeviceRegistrationVarsBuilder
     _$GUserDeviceRegistrationVars _$result;
     try {
       _$result = _$v ??
-          new _$GUserDeviceRegistrationVars._(
+          _$GUserDeviceRegistrationVars._(
             data: data.build(),
           );
     } catch (_) {
@@ -239,7 +232,7 @@ class GUserDeviceRegistrationVarsBuilder
         _$failedField = 'data';
         data.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUserDeviceRegistrationVars', _$failedField, e.toString());
       }
       rethrow;

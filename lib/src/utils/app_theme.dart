@@ -145,7 +145,7 @@ class AppTheme {
 
   ///Default Theme Data
   static ThemeData get theme => ThemeData(
-        dialogTheme: const DialogTheme(
+        dialogTheme: const DialogThemeData(
           surfaceTintColor: white,
         ),
         appBarTheme: AppBarTheme(

@@ -1,3 +1,7 @@
+"""
+Indicates exactly one field must be supplied and this field must not be `null`.
+"""
+directive @oneOf on INPUT_OBJECT
 
 type User {
   id: ID!
@@ -1188,6 +1192,7 @@ type Vehicle {
   name: String
   description: String
   longDescription: String
+  shortDescription: String
   type: VehicleType
   subType(where: VehicleSubTypeWhereInput! = {}, orderBy: [VehicleSubTypeOrderByInput!]! = [], take: Int, skip: Int! = 0): [VehicleSubType!]
   subTypeCount(where: VehicleSubTypeWhereInput! = {}): Int
@@ -1216,6 +1221,7 @@ input VehicleWhereInput {
   name: StringFilter
   description: StringFilter
   longDescription: StringFilter
+  shortDescription: StringFilter
   type: VehicleTypeWhereInput
   subType: VehicleSubTypeManyRelationFilter
   brand: BrandWhereInput
@@ -1256,6 +1262,7 @@ input VehicleOrderByInput {
   name: OrderDirection
   description: OrderDirection
   longDescription: OrderDirection
+  shortDescription: OrderDirection
   informative: OrderDirection
 }
 
@@ -1265,6 +1272,7 @@ input VehicleUpdateInput {
   name: String
   description: String
   longDescription: String
+  shortDescription: String
   type: VehicleTypeRelateToOneForUpdateInput
   subType: VehicleSubTypeRelateToManyForUpdateInput
   brand: BrandRelateToOneForUpdateInput
@@ -1320,6 +1328,7 @@ input VehicleCreateInput {
   name: String
   description: String
   longDescription: String
+  shortDescription: String
   type: VehicleTypeRelateToOneForCreateInput
   subType: VehicleSubTypeRelateToManyForCreateInput
   brand: BrandRelateToOneForCreateInput
@@ -2050,6 +2059,7 @@ type VehicleVariant {
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  registrationRequired: Boolean
   key: String
   index: Int
   vehicle: Vehicle
@@ -2083,6 +2093,7 @@ input VehicleVariantWhereInput {
   createdAt: DateTimeNullableFilter
   modifiedAt: DateTimeNullableFilter
   name: StringFilter
+  registrationRequired: BooleanFilter
   key: StringFilter
   index: IntNullableFilter
   vehicle: VehicleWhereInput
@@ -2107,6 +2118,7 @@ input VehicleVariantOrderByInput {
   createdAt: OrderDirection
   modifiedAt: OrderDirection
   name: OrderDirection
+  registrationRequired: OrderDirection
   key: OrderDirection
   index: OrderDirection
   default: OrderDirection
@@ -2119,6 +2131,7 @@ input VehicleVariantUpdateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  registrationRequired: Boolean
   key: String
   index: Int
   vehicle: VehicleRelateToOneForUpdateInput
@@ -2148,6 +2161,7 @@ input VehicleVariantCreateInput {
   createdAt: DateTime
   modifiedAt: DateTime
   name: String
+  registrationRequired: Boolean
   key: String
   index: Int
   vehicle: VehicleRelateToOneForCreateInput
@@ -4970,6 +4984,7 @@ type Product {
   name: String
   description: String
   longDescription: String
+  shortDescription: String
   type: ProductType
   brand: Brand
   variants(where: ProductVariantWhereInput! = {}, orderBy: [ProductVariantOrderByInput!]! = [], take: Int, skip: Int! = 0): [ProductVariant!]
@@ -4992,6 +5007,7 @@ input ProductWhereInput {
   name: StringFilter
   description: StringFilter
   longDescription: StringFilter
+  shortDescription: StringFilter
   type: ProductTypeWhereInput
   brand: BrandWhereInput
   variants: ProductVariantManyRelationFilter
@@ -5017,6 +5033,7 @@ input ProductOrderByInput {
   name: OrderDirection
   description: OrderDirection
   longDescription: OrderDirection
+  shortDescription: OrderDirection
 }
 
 input ProductUpdateInput {
@@ -5025,6 +5042,7 @@ input ProductUpdateInput {
   name: String
   description: String
   longDescription: String
+  shortDescription: String
   type: ProductTypeRelateToOneForUpdateInput
   brand: BrandRelateToOneForUpdateInput
   variants: ProductVariantRelateToManyForUpdateInput
@@ -5062,6 +5080,7 @@ input ProductCreateInput {
   name: String
   description: String
   longDescription: String
+  shortDescription: String
   type: ProductTypeRelateToOneForCreateInput
   brand: BrandRelateToOneForCreateInput
   variants: ProductVariantRelateToManyForCreateInput
@@ -6858,13 +6877,15 @@ type Query {
   getPincode(pincode: String!): JSON
   authenticatedItem: AuthenticatedItem
   validateUserPasswordResetToken(phoneNumber: String!, token: String!): ValidateUserPasswordResetTokenResult
-  searchSuggestion(query: String!): [String!]
+  searchSuggestion(query: String!): [String!] @deprecated(reason: "please use new searchSuggestionV2 api")
+  searchSuggestionV2(query: String!): JSON
   getCouponAppliedDetails(couponCode: String!, items: [Item!]!): JSON
   getOfferAppliedDetails(items: [Item!]!): JSON
   getNearestDealers(location: [Float!]!): [NearestDealer!]
   vehicleOrderInvoice(vehicleOrderId: ID!): JSON
   testDriveOrderInvoice(testDriveOrderId: ID!): JSON
   productOrderInvoice(productOrderId: ID!): JSON
+  getEmailOrPhoneNumberExists(phoneNumber: String, email: String): JSON
 }
 
 type NearestDealer {

@@ -7,9 +7,9 @@ part of 'notifications.req.gql.dart';
 // **************************************************************************
 
 Serializer<GAppNotificationsReq> _$gAppNotificationsReqSerializer =
-    new _$GAppNotificationsReqSerializer();
+    _$GAppNotificationsReqSerializer();
 Serializer<GUserDeviceRegistrationReq> _$gUserDeviceRegistrationReqSerializer =
-    new _$GUserDeviceRegistrationReqSerializer();
+    _$GUserDeviceRegistrationReqSerializer();
 
 class _$GAppNotificationsReqSerializer
     implements StructuredSerializer<GAppNotificationsReq> {
@@ -80,7 +80,7 @@ class _$GAppNotificationsReqSerializer
   GAppNotificationsReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GAppNotificationsReqBuilder();
+    final result = GAppNotificationsReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -202,7 +202,7 @@ class _$GUserDeviceRegistrationReqSerializer
   GUserDeviceRegistrationReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserDeviceRegistrationReqBuilder();
+    final result = GUserDeviceRegistrationReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -282,7 +282,7 @@ class _$GAppNotificationsReq extends GAppNotificationsReq {
 
   factory _$GAppNotificationsReq(
           [void Function(GAppNotificationsReqBuilder)? updates]) =>
-      (new GAppNotificationsReqBuilder()..update(updates))._build();
+      (GAppNotificationsReqBuilder()..update(updates))._build();
 
   _$GAppNotificationsReq._(
       {required this.vars,
@@ -295,15 +295,7 @@ class _$GAppNotificationsReq extends GAppNotificationsReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        vars, r'GAppNotificationsReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GAppNotificationsReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GAppNotificationsReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GAppNotificationsReq rebuild(
           void Function(GAppNotificationsReqBuilder) updates) =>
@@ -311,7 +303,7 @@ class _$GAppNotificationsReq extends GAppNotificationsReq {
 
   @override
   GAppNotificationsReqBuilder toBuilder() =>
-      new GAppNotificationsReqBuilder()..replace(this);
+      GAppNotificationsReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -370,7 +362,7 @@ class GAppNotificationsReqBuilder
 
   _i3.GAppNotificationsVarsBuilder? _vars;
   _i3.GAppNotificationsVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GAppNotificationsVarsBuilder();
+      _$this._vars ??= _i3.GAppNotificationsVarsBuilder();
   set vars(_i3.GAppNotificationsVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
@@ -394,7 +386,7 @@ class GAppNotificationsReqBuilder
 
   _i2.GAppNotificationsDataBuilder? _optimisticResponse;
   _i2.GAppNotificationsDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GAppNotificationsDataBuilder();
+      _$this._optimisticResponse ??= _i2.GAppNotificationsDataBuilder();
   set optimisticResponse(
           _i2.GAppNotificationsDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
@@ -449,7 +441,6 @@ class GAppNotificationsReqBuilder
 
   @override
   void replace(GAppNotificationsReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GAppNotificationsReq;
   }
 
@@ -465,7 +456,7 @@ class GAppNotificationsReqBuilder
     _$GAppNotificationsReq _$result;
     try {
       _$result = _$v ??
-          new _$GAppNotificationsReq._(
+          _$GAppNotificationsReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GAppNotificationsReq', 'operation'),
@@ -488,7 +479,7 @@ class GAppNotificationsReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GAppNotificationsReq', _$failedField, e.toString());
       }
       rethrow;
@@ -524,7 +515,7 @@ class _$GUserDeviceRegistrationReq extends GUserDeviceRegistrationReq {
 
   factory _$GUserDeviceRegistrationReq(
           [void Function(GUserDeviceRegistrationReqBuilder)? updates]) =>
-      (new GUserDeviceRegistrationReqBuilder()..update(updates))._build();
+      (GUserDeviceRegistrationReqBuilder()..update(updates))._build();
 
   _$GUserDeviceRegistrationReq._(
       {required this.vars,
@@ -537,15 +528,7 @@ class _$GUserDeviceRegistrationReq extends GUserDeviceRegistrationReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        vars, r'GUserDeviceRegistrationReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GUserDeviceRegistrationReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GUserDeviceRegistrationReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GUserDeviceRegistrationReq rebuild(
           void Function(GUserDeviceRegistrationReqBuilder) updates) =>
@@ -553,7 +536,7 @@ class _$GUserDeviceRegistrationReq extends GUserDeviceRegistrationReq {
 
   @override
   GUserDeviceRegistrationReqBuilder toBuilder() =>
-      new GUserDeviceRegistrationReqBuilder()..replace(this);
+      GUserDeviceRegistrationReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -613,7 +596,7 @@ class GUserDeviceRegistrationReqBuilder
 
   _i3.GUserDeviceRegistrationVarsBuilder? _vars;
   _i3.GUserDeviceRegistrationVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GUserDeviceRegistrationVarsBuilder();
+      _$this._vars ??= _i3.GUserDeviceRegistrationVarsBuilder();
   set vars(_i3.GUserDeviceRegistrationVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
@@ -639,8 +622,7 @@ class GUserDeviceRegistrationReqBuilder
 
   _i2.GUserDeviceRegistrationDataBuilder? _optimisticResponse;
   _i2.GUserDeviceRegistrationDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??=
-          new _i2.GUserDeviceRegistrationDataBuilder();
+      _$this._optimisticResponse ??= _i2.GUserDeviceRegistrationDataBuilder();
   set optimisticResponse(
           _i2.GUserDeviceRegistrationDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
@@ -695,7 +677,6 @@ class GUserDeviceRegistrationReqBuilder
 
   @override
   void replace(GUserDeviceRegistrationReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUserDeviceRegistrationReq;
   }
 
@@ -711,7 +692,7 @@ class GUserDeviceRegistrationReqBuilder
     _$GUserDeviceRegistrationReq _$result;
     try {
       _$result = _$v ??
-          new _$GUserDeviceRegistrationReq._(
+          _$GUserDeviceRegistrationReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GUserDeviceRegistrationReq', 'operation'),
@@ -736,7 +717,7 @@ class GUserDeviceRegistrationReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUserDeviceRegistrationReq', _$failedField, e.toString());
       }
       rethrow;

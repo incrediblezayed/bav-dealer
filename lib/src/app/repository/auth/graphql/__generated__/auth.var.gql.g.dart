@@ -7,34 +7,34 @@ part of 'auth.var.gql.dart';
 // **************************************************************************
 
 Serializer<GCreateUserVars> _$gCreateUserVarsSerializer =
-    new _$GCreateUserVarsSerializer();
+    _$GCreateUserVarsSerializer();
 Serializer<GCurrentUserOTPVars> _$gCurrentUserOTPVarsSerializer =
-    new _$GCurrentUserOTPVarsSerializer();
+    _$GCurrentUserOTPVarsSerializer();
 Serializer<GValidateUserOTPVars> _$gValidateUserOTPVarsSerializer =
-    new _$GValidateUserOTPVarsSerializer();
+    _$GValidateUserOTPVarsSerializer();
 Serializer<GSendUserPasswordResetLinkVars>
     _$gSendUserPasswordResetLinkVarsSerializer =
-    new _$GSendUserPasswordResetLinkVarsSerializer();
+    _$GSendUserPasswordResetLinkVarsSerializer();
 Serializer<GRedeemUserPasswordResetTokenVars>
     _$gRedeemUserPasswordResetTokenVarsSerializer =
-    new _$GRedeemUserPasswordResetTokenVarsSerializer();
+    _$GRedeemUserPasswordResetTokenVarsSerializer();
 Serializer<GValidateUserPasswordResetTokenVars>
     _$gValidateUserPasswordResetTokenVarsSerializer =
-    new _$GValidateUserPasswordResetTokenVarsSerializer();
+    _$GValidateUserPasswordResetTokenVarsSerializer();
 Serializer<GCreateDealerVars> _$gCreateDealerVarsSerializer =
-    new _$GCreateDealerVarsSerializer();
+    _$GCreateDealerVarsSerializer();
 Serializer<GAuthenticateUserWithPasswordVars>
     _$gAuthenticateUserWithPasswordVarsSerializer =
-    new _$GAuthenticateUserWithPasswordVarsSerializer();
-Serializer<GUserVars> _$gUserVarsSerializer = new _$GUserVarsSerializer();
+    _$GAuthenticateUserWithPasswordVarsSerializer();
+Serializer<GUserVars> _$gUserVarsSerializer = _$GUserVarsSerializer();
 Serializer<GUpdateUserVars> _$gUpdateUserVarsSerializer =
-    new _$GUpdateUserVarsSerializer();
-Serializer<GDealerVars> _$gDealerVarsSerializer = new _$GDealerVarsSerializer();
+    _$GUpdateUserVarsSerializer();
+Serializer<GDealerVars> _$gDealerVarsSerializer = _$GDealerVarsSerializer();
 Serializer<GUpdateDealerVars> _$gUpdateDealerVarsSerializer =
-    new _$GUpdateDealerVarsSerializer();
+    _$GUpdateDealerVarsSerializer();
 Serializer<GSendDealerMOUApprovalOTPVars>
     _$gSendDealerMOUApprovalOTPVarsSerializer =
-    new _$GSendDealerMOUApprovalOTPVarsSerializer();
+    _$GSendDealerMOUApprovalOTPVarsSerializer();
 
 class _$GCreateUserVarsSerializer
     implements StructuredSerializer<GCreateUserVars> {
@@ -59,7 +59,7 @@ class _$GCreateUserVarsSerializer
   GCreateUserVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateUserVarsBuilder();
+    final result = GCreateUserVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -105,7 +105,7 @@ class _$GCurrentUserOTPVarsSerializer
   GCurrentUserOTPVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCurrentUserOTPVarsBuilder();
+    final result = GCurrentUserOTPVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -152,7 +152,7 @@ class _$GValidateUserOTPVarsSerializer
   GValidateUserOTPVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GValidateUserOTPVarsBuilder();
+    final result = GValidateUserOTPVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -202,7 +202,7 @@ class _$GSendUserPasswordResetLinkVarsSerializer
   GSendUserPasswordResetLinkVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GSendUserPasswordResetLinkVarsBuilder();
+    final result = GSendUserPasswordResetLinkVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -254,7 +254,7 @@ class _$GRedeemUserPasswordResetTokenVarsSerializer
   GRedeemUserPasswordResetTokenVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GRedeemUserPasswordResetTokenVarsBuilder();
+    final result = GRedeemUserPasswordResetTokenVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -311,7 +311,7 @@ class _$GValidateUserPasswordResetTokenVarsSerializer
   GValidateUserPasswordResetTokenVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GValidateUserPasswordResetTokenVarsBuilder();
+    final result = GValidateUserPasswordResetTokenVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -357,7 +357,7 @@ class _$GCreateDealerVarsSerializer
   GCreateDealerVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateDealerVarsBuilder();
+    final result = GCreateDealerVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -407,7 +407,7 @@ class _$GAuthenticateUserWithPasswordVarsSerializer
   GAuthenticateUserWithPasswordVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GAuthenticateUserWithPasswordVarsBuilder();
+    final result = GAuthenticateUserWithPasswordVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -451,7 +451,7 @@ class _$GUserVarsSerializer implements StructuredSerializer<GUserVars> {
   @override
   GUserVars deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserVarsBuilder();
+    final result = GUserVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -497,7 +497,7 @@ class _$GUpdateUserVarsSerializer
   GUpdateUserVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUpdateUserVarsBuilder();
+    final result = GUpdateUserVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -543,7 +543,7 @@ class _$GDealerVarsSerializer implements StructuredSerializer<GDealerVars> {
   @override
   GDealerVars deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GDealerVarsBuilder();
+    final result = GDealerVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -589,7 +589,7 @@ class _$GUpdateDealerVarsSerializer
   GUpdateDealerVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUpdateDealerVarsBuilder();
+    final result = GUpdateDealerVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -635,7 +635,7 @@ class _$GSendDealerMOUApprovalOTPVarsSerializer
   GSendDealerMOUApprovalOTPVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    return new GSendDealerMOUApprovalOTPVarsBuilder().build();
+    return GSendDealerMOUApprovalOTPVarsBuilder().build();
   }
 }
 
@@ -644,19 +644,15 @@ class _$GCreateUserVars extends GCreateUserVars {
   final _i1.GUserCreateInput data;
 
   factory _$GCreateUserVars([void Function(GCreateUserVarsBuilder)? updates]) =>
-      (new GCreateUserVarsBuilder()..update(updates))._build();
+      (GCreateUserVarsBuilder()..update(updates))._build();
 
-  _$GCreateUserVars._({required this.data}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(data, r'GCreateUserVars', 'data');
-  }
-
+  _$GCreateUserVars._({required this.data}) : super._();
   @override
   GCreateUserVars rebuild(void Function(GCreateUserVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GCreateUserVarsBuilder toBuilder() =>
-      new GCreateUserVarsBuilder()..replace(this);
+  GCreateUserVarsBuilder toBuilder() => GCreateUserVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -685,7 +681,7 @@ class GCreateUserVarsBuilder
 
   _i1.GUserCreateInputBuilder? _data;
   _i1.GUserCreateInputBuilder get data =>
-      _$this._data ??= new _i1.GUserCreateInputBuilder();
+      _$this._data ??= _i1.GUserCreateInputBuilder();
   set data(_i1.GUserCreateInputBuilder? data) => _$this._data = data;
 
   GCreateUserVarsBuilder();
@@ -701,7 +697,6 @@ class GCreateUserVarsBuilder
 
   @override
   void replace(GCreateUserVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateUserVars;
   }
 
@@ -717,7 +712,7 @@ class GCreateUserVarsBuilder
     _$GCreateUserVars _$result;
     try {
       _$result = _$v ??
-          new _$GCreateUserVars._(
+          _$GCreateUserVars._(
             data: data.build(),
           );
     } catch (_) {
@@ -726,7 +721,7 @@ class GCreateUserVarsBuilder
         _$failedField = 'data';
         data.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCreateUserVars', _$failedField, e.toString());
       }
       rethrow;
@@ -742,12 +737,9 @@ class _$GCurrentUserOTPVars extends GCurrentUserOTPVars {
 
   factory _$GCurrentUserOTPVars(
           [void Function(GCurrentUserOTPVarsBuilder)? updates]) =>
-      (new GCurrentUserOTPVarsBuilder()..update(updates))._build();
+      (GCurrentUserOTPVarsBuilder()..update(updates))._build();
 
-  _$GCurrentUserOTPVars._({required this.key}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(key, r'GCurrentUserOTPVars', 'key');
-  }
-
+  _$GCurrentUserOTPVars._({required this.key}) : super._();
   @override
   GCurrentUserOTPVars rebuild(
           void Function(GCurrentUserOTPVarsBuilder) updates) =>
@@ -755,7 +747,7 @@ class _$GCurrentUserOTPVars extends GCurrentUserOTPVars {
 
   @override
   GCurrentUserOTPVarsBuilder toBuilder() =>
-      new GCurrentUserOTPVarsBuilder()..replace(this);
+      GCurrentUserOTPVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -800,7 +792,6 @@ class GCurrentUserOTPVarsBuilder
 
   @override
   void replace(GCurrentUserOTPVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCurrentUserOTPVars;
   }
 
@@ -814,7 +805,7 @@ class GCurrentUserOTPVarsBuilder
 
   _$GCurrentUserOTPVars _build() {
     final _$result = _$v ??
-        new _$GCurrentUserOTPVars._(
+        _$GCurrentUserOTPVars._(
           key: BuiltValueNullFieldError.checkNotNull(
               key, r'GCurrentUserOTPVars', 'key'),
         );
@@ -831,13 +822,9 @@ class _$GValidateUserOTPVars extends GValidateUserOTPVars {
 
   factory _$GValidateUserOTPVars(
           [void Function(GValidateUserOTPVarsBuilder)? updates]) =>
-      (new GValidateUserOTPVarsBuilder()..update(updates))._build();
+      (GValidateUserOTPVarsBuilder()..update(updates))._build();
 
-  _$GValidateUserOTPVars._({required this.key, required this.otp}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(key, r'GValidateUserOTPVars', 'key');
-    BuiltValueNullFieldError.checkNotNull(otp, r'GValidateUserOTPVars', 'otp');
-  }
-
+  _$GValidateUserOTPVars._({required this.key, required this.otp}) : super._();
   @override
   GValidateUserOTPVars rebuild(
           void Function(GValidateUserOTPVarsBuilder) updates) =>
@@ -845,7 +832,7 @@ class _$GValidateUserOTPVars extends GValidateUserOTPVars {
 
   @override
   GValidateUserOTPVarsBuilder toBuilder() =>
-      new GValidateUserOTPVarsBuilder()..replace(this);
+      GValidateUserOTPVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -899,7 +886,6 @@ class GValidateUserOTPVarsBuilder
 
   @override
   void replace(GValidateUserOTPVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GValidateUserOTPVars;
   }
 
@@ -913,7 +899,7 @@ class GValidateUserOTPVarsBuilder
 
   _$GValidateUserOTPVars _build() {
     final _$result = _$v ??
-        new _$GValidateUserOTPVars._(
+        _$GValidateUserOTPVars._(
           key: BuiltValueNullFieldError.checkNotNull(
               key, r'GValidateUserOTPVars', 'key'),
           otp: BuiltValueNullFieldError.checkNotNull(
@@ -930,13 +916,9 @@ class _$GSendUserPasswordResetLinkVars extends GSendUserPasswordResetLinkVars {
 
   factory _$GSendUserPasswordResetLinkVars(
           [void Function(GSendUserPasswordResetLinkVarsBuilder)? updates]) =>
-      (new GSendUserPasswordResetLinkVarsBuilder()..update(updates))._build();
+      (GSendUserPasswordResetLinkVarsBuilder()..update(updates))._build();
 
-  _$GSendUserPasswordResetLinkVars._({required this.phoneNumber}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        phoneNumber, r'GSendUserPasswordResetLinkVars', 'phoneNumber');
-  }
-
+  _$GSendUserPasswordResetLinkVars._({required this.phoneNumber}) : super._();
   @override
   GSendUserPasswordResetLinkVars rebuild(
           void Function(GSendUserPasswordResetLinkVarsBuilder) updates) =>
@@ -944,7 +926,7 @@ class _$GSendUserPasswordResetLinkVars extends GSendUserPasswordResetLinkVars {
 
   @override
   GSendUserPasswordResetLinkVarsBuilder toBuilder() =>
-      new GSendUserPasswordResetLinkVarsBuilder()..replace(this);
+      GSendUserPasswordResetLinkVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -992,7 +974,6 @@ class GSendUserPasswordResetLinkVarsBuilder
 
   @override
   void replace(GSendUserPasswordResetLinkVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GSendUserPasswordResetLinkVars;
   }
 
@@ -1006,7 +987,7 @@ class GSendUserPasswordResetLinkVarsBuilder
 
   _$GSendUserPasswordResetLinkVars _build() {
     final _$result = _$v ??
-        new _$GSendUserPasswordResetLinkVars._(
+        _$GSendUserPasswordResetLinkVars._(
           phoneNumber: BuiltValueNullFieldError.checkNotNull(
               phoneNumber, r'GSendUserPasswordResetLinkVars', 'phoneNumber'),
         );
@@ -1026,20 +1007,11 @@ class _$GRedeemUserPasswordResetTokenVars
 
   factory _$GRedeemUserPasswordResetTokenVars(
           [void Function(GRedeemUserPasswordResetTokenVarsBuilder)? updates]) =>
-      (new GRedeemUserPasswordResetTokenVarsBuilder()..update(updates))
-          ._build();
+      (GRedeemUserPasswordResetTokenVarsBuilder()..update(updates))._build();
 
   _$GRedeemUserPasswordResetTokenVars._(
       {required this.phoneNumber, required this.token, required this.password})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        phoneNumber, r'GRedeemUserPasswordResetTokenVars', 'phoneNumber');
-    BuiltValueNullFieldError.checkNotNull(
-        token, r'GRedeemUserPasswordResetTokenVars', 'token');
-    BuiltValueNullFieldError.checkNotNull(
-        password, r'GRedeemUserPasswordResetTokenVars', 'password');
-  }
-
+      : super._();
   @override
   GRedeemUserPasswordResetTokenVars rebuild(
           void Function(GRedeemUserPasswordResetTokenVarsBuilder) updates) =>
@@ -1047,7 +1019,7 @@ class _$GRedeemUserPasswordResetTokenVars
 
   @override
   GRedeemUserPasswordResetTokenVarsBuilder toBuilder() =>
-      new GRedeemUserPasswordResetTokenVarsBuilder()..replace(this);
+      GRedeemUserPasswordResetTokenVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1111,7 +1083,6 @@ class GRedeemUserPasswordResetTokenVarsBuilder
 
   @override
   void replace(GRedeemUserPasswordResetTokenVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GRedeemUserPasswordResetTokenVars;
   }
 
@@ -1126,7 +1097,7 @@ class GRedeemUserPasswordResetTokenVarsBuilder
 
   _$GRedeemUserPasswordResetTokenVars _build() {
     final _$result = _$v ??
-        new _$GRedeemUserPasswordResetTokenVars._(
+        _$GRedeemUserPasswordResetTokenVars._(
           phoneNumber: BuiltValueNullFieldError.checkNotNull(
               phoneNumber, r'GRedeemUserPasswordResetTokenVars', 'phoneNumber'),
           token: BuiltValueNullFieldError.checkNotNull(
@@ -1149,18 +1120,11 @@ class _$GValidateUserPasswordResetTokenVars
   factory _$GValidateUserPasswordResetTokenVars(
           [void Function(GValidateUserPasswordResetTokenVarsBuilder)?
               updates]) =>
-      (new GValidateUserPasswordResetTokenVarsBuilder()..update(updates))
-          ._build();
+      (GValidateUserPasswordResetTokenVarsBuilder()..update(updates))._build();
 
   _$GValidateUserPasswordResetTokenVars._(
       {required this.token, required this.phoneNumber})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        token, r'GValidateUserPasswordResetTokenVars', 'token');
-    BuiltValueNullFieldError.checkNotNull(
-        phoneNumber, r'GValidateUserPasswordResetTokenVars', 'phoneNumber');
-  }
-
+      : super._();
   @override
   GValidateUserPasswordResetTokenVars rebuild(
           void Function(GValidateUserPasswordResetTokenVarsBuilder) updates) =>
@@ -1168,7 +1132,7 @@ class _$GValidateUserPasswordResetTokenVars
 
   @override
   GValidateUserPasswordResetTokenVarsBuilder toBuilder() =>
-      new GValidateUserPasswordResetTokenVarsBuilder()..replace(this);
+      GValidateUserPasswordResetTokenVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1224,7 +1188,6 @@ class GValidateUserPasswordResetTokenVarsBuilder
 
   @override
   void replace(GValidateUserPasswordResetTokenVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GValidateUserPasswordResetTokenVars;
   }
 
@@ -1239,7 +1202,7 @@ class GValidateUserPasswordResetTokenVarsBuilder
 
   _$GValidateUserPasswordResetTokenVars _build() {
     final _$result = _$v ??
-        new _$GValidateUserPasswordResetTokenVars._(
+        _$GValidateUserPasswordResetTokenVars._(
           token: BuiltValueNullFieldError.checkNotNull(
               token, r'GValidateUserPasswordResetTokenVars', 'token'),
           phoneNumber: BuiltValueNullFieldError.checkNotNull(phoneNumber,
@@ -1256,19 +1219,16 @@ class _$GCreateDealerVars extends GCreateDealerVars {
 
   factory _$GCreateDealerVars(
           [void Function(GCreateDealerVarsBuilder)? updates]) =>
-      (new GCreateDealerVarsBuilder()..update(updates))._build();
+      (GCreateDealerVarsBuilder()..update(updates))._build();
 
-  _$GCreateDealerVars._({required this.data}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(data, r'GCreateDealerVars', 'data');
-  }
-
+  _$GCreateDealerVars._({required this.data}) : super._();
   @override
   GCreateDealerVars rebuild(void Function(GCreateDealerVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   GCreateDealerVarsBuilder toBuilder() =>
-      new GCreateDealerVarsBuilder()..replace(this);
+      GCreateDealerVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1298,7 +1258,7 @@ class GCreateDealerVarsBuilder
 
   _i1.GDealerCreateInputBuilder? _data;
   _i1.GDealerCreateInputBuilder get data =>
-      _$this._data ??= new _i1.GDealerCreateInputBuilder();
+      _$this._data ??= _i1.GDealerCreateInputBuilder();
   set data(_i1.GDealerCreateInputBuilder? data) => _$this._data = data;
 
   GCreateDealerVarsBuilder();
@@ -1314,7 +1274,6 @@ class GCreateDealerVarsBuilder
 
   @override
   void replace(GCreateDealerVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateDealerVars;
   }
 
@@ -1330,7 +1289,7 @@ class GCreateDealerVarsBuilder
     _$GCreateDealerVars _$result;
     try {
       _$result = _$v ??
-          new _$GCreateDealerVars._(
+          _$GCreateDealerVars._(
             data: data.build(),
           );
     } catch (_) {
@@ -1339,7 +1298,7 @@ class GCreateDealerVarsBuilder
         _$failedField = 'data';
         data.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCreateDealerVars', _$failedField, e.toString());
       }
       rethrow;
@@ -1358,18 +1317,11 @@ class _$GAuthenticateUserWithPasswordVars
 
   factory _$GAuthenticateUserWithPasswordVars(
           [void Function(GAuthenticateUserWithPasswordVarsBuilder)? updates]) =>
-      (new GAuthenticateUserWithPasswordVarsBuilder()..update(updates))
-          ._build();
+      (GAuthenticateUserWithPasswordVarsBuilder()..update(updates))._build();
 
   _$GAuthenticateUserWithPasswordVars._(
       {required this.phoneNumber, required this.password})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        phoneNumber, r'GAuthenticateUserWithPasswordVars', 'phoneNumber');
-    BuiltValueNullFieldError.checkNotNull(
-        password, r'GAuthenticateUserWithPasswordVars', 'password');
-  }
-
+      : super._();
   @override
   GAuthenticateUserWithPasswordVars rebuild(
           void Function(GAuthenticateUserWithPasswordVarsBuilder) updates) =>
@@ -1377,7 +1329,7 @@ class _$GAuthenticateUserWithPasswordVars
 
   @override
   GAuthenticateUserWithPasswordVarsBuilder toBuilder() =>
-      new GAuthenticateUserWithPasswordVarsBuilder()..replace(this);
+      GAuthenticateUserWithPasswordVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1433,7 +1385,6 @@ class GAuthenticateUserWithPasswordVarsBuilder
 
   @override
   void replace(GAuthenticateUserWithPasswordVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GAuthenticateUserWithPasswordVars;
   }
 
@@ -1448,7 +1399,7 @@ class GAuthenticateUserWithPasswordVarsBuilder
 
   _$GAuthenticateUserWithPasswordVars _build() {
     final _$result = _$v ??
-        new _$GAuthenticateUserWithPasswordVars._(
+        _$GAuthenticateUserWithPasswordVars._(
           phoneNumber: BuiltValueNullFieldError.checkNotNull(
               phoneNumber, r'GAuthenticateUserWithPasswordVars', 'phoneNumber'),
           password: BuiltValueNullFieldError.checkNotNull(
@@ -1464,18 +1415,15 @@ class _$GUserVars extends GUserVars {
   final _i1.GUserWhereUniqueInput where;
 
   factory _$GUserVars([void Function(GUserVarsBuilder)? updates]) =>
-      (new GUserVarsBuilder()..update(updates))._build();
+      (GUserVarsBuilder()..update(updates))._build();
 
-  _$GUserVars._({required this.where}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(where, r'GUserVars', 'where');
-  }
-
+  _$GUserVars._({required this.where}) : super._();
   @override
   GUserVars rebuild(void Function(GUserVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GUserVarsBuilder toBuilder() => new GUserVarsBuilder()..replace(this);
+  GUserVarsBuilder toBuilder() => GUserVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1503,7 +1451,7 @@ class GUserVarsBuilder implements Builder<GUserVars, GUserVarsBuilder> {
 
   _i1.GUserWhereUniqueInputBuilder? _where;
   _i1.GUserWhereUniqueInputBuilder get where =>
-      _$this._where ??= new _i1.GUserWhereUniqueInputBuilder();
+      _$this._where ??= _i1.GUserWhereUniqueInputBuilder();
   set where(_i1.GUserWhereUniqueInputBuilder? where) => _$this._where = where;
 
   GUserVarsBuilder();
@@ -1519,7 +1467,6 @@ class GUserVarsBuilder implements Builder<GUserVars, GUserVarsBuilder> {
 
   @override
   void replace(GUserVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUserVars;
   }
 
@@ -1535,7 +1482,7 @@ class GUserVarsBuilder implements Builder<GUserVars, GUserVarsBuilder> {
     _$GUserVars _$result;
     try {
       _$result = _$v ??
-          new _$GUserVars._(
+          _$GUserVars._(
             where: where.build(),
           );
     } catch (_) {
@@ -1544,7 +1491,7 @@ class GUserVarsBuilder implements Builder<GUserVars, GUserVarsBuilder> {
         _$failedField = 'where';
         where.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUserVars', _$failedField, e.toString());
       }
       rethrow;
@@ -1561,20 +1508,15 @@ class _$GUpdateUserVars extends GUpdateUserVars {
   final _i1.GUserWhereUniqueInput where;
 
   factory _$GUpdateUserVars([void Function(GUpdateUserVarsBuilder)? updates]) =>
-      (new GUpdateUserVarsBuilder()..update(updates))._build();
+      (GUpdateUserVarsBuilder()..update(updates))._build();
 
-  _$GUpdateUserVars._({required this.data, required this.where}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(data, r'GUpdateUserVars', 'data');
-    BuiltValueNullFieldError.checkNotNull(where, r'GUpdateUserVars', 'where');
-  }
-
+  _$GUpdateUserVars._({required this.data, required this.where}) : super._();
   @override
   GUpdateUserVars rebuild(void Function(GUpdateUserVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GUpdateUserVarsBuilder toBuilder() =>
-      new GUpdateUserVarsBuilder()..replace(this);
+  GUpdateUserVarsBuilder toBuilder() => GUpdateUserVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1608,12 +1550,12 @@ class GUpdateUserVarsBuilder
 
   _i1.GUserUpdateInputBuilder? _data;
   _i1.GUserUpdateInputBuilder get data =>
-      _$this._data ??= new _i1.GUserUpdateInputBuilder();
+      _$this._data ??= _i1.GUserUpdateInputBuilder();
   set data(_i1.GUserUpdateInputBuilder? data) => _$this._data = data;
 
   _i1.GUserWhereUniqueInputBuilder? _where;
   _i1.GUserWhereUniqueInputBuilder get where =>
-      _$this._where ??= new _i1.GUserWhereUniqueInputBuilder();
+      _$this._where ??= _i1.GUserWhereUniqueInputBuilder();
   set where(_i1.GUserWhereUniqueInputBuilder? where) => _$this._where = where;
 
   GUpdateUserVarsBuilder();
@@ -1630,7 +1572,6 @@ class GUpdateUserVarsBuilder
 
   @override
   void replace(GUpdateUserVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUpdateUserVars;
   }
 
@@ -1646,7 +1587,7 @@ class GUpdateUserVarsBuilder
     _$GUpdateUserVars _$result;
     try {
       _$result = _$v ??
-          new _$GUpdateUserVars._(
+          _$GUpdateUserVars._(
             data: data.build(),
             where: where.build(),
           );
@@ -1658,7 +1599,7 @@ class GUpdateUserVarsBuilder
         _$failedField = 'where';
         where.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUpdateUserVars', _$failedField, e.toString());
       }
       rethrow;
@@ -1673,18 +1614,15 @@ class _$GDealerVars extends GDealerVars {
   final _i1.GDealerWhereInput where;
 
   factory _$GDealerVars([void Function(GDealerVarsBuilder)? updates]) =>
-      (new GDealerVarsBuilder()..update(updates))._build();
+      (GDealerVarsBuilder()..update(updates))._build();
 
-  _$GDealerVars._({required this.where}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(where, r'GDealerVars', 'where');
-  }
-
+  _$GDealerVars._({required this.where}) : super._();
   @override
   GDealerVars rebuild(void Function(GDealerVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GDealerVarsBuilder toBuilder() => new GDealerVarsBuilder()..replace(this);
+  GDealerVarsBuilder toBuilder() => GDealerVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1712,7 +1650,7 @@ class GDealerVarsBuilder implements Builder<GDealerVars, GDealerVarsBuilder> {
 
   _i1.GDealerWhereInputBuilder? _where;
   _i1.GDealerWhereInputBuilder get where =>
-      _$this._where ??= new _i1.GDealerWhereInputBuilder();
+      _$this._where ??= _i1.GDealerWhereInputBuilder();
   set where(_i1.GDealerWhereInputBuilder? where) => _$this._where = where;
 
   GDealerVarsBuilder();
@@ -1728,7 +1666,6 @@ class GDealerVarsBuilder implements Builder<GDealerVars, GDealerVarsBuilder> {
 
   @override
   void replace(GDealerVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GDealerVars;
   }
 
@@ -1744,7 +1681,7 @@ class GDealerVarsBuilder implements Builder<GDealerVars, GDealerVarsBuilder> {
     _$GDealerVars _$result;
     try {
       _$result = _$v ??
-          new _$GDealerVars._(
+          _$GDealerVars._(
             where: where.build(),
           );
     } catch (_) {
@@ -1753,7 +1690,7 @@ class GDealerVarsBuilder implements Builder<GDealerVars, GDealerVarsBuilder> {
         _$failedField = 'where';
         where.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GDealerVars', _$failedField, e.toString());
       }
       rethrow;
@@ -1771,20 +1708,16 @@ class _$GUpdateDealerVars extends GUpdateDealerVars {
 
   factory _$GUpdateDealerVars(
           [void Function(GUpdateDealerVarsBuilder)? updates]) =>
-      (new GUpdateDealerVarsBuilder()..update(updates))._build();
+      (GUpdateDealerVarsBuilder()..update(updates))._build();
 
-  _$GUpdateDealerVars._({required this.where, required this.data}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(where, r'GUpdateDealerVars', 'where');
-    BuiltValueNullFieldError.checkNotNull(data, r'GUpdateDealerVars', 'data');
-  }
-
+  _$GUpdateDealerVars._({required this.where, required this.data}) : super._();
   @override
   GUpdateDealerVars rebuild(void Function(GUpdateDealerVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   GUpdateDealerVarsBuilder toBuilder() =>
-      new GUpdateDealerVarsBuilder()..replace(this);
+      GUpdateDealerVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1818,12 +1751,12 @@ class GUpdateDealerVarsBuilder
 
   _i1.GDealerWhereUniqueInputBuilder? _where;
   _i1.GDealerWhereUniqueInputBuilder get where =>
-      _$this._where ??= new _i1.GDealerWhereUniqueInputBuilder();
+      _$this._where ??= _i1.GDealerWhereUniqueInputBuilder();
   set where(_i1.GDealerWhereUniqueInputBuilder? where) => _$this._where = where;
 
   _i1.GDealerUpdateInputBuilder? _data;
   _i1.GDealerUpdateInputBuilder get data =>
-      _$this._data ??= new _i1.GDealerUpdateInputBuilder();
+      _$this._data ??= _i1.GDealerUpdateInputBuilder();
   set data(_i1.GDealerUpdateInputBuilder? data) => _$this._data = data;
 
   GUpdateDealerVarsBuilder();
@@ -1840,7 +1773,6 @@ class GUpdateDealerVarsBuilder
 
   @override
   void replace(GUpdateDealerVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUpdateDealerVars;
   }
 
@@ -1856,7 +1788,7 @@ class GUpdateDealerVarsBuilder
     _$GUpdateDealerVars _$result;
     try {
       _$result = _$v ??
-          new _$GUpdateDealerVars._(
+          _$GUpdateDealerVars._(
             where: where.build(),
             data: data.build(),
           );
@@ -1868,7 +1800,7 @@ class GUpdateDealerVarsBuilder
         _$failedField = 'data';
         data.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUpdateDealerVars', _$failedField, e.toString());
       }
       rethrow;
@@ -1881,10 +1813,9 @@ class GUpdateDealerVarsBuilder
 class _$GSendDealerMOUApprovalOTPVars extends GSendDealerMOUApprovalOTPVars {
   factory _$GSendDealerMOUApprovalOTPVars(
           [void Function(GSendDealerMOUApprovalOTPVarsBuilder)? updates]) =>
-      (new GSendDealerMOUApprovalOTPVarsBuilder()..update(updates))._build();
+      (GSendDealerMOUApprovalOTPVarsBuilder()..update(updates))._build();
 
   _$GSendDealerMOUApprovalOTPVars._() : super._();
-
   @override
   GSendDealerMOUApprovalOTPVars rebuild(
           void Function(GSendDealerMOUApprovalOTPVarsBuilder) updates) =>
@@ -1892,7 +1823,7 @@ class _$GSendDealerMOUApprovalOTPVars extends GSendDealerMOUApprovalOTPVars {
 
   @override
   GSendDealerMOUApprovalOTPVarsBuilder toBuilder() =>
-      new GSendDealerMOUApprovalOTPVarsBuilder()..replace(this);
+      GSendDealerMOUApprovalOTPVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1922,7 +1853,6 @@ class GSendDealerMOUApprovalOTPVarsBuilder
 
   @override
   void replace(GSendDealerMOUApprovalOTPVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GSendDealerMOUApprovalOTPVars;
   }
 
@@ -1935,7 +1865,7 @@ class GSendDealerMOUApprovalOTPVarsBuilder
   GSendDealerMOUApprovalOTPVars build() => _build();
 
   _$GSendDealerMOUApprovalOTPVars _build() {
-    final _$result = _$v ?? new _$GSendDealerMOUApprovalOTPVars._();
+    final _$result = _$v ?? _$GSendDealerMOUApprovalOTPVars._();
     replace(_$result);
     return _$result;
   }

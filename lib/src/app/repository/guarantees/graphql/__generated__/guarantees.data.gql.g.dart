@@ -7,9 +7,9 @@ part of 'guarantees.data.gql.dart';
 // **************************************************************************
 
 Serializer<GGuaranteesData> _$gGuaranteesDataSerializer =
-    new _$GGuaranteesDataSerializer();
+    _$GGuaranteesDataSerializer();
 Serializer<GGuaranteesData_guarantees> _$gGuaranteesDataGuaranteesSerializer =
-    new _$GGuaranteesData_guaranteesSerializer();
+    _$GGuaranteesData_guaranteesSerializer();
 
 class _$GGuaranteesDataSerializer
     implements StructuredSerializer<GGuaranteesData> {
@@ -42,7 +42,7 @@ class _$GGuaranteesDataSerializer
   GGuaranteesData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GGuaranteesDataBuilder();
+    final result = GGuaranteesDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -103,7 +103,7 @@ class _$GGuaranteesData_guaranteesSerializer
   GGuaranteesData_guarantees deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GGuaranteesData_guaranteesBuilder();
+    final result = GGuaranteesData_guaranteesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -137,21 +137,15 @@ class _$GGuaranteesData extends GGuaranteesData {
   final BuiltList<GGuaranteesData_guarantees>? guarantees;
 
   factory _$GGuaranteesData([void Function(GGuaranteesDataBuilder)? updates]) =>
-      (new GGuaranteesDataBuilder()..update(updates))._build();
+      (GGuaranteesDataBuilder()..update(updates))._build();
 
-  _$GGuaranteesData._({required this.G__typename, this.guarantees})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GGuaranteesData', 'G__typename');
-  }
-
+  _$GGuaranteesData._({required this.G__typename, this.guarantees}) : super._();
   @override
   GGuaranteesData rebuild(void Function(GGuaranteesDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GGuaranteesDataBuilder toBuilder() =>
-      new GGuaranteesDataBuilder()..replace(this);
+  GGuaranteesDataBuilder toBuilder() => GGuaranteesDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -189,7 +183,7 @@ class GGuaranteesDataBuilder
 
   ListBuilder<GGuaranteesData_guarantees>? _guarantees;
   ListBuilder<GGuaranteesData_guarantees> get guarantees =>
-      _$this._guarantees ??= new ListBuilder<GGuaranteesData_guarantees>();
+      _$this._guarantees ??= ListBuilder<GGuaranteesData_guarantees>();
   set guarantees(ListBuilder<GGuaranteesData_guarantees>? guarantees) =>
       _$this._guarantees = guarantees;
 
@@ -209,7 +203,6 @@ class GGuaranteesDataBuilder
 
   @override
   void replace(GGuaranteesData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GGuaranteesData;
   }
 
@@ -225,7 +218,7 @@ class GGuaranteesDataBuilder
     _$GGuaranteesData _$result;
     try {
       _$result = _$v ??
-          new _$GGuaranteesData._(
+          _$GGuaranteesData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GGuaranteesData', 'G__typename'),
             guarantees: _guarantees?.build(),
@@ -236,7 +229,7 @@ class GGuaranteesDataBuilder
         _$failedField = 'guarantees';
         _guarantees?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GGuaranteesData', _$failedField, e.toString());
       }
       rethrow;
@@ -256,17 +249,11 @@ class _$GGuaranteesData_guarantees extends GGuaranteesData_guarantees {
 
   factory _$GGuaranteesData_guarantees(
           [void Function(GGuaranteesData_guaranteesBuilder)? updates]) =>
-      (new GGuaranteesData_guaranteesBuilder()..update(updates))._build();
+      (GGuaranteesData_guaranteesBuilder()..update(updates))._build();
 
   _$GGuaranteesData_guarantees._(
       {required this.G__typename, required this.id, this.name})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GGuaranteesData_guarantees', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GGuaranteesData_guarantees', 'id');
-  }
-
+      : super._();
   @override
   GGuaranteesData_guarantees rebuild(
           void Function(GGuaranteesData_guaranteesBuilder) updates) =>
@@ -274,7 +261,7 @@ class _$GGuaranteesData_guarantees extends GGuaranteesData_guarantees {
 
   @override
   GGuaranteesData_guaranteesBuilder toBuilder() =>
-      new GGuaranteesData_guaranteesBuilder()..replace(this);
+      GGuaranteesData_guaranteesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -339,7 +326,6 @@ class GGuaranteesData_guaranteesBuilder
 
   @override
   void replace(GGuaranteesData_guarantees other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GGuaranteesData_guarantees;
   }
 
@@ -353,7 +339,7 @@ class GGuaranteesData_guaranteesBuilder
 
   _$GGuaranteesData_guarantees _build() {
     final _$result = _$v ??
-        new _$GGuaranteesData_guarantees._(
+        _$GGuaranteesData_guarantees._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename, r'GGuaranteesData_guarantees', 'G__typename'),
           id: BuiltValueNullFieldError.checkNotNull(

@@ -7,7 +7,7 @@ part of 'guarantees.req.gql.dart';
 // **************************************************************************
 
 Serializer<GGuaranteesReq> _$gGuaranteesReqSerializer =
-    new _$GGuaranteesReqSerializer();
+    _$GGuaranteesReqSerializer();
 
 class _$GGuaranteesReqSerializer
     implements StructuredSerializer<GGuaranteesReq> {
@@ -74,7 +74,7 @@ class _$GGuaranteesReqSerializer
   GGuaranteesReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GGuaranteesReqBuilder();
+    final result = GGuaranteesReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -151,7 +151,7 @@ class _$GGuaranteesReq extends GGuaranteesReq {
   final _i4.Context? context;
 
   factory _$GGuaranteesReq([void Function(GGuaranteesReqBuilder)? updates]) =>
-      (new GGuaranteesReqBuilder()..update(updates))._build();
+      (GGuaranteesReqBuilder()..update(updates))._build();
 
   _$GGuaranteesReq._(
       {required this.vars,
@@ -164,21 +164,13 @@ class _$GGuaranteesReq extends GGuaranteesReq {
       this.fetchPolicy,
       required this.executeOnListen,
       this.context})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(vars, r'GGuaranteesReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GGuaranteesReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GGuaranteesReq', 'executeOnListen');
-  }
-
+      : super._();
   @override
   GGuaranteesReq rebuild(void Function(GGuaranteesReqBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GGuaranteesReqBuilder toBuilder() =>
-      new GGuaranteesReqBuilder()..replace(this);
+  GGuaranteesReqBuilder toBuilder() => GGuaranteesReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -237,7 +229,7 @@ class GGuaranteesReqBuilder
 
   _i3.GGuaranteesVarsBuilder? _vars;
   _i3.GGuaranteesVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GGuaranteesVarsBuilder();
+      _$this._vars ??= _i3.GGuaranteesVarsBuilder();
   set vars(_i3.GGuaranteesVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
@@ -260,7 +252,7 @@ class GGuaranteesReqBuilder
 
   _i2.GGuaranteesDataBuilder? _optimisticResponse;
   _i2.GGuaranteesDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GGuaranteesDataBuilder();
+      _$this._optimisticResponse ??= _i2.GGuaranteesDataBuilder();
   set optimisticResponse(_i2.GGuaranteesDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
@@ -314,7 +306,6 @@ class GGuaranteesReqBuilder
 
   @override
   void replace(GGuaranteesReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GGuaranteesReq;
   }
 
@@ -330,7 +321,7 @@ class GGuaranteesReqBuilder
     _$GGuaranteesReq _$result;
     try {
       _$result = _$v ??
-          new _$GGuaranteesReq._(
+          _$GGuaranteesReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
                 operation, r'GGuaranteesReq', 'operation'),
@@ -353,7 +344,7 @@ class GGuaranteesReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GGuaranteesReq', _$failedField, e.toString());
       }
       rethrow;

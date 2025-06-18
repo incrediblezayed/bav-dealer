@@ -261,7 +261,6 @@ class AuthRepository {
             if (address != null) b.vars.data.address = address;
             if (imageFile != null) b.vars.data.profile_image.upload = imageFile;
             b.fetchPolicy = FetchPolicy.NoCache;
-
             b;
           }),
         ).first;

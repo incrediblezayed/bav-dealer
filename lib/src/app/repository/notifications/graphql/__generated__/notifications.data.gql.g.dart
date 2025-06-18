@@ -7,19 +7,19 @@ part of 'notifications.data.gql.dart';
 // **************************************************************************
 
 Serializer<GAppNotificationsData> _$gAppNotificationsDataSerializer =
-    new _$GAppNotificationsDataSerializer();
+    _$GAppNotificationsDataSerializer();
 Serializer<GAppNotificationsData_appNotifications>
     _$gAppNotificationsDataAppNotificationsSerializer =
-    new _$GAppNotificationsData_appNotificationsSerializer();
+    _$GAppNotificationsData_appNotificationsSerializer();
 Serializer<GAppNotificationsData_appNotifications_notificationType>
     _$gAppNotificationsDataAppNotificationsNotificationTypeSerializer =
-    new _$GAppNotificationsData_appNotifications_notificationTypeSerializer();
+    _$GAppNotificationsData_appNotifications_notificationTypeSerializer();
 Serializer<GUserDeviceRegistrationData>
     _$gUserDeviceRegistrationDataSerializer =
-    new _$GUserDeviceRegistrationDataSerializer();
+    _$GUserDeviceRegistrationDataSerializer();
 Serializer<GUserDeviceRegistrationData_createFirebaseDeviceToken>
     _$gUserDeviceRegistrationDataCreateFirebaseDeviceTokenSerializer =
-    new _$GUserDeviceRegistrationData_createFirebaseDeviceTokenSerializer();
+    _$GUserDeviceRegistrationData_createFirebaseDeviceTokenSerializer();
 
 class _$GAppNotificationsDataSerializer
     implements StructuredSerializer<GAppNotificationsData> {
@@ -57,7 +57,7 @@ class _$GAppNotificationsDataSerializer
   GAppNotificationsData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GAppNotificationsDataBuilder();
+    final result = GAppNotificationsDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -147,7 +147,7 @@ class _$GAppNotificationsData_appNotificationsSerializer
   GAppNotificationsData_appNotifications deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GAppNotificationsData_appNotificationsBuilder();
+    final result = GAppNotificationsData_appNotificationsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -239,7 +239,7 @@ class _$GAppNotificationsData_appNotifications_notificationTypeSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GAppNotificationsData_appNotifications_notificationTypeBuilder();
+        GAppNotificationsData_appNotifications_notificationTypeBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -305,7 +305,7 @@ class _$GUserDeviceRegistrationDataSerializer
   GUserDeviceRegistrationData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserDeviceRegistrationDataBuilder();
+    final result = GUserDeviceRegistrationDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -369,7 +369,7 @@ class _$GUserDeviceRegistrationData_createFirebaseDeviceTokenSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder();
+        GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -400,14 +400,10 @@ class _$GAppNotificationsData extends GAppNotificationsData {
 
   factory _$GAppNotificationsData(
           [void Function(GAppNotificationsDataBuilder)? updates]) =>
-      (new GAppNotificationsDataBuilder()..update(updates))._build();
+      (GAppNotificationsDataBuilder()..update(updates))._build();
 
   _$GAppNotificationsData._({required this.G__typename, this.appNotifications})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GAppNotificationsData', 'G__typename');
-  }
-
+      : super._();
   @override
   GAppNotificationsData rebuild(
           void Function(GAppNotificationsDataBuilder) updates) =>
@@ -415,7 +411,7 @@ class _$GAppNotificationsData extends GAppNotificationsData {
 
   @override
   GAppNotificationsDataBuilder toBuilder() =>
-      new GAppNotificationsDataBuilder()..replace(this);
+      GAppNotificationsDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -454,7 +450,7 @@ class GAppNotificationsDataBuilder
   ListBuilder<GAppNotificationsData_appNotifications>? _appNotifications;
   ListBuilder<GAppNotificationsData_appNotifications> get appNotifications =>
       _$this._appNotifications ??=
-          new ListBuilder<GAppNotificationsData_appNotifications>();
+          ListBuilder<GAppNotificationsData_appNotifications>();
   set appNotifications(
           ListBuilder<GAppNotificationsData_appNotifications>?
               appNotifications) =>
@@ -476,7 +472,6 @@ class GAppNotificationsDataBuilder
 
   @override
   void replace(GAppNotificationsData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GAppNotificationsData;
   }
 
@@ -492,7 +487,7 @@ class GAppNotificationsDataBuilder
     _$GAppNotificationsData _$result;
     try {
       _$result = _$v ??
-          new _$GAppNotificationsData._(
+          _$GAppNotificationsData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GAppNotificationsData', 'G__typename'),
             appNotifications: _appNotifications?.build(),
@@ -503,7 +498,7 @@ class GAppNotificationsDataBuilder
         _$failedField = 'appNotifications';
         _appNotifications?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GAppNotificationsData', _$failedField, e.toString());
       }
       rethrow;
@@ -534,7 +529,7 @@ class _$GAppNotificationsData_appNotifications
   factory _$GAppNotificationsData_appNotifications(
           [void Function(GAppNotificationsData_appNotificationsBuilder)?
               updates]) =>
-      (new GAppNotificationsData_appNotificationsBuilder()..update(updates))
+      (GAppNotificationsData_appNotificationsBuilder()..update(updates))
           ._build();
 
   _$GAppNotificationsData_appNotifications._(
@@ -545,13 +540,7 @@ class _$GAppNotificationsData_appNotifications
       this.modifiedAt,
       this.notificationType,
       this.title})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GAppNotificationsData_appNotifications', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GAppNotificationsData_appNotifications', 'id');
-  }
-
+      : super._();
   @override
   GAppNotificationsData_appNotifications rebuild(
           void Function(GAppNotificationsData_appNotificationsBuilder)
@@ -560,7 +549,7 @@ class _$GAppNotificationsData_appNotifications
 
   @override
   GAppNotificationsData_appNotificationsBuilder toBuilder() =>
-      new GAppNotificationsData_appNotificationsBuilder()..replace(this);
+      GAppNotificationsData_appNotificationsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -624,13 +613,13 @@ class GAppNotificationsData_appNotificationsBuilder
 
   _i2.GDateTimeBuilder? _createdAt;
   _i2.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+      _$this._createdAt ??= _i2.GDateTimeBuilder();
   set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
   _i2.GDateTimeBuilder? _modifiedAt;
   _i2.GDateTimeBuilder get modifiedAt =>
-      _$this._modifiedAt ??= new _i2.GDateTimeBuilder();
+      _$this._modifiedAt ??= _i2.GDateTimeBuilder();
   set modifiedAt(_i2.GDateTimeBuilder? modifiedAt) =>
       _$this._modifiedAt = modifiedAt;
 
@@ -638,7 +627,7 @@ class GAppNotificationsData_appNotificationsBuilder
       _notificationType;
   GAppNotificationsData_appNotifications_notificationTypeBuilder
       get notificationType => _$this._notificationType ??=
-          new GAppNotificationsData_appNotifications_notificationTypeBuilder();
+          GAppNotificationsData_appNotifications_notificationTypeBuilder();
   set notificationType(
           GAppNotificationsData_appNotifications_notificationTypeBuilder?
               notificationType) =>
@@ -669,7 +658,6 @@ class GAppNotificationsData_appNotificationsBuilder
 
   @override
   void replace(GAppNotificationsData_appNotifications other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GAppNotificationsData_appNotifications;
   }
 
@@ -686,7 +674,7 @@ class GAppNotificationsData_appNotificationsBuilder
     _$GAppNotificationsData_appNotifications _$result;
     try {
       _$result = _$v ??
-          new _$GAppNotificationsData_appNotifications._(
+          _$GAppNotificationsData_appNotifications._(
             G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                 r'GAppNotificationsData_appNotifications', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
@@ -707,7 +695,7 @@ class GAppNotificationsData_appNotificationsBuilder
         _$failedField = 'notificationType';
         _notificationType?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GAppNotificationsData_appNotifications',
             _$failedField,
             e.toString());
@@ -734,21 +722,13 @@ class _$GAppNotificationsData_appNotifications_notificationType
           [void Function(
                   GAppNotificationsData_appNotifications_notificationTypeBuilder)?
               updates]) =>
-      (new GAppNotificationsData_appNotifications_notificationTypeBuilder()
+      (GAppNotificationsData_appNotifications_notificationTypeBuilder()
             ..update(updates))
           ._build();
 
   _$GAppNotificationsData_appNotifications_notificationType._(
       {required this.G__typename, required this.id, this.createdAt, this.name})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GAppNotificationsData_appNotifications_notificationType',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GAppNotificationsData_appNotifications_notificationType', 'id');
-  }
-
+      : super._();
   @override
   GAppNotificationsData_appNotifications_notificationType rebuild(
           void Function(
@@ -758,7 +738,7 @@ class _$GAppNotificationsData_appNotifications_notificationType
 
   @override
   GAppNotificationsData_appNotifications_notificationTypeBuilder toBuilder() =>
-      new GAppNotificationsData_appNotifications_notificationTypeBuilder()
+      GAppNotificationsData_appNotifications_notificationTypeBuilder()
         ..replace(this);
 
   @override
@@ -810,7 +790,7 @@ class GAppNotificationsData_appNotifications_notificationTypeBuilder
 
   _i2.GDateTimeBuilder? _createdAt;
   _i2.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+      _$this._createdAt ??= _i2.GDateTimeBuilder();
   set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
@@ -837,7 +817,6 @@ class GAppNotificationsData_appNotifications_notificationTypeBuilder
 
   @override
   void replace(GAppNotificationsData_appNotifications_notificationType other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GAppNotificationsData_appNotifications_notificationType;
   }
 
@@ -856,7 +835,7 @@ class GAppNotificationsData_appNotifications_notificationTypeBuilder
     _$GAppNotificationsData_appNotifications_notificationType _$result;
     try {
       _$result = _$v ??
-          new _$GAppNotificationsData_appNotifications_notificationType._(
+          _$GAppNotificationsData_appNotifications_notificationType._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
                 r'GAppNotificationsData_appNotifications_notificationType',
@@ -874,7 +853,7 @@ class GAppNotificationsData_appNotifications_notificationTypeBuilder
         _$failedField = 'createdAt';
         _createdAt?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GAppNotificationsData_appNotifications_notificationType',
             _$failedField,
             e.toString());
@@ -895,15 +874,11 @@ class _$GUserDeviceRegistrationData extends GUserDeviceRegistrationData {
 
   factory _$GUserDeviceRegistrationData(
           [void Function(GUserDeviceRegistrationDataBuilder)? updates]) =>
-      (new GUserDeviceRegistrationDataBuilder()..update(updates))._build();
+      (GUserDeviceRegistrationDataBuilder()..update(updates))._build();
 
   _$GUserDeviceRegistrationData._(
       {required this.G__typename, this.createFirebaseDeviceToken})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUserDeviceRegistrationData', 'G__typename');
-  }
-
+      : super._();
   @override
   GUserDeviceRegistrationData rebuild(
           void Function(GUserDeviceRegistrationDataBuilder) updates) =>
@@ -911,7 +886,7 @@ class _$GUserDeviceRegistrationData extends GUserDeviceRegistrationData {
 
   @override
   GUserDeviceRegistrationDataBuilder toBuilder() =>
-      new GUserDeviceRegistrationDataBuilder()..replace(this);
+      GUserDeviceRegistrationDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -953,7 +928,7 @@ class GUserDeviceRegistrationDataBuilder
       _createFirebaseDeviceToken;
   GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder
       get createFirebaseDeviceToken => _$this._createFirebaseDeviceToken ??=
-          new GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder();
+          GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder();
   set createFirebaseDeviceToken(
           GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder?
               createFirebaseDeviceToken) =>
@@ -975,7 +950,6 @@ class GUserDeviceRegistrationDataBuilder
 
   @override
   void replace(GUserDeviceRegistrationData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUserDeviceRegistrationData;
   }
 
@@ -991,7 +965,7 @@ class GUserDeviceRegistrationDataBuilder
     _$GUserDeviceRegistrationData _$result;
     try {
       _$result = _$v ??
-          new _$GUserDeviceRegistrationData._(
+          _$GUserDeviceRegistrationData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GUserDeviceRegistrationData', 'G__typename'),
             createFirebaseDeviceToken: _createFirebaseDeviceToken?.build(),
@@ -1002,7 +976,7 @@ class GUserDeviceRegistrationDataBuilder
         _$failedField = 'createFirebaseDeviceToken';
         _createFirebaseDeviceToken?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUserDeviceRegistrationData', _$failedField, e.toString());
       }
       rethrow;
@@ -1023,19 +997,13 @@ class _$GUserDeviceRegistrationData_createFirebaseDeviceToken
           [void Function(
                   GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder)?
               updates]) =>
-      (new GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder()
+      (GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder()
             ..update(updates))
           ._build();
 
   _$GUserDeviceRegistrationData_createFirebaseDeviceToken._(
       {required this.G__typename, this.deviceToken})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GUserDeviceRegistrationData_createFirebaseDeviceToken',
-        'G__typename');
-  }
-
+      : super._();
   @override
   GUserDeviceRegistrationData_createFirebaseDeviceToken rebuild(
           void Function(
@@ -1045,7 +1013,7 @@ class _$GUserDeviceRegistrationData_createFirebaseDeviceToken
 
   @override
   GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder toBuilder() =>
-      new GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder()
+      GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder()
         ..replace(this);
 
   @override
@@ -1106,7 +1074,6 @@ class GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder
 
   @override
   void replace(GUserDeviceRegistrationData_createFirebaseDeviceToken other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUserDeviceRegistrationData_createFirebaseDeviceToken;
   }
 
@@ -1123,7 +1090,7 @@ class GUserDeviceRegistrationData_createFirebaseDeviceTokenBuilder
 
   _$GUserDeviceRegistrationData_createFirebaseDeviceToken _build() {
     final _$result = _$v ??
-        new _$GUserDeviceRegistrationData_createFirebaseDeviceToken._(
+        _$GUserDeviceRegistrationData_createFirebaseDeviceToken._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
               r'GUserDeviceRegistrationData_createFirebaseDeviceToken',

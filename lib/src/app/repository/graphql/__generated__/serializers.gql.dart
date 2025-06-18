@@ -1037,7 +1037,7 @@ import 'package:dealerapp/src/app/repository/stockRequest/graphql/__generated__/
 import 'package:dealerapp/src/custom_serializers/upload_serializer.dart'
     show UploadSerializer;
 import 'package:ferry_exec/ferry_exec.dart';
-import 'package:gql_code_builder/src/serializers/operation_serializer.dart'
+import 'package:gql_code_builder_serializers/gql_code_builder_serializers.dart'
     show OperationSerializer;
 
 part 'serializers.gql.g.dart';

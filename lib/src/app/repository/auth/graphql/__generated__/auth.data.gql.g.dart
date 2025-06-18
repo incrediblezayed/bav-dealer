@@ -7,97 +7,97 @@ part of 'auth.data.gql.dart';
 // **************************************************************************
 
 Serializer<GCreateUserData> _$gCreateUserDataSerializer =
-    new _$GCreateUserDataSerializer();
+    _$GCreateUserDataSerializer();
 Serializer<GCreateUserData_createUser> _$gCreateUserDataCreateUserSerializer =
-    new _$GCreateUserData_createUserSerializer();
+    _$GCreateUserData_createUserSerializer();
 Serializer<GCurrentUserOTPData> _$gCurrentUserOTPDataSerializer =
-    new _$GCurrentUserOTPDataSerializer();
+    _$GCurrentUserOTPDataSerializer();
 Serializer<GValidateUserOTPData> _$gValidateUserOTPDataSerializer =
-    new _$GValidateUserOTPDataSerializer();
+    _$GValidateUserOTPDataSerializer();
 Serializer<GSendUserPasswordResetLinkData>
     _$gSendUserPasswordResetLinkDataSerializer =
-    new _$GSendUserPasswordResetLinkDataSerializer();
+    _$GSendUserPasswordResetLinkDataSerializer();
 Serializer<GRedeemUserPasswordResetTokenData>
     _$gRedeemUserPasswordResetTokenDataSerializer =
-    new _$GRedeemUserPasswordResetTokenDataSerializer();
+    _$GRedeemUserPasswordResetTokenDataSerializer();
 Serializer<GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken>
     _$gRedeemUserPasswordResetTokenDataRedeemUserPasswordResetTokenSerializer =
-    new _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenSerializer();
+    _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenSerializer();
 Serializer<GValidateUserPasswordResetTokenData>
     _$gValidateUserPasswordResetTokenDataSerializer =
-    new _$GValidateUserPasswordResetTokenDataSerializer();
+    _$GValidateUserPasswordResetTokenDataSerializer();
 Serializer<GValidateUserPasswordResetTokenData_validateUserPasswordResetToken>
     _$gValidateUserPasswordResetTokenDataValidateUserPasswordResetTokenSerializer =
-    new _$GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenSerializer();
+    _$GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenSerializer();
 Serializer<GCreateDealerData> _$gCreateDealerDataSerializer =
-    new _$GCreateDealerDataSerializer();
+    _$GCreateDealerDataSerializer();
 Serializer<GCreateDealerData_createDealer>
     _$gCreateDealerDataCreateDealerSerializer =
-    new _$GCreateDealerData_createDealerSerializer();
+    _$GCreateDealerData_createDealerSerializer();
 Serializer<GAuthenticateUserWithPasswordData>
     _$gAuthenticateUserWithPasswordDataSerializer =
-    new _$GAuthenticateUserWithPasswordDataSerializer();
+    _$GAuthenticateUserWithPasswordDataSerializer();
 Serializer<GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base>
     _$gAuthenticateUserWithPasswordDataAuthenticateUserWithPasswordBaseSerializer =
-    new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__baseSerializer();
+    _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__baseSerializer();
 Serializer<
         GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess>
     _$gAuthenticateUserWithPasswordDataAuthenticateUserWithPasswordAsUserAuthenticationWithPasswordSuccessSerializer =
-    new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccessSerializer();
+    _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccessSerializer();
 Serializer<
         GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item>
     _$gAuthenticateUserWithPasswordDataAuthenticateUserWithPasswordAsUserAuthenticationWithPasswordSuccessItemSerializer =
-    new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_itemSerializer();
+    _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_itemSerializer();
 Serializer<
         GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image>
     _$gAuthenticateUserWithPasswordDataAuthenticateUserWithPasswordAsUserAuthenticationWithPasswordSuccessItemProfileImageSerializer =
-    new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_imageSerializer();
+    _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_imageSerializer();
 Serializer<
         GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses>
     _$gAuthenticateUserWithPasswordDataAuthenticateUserWithPasswordAsUserAuthenticationWithPasswordSuccessItemAddressesSerializer =
-    new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addressesSerializer();
+    _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addressesSerializer();
 Serializer<
         GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode>
     _$gAuthenticateUserWithPasswordDataAuthenticateUserWithPasswordAsUserAuthenticationWithPasswordSuccessItemReferralCodeSerializer =
-    new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCodeSerializer();
+    _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCodeSerializer();
 Serializer<
         GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure>
     _$gAuthenticateUserWithPasswordDataAuthenticateUserWithPasswordAsUserAuthenticationWithPasswordFailureSerializer =
-    new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailureSerializer();
-Serializer<GUserData> _$gUserDataSerializer = new _$GUserDataSerializer();
+    _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailureSerializer();
+Serializer<GUserData> _$gUserDataSerializer = _$GUserDataSerializer();
 Serializer<GUserData_user> _$gUserDataUserSerializer =
-    new _$GUserData_userSerializer();
+    _$GUserData_userSerializer();
 Serializer<GUserData_user_profile_image> _$gUserDataUserProfileImageSerializer =
-    new _$GUserData_user_profile_imageSerializer();
+    _$GUserData_user_profile_imageSerializer();
 Serializer<GUserData_user_addresses> _$gUserDataUserAddressesSerializer =
-    new _$GUserData_user_addressesSerializer();
+    _$GUserData_user_addressesSerializer();
 Serializer<GUserData_user_referralCode> _$gUserDataUserReferralCodeSerializer =
-    new _$GUserData_user_referralCodeSerializer();
+    _$GUserData_user_referralCodeSerializer();
 Serializer<GUserData_user_favorites> _$gUserDataUserFavoritesSerializer =
-    new _$GUserData_user_favoritesSerializer();
+    _$GUserData_user_favoritesSerializer();
 Serializer<GUserData_user_favorites_vehicleVariant>
     _$gUserDataUserFavoritesVehicleVariantSerializer =
-    new _$GUserData_user_favorites_vehicleVariantSerializer();
+    _$GUserData_user_favorites_vehicleVariantSerializer();
 Serializer<GUserData_user_aadhaar> _$gUserDataUserAadhaarSerializer =
-    new _$GUserData_user_aadhaarSerializer();
+    _$GUserData_user_aadhaarSerializer();
 Serializer<GUserData_user_driving_license>
     _$gUserDataUserDrivingLicenseSerializer =
-    new _$GUserData_user_driving_licenseSerializer();
+    _$GUserData_user_driving_licenseSerializer();
 Serializer<GUpdateUserData> _$gUpdateUserDataSerializer =
-    new _$GUpdateUserDataSerializer();
+    _$GUpdateUserDataSerializer();
 Serializer<GUpdateUserData_updateUser> _$gUpdateUserDataUpdateUserSerializer =
-    new _$GUpdateUserData_updateUserSerializer();
-Serializer<GDealerData> _$gDealerDataSerializer = new _$GDealerDataSerializer();
+    _$GUpdateUserData_updateUserSerializer();
+Serializer<GDealerData> _$gDealerDataSerializer = _$GDealerDataSerializer();
 Serializer<GDealerData_dealers> _$gDealerDataDealersSerializer =
-    new _$GDealerData_dealersSerializer();
+    _$GDealerData_dealersSerializer();
 Serializer<GUpdateDealerData> _$gUpdateDealerDataSerializer =
-    new _$GUpdateDealerDataSerializer();
+    _$GUpdateDealerDataSerializer();
 Serializer<GUpdateDealerData_updateDealer>
     _$gUpdateDealerDataUpdateDealerSerializer =
-    new _$GUpdateDealerData_updateDealerSerializer();
+    _$GUpdateDealerData_updateDealerSerializer();
 Serializer<GSendDealerMOUApprovalOTPData>
     _$gSendDealerMOUApprovalOTPDataSerializer =
-    new _$GSendDealerMOUApprovalOTPDataSerializer();
+    _$GSendDealerMOUApprovalOTPDataSerializer();
 
 class _$GCreateUserDataSerializer
     implements StructuredSerializer<GCreateUserData> {
@@ -129,7 +129,7 @@ class _$GCreateUserDataSerializer
   GCreateUserData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateUserDataBuilder();
+    final result = GCreateUserDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -182,7 +182,7 @@ class _$GCreateUserData_createUserSerializer
   GCreateUserData_createUser deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateUserData_createUserBuilder();
+    final result = GCreateUserData_createUserBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -239,7 +239,7 @@ class _$GCurrentUserOTPDataSerializer
   GCurrentUserOTPData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCurrentUserOTPDataBuilder();
+    final result = GCurrentUserOTPDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -296,7 +296,7 @@ class _$GValidateUserOTPDataSerializer
   GValidateUserOTPData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GValidateUserOTPDataBuilder();
+    final result = GValidateUserOTPDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -349,7 +349,7 @@ class _$GSendUserPasswordResetLinkDataSerializer
   GSendUserPasswordResetLinkData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GSendUserPasswordResetLinkDataBuilder();
+    final result = GSendUserPasswordResetLinkDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -407,7 +407,7 @@ class _$GRedeemUserPasswordResetTokenDataSerializer
   GRedeemUserPasswordResetTokenData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GRedeemUserPasswordResetTokenDataBuilder();
+    final result = GRedeemUserPasswordResetTokenDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -470,7 +470,7 @@ class _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder();
+        GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -534,7 +534,7 @@ class _$GValidateUserPasswordResetTokenDataSerializer
   GValidateUserPasswordResetTokenData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GValidateUserPasswordResetTokenDataBuilder();
+    final result = GValidateUserPasswordResetTokenDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -597,7 +597,7 @@ class _$GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenSerial
       deserialize(Serializers serializers, Iterable<Object?> serialized,
           {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder();
+        GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -656,7 +656,7 @@ class _$GCreateDealerDataSerializer
   GCreateDealerData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateDealerDataBuilder();
+    final result = GCreateDealerDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -710,7 +710,7 @@ class _$GCreateDealerData_createDealerSerializer
   GCreateDealerData_createDealer deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GCreateDealerData_createDealerBuilder();
+    final result = GCreateDealerData_createDealerBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -768,7 +768,7 @@ class _$GAuthenticateUserWithPasswordDataSerializer
   GAuthenticateUserWithPasswordData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GAuthenticateUserWithPasswordDataBuilder();
+    final result = GAuthenticateUserWithPasswordDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -826,7 +826,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__baseSeri
       deserialize(Serializers serializers, Iterable<Object?> serialized,
           {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__baseBuilder();
+        GAuthenticateUserWithPasswordData_authenticateUserWithPassword__baseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -885,7 +885,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
       deserialize(Serializers serializers, Iterable<Object?> serialized,
           {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccessBuilder();
+        GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccessBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1031,7 +1031,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
       deserialize(Serializers serializers, Iterable<Object?> serialized,
           {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_itemBuilder();
+        GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_itemBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1152,7 +1152,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
       deserialize(Serializers serializers, Iterable<Object?> serialized,
           {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_imageBuilder();
+        GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_imageBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1301,7 +1301,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
       deserialize(Serializers serializers, Iterable<Object?> serialized,
           {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addressesBuilder();
+        GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addressesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1420,7 +1420,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
       deserialize(Serializers serializers, Iterable<Object?> serialized,
           {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCodeBuilder();
+        GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCodeBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1491,7 +1491,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
       deserialize(Serializers serializers, Iterable<Object?> serialized,
           {FullType specifiedType = FullType.unspecified}) {
     final result =
-        new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailureBuilder();
+        GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailureBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1542,7 +1542,7 @@ class _$GUserDataSerializer implements StructuredSerializer<GUserData> {
   @override
   GUserData deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserDataBuilder();
+    final result = GUserDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1691,7 +1691,7 @@ class _$GUserData_userSerializer
   GUserData_user deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserData_userBuilder();
+    final result = GUserData_userBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1820,7 +1820,7 @@ class _$GUserData_user_profile_imageSerializer
   GUserData_user_profile_image deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserData_user_profile_imageBuilder();
+    final result = GUserData_user_profile_imageBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1963,7 +1963,7 @@ class _$GUserData_user_addressesSerializer
   GUserData_user_addresses deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserData_user_addressesBuilder();
+    final result = GUserData_user_addressesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2076,7 +2076,7 @@ class _$GUserData_user_referralCodeSerializer
   GUserData_user_referralCode deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserData_user_referralCodeBuilder();
+    final result = GUserData_user_referralCodeBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2148,7 +2148,7 @@ class _$GUserData_user_favoritesSerializer
   GUserData_user_favorites deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserData_user_favoritesBuilder();
+    final result = GUserData_user_favoritesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2206,7 +2206,7 @@ class _$GUserData_user_favorites_vehicleVariantSerializer
   GUserData_user_favorites_vehicleVariant deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserData_user_favorites_vehicleVariantBuilder();
+    final result = GUserData_user_favorites_vehicleVariantBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2261,7 +2261,7 @@ class _$GUserData_user_aadhaarSerializer
   GUserData_user_aadhaar deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserData_user_aadhaarBuilder();
+    final result = GUserData_user_aadhaarBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2320,7 +2320,7 @@ class _$GUserData_user_driving_licenseSerializer
   GUserData_user_driving_license deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserData_user_driving_licenseBuilder();
+    final result = GUserData_user_driving_licenseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2377,7 +2377,7 @@ class _$GUpdateUserDataSerializer
   GUpdateUserData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUpdateUserDataBuilder();
+    final result = GUpdateUserDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2430,7 +2430,7 @@ class _$GUpdateUserData_updateUserSerializer
   GUpdateUserData_updateUser deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUpdateUserData_updateUserBuilder();
+    final result = GUpdateUserData_updateUserBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2482,7 +2482,7 @@ class _$GDealerDataSerializer implements StructuredSerializer<GDealerData> {
   @override
   GDealerData deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GDealerDataBuilder();
+    final result = GDealerDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2550,7 +2550,7 @@ class _$GDealerData_dealersSerializer
   GDealerData_dealers deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GDealerData_dealersBuilder();
+    final result = GDealerData_dealersBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2611,7 +2611,7 @@ class _$GUpdateDealerDataSerializer
   GUpdateDealerData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUpdateDealerDataBuilder();
+    final result = GUpdateDealerDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2687,7 +2687,7 @@ class _$GUpdateDealerData_updateDealerSerializer
   GUpdateDealerData_updateDealer deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUpdateDealerData_updateDealerBuilder();
+    final result = GUpdateDealerData_updateDealerBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2758,7 +2758,7 @@ class _$GSendDealerMOUApprovalOTPDataSerializer
   GSendDealerMOUApprovalOTPData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GSendDealerMOUApprovalOTPDataBuilder();
+    final result = GSendDealerMOUApprovalOTPDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2788,21 +2788,15 @@ class _$GCreateUserData extends GCreateUserData {
   final GCreateUserData_createUser? createUser;
 
   factory _$GCreateUserData([void Function(GCreateUserDataBuilder)? updates]) =>
-      (new GCreateUserDataBuilder()..update(updates))._build();
+      (GCreateUserDataBuilder()..update(updates))._build();
 
-  _$GCreateUserData._({required this.G__typename, this.createUser})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GCreateUserData', 'G__typename');
-  }
-
+  _$GCreateUserData._({required this.G__typename, this.createUser}) : super._();
   @override
   GCreateUserData rebuild(void Function(GCreateUserDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GCreateUserDataBuilder toBuilder() =>
-      new GCreateUserDataBuilder()..replace(this);
+  GCreateUserDataBuilder toBuilder() => GCreateUserDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -2840,7 +2834,7 @@ class GCreateUserDataBuilder
 
   GCreateUserData_createUserBuilder? _createUser;
   GCreateUserData_createUserBuilder get createUser =>
-      _$this._createUser ??= new GCreateUserData_createUserBuilder();
+      _$this._createUser ??= GCreateUserData_createUserBuilder();
   set createUser(GCreateUserData_createUserBuilder? createUser) =>
       _$this._createUser = createUser;
 
@@ -2860,7 +2854,6 @@ class GCreateUserDataBuilder
 
   @override
   void replace(GCreateUserData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateUserData;
   }
 
@@ -2876,7 +2869,7 @@ class GCreateUserDataBuilder
     _$GCreateUserData _$result;
     try {
       _$result = _$v ??
-          new _$GCreateUserData._(
+          _$GCreateUserData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GCreateUserData', 'G__typename'),
             createUser: _createUser?.build(),
@@ -2887,7 +2880,7 @@ class GCreateUserDataBuilder
         _$failedField = 'createUser';
         _createUser?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCreateUserData', _$failedField, e.toString());
       }
       rethrow;
@@ -2905,16 +2898,10 @@ class _$GCreateUserData_createUser extends GCreateUserData_createUser {
 
   factory _$GCreateUserData_createUser(
           [void Function(GCreateUserData_createUserBuilder)? updates]) =>
-      (new GCreateUserData_createUserBuilder()..update(updates))._build();
+      (GCreateUserData_createUserBuilder()..update(updates))._build();
 
   _$GCreateUserData_createUser._({required this.G__typename, required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GCreateUserData_createUser', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GCreateUserData_createUser', 'id');
-  }
-
+      : super._();
   @override
   GCreateUserData_createUser rebuild(
           void Function(GCreateUserData_createUserBuilder) updates) =>
@@ -2922,7 +2909,7 @@ class _$GCreateUserData_createUser extends GCreateUserData_createUser {
 
   @override
   GCreateUserData_createUserBuilder toBuilder() =>
-      new GCreateUserData_createUserBuilder()..replace(this);
+      GCreateUserData_createUserBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -2979,7 +2966,6 @@ class GCreateUserData_createUserBuilder
 
   @override
   void replace(GCreateUserData_createUser other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateUserData_createUser;
   }
 
@@ -2993,7 +2979,7 @@ class GCreateUserData_createUserBuilder
 
   _$GCreateUserData_createUser _build() {
     final _$result = _$v ??
-        new _$GCreateUserData_createUser._(
+        _$GCreateUserData_createUser._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename, r'GCreateUserData_createUser', 'G__typename'),
           id: BuiltValueNullFieldError.checkNotNull(
@@ -3012,14 +2998,10 @@ class _$GCurrentUserOTPData extends GCurrentUserOTPData {
 
   factory _$GCurrentUserOTPData(
           [void Function(GCurrentUserOTPDataBuilder)? updates]) =>
-      (new GCurrentUserOTPDataBuilder()..update(updates))._build();
+      (GCurrentUserOTPDataBuilder()..update(updates))._build();
 
   _$GCurrentUserOTPData._({required this.G__typename, this.currentUserOTP})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GCurrentUserOTPData', 'G__typename');
-  }
-
+      : super._();
   @override
   GCurrentUserOTPData rebuild(
           void Function(GCurrentUserOTPDataBuilder) updates) =>
@@ -3027,7 +3009,7 @@ class _$GCurrentUserOTPData extends GCurrentUserOTPData {
 
   @override
   GCurrentUserOTPDataBuilder toBuilder() =>
-      new GCurrentUserOTPDataBuilder()..replace(this);
+      GCurrentUserOTPDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -3084,7 +3066,6 @@ class GCurrentUserOTPDataBuilder
 
   @override
   void replace(GCurrentUserOTPData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCurrentUserOTPData;
   }
 
@@ -3098,7 +3079,7 @@ class GCurrentUserOTPDataBuilder
 
   _$GCurrentUserOTPData _build() {
     final _$result = _$v ??
-        new _$GCurrentUserOTPData._(
+        _$GCurrentUserOTPData._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename, r'GCurrentUserOTPData', 'G__typename'),
           currentUserOTP: currentUserOTP,
@@ -3116,14 +3097,10 @@ class _$GValidateUserOTPData extends GValidateUserOTPData {
 
   factory _$GValidateUserOTPData(
           [void Function(GValidateUserOTPDataBuilder)? updates]) =>
-      (new GValidateUserOTPDataBuilder()..update(updates))._build();
+      (GValidateUserOTPDataBuilder()..update(updates))._build();
 
   _$GValidateUserOTPData._({required this.G__typename, this.validateUserOTP})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GValidateUserOTPData', 'G__typename');
-  }
-
+      : super._();
   @override
   GValidateUserOTPData rebuild(
           void Function(GValidateUserOTPDataBuilder) updates) =>
@@ -3131,7 +3108,7 @@ class _$GValidateUserOTPData extends GValidateUserOTPData {
 
   @override
   GValidateUserOTPDataBuilder toBuilder() =>
-      new GValidateUserOTPDataBuilder()..replace(this);
+      GValidateUserOTPDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -3188,7 +3165,6 @@ class GValidateUserOTPDataBuilder
 
   @override
   void replace(GValidateUserOTPData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GValidateUserOTPData;
   }
 
@@ -3202,7 +3178,7 @@ class GValidateUserOTPDataBuilder
 
   _$GValidateUserOTPData _build() {
     final _$result = _$v ??
-        new _$GValidateUserOTPData._(
+        _$GValidateUserOTPData._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename, r'GValidateUserOTPData', 'G__typename'),
           validateUserOTP: validateUserOTP,
@@ -3220,17 +3196,11 @@ class _$GSendUserPasswordResetLinkData extends GSendUserPasswordResetLinkData {
 
   factory _$GSendUserPasswordResetLinkData(
           [void Function(GSendUserPasswordResetLinkDataBuilder)? updates]) =>
-      (new GSendUserPasswordResetLinkDataBuilder()..update(updates))._build();
+      (GSendUserPasswordResetLinkDataBuilder()..update(updates))._build();
 
   _$GSendUserPasswordResetLinkData._(
       {required this.G__typename, required this.sendUserPasswordResetLink})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GSendUserPasswordResetLinkData', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(sendUserPasswordResetLink,
-        r'GSendUserPasswordResetLinkData', 'sendUserPasswordResetLink');
-  }
-
+      : super._();
   @override
   GSendUserPasswordResetLinkData rebuild(
           void Function(GSendUserPasswordResetLinkDataBuilder) updates) =>
@@ -3238,7 +3208,7 @@ class _$GSendUserPasswordResetLinkData extends GSendUserPasswordResetLinkData {
 
   @override
   GSendUserPasswordResetLinkDataBuilder toBuilder() =>
-      new GSendUserPasswordResetLinkDataBuilder()..replace(this);
+      GSendUserPasswordResetLinkDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -3297,7 +3267,6 @@ class GSendUserPasswordResetLinkDataBuilder
 
   @override
   void replace(GSendUserPasswordResetLinkData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GSendUserPasswordResetLinkData;
   }
 
@@ -3311,7 +3280,7 @@ class GSendUserPasswordResetLinkDataBuilder
 
   _$GSendUserPasswordResetLinkData _build() {
     final _$result = _$v ??
-        new _$GSendUserPasswordResetLinkData._(
+        _$GSendUserPasswordResetLinkData._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename, r'GSendUserPasswordResetLinkData', 'G__typename'),
           sendUserPasswordResetLink: BuiltValueNullFieldError.checkNotNull(
@@ -3334,16 +3303,11 @@ class _$GRedeemUserPasswordResetTokenData
 
   factory _$GRedeemUserPasswordResetTokenData(
           [void Function(GRedeemUserPasswordResetTokenDataBuilder)? updates]) =>
-      (new GRedeemUserPasswordResetTokenDataBuilder()..update(updates))
-          ._build();
+      (GRedeemUserPasswordResetTokenDataBuilder()..update(updates))._build();
 
   _$GRedeemUserPasswordResetTokenData._(
       {required this.G__typename, this.redeemUserPasswordResetToken})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GRedeemUserPasswordResetTokenData', 'G__typename');
-  }
-
+      : super._();
   @override
   GRedeemUserPasswordResetTokenData rebuild(
           void Function(GRedeemUserPasswordResetTokenDataBuilder) updates) =>
@@ -3351,7 +3315,7 @@ class _$GRedeemUserPasswordResetTokenData
 
   @override
   GRedeemUserPasswordResetTokenDataBuilder toBuilder() =>
-      new GRedeemUserPasswordResetTokenDataBuilder()..replace(this);
+      GRedeemUserPasswordResetTokenDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -3394,7 +3358,7 @@ class GRedeemUserPasswordResetTokenDataBuilder
   GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder
       get redeemUserPasswordResetToken => _$this
               ._redeemUserPasswordResetToken ??=
-          new GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder();
+          GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder();
   set redeemUserPasswordResetToken(
           GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder?
               redeemUserPasswordResetToken) =>
@@ -3417,7 +3381,6 @@ class GRedeemUserPasswordResetTokenDataBuilder
 
   @override
   void replace(GRedeemUserPasswordResetTokenData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GRedeemUserPasswordResetTokenData;
   }
 
@@ -3434,7 +3397,7 @@ class GRedeemUserPasswordResetTokenDataBuilder
     _$GRedeemUserPasswordResetTokenData _$result;
     try {
       _$result = _$v ??
-          new _$GRedeemUserPasswordResetTokenData._(
+          _$GRedeemUserPasswordResetTokenData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                 r'GRedeemUserPasswordResetTokenData', 'G__typename'),
             redeemUserPasswordResetToken:
@@ -3446,7 +3409,7 @@ class GRedeemUserPasswordResetTokenDataBuilder
         _$failedField = 'redeemUserPasswordResetToken';
         _redeemUserPasswordResetToken?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GRedeemUserPasswordResetTokenData', _$failedField, e.toString());
       }
       rethrow;
@@ -3469,27 +3432,13 @@ class _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken
           [void Function(
                   GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder)?
               updates]) =>
-      (new GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder()
+      (GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder()
             ..update(updates))
           ._build();
 
   _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken._(
       {required this.G__typename, required this.code, required this.message})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        code,
-        r'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken',
-        'code');
-    BuiltValueNullFieldError.checkNotNull(
-        message,
-        r'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken',
-        'message');
-  }
-
+      : super._();
   @override
   GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken rebuild(
           void Function(
@@ -3500,7 +3449,7 @@ class _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken
   @override
   GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder
       toBuilder() =>
-          new GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder()
+          GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder()
             ..replace(this);
 
   @override
@@ -3572,7 +3521,6 @@ class GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder
   @override
   void replace(
       GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken;
   }
@@ -3591,7 +3539,7 @@ class GRedeemUserPasswordResetTokenData_redeemUserPasswordResetTokenBuilder
 
   _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken _build() {
     final _$result = _$v ??
-        new _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken._(
+        _$GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
               r'GRedeemUserPasswordResetTokenData_redeemUserPasswordResetToken',
@@ -3621,16 +3569,11 @@ class _$GValidateUserPasswordResetTokenData
   factory _$GValidateUserPasswordResetTokenData(
           [void Function(GValidateUserPasswordResetTokenDataBuilder)?
               updates]) =>
-      (new GValidateUserPasswordResetTokenDataBuilder()..update(updates))
-          ._build();
+      (GValidateUserPasswordResetTokenDataBuilder()..update(updates))._build();
 
   _$GValidateUserPasswordResetTokenData._(
       {required this.G__typename, this.validateUserPasswordResetToken})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GValidateUserPasswordResetTokenData', 'G__typename');
-  }
-
+      : super._();
   @override
   GValidateUserPasswordResetTokenData rebuild(
           void Function(GValidateUserPasswordResetTokenDataBuilder) updates) =>
@@ -3638,7 +3581,7 @@ class _$GValidateUserPasswordResetTokenData
 
   @override
   GValidateUserPasswordResetTokenDataBuilder toBuilder() =>
-      new GValidateUserPasswordResetTokenDataBuilder()..replace(this);
+      GValidateUserPasswordResetTokenDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -3682,7 +3625,7 @@ class GValidateUserPasswordResetTokenDataBuilder
   GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder
       get validateUserPasswordResetToken => _$this
               ._validateUserPasswordResetToken ??=
-          new GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder();
+          GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder();
   set validateUserPasswordResetToken(
           GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder?
               validateUserPasswordResetToken) =>
@@ -3705,7 +3648,6 @@ class GValidateUserPasswordResetTokenDataBuilder
 
   @override
   void replace(GValidateUserPasswordResetTokenData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GValidateUserPasswordResetTokenData;
   }
 
@@ -3722,7 +3664,7 @@ class GValidateUserPasswordResetTokenDataBuilder
     _$GValidateUserPasswordResetTokenData _$result;
     try {
       _$result = _$v ??
-          new _$GValidateUserPasswordResetTokenData._(
+          _$GValidateUserPasswordResetTokenData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                 r'GValidateUserPasswordResetTokenData', 'G__typename'),
             validateUserPasswordResetToken:
@@ -3734,10 +3676,8 @@ class GValidateUserPasswordResetTokenDataBuilder
         _$failedField = 'validateUserPasswordResetToken';
         _validateUserPasswordResetToken?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GValidateUserPasswordResetTokenData',
-            _$failedField,
-            e.toString());
+        throw BuiltValueNestedFieldError(r'GValidateUserPasswordResetTokenData',
+            _$failedField, e.toString());
       }
       rethrow;
     }
@@ -3759,27 +3699,13 @@ class _$GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
           [void Function(
                   GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder)?
               updates]) =>
-      (new GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder()
+      (GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder()
             ..update(updates))
           ._build();
 
   _$GValidateUserPasswordResetTokenData_validateUserPasswordResetToken._(
       {required this.G__typename, required this.code, required this.message})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        code,
-        r'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken',
-        'code');
-    BuiltValueNullFieldError.checkNotNull(
-        message,
-        r'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken',
-        'message');
-  }
-
+      : super._();
   @override
   GValidateUserPasswordResetTokenData_validateUserPasswordResetToken rebuild(
           void Function(
@@ -3790,7 +3716,7 @@ class _$GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
   @override
   GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder
       toBuilder() =>
-          new GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder()
+          GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder()
             ..replace(this);
 
   @override
@@ -3864,7 +3790,6 @@ class GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder
   void replace(
       GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
           other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GValidateUserPasswordResetTokenData_validateUserPasswordResetToken;
   }
@@ -3884,8 +3809,7 @@ class GValidateUserPasswordResetTokenData_validateUserPasswordResetTokenBuilder
   _$GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
       _build() {
     final _$result = _$v ??
-        new _$GValidateUserPasswordResetTokenData_validateUserPasswordResetToken
-            ._(
+        _$GValidateUserPasswordResetTokenData_validateUserPasswordResetToken._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
               r'GValidateUserPasswordResetTokenData_validateUserPasswordResetToken',
@@ -3912,21 +3836,17 @@ class _$GCreateDealerData extends GCreateDealerData {
 
   factory _$GCreateDealerData(
           [void Function(GCreateDealerDataBuilder)? updates]) =>
-      (new GCreateDealerDataBuilder()..update(updates))._build();
+      (GCreateDealerDataBuilder()..update(updates))._build();
 
   _$GCreateDealerData._({required this.G__typename, this.createDealer})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GCreateDealerData', 'G__typename');
-  }
-
+      : super._();
   @override
   GCreateDealerData rebuild(void Function(GCreateDealerDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   GCreateDealerDataBuilder toBuilder() =>
-      new GCreateDealerDataBuilder()..replace(this);
+      GCreateDealerDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -3964,7 +3884,7 @@ class GCreateDealerDataBuilder
 
   GCreateDealerData_createDealerBuilder? _createDealer;
   GCreateDealerData_createDealerBuilder get createDealer =>
-      _$this._createDealer ??= new GCreateDealerData_createDealerBuilder();
+      _$this._createDealer ??= GCreateDealerData_createDealerBuilder();
   set createDealer(GCreateDealerData_createDealerBuilder? createDealer) =>
       _$this._createDealer = createDealer;
 
@@ -3984,7 +3904,6 @@ class GCreateDealerDataBuilder
 
   @override
   void replace(GCreateDealerData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateDealerData;
   }
 
@@ -4000,7 +3919,7 @@ class GCreateDealerDataBuilder
     _$GCreateDealerData _$result;
     try {
       _$result = _$v ??
-          new _$GCreateDealerData._(
+          _$GCreateDealerData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GCreateDealerData', 'G__typename'),
             createDealer: _createDealer?.build(),
@@ -4011,7 +3930,7 @@ class GCreateDealerDataBuilder
         _$failedField = 'createDealer';
         _createDealer?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GCreateDealerData', _$failedField, e.toString());
       }
       rethrow;
@@ -4029,17 +3948,11 @@ class _$GCreateDealerData_createDealer extends GCreateDealerData_createDealer {
 
   factory _$GCreateDealerData_createDealer(
           [void Function(GCreateDealerData_createDealerBuilder)? updates]) =>
-      (new GCreateDealerData_createDealerBuilder()..update(updates))._build();
+      (GCreateDealerData_createDealerBuilder()..update(updates))._build();
 
   _$GCreateDealerData_createDealer._(
       {required this.G__typename, required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GCreateDealerData_createDealer', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GCreateDealerData_createDealer', 'id');
-  }
-
+      : super._();
   @override
   GCreateDealerData_createDealer rebuild(
           void Function(GCreateDealerData_createDealerBuilder) updates) =>
@@ -4047,7 +3960,7 @@ class _$GCreateDealerData_createDealer extends GCreateDealerData_createDealer {
 
   @override
   GCreateDealerData_createDealerBuilder toBuilder() =>
-      new GCreateDealerData_createDealerBuilder()..replace(this);
+      GCreateDealerData_createDealerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -4105,7 +4018,6 @@ class GCreateDealerData_createDealerBuilder
 
   @override
   void replace(GCreateDealerData_createDealer other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GCreateDealerData_createDealer;
   }
 
@@ -4119,7 +4031,7 @@ class GCreateDealerData_createDealerBuilder
 
   _$GCreateDealerData_createDealer _build() {
     final _$result = _$v ??
-        new _$GCreateDealerData_createDealer._(
+        _$GCreateDealerData_createDealer._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename, r'GCreateDealerData_createDealer', 'G__typename'),
           id: BuiltValueNullFieldError.checkNotNull(
@@ -4140,16 +4052,11 @@ class _$GAuthenticateUserWithPasswordData
 
   factory _$GAuthenticateUserWithPasswordData(
           [void Function(GAuthenticateUserWithPasswordDataBuilder)? updates]) =>
-      (new GAuthenticateUserWithPasswordDataBuilder()..update(updates))
-          ._build();
+      (GAuthenticateUserWithPasswordDataBuilder()..update(updates))._build();
 
   _$GAuthenticateUserWithPasswordData._(
       {required this.G__typename, this.authenticateUserWithPassword})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GAuthenticateUserWithPasswordData', 'G__typename');
-  }
-
+      : super._();
   @override
   GAuthenticateUserWithPasswordData rebuild(
           void Function(GAuthenticateUserWithPasswordDataBuilder) updates) =>
@@ -4157,7 +4064,7 @@ class _$GAuthenticateUserWithPasswordData
 
   @override
   GAuthenticateUserWithPasswordDataBuilder toBuilder() =>
-      new GAuthenticateUserWithPasswordDataBuilder()..replace(this);
+      GAuthenticateUserWithPasswordDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -4220,7 +4127,6 @@ class GAuthenticateUserWithPasswordDataBuilder
 
   @override
   void replace(GAuthenticateUserWithPasswordData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GAuthenticateUserWithPasswordData;
   }
 
@@ -4235,7 +4141,7 @@ class GAuthenticateUserWithPasswordDataBuilder
 
   _$GAuthenticateUserWithPasswordData _build() {
     final _$result = _$v ??
-        new _$GAuthenticateUserWithPasswordData._(
+        _$GAuthenticateUserWithPasswordData._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename, r'GAuthenticateUserWithPasswordData', 'G__typename'),
           authenticateUserWithPassword: authenticateUserWithPassword,
@@ -4254,19 +4160,13 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base
           [void Function(
                   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__baseBuilder)?
               updates]) =>
-      (new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__baseBuilder()
+      (GAuthenticateUserWithPasswordData_authenticateUserWithPassword__baseBuilder()
             ..update(updates))
           ._build();
 
   _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base._(
       {required this.G__typename})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base',
-        'G__typename');
-  }
-
+      : super._();
   @override
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base rebuild(
           void Function(
@@ -4277,7 +4177,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base
   @override
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__baseBuilder
       toBuilder() =>
-          new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__baseBuilder()
+          GAuthenticateUserWithPasswordData_authenticateUserWithPassword__baseBuilder()
             ..replace(this);
 
   @override
@@ -4335,7 +4235,6 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__baseBuilde
   void replace(
       GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base
           other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base;
   }
@@ -4355,7 +4254,7 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__baseBuilde
   _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base
       _build() {
     final _$result = _$v ??
-        new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base
+        _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__base
             ._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
@@ -4381,7 +4280,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
           [void Function(
                   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccessBuilder)?
               updates]) =>
-      (new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccessBuilder()
+      (GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccessBuilder()
             ..update(updates))
           ._build();
 
@@ -4389,21 +4288,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
       {required this.G__typename,
       required this.item,
       required this.sessionToken})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        item,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess',
-        'item');
-    BuiltValueNullFieldError.checkNotNull(
-        sessionToken,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess',
-        'sessionToken');
-  }
-
+      : super._();
   @override
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess
       rebuild(
@@ -4415,7 +4300,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
   @override
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccessBuilder
       toBuilder() =>
-          new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccessBuilder()
+          GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccessBuilder()
             ..replace(this);
 
   @override
@@ -4465,7 +4350,7 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
       _item;
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_itemBuilder
       get item => _$this._item ??=
-          new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_itemBuilder();
+          GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_itemBuilder();
   set item(
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_itemBuilder?
               item) =>
@@ -4496,7 +4381,6 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
   void replace(
       GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess
           other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess;
   }
@@ -4519,7 +4403,7 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
         _$result;
     try {
       _$result = _$v ??
-          new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess
+          _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess
               ._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
@@ -4537,7 +4421,7 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
         _$failedField = 'item';
         item.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess',
             _$failedField,
             e.toString());
@@ -4586,7 +4470,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
           [void Function(
                   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_itemBuilder)?
               updates]) =>
-      (new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_itemBuilder()
+      (GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_itemBuilder()
             ..update(updates))
           ._build();
 
@@ -4604,17 +4488,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
       this.emailVerified,
       this.referralCode,
       this.deactivate})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item',
-        'id');
-  }
-
+      : super._();
   @override
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item
       rebuild(
@@ -4626,7 +4500,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
   @override
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_itemBuilder
       toBuilder() =>
-          new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_itemBuilder()
+          GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_itemBuilder()
             ..replace(this);
 
   @override
@@ -4735,7 +4609,7 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
       _profile_image;
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_imageBuilder
       get profile_image => _$this._profile_image ??=
-          new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_imageBuilder();
+          GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_imageBuilder();
   set profile_image(
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_imageBuilder?
               profile_image) =>
@@ -4746,7 +4620,7 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
       _addresses;
   ListBuilder<
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses>
-      get addresses => _$this._addresses ??= new ListBuilder<
+      get addresses => _$this._addresses ??= ListBuilder<
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses>();
   set addresses(
           ListBuilder<
@@ -4763,7 +4637,7 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
       _referralCode;
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCodeBuilder
       get referralCode => _$this._referralCode ??=
-          new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCodeBuilder();
+          GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCodeBuilder();
   set referralCode(
           GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCodeBuilder?
               referralCode) =>
@@ -4804,7 +4678,6 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
   void replace(
       GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item
           other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item;
   }
@@ -4827,7 +4700,7 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
         _$result;
     try {
       _$result = _$v ??
-          new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item
+          _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item
               ._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
@@ -4860,7 +4733,7 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
         _$failedField = 'referralCode';
         _referralCode?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item',
             _$failedField,
             e.toString());
@@ -4893,7 +4766,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
           [void Function(
                   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_imageBuilder)?
               updates]) =>
-      (new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_imageBuilder()
+      (GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_imageBuilder()
             ..update(updates))
           ._build();
 
@@ -4905,37 +4778,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
       required this.height,
       required this.extension,
       required this.url})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image',
-        'id');
-    BuiltValueNullFieldError.checkNotNull(
-        filesize,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image',
-        'filesize');
-    BuiltValueNullFieldError.checkNotNull(
-        width,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image',
-        'width');
-    BuiltValueNullFieldError.checkNotNull(
-        height,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image',
-        'height');
-    BuiltValueNullFieldError.checkNotNull(
-        extension,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image',
-        'extension');
-    BuiltValueNullFieldError.checkNotNull(
-        url,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image',
-        'url');
-  }
-
+      : super._();
   @override
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image
       rebuild(
@@ -4947,7 +4790,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
   @override
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_imageBuilder
       toBuilder() =>
-          new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_imageBuilder()
+          GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_imageBuilder()
             ..replace(this);
 
   @override
@@ -5055,7 +4898,6 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
   void replace(
       GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image
           other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image;
   }
@@ -5075,7 +4917,7 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
   _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image
       _build() {
     final _$result = _$v ??
-        new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image
+        _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_profile_image
             ._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
@@ -5142,7 +4984,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
           [void Function(
                   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addressesBuilder)?
               updates]) =>
-      (new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addressesBuilder()
+      (GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addressesBuilder()
             ..update(updates))
           ._build();
 
@@ -5159,17 +5001,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
       this.district,
       this.state,
       this.Gdefault})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses',
-        'id');
-  }
-
+      : super._();
   @override
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses
       rebuild(
@@ -5181,7 +5013,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
   @override
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addressesBuilder
       toBuilder() =>
-          new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addressesBuilder()
+          GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addressesBuilder()
             ..replace(this);
 
   @override
@@ -5260,13 +5092,13 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
 
   _i2.GDateTimeBuilder? _createdAt;
   _i2.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+      _$this._createdAt ??= _i2.GDateTimeBuilder();
   set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
   _i2.GDateTimeBuilder? _modifiedAt;
   _i2.GDateTimeBuilder get modifiedAt =>
-      _$this._modifiedAt ??= new _i2.GDateTimeBuilder();
+      _$this._modifiedAt ??= _i2.GDateTimeBuilder();
   set modifiedAt(_i2.GDateTimeBuilder? modifiedAt) =>
       _$this._modifiedAt = modifiedAt;
 
@@ -5332,7 +5164,6 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
   void replace(
       GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses
           other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses;
   }
@@ -5355,7 +5186,7 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
         _$result;
     try {
       _$result = _$v ??
-          new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses
+          _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses
               ._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
@@ -5384,7 +5215,7 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
         _$failedField = 'modifiedAt';
         _modifiedAt?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_addresses',
             _$failedField,
             e.toString());
@@ -5413,7 +5244,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
           [void Function(
                   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCodeBuilder)?
               updates]) =>
-      (new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCodeBuilder()
+      (GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCodeBuilder()
             ..update(updates))
           ._build();
 
@@ -5423,17 +5254,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
       this.code,
       this.modifiedAt,
       this.createdAt})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode',
-        'id');
-  }
-
+      : super._();
   @override
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode
       rebuild(
@@ -5445,7 +5266,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
   @override
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCodeBuilder
       toBuilder() =>
-          new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCodeBuilder()
+          GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCodeBuilder()
             ..replace(this);
 
   @override
@@ -5507,13 +5328,13 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
 
   _i2.GDateTimeBuilder? _modifiedAt;
   _i2.GDateTimeBuilder get modifiedAt =>
-      _$this._modifiedAt ??= new _i2.GDateTimeBuilder();
+      _$this._modifiedAt ??= _i2.GDateTimeBuilder();
   set modifiedAt(_i2.GDateTimeBuilder? modifiedAt) =>
       _$this._modifiedAt = modifiedAt;
 
   _i2.GDateTimeBuilder? _createdAt;
   _i2.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+      _$this._createdAt ??= _i2.GDateTimeBuilder();
   set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
@@ -5540,7 +5361,6 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
   void replace(
       GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode
           other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode;
   }
@@ -5563,7 +5383,7 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
         _$result;
     try {
       _$result = _$v ??
-          new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode
+          _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode
               ._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename,
@@ -5585,7 +5405,7 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
         _$failedField = 'createdAt';
         _createdAt?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordSuccess_item_referralCode',
             _$failedField,
             e.toString());
@@ -5608,23 +5428,13 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
           [void Function(
                   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailureBuilder)?
               updates]) =>
-      (new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailureBuilder()
+      (GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailureBuilder()
             ..update(updates))
           ._build();
 
   _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure._(
       {required this.G__typename, required this.message})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure',
-        'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        message,
-        r'GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure',
-        'message');
-  }
-
+      : super._();
   @override
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure
       rebuild(
@@ -5636,7 +5446,7 @@ class _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAu
   @override
   GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailureBuilder
       toBuilder() =>
-          new GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailureBuilder()
+          GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailureBuilder()
             ..replace(this);
 
   @override
@@ -5703,7 +5513,6 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
   void replace(
       GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure
           other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other
         as _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure;
   }
@@ -5723,7 +5532,7 @@ class GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuth
   _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure
       _build() {
     final _$result = _$v ??
-        new _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure
+        _$GAuthenticateUserWithPasswordData_authenticateUserWithPassword__asUserAuthenticationWithPasswordFailure
             ._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename,
@@ -5746,19 +5555,15 @@ class _$GUserData extends GUserData {
   final GUserData_user? user;
 
   factory _$GUserData([void Function(GUserDataBuilder)? updates]) =>
-      (new GUserDataBuilder()..update(updates))._build();
+      (GUserDataBuilder()..update(updates))._build();
 
-  _$GUserData._({required this.G__typename, this.user}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUserData', 'G__typename');
-  }
-
+  _$GUserData._({required this.G__typename, this.user}) : super._();
   @override
   GUserData rebuild(void Function(GUserDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GUserDataBuilder toBuilder() => new GUserDataBuilder()..replace(this);
+  GUserDataBuilder toBuilder() => GUserDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -5794,8 +5599,7 @@ class GUserDataBuilder implements Builder<GUserData, GUserDataBuilder> {
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
   GUserData_userBuilder? _user;
-  GUserData_userBuilder get user =>
-      _$this._user ??= new GUserData_userBuilder();
+  GUserData_userBuilder get user => _$this._user ??= GUserData_userBuilder();
   set user(GUserData_userBuilder? user) => _$this._user = user;
 
   GUserDataBuilder() {
@@ -5814,7 +5618,6 @@ class GUserDataBuilder implements Builder<GUserData, GUserDataBuilder> {
 
   @override
   void replace(GUserData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUserData;
   }
 
@@ -5830,7 +5633,7 @@ class GUserDataBuilder implements Builder<GUserData, GUserDataBuilder> {
     _$GUserData _$result;
     try {
       _$result = _$v ??
-          new _$GUserData._(
+          _$GUserData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GUserData', 'G__typename'),
             user: _user?.build(),
@@ -5841,7 +5644,7 @@ class GUserDataBuilder implements Builder<GUserData, GUserDataBuilder> {
         _$failedField = 'user';
         _user?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUserData', _$failedField, e.toString());
       }
       rethrow;
@@ -5886,7 +5689,7 @@ class _$GUserData_user extends GUserData_user {
   final bool? deactivate;
 
   factory _$GUserData_user([void Function(GUserData_userBuilder)? updates]) =>
-      (new GUserData_userBuilder()..update(updates))._build();
+      (GUserData_userBuilder()..update(updates))._build();
 
   _$GUserData_user._(
       {required this.G__typename,
@@ -5905,19 +5708,13 @@ class _$GUserData_user extends GUserData_user {
       this.aadhaar,
       this.driving_license,
       this.deactivate})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUserData_user', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(id, r'GUserData_user', 'id');
-  }
-
+      : super._();
   @override
   GUserData_user rebuild(void Function(GUserData_userBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GUserData_userBuilder toBuilder() =>
-      new GUserData_userBuilder()..replace(this);
+  GUserData_userBuilder toBuilder() => GUserData_userBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -6026,13 +5823,13 @@ class GUserData_userBuilder
 
   GUserData_user_profile_imageBuilder? _profile_image;
   GUserData_user_profile_imageBuilder get profile_image =>
-      _$this._profile_image ??= new GUserData_user_profile_imageBuilder();
+      _$this._profile_image ??= GUserData_user_profile_imageBuilder();
   set profile_image(GUserData_user_profile_imageBuilder? profile_image) =>
       _$this._profile_image = profile_image;
 
   ListBuilder<GUserData_user_addresses>? _addresses;
   ListBuilder<GUserData_user_addresses> get addresses =>
-      _$this._addresses ??= new ListBuilder<GUserData_user_addresses>();
+      _$this._addresses ??= ListBuilder<GUserData_user_addresses>();
   set addresses(ListBuilder<GUserData_user_addresses>? addresses) =>
       _$this._addresses = addresses;
 
@@ -6043,25 +5840,25 @@ class GUserData_userBuilder
 
   GUserData_user_referralCodeBuilder? _referralCode;
   GUserData_user_referralCodeBuilder get referralCode =>
-      _$this._referralCode ??= new GUserData_user_referralCodeBuilder();
+      _$this._referralCode ??= GUserData_user_referralCodeBuilder();
   set referralCode(GUserData_user_referralCodeBuilder? referralCode) =>
       _$this._referralCode = referralCode;
 
   ListBuilder<GUserData_user_favorites>? _favorites;
   ListBuilder<GUserData_user_favorites> get favorites =>
-      _$this._favorites ??= new ListBuilder<GUserData_user_favorites>();
+      _$this._favorites ??= ListBuilder<GUserData_user_favorites>();
   set favorites(ListBuilder<GUserData_user_favorites>? favorites) =>
       _$this._favorites = favorites;
 
   GUserData_user_aadhaarBuilder? _aadhaar;
   GUserData_user_aadhaarBuilder get aadhaar =>
-      _$this._aadhaar ??= new GUserData_user_aadhaarBuilder();
+      _$this._aadhaar ??= GUserData_user_aadhaarBuilder();
   set aadhaar(GUserData_user_aadhaarBuilder? aadhaar) =>
       _$this._aadhaar = aadhaar;
 
   GUserData_user_driving_licenseBuilder? _driving_license;
   GUserData_user_driving_licenseBuilder get driving_license =>
-      _$this._driving_license ??= new GUserData_user_driving_licenseBuilder();
+      _$this._driving_license ??= GUserData_user_driving_licenseBuilder();
   set driving_license(GUserData_user_driving_licenseBuilder? driving_license) =>
       _$this._driving_license = driving_license;
 
@@ -6099,7 +5896,6 @@ class GUserData_userBuilder
 
   @override
   void replace(GUserData_user other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUserData_user;
   }
 
@@ -6115,7 +5911,7 @@ class GUserData_userBuilder
     _$GUserData_user _$result;
     try {
       _$result = _$v ??
-          new _$GUserData_user._(
+          _$GUserData_user._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GUserData_user', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
@@ -6152,7 +5948,7 @@ class GUserData_userBuilder
         _$failedField = 'driving_license';
         _driving_license?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUserData_user', _$failedField, e.toString());
       }
       rethrow;
@@ -6180,7 +5976,7 @@ class _$GUserData_user_profile_image extends GUserData_user_profile_image {
 
   factory _$GUserData_user_profile_image(
           [void Function(GUserData_user_profile_imageBuilder)? updates]) =>
-      (new GUserData_user_profile_imageBuilder()..update(updates))._build();
+      (GUserData_user_profile_imageBuilder()..update(updates))._build();
 
   _$GUserData_user_profile_image._(
       {required this.G__typename,
@@ -6190,23 +5986,7 @@ class _$GUserData_user_profile_image extends GUserData_user_profile_image {
       required this.height,
       required this.extension,
       required this.url})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUserData_user_profile_image', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GUserData_user_profile_image', 'id');
-    BuiltValueNullFieldError.checkNotNull(
-        filesize, r'GUserData_user_profile_image', 'filesize');
-    BuiltValueNullFieldError.checkNotNull(
-        width, r'GUserData_user_profile_image', 'width');
-    BuiltValueNullFieldError.checkNotNull(
-        height, r'GUserData_user_profile_image', 'height');
-    BuiltValueNullFieldError.checkNotNull(
-        extension, r'GUserData_user_profile_image', 'extension');
-    BuiltValueNullFieldError.checkNotNull(
-        url, r'GUserData_user_profile_image', 'url');
-  }
-
+      : super._();
   @override
   GUserData_user_profile_image rebuild(
           void Function(GUserData_user_profile_imageBuilder) updates) =>
@@ -6214,7 +5994,7 @@ class _$GUserData_user_profile_image extends GUserData_user_profile_image {
 
   @override
   GUserData_user_profile_imageBuilder toBuilder() =>
-      new GUserData_user_profile_imageBuilder()..replace(this);
+      GUserData_user_profile_imageBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -6313,7 +6093,6 @@ class GUserData_user_profile_imageBuilder
 
   @override
   void replace(GUserData_user_profile_image other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUserData_user_profile_image;
   }
 
@@ -6327,7 +6106,7 @@ class GUserData_user_profile_imageBuilder
 
   _$GUserData_user_profile_image _build() {
     final _$result = _$v ??
-        new _$GUserData_user_profile_image._(
+        _$GUserData_user_profile_image._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename, r'GUserData_user_profile_image', 'G__typename'),
           id: BuiltValueNullFieldError.checkNotNull(
@@ -6376,7 +6155,7 @@ class _$GUserData_user_addresses extends GUserData_user_addresses {
 
   factory _$GUserData_user_addresses(
           [void Function(GUserData_user_addressesBuilder)? updates]) =>
-      (new GUserData_user_addressesBuilder()..update(updates))._build();
+      (GUserData_user_addressesBuilder()..update(updates))._build();
 
   _$GUserData_user_addresses._(
       {required this.G__typename,
@@ -6391,13 +6170,7 @@ class _$GUserData_user_addresses extends GUserData_user_addresses {
       this.district,
       this.state,
       this.Gdefault})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUserData_user_addresses', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GUserData_user_addresses', 'id');
-  }
-
+      : super._();
   @override
   GUserData_user_addresses rebuild(
           void Function(GUserData_user_addressesBuilder) updates) =>
@@ -6405,7 +6178,7 @@ class _$GUserData_user_addresses extends GUserData_user_addresses {
 
   @override
   GUserData_user_addressesBuilder toBuilder() =>
-      new GUserData_user_addressesBuilder()..replace(this);
+      GUserData_user_addressesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -6478,13 +6251,13 @@ class GUserData_user_addressesBuilder
 
   _i2.GDateTimeBuilder? _createdAt;
   _i2.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+      _$this._createdAt ??= _i2.GDateTimeBuilder();
   set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
   _i2.GDateTimeBuilder? _modifiedAt;
   _i2.GDateTimeBuilder get modifiedAt =>
-      _$this._modifiedAt ??= new _i2.GDateTimeBuilder();
+      _$this._modifiedAt ??= _i2.GDateTimeBuilder();
   set modifiedAt(_i2.GDateTimeBuilder? modifiedAt) =>
       _$this._modifiedAt = modifiedAt;
 
@@ -6546,7 +6319,6 @@ class GUserData_user_addressesBuilder
 
   @override
   void replace(GUserData_user_addresses other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUserData_user_addresses;
   }
 
@@ -6562,7 +6334,7 @@ class GUserData_user_addressesBuilder
     _$GUserData_user_addresses _$result;
     try {
       _$result = _$v ??
-          new _$GUserData_user_addresses._(
+          _$GUserData_user_addresses._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GUserData_user_addresses', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
@@ -6586,7 +6358,7 @@ class GUserData_user_addressesBuilder
         _$failedField = 'modifiedAt';
         _modifiedAt?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUserData_user_addresses', _$failedField, e.toString());
       }
       rethrow;
@@ -6610,7 +6382,7 @@ class _$GUserData_user_referralCode extends GUserData_user_referralCode {
 
   factory _$GUserData_user_referralCode(
           [void Function(GUserData_user_referralCodeBuilder)? updates]) =>
-      (new GUserData_user_referralCodeBuilder()..update(updates))._build();
+      (GUserData_user_referralCodeBuilder()..update(updates))._build();
 
   _$GUserData_user_referralCode._(
       {required this.G__typename,
@@ -6618,13 +6390,7 @@ class _$GUserData_user_referralCode extends GUserData_user_referralCode {
       this.code,
       this.modifiedAt,
       this.createdAt})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUserData_user_referralCode', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GUserData_user_referralCode', 'id');
-  }
-
+      : super._();
   @override
   GUserData_user_referralCode rebuild(
           void Function(GUserData_user_referralCodeBuilder) updates) =>
@@ -6632,7 +6398,7 @@ class _$GUserData_user_referralCode extends GUserData_user_referralCode {
 
   @override
   GUserData_user_referralCodeBuilder toBuilder() =>
-      new GUserData_user_referralCodeBuilder()..replace(this);
+      GUserData_user_referralCodeBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -6689,13 +6455,13 @@ class GUserData_user_referralCodeBuilder
 
   _i2.GDateTimeBuilder? _modifiedAt;
   _i2.GDateTimeBuilder get modifiedAt =>
-      _$this._modifiedAt ??= new _i2.GDateTimeBuilder();
+      _$this._modifiedAt ??= _i2.GDateTimeBuilder();
   set modifiedAt(_i2.GDateTimeBuilder? modifiedAt) =>
       _$this._modifiedAt = modifiedAt;
 
   _i2.GDateTimeBuilder? _createdAt;
   _i2.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+      _$this._createdAt ??= _i2.GDateTimeBuilder();
   set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
@@ -6718,7 +6484,6 @@ class GUserData_user_referralCodeBuilder
 
   @override
   void replace(GUserData_user_referralCode other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUserData_user_referralCode;
   }
 
@@ -6734,7 +6499,7 @@ class GUserData_user_referralCodeBuilder
     _$GUserData_user_referralCode _$result;
     try {
       _$result = _$v ??
-          new _$GUserData_user_referralCode._(
+          _$GUserData_user_referralCode._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GUserData_user_referralCode', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
@@ -6751,7 +6516,7 @@ class GUserData_user_referralCodeBuilder
         _$failedField = 'createdAt';
         _createdAt?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUserData_user_referralCode', _$failedField, e.toString());
       }
       rethrow;
@@ -6771,17 +6536,11 @@ class _$GUserData_user_favorites extends GUserData_user_favorites {
 
   factory _$GUserData_user_favorites(
           [void Function(GUserData_user_favoritesBuilder)? updates]) =>
-      (new GUserData_user_favoritesBuilder()..update(updates))._build();
+      (GUserData_user_favoritesBuilder()..update(updates))._build();
 
   _$GUserData_user_favorites._(
       {required this.G__typename, this.vehicleVariant, required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUserData_user_favorites', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GUserData_user_favorites', 'id');
-  }
-
+      : super._();
   @override
   GUserData_user_favorites rebuild(
           void Function(GUserData_user_favoritesBuilder) updates) =>
@@ -6789,7 +6548,7 @@ class _$GUserData_user_favorites extends GUserData_user_favorites {
 
   @override
   GUserData_user_favoritesBuilder toBuilder() =>
-      new GUserData_user_favoritesBuilder()..replace(this);
+      GUserData_user_favoritesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -6832,7 +6591,7 @@ class GUserData_user_favoritesBuilder
   GUserData_user_favorites_vehicleVariantBuilder? _vehicleVariant;
   GUserData_user_favorites_vehicleVariantBuilder get vehicleVariant =>
       _$this._vehicleVariant ??=
-          new GUserData_user_favorites_vehicleVariantBuilder();
+          GUserData_user_favorites_vehicleVariantBuilder();
   set vehicleVariant(
           GUserData_user_favorites_vehicleVariantBuilder? vehicleVariant) =>
       _$this._vehicleVariant = vehicleVariant;
@@ -6858,7 +6617,6 @@ class GUserData_user_favoritesBuilder
 
   @override
   void replace(GUserData_user_favorites other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUserData_user_favorites;
   }
 
@@ -6874,7 +6632,7 @@ class GUserData_user_favoritesBuilder
     _$GUserData_user_favorites _$result;
     try {
       _$result = _$v ??
-          new _$GUserData_user_favorites._(
+          _$GUserData_user_favorites._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GUserData_user_favorites', 'G__typename'),
             vehicleVariant: _vehicleVariant?.build(),
@@ -6887,7 +6645,7 @@ class GUserData_user_favoritesBuilder
         _$failedField = 'vehicleVariant';
         _vehicleVariant?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUserData_user_favorites', _$failedField, e.toString());
       }
       rethrow;
@@ -6907,18 +6665,12 @@ class _$GUserData_user_favorites_vehicleVariant
   factory _$GUserData_user_favorites_vehicleVariant(
           [void Function(GUserData_user_favorites_vehicleVariantBuilder)?
               updates]) =>
-      (new GUserData_user_favorites_vehicleVariantBuilder()..update(updates))
+      (GUserData_user_favorites_vehicleVariantBuilder()..update(updates))
           ._build();
 
   _$GUserData_user_favorites_vehicleVariant._(
       {required this.G__typename, required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUserData_user_favorites_vehicleVariant', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GUserData_user_favorites_vehicleVariant', 'id');
-  }
-
+      : super._();
   @override
   GUserData_user_favorites_vehicleVariant rebuild(
           void Function(GUserData_user_favorites_vehicleVariantBuilder)
@@ -6927,7 +6679,7 @@ class _$GUserData_user_favorites_vehicleVariant
 
   @override
   GUserData_user_favorites_vehicleVariantBuilder toBuilder() =>
-      new GUserData_user_favorites_vehicleVariantBuilder()..replace(this);
+      GUserData_user_favorites_vehicleVariantBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -6986,7 +6738,6 @@ class GUserData_user_favorites_vehicleVariantBuilder
 
   @override
   void replace(GUserData_user_favorites_vehicleVariant other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUserData_user_favorites_vehicleVariant;
   }
 
@@ -7001,7 +6752,7 @@ class GUserData_user_favorites_vehicleVariantBuilder
 
   _$GUserData_user_favorites_vehicleVariant _build() {
     final _$result = _$v ??
-        new _$GUserData_user_favorites_vehicleVariant._(
+        _$GUserData_user_favorites_vehicleVariant._(
           G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
               r'GUserData_user_favorites_vehicleVariant', 'G__typename'),
           id: BuiltValueNullFieldError.checkNotNull(
@@ -7022,19 +6773,11 @@ class _$GUserData_user_aadhaar extends GUserData_user_aadhaar {
 
   factory _$GUserData_user_aadhaar(
           [void Function(GUserData_user_aadhaarBuilder)? updates]) =>
-      (new GUserData_user_aadhaarBuilder()..update(updates))._build();
+      (GUserData_user_aadhaarBuilder()..update(updates))._build();
 
   _$GUserData_user_aadhaar._(
       {required this.G__typename, required this.url, required this.filename})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUserData_user_aadhaar', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        url, r'GUserData_user_aadhaar', 'url');
-    BuiltValueNullFieldError.checkNotNull(
-        filename, r'GUserData_user_aadhaar', 'filename');
-  }
-
+      : super._();
   @override
   GUserData_user_aadhaar rebuild(
           void Function(GUserData_user_aadhaarBuilder) updates) =>
@@ -7042,7 +6785,7 @@ class _$GUserData_user_aadhaar extends GUserData_user_aadhaar {
 
   @override
   GUserData_user_aadhaarBuilder toBuilder() =>
-      new GUserData_user_aadhaarBuilder()..replace(this);
+      GUserData_user_aadhaarBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -7106,7 +6849,6 @@ class GUserData_user_aadhaarBuilder
 
   @override
   void replace(GUserData_user_aadhaar other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUserData_user_aadhaar;
   }
 
@@ -7120,7 +6862,7 @@ class GUserData_user_aadhaarBuilder
 
   _$GUserData_user_aadhaar _build() {
     final _$result = _$v ??
-        new _$GUserData_user_aadhaar._(
+        _$GUserData_user_aadhaar._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename, r'GUserData_user_aadhaar', 'G__typename'),
           url: BuiltValueNullFieldError.checkNotNull(
@@ -7143,19 +6885,11 @@ class _$GUserData_user_driving_license extends GUserData_user_driving_license {
 
   factory _$GUserData_user_driving_license(
           [void Function(GUserData_user_driving_licenseBuilder)? updates]) =>
-      (new GUserData_user_driving_licenseBuilder()..update(updates))._build();
+      (GUserData_user_driving_licenseBuilder()..update(updates))._build();
 
   _$GUserData_user_driving_license._(
       {required this.G__typename, required this.url, required this.filename})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUserData_user_driving_license', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        url, r'GUserData_user_driving_license', 'url');
-    BuiltValueNullFieldError.checkNotNull(
-        filename, r'GUserData_user_driving_license', 'filename');
-  }
-
+      : super._();
   @override
   GUserData_user_driving_license rebuild(
           void Function(GUserData_user_driving_licenseBuilder) updates) =>
@@ -7163,7 +6897,7 @@ class _$GUserData_user_driving_license extends GUserData_user_driving_license {
 
   @override
   GUserData_user_driving_licenseBuilder toBuilder() =>
-      new GUserData_user_driving_licenseBuilder()..replace(this);
+      GUserData_user_driving_licenseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -7229,7 +6963,6 @@ class GUserData_user_driving_licenseBuilder
 
   @override
   void replace(GUserData_user_driving_license other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUserData_user_driving_license;
   }
 
@@ -7243,7 +6976,7 @@ class GUserData_user_driving_licenseBuilder
 
   _$GUserData_user_driving_license _build() {
     final _$result = _$v ??
-        new _$GUserData_user_driving_license._(
+        _$GUserData_user_driving_license._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename, r'GUserData_user_driving_license', 'G__typename'),
           url: BuiltValueNullFieldError.checkNotNull(
@@ -7263,21 +6996,15 @@ class _$GUpdateUserData extends GUpdateUserData {
   final GUpdateUserData_updateUser? updateUser;
 
   factory _$GUpdateUserData([void Function(GUpdateUserDataBuilder)? updates]) =>
-      (new GUpdateUserDataBuilder()..update(updates))._build();
+      (GUpdateUserDataBuilder()..update(updates))._build();
 
-  _$GUpdateUserData._({required this.G__typename, this.updateUser})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUpdateUserData', 'G__typename');
-  }
-
+  _$GUpdateUserData._({required this.G__typename, this.updateUser}) : super._();
   @override
   GUpdateUserData rebuild(void Function(GUpdateUserDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GUpdateUserDataBuilder toBuilder() =>
-      new GUpdateUserDataBuilder()..replace(this);
+  GUpdateUserDataBuilder toBuilder() => GUpdateUserDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -7315,7 +7042,7 @@ class GUpdateUserDataBuilder
 
   GUpdateUserData_updateUserBuilder? _updateUser;
   GUpdateUserData_updateUserBuilder get updateUser =>
-      _$this._updateUser ??= new GUpdateUserData_updateUserBuilder();
+      _$this._updateUser ??= GUpdateUserData_updateUserBuilder();
   set updateUser(GUpdateUserData_updateUserBuilder? updateUser) =>
       _$this._updateUser = updateUser;
 
@@ -7335,7 +7062,6 @@ class GUpdateUserDataBuilder
 
   @override
   void replace(GUpdateUserData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUpdateUserData;
   }
 
@@ -7351,7 +7077,7 @@ class GUpdateUserDataBuilder
     _$GUpdateUserData _$result;
     try {
       _$result = _$v ??
-          new _$GUpdateUserData._(
+          _$GUpdateUserData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GUpdateUserData', 'G__typename'),
             updateUser: _updateUser?.build(),
@@ -7362,7 +7088,7 @@ class GUpdateUserDataBuilder
         _$failedField = 'updateUser';
         _updateUser?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUpdateUserData', _$failedField, e.toString());
       }
       rethrow;
@@ -7380,16 +7106,10 @@ class _$GUpdateUserData_updateUser extends GUpdateUserData_updateUser {
 
   factory _$GUpdateUserData_updateUser(
           [void Function(GUpdateUserData_updateUserBuilder)? updates]) =>
-      (new GUpdateUserData_updateUserBuilder()..update(updates))._build();
+      (GUpdateUserData_updateUserBuilder()..update(updates))._build();
 
   _$GUpdateUserData_updateUser._({required this.G__typename, required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUpdateUserData_updateUser', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GUpdateUserData_updateUser', 'id');
-  }
-
+      : super._();
   @override
   GUpdateUserData_updateUser rebuild(
           void Function(GUpdateUserData_updateUserBuilder) updates) =>
@@ -7397,7 +7117,7 @@ class _$GUpdateUserData_updateUser extends GUpdateUserData_updateUser {
 
   @override
   GUpdateUserData_updateUserBuilder toBuilder() =>
-      new GUpdateUserData_updateUserBuilder()..replace(this);
+      GUpdateUserData_updateUserBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -7454,7 +7174,6 @@ class GUpdateUserData_updateUserBuilder
 
   @override
   void replace(GUpdateUserData_updateUser other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUpdateUserData_updateUser;
   }
 
@@ -7468,7 +7187,7 @@ class GUpdateUserData_updateUserBuilder
 
   _$GUpdateUserData_updateUser _build() {
     final _$result = _$v ??
-        new _$GUpdateUserData_updateUser._(
+        _$GUpdateUserData_updateUser._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename, r'GUpdateUserData_updateUser', 'G__typename'),
           id: BuiltValueNullFieldError.checkNotNull(
@@ -7486,19 +7205,15 @@ class _$GDealerData extends GDealerData {
   final BuiltList<GDealerData_dealers>? dealers;
 
   factory _$GDealerData([void Function(GDealerDataBuilder)? updates]) =>
-      (new GDealerDataBuilder()..update(updates))._build();
+      (GDealerDataBuilder()..update(updates))._build();
 
-  _$GDealerData._({required this.G__typename, this.dealers}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GDealerData', 'G__typename');
-  }
-
+  _$GDealerData._({required this.G__typename, this.dealers}) : super._();
   @override
   GDealerData rebuild(void Function(GDealerDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GDealerDataBuilder toBuilder() => new GDealerDataBuilder()..replace(this);
+  GDealerDataBuilder toBuilder() => GDealerDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -7535,7 +7250,7 @@ class GDealerDataBuilder implements Builder<GDealerData, GDealerDataBuilder> {
 
   ListBuilder<GDealerData_dealers>? _dealers;
   ListBuilder<GDealerData_dealers> get dealers =>
-      _$this._dealers ??= new ListBuilder<GDealerData_dealers>();
+      _$this._dealers ??= ListBuilder<GDealerData_dealers>();
   set dealers(ListBuilder<GDealerData_dealers>? dealers) =>
       _$this._dealers = dealers;
 
@@ -7555,7 +7270,6 @@ class GDealerDataBuilder implements Builder<GDealerData, GDealerDataBuilder> {
 
   @override
   void replace(GDealerData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GDealerData;
   }
 
@@ -7571,7 +7285,7 @@ class GDealerDataBuilder implements Builder<GDealerData, GDealerDataBuilder> {
     _$GDealerData _$result;
     try {
       _$result = _$v ??
-          new _$GDealerData._(
+          _$GDealerData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GDealerData', 'G__typename'),
             dealers: _dealers?.build(),
@@ -7582,7 +7296,7 @@ class GDealerDataBuilder implements Builder<GDealerData, GDealerDataBuilder> {
         _$failedField = 'dealers';
         _dealers?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GDealerData', _$failedField, e.toString());
       }
       rethrow;
@@ -7604,19 +7318,14 @@ class _$GDealerData_dealers extends GDealerData_dealers {
 
   factory _$GDealerData_dealers(
           [void Function(GDealerData_dealersBuilder)? updates]) =>
-      (new GDealerData_dealersBuilder()..update(updates))._build();
+      (GDealerData_dealersBuilder()..update(updates))._build();
 
   _$GDealerData_dealers._(
       {required this.G__typename,
       required this.id,
       this.approved,
       this.mouApproved})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GDealerData_dealers', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(id, r'GDealerData_dealers', 'id');
-  }
-
+      : super._();
   @override
   GDealerData_dealers rebuild(
           void Function(GDealerData_dealersBuilder) updates) =>
@@ -7624,7 +7333,7 @@ class _$GDealerData_dealers extends GDealerData_dealers {
 
   @override
   GDealerData_dealersBuilder toBuilder() =>
-      new GDealerData_dealersBuilder()..replace(this);
+      GDealerData_dealersBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -7696,7 +7405,6 @@ class GDealerData_dealersBuilder
 
   @override
   void replace(GDealerData_dealers other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GDealerData_dealers;
   }
 
@@ -7710,7 +7418,7 @@ class GDealerData_dealersBuilder
 
   _$GDealerData_dealers _build() {
     final _$result = _$v ??
-        new _$GDealerData_dealers._(
+        _$GDealerData_dealers._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename, r'GDealerData_dealers', 'G__typename'),
           id: BuiltValueNullFieldError.checkNotNull(
@@ -7731,21 +7439,17 @@ class _$GUpdateDealerData extends GUpdateDealerData {
 
   factory _$GUpdateDealerData(
           [void Function(GUpdateDealerDataBuilder)? updates]) =>
-      (new GUpdateDealerDataBuilder()..update(updates))._build();
+      (GUpdateDealerDataBuilder()..update(updates))._build();
 
   _$GUpdateDealerData._({required this.G__typename, this.updateDealer})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUpdateDealerData', 'G__typename');
-  }
-
+      : super._();
   @override
   GUpdateDealerData rebuild(void Function(GUpdateDealerDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   GUpdateDealerDataBuilder toBuilder() =>
-      new GUpdateDealerDataBuilder()..replace(this);
+      GUpdateDealerDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -7783,7 +7487,7 @@ class GUpdateDealerDataBuilder
 
   GUpdateDealerData_updateDealerBuilder? _updateDealer;
   GUpdateDealerData_updateDealerBuilder get updateDealer =>
-      _$this._updateDealer ??= new GUpdateDealerData_updateDealerBuilder();
+      _$this._updateDealer ??= GUpdateDealerData_updateDealerBuilder();
   set updateDealer(GUpdateDealerData_updateDealerBuilder? updateDealer) =>
       _$this._updateDealer = updateDealer;
 
@@ -7803,7 +7507,6 @@ class GUpdateDealerDataBuilder
 
   @override
   void replace(GUpdateDealerData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUpdateDealerData;
   }
 
@@ -7819,7 +7522,7 @@ class GUpdateDealerDataBuilder
     _$GUpdateDealerData _$result;
     try {
       _$result = _$v ??
-          new _$GUpdateDealerData._(
+          _$GUpdateDealerData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GUpdateDealerData', 'G__typename'),
             updateDealer: _updateDealer?.build(),
@@ -7830,7 +7533,7 @@ class GUpdateDealerDataBuilder
         _$failedField = 'updateDealer';
         _updateDealer?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUpdateDealerData', _$failedField, e.toString());
       }
       rethrow;
@@ -7854,7 +7557,7 @@ class _$GUpdateDealerData_updateDealer extends GUpdateDealerData_updateDealer {
 
   factory _$GUpdateDealerData_updateDealer(
           [void Function(GUpdateDealerData_updateDealerBuilder)? updates]) =>
-      (new GUpdateDealerData_updateDealerBuilder()..update(updates))._build();
+      (GUpdateDealerData_updateDealerBuilder()..update(updates))._build();
 
   _$GUpdateDealerData_updateDealer._(
       {required this.G__typename,
@@ -7862,13 +7565,7 @@ class _$GUpdateDealerData_updateDealer extends GUpdateDealerData_updateDealer {
       this.lLat,
       this.lLng,
       this.location})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUpdateDealerData_updateDealer', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GUpdateDealerData_updateDealer', 'id');
-  }
-
+      : super._();
   @override
   GUpdateDealerData_updateDealer rebuild(
           void Function(GUpdateDealerData_updateDealerBuilder) updates) =>
@@ -7876,7 +7573,7 @@ class _$GUpdateDealerData_updateDealer extends GUpdateDealerData_updateDealer {
 
   @override
   GUpdateDealerData_updateDealerBuilder toBuilder() =>
-      new GUpdateDealerData_updateDealerBuilder()..replace(this);
+      GUpdateDealerData_updateDealerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -7937,7 +7634,7 @@ class GUpdateDealerData_updateDealerBuilder
 
   ListBuilder<double?>? _location;
   ListBuilder<double?> get location =>
-      _$this._location ??= new ListBuilder<double?>();
+      _$this._location ??= ListBuilder<double?>();
   set location(ListBuilder<double?>? location) => _$this._location = location;
 
   GUpdateDealerData_updateDealerBuilder() {
@@ -7959,7 +7656,6 @@ class GUpdateDealerData_updateDealerBuilder
 
   @override
   void replace(GUpdateDealerData_updateDealer other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GUpdateDealerData_updateDealer;
   }
 
@@ -7975,7 +7671,7 @@ class GUpdateDealerData_updateDealerBuilder
     _$GUpdateDealerData_updateDealer _$result;
     try {
       _$result = _$v ??
-          new _$GUpdateDealerData_updateDealer._(
+          _$GUpdateDealerData_updateDealer._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GUpdateDealerData_updateDealer', 'G__typename'),
             id: BuiltValueNullFieldError.checkNotNull(
@@ -7990,7 +7686,7 @@ class GUpdateDealerData_updateDealerBuilder
         _$failedField = 'location';
         _location?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'GUpdateDealerData_updateDealer', _$failedField, e.toString());
       }
       rethrow;
@@ -8008,15 +7704,11 @@ class _$GSendDealerMOUApprovalOTPData extends GSendDealerMOUApprovalOTPData {
 
   factory _$GSendDealerMOUApprovalOTPData(
           [void Function(GSendDealerMOUApprovalOTPDataBuilder)? updates]) =>
-      (new GSendDealerMOUApprovalOTPDataBuilder()..update(updates))._build();
+      (GSendDealerMOUApprovalOTPDataBuilder()..update(updates))._build();
 
   _$GSendDealerMOUApprovalOTPData._(
       {required this.G__typename, this.sendDealerMOUApprovalOTP})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GSendDealerMOUApprovalOTPData', 'G__typename');
-  }
-
+      : super._();
   @override
   GSendDealerMOUApprovalOTPData rebuild(
           void Function(GSendDealerMOUApprovalOTPDataBuilder) updates) =>
@@ -8024,7 +7716,7 @@ class _$GSendDealerMOUApprovalOTPData extends GSendDealerMOUApprovalOTPData {
 
   @override
   GSendDealerMOUApprovalOTPDataBuilder toBuilder() =>
-      new GSendDealerMOUApprovalOTPDataBuilder()..replace(this);
+      GSendDealerMOUApprovalOTPDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -8084,7 +7776,6 @@ class GSendDealerMOUApprovalOTPDataBuilder
 
   @override
   void replace(GSendDealerMOUApprovalOTPData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GSendDealerMOUApprovalOTPData;
   }
 
@@ -8098,7 +7789,7 @@ class GSendDealerMOUApprovalOTPDataBuilder
 
   _$GSendDealerMOUApprovalOTPData _build() {
     final _$result = _$v ??
-        new _$GSendDealerMOUApprovalOTPData._(
+        _$GSendDealerMOUApprovalOTPData._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
               G__typename, r'GSendDealerMOUApprovalOTPData', 'G__typename'),
           sendDealerMOUApprovalOTP: sendDealerMOUApprovalOTP,
