@@ -111,7 +111,6 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                   )
                   ?.id ??
               '';
-          priceId.log();
           return PriceModel(
             price: widget.prices
                     .firstWhereOrNull(
@@ -309,11 +308,11 @@ class _QuantityScreenState extends ConsumerState<QuantityScreen> {
                                   if (widget.product) {
                                     inventoryPro
                                         .updateProductDealer(
-                                      index: widget.index!,
-                                      id: widget.vehicleDealerId!,
-                                      guarantees: selectedGuarantees.toList(),
-                                      prices: prices,
-                                    )
+                                            index: widget.index!,
+                                            id: widget.vehicleDealerId!,
+                                            guarantees:
+                                                selectedGuarantees.toList(),
+                                            prices: prices)
                                         .then((value) {
                                       for (var i = 0;
                                           i < controller.length;

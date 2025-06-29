@@ -405,6 +405,7 @@ class InventoryProvider extends ChangeNotifier {
         dealerId: id,
         guarantees: guarantees,
         prices: prices,
+        oldPrices: vehicleDealers?[index].prices,
       );
       if (vehicleDealers != null) {
         vehicleDealers![index] = result;
@@ -461,6 +462,7 @@ class InventoryProvider extends ChangeNotifier {
         dealerId: id,
         guarantees: guarantees,
         prices: prices,
+        oldPrices: productDealers?[index].prices,
       );
       if (productDealers != null) {
         productDealers![index] = result;

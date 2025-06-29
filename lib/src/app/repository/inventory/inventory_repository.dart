@@ -1,4 +1,5 @@
 import 'package:built_collection/built_collection.dart';
+import 'package:collection/collection.dart';
 import 'package:dealerapp/src/app/model/dealer_stock_model.dart';
 import 'package:dealerapp/src/app/model/product_details_model.dart';
 import 'package:dealerapp/src/app/provider/app_provider.dart';
@@ -467,6 +468,7 @@ class InventoryRepository {
     required String dealerId,
     required List<String> guarantees,
     List<PriceModel>? prices,
+    List<Price>? oldPrices,
   }) async {
     try {
       if (prices != null &&
@@ -476,6 +478,17 @@ class InventoryRepository {
             (b) {
               b.vars.data = ListBuilder<GPriceUpdateArgs>(
                 prices
+                    .where((element) => element.priceId.isNotEmpty)
+                    .where((element) {
+                      if (oldPrices != null) {
+                        final oldPrice = oldPrices
+                            .firstWhereOrNull((p0) => p0.id == element.priceId);
+                        if (oldPrice != null) {
+                          return oldPrice.amount != element.price;
+                        }
+                      }
+                      return true;
+                    })
                     .map(
                       (e) => GPriceUpdateArgs(
                         (b) => b
@@ -505,18 +518,32 @@ class InventoryRepository {
                 ),
               );
             }
-            if (prices != null &&
-                prices.where((element) => element.priceId.isEmpty).isNotEmpty) {
-              b.vars.data.prices.create = ListBuilder<GPriceCreateInput>(
-                prices.map<GPriceCreateInput>(
-                  (e) => GPriceCreateInput(
-                    (b) => b
-                      ..amount = e.price
-                      ..originalAmount = e.originalAmount
-                      ..category.connect.id = e.type,
-                  ),
-                ),
-              );
+            if (prices != null) {
+              if (prices
+                  .where((element) => element.priceId.isEmpty)
+                  .isNotEmpty) {
+                b.vars.data.prices.create = ListBuilder<GPriceCreateInput>(
+                  prices
+                      .where((element) => element.priceId.isEmpty)
+                      .map<GPriceCreateInput>(
+                        (e) => GPriceCreateInput(
+                          (b) => b
+                            ..amount = e.price
+                            ..originalAmount = e.originalAmount
+                            ..category.connect.id = e.type,
+                        ),
+                      ),
+                );
+              } else {
+                b.vars.data.prices.connect =
+                    ListBuilder<GPriceWhereUniqueInput>(
+                  prices
+                      .where((element) => element.priceId.isNotEmpty)
+                      .map<GPriceWhereUniqueInput>(
+                        (e) => GPriceWhereUniqueInput((b) => b..id = e.priceId),
+                      ),
+                );
+              }
             }
           },
         ),
@@ -594,6 +621,7 @@ class InventoryRepository {
     required String dealerId,
     required List<String> guarantees,
     List<PriceModel>? prices,
+    List<Price>? oldPrices,
   }) async {
     try {
       if (prices != null &&
@@ -603,6 +631,17 @@ class InventoryRepository {
             (b) {
               b.vars.data = ListBuilder<GPriceUpdateArgs>(
                 prices
+                    .where((element) => element.priceId.isNotEmpty)
+                    .where((element) {
+                      if (oldPrices != null) {
+                        final oldPrice = oldPrices
+                            .firstWhereOrNull((p0) => p0.id == element.priceId);
+                        if (oldPrice != null) {
+                          return oldPrice.amount != element.price;
+                        }
+                      }
+                      return true;
+                    })
                     .map(
                       (e) => GPriceUpdateArgs(
                         (b) => b
@@ -632,18 +671,32 @@ class InventoryRepository {
                 ),
               );
             }
-            if (prices != null &&
-                prices.where((element) => element.priceId.isEmpty).isNotEmpty) {
-              b.vars.data.prices.create = ListBuilder<GPriceCreateInput>(
-                prices.map<GPriceCreateInput>(
-                  (e) => GPriceCreateInput(
-                    (b) => b
-                      ..amount = e.price
-                      ..originalAmount = e.originalAmount
-                      ..category.connect.id = e.type,
-                  ),
-                ),
-              );
+            if (prices != null) {
+              if (prices
+                  .where((element) => element.priceId.isEmpty)
+                  .isNotEmpty) {
+                b.vars.data.prices.create = ListBuilder<GPriceCreateInput>(
+                  prices
+                      .where((element) => element.priceId.isEmpty)
+                      .map<GPriceCreateInput>(
+                        (e) => GPriceCreateInput(
+                          (b) => b
+                            ..amount = e.price
+                            ..originalAmount = e.originalAmount
+                            ..category.connect.id = e.type,
+                        ),
+                      ),
+                );
+              } else {
+                b.vars.data.prices.connect =
+                    ListBuilder<GPriceWhereUniqueInput>(
+                  prices
+                      .where((element) => element.priceId.isNotEmpty)
+                      .map<GPriceWhereUniqueInput>(
+                        (e) => GPriceWhereUniqueInput((b) => b..id = e.priceId),
+                      ),
+                );
+              }
             }
           },
         ),

@@ -359,7 +359,7 @@ class AuthProvider extends ChangeNotifier {
 
   ///
   TextEditingController phoneNumberController =
-      TextEditingController(text: kDebugMode ? '6281082551' : '');
+      TextEditingController(text: kDebugMode ? '7032247687' : '');
 
   ///
   TextEditingController emailIdController = TextEditingController();
